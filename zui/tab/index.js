@@ -1,12 +1,12 @@
 var Tab = {
   _handleZuiTabChange(e) {
     var dataset = e.currentTarget.dataset;
-    var id = dataset.id;
+    var componentId = dataset.componentId;
     var selectedId = dataset.itemId;
 
     if (this.handleZuiTabChange) {
       this.handleZuiTabChange({
-        id,
+        componentId,
         selectedId
       });
     }

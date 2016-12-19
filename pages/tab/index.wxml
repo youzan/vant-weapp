@@ -2,9 +2,9 @@
 
 <view class="container">
   <view style="margin: 20px 0">
-    <template is="zui-tab" data="{{tab: tab1, id: 'tab1'}}"></template>
+    <template is="zui-tab" data="{{tab: tab1, componentId: 'tab1'}}"></template>
   </view>
   <view style="margin: 20px 0">
-    <template is="zui-tab" data="{{tab: tab2, id: 'tab2'}}"></template>
+    <template is="zui-tab" data="{{tab: tab2, componentId: 'tab2'}}"></template>
   </view>
 </view>

@@ -2,12 +2,12 @@
   <view class="zui-tab">
       <block wx:if="{{tab.scroll}}">
         <scroll-view class="zui-tab__bd zui-tab__bd--scroll {{fixed ? 'zui-tab__bd--fixed' : ''}}" scroll-x="true">
-          <template is="zui-tab-list" data="{{ tab, id }}"></template>
+          <template is="zui-tab-list" data="{{ tab, componentId }}"></template>
         </scroll-view>
       </block>
       <block wx:else>
         <view class="zui-tab__bd">
-          <template is="zui-tab-list" data="{{ tab, id }}"></template>
+          <template is="zui-tab-list" data="{{ tab, componentId }}"></template>
         </view>
       </block>
   </view>
@@ -18,7 +18,7 @@
     wx:for="{{tab.list}}"
     wx:key="id"
     class="zui-tab__item {{tab.selectedId == item.id ? 'zui-tab__item--selected' : ''}}"
-    data-id="{{id}}"
+    data-component-id="{{componentId}}"
     data-item-id="{{item.id}}"
     bindtap="_handleZuiTabChange"
   >

@@ -49,11 +49,11 @@ Page(Object.assign({}, ZUI.Tab, {
 
   handleZuiTabChange(e) {
     console.info('[ZUI:Tab:Change]', e);
-    var id = e.id;
+    var componentId = e.componentId;
     var selectedId = e.selectedId;
 
     this.setData({
-      [`${id}.selectedId`]: selectedId
+      [`${componentId}.selectedId`]: selectedId
     });
   }
 }));

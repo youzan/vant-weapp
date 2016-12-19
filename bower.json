@@ -4,7 +4,6 @@
     "Nino <nino@youzan.com>",
     "Pangxie <pangxie@youzan.com>"
   ],
-  "directory": "zui/components",
   "description": "A UI Library for Weapp",
   "main": "zui/index.js",
   "moduleType": [],
@@ -16,6 +15,9 @@
     "bower_components",
     "test",
     "tests",
-    "pages"
+    "pages",
+    "app.js",
+    "app.json",
+    "bower.json"
   ]
 }

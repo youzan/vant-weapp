@@ -1,36 +1,10 @@
-<template name="component-tab">
-  <view class="zui-tab">
-      <block wx:if="{{tab.scroll}}">
-        <scroll-view class="zui-tab__bd zui-tab__bd--scroll {{fixed ? 'zui-tab__bd--fixed' : ''}}" scroll-x="true">
-          <template is="component-tab-list" data="{{ tab, componentId }}"></template>
-        </scroll-view>
-      </block>
-      <block wx:else>
-        <view class="zui-tab__bd">
-          <template is="component-tab-list" data="{{ tab, componentId }}"></template>
-        </view>
-      </block>
-  </view>
-</template>
-
-<template name="component-tab-list">
-  <view
-    wx:for="{{tab.list}}"
-    wx:key="id"
-    class="zui-tab__item {{tab.selectedId == item.id ? 'zui-tab__item--selected' : ''}}"
-    data-component-id="{{componentId}}"
-    data-item-id="{{item.id}}"
-    bindtap="_handleComponentTabChange"
-  >
-    <view class="zui-tab__title">{{item.title}}</view>
-  </view>
-</template>
+<import src="/zui/tab/index.wxml" />
 
 <view class="container">
   <view style="margin: 20px 0">
-    <template is="component-tab" data="{{tab: tab1, componentId: 'tab1'}}"></template>
+    <template is="zui-tab" data="{{tab: tab1, id: 'tab1'}}"></template>
   </view>
   <view style="margin: 20px 0">
-    <template is="component-tab" data="{{tab: tab2, componentId: 'tab2'}}"></template>
+    <template is="zui-tab" data="{{tab: tab2, id: 'tab2'}}"></template>
   </view>
 </view>

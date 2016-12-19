@@ -1,0 +1,20 @@
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.wxml]
+indent_size = 2
+
+[*.wxss]
+indent_size = 2
+
+[*.js]
+indent_size = 2
+
+[*.json]
+indent_size = 2

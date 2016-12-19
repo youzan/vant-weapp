@@ -1,0 +1,43 @@
+{
+    "extends": "airbnb",
+    "globals": {
+        "getApp": false,
+        "Page": false,
+        "App": false,
+        "wx": false
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "no-extend-native": 0,
+        "no-shadow": 0,
+        "no-loop-func": 0,
+        "no-console": 0,
+        "no-var": 0,
+        "vars-on-top": 0,
+        "new-cap": 0,
+        "no-used-var": 0,
+        "semi": [
+            1,
+            "always",
+            {
+                "omitLastInOneLineBlock": true
+            }
+        ],
+        "camelcase": 1,
+        "prefer-template": 0,
+        "eqeqeq": 0,
+        "max-len": 0,
+        "react/prefer-stateless-function": 0,
+        "comma-dangle": 0,
+        "func-names": 0,
+        "prefer-const": 0,
+        "arrow-body-style": 0,
+        "no-param-reassign": 0,
+        "no-return-assign": 0,
+        "consistent-return": 0,
+        "no-unused-expressions": 0,
+        "no-underscore-dangle": 0,
+        "no-use-before-define": 0,
+        "no-new": 0
+    }
+}

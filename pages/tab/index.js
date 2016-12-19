@@ -1,4 +1,6 @@
-Page({
+var ZUI = require('../../zui/index');
+
+Page(Object.assign({}, ZUI.Tab, {
   data: {
     tab1: {
       list: [{
@@ -45,26 +47,13 @@ Page({
     }
   },
 
-  _handleComponentTabChange(e) {
-    var dataset = e.currentTarget.dataset;
-    var componentId = dataset.componentId;
-    var selectedId = dataset.itemId;
-
-    if (this.handleComponentTabChange) {
-      this.handleComponentTabChange({
-        componentId,
-        selectedId
-      });
-    }
-  },
-
-  handleComponentTabChange(e) {
-    console.log('[handleComponentTabChange]', e);
-    var componentId = e.componentId;
+  handleZuiTabChange(e) {
+    console.info('[ZUI:Tab:Change]', e);
+    var id = e.id;
     var selectedId = e.selectedId;
 
     this.setData({
-      [`${componentId}.selectedId`]: selectedId
+      [`${id}.selectedId`]: selectedId
     });
   }
-});
+}));

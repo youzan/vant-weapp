@@ -18,6 +18,9 @@
 .zui-btn::after {
   display: none;
 }
+.zui-btns {
+  margin: 15px;
+}
 
 /* type */
 .zui-btn--primary {

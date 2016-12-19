@@ -1,0 +1,20 @@
+{
+  "name": "zui",
+  "authors": [
+    "Nino <nino@youzan.com>",
+    "Pangxie <pangxie@youzan.com>"
+  ],
+  "directory": "zui/components",
+  "description": "A UI Library for Weapp",
+  "main": "zui/index.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

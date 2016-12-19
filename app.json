@@ -8,7 +8,8 @@
     "pages/loadmore/index",
     "pages/panel/index",
     "pages/tab/index",
-    "pages/quantity/index"
+    "pages/quantity/index",
+    "pages/toptips/index"
   ],
   "window":{
     "navigationBarBackgroundColor": "#FAFAFA",

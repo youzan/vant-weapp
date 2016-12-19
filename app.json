@@ -10,7 +10,8 @@
     "pages/tab/index",
     "pages/quantity/index",
     "pages/toptips/index",
-    "pages/steps/index"
+    "pages/steps/index",
+    "pages/toast/index"
   ],
   "window":{
     "navigationBarBackgroundColor": "#FAFAFA",

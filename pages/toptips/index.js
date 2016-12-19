@@ -1,6 +1,6 @@
-var topTips = require('../../zui/toptips/index');
+var ZUI = require('../../zui/index');
 
-Page(Object.assign({}, topTips, {
+Page(Object.assign({}, ZUI.TopTips, {
   data: {},
 
   showTopTips() {

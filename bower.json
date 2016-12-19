@@ -11,14 +11,8 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests",
     "pages",
-    "app.js",
-    "app.json",
-    "app.wxss",
-    "bower.json"
+    "app.*",
+    "*.md"
   ]
 }

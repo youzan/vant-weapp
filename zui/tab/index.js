@@ -5,6 +5,10 @@ var Tab = {
     var selectedId = dataset.itemId;
 
     if (this.handleZuiTabChange) {
+      console.info('[ZUI:Tab:Change]', {
+        componentId,
+        selectedId
+      });
       this.handleZuiTabChange({
         componentId,
         selectedId

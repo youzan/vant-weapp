@@ -8,6 +8,7 @@
     "pages/loadmore/index",
     "pages/panel/index",
     "pages/tab/index",
+    "pages/quantity/index",
     "pages/toptips/index",
     "pages/steps/index"
   ],

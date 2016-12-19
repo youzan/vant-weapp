@@ -1,0 +1,31 @@
+<view class="container">
+
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--access">
+      <view class="zui-cell__bd">字段1</view>
+      <view class="zui-cell__ft"></view>
+    </view>
+    <view class="zui-cell zui-cell--access">
+      <view class="zui-cell__bd">字段2</view>
+      <view class="zui-cell__ft"></view>
+    </view>
+    <view class="zui-cell zui-cell--last-child zui-cell--access">
+      <view class="zui-cell__bd">最后一个字段</view>
+      <view class="zui-cell__ft"></view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">不带箭头</view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <navigator class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">点击时背景会变色</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+  </view>
+
+</view>

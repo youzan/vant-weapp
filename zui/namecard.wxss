@@ -1,0 +1,37 @@
+.zui-namecard {
+  margin-left: 0px;
+  width: auto;
+  padding: 5px 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.zui-namecard__thumb {
+  width: 90px;
+  height: 90px;
+  float: left;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.zui-namecard__img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.zui-namecard__detail {
+  margin-left: 100px;
+  width: auto;
+  position: relative;
+}

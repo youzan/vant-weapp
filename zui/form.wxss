@@ -1,0 +1,17 @@
+.zui-form {
+  background-color: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.zui-form__item {
+  line-height: 26px;
+}
+
+.zui-form__title {
+  float: left;
+  width: 80px;
+  font-size: 14px;
+}
+
+.zui-form__input {
+}

@@ -1,0 +1,42 @@
+<view class="container">
+
+  <view class="zui-panel" style="padding: 15px;">
+    <button class="zui-btn">取消订单</button>
+    <button class="zui-btn zui-btn--primary">确认付款</button>
+    <button class="zui-btn zui-btn--danger">确认付款</button>
+    <button class="zui-btn zui-btn--warn zui-btn--last-child">确认付款</button>
+  </view>
+
+  <view class="zui-panel">
+    <button class="zui-btn zui-btn--big zui-btn--primary">确认付款</button>
+    <button class="zui-btn zui-btn--big zui-btn--warn">立即购买</button>
+    <button class="zui-btn zui-btn--big zui-btn--danger">立即购买</button>
+  </view>
+
+  <view class="zui-panel" style="padding: 15px;">
+    <button class="zui-btn zui-btn--small">取消订单</button>
+    <button class="zui-btn zui-btn--small zui-btn--primary">确认付款</button>
+  </view>
+
+  <view class="zui-panel" style="padding: 15px;">
+    <button class="zui-btn zui-btn--mini zui-btn--plain">取消订单</button>
+    <button class="zui-btn zui-btn--mini zui-btn--primary zui-btn--plain">确认付款</button>
+    <button class="zui-btn zui-btn--mini zui-btn--warn zui-btn--plain">确认付款</button>
+    <button class="zui-btn zui-btn--mini zui-btn--danger zui-btn--plain">确认付款</button>
+  </view>
+
+  <view class="zui-panel" style="padding: 15px;">
+    <button class="zui-btn zui-btn--loading">取消订单</button>
+    <button class="zui-btn zui-btn--loading zui-btn--primary">确认付款</button>
+    <button class="zui-btn zui-btn--loading zui-btn--danger">确认付款</button>
+    <button class="zui-btn zui-btn--loading zui-btn--warn zui-btn--last-child">确认付款</button>
+  </view>
+
+  <view class="zui-panel" style="padding: 15px;">
+    <button class="zui-btn zui-btn--disabled" disabled>取消订单</button>
+    <button class="zui-btn zui-btn--disabled zui-btn--primary" disabled>确认付款</button>
+    <button class="zui-btn zui-btn--disabled zui-btn--danger" disabled>确认付款</button>
+    <button class="zui-btn zui-btn--disabled zui-btn--warn zui-btn--last-child" disabled>确认付款</button>
+  </view>
+
+</view>

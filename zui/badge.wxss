@@ -1,0 +1,24 @@
+.zui-badge {
+  position: relative;
+}
+.zui-badge__count {
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  height: 16px;
+  min-width: 16px;
+  line-height: 16px;
+  padding: 0 4px;
+  font-size: 10px;
+  font-family: tahoma;
+  border-radius: 10px;
+  background: #FF4444;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  transform: translateX(50%);
+  transform-origin: -10% center;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #fff;
+  box-sizing: border-box;
+}

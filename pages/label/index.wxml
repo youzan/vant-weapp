@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-label">蓝色</view>
+      <view class="zui-label zui-label--primary">红色</view>
+      <view class="zui-label zui-label--disabled">黑色</view>
+    </view>
+  </view>
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-label zui-label--primary zui-label--small">会员折扣</view>
+      <view class="zui-label zui-label--primary zui-label--small">返现</view>
+    </view>
+  </view>
+
+    <view class="zui-panel">
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-label zui-label--primary zui-label--small zui-label--plain">会员折扣</view>
+      <view class="zui-label zui-label--primary zui-label--small zui-label--plain">返现</view>
+    </view>
+  </view>
+</view>

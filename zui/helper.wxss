@@ -1,0 +1,66 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.zui-center {
+  text-align: center;
+}
+
+.zui-right {
+  text-align: right;
+}
+
+.zui-text-deleted {
+  text-decoration: line-through;
+}
+.zui-font-12 {
+  font-size: 12px;
+}
+.zui-font-14 {
+  font-size: 14px;
+}
+.zui-font-16 {
+  font-size: 16px;
+}
+.zui-font-18 {
+  font-size: 18px;
+}
+.zui-font-30 {
+  font-size: 30px;
+}
+.zui-font-bold {
+  font-weight: bold;
+}
+
+.zui-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8c8;
+  border-style: solid;
+  transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+
+.zui-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zui-ellipsis--l2 {
+  max-height: 40px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,27 @@
+.zui-c-red {
+  color: #f44 !important;
+}
+
+.zui-c-gray {
+  color: #c9c9c9 !important;
+}
+
+.zui-c-gray-dark {
+  color: #999 !important;
+}
+
+.zui-c-gray-darker {
+  color: #666 !important;
+}
+
+.zui-c-black {
+  color: #333 !important;
+}
+
+.zui-c-blue {
+  color: #3283fa !important;
+}
+
+.zui-c-green {
+  color: #44BB00 !important;
+}

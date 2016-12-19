@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="demo">
+    <view class="demo__item">
+      <view class="demo__icon zui-badge">
+      </view>
+    </view>
+    <view class="demo__item">
+      <view class="demo__icon zui-badge">
+        <view class="zui-badge__count">9</view>
+      </view>
+    </view>
+    <view class="demo__item">
+      <view class="demo__icon zui-badge">
+        <view class="zui-badge__count">19</view>
+      </view>
+    </view>
+    <view class="demo__item">
+      <view class="demo__icon zui-badge">
+        <view class="zui-badge__count">99+</view>
+      </view>
+    </view>
+  </view>
+</view>

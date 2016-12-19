@@ -1,0 +1,45 @@
+.zui-tab {
+  height: 45px;
+}
+.zui-tab__bd {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #e5e5e5;
+  background: #fff;
+}
+.zui-tab__bd--fixed {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.zui-tab__item {
+  flex: 1;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.zui-tab__title {
+  font-size: 14px;
+  display: inline-block;
+  color: #666;
+  height: 44px;
+  line-height: 44px;
+  box-sizing: border-box;
+  margin: 0 10px;
+  word-break: keep-all;
+}
+
+.zui-tab__item--selected .zui-tab__title {
+  color: #f44;
+  border-bottom: 2px solid #f44;
+}
+
+.zui-tab__bd--scroll {
+  display: block;
+  white-space: nowrap;
+}
+.zui-tab__bd--scroll .zui-tab__text {
+  margin: 0 20px;
+}

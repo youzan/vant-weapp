@@ -1,0 +1,48 @@
+.zui-cell {
+  position: relative;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.zui-cell::after {
+  position: absolute;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  border-top: 1rpx solid #e5e5e5;
+  background: #e5e5e5;
+  content: ' ';
+}
+.zui-cell__bd {
+  flex: 1;
+}
+.zui-cell__ft {
+  position: relative;
+  text-align: right;
+  color: #999;
+}
+
+.zui-cell--last-child::after {
+  display: none;
+}
+
+.zui-cell--access .zui-cell__ft {
+  padding-right: 13px;
+}
+
+.zui-cell--access .zui-cell__ft::after {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8c8;
+  border-style: solid;
+  transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}

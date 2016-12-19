@@ -1,0 +1,117 @@
+.zui-steps {
+  position: relative;
+}
+
+.zui-steps-4 .zui-steps__step {
+  width: 33%;
+}
+
+.zui-steps-3 .zui-steps__step {
+  width: 50%;
+}
+
+.zui-steps__step {
+  position: relative;
+  float: left;
+  padding-bottom: 20px;
+  color: #b1b1b1;
+}
+
+.zui-steps__title {
+  display: inline-block;
+  transform: translateX(-50%);
+  margin-left: 2px;
+  font-size: 10px;
+}
+
+.zui-steps__icon {
+  position: absolute;
+  top: 28px;
+  left: -8px;
+  padding: 0 8px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.zui-steps__circle {
+  display: block;
+  position: relative;
+  width: 5px;
+  height: 5px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+}
+
+.zui-steps__line {
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+
+
+/* 已完成的steps */
+.zui-steps__step--done {
+  color: #333;
+}
+
+.zui-steps__step--done .zui-steps__line {
+  background-color: #06bf04;
+}
+
+.zui-steps__step--done .zui-steps__circle {
+  width: 5px;
+  height: 5px;
+  background: transparent url("https://b.yzcdn.cn/v2/image/wap/trade/steps/icon_green@2x.png") center no-repeat;
+  background-size: 5px 5px;
+  border-radius: 0;
+}
+
+/* 正在进行中的steps */
+.zui-steps__step--cur .zui-steps__icon {
+  top: 24px;
+}
+
+.zui-steps__step--cur .zui-steps__circle {
+  width: 13px;
+  height: 13px;
+  background-image: url("https://b.yzcdn.cn/v2/image/wap/success_small@2x.png");
+  background-size: 13px 13px;
+}
+
+.zui-steps__step--cur .zui-steps__title {
+  margin-left: 6px;
+}
+
+.zui-steps__step--cur .zui-steps__line {
+  background-color: #e5e5e5;
+}
+
+/* 各种不同位置的 */
+.zui-steps__step--first-child .zui-steps__title {
+  margin-left: 0;
+  transform: none;
+}
+
+.zui-steps__step--last-child {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: right;
+}
+
+.zui-steps__step--last-child .zui-steps__title {
+  transform: none;
+}
+
+.zui-steps__step--last-child .zui-steps__icon {
+  left: auto;
+  right: -6px;
+}
+
+.zui-steps__step--last-child .zui-steps__line {
+  display: none;
+}

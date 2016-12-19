@@ -1,0 +1,15 @@
+<view class="container">
+
+  <view class="zui-panel">
+    <view style="padding: 15px;">Panel</view>
+  </view>
+
+  <view class="zui-panel">
+    <view style="padding: 15px;">Panel</view>
+  </view>
+
+  <view class="zui-panel">
+    <view style="padding: 15px;">Panel</view>
+  </view>
+
+</view>

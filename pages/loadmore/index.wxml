@@ -1,0 +1,7 @@
+<import src="/zui/loadmore.wxml" />
+
+<view class="container">
+  <template is="loadmore" data="{{loading: true}}" />
+  <template is="loadmore" data="{{nomore: true}}" />
+  <template is="loadmore" data="{{nodata: true}}" />
+</view>

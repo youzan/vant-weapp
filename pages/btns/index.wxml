@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="zui-btns">
+    <button class="zui-btn zui-btn--danger">1号按钮</button>
+    <button class="zui-btn zui-btn--primary">1号按钮</button>
+    <button class="zui-btn">2号按钮</button>
+  </view>
+</view>

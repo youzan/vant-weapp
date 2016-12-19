@@ -1,0 +1,34 @@
+<view class="container">
+
+  <view class="zui-panel">
+    <navigator class="zui-cell zui-cell--access" url="/pages/btn/index">
+      <view class="zui-cell__bd">Button</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/loadmore/index">
+      <view class="zui-cell__bd">Loadmore</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/panel/index">
+      <view class="zui-cell__bd">Panel</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/cell/index">
+      <view class="zui-cell__bd">Cell</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/badge/index">
+      <view class="zui-cell__bd">Badge</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/tab/index">
+      <view class="zui-cell__bd">Tab</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/pages/label/index">
+      <view class="zui-cell__bd">Label</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+  </view>
+
+</view>

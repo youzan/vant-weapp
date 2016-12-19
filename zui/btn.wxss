@@ -1,0 +1,137 @@
+.zui-btn {
+  position: relative;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 2px;
+  border: 1rpx solid #e5e5e5;
+  font-size: 16px;
+  line-height: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.zui-btn::after {
+  display: none;
+}
+
+/* type */
+.zui-btn--primary {
+  color: #fff;
+  background-color: #4b0;
+  border-color: #0a0;
+}
+
+.zui-btn--warn {
+  color: #fff;
+  background-color: #f85;
+  border-color: #f85;
+}
+
+.zui-btn--danger {
+  color: #fff;
+  background-color: #f44;
+  border-color: #e33;
+}
+
+/* size */
+.zui-btn--small {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+.zui-btn--mini {
+  display: inline-block;
+  line-height: 21px;
+  height: 22px;
+  font-size: 10px;
+  margin-right: 5px;
+  margin-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.zui-btn--big {
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+  line-height: 50px;
+  height: 50px;
+}
+
+/* plain */
+.zui-btn--plain.zui-btn {
+  background-color: transparent;
+}
+.zui-btn--plain.zui-btn--primary {
+  color: #06BF04;
+}
+.zui-btn--plain.zui-btn--warn {
+  color: #FF6600;
+}
+.zui-btn--plain.zui-btn--danger {
+  color: #FF4444;
+}
+
+/* 重写button组件的button-hover样式 */
+.button-hover {
+  opacity: 0.9;
+}
+
+/* loading */
+.zui-btn--loading {
+  color: transparent;
+  opacity: 1;
+}
+.zui-btn--loading::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: ' ';
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 3px solid #e5e5e5;
+  border-color: #666 #e5e5e5 #e5e5e5 #e5e5e5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  animation: btn-spin 0.6s linear;
+  animation-iteration-count: infinite;
+}
+.zui-btn--primary.zui-btn--loading::before,
+.zui-btn--warn.zui-btn--loading::before,
+.zui-btn--danger.zui-btn--loading::before {
+  border-color: #fff rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+}
+
+@keyframes btn-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* disabled */
+.zui-btn.zui-btn--disabled {
+  color: #999;
+  background: #f8f8f8;
+  border-color: #e5e5e5;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* ::last-child */
+.zui-btn--last-child {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+

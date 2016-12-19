@@ -1,0 +1,14 @@
+.demo {
+  padding: 40px 0;
+  display: flex;
+}
+.demo__item {
+  flex: 1;
+}
+.demo__icon {
+  margin: 0 auto;
+  width: 48px;
+  height: 48px;
+  background: #ddd;
+  border-radius: 4px;
+}

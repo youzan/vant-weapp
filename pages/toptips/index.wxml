@@ -1,7 +1,15 @@
 <import src="/zui/toptips/index.wxml" />
 
 <view class="container">
-  <button class="zui-btn zui-btn--primary zui-btn--big" catchtap="showTopTips">显示toptips</button>
+  <view class="zui-btns">
+    <button
+      class="zui-btn zui-btn--primary zui-btn--big"
+      catchtap="showTopTips"
+      style="margin-top: 40vh;"
+    >
+      显示toptips
+    </button>
+  </view>
 </view>
 
 <template is="zui-toptips" data="{{ componentTopTips }}"></template>

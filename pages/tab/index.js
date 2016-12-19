@@ -48,7 +48,6 @@ Page(Object.assign({}, ZUI.Tab, {
   },
 
   handleZuiTabChange(e) {
-    console.info('[ZUI:Tab:Change]', e);
     var componentId = e.componentId;
     var selectedId = e.selectedId;
 

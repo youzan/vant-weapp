@@ -1,0 +1,20 @@
+.zui-toptips {
+  display: block;
+  position: fixed;
+  -webkit-transform: translateZ(0) translateY(-100%);
+  width: 100%;
+  top: 0;
+  line-height: 2.3;
+  font-size: 14px;
+  text-align: center;
+  color: #FFF;
+  background-color: #E64340;
+  z-index: 2;
+
+  /* 动画部分 */
+  transition: all 0.4s ease;
+}
+
+.zui-toptips--show {
+  -webkit-transform: translateZ(0) translateY(0);
+}

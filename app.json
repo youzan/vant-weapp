@@ -9,7 +9,8 @@
     "pages/panel/index",
     "pages/tab/index",
     "pages/quantity/index",
-    "pages/toptips/index"
+    "pages/toptips/index",
+    "pages/steps/index"
   ],
   "window":{
     "navigationBarBackgroundColor": "#FAFAFA",

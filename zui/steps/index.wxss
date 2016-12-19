@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.zui-steps-5 .zui-steps__step {
+  width: 25%;
+}
+
 .zui-steps-4 .zui-steps__step {
   width: 33%;
 }

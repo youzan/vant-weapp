@@ -1,0 +1,3 @@
+<template name="zui-toast">
+  <view class="zui-toast" wx:if="{{ componentToast.show }}" bindtap="clearToast">{{ componentToast.title }}</view>
+</template>

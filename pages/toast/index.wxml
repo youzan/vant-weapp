@@ -1,0 +1,7 @@
+<import src="/zui/toast/index.wxml" />
+
+<view class="container">
+  <button class="zui-btn zui-btn--primary zui-btn--big" catchtap="showToast">弹个窗~</button>
+</view>
+
+<template is="zui-toast" data="{{ componentToast }}"></template>

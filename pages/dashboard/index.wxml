@@ -33,8 +33,16 @@
       <view class="zui-cell__bd">Quantity</view>
       <view class="zui-cell__ft"></view>
     </navigator>
-    <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/pages/toptips/index">
+    <navigator class="zui-cell zui-cell--access" url="/pages/toptips/index">
       <view class="zui-cell__bd">Toptips</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/steps/index">
+      <view class="zui-cell__bd">Steps</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/pages/toast/index">
+      <view class="zui-cell__bd">Toast</view>
       <view class="zui-cell__ft"></view>
     </navigator>
   </view>

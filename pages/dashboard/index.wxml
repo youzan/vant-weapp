@@ -25,8 +25,12 @@
       <view class="zui-cell__bd">Tab</view>
       <view class="zui-cell__ft"></view>
     </navigator>
-    <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/pages/label/index">
+    <navigator class="zui-cell zui-cell--access" url="/pages/label/index">
       <view class="zui-cell__bd">Label</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/pages/toptips/index">
+      <view class="zui-cell__bd">Toptips</view>
       <view class="zui-cell__ft"></view>
     </navigator>
   </view>

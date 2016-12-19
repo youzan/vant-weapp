@@ -1,0 +1,3 @@
+<template name="zui-toptips">
+  <view class="zui-toptips {{ componentTopTips.show ? 'zui-toptips--show' : '' }}">{{ componentTopTips.content }}</view>
+</template>

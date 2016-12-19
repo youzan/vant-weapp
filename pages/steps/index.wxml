@@ -1,65 +1,66 @@
 <view class="container">
-
-  <view class="zui-cell">
-    <view class="zui-cell__bd">
-      <view class="top-info__steps zui-steps zui-steps-3">
-        <view
-          class="zui-steps__step zui-steps__step--first-child zui-steps__step--done">
-          <text class="zui-steps__title">步骤一</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+  <view class="zui-panel">
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view class="top-info__steps zui-steps zui-steps-3">
+          <view
+            class="zui-steps__step zui-steps__step--first-child zui-steps__step--done">
+            <text class="zui-steps__title">步骤一</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
-        </view>
-        <view class="zui-steps__step zui-steps__step--done zui-steps__step--cur">
-          <text class="zui-steps__title">步骤二</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+          <view class="zui-steps__step zui-steps__step--done zui-steps__step--cur">
+            <text class="zui-steps__title">步骤二</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
-        </view>
-        <view class="zui-steps__step zui-steps__step--last-child">
-          <text class="zui-steps__title">步骤三</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+          <view class="zui-steps__step zui-steps__step--last-child">
+            <text class="zui-steps__title">步骤三</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
         </view>
       </view>
     </view>
-  </view>
 
-  <view class="zui-cell zui-cell--last-child">
-    <view class="zui-cell__bd">
-      <view class="top-info__steps zui-steps zui-steps-4">
-        <view
-          class="zui-steps__step zui-steps__step--first-child zui-steps__step--done">
-          <text class="zui-steps__title">步骤一</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">
+        <view class="top-info__steps zui-steps zui-steps-4">
+          <view
+            class="zui-steps__step zui-steps__step--first-child zui-steps__step--done">
+            <text class="zui-steps__title">步骤一</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
-        </view>
-        <view class="zui-steps__step zui-steps__step--done">
-          <text class="zui-steps__title">步骤二</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+          <view class="zui-steps__step zui-steps__step--done">
+            <text class="zui-steps__title">步骤二</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
-        </view>
-        <view class="zui-steps__step zui-steps__step--done zui-steps__step--cur">
-          <text class="zui-steps__title">步骤三</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+          <view class="zui-steps__step zui-steps__step--done zui-steps__step--cur">
+            <text class="zui-steps__title">步骤三</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
-        </view>
-        <view class="zui-steps__step zui-steps__step--last-child">
-          <text class="zui-steps__title">步骤四</text>
-          <view class="zui-steps__icon">
-            <view class="zui-steps__circle"></view>
+          <view class="zui-steps__step zui-steps__step--last-child">
+            <text class="zui-steps__title">步骤四</text>
+            <view class="zui-steps__icon">
+              <view class="zui-steps__circle"></view>
+            </view>
+            <view class="zui-steps__line"></view>
           </view>
-          <view class="zui-steps__line"></view>
         </view>
       </view>
     </view>

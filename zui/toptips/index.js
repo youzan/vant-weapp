@@ -5,6 +5,7 @@ module.exports = {
     // 如果已经有一个计时器在了，就清理掉先
     if (timer) {
       clearTimeout(timer);
+      timer = undefined;
     }
 
     if (typeof options === 'number') {

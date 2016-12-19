@@ -1,0 +1,28 @@
+<template name="zui-quantity">
+  <view class="zui-quantity">
+    <view
+      class="zui-quantity__minus {{ quantity <= min ? 'zui-quantity--disabled' : '' }}"
+      data-component-id="{{ componentId }}"
+      data-quantity="{{ quantity }}"
+      data-disabled="{{ quantity <= min }}"
+      bindtap="_handleZuiQuantityMinus"
+    >-</view>
+    <input
+      class="zui-quantity__text {{ min >= max ? 'zui-quantity--disabled' : '' }}"
+      type="number"
+      data-component-id="{{ componentId }}"
+      data-min="{{ min }}"
+      data-max="{{ max }}"
+      value="{{ quantity }}"
+      disabled="{{ min >= max }}"
+      bindblur="_handleZuiQuantityBlur"
+    ></input>
+    <view
+      class="zui-quantity__plus {{ quantity >= max ? 'zui-quantity--disabled' : '' }}"
+      data-component-id="{{ componentId }}"
+      data-quantity="{{ quantity }}"
+      data-disabled="{{ quantity >= max }}"
+      bindtap="_handleZuiQuantityPlus"
+    >+</view>
+  </view>
+</template>

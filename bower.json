@@ -1,0 +1,23 @@
+{
+  "name": "zui",
+  "authors": [
+    "Nino <nino@youzan.com>",
+    "Pangxie <pangxie@youzan.com>"
+  ],
+  "description": "A UI Library for Weapp",
+  "main": "zui/index.js",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "pages",
+    "app.js",
+    "app.json",
+    "bower.json"
+  ]
+}

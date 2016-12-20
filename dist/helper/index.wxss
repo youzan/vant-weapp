@@ -65,3 +65,12 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.zui-clearfix {
+  zoom: 1;
+}
+.zui-clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}

@@ -10,15 +10,18 @@ function handle(e, num) {
 }
 
 function callback(componentId, quantity) {
+  quantity = +quantity;
+  var e = { componentId, quantity };
+  console.info('[zui:quantity:change]', e);
+
   if (this.handleZuiQuantityChange) {
-    quantity = +quantity;
-    var e = { componentId, quantity };
-    console.info('[ZUI:Quantity:Change]', e);
     this.handleZuiQuantityChange(e);
+  } else {
+    console.warn('页面缺少 handleZuiQuantityChange 回调函数');
   }
 }
 
-var ComponentQuantity = {
+var Quantity = {
   _handleZuiQuantityMinus(e) {
     handle.call(this, e, -1);
   },
@@ -55,4 +58,4 @@ var ComponentQuantity = {
   }
 };
 
-module.exports = ComponentQuantity;
+module.exports = Quantity;

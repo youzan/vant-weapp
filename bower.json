@@ -11,7 +11,7 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "pages",
+    "example",
     "app.*",
     "*.md"
   ]

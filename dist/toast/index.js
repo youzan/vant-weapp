@@ -1,28 +1,28 @@
 module.exports = {
   showZuiToast(title, timeout) {
-    var componentToast = this.data.componentToast || {};
-    clearTimeout(componentToast.timer);
+    var zuiToast = this.data.zuiToast || {};
+    clearTimeout(zuiToast.timer);
 
     // 弹层设置~
-    componentToast = {
+    zuiToast = {
       show: true,
       title
     };
     this.setData({
-      componentToast
+      zuiToast
     });
 
-    componentToast.timer = setTimeout(() => {
+    zuiToast.timer = setTimeout(() => {
       this.clearZuiToast();
     }, timeout || 3000);
   },
 
   clearZuiToast() {
-    var componentToast = this.data.componentToast || {};
-    clearTimeout(componentToast.timer);
+    var zuiToast = this.data.zuiToast || {};
+    clearTimeout(zuiToast.timer);
 
     this.setData({
-      'componentToast.show': false
+      'zuiToast.show': false
     });
   }
 };

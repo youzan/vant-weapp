@@ -11,6 +11,7 @@ var Tab = {
     } else {
       console.warn('页面缺少 handleZuiTabChange 回调函数');
     }
+  }
 };
 
 module.exports = Tab;

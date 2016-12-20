@@ -21,7 +21,7 @@ function callback(componentId, quantity) {
   }
 }
 
-var ComponentQuantity = {
+var Quantity = {
   _handleZuiQuantityMinus(e) {
     handle.call(this, e, -1);
   },
@@ -58,4 +58,4 @@ var ComponentQuantity = {
   }
 };
 
-module.exports = ComponentQuantity;
+module.exports = Quantity;

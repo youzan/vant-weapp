@@ -1,4 +1,4 @@
-<template name="loadmore">
+<template name="zui-loadmore">
 
   <block wx:if="{{nomore}}">
     <view class="zui-loadmore zui-loadmore--nomore">

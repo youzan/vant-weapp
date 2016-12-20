@@ -1,4 +1,4 @@
-var ZUI = require('../../zui/index');
+var ZUI = require('../../dist/index');
 
 Page(Object.assign({}, ZUI.Toast, {
   data: {},

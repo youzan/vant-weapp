@@ -1,4 +1,4 @@
-<import src="/zui/quantity/index.wxml" />
+<import src="/dist/quantity/index.wxml" />
 
 <view class="container">
   <view style="padding: 40px 15px">

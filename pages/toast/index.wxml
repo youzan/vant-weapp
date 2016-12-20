@@ -1,4 +1,4 @@
-<import src="/zui/toast/index.wxml" />
+<import src="/dist/toast/index.wxml" />
 
 <view class="container">
   <view class="zui-btns">

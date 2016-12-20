@@ -3,7 +3,7 @@
   <view class="zui-panel">
     <view class="zui-cell">
       <view class="zui-cell__bd">
-        <view class="pull-right">pull-right: 往右靠</view>
+        <view class="zui-pull-right">zui-pull-right: 往右靠</view>
       </view>
     </view>
 
@@ -15,18 +15,18 @@
 
     <view class="zui-cell">
       <view class="zui-cell__bd">
-        <view class="zui-font-12 zui-font-bold">
-          <view>zui-font-12：字号12</view>
-          <view>zui-font-bold：加粗</view>
+        <view>
+          <view class="zui-font-12">zui-font-12：字号12</view>
+          <view class="zui-font-12 zui-font-bold">zui-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
 
     <view class="zui-cell">
       <view class="zui-cell__bd">
-        <view class="zui-font-16 zui-font-bold">
-          <view>zui-font-16：字号16</view>
-          <view>zui-font-bold：加粗</view>
+        <view>
+          <view class="zui-font-16">zui-font-16：字号16</view>
+          <view class="zui-font-16 zui-font-bold">zui-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>

@@ -21,7 +21,7 @@ module.exports = {
 
     // 展示出topTips
     this.setData({
-      componentTopTips: {
+      zuiTopTips: {
         show: true,
         content,
         options
@@ -31,7 +31,7 @@ module.exports = {
     // 设置定时器，定时关闭topTips
     timer = setTimeout(() => {
       this.setData({
-        'componentTopTips.show': false
+        'zuiTopTips.show': false
       });
       timer = undefined;
     }, options.duration);

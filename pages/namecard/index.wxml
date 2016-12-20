@@ -1,0 +1,17 @@
+<view class="container">
+
+  <view class="zui-panel">
+    <view class="zui-namecard">
+      <view class="zui-namecard__thumb">
+        <image class="zui-namecard__img"
+          src="https://img.yzcdn.cn/upload_files/2016/12/06/9deca4d6fad5094bc78cb20339eb4264.png?imageView2/2/w/980/h/980/q/75/format/webp"
+          mode="aspectFit"
+        ></image>
+      </view>
+      <view class="zui-namecard__detail">
+        描述内容~
+      </view>
+    </view>
+  </view>
+
+</view>

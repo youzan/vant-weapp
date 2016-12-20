@@ -1,4 +1,4 @@
-<import src="/zui/toptips/index.wxml" />
+<import src="/dist/toptips/index.wxml" />
 
 <view class="container">
   <view class="zui-btns">

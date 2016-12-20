@@ -1,4 +1,4 @@
-<import src="/zui/loadmore/index.wxml" />
+<import src="/dist/loadmore/index.wxml" />
 
 <view class="container">
   <template is="loadmore" data="{{loading: true}}" />

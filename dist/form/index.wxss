@@ -14,4 +14,5 @@
 }
 
 .zui-form__input {
+  min-height: 26px;
 }

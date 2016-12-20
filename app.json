@@ -10,6 +10,7 @@
     "pages/tab/index",
     "pages/quantity/index",
     "pages/toptips/index",
+    "pages/helper/index",
     "pages/steps/index",
     "pages/toast/index"
   ],

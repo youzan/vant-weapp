@@ -1,0 +1,61 @@
+<view class="container">
+
+  <view class="zui-panel">
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view class="pull-right">pull-right: 往右靠</view>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view class="zui-text-deleted">zui-text-deleted：被删除的效果</view>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view class="zui-font-12 zui-font-bold">
+          <view>zui-font-12：字号12</view>
+          <view>zui-font-bold：加粗</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view class="zui-font-16 zui-font-bold">
+          <view>zui-font-16：字号16</view>
+          <view>zui-font-bold：加粗</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view>zui-arrow：箭头</view>
+        <view class="zui-arrow"></view>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <view class="zui-ellipsis" style="width: 300px;">
+          zui-ellipsis：单行点点点
+          ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+        </view>
+      </view>
+    </view>
+
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">
+        <view class="zui-ellipsis--l2">
+          zui-ellipsis--l2：单行点点点
+          ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

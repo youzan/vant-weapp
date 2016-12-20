@@ -12,4 +12,4 @@
   </view>
 </view>
 
-<template is="zui-toast" data="{{ componentToast }}"></template>
+<template is="zui-toast" data="{{ zuiToast }}"></template>

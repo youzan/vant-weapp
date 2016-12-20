@@ -12,6 +12,7 @@
     "pages/toptips/index",
     "pages/helper/index",
     "pages/steps/index",
+    "pages/namecard/index",
     "pages/toast/index"
   ],
   "window":{

@@ -33,6 +33,21 @@
 
     <view class="zui-cell">
       <view class="zui-cell__bd">
+        <view class="">
+          <view>字体颜色</view>
+          <view class="zui-c-red">zui-c-red: 红色</view>
+          <view class="zui-c-gray">zui-c-gray: 灰色</view>
+          <view class="zui-c-gray-dark">zui-c-gray-dark: 再灰一点点</view>
+          <view class="zui-c-gray-darker">zui-c-gray-darker: 更深的灰色</view>
+          <view class="zui-c-black">zui-c-black: 黑色</view>
+          <view class="zui-c-blue">zui-c-blue: 蓝色</view>
+          <view class="zui-c-green">zui-c-green: 绿色</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
         <view>zui-arrow：箭头</view>
         <view class="zui-arrow"></view>
       </view>

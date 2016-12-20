@@ -10,7 +10,10 @@
     "pages/tab/index",
     "pages/quantity/index",
     "pages/toptips/index",
+    "pages/helper/index",
+    "pages/form/index",
     "pages/steps/index",
+    "pages/namecard/index",
     "pages/toast/index"
   ],
   "window":{

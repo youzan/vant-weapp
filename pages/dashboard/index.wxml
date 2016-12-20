@@ -29,6 +29,18 @@
       <view class="zui-cell__bd">Label</view>
       <view class="zui-cell__ft"></view>
     </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/helper/index">
+      <view class="zui-cell__bd">Helper</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/form/index">
+      <view class="zui-cell__bd">Form</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/pages/namecard/index">
+      <view class="zui-cell__bd">Namecard</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
     <navigator class="zui-cell zui-cell--access" url="/pages/quantity/index">
       <view class="zui-cell__bd">Quantity</view>
       <view class="zui-cell__ft"></view>

@@ -1,0 +1,22 @@
+<view class="container">
+
+  <view class="zui-form">
+    <view class="zui-cell zui-form__item">
+      <text class="zui-form__title">收货人</text>
+      <input
+        class="zui-form__input zui-cell__bd"
+        placeholder="名字"
+      />
+    </view>
+    <view class="zui-cell zui-form__item zui-cell--last-child">
+      <text class="zui-form__title">联系电话</text>
+      <input
+        class="zui-form__input zui-cell__bd"
+        type="number"
+        maxlength="20"
+        placeholder="手机或固定电话"
+      />
+    </view>
+  </view>
+
+</view>

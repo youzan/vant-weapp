@@ -1,8 +1,8 @@
-.pull-left {
+.zui-pull-left {
   float: left;
 }
 
-.pull-right {
+.zui-pull-right {
   float: right;
 }
 
@@ -50,9 +50,10 @@
 }
 
 .zui-ellipsis {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
 }
 
 .zui-ellipsis--l2 {

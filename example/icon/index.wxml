@@ -1,8 +1,8 @@
 <view class="container">
   <view class="zui-panel">
-    <view wx:for="{{ icons }}" wx:for-item="icon">
+    <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
       <view class="zui-icon zui-icon-{{ icon }}"></view>
-      <view style="display: inline-block;">zui-icon-{{ icon }}</view>
+      <view class="icon-classname">zui-icon-{{ icon }}</view>
     </view>
   </view>
 </view>

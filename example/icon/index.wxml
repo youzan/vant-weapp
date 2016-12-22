@@ -1,7 +1,13 @@
 <view class="container">
   <view class="zui-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
-      <view class="zui-icon zui-icon-{{ icon }}"></view>
+      <view class="zui-icon zui-icon-{{ icon }}"  style="font-size: 20px; color: #ff4343;"></view>
+      <view class="icon-classname">zui-icon-{{ icon }}</view>
+    </view>
+  </view>
+  <view class="zui-panel">
+    <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
+      <view class="zui-icon zui-icon-{{ icon }}" style="font-size: 40px;"></view>
       <view class="icon-classname">zui-icon-{{ icon }}</view>
     </view>
   </view>

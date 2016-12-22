@@ -5,6 +5,10 @@
       <view class="zui-cell__bd">Button</view>
       <view class="zui-cell__ft"></view>
     </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/example/icon/index">
+      <view class="zui-cell__bd">Icon</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
     <navigator class="zui-cell zui-cell--access" url="/example/loadmore/index">
       <view class="zui-cell__bd">Loadmore</view>
       <view class="zui-cell__ft"></view>

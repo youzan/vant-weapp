@@ -5,3 +5,7 @@
   margin-top: 10px;
   overflow: hidden;
 }
+
+.zui-panel--without-margin-top {
+  margin-top: 0;
+}

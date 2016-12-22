@@ -16,3 +16,7 @@
 .zui-form__input {
   min-height: 26px;
 }
+
+.zui-form__input input {
+  min-height: 26px;
+}

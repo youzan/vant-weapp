@@ -1,10 +1,15 @@
 Page({
   data: {
     icons: [
-      'cancel',
-      'store',
-      'certificate',
       'arrow',
+      'certificate',
+      'check',
+      'checked',
+      'close',
+      'gift',
+      'location',
+      'message',
+      'store',
       'shopping-cart',
     ]
   }

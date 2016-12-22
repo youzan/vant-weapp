@@ -6,7 +6,7 @@
         </scroll-view>
       </block>
       <block wx:else>
-        <view class="zui-tab__bd">
+        <view class="zui-tab__bd {{fixed ? 'zui-tab__bd--fixed' : ''}}">
           <template is="zui-tab-list" data="{{ tab, componentId }}"></template>
         </view>
       </block>

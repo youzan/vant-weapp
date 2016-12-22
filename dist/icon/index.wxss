@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'zuiicon';
-  src: url('https://b.yzcdn.cn/zui/font/zuiicon-eeabfa2d9e.eot');
-  src: url('https://b.yzcdn.cn/zui/font/zuiicon-eeabfa2d9e.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zui/font/zuiicon-eeabfa2d9e.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zui/font/zuiicon-eeabfa2d9e.woff') format('woff'),
-       url('https://b.yzcdn.cn/zui/font/zuiicon-eeabfa2d9e.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zui/font/zuiicon-ca855b1878.eot');
+  src: url('https://b.yzcdn.cn/zui/font/zuiicon-ca855b1878.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zui/font/zuiicon-ca855b1878.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zui/font/zuiicon-ca855b1878.woff') format('woff'),
+       url('https://b.yzcdn.cn/zui/font/zuiicon-ca855b1878.ttf') format('truetype')
 }
 
 .zui-icon {

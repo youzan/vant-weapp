@@ -1,5 +1,3 @@
-var app = getApp()
-
 Page({
   data: {
     icons: [
@@ -8,14 +6,6 @@ Page({
       'certificate',
       'arrow',
       'shopping-cart',
-
     ]
-  },
-
-  onLoad: function () {
-
-  },
-
-  onShow: function() {
-  },
-})
+  }
+});

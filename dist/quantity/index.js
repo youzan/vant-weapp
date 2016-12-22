@@ -4,9 +4,7 @@ function handle(e, num) {
   var disabled = dataset.disabled;
   var quantity = +dataset.quantity;
 
-  console.error(disabled, typeof disabled);
-
-  if (disabled == true) return null;
+  if (disabled) return null;
 
   callback.call(this, componentId, quantity + num);
 }

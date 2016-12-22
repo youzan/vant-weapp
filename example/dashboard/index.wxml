@@ -1,68 +1,8 @@
 <view class="container">
 
   <view class="zui-panel">
-    <navigator class="zui-cell zui-cell--access" url="/example/btn/index">
-      <view class="zui-cell__bd">Button</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/icon/index">
-      <view class="zui-cell__bd">Icon</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/loadmore/index">
-      <view class="zui-cell__bd">Loadmore</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/panel/index">
-      <view class="zui-cell__bd">Panel</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/cell/index">
-      <view class="zui-cell__bd">Cell</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/badge/index">
-      <view class="zui-cell__bd">Badge</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/tab/index">
-      <view class="zui-cell__bd">Tab</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/label/index">
-      <view class="zui-cell__bd">Label</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/helper/index">
-      <view class="zui-cell__bd">Helper</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/form/index">
-      <view class="zui-cell__bd">Form</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/namecard/index">
-      <view class="zui-cell__bd">Namecard</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/quantity/index">
-      <view class="zui-cell__bd">Quantity</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/dialog/index">
-      <view class="zui-cell__bd">Dialog</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/toptips/index">
-      <view class="zui-cell__bd">Toptips</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access" url="/example/steps/index">
-      <view class="zui-cell__bd">Steps</view>
-      <view class="zui-cell__ft"></view>
-    </navigator>
-    <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/example/toast/index">
-      <view class="zui-cell__bd">Toast</view>
+    <navigator wx:for="{{ list }}" wx:key="name" class="zui-cell zui-cell--access" url="{{ item.path }}">
+      <view class="zui-cell__bd">{{ item.name }}</view>
       <view class="zui-cell__ft"></view>
     </navigator>
   </view>

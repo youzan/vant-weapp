@@ -53,6 +53,10 @@
       <view class="zui-cell__bd">Steps</view>
       <view class="zui-cell__ft"></view>
     </navigator>
+    <navigator class="zui-cell zui-cell--access" url="/example/vsteps/index">
+      <view class="zui-cell__bd">Vsteps</view>
+      <view class="zui-cell__ft"></view>
+    </navigator>
     <navigator class="zui-cell zui-cell--access zui-cell--last-child" url="/example/toast/index">
       <view class="zui-cell__bd">Toast</view>
       <view class="zui-cell__ft"></view>

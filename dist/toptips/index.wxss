@@ -9,7 +9,7 @@
   text-align: center;
   color: #FFF;
   background-color: #E64340;
-  z-index: 20;
+  z-index: 110;
 
   /* 动画部分 */
   transition: all 0.4s ease;

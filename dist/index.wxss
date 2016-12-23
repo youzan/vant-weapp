@@ -14,3 +14,4 @@
 @import "steps/index.wxss";
 @import "toast/index.wxss";
 @import "toptips/index.wxss";
+@import "vsteps/index.wxss";

@@ -15,7 +15,9 @@
     "example/steps/index",
     "example/namecard/index",
     "example/toast/index",
-    "example/vsteps/index"
+    "example/vsteps/index",
+    "example/icon/index",
+    "example/dialog/index"
   ],
   "window":{
     "navigationBarBackgroundColor": "#FAFAFA",
@@ -23,5 +25,6 @@
     "navigationBarTextStyle":"black",
     "backgroundTextStyle":"dark",
     "backgroundColor": "#f9f9f9"
-  }
+  },
+  "debug": true
 }

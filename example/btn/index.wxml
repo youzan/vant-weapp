@@ -8,9 +8,9 @@
   </view>
 
   <view class="zui-panel">
-    <button class="zui-btn zui-btn--big zui-btn--primary">确认付款</button>
-    <button class="zui-btn zui-btn--big zui-btn--warn">立即购买</button>
-    <button class="zui-btn zui-btn--big zui-btn--danger">立即购买</button>
+    <button class="zui-btn zui-btn--large zui-btn--primary">确认付款</button>
+    <button class="zui-btn zui-btn--large zui-btn--warn">立即购买</button>
+    <button class="zui-btn zui-btn--large zui-btn--danger">立即购买</button>
   </view>
 
   <view class="zui-panel" style="padding: 15px;">

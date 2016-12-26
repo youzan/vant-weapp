@@ -3,7 +3,7 @@
 <view class="container">
   <view class="zui-btns">
     <button
-      class="zui-btn zui-btn--primary zui-btn--big"
+      class="zui-btn zui-btn--primary zui-btn--large"
       catchtap="showTopTips"
       style="margin-top: 40vh;"
     >

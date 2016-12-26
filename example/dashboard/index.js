@@ -43,6 +43,9 @@ Page({
         name: 'Steps',
         path: '/example/steps/index'
       }, {
+        name: 'Vsteps',
+        path: '/example/vsteps/index'
+      }, {
         name: 'Tab',
         path: '/example/tab/index'
       }, {

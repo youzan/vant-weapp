@@ -15,6 +15,7 @@
     "example/steps/index",
     "example/namecard/index",
     "example/toast/index",
+    "example/vsteps/index",
     "example/icon/index",
     "example/dialog/index"
   ],

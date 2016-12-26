@@ -9,7 +9,23 @@
         ></image>
       </view>
       <view class="zui-namecard__detail">
-        描述内容~
+        <view class="zui-namecard__detail-row">
+          <view class="zui-namecard__right-col">¥ 999.99</view>
+          <view class="goods-card__left-col zui-ellipsis--l2">
+            商品名称是什么
+          </view>
+        </view>
+
+        <view class="zui-namecard__detail-row zui-c-gray-darker">
+          <view class="zui-namecard__right-col">x2</view>
+          <view class="zui-namecard__left-col">
+            商品SKU1
+          </view>
+        </view>
+
+        <view class="zui-namecard__detail-row zui-c-gray-darker">
+          <view class="goods-card__left-col zui-c-red">已发货</view>
+        </view>
       </view>
     </view>
   </view>

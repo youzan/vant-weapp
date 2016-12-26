@@ -13,5 +13,5 @@
   padding: 10px;
   text-align: center;
   border-radius: 4px;
-  z-index: 10;
+  z-index: 100;
 }

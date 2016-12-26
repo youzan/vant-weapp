@@ -3,6 +3,8 @@
   position: fixed;
   -webkit-transform: translateZ(0) translateY(-100%);
   width: 100%;
+  /* 至少有一行的高度，保证第一次动画显示正常 */
+  min-height: 32px;
   top: 0;
   line-height: 2.3;
   font-size: 14px;

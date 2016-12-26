@@ -60,7 +60,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.zui-btn--big {
+.zui-btn--large {
   border-radius: 0;
   margin-bottom: 0;
   border: none;

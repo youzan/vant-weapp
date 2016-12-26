@@ -35,3 +35,19 @@
   width: auto;
   position: relative;
 }
+
+.zui-namecard__detail-row {
+  overflow: hidden;
+  line-height: 20px;
+  min-height: 20px;
+  margin-bottom: 3px;
+}
+
+.zui-namecard__right-col {
+  float: right;
+}
+
+.zui-namecard__left-col {
+  margin-right: 80px;
+}
+

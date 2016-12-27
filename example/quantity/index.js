@@ -3,7 +3,7 @@ var ZUI = require('../../dist/index');
 Page(Object.assign({}, ZUI.Quantity, {
   data: {
     quantity1: {
-      quantity: 1,
+      quantity: 10,
       min: 1,
       max: 20
     },
@@ -11,6 +11,11 @@ Page(Object.assign({}, ZUI.Quantity, {
       quantity: 1,
       min: 1,
       max: 1
+    },
+    quantity3: {
+      quantity: 10,
+      min: 1,
+      max: 20
     }
   },
 

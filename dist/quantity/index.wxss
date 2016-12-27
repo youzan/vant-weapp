@@ -35,3 +35,12 @@
   color: #bbb;
   border-color: #e8e8e8;
 }
+.zui-quantity--small view {
+  min-width: 36px;
+  line-height: 18px;
+}
+.zui-quantity--small .zui-quantity__text {
+  width: 36px;
+  line-height: 28px;
+  height: 28px;
+}

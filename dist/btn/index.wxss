@@ -60,7 +60,7 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.zui-btn--big {
+.zui-btn--large {
   border-radius: 0;
   margin-bottom: 0;
   border: none;
@@ -125,11 +125,12 @@
 
 /* disabled */
 .zui-btn.zui-btn--disabled {
-  color: #999;
-  background: #f8f8f8;
-  border-color: #e5e5e5;
-  cursor: not-allowed;
-  opacity: 1;
+  /* 防止样式被 button[disabled] 的规则覆盖，所以使用了important */
+  color: #999 ! important;
+  background: #f8f8f8 ! important;
+  border-color: #e5e5e5 ! important;
+  cursor: not-allowed ! important;
+  opacity: 1 ! important;
 }
 
 /* ::last-child */

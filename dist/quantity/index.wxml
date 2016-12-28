@@ -1,5 +1,5 @@
 <template name="zui-quantity">
-  <view class="zui-quantity">
+  <view class="zui-quantity {{ size === 'small' ? 'zui-quantity--small' : '' }}">
     <view
       class="zui-quantity__minus {{ quantity <= min ? 'zui-quantity--disabled' : '' }}"
       data-component-id="{{ componentId }}"

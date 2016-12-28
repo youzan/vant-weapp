@@ -13,10 +13,25 @@
   font-size: 14px;
 }
 
-.zui-form__input {
+.zui-form__title--top {
+  align-self: flex-start;
+}
+
+.zui-form__input, .zui-form__textarea {
   min-height: 26px;
 }
 
 .zui-form__input input {
   min-height: 26px;
+}
+
+.zui-form__textarea {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+.zui-form__textarea textarea {
+  width: auto;
+  flex: 1;
 }

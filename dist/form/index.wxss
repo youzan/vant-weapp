@@ -33,4 +33,5 @@
 
 .zui-form__textarea textarea {
   width: auto;
+  flex: 1;
 }

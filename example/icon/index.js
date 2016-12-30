@@ -1,7 +1,9 @@
 Page({
   data: {
     icons: [
+      'album',
       'arrow',
+      'camera',
       'certificate',
       'check',
       'checked',
@@ -9,8 +11,12 @@ Page({
       'gift',
       'location',
       'message',
-      'store',
+      'send',
       'shopping-cart',
+      'sign',
+      'store',
+      'topay',
+      'tosend'
     ]
   }
 });

@@ -4,6 +4,7 @@
   padding: 5px 15px;
   overflow: hidden;
   position: relative;
+  font-size: 14px;
 }
 
 .zui-card__thumb {

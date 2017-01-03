@@ -68,9 +68,7 @@
 .zui-steps__step--done .zui-steps__circle {
   width: 5px;
   height: 5px;
-  background: transparent url("https://b.yzcdn.cn/v2/image/wap/trade/steps/icon_green@2x.png") center no-repeat;
-  background-size: 5px 5px;
-  border-radius: 0;
+  background-color: #09bb07;
 }
 
 /* 正在进行中的steps */

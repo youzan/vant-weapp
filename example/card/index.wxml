@@ -4,7 +4,7 @@
     <view class="zui-card">
       <view class="zui-card__thumb">
         <image class="zui-card__img"
-          src="https://img.yzcdn.cn/upload_files/2016/12/06/9deca4d6fad5094bc78cb20339eb4264.png?imageView2/2/w/980/h/980/q/75/format/webp"
+          src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
           mode="aspectFit"
         ></image>
       </view>
@@ -12,14 +12,14 @@
         <view class="zui-card__detail-row">
           <view class="zui-card__right-col">¥ 999.99</view>
           <view class="goods-card__left-col zui-ellipsis--l2">
-            商品名称是什么
+             红烧牛肉【虚拟商品】【有库存】【有sku】
           </view>
         </view>
 
         <view class="zui-card__detail-row zui-c-gray-darker">
           <view class="zui-card__right-col">x2</view>
           <view class="zui-card__left-col">
-            商品SKU1
+            3000克 50%
           </view>
         </view>
 

@@ -1,4 +1,4 @@
-.zui-namecard {
+.zui-card {
   margin-left: 0px;
   width: auto;
   padding: 5px 15px;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.zui-namecard__thumb {
+.zui-card__thumb {
   width: 90px;
   height: 90px;
   float: left;
@@ -17,7 +17,7 @@
   background-size: cover;
 }
 
-.zui-namecard__img {
+.zui-card__img {
   position: absolute;
   margin: auto;
   top: 0;
@@ -30,24 +30,24 @@
   max-height: 100%;
 }
 
-.zui-namecard__detail {
+.zui-card__detail {
   margin-left: 100px;
   width: auto;
   position: relative;
 }
 
-.zui-namecard__detail-row {
+.zui-card__detail-row {
   overflow: hidden;
   line-height: 20px;
   min-height: 20px;
   margin-bottom: 3px;
 }
 
-.zui-namecard__right-col {
+.zui-card__right-col {
   float: right;
 }
 
-.zui-namecard__left-col {
+.zui-card__left-col {
   margin-right: 80px;
 }
 

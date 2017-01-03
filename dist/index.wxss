@@ -4,7 +4,7 @@
 @import "panel/index.wxss";
 @import "btn/index.wxss";
 @import "cell/index.wxss";
-@import "namecard/index.wxss";
+@import "card/index.wxss";
 @import "badge/index.wxss";
 @import "dialog/index.wxss";
 @import "form/index.wxss";

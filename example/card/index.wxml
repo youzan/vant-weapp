@@ -1,29 +1,29 @@
 <view class="container">
 
   <view class="zui-panel">
-    <view class="zui-namecard">
-      <view class="zui-namecard__thumb">
-        <image class="zui-namecard__img"
+    <view class="zui-card">
+      <view class="zui-card__thumb">
+        <image class="zui-card__img"
           src="https://img.yzcdn.cn/upload_files/2016/12/06/9deca4d6fad5094bc78cb20339eb4264.png?imageView2/2/w/980/h/980/q/75/format/webp"
           mode="aspectFit"
         ></image>
       </view>
-      <view class="zui-namecard__detail">
-        <view class="zui-namecard__detail-row">
-          <view class="zui-namecard__right-col">¥ 999.99</view>
+      <view class="zui-card__detail">
+        <view class="zui-card__detail-row">
+          <view class="zui-card__right-col">¥ 999.99</view>
           <view class="goods-card__left-col zui-ellipsis--l2">
             商品名称是什么
           </view>
         </view>
 
-        <view class="zui-namecard__detail-row zui-c-gray-darker">
-          <view class="zui-namecard__right-col">x2</view>
-          <view class="zui-namecard__left-col">
+        <view class="zui-card__detail-row zui-c-gray-darker">
+          <view class="zui-card__right-col">x2</view>
+          <view class="zui-card__left-col">
             商品SKU1
           </view>
         </view>
 
-        <view class="zui-namecard__detail-row zui-c-gray-darker">
+        <view class="zui-card__detail-row zui-c-gray-darker">
           <view class="goods-card__left-col zui-c-red">已发货</view>
         </view>
       </view>

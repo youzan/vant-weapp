@@ -31,8 +31,8 @@ Page({
         name: 'Loadmore',
         path: '/example/loadmore/index'
       }, {
-        name: 'Namecard',
-        path: '/example/namecard/index'
+        name: 'Card',
+        path: '/example/card/index'
       }, {
         name: 'Panel',
         path: '/example/panel/index'

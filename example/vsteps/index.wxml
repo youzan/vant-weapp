@@ -1,43 +1,25 @@
 <view class="container">
   <view class="zui-panel">
-    <view
-      class="zui-vsteps zui-vsteps--active zui-vsteps--first-child"
-    >
-      <view class="zui-vsteps__line"></view>
-      <view class="">
-        <view class="zui-vsteps__content zui-vsteps__title">
-          <view class="zui-vsteps__icons">
-            <icon type="success" size="13" class="zui-vsteps__icon zui-vsteps__icon--active" />
-          </view>
-          <text>卖家退款(2016-03-23  20:20:20)</text>
-        </view>
+    <view class="zui-vsteps zui-vsteps__step--done zui-vsteps--first-child">
+      <view class="zui-vsteps__title">卖家退款(2016-03-23  20:20:20)</view>
+      <view class="zui-vsteps__icons">
+        <view class="zui-vsteps__circle zui-icon zui-icon-checked"></view>
       </view>
+      <view class="zui-vsteps__line"></view>
     </view>
-    <view
-      class="zui-vsteps zui-vsteps--active"
-    >
-      <view class="zui-vsteps__line"></view>
-      <view class="">
-        <view class="zui-vsteps__content zui-vsteps__title">
-          <view class="zui-vsteps__icons">
-            <icon type="success" size="13" class="zui-vsteps__icon zui-vsteps__icon--active" />
-          </view>
-          <text>卖家退款(2016-03-23  20:20:20)</text>
-        </view>
+    <view class="zui-vsteps zui-vsteps__step--done zui-vsteps__step--cur">
+      <view class="zui-vsteps__title">卖家退款(2016-03-23  20:20:20)</view>
+      <view class="zui-vsteps__icons">
+        <view class="zui-vsteps__circle zui-icon zui-icon-checked"></view>
       </view>
+      <view class="zui-vsteps__line"></view>
     </view>
-    <view
-      class="zui-vsteps zui-vsteps--last-child"
-    >
-      <view class="zui-vsteps__line"></view>
-      <view class="">
-        <view class="zui-vsteps__content zui-vsteps__title">
-          <view class="zui-vsteps__icons">
-            <view class="zui-vsteps__icon zui-vsteps__icon--normal"></view>
-          </view>
-          <text>卖家退款(2016-03-23  20:20:20)</text>
-        </view>
+    <view class="zui-vsteps zui-vsteps--last-child">
+      <view class="zui-vsteps__title">卖家退款(2016-03-23  20:20:20)</view>
+      <view class="zui-vsteps__icons">
+        <view class="zui-vsteps__circle"></view>
       </view>
+      <view class="zui-vsteps__line"></view>
     </view>
   </view>
 </view>

@@ -10,7 +10,7 @@
   left: 42px;
 }
 
-.zui-vsteps--active {
+.zui-vsteps__step--done {
   color: #44BB00;
 }
 
@@ -23,7 +23,7 @@
   background-color: #e5e5e5;
 }
 
-.zui-vsteps__content {
+.zui-vsteps__title {
   padding-left: 27px;
 }
 
@@ -33,21 +33,23 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  font-size: 0;
-  line-height: 0;
   padding: 3px 0;
   background-color: #fff;
 }
 
-.zui-vsteps__icon {
-
-}
-
-.zui-vsteps__icon--normal {
+.zui-vsteps__circle {
   width: 5px;
   height: 5px;
   background-color: #cacaca;
   border-radius: 10px;
+}
+
+.zui-vsteps__step--done .zui-vsteps__circle {
+  width: 13px;
+  height: 13px;
+  color: #09bb07;
+  background-color: transparent;
+  border-radius:0;
 }
 
 .zui-vsteps__icon--active {

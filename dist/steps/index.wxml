@@ -1,0 +1,14 @@
+<template name="steps">
+  <view class="zui-steps zui-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zui-steps--{{ steps.length }}">
+    <view
+      wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
+      class="zui-steps__step {{ index == 0 ? 'zui-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'zui-steps__step--last-child' : '' }} {{ step.done ? 'zui-steps__step--done' : '' }} {{ step.current ? 'zui-steps__step--cur' : '' }}"
+    >
+      <view class="zui-steps__title">{{ step.text }}</view>
+      <view class="zui-steps__icons">
+        <view class="zui-steps__circle"></view>
+      </view>
+      <view class="zui-steps__line"></view>
+    </view>
+  </view>
+</template>

@@ -8,6 +8,12 @@
       </view>
     </view>
 
+    <view class="zui-cell zui-cell">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'vertical', steps, className: 'my-class' }}"></template>
+      </view>
+    </view>
+
     <view class="zui-cell zui-cell--last-child">
       <view class="zui-cell__bd">
         <template is="zui-steps" data="{{ type: 'vertical', steps }}"></template>

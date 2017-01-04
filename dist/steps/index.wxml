@@ -1,5 +1,5 @@
 <template name="zui-steps">
-  <view class="zui-steps zui-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zui-steps--{{ steps.length }}">
+  <view class="zui-steps zui-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zui-steps--{{ steps.length }} {{ className }}">
     <view
       wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
       class="zui-steps__step {{ index == 0 ? 'zui-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'zui-steps__step--last-child' : '' }} {{ step.done ? 'zui-steps__step--done' : '' }} {{ step.current ? 'zui-steps__step--cur' : '' }}"

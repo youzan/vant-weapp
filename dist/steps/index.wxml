@@ -1,4 +1,4 @@
-<template name="steps">
+<template name="zui-steps">
   <view class="zui-steps zui-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zui-steps--{{ steps.length }}">
     <view
       wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"

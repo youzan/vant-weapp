@@ -4,13 +4,13 @@
   <view class="zui-panel">
     <view class="zui-cell">
       <view class="zui-cell__bd">
-        <template is="steps" data="{{ type: 'horizon', steps }}"></template>
+        <template is="zui-steps" data="{{ type: 'horizon', steps }}"></template>
       </view>
     </view>
 
     <view class="zui-cell zui-cell--last-child">
       <view class="zui-cell__bd">
-        <template is="steps" data="{{ type: 'vertical', steps }}"></template>
+        <template is="zui-steps" data="{{ type: 'vertical', steps }}"></template>
       </view>
     </view>
   </view>

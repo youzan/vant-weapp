@@ -9,6 +9,7 @@ Page({
       'checked',
       'close',
       'gift',
+      'home',
       'location',
       'message',
       'send',

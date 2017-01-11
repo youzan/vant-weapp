@@ -17,6 +17,12 @@
 .zui-text-deleted {
   text-decoration: line-through;
 }
+.zui-font-8 {
+  font-size: 8px;
+}
+.zui-font-10 {
+  font-size: 10px;
+}
 .zui-font-12 {
   font-size: 12px;
 }
@@ -28,6 +34,15 @@
 }
 .zui-font-18 {
   font-size: 18px;
+}
+.zui-font-20 {
+  font-size: 20px;
+}
+.zui-font-22 {
+  font-size: 22px;
+}
+.zui-font-24 {
+  font-size: 22px;
 }
 .zui-font-30 {
   font-size: 30px;

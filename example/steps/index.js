@@ -1,30 +1,72 @@
-var app = getApp()
+// var app = getApp();
 
 Page({
   data: {
     steps: [
       {
-        current: false,
+        current: true,
         done: true,
-        text: '步骤一'
+        text: '步骤一',
+        desc: '10.01'
       },
       {
-        done: true,
-        current: true,
-        text: '步骤二'
+        done: false,
+        current: false,
+        text: '步骤二',
+        desc: '10.02'
       },
       {
         done: false,
         current: false,
         text: '步骤三'
       }
+    ],
+    steps2: [
+      {
+        current: false,
+        done: true,
+        text: '步骤一',
+        desc: '10.01'
+      },
+      {
+        done: true,
+        current: true,
+        text: '步骤二',
+        desc: '10.02'
+      },
+      {
+        done: false,
+        current: false,
+        text: '步骤三',
+        desc: '10.03'
+      }
+    ],
+    steps3: [
+      {
+        current: false,
+        done: true,
+        text: '步骤一',
+        desc: '10.01'
+      },
+      {
+        done: true,
+        current: false,
+        text: '步骤二',
+        desc: '10.02'
+      },
+      {
+        done: true,
+        current: true,
+        text: '步骤三',
+        desc: '10.03'
+      }
     ]
   },
 
-  onLoad: function () {
+  onLoad() {
 
   },
 
-  onShow: function() {
+  onShow() {
   },
-})
+});

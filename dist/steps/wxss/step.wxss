@@ -98,7 +98,6 @@
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
   text-align: right;
 }
 
@@ -117,6 +116,10 @@
 }
 
 /* 有描述的step */
+.zui-steps--steps .zui-steps__step--db-title {
+  min-height: 28px;
+}
+
 .zui-steps--steps .zui-steps__step--db-title .zui-steps__line {
   top: 46px;
 }

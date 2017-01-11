@@ -121,13 +121,13 @@
 }
 
 .zui-steps--steps .zui-steps__step--db-title .zui-steps__line {
-  top: 46px;
+  top: 45px;
 }
 
 .zui-steps--steps .zui-steps__step--db-title .zui-steps__icons {
-  top: 44px;
+  top: 43px;
 }
 
 .zui-steps--steps .zui-steps__step--db-title.zui-steps__step--cur .zui-steps__icons {
-  top: 40px;
+  top: 39px;
 }

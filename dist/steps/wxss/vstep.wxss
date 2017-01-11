@@ -22,8 +22,13 @@
 }
 
 .zui-steps--vsteps .zui-steps__title {
+  display: inline-block;
   line-height: 20px;
   padding-left: 27px;
+}
+
+.zui-steps--vsteps .zui-steps__title--desc {
+  padding-left: 3px;
 }
 
 .zui-steps--vsteps .zui-steps__icons {

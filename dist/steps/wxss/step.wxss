@@ -13,21 +13,20 @@
 .zui-steps--steps .zui-steps__step {
   position: relative;
   float: left;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   color: #b1b1b1;
 }
 
 .zui-steps--steps .zui-steps__title {
-  display: inline-block;
   transform: translateX(-50%);
-  margin-left: 2px;
   font-size: 10px;
+  text-align: center;
 }
 
 .zui-steps--steps .zui-steps__icons {
   position: absolute;
-  top: 28px;
-  left: -8px;
+  top: 30px;
+  left: -10px;
   padding: 0 8px;
   background-color: #fff;
   z-index: 10;
@@ -45,7 +44,7 @@
 .zui-steps--steps .zui-steps__line {
   position: absolute;
   left: 0px;
-  top: 30px;
+  top: 32px;
   width: 100%;
   height: 1px;
   background-color: #e5e5e5;
@@ -69,7 +68,8 @@
 
 /* 正在进行中的steps */
 .zui-steps--steps .zui-steps__step--cur .zui-steps__icons {
-  top: 24px;
+  top: 25px;
+  left: -14px;
 }
 
 .zui-steps--steps .zui-steps__step--cur .zui-steps__circle {
@@ -77,10 +77,6 @@
   height: 13px;
   background-image: url("https://b.yzcdn.cn/v2/image/wap/success_small@2x.png");
   background-size: 13px 13px;
-}
-
-.zui-steps--steps .zui-steps__step--cur .zui-steps__title {
-  margin-left: 6px;
 }
 
 .zui-steps--steps .zui-steps__step--cur .zui-steps__line {
@@ -91,6 +87,11 @@
 .zui-steps--steps .zui-steps__step--first-child .zui-steps__title {
   margin-left: 0;
   transform: none;
+  text-align: left;
+}
+
+.zui-steps--steps .zui-steps__step--first-child .zui-steps__icons {
+  left: -7px;
 }
 
 .zui-steps--steps .zui-steps__step--last-child {
@@ -103,6 +104,7 @@
 
 .zui-steps--steps .zui-steps__step--last-child .zui-steps__title {
   transform: none;
+  text-align: right;
 }
 
 .zui-steps--steps .zui-steps__step--last-child .zui-steps__icons {
@@ -112,4 +114,17 @@
 
 .zui-steps--steps .zui-steps__step--last-child .zui-steps__line {
   display: none;
+}
+
+/* 有描述的step */
+.zui-steps--steps .zui-steps__step--db-title .zui-steps__line {
+  top: 46px;
+}
+
+.zui-steps--steps .zui-steps__step--db-title .zui-steps__icons {
+  top: 44px;
+}
+
+.zui-steps--steps .zui-steps__step--db-title.zui-steps__step--cur .zui-steps__icons {
+  top: 40px;
 }

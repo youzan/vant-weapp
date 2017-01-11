@@ -4,7 +4,51 @@
   <view class="zui-panel">
     <view class="zui-cell">
       <view class="zui-cell__bd">
-        <template is="zui-steps" data="{{ type: 'horizon', steps }}"></template>
+        <template is="zui-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'horizon', steps: steps2 }}"></template>
+      </view>
+    </view>
+
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'horizon', steps: steps3 }}"></template>
+      </view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <view class="zui-cell">
+      <view class="zui-cell__bd">有描述的steps</view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps }}"></template>
+      </view>
+    </view>
+
+    <view class="zui-cell">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps2 }}"></template>
+      </view>
+    </view>
+
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps3 }}"></template>
+      </view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell">
+      <view class="zui-cell__bd">
+        <template is="zui-steps" data="{{ type: 'vertical', hasDesc: true, steps }}"></template>
       </view>
     </view>
 

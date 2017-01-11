@@ -117,7 +117,7 @@
 
 /* 有描述的step */
 .zui-steps--steps .zui-steps__step--db-title {
-  min-height: 28px;
+  min-height: 29px;
 }
 
 .zui-steps--steps .zui-steps__step--db-title .zui-steps__line {

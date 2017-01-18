@@ -7,4 +7,7 @@
   <view style="margin: 20px 0">
     <template is="zui-tab" data="{{tab: tab2, componentId: 'tab2'}}"></template>
   </view>
+  <view style="margin: 20px 0">
+    <template is="zui-tab" data="{{tab: tab3, componentId: 'tab3'}}"></template>
+  </view>
 </view>

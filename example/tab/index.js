@@ -44,6 +44,29 @@ Page(Object.assign({}, ZUI.Tab, {
       }],
       selectedId: '1',
       scroll: true
+    },
+    tab3: {
+      list: [{
+        id: '1',
+        title: '商品1'
+      }, {
+        id: '2',
+        title: '商品2'
+      }, {
+        id: '3',
+        title: '商品3'
+      }, {
+        id: '4',
+        title: '商品4'
+      }, {
+        id: '5',
+        title: '商品5'
+      }, {
+        id: '6',
+        title: '商品6'
+      }],
+      selectedId: '1',
+      scroll: true
     }
   },
 

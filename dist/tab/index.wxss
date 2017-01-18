@@ -40,6 +40,9 @@
   display: block;
   white-space: nowrap;
 }
+.zui-tab__bd--scroll .zui-tab__item {
+  min-width: 80px;
+}
 .zui-tab__bd--scroll .zui-tab__text {
   margin: 0 20px;
 }

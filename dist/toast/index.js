@@ -12,9 +12,13 @@ module.exports = {
       zuiToast
     });
 
-    zuiToast.timer = setTimeout(() => {
+    var timer = setTimeout(() => {
       this.clearZuiToast();
     }, timeout || 3000);
+
+    this.setData({
+      'zuiToast.timer': timer
+    });
   },
 
   clearZuiToast() {

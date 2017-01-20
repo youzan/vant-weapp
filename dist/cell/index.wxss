@@ -22,7 +22,7 @@
 .zui-cell__ft {
   position: relative;
   text-align: right;
-  color: #999;
+  color: #666;
 }
 
 .zui-cell--last-child::after {

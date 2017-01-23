@@ -9,7 +9,7 @@ ZUI 是一套用于微信小程序开发的基础UI组件库，由有赞官方�
 git clone https://github.com/youzan/zui.git
 cd zui
 ```
-将zui放入微信Web开发者工具中，可以预览各种组件的Demo和使用方法
+将zui目录放入 微信Web开发者工具 中，可以预览各种组件的Demo和使用方法
 
 ## License
 The MIT License(http://opensource.org/licenses/MIT)

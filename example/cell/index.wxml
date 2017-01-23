@@ -28,4 +28,16 @@
     </navigator>
   </view>
 
+  <view class="zui-panel-title">营业时间</view>
+  <view class="zui-panel">
+    <view class="zui-cell">
+      <view class="zui-cell__bd">日期</view>
+      <view class="zui-cell__ft">每天</view>
+    </view>
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">时间段</view>
+      <view class="zui-cell__ft">08:00~22:00</view>
+    </view>
+  </view>
+
 </view>

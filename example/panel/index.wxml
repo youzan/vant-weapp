@@ -1,7 +1,8 @@
 <view class="container">
 
+  <view class="zui-panel-title">标题</view>
   <view class="zui-panel">
-    <view style="padding: 15px;">Panel</view>
+    <view style="padding: 15px;">带标题的Panel</view>
   </view>
 
   <view class="zui-panel">

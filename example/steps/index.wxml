@@ -21,11 +21,8 @@
     </view>
   </view>
 
+  <view class="zui-panel-title">有描述的steps</view>
   <view class="zui-panel">
-    <view class="zui-cell">
-      <view class="zui-cell__bd">有描述的steps</view>
-    </view>
-
     <view class="zui-cell">
       <view class="zui-cell__bd">
         <template is="zui-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps }}"></template>
@@ -45,6 +42,7 @@
     </view>
   </view>
 
+  <view class="zui-panel-title">垂直方向的steps</view>
   <view class="zui-panel">
     <view class="zui-cell zui-cell">
       <view class="zui-cell__bd">
@@ -59,11 +57,11 @@
     </view>
   </view>
 
+  <view class="zui-panel-title">可自定义class</view>
   <view class="zui-panel">
-    <view class="zui-cell">
-      <view class="zui-cell__bd">可自定义class</view>
+    <view class="zui-cell__bd">
+      <template is="zui-steps" data="{{ type: 'vertical', steps, className: 'my-class' }}"></template>
     </view>
-    <template is="zui-steps" data="{{ type: 'vertical', steps, className: 'my-class' }}"></template>
   </view>
 
 </view>

@@ -1,5 +1,7 @@
 <view class="container">
 
+  <view class="doc-title">CARD</view>
+
   <view class="zui-panel">
     <view class="zui-card">
       <view class="zui-card__thumb">

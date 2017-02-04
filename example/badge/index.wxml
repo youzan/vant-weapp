@@ -1,4 +1,7 @@
 <view class="container">
+
+  <view class="doc-title">BADGE</view>
+
   <view class="demo">
     <view class="demo__item">
       <view class="demo__icon zui-badge">

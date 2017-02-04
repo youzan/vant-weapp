@@ -1,6 +1,9 @@
 <import src="/dist/quantity/index.wxml" />
 
 <view class="container">
+
+  <view class="doc-title">QUANTITY</view>
+
   <view style="padding: 40px 15px">
     <template is="zui-quantity" data="{{ ...quantity1, componentId: 'quantity1' }}" />
   </view>

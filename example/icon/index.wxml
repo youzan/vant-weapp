@@ -1,4 +1,7 @@
 <view class="container">
+
+  <view class="doc-title">ICON</view>
+
   <view class="zui-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
       <view class="zui-icon zui-icon-{{ icon }}"  style="font-size: 20px; color: #ff4343;"></view>

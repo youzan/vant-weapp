@@ -16,3 +16,11 @@
   background-color: #e2e2e2;
   z-index: 5;
 }
+.doc-title {
+  font-size: 25px;
+  line-height: 25px;
+  color: #666;
+  padding: 15px 0;
+  margin: 20px 15px;
+  border-bottom: 1rpx solid #e5e5e5;
+}

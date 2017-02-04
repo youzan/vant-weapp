@@ -4,6 +4,6 @@ Page(Object.assign({}, ZUI.Toast, {
   data: {},
 
   showToast() {
-    this.showZuiToast('哎呀，出了点小问题');
+    this.showZuiToast('toast的内容');
   }
 }));

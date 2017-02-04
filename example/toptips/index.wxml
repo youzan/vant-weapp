@@ -1,12 +1,11 @@
 <import src="/dist/toptips/index.wxml" />
 
 <view class="container">
-  <view class="zui-btns">
-    <button
-      class="zui-btn zui-btn--primary zui-btn--large"
-      catchtap="showTopTips"
-      style="margin-top: 40vh;"
-    >
+
+  <view class="doc-title">TOPTIPS</view>
+
+  <view class="zui-btns" style="margin-top: 30vh;">
+    <button class="zui-btn" bindtap="showTopTips">
       显示toptips
     </button>
   </view>

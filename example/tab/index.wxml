@@ -1,6 +1,9 @@
 <import src="/dist/tab/index.wxml" />
 
 <view class="container">
+
+  <view class="doc-title">TAB</view>
+
   <view style="margin: 20px 0">
     <template is="zui-tab" data="{{tab: tab1, componentId: 'tab1'}}"></template>
   </view>

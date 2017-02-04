@@ -1,42 +1,88 @@
 <view class="container">
 
+  <view class="doc-title">CELL</view>
+
   <view class="zui-panel">
-    <view class="zui-cell zui-cell--access">
-      <view class="zui-cell__bd">字段1</view>
-      <view class="zui-cell__ft"></view>
-    </view>
-    <view class="zui-cell zui-cell--access">
-      <view class="zui-cell__bd">字段2</view>
-      <view class="zui-cell__ft"></view>
-    </view>
-    <view class="zui-cell zui-cell--last-child zui-cell--access">
-      <view class="zui-cell__bd">最后一个字段</view>
-      <view class="zui-cell__ft"></view>
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">单行列表</view>
     </view>
   </view>
 
   <view class="zui-panel">
     <view class="zui-cell zui-cell--last-child">
-      <view class="zui-cell__bd">不带箭头</view>
+      <view class="zui-cell__bd">单行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
     </view>
   </view>
 
   <view class="zui-panel">
-    <navigator class="zui-cell zui-cell--last-child">
-      <view class="zui-cell__bd">点击时背景会变色</view>
+    <view class="zui-cell zui-cell--last-child zui-cell--access">
+      <view class="zui-cell__bd">单行列表</view>
       <view class="zui-cell__ft"></view>
-    </navigator>
+    </view>
   </view>
 
-  <view class="zui-panel-title">营业时间</view>
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--last-child zui-cell--access">
+      <view class="zui-cell__bd">单行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
+    </view>
+  </view>
+
   <view class="zui-panel">
     <view class="zui-cell">
-      <view class="zui-cell__bd">日期</view>
-      <view class="zui-cell__ft">每天</view>
+      <view class="zui-cell__bd">多行列表</view>
+    </view>
+    <view class="zui-cell">
+      <view class="zui-cell__bd">多行列表</view>
     </view>
     <view class="zui-cell zui-cell--last-child">
-      <view class="zui-cell__bd">时间段</view>
-      <view class="zui-cell__ft">08:00~22:00</view>
+      <view class="zui-cell__bd">多行列表</view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <view class="zui-cell">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
+    </view>
+    <view class="zui-cell">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
+    </view>
+    <view class="zui-cell zui-cell--last-child">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--access">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft"></view>
+    </view>
+    <view class="zui-cell zui-cell--access">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft"></view>
+    </view>
+    <view class="zui-cell zui-cell--access zui-cell--last-child">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft"></view>
+    </view>
+  </view>
+
+  <view class="zui-panel">
+    <view class="zui-cell zui-cell--access">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
+    </view>
+    <view class="zui-cell zui-cell--access">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
+    </view>
+    <view class="zui-cell zui-cell--access zui-cell--last-child">
+      <view class="zui-cell__bd">多行列表</view>
+      <view class="zui-cell__ft">详细信息</view>
     </view>
   </view>
 

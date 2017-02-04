@@ -1,4 +1,7 @@
 <view class="container">
+
+  <view class="doc-title">LABEL</view>
+
   <view class="zui-panel">
     <view class="zui-cell zui-cell--last-child">
       <view class="zui-label">蓝色</view>

@@ -1,6 +1,9 @@
 <import src="/dist/steps/index.wxml" />
 
 <view class="container">
+
+  <view class="doc-title">STEPS</view>
+
   <view class="zui-panel">
     <view class="zui-cell">
       <view class="zui-cell__bd">

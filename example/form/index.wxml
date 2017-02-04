@@ -1,5 +1,7 @@
 <view class="container">
 
+  <view class="doc-title">FORM</view>
+
   <view class="zui-form">
     <view class="zui-cell zui-form__item">
       <text class="zui-form__title">收货人</text>

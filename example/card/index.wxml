@@ -11,7 +11,7 @@
       <view class="zui-card__detail">
         <view class="zui-card__detail-row">
           <view class="zui-card__right-col">¥ 999.99</view>
-          <view class="goods-card__left-col zui-ellipsis--l2">
+          <view class="zui-card__left-col zui-ellipsis--l2">
              红烧牛肉【虚拟商品】【有库存】【有sku】
           </view>
         </view>
@@ -24,7 +24,7 @@
         </view>
 
         <view class="zui-card__detail-row zui-c-gray-darker">
-          <view class="goods-card__left-col zui-c-red">已发货</view>
+          <view class="zui-card__left-col zui-c-red">已发货</view>
         </view>
       </view>
     </view>

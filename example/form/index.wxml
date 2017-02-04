@@ -10,7 +10,7 @@
         placeholder="名字"
       />
     </view>
-    <view class="zui-cell zui-form__item zui-cell--last-child">
+    <view class="zui-cell zui-form__item">
       <text class="zui-form__title">联系电话</text>
       <input
         class="zui-form__input zui-cell__bd"
@@ -18,6 +18,19 @@
         maxlength="20"
         placeholder="手机或固定电话"
       />
+    </view>
+    <view class="zui-cell zui-form__item zui-cell--last-child">
+      <text class="zui-form__title">选择区域</text>
+      <view class="zui-form__input zui-cell__bd">
+        <picker
+          mode="selector"
+          range="{{ area }}"
+          value="{{ areaIndex }}"
+          bindchange="onAreaChange"
+        >
+          {{ area[areaIndex] }}
+        </picker>
+      </view>
     </view>
   </view>
 

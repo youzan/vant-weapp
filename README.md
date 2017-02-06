@@ -1,10 +1,9 @@
-[issue]: https://github.com/youzan/zui/issues/new
-[PR]: https://github.com/youzan/zui/compare
-[ZUI]: https://github.com/youzan/zui
-[MIT]: http://opensource.org/licenses/MIT
+<p align="center">
+    <img src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
+</p>
 
 
-ZUI 为 微信小程序 量身设计
+ZUI 为微信小程序量身设计
 ====
 
 ## 概述
@@ -26,3 +25,8 @@ cd zui
 ## 贡献
 
 如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为提升 [ZUI] 贡献力量
+
+[issue]: https://github.com/youzan/zui/issues/new
+[PR]: https://github.com/youzan/zui/compare
+[ZUI]: https://github.com/youzan/zui
+[MIT]: http://opensource.org/licenses/MIT

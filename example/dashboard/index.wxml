@@ -1,5 +1,7 @@
 <view class="container">
 
+  <image class="logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png"></image>
+
   <view class="zui-panel">
     <navigator wx:for="{{ list }}" wx:key="name" class="zui-cell zui-cell--access" url="{{ item.path }}">
       <view class="zui-cell__bd">{{ item.name }}</view>

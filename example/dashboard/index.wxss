@@ -1,6 +1,6 @@
 .logo {
   display: block;
   margin: 40px auto;
-  width: 80px;
-  height: 80px;
+  width: 92px;
+  height: 82px;
 }

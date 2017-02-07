@@ -4,11 +4,11 @@
 
   <view class="doc-title">TOPTIPS</view>
 
-  <view class="zui-btns" style="margin-top: 30vh;">
-    <button class="zui-btn" bindtap="showTopTips">
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <button class="zan-btn" bindtap="showTopTips">
       显示toptips
     </button>
   </view>
 </view>
 
-<template is="zui-toptips" data="{{ zuiTopTips }}"></template>
+<template is="zan-toptips" data="{{ zanTopTips }}"></template>

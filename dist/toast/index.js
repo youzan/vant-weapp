@@ -1,32 +1,32 @@
 module.exports = {
-  showZuiToast(title, timeout) {
-    var zuiToast = this.data.zuiToast || {};
-    clearTimeout(zuiToast.timer);
+  showZanToast(title, timeout) {
+    var zanToast = this.data.zanToast || {};
+    clearTimeout(zanToast.timer);
 
     // 弹层设置~
-    zuiToast = {
+    zanToast = {
       show: true,
       title
     };
     this.setData({
-      zuiToast
+      zanToast
     });
 
     var timer = setTimeout(() => {
-      this.clearZuiToast();
+      this.clearZanToast();
     }, timeout || 3000);
 
     this.setData({
-      'zuiToast.timer': timer
+      'zanToast.timer': timer
     });
   },
 
-  clearZuiToast() {
-    var zuiToast = this.data.zuiToast || {};
-    clearTimeout(zuiToast.timer);
+  clearZanToast() {
+    var zanToast = this.data.zanToast || {};
+    clearTimeout(zanToast.timer);
 
     this.setData({
-      'zuiToast.show': false
+      'zanToast.show': false
     });
   }
 };

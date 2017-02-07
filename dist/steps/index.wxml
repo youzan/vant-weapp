@@ -1,15 +1,15 @@
-<template name="zui-steps">
-  <view class="zui-steps zui-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zui-steps--{{ steps.length }} {{ className }}">
+<template name="zan-steps">
+  <view class="zan-steps zan-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zan-steps--{{ steps.length }} {{ className }}">
     <view
       wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
-      class="zui-steps__step {{ hasDesc ? 'zui-steps__step--db-title' : '' }} {{ index == 0 ? 'zui-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'zui-steps__step--last-child' : '' }} {{ step.done ? 'zui-steps__step--done' : '' }} {{ step.current ? 'zui-steps__step--cur' : '' }}"
+      class="zan-steps__step {{ hasDesc ? 'zan-steps__step--db-title' : '' }} {{ index == 0 ? 'zan-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'zan-steps__step--last-child' : '' }} {{ step.done ? 'zan-steps__step--done' : '' }} {{ step.current ? 'zan-steps__step--cur' : '' }}"
     >
-      <view class="zui-steps__title">{{ step.text }}</view>
-      <view wx:if="{{ hasDesc && step.desc }}" class="zui-steps__title zui-steps__title--desc">{{ step.desc }}</view>
-      <view class="zui-steps__icons">
-        <view class="zui-steps__circle"></view>
+      <view class="zan-steps__title">{{ step.text }}</view>
+      <view wx:if="{{ hasDesc && step.desc }}" class="zan-steps__title zan-steps__title--desc">{{ step.desc }}</view>
+      <view class="zan-steps__icons">
+        <view class="zan-steps__circle"></view>
       </view>
-      <view class="zui-steps__line"></view>
+      <view class="zan-steps__line"></view>
     </view>
   </view>
 </template>

@@ -1,71 +1,71 @@
 <view class="container">
 
-  <view class="zui-panel">
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
-        <view class="zui-pull-right">zui-pull-right: 往右靠</view>
+  <view class="zan-panel">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <view class="zan-pull-right">zan-pull-right: 往右靠</view>
       </view>
     </view>
 
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
-        <view class="zui-text-deleted">zui-text-deleted：被删除的效果</view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <view class="zan-text-deleted">zan-text-deleted：被删除的效果</view>
       </view>
     </view>
 
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
         <view>
-          <view class="zui-font-12">zui-font-12：字号12</view>
-          <view class="zui-font-12 zui-font-bold">zui-font-bold：再来个加粗</view>
+          <view class="zan-font-12">zan-font-12：字号12</view>
+          <view class="zan-font-12 zan-font-bold">zan-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
 
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
         <view>
-          <view class="zui-font-16">zui-font-16：字号16</view>
-          <view class="zui-font-16 zui-font-bold">zui-font-bold：再来个加粗</view>
+          <view class="zan-font-16">zan-font-16：字号16</view>
+          <view class="zan-font-16 zan-font-bold">zan-font-bold：再来个加粗</view>
         </view>
       </view>
     </view>
 
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
         <view class="">
           <view>字体颜色</view>
-          <view class="zui-c-red">zui-c-red: 红色</view>
-          <view class="zui-c-gray">zui-c-gray: 灰色</view>
-          <view class="zui-c-gray-dark">zui-c-gray-dark: 再灰一点点</view>
-          <view class="zui-c-gray-darker">zui-c-gray-darker: 更深的灰色</view>
-          <view class="zui-c-black">zui-c-black: 黑色</view>
-          <view class="zui-c-blue">zui-c-blue: 蓝色</view>
-          <view class="zui-c-green">zui-c-green: 绿色</view>
+          <view class="zan-c-red">zan-c-red: 红色</view>
+          <view class="zan-c-gray">zan-c-gray: 灰色</view>
+          <view class="zan-c-gray-dark">zan-c-gray-dark: 再灰一点点</view>
+          <view class="zan-c-gray-darker">zan-c-gray-darker: 更深的灰色</view>
+          <view class="zan-c-black">zan-c-black: 黑色</view>
+          <view class="zan-c-blue">zan-c-blue: 蓝色</view>
+          <view class="zan-c-green">zan-c-green: 绿色</view>
         </view>
       </view>
     </view>
 
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
-        <view>zui-arrow：箭头</view>
-        <view class="zui-arrow"></view>
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <view>zan-arrow：箭头</view>
+        <view class="zan-arrow"></view>
       </view>
     </view>
 
-    <view class="zui-cell">
-      <view class="zui-cell__bd">
-        <view class="zui-ellipsis" style="width: 300px;">
-          zui-ellipsis：单行点点点
+    <view class="zan-cell">
+      <view class="zan-cell__bd">
+        <view class="zan-ellipsis" style="width: 300px;">
+          zan-ellipsis：单行点点点
           ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
         </view>
       </view>
     </view>
 
-    <view class="zui-cell zui-cell--last-child">
-      <view class="zui-cell__bd">
-        <view class="zui-ellipsis--l2">
-          zui-ellipsis--l2：单行点点点
+    <view class="zan-cell zan-cell--last-child">
+      <view class="zan-cell__bd">
+        <view class="zan-ellipsis--l2">
+          zan-ellipsis--l2：单行点点点
           ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
         </view>
       </view>

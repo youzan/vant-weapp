@@ -1,6 +1,6 @@
 .my-class {
   padding: 10px;
 }
-.my-class .zui-steps__step--done {
+.my-class .zan-steps__step--done {
   color: #f44;
 }

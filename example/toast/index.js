@@ -1,9 +1,9 @@
-var ZUI = require('../../dist/index');
+var Zan = require('../../dist/index');
 
-Page(Object.assign({}, ZUI.Toast, {
+Page(Object.assign({}, Zan.Toast, {
   data: {},
 
   showToast() {
-    this.showZuiToast('toast的内容');
+    this.showZanToast('toast的内容');
   }
 }));

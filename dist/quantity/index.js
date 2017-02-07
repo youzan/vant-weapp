@@ -12,25 +12,25 @@ function handle(e, num) {
 function callback(componentId, quantity) {
   quantity = +quantity;
   var e = { componentId, quantity };
-  console.info('[zui:quantity:change]', e);
+  console.info('[zan:quantity:change]', e);
 
-  if (this.handleZuiQuantityChange) {
-    this.handleZuiQuantityChange(e);
+  if (this.handleZanQuantityChange) {
+    this.handleZanQuantityChange(e);
   } else {
-    console.warn('页面缺少 handleZuiQuantityChange 回调函数');
+    console.warn('页面缺少 handleZanQuantityChange 回调函数');
   }
 }
 
 var Quantity = {
-  _handleZuiQuantityMinus(e) {
+  _handleZanQuantityMinus(e) {
     handle.call(this, e, -1);
   },
 
-  _handleZuiQuantityPlus(e) {
+  _handleZanQuantityPlus(e) {
     handle.call(this, e, +1);
   },
 
-  _handleZuiQuantityBlur(e) {
+  _handleZanQuantityBlur(e) {
     var dataset = e.currentTarget.dataset;
     var componentId = dataset.componentId;
     var max = +dataset.max;

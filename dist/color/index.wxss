@@ -1,27 +1,27 @@
-.zui-c-red {
+.zan-c-red {
   color: #f44 !important;
 }
 
-.zui-c-gray {
+.zan-c-gray {
   color: #c9c9c9 !important;
 }
 
-.zui-c-gray-dark {
+.zan-c-gray-dark {
   color: #999 !important;
 }
 
-.zui-c-gray-darker {
+.zan-c-gray-darker {
   color: #666 !important;
 }
 
-.zui-c-black {
+.zan-c-black {
   color: #333 !important;
 }
 
-.zui-c-blue {
+.zan-c-blue {
   color: #3283fa !important;
 }
 
-.zui-c-green {
+.zan-c-green {
   color: #44BB00 !important;
 }

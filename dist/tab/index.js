@@ -1,15 +1,15 @@
 var Tab = {
-  _handleZuiTabChange(e) {
+  _handleZanTabChange(e) {
     var dataset = e.currentTarget.dataset;
     var componentId = dataset.componentId;
     var selectedId = dataset.itemId;
     var data = { componentId, selectedId };
 
-    console.info('[zui:tab:change]', data);
-    if (this.handleZuiTabChange) {
-      this.handleZuiTabChange(data);
+    console.info('[zan:tab:change]', data);
+    if (this.handleZanTabChange) {
+      this.handleZanTabChange(data);
     } else {
-      console.warn('页面缺少 handleZuiTabChange 回调函数');
+      console.warn('页面缺少 handleZanTabChange 回调函数');
     }
   }
 };

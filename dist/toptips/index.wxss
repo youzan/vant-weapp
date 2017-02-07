@@ -1,4 +1,4 @@
-.zui-toptips {
+.zan-toptips {
   display: block;
   position: fixed;
   -webkit-transform: translateZ(0) translateY(-100%);
@@ -17,6 +17,6 @@
   transition: all 0.4s ease;
 }
 
-.zui-toptips--show {
+.zan-toptips--show {
   -webkit-transform: translateZ(0) translateY(0);
 }

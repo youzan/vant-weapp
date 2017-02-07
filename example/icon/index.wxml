@@ -2,16 +2,16 @@
 
   <view class="doc-title">ICON</view>
 
-  <view class="zui-panel">
+  <view class="zan-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
-      <view class="zui-icon zui-icon-{{ icon }}"  style="font-size: 20px; color: #ff4343;"></view>
-      <view class="icon-classname">zui-icon-{{ icon }}</view>
+      <view class="zan-icon zan-icon-{{ icon }}"  style="font-size: 20px; color: #ff4343;"></view>
+      <view class="icon-classname">zan-icon-{{ icon }}</view>
     </view>
   </view>
-  <view class="zui-panel" style="margin-bottom: 40px;">
+  <view class="zan-panel" style="margin-bottom: 40px;">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
-      <view class="zui-icon zui-icon-{{ icon }}" style="font-size: 40px;"></view>
-      <view class="icon-classname">zui-icon-{{ icon }}</view>
+      <view class="zan-icon zan-icon-{{ icon }}" style="font-size: 40px;"></view>
+      <view class="icon-classname">zan-icon-{{ icon }}</view>
     </view>
   </view>
 </view>

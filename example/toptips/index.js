@@ -1,9 +1,9 @@
-var ZUI = require('../../dist/index');
+var Zan = require('../../dist/index');
 
-Page(Object.assign({}, ZUI.TopTips, {
+Page(Object.assign({}, Zan.TopTips, {
   data: {},
 
   showTopTips() {
-    this.showZuiTopTips('toptips的内容');
+    this.showZanTopTips('toptips的内容');
   }
 }));

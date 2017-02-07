@@ -4,11 +4,11 @@
 
   <view class="doc-title">TOAST</view>
 
-  <view class="zui-btns" style="margin-top: 30vh;">
-    <button class="zui-btn" bindtap="showToast">
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <button class="zan-btn" bindtap="showToast">
       显示toast
     </button>
   </view>
 </view>
 
-<template is="zui-toast" data="{{ zuiToast }}"></template>
+<template is="zan-toast" data="{{ zanToast }}"></template>

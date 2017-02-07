@@ -3,7 +3,7 @@
 
   <view class="doc-title">LOADMORE</view>
 
-  <template is="zui-loadmore" data="{{loading: true}}" />
-  <template is="zui-loadmore" data="{{nodata: true}}" />
-  <template is="zui-loadmore" data="{{nomore: true}}" />
+  <template is="zan-loadmore" data="{{loading: true}}" />
+  <template is="zan-loadmore" data="{{nodata: true}}" />
+  <template is="zan-loadmore" data="{{nomore: true}}" />
 </view>

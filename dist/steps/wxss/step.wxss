@@ -1,29 +1,29 @@
-.zui-steps--steps.zui-steps--5 .zui-steps__step {
+.zan-steps--steps.zan-steps--5 .zan-steps__step {
   width: 25%;
 }
 
-.zui-steps--steps.zui-steps--4 .zui-steps__step {
+.zan-steps--steps.zan-steps--4 .zan-steps__step {
   width: 33%;
 }
 
-.zui-steps--steps.zui-steps--3 .zui-steps__step {
+.zan-steps--steps.zan-steps--3 .zan-steps__step {
   width: 50%;
 }
 
-.zui-steps--steps .zui-steps__step {
+.zan-steps--steps .zan-steps__step {
   position: relative;
   float: left;
   padding-bottom: 25px;
   color: #b1b1b1;
 }
 
-.zui-steps--steps .zui-steps__title {
+.zan-steps--steps .zan-steps__title {
   transform: translateX(-50%);
   font-size: 10px;
   text-align: center;
 }
 
-.zui-steps--steps .zui-steps__icons {
+.zan-steps--steps .zan-steps__icons {
   position: absolute;
   top: 30px;
   left: -10px;
@@ -32,7 +32,7 @@
   z-index: 10;
 }
 
-.zui-steps--steps .zui-steps__circle {
+.zan-steps--steps .zan-steps__circle {
   display: block;
   position: relative;
   width: 5px;
@@ -41,7 +41,7 @@
   border-radius: 50%;
 }
 
-.zui-steps--steps .zui-steps__line {
+.zan-steps--steps .zan-steps__line {
   position: absolute;
   left: 0px;
   top: 32px;
@@ -52,82 +52,82 @@
 
 
 /* 已完成的steps */
-.zui-steps--steps .zui-steps__step--done {
+.zan-steps--steps .zan-steps__step--done {
   color: #333;
 }
 
-.zui-steps--steps .zui-steps__step--done .zui-steps__line {
+.zan-steps--steps .zan-steps__step--done .zan-steps__line {
   background-color: #06bf04;
 }
 
-.zui-steps--steps .zui-steps__step--done .zui-steps__circle {
+.zan-steps--steps .zan-steps__step--done .zan-steps__circle {
   width: 5px;
   height: 5px;
   background-color: #09bb07;
 }
 
 /* 正在进行中的steps */
-.zui-steps--steps .zui-steps__step--cur .zui-steps__icons {
+.zan-steps--steps .zan-steps__step--cur .zan-steps__icons {
   top: 25px;
   left: -14px;
 }
 
-.zui-steps--steps .zui-steps__step--cur .zui-steps__circle {
+.zan-steps--steps .zan-steps__step--cur .zan-steps__circle {
   width: 13px;
   height: 13px;
   background-image: url("https://b.yzcdn.cn/v2/image/wap/success_small@2x.png");
   background-size: 13px 13px;
 }
 
-.zui-steps--steps .zui-steps__step--cur .zui-steps__line {
+.zan-steps--steps .zan-steps__step--cur .zan-steps__line {
   background-color: #e5e5e5;
 }
 
 /* 各种不同位置的 */
-.zui-steps--steps .zui-steps__step--first-child .zui-steps__title {
+.zan-steps--steps .zan-steps__step--first-child .zan-steps__title {
   margin-left: 0;
   transform: none;
   text-align: left;
 }
 
-.zui-steps--steps .zui-steps__step--first-child .zui-steps__icons {
+.zan-steps--steps .zan-steps__step--first-child .zan-steps__icons {
   left: -7px;
 }
 
-.zui-steps--steps .zui-steps__step--last-child {
+.zan-steps--steps .zan-steps__step--last-child {
   position: absolute;
   right: 0;
   top: 0;
   text-align: right;
 }
 
-.zui-steps--steps .zui-steps__step--last-child .zui-steps__title {
+.zan-steps--steps .zan-steps__step--last-child .zan-steps__title {
   transform: none;
   text-align: right;
 }
 
-.zui-steps--steps .zui-steps__step--last-child .zui-steps__icons {
+.zan-steps--steps .zan-steps__step--last-child .zan-steps__icons {
   left: auto;
   right: -6px;
 }
 
-.zui-steps--steps .zui-steps__step--last-child .zui-steps__line {
+.zan-steps--steps .zan-steps__step--last-child .zan-steps__line {
   display: none;
 }
 
 /* 有描述的step */
-.zui-steps--steps .zui-steps__step--db-title {
+.zan-steps--steps .zan-steps__step--db-title {
   min-height: 29px;
 }
 
-.zui-steps--steps .zui-steps__step--db-title .zui-steps__line {
+.zan-steps--steps .zan-steps__step--db-title .zan-steps__line {
   top: 45px;
 }
 
-.zui-steps--steps .zui-steps__step--db-title .zui-steps__icons {
+.zan-steps--steps .zan-steps__step--db-title .zan-steps__icons {
   top: 43px;
 }
 
-.zui-steps--steps .zui-steps__step--db-title.zui-steps__step--cur .zui-steps__icons {
+.zan-steps--steps .zan-steps__step--db-title.zan-steps__step--cur .zan-steps__icons {
   top: 39px;
 }

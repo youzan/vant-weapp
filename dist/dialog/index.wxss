@@ -1,4 +1,4 @@
-.zui-dialog__mask {
+.zan-dialog__mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   background: rgba(0, 0, 0, 0.7);
   display: none;
 }
-.zui-dialog__container {
+.zan-dialog__container {
   position: fixed;
   bottom: 0;
   width: 750rpx;
@@ -17,10 +17,10 @@
   transition: all 0.4s ease;
   z-index: 11;
 }
-.zui-dialog--show .zui-dialog__container {
+.zan-dialog--show .zan-dialog__container {
   transform: translateY(0);
 }
-.zui-dialog--show .zui-dialog__mask {
+.zan-dialog--show .zan-dialog__mask {
   display: block;
 }
 

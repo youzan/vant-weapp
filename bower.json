@@ -1,12 +1,12 @@
 {
-  "name": "zui",
+  "name": "zanui-weapp",
   "authors": [
-    "Nino <nino@youzan.com>",
+    "Nino <ninofocus@gmail.com>",
     "Pangxie <pangxie@youzan.com>"
   ],
-  "directory": "zui",
+  "directory": "zanui-weapp",
   "description": "A UI Library for Weapp",
-  "main": "zui",
+  "main": "zan",
   "license": "MIT",
   "homepage": "",
   "ignore": [

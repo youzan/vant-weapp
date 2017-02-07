@@ -1,4 +1,4 @@
-.zui-loadmore {
+.zan-loadmore {
   position: relative;
   width: 65%;
   margin: 21px auto;
@@ -8,7 +8,7 @@
   vertical-align: middle;
 }
 
-.zui-loading {
+.zan-loading {
   width:20px;
   height:20px;
   display: inline-block;
@@ -19,42 +19,42 @@
   background-size: 100%;
 }
 
-.zui-loadmore .zui-loading {
+.zan-loadmore .zan-loading {
   margin-right: 4px;
 }
 
-.zui-loadmore__tips {
+.zan-loadmore__tips {
   display: inline-block;
   vertical-align: middle;
   height: 20px;
   line-height: 20px;
 }
 
-.zui-loadmore--nodata,
-.zui-loadmore--nomore {
+.zan-loadmore--nodata,
+.zan-loadmore--nomore {
   border-top: 1rpx solid #e5e5e5;
   color: #999;
 }
 
-.zui-loadmore--nodata {
+.zan-loadmore--nodata {
   margin-top: 120px;
 }
 
-.zui-loadmore--nodata .zui-loadmore__tips {
+.zan-loadmore--nodata .zan-loadmore__tips {
   position: relative;
   top: -11px;
   background: #f9f9f9;
   padding: 0 6px;
 }
 
-.zui-loadmore--nomore .zui-loadmore__tips {
+.zan-loadmore--nomore .zan-loadmore__tips {
   position: relative;
   top: -11px;
   background: #f9f9f9;
   padding: 0 6px;
 }
 
-.zui-loadmore__dot {
+.zan-loadmore__dot {
   position: absolute;
   left: 50%;
   top: 10px;

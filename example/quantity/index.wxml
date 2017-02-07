@@ -5,16 +5,16 @@
   <view class="doc-title">QUANTITY</view>
 
   <view style="padding: 40px 15px">
-    <template is="zui-quantity" data="{{ ...quantity1, componentId: 'quantity1' }}" />
+    <template is="zan-quantity" data="{{ ...quantity1, componentId: 'quantity1' }}" />
   </view>
 
   <!-- 当最大值等于最小值时，组件不可用 -->
   <view style="padding: 40px 15px ">
-    <template is="zui-quantity" data="{{ ...quantity2, componentId: 'quantity2' }}" />
+    <template is="zan-quantity" data="{{ ...quantity2, componentId: 'quantity2' }}" />
   </view>
 
   <!-- small size -->
   <view style="padding: 40px 15px ">
-    <template is="zui-quantity" data="{{ ...quantity3, componentId: 'quantity3', size: 'small' }}" />
+    <template is="zan-quantity" data="{{ ...quantity3, componentId: 'quantity3', size: 'small' }}" />
   </view>
 </view>

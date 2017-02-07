@@ -1,7 +1,7 @@
-.zui-quantity {
+.zan-quantity {
   color: #666;
 }
-.zui-quantity view {
+.zan-quantity view {
   display: inline-block;
   line-height: 20px;
   padding: 5px 0;
@@ -12,11 +12,11 @@
   font-size: 12px;
   border: 1rpx solid #999;
 }
-.zui-quantity .zui-quantity__minus {
+.zan-quantity .zan-quantity__minus {
   border-right: none;
   border-radius: 2px 0 0 2px;
 }
-.zui-quantity .zui-quantity__text {
+.zan-quantity .zan-quantity__text {
   border: 1rpx solid #999;
   display: inline-block;
   text-align: center;
@@ -26,20 +26,20 @@
   font-size: 12px;
   line-height: 30px;
 }
-.zui-quantity .zui-quantity__plus {
+.zan-quantity .zan-quantity__plus {
   border-left: none;
   border-radius: 0 2px 2px 0;
 }
-.zui-quantity .zui-quantity--disabled {
+.zan-quantity .zan-quantity--disabled {
   background: #f8f8f8;
   color: #bbb;
   border-color: #e8e8e8;
 }
-.zui-quantity--small view {
+.zan-quantity--small view {
   min-width: 36px;
   line-height: 18px;
 }
-.zui-quantity--small .zui-quantity__text {
+.zan-quantity--small .zan-quantity__text {
   width: 36px;
   line-height: 28px;
   height: 28px;

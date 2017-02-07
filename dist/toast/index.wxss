@@ -1,4 +1,4 @@
-.zui-toast {
+.zan-toast {
   position: fixed;
   top: 35%;
   left: 20%;

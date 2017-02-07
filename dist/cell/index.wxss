@@ -1,4 +1,4 @@
-.zui-cell {
+.zan-cell {
   position: relative;
   padding: 12px 15px;
   display: flex;
@@ -7,7 +7,7 @@
   font-size: 14px;
 }
 
-.zui-cell::after {
+.zan-cell::after {
   position: absolute;
   left: 15px;
   right: 0;
@@ -16,24 +16,24 @@
   background: #e5e5e5;
   content: ' ';
 }
-.zui-cell__bd {
+.zan-cell__bd {
   flex: 1;
 }
-.zui-cell__ft {
+.zan-cell__ft {
   position: relative;
   text-align: right;
   color: #666;
 }
 
-.zui-cell--last-child::after {
+.zan-cell--last-child::after {
   display: none;
 }
 
-.zui-cell--access .zui-cell__ft {
+.zan-cell--access .zan-cell__ft {
   padding-right: 13px;
 }
 
-.zui-cell--access .zui-cell__ft::after {
+.zan-cell--access .zan-cell__ft::after {
   position: absolute;
   top: 50%;
   right: 2px;

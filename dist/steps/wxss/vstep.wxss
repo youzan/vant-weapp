@@ -1,18 +1,18 @@
-.zui-steps--vsteps {
+.zan-steps--vsteps {
   color: #999;
   font-size: 14px;
 }
 
-.zui-steps--vsteps .zui-steps__step {
+.zan-steps--vsteps .zan-steps__step {
   position: relative;
   padding: 15px 0;
 }
 
-.zui-steps--vsteps .zui-steps__step--done {
+.zan-steps--vsteps .zan-steps__step--done {
   color: #44BB00;
 }
 
-.zui-steps--vsteps .zui-steps__line {
+.zan-steps--vsteps .zan-steps__line {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -21,17 +21,17 @@
   background-color: #e5e5e5;
 }
 
-.zui-steps--vsteps .zui-steps__title {
+.zan-steps--vsteps .zan-steps__title {
   display: inline-block;
   line-height: 20px;
   padding-left: 27px;
 }
 
-.zui-steps--vsteps .zui-steps__title--desc {
+.zan-steps--vsteps .zan-steps__title--desc {
   padding-left: 3px;
 }
 
-.zui-steps--vsteps .zui-steps__icons {
+.zan-steps--vsteps .zan-steps__icons {
   position: absolute;
   left: 7px;
   top: 50%;
@@ -41,14 +41,14 @@
   background-color: #fff;
 }
 
-.zui-steps--vsteps .zui-steps__circle {
+.zan-steps--vsteps .zan-steps__circle {
   width: 5px;
   height: 5px;
   background-color: #cacaca;
   border-radius: 10px;
 }
 
-.zui-steps--vsteps .zui-steps__step--done .zui-steps__circle {
+.zan-steps--vsteps .zan-steps__step--done .zan-steps__circle {
   width: 13px;
   height: 13px;
   background: transparent url("https://b.yzcdn.cn/v2/image/wap/success_small@2x.png");
@@ -56,12 +56,12 @@
   border-radius:0;
 }
 
-.zui-steps--vsteps .zui-steps__icon--active {
+.zan-steps--vsteps .zan-steps__icon--active {
   width: 13px;
   height: 13px;
 }
 
-.zui-steps--vsteps .zui-steps__step--first-child .zui-steps__title::before {
+.zan-steps--vsteps .zan-steps__step--first-child .zan-steps__title::before {
   content: '';
   position: absolute;
   top: 0;
@@ -72,7 +72,7 @@
   z-index: 1;
 }
 
-.zui-steps--vsteps .zui-steps__step--last-child .zui-steps__title::before {
+.zan-steps--vsteps .zan-steps__step--last-child .zan-steps__title::before {
   content: '';
   position: absolute;
   top: 50%;

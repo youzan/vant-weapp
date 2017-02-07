@@ -1,7 +1,7 @@
 var timer = undefined;
 
 module.exports = {
-  showZuiTopTips(content = '', options = {}) {
+  showZanTopTips(content = '', options = {}) {
     // 如果已经有一个计时器在了，就清理掉先
     if (timer) {
       clearTimeout(timer);
@@ -21,7 +21,7 @@ module.exports = {
 
     // 展示出topTips
     this.setData({
-      zuiTopTips: {
+      zanTopTips: {
         show: true,
         content,
         options
@@ -31,7 +31,7 @@ module.exports = {
     // 设置定时器，定时关闭topTips
     timer = setTimeout(() => {
       this.setData({
-        'zuiTopTips.show': false
+        'zanTopTips.show': false
       });
       timer = undefined;
     }, options.duration);

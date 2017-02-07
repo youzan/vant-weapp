@@ -1,7 +1,7 @@
-.zui-badge {
+.zan-badge {
   position: relative;
 }
-.zui-badge__count {
+.zan-badge__count {
   position: absolute;
   top: -8px;
   right: 0px;

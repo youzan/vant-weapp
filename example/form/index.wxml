@@ -2,26 +2,26 @@
 
   <view class="doc-title">FORM</view>
 
-  <view class="zui-form">
-    <view class="zui-cell zui-form__item">
-      <text class="zui-form__title">收货人</text>
+  <view class="zan-form">
+    <view class="zan-cell zan-form__item">
+      <text class="zan-form__title">收货人</text>
       <input
-        class="zui-form__input zui-cell__bd"
+        class="zan-form__input zan-cell__bd"
         placeholder="名字"
       />
     </view>
-    <view class="zui-cell zui-form__item">
-      <text class="zui-form__title">联系电话</text>
+    <view class="zan-cell zan-form__item">
+      <text class="zan-form__title">联系电话</text>
       <input
-        class="zui-form__input zui-cell__bd"
+        class="zan-form__input zan-cell__bd"
         type="number"
         maxlength="20"
         placeholder="手机或固定电话"
       />
     </view>
-    <view class="zui-cell zui-form__item zui-cell--last-child">
-      <text class="zui-form__title">选择区域</text>
-      <view class="zui-form__input zui-cell__bd">
+    <view class="zan-cell zan-form__item zan-cell--last-child">
+      <text class="zan-form__title">选择区域</text>
+      <view class="zan-form__input zan-cell__bd">
         <picker
           mode="selector"
           range="{{ area }}"

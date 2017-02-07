@@ -1,6 +1,6 @@
-var ZUI = require('../../dist/index');
+var Zan = require('../../dist/index');
 
-Page(Object.assign({}, ZUI.Quantity, {
+Page(Object.assign({}, Zan.Quantity, {
   data: {
     quantity1: {
       quantity: 10,
@@ -19,7 +19,7 @@ Page(Object.assign({}, ZUI.Quantity, {
     }
   },
 
-  handleZuiQuantityChange(e) {
+  handleZanQuantityChange(e) {
     var componentId = e.componentId;
     var quantity = e.quantity;
 

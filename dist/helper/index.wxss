@@ -1,57 +1,57 @@
-.zui-pull-left {
+.zan-pull-left {
   float: left;
 }
 
-.zui-pull-right {
+.zan-pull-right {
   float: right;
 }
 
-.zui-center {
+.zan-center {
   text-align: center;
 }
 
-.zui-right {
+.zan-right {
   text-align: right;
 }
 
-.zui-text-deleted {
+.zan-text-deleted {
   text-decoration: line-through;
 }
-.zui-font-8 {
+.zan-font-8 {
   font-size: 8px;
 }
-.zui-font-10 {
+.zan-font-10 {
   font-size: 10px;
 }
-.zui-font-12 {
+.zan-font-12 {
   font-size: 12px;
 }
-.zui-font-14 {
+.zan-font-14 {
   font-size: 14px;
 }
-.zui-font-16 {
+.zan-font-16 {
   font-size: 16px;
 }
-.zui-font-18 {
+.zan-font-18 {
   font-size: 18px;
 }
-.zui-font-20 {
+.zan-font-20 {
   font-size: 20px;
 }
-.zui-font-22 {
+.zan-font-22 {
   font-size: 22px;
 }
-.zui-font-24 {
+.zan-font-24 {
   font-size: 22px;
 }
-.zui-font-30 {
+.zan-font-30 {
   font-size: 30px;
 }
-.zui-font-bold {
+.zan-font-bold {
   font-weight: bold;
 }
 
-.zui-arrow {
+.zan-arrow {
   position: absolute;
   right: 15px;
   top: 50%;
@@ -64,14 +64,14 @@
   transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
 
-.zui-ellipsis {
+.zan-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
 }
 
-.zui-ellipsis--l2 {
+.zan-ellipsis--l2 {
   max-height: 40px;
   line-height: 20px;
   overflow: hidden;
@@ -81,7 +81,7 @@
   -webkit-box-orient: vertical;
 }
 
-.zui-ellipsis--l3 {
+.zan-ellipsis--l3 {
   max-height: 60px;
   line-height: 20px;
   overflow: hidden;
@@ -91,10 +91,10 @@
   -webkit-box-orient: vertical;
 }
 
-.zui-clearfix {
+.zan-clearfix {
   zoom: 1;
 }
-.zui-clearfix::after {
+.zan-clearfix::after {
   content: '';
   display: table;
   clear: both;

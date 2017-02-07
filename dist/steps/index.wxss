@@ -1,6 +1,6 @@
 @import "wxss/step.wxss";
 @import "wxss/vstep.wxss";
 
-.zui-steps {
+.zan-steps {
   position: relative;
 }

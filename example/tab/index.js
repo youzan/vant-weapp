@@ -1,6 +1,6 @@
-var ZUI = require('../../dist/index');
+var Zan = require('../../dist/index');
 
-Page(Object.assign({}, ZUI.Tab, {
+Page(Object.assign({}, Zan.Tab, {
   data: {
     tab1: {
       list: [{
@@ -70,7 +70,7 @@ Page(Object.assign({}, ZUI.Tab, {
     }
   },
 
-  handleZuiTabChange(e) {
+  handleZanTabChange(e) {
     var componentId = e.componentId;
     var selectedId = e.selectedId;
 

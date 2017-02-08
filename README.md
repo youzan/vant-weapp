@@ -2,7 +2,7 @@
     <img src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
 </p>
 
-高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞
+高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞
 ====
 
 ## 概述
@@ -21,7 +21,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 1. 打开 `微信Web开发者工具`，'本地小程序项目 - 添加项目'，把 zanui-weapp 添加进去就可以查看组件源码、预览示例demo了。
 
-## 使用
+## 使用
 1. 使用 [ZanUI-WeApp](https://github.com/youzan/zanui-weapp) 前
 请确保已经学习过微信官方的 [小程序简易教程](https://mp.weixin.qq.com/debug/wxadoc/dev/) 
 和 [小程序框架介绍](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)

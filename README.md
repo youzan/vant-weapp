@@ -18,7 +18,7 @@ cd zanui-weapp
 ## 预览
 用[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)打开项目目录
 
-<img src="https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png" width="320" />
+![](https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png)
 
 ## 使用
 
@@ -36,6 +36,8 @@ cd zanui-weapp
     <view class="zan-btn">按钮</view>
     ~~~
 
+    ![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)
+
 2. 复杂组件
 
     如加载更多组件，需要先引入定义好的模版，然后给模版传递数据
@@ -49,6 +51,8 @@ cd zanui-weapp
     <!-- 使用组件 -->
     <template is="zan-loadmore" data="{{loading: true}}" />
     ~~~
+
+    ![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)
 
 3. 带事件回掉的组件
 
@@ -90,18 +94,20 @@ cd zanui-weapp
     }));
     ~~~
 
+    ![](https://img.yzcdn.cn/public_files/2017/02/08/b791dfef150b01a7ce1e9aa9e60e0038.png)
+
 4. API类组件
 
     如Toast组件，需要先引入模版，并在页面上使用。
 
-    >> 注意`zanToast`这个数据也是通过`Zan.Toast`注入到页面的
+    > 注意`zanToast`这个数据也是通过`Zan.Toast`注入到页面的
 
     ~~~html
     <!-- example/toast/index.html -->
 
     <import src="path/to/zanui-weapp/dist/toast/index.wxml" />
 
-    <view bindtap="showToast">showToast</view>
+    <view bindtap="showToast">显示toast</view>
 
     <template is="zan-toast" data="{{ zanToast }}"></template>
     ~~~
@@ -121,7 +127,9 @@ cd zanui-weapp
 
     ~~~
 
-更多示例可以在项目的 `example`目录中查看
+    ![](https://img.yzcdn.cn/public_files/2017/02/08/ada80798c88df08060ce96964384e88e.png)
+
+更多示例可以在项目的`example`目录中查看
 
 ## 协议
 [MIT]

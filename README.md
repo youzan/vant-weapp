@@ -11,7 +11,7 @@
 包含 badge、btn、card、cell、color、dialog、form、helper、icon、label、loadmore、panel、quantity、
 steps、tab、toast、toptip 共计 17 类组件或元素。
 
-更多背景介绍，可以移步到[我们专门写的的介绍文章](http://tech.youzan.com/zanui-weapp/)。
+更多背景介绍，可以移步到 [我们专门写的的介绍文章](http://tech.youzan.com/zanui-weapp/)。
 
 ## Demo
 1. 下载源码
@@ -26,7 +26,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 请确保已经学习过微信官方的 [小程序简易教程](https://mp.weixin.qq.com/debug/wxadoc/dev/) 
 和 [小程序框架介绍](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html)
 
-1. 然后用 [Bower](https://bower.io/) 将 [ZanUI-WeApp](https://github.com/youzan/zanui-weapp) 添加到你的项目中使用。
+1. 然后用 [Bower](https://bower.io/) 将 [ZanUI-WeApp](https://github.com/youzan/zanui-weapp) 添加到你的项目中使用。
 
 1. 你也可以 fork 出一份你自己的 [ZanUI-WeApp](https://github.com/youzan/zanui-weapp)，这样更利于代码稳定和个性定制。
 

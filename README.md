@@ -94,7 +94,7 @@ cd zanui-weapp
         var quantity = e.quantity;
 
         this.setData({
-          [`quantity.quantity`]: quantity
+          'quantity.quantity': quantity
         });
       }
     }));

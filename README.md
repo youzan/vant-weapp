@@ -153,7 +153,7 @@ Page(Object.assign({}, Zan.Toast, {
 
 [issue]: https://github.com/youzan/zanui-weapp/issues/new
 [PR]: https://github.com/youzan/zanui-weapp/compare
-[ZanUI Weapp]: https://github.com/youzan/zanui-weapp
+[ZanUI WeApp]: https://github.com/youzan/zanui-weapp
 [MIT]: http://opensource.org/licenses/MIT
 [Bower]: https://bower.io/
 [小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev

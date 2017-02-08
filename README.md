@@ -26,7 +26,7 @@ cd zanui-weapp
 
 根据功能的不同，可以将组件大致的分为4类：
 
-### 1. 简单组件
+### 一、简单组件
 
 如按钮组件，只要按照wxml结构写就好了
 
@@ -38,7 +38,7 @@ cd zanui-weapp
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)
 
-### 2. 复杂组件
+### 二、复杂组件
 
 如加载更多组件，需要先引入定义好的模版，然后给模版传递数据
 
@@ -60,7 +60,7 @@ cd zanui-weapp
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)
 
-### 3. 带事件回掉的组件
+### 三、带事件回掉的组件
 
 如数量选择组件，需要先引入模版，然后给模版传递数据
 
@@ -102,7 +102,7 @@ Page(Object.assign({}, Zan.Quantity, {
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/b791dfef150b01a7ce1e9aa9e60e0038.png)
 
-### 4. API类组件
+### 四、API类组件
 
 如Toast组件，需要先引入模版，并在页面上使用。
 

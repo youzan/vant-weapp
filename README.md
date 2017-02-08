@@ -3,11 +3,11 @@
 </p>
 
 
-高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞
+高颜值、好用、易扩展的小程序 UI 库，Powered by [有赞](https://youzan.com/intro/about)
 ====
 
 ## 概述
-[ZanUI-WeApp]是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感知。
+[ZanUI-WeApp]是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
 
 包含 badge、btn、card、cell、color、dialog、form、helper、icon、label、loadmore、panel、quantity、steps、tab、toast、toptip 共计 17 类组件或元素。
 
@@ -27,7 +27,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 1. 使用 [ZanUI-WeApp] 前请确保已经学习过微信官方的 [小程序简易教程] 和 [小程序框架介绍]。
 2. 然后用 [Bower] 将 [ZanUI-WeApp] 添加到你的项目中使用。
-3. 你也可以 fork 出一份你自己的 [ZanUI-WeApp]，这样更利于代码稳定和个性定制。
+3. 你也可以 fork 出一份你自己的 [ZanUI-WeApp]，这样可以获得更稳定的代码和更方便的进行个性定制。
 
 我们推荐在你的`app.wxss`直接引入`zanui-weapp/dist/index.wxss`。
 
@@ -67,7 +67,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)
 
-### 三、带事件回掉的组件
+### 三、带事件回调的组件
 
 如数量选择组件，需要先引入模版，然后给模版传递数据
 
@@ -79,7 +79,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 <template is="zan-quantity" data="{{ ...quantity, componentId: 'customId' }}" />
 ~~~
 
-然后通过`Zan.Quantity`把相关回掉注入到页面中
+然后通过`Zan.Quantity`把相关回调注入到页面中
 
 ~~~js
 // example/quantity/index.js
@@ -96,7 +96,7 @@ Page(Object.assign({}, Zan.Quantity, {
   },
 
   handleZanQuantityChange(e) {
-    // 如果页面有多个Quantity组件，则通过componentId来表示唯一
+    // 如果页面有多个Quantity组件，则通过唯一componentId进行索引
     var compoenntId = e.componentId;
     var quantity = e.quantity;
 
@@ -145,11 +145,11 @@ Page(Object.assign({}, Zan.Toast, {
 更多示例可以在项目的`example`目录中查看
 
 ## 协议
-本项目采用 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)，请自由地享受和参与开源。
+本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
 ## 贡献
 
-如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为提升 [ZanUI-Weapp] 贡献力量
+如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为优化 [ZanUI-Weapp] 贡献力量
 
 [ZanUI-WeApp]: https://github.com/youzan/zanui-weapp
 [issue]: https://github.com/youzan/zanui-weapp/issues/new

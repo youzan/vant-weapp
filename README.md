@@ -2,7 +2,7 @@
     <img src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
 </p>
 
-简单、好用的小程序 UI 库，Powered by 有赞
+高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞
 ====
 
 ## 概述
@@ -10,6 +10,8 @@
 结合了微信的视觉规范，为用户提供更加统一的使用感知。
 包含 badge、btn、card、cell、color、dialog、form、helper、icon、label、loadmore、panel、quantity、
 steps、tab、toast、toptip 共计 17 类组件或元素。
+
+更多背景介绍，可以移步到[我们专门写的的介绍文章](http://tech.youzan.com/zanui-weapp/)。
 
 ## Demo
 1. 下载源码

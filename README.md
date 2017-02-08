@@ -47,7 +47,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 ### 二、复杂组件
 
-要加载更多组件，需先引入定义好的模版，然后给模版传递数据
+如加载更多组件，需要先引入定义好的模版，然后给模版传递数据
 
 ~~~html
 <!-- example/loadmore/index.html -->

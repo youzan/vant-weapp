@@ -111,7 +111,7 @@ Page(Object.assign({}, Zan.Quantity, {
 
 ### 四、API类组件
 
-如Toast组件，需要先引入模版，再在页面上使用。
+如Toast组件，需要先引入模版，并在页面上使用。
 
 > 注意`zanToast`这个数据也是通过`Zan.Toast`注入到页面的
 

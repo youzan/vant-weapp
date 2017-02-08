@@ -48,8 +48,14 @@ cd zanui-weapp
     <!-- 引入组件模版 -->
     <import src="path/to/zanui-weapp/dist/loadmore/index.wxml" />
 
-    <!-- 使用组件 -->
+    <!-- 加载中 -->
     <template is="zan-loadmore" data="{{loading: true}}" />
+
+    <!-- 一条数据都没有 -->
+    <template is="zan-loadmore" data="{{nodata: true}}" />
+
+    <!-- 没有更多数据了 -->
+    <template is="zan-loadmore" data="{{nomore: true}}" />
     ~~~
 
     ![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)

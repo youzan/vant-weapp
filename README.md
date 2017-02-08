@@ -67,7 +67,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)
 
-### 三、带事件回掉的组件
+### 三、带事件回调的组件
 
 如数量选择组件，需要先引入模版，然后给模版传递数据
 

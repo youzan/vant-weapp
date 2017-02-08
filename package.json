@@ -1,0 +1,22 @@
+{
+  "name": "zanui-weapp",
+  "version": "2.0.0",
+  "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
+  "main": "app.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/youzan/zanui-weapp.git"
+  },
+  "author": "youzan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youzan/zanui-weapp/issues"
+  },
+  "homepage": "https://github.com/youzan/zanui-weapp#readme"
+}

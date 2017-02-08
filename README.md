@@ -11,7 +11,7 @@
 
 包含 badge、btn、card、cell、color、dialog、form、helper、icon、label、loadmore、panel、quantity、steps、tab、toast、toptip 共计 17 类组件或元素。
 
-更多背景介绍，可以移步到[我们专门写的的介绍文章](http://tech.youzan.com/zanui-weapp/)。
+更多背景介绍，可以移步到 [我们专门写的的介绍文章](http://tech.youzan.com/zanui-weapp/)。
 
 ## 下载
 ``` bash

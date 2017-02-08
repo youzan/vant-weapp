@@ -10,6 +10,9 @@ Page({
         name: 'Button',
         path: '/example/btn/index'
       }, {
+        name: 'Card',
+        path: '/example/card/index'
+      }, {
         name: 'Cell',
         path: '/example/cell/index'
       }, {
@@ -30,9 +33,6 @@ Page({
       }, {
         name: 'Loadmore',
         path: '/example/loadmore/index'
-      }, {
-        name: 'Card',
-        path: '/example/card/index'
       }, {
         name: 'Panel',
         path: '/example/panel/index'

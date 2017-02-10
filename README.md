@@ -1,10 +1,11 @@
+<p>
+<a href="https://github.com/youzan/"><img alt="有赞logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
+</p></a>
 <p align="center">
-    <img src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
+    <img alt="项目logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
 </p>
+<p align="center">高颜值、好用、易扩展的小程序 UI 库，Powered by [有赞](https://youzan.com/intro/about)</p>
 
-
-高颜值、好用、易扩展的小程序 UI 库，Powered by [有赞](https://youzan.com/intro/about)
-====
 
 ## 概述
 [ZanUI-WeApp]是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
@@ -33,7 +34,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 根据功能的不同，可以将组件大致的分为4类：
 
-### 一、简单组件
+#### 1. 简单组件
 
 如按钮组件，只要按照wxml结构写就好了
 
@@ -45,7 +46,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)
 
-### 二、复杂组件
+#### 2. 复杂组件
 
 如加载更多组件，需要先引入定义好的模版，然后给模版传递数据
 
@@ -67,7 +68,7 @@ git clone https://github.com/youzan/zanui-weapp.git
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)
 
-### 三、带事件回调的组件
+#### 3. 带事件回调的组件
 
 如数量选择组件，需要先引入模版，然后给模版传递数据
 
@@ -109,7 +110,7 @@ Page(Object.assign({}, Zan.Quantity, {
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/b791dfef150b01a7ce1e9aa9e60e0038.png)
 
-### 四、API类组件
+#### 4. API类组件
 
 如Toast组件，需要先引入模版，并在页面上使用。
 
@@ -144,7 +145,7 @@ Page(Object.assign({}, Zan.Toast, {
 
 更多示例可以在项目的`example`目录中查看
 
-## 协议
+## 开源协议
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
 ## 贡献

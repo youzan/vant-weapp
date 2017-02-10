@@ -4,7 +4,7 @@
 <p align="center">
     <img alt="项目logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
 </p>
-<p align="center">高颜值、好用、易扩展的小程序 UI 库，Powered by [有赞](https://youzan.com/intro/about)</p>
+<p align="center">高颜值、好用、易扩展的小程序 UI 库</p>
 
 
 ## 概述

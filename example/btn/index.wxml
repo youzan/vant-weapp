@@ -8,7 +8,7 @@
       <button class="zan-btn">取消订单</button>
       <button class="zan-btn zan-btn--primary">确认付款</button>
       <button class="zan-btn zan-btn--danger">确认付款</button>
-      <button class="zan-btn zan-btn--warn zan-btn--last-child">确认付款</button>
+      <button class="zan-btn zan-btn--warn">确认付款</button>
     </view>
   </view>
 
@@ -39,7 +39,7 @@
       <button class="zan-btn zan-btn--loading">取消订单</button>
       <button class="zan-btn zan-btn--loading zan-btn--primary">确认付款</button>
       <button class="zan-btn zan-btn--loading zan-btn--danger">确认付款</button>
-      <button class="zan-btn zan-btn--loading zan-btn--warn zan-btn--last-child">确认付款</button>
+      <button class="zan-btn zan-btn--loading zan-btn--warn">确认付款</button>
     </view>
   </view>
 
@@ -49,7 +49,7 @@
       <button class="zan-btn zan-btn--disabled" disabled>取消订单</button>
       <button class="zan-btn zan-btn--disabled zan-btn--primary" disabled>确认付款</button>
       <button class="zan-btn zan-btn--disabled zan-btn--danger" disabled>确认付款</button>
-      <button class="zan-btn zan-btn--disabled zan-btn--warn zan-btn--last-child" disabled>确认付款</button>
+      <button class="zan-btn zan-btn--disabled zan-btn--warn" disabled>确认付款</button>
     </view>
   </view>
 

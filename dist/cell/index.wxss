@@ -25,7 +25,8 @@
   color: #666;
 }
 
-.zan-cell--last-child::after {
+.zan-cell--last-child::after,
+.zan-cell:last-child::after {
   display: none;
 }
 

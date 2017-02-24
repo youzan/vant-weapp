@@ -1,0 +1,23 @@
+<import src="/dist/switch/index.wxml" />
+
+<view class="container">
+
+  <view class="doc-title">SWITCH</view>
+
+  <view class="zan-panel-title">同步开关</view>
+  <view class="zan-panel">
+    <template is="zan-switch" data="{{ ...sync, componentId: 'sync' }}" />
+  </view>
+
+  <view class="zan-panel-title">异步开关</view>
+  <view class="zan-panel">
+    <template is="zan-switch" data="{{ ...async, componentId: 'async' }}" />
+  </view>
+
+  <view class="zan-panel-title">开关不可用</view>
+  <view class="zan-panel">
+    <template is="zan-switch" data="{{ checked: false, disabled: true, componentId: 'switch3' }}" />
+    <template is="zan-switch" data="{{ checked: true, disabled: true, componentId: 'switch4' }}" />
+  </view>
+
+</view>

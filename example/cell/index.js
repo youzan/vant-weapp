@@ -1,13 +1,19 @@
-var app = getApp()
+var Zan = require('../../dist/index');
 
-Page({
+Page(Object.assign({}, Zan.Switch, {
   data: {
+    checked: false
   },
 
-  onLoad: function () {
-
+  onLoad() {
   },
 
-  onShow: function() {
+  onShow() {
   },
-})
+
+  handleZanSwitchChange(e) {
+    this.setData({
+      checked: e.checked
+    });
+  }
+}));

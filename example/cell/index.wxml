@@ -1,3 +1,5 @@
+<import src="/dist/switch/index.wxml" />
+
 <view class="container">
 
   <view class="doc-title">CELL</view>
@@ -19,6 +21,15 @@
     <view class="zan-cell zan-cell--access">
       <view class="zan-cell__bd">单行列表</view>
       <view class="zan-cell__ft"></view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--switch">
+      <view class="zan-cell__bd">开关</view>
+      <view class="zan-cell__ft">
+        <template is="zan-switch" data="{{ checked }}"/>
+      </view>
     </view>
   </view>
 

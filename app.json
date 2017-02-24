@@ -13,6 +13,7 @@
     "example/helper/index",
     "example/form/index",
     "example/steps/index",
+    "example/switch/index",
     "example/card/index",
     "example/toast/index",
     "example/icon/index",

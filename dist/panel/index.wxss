@@ -8,7 +8,7 @@
 
 .zan-panel-title {
   font-size: 14px;
-  line-height: 14px;
+  line-height: 1;
   color: #999;
   padding: 20px 15px 0 15px;
 }

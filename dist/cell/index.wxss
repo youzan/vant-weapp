@@ -47,3 +47,7 @@
   border-style: solid;
   transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
+.zan-cell--switch {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

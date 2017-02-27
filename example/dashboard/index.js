@@ -1,5 +1,3 @@
-var app = getApp()
-
 Page({
   data: {
     list: [
@@ -42,6 +40,9 @@ Page({
       }, {
         name: 'Steps',
         path: '/example/steps/index'
+      }, {
+        name: 'Switch',
+        path: '/example/switch/index'
       }, {
         name: 'Tab',
         path: '/example/tab/index'

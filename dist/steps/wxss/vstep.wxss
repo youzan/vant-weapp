@@ -78,7 +78,7 @@
   z-index: 1;
 }
 
-.zan-steps--vsteps .zan-steps__step--last-child .zan-steps__title::before {
+.zan-steps--vsteps .zan-steps__step--last-child .zan-steps__title::after {
   content: '';
   position: absolute;
   top: 50%;

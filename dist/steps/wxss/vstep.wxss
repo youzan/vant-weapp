@@ -49,6 +49,12 @@
 }
 
 .zan-steps--vsteps .zan-steps__step--done .zan-steps__circle {
+  width: 5px;
+  height: 5px;
+  background-color: #09bb07;
+}
+
+.zan-steps--vsteps .zan-steps__step--cur .zan-steps__circle {
   width: 13px;
   height: 13px;
   background: transparent url("https://b.yzcdn.cn/v2/image/wap/success_small@2x.png");
@@ -72,7 +78,7 @@
   z-index: 1;
 }
 
-.zan-steps--vsteps .zan-steps__step--last-child .zan-steps__title::before {
+.zan-steps--vsteps .zan-steps__step--last-child .zan-steps__title::after {
   content: '';
   position: absolute;
   top: 50%;

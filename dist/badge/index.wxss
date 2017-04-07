@@ -5,13 +5,13 @@
   position: absolute;
   top: -8px;
   right: 0px;
-  height: 16px;
-  min-width: 16px;
-  line-height: 16px;
-  padding: 0 4px;
+  height: 1.6em;
+  min-width: 1.6em;
+  line-height: 1.6;
+  padding: 0 .4em;
   font-size: 10px;
   font-family: tahoma;
-  border-radius: 10px;
+  border-radius: .8em;
   background: #FF4444;
   color: #fff;
   text-align: center;

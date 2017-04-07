@@ -158,5 +158,5 @@ Page(Object.assign({}, Zan.Toast, {
 [ZanUI WeApp]: https://github.com/youzan/zanui-weapp
 [MIT]: http://opensource.org/licenses/MIT
 [Bower]: https://bower.io/
-[小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev
+[小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev/
 [小程序框架介绍]: https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html

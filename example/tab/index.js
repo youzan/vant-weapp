@@ -43,7 +43,8 @@ Page(Object.assign({}, Zan.Tab, {
         title: '最新商品6'
       }],
       selectedId: '1',
-      scroll: true
+      scroll: true,
+      height: 45
     },
     tab3: {
       list: [{
@@ -66,7 +67,8 @@ Page(Object.assign({}, Zan.Tab, {
         title: '商品6'
       }],
       selectedId: '1',
-      scroll: true
+      scroll: true,
+      height: 45
     }
   },
 

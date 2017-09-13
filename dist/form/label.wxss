@@ -1,0 +1,6 @@
+.radio-list .radio-check{
+  display: none;
+}
+.selected-color{
+  color: #ff4444;
+}

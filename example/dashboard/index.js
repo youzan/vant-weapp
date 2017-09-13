@@ -52,9 +52,6 @@ Page({
       }, {
         name: 'Toptips',
         path: '/example/toptips/index'
-      }, {
-        name: 'TopFilter',
-        path: '/example/TopFilter/index'
       }
     ]
   },

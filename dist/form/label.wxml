@@ -1,5 +1,5 @@
 <template name="label">
-  <label class="d-block" wx:for="{{items}}" wx:key="value">
+  <label wx:for="{{items}}" wx:key="value">
     <view class="zan-cell" wx:if="{{item.value === checkedValue}}">
       <radio class="radio-check" value="{{item.value}}" checked="{{item.value === checkedValue}}"/>
       <view class="zan-cell__bd selected-color" style="padding-left:{{ item.padding * 10 }}px">{{item.name}}</view>

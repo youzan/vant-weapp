@@ -25,7 +25,6 @@
   </view>
 
   <view class="zan-panel">
-
     <view class="zan-cell zan-cell--switch">
       <view class="zan-cell__bd">开关</view>
       <view class="zan-cell__ft">

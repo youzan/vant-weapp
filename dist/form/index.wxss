@@ -36,3 +36,55 @@
   width: auto;
   flex: 1;
 }
+
+
+.zan-form__picker--bd {
+  z-index: 200;
+  background: #fff;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 750rpx;
+}
+
+.zan-form__region--dialog-btn {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  z-index: 4;
+}
+
+.zan-form__region--dialog-btn-cancel {
+  float: left;
+  margin: 20rpx;
+  color: #818181;
+}
+
+.zan-form__region--dialog-btn-confirm {
+  float: right;
+  margin: 20rpx;
+  color: #2FB42E
+}
+/*
+.section .picker {
+  background-color: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+  padding: 20rpx;
+}
+*/
+.zan-form__region--column {
+  line-height: 50px;
+  padding-left:10px;
+}
+
+.zan-form__dialog--mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  display: block;
+}

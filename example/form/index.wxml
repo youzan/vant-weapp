@@ -1,3 +1,5 @@
+<import src="/dist/form/index.wxml" />
+
 <view class="container">
 
   <view class="doc-title">FORM</view>
@@ -19,7 +21,7 @@
         placeholder="手机或固定电话"
       />
     </view>
-    <view class="zan-cell zan-form__item zan-cell--last-child">
+    <view class="zan-cell zan-form__item">
       <text class="zan-form__title">选择区域</text>
       <view class="zan-form__input zan-cell__bd">
         <picker
@@ -32,6 +34,13 @@
         </picker>
       </view>
     </view>
+
+    <view class="zan-cell zan-form__item  zan-cell--last-child">
+      <text class="zan-form__title">省市区</text>
+      <template is="zan-form__region" data="{{province, city, county}}"></template>
+    </view>
   </view>
 
 </view>
+
+<template is="zan-form__region--item-list" data="{{condition, vlaue, provinces, citys, countys}}"></template>

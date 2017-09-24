@@ -4,7 +4,7 @@
 
   <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">
-      <view class="zan-label">蓝色</view>
+      <view class="zan-label">灰色</view>
       <view class="zan-label zan-label--primary">红色</view>
       <view class="zan-label zan-label--disabled">黑色</view>
     </view>

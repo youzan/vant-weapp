@@ -8,6 +8,9 @@ Page({
         name: 'Button 按钮',
         path: '/example/btn/index'
       }, {
+        name: 'Capsule 胶囊',
+        path: '/example/capsule/index'
+      }, {
         name: 'Card 卡片',
         path: '/example/card/index'
       }, {

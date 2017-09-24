@@ -1,0 +1,6 @@
+<template name="capsule">
+  <view class="zan-capsule">
+    <view class="zan-capsule__left">{{ leftText }}</view>
+    <view class="zan-capsule__right">{{ rightText }}</view>
+  </view>
+</template>

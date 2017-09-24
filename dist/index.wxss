@@ -1,4 +1,5 @@
 @import "loadmore/index.wxss";
+@import "capsule/index.wxss";
 @import "color/index.wxss";
 @import "helper/index.wxss";
 @import "panel/index.wxss";

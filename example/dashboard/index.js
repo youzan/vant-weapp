@@ -8,6 +8,9 @@ Page({
         name: 'Button',
         path: '/example/btn/index'
       }, {
+        name: 'Capsule',
+        path: '/example/capsule/index'
+      }, {
         name: 'Card',
         path: '/example/card/index'
       }, {

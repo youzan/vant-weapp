@@ -1,0 +1,13 @@
+<import src="/dist/capsule/index.wxml" />
+
+<view class="container">
+
+  <view class="doc-title">CAPSULE</view>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--last-child">
+      <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份'}}" />
+    </view>
+  </view>
+
+</view>

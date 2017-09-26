@@ -1,0 +1,23 @@
+<template name="zan-check-label">
+  <radio-group class="zan-check-label__list" bindchange="_handleZanCheckLabelSelect">
+    <label wx:for="{{ items }}" wx:key="value">
+      <view class="zan-cell" wx:if="{{ item.value === checkedValue }}">
+        <radio class="zan-check-label__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
+        <view class="zan-cell__bd zan-check-label__selected" style="padding-left:{{ item.padding * 10 }}px">{{ item.name }}</view>
+        <view class="zan-cell__ft">
+          <icon type="success_no_circle" color="#ff4444" size="14"></icon>
+        </view>
+      </view>
+      <view class="zan-cell" wx:else>
+        <radio class="zan-check-label__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
+        <view
+          class="zan-cell__bd"
+          style="padding-left:{{ item.padding * 10 }}px"
+        >{{ item.name }}</view>
+      </view>
+    </label>
+    <label wx:if="{{ !ignoreDefault }}" class="hidden">
+      <radio class="zan-check-label__radio" value="-1" checked="{{ checkedValue === '-1' }}"/>
+    </label>
+  </radio-group>
+</template>

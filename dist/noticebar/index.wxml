@@ -1,0 +1,9 @@
+<template name="zan-noticebar">
+  <view class="zan-noticebar">
+    <view id="zan-noticebar__content-wrap" >
+      <view animation="{{ zanNoticeBarAnimeData }}" id="zan-noticebar__content">
+        {{ text }}
+      </view>
+    </view>
+  </view>
+</template>

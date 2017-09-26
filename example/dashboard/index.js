@@ -35,6 +35,9 @@ Page({
         name: 'Loadmore 加载',
         path: '/example/loadmore/index'
       }, {
+        name: 'Noticebar 通告栏',
+        path: '/example/noticebar/index'
+      }, {
         name: 'Panel 面板',
         path: '/example/panel/index'
       }, {

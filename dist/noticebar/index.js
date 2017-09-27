@@ -1,14 +1,14 @@
 var ZanNoticeBar = {
   initZanNoticeBar: function () {
-    var node = {};
+    this.zanNoticeBarNode = {};
     var _this = this
     wx.createSelectorQuery().select('#zan-noticebar__content').boundingClientRect(function (rect) {
-      node.width = rect.width;
-      if (node.width) {
+      if (rect.width) {
+        _this.zanNoticeBarNode.width = rect.width;
         wx.createSelectorQuery().select('#zan-noticebar__content-wrap').boundingClientRect(function (rect) {
-          node.wrapWidth = rect.width;
-          if (node.wrapWidth < node.width) {
-            var mstime = node.width / 40 * 1000;
+          _this.zanNoticeBarNode.wrapWidth = rect.width;
+          if (_this.zanNoticeBarNode.wrapWidth < _this.zanNoticeBarNode.width) {
+            var mstime = _this.zanNoticeBarNode.width / 40 * 1000;
             _this.zanNoticeBarAnime = wx.createAnimation({
               duration: mstime,
               timingFunction: 'linear'
@@ -16,7 +16,7 @@ var ZanNoticeBar = {
             _this.zanNoticeBarResetAnime = wx.createAnimation({
               duration: 0,
               timingFunction: 'linear'
-            })
+            });
             _this.scrollZanNoticeBar(mstime);
           }
         }).exec();
@@ -26,7 +26,7 @@ var ZanNoticeBar = {
     }).exec();
   },
   scrollZanNoticeBar: function (mstime) {
-    var resetAnimationData = this.zanNoticeBarResetAnime.translateX(0).step();
+    var resetAnimationData = this.zanNoticeBarResetAnime.translateX(this.zanNoticeBarNode.wrapWidth).step();
     this.setData({
       zanNoticeBarAnimeData: resetAnimationData.export()
     });
@@ -36,7 +36,7 @@ var ZanNoticeBar = {
       _this.setData({
         zanNoticeBarAnimeData: aninationData.export()
       });
-    }, 100)
+    }, 100);
 
     setTimeout(function () {
       _this.scrollZanNoticeBar(mstime);

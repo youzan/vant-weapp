@@ -1,0 +1,15 @@
+<template name="zan-quickpick">
+  <view
+    class="group-container"
+    catchtap="_handleTapOnList"
+    data-id="{{componentId}}"
+    data-source="{{list}}"
+  >
+    <view
+      wx:for="{{list}}"
+      wx:key="{{item.text}}"
+      class="zan-label zan-label--{{ item.select && 'selected' }} zan-quickpick-item"
+      data-index="{{index}}"
+    >{{item.text || item}}</view>
+  </view>
+</template>

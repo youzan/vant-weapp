@@ -1,0 +1,30 @@
+<view class="container">
+
+  <view class="doc-title">POPUP</view>
+
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <button class="zan-btn" bindtap="toggleLeftPopup">
+      从左边弹出popup
+    </button>
+    <button class="zan-btn" bindtap="toggleRightPopup">
+      从右边弹出popup
+    </button>
+  </view>
+
+  <view class="zan-popup zan-popup--left {{ showLeftPopup ? 'zan-popup--show' : ''}}">
+    <view style="padding: 15px;">
+      <button class="zan-btn" bindtap="toggleLeftPopup">
+        关闭 popup
+      </button>
+    </view>
+  </view>
+
+  <view class="zan-popup zan-popup--right {{ showRightPopup ? 'zan-popup--show' : ''}}">
+    <view style="padding: 15px;">
+      <button class="zan-btn" bindtap="toggleRightPopup">
+        关闭 popup
+      </button>
+    </view>
+  </view>
+
+</view>

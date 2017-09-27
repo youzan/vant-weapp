@@ -18,11 +18,11 @@
   transform: translate3d(-50%, 0, 0);
 }
 
-.zan-popup--left {
+.zan-popup--right {
   transform: translate3d(50%, -50%, 0);
 }
 
-.zan-popup--right {
+.zan-popup--left {
   transform: translate3d(-150%, -50%, 0);
 }
 

@@ -1,0 +1,6 @@
+.zan-check-label__list .zan-check-label__radio{
+  display: none;
+}
+.zan-check-label__selected{
+  color: #ff4444;
+}

@@ -12,6 +12,7 @@
 @import "loadmore/index.wxss";
 @import "noticebar/index.wxss";
 @import "panel/index.wxss";
+@import "popup/index.wxss";
 @import "quantity/index.wxss";
 @import "steps/index.wxss";
 @import "switch/index.wxss";

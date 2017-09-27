@@ -41,6 +41,9 @@ Page({
         name: 'Panel 面板',
         path: '/example/panel/index'
       }, {
+        name: 'Popup 弹出层',
+        path: '/example/popup/index'
+      }, {
         name: 'Quantity 计数器',
         path: '/example/quantity/index'
       }, {

@@ -25,6 +25,19 @@
   color: #666;
 }
 
+.zan-cell__no-pading{
+  padding: 0;
+}
+.zan-cell__no-pading .zan-cell__bd_padding {
+  padding: 12px 0 12px 15px;
+}
+.zan-cell__no-pading .zan-cell__bd_padding .zan-form__input{
+  height: 26px;
+}
+.zan-cell__no-pading .zan-cell__ft_padding {
+  padding: 12px 15px 12px 0;
+}
+
 .zan-cell--last-child::after,
 .zan-cell:last-child::after {
   display: none;

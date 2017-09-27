@@ -1,3 +1,5 @@
+<import src="/dist/form/check_label.wxml" />
+
 <view class="container">
 
   <view class="doc-title">FORM</view>
@@ -34,4 +36,40 @@
     </view>
   </view>
 
+  <view class="zan-form" style="margin-top: 20px">
+    <view class="zan-cell zan-cell__no-pading zan-form__item">
+      <view class="zan-cell__bd zan-cell__bd_padding">
+        <text class="zan-form__title">验证码</text>
+        <input
+          class="zan-form__input"
+          type="text"
+          maxlength="7"
+          placeholder="请输入短信验证码"
+        />
+      </view>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--large zan-btn--primary">获取验证码</button>
+      </view>
+    </view>
+    <view class="zan-cell zan-form__item">
+      <view class="zan-cell__bd">
+        <text class="zan-form__title">验证码</text>
+        <input
+          class="zan-form__input"
+          type="text"
+          maxlength="7"
+          placeholder="请输入短信验证码"
+        />
+      </view>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--mini zan-btn--primary sms-btn">获取验证码</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-panel">
+    <view>
+      <template is="zan-check-label" data="{{items, checkedValue}}" />
+    </view>
+  </view>
 </view>

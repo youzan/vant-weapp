@@ -35,12 +35,21 @@
       </view>
     </view>
 
-    <view class="zan-cell zan-form__item  zan-cell--last-child">
-      <text class="zan-form__title">省市区</text>
-      <template is="zan-form__region" data="{{province, city, county}}"></template>
+    <view class="zan-cell zan-form__item">
+      <text class="zan-form__title">户籍地</text>
+      <template is="zan-form__region" data="{{ dataSource: homeAddress, componentId: 'homeAddress' }}"></template>
+    </view>
+
+    <view class="zan-cell zan-form__item zan-cell--last-child">
+      <text class="zan-form__title">居住地</text>
+      <template is="zan-form__region" data="{{ dataSource: address, componentId: 'address' }}"></template>
     </view>
   </view>
 
+  <view class="zan-btns" bindtap="submitInfo">
+    <button class="zan-btn zan-btn--primary">提交</button>
+  </view>
 </view>
 
-<template is="zan-form__region--item-list" data="{{condition, vlaue, provinces, citys, countys}}"></template>
+<template is="zan-form__region--item-list" data="{{dataSource: homeAddress, componentId: 'homeAddress'}}"></template>
+<template is="zan-form__region--item-list" data="{{dataSource: address, componentId: 'address'}}"></template>

@@ -1,102 +1,129 @@
+function handle(e, callback) {
+  var dataset     = e.currentTarget.dataset;
+  var componentId = dataset.componentId;
+  var dataSource  = dataset.region;
+
+  callback.call(this, componentId, dataSource, e);
+}
+
+function toggleRegionDialogCallback(componentId, regionSource) {
+  if (this.handleZanRegionDialogChange) {
+    this.handleZanRegionDialogChange(componentId);
+  } else {
+    console.warn('页面缺少 handleZanQuantityChange 回调函数');
+  }
+}
+
+function regionChangeCallback(componentId, regionSource, e) {
+  var val = e.detail.value;
+  var t = regionSource.values;
+  var regionData = regionSource.regionData;
+
+  if(val[0] != t[0]){
+    const citys = [];
+    const countys = [];
+    regionData[val[0]].sub.forEach((item) => { citys.push(item) });
+    regionData[val[0]].sub[0].sub.forEach((item) => { countys.push(item) });
+    
+    if (this.handleZanRegionChange) {
+      this.handleZanRegionChange(
+        componentId,
+        {
+          province: regionSource.provinces[val[0]].name,
+          city: regionData[val[0]].sub[0].name,
+          cityCode: regionData[val[0]].sub[0].code,
+          citys:citys,
+          county: regionData[val[0]].sub[0].sub[0].name,
+          countyCode: regionData[val[0]].sub[0].sub[0].code,
+          countys:countys,
+          values: val,
+          value:[val[0],0,0]
+        }
+      );
+    } else {
+      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+    }
+    return;
+  }
+  if(val[1] != t[1]){
+    const countys = [];
+    regionData[val[0]].sub[val[1]].sub.forEach((item) => { countys.push(item) });
+    
+    if (this.handleZanRegionChange) {
+      this.handleZanRegionChange(
+        componentId,
+        {
+          city: regionSource.citys[val[1]].name,
+          cityCode: regionSource.citys[val[1]].code,
+          county: regionData[val[0]].sub[val[1]].sub[0] ? regionData[val[0]].sub[val[1]].sub[0].name : '',
+          countyCode: regionSource.countys[0] ? regionSource.countys[0].code : '',
+          countys:countys,
+          values: val,
+          value:[val[0],val[1],0]
+        }
+      );
+    } else {
+      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+    }
+    return;
+  }
+  if(val[2] != t[2]){
+    if (this.handleZanRegionChange) {
+      this.handleZanRegionChange(
+        componentId,
+        {
+          county: regionSource.countys[val[2]].name,
+          countyCode: regionSource.countys[val[2]].code,
+          values: val,
+          value:[val[0],val[1],val[2]]
+        }
+      );
+    } else {
+      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+    }
+    return;
+  }
+  
+}
 
 var Form = {
-  initFormRegion(regionData) {
+  _toggleRegionDialog(e) {
+    handle.call(this, e, toggleRegionDialogCallback);
+  },
+
+  _handleZanRegionChange(e) {
+    handle.call(this, e, regionChangeCallback);
+  },
+  initRegionData(componentId, regionData, defaultRegion) {
     const provinces = [];
     const citys = [];
     const countys = [];
+    const initRegion = defaultRegion || [10, 0, 4];
+    regionData.forEach((item) => { provinces.push(item) });
+    regionData[initRegion[0]].sub.forEach((item) => { citys.push(item) });
+    regionData[initRegion[0]].sub[initRegion[1]].sub.forEach((item) => { countys.push(item) });
 
-    for(let i=0;i<regionData.length;i++){
-      provinces.push(regionData[i]);
+    if (this.handleZanRegionChange) {
+      this.handleZanRegionChange(
+        componentId,
+        {
+          provinces: provinces,
+          citys: citys,
+          countys: countys,
+          province: regionData[initRegion[0]].name,
+          city: regionData[initRegion[0]].sub[initRegion[1]].name,
+          cityCode: regionData[initRegion[0]].sub[initRegion[1]].code,
+          county: regionData[initRegion[0]].sub[initRegion[1]].sub[initRegion[2]].name,
+          countyCode: regionData[initRegion[0]].sub[initRegion[1]].sub[initRegion[2]].code,
+          regionData,
+          values: [initRegion[0], initRegion[1], initRegion[2]],
+          value: [initRegion[0], initRegion[1], initRegion[2]],
+          isShow: false
+        }
+      );
+    } else {
+      console.warn('页面缺少 handleZanQuantityChange 回调函数');
     }
-    // console.log('省份完成');
-    for (let i = 0 ; i < regionData[0].sub.length; i++) {
-      citys.push(regionData[0].sub[i])
-    }
-    // console.log('city完成');
-    for (let i = 0 ; i < regionData[0].sub[0].sub.length; i++) {
-      countys.push(regionData[0].sub[0].sub[i])
-    }
-
-    this.setData({
-      'provinces': provinces,
-      'citys':citys,
-      'countys':countys,
-      'province':regionData[10].name,
-      'city':regionData[10].sub[0].name,
-      'cityCode':regionData[10].sub[0].code,
-      'county':regionData[10].sub[0].sub[4].name,
-      'countyCode':regionData[10].sub[0].sub[4].code,
-      regionData,
-      values: [0, 0, 0],
-      condition: false
-    })
-  },
-  _bindRegionChange: function(e) {
-    // console.log(e);
-    var val = e.detail.value;
-    var t = this.data.values;
-    var regionData = this.data.regionData;
-
-    if(val[0] != t[0]){
-      // console.log('province no ');
-      const citys = [];
-      const countys = [];
-
-      for (let i = 0 ; i < regionData[val[0]].sub.length; i++) {
-        citys.push(regionData[val[0]].sub[i])
-      }
-      for (let i = 0 ; i < regionData[val[0]].sub[0].sub.length; i++) {
-        countys.push(regionData[val[0]].sub[0].sub[i])
-      }
-
-      this.setData({
-        province: this.data.provinces[val[0]].name,
-        city: regionData[val[0]].sub[0].name,
-        cityCode: regionData[val[0]].sub[0].code,
-        citys:citys,
-        county: regionData[val[0]].sub[0].sub[0].name,
-        countyCode: regionData[val[0]].sub[0].sub[0].code,
-        countys:countys,
-        values: val,
-        value:[val[0],0,0]
-      })
-
-      return;
-    }
-    if(val[1] != t[1]){
-      // console.log('city no');
-      const countys = [];
-
-      for (let i = 0 ; i < regionData[val[0]].sub[val[1]].sub.length; i++) {
-        countys.push(regionData[val[0]].sub[val[1]].sub[i])
-      }
-
-      this.setData({
-        city: this.data.citys[val[1]].name,
-        cityCode: this.data.citys[val[1]].code,
-        county: regionData[val[0]].sub[val[1]].sub[0] ? regionData[val[0]].sub[val[1]].sub[0].name : '',
-        countyCode: this.data.countys[0] ? this.data.countys[0].code : '',
-        countys:countys,
-        values: val,
-        value:[val[0],val[1],0]
-      })
-      return;
-    }
-    if(val[2] != t[2]){
-      // console.log('county no:', val);
-      this.setData({
-        county: this.data.countys[val[2]].name,
-        countyCode: this.data.countys[val[2]].code,
-        values: val,
-        value:[val[0],val[1],val[2]]
-      })
-      return;
-    }
-  },
-  _toggleRegionDialog:function(){
-    this.setData({
-      condition:!this.data.condition
-    })
   }
 };
 

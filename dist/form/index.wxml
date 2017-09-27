@@ -1,26 +1,33 @@
 
 <template name="zan-form__region">
-  <view class="zan-form__input zan-cell__bd" bindtap="_toggleRegionDialog">
-    {{county ? province + '-' + city + '-' + county : province + '-' + city }}
+  <view class="zan-form__input zan-cell__bd" bindtap="_toggleRegionDialog" data-component-id="{{ componentId }}" data-region="{{ dataSource }}">
+    {{dataSource.county ? (dataSource.province === dataSource.city ? dataSource.city + '-' + dataSource.county : dataSource.province + '-' + dataSource.city + '-' + dataSource.county) : dataSource.province + '-' + dataSource.city }}
   </view>
 </template>
 
 <template name="zan-form__region--item-list">
-  <view wx:if="{{condition}}">
+  <view wx:if="{{dataSource.isShow}}">
     <view class="zan-form__dialog--mask" bindtap="_toggleRegionDialog" />
-    <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="_bindRegionChange" class="zan-form__picker--bd">
+    <picker-view
+      indicator-style="height: 50px;"
+      value="{{dataSource.value}}"
+      bindchange="_handleZanRegionChange"
+      data-component-id="{{ componentId }}"
+      data-region="{{ dataSource }}"
+      class="zan-form__picker--bd"
+    >
       <view class="zan-form__region--dialog-btn">
-        <view bindtap="_toggleRegionDialog" class="zan-form__region--dialog-btn-cancel">取消</view>
-        <view bindtap="_toggleRegionDialog" class="zan-form__region--dialog-btn-confirm">确定</view>
+        <view bindtap="_toggleRegionDialog" data-component-id="{{ componentId }}" data-region="{{ dataSource }}" class="zan-form__region--dialog-btn-cancel">取消</view>
+        <view bindtap="_toggleRegionDialog" data-component-id="{{ componentId }}" data-region="{{ dataSource }}" class="zan-form__region--dialog-btn-confirm">确定</view>
       </view>
       <picker-view-column>
-        <view wx:for="{{provinces}}" wx:key="name" class="zan-form__region--column">{{item.name}}</view>
+        <view wx:for="{{dataSource.provinces}}" wx:key="name" class="zan-form__region--column">{{item.name}}</view>
       </picker-view-column>
       <picker-view-column>
-        <view wx:for="{{citys}}" wx:key="name" class="zan-form__region--column">{{item.name}}</view>
+        <view wx:for="{{dataSource.citys}}" wx:key="name" class="zan-form__region--column">{{item.name}}</view>
       </picker-view-column>
       <picker-view-column>
-        <view wx:for="{{countys}}" wx:key="name" class="zan-form__region--column">{{item.name}}</view>
+        <view wx:for="{{dataSource.countys}}" wx:key="name" class="zan-form__region--column">{{item.name}}</view>
       </picker-view-column>
     </picker-view>
   </view>

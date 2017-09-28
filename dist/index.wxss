@@ -8,6 +8,7 @@
 @import "badge/index.wxss";
 @import "dialog/index.wxss";
 @import "form/index.wxss";
+@import "form/check_label.wxss";
 @import "tab/index.wxss";
 @import "label/index.wxss";
 @import "quantity/index.wxss";

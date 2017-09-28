@@ -10,7 +10,11 @@ Page(Object.assign({}, Zan.Form, {
   },
 
   onLoad: function () {
-    // initRegionData params: (componentId, regionData, defaultRegion)
+    /**
+     * @param {String} componentId
+     * @param {JSON} regionData
+     * @param {Array} defaultRegion
+     */
     this.initRegionData('homeAddress', regionData, [8,0,0]);
     this.initRegionData('address', regionData);
   },

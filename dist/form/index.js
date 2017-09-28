@@ -10,7 +10,7 @@ function toggleRegionDialogCallback(componentId, regionSource) {
   if (this.handleZanRegionDialogChange) {
     this.handleZanRegionDialogChange(componentId);
   } else {
-    console.warn('页面缺少 handleZanQuantityChange 回调函数');
+    console.warn('页面缺少 handleZanRegionDialogChange 回调函数');
   }
 }
 
@@ -41,7 +41,7 @@ function regionChangeCallback(componentId, regionSource, e) {
         }
       );
     } else {
-      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+      console.warn('页面缺少 handleZanRegionChange 回调函数');
     }
     return;
   }
@@ -63,7 +63,7 @@ function regionChangeCallback(componentId, regionSource, e) {
         }
       );
     } else {
-      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+      console.warn('页面缺少 handleZanRegionChange 回调函数');
     }
     return;
   }
@@ -79,7 +79,7 @@ function regionChangeCallback(componentId, regionSource, e) {
         }
       );
     } else {
-      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+      console.warn('页面缺少 handleZanRegionChange 回调函数');
     }
     return;
   }
@@ -122,7 +122,7 @@ var Form = {
         }
       );
     } else {
-      console.warn('页面缺少 handleZanQuantityChange 回调函数');
+      console.warn('页面缺少 handleZanRegionChange 回调函数');
     }
   }
 };

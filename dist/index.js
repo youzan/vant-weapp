@@ -3,4 +3,5 @@ exports.Quantity = require('./quantity/index');
 exports.TopTips = require('./toptips/index');
 exports.Toast = require('./toast/index');
 exports.Switch = require('./switch/index');
+exports.Form = require('./form/index');
 exports.CheckLabel = require('./form/check_label');

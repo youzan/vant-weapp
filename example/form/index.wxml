@@ -1,3 +1,4 @@
+<import src="/dist/form/index.wxml" />
 <import src="/dist/form/check_label.wxml" />
 
 <view class="container">
@@ -21,7 +22,7 @@
         placeholder="手机或固定电话"
       />
     </view>
-    <view class="zan-cell zan-form__item zan-cell--last-child">
+    <view class="zan-cell zan-form__item">
       <text class="zan-form__title">选择区域</text>
       <view class="zan-form__input zan-cell__bd">
         <picker
@@ -33,6 +34,16 @@
           {{ area[areaIndex] }}
         </picker>
       </view>
+    </view>
+
+    <view class="zan-cell zan-form__item">
+      <text class="zan-form__title">户籍地</text>
+      <template is="zan-form__region" data="{{ dataSource: homeAddress, componentId: 'homeAddress' }}"></template>
+    </view>
+
+    <view class="zan-cell zan-form__item zan-cell--last-child">
+      <text class="zan-form__title">居住地</text>
+      <template is="zan-form__region" data="{{ dataSource: address, componentId: 'address' }}"></template>
     </view>
   </view>
 
@@ -72,4 +83,12 @@
       <template is="zan-check-label" data="{{items, checkedValue}}" />
     </view>
   </view>
+  
+  <view class="zan-btns" bindtap="submitInfo">
+    <button class="zan-btn zan-btn--primary">提交</button>
+  </view>
+  
 </view>
+
+<template is="zan-form__region--item-list" data="{{dataSource: homeAddress, componentId: 'homeAddress'}}"></template>
+<template is="zan-form__region--item-list" data="{{dataSource: address, componentId: 'address'}}"></template>

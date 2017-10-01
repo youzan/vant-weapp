@@ -1,11 +1,11 @@
 var ZanNoticeBar = {
-  initZanNoticeBar: function () {
+  initZanNoticeBarScroll: function (componentId) {
     this.zanNoticeBarNode = {};
     var _this = this
-    wx.createSelectorQuery().select('#zan-noticebar__content').boundingClientRect(function (rect) {
+    wx.createSelectorQuery().select(`#${componentId}__content`).boundingClientRect(function (rect) {
       if (rect.width) {
         _this.zanNoticeBarNode.width = rect.width;
-        wx.createSelectorQuery().select('#zan-noticebar__content-wrap').boundingClientRect(function (rect) {
+        wx.createSelectorQuery().select(`#${componentId}__content-wrap`).boundingClientRect(function (rect) {
           _this.zanNoticeBarNode.wrapWidth = rect.width;
           if (_this.zanNoticeBarNode.wrapWidth < _this.zanNoticeBarNode.width) {
             var mstime = _this.zanNoticeBarNode.width / 40 * 1000;
@@ -17,7 +17,7 @@ var ZanNoticeBar = {
               duration: 0,
               timingFunction: 'linear'
             });
-            _this.scrollZanNoticeBar(mstime);
+            _this.scrollZanNoticeBar(componentId, mstime);
           }
         }).exec();
       } else {
@@ -25,21 +25,21 @@ var ZanNoticeBar = {
       }
     }).exec();
   },
-  scrollZanNoticeBar: function (mstime) {
+  scrollZanNoticeBar: function (componentId, mstime) {
     var resetAnimationData = this.zanNoticeBarResetAnime.translateX(this.zanNoticeBarNode.wrapWidth).step();
     this.setData({
-      zanNoticeBarAnimeData: resetAnimationData.export()
+      [`${componentId}.animationData`]: resetAnimationData.export()
     });
     var aninationData = this.zanNoticeBarAnime.translateX(-mstime * 40 / 1000).step();
     var _this = this;
     setTimeout(function () {
       _this.setData({
-        zanNoticeBarAnimeData: aninationData.export()
+        [`${componentId}.animationData`]: aninationData.export()
       });
     }, 100);
 
     setTimeout(function () {
-      _this.scrollZanNoticeBar(mstime);
+      _this.scrollZanNoticeBar(componentId, mstime);
     }, mstime);
   }
 };

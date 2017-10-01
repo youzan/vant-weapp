@@ -5,13 +5,3 @@
   line-height: 1.5;
   background-color: #fff7cc;
 }
-#zan-noticebar__content-wrap {
-  height: 18px;
-  overflow: hidden;
-  position: relative;
-}
-
-#zan-noticebar__content {
-  position: absolute;
-  white-space: nowrap;
-}

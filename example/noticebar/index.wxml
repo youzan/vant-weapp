@@ -3,8 +3,20 @@
 
   <view class="doc-title">NOTICEBAR</view>
 
-  <template
-    is="zan-noticebar"
-    data="{{ text: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。', zanNoticeBarAnimeData  }}"
-  ></template>
+  <view class="zan-panel-title">滚动通告栏</view>
+  <view class="zan-panel">
+    <template
+      is="zan-noticebar"
+      data="{{ ...movable, componentId: 'movable'  }}"
+    ></template>
+  </view>
+
+  <view class="zan-panel-title">静止通告栏</view>
+  <view class="zan-panel">
+    <template
+      is="zan-noticebar"
+      data="{{ ...static, componentId: 'static'  }}"
+    ></template>
+  </view>
+
 </view>

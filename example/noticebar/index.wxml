@@ -1,0 +1,30 @@
+<import src="/dist/noticebar/index.wxml" />
+<view class="container">
+
+  <view class="doc-title">NOTICEBAR</view>
+
+  <view class="zan-panel-title">滚动通告栏</view>
+  <view class="zan-panel">
+    <template
+      is="zan-noticebar"
+      data="{{ ...movable, componentId: 'movable'  }}"
+    ></template>
+  </view>
+
+  <view class="zan-panel-title">静止通告栏1</view>
+  <view class="zan-panel">
+    <template
+      is="zan-noticebar"
+      data="{{ ...static1, componentId: 'static1'  }}"
+    ></template>
+  </view>
+
+  <view class="zan-panel-title">静止通告栏2</view>
+  <view class="zan-panel">
+    <template
+      is="zan-noticebar"
+      data="{{ ...static2, componentId: 'static2'  }}"
+    ></template>
+  </view>
+
+</view>

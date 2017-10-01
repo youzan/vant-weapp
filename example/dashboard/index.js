@@ -8,6 +8,9 @@ Page({
         name: 'Button 按钮',
         path: '/example/btn/index'
       }, {
+        name: 'Capsule 胶囊',
+        path: '/example/capsule/index'
+      }, {
         name: 'Card 卡片',
         path: '/example/card/index'
       }, {
@@ -32,8 +35,14 @@ Page({
         name: 'Loadmore 加载',
         path: '/example/loadmore/index'
       }, {
+        name: 'Noticebar 通告栏',
+        path: '/example/noticebar/index'
+      }, {
         name: 'Panel 面板',
         path: '/example/panel/index'
+      }, {
+        name: 'Popup 弹出层',
+        path: '/example/popup/index'
       }, {
         name: 'Quantity 计数器',
         path: '/example/quantity/index'

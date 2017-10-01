@@ -1,5 +1,3 @@
-var app = getApp()
-
 Page({
   data: {
     showDialog: false

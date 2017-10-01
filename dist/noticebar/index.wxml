@@ -1,0 +1,16 @@
+<template name="zan-noticebar">
+  <view class="zan-noticebar">
+    <view
+      id="{{ componentId }}__content-wrap"
+      style="height: 18px; overflow: hidden; position: relative;"
+    >
+      <view
+        animation="{{ animationData }}"
+        id="{{ componentId }}__content"
+        style="position: absolute; white-space: nowrap;"
+      >
+        {{ text }}
+      </view>
+    </view>
+  </view>
+</template>

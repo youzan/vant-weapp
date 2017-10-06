@@ -4,9 +4,18 @@
 
   <view class="doc-title">CAPSULE</view>
 
+  <view class="zan-panel-title">基本用法</view>
   <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">
       <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份'}}" />
+      <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份', type: 'danger' }}" />
+    </view>
+  </view>
+
+  <view class="zan-panel-title">自定义颜色</view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-cell--last-child">
+      <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份', color: '#38f' }}" />
     </view>
   </view>
 

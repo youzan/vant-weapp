@@ -7,7 +7,8 @@
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "sh build/release.sh",
+    "changelog": "sh build/build-changelog.sh"
   },
   "repository": {
     "type": "git",

@@ -12,6 +12,8 @@
   "ignore": [
     "**/.*",
     "example",
+    "build",
+    ".github",
     "app.*",
     "*.md"
   ]

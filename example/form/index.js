@@ -19,20 +19,20 @@ Page(Object.assign({}, Zan.CheckLabel, {
     checkedValue: -1,
   },
 
-  onLoad: function () {
+  onLoad() {
 
   },
 
-  onShow: function () {
+  onShow() {
   },
 
-  onAreaChange: function (e) {
+  onAreaChange(e) {
     this.setData({
       areaIndex: e.detail.value
     });
   },
 
-  handleZanCheckLabelSelect: function (e) {
+  handleZanCheckLabelSelect(e) {
     this.setData({
       checkedValue: e.value
     });

@@ -1,4 +1,4 @@
-<import src="/dist/form/check_label.wxml" />
+<import src="/dist/check-label/index.wxml" />
 
 <view class="container">
 

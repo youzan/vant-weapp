@@ -32,7 +32,7 @@ Page(Object.assign({}, Zan.CheckLabel, {
     });
   },
 
-  handleZanCheckLabelSelect(e) {
+  handleZanSelectChange(e) {
     this.setData({
       checkedValue: e.value
     });

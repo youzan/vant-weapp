@@ -10,15 +10,15 @@ function callback(componentId, value) {
   var e = { componentId, value };
   console.info('[zan:CheckLabel:select]', e);
 
-  if (this.handleZanCheckLabelSelect) {
-    this.handleZanCheckLabelSelect(e);
+  if (this.handleZanSelectChange) {
+    this.handleZanSelectChange(e);
   } else {
-    console.warn('页面缺少 handleZanCheckLabelSelect 回调函数');
+    console.warn('页面缺少 handleZanSelectChange 回调函数');
   }
 }
 
 var CheckLabel = {
-  _handleZanCheckLabelSelect(e) {
+  _handleZanSelectChange(e) {
     handle.call(this, e);
   },
 };

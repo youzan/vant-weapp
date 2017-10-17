@@ -1,4 +1,4 @@
-<import src="/dist/check-label/index.wxml" />
+<import src="/dist/select/index.wxml" />
 
 <view class="container">
 
@@ -55,7 +55,7 @@
 
   <view class="zan-panel">
     <view>
-      <template is="zan-check-label" data="{{items, checkedValue}}" />
+      <template is="zan-select" data="{{ items, checkedValue, activeColor: '#4b0' }}" />
     </view>
   </view>
 </view>

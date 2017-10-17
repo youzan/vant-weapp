@@ -8,7 +8,7 @@ function handle(e) {
 
 function callback(componentId, value) {
   var e = { componentId, value };
-  console.info('[zan:CheckLabel:select]', e);
+  console.info('[zan:Select:change]', e);
 
   if (this.handleZanSelectChange) {
     this.handleZanSelectChange(e);
@@ -17,10 +17,10 @@ function callback(componentId, value) {
   }
 }
 
-var CheckLabel = {
+var Select = {
   _handleZanSelectChange(e) {
     handle.call(this, e);
   },
 };
 
-module.exports = CheckLabel;
+module.exports = Select;

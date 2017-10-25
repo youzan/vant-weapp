@@ -5,3 +5,4 @@
 .vscode
 node_modules
 CHANGELOG-GENERATED.md
+project.config.json

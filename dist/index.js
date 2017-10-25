@@ -1,4 +1,4 @@
-exports.CheckLabel = require('./form/check_label');
+exports.CheckLabel = require('./select/index');
 exports.NoticeBar = require('./noticebar/index');
 exports.Quantity = require('./quantity/index');
 exports.Switch = require('./switch/index');

@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "example/dashboard/index",
     "example/btn/index",
     "example/badge/index",
@@ -20,13 +20,14 @@
     "example/switch/index",
     "example/tab/index",
     "example/toptips/index",
-    "example/toast/index"
+    "example/toast/index",
+    "example/select/index"
   ],
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#FAFAFA",
     "navigationBarTitleText": "ZanUI",
-    "navigationBarTextStyle":"black",
-    "backgroundTextStyle":"dark",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
     "backgroundColor": "#f9f9f9"
   },
   "debug": true

@@ -6,7 +6,6 @@
 @import "color/index.wxss";
 @import "dialog/index.wxss";
 @import "form/index.wxss";
-@import "form/check_label.wxss";
 @import "helper/index.wxss";
 @import "icon/index.wxss";
 @import "label/index.wxss";
@@ -15,6 +14,7 @@
 @import "panel/index.wxss";
 @import "popup/index.wxss";
 @import "quantity/index.wxss";
+@import "select/index.wxss";
 @import "steps/index.wxss";
 @import "switch/index.wxss";
 @import "tab/index.wxss";

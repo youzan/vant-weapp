@@ -1,5 +1,3 @@
-<import src="/dist/form/check_label.wxml" />
-
 <view class="container">
 
   <view class="doc-title">FORM</view>
@@ -53,9 +51,4 @@
     </view>
   </view>
 
-  <view class="zan-panel">
-    <view>
-      <template is="zan-check-label" data="{{items, checkedValue}}" />
-    </view>
-  </view>
 </view>

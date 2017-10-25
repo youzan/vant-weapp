@@ -45,6 +45,9 @@ export default {
         name: 'Quantity 计数器',
         path: '/example/quantity/index'
       }, {
+        name: 'Select 选择',
+        path: '/example/select/index'
+      }, {
         name: 'Steps 步骤条',
         path: '/example/steps/index'
       }, {

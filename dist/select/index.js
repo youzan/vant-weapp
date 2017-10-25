@@ -8,19 +8,19 @@ function handle(e) {
 
 function callback(componentId, value) {
   var e = { componentId, value };
-  console.info('[zan:CheckLabel:select]', e);
+  console.info('[zan:Select:change]', e);
 
-  if (this.handleZanCheckLabelSelect) {
-    this.handleZanCheckLabelSelect(e);
+  if (this.handleZanSelectChange) {
+    this.handleZanSelectChange(e);
   } else {
-    console.warn('页面缺少 handleZanCheckLabelSelect 回调函数');
+    console.warn('页面缺少 handleZanSelectChange 回调函数');
   }
 }
 
-var CheckLabel = {
-  _handleZanCheckLabelSelect(e) {
+var Select = {
+  _handleZanSelectChange(e) {
     handle.call(this, e);
   },
 };
 
-module.exports = CheckLabel;
+module.exports = Select;

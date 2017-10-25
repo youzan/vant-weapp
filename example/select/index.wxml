@@ -1,0 +1,20 @@
+<import src="/dist/select/index.wxml" />
+
+<view class="container">
+
+  <view class="doc-title">SELECT</view>
+
+  <view class="zan-panel-title">基础用法</view>
+  <view class="zan-panel">
+    <view>
+      <template is="zan-select" data="{{ items, checkedValue: checked.base, componentId: 'base' }}" ></template>
+    </view>
+  </view>
+
+  <view class="zan-panel-title">自定义高亮颜色</view>
+  <view class="zan-panel">
+    <view>
+      <template is="zan-select" data="{{ items, checkedValue: checked.color, activeColor, componentId: 'color' }}" ></template>
+    </view>
+  </view>
+</view>

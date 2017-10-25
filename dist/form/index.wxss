@@ -9,7 +9,6 @@
 }
 
 .zan-form__title {
-  float: left;
   width: 80px;
   font-size: 14px;
 }

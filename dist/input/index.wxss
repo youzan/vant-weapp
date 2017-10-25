@@ -1,0 +1,22 @@
+@import '../cell/index.wxss';
+
+.zan-input--error {
+  border-color: #f40;
+}
+
+.zan-input__title {
+  color: #333;
+  width: 80px;
+}
+
+.zan-input__input {
+  line-height: 32px;
+  height: 32px;
+  min-height: 32px;
+  flex: 1;
+  padding-left: 10px;
+}
+
+.zan-input__input--right {
+  text-align: right;
+}

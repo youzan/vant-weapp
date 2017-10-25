@@ -22,7 +22,7 @@ $basepath/icons/generate-font.sh
 
 if command_exists superman ; then
   # upload to cdn
-  # superman cdn $server_prefix $basepath/../build/font/zanui-weapp-icon-*
+  superman cdn $server_prefix $basepath/../assets/icons/build/font/zanui-weapp-icon-*
 fi
 
 # generate fontface style
@@ -75,4 +75,4 @@ cat > $basepath/../dist/icon/index.wxss <<EOF
 }
 EOF
 
-# cat $basepath/../ >> $basepath/../dist/icon/index.wxss
+cat $basepath/../assets/icons/build/css/zanui-weapp-icon-codes.css >> $basepath/../dist/icon/index.wxss

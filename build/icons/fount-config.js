@@ -1,16 +1,16 @@
 module.exports = {
   name: 'zanui-weapp-icon',
-  output: '../build',
+  output: '../../assets/icons/build',
   meta: {
     author: 'pangxie',
     license: 'MIT',
     license_url: 'https://opensource.org/licenses/MIT',
     homepage: 'http://github.com/youzan',
-    css_prefix_text: 'van-icon-',
+    css_prefix_text: 'zan-icon-',
     filename_hash: true
   },
   hinting: true,
-  glyphs_dir: '../icons',
+  glyphs_dir: '../../assets/icons/svg',
   glyphs: [
     {
       keywords: ['qr', 'invalid'],

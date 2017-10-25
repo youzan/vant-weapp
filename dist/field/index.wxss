@@ -23,7 +23,7 @@
 
 .zan-field__title {
   color: #333;
-  min-width: 80px;
+  min-width: 62px;
   padding-right: 10px;
 }
 

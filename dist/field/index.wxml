@@ -8,14 +8,14 @@
       auto-height
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
-      bindinput="_handleZanInputChange"
+      bindinput="_handleZanFieldChange"
       data-component-id="{{ componentId }}"></textarea>
     <input
       wx:else
       type="{{ inputType || 'text' }}"
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
-      bindinput="_handleZanInputChange"
+      bindinput="_handleZanFieldChange"
       data-component-id="{{ componentId }}"/>
   </view>
 </template>

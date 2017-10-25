@@ -1,3 +1,0 @@
-Page(Object.assign({}, {
-  data: {}
-}));

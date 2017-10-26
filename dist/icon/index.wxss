@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'zanui-weapp-icon';
-  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-*.eot');
-  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-*.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-*.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-*.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-*.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.eot');
+  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.ttf') format('truetype')
 }
 
 .zan-icon {

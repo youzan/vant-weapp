@@ -13,7 +13,7 @@ command_exists () {
 }
 
 fontname() {
-  echo "https://b.yzcdn.cn$server_prefix/$(basename $basepath/../build/font/zanui-weapp-icon-*.$1)"
+  echo "https://b.yzcdn.cn$server_prefix/$(basename $basepath/../assets/icons/build/font/zanui-weapp-icon-*.$1)"
 }
 
 # generate font files from sketch file

@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'zanui-weapp-icon';
-  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.eot');
-  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-40d66a3aab.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-9e9804afef.eot');
+  src: url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-9e9804afef.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-9e9804afef.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-9e9804afef.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui-weapp/zanui-weapp-icon-9e9804afef.ttf') format('truetype')
 }
 
 .zan-icon {
@@ -65,7 +65,7 @@
 .zan-icon-logistics:before { content: '\e810'; } /* '' */
 .zan-icon-edit:before { content: '\e811'; } /* '' */
 .zan-icon-passed:before { content: '\e812'; } /* '' */
-.zan-icon-cart:before { content: '\e813'; } /* '' */
+.zan-icon-shopping-cart:before { content: '\e813'; } /* '' */
 .zan-icon-arrow:before { content: '\e814'; } /* '' */
 .zan-icon-gift:before { content: '\e815'; } /* '' */
 .zan-icon-search:before { content: '\e816'; } /* '' */
@@ -123,3 +123,8 @@
 .zan-icon-gold-coin:before { content: '\e84a'; } /* '' */
 .zan-icon-completed:before { content: '\e84b'; } /* '' */
 .zan-icon-value-card:before { content: '\e84c'; } /* '' */
+.zan-icon-certificate:before { content: '\e84d'; } /* '' */
+.zan-icon-tosend:before { content: '\e84e'; } /* '' */
+.zan-icon-sign:before { content: '\e84f'; } /* '' */
+.zan-icon-home:before { content: '\e850'; } /* '' */
+.zan-icon-phone:before { content: '\e851'; } /* '' */

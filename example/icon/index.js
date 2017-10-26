@@ -45,7 +45,7 @@ Page({
       'credit-pay',
       'debit-pay',
       'other-pay',
-      'cart',
+      'shopping-cart',
       'browsing-history',
       'goods-collect',
       'shop-collect',
@@ -77,7 +77,12 @@ Page({
       'gift-card',
       'coupon',
       'completed',
-      'value-card'
+      'value-card',
+      'certificate',
+      'tosend',
+      'sign',
+      'home',
+      'phone'
     ]
   }
 });

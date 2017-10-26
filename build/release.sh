@@ -17,8 +17,10 @@ then
   git commit -m "[build] $VERSION"
 
   # publish
+  echo "publishing git..."
   git push origin master
   git push origin refs/tags/v$VERSION
 
+  echo "publishing npm..."
   npm publish
 fi

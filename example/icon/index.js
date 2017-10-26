@@ -1,9 +1,9 @@
 Page({
   data: {
     icons: [
-      'album',
+      'photo',
       'arrow',
-      'camera',
+      'photograph',
       'certificate',
       'check',
       'checked',
@@ -15,7 +15,7 @@ Page({
       'send',
       'shopping-cart',
       'sign',
-      'store',
+      'shop',
       'topay',
       'tosend'
     ]

@@ -8,10 +8,4 @@
       <view class="icon-classname">zan-icon-{{ icon }}</view>
     </view>
   </view>
-  <view class="zan-panel" style="margin-bottom: 40px;">
-    <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
-      <view class="zan-icon zan-icon-{{ icon }}" style="font-size: 40px;"></view>
-      <view class="icon-classname">zan-icon-{{ icon }}</view>
-    </view>
-  </view>
 </view>

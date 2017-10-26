@@ -8,7 +8,8 @@
   },
   "scripts": {
     "release": "sh build/release.sh",
-    "changelog": "sh build/build-changelog.sh"
+    "changelog": "sh build/build-changelog.sh",
+    "icon": "sh build/build-icon.sh"
   },
   "repository": {
     "type": "git",

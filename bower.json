@@ -13,8 +13,10 @@
     "**/.*",
     "example",
     "build",
+    "assets",
     ".github",
     "app.*",
-    "*.md"
+    "*.md",
+    "*.log"
   ]
 }

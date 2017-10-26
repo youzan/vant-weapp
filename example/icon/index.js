@@ -79,25 +79,5 @@ Page({
       'completed',
       'value-card'
     ]
-    // 老版本
-    // icons: [
-    //   'photo',
-    //   'arrow',
-    //   'photograph',
-    //   'certificate',
-    //   'check',
-    //   'checked',
-    //   'close',
-    //   'gift',
-    //   'home',
-    //   'location',
-    //   'chat',
-    //   'logistics',
-    //   'shopping-cart',
-    //   'sign',
-    //   'shop',
-    //   'topay',
-    //   'tosend'
-    // ]
   }
 });

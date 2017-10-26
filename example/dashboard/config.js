@@ -18,9 +18,6 @@ export default {
         name: 'Cell 单元格',
         path: '/example/cell/index'
       }, {
-        name: 'Form 表单',
-        path: '/example/form/index'
-      }, {
         name: 'Helper 基础样式',
         path: '/example/helper/index'
       }, {
@@ -62,6 +59,15 @@ export default {
       }
     ]
   },
+  form: {
+    title: '表单',
+    content: [
+      {
+        name: 'Field 输入框',
+        path: '/example/field/index'
+      }
+    ]
+  },
   action: {
     title: '操作反馈',
     content: [
@@ -74,4 +80,4 @@ export default {
       }
     ]
   }
-}
+};

@@ -5,7 +5,7 @@
 @import "cell/index.wxss";
 @import "color/index.wxss";
 @import "dialog/index.wxss";
-@import "form/index.wxss";
+@import "field/index.wxss";
 @import "helper/index.wxss";
 @import "icon/index.wxss";
 @import "label/index.wxss";

@@ -13,8 +13,6 @@ then
 
   # commit
   npm version $VERSION --message "[release] $VERSION"
-  git add -A
-  git commit -m "[build] $VERSION"
 
   # publish
   echo "publishing git..."

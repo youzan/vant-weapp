@@ -1,5 +1,10 @@
 @import '../cell/index.wxss';
 
+.zan-field {
+  padding: 7px 15px;
+  color: #333;
+}
+
 .zan-field--wrapped {
   margin: 0 15px;
   border: 1rpx solid #e5e5e5;
@@ -23,15 +28,21 @@
 
 .zan-field__title {
   color: #333;
-  min-width: 62px;
+  min-width: 65px;
   padding-right: 10px;
 }
 
 .zan-field__input {
-  line-height: 30px;
-  height: 30px;
-  min-height: 30px;
   flex: 1;
+  line-height: 1.6;
+  padding: 4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 14px;
+}
+
+.zan-field__placeholder {
+  font-size: 14px;
 }
 
 .zan-field__input--right {

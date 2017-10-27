@@ -8,6 +8,7 @@
       auto-height
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
+      placeholder-class="zan-field__placeholder"
       bindinput="_handleZanFieldChange"
       data-component-id="{{ componentId }}"></textarea>
     <input
@@ -15,6 +16,7 @@
       type="{{ inputType || 'text' }}"
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
+      placeholder-class="zan-field__placeholder"
       bindinput="_handleZanFieldChange"
       data-component-id="{{ componentId }}"/>
   </view>

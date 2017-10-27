@@ -53,9 +53,6 @@ export default {
       }, {
         name: 'Tab 标签',
         path: '/example/tab/index'
-      }, {
-        name: 'Toptips 顶部提示',
-        path: '/example/toptips/index'
       }
     ]
   },
@@ -72,11 +69,14 @@ export default {
     title: '操作反馈',
     content: [
       {
+        name: 'Dialog 弹出框',
+        path: '/example/dialog/index'
+      }, {
         name: 'Toast 轻提示',
         path: '/example/toast/index'
       }, {
-        name: 'Dialog 弹出框',
-        path: '/example/dialog/index'
+        name: 'Toptips 顶部提示',
+        path: '/example/toptips/index'
       }
     ]
   }

@@ -22,7 +22,7 @@
 
   <view class="zan-panel-title">自定义显示内容</view>
   <view class="zan-panel">
-    <view class="zan-cell">
+    <view class="zan-cell zan-field">
       <view class="zan-cell__hd zan-field__title">选择区域</view>
       <picker
         mode="selector"
@@ -35,7 +35,7 @@
       </picker>
     </view>
 
-    <view class="zan-cell">
+    <view class="zan-cell zan-field">
       <view class="zan-cell__hd zan-field__title">验证码</view>
       <input
         type="text"

@@ -1,5 +1,14 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.3.0](https://github.com/youzan/zanui-weapp/tree/v2.3.0) (2017-10-26)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.2.0...v2.3.0)
+
+**Breaking Change**
+
+- icon 整理 & 新增 [\#38](https://github.com/youzan/zanui-weapp/pull/38) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 Field 组件, 代替原有 Form 组件 [\#37](https://github.com/youzan/zanui-weapp/pull/37) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 Select 组件，代替原有 Check_label 组件 [\#36](https://github.com/youzan/zanui-weapp/pull/36) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.2.0](https://github.com/youzan/zanui-weapp/tree/v2.2.0) (2017-10-15)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.1.1...v2.2.0)
 

@@ -1,5 +1,9 @@
 @import '../cell/index.wxss';
 
+.zan-field {
+  padding: 7px 15px;
+}
+
 .zan-field--wrapped {
   margin: 0 15px;
   border: 1rpx solid #e5e5e5;
@@ -29,7 +33,6 @@
 
 .zan-field__input {
   line-height: 30px;
-  height: 30px;
   min-height: 30px;
   flex: 1;
 }

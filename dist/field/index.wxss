@@ -40,6 +40,10 @@
   font-size: 14px;
 }
 
+.zan-field__placeholder {
+  font-size: 14px;
+}
+
 .zan-field__input--right {
   text-align: right;
 }

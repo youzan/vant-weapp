@@ -2,6 +2,7 @@
 
 .zan-field {
   padding: 7px 15px;
+  color: #333;
 }
 
 .zan-field--wrapped {

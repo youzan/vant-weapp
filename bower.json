@@ -16,7 +16,7 @@
     "build",
     "example",
     "node_modules",
-    "src",
+    "packages",
     "postcss.config.js",
     "app.*",
     "*.md",

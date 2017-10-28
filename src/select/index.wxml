@@ -1,0 +1,38 @@
+<template name="zan-select">
+  <radio-group class="zan-select__list" bindchange="_handleZanSelectChange" data-component-id="{{ componentId }}">
+    <label wx:for="{{ items }}" wx:key="value">
+      <view class="zan-cell">
+        <radio class="zan-select__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>
+        <view
+          class="zan-cell__bd"
+          style="{{ parse.getItemStyle(item, checkedValue, activeColor) }}"
+        >{{ item.name }}</view>
+        <view wx:if="{{ item.value === checkedValue }}" class="zan-cell__ft">
+          <icon type="success_no_circle" color="{{ parse.getColor(activeColor) }}" size="14"></icon>
+        </view>
+      </view>
+    </label>
+  </radio-group>
+</template>
+
+<wxs module="parse">
+function getColor(color) {
+  color = color || '#ff4444'
+  return color;
+}
+
+module.exports = {
+  getColor: getColor,
+  getItemStyle: function(item, checkedValue, activeColor) {
+    var padding = item.padding * 10;
+    var style = 'padding-left: ' + padding + 'px;';
+
+    // 如果为选中状态，则高亮
+    if (item.value === checkedValue) {
+      style += 'color: ' + getColor(activeColor);
+    }
+
+    return style;
+  }
+};
+</wxs>

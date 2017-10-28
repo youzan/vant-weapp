@@ -1,0 +1,28 @@
+<template name="zan-quantity">
+  <view class="zan-quantity {{ size === 'small' ? 'zan-quantity--small' : '' }}">
+    <view
+      class="zan-quantity__minus {{ quantity <= min ? 'zan-quantity--disabled' : '' }}"
+      data-component-id="{{ componentId }}"
+      data-quantity="{{ quantity }}"
+      data-disabled="{{ quantity <= min }}"
+      bindtap="_handleZanQuantityMinus"
+    >-</view>
+    <input
+      class="zan-quantity__text {{ min >= max ? 'zan-quantity--disabled' : '' }}"
+      type="number"
+      data-component-id="{{ componentId }}"
+      data-min="{{ min }}"
+      data-max="{{ max }}"
+      value="{{ quantity }}"
+      disabled="{{ min >= max }}"
+      bindblur="_handleZanQuantityBlur"
+    ></input>
+    <view
+      class="zan-quantity__plus {{ quantity >= max ? 'zan-quantity--disabled' : '' }}"
+      data-component-id="{{ componentId }}"
+      data-quantity="{{ quantity }}"
+      data-disabled="{{ quantity >= max }}"
+      bindtap="_handleZanQuantityPlus"
+    >+</view>
+  </view>
+</template>

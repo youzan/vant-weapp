@@ -1,0 +1,19 @@
+.zan-panel {
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.zan-panel-title {
+  font-size: 14px;
+  line-height: 1;
+  color: #999;
+  padding: 20px 15px 0 15px;
+}
+
+
+.zan-panel--without-margin-top {
+  margin-top: 0;
+}

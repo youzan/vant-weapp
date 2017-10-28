@@ -1,0 +1,34 @@
+.zan-label {
+  display: inline-block;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  color: #333;
+  border: 1rpx solid #999;
+  padding: 0px 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+}
+.zan-label--primary {
+  color: #fff;
+  background: #f44;
+  border: 1rpx solid #f44;
+}
+.zan-label--disabled {
+  color: #cacaca;
+  background: #eee;
+  border: 1rpx solid #e5e5e5;
+}
+.zan-label--small {
+  font-size: 11px;
+  height: 16px;
+  line-height: 16px;
+  padding: 0px 3px;
+}
+.zan-label--plain.zan-label--primary {
+  color: #f44;
+  background: #fff;
+}

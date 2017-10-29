@@ -18,6 +18,7 @@
     "node_modules",
     "packages",
     "postcss.config.js",
+    "package.json",
     "app.*",
     "*.md",
     "*.log"

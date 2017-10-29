@@ -11,10 +11,14 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "example",
-    "build",
-    "assets",
     ".github",
+    "assets",
+    "build",
+    "example",
+    "node_modules",
+    "packages",
+    "postcss.config.js",
+    "package.json",
     "app.*",
     "*.md",
     "*.log"

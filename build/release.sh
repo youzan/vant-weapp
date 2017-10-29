@@ -11,6 +11,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
 
+  # build
+  npm run components
+
+  # commit build
+  git add -A
+  git commit -m "[build] $VERSION"
+
   # commit
   npm version $VERSION --message "[release] $VERSION"
 

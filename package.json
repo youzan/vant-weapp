@@ -8,8 +8,11 @@
   },
   "scripts": {
     "release": "sh build/release.sh",
+    "components": "node build/build-components.js --color",
+    "css": "gulp build --gulpfile build/build-css.js --color",
     "changelog": "sh build/build-changelog.sh",
-    "icon": "sh build/build-icon.sh"
+    "icon": "sh build/build-icon.sh",
+    "dev": "node build/build-dev.js --color"
   },
   "repository": {
     "type": "git",
@@ -20,5 +23,16 @@
   "bugs": {
     "url": "https://github.com/youzan/zanui-weapp/issues"
   },
-  "homepage": "https://github.com/youzan/zanui-weapp#readme"
+  "homepage": "https://github.com/youzan/zanui-weapp#readme",
+  "devDependencies": {
+    "fs-extra": "^4.0.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-postcss": "^7.0.0",
+    "node-watch": "^0.5.5",
+    "postcss-calc": "^6.0.1",
+    "postcss-easy-import": "^3.0.0",
+    "precss": "^2.0.0",
+    "shelljs": "^0.7.8"
+  }
 }

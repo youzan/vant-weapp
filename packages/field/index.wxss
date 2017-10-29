@@ -1,0 +1,50 @@
+@import '../cell/index.wxss';
+
+.zan-field {
+  padding: 7px 15px;
+  color: #333;
+}
+
+.zan-field--wrapped {
+  margin: 0 15px;
+  border: 1rpx solid #e5e5e5;
+  border-radius: 8rpx;
+  background-color: #fff;
+}
+
+.zan-field--wrapped::after {
+  border: 0rpx;
+}
+
+.zan-field--wrapped + .zan-field--wrapped {
+  margin-top: 10px;
+}
+
+.zan-field--error {
+  /* 圆角输入框时，将边框也置红 */
+  border-color: #f40;
+  color: #f40;
+}
+
+.zan-field__title {
+  color: #333;
+  min-width: 65px;
+  padding-right: 10px;
+}
+
+.zan-field__input {
+  flex: 1;
+  line-height: 1.6;
+  padding: 4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 14px;
+}
+
+.zan-field__placeholder {
+  font-size: 14px;
+}
+
+.zan-field__input--right {
+  text-align: right;
+}

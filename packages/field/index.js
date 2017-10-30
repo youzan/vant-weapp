@@ -6,7 +6,7 @@ module.exports = {
     console.info('[zan:field:change]', event);
 
     if (this.handleZanFieldChange) {
-      this.handleZanFieldChange(event);
+      return this.handleZanFieldChange(event);
     } else {
       console.warn('页面缺少 handleZanFieldChange 回调函数');
     }

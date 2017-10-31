@@ -1,0 +1,11 @@
+.zan-col {
+  line-height: 30px;
+  text-align: center;
+  background-color: #39a9ed;
+  font-size: 12px;
+  color: #fff;
+}
+
+.zan-col:nth-child(even) {
+  background-color: #66c6f2;
+}

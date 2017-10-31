@@ -25,3 +25,10 @@
   margin: 10px 15px;
   border-bottom: 1rpx solid #e5e5e5;
 }
+.doc-description {
+  margin: 14px 0;
+  padding: 0 15px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+}

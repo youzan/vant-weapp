@@ -16,7 +16,11 @@ module.exports = function (config = {}) {
 
 function extracter(config = {}) {
   // 复制 src
-  fs.copySync(config.src, config.dist);
+  fs.copySync(config.src, config.dist, {
+    filter(src = '') {
+      return src.indexOf('.wxss') < 0;
+    }
+  });
 
   // js 无需编译，让微信开发者工具处理
 

@@ -3,6 +3,7 @@
 @import "capsule/index.wxss";
 @import "card/index.wxss";
 @import "cell/index.wxss";
+@import "col/index.wxss";
 @import "color/index.wxss";
 @import "dialog/index.wxss";
 @import "field/index.wxss";
@@ -14,6 +15,7 @@
 @import "panel/index.wxss";
 @import "popup/index.wxss";
 @import "quantity/index.wxss";
+@import "row/index.wxss";
 @import "select/index.wxss";
 @import "steps/index.wxss";
 @import "switch/index.wxss";

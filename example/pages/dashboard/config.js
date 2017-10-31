@@ -27,6 +27,9 @@ export default {
         name: 'Label 标签',
         path: '/pages/label/index'
       }, {
+        name: 'Layout 标签',
+        path: '/pages/layout/index'
+      }, {
         name: 'Loadmore 加载',
         path: '/pages/loadmore/index'
       }, {

@@ -11,6 +11,7 @@
     "pages/helper/index",
     "pages/icon/index",
     "pages/label/index",
+    "pages/layout/index",
     "pages/loadmore/index",
     "pages/noticebar/index",
     "pages/panel/index",

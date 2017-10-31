@@ -22,7 +22,14 @@ git clone https://github.com/youzan/zanui-weapp.git
 ```
 
 ## 预览
-打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 zanui-weapp 添加进去就可以查看组件源码、预览示例demo了。
+1. 在 zanui-weapp 根目录下运行
+``` bash
+# 安装项目依赖
+npm install
+# 执行组件编译
+npm run dev
+```
+2. 打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 zanui-weapp/example 目录添加进去就可以预览示例demo了。
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png)
 

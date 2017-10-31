@@ -14,7 +14,7 @@
     ".github",
     "assets",
     "build",
-    "docs",
+    "example",
     "node_modules",
     "packages",
     "postcss.config.js",

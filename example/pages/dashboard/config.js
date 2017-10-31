@@ -4,55 +4,58 @@ export default {
     content: [
       {
         name: 'Badge 徽章',
-        path: '/example/badge/index'
+        path: '/pages/badge/index'
       }, {
         name: 'Button 按钮',
-        path: '/example/btn/index'
+        path: '/pages/btn/index'
       }, {
         name: 'Capsule 胶囊',
-        path: '/example/capsule/index'
+        path: '/pages/capsule/index'
       }, {
         name: 'Card 卡片',
-        path: '/example/card/index'
+        path: '/pages/card/index'
       }, {
         name: 'Cell 单元格',
-        path: '/example/cell/index'
+        path: '/pages/cell/index'
       }, {
         name: 'Helper 基础样式',
-        path: '/example/helper/index'
+        path: '/pages/helper/index'
       }, {
         name: 'Icon 图标',
-        path: '/example/icon/index'
+        path: '/pages/icon/index'
       }, {
         name: 'Label 标签',
-        path: '/example/label/index'
+        path: '/pages/label/index'
+      }, {
+        name: 'Layout 标签',
+        path: '/pages/layout/index'
       }, {
         name: 'Loadmore 加载',
-        path: '/example/loadmore/index'
+        path: '/pages/loadmore/index'
       }, {
         name: 'Noticebar 通告栏',
-        path: '/example/noticebar/index'
+        path: '/pages/noticebar/index'
       }, {
         name: 'Panel 面板',
-        path: '/example/panel/index'
+        path: '/pages/panel/index'
       }, {
         name: 'Popup 弹出层',
-        path: '/example/popup/index'
+        path: '/pages/popup/index'
       }, {
         name: 'Quantity 计数器',
-        path: '/example/quantity/index'
+        path: '/pages/quantity/index'
       }, {
         name: 'Select 选择',
-        path: '/example/select/index'
+        path: '/pages/select/index'
       }, {
         name: 'Steps 步骤条',
-        path: '/example/steps/index'
+        path: '/pages/steps/index'
       }, {
         name: 'Switch 开关',
-        path: '/example/switch/index'
+        path: '/pages/switch/index'
       }, {
         name: 'Tab 标签',
-        path: '/example/tab/index'
+        path: '/pages/tab/index'
       }
     ]
   },
@@ -61,7 +64,7 @@ export default {
     content: [
       {
         name: 'Field 输入框',
-        path: '/example/field/index'
+        path: '/pages/field/index'
       }
     ]
   },
@@ -70,13 +73,13 @@ export default {
     content: [
       {
         name: 'Dialog 弹出框',
-        path: '/example/dialog/index'
+        path: '/pages/dialog/index'
       }, {
         name: 'Toast 轻提示',
-        path: '/example/toast/index'
+        path: '/pages/toast/index'
       }, {
         name: 'Toptips 顶部提示',
-        path: '/example/toptips/index'
+        path: '/pages/toptips/index'
       }
     ]
   }

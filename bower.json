@@ -13,13 +13,12 @@
     "**/.*",
     ".github",
     "assets",
-    "build",
     "example",
     "node_modules",
     "packages",
+    "scripts",
     "postcss.config.js",
     "package.json",
-    "app.*",
     "*.md",
     "*.log"
   ]

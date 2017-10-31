@@ -7,12 +7,11 @@
     "example": "example"
   },
   "scripts": {
-    "release": "sh build/release.sh",
-    "components": "node build/build-components.js --color",
-    "css": "gulp build --gulpfile build/build-css.js --color",
-    "changelog": "sh build/build-changelog.sh",
-    "icon": "sh build/build-icon.sh",
-    "dev": "node build/build-dev.js --color"
+    "release": "sh scripts/release.sh",
+    "components": "node scripts/build-components.js --color",
+    "changelog": "sh scripts/build-changelog.sh",
+    "icon": "sh scripts/build-icon.sh",
+    "dev": "node scripts/build-dev.js --color"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,8 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.8",
     "node-watch": "^0.5.5",
     "postcss-calc": "^6.0.1",
     "postcss-easy-import": "^3.0.0",

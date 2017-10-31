@@ -25,5 +25,5 @@ function extracter(config = {}) {
   // js 无需编译，让微信开发者工具处理
 
   // 编译 wxss 文件
-  exec(`gulp build --gulpfile build/utils/build-css.js --dist ${config.dist} --color`);
+  exec(`gulp build --gulpfile scripts/utils/build-css.js --dist ${config.dist} --color`);
 }

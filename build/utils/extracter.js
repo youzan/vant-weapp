@@ -6,11 +6,10 @@ module.exports = function (config = {}) {
   // 清空 dist 目录
   fs.emptyDirSync(config.dist);
 
+  extracter(config);
+
   if (config.watch) {
-    extracter(config);
     nodeWatch(config.src, { recursive: true }, () => extracter(config));
-  } else {
-    extracter(config);
   }
 };
 
@@ -22,5 +21,5 @@ function extracter(config = {}) {
   // js 无需编译，让微信开发者工具处理
 
   // 编译 wxss 文件
-  exec('npm run css');
+  exec(`gulp build --gulpfile build/utils/build-css.js --dist ${config.dist} --color`);
 }

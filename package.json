@@ -28,6 +28,7 @@
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
     "node-watch": "^0.5.5",
     "postcss-calc": "^6.0.1",

@@ -18,7 +18,7 @@ function extracter(config = {}) {
   // 复制 src
   fs.copySync(config.src, config.dist, {
     filter(src = '') {
-      return src.indexOf('.wxss') < 0;
+      return src.indexOf('.pcss') < 0;
     }
   });
 

@@ -22,6 +22,9 @@
   "bugs": {
     "url": "https://github.com/youzan/zanui-weapp/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/youzan/zanui-weapp#readme",
   "devDependencies": {
     "fs-extra": "^4.0.2",

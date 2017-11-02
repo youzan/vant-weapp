@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs-extra');
 const nodeWatch = require('node-watch');
 require('shelljs/global');
@@ -18,7 +19,8 @@ function extracter(config = {}) {
   // 复制 src
   fs.copySync(config.src, config.dist, {
     filter(src = '') {
-      return src.indexOf('.pcss') < 0;
+      const extname = path.extname(src);
+      return ['.pcss', '.md'].indexOf(extname) < 0;
     }
   });
 

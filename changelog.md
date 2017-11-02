@@ -1,5 +1,15 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.3.2](https://github.com/youzan/zanui-weapp/tree/v2.3.2) (2017-11-02)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.1...v2.3.2)
+
+**Improvements**
+
+- 更新 Icon 中 shop 图标 [\#45](https://github.com/youzan/zanui-weapp/pull/45) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 layout 组件 [\#43](https://github.com/youzan/zanui-weapp/pull/43) ([pangxie1991](https://github.com/pangxie1991))
+- Field 组件中 Input 事件支持升级 [\#42](https://github.com/youzan/zanui-weapp/pull/42) ([pangxie1991](https://github.com/pangxie1991))
+- 增加 css 编译，方便组件书写 [\#40](https://github.com/youzan/zanui-weapp/pull/40) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.3.1](https://github.com/youzan/zanui-weapp/tree/v2.3.1) (2017-10-27)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.0...v2.3.1)
 

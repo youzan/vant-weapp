@@ -1,0 +1,3 @@
+.zan-capsule + .zan-capsule {
+  margin-left: 10px;
+}

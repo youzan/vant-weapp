@@ -1,7 +1,7 @@
 ## Badge 徽章
 
 ### 使用指南
-在顶层 app.wxss 中引入组件库所有样式
+在 app.wxss 中引入组件库所有样式
 ```css
 @import "path/to/zanui-weapp/dist/index.wxss";
 ```

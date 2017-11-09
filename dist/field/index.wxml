@@ -1,0 +1,23 @@
+<template name="zan-field">
+  <view class="zan-cell zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
+    <view
+      wx:if="{{ title }}"
+      class="zan-cell__hd zan-field__title">{{ title }}</view>
+    <textarea
+      wx:if="{{ type === 'textarea' }}"
+      auto-height
+      placeholder="{{ placeholder }}"
+      class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
+      placeholder-class="zan-field__placeholder"
+      bindinput="_handleZanFieldChange"
+      data-component-id="{{ componentId }}"></textarea>
+    <input
+      wx:else
+      type="{{ inputType || 'text' }}"
+      placeholder="{{ placeholder }}"
+      class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
+      placeholder-class="zan-field__placeholder"
+      bindinput="_handleZanFieldChange"
+      data-component-id="{{ componentId }}"/>
+  </view>
+</template>

@@ -11,8 +11,15 @@
   "homepage": "",
   "ignore": [
     "**/.*",
+    ".github",
+    "assets",
     "example",
-    "app.*",
-    "*.md"
+    "node_modules",
+    "packages",
+    "scripts",
+    "postcss.config.js",
+    "package.json",
+    "*.md",
+    "*.log"
   ]
 }

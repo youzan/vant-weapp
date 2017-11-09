@@ -10,9 +10,11 @@
 ## 概述
 [ZanUI-WeApp]是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
 
-包含 badge、btn、capsule、card、cell、color、dialog、form、helper、icon、label、loadmore、noticebar、panel、popup、quantity、steps、switch、tab、toast、toptip 共计 21 类组件或元素。
+现已包含 badge、btn、card、cell、dialog、icon、label、noticebar、panel、popup、switch、tab、toast、toptips 等组件或元素。具体可以扫描下方小程序二维码，体验组件库示例 Demo
 
-更多背景介绍，可以移步到 [我们专门写的的介绍文章](http://tech.youzan.com/zanui-weapp/)。
+![ZanUI-WeApp 演示](https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300)
+
+更多背景介绍，请移步 [我们写的介绍文章](http://tech.youzan.com/zanui-weapp/)。
 
 ## 下载
 ``` bash
@@ -20,7 +22,14 @@ git clone https://github.com/youzan/zanui-weapp.git
 ```
 
 ## 预览
-打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 zanui-weapp 添加进去就可以查看组件源码、预览示例demo了。
+1. 在 zanui-weapp 根目录下运行
+``` bash
+# 安装项目依赖
+npm install
+# 执行组件编译
+npm run dev
+```
+2. 打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 zanui-weapp/example 目录添加进去就可以预览示例demo了。
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png)
 

@@ -1,0 +1,27 @@
+.zan-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+.zan-dialog__container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 750rpx;
+  background: white;
+  transform: translateY(150%);
+  transition: all 0.4s ease;
+  z-index: 11;
+}
+.zan-dialog--show .zan-dialog__container {
+  transform: translateY(0);
+}
+.zan-dialog--show .zan-dialog__mask {
+  display: block;
+}
+

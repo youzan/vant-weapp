@@ -1,0 +1,39 @@
+.zan-capsule {
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: middle;
+  line-height: 16px;
+  transform: scale(0.83);
+}
+.zan-capsule__left,
+.zan-capsule__right {
+  display: inline-block;
+  line-height: 16px;
+  height: 16px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.zan-capsule__left {
+  padding: 0 2px;
+  color: #FFF;
+  background: #999;
+  border-radius: 2px 0 0 2px;
+  border: 1rpx solid #999;
+}
+.zan-capsule__right {
+  padding: 0 5px;
+  color: #999;
+  border-radius: 0 2px 2px 0;
+  border: 1rpx solid #999;
+}
+
+.zan-capsule--danger .zan-capsule__left {
+  color: #FFF;
+  background: #F24544;
+  border-color: #F24544;
+}
+
+.zan-capsule--danger .zan-capsule__right {
+  color: #F24544;
+  border-color: #F24544;
+}

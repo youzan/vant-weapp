@@ -1,0 +1,69 @@
+.zan-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 32px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background: #44DB5E;
+  border: 1px solid #44DB5E;
+}
+.zan-switch__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+  z-index: 2;
+}
+.zan-switch__bg {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 52px;
+  height: 32px;
+  background: #fff;
+  border-radius: 26px;
+  display: inline-block;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+  transform: scale(0);
+  transform-origin: 36px 16px;
+}
+.zan-switch--on .zan-switch__circle {
+  transform: translateX(20px);
+}
+.zan-switch--off .zan-switch__bg {
+  transform: scale(1);
+}
+.zan-swtich--disabled {
+  opacity: 0.4;
+}
+.zan-switch__loading {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  background: url(https://img.yzcdn.cn/public_files/2017/02/24/9acec77d91106cd15b8107c4633d9155.png) no-repeat;
+  background-size: 16px 16px;
+  animation: zan-switch-loading 0.8s infinite linear;
+}
+
+@keyframes zan-switch-loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

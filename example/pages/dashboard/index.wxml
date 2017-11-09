@@ -1,0 +1,15 @@
+<view class="container">
+
+  <image class="logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png"></image>
+
+  <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
+    <view class="zan-panel-title">{{ group.title }}</view>
+    <view class="zan-panel">
+      <navigator wx:for="{{ group.content }}" wx:key="name" class="zan-cell zan-cell--access" url="{{ item.path }}">
+        <view class="zan-cell__bd">{{ item.name }}</view>
+        <view class="zan-cell__ft"></view>
+      </navigator>
+    </view>
+  </block>
+  
+</view>

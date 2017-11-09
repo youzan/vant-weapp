@@ -1,0 +1,49 @@
+<import src="/dist/field/index.wxml" />
+
+<view class="container">
+  <view class="doc-title">Field</view>
+
+  <view class="zan-panel-title">基础用法</view>
+  <view class="zan-panel">
+    <template is="zan-field" data="{{ title: '收货人', type: 'input', placeholder: '名字' }}"></template>
+    <template is="zan-field" data="{{ title: '联系电话', type: 'input', inputType: 'number', placeholder: '请输入手机号', error: true }}"></template>
+    <template is="zan-field" data="{{ title: '详细地址', type: 'textarea', placeholder: '请输入详细地址' }}"></template>
+  </view>
+
+  <view class="zan-panel-title">无标题输入框</view>
+  <view class="zan-panel">
+    <template is="zan-field" data="{{ type: 'input', placeholder: '请输入收货人姓名' }}"></template>
+  </view>
+
+  <view class="zan-panel-title field__title--radius">圆角输入框</view>
+  <template is="zan-field" data="{{ mode: 'wrapped', title: '消费总额', type: 'input', inputType: 'number', placeholder: '询问收银员后输入', right: true }}"></template>
+  <template is="zan-field" data="{{ mode: 'wrapped', title: '不参与优惠金额', type: 'input', inputType: 'number', placeholder: '询问收银员后输入', error: true, right: true }}"></template>
+  <template is="zan-field" data="{{ mode: 'wrapped', type: 'input', inputType: 'number', placeholder: '请输入消费金额' }}"></template>
+
+  <view class="zan-panel-title">自定义显示内容</view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-field">
+      <view class="zan-cell__hd zan-field__title">选择区域</view>
+      <picker
+        mode="selector"
+        class="zan-field__input zan-cell__bd"
+        range="{{ area }}"
+        value="{{ areaIndex }}"
+        bindchange="onAreaChange"
+      >
+        {{ area[areaIndex] }}
+      </picker>
+    </view>
+
+    <view class="zan-cell zan-field">
+      <view class="zan-cell__hd zan-field__title">验证码</view>
+      <input
+        type="text"
+        placeholder="请输入短信验证码"
+        class="zan-field__input zan-cell__bd"/>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--mini zan-btn--primary">获取验证码</button>
+      </view>
+    </view>
+  </view>
+</view>

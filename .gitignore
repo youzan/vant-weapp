@@ -1,0 +1,11 @@
+*.log*
+.cache
+.DS_Store
+.idea
+.vscode
+node_modules
+CHANGELOG-GENERATED.md
+project.config.json
+assets/icons/build
+assets/icons/svg
+example/dist

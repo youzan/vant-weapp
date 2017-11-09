@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/dashboard/index",
+    "pages/btn/index",
+    "pages/badge/index",
+    "pages/capsule/index",
+    "pages/card/index",
+    "pages/cell/index",
+    "pages/dialog/index",
+    "pages/field/index",
+    "pages/helper/index",
+    "pages/icon/index",
+    "pages/label/index",
+    "pages/layout/index",
+    "pages/loadmore/index",
+    "pages/noticebar/index",
+    "pages/panel/index",
+    "pages/popup/index",
+    "pages/quantity/index",
+    "pages/steps/index",
+    "pages/switch/index",
+    "pages/tab/index",
+    "pages/toptips/index",
+    "pages/toast/index",
+    "pages/select/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarTitleText": "ZanUI-WeApp",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f9f9f9"
+  },
+  "debug": true
+}

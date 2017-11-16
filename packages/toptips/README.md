@@ -14,10 +14,10 @@
 <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 ```
 ```js
-const toptips = require('path/to/zanui-weapp/dist/toptips/index');
+const Toptips = require('path/to/zanui-weapp/dist/toptips/index');
 
-// 在 Page 中混入 toptips 里面声明的方法
-Page(Object.assign({}, toptips, {
+// 在 Page 中混入 Toptips 里面声明的方法
+Page(Object.assign({}, Toptips, {
   // ...
 }));
 ```

@@ -38,3 +38,5 @@
 ```html
 <button class="zan-btn zan-btn--loading">确认付款</button>
 ```
+
+![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)

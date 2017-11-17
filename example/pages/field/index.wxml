@@ -5,14 +5,22 @@
 
   <view class="zan-panel-title">基础用法</view>
   <view class="zan-panel">
-    <template is="zan-field" data="{{ title: '收货人', type: 'input', placeholder: '名字' }}"></template>
+    <template is="zan-field" data="{{ title: '收货人', type: 'input', placeholder: '名字', value: value }}"></template>
     <template is="zan-field" data="{{ title: '联系电话', type: 'input', inputType: 'number', placeholder: '请输入手机号', error: true }}"></template>
     <template is="zan-field" data="{{ title: '详细地址', type: 'textarea', placeholder: '请输入详细地址' }}"></template>
   </view>
 
+  <view class="zan-btns">
+    <button class="zan-btn zan-btn--primary" bindtap="clearInput">清除输入</button>
+  </view>
+
   <view class="zan-panel-title">无标题输入框</view>
   <view class="zan-panel">
-    <template is="zan-field" data="{{ type: 'input', placeholder: '请输入收货人姓名' }}"></template>
+    <template is="zan-field" data="{{ type: 'input', placeholder: '请输入收货人姓名', value: textareaValue }}"></template>
+  </view>
+
+  <view class="zan-btns">
+    <button class="zan-btn zan-btn--primary" bindtap="clearTextarea">清除输入</button>
   </view>
 
   <view class="zan-panel-title field__title--radius">圆角输入框</view>

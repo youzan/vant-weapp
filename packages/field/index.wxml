@@ -6,6 +6,7 @@
     <textarea
       wx:if="{{ type === 'textarea' }}"
       auto-height
+      value="{{ value }}"
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
       placeholder-class="zan-field__placeholder"
@@ -14,6 +15,7 @@
     <input
       wx:else
       type="{{ inputType || 'text' }}"
+      value="{{ value }}"
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
       placeholder-class="zan-field__placeholder"

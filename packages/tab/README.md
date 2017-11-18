@@ -13,7 +13,7 @@
 ```js
 const Tab = require('path/to/zanui-weapp/dist/tab/index');
 
-// 在 Page 中混入 Toast 里面声明的方法
+// 在 Page 中混入 Tab 里面声明的方法
 Page(Object.assign({}, Tab, {
   // ...
 }));
@@ -51,7 +51,6 @@ tab 的数据格式如下
   // 是否开启左右滑动类型的 tab
   scroll: false
 }
-
 ```
 
 当 tab 被点击时，可以在页面中注册 handleZanTabChange 方法来监听

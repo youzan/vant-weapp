@@ -27,7 +27,6 @@ Page({
       'add',
       'add2',
       'photo',
-      'cart',
       'arrow',
       'search',
       'clear',
@@ -75,14 +74,14 @@ Page({
       'description',
       'card',
       'gift-card',
-      'coupon',
       'completed',
       'value-card',
       'certificate',
       'tosend',
       'sign',
       'home',
-      'phone'
+      'phone',
+      'add-o'
     ]
   }
 });

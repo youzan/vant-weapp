@@ -214,11 +214,6 @@ module.exports = {
       css: 'other-pay'
     },
     {
-      keywords: ['cart'],
-      src: '购物车.svg',
-      css: 'cart'
-    },
-    {
       keywords: ['browsing', 'history'],
       src: '浏览记录.svg',
       css: 'browsing-history'
@@ -380,11 +375,6 @@ module.exports = {
       css: 'gift-card'
     },
     {
-      keywords: ['coupon'],
-      src: '优惠券卡.svg',
-      css: 'coupon'
-    },
-    {
       keywords: ['clock'],
       src: '时钟.svg',
       css: 'clock'
@@ -428,6 +418,11 @@ module.exports = {
       keywords: ['phone'],
       src: '电话.svg',
       css: 'phone'
+    },
+    {
+      keywords: ['buy', 'add'],
+      src: '加购.svg',
+      css: 'add-o'
     }
   ]
 };

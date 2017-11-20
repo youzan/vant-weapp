@@ -1,5 +1,15 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.3.3](https://github.com/youzan/zanui-weapp/tree/v2.3.3) (2017-11-20)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.2...v2.3.3)
+
+**Improvements**
+
+- 新增部分 icon [\#63](https://github.com/youzan/zanui-weapp/pull/63) ([pangxie1991](https://github.com/pangxie1991))
+- Field 增加 value 传入支持 [\#60](https://github.com/youzan/zanui-weapp/pull/60) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 capsule 样式问题 [\#51](https://github.com/youzan/zanui-weapp/pull/51) ([everywill](https://github.com/everywill))
+- 增加组件使用文档 [\#50](https://github.com/youzan/zanui-weapp/pull/50) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.3.2](https://github.com/youzan/zanui-weapp/tree/v2.3.2) (2017-11-02)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.1...v2.3.2)
 

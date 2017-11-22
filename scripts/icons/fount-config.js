@@ -112,8 +112,13 @@ module.exports = {
       css: 'passed'
     },
     {
-      keywords: ['shopping-cart'],
+      keywords: ['cart'],
       src: '购物车2.svg',
+      css: 'cart'
+    },
+    {
+      keywords: ['shopping-cart'],
+      src: '购物车1.svg',
       css: 'shopping-cart'
     },
     {

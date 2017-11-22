@@ -9,6 +9,6 @@
   font-size: 10px;
 }
 .zan-icon {
-  font-size: 40px;
+  font-size: 24px;
   margin: 20px;
 }

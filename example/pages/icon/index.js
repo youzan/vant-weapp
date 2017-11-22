@@ -26,7 +26,9 @@ Page({
       'photograph',
       'add',
       'add2',
+      'add-o',
       'photo',
+      'cart',
       'arrow',
       'search',
       'clear',
@@ -80,8 +82,7 @@ Page({
       'tosend',
       'sign',
       'home',
-      'phone',
-      'add-o'
+      'phone'
     ]
   }
 });

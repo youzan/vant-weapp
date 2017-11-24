@@ -82,7 +82,14 @@ Page({
       'tosend',
       'sign',
       'home',
-      'phone'
+      'phone',
+      'play',
+      'pause',
+      'stop',
+      'hot',
+      'new',
+      'new-arrival',
+      'hot-sale'
     ]
   }
 });

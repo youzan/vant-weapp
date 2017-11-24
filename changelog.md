@@ -1,5 +1,13 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.3.4](https://github.com/youzan/zanui-weapp/tree/v2.3.4) (2017-11-24)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.3...v2.3.4)
+
+**Improvements**
+
+- 增加新的 Icon [\#65](https://github.com/youzan/zanui-weapp/pull/65) ([pangxie1991](https://github.com/pangxie1991))
+- 加回 cart 图标 [\#64](https://github.com/youzan/zanui-weapp/pull/64) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.3.3](https://github.com/youzan/zanui-weapp/tree/v2.3.3) (2017-11-20)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.2...v2.3.3)
 

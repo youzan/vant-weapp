@@ -29,20 +29,22 @@
 /* 左侧popup */
 .zan-popup--left .zan-popup__container {
   left: 0;
-  transform: translate3d(-100%, -50%, 0);
+  top: auto;
+  transform: translate3d(-100%, 0, 0);
 }
 .zan-popup--show.zan-popup--left .zan-popup__container {
-  transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* 右侧popup */
 .zan-popup--right .zan-popup__container {
   right: 0;
+  top: auto;
   left: auto;
-  transform: translate3d(100%, -50%, 0);
+  transform: translate3d(100%, 0, 0);
 }
 .zan-popup--show.zan-popup--right .zan-popup__container {
-  transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* 底部popup */

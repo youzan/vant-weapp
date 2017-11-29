@@ -2,6 +2,16 @@
   border-radius: 4px;
 }
 
+.popup-example--right .zan-popup__container {
+  top: 0;
+  bottom: 0;
+}
+
+.popup-example--left .zan-popup__container {
+  top: 0;
+  bottom: 0;
+}
+
 .popup-example--top .zan-popup__container {
   left: 0;
   right: 0;

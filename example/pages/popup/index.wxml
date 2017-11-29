@@ -31,7 +31,7 @@
     </view>
   </view>
 
-  <view class="zan-popup zan-popup--left {{ showLeftPopup ? 'zan-popup--show' : ''}}">
+  <view class="popup-example--left zan-popup zan-popup--left {{ showLeftPopup ? 'zan-popup--show' : ''}}">
     <view class="zan-popup__mask" bindtap="toggleLeftPopup"></view>
     <view class="zan-popup__container">
       <view class="zan-btns">
@@ -42,7 +42,7 @@
     </view>
   </view>
 
-  <view class="zan-popup zan-popup--right {{ showRightPopup ? 'zan-popup--show' : ''}}">
+  <view class="popup-example--right zan-popup zan-popup--right {{ showRightPopup ? 'zan-popup--show' : ''}}">
     <view class="zan-popup__mask" catchtap="toggleRightPopup"></view>
     <view class="zan-popup__container">
       <view class="zan-btns">

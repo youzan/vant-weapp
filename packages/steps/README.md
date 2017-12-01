@@ -15,7 +15,7 @@
 在模板中使用 zan-steps 模板，并传入相应数据
 ```html
 <template is="zan-steps" data="{{ type: 'horizon', steps }}"></template>
-
+```
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | type | steps 的展示状态，可选值为 'horizon', 'vertical' | String | horizon | |

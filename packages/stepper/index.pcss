@@ -1,7 +1,7 @@
-.zan-quantity {
+.zan-stepper {
   color: #666;
 }
-.zan-quantity view {
+.zan-stepper view {
   display: inline-block;
   line-height: 20px;
   padding: 5px 0;
@@ -12,34 +12,36 @@
   font-size: 12px;
   border: 1rpx solid #999;
 }
-.zan-quantity .zan-quantity__minus {
+.zan-stepper .zan-stepper__minus {
   border-right: none;
   border-radius: 2px 0 0 2px;
 }
-.zan-quantity .zan-quantity__text {
+.zan-stepper .zan-stepper__text {
   border: 1rpx solid #999;
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   height: 30px;
   width: 40px;
+  /* 重置 input 默认样式 */
+  min-height: auto;
   font-size: 12px;
   line-height: 30px;
 }
-.zan-quantity .zan-quantity__plus {
+.zan-stepper .zan-stepper__plus {
   border-left: none;
   border-radius: 0 2px 2px 0;
 }
-.zan-quantity .zan-quantity--disabled {
+.zan-stepper .zan-stepper--disabled {
   background: #f8f8f8;
   color: #bbb;
   border-color: #e8e8e8;
 }
-.zan-quantity--small view {
+.zan-stepper--small view {
   min-width: 36px;
   line-height: 18px;
 }
-.zan-quantity--small .zan-quantity__text {
+.zan-stepper--small .zan-stepper__text {
   width: 36px;
   line-height: 28px;
   height: 28px;

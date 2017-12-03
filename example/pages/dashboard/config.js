@@ -24,10 +24,10 @@ export default {
         name: 'Icon 图标',
         path: '/pages/icon/index'
       }, {
-        name: 'Label 标签',
-        path: '/pages/label/index'
+        name: 'Tag 标记',
+        path: '/pages/tag/index'
       }, {
-        name: 'Layout 标签',
+        name: 'Layout 布局',
         path: '/pages/layout/index'
       }, {
         name: 'Loadmore 加载',

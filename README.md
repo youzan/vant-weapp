@@ -49,7 +49,6 @@ npm run dev
 * [Cell - 单元格](./packages/cell/README.md)
 * [Helper - 基础样式](./packages/helper/README.md)
 * [Icon - 图标](./packages/icon/README.md)
-* [Label - 标签](./packages/label/README.md)
 * [Layout - 布局](./packages/row/README.md)
 * [Loadmore - 加载](./packages/loadmore/README.md)
 * [Noticebar - 通告栏](./packages/noticebar/README.md)
@@ -62,6 +61,7 @@ npm run dev
 * [Tab - 标签](./packages/tab/README.md)
 * [Field - 输入框](./packages/field/README.md)
 * [Dialog - 弹出框](./packages/dialog/README.md)
+* [Tag - 标签](./packages/tag/README.md)
 * [Toast - 轻提示](./packages/toast/README.md)
 * [Toptips - 顶部提示](./packages/toptips/README.md)
 

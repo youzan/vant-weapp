@@ -3,6 +3,15 @@
   <view class="doc-title">POPUP</view>
 
   <view class="zan-btns" style="margin-top: 30vh;">
+    <button class="zan-btn" bindtap="togglePopup">
+      弹出popup
+    </button>
+    <button class="zan-btn" bindtap="toggleTopPopup">
+      从顶部弹出popup
+    </button>
+    <button class="zan-btn" bindtap="toggleBottomPopup">
+      从底部弹出popup
+    </button>
     <button class="zan-btn" bindtap="toggleLeftPopup">
       从左边弹出popup
     </button>
@@ -11,19 +20,54 @@
     </button>
   </view>
 
-  <view class="zan-popup zan-popup--left {{ showLeftPopup ? 'zan-popup--show' : ''}}">
-    <view style="padding: 15px;">
-      <button class="zan-btn" bindtap="toggleLeftPopup">
-        关闭 popup
-      </button>
+  <view class="zan-popup {{ showPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" bindtap="togglePopup"></view>
+    <view class="zan-popup__container popup-example--center">
+      <view class="zan-btns">
+        <button class="zan-btn" bindtap="togglePopup">
+          关闭 popup
+        </button>
+      </view>
     </view>
   </view>
 
-  <view class="zan-popup zan-popup--right {{ showRightPopup ? 'zan-popup--show' : ''}}">
-    <view style="padding: 15px;">
-      <button class="zan-btn" bindtap="toggleRightPopup">
-        关闭 popup
-      </button>
+  <view class="popup-example--left zan-popup zan-popup--left {{ showLeftPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" bindtap="toggleLeftPopup"></view>
+    <view class="zan-popup__container">
+      <view class="zan-btns">
+        <button class="zan-btn" catchtap="toggleLeftPopup">
+          关闭 popup
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="popup-example--right zan-popup zan-popup--right {{ showRightPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" catchtap="toggleRightPopup"></view>
+    <view class="zan-popup__container">
+      <view class="zan-btns">
+        <button class="zan-btn" catchtap="toggleRightPopup">
+          关闭 popup
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="popup-example--top zan-popup zan-popup--top {{ showTopPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" catchtap="toggleTopPopup"></view>
+    <view class="zan-popup__container">
+      内容
+    </view>
+  </view>
+
+  <view class="popup-example--bottom zan-popup zan-popup--bottom {{ showBottomPopup ? 'zan-popup--show' : ''}}">
+    <view class="zan-popup__mask" catchtap="toggleBottomPopup"></view>
+    <view class="zan-popup__container">
+      <view class="zan-btns">
+        <button class="zan-btn" catchtap="toggleBottomPopup">
+          关闭 popup
+        </button>
+      </view>
     </view>
   </view>
 

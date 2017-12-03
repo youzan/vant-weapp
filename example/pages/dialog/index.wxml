@@ -1,18 +1,24 @@
+<import src="/dist/dialog/index.wxml" />
+
 <view class="container">
 
   <view class="doc-title">DIALOG</view>
 
   <view class="zan-btns" style="margin-top: 30vh;">
-    <button class="zan-btn" bindtap="toggleDialog">
-      显示Dialog
+    <button class="zan-btn" bindtap="toggleBaseDialog">
+      基础 Dialog
+    </button>
+    <button class="zan-btn" bindtap="toggleWithoutTitleDialog">
+      Dialog - 无标题
+    </button>
+    <button class="zan-btn" bindtap="toggleButtonDialog">
+      Dialog - 自定义显示按钮
+    </button>
+    <button class="zan-btn" bindtap="toggleVerticalDialog">
+      Dialog - 按钮纵向排布
     </button>
   </view>
 
-  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
-    <view class="zan-dialog__mask" bindtap="toggleDialog" />
-    <view class="zan-dialog__container">
-      <view style="padding: 100px 0; text-align: center;">Dialog内容</view>
-    </view>
-  </view>
-
 </view>
+
+<template is="zan-dialog" data="{{ zanDialog }}"></template>

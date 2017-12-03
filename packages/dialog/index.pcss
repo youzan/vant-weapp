@@ -1,27 +1,92 @@
-.zan-dialog__mask {
+/* 基础样式 */
+.zan-dialog--container {
   position: fixed;
+  top: 45%;
+  left: 50%;
+  width: 80%;
+  height: 0;
+  font-size: 16px;
+  overflow: hidden;
+  transition: all .2s linear;
+  border-radius: 4px;
+  background-color: #fff;
+  transform: translate3d(-50%, -50%, 0);
+  color: #333;
+  opacity: 0;
+}
+
+.zan-dialog--mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: .3s;
   display: none;
 }
-.zan-dialog__container {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 750rpx;
-  background: white;
-  transform: translateY(150%);
-  transition: all 0.4s ease;
-  z-index: 11;
+
+/* 弹出层内容 */
+.zan-dialog__header {
+  padding: 15px 0 0;
+  text-align: center;
 }
-.zan-dialog--show .zan-dialog__container {
-  transform: translateY(0);
+
+.zan-dialog__content {
+  padding: 15px 20px;
+  line-height: 1.5;
+  min-height: 40px;
+  border-bottom: 1rpx solid #e5e5e5;
 }
-.zan-dialog--show .zan-dialog__mask {
+
+/* 在有标题时，需要减弱内容的存在感 */
+.zan-dialog__content--title {
+  color: #999;
+  font-size: 14px;
+}
+
+.zan-dialog__footer {
+  overflow: hidden;
+}
+
+.zan-dialog__button {
+  line-height: 50px;
+  height: 50px;
+  padding: 0 5px;
+  border: 0px none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+/* 展示时，样式重置 */
+.zan-dialog--show .zan-dialog--container {
+  opacity: 1;
+  height: auto;
+}
+
+.zan-dialog--show .zan-dialog--mask {
   display: block;
 }
 
+/* 水平/垂直布局 */
+.zan-dialog__footer--horizon {
+  display: flex;
+}
+
+.zan-dialog__footer--horizon .zan-dialog__button {
+  flex: 1;
+  border-right: 1rpx solid #e5e5e5;
+}
+
+.zan-dialog__footer--horizon .zan-dialog__button:last-child {
+  border-right: 0px none;
+}
+
+.zan-dialog__footer--vertical .zan-dialog__button {
+  flex: 1;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.zan-dialog__footer--vertical .zan-dialog__button:last-child {
+  border-bottom: 0px none;
+}

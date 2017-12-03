@@ -1,0 +1,30 @@
+.popup-example--center {
+  border-radius: 4px;
+}
+
+.popup-example--right .zan-popup__container {
+  top: 0;
+  bottom: 0;
+}
+
+.popup-example--left .zan-popup__container {
+  top: 0;
+  bottom: 0;
+}
+
+.popup-example--top .zan-popup__container {
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 16px;
+}
+.popup-example--top .zan-popup__mask {
+  opacity: 0;
+}
+
+.popup-example--bottom .zan-popup__container {
+  left: 0;
+  right: 0;
+}

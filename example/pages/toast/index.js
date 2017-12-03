@@ -1,4 +1,4 @@
-var Zan = require('../../dist/index');
+const Zan = require('../../dist/index');
 
 Page(Object.assign({}, Zan.Toast, {
   data: {},

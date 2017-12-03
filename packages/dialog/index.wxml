@@ -1,0 +1,22 @@
+<template name="zan-dialog">
+  <view class="zan-dialog {{ zanDialog.show ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog--mask"></view>
+    <view class="zan-dialog--container">
+      <view
+        wx:if="{{ zanDialog.title }}"
+        class="zan-dialog__header">{{ zanDialog.title }}</view>
+      <view
+        class="zan-dialog__content {{ zanDialog.title ? 'zan-dialog__content--title' : '' }}">{{ zanDialog.content }}</view>
+      <view
+        class="zan-dialog__footer {{ zanDialog.buttonsShowVertical ? 'zan-dialog__footer--vertical' : 'zan-dialog__footer--horizon' }}">
+        <block wx:for="{{ zanDialog.buttons }}" wx:key="{{ item.text }}-{{ item.type }}">
+          <button
+            class="zan-dialog__button zan-btn"
+            data-type="{{ item.type }}"
+            catchtap="_handleZanDialogButtonClick"
+            style="color: {{ item.color || '#333' }}">{{ item.text }}</button>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,4 +1,5 @@
 exports.CheckLabel = require('./select/index');
+exports.Dialog = require('./dialog/index');
 exports.Field = require('./field/index');
 exports.NoticeBar = require('./noticebar/index');
 exports.Quantity = require('./quantity/index');

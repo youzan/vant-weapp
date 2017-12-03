@@ -9,7 +9,7 @@ module.exports = {
       // 标题
       title = '',
       // 内容
-      content = '',
+      content = ' ',
       // 按钮是否展示为纵向
       buttonsShowVertical = false,
       // 是否展示确定
@@ -23,16 +23,12 @@ module.exports = {
       // 取消按钮文案
       cancelText = '取消',
       // 取消按钮颜色
-      cancelColor = '#00000'
+      cancelColor = '#333'
     } = options;
 
-    // 是否展示自定义按钮，自定义按钮和默认按钮的处理逻辑也会分离
-    let showCustomBtns = false;
-    if (buttons.length > 0) {
-      showCustomBtns = true;
-    } else {
-      // 处理默认按钮的展示
-      // 纵向排布确认按钮在上方
+    // 处理默认按钮的展示
+    // 纵向排布确认按钮在上方
+    if (buttons.length === 0) {
       if (showConfirm) {
         buttons.push({
           type: 'confirm',
@@ -59,7 +55,6 @@ module.exports = {
       this.setData({
         zanDialog: {
           show: true,
-          showCustomBtns,
           buttons,
           title,
           content,

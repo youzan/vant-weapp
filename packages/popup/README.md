@@ -6,7 +6,7 @@
 @import "path/to/zanui-weapp/dist/index.wxss";
 ```
 
-在需要使用的页面里引入组件库模板和脚本
+在需要使用的页面里使用特定的 wxml 结构
 ```html
 <!-- 在需要展示时，增加 zan-popup--show 类即可 -->
 <view class="zan-popup zan-popup--show">

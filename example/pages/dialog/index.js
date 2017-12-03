@@ -31,7 +31,7 @@ Page(Object.assign({}, Zan.Dialog, {
         type: 'cash'
       }, {
         text: '微信支付',
-        color: 'green',
+        color: '#3CC51F',
         type: 'wechat'
       }, {
         text: '取消',
@@ -53,7 +53,7 @@ Page(Object.assign({}, Zan.Dialog, {
         type: 'cash'
       }, {
         text: '微信支付',
-        color: 'green',
+        color: '#3CC51F',
         type: 'wechat'
       }, {
         text: '取消',

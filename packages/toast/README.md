@@ -25,5 +25,5 @@ Page(Object.assign({}, Toast, {
 ### 代码演示
 在 js 中直接调用 this.showZanToast 即可
 ```js
-this.showZanToast('toptips的内容');
+this.showZanToast('toast的内容');
 ```

@@ -54,7 +54,7 @@ npm run dev
 * [Noticebar - 通告栏](./packages/noticebar/README.md)
 * [Panel - 面板](./packages/panel/README.md)
 * [Popup - 弹出层](./packages/popup/README.md)
-* [Quantity - 计数器](./packages/quantity/README.md)
+* [Stepper - 计数器](./packages/stepper/README.md)
 * [Select - 选择](./packages/select/README.md)
 * [Steps - 步骤条](./packages/steps/README.md)
 * [Switch - 开关](./packages/switch/README.md)
@@ -106,36 +106,36 @@ npm run dev
 如数量选择组件，需要先引入模版，然后给模版传递数据
 
 ~~~html
-<!-- example/quantity/index.html -->
+<!-- example/stepper/index.html -->
 
-<import src="path/to/zanui-weapp/dist/quantity/index.wxml" />
+<import src="path/to/zanui-weapp/dist/stepper/index.wxml" />
 
-<template is="zan-quantity" data="{{ ...quantity, componentId: 'customId' }}" />
+<template is="zan-stepper" data="{{ ...stepper, componentId: 'customId' }}" />
 ~~~
 
-然后通过`Zan.Quantity`把相关回调注入到页面中
+然后通过`Zan.Stepper`把相关回调注入到页面中
 
 ~~~js
-// example/quantity/index.js
+// example/stepper/index.js
 
 var Zan = require('path/to/zanui-weapp/dist/index');
 
-Page(Object.assign({}, Zan.Quantity, {
+Page(Object.assign({}, Zan.Stepper, {
   data: {
-    quantity: {
-      quantity: 10,
+    stepper: {
+      stepper: 10,
       min: 1,
       max: 20
     },
   },
 
-  handleZanQuantityChange(e) {
-    // 如果页面有多个Quantity组件，则通过唯一componentId进行索引
+  handleZanStepperChange(e) {
+    // 如果页面有多个Stepper组件，则通过唯一componentId进行索引
     var compoenntId = e.componentId;
-    var quantity = e.quantity;
+    var stepper = e.stepper;
 
     this.setData({
-      'quantity.quantity': quantity
+      'stepper.stepper': stepper
     });
   }
 }));

@@ -2,35 +2,35 @@ function handle(e, num) {
   var dataset = e.currentTarget.dataset;
   var componentId = dataset.componentId;
   var disabled = dataset.disabled;
-  var quantity = +dataset.quantity;
+  var stepper = +dataset.stepper;
 
   if (disabled) return null;
 
-  callback.call(this, componentId, quantity + num);
+  callback.call(this, componentId, stepper + num);
 }
 
-function callback(componentId, quantity) {
-  quantity = +quantity;
-  var e = { componentId, quantity };
-  console.info('[zan:quantity:change]', e);
+function callback(componentId, stepper) {
+  stepper = +stepper;
+  var e = { componentId, stepper };
+  console.info('[zan:stepper:change]', e);
 
-  if (this.handleZanQuantityChange) {
-    this.handleZanQuantityChange(e);
+  if (this.handleZanStepperChange) {
+    this.handleZanStepperChange(e);
   } else {
-    console.warn('页面缺少 handleZanQuantityChange 回调函数');
+    console.warn('页面缺少 handleZanStepperChange 回调函数');
   }
 }
 
-var Quantity = {
-  _handleZanQuantityMinus(e) {
+var Stepper = {
+  _handleZanStepperMinus(e) {
     handle.call(this, e, -1);
   },
 
-  _handleZanQuantityPlus(e) {
+  _handleZanStepperPlus(e) {
     handle.call(this, e, +1);
   },
 
-  _handleZanQuantityBlur(e) {
+  _handleZanStepperBlur(e) {
     var dataset = e.currentTarget.dataset;
     var componentId = dataset.componentId;
     var max = +dataset.max;
@@ -58,4 +58,4 @@ var Quantity = {
   }
 };
 
-module.exports = Quantity;
+module.exports = Stepper;

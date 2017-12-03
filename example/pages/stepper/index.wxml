@@ -1,0 +1,20 @@
+<import src="/dist/stepper/index.wxml" />
+
+<view class="container">
+
+  <view class="doc-title">Stepper</view>
+
+  <view style="padding: 40px 15px">
+    <template is="zan-stepper" data="{{ ...stepper1, componentId: 'stepper1' }}" />
+  </view>
+
+  <!-- 当最大值等于最小值时，组件不可用 -->
+  <view style="padding: 40px 15px ">
+    <template is="zan-stepper" data="{{ ...stepper2, componentId: 'stepper2' }}" />
+  </view>
+
+  <!-- small size -->
+  <view style="padding: 40px 15px ">
+    <template is="zan-stepper" data="{{ ...stepper3, componentId: 'stepper3', size: 'small' }}" />
+  </view>
+</view>

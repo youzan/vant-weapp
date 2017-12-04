@@ -28,6 +28,7 @@ module.exports = {
 
     // 处理默认按钮的展示
     // 纵向排布确认按钮在上方
+    let showCustomBtns = false;
     if (buttons.length === 0) {
       if (showConfirm) {
         buttons.push({
@@ -49,12 +50,15 @@ module.exports = {
           buttons.unshift(cancelButton);
         }
       }
+    } else {
+      showCustomBtns = true;
     }
 
     return new Promise((resolve, reject) => {
       this.setData({
         zanDialog: {
           show: true,
+          showCustomBtns,
           buttons,
           title,
           content,

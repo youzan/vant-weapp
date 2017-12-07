@@ -10,7 +10,7 @@
 ```html
 <import src="path/to/zanui-weapp/dist/field/index.wxml" />
 
-<!-- 直接使用 zan-field 模板，并且直接传入 zanToast -->
+<!-- 直接使用 zan-field 模板，并且直接传入设置值 -->
 <template is="zan-field" data="{{ value }}"></template>
 ```
 ```js
@@ -45,6 +45,7 @@ Page(Object.assign({}, Field, {
 ```
 
 `Field` 支持传入参数如下
+
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 输入框左侧标题，若传入为空，则不显示标题 | String | - | |

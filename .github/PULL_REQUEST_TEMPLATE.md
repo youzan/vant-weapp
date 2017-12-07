@@ -3,7 +3,7 @@
 ### 认真写 PR 的标题，会用于生成 change log。
 
 #### 标题规则
-[bug fix / breaking change / new feature] 组件名字：修改内容描述
+[bug fix / breaking change / new feature / improvement] 组件名字：修改内容描述
 
 说明：
 * 前面方括号用来区分 Issue / PR 的 类型：bug fix - 改 bug；breaking change: 不兼容的改动；new feature：新功能

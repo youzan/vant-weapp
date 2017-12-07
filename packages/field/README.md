@@ -51,7 +51,7 @@ Page(Object.assign({}, Field, {
 | title | 输入框左侧标题，若传入为空，则不显示标题 | String | - | |
 | value | 输入框的内容 | String  | - | |
 | type | 输入框的类型，可选值为 input, textarea | String  | input | |
-| inputType | 输入框为 input 情况下，输入框的类型 | String  | text | |
+| inputType | 输入框为 input 情况下，输入框的类型，例如：number, text, password | String  | text | |
 | placeholder | 输入框为空时占位符 | String  | | |
 | mode | 输入框展示样式，可选值为 wrapped, normal | String | normal | |
 | right | 输入框内容是否居右显示 | Boolean  | false | |

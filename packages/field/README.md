@@ -54,7 +54,7 @@ Page(Object.assign({}, Field, {
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 输入框左侧标题，若传入为空，则不显示标题 | String | - | |
-| name | 输入框的名字，用于 form 表单提交时的 key 名 | String  | componentId 指定的值 | |
+| name | 输入框的名字，作为 form 表单提交时数据的 key | String  | componentId 指定的值 | |
 | value | 输入框的内容 | String  | - | |
 | type | 输入框的类型，可选值为 input, textarea | String  | input | |
 | inputType | 输入框为 input 情况下，输入框的类型，例如：number, text, password | String  | text | |

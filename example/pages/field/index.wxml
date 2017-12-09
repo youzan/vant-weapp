@@ -3,30 +3,72 @@
 <view class="container">
   <view class="doc-title">Field</view>
 
+  <!-- Field 基础用法 -->
   <view class="zan-panel-title">基础用法</view>
   <view class="zan-panel">
-    <template is="zan-field" data="{{ title: '收货人', type: 'input', placeholder: '名字', value: value }}"></template>
-    <template is="zan-field" data="{{ title: '联系电话', type: 'input', inputType: 'number', placeholder: '请输入手机号', error: true }}"></template>
-    <template is="zan-field" data="{{ title: '详细地址', type: 'textarea', placeholder: '请输入详细地址' }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.base.name, value }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.base.tel }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.base.address }}"></template>
   </view>
 
   <view class="zan-btns">
-    <button class="zan-btn zan-btn--primary" bindtap="clearInput">清除输入</button>
+    <button
+      class="zan-btn zan-btn--primary"
+      bindtap="clearInput">清除输入</button>
   </view>
 
+  <!-- 去除标题后的输入框样式 -->
   <view class="zan-panel-title">无标题输入框</view>
   <view class="zan-panel">
-    <template is="zan-field" data="{{ type: 'input', placeholder: '请输入收货人姓名', value: textareaValue }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.notitle, value: textareaValue }}"></template>
   </view>
 
   <view class="zan-btns">
-    <button class="zan-btn zan-btn--primary" bindtap="clearTextarea">清除输入</button>
+    <button
+      class="zan-btn zan-btn--primary"
+      bindtap="clearTextarea">清除输入</button>
   </view>
 
+  <!-- 使用 Field 圆角样式 -->
   <view class="zan-panel-title field__title--radius">圆角输入框</view>
-  <template is="zan-field" data="{{ mode: 'wrapped', title: '消费总额', type: 'input', inputType: 'number', placeholder: '询问收银员后输入', right: true }}"></template>
-  <template is="zan-field" data="{{ mode: 'wrapped', title: '不参与优惠金额', type: 'input', inputType: 'number', placeholder: '询问收银员后输入', error: true, right: true }}"></template>
-  <template is="zan-field" data="{{ mode: 'wrapped', type: 'input', inputType: 'number', placeholder: '请输入消费金额' }}"></template>
+  <template
+    is="zan-field"
+    data="{{ ...config.radius.totalPrice }}"></template>
+  <template
+    is="zan-field"
+    data="{{ ...config.radius.excludePrice }}"></template>
+  <template
+    is="zan-field"
+    data="{{ ...config.radius.notitle }}"></template>
+
+  <!-- form 中使用 Field -->
+  <view class="zan-panel-title">Form 表单中的field应用</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="zan-panel">
+      <template
+        is="zan-field"
+        data="{{ ...config.form.name }}"></template>
+      <template
+        is="zan-field"
+        data="{{ ...config.form.tel }}"></template>
+      <view class="zan-btns">
+        <button
+          class="zan-btn zan-btn--primary"
+          formType="submit">提交数据</button>
+        <button
+          class="zan-btn"
+          formType="reset">重置数据</button>
+      </view>
+    </view>
+  </form>
 
   <view class="zan-panel-title">自定义显示内容</view>
   <view class="zan-panel">

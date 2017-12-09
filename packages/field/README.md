@@ -31,6 +31,7 @@ field 支持多种展示方式，在 `data` 中传入对应的设置即可。
 当 field 触发输入事件时，可以在页面中注册 handleZanFieldChange 方法来监听
 ```js
 Page(Object.assign({}, Field, {
+  // 输入框内容更改时触发
   handleZanFieldChange({ componentId, detail }) {
     /*
      * componentId 即为在模板中传入的 componentId
@@ -40,7 +41,11 @@ Page(Object.assign({}, Field, {
     /*
      * 处理函数可以直接 return 一个字符串，将替换输入框的内容。
      */
-  }
+  },
+  // 输入框聚焦时触发
+  handleZanFieldFocus({ componentId, detail }) {},
+  // 输入框失焦时触发
+  handleZanFieldBlur({ componentId, detail }) {},
 }));
 ```
 
@@ -49,6 +54,7 @@ Page(Object.assign({}, Field, {
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 输入框左侧标题，若传入为空，则不显示标题 | String | - | |
+| name | 输入框的名字，作为 form 表单提交时数据的 key | String  | componentId 指定的值 | |
 | value | 输入框的内容 | String  | - | |
 | type | 输入框的类型，可选值为 input, textarea | String  | input | |
 | inputType | 输入框为 input 情况下，输入框的类型，例如：number, text, password | String  | text | |
@@ -56,3 +62,4 @@ Page(Object.assign({}, Field, {
 | mode | 输入框展示样式，可选值为 wrapped, normal | String | normal | |
 | right | 输入框内容是否居右显示 | Boolean  | false | |
 | error | 是否显示为输入框错误情况下的样式 | Boolean  | false | |
+| componentId | 用于区分输入框之间的唯一名称 | String  | - | |

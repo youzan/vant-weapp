@@ -1,5 +1,25 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.4.0](https://github.com/youzan/zanui-weapp/tree/v2.4.0) (2017-12-09)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.5...v2.4.0)
+
+**Improvements**
+
+- 新增 Field 组件对于 Form 的支持 [\#75](https://github.com/youzan/zanui-weapp/pull/75) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 Field 组件文档 [\#73](https://github.com/youzan/zanui-weapp/pull/73) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 Dialog 组件自定义按钮时按钮点击回调的问题 [\#72](https://github.com/youzan/zanui-weapp/pull/72) ([pangxie1991](https://github.com/pangxie1991))
+- Quantity 组件更名为 Stepper [\#70](https://github.com/youzan/zanui-weapp/pull/70) ([pangxie1991](https://github.com/pangxie1991))
+- Dialog 组件和 Popup 组件重构 [\#69](https://github.com/youzan/zanui-weapp/pull/69) ([pangxie1991](https://github.com/pangxie1991))
+- 修正部分文档错误 [\#68](https://github.com/youzan/zanui-weapp/pull/68) ([0x01f7](https://github.com/0x01f7))
+- Label组件重命名为 Tag 并整理样式 [\#55](https://github.com/youzan/zanui-weapp/pull/55) ([pangxie1991](https://github.com/pangxie1991))
+
+## [v2.3.5](https://github.com/youzan/zanui-weapp/tree/v2.3.5) (2017-11-27)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.4...v2.3.5)
+
+**Improvements**
+
+- 修复 zan-icon-new 展示 [\#66](https://github.com/youzan/zanui-weapp/pull/66) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.3.4](https://github.com/youzan/zanui-weapp/tree/v2.3.4) (2017-11-24)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.3...v2.3.4)
 

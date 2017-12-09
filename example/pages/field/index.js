@@ -20,6 +20,18 @@ Page(Object.assign({}, Zan.Field, {
     console.log('[zan:field:change]', componentId, detail);
   },
 
+  handleZanFieldFocus(e) {
+    const { componentId, detail } = e;
+
+    console.log('[zan:field:focus]', componentId, detail);
+  },
+
+  handleZanFieldBlur(e) {
+    const { componentId, detail } = e;
+
+    console.log('[zan:field:blur]', componentId, detail);
+  },
+
   clearInput() {
     this.setData({
       value: ''
@@ -30,5 +42,13 @@ Page(Object.assign({}, Zan.Field, {
     this.setData({
       textareaValue: ''
     });
+  },
+
+  formSubmit(event) {
+    console.log('[zan:field:submit]', event.detail.value);
+  },
+
+  formReset(event) {
+    console.log('[zan:field:reset]', event);
   }
 }));

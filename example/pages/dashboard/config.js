@@ -24,9 +24,6 @@ export default {
         name: 'Icon 图标',
         path: '/pages/icon/index'
       }, {
-        name: 'Tag 标记',
-        path: '/pages/tag/index'
-      }, {
         name: 'Layout 布局',
         path: '/pages/layout/index'
       }, {
@@ -56,6 +53,9 @@ export default {
       }, {
         name: 'Tab 标签',
         path: '/pages/tab/index'
+      }, {
+        name: 'Tag 标记',
+        path: '/pages/tag/index'
       }
     ]
   },

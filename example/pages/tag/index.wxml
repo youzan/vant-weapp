@@ -20,6 +20,7 @@
 
     <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">
+      <view class="zan-tag zan-tag--plain">灰色</view>
       <view class="zan-tag zan-tag--danger zan-tag--plain">会员折扣</view>
       <view class="zan-tag zan-tag--warn zan-tag--plain">返现</view>
       <view class="zan-tag zan-tag--primary zan-tag--plain">返现</view>

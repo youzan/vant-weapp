@@ -1,5 +1,16 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.4.1](https://github.com/youzan/zanui-weapp/tree/v2.4.1) (2017-12-13)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.0...v2.4.1)
+
+**Bug Fixes**
+
+- 修复 Tag 展现问题 [\#77](https://github.com/youzan/zanui-weapp/pull/77) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+
+- 新增 tag 组件文档 [\#76](https://github.com/youzan/zanui-weapp/pull/76) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.4.0](https://github.com/youzan/zanui-weapp/tree/v2.4.0) (2017-12-09)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.3.5...v2.4.0)
 

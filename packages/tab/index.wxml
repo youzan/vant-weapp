@@ -1,17 +1,23 @@
 <template name="zan-tab">
   <view class="zan-tab">
-    <block wx:if="{{ tab.scroll }}">
+    <block wx:if="{{ tab.scroll || scroll }}">
       <scroll-view
         class="zan-tab__bd zan-tab__bd--scroll {{ fixed ? 'zan-tab__bd--fixed' : '' }}"
         scroll-x="true"
-        style="height: {{ tab.height ? tab.height + 'px' : 'auto' }}"
+        style="height: {{ tab.height || height ? ((tab.height || height) + 'px') : 'auto' }}"
       >
-        <template is="zan-tab-list" data="{{ tab, componentId }}"></template>
+        <template
+          is="zan-tab-list"
+          data="{{ list: tab.list || list, selectedId: tab.selectedId || selectedId, componentId }}">
+        </template>
       </scroll-view>
     </block>
     <block wx:else>
       <view class="zan-tab__bd {{ fixed ? 'zan-tab__bd--fixed' : '' }}">
-        <template is="zan-tab-list" data="{{ tab, componentId }}"></template>
+        <template
+          is="zan-tab-list"
+          data="{{ list: tab.list || list, selectedId: tab.selectedId || selectedId, componentId }}">
+        </template>
       </view>
     </block>
   </view>
@@ -19,9 +25,9 @@
 
 <template name="zan-tab-list">
   <view
-    wx:for="{{ tab.list }}"
+    wx:for="{{ list }}"
     wx:key="id"
-    class="zan-tab__item {{ tab.selectedId == item.id ? 'zan-tab__item--selected' : '' }}"
+    class="zan-tab__item {{ selectedId == item.id ? 'zan-tab__item--selected' : '' }}"
     data-component-id="{{ componentId }}"
     data-item-id="{{ item.id }}"
     bindtap="_handleZanTabChange"

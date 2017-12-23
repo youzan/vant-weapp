@@ -1,3 +1,5 @@
+@import "../common/_mixins";
+
 .zan-btn {
   position: relative;
   color: #333;
@@ -6,7 +8,6 @@
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 2px;
-  border: 1rpx solid #e5e5e5;
   font-size: 16px;
   line-height: 45px;
   height: 45px;
@@ -16,7 +17,9 @@
   vertical-align: middle;
 }
 .zan-btn::after {
-  display: none;
+  @mixin hairline;
+  border-width: 1px;
+  border-radius: 4px;
 }
 .zan-btns {
   margin: 15px;
@@ -26,19 +29,28 @@
 .zan-btn--primary {
   color: #fff;
   background-color: #4b0;
-  border-color: #0a0;
+
+  &::after {
+    border-color: #0a0;
+  }
 }
 
 .zan-btn--warn {
   color: #fff;
   background-color: #f85;
-  border-color: #f85;
+
+  &::after {
+    border-color: #f85;
+  }
 }
 
 .zan-btn--danger {
   color: #fff;
   background-color: #f44;
-  border-color: #e33;
+
+  &::after {
+    border-color: #e33;
+  }
 }
 
 /* size */
@@ -131,6 +143,10 @@
   border-color: #e5e5e5 ! important;
   cursor: not-allowed ! important;
   opacity: 1 ! important;
+
+  &::after {
+    border-color: #e5e5e5 ! important;
+  }
 }
 
 /* :last-child */

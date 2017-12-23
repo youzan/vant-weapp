@@ -1,3 +1,5 @@
+@import "../common/_mixins";
+
 .zan-cell {
   position: relative;
   padding: 12px 15px;
@@ -8,14 +10,12 @@
 }
 
 .zan-cell::after {
-  position: absolute;
+  @mixin hairline;
+  border-bottom-width: 1px;
   left: 15px;
   right: 0;
-  bottom: 0;
-  border-top: 1rpx solid #e5e5e5;
-  background: #e5e5e5;
-  content: ' ';
 }
+
 .zan-cell__icon {
   margin-right: 5px;
 }

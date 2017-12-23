@@ -1,13 +1,14 @@
+const { extractComponentId } = require('../common/helper');
+
 function handle(e) {
-  var dataset = e.currentTarget.dataset;
-  var componentId = dataset.componentId;
-  var value = e.detail.value;
+  const componentId = extractComponentId(e);
+  const value = e.detail.value;
 
   callback.call(this, componentId, value);
 }
 
 function callback(componentId, value) {
-  var e = { componentId, value };
+  const e = { componentId, value };
   console.info('[zan:Select:change]', e);
 
   if (this.handleZanSelectChange) {
@@ -17,10 +18,8 @@ function callback(componentId, value) {
   }
 }
 
-var Select = {
+module.exports = {
   _handleZanSelectChange(e) {
     handle.call(this, e);
-  },
+  }
 };
-
-module.exports = Select;

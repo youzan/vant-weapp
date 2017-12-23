@@ -1,60 +1,83 @@
+@import '../common/_var';
+@import "../common/_mixins";
+
 .zan-tag {
   display: inline-block;
+  position: relative;
   box-sizing: border-box;
   line-height: 16px;
   padding: 0 5px;
   border-radius: 2px;
   font-size: 11px;
-  background: #c9c9c9;
-  border: 1rpx solid #e5e5e5;
+  background: $gray;
   text-align: center;
-  color: #fff;
+  color: $white;
+
+  &::after {
+    @mixin hairline;
+    border-width: 1px;
+    border-radius: 4px;
+  }
 }
 
 .zan-tag--plain {
-  color: #c9c9c9;
-  background: #fff;
+  color: $gray;
+  background: $white;
 }
 
 /* 各种主题代码 */
 .zan-tag--primary {
-  color: #fff;
-  background-color: #4b0;
-  border: 1rpx solid #4b0;
+  color: $button-primary-color;
+  background-color: $button-primary-background-color;
+
+  &::after {
+    border-color: $button-primary-background-color;
+  }
 
   /* 空心形式 */
   &.zan-tag--plain {
-    color: #4b0;
-    background: #fff;
+    color: $button-primary-background-color;
+    background: $white;
   }
 }
+
 .zan-tag--danger {
-  color: #fff;
-  background: #f44;
-  border: 1rpx solid #f44;
+  color: $button-danger-color;
+  background: $button-danger-background-color;
+
+  &::after {
+    border-color: $button-danger-background-color;
+  }
 
   /* 空心形式 */
   &.zan-tag--plain {
-    color: #f44;
-    background: #fff;
+    color: $button-danger-background-color;
+    background: $button-danger-color;
   }
 }
+
 .zan-tag--warn {
-  color: #fff;
+  color: $white;
   background: #f85;
-  border: 1rpx solid #f85;
+
+  &::after {
+    border-color: #f85;
+  }
 
   /* 空心形式 */
   &.zan-tag--plain {
     color: #f85;
-    background: #fff;
+    background: $white;
   }
 }
 
 
 /* disabled tag */
 .zan-tag--disabled {
-  color: #cacaca !important;
-  background: #eee;
-  border: 1rpx solid #e5e5e5;
+  color: $button-disabled-color !important;
+  background: $button-disabled-background-color;
+
+  &::after {
+    border-color: $button-disabled-border-color;
+  }
 }

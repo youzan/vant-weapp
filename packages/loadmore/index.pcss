@@ -1,3 +1,5 @@
+@import "../common/_mixins";
+
 .zan-loadmore {
   position: relative;
   width: 65%;
@@ -32,8 +34,12 @@
 
 .zan-loadmore--nodata,
 .zan-loadmore--nomore {
-  border-top: 1rpx solid #e5e5e5;
   color: #999;
+
+  &::after {
+    @mixin hairline;
+    border-top-width: 1px;
+  }
 }
 
 .zan-loadmore--nodata {
@@ -45,6 +51,7 @@
   top: -11px;
   background: #f9f9f9;
   padding: 0 6px;
+  z-index: 1;
 }
 
 .zan-loadmore--nomore .zan-loadmore__tips {
@@ -52,6 +59,7 @@
   top: -11px;
   background: #f9f9f9;
   padding: 0 6px;
+  z-index: 1;
 }
 
 .zan-loadmore__dot {

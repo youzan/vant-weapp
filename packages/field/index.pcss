@@ -1,4 +1,4 @@
-@import '../cell/index.pcss';
+@import '../cell/index';
 
 .zan-field {
   padding: 7px 15px;
@@ -7,13 +7,13 @@
 
 .zan-field--wrapped {
   margin: 0 15px;
-  border: 1rpx solid #e5e5e5;
-  border-radius: 8rpx;
   background-color: #fff;
-}
 
-.zan-field--wrapped::after {
-  border: 0rpx;
+  &::after {
+    left: 0;
+    border-width: 1px;
+    border-radius: 4px;
+  }
 }
 
 .zan-field--wrapped + .zan-field--wrapped {
@@ -21,9 +21,12 @@
 }
 
 .zan-field--error {
-  /* 圆角输入框时，将边框也置红 */
-  border-color: #f40;
   color: #f40;
+}
+
+/* 圆角输入框时，将边框也置红 */
+.zan-field--wrapped.zan-field--error::after {
+  border-color: #f40;
 }
 
 .zan-field__title {

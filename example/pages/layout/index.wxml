@@ -1,6 +1,6 @@
 <view class="container">
 
-  <view class="doc-title">LAYOUT</view>
+  <view class="doc-title zan-hairline--bottom">LAYOUT</view>
 
   <view class="zan-panel-title">基础用法</view>
   <view class="doc-description">Layout 组件提供了24列栅格，添加 zan-col-x 可以设置元素所占宽度</view>

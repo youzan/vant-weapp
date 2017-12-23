@@ -1,4 +1,4 @@
-const { extractComponentId } = require('../utils/index');
+const { extractComponentId } = require('../common/helper');
 
 module.exports = {
   _handleZanFieldChange(event) {

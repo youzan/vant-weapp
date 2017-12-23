@@ -5,7 +5,7 @@ const postcssCalc = require('postcss-calc');
 module.exports = {
   plugins: [
     postcssEasyImport({
-      extensions: ['wxss', 'css']
+      extensions: ['.wxss', '.css', '.pcss']
     }),
     precss(),
     postcssCalc()

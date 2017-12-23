@@ -2,7 +2,7 @@
 
 <view class="container">
 
-  <view class="doc-title">CELL</view>
+  <view class="doc-title zan-hairline--bottom">CELL</view>
 
   <view class="zan-panel">
     <view class="zan-cell">

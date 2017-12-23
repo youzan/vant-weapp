@@ -2,7 +2,7 @@
 
 <view class="container">
 
-  <view class="doc-title">TAB</view>
+  <view class="doc-title zan-hairline--bottom">TAB</view>
 
   <view style="margin: 20px 0">
     <template

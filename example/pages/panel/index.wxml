@@ -1,6 +1,6 @@
 <view class="container">
 
-  <view class="doc-title">PANEL</view>
+  <view class="doc-title zan-hairline--bottom">PANEL</view>
 
   <view class="zan-panel-title">标题</view>
   <view class="zan-panel">

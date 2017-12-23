@@ -1,6 +1,6 @@
 <view class="container">
 
-  <view class="doc-title">ICON</view>
+  <view class="doc-title zan-hairline--bottom">ICON</view>
 
   <view class="zan-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">

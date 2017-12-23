@@ -1,7 +1,7 @@
 <import src="/dist/noticebar/index.wxml" />
 <view class="container">
 
-  <view class="doc-title">NOTICEBAR</view>
+  <view class="doc-title zan-hairline--bottom">NOTICEBAR</view>
 
   <view class="zan-panel-title">滚动通告栏</view>
   <view class="zan-panel">

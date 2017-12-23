@@ -2,7 +2,7 @@
 
 <view class="container">
 
-  <view class="doc-title">CAPSULE</view>
+  <view class="doc-title zan-hairline--bottom">CAPSULE</view>
 
   <view class="zan-panel-title">基本用法</view>
   <view class="zan-panel">

@@ -1,9 +1,11 @@
+const { extractComponentId } = require('../common/helper');
+
 var Tab = {
   _handleZanTabChange(e) {
-    var dataset = e.currentTarget.dataset;
-    var componentId = dataset.componentId;
-    var selectedId = dataset.itemId;
-    var data = { componentId, selectedId };
+    const componentId = extractComponentId(e);
+    const dataset = e.currentTarget.dataset;
+    const selectedId = dataset.itemId;
+    const data = { componentId, selectedId };
 
     console.info('[zan:tab:change]', data);
     if (this.handleZanTabChange) {

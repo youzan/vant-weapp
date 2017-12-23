@@ -1,3 +1,5 @@
+@import "../common/_mixins";
+
 /* 基础样式 */
 .zan-dialog--container {
   position: fixed;
@@ -33,10 +35,15 @@
 }
 
 .zan-dialog__content {
+  position: relative;
   padding: 15px 20px;
   line-height: 1.5;
   min-height: 40px;
-  border-bottom: 1rpx solid #e5e5e5;
+
+  &::after {
+    @mixin hairline;
+    border-bottom-width: 1px;
+  }
 }
 
 /* 在有标题时，需要减弱内容的存在感 */
@@ -53,9 +60,13 @@
   line-height: 50px;
   height: 50px;
   padding: 0 5px;
-  border: 0px none;
   border-radius: 0;
   margin-bottom: 0;
+
+  &::after {
+    border-width: 0;
+    border-radius: 0;
+  }
 }
 
 /* 展示时，样式重置 */
@@ -75,18 +86,25 @@
 
 .zan-dialog__footer--horizon .zan-dialog__button {
   flex: 1;
-  border-right: 1rpx solid #e5e5e5;
+
+  &::after {
+    border-right-width: 1px;
+  }
+
+  &:last-child::after {
+    border-right-width: 0;
+  }
 }
 
-.zan-dialog__footer--horizon .zan-dialog__button:last-child {
-  border-right: 0px none;
-}
 
 .zan-dialog__footer--vertical .zan-dialog__button {
   flex: 1;
-  border-bottom: 1rpx solid #e5e5e5;
-}
 
-.zan-dialog__footer--vertical .zan-dialog__button:last-child {
-  border-bottom: 0px none;
+  &::after {
+    border-bottom-width: 1px;
+  }
+
+  &:last-child::after {
+    border-bottom-width: 0;
+  }
 }

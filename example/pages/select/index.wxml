@@ -2,7 +2,7 @@
 
 <view class="container">
 
-  <view class="doc-title">SELECT</view>
+  <view class="doc-title zan-hairline--bottom">SELECT</view>
 
   <view class="zan-panel-title">基础用法</view>
   <view class="zan-panel">

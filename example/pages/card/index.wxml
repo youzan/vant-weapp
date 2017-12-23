@@ -1,6 +1,6 @@
 <view class="container">
 
-  <view class="doc-title">CARD</view>
+  <view class="doc-title zan-hairline--bottom">CARD</view>
 
   <view class="zan-panel">
     <view class="zan-card">

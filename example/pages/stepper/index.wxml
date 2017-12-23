@@ -2,7 +2,7 @@
 
 <view class="container">
 
-  <view class="doc-title">Stepper</view>
+  <view class="doc-title zan-hairline--bottom">Stepper</view>
 
   <view style="padding: 40px 15px">
     <template is="zan-stepper" data="{{ ...stepper1, componentId: 'stepper1' }}" />

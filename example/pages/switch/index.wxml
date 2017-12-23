@@ -2,7 +2,7 @@
 
 <view class="container">
 
-  <view class="doc-title">SWITCH</view>
+  <view class="doc-title zan-hairline--bottom">SWITCH</view>
 
   <view class="zan-panel-title">同步开关</view>
   <view class="zan-panel">

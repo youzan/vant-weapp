@@ -1,6 +1,6 @@
 <view class="container">
 
-  <view class="doc-title">BUTTON</view>
+  <view class="doc-title zan-hairline--bottom">BUTTON</view>
 
   <view class="zan-panel-title">普通按钮</view>
   <view class="zan-panel">

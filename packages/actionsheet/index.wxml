@@ -1,0 +1,8 @@
+<template name="zan-actionsheet">
+<view class="zan-actionsheet {{ zanActionsheet.show ? 'zan-actionsheet--show' : '' }}">
+    <view class="zan-actionsheet--mask"></view>
+    <view class="zan-actionsheet--container">
+
+    </view>
+  </view>
+</template>

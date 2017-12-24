@@ -1,3 +1,4 @@
+exports.Actionsheet = require('./actionsheet/index');
 exports.CheckLabel = require('./select/index');
 exports.Dialog = require('./dialog/index');
 exports.Field = require('./field/index');

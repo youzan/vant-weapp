@@ -1,5 +1,4 @@
-const Zan = require('../../dist/index');
-const { Tab, extend } = Zan;
+const { Tab, extend } = require('../../dist/index');
 
 Page(extend({}, Tab, {
   data: {

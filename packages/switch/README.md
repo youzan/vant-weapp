@@ -11,10 +11,10 @@
 <import src="path/to/zanui-weapp/dist/switch/index.wxml" />
 ```
 ```js
-const Switch = require('path/to/zanui-weapp/dist/switch/index');
+const { Switch, extend } = require('path/to/zanui-weapp/dist/index');
 
 // 在 Page 中混入 Switch 里面声明的方法
-Page(Object.assign({}, Switch, {
+Page(extend({}, Switch, {
   // ...
 }));
 ```
@@ -34,7 +34,7 @@ Page(Object.assign({}, Switch, {
 
 当 switch 被点击时，可以在页面中注册 handleZanSwitchChange 方法来监听
 ```js
-Page(Object.assign({}, Tab, {
+Page(extend({}, Tab, {
   handleZanSwitchChange({ componentId, checked }) {
     // componentId 即为在模板中传入的 componentId
     // 用于在一个页面上使用多个 switch 时，进行区分

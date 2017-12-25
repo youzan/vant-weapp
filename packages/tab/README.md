@@ -11,10 +11,10 @@
 <import src="path/to/zanui-weapp/dist/tab/index.wxml" />
 ```
 ```js
-const Tab = require('path/to/zanui-weapp/dist/tab/index');
+const { extend, Tab } = require('path/to/zanui-weapp/dist/index');
 
 // 在 Page 中混入 Tab 里面声明的方法
-Page(Object.assign({}, Tab, {
+Page(extend({}, Tab, {
   // ...
 }));
 ```
@@ -57,7 +57,7 @@ tab 组件中，list 数据格式如下
 
 当 tab 被点击时，可以在页面中注册 handleZanTabChange 方法来监听
 ```js
-Page(Object.assign({}, Tab, {
+Page(extend({}, Tab, {
   handleZanTabChange({ componentId, selectedId }) {
     // componentId 即为在模板中传入的 componentId
     // 用于在一个页面上使用多个 tab 时，进行区分

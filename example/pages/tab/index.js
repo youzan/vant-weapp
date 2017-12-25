@@ -1,6 +1,7 @@
-var Zan = require('../../dist/index');
+const Zan = require('../../dist/index');
+const { Tab, extend } = Zan;
 
-Page(Object.assign({}, Zan.Tab, {
+Page(extend({}, Tab, {
   data: {
     tab1: {
       list: [{

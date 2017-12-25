@@ -1,5 +1,19 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.4.2](https://github.com/youzan/zanui-weapp/tree/v2.4.2) (2017-12-25)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.1...v2.4.2)
+
+**Bug Fixes**
+
+- 修复 Popup 组件弹出的 container 遮挡主页事件bug [\#83](https://github.com/youzan/zanui-weapp/pull/83) ([shoung6](https://github.com/shoung6))
+- 修复 Tab 组件不滚动情况下，文字过长显示问题 [\#81](https://github.com/youzan/zanui-weapp/pull/81) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+
+- 新增使用文档 [\#88](https://github.com/youzan/zanui-weapp/pull/88) ([pangxie1991](https://github.com/pangxie1991))
+- 部分组件边框实现修改 [\#87](https://github.com/youzan/zanui-weapp/pull/87) ([pangxie1991](https://github.com/pangxie1991))
+
+
 ## [v2.4.1](https://github.com/youzan/zanui-weapp/tree/v2.4.1) (2017-12-13)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.0...v2.4.1)
 

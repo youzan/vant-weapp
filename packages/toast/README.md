@@ -14,10 +14,10 @@
 <template is="zan-toast" data="{{ zanToast }}"></template>
 ```
 ```js
-const Toast = require('path/to/zanui-weapp/dist/toast/index');
+const { Toast, extend } = require('path/to/zanui-weapp/dist/index');
 
 // 在 Page 中混入 Toast 里面声明的方法
-Page(Object.assign({}, Toast, {
+Page(extend({}, Toast, {
   // ...
 }));
 ```

@@ -13,10 +13,10 @@
 <template is="zan-stepper" data="{{ ...stepper, componentId: 'stepper' }}"></template>
 ```
 ```js
-const Stepper = require('path/to/zanui-weapp/dist/stepper/index');
+const { extend, Stepper } = require('path/to/zanui-weapp/dist/index');
 
 // 在 Page 中混入 Stepper 里面声明的方法
-Page(Object.assign({}, Stepper, {
+Page(extend({}, Stepper, {
   // ...
 }));
 ```
@@ -39,7 +39,7 @@ const stepper = {
 
 当 stepper 被点击时，可以在页面中注册 handleZanStepperChange 方法来监听
 ```js
-Page(Object.assign({}, Stepper, {
+Page(extend({}, Stepper, {
   handleZanStepperChange({ componentId, stepper }) {
     // componentId 即为在模板中传入的 componentId
     // 用于在一个页面上使用多个 stepper 时，进行区分

@@ -8,14 +8,14 @@ function extractComponentId(event = {}) {
 const LIFE_CYCLE = ['onLoad', 'onReady', 'onShow', 'onHide', 'onUnload', 'onPullDownRefresh', 'onReachBottom', 'onShareAppMessage', 'onPageScroll'];
 /*
   1. 直接合并所有生命周期函数
-  Page(extendWithLife({}, {
+  Page(extend({}, {
     onLoad() {},
     ...
   }));
 
   2. 只合并指定的生命周期
-  const extend = extendWithLife(['onLoad']);
-  Page(extend({}, {
+  const extendOnload = extend(['onLoad']);
+  Page(extendOnload({}, {
     onLoad() {},
     ...
   }));

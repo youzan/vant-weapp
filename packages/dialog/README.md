@@ -13,10 +13,10 @@
 <template is="zan-dialog" data="{{ zanDialog }}"></template>
 ```
 ```js
-const Dialog = require('path/to/zanui-weapp/dist/dialog/index');
+const { Dialog, extend } = require('path/to/zanui-weapp/dist/index');
 
 // 在 Page 中混入 Dialog 里面声明的方法
-Page(Object.assign({}, Dialog, {
+Page(extend({}, Dialog, {
   // ...
 }));
 ```

@@ -1,5 +1,5 @@
 var ZanNoticeBar = {
-  initZanNoticeBarScroll: function (componentId) {
+  initZanNoticeBarScroll(componentId) {
     this.zanNoticeBarNode = this.zanNoticeBarNode || {};
     this.zanNoticeBarNode[`${componentId}`] = {
       width: undefined,
@@ -8,11 +8,10 @@ var ZanNoticeBar = {
       resetAnimation: null
     };
     var currentComponent = this.zanNoticeBarNode[`${componentId}`];
-    var _this = this;
-    wx.createSelectorQuery().select(`#${componentId}__content`).boundingClientRect(function (rect) {
+    wx.createSelectorQuery().select(`#${componentId}__content`).boundingClientRect((rect) => {
       if (rect.width) {
         currentComponent.width = rect.width;
-        wx.createSelectorQuery().select(`#${componentId}__content-wrap`).boundingClientRect(function (rect) {
+        wx.createSelectorQuery().select(`#${componentId}__content-wrap`).boundingClientRect((rect) => {
           currentComponent.wrapWidth = rect.width;
           if (currentComponent.wrapWidth < currentComponent.width) {
             var mstime = currentComponent.width / 40 * 1000;
@@ -24,7 +23,7 @@ var ZanNoticeBar = {
               duration: 0,
               timingFunction: 'linear'
             });
-            _this.scrollZanNoticeBar(componentId, mstime);
+            this.scrollZanNoticeBar(componentId, mstime);
           }
         }).exec();
       } else {
@@ -32,22 +31,22 @@ var ZanNoticeBar = {
       }
     }).exec();
   },
-  scrollZanNoticeBar: function (componentId, mstime) {
+
+  scrollZanNoticeBar(componentId, mstime) {
     var currentComponent = this.zanNoticeBarNode[`${componentId}`];
     var resetAnimationData = currentComponent.resetAnimation.translateX(currentComponent.wrapWidth).step();
     this.setData({
       [`${componentId}.animationData`]: resetAnimationData.export()
     });
     var aninationData = currentComponent.animation.translateX(-mstime * 40 / 1000).step();
-    var _this = this;
-    setTimeout(function () {
-      _this.setData({
+    setTimeout(() => {
+      this.setData({
         [`${componentId}.animationData`]: aninationData.export()
       });
     }, 100);
 
-    setTimeout(function () {
-      _this.scrollZanNoticeBar(componentId, mstime);
+    setTimeout(() => {
+      this.scrollZanNoticeBar(componentId, mstime);
     }, mstime);
   }
 };

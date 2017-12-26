@@ -16,7 +16,9 @@
 
 // 在 Page 中混入 Noticebar 里面声明的方法
 ```js
-Page(Object.assign({}, Noticebar, {
+const { Noticebar, extend } = require('path/to/zanui-weapp/dist/index');
+
+Page(extend({}, Noticebar, {
   // ...
 }));
 ```
@@ -31,7 +33,7 @@ Page(Object.assign({}, Noticebar, {
 
 如果组件需要开启滚动展示，需要在 Page 的脚本中执行 initZanNoticeBarScroll 方法，来开启滚动展示
 ```js
-Page(Object.assign({}, Noticebar, {
+Page(extend({}, Noticebar, {
   // ...
   onShow() {
     // 在方法中传入对应的 componentId

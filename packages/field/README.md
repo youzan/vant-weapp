@@ -14,10 +14,10 @@
 <template is="zan-field" data="{{ value }}"></template>
 ```
 ```js
-const Field = require('path/to/zanui-weapp/dist/field/index');
+const { Field, extend } = require('path/to/zanui-weapp/dist/index');
 
 // 在 Page 中混入 Field 里面声明的方法
-Page(Object.assign({}, Field, {
+Page(extend({}, Field, {
   // ...
 }));
 ```
@@ -30,7 +30,7 @@ field 支持多种展示方式，在 `data` 中传入对应的设置即可。
 
 当 field 触发输入事件时，可以在页面中注册 handleZanFieldChange 方法来监听
 ```js
-Page(Object.assign({}, Field, {
+Page(extend({}, Field, {
   // 输入框内容更改时触发
   handleZanFieldChange({ componentId, detail }) {
     /*

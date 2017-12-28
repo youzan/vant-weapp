@@ -22,18 +22,20 @@ Page(extend({}, Tab, {
 ### 代码演示
 在模板中使用 zan-tab 模板，并传入相应数据
 ```html
-<template is="zan-tab" data="{{ list, selectedId: '', componentId: 'tab1' }}"></template>
+<template is="zan-tab" data="{{ tab: { list, selectedId, scroll, height }, componentId: 'tab1' }}"></template>
 ```
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| list | tab 列表 | Array | - | |
-| selectedId | 当前被选中 tab 项的 id | String | - | |
-| scroll | 是否开启 tab 左右滑动模式 | Boolean | - | |
+| tab | tab 配置对象 | Object | - | |
+| tab.scroll | 是否开启 tab 左右滑动模式 | Boolean | - | |
+| tab.list | 可选项列表 | Array | - | |
+| tab.selectedId | 选中id | - | - | |
+| tab.height | tab高度 | Number | - | |
 | componentId | 用于区分页面多个 tab 组件 | String | - | |
 
 
-tab 组件中，list 数据格式如下
+tab 组件中，tab.list 数据格式如下
 ```js
 [{
   // tab 项 id

@@ -4,10 +4,12 @@
 
   <view class="doc-title zan-hairline--bottom zan-hairline--bottom">ACTIONSHEET</view>
 
-  <button class="zan-btn" bindtap="toggleActionsheet">
-    Actionsheet
-  </button>
+  <view class="zan-btns">
+    <button class="zan-btn" bindtap="toggleActionsheet">
+      Actionsheet
+    </button>
+  </view>
+
+  <template is="zan-actionsheet" data="{{ ...baseActionsheet }}"></template>
 
 </view>
-
-<template is="zan-actionsheet" data="{{ zanActionsheet }}"></template>

@@ -1,14 +1,21 @@
-const Zan = require('../../dist/index');
+const { Actionsheet, extend } = require('../../dist/index');
 
-Page(Object.assign({}, Zan.Actionsheet, {
+Page(extend({}, Actionsheet, {
   data: {
     baseActionsheet: {
       show: false,
       cancelText: '关闭 Action',
       closeOnClickOverlay: false,
+      componentId: 'baseActionsheet',
       actions: [{
-        name: '选项',
-        subname: '选项描述语',
+        name: '选项1',
+        subname: '选项描述语1',
+        className: 'action-class',
+        loading: false,
+        type: 'action1'
+      }, {
+        name: '选项2',
+        subname: '选项描述语2',
         className: 'action-class',
         loading: false,
         type: 'action1'
@@ -20,6 +27,27 @@ Page(Object.assign({}, Zan.Actionsheet, {
     this.setData({
       'baseActionsheet.show': true
     });
+  },
+
+  handleZanActionsheetCancel({ componentId }) {
+    this.setData({
+      [`${componentId}.show`]: false
+    });
+  },
+
+  handleZanActionsheetClick({ componentId, index }) {
+    console.log(`item index ${index} clicked`);
+
+    this.setData({
+      [`${componentId}.actions[${index}].loading`]: true
+    });
+
+    setTimeout(() => {
+      this.setData({
+        [`${componentId}.show`]: false,
+        [`${componentId}.actions[${index}].loading`]: false
+      });
+    }, 1500);
   }
 
 }));

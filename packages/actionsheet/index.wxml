@@ -1,7 +1,25 @@
 <template name="zan-actionsheet">
-<view class="zan-actionsheet {{ zanActionsheet.show ? 'zan-actionsheet--show' : '' }}">
-    <view class="zan-actionsheet--mask"></view>
-    <view class="zan-actionsheet--container">
+  <view class="zan-actionsheet {{ show ? 'zan-actionsheet--show' : '' }}">
+    <view
+      class="zan-actionsheet__mask"
+      catchtap="_handleZanActionsheetMaskClick"
+      data-component-id="{{ componentId }}"></view>
+    <view class="zan-actionsheet__container">
+      <!-- 实际按钮显示 -->
+      <button
+        wx:for="{{ actions }}"
+        wx:for-index="index"
+        wx:for-item="item"
+        wx:key="{{ index }}-{{ item.name }}"
+        catchtap="_handleZanActionsheetBtnClick"
+        data-component-id="{{ componentId }}"
+        data-index="{{ index }}"
+        class="zan-btn zan-actionsheet__btn {{ item.loading ? 'zan-btn--loading' : '' }}">
+        {{ item.name }}
+      </button>
+    </view>
+
+    <view class="zan-actionsheet__footer">
 
     </view>
   </view>

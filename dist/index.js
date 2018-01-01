@@ -7,3 +7,6 @@ exports.Switch = require('./switch/index');
 exports.Tab = require('./tab/index');
 exports.Toast = require('./toast/index');
 exports.TopTips = require('./toptips/index');
+
+const { extend } = require('./common/helper');
+exports.extend = extend;

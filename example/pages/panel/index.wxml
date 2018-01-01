@@ -11,6 +11,10 @@
     <view style="padding: 15px;">内容</view>
   </view>
 
+  <view class="zan-panel zan-panel--without-border">
+    <view style="padding: 15px;">无边框的panel</view>
+  </view>
+
   <view class="zan-panel">
     <view style="padding: 15px;">内容</view>
   </view>

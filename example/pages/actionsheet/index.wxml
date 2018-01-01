@@ -1,0 +1,15 @@
+<import src="/dist/actionsheet/index.wxml" />
+
+<view class="container">
+
+  <view class="doc-title zan-hairline--bottom zan-hairline--bottom">ACTIONSHEET</view>
+
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <button class="zan-btn" bindtap="toggleActionsheet">
+      Actionsheet
+    </button>
+  </view>
+
+  <template is="zan-actionsheet" data="{{ ...baseActionsheet }}"></template>
+
+</view>

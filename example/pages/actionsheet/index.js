@@ -11,14 +11,12 @@ Page(extend({}, Actionsheet, {
         name: '选项1',
         subname: '选项描述语1',
         className: 'action-class',
-        loading: false,
-        type: 'action1'
+        loading: false
       }, {
         name: '选项2',
         subname: '选项描述语2',
         className: 'action-class',
-        loading: false,
-        type: 'action1'
+        loading: false
       }]
     }
   },

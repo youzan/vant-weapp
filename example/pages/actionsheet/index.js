@@ -5,7 +5,7 @@ Page(extend({}, Actionsheet, {
     baseActionsheet: {
       show: false,
       cancelText: '关闭 Action',
-      closeOnClickOverlay: false,
+      closeOnClickOverlay: true,
       componentId: 'baseActionsheet',
       actions: [{
         name: '选项1',

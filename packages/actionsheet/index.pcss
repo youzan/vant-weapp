@@ -1,3 +1,4 @@
+@import "../common/_var";
 @import "../common/_mixins";
 
 .zan-actionsheet {
@@ -20,7 +21,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #fff;
+  background: $background-color;
   transform: translate3d(0, 50%, 0);
   transform-origin: center;
   transition: all 0.2s ease;
@@ -43,6 +44,21 @@
   &::after {
     border-bottom-width: 0;
   }
+}
+
+.zan-actionsheet__subname {
+  margin-left: 2px;
+  font-size: 12px;
+  color: $gray-darker;
+}
+
+.zan-actionsheet__footer {
+  margin-top: 10px;
+}
+
+/* btn-loading 状态 */
+.zan-actionsheet__btn.zan-btn--loading .zan-actionsheet__subname {
+  color: transparent;
 }
 
 /* zan-actionsheet 展示出来的样式 */

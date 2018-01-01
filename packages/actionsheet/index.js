@@ -1,8 +1,14 @@
 const { extractComponentId } = require('../common/helper');
 
 module.exports = {
-  _handleZanActionsheetMaskClick(e) {
-    const componentId = extractComponentId(e);
+  _handleZanActionsheetMaskClick({ currentTarget = {} }) {
+    const dataset = currentTarget.dataset || {};
+    const { componentId, closeOnClickOverlay } = dataset;
+
+    // 判断是否在点击背景时需要关闭弹层
+    if (!closeOnClickOverlay) {
+      return;
+    }
 
     resolveCancelClick.call(this, { componentId });
   },

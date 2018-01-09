@@ -1,6 +1,6 @@
 var Zan = require('../../dist/index');
 
-Page(Object.assign({}, Zan.CheckLabel, {
+Page(Object.assign({}, Zan.Select, {
 
   data: {
     items: [

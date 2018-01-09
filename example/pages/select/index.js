@@ -1,6 +1,6 @@
 var Zan = require('../../dist/index');
 
-Page(Object.assign({}, Zan.CheckLabel, {
+Page(Object.assign({}, Zan.Select, Zan.TopTips, {
 
   data: {
     items: [
@@ -18,7 +18,8 @@ Page(Object.assign({}, Zan.CheckLabel, {
 
     checked: {
       base: -1,
-      color: -1
+      color: -1,
+      form: -1
     },
 
     activeColor: '#4b0'
@@ -28,5 +29,10 @@ Page(Object.assign({}, Zan.CheckLabel, {
     this.setData({
       [`checked.${componentId}`]: value
     });
+  },
+
+  formSubmit(event) {
+    console.log('[zan:field:submit]', event.detail.value);
+    this.showZanTopTips(`选中的值为${event.detail.value.formtest}`);
   }
 }));

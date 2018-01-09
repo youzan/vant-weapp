@@ -81,7 +81,7 @@ export default {
         name: 'Toast 轻提示',
         path: '/pages/toast/index'
       }, {
-        name: 'Toptips 顶部提示',
+        name: 'TopTips 顶部提示',
         path: '/pages/toptips/index'
       }
     ]

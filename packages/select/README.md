@@ -44,6 +44,7 @@ Page(extend({}, Select, {
 |-----------|-----------|-----------|-------------|-------------|
 | items | select 显示各个项的配置 | Array | - | |
 | checkedValue | 高亮的 item 的 value 值 | String | - | |
+| name | Select 的名字，作为 form 表单提交时数据的 key | String | - | |
 | activeColor | Select 高亮颜色 | String | #ff4444 | |
 | componentId | 用于区分页面多个 Select 组件 | String | - | |
 

@@ -1,4 +1,4 @@
-## Toptips 顶部提示
+## TopTips 顶部提示
 
 ### 使用指南
 在 app.wxss 中引入组件库所有样式
@@ -14,10 +14,10 @@
 <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 ```
 ```js
-const { Toptips, extend } = require('path/to/zanui-weapp/dist/index');
+const { TopTips, extend } = require('path/to/zanui-weapp/dist/index');
 
-// 在 Page 中混入 Toptips 里面声明的方法
-Page(extend({}, Toptips, {
+// 在 Page 中混入 TopTips 里面声明的方法
+Page(extend({}, TopTips, {
   // ...
 }));
 ```

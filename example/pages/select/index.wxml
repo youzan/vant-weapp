@@ -1,4 +1,5 @@
 <import src="/dist/select/index.wxml" />
+<import src="/dist/toptips/index.wxml" />
 
 <view class="container">
 
@@ -17,4 +18,23 @@
       <template is="zan-select" data="{{ items, checkedValue: checked.color, activeColor, componentId: 'color' }}" ></template>
     </view>
   </view>
+
+  <view class="zan-panel-title">Form 表单中的select应用</view>
+  <form bindsubmit="formSubmit">
+    <view class="zan-panel">
+      <view>
+        <template
+          is="zan-select"
+          data="{{ items, checkedValue: checked.form, name: 'formtest', componentId: 'form' }}" ></template>
+      </view>
+    </view>
+
+    <view class="zan-btns">
+      <button
+        class="zan-btn zan-btn--primary"
+        formType="submit">提交数据</button>
+    </view>
+  </form>
 </view>
+
+<template is="zan-toptips" data="{{ zanTopTips }}"></template>

@@ -7,7 +7,7 @@
       data-component-id="{{ componentId }}"></view>
     <view class="zan-actionsheet__container">
       <!-- 实际按钮显示 -->
-      <view
+      <button
         wx:for="{{ actions }}"
         wx:for-index="index"
         wx:for-item="item"
@@ -15,13 +15,14 @@
         catchtap="_handleZanActionsheetBtnClick"
         data-component-id="{{ componentId }}"
         data-index="{{ index }}"
+        open-type="{{ item.openType }}"
         class="zan-btn zan-actionsheet__btn {{ item.loading ? 'zan-btn--loading' : '' }} {{ item.className }}"
       >
         <text>{{ item.name }}</text>
         <text
           wx:if="{{ item.subname }}"
           class="zan-actionsheet__subname">{{ item.subname }}</text>
-      </view>
+      </button>
 
       <!-- 关闭按钮 -->
       <view

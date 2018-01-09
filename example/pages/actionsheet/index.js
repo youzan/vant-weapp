@@ -17,8 +17,18 @@ Page(extend({}, Actionsheet, {
         subname: '选项描述语2',
         className: 'action-class',
         loading: false
+      }, {
+        name: '去分享',
+        openType: 'share'
       }]
     }
+  },
+
+  onShareAppMessage() {
+    return {
+      title: 'ZanUI-WeApp',
+      imageUrl: 'https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png'
+    };
   },
 
   toggleActionsheet() {
@@ -35,6 +45,11 @@ Page(extend({}, Actionsheet, {
 
   handleZanActionsheetClick({ componentId, index }) {
     console.log(`item index ${index} clicked`);
+
+    // 如果是分享按钮被点击, 不处理关闭
+    if (index === 2) {
+      return;
+    }
 
     this.setData({
       [`${componentId}.actions[${index}].loading`]: true

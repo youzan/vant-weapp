@@ -1,5 +1,10 @@
 <template name="zan-select">
-  <radio-group class="zan-select__list" bindchange="_handleZanSelectChange" data-component-id="{{ componentId }}">
+  <radio-group
+    class="zan-select__list"
+    name="{{ name || componentId || '' }}"
+    bindchange="_handleZanSelectChange"
+    data-component-id="{{ componentId }}"
+  >
     <label wx:for="{{ items }}" wx:key="value">
       <view class="zan-cell">
         <radio class="zan-select__radio" value="{{ item.value }}" checked="{{ item.value === checkedValue }}"/>

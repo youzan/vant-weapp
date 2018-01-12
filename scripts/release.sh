@@ -29,4 +29,11 @@ then
 
   echo "publishing npm..."
   npm publish
+
+  # sync dev
+  echo "sync dev..."
+  git checkout dev
+  git rebase master
+  git push origin dev
+
 fi

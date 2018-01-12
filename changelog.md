@@ -1,5 +1,19 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.4.4](https://github.com/youzan/zanui-weapp/tree/v2.4.4) (2018-01-12)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.3...v2.4.4)
+
+**Improvements**
+
+- Actionsheet 组件新增 open-type 支持 [\#106](https://github.com/youzan/zanui-weapp/pull/106) ([pangxie1991](https://github.com/pangxie1991))
+- Select 组件新增支持 form 中 submit 使用 [\#104](https://github.com/youzan/zanui-weapp/pull/104) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 Actionsheet 行动按钮组件 [\#97](https://github.com/youzan/zanui-weapp/pull/97) ([pangxie1991](https://github.com/pangxie1991))
+
+**Bug Fixes**
+- 修复 actionsheet 隐藏时阻挡页面元素点击 [\#99](https://github.com/youzan/zanui-weapp/pull/99) ([yun77op](https://github.com/yun77op))
+- 修复 Badge 组件纵向对齐问题 [\#96](https://github.com/youzan/zanui-weapp/pull/96) ([pangxie1991](https://github.com/pangxie1991))
+- 修复合并生命周期extend函数并修改tab文档 [\#93](https://github.com/youzan/zanui-weapp/pull/93) ([Tinysymphony](https://github.com/Tinysymphony))
+
 ## [v2.4.3](https://github.com/youzan/zanui-weapp/tree/v2.4.3) (2017-12-28)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.2...v2.4.3)
 

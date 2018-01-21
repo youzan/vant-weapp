@@ -41,25 +41,6 @@ Page(Object.assign({}, Zan.Field, {
     console.log('[zan:field:blur]', componentId, detail);
   },
 
-  /* piker-view 示例相关函数 */
-  handleDateFieldClick() {
-    this.setData({
-      'pickerViewConfig.show': true
-    });
-  },
-
-  handlePopupDateChange(e) {
-    this.setData({
-      'pickerViewConfig.value': e.detail.value
-    });
-  },
-
-  hideDatePopup() {
-    this.setData({
-      'pickerViewConfig.show': false
-    });
-  },
-
   clearInput() {
     this.setData({
       value: ''
@@ -78,5 +59,25 @@ Page(Object.assign({}, Zan.Field, {
 
   formReset(event) {
     console.log('[zan:field:reset]', event);
+  },
+
+  /* piker-view 示例相关函数 */
+  handleDateFieldClick() {
+    this.setData({
+      'pickerViewConfig.show': true
+    });
+  },
+
+  handlePopupDateChange(e) {
+    this.setData({
+      'pickerViewConfig.value': e.detail.value
+    });
+  },
+
+  hideDatePopup() {
+    this.setData({
+      'pickerViewConfig.show': false
+    });
   }
+
 }));

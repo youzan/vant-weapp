@@ -72,7 +72,10 @@ actions 的具体数据结构
   // 按钮特殊类，可以通过传入这个，为按钮增加特殊样式
   className: 'action-class',
   // 按钮是否显示为 loading
-  loading: false
+  loading: false,
+  // 按钮的微信开放能力
+  // 具体支持可参考微信官方文档：https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html
+  openType: 'share'
 }]
 ```
 

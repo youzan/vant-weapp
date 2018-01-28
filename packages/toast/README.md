@@ -51,8 +51,8 @@ this.showZanLoading('toast的内容');
 #### 方法
 | 方法名       | 参数      | 返回值       | 介绍       |
 |-----------|-----------|-----------|-------------|
-| showZanToast | `title | options`, `timeout` | - | 展示提示 |
-| showZanLoading | `title | options` | - | 展示加载提示 |
+| showZanToast | `title \| options`, `timeout` | - | 展示提示 |
+| showZanLoading | `title \| options` | - | 展示加载提示 |
 | clearZanToast |  | - | 关闭提示 |
 
 #### options 具体参数如下

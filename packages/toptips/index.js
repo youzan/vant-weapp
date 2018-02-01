@@ -4,7 +4,7 @@ module.exports = {
     // 如果已经有一个计时器在了，就清理掉先
     if (zanTopTips.timer) {
       clearTimeout(zanTopTips.timer);
-      zanTopTips.timer = undefined;
+      zanTopTips.timer = 0;
     }
 
     if (typeof options === 'number') {
@@ -22,7 +22,7 @@ module.exports = {
     let timer = setTimeout(() => {
       this.setData({
         'zanTopTips.show': false,
-        'zanTopTips.timer': undefined
+        'zanTopTips.timer': 0
       });
     }, options.duration);
 

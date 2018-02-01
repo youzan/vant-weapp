@@ -42,6 +42,7 @@ npm run dev
 我们推荐在你的`app.wxss`直接引入`zanui-weapp/dist/index.wxss`。
 
 #### 具体组件文档
+* [Actionsheet - 行动按钮](./packages/actionsheet/README.md)
 * [Badge - 徽章](./packages/badge/README.md)
 * [Button - 按钮](./packages/btn/README.md)
 * [Capsule - 胶囊](./packages/capsule/README.md)

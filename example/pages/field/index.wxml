@@ -72,6 +72,46 @@
 
   <view class="zan-panel-title">自定义显示内容</view>
   <view class="zan-panel">
+    <!-- 配合 popup 使用 picker-view -->
+    <view class="zan-cell zan-field">
+      <view class="zan-cell__hd zan-field__title">人员信息</view>
+      <view
+        class="zan-field__input zan-cell__bd"
+        bindtap="handleDateFieldClick"
+      >
+        出生日期: {{ pickerViewConfig.year[pickerViewConfig.value[0]] }}
+        性别: {{ pickerViewConfig.sex[pickerViewConfig.value[1]] }}
+      </view>
+    </view>
+    <!-- 对应的 popup 层 -->
+    <view
+      class="zan-popup zan-popup--bottom {{ pickerViewConfig.show ? 'zan-popup--show' : ''}}"
+    >
+      <view class="zan-popup__mask" bindtap="hideDatePopup"></view>
+      <view class="zan-popup__container popup-field-example--bottom">
+        <picker-view
+          value="{{ pickerViewConfig.value }}"
+          indicator-style="height: 50px"
+          class="picker-view-example"
+          bindchange="handlePopupDateChange"
+        >
+          <picker-view-column>
+            <view
+              class="picker-view-column-example"
+              wx:for="{{ pickerViewConfig.year }}"
+            >{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view
+              class="picker-view-column-example"
+              wx:for="{{ pickerViewConfig.sex }}"
+            >{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+
+    <!-- 简单 picker 示例 -->
     <view class="zan-cell zan-field">
       <view class="zan-cell__hd zan-field__title">选择区域</view>
       <picker

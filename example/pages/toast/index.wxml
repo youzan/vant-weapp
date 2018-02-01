@@ -4,9 +4,29 @@
 
   <view class="doc-title zan-hairline--bottom">TOAST</view>
 
-  <view class="zan-btns" style="margin-top: 30vh;">
+  <view class="zan-btns" style="margin-top: 15vh;">
     <button class="zan-btn" bindtap="showToast">
       显示toast
+    </button>
+
+    <button class="zan-btn" bindtap="showIconToast">
+      显示 Icon 图标的toast
+    </button>
+
+    <button class="zan-btn" bindtap="showImageToast">
+      自定义图片作为图标的toast
+    </button>
+
+    <button class="zan-btn" bindtap="showLoadingToast">
+      显示 Loading toast
+    </button>
+
+    <button class="zan-btn" bindtap="showOnlyIcon">
+      只显示图标的toast
+    </button>
+
+    <button class="zan-btn" bindtap="showLoading">
+      显示 Loading
     </button>
   </view>
 </view>

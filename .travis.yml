@@ -7,9 +7,9 @@ branches:
 #   - git config --global user.email "ci@travis-ci.org"
 install:
   - cd website && yarn
-  
+
 script:
-  - bash ./scripts/deploy.sh
+  - bash ../scripts/deploy.sh
 
 language: node_js
 

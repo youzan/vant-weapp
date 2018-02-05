@@ -1,6 +1,7 @@
 branches:
   only:
   - master
+  - dev
 
 # before_script:
 #   - git config --global user.name "Travis CI"

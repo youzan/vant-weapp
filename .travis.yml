@@ -5,7 +5,9 @@ branches:
 # before_script:
 #   - git config --global user.name "Travis CI"
 #   - git config --global user.email "ci@travis-ci.org"
-
+install:
+  - cd website && yarn
+  
 script:
   - bash ./scripts/deploy.sh
 

@@ -11,8 +11,7 @@
     "components": "node scripts/build-components.js --color",
     "changelog": "sh scripts/build-changelog.sh",
     "icon": "sh scripts/build-icon.sh",
-    "dev": "node scripts/build-dev.js --color",
-    "build": "cd website && npm run build"
+    "dev": "node scripts/build-dev.js --color"
   },
   "repository": {
     "type": "git",

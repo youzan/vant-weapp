@@ -1,5 +1,6 @@
 npm run build
 
+cd dist
 git config --global user.name "Travis CI"
 git config --global user.email "ci@travis-ci.org"
 

@@ -1,8 +1,8 @@
+npm run build
+
+cd dist && git init
 git config --global user.name "Travis CI"
 git config --global user.email "ci@travis-ci.org"
-
-$(npm bin)/update-branch --commands "npm run build" \
-                         --commit-message "Update gh-pages [skip ci]" \
-                         --directory "dist" \
-                         --distribution-branch "gh-pages" \
-                         --source-branch "master"
+git add -A && git commit -am "Update gh-pages [skip ci]"
+git checkout -b gh-pages
+git push --force --quiet "https://${GH_TOKEN}@${REPO}" gh-pages:gh-pages

@@ -1,0 +1,19 @@
+branches:
+  only:
+  - master
+
+# before_script:
+#   - git config --global user.name "Travis CI"
+#   - git config --global user.email "ci@travis-ci.org"
+
+script:
+  - bash ./scripts/deploy.sh
+
+language: node_js
+
+node_js:
+  - "6"
+
+sudo: false
+
+cache: yarn

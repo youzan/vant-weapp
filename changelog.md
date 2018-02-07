@@ -1,5 +1,16 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v2.4.5](https://github.com/youzan/zanui-weapp/tree/v2.4.5) (2018-02-07)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.4...v2.4.5)
+
+**Improvements**
+
+- Toast 新增支持图标展示 [\#121](https://github.com/youzan/zanui-weapp/pull/121) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 Actionsheet 文档 [\#118](https://github.com/youzan/zanui-weapp/pull/118) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 Toptips 组件未显示时，下拉页面展示问题 [\#116](https://github.com/youzan/zanui-weapp/pull/116) ([pangxie1991](https://github.com/pangxie1991))
+- Field 使用示例中增加 picker-view 使用 [\#115](https://github.com/youzan/zanui-weapp/pull/115) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 Toptips 组件在控制台里的报错 [\#114](https://github.com/youzan/zanui-weapp/pull/114) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.4.4](https://github.com/youzan/zanui-weapp/tree/v2.4.4) (2018-01-12)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.3...v2.4.4)
 

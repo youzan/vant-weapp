@@ -1,8 +1,12 @@
+cd website && yarn && yarn cache node_modules
+
 npm run build
 
 cd dist && git init
-git config --global user.name "Travis CI"
-git config --global user.email "ci@travis-ci.org"
+
+NAME=`git config user.name`
+EMAIL=`git config user.email`
+git config --global user.name $NAME
+git config --global user.email $EMAIL
 git add -A && git commit -am "Update gh-pages [skip ci]"
-git checkout -b gh-pages
-git push --force --quiet "https://${GH_TOKEN}@${REPO}" gh-pages:gh-pages
+

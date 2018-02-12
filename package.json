@@ -12,7 +12,8 @@
     "changelog": "sh scripts/build-changelog.sh",
     "icon": "sh scripts/build-icon.sh",
     "dev": "node scripts/build-dev.js --color",
-    "build": "sh scripts/deploy.sh"
+    "build": "sh scripts/deploy.sh",
+    "deploy": "npm run build && gh-pages -d website/dist --remote youzan"
   },
   "repository": {
     "type": "git",
@@ -39,5 +40,8 @@
     "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0",
     "shelljs": "^0.7.8"
+  },
+  "dependencies": {
+    "gh-pages": "^1.1.0"
   }
 }

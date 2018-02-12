@@ -1,4 +1,4 @@
-var ZanNoticeBar = {
+const ZanNoticeBar = {
   initZanNoticeBarScroll(componentId) {
     this.zanNoticeBarNode = this.zanNoticeBarNode || {};
     this.zanNoticeBarNode[`${componentId}`] = {
@@ -7,38 +7,53 @@ var ZanNoticeBar = {
       animation: null,
       resetAnimation: null
     };
-    var currentComponent = this.zanNoticeBarNode[`${componentId}`];
-    wx.createSelectorQuery().select(`#${componentId}__content`).boundingClientRect((rect) => {
-      if (rect.width) {
+
+    const currentComponent = this.zanNoticeBarNode[`${componentId}`];
+    wx.createSelectorQuery()
+      .in(this)
+      .select(`#${componentId}__content`)
+      .boundingClientRect((rect) => {
+        if (!rect || !rect.width) {
+          console.warn('页面缺少 noticebar 元素');
+          return;
+        }
+
         currentComponent.width = rect.width;
-        wx.createSelectorQuery().select(`#${componentId}__content-wrap`).boundingClientRect((rect) => {
-          currentComponent.wrapWidth = rect.width;
-          if (currentComponent.wrapWidth < currentComponent.width) {
-            var mstime = currentComponent.width / 40 * 1000;
-            currentComponent.animation = wx.createAnimation({
-              duration: mstime,
-              timingFunction: 'linear'
-            });
-            currentComponent.resetAnimation = wx.createAnimation({
-              duration: 0,
-              timingFunction: 'linear'
-            });
-            this.scrollZanNoticeBar(componentId, mstime);
-          }
-        }).exec();
-      } else {
-        console.warn('页面缺少 noticebar 元素');
-      }
-    }).exec();
+        wx
+          .createSelectorQuery()
+          .in(this)
+          .select(`#${componentId}__content-wrap`)
+          .boundingClientRect((rect) => {
+            if (!rect || !rect.width) {
+              return;
+            }
+
+            currentComponent.wrapWidth = rect.width;
+            if (currentComponent.wrapWidth < currentComponent.width) {
+              var mstime = currentComponent.width / 40 * 1000;
+              currentComponent.animation = wx.createAnimation({
+                duration: mstime,
+                timingFunction: 'linear'
+              });
+              currentComponent.resetAnimation = wx.createAnimation({
+                duration: 0,
+                timingFunction: 'linear'
+              });
+              this.scrollZanNoticeBar(componentId, mstime);
+            }
+          })
+        .exec();
+      })
+    .exec();
   },
 
   scrollZanNoticeBar(componentId, mstime) {
-    var currentComponent = this.zanNoticeBarNode[`${componentId}`];
-    var resetAnimationData = currentComponent.resetAnimation.translateX(currentComponent.wrapWidth).step();
+    const currentComponent = this.zanNoticeBarNode[`${componentId}`];
+    const resetAnimationData = currentComponent.resetAnimation.translateX(currentComponent.wrapWidth).step();
     this.setData({
       [`${componentId}.animationData`]: resetAnimationData.export()
     });
-    var aninationData = currentComponent.animation.translateX(-mstime * 40 / 1000).step();
+    const aninationData = currentComponent.animation.translateX(-mstime * 40 / 1000).step();
     setTimeout(() => {
       this.setData({
         [`${componentId}.animationData`]: aninationData.export()

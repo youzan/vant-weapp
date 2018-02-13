@@ -13,7 +13,7 @@
     "icon": "sh scripts/build-icon.sh",
     "dev": "node scripts/build-dev.js --color",
     "build": "sh scripts/deploy.sh",
-    "deploy": "npm run build && gh-pages -d website/dist --remote youzan"
+    "deploy": "npm run build && superman cdn basic && gh-pages -d website/dist --remote youzan"
   },
   "repository": {
     "type": "git",

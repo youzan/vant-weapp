@@ -2,6 +2,7 @@ module.exports = {
   // 基础类型输入框配置
   base: {
     name: {
+      focus: true,
       title: '收货人',
       placeholder: '名字'
     },

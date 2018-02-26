@@ -17,6 +17,7 @@
     "node_modules",
     "packages",
     "scripts",
+    "website",
     "postcss.config.js",
     "package.json",
     "*.md",

@@ -16,6 +16,11 @@
   }
 }
 
+/* 圆角输入框，强制展示边框 */
+.zan-field.zan-field--wrapped::after {
+  display: block;
+}
+
 .zan-field--wrapped + .zan-field--wrapped {
   margin-top: 10px;
 }
@@ -24,7 +29,7 @@
   color: #f40;
 }
 
-/* 圆角输入框时，将边框也置红 */
+/* 圆角输入框出现错误时，将边框也置红 */
 .zan-field--wrapped.zan-field--error::after {
   border-color: #f40;
 }

@@ -1,3 +1,31 @@
 <template name="zan-toast">
-  <view class="zan-toast" wx:if="{{ zanToast.show }}" bindtap="clearZanToast">{{ zanToast.title }}</view>
+  <view
+    class="zan-toast {{ !zanToast.title ? 'zan-toast--notitle' : '' }}"
+    wx:if="{{ zanToast.show }}"
+    bindtap="clearZanToast"
+  >
+    <!-- icon 展示 -->
+    <block
+      wx:if="{{ zanToast.icon || zanToast.image }}"
+    >
+      <view
+        wx:if="{{ zanToast.image }}"
+        class="zan-toast__icon zan-toast__icon-image"
+        style="background-image: url({{ zanToast.image }});"
+      ></view>
+      <view
+        wx:elif="{{ zanToast.icon === 'loading' }}"
+        class="zan-toast__icon zan-toast__icon-loading"
+      >
+        <view class="zan-loading"></view>
+      </view>
+      <view
+        wx:else
+        class="zan-toast__icon zan-icon zan-icon-{{ zanToast.icon }}"
+      ></view>
+    </block>
+
+    <!-- 文案展示 -->
+    <view wx:if="{{ zanToast.title }}">{{ zanToast.title }}</view>
+  </view>
 </template>

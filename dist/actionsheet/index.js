@@ -26,16 +26,16 @@ module.exports = {
     if (this.handleZanActionsheetClick) {
       this.handleZanActionsheetClick({ componentId, index });
     } else {
-      console.warn('页面缺少 handleZanActionsheetClick 回调函数');
+      
     }
   }
 };
 
 function resolveCancelClick({ componentId }) {
-  console.info('[zan:actionsheet:cancel]');
+  
   if (this.handleZanActionsheetCancel) {
     this.handleZanActionsheetCancel({ componentId });
   } else {
-    console.warn('页面缺少 handleZanActionsheetCancel 回调函数');
+    
   }
 }

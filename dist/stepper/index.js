@@ -12,12 +12,12 @@ function handle(e, num) {
 function callback(componentId, stepper) {
   stepper = +stepper;
   var e = { componentId, stepper };
-  console.info('[zan:stepper:change]', e);
+  
 
   if (this.handleZanStepperChange) {
     this.handleZanStepperChange(e);
   } else {
-    console.warn('页面缺少 handleZanStepperChange 回调函数');
+    
   }
 }
 

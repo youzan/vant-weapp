@@ -9,12 +9,12 @@ function handle(e) {
 
 function callback(componentId, value) {
   const e = { componentId, value };
-  console.info('[zan:Select:change]', e);
+  
 
   if (this.handleZanSelectChange) {
     this.handleZanSelectChange(e);
   } else {
-    console.warn('页面缺少 handleZanSelectChange 回调函数');
+    
   }
 }
 

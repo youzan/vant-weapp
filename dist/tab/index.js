@@ -7,7 +7,7 @@ var Tab = {
     const selectedId = dataset.itemId;
     const data = { componentId, selectedId };
 
-    console.info('[zan:tab:change]', data);
+    
     if (this.handleZanTabChange) {
       this.handleZanTabChange(data);
     } else {

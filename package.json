@@ -8,7 +8,7 @@
   },
   "scripts": {
     "release": "sh scripts/release.sh",
-    "components": "node scripts/build-components.js --color",
+    "components": "cross-env NODE_ENV=production node scripts/build-components.js --color",
     "changelog": "sh scripts/build-changelog.sh",
     "icon": "sh scripts/build-icon.sh",
     "dev": "node scripts/build-dev.js --color",
@@ -29,10 +29,12 @@
   ],
   "homepage": "https://github.com/youzan/zanui-weapp#readme",
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "fs-extra": "^4.0.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-postcss": "^7.0.0",
+    "gulp-remove-logging": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
     "node-watch": "^0.5.5",

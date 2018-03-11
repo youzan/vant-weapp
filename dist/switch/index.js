@@ -9,7 +9,7 @@ var Switch = {
 
     if (loading || disabled) return;
 
-    console.info('[zan:switch:change]', { checked, componentId });
+    
 
     if (this.handleZanSwitchChange) {
       this.handleZanSwitchChange({

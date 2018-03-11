@@ -11,7 +11,7 @@ var Tab = {
     if (this.handleZanTabChange) {
       this.handleZanTabChange(data);
     } else {
-      
+      console.warn('页面缺少 handleZanTabChange 回调函数');
     }
   }
 };

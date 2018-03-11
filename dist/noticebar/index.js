@@ -14,7 +14,7 @@ const ZanNoticeBar = {
       .select(`#${componentId}__content`)
       .boundingClientRect((rect) => {
         if (!rect || !rect.width) {
-          
+          console.warn('页面缺少 noticebar 元素');
           return;
         }
 

@@ -14,7 +14,7 @@ function callback(componentId, value) {
   if (this.handleZanSelectChange) {
     this.handleZanSelectChange(e);
   } else {
-    
+    console.warn('页面缺少 handleZanSelectChange 回调函数');
   }
 }
 

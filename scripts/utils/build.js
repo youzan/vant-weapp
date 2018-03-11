@@ -21,7 +21,7 @@ gulp.task('compile-css', () => {
 gulp.task('compile-js', () => {
   return gulp.src(['../../packages/**/*.js'])
     .pipe(removeLogging({
-      methods: isProduction ? ['log', 'warn', 'info'] : []
+      methods: isProduction ? ['log', 'info'] : []
     }))
     .pipe(gulp.dest(options.dist));
 });

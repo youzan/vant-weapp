@@ -11,7 +11,7 @@ module.exports = {
       return this.handleZanFieldChange(event);
     }
 
-    
+    console.warn('页面缺少 handleZanFieldChange 回调函数');
   },
 
   _handleZanFieldFocus(event) {
@@ -23,8 +23,6 @@ module.exports = {
     if (this.handleZanFieldFocus) {
       return this.handleZanFieldFocus(event);
     }
-
-    
   },
 
   _handleZanFieldBlur(event) {
@@ -36,7 +34,5 @@ module.exports = {
     if (this.handleZanFieldBlur) {
       return this.handleZanFieldBlur(event);
     }
-
-    
   }
 };

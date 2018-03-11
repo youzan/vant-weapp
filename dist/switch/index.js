@@ -17,7 +17,7 @@ var Switch = {
         componentId
       });
     } else {
-      
+      console.warn('页面缺少 handleZanSwitchChange 回调函数');
     }
   }
 };

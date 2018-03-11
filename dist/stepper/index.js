@@ -17,7 +17,7 @@ function callback(componentId, stepper) {
   if (this.handleZanStepperChange) {
     this.handleZanStepperChange(e);
   } else {
-    
+    console.warn('页面缺少 handleZanStepperChange 回调函数');
   }
 }
 

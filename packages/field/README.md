@@ -60,6 +60,7 @@ Page(extend({}, Field, {
 | inputType | 输入框为 input 情况下，输入框的类型，例如：number, text, password | String  | text | |
 | placeholder | 输入框为空时占位符 | String  | | |
 | focus | 自动聚焦，拉起键盘 | Boolean  | false | |
+| disabled | 输入框是否禁用 | Boolean  | false | |
 | mode | 输入框展示样式，可选值为 wrapped, normal | String | normal | |
 | right | 输入框内容是否居右显示 | Boolean  | false | |
 | error | 是否显示为输入框错误情况下的样式 | Boolean  | false | |

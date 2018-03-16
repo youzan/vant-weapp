@@ -13,8 +13,8 @@
     "icon": "sh scripts/build-icon.sh",
     "dev": "node scripts/build-dev.js --color",
     "build": "sh scripts/deploy.sh",
-    "build:doc": "wedoc run build",
-    "watch:doc": "wedoc run watch",
+    "watch:doc": "NODE_ENV=development wedoc run watch",
+    "build:doc": "NODE_ENV=production wedoc run build",
     "deploy:doc": "npm run build:doc && superman cdn basic && gh-pages -d website/dist --remote youzan"
   },
   "repository": {
@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "gh-pages": "^1.1.0",
-    "wedoc": "0.0.7"
+    "wedoc": "0.0.12"
   }
 }

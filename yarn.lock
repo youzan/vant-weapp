@@ -7721,6 +7721,14 @@ shelljs@^0.7.8:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
+shelljs@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.1.tgz#729e038c413a2254c4078b95ed46e0397154a9f1"
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
 shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
@@ -8894,9 +8902,9 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
-wedoc@0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/wedoc/-/wedoc-0.0.7.tgz#7361e3b34d1cb72a60e0489c6f6106a18b845c96"
+wedoc@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/wedoc/-/wedoc-0.0.12.tgz#579110498b5d2648fe7485d12036631b85205f90"
   dependencies:
     autoprefixer "^7.1.2"
     babel-core "^6.22.1"
@@ -8947,6 +8955,7 @@ wedoc@0.0.7:
     rimraf "^2.6.0"
     selenium-server "^3.0.1"
     semver "^5.3.0"
+    shelljs "^0.8.1"
     style-loader "^0.19.1"
     uglifyjs-webpack-plugin "^1.1.1"
     url-loader "^0.5.8"

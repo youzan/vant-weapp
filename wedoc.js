@@ -13,7 +13,7 @@ module.exports = {
   },
   webpack: {
     output: {
-      publicPath: 'https://b.yzcdn.cn/zanui/weapp',
+      publicPath: process.argv[process.argv.length - 1] === 'build' ? 'https://b.yzcdn.cn/zanui/weapp' : '/',
       filename: '[name].[hash].js'
     }
   }

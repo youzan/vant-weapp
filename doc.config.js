@@ -25,7 +25,7 @@ module.exports = {
       加入我们: 'https://job.youzan.com'
     }
   },
-  plugins: [require('/Users/jdliu/projects/youzan/zanui-weapp/website/plugins/wxapp-demo')],
+  plugins: [require('./website/plugins/wxapp-demo.js')],
   docs: {
     base: 'zanui',
     default: 'icon',
@@ -34,53 +34,53 @@ module.exports = {
         base: 'base',
         label: '基础',
         include: {
-          icon: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/icon/README.md'),
-          btn: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/btn/README.md'),
-          helper: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/helper/README.md')
+          icon: require('../../../packages/icon/README.md'),
+          btn: require('../../../packages/btn/README.md'),
+          helper: require('../../../packages/helper/README.md')
         }
       },
       {
         base: 'layout',
         label: '布局',
         include: {
-          row: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/row/README.md'),
-          cell: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/cell/README.md'),
-          card: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/card/README.md'),
-          panel: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/panel/README.md')
+          row: require('../../../packages/row/README.md'),
+          cell: require('../../../packages/cell/README.md'),
+          card: require('../../../packages/card/README.md'),
+          panel: require('../../../packages/panel/README.md')
         }
       },
       {
         base: 'form',
         label: '表单',
         include: {
-          field: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/field/README.md'),
-          switch: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/switch/README.md'),
-          select: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/select/README.md'),
-          stepper: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/stepper/README.md')
+          field: require('../../../packages/field/README.md'),
+          switch: require('../../../packages/switch/README.md'),
+          select: require('../../../packages/select/README.md'),
+          stepper: require('../../../packages/stepper/README.md')
         }
       },
       {
         base: 'view',
         label: '展示',
         include: {
-          tag: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/tag/README.md'),
-          badge: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/badge/README.md'),
-          capsule: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/capsule/README.md'),
-          noticebar: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/noticebar/README.md'),
-          steps: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/steps/README.md')
+          tag: require('../../../packages/tag/README.md'),
+          badge: require('../../../packages/badge/README.md'),
+          capsule: require('../../../packages/capsule/README.md'),
+          noticebar: require('../../../packages/noticebar/README.md'),
+          steps: require('../../../packages/steps/README.md')
         }
       },
       {
         base: 'interactive',
         label: '交互',
         include: {
-          toast: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/toast/README.md'),
-          popup: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/popup/README.md'),
-          dialog: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/dialog/README.md'),
-          toptips: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/toptips/README.md'),
-          tab: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/tab/README.md'),
-          loadmore: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/loadmore/README.md'),
-          actionsheet: require('/Users/jdliu/projects/youzan/zanui-weapp/packages/actionsheet/README.md')
+          toast: require('../../../packages/toast/README.md'),
+          popup: require('../../../packages/popup/README.md'),
+          dialog: require('../../../packages/dialog/README.md'),
+          toptips: require('../../../packages/toptips/README.md'),
+          tab: require('../../../packages/tab/README.md'),
+          loadmore: require('../../../packages/loadmore/README.md'),
+          actionsheet: require('../../../packages/actionsheet/README.md')
         }
       }
     ],

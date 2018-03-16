@@ -16,6 +16,11 @@ module.exports = {
       title: '详细地址',
       type: 'textarea',
       placeholder: '请输入详细地址'
+    },
+    disabled: {
+      title: '用户信息',
+      disabled: true,
+      value: '输入框已禁用'
     }
   },
   // 无标题输入框

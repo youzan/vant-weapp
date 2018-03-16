@@ -4,6 +4,9 @@
   top: 0;
   z-index: 2;
 }
+.van-doc-header__top-nav-item .van-doc-header__top-nav-lang {
+  display: none;
+}
 .van-doc-footer {
   position: relative
 }

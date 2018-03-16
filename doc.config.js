@@ -34,53 +34,53 @@ module.exports = {
         base: 'base',
         label: '基础',
         include: {
-          icon: require('../../../packages/icon/README.md'),
-          btn: require('../../../packages/btn/README.md'),
-          helper: require('../../../packages/helper/README.md')
+          icon: require('./packages/icon/README.md'),
+          btn: require('./packages/btn/README.md'),
+          helper: require('./packages/helper/README.md')
         }
       },
       {
         base: 'layout',
         label: '布局',
         include: {
-          row: require('../../../packages/row/README.md'),
-          cell: require('../../../packages/cell/README.md'),
-          card: require('../../../packages/card/README.md'),
-          panel: require('../../../packages/panel/README.md')
+          row: require('./packages/row/README.md'),
+          cell: require('./packages/cell/README.md'),
+          card: require('./packages/card/README.md'),
+          panel: require('./packages/panel/README.md')
         }
       },
       {
         base: 'form',
         label: '表单',
         include: {
-          field: require('../../../packages/field/README.md'),
-          switch: require('../../../packages/switch/README.md'),
-          select: require('../../../packages/select/README.md'),
-          stepper: require('../../../packages/stepper/README.md')
+          field: require('./packages/field/README.md'),
+          switch: require('./packages/switch/README.md'),
+          select: require('./packages/select/README.md'),
+          stepper: require('./packages/stepper/README.md')
         }
       },
       {
         base: 'view',
         label: '展示',
         include: {
-          tag: require('../../../packages/tag/README.md'),
-          badge: require('../../../packages/badge/README.md'),
-          capsule: require('../../../packages/capsule/README.md'),
-          noticebar: require('../../../packages/noticebar/README.md'),
-          steps: require('../../../packages/steps/README.md')
+          tag: require('./packages/tag/README.md'),
+          badge: require('./packages/badge/README.md'),
+          capsule: require('./packages/capsule/README.md'),
+          noticebar: require('./packages/noticebar/README.md'),
+          steps: require('./packages/steps/README.md')
         }
       },
       {
         base: 'interactive',
         label: '交互',
         include: {
-          toast: require('../../../packages/toast/README.md'),
-          popup: require('../../../packages/popup/README.md'),
-          dialog: require('../../../packages/dialog/README.md'),
-          toptips: require('../../../packages/toptips/README.md'),
-          tab: require('../../../packages/tab/README.md'),
-          loadmore: require('../../../packages/loadmore/README.md'),
-          actionsheet: require('../../../packages/actionsheet/README.md')
+          toast: require('./packages/toast/README.md'),
+          popup: require('./packages/popup/README.md'),
+          dialog: require('./packages/dialog/README.md'),
+          toptips: require('./packages/toptips/README.md'),
+          tab: require('./packages/tab/README.md'),
+          loadmore: require('./packages/loadmore/README.md'),
+          actionsheet: require('./packages/actionsheet/README.md')
         }
       }
     ],

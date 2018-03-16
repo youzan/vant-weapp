@@ -45,6 +45,6 @@
   },
   "dependencies": {
     "gh-pages": "^1.1.0",
-    "wedoc": "0.0.12"
+    "wedoc": "0.0.13"
   }
 }

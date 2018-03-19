@@ -20,12 +20,10 @@ function extracter(config = {}) {
   fs.copySync(config.src, config.dist, {
     filter(src = '') {
       const extname = path.extname(src);
-      return ['.pcss', '.md'].indexOf(extname) < 0;
+      return ['.js', '.pcss', '.md'].indexOf(extname) < 0;
     }
   });
 
-  // js 无需编译，让微信开发者工具处理
-
-  // 编译 wxss 文件
-  exec(`gulp build --gulpfile scripts/utils/build-css.js --dist ${config.dist} --color`);
+  // 编译 js wxss 文件
+  exec(`gulp build --gulpfile scripts/utils/build.js --dist ${config.dist} --color`);
 }

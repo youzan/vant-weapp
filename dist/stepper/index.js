@@ -12,7 +12,7 @@ function handle(e, num) {
 function callback(componentId, stepper) {
   stepper = +stepper;
   var e = { componentId, stepper };
-  console.info('[zan:stepper:change]', e);
+  
 
   if (this.handleZanStepperChange) {
     this.handleZanStepperChange(e);

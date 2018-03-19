@@ -32,7 +32,7 @@ module.exports = {
 };
 
 function resolveCancelClick({ componentId }) {
-  console.info('[zan:actionsheet:cancel]');
+  
   if (this.handleZanActionsheetCancel) {
     this.handleZanActionsheetCancel({ componentId });
   } else {

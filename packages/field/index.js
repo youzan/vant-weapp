@@ -23,8 +23,6 @@ module.exports = {
     if (this.handleZanFieldFocus) {
       return this.handleZanFieldFocus(event);
     }
-
-    console.warn('页面缺少 handleZanFieldFocus 回调函数');
   },
 
   _handleZanFieldBlur(event) {
@@ -36,7 +34,5 @@ module.exports = {
     if (this.handleZanFieldBlur) {
       return this.handleZanFieldBlur(event);
     }
-
-    console.warn('页面缺少 handleZanFieldBlur 回调函数');
   }
 };

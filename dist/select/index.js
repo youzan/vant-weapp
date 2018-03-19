@@ -9,7 +9,7 @@ function handle(e) {
 
 function callback(componentId, value) {
   const e = { componentId, value };
-  console.info('[zan:Select:change]', e);
+  
 
   if (this.handleZanSelectChange) {
     this.handleZanSelectChange(e);

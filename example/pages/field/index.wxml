@@ -15,6 +15,9 @@
     <template
       is="zan-field"
       data="{{ ...config.base.address }}"></template>
+    <template
+      is="zan-field"
+      data="{{ ...config.base.disabled }}"></template>
   </view>
 
   <view class="zan-btns">

@@ -1,7 +1,0 @@
-{
-  "env": { 
-    "jest": true
-  },
-  "globals": { 
-  }
-}

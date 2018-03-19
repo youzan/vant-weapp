@@ -9,3 +9,4 @@ project.config.json
 assets/icons/build
 assets/icons/svg
 example/dist
+website/dist

@@ -2,7 +2,7 @@
   <div class="demo" :class="activeCodeType">
     <h3 v-if="types.length">示例代码</h3>
     <div class="demo-view-qrcode">
-      <img src="https://camo.githubusercontent.com/b3e6c0c62d421ef5df9d7e9b8366e6287c0464b7/68747470733a2f2f696d672e797a63646e2e636e2f7075626c69635f66696c65732f323031372f31302f33302f35353464643934306562316132363964346163393133336537386165333231662e6a70673f696d61676556696577322f322f772f3330302f682f333030" />
+      <img src="https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300" />
       <div>微信扫一扫</div>
     </div>
     <!-- <div class="code-type-tabs">

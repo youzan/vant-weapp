@@ -1,8 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const file = require('./file')
-const demoPath = path.join(__dirname, '../../example/pages')
-
+const demoPath = path.join(__dirname, '../example/pages')
 function getDemoFiles (demoDir) {
   if (!file.hasFile(demoDir)) return {}
   let files = file.getFiles(demoDir)

@@ -1,6 +1,0 @@
-/build/
-/config/
-/dist/
-/*.js
-/test/unit/coverage/
-/src/components/vant-doc

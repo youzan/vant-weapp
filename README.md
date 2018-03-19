@@ -41,31 +41,9 @@ npm run dev
 
 我们推荐在你的`app.wxss`直接引入`zanui-weapp/dist/index.wxss`。
 
-#### 具体组件文档
-* [Actionsheet - 行动按钮](./packages/actionsheet/README.md)
-* [Badge - 徽章](./packages/badge/README.md)
-* [Button - 按钮](./packages/btn/README.md)
-* [Capsule - 胶囊](./packages/capsule/README.md)
-* [Card - 卡片](./packages/card/README.md)
-* [Cell - 单元格](./packages/cell/README.md)
-* [Helper - 基础样式](./packages/helper/README.md)
-* [Icon - 图标](./packages/icon/README.md)
-* [Layout - 布局](./packages/row/README.md)
-* [Loadmore - 加载](./packages/loadmore/README.md)
-* [Noticebar - 通告栏](./packages/noticebar/README.md)
-* [Panel - 面板](./packages/panel/README.md)
-* [Popup - 弹出层](./packages/popup/README.md)
-* [Stepper - 计数器](./packages/stepper/README.md)
-* [Select - 选择](./packages/select/README.md)
-* [Steps - 步骤条](./packages/steps/README.md)
-* [Switch - 开关](./packages/switch/README.md)
-* [Tab - 标签](./packages/tab/README.md)
-* [Field - 输入框](./packages/field/README.md)
-* [Dialog - 弹出框](./packages/dialog/README.md)
-* [Tag - 标签](./packages/tag/README.md)
-* [Toast - 轻提示](./packages/toast/README.md)
-* [Toptips - 顶部提示](./packages/toptips/README.md)
+详细使用文档，请参考 [快速上手](https://www.youzanyun.com/zanui/weapp)
 
+### 组件分类介绍
 根据功能的不同，可以将组件大致的分为4类：
 
 #### 1. 简单组件

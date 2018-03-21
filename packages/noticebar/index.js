@@ -18,6 +18,8 @@ const ZanNoticeBar = {
           return;
         }
 
+        console.log('rect', componentId, rect.width, rect);
+
         currentComponent.width = rect.width;
         wx
           .createSelectorQuery()
@@ -27,6 +29,8 @@ const ZanNoticeBar = {
             if (!rect || !rect.width) {
               return;
             }
+
+            clearTimeout(this.data[componentId].setTimeoutId)
 
             currentComponent.wrapWidth = rect.width;
             if (currentComponent.wrapWidth < currentComponent.width) {
@@ -60,9 +64,12 @@ const ZanNoticeBar = {
       });
     }, 100);
 
-    setTimeout(() => {
+    const setTimeoutId = setTimeout(() => {
       this.scrollZanNoticeBar(componentId, mstime);
     }, mstime);
+    this.setData({
+      [`${componentId}.setTimeoutId`]: setTimeoutId
+    })
   }
 };
 

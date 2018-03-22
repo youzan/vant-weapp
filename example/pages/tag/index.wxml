@@ -4,27 +4,27 @@
 
   <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">
-      <view class="zan-tag">灰色</view>
-      <view class="zan-tag zan-tag--danger">红色</view>
-      <view class="zan-tag zan-tag--disabled">不可用</view>
+      <zan-tag>灰色</zan-tag>
+      <zan-tag type="danger">红色</zan-tag>
+      <zan-tag disabled>不可用</zan-tag>
     </view>
   </view>
   <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">
-      <view class="zan-tag zan-tag--danger">会员折扣</view>
-      <view class="zan-tag zan-tag--warn">返现</view>
-      <view class="zan-tag zan-tag--primary">返现</view>
-      <view class="zan-tag zan-tag--primary zan-tag--disabled">不可用</view>
+      <zan-tag type="danger">会员折扣</zan-tag>
+      <zan-tag type="warn">返现</zan-tag>
+      <zan-tag type="primary">返现</zan-tag>
+      <zan-tag type="primary" disabled>不可用</zan-tag>
     </view>
   </view>
 
     <view class="zan-panel">
     <view class="zan-cell zan-cell--last-child">
-      <view class="zan-tag zan-tag--plain">灰色</view>
-      <view class="zan-tag zan-tag--danger zan-tag--plain">会员折扣</view>
-      <view class="zan-tag zan-tag--warn zan-tag--plain">返现</view>
-      <view class="zan-tag zan-tag--primary zan-tag--plain">返现</view>
-      <view class="zan-tag zan-tag--primary zan-tag--plain zan-tag--disabled">返现不可用</view>
+      <zan-tag plain>灰色</zan-tag>
+      <zan-tag type="danger" plain>会员折扣</zan-tag>
+      <zan-tag type="warn" plain>返现</zan-tag>
+      <zan-tag type="primary" plain>返现</zan-tag>
+      <zan-tag type="primary" plain disabled>返现不可用</zan-tag>
     </view>
   </view>
 </view>

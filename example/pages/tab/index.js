@@ -70,30 +70,5 @@ Page({
       scroll: true,
       height: 45
     }
-  },
-
-  onShow() {
-    setTimeout(() => {
-      this.setData({
-        tab2: {
-          ...this.data.tab2,
-          selectedId: '3'
-        }
-      });
-    }, 2000);
-  },
-
-  handleTabChange(data) {
-    console.log(data);
-  },
-
-  handleScroll(e) {
-    const scrollTop = e.detail.scrollTop;
-
-    (scrollTop > interval * moduleId) && moduleId++;
-
-    this.setData({
-      [`tab3.selectedId`]: String(moduleId)
-    });
   }
 });

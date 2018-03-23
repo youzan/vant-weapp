@@ -9,7 +9,6 @@
       list="{{ tab1.list }}"
       selected-id="{{ tab1.selectedId }}"
       component-id="tab1"
-      bindtabchange="handleTabChange"
     />
   </view>
   <view style="margin: 20px 0">
@@ -22,16 +21,6 @@
     <zan-tab
       tab="{{ tab3 }}"
       component-id="tab3"
-    >
-      <scroll-view
-        style="height: 200px"
-        scroll-y="true"
-        bindscroll="handleScroll"
-      >
-        <view class="scroll-wrapper">
-          test change tab when scroll.
-        </view>
-      </scroll-view>
-    </zan-tab>
+    />
   </view>
 </view>

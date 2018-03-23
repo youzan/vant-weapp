@@ -28,6 +28,8 @@ const ZanNoticeBar = {
               return;
             }
 
+            clearTimeout(this.data[componentId].setTimeoutId)
+
             currentComponent.wrapWidth = rect.width;
             if (currentComponent.wrapWidth < currentComponent.width) {
               var mstime = currentComponent.width / 40 * 1000;
@@ -60,9 +62,12 @@ const ZanNoticeBar = {
       });
     }, 100);
 
-    setTimeout(() => {
+    const setTimeoutId = setTimeout(() => {
       this.scrollZanNoticeBar(componentId, mstime);
     }, mstime);
+    this.setData({
+      [`${componentId}.setTimeoutId`]: setTimeoutId
+    })
   }
 };
 

@@ -4,11 +4,14 @@
   float: left;
   text-align: center;
 }
+
+.example-icon {
+  font-size: 24px;
+  padding: 10px;
+  color: rgba(69, 90, 100, .8);
+}
+
 .icon-classname {
   color: #999;
   font-size: 10px;
-}
-.zan-icon {
-  font-size: 24px;
-  margin: 20px;
 }

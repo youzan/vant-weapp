@@ -4,7 +4,9 @@
 
   <view class="zan-panel">
     <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
-      <view class="zan-icon zan-icon-{{ icon }}"  style="color: #ff4343;"></view>
+      <view class="example-icon">
+        <zan-icon type="{{ icon }}"></zan-icon>
+      </view>
       <view class="icon-classname">zan-icon-{{ icon }}</view>
     </view>
   </view>

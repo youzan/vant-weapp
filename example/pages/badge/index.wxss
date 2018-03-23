@@ -1,6 +1,7 @@
 .demo {
-  padding: 40px 0;
+  padding: 40px 10px;
   display: flex;
+  flex-wrap: wrap;
 }
 .demo__item {
   flex: 1;

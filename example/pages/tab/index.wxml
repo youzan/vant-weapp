@@ -5,18 +5,33 @@
   <view class="doc-title zan-hairline--bottom">TAB</view>
 
   <view style="margin: 20px 0">
-    <template
-      is="zan-tab"
-      data="{{ ...tab1, componentId: 'tab1' }}"></template>
+    <zan-tab
+      list="{{ tab1.list }}"
+      selected-id="{{ tab1.selectedId }}"
+      component-id="tab1"
+      bindtabchange="handleTabChange"
+    />
   </view>
   <view style="margin: 20px 0">
-    <template
-      is="zan-tab"
-      data="{{ ...tab2, componentId: 'tab2' }}"></template>
+    <zan-tab
+      tab="{{ tab2 }}"
+      component-id="tab2"
+    />
   </view>
   <view style="margin: 20px 0">
-    <template
-      is="zan-tab"
-      data="{{ ...tab3, componentId: 'tab3' }}"></template>
+    <zan-tab
+      tab="{{ tab3 }}"
+      component-id="tab3"
+    >
+      <scroll-view
+        style="height: 200px"
+        scroll-y="true"
+        bindscroll="handleScroll"
+      >
+        <view class="scroll-wrapper">
+          test change tab when scroll.
+        </view>
+      </scroll-view>
+    </zan-tab>
   </view>
 </view>

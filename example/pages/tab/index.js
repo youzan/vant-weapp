@@ -1,6 +1,7 @@
-const { Tab, extend } = require('../../dist/index');
+const interval = 50;
+let moduleId = 1;
 
-Page(extend({}, Tab, {
+Page({
   data: {
     tab1: {
       list: [{
@@ -71,12 +72,28 @@ Page(extend({}, Tab, {
     }
   },
 
-  handleZanTabChange(e) {
-    var componentId = e.componentId;
-    var selectedId = e.selectedId;
+  onShow() {
+    setTimeout(() => {
+      this.setData({
+        tab2: {
+          ...this.data.tab2,
+          selectedId: '3'
+        }
+      });
+    }, 2000);
+  },
+
+  handleTabChange(data) {
+    console.log(data);
+  },
+
+  handleScroll(e) {
+    const scrollTop = e.detail.scrollTop;
+
+    (scrollTop > interval * moduleId) && moduleId++;
 
     this.setData({
-      [`${componentId}.selectedId`]: selectedId
+      [`tab3.selectedId`]: String(moduleId)
     });
   }
-}));
+});

@@ -18,8 +18,6 @@ const ZanNoticeBar = {
           return;
         }
 
-        console.log('rect', componentId, rect.width, rect);
-
         currentComponent.width = rect.width;
         wx
           .createSelectorQuery()

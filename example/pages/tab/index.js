@@ -44,7 +44,7 @@ Page({
       }],
       selectedId: '1',
       scroll: true,
-      height: 45
+      height: 80
     },
     tab3: {
       list: [{
@@ -67,8 +67,9 @@ Page({
         title: '商品6'
       }],
       selectedId: '1',
+      height: 45,
       scroll: true,
-      height: 45
+      fixed: true
     }
   }
 });

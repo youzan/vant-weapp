@@ -2,17 +2,6 @@ Component({
   externalClasses: 'class',
 
   properties: {
-    tab: {
-      type: Object,
-      value: {},
-      observer(newVal, oldVal) {
-        if (newVal.selectedId && newVal.selectedId !== oldVal.selectedId) {
-          this.setData({
-            currentTab: newVal.selectedId
-          });
-        }
-      }
-    },
     scroll: {
       type: Boolean,
       value: false
@@ -49,23 +38,21 @@ Component({
   },
 
   attached() {
-    const { tab, selectedId } = this.data;
     this.setData({
-      currentTab: tab.selectedId || selectedId
+      currentTab: this.data.selectedId
     });
   },
 
   methods: {
     _handleZanTabChange(e) {
-      const { componentId, itemId: selectedId } = e.currentTarget.dataset;
-      const data = { componentId, selectedId };
+      const selectedId = e.currentTarget.dataset.itemId;
 
       this.setData({
         currentTab: selectedId
       });
 
-      console.info('[zan:tab:change]', data);
-      this.triggerEvent('tabchange', data);
+      console.info('[zan:tab:change] selectedId:', selectedId);
+      this.triggerEvent('tabchange', selectedId);
     }
   }
 })

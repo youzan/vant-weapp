@@ -8,19 +8,23 @@
     <zan-tab
       list="{{ tab1.list }}"
       selected-id="{{ tab1.selectedId }}"
-      component-id="tab1"
     />
   </view>
   <view style="margin: 20px 0">
     <zan-tab
-      tab="{{ tab2 }}"
-      component-id="tab2"
+      list="{{ tab2.list }}"
+      selected-id="{{ tab2.selectedId }}"
+      scroll="{{ tab2.scroll }}"
+      height="{{ tab2.height }}"
     />
   </view>
   <view style="margin: 20px 0">
     <zan-tab
-      tab="{{ tab3 }}"
-      component-id="tab3"
+      list="{{ tab3.list }}"
+      selected-id="{{ tab3.selectedId }}"
+      scroll="{{ tab3.scroll }}"
+      fixed="{{ tab3.fixed }}"
+      height="{{ tab3.height }}"
     />
   </view>
 </view>

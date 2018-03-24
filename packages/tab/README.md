@@ -11,10 +11,12 @@
 // 在 Page 中声明 Tab 依赖的展示数据
 Page({
   data: {
-    tab: {
-      list: [],
-      ...
-    }
+    list: [{
+      id: 'xxx',
+      title: 'xxx'
+    }],
+    selectedId: 'xxx',
+    ...
   }
 })
 ```
@@ -23,25 +25,22 @@ Page({
 可以在任意位置上使用 zan-tab 标签。传入对应的数据即可。
 ```html
 <zan-tab
-  tab="{{ tab }}"
+  scroll="{{ scroll }}"
+  list="{{ list }}"
+  selected-id="{{ selectedId }}"
+  height="{{ height }}"
+  fixed="{{ fixed }}"
   bindtabchange="handleTabChange"
-/>
-
-<zan-tab
-  list="{{ tab.list }}"
-  selected-id="{{ tab.selectedId }}"
-  ...
 />
 ```
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| tab | tab 配置对象 | Object | - | |
 | tab.scroll | 是否开启 tab 左右滑动模式 | Boolean | - | |
 | tab.list | 可选项列表 | Array | - | |
 | tab.selectedId | 选中id | - | - | |
 | tab.height | tab高度 | Number | - | |
-| tab.fixed | 是否固定位置 | Boolean | - | |kv
+| tab.fixed | 是否固定位置 | Boolean | - | |
 | componentId | 用于区分页面多个 tab 组件 | String | - | |
 
 
@@ -70,9 +69,7 @@ tab 组件中，tab.list 数据格式如下
 可以监听 bindtabchange 事件回调，在页面注册回调函数
 ```js
 Page({
-  customCallback({ componentId, selectedId }) {
-    // componentId 即为在模板中传入的 componentId
-    // 用于在一个页面上使用多个 tab 时，进行区分
+  customCallback(selectedId) {
     // selectId 表示被选中 tab 项的 id
   }
 }));

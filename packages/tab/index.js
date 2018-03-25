@@ -26,10 +26,6 @@ Component({
           currentTab: newVal
         });
       }
-    },
-    componentId: {
-      type: String,
-      default: ''
     }
   },
 

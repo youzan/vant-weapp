@@ -4,11 +4,18 @@ Component({
       type: Boolean,
       value: false
     },
+
     overlay: {
       type: Boolean,
       value: true
     },
-    // 内容从哪个方向出，可选 center top bottom left right
+
+    closeOnClickOverlay: {
+      type: Boolean,
+      value: true
+    },
+
+    // 弹出方向
     type: {
       type: String,
       value: 'center'
@@ -17,7 +24,12 @@ Component({
 
   methods: {
     handleMaskClick() {
-      this.triggerEvent('clickmask', {});
+      this.triggerEvent('click-overlay', {});
+
+      if (!this.data.closeOnClickOverlay) {
+        return;
+      }
+      this.triggerEvent('close', {});
     }
   }
 });

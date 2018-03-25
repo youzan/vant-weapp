@@ -1,8 +1,5 @@
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">POPUP</view>
-
-  <view class="zan-btns" style="margin-top: 30vh;">
+<doc-page title="POPUP">
+  <view class="zan-btns" style="margin-top: 10vh;">
     <button class="zan-btn" bindtap="togglePopup">
       弹出popup
     </button>
@@ -70,5 +67,4 @@
       </view>
     </view>
   </view>
-
-</view>
+</doc-page>

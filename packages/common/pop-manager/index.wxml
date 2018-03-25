@@ -1,0 +1,6 @@
+<view class="pop {{ show ? 'pop--show' : '' }}">
+  <view class="pop__mask" bindtap="handleMaskClick"></view>
+  <view class="pop__container">
+    <slot></slot>
+  </view>
+</view>

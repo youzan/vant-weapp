@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "时间选择器",
+  "usingComponents": {
+    "zan-date-picker": "../../dist/datetime-picker/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index"
+  }
+}

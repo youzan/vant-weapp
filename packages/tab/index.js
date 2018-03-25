@@ -1,19 +1,58 @@
-const { extractComponentId } = require('../common/helper');
+Component({
+  externalClasses: 'class',
 
-var Tab = {
-  _handleZanTabChange(e) {
-    const componentId = extractComponentId(e);
-    const dataset = e.currentTarget.dataset;
-    const selectedId = dataset.itemId;
-    const data = { componentId, selectedId };
+  properties: {
+    scroll: {
+      type: Boolean,
+      value: false
+    },
+    fixed: {
+      type: Boolean,
+      value: false
+    },
+    height: {
+      type: Number,
+      value: 0
+    },
+    list: {
+      type: Array,
+      value: []
+    },
+    selectedId: {
+      type: [String, Number],
+      value: '',
+      observer(newVal) {
+        this.setData({
+          currentTab: newVal
+        });
+      }
+    },
+    componentId: {
+      type: String,
+      default: ''
+    }
+  },
 
-    console.info('[zan:tab:change]', data);
-    if (this.handleZanTabChange) {
-      this.handleZanTabChange(data);
-    } else {
-      console.warn('页面缺少 handleZanTabChange 回调函数');
+  data: {
+    currentTab: ''
+  },
+
+  attached() {
+    this.setData({
+      currentTab: this.data.selectedId
+    });
+  },
+
+  methods: {
+    _handleZanTabChange(e) {
+      const selectedId = e.currentTarget.dataset.itemId;
+
+      this.setData({
+        currentTab: selectedId
+      });
+
+      console.info('[zan:tab:change] selectedId:', selectedId);
+      this.triggerEvent('tabchange', selectedId);
     }
   }
-};
-
-module.exports = Tab;
+})

@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "Cell 单元格"
+  "navigationBarTitleText": "Cell 单元格",
+  "usingComponents": {
+    "zan-cell": "../../dist/cell/index",
+    "zan-icon": "../../dist/icon/index",
+    "zan-cell-group": "../../dist/cell-group/index"
+  }
 }

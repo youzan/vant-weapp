@@ -3,7 +3,7 @@
 
   <view class="doc-title zan-hairline--bottom">LOADMORE</view>
 
-  <template is="zan-loadmore" data="{{ loading: true }}" />
-  <template is="zan-loadmore" data="{{ nodata: true }}" />
-  <template is="zan-loadmore" data="{{ nomore: true }}" />
+  <zan-load-more loading></zan-load-more>
+  <zan-load-more no-data></zan-load-more>
+  <zan-load-more no-more></zan-load-more>
 </view>

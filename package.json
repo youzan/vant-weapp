@@ -43,9 +43,7 @@
     "postcss-calc": "^6.0.1",
     "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0",
-    "shelljs": "^0.7.8"
-  },
-  "dependencies": {
+    "shelljs": "^0.7.8",
     "gh-pages": "^1.1.0",
     "wedoc": "0.0.13"
   }

@@ -26,20 +26,20 @@
 #### 类型
 tag支持额外的三种类型 primary, danger, warn
 ```html
-<zan-tag type="primary">确认付款</zan-tag>
-<zan-tag type="danger">确认付款</zan-tag>
-<zan-tag type="warn">确认付款</zan-tag>
+<zan-tag type="primary">会员折扣</zan-tag>
+<zan-tag type="danger">返现</zan-tag>
+<zan-tag type="warn">返现</zan-tag>
 ```
 
 
 #### 其他
 tag镂空状态
 ```html
-<zan-tag plain>确认付款</zan-tag>
+<zan-tag plain>返现</zan-tag>
 ```
 
 tag禁用状态
 ```html
-<zan-tag disabled>确认付款</zan-tag>
+<zan-tag disabled>不可用</zan-tag>
 ```
 

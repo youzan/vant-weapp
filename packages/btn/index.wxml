@@ -1,0 +1,7 @@
+
+<button 
+  class="custom-class zan-btn {{size ? 'zan-btn--'+size : ''}} {{size === 'mini' ? 'zan-btn--plain' : ''}} {{type ? 'zan-btn--'+type : ''}} {{loading ? 'zan-btn--loading' : ''}} {{disabled ? 'zan-btn--disabled' : ''}}"
+  disabled="{{disabled}}"
+>
+  <slot></slot>
+</button>

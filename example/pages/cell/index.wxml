@@ -5,114 +5,46 @@
   <view class="doc-title zan-hairline--bottom">CELL</view>
 
   <view class="zan-panel">
-    <view class="zan-cell">
-      <view class="zan-cell__bd">单行列表</view>
-    </view>
+    <zan-cell title="单行列表"></zan-cell>
   </view>
 
   <view class="zan-panel">
-    <view class="zan-cell">
-      <view class="zan-cell__bd">单行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
+    <zan-cell title="单行列表" value="详细信息"></zan-cell>
   </view>
 
   <view class="zan-panel">
-    <view class="zan-cell">
-      <view class="zan-cell__icon zan-icon zan-icon-checked" style="color:#38f;"></view>
-      <view class="zan-cell__bd">单行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
+    <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
+  </view>
+
+  <view class="zan-panel-title">带 icon 的 cell</view>
+  <view class="zan-panel">
+    <zan-cell title="单行列表" value="详细信息">
+      <zan-icon slot="icon" type="checked"></zan-icon>
+    </zan-cell>
+  </view>
+
+
+  <view class="zan-panel-title">带箭头的 cell</view>
+  <view class="zan-panel">
+    <zan-cell title="只显示箭头" is-link="{{true}}"></zan-cell>
   </view>
 
   <view class="zan-panel">
-    <view class="zan-cell">
-      <view class="zan-cell__bd">
-        <view class="zan-cell__text">单行列表</view>
-        <view class="zan-cell__desc">附加描述</view>
-      </view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
+    <zan-cell title="跳转到首页" is-link="/pages/dashboard/index"></zan-cell>
   </view>
-
+  <view class="zan-panel-title">cell 组</view>
   <view class="zan-panel">
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">单行列表</view>
-      <view class="zan-cell__ft"></view>
-    </view>
+    <zan-cell-group>
+      <zan-cell title="只显示箭头" is-link="{{true}}"></zan-cell>
+      <zan-cell title="跳转到首页" is-link="/pages/dashboard/index"></zan-cell>
+      <zan-cell title="只有 footer 点击有效" is-link="/pages/dashboard/index" only-tap-footer></zan-cell>
+      <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
+      <zan-cell title="表单">
+        <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
+      </zan-cell>
+      <zan-cell title="开关">
+        <switch slot="footer" checked/>
+      </zan-cell>
+    </zan-cell-group>
   </view>
-
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--switch">
-      <view class="zan-cell__bd">开关</view>
-      <view class="zan-cell__ft">
-        <template is="zan-switch" data="{{ checked }}"/>
-      </view>
-    </view>
-  </view>
-
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">单行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-  </view>
-
-  <view class="zan-panel">
-    <view class="zan-cell">
-      <view class="zan-cell__bd">多行列表</view>
-    </view>
-    <view class="zan-cell">
-      <view class="zan-cell__bd">多行列表</view>
-    </view>
-    <view class="zan-cell">
-      <view class="zan-cell__bd">多行列表</view>
-    </view>
-  </view>
-
-  <view class="zan-panel">
-    <view class="zan-cell">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-    <view class="zan-cell">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-    <view class="zan-cell">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-  </view>
-
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft"></view>
-    </view>
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft"></view>
-    </view>
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft"></view>
-    </view>
-  </view>
-
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-    <view class="zan-cell zan-cell--access">
-      <view class="zan-cell__bd">多行列表</view>
-      <view class="zan-cell__ft">详细信息</view>
-    </view>
-  </view>
-
 </view>

@@ -90,7 +90,7 @@ Component({
       .select('.zan-noticebar__content')
       .boundingClientRect(rect => {
         if (!rect || !rect.width) {
-          console.warn('页面缺少 noticebar 元素');
+          throw new Error('页面缺少 noticebar 元素');
           return;
         }
         this.setData({

@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Tag 标记"
+  "navigationBarTitleText": "Tag 标记",
+  "usingComponents": {
+    "zan-tag": "/dist/tag/index"
+  }
 }

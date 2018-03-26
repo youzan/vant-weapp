@@ -1,0 +1,11 @@
+<view
+  class="pop pop--{{ type }} {{ show ? 'pop--show' : '' }}"
+>
+  <view 
+    class="pop__mask {{ overlay ? '' : 'pop__mask--hide' }}"
+    bindtap="handleMaskClick"
+  ></view>
+  <view class="pop__container">
+    <slot></slot>
+  </view>
+</view>

@@ -66,6 +66,11 @@ Component({
     }
   },
 
+  detached() {
+    const { timer } = this.data;
+    timer && clearTimeout(timer);
+  },
+
   ready() {
     this._init();
   },
@@ -85,7 +90,7 @@ Component({
       .select('.zan-noticebar__content')
       .boundingClientRect(rect => {
         if (!rect || !rect.width) {
-          throw new Error('页面缺少 noticebar 元素');
+          console.warn('页面缺少 noticebar 元素');
           return;
         }
         this.setData({
@@ -105,7 +110,6 @@ Component({
 
             if (scrollable && wrapWidth < width) {
               const elapse = width / speed * 1000;
-              console.log(`delay: ${delay}`)
               const animation = wx.createAnimation({
                 duration: elapse,
                 timeingFunction: 'linear',

@@ -1,7 +1,6 @@
-const Zan = require('../../dist/index');
 const config = require('./config');
 
-Page(Object.assign({}, Zan.Field, {
+Page(Object.assign({}, {
   data: {
     config,
     value: 'test',

@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Stepper 计数器"
+  "navigationBarTitleText": "Stepper 计数器",
+  "usingComponents": {
+    "zan-stepper": "../../dist/stepper/index"
+  }
 }

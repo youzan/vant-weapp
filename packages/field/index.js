@@ -1,38 +1,54 @@
-const { extractComponentId } = require('../common/helper');
-
-module.exports = {
-  _handleZanFieldChange(event) {
-    const componentId = extractComponentId(event);
-    event.componentId = componentId;
-
-    console.info('[zan:field:change]', event);
-
-    if (this.handleZanFieldChange) {
-      return this.handleZanFieldChange(event);
-    }
-
-    console.warn('页面缺少 handleZanFieldChange 回调函数');
+Component({
+  properties: {
+    title: String,
+    name: String,
+    type: {
+      type: String,
+      value: 'input'
+    },
+    name: String,
+    value: String,
+    disabled: Boolean,
+    inputType: {
+      type: String,
+      value: 'text'
+    },
+    placeholder: String,
+    focus: Boolean,
+    mode: {
+      type: String,
+      value: 'normal'
+    },
+    right: Boolean,
+    error: Boolean,
+    componentId: String
   },
 
-  _handleZanFieldFocus(event) {
-    const componentId = extractComponentId(event);
-    event.componentId = componentId;
+  methods: {
+    handleZanFieldChange(event) {
+      const { componentId } = this.data;
+      event.componentId = componentId;
+  
+      console.info('[zan:field:change]', event);
+      this.triggerEvent('change', event);
+    },
+  
+    handleZanFieldFocus(event) {
+      const { componentId } = this.data;
+      event.componentId = componentId;
 
-    console.info('[zan:field:focus]', event);
-
-    if (this.handleZanFieldFocus) {
-      return this.handleZanFieldFocus(event);
-    }
-  },
-
-  _handleZanFieldBlur(event) {
-    const componentId = extractComponentId(event);
-    event.componentId = componentId;
-
-    console.info('[zan:field:blur]', event);
-
-    if (this.handleZanFieldBlur) {
-      return this.handleZanFieldBlur(event);
+      console.info('[zan:field:focus]', event);
+  
+      this.triggerEvent('focus', event);
+    },
+  
+    handleZanFieldBlur(event) {
+      const { componentId } = this.data;
+      event.componentId = componentId;
+  
+      console.info('[zan:field:blur]', event);
+  
+      this.triggerEvent('blur', event);
     }
   }
-};
+})

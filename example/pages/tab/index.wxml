@@ -5,18 +5,26 @@
   <view class="doc-title zan-hairline--bottom">TAB</view>
 
   <view style="margin: 20px 0">
-    <template
-      is="zan-tab"
-      data="{{ ...tab1, componentId: 'tab1' }}"></template>
+    <zan-tab
+      list="{{ tab1.list }}"
+      selected-id="{{ tab1.selectedId }}"
+    />
   </view>
   <view style="margin: 20px 0">
-    <template
-      is="zan-tab"
-      data="{{ ...tab2, componentId: 'tab2' }}"></template>
+    <zan-tab
+      list="{{ tab2.list }}"
+      selected-id="{{ tab2.selectedId }}"
+      scroll="{{ tab2.scroll }}"
+      height="{{ tab2.height }}"
+    />
   </view>
   <view style="margin: 20px 0">
-    <template
-      is="zan-tab"
-      data="{{ ...tab3, componentId: 'tab3' }}"></template>
+    <zan-tab
+      list="{{ tab3.list }}"
+      selected-id="{{ tab3.selectedId }}"
+      scroll="{{ tab3.scroll }}"
+      fixed="{{ tab3.fixed }}"
+      height="{{ tab3.height }}"
+    />
   </view>
 </view>

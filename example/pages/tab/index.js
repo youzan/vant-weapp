@@ -1,6 +1,4 @@
-const { Tab, extend } = require('../../dist/index');
-
-Page(extend({}, Tab, {
+Page({
   data: {
     tab1: {
       list: [{
@@ -43,7 +41,7 @@ Page(extend({}, Tab, {
       }],
       selectedId: '1',
       scroll: true,
-      height: 45
+      height: 80
     },
     tab3: {
       list: [{
@@ -66,17 +64,9 @@ Page(extend({}, Tab, {
         title: '商品6'
       }],
       selectedId: '1',
+      height: 45,
       scroll: true,
-      height: 45
+      fixed: true
     }
-  },
-
-  handleZanTabChange(e) {
-    var componentId = e.componentId;
-    var selectedId = e.selectedId;
-
-    this.setData({
-      [`${componentId}.selectedId`]: selectedId
-    });
   }
-}));
+});

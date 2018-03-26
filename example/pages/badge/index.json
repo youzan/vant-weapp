@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Badge 徽章"
+  "navigationBarTitleText": "Badge 徽章",
+  "usingComponents": {
+    "zan-badge": "../../dist/badge/index"
+  }
 }

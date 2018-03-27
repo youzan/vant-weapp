@@ -5,39 +5,22 @@
 ```json
 {
   "usingComponents": {
-    "Panel": "/packages/Panel/panel"
+    " zan-panel": "/packages/Panel/panel"
   }
 }
 ```
 
 ### 代码演示
 Panel 提供了一块白色的展示区域，使用方式如下
-```js
-Page({
-  data: {
-    title: '我是🦀',
-    hideTop: true,
-    hideBorder: true
-  }
-  // ...
-});
-```
 ```html
-<Panel
-  title='我是标题'
->
+<zan-panel title='我是标题'>
   <view>内容</view>
-</Panel>
-<Panel
-  title={{title}}
-  hide-top={{hideTop}}
->
-  <view>内容</view>
-</Panel>
-<Panel
-  title={{title}}
-  hide-border={{hideBorder}}
->
-  <view>内容</view>
-</Panel>
+</zan-panel>
 ```
+| 参数       | 说明      | 类型       | 默认值       | 必须      |
+|-----------|-----------|-----------|-------------|-------------|
+| title | panel的标题 | String | - | |
+| hide-top | 隐藏顶部边框 | Boolean | - | |
+| hide-border | 内容区隐藏边框 | Boolean | - | |
+
+

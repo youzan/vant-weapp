@@ -4,7 +4,7 @@ Page(Object.assign({}, Zan.Dialog, {
   toggleBaseDialog() {
     this.showZanDialog({
       title: '弹窗',
-      content: '这是一个模态弹窗',
+      content: '这是一个模态弹窗\n换行',
       showCancel: true
     }).then(() => {
       console.log('=== dialog ===', 'type: confirm');

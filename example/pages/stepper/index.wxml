@@ -5,7 +5,7 @@
       stepper="{{ stepper1.stepper }}"
       min="{{ stepper1.min }}"
       max="{{ stepper1.max }}"
-      component-id="stepper1"
+      data-component-id="stepper1"
       bind:change="handleZanStepperChange"
     >
     </zan-stepper>
@@ -15,11 +15,11 @@
   <view class="zan-panel-title">不同尺寸</view>
   <view style="padding: 40px 15px">
     <zan-stepper
-      stepper="{{ stepper3.stepper }}"
-      min="{{ stepper3.min }}"
-      max="{{ stepper3.max }}"
-      component-id="stepper3"
+      stepper="{{ stepper2.stepper }}"
+      min="{{ stepper2.min }}"
+      max="{{ stepper2.max }}"
       size="small"
+      data-component-id="stepper2"
       bind:change="handleZanStepperChange"
     >
     </zan-stepper>
@@ -28,11 +28,11 @@
   <view class="zan-panel-title">高级用法</view>
   <view style="padding: 40px 15px">
     <zan-stepper
-      stepper="{{ stepper4.stepper }}"
-      min="{{ stepper4.min }}"
-      max="{{ stepper4.max }}"
-      component-id="stepper4"
-      step="{{ stepper4.step }}"
+      stepper="{{ stepper3.stepper }}"
+      min="{{ stepper3.min }}"
+      max="{{ stepper3.max }}"
+      step="{{ stepper3.step }}"
+      data-component-id="stepper3"
       bind:change="handleZanStepperChange"
     >
     </zan-stepper>

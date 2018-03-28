@@ -20,32 +20,22 @@ Component({
       value: 'normal'
     },
     right: Boolean,
-    error: Boolean,
-    componentId: String
+    error: Boolean
   },
 
   methods: {
     handleZanFieldChange(event) {
-      const { componentId } = this.data;
-      event.componentId = componentId;
-  
       console.info('[zan:field:change]', event);
       this.triggerEvent('change', event);
     },
   
     handleZanFieldFocus(event) {
-      const { componentId } = this.data;
-      event.componentId = componentId;
-
       console.info('[zan:field:focus]', event);
   
       this.triggerEvent('focus', event);
     },
   
     handleZanFieldBlur(event) {
-      const { componentId } = this.data;
-      event.componentId = componentId;
-  
       console.info('[zan:field:blur]', event);
   
       this.triggerEvent('blur', event);

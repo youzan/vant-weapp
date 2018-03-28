@@ -13,7 +13,6 @@ Component({
       type: Number,
       value: Infinity
     },
-    componentId: String,
     step: {
       type: Number,
       value: 1
@@ -24,7 +23,7 @@ Component({
     handleZanStepperChange(e, type) {
       const dataset = e.currentTarget.dataset;
       const disabled = dataset.disabled;
-      const { step, componentId } = this.data;
+      const { step } = this.data;
       let stepper = this.data.stepper;
 
       if (disabled) return null;
@@ -35,10 +34,7 @@ Component({
         stepper += step;
       }
 
-      this.triggerEvent('change', {
-        componentId,
-        stepper
-      });
+      this.triggerEvent('change', stepper);
       this.triggerEvent(type);
     },
 
@@ -53,14 +49,11 @@ Component({
     handleZanStepperBlur(e) {
       const dataset = e.currentTarget.dataset;
       let value = e.detail.value;
-      const { componentId, min, max } = this.data;
+      const { min, max } = this.data;
   
       if (!value) {
         setTimeout(() => {
-          this.triggerEvent('change', {
-            componentId,
-            stepper: min
-          });
+          this.triggerEvent('change', min);
         }, 16);
         return;
       }
@@ -72,10 +65,7 @@ Component({
         value = min;
       }
   
-      this.triggerEvent('change', {
-        componentId,
-        stepper: value
-      });
+      this.triggerEvent('change', value);
     }
   }
 });

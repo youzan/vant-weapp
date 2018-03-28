@@ -9,7 +9,6 @@
       placeholder="{{ config.base.name.placeholder }}"
       focus="{{ config.base.name.focus }}"
       value="{{ value }}"
-      bind:change="handleZanFieldChange"
     >
     </zan-field>
     <zan-field
@@ -47,7 +46,6 @@
   <view class="zan-panel">
     <zan-field
       placeholder="{{ config.notitle.placeholder }}"
-      component-id="{{ config.notitle.componentId }}"
       value="{{ textareaValue }}"
     >
     </zan-field>
@@ -95,14 +93,12 @@
       <zan-field
         name="{{ config.form.name.name }}"
         placeholder="{{ config.form.name.placeholder }}"
-        component-id="{{ config.form.name.componentId }}"
       >
       </zan-field>
       <zan-field
         name="{{ config.form.tel.name }}"
         placeholder="{{ config.form.tel.placeholder }}"
         input-type="{{ config.form.tel.inputType }}"
-        component-id="{{ config.form.tel.componentId }}"
       >
       </zan-field>
       <view class="zan-btns">

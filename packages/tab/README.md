@@ -5,9 +5,13 @@
 ```json
 {
   "usingComponents": {
-    "zan-tab": "path/to/zanui-weapp/dist/icon/index"
+    "zan-tab": "path/to/zanui-weapp/dist/tab/index"
   }
 }
+```
+
+在 index.js 中声明组件数据
+```js
 // 在 Page 中声明 Tab 依赖的展示数据
 Page({
   data: {
@@ -36,15 +40,14 @@ Page({
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| tab.scroll | 是否开启 tab 左右滑动模式 | Boolean | - | |
-| tab.list | 可选项列表 | Array | - | |
-| tab.selectedId | 选中id | - | - | |
-| tab.height | tab高度 | Number | - | |
-| tab.fixed | 是否固定位置 | Boolean | - | |
-| componentId | 用于区分页面多个 tab 组件 | String | - | |
+| scroll | 是否开启 tab 左右滑动模式 | Boolean | - | |
+| list | 可选项列表 | Array | - | |
+| selectedId | 选中id | - | - | |
+| height | tab高度 | Number | - | |
+| fixed | 是否固定位置 | Boolean | - | |
 
 
-tab 组件中，tab.list 数据格式如下
+tab 组件中，list 数据格式如下
 ```js
 [{
   // tab 项 id

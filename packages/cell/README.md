@@ -1,54 +1,68 @@
 ## Cell 单元格
 
-### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+自定义 cell 组件
+
+### 属性与事件
+
+| 名称          | 类型        | 是否必须 | 默认  | 描述                                                                                                     |
+| ------------- | ----------- | -------- | ----- | -------------------------------------------------------------------------------------------------------- |
+| title         | String      | 否       | 无    | 左侧标题                                                                                                 |
+| label         | Boolean     | 否       | false | 标题下方的描述信息                                                                                       |
+| value         | String      | 否       | 取消  | 右侧内容                                                                                                 |
+| isLink        | Number      | 否       | 55    | 链接，用于导航，如果是 `Boolean` 型值则只显示链接样式，`String` 类型值才做导航，但是组件不检查路径正确性 |
+| linkType      | String      | 否       | 无    | 链接跳转类型，可选值为 `navigateTo`，`redirectTo`，`switchTab`，`reLaunch`                               |
+| onlyTapFooter | Boolean     | 否       | false | 只有点击 footer 区域才触发 tab 事件                                                                      |
+| bindtap       | EventHandle | 否       | 无    | 点击 cell 时触发，`onlyTapFooter` 为 `true` 时点击 footer 区域触发                                       |
+
+### 可用的 slot
+
+| 名称          | 是否必须    | 默认 | 描述                                                                  |
+| ------------- | ----------- | ---- | --------------------------------------------------------------------- |
+| 默认            | 否          | 无   | 左侧除了 `title`，`label` 外的自定义 wxml 内容                              |
+| icon          | 否          | 无   | 标题前自定义的 icon，可使用 `icon` 自定义组件，具体使用参考 icon 组件 |
+| footer          | 否          | 无   | 右侧自定义 wxml 内容，如果设置了 `value` 属性，则不生效 |
+
+### cell 组
+
+多个 cell 组件必须作为 `cell-group` 组件的子组件，否则可能出现显示问题。
+
+#### 单个 cell 使用示例
+~~~json
+  {
+    ...
+    "usingComponents": {
+      "zan-cell": "../../dist/cell/index",
+    }
+    ...
+  }
+~~~
+
+~~~wxml
+  <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
+~~~
+
+#### cell 组使用示例
+```json
+  {
+    ...
+    "usingComponents": {
+      "zan-cell": "../../dist/cell/index",
+      "zan-cell-group": "../../dist/cell-group/index"
+    }
+    ...
+  }
 ```
 
-### 代码演示
-
-#### 基础用法
-`zan-cell` 有三部分组成：
-顶部 Icon：`zan-cell__icon`
-主内容区：`zan-cell__bd`
-附属内容：`zan-cell__ft`
-
-```html
-<view class="zan-cell">
-  <view class="zan-cell__icon zan-icon zan-icon-check"></view>
-  <view class="zan-cell__bd">单行列表</view>
-  <view class="zan-cell__ft">详细信息</view>
-</view>
-```
-
-当然，也可以在内容区增加附加描述
-```html
-<view class="zan-cell">
-  <view class="zan-cell__bd">
-    <view class="zan-cell__text">单行列表</view>
-    <view class="zan-cell__desc">附加描述</view>
-  </view>
-  <view class="zan-cell__ft">详细信息</view>
-</view>
-```
-
-#### 带箭头的单元格
-在根元素上增加 `zan-cell--access`，可以在右侧显示出箭头。
-```html
-<view class="zan-cell zan-cell--access">
-  <view class="zan-cell__bd">单行列表</view>
-  <view class="zan-cell__ft"></view>
-</view>
-```
-
-#### 带开关的单元格
-增加 `zan-cell--switch`，更好的适配带有开关的情况
-```html
-<view class="zan-cell zan-cell--switch">
-  <view class="zan-cell__bd">开关</view>
-  <view class="zan-cell__ft">
-    <template is="zan-switch" data="{{ checked }}"/>
-  </view>
-</view>
+```wxml
+  <zan-cell-group>
+    <zan-cell title="只显示箭头" is-link="{{true}}"></zan-cell>
+    <zan-cell title="跳转到首页" is-link="/pages/dashboard/index"></zan-cell>
+    <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
+    <zan-cell title="表单">
+      <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
+    </zan-cell>
+    <zan-cell title="开关">
+      <switch slot="footer" checked/>
+    </zan-cell>
+  </zan-cell-group>
 ```

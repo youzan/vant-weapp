@@ -1,6 +1,3 @@
-const interval = 50;
-let moduleId = 1;
-
 Page({
   data: {
     tab1: {

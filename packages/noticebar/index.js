@@ -1,74 +1,169 @@
-const ZanNoticeBar = {
-  initZanNoticeBarScroll(componentId) {
-    this.zanNoticeBarNode = this.zanNoticeBarNode || {};
-    this.zanNoticeBarNode[`${componentId}`] = {
-      width: undefined,
-      wrapWidth: undefined,
-      animation: null,
-      resetAnimation: null
-    };
+const VALID_MODE = ['closeable'];
+const FONT_COLOR = '#f60';
+const BG_COLOR = '#fff7cc';
 
-    const currentComponent = this.zanNoticeBarNode[`${componentId}`];
-    wx.createSelectorQuery()
+Component({
+  properties: {
+    text: {
+      type: String,
+      value: ''
+    },
+    mode: {
+      type: String,
+      value: ''
+    },
+    url: {
+      type: String,
+      value: ''
+    },
+    openType: {
+      type: String,
+      value: 'navigate'
+    },
+    delay: {
+      type: Number,
+      value: 0
+    },
+    speed: {
+      type: Number,
+      value: 40
+    },
+    scrollable: {
+      type: Boolean,
+      value: false
+    },
+    leftIcon: {
+      type: String,
+      value: ''
+    },
+    color: {
+      type: String,
+      value: FONT_COLOR
+    },
+    backgroundColor: {
+      type: String,
+      value: BG_COLOR
+    }
+  },
+
+  data: {
+    show: true,
+    hasRightIcon: false,
+    width: undefined,
+    wrapWidth: undefined,
+    elapse: undefined,
+    animation: null,
+    resetAnimation: null,
+    timer: null
+  },
+
+  attached() {
+    const { mode } = this.data;
+    if (mode && this._checkMode(mode)) {
+      this.setData({
+        hasRightIcon: true
+      });
+    }
+  },
+
+  detached() {
+    const { timer } = this.data;
+    timer && clearTimeout(timer);
+  },
+
+  ready() {
+    this._init();
+  },
+
+  methods: {
+    _checkMode(val) {
+      const isValidMode = ~VALID_MODE.indexOf(val);
+      if (!isValidMode) {
+        console.warn(`mode only accept value of ${VALID_MODE}, now get ${val}.`);
+      }
+      return isValidMode;
+    },
+
+    _init() {
+      wx.createSelectorQuery()
       .in(this)
-      .select(`#${componentId}__content`)
-      .boundingClientRect((rect) => {
+      .select('.zan-noticebar__content')
+      .boundingClientRect(rect => {
         if (!rect || !rect.width) {
-          console.warn('页面缺少 noticebar 元素');
+          throw new Error('页面缺少 noticebar 元素');
           return;
         }
+        this.setData({
+          width: rect.width
+        });
 
-        currentComponent.width = rect.width;
-        wx
-          .createSelectorQuery()
+        wx.createSelectorQuery()
           .in(this)
-          .select(`#${componentId}__content-wrap`)
+          .select('.zan-noticebar__content-wrap')
           .boundingClientRect((rect) => {
             if (!rect || !rect.width) {
               return;
             }
 
-            clearTimeout(this.data[componentId].setTimeoutId)
+            const wrapWidth = rect.width;
+            const { width, speed, scrollable, delay } = this.data;
 
-            currentComponent.wrapWidth = rect.width;
-            if (currentComponent.wrapWidth < currentComponent.width) {
-              var mstime = currentComponent.width / 40 * 1000;
-              currentComponent.animation = wx.createAnimation({
-                duration: mstime,
-                timingFunction: 'linear'
+            if (scrollable && wrapWidth < width) {
+              const elapse = width / speed * 1000;
+              const animation = wx.createAnimation({
+                duration: elapse,
+                timeingFunction: 'linear',
+                delay
               });
-              currentComponent.resetAnimation = wx.createAnimation({
+              const resetAnimation = wx.createAnimation({
                 duration: 0,
-                timingFunction: 'linear'
+                timeingFunction: 'linear'
               });
-              this.scrollZanNoticeBar(componentId, mstime);
+
+              this.setData({
+                elapse,
+                wrapWidth,
+                animation,
+                resetAnimation
+              }, () => {
+                this._scroll();
+              });
             }
           })
-        .exec();
+          .exec();
       })
-    .exec();
-  },
+      .exec();
+    },
 
-  scrollZanNoticeBar(componentId, mstime) {
-    const currentComponent = this.zanNoticeBarNode[`${componentId}`];
-    const resetAnimationData = currentComponent.resetAnimation.translateX(currentComponent.wrapWidth).step();
-    this.setData({
-      [`${componentId}.animationData`]: resetAnimationData.export()
-    });
-    const aninationData = currentComponent.animation.translateX(-mstime * 40 / 1000).step();
-    setTimeout(() => {
+    _scroll() {
+      const { animation, resetAnimation, wrapWidth, elapse, speed } = this.data;
+      const resetAnimationData = resetAnimation.translateX(wrapWidth).step();
+      const animationData = animation.translateX(-elapse * speed / 1000).step();
       this.setData({
-        [`${componentId}.animationData`]: aninationData.export()
+        animationData: resetAnimation.export()
       });
-    }, 100);
+      setTimeout(() => {
+        this.setData({
+          animationData: animationData.export()
+        })
+      }, 100);
 
-    const setTimeoutId = setTimeout(() => {
-      this.scrollZanNoticeBar(componentId, mstime);
-    }, mstime);
-    this.setData({
-      [`${componentId}.setTimeoutId`]: setTimeoutId
-    })
+      const timer = setTimeout(() => {
+        this._scroll();
+      }, elapse);
+
+      this.setData({
+        timer
+      });
+    },
+
+    _handleButtonClick() {
+      const { timer } = this.data;
+      timer && clearTimeout(timer);
+      this.setData({
+        show: false,
+        timer: null
+      });
+    }
   }
-};
-
-module.exports = ZanNoticeBar;
+})

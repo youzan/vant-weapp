@@ -1,16 +1,31 @@
-<template name="zan-noticebar">
-  <view class="zan-noticebar">
-    <view
-      id="{{ componentId }}__content-wrap"
-      style="height: 18px; overflow: hidden; position: relative;"
-    >
-      <view
-        animation="{{ animationData }}"
-        id="{{ componentId }}__content"
-        style="position: absolute; white-space: nowrap;"
-      >
-        {{ text }}
-      </view>
+<view
+  wx:if="{{ show }}"
+  class="zan-noticebar {{ hasRightIcon ? 'zan-noticebar--within-icon' : '' }}"
+  style="color: {{ color }};background-color: {{ backgroundColor }}"
+>
+  <view wx:if="{{ leftIcon }}" class="zan-noticebar__left-icon">
+    <image src="{{ leftIcon }}" />
+  </view>
+  <view class="zan-noticebar__content-wrap">
+    <view class="zan-noticebar__content" animation="{{ animationData }}">
+      {{ text }}
     </view>
   </view>
-</template>
+
+  <block wx:if="{{ mode }}">
+    <zan-icon
+      wx:if="{{ mode === 'closeable' }}"
+      class="zan-noticebar__right-icon"
+      type="close"
+      bindtap="_handleButtonClick"
+    />
+    <navigator
+      wx:if="{{ mode === 'link' }}"
+      url="{{ url }}"
+      open-type="{{ openType }}"
+    >
+      <zan-icon class="zan-noticebar__right-icon" type="arrow" />
+    </navigator>
+  </block>
+
+</view>

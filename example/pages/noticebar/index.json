@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Noticebar 通告栏"
+  "navigationBarTitleText": "Noticebar 通告栏",
+  "usingComponents": {
+    "zan-noticebar": "../../dist/noticebar/index"
+  }
 }

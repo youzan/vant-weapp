@@ -1,7 +1,6 @@
-const Zan = require('../../dist/index');
 const config = require('./config');
 
-Page(Object.assign({}, Zan.Field, {
+Page(Object.assign({}, {
   data: {
     config,
     value: 'test',
@@ -24,21 +23,21 @@ Page(Object.assign({}, Zan.Field, {
   },
 
   handleZanFieldChange(e) {
-    const { componentId, detail } = e;
+    const { detail } = e;
 
-    console.log('[zan:field:change]', componentId, detail);
+    console.log('[zan:field:change]', detail);
   },
 
   handleZanFieldFocus(e) {
-    const { componentId, detail } = e;
+    const { detail } = e;
 
-    console.log('[zan:field:focus]', componentId, detail);
+    console.log('[zan:field:focus]', detail);
   },
 
   handleZanFieldBlur(e) {
-    const { componentId, detail } = e;
+    const { detail } = e;
 
-    console.log('[zan:field:blur]', componentId, detail);
+    console.log('[zan:field:blur]', detail);
   },
 
   clearInput() {

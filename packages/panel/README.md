@@ -1,15 +1,26 @@
-## Panel 面板
+## Panel 面板组件
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+在 index.json 中引入组件
+```json
+{
+  "usingComponents": {
+    " zan-panel": "/packages/Panel/panel"
+  }
+}
 ```
 
 ### 代码演示
-Panel 提供了一块白色的展示区域，直接在需要的元素上加上 zan-panel 类即可，使用方式如下
+Panel 提供了一块白色的展示区域，使用方式如下
 ```html
-<view class="zan-panel">
+<zan-panel title='我是标题'>
   <view>内容</view>
-</view>
+</zan-panel>
 ```
+| 参数       | 说明      | 类型       | 默认值       | 必须      |
+|-----------|-----------|-----------|-------------|-------------|
+| title | panel的标题 | String | - | |
+| hide-top | 隐藏顶部边框 | Boolean | - | |
+| hide-border | 内容区隐藏边框 | Boolean | - | |
+
+

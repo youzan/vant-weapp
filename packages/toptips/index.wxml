@@ -1,3 +1,1 @@
-<template name="zan-toptips">
-  <view class="zan-toptips {{ zanTopTips.show ? 'zan-toptips--show' : '' }}">{{ zanTopTips.content }}</view>
-</template>
+<view class="zan-toptips {{ isShow ? 'zan-toptips--show' : '' }}">{{ content }}</view>

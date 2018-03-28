@@ -20,23 +20,8 @@ Component({
     },
     selectedId: {
       type: [String, Number],
-      value: '',
-      observer(newVal) {
-        this.setData({
-          currentTab: newVal
-        });
-      }
+      value: ''
     }
-  },
-
-  data: {
-    currentTab: ''
-  },
-
-  attached() {
-    this.setData({
-      currentTab: this.data.selectedId
-    });
   },
 
   methods: {
@@ -44,7 +29,7 @@ Component({
       const selectedId = e.currentTarget.dataset.itemId;
 
       this.setData({
-        currentTab: selectedId
+        selectedId
       });
 
       console.info('[zan:tab:change] selectedId:', selectedId);

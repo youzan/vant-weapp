@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Toptips 顶部提示"
+  "navigationBarTitleText": "Toptips 顶部提示",
+  "usingComponents": {
+    "zan-toptips": "../../dist/toptips/index"
+  }
 }

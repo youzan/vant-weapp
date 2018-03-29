@@ -1,20 +1,24 @@
 ## Actionsheet 行动按钮
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+在 index.json 中引入组件
+```json
+{
+  "usingComponents": {
+    "zan-badge": "path/to/zanui-weapp/dist/actionsheet/index"
+  }
+}
 ```
 
-在需要使用的页面里引入组件库模板和脚本
+### 使用指南
+
 ```html
-<import src="/dist/actionsheet/index.wxml" />
-<!-- 直接使用 zan-actionsheet 模板，并且直接传入参数配置 -->
-<template is="zan-actionsheet" data="{{ ...actionsheet }}"></template>
+<view class="actionsheet-container">
+  <zan-actionsheet>10</zan-actionsheet>
+</view>
 ```
-```js
-const { Actionsheet, extend } = require('path/to/zanui-weapp/dist/index');
 
+```js
 // 在 Page 中混入 Actionsheet 里面声明的方法
 Page(extend({}, Actionsheet, {
   data: {

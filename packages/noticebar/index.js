@@ -66,6 +66,11 @@ Component({
     }
   },
 
+  detached() {
+    const { timer } = this.data;
+    timer && clearTimeout(timer);
+  },
+
   ready() {
     this._init();
   },
@@ -105,7 +110,6 @@ Component({
 
             if (scrollable && wrapWidth < width) {
               const elapse = width / speed * 1000;
-              console.log(`delay: ${delay}`)
               const animation = wx.createAnimation({
                 duration: elapse,
                 timeingFunction: 'linear',

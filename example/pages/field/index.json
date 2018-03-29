@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Field 输入框"
+  "navigationBarTitleText": "Field 输入框",
+  "usingComponents": {
+    "zan-field": "../../dist/field/index"
+  }
 }

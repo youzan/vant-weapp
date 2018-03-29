@@ -1,5 +1,5 @@
 <doc-page title="ICON">
-  <view wx:for="{{ icons }}" wx:for-item="icon" class="icon-wrap">
+  <view wx:for="{{ icons }}" wx:for-item="icon" wx:key="icon" class="icon-wrap">
     <view class="example-icon">
       <zan-icon type="{{ icon }}"></zan-icon>
     </view>

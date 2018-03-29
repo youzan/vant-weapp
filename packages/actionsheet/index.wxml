@@ -9,7 +9,6 @@
       wx:for="{{ actions }}"
       wx:key="{{ index }}-{{ item.name }}"
       bind:btnclick="handleBtnClick"
-      catchtap="cancelClick"
       data-index="{{ index }}"
       open-type="{{ item.openType }}"
       custom-class="zan-actionsheet__btn"

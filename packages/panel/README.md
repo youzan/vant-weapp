@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    " zan-panel": "/packages/Panel/panel"
+    "zan-panel": "/packages/Panel/panel"
   }
 }
 ```

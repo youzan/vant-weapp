@@ -1,0 +1,18 @@
+<view class="loading {{color}} use-{{use}}">
+  <view wx:if="{{type === 'circle'}}" class="circle"></view>
+  <view wx:if="{{type === 'circular'}}" class="circular"></view>
+  <view wx:if="{{type === 'spinner'}}" class="spinner">
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+    <view></view>
+  </view>
+</view>

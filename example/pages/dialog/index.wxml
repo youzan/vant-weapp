@@ -1,4 +1,11 @@
-<import src="/dist/dialog/index.wxml" />
+<doc-page title="DIALOG">
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <zan-btn>基础 Dialog</zan-btn>
+  </view>
+  <zan-dialog bindtap="toggleBaseDialog"></zan-dialog>
+</doc-page>
+
+<!-- <import src="/dist/dialog/index.wxml" />
 
 <view class="container">
 
@@ -21,4 +28,4 @@
 
 </view>
 
-<template is="zan-dialog" data="{{ zanDialog }}"></template>
+<template is="zan-dialog" data="{{ zanDialog }}"></template> -->

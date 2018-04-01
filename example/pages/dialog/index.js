@@ -1,8 +1,8 @@
-const Zan = require('../../dist/index');
+const Dialog = require('../../dist/dialog/index');
 
-Page(Object.assign({}, Zan.Dialog, {
+Page({
   toggleBaseDialog() {
-    this.showZanDialog({
+    Dialog({
       title: '弹窗',
       content: '这是一个模态弹窗',
       showCancel: true
@@ -63,4 +63,4 @@ Page(Object.assign({}, Zan.Dialog, {
       console.log('=== dialog with vertical buttons ===', `type: ${type}`);
     });
   }
-}));
+});

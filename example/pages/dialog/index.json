@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "Dialog 弹出框"
+  "navigationBarTitleText": "Dialog 弹出框",
+  "usingComponents": {
+    "doc-page": "../../components/doc-page/index",
+    "zan-dialog": "../../dist/dialog/index",
+    "zan-button": "../../dist/btn/index"
+  }  
 }

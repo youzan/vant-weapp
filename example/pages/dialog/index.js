@@ -4,7 +4,8 @@ Page({
   toggleBaseDialog() {
     Dialog({
       title: '弹窗',
-      content: '这是一个模态弹窗',
+      message: '这是一个模态弹窗',
+      selector: '#zan-base-dialog',
       showCancel: true
     }).then(() => {
       console.log('=== dialog ===', 'type: confirm');

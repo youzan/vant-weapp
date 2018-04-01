@@ -57,21 +57,21 @@ function Dialog(options, pageCtx) {
   const buttons = parsedOptions.buttons;
   let showCustomBtns = false;
   if (buttons.length === 0) {
-    if (showConfirmButton) {
+    if (parsedOptions.showConfirmButton) {
       buttons.push({
         type: 'confirm',
-        text: confirmButtonText,
-        color: confirmButtonColor
+        text: parsedOptions.confirmButtonText,
+        color: parsedOptions.confirmButtonColor
       });
     }
 
-    if (showCancelButton) {
+    if (parsedOptions.showCancelButton) {
       const cancelButton = {
         type: 'cancel',
-        text: cancelButtonText,
-        color: cancelButtonColor
+        text: parsedOptions.cancelButtonText,
+        color: parsedOptions.cancelButtonColor
       };
-      if (buttonsShowVertical) {
+      if (parsedOptions.buttonsShowVertical) {
         buttons.push(cancelButton);
       } else {
         buttons.unshift(cancelButton);

@@ -1,29 +1,36 @@
 <pop-manager
   show="{{ show }}"
-  type="{{ type }}"
-  overlay="{{ overlay }}"
+  type="center"
+  overlay="{{ true }}"
   bindclickmask="handleMaskClick"
 >
-  <view
-    wx:if="{{ title }}"
-    class="zan-dialog__header"
-  >{{ title }}</view>
-  <view
-    class="zan-dialog__content {{ title ? 'zan-dialog__content--title' : '' }}"
-  >{{ message }}</view>
-  <view
-    class="zan-dialog__footer {{ buttonsShowVertical ? 'zan-dialog__footer--vertical' : 'zan-dialog__footer--horizon' }}"
-  >
-    <block
-      wx:for="{{ buttons }}"
-      wx:key="{{ item.text }}-{{ item.type }}"
+  <view class="zan-dialog--container">
+    <view
+      wx:if="{{ title }}"
+      class="zan-dialog__header"
+    >{{ title }}</view>
+    <view
+      class="zan-dialog__content {{ title ? 'zan-dialog__content--title' : '' }}"
     >
-      <button
-        class="zan-dialog__button zan-btn"
-        data-type="{{ item.type }}"
-        catchtap="handleButtonClick"
-        style="color: {{ item.color || '#333' }}"
-      >{{ item.text }}</button>
-    </block>
+      <text>{{ message }}</text>
+    </view>
+    <view
+      class="zan-dialog__footer {{ buttonsShowVertical ? 'zan-dialog__footer--vertical' : 'zan-dialog__footer--horizon' }}"
+    >
+      <block
+        wx:for="{{ buttons }}"
+        wx:key="{{ item.text }}-{{ item.type }}"
+      >
+        <zan-button
+          class="zan-dialog__button"
+          data-type="{{ item.type }}"
+          catchtap="handleButtonClick"
+        >
+          <view
+            style="color: {{ item.color || '#333' }}"
+          >{{ item.text }}</view>
+        </zan-button>
+      </block>
+    </view>
   </view>
 </pop-manager>

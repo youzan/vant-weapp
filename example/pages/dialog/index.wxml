@@ -1,8 +1,10 @@
 <doc-page title="DIALOG">
   <view class="zan-btns" style="margin-top: 30vh;">
-    <zan-btn>基础 Dialog</zan-btn>
+    <zan-button bindtap="toggleBaseDialog">基础 Dialog</zan-button>
   </view>
-  <zan-dialog bindtap="toggleBaseDialog"></zan-dialog>
+  <zan-dialog
+    id="zan-base-dialog"
+  ></zan-dialog>
 </doc-page>
 
 <!-- <import src="/dist/dialog/index.wxml" />

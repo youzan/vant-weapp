@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "Actionsheet 行动按钮"
+  "navigationBarTitleText": "Actionsheet 行动按钮",
+  "usingComponents": {
+    "zan-actionsheet": "../../dist/actionsheet/index",
+    "zan-btn": "../../dist/btn/index"
+  }
 }

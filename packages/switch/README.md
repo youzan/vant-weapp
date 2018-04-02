@@ -1,47 +1,56 @@
 ## Switch 开关
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
-```
-
-在需要使用的页面里引入组件库模板和脚本
-```html
-<import src="path/to/zanui-weapp/dist/switch/index.wxml" />
-```
-```js
-const { Switch, extend } = require('path/to/zanui-weapp/dist/index');
-
-// 在 Page 中混入 Switch 里面声明的方法
-Page(extend({}, Switch, {
-  // ...
-}));
+在 index.json 中引入组件
+```json
+{
+  "usingComponents": {
+    "zan-switch": "/packages/Panel/panel"
+  }
+}
 ```
 
 ### 代码演示
-在模板中使用 zan-switch 模板，并传入相应数据
+可以在页面任意位置上使用 zan-popup 标签。通过 show 可以控制弹窗是否展示
 ```html
-<template is="zan-switch" data="{{ loading, disabled, checked, componentId: 'switch1' }}"></template>
+<zan-switch
+  disabled="{{ disabled }}"
+  checked="{{ checked }}"
+  loading="{{ loading }}"
+  bind:change="handleFieldChange"
+></zan-switch>
 ```
 
+```js
+Page(extend({}, {
+  data: {
+    field: {
+      disabled: false,
+      checked: false,
+      loading: false
+    }
+  },
+
+  methods: {
+    handleFieldChange(event, data) {
+      console.log(event, data);
+    }
+  }
+}));
+```
+
+### API
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | loading | switch 是否是 loading 状态 | Boolean  | false | |
 | disabled | 是否不可用 | Boolean  | false | |
 | checked | 是否打开状态 | Boolean  | false  | 必须 |
-| componentId | 用于在一个页面上使用多个 switch 时，进行区分 | String  |  | |
 
-当 switch 被点击时，可以在页面中注册 handleZanSwitchChange 方法来监听
-```js
-Page(extend({}, Tab, {
-  handleZanSwitchChange({ componentId, checked }) {
-    // componentId 即为在模板中传入的 componentId
-    // 用于在一个页面上使用多个 switch 时，进行区分
-    // checked 表示 switch 的选中状态
-    this.setData({ checked });
-  }
-}));
-```
+### Event
+
+| 事件名称       | 说明      | 回调参数       |
+|-----------|-----------|-----------|
+| change | 当绑定值变化时触发的事件 | event对象和数据对象（包含loading和checked） |
+
 
 

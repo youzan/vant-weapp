@@ -1,0 +1,3 @@
+Component({
+  externalClasses: ['row-class']
+});

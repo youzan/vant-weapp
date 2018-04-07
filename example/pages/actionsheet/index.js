@@ -1,27 +1,22 @@
-const { Actionsheet, extend } = require('../../dist/index');
-
-Page(extend({}, Actionsheet, {
+Page({
   data: {
-    baseActionsheet: {
-      show: false,
-      cancelText: '关闭 Action',
-      closeOnClickOverlay: true,
-      componentId: 'baseActionsheet',
-      actions: [{
-        name: '选项1',
-        subname: '选项描述语1',
-        className: 'action-class',
-        loading: false
-      }, {
-        name: '选项2',
-        subname: '选项描述语2',
-        className: 'action-class',
-        loading: false
-      }, {
-        name: '去分享',
-        openType: 'share'
-      }]
-    }
+    show: false,
+    cancelWithMask: true,
+    actions: [{
+      name: '选项1',
+      subname: '选项描述语1',
+      className: 'action-class',
+      loading: false
+    }, {
+      name: '选项2',
+      subname: '选项描述语2',
+      className: 'action-class',
+      loading: false
+    }, {
+      name: '去分享',
+      openType: 'share'
+    }],
+    cancelText: '关闭 Action'
   },
 
   onShareAppMessage() {
@@ -31,36 +26,32 @@ Page(extend({}, Actionsheet, {
     };
   },
 
-  toggleActionsheet() {
+  openActionsheet() {
     this.setData({
-      'baseActionsheet.show': true
+      'show': true
     });
   },
 
-  handleZanActionsheetCancel({ componentId }) {
+  closeActionSheet() {
     this.setData({
-      [`${componentId}.show`]: false
+      'show': false
     });
   },
 
-  handleZanActionsheetClick({ componentId, index }) {
-    console.log(`item index ${index} clicked`);
-
+  clickAction({ detail }) {
     // 如果是分享按钮被点击, 不处理关闭
+    const { index } = detail;
     if (index === 2) {
       return;
     }
-
     this.setData({
-      [`${componentId}.actions[${index}].loading`]: true
+      [`actions[${index}].loading`]: true
     });
-
     setTimeout(() => {
       this.setData({
-        [`${componentId}.show`]: false,
-        [`${componentId}.actions[${index}].loading`]: false
+        [`show`]: false,
+        [`actions[${index}].loading`]: false
       });
     }, 1500);
   }
-
-}));
+});

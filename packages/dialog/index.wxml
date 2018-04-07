@@ -24,7 +24,7 @@
           class="zan-dialog__button"
           custom-class="{{ index === 0 ? 'zan-dialog__button-inside--first' : 'zan-dialog__button-inside' }}"
           data-type="{{ item.type }}"
-          bindtap="handleButtonClick"
+          bind:btnclick="handleButtonClick"
         >
           <view
             style="color: {{ item.color || '#333' }}"

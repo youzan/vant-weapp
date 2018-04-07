@@ -1,4 +1,4 @@
-const Dialog = require('../../dist/dialog/index');
+const Dialog = require('../../dist/dialog/dialog');
 
 Page({
   toggleBaseDialog() {

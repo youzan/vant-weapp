@@ -2,7 +2,6 @@
   show="{{ show }}"
   type="center"
   overlay="{{ true }}"
-  bindclickmask="handleMaskClick"
 >
   <view class="zan-dialog--container">
     <view
@@ -23,8 +22,9 @@
       >
         <zan-button
           class="zan-dialog__button"
+          custom-class="{{ index === 0 ? 'zan-dialog__button-inside--first' : 'zan-dialog__button-inside' }}"
           data-type="{{ item.type }}"
-          catchtap="handleButtonClick"
+          bindtap="handleButtonClick"
         >
           <view
             style="color: {{ item.color || '#333' }}"

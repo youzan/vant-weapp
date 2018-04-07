@@ -24,7 +24,7 @@ const defaultData = {
   cancelButtonColor: '#333'
 };
 
-const promiseList = {};
+const _f = function() {};
 
 Component({
   properties: {},
@@ -33,7 +33,42 @@ Component({
     ...defaultData,
     key: '',
     show: false,
-    showCustomBtns: false
+    showCustomBtns: false,
+    promiseFunc: {}
+  },
+
+  methods: {
+    handleButtonClick(e) {
+      const { currentTarget = {} } = e;
+      const { dataset = {} } = currentTarget;
+
+      // 获取当次弹出框的信息
+      const { resolve = _f, reject = _f } = this.data.promiseFunc || {};
+
+      // 重置 zanDialog 里的内容
+      this.setData({
+        show: false
+      });
+
+      // 自定义按钮，全部 resolve 形式返回，根据 type 区分点击按钮
+      if (this.data.showCustomBtns) {
+        resolve({
+          type: dataset.type
+        });
+        return;
+      }
+
+      // 默认按钮，确认为 resolve，取消为 reject
+      if (dataset.type === 'confirm') {
+        resolve({
+          type: 'confirm'
+        });
+      } else {
+        reject({
+          type: 'cancel'
+        });
+      }
+    }
   }
 });
 
@@ -51,6 +86,11 @@ function Dialog(options, pageCtx) {
     ctx = pages[pages.length - 1];
   }
   const dialogCtx = ctx.selectComponent(parsedOptions.selector);
+
+  if (!dialogCtx) {
+    console.error('无法找到对应的dialog组件，请于页面中注册并在 wxml 中声明 dialog 自定义组件');
+    return Promise.reject({ type: 'component error' });
+  }
 
   // 处理默认按钮的展示
   // 纵向排布确认按钮在上方
@@ -87,7 +127,8 @@ function Dialog(options, pageCtx) {
       buttons,
       showCustomBtns,
       key: `${(new Date()).getTime()}`,
-      show: true
+      show: true,
+      promiseFunc: { resolve, reject }
     });
   });
 }

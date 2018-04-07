@@ -39,8 +39,18 @@
 }
 
 .zan-dialog__button {
+  flex: 1;
+}
+
+.zan-dialog__button-inside, .zan-dialog__button-inside--first {
+  margin-bottom: 0;
   line-height: 50px;
   height: 50px;
+
+  &::after {
+    border-width: 0;
+    border-radius: 0;
+  }
 }
 
 /* 水平/垂直布局 */
@@ -48,27 +58,14 @@
   display: flex;
 }
 
-.zan-dialog__footer--horizon .zan-dialog__button {
-  flex: 1;
-
+.zan-dialog__footer--horizon .zan-dialog__button-inside {
   &::after {
-    border-right-width: 1px;
-  }
-
-  &:last-child::after {
-    border-right-width: 0;
+    border-left-width: 1px;
   }
 }
 
-
-.zan-dialog__footer--vertical .zan-dialog__button {
-  flex: 1;
-
+.zan-dialog__footer--vertical .zan-dialog__button-inside {
   &::after {
-    border-bottom-width: 1px;
-  }
-
-  &:last-child::after {
-    border-bottom-width: 0;
+    border-top-width: 1px;
   }
 }

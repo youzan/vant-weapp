@@ -5,13 +5,12 @@
 ```json
 {
   "usingComponents": {
-    "zan-switch": "/packages/Panel/panel"
+    "zan-switch": "/packages/switch/index"
   }
 }
 ```
 
 ### 代码演示
-可以在页面任意位置上使用 zan-popup 标签。通过 show 可以控制弹窗是否展示
 ```html
 <zan-switch
   disabled="{{ disabled }}"

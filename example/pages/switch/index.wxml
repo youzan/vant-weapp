@@ -6,18 +6,17 @@
 
   <view class="zan-panel-title">同步开关</view>
   <view class="zan-panel">
-    <template is="zan-switch" data="{{ ...sync, componentId: 'sync' }}" />
+    <zan-switch checked="{{sync.checked}}" bind:change="syncChange" />
   </view>
 
   <view class="zan-panel-title">异步开关</view>
   <view class="zan-panel">
-    <template is="zan-switch" data="{{ ...async, componentId: 'async' }}" />
+    <zan-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
   </view>
 
   <view class="zan-panel-title">开关不可用</view>
   <view class="zan-panel">
-    <template is="zan-switch" data="{{ checked: false, disabled: true, componentId: 'switch3' }}" />
-    <template is="zan-switch" data="{{ checked: true, disabled: true, componentId: 'switch4' }}" />
+    <zan-switch disabled="{{ false }}" />
   </view>
 
 </view>

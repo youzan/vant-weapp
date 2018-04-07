@@ -32,7 +32,9 @@
   "homepage": "https://github.com/youzan/zanui-weapp#readme",
   "devDependencies": {
     "cross-env": "^5.1.4",
+    "eslint-config-airbnb": "^16.1.0",
     "fs-extra": "^4.0.2",
+    "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-postcss": "^7.0.0",
@@ -44,7 +46,6 @@
     "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0",
     "shelljs": "^0.7.8",
-    "gh-pages": "^1.1.0",
     "wedoc": "0.0.13"
   }
 }

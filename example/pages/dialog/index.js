@@ -1,30 +1,33 @@
-const Zan = require('../../dist/index');
+const Dialog = require('../../dist/dialog/dialog');
 
-Page(Object.assign({}, Zan.Dialog, {
+Page({
   toggleBaseDialog() {
-    this.showZanDialog({
+    Dialog({
       title: '弹窗',
-      content: '这是一个模态弹窗',
-      showCancel: true
+      message: '这是一个模态弹窗',
+      selector: '#zan-base-dialog',
+      showCancelButton: true
     }).then(() => {
-      console.log('=== dialog ===', 'type: confirm');
+      console.log('=== dialog resolve ===', 'type: confirm');
     }).catch(() => {
-      console.log('=== dialog ===', 'type: cancel');
+      console.log('=== dialog reject ===', 'type: cancel');
     });
   },
 
   toggleWithoutTitleDialog() {
-    this.showZanDialog({
-      content: '这是一个模态弹窗'
+    Dialog({
+      message: '这是一个模态弹窗',
+      selector: '#zan-no-title-dialog'
     }).then(() => {
-      console.log('=== dialog without title ===', 'type: confirm');
+      console.log('=== dialog ===', 'type: confirm');
     });
   },
 
   toggleButtonDialog() {
-    this.showZanDialog({
+    Dialog({
       title: '弹窗',
-      content: '这是一个模态弹窗',
+      message: '这是一个模态弹窗',
+      selector: '#zan-button-dialog',
       buttons: [{
         text: '现金支付',
         color: 'red',
@@ -43,9 +46,10 @@ Page(Object.assign({}, Zan.Dialog, {
   },
 
   toggleVerticalDialog() {
-    this.showZanDialog({
+    Dialog({
       title: '弹窗',
-      content: '这是一个模态弹窗',
+      message: '这是一个模态弹窗',
+      selector: '#zan-vertical-dialog',
       buttonsShowVertical: true,
       buttons: [{
         text: '现金支付',
@@ -63,4 +67,4 @@ Page(Object.assign({}, Zan.Dialog, {
       console.log('=== dialog with vertical buttons ===', `type: ${type}`);
     });
   }
-}));
+});

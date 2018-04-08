@@ -21,7 +21,7 @@
 ```
 
 ```js
-Page(extend({}, {
+Page({
   data: {
     field: {
       disabled: false,
@@ -35,7 +35,7 @@ Page(extend({}, {
       console.log(event, data);
     }
   }
-}));
+});
 ```
 
 ### API

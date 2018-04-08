@@ -22,5 +22,14 @@ Component({
       type: Boolean,
       value: false,
     },
+    openType: {
+      type: String,
+      value: ''
+    }
   },
+  methods: {
+    handleTap() {
+      this.triggerEvent('btnclick');
+    }
+  }
 });

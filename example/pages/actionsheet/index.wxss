@@ -1,0 +1,3 @@
+.tiny {
+  background: rgba(30, 30, 40, 0.7) !important;
+}

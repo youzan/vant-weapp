@@ -30,16 +30,30 @@
   visibility: hidden;
 }
 
-.zan-actionsheet__btn.zan-btn {
-  height: 50px;
-  line-height: 50px;
-  margin-bottom: 0;
-
-  &::after {
-    border-width: 0;
-    border-bottom-width: 1px;
-  }
+.zan-actionsheet__btn {
+  margin-bottom: 0 !important;
 }
+
+.zan-actionsheet__footer .zan-actionsheet__btn {
+  background: #fff;
+}
+
+.zan-actionsheet__btn-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.zan-actionsheet__subname {
+  color: $gray-dark;
+}
+
+.zan-actionsheet__subname,
+.zan-actionsheet__name {
+  height: 45px;
+  line-height: 45px;
+}
+
 
 .zan-actionsheet__btn.zan-btn:last-child {
   &::after {
@@ -50,7 +64,6 @@
 .zan-actionsheet__subname {
   margin-left: 2px;
   font-size: 12px;
-  color: $gray-darker;
 }
 
 .zan-actionsheet__footer {
@@ -58,7 +71,7 @@
 }
 
 /* btn-loading 状态 */
-.zan-actionsheet__btn.zan-btn--loading .zan-actionsheet__subname {
+.zan-actionsheet__btn--loading .zan-actionsheet__subname {
   color: transparent;
 }
 

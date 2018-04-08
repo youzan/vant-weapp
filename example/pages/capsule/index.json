@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "Capsule 胶囊"
+  "navigationBarTitleText": "Capsule 胶囊",
+  "usingComponents": {
+    "zan-panel": "/packages/panel/index",
+    "zan-capsule": "/packages/capsule/index"
+  }
 }

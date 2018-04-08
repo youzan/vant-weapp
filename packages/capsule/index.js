@@ -7,7 +7,7 @@ Component({
     // 颜色状态
     type: {
       type: String,
-      value: 'danger'
+      value: ''
     },
     // 自定义颜色
     color :{

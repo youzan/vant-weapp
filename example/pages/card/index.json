@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Card 卡片"
+  "navigationBarTitleText": "Card 卡片",
+  "usingComponents": {
+    "zan-card": "../../dist/card/index"
+  }
 }

@@ -1,3 +1,9 @@
 Component({
-  externalClasses: ['row-class']
+  externalClasses: ['row-class'],
+
+  relations: {
+    '../col/index': {
+      type: 'child'
+    }
+  }
 });

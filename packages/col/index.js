@@ -1,6 +1,12 @@
 Component({
   externalClasses: ['col-class'],
 
+  relations: {
+    '../row/index': {
+      type: 'parent'
+    }
+  },
+
   properties: {
     col: {
       value: 0,

@@ -3,33 +3,45 @@
   <view class="doc-title zan-hairline--bottom">CARD</view>
 
   <view class="zan-panel">
-    <view class="zan-card">
-      <view class="zan-card__thumb">
+    <zan-card
+      card-class="test-card"
+      thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
+      price="999.99"
+      title="红烧牛肉【虚拟商品】【有库存】【有sku】"
+      num="2"
+      desc="3000克 50%"
+      status="已发货"
+    >
+    </zan-card>
+
+  </view>
+
+  <view class="doc-title zan-hairline--bottom">使用slot</view>
+
+  <view class="zan-panel">
+    <zan-card
+      card-class="test-card"
+      useThumbSlot="{{ true }}"
+      useDetailSlot="{{ true }}"
+    >
+      <view slot="thumb-slot" class="zan-card__thumb">
         <image class="zan-card__img"
           src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
           mode="aspectFit"
         ></image>
       </view>
-      <view class="zan-card__detail">
+      <!-- 右侧详情 -->
+      <view slot="detail-slot" class="zan-card__detail">
         <view class="zan-card__detail-row">
-          <view class="zan-card__right-col">¥ 999.99</view>
+          <view class="zan-card__right-col">x 2</view>
           <view class="zan-card__left-col zan-ellipsis--l2">
-             红烧牛肉【虚拟商品】【有库存】【有sku】
+            我是标题
           </view>
         </view>
-
         <view class="zan-card__detail-row zan-c-gray-darker">
-          <view class="zan-card__right-col">x2</view>
-          <view class="zan-card__left-col">
-            3000克 50%
-          </view>
-        </view>
-
-        <view class="zan-card__detail-row zan-c-gray-darker">
-          <view class="zan-card__left-col zan-c-red">已发货</view>
+          <view class="zan-card__left-col">¥ 111</view>
         </view>
       </view>
-    </view>
+    </zan-card>
   </view>
-
 </view>

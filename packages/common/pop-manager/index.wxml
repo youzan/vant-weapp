@@ -2,7 +2,8 @@
   class="pop pop--{{ type }} {{ show ? 'pop--show' : '' }}"
 >
   <view 
-    class="pop__mask {{ overlay ? '' : 'pop__mask--hide' }}"
+    wx:if="{{ overlay }}"
+    class="pop__mask {{ showOverlay ? '' : 'pop__mask--hide' }}"
     bindtap="handleMaskClick"
   ></view>
   <view class="pop__container">

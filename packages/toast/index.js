@@ -6,6 +6,8 @@ const DEFAULT_DATA = {
   mask: false
 };
 
+const SUPPORT_TYPE = ['loading', 'success', 'fail'];
+
 Component({
   data: {
     ...DEFAULT_DATA
@@ -14,13 +16,15 @@ Component({
   methods: {
     show(options) {
       const toastOptions = { ...options };
-      if (!options.type) {
-        toastOptions.icon = '';
-        toastOptions.image = options.image || '';
+
+      let icon = '';
+      if (SUPPORT_TYPE.indexOf(options.type) > -1) {
+        icon = options.type || options.icon;
       }
 
       this.setData({
-        ...toastOptions
+        ...toastOptions,
+        icon
       });
     },
 

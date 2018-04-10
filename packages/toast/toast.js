@@ -1,3 +1,8 @@
+let timeoutData = {
+  timeoutId: 0,
+  toastCtx: null
+}
+
 function Toast(options = {}, pageCtx) {
   let ctx = pageCtx;
   if (!ctx) {
@@ -11,14 +16,37 @@ function Toast(options = {}, pageCtx) {
     return;
   }
 
+  if (timeoutData.timeoutId) {
+    Toast.clear();
+  }
+
   toastCtx.show({
     ...options,
     show: true
   });
 
-  setTimeout(() => {
+  const timeoutId = setTimeout(() => {
     toastCtx.clear();
   }, options.timeout || 3000);
+
+  timeoutData = {
+    timeoutId,
+    toastCtx
+  }
 };
+
+// 清理所有 toast
+Toast.clear = function() {
+  clearTimeout(timeoutData.timeoutId);
+
+  try {
+    timeoutData.toastCtx && timeoutData.toastCtx.clear();
+  } catch (e) {}
+
+  timeoutData = {
+    timeoutId: 0,
+    toastCtx: null
+  }
+}
 
 module.exports = Toast;

@@ -5,7 +5,6 @@ Page({
   data: {},
 
   showToast() {
-    // this.showZanToast('toast的内容');
     Toast({
       message: 'toast的内容',
       selector: '#zan-toast-test'
@@ -34,23 +33,19 @@ Page({
       message: 'toast的内容',
       selector: '#zan-toast-test'
     });
-    // this.showZanToast({
-    //   title: 'toast的内容',
-    //   icon: 'loading'
-    // });
   },
 
   showOnlyIcon() {
-    // this.showZanToast({
-    //   icon: 'fail'
-    // });
     Toast({
       type: 'fail',
       selector: '#zan-toast-test'
     });
   },
 
-  // showLoading() {
-  //   this.showZanLoading('加载中');
-  // }
+  showLoading() {
+    Toast.loading({
+      message: '加载中',
+      selector: '#zan-toast-test'
+    });
+  }
 });

@@ -49,4 +49,12 @@ Toast.clear = function() {
   }
 }
 
+// 显示 loading
+Toast.loading = function(options = {}) {
+  Toast({
+    ...options,
+    type: 'loading'
+  });
+}
+
 module.exports = Toast;

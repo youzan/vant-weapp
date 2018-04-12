@@ -18,12 +18,11 @@
     >
       <view class="zan-loading"></view>
     </view>
-    <view wx:else>
-      <zan-icon
-        type="{{ icon }}"
-        class="zan-toast__icon"
-      ></zan-icon>
-    </view>
+    <zan-icon
+      wx:else
+      type="{{ icon }}"
+      class="zan-toast__icon"
+    ></zan-icon>
   </block>
 
   <!-- 文案展示 -->

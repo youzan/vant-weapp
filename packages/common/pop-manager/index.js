@@ -4,7 +4,13 @@ Component({
       type: Boolean,
       value: false
     },
+    // 是否有遮罩层
     overlay: {
+      type: Boolean,
+      value: true
+    },
+    // 遮罩层是否会显示
+    showOverlay: {
       type: Boolean,
       value: true
     },

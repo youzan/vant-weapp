@@ -1,7 +1,6 @@
 <pop-manager
   show="{{ show }}"
   type="center"
-  overlay="{{ true }}"
 >
   <view class="zan-dialog--container">
     <view

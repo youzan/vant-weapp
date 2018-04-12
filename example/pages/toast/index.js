@@ -1,4 +1,3 @@
-const Zan = require('../../dist/index');
 const Toast = require('../../dist/toast/toast');
 
 Page({

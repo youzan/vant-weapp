@@ -4,7 +4,7 @@ Page({
   toggleBaseDialog() {
     Dialog({
       title: '弹窗',
-      message: '这是一个模态弹窗',
+      message: '这是一个模态弹窗\n换行',
       selector: '#zan-base-dialog',
       showCancelButton: true
     }).then(() => {

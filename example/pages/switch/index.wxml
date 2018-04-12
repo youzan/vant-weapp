@@ -4,20 +4,16 @@
 
   <view class="doc-title zan-hairline--bottom">SWITCH</view>
 
-  <view class="zan-panel-title">同步开关</view>
-  <view class="zan-panel">
-    <template is="zan-switch" data="{{ ...sync, componentId: 'sync' }}" />
-  </view>
+  <zan-panel title='同步开关'>
+    <zan-switch checked="{{sync.checked}}" bind:change="syncChange" />
+  </zan-panel>
 
-  <view class="zan-panel-title">异步开关</view>
-  <view class="zan-panel">
-    <template is="zan-switch" data="{{ ...async, componentId: 'async' }}" />
-  </view>
+  <zan-panel title='同步开关'>
+    <zan-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
+  </zan-panel>
 
-  <view class="zan-panel-title">开关不可用</view>
-  <view class="zan-panel">
-    <template is="zan-switch" data="{{ checked: false, disabled: true, componentId: 'switch3' }}" />
-    <template is="zan-switch" data="{{ checked: true, disabled: true, componentId: 'switch4' }}" />
-  </view>
+  <zan-panel title='同步开关'>
+    <zan-switch disabled="{{ false }}" />
+  </zan-panel>
 
 </view>

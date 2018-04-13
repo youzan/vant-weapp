@@ -1,5 +1,4 @@
 <radio-group
-  name="{{ name }}"
   class="zan-select__list"
   bindchange="_handleZanSelectChange"
 >

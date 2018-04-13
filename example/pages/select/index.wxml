@@ -21,20 +21,4 @@
     />
   </zan-panel>
 
-  <zan-panel title='Form 表单中的select应用'>
-    <form bindsubmit="formSubmit">
-      <zan-select
-        name="formtest"
-        items="{{ items }}"
-        checkedValue="{{ checked.form }}"
-        bind:change="handleFieldChange"
-      />
-      <view class="zan-btns">
-        <button
-          class="zan-btn zan-btn--primary"
-          formType="submit">提交数据</button>
-      </view>
-    </form>
-  </zan-panel>
-
 <template is="zan-toptips" data="{{ zanTopTips }}"></template>

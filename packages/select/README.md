@@ -11,7 +11,6 @@
 ```
 
 ### 代码演示
-=======
 ```html
 <zan-select
   items="{{ items }}"
@@ -56,6 +55,5 @@ Page({
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | items | select 显示各个项的配置 | Array | - | |
-| name | Select 的名字，作为 form 表单提交时数据的 key | String | - | |
 | checkedValue | 高亮的 item 的 value 值 | String | - | |
 | activeColor | Select 高亮颜色 | String | #ff4444 | |

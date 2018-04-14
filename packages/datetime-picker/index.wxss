@@ -1,3 +1,6 @@
+.picker-view-column {
+  font-size: 14px;
+}
 .placeholder-class {
   width: 100%;
 }
@@ -13,25 +16,32 @@
   height: 0;
   transition: height ease-in 0.3s;
 }
+.picker-view .picker {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  z-index: auto;
+}
 .picker-visible {
   height: 236px;
   bottom: 0;
 }
-
+.picker-view .picker-visible {
+  height: 200px;
+}
 .picker-mask {
   position: fixed;
-  /* pointer-events: none; */
   top: 0;
   left: 0;
   right: 0;
   bottom: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  transition: bottom ease-in 0.3s;
   z-index: -1;
 }
 .picker-mask.show {
-  bottom: 236px;  
-  z-index: 998;
+  bottom: 0;  
+  z-index: 998; 
 }
 .picker .picker-action {
   height: 36px;
@@ -52,6 +62,7 @@
   position: relative;
   overflow: hidden;
   height: 180px;
+  font-size: 16px;
 }
 .picker-cols .fixed-col {
   color: #999;
@@ -86,8 +97,6 @@
   position: absolute;
   height: 72px;
   width: calc(100% - 10px);
-  /* background: rgba(255, 255, 255, 0.5); */
-  z-index: 1000;
   pointer-events: none;
 }
 .picker-cols::before {

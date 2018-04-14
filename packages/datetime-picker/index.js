@@ -153,6 +153,9 @@ Component({
     native: {
       type: Boolean
     },
+    pickerView: {
+      type: Boolean
+    },
     date: {
       type: String,
       value: new Date()
@@ -171,6 +174,7 @@ Component({
       if ((this.data.notUse || []).indexOf(item) === -1) { this.use[item] = true }
     });
     this.setData({ use: this.use });
+    this.data.pickerView && !this.data.native && this.showPicker();
   },
   ready() {
     this.picker = new DatePicker(this.data.format, this.data.date, this.updatePicker.bind(this));
@@ -236,8 +240,8 @@ Component({
     columnchange(e) {
       let { column, value } = e.detail;
       _indexs[column] = value;
-      this.setData({ text: this.getFormatStr() });
       this.picker.update(column, value, this.updatePicker.bind(this));
+      this.data.pickerView && this.change({detail: {value: _indexs}})
     },
     getFormatStr() {
       let date = new Date()

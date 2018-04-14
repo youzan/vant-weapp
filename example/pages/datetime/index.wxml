@@ -1,6 +1,7 @@
 <view class="container">
   <view class="doc-title zan-hairline--bottom">DATETIME PICKER</view>
-  
+
+  <view class="zan-panel-title">底部弹出</view>  
   <view class="zan-panel">
     <zan-cell-group>
 
@@ -43,6 +44,51 @@
           placeholder-class="my-customer-class-name" />
       </zan-cell>
     </zan-cell-group>
-    
   </view>
+  <view class="zan-panel-title">嵌入页面</view>  
+  <zan-date-picker
+    native
+    picker-view   
+    bindchange="change"  
+    bindcancel="cancel"
+    placeholder="组件内原生 picker"
+    placeholder-class="my-customer-class" />
+    <view class="my-customer-class">页面内的 picker-view </view>
+    <picker-view
+      value="{{ selected }}"
+      bindchange="change"
+      indicator-style="height: 50px;"
+      style="height: 200px">
+      <picker-view-column>
+        <view wx:for="{{dataList[0]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+      </picker-view-column>
+    
+      <picker-view-column>
+        <view wx:for="{{dataList[1]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+      </picker-view-column>
+    
+      <picker-view-column>
+        <view wx:for="{{dataList[2]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+      </picker-view-column>
+    
+      <picker-view-column>
+        <view wx:for="{{dataList[3]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+      </picker-view-column>
+    
+      <picker-view-column>
+        <view wx:for="{{dataList[4]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+      </picker-view-column>
+    
+      <picker-view-column>
+        <view wx:for="{{dataList[5]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  <zan-date-picker
+    picker-view
+    bindchange="change"  
+    bindcancel="cancel"
+    placeholder="自定义显示格式的 picker"
+    format="选择的是YY-MM-DD HH:mm:ss"
+    placeholder-class="my-customer-class" />
 </view>
+

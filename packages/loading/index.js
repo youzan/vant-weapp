@@ -6,10 +6,6 @@ Component({
     },
     color: {
       type: String
-    },
-    use: {
-      type: null,
-      value: 1
     }
   }
 })

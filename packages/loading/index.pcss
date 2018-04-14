@@ -1,9 +1,11 @@
 $spinners: 12;
 
-.loading.use-1 {
+.loading.inline {
   position: relative;
   margin: 15px;
   text-align: center;
+  display: flex;
+  justify-content: center;
   
   & .circle {
     display: inline-block;
@@ -83,8 +85,8 @@ $spinners: 12;
   }
 }
 
-.loading.use-2 {
-  & .spinner {
+.loading.block {
+  & .dot-spinner {
     margin: 15px 15px;
     overflow: hidden;
 
@@ -98,7 +100,7 @@ $spinners: 12;
       position: relative;
       left: 0;
 
-      animation: spinner-2 2s ease infinite;
+      animation: dot-spinner 2s ease infinite;
       @for $i from 1 to 6 {
         &:nth-child($i) {
           animation-delay: calc((6 - $i)/10)s;
@@ -112,12 +114,13 @@ $spinners: 12;
     }
   }
 
-  &.black .spinner view {
+  &.black .dot-spinner view {
     background: #c9c9c9;
   }
 }
 
-@keyframes spinner-2 {
+
+@keyframes dot-spinner {
   40% {
     left: calc(50% - 15px);
   }

@@ -33,26 +33,11 @@
 ```html
 <zan-card
   card-class="test-card"
-  useThumbSlot="{{ true }}"
   useDetailSlot="{{ true }}"
 >
-  <view slot="thumb-slot" class="zan-card__thumb">
-    <image class="zan-card__img"
-      src="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
-      mode="aspectFit"
-    ></image>
-  </view>
   <!-- 右侧详情 -->
   <view slot="detail-slot" class="zan-card__detail">
-    <view class="zan-card__detail-row">
-      <view class="zan-card__right-col">x 2</view>
-      <view class="zan-card__left-col zan-ellipsis--l2">
-        我是标题
-      </view>
-    </view>
-    <view class="zan-card__detail-row zan-c-gray-darker">
-      <view class="zan-card__left-col">¥ 111</view>
-    </view>
+    我是标题
   </view>
 </zan-card>
 ```
@@ -67,5 +52,4 @@
 | desc | 商品描述 | String | -
 | num | 商品数量 | Number | -
 | status | 商品状态 | String | -
-| useThumbSlot | 是否使用thumb-slot（true时需要添加对应slot） | Boolean | `false`
 | useDetailSlot | 是否使用detail-slot（true时需要添加对应slot） | Boolean | `false`

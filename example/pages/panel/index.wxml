@@ -1,4 +1,4 @@
-<doc-page title="PANEL">
+<doc-page title="PANEL" without-padding>
 
   <zan-panel class="panel-example">
     <view style="padding: 15px;">PANEL 内容区域</view>

@@ -3,6 +3,8 @@
   "usingComponents": {
     "zan-cell": "../../dist/cell/index",
     "zan-icon": "../../dist/icon/index",
-    "zan-cell-group": "../../dist/cell-group/index"
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell-group": "../../dist/cell-group/index",
+    "doc-page": "../../components/doc-page/index"
   }
 }

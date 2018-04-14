@@ -5,11 +5,13 @@
   <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
     <zan-panel title="{{ group.title }}">
       <zan-cell-group>
-        <navigator wx:for="{{ group.content }}" wx:key="name" url="{{ item.path }}">
-          <zan-cell></zan-cell>
-          <view class="zan-cell__bd">{{ item.name }}</view>
-          <view class="zan-cell__ft"></view>
-        </navigator>
+        <zan-cell
+          wx:for="{{ group.content }}"
+          wx:key="name"
+          is-link
+          url="{{ item.path }}"
+          title="{{ item.name }}"
+        ></zan-cell>
       </zan-cell-group>
     </zan-panel>
   </block>

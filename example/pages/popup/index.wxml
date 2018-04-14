@@ -1,20 +1,20 @@
 <doc-page title="POPUP">
   <view class="zan-btns" style="margin-top: 10vh;">
-    <button class="zan-btn" bindtap="togglePopup">
+    <zan-button class="zan-btn" bind:btnclick="togglePopup">
       弹出popup
-    </button>
-    <button class="zan-btn" bindtap="toggleTopPopup">
+    </zan-button>
+    <zan-button class="zan-btn" bind:btnclick="toggleTopPopup">
       从顶部弹出popup
-    </button>
-    <button class="zan-btn" bindtap="toggleBottomPopup">
+    </zan-button>
+    <zan-button class="zan-btn" bind:btnclick="toggleBottomPopup">
       从底部弹出popup
-    </button>
-    <button class="zan-btn" bindtap="toggleLeftPopup">
+    </zan-button>
+    <zan-button class="zan-btn" bind:btnclick="toggleLeftPopup">
       从左边弹出popup
-    </button>
-    <button class="zan-btn" bindtap="toggleRightPopup">
+    </zan-button>
+    <zan-button class="zan-btn" bind:btnclick="toggleRightPopup">
       从右边弹出popup
-    </button>
+    </zan-button>
   </view>
 
   <!-- 中间弹出框 -->

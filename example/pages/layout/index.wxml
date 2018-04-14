@@ -1,20 +1,14 @@
-<view class="container">
+<doc-page title="LAYOUT" without-padding>
 
-  <view class="doc-title zan-hairline--bottom">LAYOUT</view>
-
-  <view class="zan-panel-title">基础用法</view>
-  <view class="doc-description">Layout 组件提供了24列栅格，添加 zan-col-x 可以设置元素所占宽度</view>
-  <view class="zan-panel">
+  <zan-panel title="基础用法">
     <zan-row>
       <zan-col col="8" col-class="custom-zan-col">span: 8</zan-col>
       <zan-col col="8" col-class="custom-zan-col">span: 8</zan-col>
       <zan-col col="8" col-class="custom-zan-col">span: 8</zan-col>
     </zan-row>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel-title">offset</view>
-  <view class="doc-description">添加 zan-col-offset-x 类可以设置列的偏移宽度，计算方式与 span 相同</view>
-  <view class="zan-panel">
+  <zan-panel title="利用 offset 布局">
     <zan-row>
       <zan-col col="4" col-class="custom-zan-col">span: 4</zan-col>
       <zan-col col="10" offset="4" col-class="custom-zan-col">offset: 4, span: 10</zan-col>
@@ -22,6 +16,6 @@
     <zan-row>
       <zan-col col="12" offset="12" col-class="custom-zan-col">offset: 12, span: 12</zan-col>
     </zan-row>
-  </view>
+  </zan-panel>
 
-</view>
+</doc-page>

@@ -6,15 +6,18 @@
 @import "path/to/zanui-weapp/dist/index.wxss";
 ```
 
-在需要使用的页面里引入组件库模板和脚本
-```html
-<import src="path/to/zanui-weapp/dist/steps/index.wxml" />
-```
+在 index.json 中引入组件
+```json
+{
+  "usingComponents": {
+    "zan-steps": "path/to/zanui-weapp/dist/steps/index"
+  }
+}
 
 ### 代码演示
 在模板中使用 zan-steps 模板，并传入相应数据
 ```html
-<template is="zan-steps" data="{{ type: 'horizon', steps }}"></template>
+<zan-steps type="horizon" steps="{{steps}}"></zan-steps>
 ```
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|

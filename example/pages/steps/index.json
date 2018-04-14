@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "Steps 步骤条"
+  "navigationBarTitleText": "Steps 步骤条",
+  "usingComponents": {
+    "zan-steps": "../../dist/steps/index"
+  }
 }

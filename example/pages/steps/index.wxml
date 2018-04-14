@@ -7,19 +7,19 @@
   <view class="zan-panel">
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'horizon', steps: steps }}"></template>
+        <zan-steps type="horizon" steps="{{steps}}"></zan-steps>
       </view>
     </view>
 
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'horizon', steps: steps2 }}"></template>
+        <zan-steps type="horizon" steps="{{steps2}}"></zan-steps>
       </view>
     </view>
 
     <view class="zan-cell zan-cell--last-child">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'horizon', steps: steps3 }}"></template>
+        <zan-steps type="horizon" steps="{{steps3}}"></zan-steps>
       </view>
     </view>
   </view>
@@ -28,19 +28,19 @@
   <view class="zan-panel">
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps }}"></template>
+        <zan-steps type="horizon" hasDesc steps="{{steps}}"></zan-steps>
       </view>
     </view>
 
     <view class="zan-cell">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps2 }}"></template>
+        <zan-steps type="horizon" hasDesc steps="{{steps2}}"></zan-steps>
       </view>
     </view>
 
     <view class="zan-cell zan-cell--last-child">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'horizon', hasDesc: true, steps: steps3 }}"></template>
+        <zan-steps type="horizon" hasDesc steps="{{steps3}}"></zan-steps>
       </view>
     </view>
   </view>
@@ -49,13 +49,13 @@
   <view class="zan-panel">
     <view class="zan-cell zan-cell">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'vertical', hasDesc: true, steps }}"></template>
+        <zan-steps type="vertical" hasDesc steps="{{steps}}"></zan-steps>
       </view>
     </view>
 
     <view class="zan-cell zan-cell--last-child">
       <view class="zan-cell__bd">
-        <template is="zan-steps" data="{{ type: 'vertical', steps }}"></template>
+        <zan-steps type="vertical" steps="{{steps}}"></zan-steps>
       </view>
     </view>
   </view>
@@ -63,7 +63,7 @@
   <view class="zan-panel-title">可自定义class</view>
   <view class="zan-panel">
     <view class="zan-cell__bd">
-      <template is="zan-steps" data="{{ type: 'vertical', steps, className: 'my-class' }}"></template>
+      <zan-steps type="vertical" steps="{{steps}}" className="my-class"></zan-steps>
     </view>
   </view>
 

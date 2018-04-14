@@ -2,7 +2,7 @@
 
 .zan-panel {
   position: relative;
-  margin-top: 10px;
+  overflow: hidden;
 }
 
 .zan-panel__title {
@@ -13,6 +13,7 @@
 }
 
 .zan-panel__content {
+  position: relative;
   background: #fff;
   overflow: hidden;
   &::after {
@@ -20,10 +21,6 @@
     border-top-width: 1px;
     border-bottom-width: 1px;
   }
-}
-
-.zan-panel--without-margin-top {
-  margin-top: 0;
 }
 
 .zan-panel--without-border {

@@ -1,4 +1,4 @@
-<view class="zan-panel  {{ hideTop ? 'zan-panel--without-margin-top' : '' }}">
+<view class="zan-panel">
   <view
     wx:if="{{ title }}"
     class="zan-panel__title">{{ title }}</view>

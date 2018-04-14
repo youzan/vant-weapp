@@ -32,12 +32,16 @@ Component({
     isLink: {
       type: null,
       value: '',
-      description: '链接，用于导航，如果是 Boolean 型值则只显示链接样式，String 类型值才做导航，但是组件不检查路径正确性'
+      description: '是否展示右侧箭头并开启尝试以 url 跳转'
     },
     linkType: {
       type: String,
       value: 'navigateTo',
       description: '链接类型，可选值为 navigateTo，redirectTo，switchTab，reLaunch'
+    },
+    url: {
+      type: String,
+      value: ''
     }
   },
   data: {
@@ -45,12 +49,12 @@ Component({
   },
   methods: {
     navigateTo () {
-      let url = this.data.isLink.toString()
-      let type = typeof this.data.isLink
+      const url = this.data.url
+      const type = typeof this.data.isLink
 
       this.triggerEvent('tap', {})
 
-      if (!this.data.isLink || url === 'true' || url === 'false') return;
+      if (!this.data.isLink || !url || url === 'true' || url === 'false') return;
 
       if (type !== 'boolean' && type !== 'string') {
         warn('isLink 属性值必须是一个字符串或布尔值', this.data.isLink)

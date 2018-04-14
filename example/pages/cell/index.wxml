@@ -1,43 +1,36 @@
-<import src="/dist/switch/index.wxml" />
+<doc-page title="CELL" without-padding>
 
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">CELL</view>
-
-  <view class="zan-panel">
+  <zan-panel class="cell-panel-demo">
     <zan-cell title="单行列表"></zan-cell>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel">
+  <zan-panel class="cell-panel-demo">
     <zan-cell title="单行列表" value="详细信息"></zan-cell>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel">
+  <zan-panel class="cell-panel-demo">
     <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel-title">带 icon 的 cell</view>
-  <view class="zan-panel">
+  <zan-panel class="cell-panel-demo" title="带 icon 的 cell">
     <zan-cell title="单行列表" value="详细信息">
       <zan-icon slot="icon" type="checked"></zan-icon>
     </zan-cell>
-  </view>
+  </zan-panel>
 
+  <zan-panel class="cell-panel-demo" title="带箭头的 cell">
+    <zan-cell title="只显示箭头" is-link></zan-cell>
+  </zan-panel>
 
-  <view class="zan-panel-title">带箭头的 cell</view>
-  <view class="zan-panel">
-    <zan-cell title="只显示箭头" is-link="{{true}}"></zan-cell>
-  </view>
+  <zan-panel class="cell-panel-demo">
+    <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
+  </zan-panel>
 
-  <view class="zan-panel">
-    <zan-cell title="跳转到首页" is-link="/pages/dashboard/index"></zan-cell>
-  </view>
-  <view class="zan-panel-title">cell 组</view>
-  <view class="zan-panel">
+  <zan-panel class="cell-panel-demo" title="cell 组">
     <zan-cell-group>
-      <zan-cell title="只显示箭头" is-link="{{true}}"></zan-cell>
-      <zan-cell title="跳转到首页" is-link="/pages/dashboard/index"></zan-cell>
-      <zan-cell title="只有 footer 点击有效" is-link="/pages/dashboard/index" only-tap-footer></zan-cell>
+      <zan-cell title="只显示箭头" is-link></zan-cell>
+      <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
+      <zan-cell title="只有 footer 点击有效" is-link url="/pages/dashboard/index" only-tap-footer></zan-cell>
       <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
       <zan-cell title="表单">
         <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
@@ -46,5 +39,5 @@
         <switch slot="footer" checked/>
       </zan-cell>
     </zan-cell-group>
-  </view>
-</view>
+  </zan-panel>
+</doc-page>

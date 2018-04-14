@@ -3,6 +3,10 @@ Component({
     title: {
       type: String,
       value: ''
+    },
+
+    withoutPadding: {
+      type: Boolean
     }
   }
 });

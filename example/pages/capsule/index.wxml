@@ -1,16 +1,15 @@
-<import src="/dist/capsule/index.wxml" />
-
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">CAPSULE</view>
+<doc-page title="CAPSULE" without-padding>
 
   <zan-panel title='基本用法'>
-    <zan-capsule leftText="1折扣" rightText="限购一份" />
-    <zan-capsule type="danger" leftText="1折扣" rightText="限购一份" />
+    <view class="capsule-demo">
+      <zan-capsule leftText="折扣" rightText="限购一份" />
+      <zan-capsule type="danger" leftText="折扣" rightText="限购一份" />
+    </view>
   </zan-panel>
 
   <zan-panel title='自定义颜色'>
-    <zan-capsule color="#38f" leftText="1折扣" rightText="限购一份" />
+    <view class="capsule-demo">
+      <zan-capsule color="#38f" leftText="折扣" rightText="限购一份" />
+    </view>
   </zan-panel>
-
-</view>
+</doc-page>

@@ -7,7 +7,7 @@ Component({
     // 标题
     title: {
       type: String,
-      value: '标题'
+      value: ''
     },
     // 内容区顶部是否取消10像素的间距
     hideTop :{

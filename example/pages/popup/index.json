@@ -2,7 +2,8 @@
   "navigationBarTitleText": "Popup 弹出层",
   "usingComponents": {
     "doc-page": "../../components/doc-page/index",
-    "zan-popup": "../../dist/popup/index"
+    "zan-popup": "../../dist/popup/index",
+    "zan-button": "../../dist/btn/index"
   }  
 }
 

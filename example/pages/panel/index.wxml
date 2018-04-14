@@ -1,22 +1,15 @@
-<view class="container">
+<doc-page title="PANEL" without-padding>
 
-  <view class="doc-title zan-hairline--bottom">PANEL</view>
+  <zan-panel class="panel-example">
+    <view style="padding: 15px;">PANEL 内容区域</view>
+  </zan-panel>
 
-  <view class="zan-panel-title">标题</view>
-  <view class="zan-panel">
-    <view style="padding: 15px;">内容</view>
-  </view>
+  <zan-panel title="标题" class="panel-example">
+    <view style="padding: 15px;">带有标题的 PANEL</view>
+  </zan-panel>
 
-  <view class="zan-panel">
-    <view style="padding: 15px;">内容</view>
-  </view>
-
-  <view class="zan-panel zan-panel--without-border">
+  <zan-panel title="标题" hide-border="{{ true }}" class="panel-example">
     <view style="padding: 15px;">无边框的panel</view>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel">
-    <view style="padding: 15px;">内容</view>
-  </view>
-
-</view>
+</doc-page>

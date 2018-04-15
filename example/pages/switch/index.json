@@ -1,7 +1,9 @@
 {
   "navigationBarTitleText": "Switch 开关",
   "usingComponents": {
-    "zan-switch": "/packages/switch/index",
-    "zan-panel": "/packages/panel/index"
+    "zan-switch": "../../dist/switch/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "doc-page": "../../components/doc-page/index"
   }
 }

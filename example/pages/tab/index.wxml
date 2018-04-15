@@ -1,16 +1,20 @@
-<import src="/dist/tab/index.wxml" />
+<doc-page title="TAB" without-padding>
 
-<view class="container">
+  <view style="margin: 30px 0">
+    <zan-tab
+      list="{{ tab.list }}"
+      selected-id="{{ tab.selectedId }}"
+    />
+  </view>
 
-  <view class="doc-title zan-hairline--bottom">TAB</view>
-
-  <view style="margin: 20px 0">
+  <view style="margin: 30px 0">
     <zan-tab
       list="{{ tab1.list }}"
       selected-id="{{ tab1.selectedId }}"
     />
   </view>
-  <view style="margin: 20px 0">
+
+  <view style="margin: 30px 0">
     <zan-tab
       list="{{ tab2.list }}"
       selected-id="{{ tab2.selectedId }}"
@@ -18,13 +22,5 @@
       height="{{ tab2.height }}"
     />
   </view>
-  <view style="margin: 20px 0">
-    <zan-tab
-      list="{{ tab3.list }}"
-      selected-id="{{ tab3.selectedId }}"
-      scroll="{{ tab3.scroll }}"
-      fixed="{{ tab3.fixed }}"
-      height="{{ tab3.height }}"
-    />
-  </view>
-</view>
+    
+</doc-page>

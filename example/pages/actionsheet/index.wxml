@@ -1,17 +1,18 @@
-<view class="container">
-  <view class="doc-title zan-hairline--bottom zan-hairline--bottom">ACTIONSHEET</view>
+
+<doc-page title="ACTIONSHEET">
   <view class="zan-btns" style="margin-top: 30vh;">
-    <button class="zan-btn" bindtap="openActionsheet">
+    <zan-button bind:btnclick="openActionsheet">
       Actionsheet
-    </button>
-    <zan-actionsheet
-      show="{{ show }}"
-      actions="{{ actions }}"
-      cancel-text="{{ cancelText }}"
-      cancel-with-mask="{{ cancelWithMask }}"
-      bind:cancel="closeActionSheet"
-      bind:actionclick="clickAction"
-      mask-class="tiny"
-    />
+    </zan-button>
   </view>
-</view>
+
+  <zan-actionsheet
+    show="{{ show }}"
+    actions="{{ actions }}"
+    cancel-text="{{ cancelText }}"
+    cancel-with-mask="{{ cancelWithMask }}"
+    bind:cancel="closeActionSheet"
+    bind:actionclick="clickAction"
+    mask-class="tiny"
+  />
+</doc-page>

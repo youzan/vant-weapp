@@ -1,9 +1,6 @@
-<import src="/dist/field/index.wxml" />
-
-<doc-page title="Field">
+<doc-page title="Field" without-padding>
   <!-- Field 基础用法 -->
-  <view class="zan-panel-title">基础用法</view>
-  <view class="zan-panel">
+  <zan-panel title="基础用法">
     <zan-field
       title="{{ config.base.name.title }}"
       placeholder="{{ config.base.name.placeholder }}"
@@ -30,65 +27,55 @@
       disabled="{{ config.base.disabled.disabled }}"
     >
     </zan-field>
-  </view>
+  </zan-panel>
   
   <view class="zan-btns">
-    <button
-      class="zan-btn zan-btn--primary"
-      bindtap="clearInput"
-    >
-      清除输入
-    </button>
+    <zan-button type="primary" bind:btnclick="clearInput">清除输入</zan-button>
   </view>
 
   <!-- 去除标题后的输入框样式 -->
-  <view class="zan-panel-title">无标题输入框</view>
-  <view class="zan-panel">
+  <zan-panel title="无标题输入框">
     <zan-field
       placeholder="{{ config.notitle.placeholder }}"
       value="{{ textareaValue }}"
     >
     </zan-field>
-  </view>
+  </zan-panel>
 
   <view class="zan-btns">
-    <button
-      class="zan-btn zan-btn--primary"
-      bindtap="clearTextarea"
-    >
-      清除输入
-    </button>
+    <zan-button type="primary" bind:btnclick="clearTextarea">清除输入</zan-button>
   </view>
 
   <!-- 使用 Field 圆角样式 -->
-  <view class="zan-panel-title field__title--radius">圆角输入框</view>
-  <zan-field
-    title="{{ config.radius.totalPrice.title }}"
-    type="{{ config.radius.totalPrice.type }}"
-    placeholder="{{ config.radius.totalPrice.placeholder }}"
-    right="{{ config.radius.totalPrice.right }}"
-    mode="{{ config.radius.totalPrice.mode }}"
-  >
-  </zan-field>
-  <zan-field
-    class="zan-field--radius"
-    title="{{ config.radius.excludePrice.title }}"
-    type="{{ config.radius.excludePrice.type }}"
-    placeholder="{{ config.radius.excludePrice.placeholder }}"
-    right="{{ config.radius.excludePrice.right }}"
-    mode="{{ config.radius.excludePrice.mode }}"
-    error="{{ config.radius.excludePrice.error }}"
-  >
-  </zan-field>
-  <zan-field
-    placeholder="{{ config.radius.notitle.placeholder }}"
-    mode="{{ config.radius.notitle.mode }}"
-    input-type="{{ config.radius.notitle.inputTitle }}"
-  >
-  </zan-field>
-
-  <view class="zan-panel-title">Form 表单中的field应用</view>
-  <form bindsubmit="formSubmit" bindreset="formReset">
+  <zan-panel title="圆角输入框">
+    <zan-field
+      title="{{ config.radius.totalPrice.title }}"
+      type="{{ config.radius.totalPrice.type }}"
+      placeholder="{{ config.radius.totalPrice.placeholder }}"
+      right="{{ config.radius.totalPrice.right }}"
+      mode="{{ config.radius.totalPrice.mode }}"
+    >
+    </zan-field>
+    <zan-field
+      class="zan-field--radius"
+      title="{{ config.radius.excludePrice.title }}"
+      type="{{ config.radius.excludePrice.type }}"
+      placeholder="{{ config.radius.excludePrice.placeholder }}"
+      right="{{ config.radius.excludePrice.right }}"
+      mode="{{ config.radius.excludePrice.mode }}"
+      error="{{ config.radius.excludePrice.error }}"
+    >
+    </zan-field>
+    <zan-field
+      placeholder="{{ config.radius.notitle.placeholder }}"
+      mode="{{ config.radius.notitle.mode }}"
+      input-type="{{ config.radius.notitle.inputTitle }}"
+    >
+    </zan-field>
+  </zan-panel>
+  
+  <!-- <view class="zan-panel-title">Form 表单中的field应用</view> -->
+  <!-- <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="zan-panel">
       <zan-field
         name="{{ config.form.name.name }}"
@@ -110,33 +97,5 @@
           formType="reset">重置数据</button>
       </view>
     </view>
-  </form>
-
-  <view class="zan-panel-title">自定义显示内容</view>
-  <view class="zan-panel">
-    <!-- 简单 picker 示例 -->
-    <view class="zan-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">选择区域</view>
-      <picker
-        mode="selector"
-        class="zan-field__input zan-cell__bd"
-        range="{{ area }}"
-        value="{{ areaIndex }}"
-        bindchange="onAreaChange"
-      >
-        {{ area[areaIndex] }}
-      </picker>
-    </view>
-
-    <view class="zan-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">验证码</view>
-      <input
-        type="text"
-        placeholder="请输入短信验证码"
-        class="zan-field__input zan-cell__bd"/>
-      <view class="zan-cell__ft">
-        <button class="zan-btn zan-btn--mini zan-btn--primary">获取验证码</button>
-      </view>
-    </view>
-  </view>
+  </form> -->
 </doc-page>

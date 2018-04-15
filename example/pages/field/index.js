@@ -1,6 +1,6 @@
 const config = require('./config');
 
-Page(Object.assign({}, {
+Page({
   data: {
     config,
     value: 'test',
@@ -79,4 +79,4 @@ Page(Object.assign({}, {
     });
   }
 
-}));
+});

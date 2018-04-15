@@ -1,40 +1,43 @@
-<doc-page title="Stepper">
-  <view class="zan-panel-title">基础用法</view>
-  <view style="padding: 40px 15px">
-    <zan-stepper
-      stepper="{{ stepper1.stepper }}"
-      min="{{ stepper1.min }}"
-      max="{{ stepper1.max }}"
-      data-component-id="stepper1"
-      bind:change="handleZanStepperChange"
-    >
-    </zan-stepper>
-  </view>
+<doc-page title="Stepper" without-padding>
+  <zan-panel title="基础用法">
+    <view style="padding: 40px 15px">
+      <zan-stepper
+        stepper="{{ stepper1.stepper }}"
+        min="{{ stepper1.min }}"
+        max="{{ stepper1.max }}"
+        data-component-id="stepper1"
+        bind:change="handleZanStepperChange"
+      >
+      </zan-stepper>
+    </view>
+  </zan-panel>
 
   <!-- small size -->
-  <view class="zan-panel-title">不同尺寸</view>
-  <view style="padding: 40px 15px">
-    <zan-stepper
-      stepper="{{ stepper2.stepper }}"
-      min="{{ stepper2.min }}"
-      max="{{ stepper2.max }}"
-      size="small"
-      data-component-id="stepper2"
-      bind:change="handleZanStepperChange"
-    >
-    </zan-stepper>
-  </view>
+  <zan-panel title="不同尺寸-小尺寸类型">
+    <view style="padding: 40px 15px">
+      <zan-stepper
+        stepper="{{ stepper2.stepper }}"
+        min="{{ stepper2.min }}"
+        max="{{ stepper2.max }}"
+        size="small"
+        data-component-id="stepper2"
+        bind:change="handleZanStepperChange"
+      >
+      </zan-stepper>
+    </view>
+  </zan-panel>
 
-  <view class="zan-panel-title">高级用法</view>
-  <view style="padding: 40px 15px">
-    <zan-stepper
-      stepper="{{ stepper3.stepper }}"
-      min="{{ stepper3.min }}"
-      max="{{ stepper3.max }}"
-      step="{{ stepper3.step }}"
-      data-component-id="stepper3"
-      bind:change="handleZanStepperChange"
-    >
-    </zan-stepper>
-  </view>
+  <zan-panel title="高级用法-每次变动数量自定义">
+    <view style="padding: 40px 15px">
+      <zan-stepper
+        stepper="{{ stepper3.stepper }}"
+        min="{{ stepper3.min }}"
+        max="{{ stepper3.max }}"
+        step="{{ stepper3.step }}"
+        data-component-id="stepper3"
+        bind:change="handleZanStepperChange"
+      >
+      </zan-stepper>
+    </view>
+  </zan-panel>
 </doc-page>

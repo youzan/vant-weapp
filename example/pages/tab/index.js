@@ -1,5 +1,18 @@
 Page({
   data: {
+    tab: {
+      list: [{
+        id: 1,
+        title: '选项1'
+      }, {
+        id: 2,
+        title: '选项2'
+      }, {
+        id: 3,
+        title: '选项3'
+      }],
+      selectedId: 1
+    },
     tab1: {
       list: [{
         id: 'all',
@@ -13,9 +26,6 @@ Page({
       }, {
         id: 'send',
         title: '待收货'
-      }, {
-        id: 'sign',
-        title: '已完成订单'
       }],
       selectedId: 'all'
     },
@@ -41,32 +51,7 @@ Page({
       }],
       selectedId: '1',
       scroll: true,
-      height: 80
-    },
-    tab3: {
-      list: [{
-        id: '1',
-        title: '商品1'
-      }, {
-        id: '2',
-        title: '商品2'
-      }, {
-        id: '3',
-        title: '商品3'
-      }, {
-        id: '4',
-        title: '商品4'
-      }, {
-        id: '5',
-        title: '商品5'
-      }, {
-        id: '6',
-        title: '商品6'
-      }],
-      selectedId: '1',
-      height: 45,
-      scroll: true,
-      fixed: true
+      height: 45
     }
   }
 });

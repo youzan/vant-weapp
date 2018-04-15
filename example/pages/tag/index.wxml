@@ -1,30 +1,28 @@
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">Tag</view>
-
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--last-child">
+<doc-page title="Tag" without-padding>
+  <zan-panel title="基础用法" class="tag-demo">
+    <zan-cell>
       <zan-tag>灰色</zan-tag>
       <zan-tag type="danger">红色</zan-tag>
       <zan-tag disabled>不可用</zan-tag>
-    </view>
-  </view>
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--last-child">
+    </zan-cell>
+  </zan-panel>
+
+  <zan-panel title="各种不同类型" class="tag-demo">
+    <zan-cell>
       <zan-tag type="danger">会员折扣</zan-tag>
       <zan-tag type="warn">返现</zan-tag>
       <zan-tag type="primary">返现</zan-tag>
       <zan-tag type="primary" disabled>不可用</zan-tag>
-    </view>
-  </view>
+    </zan-cell>
+  </zan-panel>
 
-    <view class="zan-panel">
-    <view class="zan-cell zan-cell--last-child">
+  <zan-panel title="镂空 Tag" class="tag-demo">
+    <zan-cell>
       <zan-tag plain>灰色</zan-tag>
       <zan-tag type="danger" plain>会员折扣</zan-tag>
       <zan-tag type="warn" plain>返现</zan-tag>
       <zan-tag type="primary" plain>返现</zan-tag>
       <zan-tag type="primary" plain disabled>返现不可用</zan-tag>
-    </view>
-  </view>
-</view>
+    </zan-cell>
+  </zan-panel>
+</doc-page>

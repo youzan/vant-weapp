@@ -22,7 +22,10 @@ Component({
         return;
       }
       let checked = !this.data.checked;
-      this.triggerEvent('change', event, { loading, checked });
+      this.triggerEvent('change', {
+        checked,
+        loading: this.data.loading
+      });
     }
   }
 });

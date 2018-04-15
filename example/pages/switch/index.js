@@ -11,26 +11,20 @@ Page(Object.assign({}, Zan.Switch, {
     },
   },
 
-  syncChange(e, data) {
+  syncChange({ detail }) {
     this.setData({
-      sync: {
-        checked: data.checked
-      }
+      'sync.checked': detail.checked
     });
   },
 
-  asyncChange(e, data) {
+  asyncChange({ detail }) {
     this.setData({
-      async: {
-        loading: true
-      }
+      'async.loading': true
     });
     setTimeout(() => {
       this.setData({
-        async: {
-          loading: false,
-          checked: data.checked
-        }
+        'async.loading': false,
+        'async.checked': detail.checked
       });
     }, 500);
   }

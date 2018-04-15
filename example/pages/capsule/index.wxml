@@ -1,22 +1,15 @@
-<import src="/dist/capsule/index.wxml" />
+<doc-page title="CAPSULE" without-padding>
 
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">CAPSULE</view>
-
-  <view class="zan-panel-title">基本用法</view>
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--last-child">
-      <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份'}}" />
-      <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份', type: 'danger' }}" />
+  <zan-panel title='基本用法'>
+    <view class="capsule-demo">
+      <zan-capsule leftText="折扣" rightText="限购一份" />
+      <zan-capsule type="danger" leftText="折扣" rightText="限购一份" />
     </view>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel-title">自定义颜色</view>
-  <view class="zan-panel">
-    <view class="zan-cell zan-cell--last-child">
-      <template is="capsule" data="{{ leftText: '1折', rightText: '限购一份', color: '#38f' }}" />
+  <zan-panel title='自定义颜色'>
+    <view class="capsule-demo">
+      <zan-capsule color="#38f" leftText="折扣" rightText="限购一份" />
     </view>
-  </view>
-
-</view>
+  </zan-panel>
+</doc-page>

@@ -5,30 +5,31 @@
   <view class="doc-title zan-hairline--bottom">TOAST</view>
 
   <view class="zan-btns" style="margin-top: 15vh;">
-    <button class="zan-btn" bindtap="showToast">
+    <zan-button bind:btnclick="showToast">
       显示toast
-    </button>
+    </zan-button>
 
-    <button class="zan-btn" bindtap="showIconToast">
+    <zan-button bind:btnclick="showIconToast">
       显示 Icon 图标的toast
-    </button>
+    </zan-button>
 
-    <button class="zan-btn" bindtap="showImageToast">
+    <zan-button bind:btnclick="showImageToast">
       自定义图片作为图标的toast
-    </button>
+    </zan-button>
 
-    <button class="zan-btn" bindtap="showLoadingToast">
+    <zan-button bind:btnclick="showLoadingToast">
       显示 Loading toast
-    </button>
+    </zan-button>
 
-    <button class="zan-btn" bindtap="showOnlyIcon">
+    <zan-button bind:btnclick="showOnlyIcon">
       只显示图标的toast
-    </button>
+    </zan-button>
 
-    <button class="zan-btn" bindtap="showLoading">
+    <zan-button bind:btnclick="showLoading">
       显示 Loading
-    </button>
+    </zan-button>
   </view>
 </view>
 
-<template is="zan-toast" data="{{ zanToast }}"></template>
+<!-- <template is="zan-toast" data="{{ zanToast }}"></template> -->
+<zan-toast id="zan-toast-test"></zan-toast>

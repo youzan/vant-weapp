@@ -16,9 +16,13 @@
   right: 0;
 }
 
-.zan-cell__icon {
+.zan-cell .zan-cell__icon {
   margin-right: 5px;
 }
+.zan-cell .zan-cell__icon:empty {
+  display: none
+}
+
 .zan-cell__bd {
   flex: 1;
 }
@@ -49,8 +53,7 @@
   padding: 12px 15px 12px 0;
 }
 
-.zan-cell--last-child::after,
-.zan-cell:last-child::after {
+.zan-cell.last-cell::after {
   display: none;
 }
 

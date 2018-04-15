@@ -1,23 +1,21 @@
-<import src="/dist/switch/index.wxml" />
+<doc-page title="SWITCH" without-padding>
 
-<view class="container">
+  <zan-panel title='同步开关'>
+    <zan-cell>
+      <zan-switch checked="{{sync.checked}}" bind:change="syncChange" />
+    </zan-cell>
+  </zan-panel>
 
-  <view class="doc-title zan-hairline--bottom">SWITCH</view>
+  <zan-panel title='同步开关'>
+    <zan-cell>
+      <zan-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
+    </zan-cell>
+  </zan-panel>
 
-  <view class="zan-panel-title">同步开关</view>
-  <view class="zan-panel">
-    <template is="zan-switch" data="{{ ...sync, componentId: 'sync' }}" />
-  </view>
+  <zan-panel title='禁止改动的开关'>
+    <zan-cell>
+      <zan-switch disabled="{{ false }}" />
+    </zan-cell>
+  </zan-panel>
 
-  <view class="zan-panel-title">异步开关</view>
-  <view class="zan-panel">
-    <template is="zan-switch" data="{{ ...async, componentId: 'async' }}" />
-  </view>
-
-  <view class="zan-panel-title">开关不可用</view>
-  <view class="zan-panel">
-    <template is="zan-switch" data="{{ checked: false, disabled: true, componentId: 'switch3' }}" />
-    <template is="zan-switch" data="{{ checked: true, disabled: true, componentId: 'switch4' }}" />
-  </view>
-
-</view>
+</doc-page>

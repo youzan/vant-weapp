@@ -8,6 +8,7 @@
     "zan-icon": "path/to/zanui-weapp/dist/icon/index"
   }
 }
+```
 
 ### 代码演示
 可以在任意位置上使用 zan-icon 标签。通过 type 可以控制 icon 显示的图标

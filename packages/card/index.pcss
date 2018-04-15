@@ -1,6 +1,9 @@
+@import "../color/index.pcss";
+@import "../helper/index.pcss";
+
 .zan-card {
+  display: flex;
   margin-left: 0px;
-  width: auto;
   padding: 5px 15px;
   overflow: hidden;
   position: relative;
@@ -10,7 +13,6 @@
 .zan-card__thumb {
   width: 90px;
   height: 90px;
-  float: left;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -31,8 +33,8 @@
 }
 
 .zan-card__detail {
-  margin-left: 100px;
-  width: auto;
+  flex: 1;
+  margin-left: 10px;
   position: relative;
 }
 

@@ -1,3 +1,7 @@
+.capsule-demo {
+  padding: 15px 0;
+}
+
 .zan-capsule + .zan-capsule {
   margin-left: 10px;
 }

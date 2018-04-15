@@ -1,6 +1,4 @@
-var Zan = require('../../dist/index');
-
-Page(Object.assign({}, Zan.Stepper, {
+Page(Object.assign({}, {
   data: {
     stepper1: {
       stepper: 10,
@@ -8,20 +6,21 @@ Page(Object.assign({}, Zan.Stepper, {
       max: 20
     },
     stepper2: {
-      stepper: 1,
+      stepper: 10,
       min: 1,
-      max: 1
+      max: 20
     },
     stepper3: {
       stepper: 10,
       min: 1,
-      max: 20
+      max: 20,
+      step: 2
     }
   },
 
   handleZanStepperChange(e) {
-    var componentId = e.componentId;
-    var stepper = e.stepper;
+    const componentId = e.target.dataset.componentId;
+    const stepper = e.detail;
 
     this.setData({
       [`${componentId}.stepper`]: stepper

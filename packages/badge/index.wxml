@@ -1,0 +1,8 @@
+<view class="zan-badge">
+  <text
+    class="zan-badge__text"
+    style="color: {{ color }}; background-color: {{ backgroundColor }};font-size: {{ fontSize * 2 }}px; box-shadow: {{ boxShadow }};"
+  >
+    <slot></slot>
+  </text>
+</view>

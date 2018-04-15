@@ -1,67 +1,93 @@
-<import src="/dist/field/index.wxml" />
-
-<view class="container">
-  <view class="doc-title zan-hairline--bottom">Field</view>
-
+<doc-page title="Field" without-padding>
   <!-- Field 基础用法 -->
-  <view class="zan-panel-title">基础用法</view>
-  <view class="zan-panel">
-    <template
-      is="zan-field"
-      data="{{ ...config.base.name, value }}"></template>
-    <template
-      is="zan-field"
-      data="{{ ...config.base.tel }}"></template>
-    <template
-      is="zan-field"
-      data="{{ ...config.base.address }}"></template>
-    <template
-      is="zan-field"
-      data="{{ ...config.base.disabled }}"></template>
-  </view>
-
+  <zan-panel title="基础用法">
+    <zan-field
+      title="{{ config.base.name.title }}"
+      placeholder="{{ config.base.name.placeholder }}"
+      focus="{{ config.base.name.focus }}"
+      value="{{ value }}"
+    >
+    </zan-field>
+    <zan-field
+      title="{{ config.base.tel.title }}"
+      placeholder="{{ config.base.tel.placeholder }}"
+      error="{{ config.base.tel.error }}"
+      input-type="{{ config.base.tel.inputType }}"
+    >
+    </zan-field>
+    <zan-field
+      title="{{ config.base.address.title }}"
+      type="{{ config.base.address.type }}"
+      placeholder="{{ config.base.address.placeholder }}"
+    >
+    </zan-field>
+    <zan-field
+      title="{{ config.base.disabled.title }}"
+      value="{{ config.base.disabled.value }}"
+      disabled="{{ config.base.disabled.disabled }}"
+    >
+    </zan-field>
+  </zan-panel>
+  
   <view class="zan-btns">
-    <button
-      class="zan-btn zan-btn--primary"
-      bindtap="clearInput">清除输入</button>
+    <zan-button type="primary" bind:btnclick="clearInput">清除输入</zan-button>
   </view>
 
   <!-- 去除标题后的输入框样式 -->
-  <view class="zan-panel-title">无标题输入框</view>
-  <view class="zan-panel">
-    <template
-      is="zan-field"
-      data="{{ ...config.notitle, value: textareaValue }}"></template>
-  </view>
+  <zan-panel title="无标题输入框">
+    <zan-field
+      placeholder="{{ config.notitle.placeholder }}"
+      value="{{ textareaValue }}"
+    >
+    </zan-field>
+  </zan-panel>
 
   <view class="zan-btns">
-    <button
-      class="zan-btn zan-btn--primary"
-      bindtap="clearTextarea">清除输入</button>
+    <zan-button type="primary" bind:btnclick="clearTextarea">清除输入</zan-button>
   </view>
 
   <!-- 使用 Field 圆角样式 -->
-  <view class="zan-panel-title field__title--radius">圆角输入框</view>
-  <template
-    is="zan-field"
-    data="{{ ...config.radius.totalPrice }}"></template>
-  <template
-    is="zan-field"
-    data="{{ ...config.radius.excludePrice }}"></template>
-  <template
-    is="zan-field"
-    data="{{ ...config.radius.notitle }}"></template>
-
-  <!-- form 中使用 Field -->
-  <view class="zan-panel-title">Form 表单中的field应用</view>
-  <form bindsubmit="formSubmit" bindreset="formReset">
+  <zan-panel title="圆角输入框">
+    <zan-field
+      title="{{ config.radius.totalPrice.title }}"
+      type="{{ config.radius.totalPrice.type }}"
+      placeholder="{{ config.radius.totalPrice.placeholder }}"
+      right="{{ config.radius.totalPrice.right }}"
+      mode="{{ config.radius.totalPrice.mode }}"
+    >
+    </zan-field>
+    <zan-field
+      class="zan-field--radius"
+      title="{{ config.radius.excludePrice.title }}"
+      type="{{ config.radius.excludePrice.type }}"
+      placeholder="{{ config.radius.excludePrice.placeholder }}"
+      right="{{ config.radius.excludePrice.right }}"
+      mode="{{ config.radius.excludePrice.mode }}"
+      error="{{ config.radius.excludePrice.error }}"
+    >
+    </zan-field>
+    <zan-field
+      placeholder="{{ config.radius.notitle.placeholder }}"
+      mode="{{ config.radius.notitle.mode }}"
+      input-type="{{ config.radius.notitle.inputTitle }}"
+    >
+    </zan-field>
+  </zan-panel>
+  
+  <!-- <view class="zan-panel-title">Form 表单中的field应用</view> -->
+  <!-- <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="zan-panel">
-      <template
-        is="zan-field"
-        data="{{ ...config.form.name }}"></template>
-      <template
-        is="zan-field"
-        data="{{ ...config.form.tel }}"></template>
+      <zan-field
+        name="{{ config.form.name.name }}"
+        placeholder="{{ config.form.name.placeholder }}"
+      >
+      </zan-field>
+      <zan-field
+        name="{{ config.form.tel.name }}"
+        placeholder="{{ config.form.tel.placeholder }}"
+        input-type="{{ config.form.tel.inputType }}"
+      >
+      </zan-field>
       <view class="zan-btns">
         <button
           class="zan-btn zan-btn--primary"
@@ -71,72 +97,5 @@
           formType="reset">重置数据</button>
       </view>
     </view>
-  </form>
-
-  <view class="zan-panel-title">自定义显示内容</view>
-  <view class="zan-panel">
-    <!-- 配合 popup 使用 picker-view -->
-    <view class="zan-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">人员信息</view>
-      <view
-        class="zan-field__input zan-cell__bd"
-        bindtap="handleDateFieldClick"
-      >
-        出生日期: {{ pickerViewConfig.year[pickerViewConfig.value[0]] }}
-        性别: {{ pickerViewConfig.sex[pickerViewConfig.value[1]] }}
-      </view>
-    </view>
-    <!-- 对应的 popup 层 -->
-    <view
-      class="zan-popup zan-popup--bottom {{ pickerViewConfig.show ? 'zan-popup--show' : ''}}"
-    >
-      <view class="zan-popup__mask" bindtap="hideDatePopup"></view>
-      <view class="zan-popup__container popup-field-example--bottom">
-        <picker-view
-          value="{{ pickerViewConfig.value }}"
-          indicator-style="height: 50px"
-          class="picker-view-example"
-          bindchange="handlePopupDateChange"
-        >
-          <picker-view-column>
-            <view
-              class="picker-view-column-example"
-              wx:for="{{ pickerViewConfig.year }}"
-            >{{item}}年</view>
-          </picker-view-column>
-          <picker-view-column>
-            <view
-              class="picker-view-column-example"
-              wx:for="{{ pickerViewConfig.sex }}"
-            >{{item}}</view>
-          </picker-view-column>
-        </picker-view>
-      </view>
-    </view>
-
-    <!-- 简单 picker 示例 -->
-    <view class="zan-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">选择区域</view>
-      <picker
-        mode="selector"
-        class="zan-field__input zan-cell__bd"
-        range="{{ area }}"
-        value="{{ areaIndex }}"
-        bindchange="onAreaChange"
-      >
-        {{ area[areaIndex] }}
-      </picker>
-    </view>
-
-    <view class="zan-cell zan-field">
-      <view class="zan-cell__hd zan-field__title">验证码</view>
-      <input
-        type="text"
-        placeholder="请输入短信验证码"
-        class="zan-field__input zan-cell__bd"/>
-      <view class="zan-cell__ft">
-        <button class="zan-btn zan-btn--mini zan-btn--primary">获取验证码</button>
-      </view>
-    </view>
-  </view>
-</view>
+  </form> -->
+</doc-page>

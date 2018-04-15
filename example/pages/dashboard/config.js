@@ -27,6 +27,9 @@ export default {
         name: 'Layout 布局',
         path: '/pages/layout/index'
       }, {
+        name: 'loading 加载',
+        path: '/pages/loading/index'
+      }, {
         name: 'Noticebar 通告栏',
         path: '/pages/noticebar/index'
       }, {

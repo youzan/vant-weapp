@@ -51,8 +51,8 @@ npm run dev
 如按钮组件，只需要在页面中引入按钮自定义组件即可
 ```json
 {
-	"usingComponents": {
-		"zan-button": "/path/to/zanui-weapp/dist/btn/index"
+    "usingComponents": {
+        "zan-button": "/path/to/zanui-weapp/dist/btn/index"
     }
 }
 ```
@@ -70,8 +70,8 @@ npm run dev
 如 Toast 组件，需要先在页面上引入自定义组件。之后在逻辑运行时，直接调用方法即可展示
 ```json
 {
-	"usingComponents": {
-		"zan-toast": "/path/to/zanui-weapp/dist/toast/index"
+    "usingComponents": {
+        "zan-toast": "/path/to/zanui-weapp/dist/toast/index"
     }
 }
 ```
@@ -89,9 +89,9 @@ const Toast = require('/path/to/zanui-weapp/dist/toast/toast');
 Page({
   showToast() {
     Toast({
-		selector: '#zan-toast-test',
-		message: 'toast内容'
-	});
+        selector: '#zan-toast-test',
+        message: 'toast内容'
+    });
   }
 });
 

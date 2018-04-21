@@ -25,14 +25,12 @@ Page(Object.assign({}, Zan.Select, Zan.TopTips, {
     activeColor: '#4b0'
   },
 
-  handleZanSelectChange({ componentId, value }) {
+  handleSelectChange({ currentTarget = {}, detail = {} }) {
+    const { value = '' } = detail;
+    const { dataset = {} } = currentTarget;
+    const type = dataset.type;
     this.setData({
-      [`checked.${componentId}`]: value
+      [`checked.${type}`]: value
     });
-  },
-
-  formSubmit(event) {
-    console.log('[zan:field:submit]', event.detail.value);
-    this.showZanTopTips(`选中的值为${event.detail.value.formtest}`);
   }
 }));

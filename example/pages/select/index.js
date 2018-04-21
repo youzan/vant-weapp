@@ -1,6 +1,6 @@
 var Zan = require('../../dist/index');
 
-Page(Object.assign({}, Zan.Select, Zan.TopTips, {
+Page({
 
   data: {
     items: [
@@ -33,4 +33,4 @@ Page(Object.assign({}, Zan.Select, Zan.TopTips, {
       [`checked.${type}`]: value
     });
   }
-}));
+});

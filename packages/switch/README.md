@@ -24,11 +24,9 @@
 ```js
 Page({
   data: {
-    field: {
-      disabled: false,
-      checked: false,
-      loading: false
-    }
+    disabled: false,
+    checked: false,
+    loading: false
   },
 
   methods: {

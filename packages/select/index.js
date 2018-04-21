@@ -19,9 +19,9 @@ Component({
   },
 
   methods: {
-    _handleZanSelectChange(e) {
+    handleSelectChange(e) {
       const value = e.detail.value;
-      this.triggerEvent('change', event, { value });
+      this.triggerEvent('change', { value });
     }
   }
 });

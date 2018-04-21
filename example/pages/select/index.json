@@ -1,7 +1,8 @@
 {
   "navigationBarTitleText": "Select 选择",
   "usingComponents": {
-    "zan-panel": "/packages/panel/index",
-    "zan-select": "/packages/select/index"
+    "doc-page": "../../components/doc-page/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-select": "../../dist/select/index"
   }
 }

@@ -1,24 +1,20 @@
-<import src="/dist/toptips/index.wxml" />
-
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">SELECT</view>
-
+<doc-page title="SELECT" without-padding>
   <zan-panel title='基本用法'>
     <zan-select
       items="{{ items }}"
+      data-type="base"
       checkedValue="{{ checked.base }}"
-      bind:change="handleFieldChange"
+      bind:change="handleSelectChange"
     />
   </zan-panel>
 
   <zan-panel title='自定义高亮颜色'>
     <zan-select
       items="{{ items }}"
-      checkedValue="{{ checked.base }}"
+      data-type="color"
+      checkedValue="{{ checked.color }}"
       activeColor="{{ activeColor }}"
-      bind:change="handleFieldChange"
+      bind:change="handleSelectChange"
     />
   </zan-panel>
-
-<template is="zan-toptips" data="{{ zanTopTips }}"></template>
+</doc-page>

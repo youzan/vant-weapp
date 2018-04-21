@@ -16,7 +16,7 @@
   items="{{ items }}"
   checkedValue="{{ checkedValue }}"
   activeColor="{{ activeColor }}"
-  bind:change="handleFieldChange"
+  bind:change="handleSelectChange"
 />
 ```
 ```js
@@ -24,15 +24,11 @@ Page({
   data: {
     items: [
       {
-        // 当前选项离左侧的距离
-        padding: 0,
-        // 当前选项的值，在被选中时，会在 handleZanSelectChange 中获取到
         value: '1',
         // 选项文案
         name: '选项一',
       },
       {
-        padding: 0,
         value: '2',
         name: '选项二',
       },
@@ -42,8 +38,8 @@ Page({
   },
 
   methods: {
-    handleFieldChange(event, data) {
-      console.log(event, data);
+    handleSelectChange({ detail }) {
+      console.log(detail);
     }
   }
 });
@@ -57,3 +53,21 @@ Page({
 | items | select 显示各个项的配置 | Array | - | |
 | checkedValue | 高亮的 item 的 value 值 | String | - | |
 | activeColor | Select 高亮颜色 | String | #ff4444 | |
+
+items 具体格式如下
+```js
+{
+  items: [
+    {
+      // 选项选中时，代表的选中值。会以此作为唯一值，判断是否选中
+      value: '1',
+      // 选项的文字描述
+      name: '选项一',
+    },
+    {
+      value: '2',
+      name: '选项二',
+    },
+  ]
+}
+```

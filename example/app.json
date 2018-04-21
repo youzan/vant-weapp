@@ -12,7 +12,7 @@
     "pages/helper/index",
     "pages/icon/index",
     "pages/layout/index",
-    "pages/loadmore/index",
+    "pages/loading/index",
     "pages/noticebar/index",
     "pages/panel/index",
     "pages/popup/index",

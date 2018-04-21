@@ -84,6 +84,6 @@ module.exports = {
         }
       }
     ],
-    include: {}
+    include: { loading: require('./packages/loading/README.md') }
   }
 }

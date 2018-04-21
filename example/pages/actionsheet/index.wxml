@@ -1,15 +1,18 @@
-<import src="/dist/actionsheet/index.wxml" />
 
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom zan-hairline--bottom">ACTIONSHEET</view>
-
+<doc-page title="ACTIONSHEET">
   <view class="zan-btns" style="margin-top: 30vh;">
-    <button class="zan-btn" bindtap="toggleActionsheet">
+    <zan-button bind:btnclick="openActionsheet">
       Actionsheet
-    </button>
+    </zan-button>
   </view>
 
-  <template is="zan-actionsheet" data="{{ ...baseActionsheet }}"></template>
-
-</view>
+  <zan-actionsheet
+    show="{{ show }}"
+    actions="{{ actions }}"
+    cancel-text="{{ cancelText }}"
+    cancel-with-mask="{{ cancelWithMask }}"
+    bind:cancel="closeActionSheet"
+    bind:actionclick="clickAction"
+    mask-class="tiny"
+  />
+</doc-page>

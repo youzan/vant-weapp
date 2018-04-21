@@ -1,32 +1,23 @@
 ## Capsule 胶囊
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
-```
-
-在需要使用的模板里引入组件库模板
-```html
-<import src="path/to/zanui-weapp/dist/capsule/index.wxml" />
+在 index.json 中引入组件
+```json
+{
+  "usingComponents": {
+    "zan-capsule": "/packages/capsule/index"
+  }
+}
 ```
 
 ### 代码演示
-
-#### 基础用法
-可以用 leftText 和 rightText 控制左右文案
+Panel 提供了一块白色的展示区域，使用方式如下
 ```html
-<template is="capsule" data="{{ leftText: '1折', rightText: '限购一份'}}" />
+<zan-capsule color="#38f" leftText="1折扣" rightText="限购一份" />
 ```
-
-#### 使用不同类型胶囊
-按钮支持额外的三种类型 primary, danger, warn
-```html
-<template is="capsule" data="{{ leftText: '1折', rightText: '限购一份', type: 'danger' }}" />
-```
-
-#### 自定义颜色
-通过 color 熟悉，可以自定义显示的颜色
-```html
-<template is="capsule" data="{{ leftText: '1折', rightText: '限购一份', color: '#38f' }}" />
-```
+| 参数       | 说明      | 类型       | 默认值       | 必须      |
+|-----------|-----------|-----------|-------------|-------------|
+| type | capsule的主体颜色 | String | ''（有danger这个主题色） | |
+| color | 自定义capsule颜色 | String | - | |
+| leftText | 左侧文案 | String | - | |
+| rightText | 右侧文案 | String | - | |

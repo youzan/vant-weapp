@@ -1,15 +1,19 @@
 ## Icon 图标
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+在 index.json 中引入组件
+```json
+{
+  "usingComponents": {
+    "zan-icon": "path/to/zanui-weapp/dist/icon/index"
+  }
+}
 ```
 
 ### 代码演示
-可以在任意元素上增加 zan-icon 类即可
+可以在任意位置上使用 zan-icon 标签。通过 type 可以控制 icon 显示的图标
 ```html
-<view class="zan-icon zan-icon-close"></view>
+<zan-icon type="success"></zan-icon>
 ```
 
 支持的 icon 和 名称 见下图

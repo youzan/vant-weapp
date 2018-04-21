@@ -1,30 +1,54 @@
-<import src="/dist/noticebar/index.wxml" />
-<view class="container">
+<doc-page title="NOTICEBAR" without-padding>
 
-  <view class="doc-title zan-hairline--bottom">NOTICEBAR</view>
+  <zan-panel title="滚动通告栏">
+    <zan-noticebar
+      text="{{ bar1.text }}"
+      scrollable="{{ bar1.scrollable }}"
+    />
+  </zan-panel>
 
-  <view class="zan-panel-title">滚动通告栏</view>
-  <view class="zan-panel">
-    <template
-      is="zan-noticebar"
-      data="{{ ...movable, componentId: 'movable'  }}"
-    ></template>
-  </view>
+  <zan-panel title="延时滚动通告栏">
+    <zan-noticebar
+      text="{{ bar1.text }}"
+      scrollable="{{ bar1.scrollable }}"
+      delay="{{ bar1.delay }}"
+    />
+  </zan-panel>
 
-  <view class="zan-panel-title">静止通告栏1</view>
-  <view class="zan-panel">
-    <template
-      is="zan-noticebar"
-      data="{{ ...static1, componentId: 'static1'  }}"
-    ></template>
-  </view>
+  <zan-panel title="初始速度低滚动通告栏">
+    <zan-noticebar
+      text="{{ bar1.text }}"
+      scrollable="{{ bar1.scrollable }}"
+      speed="{{ bar5.speed }}"
+    />
+  </zan-panel>
 
-  <view class="zan-panel-title">静止通告栏2</view>
-  <view class="zan-panel">
-    <template
-      is="zan-noticebar"
-      data="{{ ...static2, componentId: 'static2'  }}"
-    ></template>
-  </view>
+  <zan-panel title="改变颜色通告栏">
+    <zan-noticebar
+      text="{{ bar2.text }}"
+      color="{{ bar2.color }}"
+      background-color="{{ bar2.backgroundColor }}"
+    />
+  </zan-panel>
 
-</view>
+  <zan-panel title="静止通告栏">
+    <zan-noticebar
+      text="{{ bar3.text }}"
+    />
+  </zan-panel>
+
+  <zan-panel title="带icon公告">
+    <zan-noticebar
+      text="{{ bar4.text }}"
+      left-icon="{{ bar4.leftIcon }}"
+    />
+  </zan-panel>
+
+  <zan-panel title="可关闭公告">
+    <zan-noticebar
+      text="{{ bar5.text }}"
+      mode="{{ bar5.mode }}"
+    />
+  </zan-panel>
+
+</doc-page>

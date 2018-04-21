@@ -1,40 +1,39 @@
-<template name="zan-actionsheet">
-  <view class="zan-actionsheet {{ show ? 'zan-actionsheet--show' : '' }}">
-    <view
-      class="zan-actionsheet__mask"
-      catchtap="_handleZanActionsheetMaskClick"
-      data-close-on-click-overlay="{{ closeOnClickOverlay }}"
-      data-component-id="{{ componentId }}"></view>
-    <view class="zan-actionsheet__container">
-      <!-- 实际按钮显示 -->
-      <button
-        wx:for="{{ actions }}"
-        wx:for-index="index"
-        wx:for-item="item"
-        wx:key="{{ index }}-{{ item.name }}"
-        catchtap="_handleZanActionsheetBtnClick"
-        data-component-id="{{ componentId }}"
-        data-index="{{ index }}"
-        open-type="{{ item.openType }}"
-        class="zan-btn zan-actionsheet__btn {{ item.loading ? 'zan-btn--loading' : '' }} {{ item.className }}"
-      >
-        <text>{{ item.name }}</text>
-        <text
+<view class="zan-actionsheet {{ show ? 'zan-actionsheet--show' : '' }}">
+  <view
+    class="mask-class zan-actionsheet__mask"
+    bindtap="onMaskClick"
+  ></view>
+  <view class="container-class zan-actionsheet__container">
+    <!-- 选项按钮 -->
+    <zan-btn
+      wx:for="{{ actions }}"
+      wx:key="{{ index }}-{{ item.name }}"
+      bind:btnclick="handleBtnClick"
+      data-index="{{ index }}"
+      open-type="{{ item.openType }}"
+      custom-class="zan-actionsheet__btn"
+      loading="{{ item.loading }}"
+    >
+      <!-- 自定义组件控制 slot 样式有问题，故在 slot 容器上传入 loading 信息 -->
+      <view class="zan-actionsheet__btn-content {{ item.loading ? 'zan-actionsheet__btn--loading' : '' }}">
+        <view class="zan-actionsheet__name">{{ item.name }}</view>
+        <view
           wx:if="{{ item.subname }}"
-          class="zan-actionsheet__subname">{{ item.subname }}</text>
-      </button>
-
-      <!-- 关闭按钮 -->
-      <view
-        wx:if="{{ cancelText }}"
-        class="zan-actionsheet__footer"
-      >
-        <button
-          class="zan-btn zan-actionsheet__btn"
-          catchtap="_handleZanActionsheetCancelBtnClick"
-          data-component-id="{{ componentId }}"
-        >{{ cancelText }}</button>
+          class="zan-actionsheet__subname">
+          {{ item.subname }}
+        </view>
       </view>
+    </zan-btn>
+
+    <!-- 关闭按钮 -->
+    <view
+      wx:if="{{ cancelText }}"
+      class="zan-actionsheet__footer"
+    >
+      <zan-btn
+        custom-class="zan-actionsheet__btn"
+        catchtap="cancelClick"
+      >{{ cancelText }}</zan-btn>
     </view>
   </view>
-</template>
+</view>

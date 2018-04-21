@@ -11,26 +11,21 @@ Page(Object.assign({}, Zan.Switch, {
     },
   },
 
-  handleZanSwitchChange(e) {
-    var componentId = e.componentId;
-    var checked = e.checked;
+  syncChange({ detail }) {
+    this.setData({
+      'sync.checked': detail.checked
+    });
+  },
 
-    if (componentId == 'sync') {
-      // 同步开关
+  asyncChange({ detail }) {
+    this.setData({
+      'async.loading': true
+    });
+    setTimeout(() => {
       this.setData({
-        [`${componentId}.checked`]: checked
+        'async.loading': false,
+        'async.checked': detail.checked
       });
-    } else if (componentId == 'async') {
-      // 异步开关
-      this.setData({
-        [`${componentId}.loading`]: true
-      });
-      setTimeout(() => {
-        this.setData({
-          [`${componentId}.loading`]: false,
-          [`${componentId}.checked`]: checked
-        });
-      }, 500);
-    }
+    }, 500);
   }
 }));

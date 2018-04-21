@@ -1,4 +1,18 @@
-<import src="/dist/dialog/index.wxml" />
+<doc-page title="DIALOG">
+  <view class="zan-btns" style="margin-top: 30vh;">
+    <zan-button bindtap="toggleBaseDialog">基础 Dialog</zan-button>
+    <zan-button bindtap="toggleWithoutTitleDialog">Dialog - 无标题</zan-button>
+    <zan-button bindtap="toggleButtonDialog">Dialog - 自定义显示按钮</zan-button>
+    <zan-button bindtap="toggleVerticalDialog">Dialog - 按钮纵向排布</zan-button>
+  </view>
+
+  <zan-dialog id="zan-base-dialog"></zan-dialog>
+  <zan-dialog id="zan-no-title-dialog"></zan-dialog>
+  <zan-dialog id="zan-button-dialog"></zan-dialog>
+  <zan-dialog id="zan-vertical-dialog"></zan-dialog>
+</doc-page>
+
+<!-- <import src="/dist/dialog/index.wxml" />
 
 <view class="container">
 
@@ -21,4 +35,4 @@
 
 </view>
 
-<template is="zan-dialog" data="{{ zanDialog }}"></template>
+<template is="zan-dialog" data="{{ zanDialog }}"></template> -->

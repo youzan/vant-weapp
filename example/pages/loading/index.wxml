@@ -1,0 +1,21 @@
+<view class="container">
+
+  <view class="doc-title zan-hairline--bottom">LOADING</view>
+
+  <view class="zan-panel-title">circle</view>
+  <view class="loading-example zan-panel">
+    <zan-loading type="circle"></zan-loading>
+    <zan-loading type="circle" color="black"></zan-loading>
+  </view>
+  <view class="zan-panel-title">spinner</view>
+  <view class="loading-example zan-panel">
+    <zan-loading type="spinner"></zan-loading>
+    <zan-loading type="spinner" color="black"></zan-loading>
+  </view>
+  <view class="zan-panel-title">dot</view>
+  <view class="zan-panel loading-example no-flex">
+    <zan-loading type="dot"></zan-loading>
+    <zan-loading type="dot" color="black"></zan-loading>
+  </view>
+
+</view>

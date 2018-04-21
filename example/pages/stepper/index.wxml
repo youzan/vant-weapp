@@ -1,20 +1,43 @@
-<import src="/dist/stepper/index.wxml" />
-
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">Stepper</view>
-
-  <view style="padding: 40px 15px">
-    <template is="zan-stepper" data="{{ ...stepper1, componentId: 'stepper1' }}" />
-  </view>
-
-  <!-- 当最大值等于最小值时，组件不可用 -->
-  <view style="padding: 40px 15px ">
-    <template is="zan-stepper" data="{{ ...stepper2, componentId: 'stepper2' }}" />
-  </view>
+<doc-page title="Stepper" without-padding>
+  <zan-panel title="基础用法">
+    <view style="padding: 40px 15px">
+      <zan-stepper
+        stepper="{{ stepper1.stepper }}"
+        min="{{ stepper1.min }}"
+        max="{{ stepper1.max }}"
+        data-component-id="stepper1"
+        bind:change="handleZanStepperChange"
+      >
+      </zan-stepper>
+    </view>
+  </zan-panel>
 
   <!-- small size -->
-  <view style="padding: 40px 15px ">
-    <template is="zan-stepper" data="{{ ...stepper3, componentId: 'stepper3', size: 'small' }}" />
-  </view>
-</view>
+  <zan-panel title="不同尺寸-小尺寸类型">
+    <view style="padding: 40px 15px">
+      <zan-stepper
+        stepper="{{ stepper2.stepper }}"
+        min="{{ stepper2.min }}"
+        max="{{ stepper2.max }}"
+        size="small"
+        data-component-id="stepper2"
+        bind:change="handleZanStepperChange"
+      >
+      </zan-stepper>
+    </view>
+  </zan-panel>
+
+  <zan-panel title="高级用法-每次变动数量自定义">
+    <view style="padding: 40px 15px">
+      <zan-stepper
+        stepper="{{ stepper3.stepper }}"
+        min="{{ stepper3.min }}"
+        max="{{ stepper3.max }}"
+        step="{{ stepper3.step }}"
+        data-component-id="stepper3"
+        bind:change="handleZanStepperChange"
+      >
+      </zan-stepper>
+    </view>
+  </zan-panel>
+</doc-page>

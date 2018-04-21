@@ -1,0 +1,27 @@
+.doc-container {
+  background: #F9F9F9;
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 15px 0;
+}
+
+.doc-title {
+  position: relative;
+  padding: 15px 0;
+  margin: 10px 15px;
+  line-height: 25px;
+  font-size: 25px;
+  color: #666;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.doc-content {
+  padding: 15px;
+  overflow: hidden;
+  color: #666;
+}
+
+.doc-content--without-pd {
+  padding: 15px 0;
+}

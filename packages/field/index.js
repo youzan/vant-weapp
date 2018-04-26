@@ -20,7 +20,11 @@ Component({
       value: 'normal'
     },
     right: Boolean,
-    error: Boolean
+    error: Boolean,
+    maxlength: {
+      type: Number,
+      value: 140
+    }
   },
 
   methods: {

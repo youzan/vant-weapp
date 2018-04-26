@@ -4,7 +4,7 @@
 
   <view class="doc-title zan-hairline--bottom">TOAST</view>
 
-  <view class="zan-btns" style="margin-top: 15vh;">
+  <zan-button-group style="margin-top: 15vh;display: block;">
     <zan-button bind:btnclick="showToast">
       显示toast
     </zan-button>
@@ -28,7 +28,7 @@
     <zan-button bind:btnclick="showLoading">
       显示 Loading
     </zan-button>
-  </view>
+  </zan-button-group>
 </view>
 
 <!-- <template is="zan-toast" data="{{ zanToast }}"></template> -->

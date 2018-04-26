@@ -1,5 +1,5 @@
 <doc-page title="POPUP">
-  <view class="zan-btns" style="margin-top: 10vh;">
+  <zan-button-group style="margin-top: 10vh;display: block;">
     <zan-button class="zan-btn" bind:btnclick="togglePopup">
       弹出popup
     </zan-button>
@@ -15,7 +15,7 @@
     <zan-button class="zan-btn" bind:btnclick="toggleRightPopup">
       从右边弹出popup
     </zan-button>
-  </view>
+  </zan-button-group>
 
   <!-- 中间弹出框 -->
   <zan-popup

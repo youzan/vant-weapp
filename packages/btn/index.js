@@ -1,6 +1,17 @@
 
 Component({
   externalClasses: ['custom-class'],
+  relations: {
+    '../btn-group/index': {
+      type: 'parent',
+      linked() {
+        this.setData({ inGroup: true });
+      },
+      unlinked() {
+        this.setData({ inGroup: false });
+      }
+    }
+  },
   properties: {
     type: {
       type: String,
@@ -27,9 +38,19 @@ Component({
       value: ''
     }
   },
+
+  data: {
+    inGroup: false,
+    isLast: false
+  },
+
   methods: {
     handleTap() {
       this.triggerEvent('btnclick');
+    },
+
+    switchLastButtonStatus(isLast = false) {
+      this.setData({ isLast });
     }
   }
 });

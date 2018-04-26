@@ -4,7 +4,6 @@
   position: relative;
   color: #333;
   background-color: #fff;
-  margin-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 2px;
@@ -17,13 +16,15 @@
   vertical-align: middle;
   overflow: visible;
 }
+
+.zan-btn--group {
+  margin-bottom: 10px;
+}
+
 .zan-btn::after {
   @mixin hairline;
   border-width: 1px;
   border-radius: 4px;
-}
-.zan-btns {
-  margin: 15px;
 }
 
 /* type */
@@ -60,25 +61,35 @@
   height: 30px;
   line-height: 30px;
   font-size: 12px;
-  margin-right: 5px;
-  margin-bottom: 0;
+  /* margin-right: 5px; */
 }
+.zan-btn--small.zan-btn--group {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
 .zan-btn--mini {
   display: inline-block;
   line-height: 21px;
   height: 22px;
   font-size: 10px;
-  margin-right: 5px;
-  margin-bottom: 0;
+  /* margin-right: 5px; */
   padding-left: 5px;
   padding-right: 5px;
 }
+.zan-btn--mini.zan-btn--group {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
 .zan-btn--large {
   border-radius: 0;
-  margin-bottom: 0;
   border: none;
   line-height: 50px;
   height: 50px;
+}
+.zan-btn--large.zan-btn--group {
+  margin-bottom: 0;
 }
 
 /* plain */
@@ -151,5 +162,8 @@
 }
 
 /* :last-child */
-
+.zan-btn--group.zan-btn--last {
+  margin-bottom: 0;
+  margin-right: 0;
+}
 

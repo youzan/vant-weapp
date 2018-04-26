@@ -1,56 +1,52 @@
-<view class="container">
+<doc-page title="BUTTON" without-padding>
 
-  <view class="doc-title zan-hairline--bottom">BUTTON</view>
-
-  <view class="zan-panel-title">普通按钮</view>
-  <view class="zan-panel">
-    <view class="zan-btns">
+  <zan-panel title="普通按钮">
+    <zan-button-group>
       <zan-button>取消订单</zan-button>
       <zan-button type="primary">确认付款</zan-button>
       <zan-button type="danger">确认付款</zan-button>
       <zan-button type="warn">确认付款</zan-button>
-    </view>
-  </view>
+    </zan-button-group>
+  </zan-panel>
 
-  <view class="zan-panel-title">大号按钮，没有边框线及圆角</view>
-  <view class="zan-panel">
+  <zan-panel title="大号按钮，没有边框线及圆角">
     <zan-button size="large" type="primary">确认付款</zan-button>
     <zan-button size="large" type="warn">立即购买</zan-button>
     <zan-button size="large" type="danger">立即购买</zan-button>
-  </view>
+  </zan-panel>
 
-  <view class="zan-panel-title">小号按钮</view>
-  <view class="zan-panel" style="padding: 15px;">
-    <zan-button size="small">取消订单</zan-button>
-    <zan-button size="small" type="primary">确认付款</zan-button>
-  </view>
+  <zan-panel title="小号按钮">
+    <zan-button-group>
+      <zan-button size="small">取消订单</zan-button>
+      <zan-button size="small" type="primary">确认付款</zan-button>
+    </zan-button-group>
+  </zan-panel>
 
-  <view class="zan-panel-title">迷你按钮</view>
-  <view class="zan-panel" style="padding: 15px;">
-    <zan-button size="mini">取消订单</zan-button>
-    <zan-button size="mini" type="primary">确认付款</zan-button>
-    <zan-button size="mini" type="warn">确认付款</zan-button>
-    <zan-button size="mini" type="danger">确认付款</zan-button>
-  </view>
+  <zan-panel title="迷你按钮">
+    <zan-button-group>
+      <zan-button size="mini">取消订单</zan-button>
+      <zan-button size="mini" type="primary">确认付款</zan-button>
+      <zan-button size="mini" type="warn">确认付款</zan-button>
+      <zan-button size="mini" type="danger">确认付款</zan-button>
+    </zan-button-group>
+  </zan-panel>
 
-  <view class="zan-panel-title">Loading</view>
-  <view class="zan-panel">
-    <view class="zan-btns">
+  <zan-panel title="Loading">
+    <zan-button-group>
       <zan-button loading>取消订单</zan-button>
       <zan-button loading type="primary">确认付款</zan-button>
       <zan-button loading type="danger">确认付款</zan-button>
       <zan-button loading type="warn">确认付款</zan-button>
-    </view>
-  </view>
+    </zan-button-group>
+  </zan-panel>
 
-  <view class="zan-panel-title">Disabled</view>
-  <view class="zan-panel">
-    <view class="zan-btns">
+  <zan-panel title="Disabled">
+    <zan-button-group>
       <zan-button disabled>取消订单</zan-button>
       <zan-button disabled type="primary">确认付款</zan-button>
       <zan-button disabled type="danger">确认付款</zan-button>
       <zan-button disabled type="warn">确认付款</zan-button>
-    </view>
-  </view>
+    </zan-button-group>
+  </zan-panel>
 
-</view>
+</doc-page>

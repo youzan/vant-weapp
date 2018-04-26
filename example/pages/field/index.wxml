@@ -19,6 +19,7 @@
       title="{{ config.base.address.title }}"
       type="{{ config.base.address.type }}"
       placeholder="{{ config.base.address.placeholder }}"
+      maxlength="50"
     >
     </zan-field>
     <zan-field

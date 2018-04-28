@@ -1,5 +1,14 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.0](https://github.com/youzan/zanui-weapp/tree/v3.0.0) (2018-04-28)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.7...v3.0.0)
+
+**Breaking changes**
+- 升级组件库至自定义组件 [\#199](https://github.com/youzan/zanui-weapp/pull/199) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+- Field 组件新增 maxlength 属性 [\#203](https://github.com/youzan/zanui-weapp/pull/203) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v2.4.7](https://github.com/youzan/zanui-weapp/tree/v2.4.7) (2018-03-25)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.6...v2.4.7)
 

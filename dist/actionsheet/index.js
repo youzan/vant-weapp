@@ -1,41 +1,36 @@
-const { extractComponentId } = require('../common/helper');
-
-module.exports = {
-  _handleZanActionsheetMaskClick({ currentTarget = {} }) {
-    const dataset = currentTarget.dataset || {};
-    const { componentId, closeOnClickOverlay } = dataset;
-
-    // 判断是否在点击背景时需要关闭弹层
-    if (!closeOnClickOverlay) {
-      return;
+Component({
+  externalClasses: ['mask-class', 'container-class'],
+  properties: {
+    actions: {
+      type: Array,
+      value: []
+    },
+    show: {
+      type: Boolean,
+      value: false
+    },
+    cancelWithMask: {
+      type: Boolean,
+      value: true
+    },
+    cancelText: {
+      type: String,
+      value: ''
     }
-
-    resolveCancelClick.call(this, { componentId });
   },
-
-  _handleZanActionsheetCancelBtnClick(e) {
-    const componentId = extractComponentId(e);
-
-    resolveCancelClick.call(this, { componentId });
-  },
-
-  _handleZanActionsheetBtnClick({ currentTarget = {} }) {
-    const dataset = currentTarget.dataset || {};
-    const { componentId, index } = dataset;
-
-    if (this.handleZanActionsheetClick) {
-      this.handleZanActionsheetClick({ componentId, index });
-    } else {
-      console.warn('页面缺少 handleZanActionsheetClick 回调函数');
+  methods: {
+    onMaskClick() {
+      if (this.data.cancelWithMask) {
+        this.cancelClick();
+      }
+    },
+    cancelClick() {
+      this.triggerEvent('cancel');
+    },
+    handleBtnClick({ currentTarget = {} }) {
+      const dataset = currentTarget.dataset || {};
+      const { index } = dataset;
+      this.triggerEvent('actionclick', { index });
     }
   }
-};
-
-function resolveCancelClick({ componentId }) {
-  
-  if (this.handleZanActionsheetCancel) {
-    this.handleZanActionsheetCancel({ componentId });
-  } else {
-    console.warn('页面缺少 handleZanActionsheetCancel 回调函数');
-  }
-}
+});

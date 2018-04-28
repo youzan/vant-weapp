@@ -1,35 +1,37 @@
-<template name="zan-field">
-  <view class="zan-cell zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
-    <view
-      wx:if="{{ title }}"
-      class="zan-cell__hd zan-field__title">{{ title }}</view>
-    <textarea
-      wx:if="{{ type === 'textarea' }}"
-      auto-height
-      name="{{ name || componentId || '' }}"
-      disabled="{{ disabled }}"
-      focus="{{ focus }}"
-      value="{{ value }}"
-      placeholder="{{ placeholder }}"
-      class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
-      placeholder-class="zan-field__placeholder"
-      bindinput="_handleZanFieldChange"
-      bindfocus="_handleZanFieldFocus"
-      bindblur="_handleZanFieldBlur"
-      data-component-id="{{ componentId || '' }}"></textarea>
-    <input
-      wx:else
-      type="{{ inputType || 'text' }}"
-      name="{{ name || componentId || '' }}"
-      disabled="{{ disabled }}"
-      focus="{{ focus }}"
-      value="{{ value }}"
-      placeholder="{{ placeholder }}"
-      class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
-      placeholder-class="zan-field__placeholder"
-      bindinput="_handleZanFieldChange"
-      bindfocus="_handleZanFieldFocus"
-      bindblur="_handleZanFieldBlur"
-      data-component-id="{{ componentId || '' }}"/>
+<view class="zan-cell zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
+  <view
+    wx:if="{{ title }}"
+    class="zan-cell__hd zan-field__title">
+    {{ title }}
   </view>
-</template>
+  <textarea
+    wx:if="{{ type === 'textarea' }}"
+    auto-height
+    name="{{ name || '' }}"
+    disabled="{{ disabled }}"
+    focus="{{ focus }}"
+    value="{{ value }}"
+    placeholder="{{ placeholder }}"
+    maxlength="{{ maxlength }}"
+    class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
+    placeholder-class="zan-field__placeholder"
+    bindinput="handleZanFieldChange"
+    bindfocus="handleZanFieldFocus"
+    bindblur="handleZanFieldBlur">
+  </textarea>
+  <input
+    wx:else
+    type="{{ inputType || 'text' }}"
+    name="{{ name || '' }}"
+    disabled="{{ disabled }}"
+    focus="{{ focus }}"
+    value="{{ value }}"
+    placeholder="{{ placeholder }}"
+    maxlength="{{ maxlength }}"
+    class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
+    placeholder-class="zan-field__placeholder"
+    bindinput="handleZanFieldChange"
+    bindfocus="handleZanFieldFocus"
+    bindblur="handleZanFieldBlur"
+  />
+</view>

@@ -1,0 +1,3 @@
+<view class="btn-group">
+  <slot></slot>
+</view>

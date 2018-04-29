@@ -30,9 +30,9 @@
     </zan-field>
   </zan-panel>
   
-  <view class="zan-btns">
+  <zan-button-group>
     <zan-button type="primary" bind:btnclick="clearInput">清除输入</zan-button>
-  </view>
+  </zan-button-group>
 
   <!-- 去除标题后的输入框样式 -->
   <zan-panel title="无标题输入框">
@@ -43,9 +43,9 @@
     </zan-field>
   </zan-panel>
 
-  <view class="zan-btns">
+  <zan-button-group>
     <zan-button type="primary" bind:btnclick="clearTextarea">清除输入</zan-button>
-  </view>
+  </zan-button-group>
 
   <!-- 使用 Field 圆角样式 -->
   <zan-panel title="圆角输入框">
@@ -74,10 +74,9 @@
     >
     </zan-field>
   </zan-panel>
-  
-  <!-- <view class="zan-panel-title">Form 表单中的field应用</view> -->
-  <!-- <form bindsubmit="formSubmit" bindreset="formReset">
-    <view class="zan-panel">
+
+  <zan-panel title="Form 表单中的field应用">
+    <form bindsubmit="formSubmit" bindreset="formReset">
       <zan-field
         name="{{ config.form.name.name }}"
         placeholder="{{ config.form.name.placeholder }}"
@@ -89,14 +88,7 @@
         input-type="{{ config.form.tel.inputType }}"
       >
       </zan-field>
-      <view class="zan-btns">
-        <button
-          class="zan-btn zan-btn--primary"
-          formType="submit">提交数据</button>
-        <button
-          class="zan-btn"
-          formType="reset">重置数据</button>
-      </view>
-    </view>
-  </form> -->
+      <button type="primary" form-type="submit">提交表单</button>
+    </form>
+  </zan-panel>
 </doc-page>

@@ -2,10 +2,14 @@ Page({
   data: {
   },
 
-  onLoad: function () {
+  onLoad() {
 
   },
 
-  onShow: function() {
+  onShow() {
   },
-})
+
+  getPhoneNumber(e) {
+    console.log(e);
+  }
+});

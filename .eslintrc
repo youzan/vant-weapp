@@ -6,7 +6,8 @@
         "Page": false,
         "Component": false,
         "App": false,
-        "wx": false
+        "wx": false,
+        "Behavior": false
     },
     "parser": "babel-eslint",
     "rules": {

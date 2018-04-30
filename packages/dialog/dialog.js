@@ -22,7 +22,7 @@ function Dialog(options, pageCtx) {
 
   // 处理默认按钮的展示
   // 纵向排布确认按钮在上方
-  const buttons = parsedOptions.buttons;
+  const { buttons = [] } = parsedOptions;
   let showCustomBtns = false;
   if (buttons.length === 0) {
     if (parsedOptions.showConfirmButton) {
@@ -59,6 +59,6 @@ function Dialog(options, pageCtx) {
       promiseFunc: { resolve, reject }
     });
   });
-};
+}
 
 module.exports = Dialog;

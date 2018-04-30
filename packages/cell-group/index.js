@@ -2,18 +2,18 @@ Component({
   relations: {
     '../cell/index': {
       type: 'child',
-      linked (target) {}
+      linked() {}
     }
   },
-  ready () {
-    let cells = this.getRelationNodes('../cell/index')
-    
+  ready() {
+    let cells = this.getRelationNodes('../cell/index');
+
     if (cells.length > 0) {
-      let lastIndex = cells.length - 1
-  
+      let lastIndex = cells.length - 1;
+
       cells.forEach((cell, index) => {
-        if (index < lastIndex) cell.notLastCell()
+        if (index < lastIndex) cell.notLastCell();
       });
     }
   }
-})
+});

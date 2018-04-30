@@ -34,13 +34,13 @@ Component({
 
       this.triggerEvent('change', event);
     },
-  
+
     handleFieldFocus(event) {
       this.triggerEvent('focus', event);
     },
-  
+
     handleFieldBlur(event) {
       this.triggerEvent('blur', event);
     }
   }
-})
+});

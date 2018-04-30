@@ -17,7 +17,7 @@ Component({
   },
 
   methods: {
-    handleZanSwitchChange(event) {
+    handleZanSwitchChange() {
       if (this.data.loading || this.data.disabled) {
         return;
       }

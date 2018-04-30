@@ -2,7 +2,7 @@ Component({
   relations: {
     '../btn/index': {
       type: 'child',
-      linked () {
+      linked() {
         updateBtnChild.call(this);
       },
       linkChange() {
@@ -16,10 +16,10 @@ Component({
 });
 
 function updateBtnChild() {
-  let btns = this.getRelationNodes('../btn/index')
-    
+  let btns = this.getRelationNodes('../btn/index');
+
   if (btns.length > 0) {
-    let lastIndex = btns.length - 1
+    let lastIndex = btns.length - 1;
 
     btns.forEach((btn, index) => {
       btn.switchLastButtonStatus(index === lastIndex);

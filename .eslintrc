@@ -2,7 +2,9 @@
     "extends": "airbnb",
     "globals": {
         "getApp": false,
+        "getCurrentPages": false,
         "Page": false,
+        "Component": false,
         "App": false,
         "wx": false
     },
@@ -16,13 +18,7 @@
         "vars-on-top": 0,
         "new-cap": 0,
         "no-used-var": 0,
-        "semi": [
-            1,
-            "always",
-            {
-                "omitLastInOneLineBlock": true
-            }
-        ],
+        "semi": [2, "always"],
         "camelcase": 1,
         "prefer-template": 0,
         "eqeqeq": 0,
@@ -39,6 +35,9 @@
         "no-underscore-dangle": 0,
         "no-use-before-define": 0,
         "no-new": 0,
-        "import/no-extraneous-dependencies": 0
+        "no-multi-assign": 0,
+        "class-methods-use-this": 0,
+        "no-plusplus": 0,
+        "prefer-promise-reject-errors": 0
     }
 }

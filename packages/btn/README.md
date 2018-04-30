@@ -76,3 +76,9 @@
 | plain   | Boolean | 否       | false | 按钮是否镂空，默认为false |
 | disabled | Boolean | 否      | false | 按钮是否禁用，默认为false |
 | loading | Boolean | 否       | false | 按钮加载状态，默认为false |
+
+### 事件
+| 事件名称       | 说明      | 回调参数       |
+|-----------|-----------|-----------|
+|  btnclick  | 按钮在可用状态被点击时触发 | |
+|  disabledclick  | 在传入的 disabled 为 true 时，点击按钮会触发此事件 | |

@@ -10,19 +10,19 @@ Component({
       value: ''
     },
     // 自定义颜色
-    color :{
-      type : String,
-      value : ''
+    color: {
+      type: String,
+      value: ''
     },
     // 左侧内容
-    leftText :{
-      type : String ,
-      value : ''
+    leftText: {
+      type: String,
+      value: ''
     },
     // 右侧内容
-    rightText :{
-      type : String ,
-      value : ''
+    rightText: {
+      type: String,
+      value: ''
     }
   }
-})
+});

@@ -32,17 +32,17 @@ Component({
       
       this.triggerEvent('change', event);
     },
-  
+
     handleZanFieldFocus(event) {
       
-  
+
       this.triggerEvent('focus', event);
     },
-  
+
     handleZanFieldBlur(event) {
       
-  
+
       this.triggerEvent('blur', event);
     }
   }
-})
+});

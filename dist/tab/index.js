@@ -36,4 +36,4 @@ Component({
       this.triggerEvent('tabchange', selectedId);
     }
   }
-})
+});

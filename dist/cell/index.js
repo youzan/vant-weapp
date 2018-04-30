@@ -1,6 +1,7 @@
 const warn = (msg, getValue) => {
-  console.warn(msg)
-  };
+  console.warn(msg);
+  
+};
 
 Component({
   options: {
@@ -47,32 +48,32 @@ Component({
     isLastCell: true
   },
   methods: {
-    navigateTo () {
-      const url = this.data.url
-      const type = typeof this.data.isLink
+    navigateTo() {
+      const { url = '' } = this.data;
+      const type = typeof this.data.isLink;
 
-      this.triggerEvent('tap', {})
+      this.triggerEvent('tap', {});
 
       if (!this.data.isLink || !url || url === 'true' || url === 'false') return;
 
       if (type !== 'boolean' && type !== 'string') {
-        warn('isLink 属性值必须是一个字符串或布尔值', this.data.isLink)
-        return
+        warn('isLink 属性值必须是一个字符串或布尔值', this.data.isLink);
+        return;
       }
 
       if (['navigateTo', 'redirectTo', 'switchTab', 'reLaunch'].indexOf(this.data.linkType) === -1) {
-        warn('linkType 属性可选值为 navigateTo，redirectTo，switchTab，reLaunch', this.data.linkType)
-        return 
+        warn('linkType 属性可选值为 navigateTo，redirectTo，switchTab，reLaunch', this.data.linkType);
+        return;
       }
-      wx[this.data.linkType].call(wx, { url })
+      wx[this.data.linkType].call(wx, { url });
     },
-    cellTap () {
+    cellTap() {
       if (!this.data.onlyTapFooter) {
-        this.navigateTo()
+        this.navigateTo();
       }
     },
-    notLastCell () {
-      this.setData({ isLastCell: false })
+    notLastCell() {
+      this.setData({ isLastCell: false });
     }
   }
-})
+});

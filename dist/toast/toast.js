@@ -1,7 +1,7 @@
 let timeoutData = {
   timeoutId: 0,
   toastCtx: null
-}
+};
 
 function Toast(options = {}, pageCtx) {
   let ctx = pageCtx;
@@ -32,29 +32,31 @@ function Toast(options = {}, pageCtx) {
   timeoutData = {
     timeoutId,
     toastCtx
-  }
-};
+  };
+}
 
 // 清理所有 toast
-Toast.clear = function() {
+Toast.clear = function () {
   clearTimeout(timeoutData.timeoutId);
 
   try {
     timeoutData.toastCtx && timeoutData.toastCtx.clear();
-  } catch (e) {}
+  } catch (e) {
+    
+  }
 
   timeoutData = {
     timeoutId: 0,
     toastCtx: null
-  }
-}
+  };
+};
 
 // 显示 loading
-Toast.loading = function(options = {}) {
+Toast.loading = function (options = {}) {
   Toast({
     ...options,
     type: 'loading'
   });
-}
+};
 
 module.exports = Toast;

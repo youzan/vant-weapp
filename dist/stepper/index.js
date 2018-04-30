@@ -21,10 +21,10 @@ Component({
 
   methods: {
     handleZanStepperChange(e, type) {
-      const dataset = e.currentTarget.dataset;
-      const disabled = dataset.disabled;
+      const { dataset = {} } = e.currentTarget;
+      const { disabled } = dataset;
       const { step } = this.data;
-      let stepper = this.data.stepper;
+      let { stepper } = this.data;
 
       if (disabled) return null;
 
@@ -41,30 +41,29 @@ Component({
     handleZanStepperMinus(e) {
       this.handleZanStepperChange(e, 'minus');
     },
-  
+
     handleZanStepperPlus(e) {
-      this.handleZanStepperChange( e, 'plus');
+      this.handleZanStepperChange(e, 'plus');
     },
-  
+
     handleZanStepperBlur(e) {
-      const dataset = e.currentTarget.dataset;
-      let value = e.detail.value;
+      let { value } = e.detail;
       const { min, max } = this.data;
-  
+
       if (!value) {
         setTimeout(() => {
           this.triggerEvent('change', min);
         }, 16);
         return;
       }
-  
+
       value = +value;
       if (value > max) {
         value = max;
       } else if (value < min) {
         value = min;
       }
-  
+
       this.triggerEvent('change', value);
     }
   }

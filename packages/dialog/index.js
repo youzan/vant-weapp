@@ -1,6 +1,6 @@
 const defaultData = require('./data');
 
-const _f = function() {};
+const _f = function () {};
 
 Component({
   properties: {},

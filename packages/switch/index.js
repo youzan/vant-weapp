@@ -17,9 +17,9 @@ Component({
   },
 
   methods: {
-    handleZanSwitchChange(event) {
+    handleZanSwitchChange() {
       if (this.data.loading || this.data.disabled) {
-        return
+        return;
       }
       let checked = !this.data.checked;
       this.triggerEvent('change', {

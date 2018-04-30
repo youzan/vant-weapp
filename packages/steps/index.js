@@ -17,4 +17,4 @@ Component({
 
     className: String
   }
-})
+});

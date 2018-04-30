@@ -10,14 +10,14 @@ Component({
       value: ''
     },
     // 内容区顶部是否取消10像素的间距
-    hideTop :{
-      type : Boolean ,
-      value : false
+    hideTop: {
+      type: Boolean,
+      value: false
     },
     // 内容区顶部是否取消边框
-    hideBorder :{
-      type : Boolean ,
-      value : false
+    hideBorder: {
+      type: Boolean,
+      value: false
     }
   }
-})
+});

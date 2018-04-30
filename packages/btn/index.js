@@ -1,4 +1,3 @@
-
 Component({
   externalClasses: ['custom-class'],
   relations: {

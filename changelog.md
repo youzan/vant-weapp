@@ -1,5 +1,11 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.1](https://github.com/youzan/zanui-weapp/tree/v3.0.1) (2018-04-30)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.0...v3.0.1)
+
+**Bug Fixes**
+- 修复 gulp 插件引起的组件编译后代码异常的问题 [\#209](https://github.com/youzan/zanui-weapp/pull/209) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v3.0.0](https://github.com/youzan/zanui-weapp/tree/v3.0.0) (2018-04-28)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.7...v3.0.0)
 

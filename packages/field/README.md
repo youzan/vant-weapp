@@ -20,12 +20,13 @@ field 支持多种展示方式，在 `data` 中传入对应的设置即可。
   placeholder="{{ field.placeholder }}"
   focus="{{ field.focus }}"
   value="{{ field.value }}"
+  bind:change="handleFieldChange"
 >
 </zan-field>
 ```
 
 ```js
-Page(extend({}, {
+Page({
   data: {
     field: {
       focus: true,
@@ -34,7 +35,7 @@ Page(extend({}, {
       value: 'test'
     }
   }
-}));
+});
 ```
 
 #### 监听事件

@@ -15,7 +15,7 @@
 #### 基础用法
 `Stepper` 组件通过传入的 stepper 对象控制，内部数据格式如下：
 ```js
-Page(extend({}, {
+Page({
   data: {
     stepper: {
       // 当前 stepper 数字
@@ -35,7 +35,7 @@ Page(extend({}, {
       stepper
     });
   }
-}));
+});
 ```
 
 当一个 `Stepper` 中，min 超过 max，就会导致组件被置灰。

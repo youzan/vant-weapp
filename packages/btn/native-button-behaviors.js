@@ -33,18 +33,17 @@ module.exports = Behavior({
     showMessageCard: String
   },
   methods: {
-    // 微信暂不支持
-    // bindgetuserinfo(e) {
-    //   this.triggerEvent('getuserinfo', e);
-    // },
-    bindcontact(e) {
-      this.triggerEvent('contact', e);
+    bindgetuserinfo({ detail = {} } = {}) {
+      this.triggerEvent('getuserinfo', detail);
     },
-    bindgetphonenumber(e) {
-      this.triggerEvent('getphonenumber', e);
+    bindcontact({ detail = {} } = {}) {
+      this.triggerEvent('contact', detail);
     },
-    binderror(e) {
-      this.triggerEvent('error', e);
+    bindgetphonenumber({ detail = {} } = {}) {
+      this.triggerEvent('getphonenumber', detail);
+    },
+    binderror({ detail = {} } = {}) {
+      this.triggerEvent('error', detail);
     }
   }
 });

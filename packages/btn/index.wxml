@@ -13,6 +13,7 @@
   show-message-card="{{ showMessageCard }}"
   bindtap="handleTap"
   bindcontact="bindcontact"
+  bindgetuserinfo="bindgetuserinfo"
   bindgetphonenumber="bindgetphonenumber"
   binderror="binderror"
 >

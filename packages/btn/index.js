@@ -1,5 +1,8 @@
+const nativeButtonBehavior = require('./native-button-behaviors');
+
 Component({
   externalClasses: ['custom-class'],
+  behaviors: [nativeButtonBehavior],
   relations: {
     '../btn-group/index': {
       type: 'parent',
@@ -31,10 +34,6 @@ Component({
     loading: {
       type: Boolean,
       value: false,
-    },
-    openType: {
-      type: String,
-      value: ''
     }
   },
 
@@ -45,6 +44,10 @@ Component({
 
   methods: {
     handleTap() {
+      if (this.data.disabled) {
+        this.triggerEvent('disabledclick')
+        return;
+      }
       this.triggerEvent('btnclick');
     },
 

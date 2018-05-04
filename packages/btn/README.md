@@ -76,3 +76,23 @@
 | plain   | Boolean | 否       | false | 按钮是否镂空，默认为false |
 | disabled | Boolean | 否      | false | 按钮是否禁用，默认为false |
 | loading | Boolean | 否       | false | 按钮加载状态，默认为false |
+| openType | String | 否       | - | 微信开放能力 |
+| appParameter | String | 否   | - | 打开 APP 时，向 APP 传递的参数 |
+| hoverStartTime | Number | 否   | 20 | 按住后多久出现点击态，单位毫秒	 |
+| hoverStayTime | Number | 否   | 70 | 手指松开后点击态保留时间，单位毫秒	 |
+| lang | String | 否   | en | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文 |
+| sessionFrom | String | 否   | - | 会话来源 |
+| sendMessageTitle | String | 否   | 当前标题 | 会话内消息卡片标题 |
+| sendMessagePath | String | 否   | 当前分享路径 | 会话内消息卡片点击跳转小程序路径	 |
+| sendMessageImg | String | 否   | 截图 | 会话内消息卡片图片 |
+| showMessageCard | String | 否   | false | 显示会话内消息卡片 |
+
+### 事件
+| 事件名称       | 说明      | 回调参数       |
+|-----------|-----------|-----------|
+|  btnclick  | 按钮在可用状态被点击时触发 | |
+|  disabledclick  | 在传入的 disabled 为 true 时，点击按钮会触发此事件 | |
+|  getuserinfo  | 用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同wx.getUserInfo | |
+|  contact  | 客服消息回调 | |
+|  getphonenumber  | 获取用户手机号回调 | |
+|  error  | 当使用开放能力时，发生错误的回调 | |

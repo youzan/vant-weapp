@@ -27,12 +27,20 @@ Page({
     }
   },
 
-  handleZanStepperChange({ componentId, stepper }) {
-    // componentId 即为在模板中传入的 componentId
-    // 用于在一个页面上使用多个 stepper 时，进行区分
+  handleZanStepperChange({
+
     // stepper 代表操作后，应该要展示的数字，需要设置到数据对象里，才会更新页面展示
+    detail: stepper,
+
+    // 模板中传入的 componentId，用于区分一个页面上的多个stepper
+    target: {
+      dataset: {
+        componentId
+      }
+    }
+  }) {
     this.setData({
-      stepper
+      [`${componentId}.stepper`]: stepper
     });
   }
 });

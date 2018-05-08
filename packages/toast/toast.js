@@ -90,7 +90,7 @@ Toast.setDefaultOptions = function (options = {}, type = 'page') {
 };
 
 // 重置 toast 基础属性
-Toast.resetDefaultOptions = function (type = 'global') {
+Toast.resetDefaultOptions = function (type = 'page') {
   if (type === 'global') {
     globalToastUserConfig = {};
   } else {

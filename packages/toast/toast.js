@@ -19,19 +19,27 @@ function getPageCtx(pageCtx) {
   return ctx;
 }
 
-// 处理 toast 参数格式化
-function parseToastOptions(options, pageCtx) {
-
+// 获取当前页面的 toast 配置数据
+function getPageToastConfig(pageCtx) {
+  const zanuiData = pageCtx.data.zanui || {};
+  return zanuiData.__zanToastPageConfig || {};
 }
 
 // Toast 显示函数
-function Toast(options = {}, pageCtx) {
+function Toast(optionsOrMsg, pageCtx) {
+  // 参数格式化处理
+  // 如果是文字，默认为 message
+  let options = optionsOrMsg || {};
+  if (typeof optionsOrMsg === 'string') {
+    options = { message: optionsOrMsg };
+  }
+
   let ctx = getPageCtx(pageCtx);
-  const pageToastUserSetting = (ctx.data.zanui || {}).__zanToastPageConfig || {}
+  const pageToastUserSetting = getPageToastConfig(ctx);
   const parsedOptions = {
     ...globalToastUserConfig,
     ...pageToastUserSetting,
-    options
+    ...options
   };
   const toastCtx = ctx.selectComponent(parsedOptions.selector);
 
@@ -60,7 +68,7 @@ function Toast(options = {}, pageCtx) {
 }
 
 // 设置 toast 基础属性
-Toast.setDefaultOptions = function (options = {}, type = 'global') {
+Toast.setDefaultOptions = function (options = {}, type = 'page') {
   const parsedDefaultOptions = {
     selector: options.selector || '',
     type: options.type || '',
@@ -73,7 +81,7 @@ Toast.setDefaultOptions = function (options = {}, type = 'global') {
     globalToastUserConfig = {
       ...parsedDefaultOptions
     };
-  } else {
+  } else if (type === 'page') {
     let ctx = getPageCtx();
     ctx.setData({
       [`${TOAST_CONFIG_KEY}`]: parsedDefaultOptions

@@ -1,4 +1,5 @@
 @import "../common/_mixins";
+@import "../common/_var";
 
 .zan-pull-left {
   float: left;
@@ -44,7 +45,10 @@
   font-size: 22px;
 }
 .zan-font-24 {
-  font-size: 22px;
+  font-size: 24px;
+}
+.zan-font-26 {
+  font-size: 26px;
 }
 .zan-font-30 {
   font-size: 30px;
@@ -100,6 +104,36 @@
   content: '';
   display: table;
   clear: both;
+}
+
+.zan-c {
+  &-red {
+    color: $red;
+  }
+
+  &-black {
+    color: $black;
+  }
+
+  &-green {
+    color: $green;
+  }
+
+  &-blue {
+    color: $blue;
+  }
+
+  &-gray {
+    color: $gray;
+  }
+
+  &-gray-dark {
+    color: $gray-dark;
+  }
+
+  &-gray-darker {
+    color: $gray-darker;
+  }
 }
 
 /* 超细边框 */

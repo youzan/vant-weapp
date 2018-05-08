@@ -9,8 +9,9 @@
 | title         | String      | 否       | 无    | 左侧标题                                                                                                 |
 | label         | Boolean     | 否       | false | 标题下方的描述信息                                                                                       |
 | value         | String      | 否       | 取消  | 右侧内容                                                                                                 |
-| isLink        | Number      | 否       | 55    | 链接，用于导航，如果是 `Boolean` 型值则只显示链接样式，`String` 类型值才做导航，但是组件不检查路径正确性 |
-| linkType      | String      | 否       | 无    | 链接跳转类型，可选值为 `navigateTo`，`redirectTo`，`switchTab`，`reLaunch`                               |
+| isLink        | Boolean      | 否       | false    | 是否展示右侧箭头并开启尝试以 url 跳转 |
+| url        | String      | 否      | -    | 当 isLink 设置为 true 时，点击 cell 会尝试跳转到该路径 |
+| linkType      | String      | 否       | navigateTo    | 链接跳转类型，可选值为 `navigateTo`，`redirectTo`，`switchTab`，`reLaunch`                               |
 | onlyTapFooter | Boolean     | 否       | false | 只有点击 footer 区域才触发 tab 事件                                                                      |
 | bindtap       | EventHandle | 否       | 无    | 点击 cell 时触发，`onlyTapFooter` 为 `true` 时点击 footer 区域触发                                       |
 

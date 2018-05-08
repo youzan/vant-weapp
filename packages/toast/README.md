@@ -1,49 +1,37 @@
 ## Toast 轻提示
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+在 json 文件中配置 toast 组件
+```json
+"usingComponents": {
+  "zan-toast": "/path/to/zanui-weapp/dist/toast/index"
+}
 ```
 
 在需要使用的页面里引入组件库模板和脚本
 ```html
-<import src="path/to/zanui-weapp/dist/toast/index.wxml" />
-
-<!-- 直接使用 zan-toast 模板，并且直接传入 zanToast -->
-<template is="zan-toast" data="{{ zanToast }}"></template>
+<zan-toast id="zan-toast-test"></zan-toast>
 ```
 ```js
-const { Toast, extend } = require('path/to/zanui-weapp/dist/index');
+const Toast = require('path/to/zanui-weapp/dist/toast/toast');
 
-// 在 Page 中混入 Toast 里面声明的方法
-Page(extend({}, Toast, {
+Page({
   // ...
-}));
-```
-
-### 代码演示
-在 js 中直接调用 this.showZanToast 即可
-```js
-this.showZanToast('toast的内容');
-
-this.showZanToast({
-  title: 'toast的内容'
+  // 可以在任意方法里直接调用，即可唤起
+  handleClick() {
+    Toast({
+      message: 'toast me',
+      selector: '#zan-toast-test'
+    });
+  }
 });
 ```
 
-Toast 支持在文字上展示图标，用法如下
+#### 加载提示
 ```js
-this.showZanToast({
-  title: 'toast的内容',
-  // icon 仅支持 Icon 组件内提供的
-  icon: 'fail'
+Toast.loading({
+  selector: '#zan-toast-test'
 });
-```
-
-Toast 组件扩展了一个 showZanLoading 的方法，快速展示加载中
-```js
-this.showZanLoading('toast的内容');
 ```
 
 ### 参数说明
@@ -51,14 +39,15 @@ this.showZanLoading('toast的内容');
 #### 方法
 | 方法名       | 参数      | 返回值       | 介绍       |
 |-----------|-----------|-----------|-------------|
-| showZanToast | `title \| options`, `timeout` | - | 展示提示 |
-| showZanLoading | `title \| options` | - | 展示加载提示 |
-| clearZanToast |  | - | 关闭提示 |
+| Toast | `options`, `timeout` | - | 展示提示 |
+| Toast.loading | `options` | - | 展示加载提示 |
+| Toast.clear | - | - | 关闭提示 |
 
 #### options 具体参数如下
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
+| 参数       | 说明      | 类型       | 默认值       | 可选值      |
 |-----------|-----------|-----------|-------------|-------------|
-| title | toast 显示文案 | String | - | |
-| icon | toast 显示图标，仅支持 Icon 组件内提供的和 `loading` | String | - | |
+| message | toast 显示文案 | String | - | |
+| type | 提示类型	 | String | - | loading success fail |
+| icon | toast 显示图标，可以用 icon 里面支持的所有图标	 | String | - | - |
 | image | toast 显示图标，为图片的链接，传入此值后会覆盖 icon 值 | String | - | |
 | timeout | toast 显示时间，小于0则会一直显示，需要手动调用 clearZanToast 清除 | Number | - | |

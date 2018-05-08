@@ -1,17 +1,31 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
-## [v2.4.6](https://github.com/youzan/zanui-weapp/tree/v2.4.6) (2018-02-27)
-[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.5...v2.4.6)
+## [v2.4.7](https://github.com/youzan/zanui-weapp/tree/v2.4.7) (2018-03-25)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.6...v2.4.7)
+
+**Improvements**
+
+- Field 组件新增 disabled 属性支持 [\#150](https://github.com/youzan/zanui-weapp/pull/150) ([pangxie1991](https://github.com/pangxie1991))
+- 移除多余的日志信息 [\#144](https://github.com/youzan/zanui-weapp/pull/144) ([pangxie1991](https://github.com/pangxie1991))
+- 新增小程序文档网页 [\#142](https://github.com/youzan/zanui-weapp/pull/142) ([realywithoutname](https://github.com/realywithoutname))
 
 **Bug Fixes**
 
-- 修复 Field 组件圆角输入框，边框显示问题 [\#134](https://github.com/youzan/zanui-weapp/pull/134) ([pangxie1991](https://github.com/pangxie1991))
-- 修复 Noticebar 组件元素查询返回空，导致报错的问题 [\#130](https://github.com/youzan/zanui-weapp/pull/130) ([pangxie1991](https://github.com/pangxie1991))
+- 修复弹窗被输入框文本覆盖的问题 [\#149](https://github.com/youzan/zanui-weapp/pull/149) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 NoticeBar 组件动画播放异常的问题 [\#155](https://github.com/youzan/zanui-weapp/pull/155) ([pangxie1991](https://github.com/pangxie1991))
+
+## [v2.4.6](https://github.com/youzan/zanui-weapp/tree/v2.4.6) (2018-02-27)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.5...v2.4.6)
 
 **new feature**
 
 - 新增 Field 组件 focus 自动聚焦属性 [\#135](https://github.com/youzan/zanui-weapp/pull/135) ([pangxie1991](https://github.com/pangxie1991))
 - 新增文档网站 [\#126](https://github.com/youzan/zanui-weapp/pull/126) ([realywithoutname](https://github.com/realywithoutname))
+
+**Bug Fixes**
+
+- 修复 Field 组件圆角输入框，边框显示问题 [\#134](https://github.com/youzan/zanui-weapp/pull/134) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 Noticebar 组件元素查询返回空，导致报错的问题 [\#130](https://github.com/youzan/zanui-weapp/pull/130) ([pangxie1991](https://github.com/pangxie1991))
 
 ## [v2.4.5](https://github.com/youzan/zanui-weapp/tree/v2.4.5) (2018-02-07)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v2.4.4...v2.4.5)

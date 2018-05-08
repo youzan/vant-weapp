@@ -44,114 +44,58 @@ npm run dev
 详细使用文档，请参考 [快速上手](https://www.youzanyun.com/zanui/weapp)
 
 ### 组件分类介绍
-根据功能的不同，可以将组件大致的分为4类：
+根据功能的不同，可以将组件大致的分为2类：
 
-#### 1. 简单组件
+#### 1. 正常引用
 
-如按钮组件，只要按照wxml结构写就好了
-
-~~~html
+如按钮组件，只需要在页面中引入按钮自定义组件即可
+```json
+{
+    "usingComponents": {
+        "zan-button": "/path/to/zanui-weapp/dist/btn/index"
+    }
+}
+```
+```html
 <!-- example/btn/index.html -->
 
-<view class="zan-btn">按钮</view>
-~~~
+<zan-button>按钮</zan-button>
+```
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)
 
-#### 2. 复杂组件
 
-如加载更多组件，需要先引入定义好的模版，然后给模版传递数据
+#### 2. API类组件
 
-~~~html
-<!-- example/loadmore/index.html -->
+如 Toast 组件，需要先在页面上引入自定义组件。之后在逻辑运行时，直接调用方法即可展示
+```json
+{
+    "usingComponents": {
+        "zan-toast": "/path/to/zanui-weapp/dist/toast/index"
+    }
+}
+```
+```html
+<zan-toast id="zan-toast-test"></zan-toast>
+```
 
-<!-- 引入组件模版 -->
-<import src="path/to/zanui-weapp/dist/loadmore/index.wxml" />
+将对应的 Toast 的函数引入页面，就可以直接调用来展示 Toast 了
 
-<!-- 加载中 -->
-<template is="zan-loadmore" data="{{loading: true}}" />
+```js
+// example/toast/index.js
 
-<!-- 一条数据都没有 -->
-<template is="zan-loadmore" data="{{nodata: true}}" />
+const Toast = require('/path/to/zanui-weapp/dist/toast/toast');
 
-<!-- 没有更多数据了 -->
-<template is="zan-loadmore" data="{{nomore: true}}" />
-~~~
-
-![](https://img.yzcdn.cn/public_files/2017/02/08/b96fdc7971577b32915604c5b2c1a3bb.png)
-
-#### 3. 带事件回调的组件
-
-如数量选择组件，需要先引入模版，然后给模版传递数据
-
-~~~html
-<!-- example/stepper/index.html -->
-
-<import src="path/to/zanui-weapp/dist/stepper/index.wxml" />
-
-<template is="zan-stepper" data="{{ ...stepper, componentId: 'customId' }}" />
-~~~
-
-然后通过`Zan.Stepper`把相关回调注入到页面中
-
-~~~js
-// example/stepper/index.js
-
-var Zan = require('path/to/zanui-weapp/dist/index');
-
-Page(Object.assign({}, Zan.Stepper, {
-  data: {
-    stepper: {
-      stepper: 10,
-      min: 1,
-      max: 20
-    },
-  },
-
-  handleZanStepperChange(e) {
-    // 如果页面有多个Stepper组件，则通过唯一componentId进行索引
-    var compoenntId = e.componentId;
-    var stepper = e.stepper;
-
-    this.setData({
-      'stepper.stepper': stepper
+Page({
+  showToast() {
+    Toast({
+        selector: '#zan-toast-test',
+        message: 'toast内容'
     });
   }
-}));
-~~~
+});
 
-![](https://img.yzcdn.cn/public_files/2017/02/08/b791dfef150b01a7ce1e9aa9e60e0038.png)
-
-#### 4. API类组件
-
-如Toast组件，需要先引入模版，并在页面上使用。
-
-> 注意`zanToast`这个数据也是通过`Zan.Toast`注入到页面的
-
-~~~html
-<!-- example/toast/index.html -->
-
-<import src="path/to/zanui-weapp/dist/toast/index.wxml" />
-
-<view bindtap="showToast">显示toast</view>
-
-<template is="zan-toast" data="{{ zanToast }}"></template>
-~~~
-
-将API注入到页面后，就可以通过`this`来直接调用相应的API了
-
-~~~js
-<!-- example/toast/index.js -->
-
-var Zan = require('path/to/zanui-weapp/dist/index');
-
-Page(Object.assign({}, Zan.Toast, {
-  showToast() {
-    this.showZanToast('toast的内容');
-  }
-}));
-
-~~~
+```
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/ada80798c88df08060ce96964384e88e.png)
 

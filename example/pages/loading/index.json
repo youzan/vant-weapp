@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "loading 加载",
+  "usingComponents": {
+    "zan-loading": "../../dist/loading/index"
+  }
+}

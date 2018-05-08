@@ -54,6 +54,7 @@ module.exports = {
   // Form 中使用输入框
   form: {
     name: {
+      name: 'name',
       placeholder: '请输入收货人姓名',
       componentId: 'form:test:name'
     },

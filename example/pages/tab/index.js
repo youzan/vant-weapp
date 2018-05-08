@@ -1,7 +1,18 @@
-const { Tab, extend } = require('../../dist/index');
-
-Page(extend({}, Tab, {
+Page({
   data: {
+    tab: {
+      list: [{
+        id: 1,
+        title: '选项1'
+      }, {
+        id: 2,
+        title: '选项2'
+      }, {
+        id: 3,
+        title: '选项3'
+      }],
+      selectedId: 1
+    },
     tab1: {
       list: [{
         id: 'all',
@@ -15,9 +26,6 @@ Page(extend({}, Tab, {
       }, {
         id: 'send',
         title: '待收货'
-      }, {
-        id: 'sign',
-        title: '已完成订单'
       }],
       selectedId: 'all'
     },
@@ -44,39 +52,6 @@ Page(extend({}, Tab, {
       selectedId: '1',
       scroll: true,
       height: 45
-    },
-    tab3: {
-      list: [{
-        id: '1',
-        title: '商品1'
-      }, {
-        id: '2',
-        title: '商品2'
-      }, {
-        id: '3',
-        title: '商品3'
-      }, {
-        id: '4',
-        title: '商品4'
-      }, {
-        id: '5',
-        title: '商品5'
-      }, {
-        id: '6',
-        title: '商品6'
-      }],
-      selectedId: '1',
-      scroll: true,
-      height: 45
     }
-  },
-
-  handleZanTabChange(e) {
-    var componentId = e.componentId;
-    var selectedId = e.selectedId;
-
-    this.setData({
-      [`${componentId}.selectedId`]: selectedId
-    });
   }
-}));
+});

@@ -3,6 +3,8 @@
   "usingComponents": {
     "zan-date-picker": "../../dist/datetime-picker/index",
     "zan-cell": "../../dist/cell/index",
-    "zan-cell-group": "../../dist/cell-group/index"
+    "zan-cell-group": "../../dist/cell-group/index",
+    "zan-panel": "../../dist/panel/index",
+    "doc-page": "../../components/doc-page/index"
   }
 }

@@ -1,5 +1,7 @@
 {
+  "navigationBarTitleText": "Icon 图标",
   "usingComponents": {
-    "zan-icon": "../../dist/icon/index"
+    "zan-icon": "../../dist/icon/index",
+    "doc-page": "../../components/doc-page/index"
   }
 }

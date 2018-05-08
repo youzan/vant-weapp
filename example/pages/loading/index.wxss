@@ -1,0 +1,14 @@
+.container {
+  background: #f0f0f0;  
+}
+.loading-example {
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+}
+.loading-example zan-loading {
+  flex: 1;
+}
+.no-flex {
+  display: block;
+}

@@ -4,10 +4,11 @@ Page({
   data: {},
 
   showToast() {
-    Toast({
-      message: 'toast的内容',
+    Toast.setDefaultOptions({
       selector: '#zan-toast-test'
-    })
+    });
+
+    Toast('toast的内容');
   },
 
   showIconToast() {

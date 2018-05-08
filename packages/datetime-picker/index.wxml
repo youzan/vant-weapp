@@ -1,5 +1,4 @@
 <block wx:if="{{ pickerView }}">
-  <view wx:if="{{ native }}" class="placeholder-class">{{text || placeholder}}</view>
   <picker-view
     wx:if="{{ native }}"
     value="{{ selected }}"
@@ -47,7 +46,7 @@
 </block>
 <view data-action="cancel" bindtap="hidePicker" class="picker-mask {{show && !pickerView ? 'show' : ''}}"></view>
 <view wx:if="{{ !native }}" class="data-time-picker {{ pickerView && 'picker-view' }}">
-  <view bindtap="showPicker" class="placeholder-class">{{text || placeholder}}</view>
+  <view bindtap="showPicker" wx:if="{{ !pickerView }}" class="placeholder-class">{{text || placeholder}}</view>
   <view class="picker {{show ? 'picker-visible' : ''}}">
     <view wx:if="{{!pickerView}}" class="picker-action">
       <view data-action="cancel" bindtap="hidePicker">取消</view>

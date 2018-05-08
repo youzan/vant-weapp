@@ -4,6 +4,7 @@
 .placeholder-class {
   width: 100%;
 }
+
 .picker {
   position: fixed;
   bottom: -100px;

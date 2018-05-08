@@ -177,6 +177,19 @@ Component({
     this.data.pickerView && !this.data.native && this.showPicker();
   },
   ready() {
+    // 微信 bug，如果不先定义会导致不能选中
+    this.setData({
+      "dataList":[
+        [
+          "2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030","2031","2032","2033","2034","2035","2036","2037","2038","2039","2040","2041","2042","2043"
+        ],
+        genNumber(1, 12, 2),
+        genNumber(0, 31, 2),
+        genNumber(0, 23, 2),
+        genNumber(0, 59, 2),
+        genNumber(0, 59, 2)
+      ]
+    })
     this.picker = new DatePicker(this.data.format, this.data.date, this.updatePicker.bind(this));
   },
   methods: {
@@ -201,6 +214,7 @@ Component({
           updateData[`transPos[${index}]`] = -item * 36;
         });
       }
+
       this.setData(updateData);
     },
     touchmove(e) {
@@ -241,7 +255,7 @@ Component({
       let { column, value } = e.detail;
       _indexs[column] = value;
       this.picker.update(column, value, this.updatePicker.bind(this));
-      this.data.pickerView && this.change({detail: {value: _indexs}})
+      this.data.pickerView && !this.data.native && this.change({detail: {value: _indexs}})
     },
     getFormatStr() {
       let date = new Date()
@@ -269,10 +283,27 @@ Component({
     },
     change(e) {
       let { value } = e.detail;
+      
       let data = this.data.dataList.map((item, index) => {
         return +item[value[index]];
       });
+
       this.triggerEvent('change', { value: data });
+
+      // 为了支持原生 picker view，每次 change 都需要手动 columnchange
+      if (this.data.pickerView && this.data.native) {
+        for (let index = 0; index < value.length; index++) {
+          if (_indexs[index] !== value[index]) {
+            this.columnchange({
+              detail: {
+                column: index, value: value[index]
+              }
+            })
+            break // 这里每次只处理一列，否则会出现日期值为 undefined 的情况
+          }
+        }
+      }
+
       this.setData({ text: this.getFormatStr() });
     },
     cancel(e) {

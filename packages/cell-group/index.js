@@ -1,5 +1,3 @@
-let cellUpdateTimeout = 0;
-
 Component({
   relations: {
     '../cell/index': {
@@ -16,15 +14,19 @@ Component({
     }
   },
 
+  data: {
+    cellUpdateTimeout: 0
+  },
+
   methods: {
     _updateIsLastCell() {
       // 用 setTimeout 减少计算次数
-      if (cellUpdateTimeout > 0) {
+      if (this.data.cellUpdateTimeout > 0) {
         return;
       }
 
-      cellUpdateTimeout = setTimeout(() => {
-        cellUpdateTimeout = 0;
+      const cellUpdateTimeout = setTimeout(() => {
+        this.setData({ cellUpdateTimeout: 0 });
         let cells = this.getRelationNodes('../cell/index');
 
         if (cells.length > 0) {
@@ -35,6 +37,8 @@ Component({
           });
         }
       });
+
+      this.setData({ cellUpdateTimeout });
     }
   }
 });

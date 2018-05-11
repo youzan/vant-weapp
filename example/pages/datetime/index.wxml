@@ -1,0 +1,69 @@
+<doc-page title="DATETIME PICKER" without-padding>
+  <zan-panel class="picker-panel-demo">
+    <zan-cell-group>
+      <zan-cell title="选择时间">
+        <zan-date-picker
+          native
+          slot="footer"
+          bindchange="change"  
+          bindcancel="cancel"
+          placeholder="原生 picker"
+          placeholder-class="my-customer-class-name" />
+      </zan-cell>
+
+      <zan-cell title="选择时间">
+        <zan-date-picker
+          slot="footer"
+          bindchange="change"  
+          bindcancel="cancel"
+          placeholder="自定义 picker"
+          placeholder-class="my-customer-class-name" />
+      </zan-cell>
+
+      <zan-cell title="选择时间">
+        <zan-date-picker
+          slot="footer"
+          not-use="{{['years', 'seconds']}}"
+          bindchange="change"  
+          bindcancel="cancel"
+          placeholder="只显示部分列的 picker"
+          placeholder-class="my-customer-class-name" />
+      </zan-cell>
+
+      <zan-cell title="选择时间">
+        <zan-date-picker
+          slot="footer"
+          bindchange="change"  
+          bindcancel="cancel"
+          placeholder="自定义显示格式的 picker"
+          format="选择的是YY-MM-DD HH:mm:ss"
+          placeholder-class="my-customer-class-name" />
+      </zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+
+
+  <zan-panel class="picker-panel-demo">
+    <zan-cell title="选择时间" value="{{pickerView1 || '自定义组件'}}"></zan-cell>
+    <zan-date-picker
+      picker-view
+      bindchange="customChange"  
+      bindcancel="cancel"
+      placeholder="自定义显示格式的 picker"
+      format="选择的是YY-MM-DD HH:mm:ss"
+      placeholder-class="my-customer-class" />
+  </zan-panel>
+
+  <zan-panel class="picker-panel-demo">
+    <zan-cell title="选择时间" value="{{ pickerView2 || '原生组件'}}"></zan-cell>
+    <zan-date-picker
+      native
+      picker-view   
+      bindchange="nativeChange"
+      bindcancel="cancel"
+      placeholder="组件内原生 picker"
+      placeholder-class="my-customer-class" />
+  </zan-panel>
+
+</doc-page>
+

@@ -83,6 +83,9 @@ export default {
       }, {
         name: 'TopTips 顶部提示',
         path: '/pages/toptips/index'
+      }, {
+        name: 'Datetime 时间选择器',
+        path: '/pages/datetime/index'
       }
     ]
   }

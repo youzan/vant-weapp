@@ -1,0 +1,111 @@
+<block wx:if="{{ pickerView }}">
+  <picker-view
+    wx:if="{{ native }}"
+    value="{{ selected }}"
+    bindchange="change"
+    indicator-style="height: 50px;"
+    class="picker-visible">
+    <picker-view-column>
+      <view wx:for="{{dataList[0]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{dataList[1]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{dataList[2]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{dataList[3]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{dataList[4]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{dataList[5]}}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</block>
+<block wx:else>
+  <picker
+    wx:if="{{native}}"
+    mode="multiSelector" 
+    range="{{ dataList }}" 
+    value="{{ selected }}"
+    bindchange="change"
+    bindcolumnchange="columnchange"
+    bindcancel="cancel" >
+    <view class="placeholder-class">
+      {{text || placeholder}}
+    </view>
+  </picker>
+</block>
+<view data-action="cancel" bindtap="hidePicker" class="picker-mask {{show && !pickerView ? 'show' : ''}}"></view>
+<view wx:if="{{ !native }}" class="data-time-picker {{ pickerView && 'picker-view' }}">
+  <view bindtap="showPicker" wx:if="{{ !pickerView }}" class="placeholder-class">{{text || placeholder}}</view>
+  <view class="picker {{show ? 'picker-visible' : ''}}">
+    <view wx:if="{{!pickerView}}" class="picker-action">
+      <view data-action="cancel" bindtap="hidePicker">取消</view>
+      <view data-action="change" bindtap="hidePicker">确认</view>
+    </view>
+    <view 
+      catchtouchstart="touchStart" 
+      catchtouchend="touchEnd" 
+      catchtouchmove="touchmove" class="picker-cols">
+
+      <view wx:if="{{use['years']}}" data-col="0" class="col">
+        <view data-col="0" style="transform: translateY({{ transPos[0] }}px)">
+          <view data-col="0" class="{{ index === selected[0] ? 'select-item' : '' }} cell" 
+            wx:for-index="index" 
+            wx:for="{{dataList[0]}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view wx:if="{{use['years']}}" data-col="0" class="fixed-col">年</view>
+
+      <view wx:if="{{use['months']}}" data-col="1" class="col">
+        <view data-col="1" style="transform: translateY({{ transPos[1] }}px)">
+          <view data-col="1" class="{{ index === selected[1] ? 'select-item' : '' }} cell" 
+            wx:for-index="index"
+            wx:for="{{dataList[1]}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view wx:if="{{use['months']}}" data-col="1" class="fixed-col">月</view>
+
+      <view wx:if="{{use['days']}}" data-col="2" class="col">
+        <view data-col="2" style="transform: translateY({{ transPos[2] }}px)">
+          <view data-col="2" class="{{ index === selected[2] ? 'select-item' : '' }} cell" 
+            wx:for-index="index" wx:for="{{dataList[2]}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view wx:if="{{use['days']}}" data-col="2" class="fixed-col">日</view>
+
+      <view wx:if="{{use['hours']}}" data-col="3" class="col">
+        <view data-col="3" style="transform: translateY({{ transPos[3] }}px)">
+          <view data-col="3" class="{{ index === selected[3] ? 'select-item' : '' }} cell" 
+            wx:for-index="index" wx:for="{{dataList[3]}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view wx:if="{{use['hours']}}" data-col="3" class="fixed-col">时</view>
+
+      <view wx:if="{{use['minutes']}}" data-col="4" class="col">
+        <view data-col="4" style="transform: translateY({{ transPos[4] }}px)">
+          <view data-col="4" class="{{ index === selected[4] ? 'select-item' : '' }} cell" 
+            wx:for-index="index" wx:for="{{dataList[4]}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view wx:if="{{use['minutes']}}" data-col="4" class="fixed-col">分</view>
+
+      <view wx:if="{{use['seconds']}}" data-col="5" class="col">
+        <view data-col="5" style="transform: translateY({{ transPos[5] }}px)">
+          <view data-col="5" class="{{ index === selected[5] ? 'select-item' : '' }} cell" 
+            wx:for-index="index" wx:for="{{dataList[5]}}" wx:key="*this">{{item}}</view>
+        </view>
+      </view>
+      <view wx:if="{{use['seconds']}}" data-col="5" class="fixed-col">秒</view>
+    </view>
+  </view>
+</view>

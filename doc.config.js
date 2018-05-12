@@ -36,7 +36,8 @@ module.exports = {
         include: {
           icon: require('./packages/icon/README.md'),
           btn: require('./packages/btn/README.md'),
-          helper: require('./packages/helper/README.md')
+          helper: require('./packages/helper/README.md'),
+          loading: require('./packages/loading/README.md')
         }
       },
       {
@@ -84,6 +85,6 @@ module.exports = {
         }
       }
     ],
-    include: { loading: require('./packages/loading/README.md') }
+    include: { 'datetime-picker': require('./packages/datetime-picker/README.md') }
   }
 }

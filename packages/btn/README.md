@@ -26,9 +26,9 @@
 #### 按钮大小
 按钮支持额外三种大小 large, small, mini
 ```html
-<zan-button type="large">确认付款</zan-button>
-<zan-button type="small">取消订单</zan-button>
-<zan-button type="mini">确认付款</zan-button>
+<zan-button size="large">确认付款</zan-button>
+<zan-button size="small">取消订单</zan-button>
+<zan-button size="mini">确认付款</zan-button>
 ```
 
 #### 其他

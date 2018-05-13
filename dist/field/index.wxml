@@ -7,7 +7,6 @@
   <textarea
     wx:if="{{ type === 'textarea' }}"
     auto-height
-    name="{{ name || '' }}"
     disabled="{{ disabled }}"
     focus="{{ focus }}"
     value="{{ value }}"
@@ -15,14 +14,13 @@
     maxlength="{{ maxlength }}"
     class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
     placeholder-class="zan-field__placeholder"
-    bindinput="handleZanFieldChange"
-    bindfocus="handleZanFieldFocus"
-    bindblur="handleZanFieldBlur">
-  </textarea>
+    bindinput="handleFieldChange"
+    bindfocus="handleFieldFocus"
+    bindblur="handleFieldBlur"
+  ></textarea>
   <input
     wx:else
     type="{{ inputType || 'text' }}"
-    name="{{ name || '' }}"
     disabled="{{ disabled }}"
     focus="{{ focus }}"
     value="{{ value }}"
@@ -30,8 +28,8 @@
     maxlength="{{ maxlength }}"
     class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
     placeholder-class="zan-field__placeholder"
-    bindinput="handleZanFieldChange"
-    bindfocus="handleZanFieldFocus"
-    bindblur="handleZanFieldBlur"
+    bindinput="handleFieldChange"
+    bindfocus="handleFieldFocus"
+    bindblur="handleFieldBlur"
   />
 </view>

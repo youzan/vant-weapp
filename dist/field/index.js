@@ -1,13 +1,12 @@
 Component({
+  behaviors: ['wx://form-field'],
+
   properties: {
     title: String,
-    name: String,
     type: {
       type: String,
       value: 'input'
     },
-    name: String,
-    value: String,
     disabled: Boolean,
     inputType: {
       type: String,
@@ -28,20 +27,19 @@ Component({
   },
 
   methods: {
-    handleZanFieldChange(event) {
-      
+    handleFieldChange(event) {
+      const { detail = {} } = event;
+      const { value = '' } = detail;
+      this.setData({ value });
+
       this.triggerEvent('change', event);
     },
 
-    handleZanFieldFocus(event) {
-      
-
+    handleFieldFocus(event) {
       this.triggerEvent('focus', event);
     },
 
-    handleZanFieldBlur(event) {
-      
-
+    handleFieldBlur(event) {
       this.triggerEvent('blur', event);
     }
   }

@@ -1,5 +1,23 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.2](https://github.com/youzan/zanui-weapp/tree/v3.0.2) (2018-05-13)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.1...v3.0.2)
+
+**new feature**
+- 新增时间选择组件 [\#164](https://github.com/youzan/zanui-weapp/pull/164) ([realywithoutname](https://github.com/realywithoutname))
+
+**Improvements**
+- Icon 中增加减号图标 [\#235](https://github.com/youzan/zanui-weapp/pull/235) ([pangxie1991](https://github.com/pangxie1991))
+- Toast 组件新增默认配置设置 [\#229](https://github.com/youzan/zanui-weapp/pull/229) ([pangxie1991](https://github.com/pangxie1991))
+- Btn 组件和 Field 组件支持原生属性 [\#219](https://github.com/youzan/zanui-weapp/pull/219) ([pangxie1991](https://github.com/pangxie1991))
+
+**Bug Fixes**
+- 修复部分情况下 cell 边框不出现的问题 [\#237](https://github.com/youzan/zanui-weapp/pull/237) ([pangxie1991](https://github.com/pangxie1991)))
+- 修复 Badge 组件在页面数据改变了以后，组件中的数字不变的问题 [\#225](https://github.com/youzan/zanui-weapp/pull/225) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 Stepper 组件文档错误 [\#222](https://github.com/youzan/zanui-weapp/pull/222) ([jerryni](https://github.com/jerryni))
+- 修复部分文档错误 [\#239](https://github.com/youzan/zanui-weapp/pull/239) ([pangxie1991](https://github.com/pangxie1991))
+
+
 ## [v3.0.1](https://github.com/youzan/zanui-weapp/tree/v3.0.1) (2018-04-30)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.0...v3.0.1)
 

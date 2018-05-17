@@ -24,7 +24,7 @@ Component({
 
   methods: {
     show() {
-      const duration = this.data.duration;
+      const { duration } = this.data;
 
       this._timer && clearTimeout(this._timer);
       this.setData({
@@ -56,7 +56,7 @@ function Toptips(options = {}) {
     duration: 3000
   };
 
-  options = Object.assign(defaultOptions,parseParam(options));
+  options = Object.assign(defaultOptions, parseParam(options));
 
   const $toptips = ctx.selectComponent(options.selector);
   delete options.selector;

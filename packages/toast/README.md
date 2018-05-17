@@ -42,6 +42,8 @@ Toast.loading({
 | Toast | `options`, `timeout` | - | 展示提示 |
 | Toast.loading | `options` | - | 展示加载提示 |
 | Toast.clear | - | - | 关闭提示 |
+| Toast.setDefaultOptions | `options` 格式同 Toast 函数可以传入的参数, `type` 可选 global/page, 分别指定对整个小程序生效/对当前页面生效 | - | 修改默认配置，对所有 Toast 生效 |
+| Toast.resetDefaultOptions | `type` 可选 global/page | - | 重置默认配置，对所有 Toast 生效 |
 
 #### options 具体参数如下
 | 参数       | 说明      | 类型       | 默认值       | 可选值      |

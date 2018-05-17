@@ -1,0 +1,10 @@
+<view class="zan-panel">
+  <view
+    wx:if="{{ title }}"
+    class="zan-panel__title">{{ title }}</view>
+  <view
+    class="zan-panel__content {{ hideBorder ? 'zan-panel--without-border' : '' }}"
+  >
+    <slot></slot>
+  </view>
+</view>

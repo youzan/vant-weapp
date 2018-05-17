@@ -2,6 +2,7 @@
   "navigationBarTitleText": "Field 输入框",
   "usingComponents": {
     "zan-button": "../../dist/btn/index",
+    "zan-button-group": "../../dist/btn-group/index",
     "zan-field": "../../dist/field/index",
     "zan-panel": "../../dist/panel/index",
     "doc-page": "../../components/doc-page/index"

@@ -86,6 +86,11 @@ module.exports = {
       css: 'add'
     },
     {
+      keywords: ['minus'],
+      src: '删除地址.svg',
+      css: 'minus'
+    },
+    {
       keywords: ['add2'],
       src: '添加.svg',
       css: 'add2'
@@ -428,6 +433,11 @@ module.exports = {
       keywords: ['buy', 'add'],
       src: '加购.svg',
       css: 'add-o'
+    },
+    {
+      keywords: ['minus', 'delete'],
+      src: '减少.svg',
+      css: 'minus-o'
     },
     {
       src: '播放.svg',

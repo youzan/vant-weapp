@@ -1,0 +1,1 @@
+<view class="zan-icon zan-icon-{{ type }}"></view>

@@ -1,0 +1,33 @@
+<view class="zan-card card-class">
+  <!-- 左侧图片 -->
+  
+  <view class="zan-card__thumb">
+    <image class="zan-card__img"
+      src="{{ thumb }}"
+      mode="aspectFit"
+    ></image>
+  </view>
+  <!-- 右侧详情 -->
+  <view class="zan-card__detail">
+    <slot wx:if="{{ useDetailSlot }}" name="detail-slot"></slot>
+    <block wx:else>
+      <view class="zan-card__detail-row">
+        <view class="zan-card__right-col">¥ {{ price }}</view>
+        <view class="zan-card__left-col zan-ellipsis--l2">
+          {{ title }}
+        </view>
+      </view>
+
+      <view class="zan-card__detail-row zan-c-gray-darker">
+        <view wx:if="{{ num }}" class="zan-card__right-col">x {{ num }}</view>
+        <view wx:if="{{ desc }}" class="zan-card__left-col">
+          {{ desc }}
+        </view>
+      </view>
+
+      <view wx:if="{{ status }}" class="zan-card__detail-row">
+        <view class="zan-card__left-col zan-c-red">{{ status }}</view>
+      </view>
+    </block>
+  </view>
+</view>

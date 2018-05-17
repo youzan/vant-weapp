@@ -15,7 +15,7 @@ module.exports = {
     address: {
       title: '详细地址',
       type: 'textarea',
-      placeholder: '请输入详细地址'
+      placeholder: '请输入详细地址(最多50字)'
     },
     disabled: {
       title: '用户信息',

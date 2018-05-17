@@ -1,25 +1,31 @@
-var Switch = {
-  _handleZanSwitchChange(e) {
-    var dataset = e.currentTarget.dataset;
+Component({
+  properties: {
+    checked: {
+      type: Boolean,
+      value: false
+    },
 
-    var checked = !dataset.checked;
-    var loading = dataset.loading;
-    var disabled = dataset.disabled;
-    var componentId = dataset.componentId;
+    loading: {
+      type: Boolean,
+      value: false
+    },
 
-    if (loading || disabled) return;
+    disabled: {
+      type: Boolean,
+      value: false
+    }
+  },
 
-    
-
-    if (this.handleZanSwitchChange) {
-      this.handleZanSwitchChange({
+  methods: {
+    handleZanSwitchChange() {
+      if (this.data.loading || this.data.disabled) {
+        return;
+      }
+      let checked = !this.data.checked;
+      this.triggerEvent('change', {
         checked,
-        componentId
+        loading: this.data.loading
       });
-    } else {
-      console.warn('页面缺少 handleZanSwitchChange 回调函数');
     }
   }
-};
-
-module.exports = Switch;
+});

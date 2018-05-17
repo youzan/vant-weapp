@@ -18,10 +18,14 @@ Page(Object.assign({}, {
     }
   },
 
-  handleZanStepperChange(e) {
-    const componentId = e.target.dataset.componentId;
-    const stepper = e.detail;
-
+  handleZanStepperChange({
+    detail: stepper,
+    target: {
+      dataset: {
+        componentId
+      }
+    }
+  }) {
     this.setData({
       [`${componentId}.stepper`]: stepper
     });

@@ -3,6 +3,7 @@
   "usingComponents": {
     "doc-page": "../../components/doc-page/index",
     "zan-dialog": "../../dist/dialog/index",
-    "zan-button": "../../dist/btn/index"
+    "zan-button": "../../dist/btn/index",
+    "zan-button-group": "../../dist/btn-group/index"
   }  
 }

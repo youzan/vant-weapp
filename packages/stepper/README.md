@@ -15,7 +15,7 @@
 #### 基础用法
 `Stepper` 组件通过传入的 stepper 对象控制，内部数据格式如下：
 ```js
-Page(extend({}, {
+Page({
   data: {
     stepper: {
       // 当前 stepper 数字
@@ -27,15 +27,23 @@ Page(extend({}, {
     }
   },
 
-  handleZanStepperChange({ componentId, stepper }) {
-    // componentId 即为在模板中传入的 componentId
-    // 用于在一个页面上使用多个 stepper 时，进行区分
+  handleZanStepperChange({
+
     // stepper 代表操作后，应该要展示的数字，需要设置到数据对象里，才会更新页面展示
+    detail: stepper,
+
+    // 模板中传入的 componentId，用于区分一个页面上的多个stepper
+    target: {
+      dataset: {
+        componentId
+      }
+    }
+  }) {
     this.setData({
-      stepper
+      [`${componentId}.stepper`]: stepper
     });
   }
-}));
+});
 ```
 
 当一个 `Stepper` 中，min 超过 max，就会导致组件被置灰。

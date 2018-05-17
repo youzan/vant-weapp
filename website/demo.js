@@ -18,11 +18,12 @@ function getDemoDir (docFile) {
 }
 
 module.exports = function (template) {
-  let demoDir = getDemoDir(this.context)
-  let demoConf = getDemoFiles(demoDir)
-  template = Object.keys(demoConf).reduce((res, key) => {
-    res += `\n~~~ ${key}\n${demoConf[key]}~~~`
-    return res
-  }, template + `<wxapp-demo demo-types="${Object.keys(demoConf)}">\n`)
-  return template + '\n</wxapp-demo>'
+  // let demoDir = getDemoDir(this.context)
+  // let demoConf = getDemoFiles(demoDir)
+  // template = Object.keys(demoConf).reduce((res, key) => {
+  //   res += `\n~~~ ${key}\n${demoConf[key]}~~~`
+  //   return res
+  // }, template + `<wxapp-demo demo-types="${Object.keys(demoConf)}">\n`)
+  // return template + '\n</wxapp-demo>'
+  return template + `<wxapp-demo></wxapp-demo>`;
 }

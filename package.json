@@ -31,6 +31,7 @@
   ],
   "homepage": "https://github.com/youzan/zanui-weapp#readme",
   "devDependencies": {
+    "autoprefixer": "^8.5.0",
     "babel-eslint": "^8.2.3",
     "cross-env": "^5.1.4",
     "eslint-config-airbnb": "^16.1.0",

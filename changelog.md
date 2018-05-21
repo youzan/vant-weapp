@@ -1,5 +1,15 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.3](https://github.com/youzan/zanui-weapp/tree/v3.0.3) (2018-05-21)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.2...v3.0.3)
+
+**Bug Fixes**
+- 修复 cell 组件点击事情触发两次的问题 [\#259](https://github.com/youzan/zanui-weapp/pull/259) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 Cell 组件文档错误 [\#254](https://github.com/youzan/zanui-weapp/pull/254) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+- Dialog 组件中的按钮支持 open-type 属性 [\#247](https://github.com/youzan/zanui-weapp/pull/247) ([artecher](https://github.com/artecher))
+
 ## [v3.0.2](https://github.com/youzan/zanui-weapp/tree/v3.0.2) (2018-05-13)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.1...v3.0.2)
 

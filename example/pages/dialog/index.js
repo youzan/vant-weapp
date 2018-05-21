@@ -33,6 +33,10 @@ Page({
         color: 'red',
         type: 'cash'
       }, {
+        text: '分享',
+        type: 'share',
+        openType: 'share'
+      }, {
         text: '微信支付',
         color: '#3CC51F',
         type: 'wechat'
@@ -60,11 +64,22 @@ Page({
         color: '#3CC51F',
         type: 'wechat'
       }, {
+        text: '分享',
+        type: 'share',
+        openType: 'share'
+      }, {
         text: '取消',
         type: 'cancel'
       }]
     }).then(({ type }) => {
       console.log('=== dialog with vertical buttons ===', `type: ${type}`);
     });
-  }
+  },
+
+  onShareAppMessage() {
+    return {
+      title: 'ZanUI-WeApp',
+      imageUrl: 'https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png'
+    };
+  },
 });

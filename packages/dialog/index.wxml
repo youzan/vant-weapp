@@ -23,6 +23,7 @@
           class="zan-dialog__button"
           custom-class="{{ index === 0 ? 'zan-dialog__button-inside--first' : 'zan-dialog__button-inside' }}"
           data-type="{{ item.type }}"
+          open-type="{{ item.openType }}"
           bind:btnclick="handleButtonClick"
         >
           <view

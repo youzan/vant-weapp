@@ -16,5 +16,9 @@ Page(Object.assign({}, Zan.Switch, {
     this.setData({
       checked: e.checked
     });
+  },
+
+  handleTap() {
+    console.log('cell tapped');
   }
 }));

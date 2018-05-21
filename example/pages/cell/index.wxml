@@ -1,7 +1,7 @@
 <doc-page title="CELL" without-padding>
 
   <zan-panel class="cell-panel-demo">
-    <zan-cell title="单行列表"></zan-cell>
+    <zan-cell title="单行列表" bindtap="handleTap"></zan-cell>
   </zan-panel>
 
   <zan-panel class="cell-panel-demo">
@@ -23,7 +23,12 @@
   </zan-panel>
 
   <zan-panel class="cell-panel-demo">
-    <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
+    <zan-cell
+      title="跳转到首页"
+      is-link
+      url="/pages/dashboard/index"
+      bindtap="handleTap"
+    ></zan-cell>
   </zan-panel>
 
   <zan-panel class="cell-panel-demo" title="cell 组">

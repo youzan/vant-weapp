@@ -1,7 +1,7 @@
 <doc-page title="CELL" without-padding>
 
   <zan-panel class="cell-panel-demo">
-    <zan-cell title="单行列表"></zan-cell>
+    <zan-cell title="单行列表" bindtap="handleTap"></zan-cell>
   </zan-panel>
 
   <zan-panel class="cell-panel-demo">
@@ -23,14 +23,25 @@
   </zan-panel>
 
   <zan-panel class="cell-panel-demo">
-    <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
+    <zan-cell
+      title="跳转到首页"
+      is-link
+      url="/pages/dashboard/index"
+      bindtap="handleTap"
+    ></zan-cell>
   </zan-panel>
 
   <zan-panel class="cell-panel-demo" title="cell 组">
     <zan-cell-group>
       <zan-cell title="只显示箭头" is-link></zan-cell>
       <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
-      <zan-cell title="只有 footer 点击有效" is-link url="/pages/dashboard/index" only-tap-footer></zan-cell>
+      <zan-cell
+        is-link
+        only-tap-footer
+        url="/pages/dashboard/index"
+        title="只有 footer 点击有效"
+        bindtap="handleTap"
+      ></zan-cell>
       <block wx:if="{{ show }}">
         <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
         <zan-cell title="表单">

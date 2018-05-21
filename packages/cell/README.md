@@ -33,8 +33,8 @@
 
 ```wxml
   <zan-cell-group>
-    <zan-cell title="只显示箭头" is-link="{{true}}"></zan-cell>
-    <zan-cell title="跳转到首页" is-link="/pages/dashboard/index"></zan-cell>
+    <zan-cell title="只显示箭头" is-link></zan-cell>
+    <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
     <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
     <zan-cell title="表单">
       <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>

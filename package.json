@@ -1,6 +1,6 @@
 {
   "name": "zanui-weapp",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
   "main": "app.js",
   "directories": {
@@ -31,6 +31,7 @@
   ],
   "homepage": "https://github.com/youzan/zanui-weapp#readme",
   "devDependencies": {
+    "autoprefixer": "^8.5.0",
     "babel-eslint": "^8.2.3",
     "cross-env": "^5.1.4",
     "eslint-config-airbnb": "^16.1.0",

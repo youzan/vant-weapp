@@ -9154,9 +9154,9 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
-wedoc@0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/wedoc/-/wedoc-0.0.13.tgz#1c0824328880541b1e99805e4996e773707c1c4c"
+wedoc@0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/wedoc/-/wedoc-0.0.16.tgz#9fae70f4a3e34d207bd9774506e3bba350f719cb"
   dependencies:
     autoprefixer "^7.1.2"
     babel-core "^6.22.1"

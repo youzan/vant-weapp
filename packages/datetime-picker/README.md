@@ -1,6 +1,26 @@
-## datetime-picker
+## DatetimePicker 时间选择
 
 使用 picker 组件开发的时间日期组件，弥补小程序 picker 自身对于快速时间选择的不支持
+
+### 示例代码
+
+```json
+{
+  "usingComponents": {
+    "zan-date-picker": "../../dist/datetime-picker/index"
+  }
+}
+```
+
+```wxml
+<zan-date-picker
+  bindchange="change"  
+  bindcancel="cancel"
+  placeholder="请选择一个时间"
+  placeholder-class="my-customer-class-name"
+  format="你选择了YYYY年MM月DD日HH点mm分ss秒"
+/>
+```
 
 ### 属性与事件
 
@@ -21,25 +41,6 @@
 | 名称         | 参数 | 描述 |
 | ------------ | ---- | ---- |
 | getFormatStr |  无    |  返回 `format` 格式的字符串，在 `picker-view` 为 true 时比较实用  |
-
-### 示例代码
-
-```json
-{
-  "usingComponents": {
-    "zan-date-picker": "../../dist/datetime-picker/index"
-  }
-}
-```
-
-```wxml
-  <zan-date-picker
-    bindchange="change"  
-    bindcancel="cancel"
-    placeholder="请选择一个时间"
-    placeholder-class="my-customer-class-name"
-    format="你选择了YYYY年MM月DD日HH点mm分ss秒" />
-```
 
 ### 增强优化
 

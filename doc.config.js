@@ -75,16 +75,17 @@ module.exports = {
         base: 'interactive',
         label: '交互',
         include: {
-          toast: require('./packages/toast/README.md'),
-          popup: require('./packages/popup/README.md'),
+          actionsheet: require('./packages/actionsheet/README.md'),
+          datetime_picker: require('./packages/datetime-picker/README.md'),
           dialog: require('./packages/dialog/README.md'),
-          toptips: require('./packages/toptips/README.md'),
+          popup: require('./packages/popup/README.md'),
           tab: require('./packages/tab/README.md'),
-          loadmore: require('./packages/loadmore/README.md'),
-          actionsheet: require('./packages/actionsheet/README.md')
+          toast: require('./packages/toast/README.md'),
+          toptips: require('./packages/toptips/README.md'),
+          loadmore: require('./packages/loadmore/README.md')
         }
       }
     ],
-    include: { 'datetime-picker': require('./packages/datetime-picker/README.md') }
+    include: {}
   }
 }

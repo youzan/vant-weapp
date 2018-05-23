@@ -2,8 +2,7 @@ Page(Object.assign({}, {
   data: {
     stepper1: {
       stepper: 10,
-      min: 1,
-      max: 20
+      min: 1
     },
     stepper2: {
       stepper: 10,

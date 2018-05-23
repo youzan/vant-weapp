@@ -4,7 +4,6 @@
       <zan-stepper
         stepper="{{ stepper1.stepper }}"
         min="{{ stepper1.min }}"
-        max="{{ stepper1.max }}"
         data-component-id="stepper1"
         bind:change="handleZanStepperChange"
       >

@@ -30,19 +30,11 @@ Page({
   },
 
   handleZanStepperChange({
-
     // stepper 代表操作后，应该要展示的数字，需要设置到数据对象里，才会更新页面展示
-    detail: stepper,
-
-    // 模板中传入的 componentId，用于区分一个页面上的多个stepper
-    target: {
-      dataset: {
-        componentId
-      }
-    }
+    detail: stepper
   }) {
     this.setData({
-      [`${componentId}.stepper`]: stepper
+      'stepper.stepper': stepper
     });
   }
 });
@@ -57,7 +49,6 @@ Page({
   stepper="{{ stepper.stepper }}"
   min="{{ stepper.min }}"
   max="{{ stepper.max }}"
-  component-id="stepper"
   bind:change="handleZanStepperChange"
 >
 </zan-stepper>
@@ -72,7 +63,6 @@ Page({
 | min | 计数器最小值 | Number | `1` | |
 | max | 计数器最大值 | Number | 无穷大 | |
 | step | 步数 | Number | `1` | |
-| componentId | 用于区分输入框之间的唯一名称 | String | - | |
 
 ### Event
 

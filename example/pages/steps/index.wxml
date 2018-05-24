@@ -1,5 +1,5 @@
 <doc-page title="STEPS" without-padding>
-  <zan-panel>
+  <zan-panel title="基础用法">
     <zan-cell-group>
       <zan-cell>
         <zan-steps type="horizon" steps="{{steps}}"></zan-steps>
@@ -11,6 +11,17 @@
         <zan-steps type="horizon" steps="{{steps3}}"></zan-steps>
       </zan-cell>
     </zan-cell-group>
+  </zan-panel>
+
+  <zan-panel title="2步完成">
+    <zan-cell-group>
+      <zan-cell>
+        <zan-steps type="horizon" steps="{{steps4}}"></zan-steps>
+      </zan-cell>
+      <zan-cell>
+        <zan-steps type="horizon" steps="{{steps5}}"></zan-steps>
+      </zan-cell>
+      </zan-cell-group>
   </zan-panel>
 
   <zan-panel title="有描述的steps">

@@ -6,7 +6,7 @@
     </zan-cell>
   </zan-panel>
 
-  <zan-panel title='同步开关'>
+  <zan-panel title='异步开关'>
     <zan-cell>
       <zan-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
     </zan-cell>

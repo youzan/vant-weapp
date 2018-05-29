@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   // 标题
   title: '',

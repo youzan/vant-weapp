@@ -1,15 +1,17 @@
+"use strict";
+
 Component({
   properties: {
     type: {
-      type: String,
+      type: String
     },
     plain: {
       type: Boolean,
-      value: false,
+      value: false
     },
     disabled: {
       type: Boolean,
-      value: false,
+      value: false
     }
   }
 });

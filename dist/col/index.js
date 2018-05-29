@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   externalClasses: ['col-class'],
 

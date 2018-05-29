@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   properties: {
     items: {
@@ -19,9 +21,9 @@ Component({
   },
 
   methods: {
-    handleSelectChange(e) {
-      const value = e.detail.value;
-      this.triggerEvent('change', { value });
+    handleSelectChange: function handleSelectChange(e) {
+      var value = e.detail.value;
+      this.triggerEvent('change', { value: value });
     }
   }
 });

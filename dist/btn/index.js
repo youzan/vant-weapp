@@ -1,4 +1,6 @@
-const nativeButtonBehavior = require('./native-button-behaviors');
+'use strict';
+
+var nativeButtonBehavior = require('./native-button-behaviors');
 
 Component({
   externalClasses: ['custom-class'],
@@ -6,10 +8,10 @@ Component({
   relations: {
     '../btn-group/index': {
       type: 'parent',
-      linked() {
+      linked: function linked() {
         this.setData({ inGroup: true });
       },
-      unlinked() {
+      unlinked: function unlinked() {
         this.setData({ inGroup: false });
       }
     }
@@ -17,23 +19,23 @@ Component({
   properties: {
     type: {
       type: String,
-      value: '',
+      value: ''
     },
     size: {
       type: String,
-      value: '',
+      value: ''
     },
     plain: {
       type: Boolean,
-      value: false,
+      value: false
     },
     disabled: {
       type: Boolean,
-      value: false,
+      value: false
     },
     loading: {
       type: Boolean,
-      value: false,
+      value: false
     }
   },
 
@@ -43,16 +45,17 @@ Component({
   },
 
   methods: {
-    handleTap() {
+    handleTap: function handleTap() {
       if (this.data.disabled) {
-        this.triggerEvent('disabledclick')
+        this.triggerEvent('disabledclick');
         return;
       }
       this.triggerEvent('btnclick');
     },
+    switchLastButtonStatus: function switchLastButtonStatus() {
+      var isLast = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-    switchLastButtonStatus(isLast = false) {
-      this.setData({ isLast });
+      this.setData({ isLast: isLast });
     }
   }
 });

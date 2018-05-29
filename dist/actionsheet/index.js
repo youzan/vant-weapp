@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   externalClasses: ['mask-class', 'container-class'],
   properties: {
@@ -19,18 +21,22 @@ Component({
     }
   },
   methods: {
-    onMaskClick() {
+    onMaskClick: function onMaskClick() {
       if (this.data.cancelWithMask) {
         this.cancelClick();
       }
     },
-    cancelClick() {
+    cancelClick: function cancelClick() {
       this.triggerEvent('cancel');
     },
-    handleBtnClick({ currentTarget = {} }) {
-      const dataset = currentTarget.dataset || {};
-      const { index } = dataset;
-      this.triggerEvent('actionclick', { index });
+    handleBtnClick: function handleBtnClick(_ref) {
+      var _ref$currentTarget = _ref.currentTarget,
+          currentTarget = _ref$currentTarget === undefined ? {} : _ref$currentTarget;
+
+      var dataset = currentTarget.dataset || {};
+      var index = dataset.index;
+
+      this.triggerEvent('actionclick', { index: index });
     }
   }
 });

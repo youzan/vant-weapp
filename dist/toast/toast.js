@@ -1,18 +1,20 @@
-const TOAST_CONFIG_KEY = 'zanui.__zanToastPageConfig';
+'use strict';
 
-let timeoutData = {
+var TOAST_CONFIG_KEY = 'zanui.__zanToastPageConfig';
+
+var timeoutData = {
   timeoutId: 0,
   toastCtx: null
 };
 
-let globalToastUserConfig = {};
+var globalToastUserConfig = {};
 
 // 获取页面上下文
 function getPageCtx(pageCtx) {
-  let ctx = pageCtx;
+  var ctx = pageCtx;
 
   if (!ctx) {
-    const pages = getCurrentPages();
+    var pages = getCurrentPages();
     ctx = pages[pages.length - 1];
   }
 
@@ -21,7 +23,7 @@ function getPageCtx(pageCtx) {
 
 // 获取当前页面的 toast 配置数据
 function getPageToastConfig(pageCtx) {
-  const zanuiData = pageCtx.data.zanui || {};
+  var zanuiData = pageCtx.data.zanui || {};
   return zanuiData.__zanToastPageConfig || {};
 }
 
@@ -29,19 +31,15 @@ function getPageToastConfig(pageCtx) {
 function Toast(optionsOrMsg, pageCtx) {
   // 参数格式化处理
   // 如果是文字，默认为 message
-  let options = optionsOrMsg || {};
+  var options = optionsOrMsg || {};
   if (typeof optionsOrMsg === 'string') {
     options = { message: optionsOrMsg };
   }
 
-  let ctx = getPageCtx(pageCtx);
-  const pageToastUserSetting = getPageToastConfig(ctx);
-  const parsedOptions = {
-    ...globalToastUserConfig,
-    ...pageToastUserSetting,
-    ...options
-  };
-  const toastCtx = ctx.selectComponent(parsedOptions.selector);
+  var ctx = getPageCtx(pageCtx);
+  var pageToastUserSetting = getPageToastConfig(ctx);
+  var parsedOptions = Object.assign({}, globalToastUserConfig, pageToastUserSetting, options);
+  var toastCtx = ctx.selectComponent(parsedOptions.selector);
 
   if (!toastCtx) {
     console.error('无法找到对应的toast组件，请于页面中注册并在 wxml 中声明 toast 自定义组件');
@@ -52,24 +50,26 @@ function Toast(optionsOrMsg, pageCtx) {
     Toast.clear();
   }
 
-  toastCtx.show({
-    ...parsedOptions,
+  toastCtx.show(Object.assign({}, parsedOptions, {
     show: true
-  });
+  }));
 
-  const timeoutId = setTimeout(() => {
+  var timeoutId = setTimeout(function () {
     toastCtx.clear();
   }, parsedOptions.timeout || 3000);
 
   timeoutData = {
-    timeoutId,
-    toastCtx
+    timeoutId: timeoutId,
+    toastCtx: toastCtx
   };
 }
 
 // 设置 toast 基础属性
-Toast.setDefaultOptions = function (options = {}, type = 'page') {
-  const parsedDefaultOptions = {
+Toast.setDefaultOptions = function () {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'page';
+
+  var parsedDefaultOptions = {
     selector: options.selector || '',
     type: options.type || '',
     icon: options.icon || '',
@@ -78,26 +78,26 @@ Toast.setDefaultOptions = function (options = {}, type = 'page') {
   };
 
   if (type === 'global') {
-    globalToastUserConfig = {
-      ...parsedDefaultOptions
-    };
+    globalToastUserConfig = Object.assign({}, parsedDefaultOptions);
   } else if (type === 'page') {
-    let ctx = getPageCtx();
-    ctx.setData({
-      [`${TOAST_CONFIG_KEY}`]: parsedDefaultOptions
-    });
+    var _ctx$setData;
+
+    var ctx = getPageCtx();
+    ctx.setData((_ctx$setData = {}, _ctx$setData['' + TOAST_CONFIG_KEY] = parsedDefaultOptions, _ctx$setData));
   }
 };
 
 // 重置 toast 基础属性
-Toast.resetDefaultOptions = function (type = 'page') {
+Toast.resetDefaultOptions = function () {
+  var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'page';
+
   if (type === 'global') {
     globalToastUserConfig = {};
   } else {
-    let ctx = getPageCtx();
-    ctx.setData({
-      [`${TOAST_CONFIG_KEY}`]: {}
-    });
+    var _ctx$setData2;
+
+    var ctx = getPageCtx();
+    ctx.setData((_ctx$setData2 = {}, _ctx$setData2['' + TOAST_CONFIG_KEY] = {}, _ctx$setData2));
   }
 };
 
@@ -107,9 +107,7 @@ Toast.clear = function () {
 
   try {
     timeoutData.toastCtx && timeoutData.toastCtx.clear();
-  } catch (e) {
-    
-  }
+  } catch (e) {}
 
   timeoutData = {
     timeoutId: 0,
@@ -118,11 +116,12 @@ Toast.clear = function () {
 };
 
 // 显示 loading
-Toast.loading = function (options = {}) {
-  Toast({
-    ...options,
+Toast.loading = function () {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  Toast(Object.assign({}, options, {
     type: 'loading'
-  });
+  }));
 };
 
 module.exports = Toast;

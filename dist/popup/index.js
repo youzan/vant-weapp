@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   properties: {
     show: {
@@ -23,7 +25,7 @@ Component({
   },
 
   methods: {
-    handleMaskClick() {
+    handleMaskClick: function handleMaskClick() {
       this.triggerEvent('click-overlay', {});
 
       if (!this.data.closeOnClickOverlay) {

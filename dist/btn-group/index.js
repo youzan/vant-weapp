@@ -1,14 +1,16 @@
+'use strict';
+
 Component({
   relations: {
     '../btn/index': {
       type: 'child',
-      linked() {
+      linked: function linked() {
         updateBtnChild.call(this);
       },
-      linkChange() {
+      linkChange: function linkChange() {
         updateBtnChild.call(this);
       },
-      unlinked() {
+      unlinked: function unlinked() {
         updateBtnChild.call(this);
       }
     }
@@ -16,12 +18,12 @@ Component({
 });
 
 function updateBtnChild() {
-  let btns = this.getRelationNodes('../btn/index');
+  var btns = this.getRelationNodes('../btn/index');
 
   if (btns.length > 0) {
-    let lastIndex = btns.length - 1;
+    var lastIndex = btns.length - 1;
 
-    btns.forEach((btn, index) => {
+    btns.forEach(function (btn, index) {
       btn.switchLastButtonStatus(index === lastIndex);
     });
   }

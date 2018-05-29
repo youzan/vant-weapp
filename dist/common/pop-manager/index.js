@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   properties: {
     show: {
@@ -22,7 +24,7 @@ Component({
   },
 
   methods: {
-    handleMaskClick() {
+    handleMaskClick: function handleMaskClick() {
       this.triggerEvent('clickmask', {});
     }
   }

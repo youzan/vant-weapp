@@ -1,27 +1,37 @@
-const defaultData = require('./data');
+'use strict';
 
-const _f = function () {};
+var defaultData = require('./data');
+
+var _f = function _f() {};
 
 Component({
   properties: {},
 
-  data: {
-    ...defaultData,
+  data: Object.assign({}, defaultData, {
     key: '',
     show: false,
     showCustomBtns: false,
     promiseFunc: {}
-  },
+  }),
 
   methods: {
-    handleButtonClick(e) {
-      const { currentTarget = {} } = e;
-      const { dataset = {} } = currentTarget;
+    handleButtonClick: function handleButtonClick(e) {
+      var _e$currentTarget = e.currentTarget,
+          currentTarget = _e$currentTarget === undefined ? {} : _e$currentTarget;
+      var _currentTarget$datase = currentTarget.dataset,
+          dataset = _currentTarget$datase === undefined ? {} : _currentTarget$datase;
 
       // 获取当次弹出框的信息
-      const { resolve = _f, reject = _f } = this.data.promiseFunc || {};
+
+      var _ref = this.data.promiseFunc || {},
+          _ref$resolve = _ref.resolve,
+          resolve = _ref$resolve === undefined ? _f : _ref$resolve,
+          _ref$reject = _ref.reject,
+          reject = _ref$reject === undefined ? _f : _ref$reject;
 
       // 重置展示
+
+
       this.setData({
         show: false
       });

@@ -1,6 +1,8 @@
-const VALID_MODE = ['closeable'];
-const FONT_COLOR = '#f60';
-const BG_COLOR = '#fff7cc';
+'use strict';
+
+var VALID_MODE = ['closeable'];
+var FONT_COLOR = '#f60';
+var BG_COLOR = '#fff7cc';
 
 Component({
   properties: {
@@ -57,111 +59,113 @@ Component({
     timer: null
   },
 
-  attached() {
-    const { mode } = this.data;
+  attached: function attached() {
+    var mode = this.data.mode;
+
     if (mode && this._checkMode(mode)) {
       this.setData({
         hasRightIcon: true
       });
     }
   },
+  detached: function detached() {
+    var timer = this.data.timer;
 
-  detached() {
-    const { timer } = this.data;
     timer && clearTimeout(timer);
   },
-
-  ready() {
+  ready: function ready() {
     this._init();
   },
 
+
   methods: {
-    _checkMode(val) {
-      const isValidMode = ~VALID_MODE.indexOf(val);
+    _checkMode: function _checkMode(val) {
+      var isValidMode = ~VALID_MODE.indexOf(val);
       if (!isValidMode) {
-        console.warn(`mode only accept value of ${VALID_MODE}, now get ${val}.`);
+        console.warn('mode only accept value of ' + VALID_MODE + ', now get ' + val + '.');
       }
       return isValidMode;
     },
+    _init: function _init() {
+      var _this = this;
 
-    _init() {
-      wx.createSelectorQuery()
-        .in(this)
-        .select('.zan-noticebar__content')
-        .boundingClientRect((rect) => {
+      wx.createSelectorQuery().in(this).select('.zan-noticebar__content').boundingClientRect(function (rect) {
+        if (!rect || !rect.width) {
+          throw new Error('页面缺少 noticebar 元素');
+        }
+        _this.setData({
+          width: rect.width
+        });
+
+        wx.createSelectorQuery().in(_this).select('.zan-noticebar__content-wrap').boundingClientRect(function (rect) {
           if (!rect || !rect.width) {
-            throw new Error('页面缺少 noticebar 元素');
+            return;
           }
-          this.setData({
-            width: rect.width
-          });
 
-          wx.createSelectorQuery()
-            .in(this)
-            .select('.zan-noticebar__content-wrap')
-            .boundingClientRect((rect) => {
-              if (!rect || !rect.width) {
-                return;
-              }
+          var wrapWidth = rect.width;
+          var _data = _this.data,
+              width = _data.width,
+              speed = _data.speed,
+              scrollable = _data.scrollable,
+              delay = _data.delay;
 
-              const wrapWidth = rect.width;
-              const {
-                width, speed, scrollable, delay
-              } = this.data;
 
-              if (scrollable && wrapWidth < width) {
-                const elapse = width / speed * 1000;
-                const animation = wx.createAnimation({
-                  duration: elapse,
-                  timeingFunction: 'linear',
-                  delay
-                });
-                const resetAnimation = wx.createAnimation({
-                  duration: 0,
-                  timeingFunction: 'linear'
-                });
+          if (scrollable && wrapWidth < width) {
+            var elapse = width / speed * 1000;
+            var animation = wx.createAnimation({
+              duration: elapse,
+              timeingFunction: 'linear',
+              delay: delay
+            });
+            var resetAnimation = wx.createAnimation({
+              duration: 0,
+              timeingFunction: 'linear'
+            });
 
-                this.setData({
-                  elapse,
-                  wrapWidth,
-                  animation,
-                  resetAnimation
-                }, () => {
-                  this._scroll();
-                });
-              }
-            })
-            .exec();
-        })
-        .exec();
+            _this.setData({
+              elapse: elapse,
+              wrapWidth: wrapWidth,
+              animation: animation,
+              resetAnimation: resetAnimation
+            }, function () {
+              _this._scroll();
+            });
+          }
+        }).exec();
+      }).exec();
     },
+    _scroll: function _scroll() {
+      var _this2 = this;
 
-    _scroll() {
-      const {
-        animation, resetAnimation, wrapWidth, elapse, speed
-      } = this.data;
+      var _data2 = this.data,
+          animation = _data2.animation,
+          resetAnimation = _data2.resetAnimation,
+          wrapWidth = _data2.wrapWidth,
+          elapse = _data2.elapse,
+          speed = _data2.speed;
+
       resetAnimation.translateX(wrapWidth).step();
-      const animationData = animation.translateX(-(elapse * speed) / 1000).step();
+      var animationData = animation.translateX(-(elapse * speed) / 1000).step();
       this.setData({
         animationData: resetAnimation.export()
       });
-      setTimeout(() => {
-        this.setData({
+      setTimeout(function () {
+        _this2.setData({
           animationData: animationData.export()
         });
       }, 100);
 
-      const timer = setTimeout(() => {
-        this._scroll();
+      var timer = setTimeout(function () {
+        _this2._scroll();
       }, elapse);
 
       this.setData({
-        timer
+        timer: timer
       });
     },
+    _handleButtonClick: function _handleButtonClick() {
+      var timer = this.data.timer;
 
-    _handleButtonClick() {
-      const { timer } = this.data;
       timer && clearTimeout(timer);
       this.setData({
         show: false,

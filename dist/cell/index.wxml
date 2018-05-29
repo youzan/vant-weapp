@@ -1,6 +1,6 @@
 <view 
   catchtap="cellTap"
-  class="zan-cell {{ isLastCell ? 'last-cell' : '' }} {{ isLink ? 'zan-cell--access' : '' }}">
+  class="cell-class zan-cell {{ isLastCell ? 'last-cell' : '' }} {{ isLink ? 'zan-cell--access' : '' }}">
 
   <view class="zan-cell__icon">
     <slot name="icon"></slot>

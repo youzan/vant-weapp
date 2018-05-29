@@ -1,4 +1,6 @@
-const DEFAULT_DATA = {
+'use strict';
+
+var DEFAULT_DATA = {
   show: false,
   message: '',
   icon: '',
@@ -6,35 +8,29 @@ const DEFAULT_DATA = {
   mask: false
 };
 
-const SUPPORT_TYPE = ['loading', 'success', 'fail'];
+var SUPPORT_TYPE = ['loading', 'success', 'fail'];
 
 Component({
-  data: {
-    ...DEFAULT_DATA
-  },
+  data: Object.assign({}, DEFAULT_DATA),
 
   methods: {
-    show(options) {
-      const toastOptions = { ...options };
+    show: function show(options) {
+      var toastOptions = Object.assign({}, options);
 
-      let icon = options.icon || '';
-      let image = options.image || '';
+      var icon = options.icon || '';
+      var image = options.image || '';
       if (SUPPORT_TYPE.indexOf(options.type) > -1) {
         icon = options.type;
         image = '';
       }
 
-      this.setData({
-        ...toastOptions,
-        icon,
-        image
-      });
+      this.setData(Object.assign({}, toastOptions, {
+        icon: icon,
+        image: image
+      }));
     },
-
-    clear() {
-      this.setData({
-        ...DEFAULT_DATA
-      });
+    clear: function clear() {
+      this.setData(Object.assign({}, DEFAULT_DATA));
     }
   }
 });

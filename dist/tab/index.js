@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   externalClasses: 'class',
 
@@ -25,14 +27,13 @@ Component({
   },
 
   methods: {
-    _handleZanTabChange(e) {
-      const selectedId = e.currentTarget.dataset.itemId;
+    _handleZanTabChange: function _handleZanTabChange(e) {
+      var selectedId = e.currentTarget.dataset.itemId;
 
       this.setData({
-        selectedId
+        selectedId: selectedId
       });
 
-      
       this.triggerEvent('tabchange', selectedId);
     }
   }

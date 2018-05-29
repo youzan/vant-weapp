@@ -67,7 +67,7 @@ function Toptips(options = {}) {
   $toptips && $toptips.show();
 }
 
-function parseParam(params) {
+function parseParam(params = '') {
   return typeof params === 'object' ? params : { content: params };
 }
 

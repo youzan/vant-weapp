@@ -1,3 +1,5 @@
+'use strict';
+
 Component({
   properties: {
     checked: {
@@ -17,13 +19,13 @@ Component({
   },
 
   methods: {
-    handleZanSwitchChange() {
+    handleZanSwitchChange: function handleZanSwitchChange() {
       if (this.data.loading || this.data.disabled) {
         return;
       }
-      let checked = !this.data.checked;
+      var checked = !this.data.checked;
       this.triggerEvent('change', {
-        checked,
+        checked: checked,
         loading: this.data.loading
       });
     }

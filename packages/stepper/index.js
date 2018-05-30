@@ -37,6 +37,8 @@ Component({
       } else if (type === 'plus') {
         stepper += step;
       }
+      
+      if (stepper < this.data.min || stepper > this.data.max) return null;
 
       this.triggerEvent('change', stepper);
       this.triggerEvent(type);

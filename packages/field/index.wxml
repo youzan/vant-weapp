@@ -1,6 +1,6 @@
 <zan-cell
-  class="{{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }}"
-  cell-class="zan-field"
+  class="field-class zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }} {{ !showBorder ? 'zan-field--no-border' : '' }}"
+  cell-class="zan-cell--field"
 >
   <view
     slot="icon"

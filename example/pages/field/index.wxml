@@ -1,33 +1,35 @@
 <doc-page title="Field" without-padding>
   <!-- Field 基础用法 -->
   <zan-panel title="基础用法">
-    <zan-field
-      title="{{ config.base.name.title }}"
-      placeholder="{{ config.base.name.placeholder }}"
-      focus="{{ config.base.name.focus }}"
-      value="{{ value }}"
-    >
-    </zan-field>
-    <zan-field
-      title="{{ config.base.tel.title }}"
-      placeholder="{{ config.base.tel.placeholder }}"
-      error="{{ config.base.tel.error }}"
-      input-type="{{ config.base.tel.inputType }}"
-    >
-    </zan-field>
-    <zan-field
-      title="{{ config.base.address.title }}"
-      type="{{ config.base.address.type }}"
-      placeholder="{{ config.base.address.placeholder }}"
-      maxlength="50"
-    >
-    </zan-field>
-    <zan-field
-      title="{{ config.base.disabled.title }}"
-      value="{{ config.base.disabled.value }}"
-      disabled="{{ config.base.disabled.disabled }}"
-    >
-    </zan-field>
+    <zan-cell-group>
+      <zan-field
+        title="{{ config.base.name.title }}"
+        placeholder="{{ config.base.name.placeholder }}"
+        focus="{{ config.base.name.focus }}"
+        value="{{ value }}"
+      >
+      </zan-field>
+      <zan-field
+        title="{{ config.base.tel.title }}"
+        placeholder="{{ config.base.tel.placeholder }}"
+        error="{{ config.base.tel.error }}"
+        input-type="{{ config.base.tel.inputType }}"
+      >
+      </zan-field>
+      <zan-field
+        title="{{ config.base.address.title }}"
+        type="{{ config.base.address.type }}"
+        placeholder="{{ config.base.address.placeholder }}"
+        maxlength="50"
+      >
+      </zan-field>
+      <zan-field
+        title="{{ config.base.disabled.title }}"
+        value="{{ config.base.disabled.value }}"
+        disabled="{{ config.base.disabled.disabled }}"
+      >
+      </zan-field>
+    </zan-cell-group>
   </zan-panel>
   
   <zan-button-group>

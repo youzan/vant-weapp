@@ -1,44 +1,58 @@
+const CELL_PATH = '../cell/index';
+const FIELD_PATH = '../field/index'
+
 Component({
   relations: {
-    '../cell/index': {
+    [CELL_PATH]: {
       type: 'child',
       linked() {
-        this._updateIsLastCell();
+        this._updateIsLastElement(CELL_PATH);
       },
       linkChanged() {
-        this._updateIsLastCell();
+        this._updateIsLastElement(CELL_PATH);
       },
       unlinked() {
-        this._updateIsLastCell();
+        this._updateIsLastElement(CELL_PATH);
+      }
+    },
+    [FIELD_PATH]: {
+      type: 'child',
+      linked() {
+        this._updateIsLastElement(FIELD_PATH);
+      },
+      linkChanged() {
+        this._updateIsLastElement(FIELD_PATH);
+      },
+      unlinked() {
+        this._updateIsLastElement(FIELD_PATH);
       }
     }
   },
 
   data: {
-    cellUpdateTimeout: 0
+   elementUpdateTimeout: 0
   },
 
   methods: {
-    _updateIsLastCell() {
+    _updateIsLastElement(childPath) {
       // 用 setTimeout 减少计算次数
-      if (this.data.cellUpdateTimeout > 0) {
+      if (this.data.elementUpdateTimeout > 0) {
         return;
       }
 
-      const cellUpdateTimeout = setTimeout(() => {
-        this.setData({ cellUpdateTimeout: 0 });
-        let cells = this.getRelationNodes('../cell/index');
+      const elementUpdateTimeout = setTimeout(() => {
+        this.setData({ elementUpdateTimeout: 0 });
+        let elements = this.getRelationNodes(childPath);
+        if (elements.length > 0) {
+          let lastIndex = elements.length - 1;
 
-        if (cells.length > 0) {
-          let lastIndex = cells.length - 1;
-
-          cells.forEach((cell, index) => {
-            cell.updateIsLastCell(index === lastIndex);
+          elements.forEach((cell, index) => {
+            cell.updateIsLastElement(index === lastIndex);
           });
         }
       });
 
-      this.setData({ cellUpdateTimeout });
+      this.setData({ elementUpdateTimeout });
     }
   }
 });

@@ -70,7 +70,7 @@ Component({
     },
 
     // 用于被 cell-group 更新，标志是否是最后一个 cell
-    updateIsLastCell(isLastCell) {
+    updateIsLastElement(isLastCell) {
       this.setData({ isLastCell });
     }
   }

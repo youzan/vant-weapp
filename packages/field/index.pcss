@@ -1,8 +1,24 @@
-@import '../cell/index';
+@import "../common/_mixins";
 
 .zan-field {
-  padding: 7px 15px;
+  display: block;
+  position: relative;
   color: #333;
+}
+
+.zan-field::after {
+  @mixin hairline;
+  border-bottom-width: 1px;
+  left: 15px;
+  right: 0;
+}
+
+.zan-field--no-border::after {
+  border-bottom-width: 0;
+}
+
+.zan-cell--field {
+  padding: 7px 15px;
 }
 
 .zan-field--wrapped {
@@ -17,7 +33,7 @@
 }
 
 /* 圆角输入框，强制展示边框 */
-.zan-field.zan-field--wrapped::after {
+.zan-field--wrapped::after {
   display: block;
 }
 

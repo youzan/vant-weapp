@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Checkbox 选择",
+  "usingComponents": {
+    "zan-checkbox": "../../dist/checkbox/index"
+  }
+}

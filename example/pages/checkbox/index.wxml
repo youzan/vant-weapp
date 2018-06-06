@@ -1,0 +1,21 @@
+<doc-page title="SELECT" without-padding>
+  <zan-panel title='基本用法'>
+    <zan-checkbox
+      items="{{ items }}"
+      data-type="base"
+      checkedValue="{{ checked.base }}"
+      activeColor="{{ activeColor }}"
+      bind:change="handleCheckboxChange"
+    />
+  </zan-panel>
+
+  <zan-panel title='自定义高亮颜色'>
+    <zan-checkbox
+      items="{{ items }}"
+      data-type="color"
+      checkedValue="{{ checked.color }}"
+      activeColor="{{ activeColor }}"
+      bind:change="handleCheckboxChange"
+    />
+  </zan-panel>
+</doc-page>

@@ -3,10 +3,8 @@
 }
 .zan-stepper view {
   display: inline-block;
-  line-height: 20px;
   padding: 5px 0;
   text-align: center;
-  min-width: 40px;
   box-sizing: border-box;
   vertical-align: middle;
   font-size: 12px;
@@ -21,12 +19,9 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  height: 30px;
-  width: 40px;
   /* 重置 input 默认样式 */
   min-height: auto;
   font-size: 12px;
-  line-height: 30px;
 }
 .zan-stepper .zan-stepper__plus {
   border-left: none;
@@ -45,4 +40,24 @@
   width: 36px;
   line-height: 28px;
   height: 28px;
+}
+
+.zan-stepper--middle view {
+  min-width: 40px;
+  line-height: 20px;
+}
+.zan-stepper--middle .zan-stepper__text {
+  width: 40px;
+  line-height: 30px;
+  height: 30px;
+}
+
+.zan-stepper--large view {
+  min-width: 44px;
+  line-height: 22px;
+}
+.zan-stepper--large .zan-stepper__text {
+  width: 44px;
+  line-height: 32px;
+  height: 32px;
 }

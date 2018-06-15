@@ -14,6 +14,7 @@
   <!-- small size -->
   <zan-panel title="不同尺寸-小尺寸类型">
     <view style="padding: 40px 15px">
+      <view style="margin-bottom: 5px">small:</view>
       <zan-stepper
         stepper="{{ stepper2.stepper }}"
         min="{{ stepper2.min }}"
@@ -21,8 +22,27 @@
         size="small"
         data-component-id="stepper2"
         bind:change="handleZanStepperChange"
-      >
-      </zan-stepper>
+
+      ></zan-stepper>
+
+      <view style="margin: 10px 0 5px;">middle:</view>
+      <zan-stepper
+        stepper="{{ stepper2.stepper }}"
+        min="{{ stepper2.min }}"
+        max="{{ stepper2.max }}"
+        data-component-id="stepper2-1"
+        bind:change="handleZanStepperChange"
+      ></zan-stepper>
+
+      <view style="margin: 10px 0 5px;">large:</view>
+      <zan-stepper
+        stepper="{{ stepper2.stepper }}"
+        min="{{ stepper2.min }}"
+        max="{{ stepper2.max }}"
+        size="large"
+        data-component-id="stepper2-2"
+        bind:change="handleZanStepperChange"
+      ></zan-stepper>
     </view>
   </zan-panel>
 

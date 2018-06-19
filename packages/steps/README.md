@@ -13,18 +13,74 @@
     "zan-steps": "path/to/zanui-weapp/dist/steps/index"
   }
 }
+```
 
 ### 代码演示
-在模板中使用 zan-steps 模板，并传入相应数据
+
+#### 基础用法
+
 ```html
 <zan-steps type="horizon" steps="{{steps}}"></zan-steps>
 ```
+
+#### 2步完成
+
+```html
+<zan-steps type="horizon" steps="{{steps}}"></zan-steps>
+```
+
+```js
+steps: [
+  {
+      done: true,
+      current: false,
+      text: '步骤一',
+      desc: '10.01'
+    },
+    {
+      done: false,
+      current: true,
+      text: '步骤二',
+      desc: '10.02'
+    }
+]
+```
+
+#### 有描述的steps
+
+```html
+<zan-steps type="horizon" hasDesc steps="{{steps}}"></zan-steps>
+```
+
+#### 垂直方向的steps
+
+```html
+<zan-steps type="vertical" steps="{{steps}}"></zan-steps>
+```
+
+#### 自定义 class
+
+```html
+<zan-steps
+  steps-class="my-class"
+  icon-class="gray"
+  title-class="white"
+  type="horizon"
+  steps="{{steps}}"
+></zan-steps>
+```
+
+
+
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | type | steps 的展示状态，可选值为 'horizon', 'vertical' | String | horizon | |
 | hasDesc | 是否展示描述 | Boolean  | false | |
 | steps | 步骤条展示数据 | Array  |  | 必须 |
-| className | 自定义类目，方便自定义显示 | String  | | |
+| steps-class | 自定义类，可改变steps外层样式 | String  | | |
+| icon-class | 自定义类，可改变icon样式 | String  | | |
+| title-class | 自定义类，可改变标题样式 | String  | | |
+| desc-class | 自定义类，可改变描述样式 | String  | | |
 
 steps 数据格式如下：
 ```js

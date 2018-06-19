@@ -1,4 +1,5 @@
 Component({
+  externalClasses: ['steps-class', 'icon-class', 'title-class', 'desc-class'],
   properties: {
     type: {
       type: String,

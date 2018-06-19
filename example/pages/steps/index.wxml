@@ -49,10 +49,18 @@
     </zan-cell-group>
   </zan-panel>
 
-  <zan-panel title="可自定义 class">
-    <zan-cell>
-      <zan-steps type="vertical" steps="{{steps}}" className="my-class"></zan-steps>
-    </zan-cell>
+  <zan-panel title="自定义 class">
+    <zan-cell-group>
+      <zan-cell cell-class="gray">
+        <zan-steps
+          steps-class="my-class"
+          icon-class="gray"
+          title-class="white"
+          type="horizon"
+          steps="{{steps}}"
+        ></zan-steps>
+      </zan-cell>
+    </zan-cell-group>
   </zan-panel>
 </doc-page>
 

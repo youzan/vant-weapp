@@ -65,6 +65,10 @@ export default {
       {
         name: 'Field 输入框',
         path: '/pages/field/index'
+      },
+      {
+        name: 'Datetime 时间选择器',
+        path: '/pages/datetime/index'
       }
     ]
   },

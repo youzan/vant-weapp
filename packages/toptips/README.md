@@ -30,11 +30,11 @@ Page({
 
 // 使用命令式调用的方式，必须在 wxml 模板中声明组件id，
 // 默认我们使用了 zan-toptips， 如果使用者要更换，可以手动传入
-
-const Toptips = require('path/to/zanui-weapp/dist/toptips/index');
+// 注意和 usingComponents 里引用的路径不一样
+const Toptips = require('path/to/zanui-weapp/dist/toptips/toptips');
 Page({
   customCallback() {
-    Toptips('只穿文案展示');
+    Toptips('只传文案展示');
   }
 })
 

@@ -19,6 +19,7 @@
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",
+    "pages/search/index",
     "pages/tab/index",
     "pages/tag/index",
     "pages/toptips/index",

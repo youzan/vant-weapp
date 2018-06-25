@@ -86,6 +86,6 @@ module.exports = {
         }
       }
     ],
-    include: {}
+    include: { search: require('./packages/search/README.md') }
   }
 }

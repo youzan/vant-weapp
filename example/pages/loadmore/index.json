@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "loadmore 加载",
+  "usingComponents": {
+    "zan-loadmore": "../../dist/loadmore/index"
+  }
+}

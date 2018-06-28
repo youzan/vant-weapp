@@ -1,26 +1,28 @@
 ## Loadmore 加载
 
 ### 使用指南
-在 app.wxss 中引入组件库所有样式
-```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+在 index.json 中引入组件
+```json
+  {
+    ...
+    "usingComponents": {
+      "zan-loadmore": "../../dist/loadmore/index"
+    }
+    ...
+  }
 ```
 
-在需要使用的页面里引入组件库模板
+在页面上直接使用 zan-loadmore 标签即可
 ```html
-<import src="path/to/zanui-weapp/dist/loadmore/index.wxml" />
-
-<!-- 直接使用 zan-loadmore 模板，并且直接传入设置值 -->
-<template is="zan-loadmore" data="{{ loading: true }}"></template>
+  <zan-loadmore nomore="true"></zan-loadmore>
+  <zan-loadmore loading="true"></zan-loadmore>
+  <zan-loadmore nodata="true" nodata-str="暂无数据"></zan-loadmore>
 ```
 
-### 代码演示
-`loadmore` 支持三种状态，loading, nodata, nomore。传入指定的值即可显示
-```html
-<!-- 加载更多 -->
-<template is="zan-loadmore" data="{{ loading: true }}"></template>
-<!-- 没有可以显示的数据 -->
-<template is="zan-loadmore" data="{{ nodata: true }}"></template>
-<!-- 没有更多的数据了 -->
-<template is="zan-loadmore" data="{{ nomore: true }}"></template>
-```
+### 具体参数
+| 名称    | 类型            | 是否必须 | 默认  | 描述              |
+| ------- | --------------- | -------- | ----- | ----------------- |
+| nomore  | Boolean | 否       | false | 没有更多数据 |
+| loading | Boolean | 否       | true | 加载中 |
+| nodata  | Boolean | 否       | false | 暂无数据  |
+| nodataStr | String | 否       | '' |  暂无数据的文案  |

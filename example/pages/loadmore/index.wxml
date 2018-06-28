@@ -1,0 +1,19 @@
+<view class="container">
+
+    <view class="doc-title zan-hairline--bottom">LOADMORE</view>
+  
+    <view class="zan-panel-title">nomore</view>
+    <view class="loadmore-example zan-panel">
+      <zan-loadmore nomore="true"></zan-loadmore>
+    </view>
+    <view class="zan-panel-title">loading</view>
+    <view class="loadmore-example zan-panel">
+      <zan-loadmore loading="true"></zan-loadmore>
+    </view>
+    <view class="zan-panel-title">nodata</view>
+    <view class="zan-panel loadmore-example">
+      <zan-loadmore nodata="true" nodataStr="暂无数据"></zan-loadmore>
+    </view>
+  
+  </view>
+  

@@ -1,9 +1,0 @@
-<import src="/dist/loadmore/index.wxml" />
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom">LOADMORE</view>
-
-  <template is="zan-loadmore" data="{{ loading: true }}" />
-  <template is="zan-loadmore" data="{{ nodata: true }}" />
-  <template is="zan-loadmore" data="{{ nomore: true }}" />
-</view>

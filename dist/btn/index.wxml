@@ -1,5 +1,7 @@
-<button 
+<button
   class="custom-class zan-btn {{ inGroup ? 'zan-btn--group' : '' }} {{ isLast ? 'zan-btn--last' : '' }} {{size ? 'zan-btn--'+size : ''}} {{size === 'mini' ? 'zan-btn--plain' : ''}} {{plain ? 'zan-btn--plain' : ''}} {{type ? 'zan-btn--'+type : ''}} {{loading ? 'zan-btn--loading' : ''}} {{disabled ? 'zan-btn--disabled' : ''}}"
+  disabled="{{ disabled }}"
+  hover-class="button-hover"
   open-type="{{ openType }}"
   app-parameter="{{ appParameter }}"
   hover-stop-propagation="{{ hoverStopPropagation }}"

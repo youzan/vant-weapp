@@ -17,11 +17,7 @@
       alignLeft="{{ true }}"
       placeholder="搜索..."
       disabled="{{ true }}"
-      keyword="{{ inputValue }}"
       placeholder="搜索商品"
-      focus="{{ focus }}"
-      bindchange="searchChange"
-      bindsearch="searchDone"
     />
   </zan-panel>
 

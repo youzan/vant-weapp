@@ -1,25 +1,13 @@
 <view
-  class="zan-search zan-cell {{ (onlySearch && !alignLeft) ? 'center-placeholder' : ''}} {{ searchClass }}"
+  class="zan-search zan-cell {{ searchClass }}"
   style="{{ searchStyle }}"
 >
   <view
     class="zan-cell__bd zan-search__form {{ useCancel ? 'zan-search__form--cancel' : '' }} input-class"
 
-    style="max-width: {{ (onlySearch && !alignLeft) ? inputWidth : 'auto' }}; {{ inputStyle }}"
+    style="{{ inputStyle }}"
   >
     <icon type="search" size="15" color="#a9a9a9"></icon>
-    <picker
-      mode="selector"
-      range="{{ range }}"
-      value="{{ rangeIndex }}"
-      bindchange="pickerChange"
-      class="zan-search__selector"
-      style="width: {{ pickerWidth || 55 }}px"
-      wx:if="{{ range.length > 0}}"
-    >
-      <view class="picker">{{ range[rangeIndex] }}</view>
-    </picker>
-
     <input
       class="zan-search__input"
       placeholder="{{ placeholder }}"

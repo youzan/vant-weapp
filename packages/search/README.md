@@ -14,7 +14,6 @@
 
 ```wxml
 <zan-search
-  alignLeft="{{ true }}"
   placeholder="搜索..."
   keyword="{{ inputValue }}"
   placeholder="搜索商品"
@@ -42,23 +41,25 @@ searchDone(e) {
 
 ### API
 
+#### 参数
 | 名称             | 类型        | 是否必须 | 默认  | 描述                                                |
 | ---------------- | ----------- | -------- | ----- | --------------------------------------------------- |
 | keyword          | String      | 否       | 无    | 默认搜索关键字                                      |
+| disabled         | Boolean     | 否       | false | 是否禁用                                          |
+| focus            | Boolean     | 否       | false | 是否获取焦点                                       |
 | useCancel        | Boolean     | 否       | false | 是否显示取消按钮                                    |
 | cancelText       | String      | 否       | 取消  | 取消按钮文字                                        |                          |
 | placeholder      | String      | 否       | 无    | 输入框占位字符串                                    |
-| range            | Array       | 否       | 无    | picker 组件 range，只支持数组，数组元素只能说字符串 |
-| rangeIndex       | Number      | 否       | 0     | picker 组件 value 属性                              |
-| bindchange       | EventHandle | 否       | 无    | 关键字发生变化时触发                                |
-| bindcancel       | EventHandle | 否       | 无    | 取消按钮点击时触发                                  |
-| bindsearch       | EventHandle | 否       | 无    | 键盘点击确认时触发
-| alignLeft        | Boolean     | 否       | false | placeholder 是否靠左                              |
-| focus            | Boolean     | 否       | false | 是否获取焦点                                       |
-| disabled         | Boolean     | 否       | false | 是否禁用                                          |
 | cancelStyle      | String      | 否       | 无     | “取消”的样式                                      |
-| cancelClass      | String      | 否       | 无     | “取消”的类名                                      |
-| inputStyle       | String      | 否       | 无     | “输入框”的样式                                     |
-| inputClass       | String      | 否       | 无     | “输入框”的类名                                    |
-| searchStyle      | String      | 否       | 无     | “整个搜索”的样式                                   |
-| searchClass      | String      | 否       | 无     | “整个搜索”的类名                                   |
+| inputStyle       | String      | 否       | 无     | “输入框”的样式
+| searchStyle      | String      | 否       | 无     | “整个搜索”的样式
+
+#### 事件
+
+| 名称             | 类型        | 是否必须 | 默认  | 描述
+| ---------------- | ----------- | -------- | ----- | ------|
+| bindcancel       | EventHandle | 否       | 无    | 取消按钮点击时触发
+| bindsearch       | EventHandle | 否       | 无    | 键盘点击确认时触发
+| bindchange       | EventHandle | 否       | 无    | 内容改变时触发
+| bindblur       | EventHandle | 否       | 无    | 焦点丢失时触发
+| bindfocus       | EventHandle | 否       | 无    | 焦点聚焦时触发

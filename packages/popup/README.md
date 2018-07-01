@@ -31,6 +31,23 @@ popup 额外支持了 上下左右 四种动画方式，通过增加 type 属性
 <zan-popup type="right" show="{{ show }}"></zan-popup>
 ```
 
+#### 控制显示，隐藏
+
+```html
+<zan-popup show="{{ isShow }}" bindclose="togglePopup"></zan-popup>
+```
+
+```js
+data: {
+  isShow: false
+},
+togglePopup() {
+  this.setData({
+    isShow: !this.data.isShow
+  });
+}
+```
+
 ### 具体参数和事件
 #### 参数说明
 | 参数       | 说明      | 类型       | 默认值       | 必须      |

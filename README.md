@@ -8,7 +8,7 @@
 
 
 ## 概述
-[ZanUI-WeApp]是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
+[ZanUI-WeApp](https://youzan.github.io/zanui-weapp)是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
 
 现已包含 badge、btn、card、cell、dialog、icon、label、noticebar、panel、popup、switch、tab、toast、toptips 等组件或元素。具体可以扫描下方小程序二维码，体验组件库示例 Demo
 
@@ -41,7 +41,7 @@ npm run dev
 
 我们推荐在你的`app.wxss`直接引入`zanui-weapp/dist/index.wxss`。
 
-详细使用文档，请参考 [快速上手](https://www.youzanyun.com/zanui/weapp)
+详细使用文档，请参考 [快速上手](https://youzan.github.io/zanui-weapp)
 
 ### 组件分类介绍
 根据功能的不同，可以将组件大致的分为2类：
@@ -106,6 +106,12 @@ Page({
 
 建议新使用的用户，直接以自定义组件形式接入
 
+## 微信讨论群
+
+欢迎大家在微信上联系我们，添加下方微信并注明『交流 ZanUI-WeApp』即可
+
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
+
 ## 开源协议
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
@@ -116,8 +122,6 @@ Page({
 [ZanUI-WeApp]: https://github.com/youzan/zanui-weapp
 [issue]: https://github.com/youzan/zanui-weapp/issues/new
 [PR]: https://github.com/youzan/zanui-weapp/compare
-[ZanUI WeApp]: https://github.com/youzan/zanui-weapp
 [MIT]: http://opensource.org/licenses/MIT
-[Bower]: https://bower.io/
 [小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev/
 [小程序框架介绍]: https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html

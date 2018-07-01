@@ -6,7 +6,10 @@ Component({
   properties: {
     text: {
       type: String,
-      value: ''
+      value: '',
+      observer(newVal) {
+        this.setData({}, this._init);
+      }
     },
     mode: {
       type: String,
@@ -71,10 +74,6 @@ Component({
     timer && clearTimeout(timer);
   },
 
-  ready() {
-    this._init();
-  },
-
   methods: {
     _checkMode(val) {
       const isValidMode = ~VALID_MODE.indexOf(val);
@@ -90,7 +89,7 @@ Component({
         .select('.zan-noticebar__content')
         .boundingClientRect((rect) => {
           if (!rect || !rect.width) {
-            throw new Error('页面缺少 noticebar 元素');
+            return;
           }
           this.setData({
             width: rect.width

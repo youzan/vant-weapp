@@ -8,7 +8,10 @@ Component({
   properties: {
     text: {
       type: String,
-      value: ''
+      value: '',
+      observer: function observer(newVal) {
+        this.setData({}, this._init);
+      }
     },
     mode: {
       type: String,
@@ -73,9 +76,6 @@ Component({
 
     timer && clearTimeout(timer);
   },
-  ready: function ready() {
-    this._init();
-  },
 
 
   methods: {
@@ -91,7 +91,7 @@ Component({
 
       wx.createSelectorQuery().in(this).select('.zan-noticebar__content').boundingClientRect(function (rect) {
         if (!rect || !rect.width) {
-          throw new Error('页面缺少 noticebar 元素');
+          return;
         }
         _this.setData({
           width: rect.width

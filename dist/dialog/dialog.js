@@ -5,7 +5,11 @@ var defaultData = require('./data');
 // options 使用参数
 // pageCtx 页面 page 上下文
 function Dialog(options, pageCtx) {
-  var parsedOptions = Object.assign({}, defaultData, options);
+  var parsedOptions = Object.assign({
+    // 自定义 btn 列表
+    // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
+    buttons: []
+  }, defaultData, options);
 
   var ctx = pageCtx;
   if (!ctx) {

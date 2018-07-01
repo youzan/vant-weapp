@@ -1,4 +1,4 @@
-<view class="zan-stepper {{ size === 'small' ? 'zan-stepper--small' : '' }}">
+<view class="zan-stepper zan-stepper--{{ size }}">
   <view
     class="zan-stepper__minus {{ stepper <= min ? 'zan-stepper--disabled' : '' }}"
     data-disabled="{{ stepper <= min }}"

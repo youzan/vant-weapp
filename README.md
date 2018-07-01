@@ -8,7 +8,7 @@
 
 
 ## 概述
-[ZanUI-WeApp]是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
+[ZanUI-WeApp](https://youzan.github.io/zanui-weapp)是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
 
 现已包含 badge、btn、card、cell、dialog、icon、label、noticebar、panel、popup、switch、tab、toast、toptips 等组件或元素。具体可以扫描下方小程序二维码，体验组件库示例 Demo
 
@@ -41,7 +41,7 @@ npm run dev
 
 我们推荐在你的`app.wxss`直接引入`zanui-weapp/dist/index.wxss`。
 
-详细使用文档，请参考 [快速上手](https://www.youzanyun.com/zanui/weapp)
+详细使用文档，请参考 [快速上手](https://youzan.github.io/zanui-weapp)
 
 ### 组件分类介绍
 根据功能的不同，可以将组件大致的分为2类：

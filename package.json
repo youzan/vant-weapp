@@ -15,7 +15,7 @@
     "build": "sh scripts/deploy.sh",
     "watch:doc": "NODE_ENV=development wedoc run watch",
     "build:doc": "NODE_ENV=production wedoc run build",
-    "deploy:doc": "npm run build:doc && superman cdn basic && gh-pages -d website/dist --remote youzan"
+    "deploy:doc": "npm run build:doc && superman cdn basic && gh-pages -d website/dist"
   },
   "repository": {
     "type": "git",

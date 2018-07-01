@@ -1,46 +1,17 @@
 .van-checkbox {
-  overflow: hidden;
-  -webkit-user-select: none;
-          user-select: none;
+  position: relative;
+  width: 45px;
+  height: 44px;
+  display: flex;
 }
-
-.van-checkbox__icon, .van-checkbox__label {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 20px;
-  }
-
 .van-checkbox__icon {
-    font-size: 12px;
-    color: transparent;
-    text-align: center;
-    border: 1px solid #aaa;
-    width: 20px;
-    height: 20px;
-    box-sizing: border-box;
-  }
-
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  width: 44px;
+}
 .van-checkbox__label {
-    margin-left: 10px;
-  }
-
-.van-checkbox--round {
-    border-radius: 100%;
-  }
-
-.van-checkbox--checked {
-    color: #fff;
-    border-color: #06bf04;
-    background-color: #06bf04;
-  }
-
-.van-checkbox--disabled {
-    color: #f8f8f8;
-    border-color: #e5e5e5;
-    background-color: currentColor;
-  }
-
-.van-checkbox--disabled.van-checkbox--checked {
-    border-color: #e5e5e5;
-    background-color: #e5e5e5;
-  }
+  display: flex;
+  align-items: center;
+  flex: 1;
+}

@@ -6,7 +6,7 @@
       checkedValue="{{ checked.base }}"
       activeColor="{{ activeColor }}"
       bind:change="handleCheckboxChange"
-    />
+    >ssss</zan-checkbox>
   </zan-panel>
 
   <zan-panel title='自定义高亮颜色'>

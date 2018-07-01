@@ -1,4 +1,4 @@
-<checkbox-group class="van-checkbox" bindchange="handleCheckboxChange" disabled>
+<!-- <checkbox-group class="van-checkbox" bindchange="handleCheckboxChange" disabled>
   <label
     class="van-checkbox__label"
     wx:key="{{ index }}-{{ item.name }}"
@@ -10,7 +10,20 @@
       color="{{parse.getColor(activeColor)}}"
     />{{item.value}}
   </label>
-</checkbox-group>
+</checkbox-group> -->
+
+<view class="van-checkbox" bindtap="handleClick">
+  <!-- <button wx:if="{{ checkedAll }}" class="checkbox-icon zan-icon zan-icon-checked collect-form-id-button" style="color: #ff4343; font-size: 18px;"></button>
+  <button wx:else class="checkbox-icon zan-icon zan-icon-check collect-form-id-button" style="color: #999; font-size: 18px;"></button> -->
+  <!-- <button class="checkbox-icon zan-icon zan-icon-check collect-form-id-button" style="color: #999; font-size: 18px;"></button> -->
+  <zan-icon wx:if="{{ checked }}" type="checked" class="van-checkbox__icon"></zan-icon>
+  <zan-icon wx:else type="check" class="van-checkbox__icon"></zan-icon>
+  <view class="van-checkbox__label">
+    <text>test</text>
+    <slot></slot>
+  </view>
+
+</view>
 
 <wxs module="parse">
 function getColor(color) {

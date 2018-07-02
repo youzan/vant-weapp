@@ -30,6 +30,9 @@
     "dist"
   ],
   "homepage": "https://github.com/youzan/zanui-weapp#readme",
+  "browserslist": [
+    "safari 6"
+  ],
   "devDependencies": {
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",

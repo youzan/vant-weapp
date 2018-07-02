@@ -2,19 +2,22 @@
 
 使用 picker 组件开发的时间日期组件，弥补小程序 picker 自身对于快速时间选择的不支持。
 
-### 示例代码
+### 使用指南
 
+在 index.json 中引入组件
 ```json
 {
   "usingComponents": {
-    "zan-date-picker": "../../dist/datetime-picker/index"
+    "zan-date-picker": "path/to/zanui-weapp/dist/datetime-picker/index"
   }
 }
 ```
 
+### 代码演示
+可以在任意位置上使用 zan-date-picker 标签。
 ```wxml
 <zan-date-picker
-  bindchange="change"  
+  bindchange="change"
   bindcancel="cancel"
   placeholder="请选择一个时间"
   placeholder-class="my-customer-class-name"

@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-select": "/packages/select/index"
+    "zan-select": "path/to/zanui-weapp/dist/select/index"
   }
 }
 ```
@@ -33,7 +33,7 @@ Page({
         name: '选项二',
       },
     ],
-    checkedValue: '选项一',
+    checkedValue: '1',
     activeColor: '#ff4443'
   },
 

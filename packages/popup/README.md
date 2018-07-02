@@ -53,7 +53,7 @@ togglePopup() {
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | show | 是否显示弹出层 | Boolean | false | |
-| overlay | 是否显示遮罩层 | Boolean | false | |
+| overlay | 是否显示遮罩层 | Boolean | true | |
 | closeOnClickOverlay | 遮罩层点击时，是否触发关闭事件 | Boolean | true | |
 | type | 弹出层动画方式, 可选`center`, `left`, `right`, `top`, `bottom` | String | center | |
 
@@ -62,5 +62,3 @@ togglePopup() {
 |-----------|-----------|-----------|
 | click-overlay | 遮罩层点击触发 |  |
 | close | 遮罩层关闭时触发 |  |
-
-

@@ -3,31 +3,27 @@
 ### 使用指南
 
 #### 单个 cell 使用示例
-~~~json
+```json
   {
-    ...
     "usingComponents": {
-      "zan-cell": "../../dist/cell/index",
+      "zan-cell": "path/to/zanui-weapp/dist/cell/index",
     }
-    ...
   }
-~~~
+```
 
-~~~wxml
+```wxml
   <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
-~~~
+```
 
 #### cell 组使用示例
 多个 cell 组件必须作为 `cell-group` 组件的子组件，否则可能出现显示问题。
 
 ```json
   {
-    ...
     "usingComponents": {
-      "zan-cell": "../../dist/cell/index",
-      "zan-cell-group": "../../dist/cell-group/index"
+      "zan-cell": "path/to/zanui-weapp/dist/cell/index",
+      "zan-cell-group": "path/to/zanui-weapp/dist/cell-group/index"
     }
-    ...
   }
 ```
 

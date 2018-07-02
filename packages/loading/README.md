@@ -4,11 +4,9 @@
 在 index.json 中引入组件
 ```json
   {
-    ...
     "usingComponents": {
-      "zan-loading": "../../dist/loading/index"
+      "zan-loading": "path/to/zanui-weapp/dist/loading/index"
     }
-    ...
   }
 ```
 

@@ -5,13 +5,13 @@
 ```json
 {
   "usingComponents": {
-    "zan-switch": "/packages/switch/index"
+    "zan-switch": "path/to/zanui-weapp/dist/switch/index"
   }
 }
 ```
 
 ### 代码演示
-=======
+可以在页面任意位置上使用 zan-switch 标签。
 ```html
 <zan-switch
   disabled="{{ disabled }}"
@@ -49,6 +49,3 @@ Page({
 | 事件名称       | 说明      | 回调参数       |
 |-----------|-----------|-----------|
 | change | 当绑定值变化时触发的事件 | event对象和数据对象（包含loading和checked） |
-
-
-

@@ -55,9 +55,10 @@ module.exports = {
         label: '表单',
         include: {
           field: require('./packages/field/README.md'),
-          switch: require('./packages/switch/README.md'),
+          search: require('./packages/search/README.md'),
           select: require('./packages/select/README.md'),
-          stepper: require('./packages/stepper/README.md')
+          stepper: require('./packages/stepper/README.md'),
+          switch: require('./packages/switch/README.md')
         }
       },
       {

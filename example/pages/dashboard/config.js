@@ -51,6 +51,9 @@ export default {
         name: 'Switch 开关',
         path: '/pages/switch/index'
       }, {
+        name: 'Search 搜索',
+        path: '/pages/search/index'
+      }, {
         name: 'Tab 标签',
         path: '/pages/tab/index'
       }, {

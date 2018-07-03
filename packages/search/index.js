@@ -1,17 +1,25 @@
 Component({
   externalClasses: ['search-class', 'input-class', 'cancel-class'],
   properties: {
-    show: {
-      type: Array,
-      value: ['icon', 'cancel']
-    },
     cancelText: {
       type: String,
       value: '取消'
     },
+    disabled: {
+      type: Boolean,
+      value: false
+    },
+    focus: {
+      type: Boolean,
+      value: false
+    },
     keyword: {
       type: String,
       value: ''
+    },
+    show: {
+      type: Array,
+      value: ['icon', 'cancel']
     },
     placeholder: {
       type: String,
@@ -28,33 +36,11 @@ Component({
     searchStyle: String,
     cancelStyle: String,
     inputStyle: String,
-    focus: {
-      type: Boolean,
-      value: false
-    },
-    disabled: {
-      type: Boolean,
-      value: false
-    }
   },
   data: {
     inputWidth: 'auto'
   },
-
   methods: {
-    search(e) {
-      this.triggerEvent('search', { value: e.detail.value });
-    },
-    inputChange(e) {
-      this._inputvalue = e.detail.value;
-      this.triggerEvent('change', { value: e.detail.value });
-    },
-    cancelSearch() {
-      this.triggerEvent('cancel');
-    },
-    focus() {
-      this.triggerEvent('focus');
-    },
     blur() {
       this.triggerEvent('blur');
     },
@@ -63,6 +49,19 @@ Component({
         focus: true
       });
       this.triggerEvent('change', { value: '' });
+    },
+    cancelSearch() {
+      this.triggerEvent('cancel');
+    },
+    focus() {
+      this.triggerEvent('focus');
+    },
+    inputChange(e) {
+      this._inputvalue = e.detail.value;
+      this.triggerEvent('change', { value: e.detail.value });
+    },
+    search(e) {
+      this.triggerEvent('search', { value: e.detail.value });
     }
   }
 });

@@ -57,7 +57,8 @@ module.exports = {
           field: require('./packages/field/README.md'),
           switch: require('./packages/switch/README.md'),
           select: require('./packages/select/README.md'),
-          stepper: require('./packages/stepper/README.md')
+          stepper: require('./packages/stepper/README.md'),
+          search: require('./packages/search/README.md')
         }
       },
       {
@@ -86,6 +87,6 @@ module.exports = {
         }
       }
     ],
-    include: { search: require('./packages/search/README.md') }
+    include: {}
   }
 }

@@ -56,6 +56,9 @@ export default {
       }, {
         name: 'Tag 标记',
         path: '/pages/tag/index'
+      }, {
+        name: 'Loadmore 加载更多',
+        path: '/pages/loadmore/index'
       }
     ]
   },

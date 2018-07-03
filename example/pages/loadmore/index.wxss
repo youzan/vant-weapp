@@ -8,7 +8,7 @@
   background: transparent;
 }
 
-.loadmore-example zan-loading {
+.loadmore-example zan-loadmore {
   flex: 1;
 }
 

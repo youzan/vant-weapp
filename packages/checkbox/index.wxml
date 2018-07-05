@@ -1,28 +1,16 @@
-<!-- <checkbox-group class="van-checkbox" bindchange="handleCheckboxChange" disabled>
-  <label
-    class="van-checkbox__label"
-    wx:key="{{ index }}-{{ item.name }}"
-    wx:for="{{items}}"
+<view
+  class="zan-checkbox checkbox-class {{ isInGroup ? 'zan-checkbox__item' : ''}} {{ type === 'list' ? 'zan-checkbox__list-item' : ''}}"
+  bindtap="{{ labelDisabled ? '' : 'handleClick' }}"
+  data-id="test"
   >
-    <checkbox
-      value="{{item.name}}"
-      checked="{{item.checked}}"
-      color="{{parse.getColor(activeColor)}}"
-    />{{item.value}}
-  </label>
-</checkbox-group> -->
-
-<view class="van-checkbox" bindtap="handleClick">
-  <!-- <button wx:if="{{ checkedAll }}" class="checkbox-icon zan-icon zan-icon-checked collect-form-id-button" style="color: #ff4343; font-size: 18px;"></button>
-  <button wx:else class="checkbox-icon zan-icon zan-icon-check collect-form-id-button" style="color: #999; font-size: 18px;"></button> -->
-  <!-- <button class="checkbox-icon zan-icon zan-icon-check collect-form-id-button" style="color: #999; font-size: 18px;"></button> -->
-  <zan-icon wx:if="{{ checked }}" type="checked" class="van-checkbox__icon"></zan-icon>
-  <zan-icon wx:else type="check" class="van-checkbox__icon"></zan-icon>
-  <view class="van-checkbox__label">
-    <text>test</text>
+  <zan-icon
+    type="{{ checked ? 'checked' : 'check'}}"
+    class="zan-checkbox__icon {{ 'zan-checkbox--' + shape }} {{ disabled ? 'zan-checkbox--disabled' : '' }} {{ checked ? 'zan-checkbox--checked' : '' }}"
+    bindtap="{{ labelDisabled ? 'handleClick': '' }}"
+  ></zan-icon>
+  <text class="zan-checkbox__label">
     <slot></slot>
-  </view>
-
+  </text>
 </view>
 
 <wxs module="parse">

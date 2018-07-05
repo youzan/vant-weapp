@@ -1,73 +1,100 @@
-## Select 选择
+## Checkbox 复选框
 
 ### 使用指南
 在 index.json 中引入组件
 ```json
 {
   "usingComponents": {
-    "zan-select": "/packages/select/index"
+    "zan-checkbox": "/packages/checkbox/index"
   }
 }
 ```
 
 ### 代码演示
+
+#### 基础用法
+
 ```html
-<zan-select
-  items="{{ items }}"
-  checkedValue="{{ checkedValue }}"
-  activeColor="{{ activeColor }}"
-  bind:change="handleSelectChange"
-/>
+<zan-checkbox
+  checkbox-class="checkbox-demo"
+  bindchange="handleCheckboxChange"
+>复选框</zan-checkbox>
 ```
+
+#### 基础用法
+
+```html
+<zan-checkbox
+  checkbox-class="checkbox-demo"
+  bindchange="handleCheckboxChange"
+>复选框</zan-checkbox>
+```
+
+#### 禁用状态
+
+```html
+<zan-checkbox
+  checkbox-class="checkbox-demo"
+  disabled
+  checked="{{ true }}"
+>复选框</zan-checkbox>
+```
+
+#### 禁用内容部分点击事件
+
+```html
+<zan-checkbox
+  checkbox-class="checkbox-demo"
+  label-disabled
+>复选框</zan-checkbox>
+```
+
+#### Checkbox组
+
+```html
+<zan-checkbox-group>
+  <zan-checkbox
+    wx:for="{{ items }}"
+    wx:for-item="item"
+    wx:for-index="index"
+    wx:key="{{ value }}"
+    checked="{{ item.checked }}"
+    data-index="{{ index }}"
+    bindchange="handleCheckboxChange"
+  >复选框 {{ item.name }}</zan-checkbox>
+</zan-checkbox-group>
+```
+
 ```js
 Page({
   data: {
     items: [
-      {
-        value: '1',
-        // 选项文案
-        name: '选项一',
-      },
-      {
-        value: '2',
-        name: '选项二',
-      },
-    ],
-    checkedValue: '选项一',
-    activeColor: '#ff4443'
-  },
-
-  methods: {
-    handleSelectChange({ detail }) {
-      console.log(detail);
-    }
+      {value: 'a'},
+      {value: 'b', checked: true},
+      {value: 'c'},
+    ]
   }
 });
 ```
 
+#### 列表模式
 
+```html
+<zan-checkbox type="list">复选框 a</zan-checkbox>
+<zan-checkbox type="list">复选框 b</zan-checkbox>
+<zan-checkbox type="list">复选框 c</zan-checkbox>
+```
 
-#### 具体参数
+### 参数
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| items | select 显示各个项的配置 | Array | - | |
-| checkedValue | 高亮的 item 的 value 值 | String | - | |
-| activeColor | Select 高亮颜色 | String | #ff4444 | |
+| checked | 是否选中 | Boolean| false | |
+| disabled | 是否可用 | Boolean| false | |
+| labelDisabled | 文字区域是否可选 | Boolean | false | |
+| type | 显示类型 | String | - | |
 
-items 具体格式如下
-```js
-{
-  items: [
-    {
-      // 选项选中时，代表的选中值。会以此作为唯一值，判断是否选中
-      value: '1',
-      // 选项的文字描述
-      name: '选项一',
-    },
-    {
-      value: '2',
-      name: '选项二',
-    },
-  ]
-}
-```
+### 事件
+
+| 事件名称       | 说明      | 回调参数       |
+| ---- | --- | ---|
+| change | 数值改变时修改 | checked值|

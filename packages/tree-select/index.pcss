@@ -1,0 +1,55 @@
+@import "../helper/index.pcss";
+
+.tree-select {
+  user-select: none;
+  position: relative;
+  font-size: 16px;
+
+  &__nav {
+    width: 143px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__nitem {
+    line-height: 44px;
+    padding: 0 15px;
+    background-color: #fff;
+
+    &--active {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__content {
+    padding: 0 15px;
+    margin-left: 143px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__item {
+    position: relative;
+    line-height: 44px;
+    padding-left: 5px;
+    padding-right: 18px;
+
+    &--active {
+      color: #f44;
+    }
+  }
+
+  &__selected {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    line-height: inherit;
+  }
+}

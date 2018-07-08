@@ -1,0 +1,11 @@
+<doc-page title="TREE SELECT" without-padding>
+  <view style="margin-top: 5vh;">
+    <zan-tree-select
+      items="{{ items }}"
+      main-active-index="{{ mainActiveIndex }}"
+      active-id="{{ activeId }}"
+      bind:itemclick="handleItemClick"
+      bind:navclick="handleNavClick"
+    ></zan-tree-select>
+  </view>
+</doc-page>

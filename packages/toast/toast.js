@@ -57,9 +57,14 @@ function Toast(optionsOrMsg, pageCtx) {
     show: true
   });
 
-  const timeoutId = setTimeout(() => {
-    toastCtx.clear();
-  }, parsedOptions.timeout || 3000);
+  let timeoutId = 0;
+
+  if (parsedOptions.timeout >= 0) {
+    timeoutId = setTimeout(() => {
+      toastCtx.clear();
+    }, parsedOptions.timeout || 3000);
+  }
+
 
   timeoutData = {
     timeoutId,

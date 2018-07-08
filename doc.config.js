@@ -85,6 +85,11 @@ module.exports = {
           toptips: require('./packages/toptips/README.md'),
           loadmore: require('./packages/loadmore/README.md')
         }
+      },
+      {
+        base: 'complexComponent',
+        label: '高阶组件',
+        include: { tree_select: require('./packages/tree-select/README.md') }
       }
     ],
     include: {}

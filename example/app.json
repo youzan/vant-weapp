@@ -24,6 +24,7 @@
     "pages/tag/index",
     "pages/toptips/index",
     "pages/toast/index",
+    "pages/tree-select/index",
     "pages/select/index",
     "pages/datetime/index"
   ],

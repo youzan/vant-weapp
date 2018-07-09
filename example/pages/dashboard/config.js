@@ -18,6 +18,9 @@ export default {
         name: 'Cell 单元格',
         path: '/pages/cell/index'
       }, {
+        name: 'Checkbox 复选框',
+        path: '/pages/checkbox/index'
+      }, {
         name: 'Helper 基础样式',
         path: '/pages/helper/index'
       }, {

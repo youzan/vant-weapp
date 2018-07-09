@@ -1,0 +1,4 @@
+.checkbox-demo {
+  display: block;
+  margin: 15px 0;
+}

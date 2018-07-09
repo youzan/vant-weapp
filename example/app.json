@@ -3,6 +3,7 @@
     "pages/dashboard/index",
     "pages/actionsheet/index",
     "pages/btn/index",
+    "pages/checkbox/index",
     "pages/badge/index",
     "pages/capsule/index",
     "pages/card/index",

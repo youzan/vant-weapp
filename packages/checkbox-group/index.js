@@ -21,12 +21,6 @@ Component({
       elements.forEach((checkbox, index) => {
         checkbox.updateData({ isInGroup: true});
       });
-    },
-
-    handleGroupCheckboxClick(e) {
-      let elements = this.getRelationNodes(CHECKBOX_PATH);
-      console.log('elements', elements)
-      console.log(e)
     }
   }
 });

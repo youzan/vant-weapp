@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Tree Select 分类选择",
+  "usingComponents": {
+    "zan-tree-select": "../../dist/tree-select/index",
+    "doc-page": "../../components/doc-page/index"
+  }
+}

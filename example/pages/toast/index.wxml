@@ -25,6 +25,10 @@
       只显示图标的toast
     </zan-button>
 
+    <zan-button bind:btnclick="showEverToast">
+      不消失的的toast
+    </zan-button>
+
     <zan-button bind:btnclick="showLoading">
       显示 Loading
     </zan-button>

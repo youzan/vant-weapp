@@ -1,5 +1,23 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.6](https://github.com/youzan/zanui-weapp/tree/v3.0.6) (2018-07-08)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.5...v3.0.6)
+
+**new feature**
+- 新增搜索组件 [\#321](https://github.com/youzan/zanui-weapp/pull/321) ([jerryni](https://github.com/jerryni))
+- 新增分类选择组件 [\#346](https://github.com/youzan/zanui-weapp/pull/346) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+
+- 优化 Tab 组件宽度样式 [\#336](https://github.com/youzan/zanui-weapp/pull/336) ([pangxie1991](https://github.com/pangxie1991))
+
+**Bug Fixes**
+
+- 修复由于 autoprefixer 移除旧浏览器代码导致的兼容性问题 [\#335](https://github.com/youzan/zanui-weapp/pull/335) ([realywithoutname](https://github.com/realywithoutname))
+- 修复 select、popup 组件文档错误，改善部分组件文档一致性 [\#334](https://github.com/youzan/zanui-weapp/pull/334) ([rex-zsd](https://github.com/rex-zsd))
+- 修复 Toast 组件的 timeout 不支持小于0的问题 [\#340](https://github.com/youzan/zanui-weapp/pull/340) ([rex-zsd](https://github.com/rex-zsd))
+
+
 ## [v3.0.5](https://github.com/youzan/zanui-weapp/tree/v3.0.5) (2018-06-29)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.4...v3.0.5)
 

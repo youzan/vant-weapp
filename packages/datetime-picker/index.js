@@ -24,6 +24,7 @@ Component({
         if (/^[0-9]+$/.test(value)) {
           value = +value
         }
+        !this._inited && this._init()
         this.updateDate(value)
       }
     },
@@ -36,32 +37,36 @@ Component({
     transPos: [0, 0, 0, 0, 0, 0]
   },
   attached() {
-    this.use = {};
-
-    ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach((item) => {
-      if ((this.data.notUse || []).indexOf(item) === -1) {
-        this.use[item] = true
-      }
-    });
-
-    this.picker = new DatePicker(this.data.date)
-
-    let { dataList, selected } = this.picker.getData(this.data.date)
-
-    // 鬼他么知道为什么 dataList, selected 不能一起 setData
-    this.setData({
-      use: this.use,
-      dataList
-    }, () => {
-      this.setData({
-        selected
-      })
-    });
-    
-    this._indexs = selected
+    !this._inited && this._init()
   },
   
   methods: {
+    _init () {
+      this._inited = true
+      this.use = {};
+
+      ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach((item) => {
+        if ((this.data.notUse || []).indexOf(item) === -1) {
+          this.use[item] = true
+        }
+      });
+
+      this.picker = new DatePicker(this.data.date)
+
+      let { dataList, selected } = this.picker.getData(this.data.date)
+
+      // 鬼他么知道为什么 dataList, selected 不能一起 setData
+      this.setData({
+        use: this.use,
+        dataList
+      }, () => {
+        this.setData({
+          selected
+        })
+      });
+      
+      this._indexs = selected
+    },
     updatePicker(updateData = []) {
       let _updateData = {};
       

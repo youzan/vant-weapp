@@ -1,5 +1,21 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.7](https://github.com/youzan/zanui-weapp/tree/v3.0.7) (2018-07-10)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.6...v3.0.7)
+
+**new feature**
+- \[new feature\] 新增 checkbox 组件 [\#341](https://github.com/youzan/zanui-weapp/pull/341) ([jerryni](https://github.com/jerryni))
+
+**Improvements**
+
+- Tab 组件支持选中项自动滑动到中间位置 [\#347](https://github.com/youzan/zanui-weapp/pull/347) ([rex-zsd](https://github.com/rex-zsd))
+- 增加部分组件自定义样式类，方便自定义样式 [\#352](https://github.com/youzan/zanui-weapp/pull/352) ([pangxie1991](https://github.com/pangxie1991))
+
+**Bug Fixes**
+
+- 修复 Toptips 组件在示例小程序上的问题 [\#351](https://github.com/youzan/zanui-weapp/pull/351) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 DateTime 组件设置初始时间时报错的问题 [\#350](https://github.com/youzan/zanui-weapp/pull/350) ([realywithoutname](https://github.com/realywithoutname))
+
 ## [v3.0.6](https://github.com/youzan/zanui-weapp/tree/v3.0.6) (2018-07-08)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.5...v3.0.6)
 

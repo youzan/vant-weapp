@@ -1,4 +1,4 @@
-const Toptips = require('../../dist/toptips/index');
+const Toptips = require('../../dist/toptips/toptips');
 
 Page({
   data: {

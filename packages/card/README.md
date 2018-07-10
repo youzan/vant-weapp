@@ -53,3 +53,9 @@
 | num | 商品数量 | Number | -
 | status | 商品状态 | String | -
 | useDetailSlot | 是否使用detail-slot（true时需要添加对应slot） | Boolean | `false`
+
+### 外部样式类
+| 类名       | 说明      |
+|-----------|-----------|
+| card-class | 根节点自定义样式类，通过这个可以改变根节点上的样式 |
+| thumb-class | 左侧图片自定义样式类，可以通过这个修改图片的展示大小形式 |

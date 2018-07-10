@@ -1,7 +1,7 @@
 const nativeButtonBehavior = require('./native-button-behaviors');
 
 Component({
-  externalClasses: ['custom-class'],
+  externalClasses: ['custom-class', 'theme-class'],
   behaviors: [nativeButtonBehavior],
   relations: {
     '../btn-group/index': {

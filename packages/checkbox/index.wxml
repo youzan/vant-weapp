@@ -1,5 +1,5 @@
 <view
-  class="zan-checkbox checkbox-class {{ isInGroup ? 'zan-checkbox__item' : ''}} {{ type === 'list' ? 'zan-checkbox__list-item' : ''}}"
+  class="checkbox-class zan-checkbox {{ isInGroup ? 'zan-checkbox__item' : ''}} {{ type === 'list' ? 'zan-checkbox__list-item' : ''}}"
   bindtap="{{ labelDisabled ? '' : 'handleClick' }}"
   data-id="test"
   >

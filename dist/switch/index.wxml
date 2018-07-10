@@ -1,5 +1,5 @@
 <view
-  class="zan-switch zan-switch--{{ checked ? 'on' : 'off' }} {{ disabled ? 'zan-swtich--disabled' : '' }}"
+  class="custom-class theme-class zan-switch zan-switch--{{ checked ? 'on' : 'off' }} {{ disabled ? 'zan-swtich--disabled' : '' }}"
   checked="{{ checked }}"
   loading="{{ loading }}"
   disabled="{{ disabled }}"

@@ -28,6 +28,7 @@ Component({
         if (/^[0-9]+$/.test(value)) {
           value = +value;
         }
+        !this._inited && this._init();
         this.updateDate(value);
       }
     },
@@ -40,39 +41,43 @@ Component({
     transPos: [0, 0, 0, 0, 0, 0]
   },
   attached: function attached() {
-    var _this = this;
-
-    this.use = {};
-
-    ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach(function (item) {
-      if ((_this.data.notUse || []).indexOf(item) === -1) {
-        _this.use[item] = true;
-      }
-    });
-
-    this.picker = new DatePicker(this.data.date);
-
-    var _picker$getData = this.picker.getData(this.data.date),
-        dataList = _picker$getData.dataList,
-        selected = _picker$getData.selected;
-
-    // 鬼他么知道为什么 dataList, selected 不能一起 setData
-
-
-    this.setData({
-      use: this.use,
-      dataList: dataList
-    }, function () {
-      _this.setData({
-        selected: selected
-      });
-    });
-
-    this._indexs = selected;
+    !this._inited && this._init();
   },
 
 
   methods: {
+    _init: function _init() {
+      var _this = this;
+
+      this._inited = true;
+      this.use = {};
+
+      ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach(function (item) {
+        if ((_this.data.notUse || []).indexOf(item) === -1) {
+          _this.use[item] = true;
+        }
+      });
+
+      this.picker = new DatePicker(this.data.date);
+
+      var _picker$getData = this.picker.getData(this.data.date),
+          dataList = _picker$getData.dataList,
+          selected = _picker$getData.selected;
+
+      // 鬼他么知道为什么 dataList, selected 不能一起 setData
+
+
+      this.setData({
+        use: this.use,
+        dataList: dataList
+      }, function () {
+        _this.setData({
+          selected: selected
+        });
+      });
+
+      this._indexs = selected;
+    },
     updatePicker: function updatePicker() {
       var updateData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
 

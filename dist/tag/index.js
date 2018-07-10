@@ -1,6 +1,8 @@
-"use strict";
+'use strict';
 
 Component({
+  externalClasses: ['custom-class', 'theme-class'],
+
   properties: {
     type: {
       type: String

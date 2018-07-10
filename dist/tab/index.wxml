@@ -4,8 +4,11 @@
 >
   <block wx:if="{{ scroll }}">
     <scroll-view
+      id="scroll-view"
       class="zan-tab__bd zan-tab__bd--scroll {{ fixed ? 'zan-tab__bd--fixed' : '' }}"
-      scroll-x="true"
+      scroll-x
+      scroll-with-animation
+      scroll-left="{{ scrollLeft }}"
       style="height: {{ height ? height + 'px' : 'auto' }}"
     >
       <template
@@ -34,6 +37,7 @@
     wx:for="{{ list }}"
     wx:key="id"
     class="zan-tab__item {{ selectedId == item.id ? 'zan-tab__item--selected' : '' }}"
+    id="item-{{ item.id }}"
     data-item-id="{{ item.id }}"
     bindtap="_handleZanTabChange"
   >

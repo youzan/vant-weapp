@@ -1,0 +1,25 @@
+<view
+  class="checkbox-class zan-checkbox {{ isInGroup ? 'zan-checkbox__item' : ''}} {{ type === 'list' ? 'zan-checkbox__list-item' : ''}}"
+  bindtap="{{ labelDisabled ? '' : 'handleClick' }}"
+  data-id="test"
+  >
+  <zan-icon
+    type="{{ checked ? 'checked' : 'check'}}"
+    class="zan-checkbox__icon {{ 'zan-checkbox--' + shape }} {{ disabled ? 'zan-checkbox--disabled' : '' }} {{ checked ? 'zan-checkbox--checked' : '' }}"
+    bindtap="{{ labelDisabled ? 'handleClick': '' }}"
+  ></zan-icon>
+  <text class="zan-checkbox__label">
+    <slot></slot>
+  </text>
+</view>
+
+<wxs module="parse">
+function getColor(color) {
+  color = color || '#ff4444'
+  return color;
+}
+
+module.exports = {
+  getColor: getColor
+};
+</wxs>

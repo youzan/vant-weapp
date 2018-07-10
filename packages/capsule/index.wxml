@@ -1,4 +1,4 @@
-<view class="zan-capsule zan-capsule--{{type}}">
+<view class="custom-class zan-capsule zan-capsule--{{type}}">
   <block wx:if="{{color}}">
     <view
       class="zan-capsule__left"

@@ -17,6 +17,7 @@
     "pages/noticebar/index",
     "pages/panel/index",
     "pages/popup/index",
+    "pages/radio/index",
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",

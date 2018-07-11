@@ -33,7 +33,6 @@ module.exports = class DatePicker {
     }
     
     let d = new Date(date);
-    console.log(d);
     
     let y = d.getFullYear();
     let m = d.getMonth() + 1;

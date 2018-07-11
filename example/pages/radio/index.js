@@ -12,12 +12,6 @@ Page({
       {name: 'USA', value: '美国'},
       {name: 'BRA', value: '巴西', disabled: true },
       {name: 'CHN', value: '中国', checked: 'true'}
-    ],
-
-    items2: [
-      {name: 'USA', value: '美国'},
-      {name: 'CHN', value: '中国', checked: 'true'},
-      {name: 'BRA', value: '巴西'}
     ]
   },
 

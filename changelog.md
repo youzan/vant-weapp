@@ -1,5 +1,13 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.8](https://github.com/youzan/zanui-weapp/tree/v3.0.8) (2018-07-12)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.7...v3.0.8)
+
+**Bug Fixes**
+
+- 修复 Toast 组件未传入 timeout 时不会自动关闭的问题 [\#361](https://github.com/youzan/zanui-weapp/pull/361) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 DateTime 组件接收非标准 iso 格式时间初始时间错误的问题 [\#355](https://github.com/youzan/zanui-weapp/pull/355) ([realywithoutname](https://github.com/realywithoutname))
+
 ## [v3.0.7](https://github.com/youzan/zanui-weapp/tree/v3.0.7) (2018-07-10)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.6...v3.0.7)
 

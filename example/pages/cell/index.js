@@ -3,7 +3,8 @@ var Zan = require('../../dist/index');
 Page(Object.assign({}, Zan.Switch, {
   data: {
     checked: false,
-    show: true
+    show: true,
+    date: ''
   },
 
   onLoad() {
@@ -15,6 +16,12 @@ Page(Object.assign({}, Zan.Switch, {
   handleZanSwitchChange(e) {
     this.setData({
       checked: e.checked
+    });
+  },
+
+  bindDateChange(e) {
+    this.setData({
+      date: e.detail.value
     });
   },
 

@@ -28,12 +28,11 @@ module.exports = class DatePicker {
     date = date || this._date || new Date
 
     // toUTCString ISO 格式部分 ios 手机会失败
-    if (typeof date === 'string' && date.indexOf('-') > 0) {
+    if (new Date(date).toString() === 'Invalid Date' && typeof date === 'string' && date.indexOf('-') > 0) {
       date = iso2utc(date)
     }
     
     let d = new Date(date);
-    console.log(d);
     
     let y = d.getFullYear();
     let m = d.getMonth() + 1;

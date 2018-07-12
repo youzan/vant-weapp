@@ -13,5 +13,9 @@ Page({
 
   nativeChange ({detail}) {
     this.setData({pickerView2: detail.value.join('-')})
+  },
+
+  change ({ detail: { value, date } }) {
+    console.log('value is', value, 'and date is', date)
   }
 })

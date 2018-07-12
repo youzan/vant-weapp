@@ -1,12 +1,12 @@
-<view class="zan-loadmore zan-loadmore--{{ nomore ? 'nomore' :  nodata ? 'nodata' : loading ? 'loading' : ''}}">
-  <view wx:if="{{ nomore }}" class="zan-loadmore__tips">
-    <view class="zan-loadmore__dot"></view>
-  </view>
-  <view wx:elif="{{ nodata }}" class="zan-loadmore__tips">
-    {{ nodataStr || '暂无数据' }}
-  </view>
-  <block wx:elif="{{ loading }}">
+<view class="zan-loadmore">
+  <block wx:if="{{ type === 'loading' }}">
     <view class="zan-loading"></view>
     <view class="zan-loadmore__tips">加载中...</view>
+  </block>
+  <block wx:elif="{{ type === 'text' }}">
+    <view class="zan-loadmore__line"></view>
+    <text wx:if="{{ text }}" class="zan-loadmore__text">{{ text }}</text>
+    <view wx:else class="zan-loadmore__dot"></view>
+    <view class="zan-loadmore__line"></view>
   </block>
 </view>

@@ -1,19 +1,12 @@
 Component({
   properties: {
-    nomore: {
-      type: Boolean,
-      value: false
+    type: {
+      type: String,
+      value: 'loading'
     },
-    loading: {
-      type: Boolean,
-      value: true
-    },
-    nodata: {
-      type: Boolean,
-      value: false
-    },
-    nodataStr: {
-      type: String
+    text: {
+      type: String,
+      value: ''
     }
   }
 });

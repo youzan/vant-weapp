@@ -1,12 +1,36 @@
 @import "../common/_mixins";
 
 .zan-loadmore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+}
+
+.zan-loadmore__line {
+  flex: 1;
+  height: 1px;
   position: relative;
-  width: 65%;
-  margin: 21px auto;
-  line-height: 20px;
-  font-size: 14px;
-  text-align: center;
+
+  &::after {
+    @mixin hairline;
+    border-bottom-width: 1px;
+  }
+}
+
+.zan-loadmore__text, .zan-loadmore__dot {
+  margin: 0 5px;
+}
+
+.zan-loadmore__dot {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  display: inline-block;
   vertical-align: middle;
 }
 
@@ -21,58 +45,9 @@
   background-size: 100%;
 }
 
-.zan-loadmore .zan-loading {
-  margin-right: 4px;
-}
-
 .zan-loadmore__tips {
   display: inline-block;
   vertical-align: middle;
-  height: 20px;
-  line-height: 20px;
-}
-
-.zan-loadmore--nodata,
-.zan-loadmore--nomore {
-  color: #999;
-
-  &::after {
-    @mixin hairline;
-    border-top-width: 1px;
-  }
-}
-
-.zan-loadmore--nodata {
-  margin-top: 120px;
-}
-
-.zan-loadmore--nodata .zan-loadmore__tips {
-  position: relative;
-  top: -11px;
-  background: #f9f9f9;
-  padding: 0 6px;
-  z-index: 1;
-}
-
-.zan-loadmore--nomore .zan-loadmore__tips {
-  position: relative;
-  top: -11px;
-  background: #f9f9f9;
-  padding: 0 6px;
-  z-index: 1;
-}
-
-.zan-loadmore__dot {
-  position: absolute;
-  left: 50%;
-  top: 10px;
-  margin-left: -2px;
-  margin-top: -2px;
-  content: " ";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #E5E5E5;
-  display: inline-block;
-  vertical-align: middle;
+  height: 24px;
+  line-height: 24px;
 }

@@ -1,1 +1,3 @@
-<view class="zan-icon zan-icon-{{ type }}"></view>
+<view class="zan-icon zan-icon-{{ type }}"
+  style="color: {{ color }}; font-size: {{ size }}px">
+</view>

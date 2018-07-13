@@ -1,5 +1,6 @@
 Component({
   behaviors: ['wx://form-field'],
+
   externalClasses: ['radio-class', 'radio-color'],
 
   properties: {

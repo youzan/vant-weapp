@@ -17,7 +17,8 @@
   </zan-panel>
 
   <zan-panel title='自定义样式'>
-    <zan-radio items="{{ items }}"
+    <zan-radio
+      items="{{ items }}"
       radio-color="radio-color"
       radio-class="radio-demo"></zan-radio>
   </zan-panel>

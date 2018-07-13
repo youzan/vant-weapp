@@ -1,5 +1,3 @@
-var Zan = require('../../dist/index');
-
 Page({
 
   data: {

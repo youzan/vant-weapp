@@ -11,10 +11,9 @@
     wx:for-index="index"
   >
     <view class="zan-radio__icon-wrap">
-      <zan-icon
-        type="{{ item.checked ? 'checked' : 'check'}}"
-        class="zan-radio__icon {{ item.disabled ? 'zan-radio--disabled' : '' }} {{ item.checked ? 'zan-radio--checked radio-color' : '' }}"
-      ></zan-icon>
+      <view class="zan-radio__icon {{ item.disabled ? 'zan-radio--disabled' : '' }} {{ item.checked ? 'zan-radio--checked radio-color' : '' }}">
+        <view class="zan-radio__icon-inside"></view>
+      </view>
       <radio
         class="zan-radio__origin"
         value="{{ item.name }}"

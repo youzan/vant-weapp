@@ -3,5 +3,6 @@
 }
 
 .radio-color {
-  color: red !important;
+  background-color: red !important;
+  border-color: red !important;
 }

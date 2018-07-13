@@ -19,32 +19,55 @@
         border-bottom: 1px solid #e5e5e5;
         .zan-radio__icon-wrap {
             float: right;
+            margin-top: 3px;
         }
     }
 
     &__icon-wrap {
         position: relative;
         width: 14px;
-        height: 20px;
+        height: 15px;
         display: inline-flex;
         align-items: center;
         color: #aaa;
         .zan-radio__origin {
             opacity: 0;
+            width: 14px;
+            height: 20px;
         }
         .zan-radio__icon {
             position: absolute;
-            left: 0;
-            top: 0;
-            display: inline-flex;
-            align-items: center;
-            color: #aaa;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid #dcdfe6;
+            border-radius: 100%;
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+            cursor: pointer;
+            box-sizing: border-box;
+
+            .zan-radio__icon-inside {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+            }
+
             &.zan-radio--checked {
-                color: #06bf04;
+                border-color: #06bf04;
+                background: #06bf04;
+                .zan-radio__icon-inside {
+                    background-color: #fff;
+                }
             }
 
             &.zan-radio--disabled {
-                color: #e5e5e5;
+                opacity: .6;
             }
         }
     }

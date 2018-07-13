@@ -46,7 +46,8 @@ Component({
     }
   },
   data: {
-    isLastCell: true
+    isLastCell: true,
+    titleWidth: 'auto'
   },
   methods: {
     footerTap() {
@@ -72,6 +73,13 @@ Component({
     // 用于被 cell-group 更新，标志是否是最后一个 cell
     updateIsLastElement(isLastCell) {
       this.setData({ isLastCell });
+    },
+
+    // 设置统一的title区域宽度
+    setTitleWidth(titleWidth) {
+      this.setData({
+        titleWidth: `${titleWidth}px`
+      });
     }
   }
 });

@@ -6,7 +6,9 @@
   </zan-panel>
 
   <zan-panel title='禁用状态'>
-    <zan-radio items="{{ items1 }}"></zan-radio>
+    <zan-radio
+      items="{{ items1 }}"
+    ></zan-radio>
   </zan-panel>
 
   <zan-panel title='事件'>
@@ -20,10 +22,14 @@
     <zan-radio
       items="{{ items }}"
       radio-color="radio-color"
-      radio-class="radio-demo"></zan-radio>
+      radio-class="radio-demo"
+    ></zan-radio>
   </zan-panel>
 
   <zan-panel title='列表模式'>
-    <zan-radio items="{{ items }}" type="list" ></zan-radio>
+    <zan-radio
+      items="{{ items }}"
+      type="list"
+    ></zan-radio>
   </zan-panel>
 </doc-page>

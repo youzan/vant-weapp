@@ -64,11 +64,31 @@ Dialog({
     text: '取消',
     type: 'cancel'
   }]
-}).then(({ type }) => {
+}).then(({ type, hasOpenDataPromise, openDataPromise }) => {
   // type 可以用于判断具体是哪一个按钮被点击
   console.log('=== dialog with custom buttons ===', `type: ${type}`);
+
+  // - 在使用自定义按钮的情况下，可以将按钮的 openType 设置为微信原生按钮支持的 open-type
+  // - 如果设置的 openType 为 'getUserInfo', 'getPhoneNumber', 'openSetting' 其中之一
+  //       就认为是需要返回相应的数据
+  //       为了处理方便，增加 flag 值 hasOpenDataPromise，表示是否有微信开放数据返回
+  //       这时，通过利用 openDataPromise，可以获取开放数据返回的具体信息
+  if (hasOpenDataPromise) {
+    openDataPromise.then((data) => {
+      console.log('成功获取信息', data);
+    }).catch((data) => {
+      console.log('获取信息失败', data);
+    });
+  }
 });
 ```
+
+#### 方法
+| 方法名       | 参数      | 返回值       | 介绍       |
+|-----------|-----------|-----------|-------------|
+| Dialog | `options` 弹窗展示参数，具体见下方具体参数, `pageCtx` 页面上下文，可以不传，默认使用当前页面 | - | 展示弹窗 |
+| Dialog.close | `options` 和弹窗展示参数一致，这里只需要 selector | - | 关闭弹窗 |
+
 
 ### 具体参数
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
@@ -76,6 +96,7 @@ Dialog({
 | message | 弹窗内容 | String  | - | 必须 |
 | selector | 显示弹窗对应组件节点的选择器 | String  | - | 必须 |
 | title | 弹窗标题 | String | - | |
+| autoClose | 点击按钮后是否自动关闭弹窗 | Boolean | true | |
 | buttonsShowVertical | 按钮是否纵向展示 | Boolean  | false | |
 | showConfirmButton | 是否展示确认按钮 | Boolean  | true | |
 | confirmButtonText | 确认按钮文案 | String  | 确定 | |
@@ -106,6 +127,12 @@ buttons 数据格式
   text: '取消',
   // 按钮类型，用于在 then 中接受点击事件时，判断是哪一个按钮被点击
   type: 'cancel'
+}, {
+  text: '获取用户信息',
+  type: 'userInfo',
+  // 利用 OpenType 设置微信按钮的开放能力
+  // 设置对应的值以后，这个按钮就会具有调用微信原生按钮支持的开放能力
+  openType: 'getUserInfo'
 }]
 ```
 

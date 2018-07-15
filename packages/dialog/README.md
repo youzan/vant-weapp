@@ -64,9 +64,22 @@ Dialog({
     text: '取消',
     type: 'cancel'
   }]
-}).then(({ type }) => {
+}).then(({ type, hasOpenDataPromise, openDataPromise }) => {
   // type 可以用于判断具体是哪一个按钮被点击
   console.log('=== dialog with custom buttons ===', `type: ${type}`);
+
+  // - 在使用自定义按钮的情况下，可以将按钮的 openType 设置为微信原生按钮支持的 open-type
+  // - 如果设置的 openType 为 'getUserInfo', 'getPhoneNumber', 'openSetting' 其中之一
+  //       就认为是需要返回相应的数据
+  //       为了处理方便，增加 flag 值 hasOpenDataPromise，表示是否有微信开放数据返回
+  //       这时，通过利用 openDataPromise，可以获取开放数据返回的具体信息
+  if (hasOpenDataPromise) {
+    openDataPromise.then((data) => {
+      console.log('成功获取信息', data);
+    }).catch((data) => {
+      console.log('获取信息失败', data);
+    });
+  }
 });
 ```
 
@@ -106,6 +119,12 @@ buttons 数据格式
   text: '取消',
   // 按钮类型，用于在 then 中接受点击事件时，判断是哪一个按钮被点击
   type: 'cancel'
+}, {
+  text: '获取用户信息',
+  type: 'userInfo',
+  // 利用 OpenType 设置微信按钮的开放能力
+  // 设置对应的值以后，这个按钮就会具有调用微信原生按钮支持的开放能力
+  openType: 'getUserInfo'
 }]
 ```
 

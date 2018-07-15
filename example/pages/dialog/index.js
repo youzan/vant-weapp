@@ -94,8 +94,14 @@ Page({
         type: 'setting',
         openType: 'openSetting'
       }]
-    }).then(({ type, openDataPromise}) => {
+    }).then(({ type, hasOpenDataPromise, openDataPromise }) => {
       console.log(type);
+
+      // 如果没有 open 数据返回，就不处理
+      if (!hasOpenDataPromise) {
+        return;
+      }
+
       openDataPromise.then((data) => {
         console.log('成功获取信息', data);
       }).catch((data) => {

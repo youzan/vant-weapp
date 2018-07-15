@@ -89,6 +89,7 @@ Dialog({
 | message | 弹窗内容 | String  | - | 必须 |
 | selector | 显示弹窗对应组件节点的选择器 | String  | - | 必须 |
 | title | 弹窗标题 | String | - | |
+| autoClose | 点击按钮后是否自动关闭弹窗 | Boolean | true | |
 | buttonsShowVertical | 按钮是否纵向展示 | Boolean  | false | |
 | showConfirmButton | 是否展示确认按钮 | Boolean  | true | |
 | confirmButtonText | 确认按钮文案 | String  | 确定 | |

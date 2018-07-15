@@ -1,5 +1,5 @@
 const _f = function () {};
-const needResponseOpenTypes = ['getUserInfo', 'getPhoneNumber', 'openSetting']
+const needResponseOpenTypes = ['getUserInfo', 'getPhoneNumber', 'openSetting'];
 
 Component({
   properties: {},
@@ -29,6 +29,7 @@ Component({
     // 取消按钮颜色
     cancelButtonColor: '#333',
     key: '',
+    autoClose: true,
     show: false,
     showCustomBtns: false,
     promiseFunc: {},
@@ -44,9 +45,9 @@ Component({
       const { resolve = _f, reject = _f } = this.data.promiseFunc || {};
 
       // 重置展示
-      this.setData({
-        show: false
-      });
+      if (this.data.autoClose) {
+        this.setData({ show: false });
+      }
 
       // 自定义按钮，全部 resolve 形式返回，根据 type 区分点击按钮
       if (this.data.showCustomBtns) {
@@ -74,7 +75,7 @@ Component({
         });
       }
 
-      this.setData({ promiseFunc: {} })
+      this.setData({ promiseFunc: {} });
     },
 
     // 以下为处理微信按钮开放能力的逻辑

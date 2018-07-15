@@ -1,4 +1,5 @@
 const Dialog = require('../../dist/dialog/dialog');
+const Toast = require('../../dist/toast/toast');
 
 Page({
   toggleBaseDialog() {
@@ -107,6 +108,26 @@ Page({
       }).catch((data) => {
         console.log('获取信息失败', data);
       });
+    });
+  },
+
+  toggleCloseDialog() {
+    Dialog({
+      title: '弹窗',
+      message: '这是一个自由控制关闭的弹窗',
+      selector: '#zan-close-dialog',
+      autoClose: false
+    }).then(() => {
+      console.log('=== dialog resolve ===', 'type: confirm');
+      Toast.loading({
+        selector: '#zan-toast'
+      });
+
+      // 2s 后自动关闭弹窗
+      setTimeout(() => {
+        Dialog.close({ selector: '#zan-close-dialog' });
+        Toast.clear();
+      }, 2000);
     });
   },
 

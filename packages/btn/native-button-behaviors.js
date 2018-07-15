@@ -42,6 +42,9 @@ module.exports = Behavior({
     bindgetphonenumber({ detail = {} } = {}) {
       this.triggerEvent('getphonenumber', detail);
     },
+    bindopensetting({ detail = {}} = {}) {
+      this.triggerEvent('opensetting', detail);
+    },
     binderror({ detail = {} } = {}) {
       this.triggerEvent('error', detail);
     }

@@ -76,6 +76,34 @@ Page({
     });
   },
 
+  toggleOpenDialog() {
+    Dialog({
+      title: '弹窗',
+      message: '获取用户数据',
+      selector: '#zan-open-dialog',
+      buttons: [{
+        text: '用户信息',
+        type: 'userInfo',
+        openType: 'getUserInfo'
+      }, {
+        text: '获取手机号',
+        type: 'tel',
+        openType: 'getPhoneNumber'
+      }, {
+        text: '打开授权页',
+        type: 'setting',
+        openType: 'openSetting'
+      }]
+    }).then(({ type, openDataPromise}) => {
+      console.log(type);
+      openDataPromise.then((data) => {
+        console.log('成功获取信息', data);
+      }).catch((data) => {
+        console.log('获取信息失败', data);
+      });
+    });
+  },
+
   onShareAppMessage() {
     return {
       title: 'ZanUI-WeApp',

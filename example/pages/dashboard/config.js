@@ -39,20 +39,8 @@ export default {
         name: 'Popup 弹出层',
         path: '/pages/popup/index'
       }, {
-        name: 'Select 选择',
-        path: '/pages/select/index'
-      }, {
-        name: 'Stepper 计数器',
-        path: '/pages/stepper/index'
-      }, {
         name: 'Steps 步骤条',
         path: '/pages/steps/index'
-      }, {
-        name: 'Switch 开关',
-        path: '/pages/switch/index'
-      }, {
-        name: 'Search 搜索',
-        path: '/pages/search/index'
       }, {
         name: 'Tab 标签',
         path: '/pages/tab/index'
@@ -71,19 +59,28 @@ export default {
       {
         name: 'Checkbox 复选框',
         path: '/pages/checkbox/index'
-      },
-      {
+      }, {
         name: 'Datetime 时间选择器',
         path: '/pages/datetime/index'
-      },
-      {
+      }, {
         name: 'Field 输入框',
         path: '/pages/field/index'
-      },
-      {
+      }, {
         name: 'Radio 单选框',
         path: '/pages/radio/index'
-      },
+      }, {
+        name: 'Search 搜索',
+        path: '/pages/search/index'
+      }, {
+        name: 'Select 选择',
+        path: '/pages/select/index'
+      }, {
+        name: 'Stepper 计数器',
+        path: '/pages/stepper/index'
+      }, {
+        name: 'Switch 开关',
+        path: '/pages/switch/index'
+      }
     ]
   },
   action: {
@@ -101,9 +98,6 @@ export default {
       }, {
         name: 'TopTips 顶部提示',
         path: '/pages/toptips/index'
-      }, {
-        name: 'Datetime 时间选择器',
-        path: '/pages/datetime/index'
       }
     ]
   }

@@ -18,9 +18,6 @@ export default {
         name: 'Cell 单元格',
         path: '/pages/cell/index'
       }, {
-        name: 'Checkbox 复选框',
-        path: '/pages/checkbox/index'
-      }, {
         name: 'Helper 基础样式',
         path: '/pages/helper/index'
       }, {
@@ -72,13 +69,21 @@ export default {
     title: '表单',
     content: [
       {
-        name: 'Field 输入框',
-        path: '/pages/field/index'
+        name: 'Checkbox 复选框',
+        path: '/pages/checkbox/index'
       },
       {
         name: 'Datetime 时间选择器',
         path: '/pages/datetime/index'
-      }
+      },
+      {
+        name: 'Field 输入框',
+        path: '/pages/field/index'
+      },
+      {
+        name: 'Radio 单选框',
+        path: '/pages/radio/index'
+      },
     ]
   },
   action: {

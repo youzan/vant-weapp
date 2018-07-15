@@ -56,6 +56,7 @@ module.exports = {
         include: {
           checkbox: require('./packages/checkbox/README.md'),
           field: require('./packages/field/README.md'),
+          radio: require('./packages/radio/README.md'),
           search: require('./packages/search/README.md'),
           select: require('./packages/select/README.md'),
           stepper: require('./packages/stepper/README.md'),

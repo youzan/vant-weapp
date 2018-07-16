@@ -27,8 +27,9 @@
   }
 ```
 
+`cell-group`提供`title-width`控制组内整体 cell 的 title 区域宽度
 ```wxml
-  <zan-cell-group>
+  <zan-cell-group title-width="90">
     <zan-cell title="只显示箭头" is-link></zan-cell>
     <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
     <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
@@ -66,3 +67,4 @@
 | 类名       | 说明      |
 |-----------|-----------|
 | cell-class | 根节点自定义样式类，通过这个可以改变根节点上的样式 |
+| title-class | title区域自定义样式 |

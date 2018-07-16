@@ -2,6 +2,12 @@ const CELL_PATH = '../cell/index';
 const FIELD_PATH = '../field/index'
 
 Component({
+  properties: {
+    titleWidth: {
+      type: Number,
+      value: null
+    }
+  },
   relations: {
     [CELL_PATH]: {
       type: 'child',
@@ -43,10 +49,13 @@ Component({
       const elementUpdateTimeout = setTimeout(() => {
         this.setData({ elementUpdateTimeout: 0 });
         let elements = this.getRelationNodes(childPath);
+        const { titleWidth } = this.properties;
+
         if (elements.length > 0) {
           let lastIndex = elements.length - 1;
 
           elements.forEach((cell, index) => {
+            titleWidth && cell.setTitleWidth(titleWidth)
             cell.updateIsLastElement(index === lastIndex);
           });
         }

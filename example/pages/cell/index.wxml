@@ -18,6 +18,16 @@
     </zan-cell>
   </zan-panel>
 
+  <zan-panel class="cell-panel-demo">
+    <zan-cell title="单行列表">
+      <picker mode="date" value="{{date}}" start="2018-07-01" end="2018-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          选择日期: {{date}}
+        </view>
+      </picker>
+    </zan-cell>
+  </zan-panel>
+
   <zan-panel class="cell-panel-demo" title="带箭头的 cell">
     <zan-cell title="只显示箭头" is-link></zan-cell>
   </zan-panel>

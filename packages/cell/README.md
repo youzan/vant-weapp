@@ -49,6 +49,7 @@
 | title         | String      | 否       | 无    | 左侧标题                                                                                                 |
 | label         | Boolean     | 否       | false | 标题下方的描述信息                                                                                       |
 | value         | String      | 否       | 取消  | 右侧内容                                                                                                 |
+| noBorder        | Boolean      | 否      | false   | 不显示下边线 |
 | isLink        | Boolean      | 否       | false    | 是否展示右侧箭头并开启尝试以 url 跳转 |
 | url        | String      | 否      | -    | 当 isLink 设置为 true 时，点击 cell 会尝试跳转到该路径 |
 | linkType      | String      | 否       | navigateTo    | 链接跳转类型，可选值为 `navigateTo`，`redirectTo`，`switchTab`，`reLaunch`                               |

@@ -44,4 +44,4 @@
 | color | 字体颜色 | String | `#fff`
 | background-color | 背景颜色 | String | `#f44`
 | font-size | 字体大小 | Number | 10
-| box-shadow | 为了更好的控制宽度，使用了box-shadow来实现badge的边框，可以根据box-shadow的语法自行修改颜色和宽度 | String | `0 0 0 2px #fff`
+| box-shadow | 同css box-shadow语法 | String | `0 0 0 2px #fff`

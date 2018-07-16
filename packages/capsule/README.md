@@ -17,7 +17,7 @@ Panel 提供了一块白色的展示区域，使用方式如下
 ```
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| type | capsule的主体颜色 | String | ''（有danger这个主题色） | |
+| type | capsule的主体颜色，可选值：danger | String | '' | |
 | color | 自定义capsule颜色 | String | - | |
 | leftText | 左侧文案 | String | - | |
 | rightText | 右侧文案 | String | - | |

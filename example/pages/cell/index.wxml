@@ -53,7 +53,7 @@
         bindtap="handleTap"
       ></zan-cell>
       <block wx:if="{{ show }}">
-        <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
+        <zan-cell no-border title="单行列表" label="附加描述" value="不想有 border"></zan-cell>
         <zan-cell title="表单">
           <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
         </zan-cell>

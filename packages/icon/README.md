@@ -11,9 +11,10 @@
 ```
 
 ### 代码演示
-可以在任意位置上使用 zan-icon 标签。通过 type 可以控制 icon 显示的图标
+可以在任意位置上使用 zan-icon 标签。通过 type 可以控制 icon 显示的图标，color 控制 icon 的颜色，size 控制 icon 的颜色。
+
 ```html
-<zan-icon type="success"></zan-icon>
+<zan-icon type="success" size="18" color="#F44"></zan-icon>
 ```
 
 支持的 icon 和 名称 见下图

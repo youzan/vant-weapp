@@ -1,5 +1,23 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.9](https://github.com/youzan/zanui-weapp/tree/v3.0.9) (2018-07-17)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.8...v3.0.9)
+
+**new feature**
+- Cell 组件新增 no-border 属性 [\#369](https://github.com/youzan/zanui-weapp/pull/369) ([realywithoutname](https://github.com/realywithoutname))
+- 新增 Radio 组件 [\#354](https://github.com/youzan/zanui-weapp/pull/354) ([jerryni](https://github.com/jerryni))
+
+**Improvements**
+
+- 优化 Dialog 弹窗组件对 open 信息的处理 [\#366](https://github.com/youzan/zanui-weapp/pull/366) ([pangxie1991](https://github.com/pangxie1991))
+- 优化 Cell 组件默认 slot 展示效果，添加 title 区域自定义 class [\#360](https://github.com/youzan/zanui-weapp/pull/360) ([ylethe](https://github.com/ylethe))
+- 优化 LoadMore 组件表现及展示效果 [\#337](https://github.com/youzan/zanui-weapp/pull/337) ([zgrong](https://github.com/zgrong))
+
+**Bug Fixes**
+
+- 修复文档错误 [\#370](https://github.com/youzan/zanui-weapp/pull/370) ([jerryni](https://github.com/jerryni))
+
+
 ## [v3.0.8](https://github.com/youzan/zanui-weapp/tree/v3.0.8) (2018-07-12)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.7...v3.0.8)
 

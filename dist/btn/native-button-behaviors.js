@@ -56,10 +56,17 @@ module.exports = Behavior({
 
       this.triggerEvent('getphonenumber', detail);
     },
-    binderror: function binderror() {
+    bindopensetting: function bindopensetting() {
       var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref4$detail = _ref4.detail,
           detail = _ref4$detail === undefined ? {} : _ref4$detail;
+
+      this.triggerEvent('opensetting', detail);
+    },
+    binderror: function binderror() {
+      var _ref5 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+          _ref5$detail = _ref5.detail,
+          detail = _ref5$detail === undefined ? {} : _ref5$detail;
 
       this.triggerEvent('error', detail);
     }

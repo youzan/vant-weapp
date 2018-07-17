@@ -6,6 +6,12 @@ var CELL_PATH = '../cell/index';
 var FIELD_PATH = '../field/index';
 
 Component({
+  properties: {
+    titleWidth: {
+      type: Number,
+      value: null
+    }
+  },
   relations: (_relations = {}, _relations[CELL_PATH] = {
     type: 'child',
     linked: function linked() {
@@ -46,10 +52,14 @@ Component({
       var elementUpdateTimeout = setTimeout(function () {
         _this.setData({ elementUpdateTimeout: 0 });
         var elements = _this.getRelationNodes(childPath);
+        var titleWidth = _this.properties.titleWidth;
+
+
         if (elements.length > 0) {
           var lastIndex = elements.length - 1;
 
           elements.forEach(function (cell, index) {
+            titleWidth && cell.setTitleWidth(titleWidth);
             cell.updateIsLastElement(index === lastIndex);
           });
         }

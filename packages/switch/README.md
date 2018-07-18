@@ -5,13 +5,13 @@
 ```json
 {
   "usingComponents": {
-    "zan-switch": "/packages/switch/index"
+    "zan-switch": "path/to/zanui-weapp/dist/switch/index"
   }
 }
 ```
 
 ### 代码演示
-=======
+可以在页面任意位置上使用 zan-switch 标签。
 ```html
 <zan-switch
   disabled="{{ disabled }}"
@@ -50,5 +50,8 @@ Page({
 |-----------|-----------|-----------|
 | change | 当绑定值变化时触发的事件 | event对象和数据对象（包含loading和checked） |
 
-
-
+### 外部样式类
+| 类名       | 说明      |
+|-----------|-----------|
+| custom-class | 根节点自定义样式类，通过这个可以改变根节点上的样式 |
+| theme-class | 根节点自定义样式类，用于更改根节点上的主题样式 |

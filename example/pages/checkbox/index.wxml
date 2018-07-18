@@ -1,0 +1,43 @@
+<doc-page title="checkbox" without-padding>
+  <zan-panel title='基本用法'>
+    <zan-checkbox
+      checkbox-class="checkbox-demo"
+      bindchange="handleCheckboxChange"
+    >复选框</zan-checkbox>
+  </zan-panel>
+
+  <zan-panel title='禁用状态'>
+    <zan-checkbox
+      checkbox-class="checkbox-demo"
+      disabled
+      checked="{{ true }}"
+    >复选框</zan-checkbox>
+  </zan-panel>
+
+  <zan-panel title='禁用内容部分点击事件'>
+    <zan-checkbox
+      checkbox-class="checkbox-demo"
+      label-disabled
+    >复选框</zan-checkbox>
+  </zan-panel>
+
+  <zan-panel title='Checkbox组'>
+    <zan-checkbox-group>
+      <zan-checkbox
+        wx:for="{{ items }}"
+        wx:for-item="item"
+        wx:for-index="index"
+        wx:key="{{ value }}"
+        checked="{{ item.checked }}"
+        data-index="{{ index }}"
+        bindchange="handleCheckboxChange"
+      >复选框 {{ item.value }}</zan-checkbox>
+    </zan-checkbox-group>
+  </zan-panel>
+
+  <zan-panel title='列表模式'>
+    <zan-checkbox type="list">复选框 a</zan-checkbox>
+    <zan-checkbox type="list">复选框 b</zan-checkbox>
+    <zan-checkbox type="list">复选框 c</zan-checkbox>
+  </zan-panel>
+</doc-page>

@@ -5,7 +5,7 @@ Component({
     multipleSlots: true
   },
 
-  externalClasses: ['card-class'],
+  externalClasses: ['card-class', 'thumb-class'],
 
   properties: {
     useThumbSlot: {

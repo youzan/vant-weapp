@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Radio 单选框",
+  "usingComponents": {
+    "zan-radio": "../../dist/radio/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "doc-page": "../../components/doc-page/index"
+  }
+}

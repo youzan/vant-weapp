@@ -1,1 +1,1 @@
-<view class="zan-toptips {{ isShow ? 'zan-toptips--show' : '' }}">{{ content }}</view>
+<view class="zan-toptips {{ isShow ? 'zan-toptips--show' : '' }}" style="background-color:{{ backgroundColor }}">{{ content }}</view>

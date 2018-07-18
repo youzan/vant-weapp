@@ -6,7 +6,10 @@ var VERY_LARGE_NUMBER = 2147483647;
 
 Component({
   properties: {
-    size: String,
+    size: {
+      type: String,
+      value: 'middle'
+    },
     stepper: {
       type: Number,
       value: 1
@@ -41,6 +44,8 @@ Component({
       } else if (type === 'plus') {
         stepper += step;
       }
+
+      if (stepper < this.data.min || stepper > this.data.max) return null;
 
       this.triggerEvent('change', stepper);
       this.triggerEvent(type);

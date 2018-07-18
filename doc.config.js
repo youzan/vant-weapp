@@ -54,10 +54,14 @@ module.exports = {
         base: 'form',
         label: '表单',
         include: {
+          checkbox: require('./packages/checkbox/README.md'),
+          datetime_picker: require('./packages/datetime-picker/README.md'),
           field: require('./packages/field/README.md'),
-          switch: require('./packages/switch/README.md'),
+          radio: require('./packages/radio/README.md'),
+          search: require('./packages/search/README.md'),
           select: require('./packages/select/README.md'),
-          stepper: require('./packages/stepper/README.md')
+          stepper: require('./packages/stepper/README.md'),
+          switch: require('./packages/switch/README.md')
         }
       },
       {
@@ -76,7 +80,6 @@ module.exports = {
         label: '交互',
         include: {
           actionsheet: require('./packages/actionsheet/README.md'),
-          datetime_picker: require('./packages/datetime-picker/README.md'),
           dialog: require('./packages/dialog/README.md'),
           popup: require('./packages/popup/README.md'),
           tab: require('./packages/tab/README.md'),
@@ -84,6 +87,11 @@ module.exports = {
           toptips: require('./packages/toptips/README.md'),
           loadmore: require('./packages/loadmore/README.md')
         }
+      },
+      {
+        base: 'complexComponent',
+        label: '高阶组件',
+        include: { tree_select: require('./packages/tree-select/README.md') }
       }
     ],
     include: {}

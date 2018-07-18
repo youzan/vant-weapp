@@ -31,12 +31,29 @@ popup 额外支持了 上下左右 四种动画方式，通过增加 type 属性
 <zan-popup type="right" show="{{ show }}"></zan-popup>
 ```
 
+#### 控制显示，隐藏
+
+```html
+<zan-popup show="{{ isShow }}" bindclose="togglePopup"></zan-popup>
+```
+
+```js
+data: {
+  isShow: false
+},
+togglePopup() {
+  this.setData({
+    isShow: !this.data.isShow
+  });
+}
+```
+
 ### 具体参数和事件
 #### 参数说明
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
 | show | 是否显示弹出层 | Boolean | false | |
-| overlay | 是否显示遮罩层 | Boolean | false | |
+| overlay | 是否显示遮罩层 | Boolean | true | |
 | closeOnClickOverlay | 遮罩层点击时，是否触发关闭事件 | Boolean | true | |
 | type | 弹出层动画方式, 可选`center`, `left`, `right`, `top`, `bottom` | String | center | |
 
@@ -45,5 +62,3 @@ popup 额外支持了 上下左右 四种动画方式，通过增加 type 属性
 |-----------|-----------|-----------|
 | click-overlay | 遮罩层点击触发 |  |
 | close | 遮罩层关闭时触发 |  |
-
-

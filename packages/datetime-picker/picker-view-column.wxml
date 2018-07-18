@@ -1,0 +1,6 @@
+<template name="picker-view-column">
+  <picker-view-column class="{{ className }} {{ hidden && 'hidden'}}">
+    <view wx:for="{{ data }}" style="line-height: 50px" wx:key="*this">{{item}}</view>
+  </picker-view-column>
+  <view class="view-column-tip {{ hidden && 'hidden'}}">{{ tip }}</view>
+</template>

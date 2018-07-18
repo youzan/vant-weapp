@@ -1,6 +1,8 @@
 'use strict';
 
 Component({
+  externalClasses: ['custom-class', 'theme-class'],
+
   properties: {
     checked: {
       type: Boolean,

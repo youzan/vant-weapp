@@ -1,0 +1,40 @@
+<view
+  class="zan-search {{ searchClass }}"
+  style="{{ searchStyle }}"
+>
+  <view
+    class="zan-search__form {{ useCancel ? 'zan-search__form--cancel' : '' }} input-class"
+    style="{{ inputStyle }}"
+  >
+    <icon type="search" size="15" color="#a9a9a9" />
+    <input
+      class="zan-search__input"
+      placeholder="{{ placeholder }}"
+      placeholder-class="zan-search__placeholder"
+      confirm-type="search"
+      bindfocus="focus"
+      bindblur="blur"
+      value="{{ keyword }}"
+      bindconfirm="search"
+      bindinput="inputChange"
+      focus="{{ focus }}"
+      disabled="{{ disabled }}"
+    />
+    <icon
+      wx:if="{{keyword}}"
+      class="zan-search__clear"
+      type="clear"
+      size="14"
+      color="#bbb"
+      bindtap="clearInput"
+    />
+  </view>
+  <view
+    class="zan-search__cancel cancel-class"
+    wx:if="{{ useCancel }}"
+    bindtap="cancelSearch"
+    style="{{ cancelStyle }}"
+  >
+    {{cancelText || '取消'}}
+  </view>
+</view>

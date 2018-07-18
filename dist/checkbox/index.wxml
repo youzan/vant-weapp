@@ -1,0 +1,13 @@
+<view
+  class="checkbox-class zan-checkbox {{ isInGroup ? 'zan-checkbox__item' : ''}} {{ type === 'list' ? 'zan-checkbox__list-item' : ''}}"
+  bindtap="{{ labelDisabled ? '' : 'handleClick' }}"
+  >
+  <zan-icon
+    type="{{ checked ? 'checked' : 'check'}}"
+    class="zan-checkbox__icon {{ disabled ? 'zan-checkbox--disabled' : '' }} {{ checked ? 'zan-checkbox--checked' : '' }}"
+    bindtap="{{ labelDisabled ? 'handleClick': '' }}"
+  ></zan-icon>
+  <text class="zan-checkbox__label">
+    <slot></slot>
+  </text>
+</view>

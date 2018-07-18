@@ -1,7 +1,7 @@
-<view class="zan-card card-class">
+<view class="card-class zan-card">
   <!-- 左侧图片 -->
   
-  <view class="zan-card__thumb">
+  <view class="thumb-class zan-card__thumb">
     <image class="zan-card__img"
       src="{{ thumb }}"
       mode="aspectFit"

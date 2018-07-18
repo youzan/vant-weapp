@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "Checkbox 选择",
+  "usingComponents": {
+    "zan-checkbox-group": "../../dist/checkbox-group/index",
+    "zan-checkbox": "../../dist/checkbox/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "doc-page": "../../components/doc-page/index"
+  }
+}

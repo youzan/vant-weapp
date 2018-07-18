@@ -1,5 +1,87 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.0.8](https://github.com/youzan/zanui-weapp/tree/v3.0.8) (2018-07-12)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.7...v3.0.8)
+
+**Bug Fixes**
+
+- 修复 Toast 组件未传入 timeout 时不会自动关闭的问题 [\#361](https://github.com/youzan/zanui-weapp/pull/361) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 DateTime 组件接收非标准 iso 格式时间初始时间错误的问题 [\#355](https://github.com/youzan/zanui-weapp/pull/355) ([realywithoutname](https://github.com/realywithoutname))
+
+## [v3.0.7](https://github.com/youzan/zanui-weapp/tree/v3.0.7) (2018-07-10)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.6...v3.0.7)
+
+**new feature**
+- \[new feature\] 新增 checkbox 组件 [\#341](https://github.com/youzan/zanui-weapp/pull/341) ([jerryni](https://github.com/jerryni))
+
+**Improvements**
+
+- Tab 组件支持选中项自动滑动到中间位置 [\#347](https://github.com/youzan/zanui-weapp/pull/347) ([rex-zsd](https://github.com/rex-zsd))
+- 增加部分组件自定义样式类，方便自定义样式 [\#352](https://github.com/youzan/zanui-weapp/pull/352) ([pangxie1991](https://github.com/pangxie1991))
+
+**Bug Fixes**
+
+- 修复 Toptips 组件在示例小程序上的问题 [\#351](https://github.com/youzan/zanui-weapp/pull/351) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 DateTime 组件设置初始时间时报错的问题 [\#350](https://github.com/youzan/zanui-weapp/pull/350) ([realywithoutname](https://github.com/realywithoutname))
+
+## [v3.0.6](https://github.com/youzan/zanui-weapp/tree/v3.0.6) (2018-07-08)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.5...v3.0.6)
+
+**new feature**
+- 新增搜索组件 [\#321](https://github.com/youzan/zanui-weapp/pull/321) ([jerryni](https://github.com/jerryni))
+- 新增分类选择组件 [\#346](https://github.com/youzan/zanui-weapp/pull/346) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+
+- 优化 Tab 组件宽度样式 [\#336](https://github.com/youzan/zanui-weapp/pull/336) ([pangxie1991](https://github.com/pangxie1991))
+
+**Bug Fixes**
+
+- 修复由于 autoprefixer 移除旧浏览器代码导致的兼容性问题 [\#335](https://github.com/youzan/zanui-weapp/pull/335) ([realywithoutname](https://github.com/realywithoutname))
+- 修复 select、popup 组件文档错误，改善部分组件文档一致性 [\#334](https://github.com/youzan/zanui-weapp/pull/334) ([rex-zsd](https://github.com/rex-zsd))
+- 修复 Toast 组件的 timeout 不支持小于0的问题 [\#340](https://github.com/youzan/zanui-weapp/pull/340) ([rex-zsd](https://github.com/rex-zsd))
+
+
+## [v3.0.5](https://github.com/youzan/zanui-weapp/tree/v3.0.5) (2018-06-29)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.4...v3.0.5)
+
+**Improvements**
+
+- 优化 popup 遮罩层相关文档 [\#324](https://github.com/youzan/zanui-weapp/pull/324) ([jerryni](https://github.com/jerryni))
+- 优化 Button，支持 disabled 属性 [\#323](https://github.com/youzan/zanui-weapp/pull/323) ([jerryni](https://github.com/jerryni))
+- Steps 组件扩展自定义class [\#311](https://github.com/youzan/zanui-weapp/pull/311) ([jerryni](https://github.com/jerryni))
+- Stepper 组件 size 属性支持 small middle large [\#306](https://github.com/youzan/zanui-weapp/pull/306) ([jerryni](https://github.com/jerryni))
+- 优化 Field 组件在列表中输入框表现 [\#296](https://github.com/youzan/zanui-weapp/pull/296) ([pangxie1991](https://github.com/pangxie1991))
+- datepicker 使用原生 picker-view 重写 [\#294](https://github.com/youzan/zanui-weapp/pull/294) ([realywithoutname](https://github.com/realywithoutname))
+- Noticebar 组件支持动态更新text [\#314](https://github.com/youzan/zanui-weapp/pull/314) ([rex-zsd](https://github.com/rex-zsd))
+- datetime-picker 组件在 demo 中增加 datetime 示例入口 [\#313](https://github.com/youzan/zanui-weapp/pull/313) ([rex-zsd](https://github.com/rex-zsd))
+
+
+**Bug Fixes**
+
+- 修复 Toptips 在自定义组件中引入报错的问题，backgroundColor不生效的问题 [\#318](https://github.com/youzan/zanui-weapp/pull/318) ([Yuliang-Lee](https://github.com/Yuliang-Lee))
+- Dialog 组件修复取消按钮只生效一次的问题 [\#312](https://github.com/youzan/zanui-weapp/pull/312) ([rex-zsd](https://github.com/rex-zsd))
+- 修复使用 dialog 组件的页面切换路由时会报错的问题 \(\#289\) [\#310](https://github.com/youzan/zanui-weapp/pull/310) ([rex-zsd](https://github.com/rex-zsd))
+- 修复按钮点击态时没有任何变化的问题 [\#287](https://github.com/youzan/zanui-weapp/pull/287) ([jerryni](https://github.com/jerryni))
+- Stepper 组件增加在数字越界前进行校验的操作 [\#283](https://github.com/youzan/zanui-weapp/pull/283) ([icarusion](https://github.com/icarusion))
+
+
+## [v3.0.4](https://github.com/youzan/zanui-weapp/tree/v3.0.4) (2018-05-29)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.3...v3.0.4)
+
+**Improvements**
+
+- 使用 babel 简单编译 dist 里面的文件 [\#285](https://github.com/youzan/zanui-weapp/pull/285) ([pangxie1991](https://github.com/pangxie1991))
+- Cell 组件增加默认白色背景色 [\#270](https://github.com/youzan/zanui-weapp/pull/270) ([pangxie1991](https://github.com/pangxie1991))
+- Stepper 文档添加size属性说明 [\#260](https://github.com/youzan/zanui-weapp/pull/260) ([jerryni](https://github.com/jerryni))
+
+**Bug Fixes**
+
+- 修复 Switch 组件示例名称错误 [\#281](https://github.com/youzan/zanui-weapp/pull/281) ([dlhandsome](https://github.com/dlhandsome))
+- 修复 Steps 2步样式 && 优化文档 [\#274](https://github.com/youzan/zanui-weapp/pull/274) ([jerryni](https://github.com/jerryni))
+- 修复 Stepper 组件不传 max 情况下，默认置灰的问题 [\#269](https://github.com/youzan/zanui-weapp/pull/269) ([pangxie1991](https://github.com/pangxie1991))
+
+
 ## [v3.0.3](https://github.com/youzan/zanui-weapp/tree/v3.0.3) (2018-05-21)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.2...v3.0.3)
 

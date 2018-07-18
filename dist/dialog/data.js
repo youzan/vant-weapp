@@ -3,9 +3,6 @@
 module.exports = {
   // 标题
   title: '',
-  // 自定义 btn 列表
-  // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
-  buttons: [],
   // 内容
   message: ' ',
   // 选择节点
@@ -23,5 +20,7 @@ module.exports = {
   // 取消按钮文案
   cancelButtonText: '取消',
   // 取消按钮颜色
-  cancelButtonColor: '#333'
+  cancelButtonColor: '#333',
+  // 点击按钮自动关闭 dialog
+  autoClose: true
 };

@@ -1,6 +1,7 @@
 'use strict';
 
 var TOAST_CONFIG_KEY = 'zanui.__zanToastPageConfig';
+var DEFAULT_SHOW_TOAST_TIME = 3000;
 
 var timeoutData = {
   timeoutId: 0,
@@ -54,9 +55,15 @@ function Toast(optionsOrMsg, pageCtx) {
     show: true
   }));
 
-  var timeoutId = setTimeout(function () {
-    toastCtx.clear();
-  }, parsedOptions.timeout || 3000);
+  var timeoutId = 0;
+  // toast 计时，如果小于0，就不会去关闭。
+  // 如果不传，就取默认值
+  var timeoutOption = parsedOptions.timeout || DEFAULT_SHOW_TOAST_TIME;
+  if (timeoutOption >= 0) {
+    timeoutId = setTimeout(function () {
+      toastCtx.clear();
+    }, timeoutOption);
+  }
 
   timeoutData = {
     timeoutId: timeoutId,
@@ -74,7 +81,7 @@ Toast.setDefaultOptions = function () {
     type: options.type || '',
     icon: options.icon || '',
     image: options.image || '',
-    timeout: options.timeout || 3000
+    timeout: options.timeout || DEFAULT_SHOW_TOAST_TIME
   };
 
   if (type === 'global') {

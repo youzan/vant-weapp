@@ -4,7 +4,7 @@
 在 json 文件中配置button组件
 ```json
 "usingComponents": {
-  "zan-button": "/dist/btn/index"
+  "zan-button": "path/to/zanui-weapp/dist/btn/index"
 }
 ```
 
@@ -53,8 +53,8 @@
 1.在 json 文件中配置 button-group 组件
 ```json
 "usingComponents": {
-  "zan-button": "/dist/btn/index",
-  "zan-button-group": "/dist/btn-group/index"
+  "zan-button": "path/to/zanui-weapp/dist/btn/index",
+  "zan-button-group": "path/to/zanui-weapp/dist/btn-group/index"
 }
 ```
 2.在 wxml 中直接引入

@@ -3,6 +3,14 @@
 Component({
   behaviors: ['wx://form-field'],
 
+  externalClasses: ['field-class'],
+
+  relations: {
+    '../cell-group/index': {
+      type: 'parent'
+    }
+  },
+
   properties: {
     title: String,
     type: {
@@ -10,12 +18,12 @@ Component({
       value: 'input'
     },
     disabled: Boolean,
+    focus: Boolean,
     inputType: {
       type: String,
       value: 'text'
     },
     placeholder: String,
-    focus: Boolean,
     mode: {
       type: String,
       value: 'normal'
@@ -26,6 +34,10 @@ Component({
       type: Number,
       value: 140
     }
+  },
+
+  data: {
+    showBorder: true
   },
 
   methods: {
@@ -44,6 +56,16 @@ Component({
     },
     handleFieldBlur: function handleFieldBlur(event) {
       this.triggerEvent('blur', event);
+    },
+    updateIsLastElement: function updateIsLastElement(isLastField) {
+      var showBorder = true;
+      if (isLastField && this.data.mode === 'normal') {
+        showBorder = false;
+      }
+
+      this.setData({
+        showBorder: showBorder
+      });
     }
   }
 });

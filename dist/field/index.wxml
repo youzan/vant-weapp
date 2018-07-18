@@ -1,5 +1,9 @@
-<view class="zan-cell zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }}">
+<zan-cell
+  class="field-class zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }} {{ !showBorder ? 'zan-field--no-border' : '' }}"
+  cell-class="zan-cell--field"
+>
   <view
+    slot="icon"
     wx:if="{{ title }}"
     class="zan-cell__hd zan-field__title">
     {{ title }}
@@ -32,4 +36,4 @@
     bindfocus="handleFieldFocus"
     bindblur="handleFieldBlur"
   />
-</view>
+</zan-cell>

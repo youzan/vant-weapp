@@ -3,6 +3,7 @@
     "pages/dashboard/index",
     "pages/actionsheet/index",
     "pages/btn/index",
+    "pages/checkbox/index",
     "pages/badge/index",
     "pages/capsule/index",
     "pages/card/index",
@@ -16,15 +17,19 @@
     "pages/noticebar/index",
     "pages/panel/index",
     "pages/popup/index",
+    "pages/radio/index",
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",
+    "pages/search/index",
     "pages/tab/index",
     "pages/tag/index",
     "pages/toptips/index",
     "pages/toast/index",
+    "pages/tree-select/index",
     "pages/select/index",
-    "pages/datetime/index"
+    "pages/datetime/index",
+    "pages/loadmore/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",

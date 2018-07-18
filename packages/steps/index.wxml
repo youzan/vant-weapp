@@ -1,11 +1,11 @@
-<view class="zan-steps zan-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zan-steps--{{ steps.length }} {{ className }}">
+<view class="steps-class zan-steps zan-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} zan-steps--{{ steps.length }} {{ className }}">
   <view
     wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
     class="zan-steps__step {{ hasDesc ? 'zan-steps__step--db-title' : '' }} {{ index == 0 ? 'zan-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'zan-steps__step--last-child' : '' }} {{ step.done ? 'zan-steps__step--done' : '' }} {{ step.current ? 'zan-steps__step--cur' : '' }}"
   >
-    <view class="zan-steps__title">{{ step.text }}</view>
-    <view wx:if="{{ hasDesc && step.desc }}" class="zan-steps__title zan-steps__title--desc">{{ step.desc }}</view>
-    <view class="zan-steps__icons">
+    <view class="zan-steps__title title-class">{{ step.text }}</view>
+    <view wx:if="{{ hasDesc && step.desc }}" class="zan-steps__title zan-steps__title--desc desc-class">{{ step.desc }}</view>
+    <view class="zan-steps__icons icon-class">
       <view class="zan-steps__circle"></view>
     </view>
     <view class="zan-steps__line"></view>

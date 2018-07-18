@@ -42,6 +42,14 @@ Page({
     });
   },
 
+  showEverToast() {
+    Toast({
+      message: 'toast的内容',
+      selector: '#zan-toast-test',
+      timeout: -1
+    });
+  },
+
   showLoading() {
     Toast.loading({
       message: '加载中',

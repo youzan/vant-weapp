@@ -4,7 +4,7 @@ const warn = (msg, getValue) => {
 };
 
 Component({
-  externalClasses: ['cell-class'],
+  externalClasses: ['cell-class', 'title-class'],
   options: {
     multipleSlots: true
   },
@@ -43,10 +43,12 @@ Component({
     url: {
       type: String,
       value: ''
-    }
+    },
+    noBorder: Boolean
   },
   data: {
-    isLastCell: true
+    isLastCell: true,
+    titleWidth: 'auto'
   },
   methods: {
     footerTap() {
@@ -70,8 +72,15 @@ Component({
     },
 
     // 用于被 cell-group 更新，标志是否是最后一个 cell
-    updateIsLastCell(isLastCell) {
+    updateIsLastElement(isLastCell) {
       this.setData({ isLastCell });
+    },
+
+    // 设置统一的title区域宽度
+    setTitleWidth(titleWidth) {
+      this.setData({
+        titleWidth: `${titleWidth}px`
+      });
     }
   }
 });

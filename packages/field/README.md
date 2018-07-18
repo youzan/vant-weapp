@@ -38,6 +38,14 @@ Page({
 });
 ```
 
+#### Field 列表
+```html
+<zan-cell-group>
+  <zan-field title="姓名"></zan-field>
+  <zan-field title="邮件"></zan-field>
+</zan-cell-group>
+```
+
 #### 监听事件
 
 field会触发一些事件，当你需要监听这些事件时，可以绑定对应的事件。

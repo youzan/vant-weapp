@@ -1,6 +1,5 @@
-.zan-panel {
-  padding: 10px;
-}
-.zan-switch {
-  margin-right: 8px;
+
+.switch-theme {
+  background: #f44 !important;
+  border-color: #f44 !important;
 }

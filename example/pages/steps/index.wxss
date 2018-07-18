@@ -1,6 +1,11 @@
 .my-class {
-  padding: 10px;
+  margin: 20px;
 }
-.my-class .zan-steps__step--done {
-  color: #f44;
+
+.gray {
+  background-color: #ccc !important;
+}
+
+.white {
+  color: #fff !important;
 }

@@ -18,4 +18,10 @@
     </zan-cell>
   </zan-panel>
 
+  <zan-panel title='自定义高亮样式'>
+    <zan-cell>
+      <zan-switch theme-class="switch-theme" disabled="{{ false }}" checked/>
+    </zan-cell>
+  </zan-panel>
+
 </doc-page>

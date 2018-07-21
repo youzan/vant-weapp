@@ -1,6 +1,6 @@
 {
   "name": "zanui-weapp",
-  "version": "3.0.7",
+  "version": "3.0.9",
   "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
   "main": "app.js",
   "directories": {
@@ -42,8 +42,12 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
+    "eslint": "^5.1.0",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-vue": "^4.7.0",
     "fs-extra": "^4.0.2",
     "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",

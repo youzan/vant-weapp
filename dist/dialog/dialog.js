@@ -2,21 +2,37 @@
 
 var defaultData = require('./data');
 
-// options 使用参数
-// pageCtx 页面 page 上下文
-function Dialog(options, pageCtx) {
-  var parsedOptions = Object.assign({
-    // 自定义 btn 列表
-    // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
-    buttons: []
-  }, defaultData, options);
+function getDialogCtx(_ref) {
+  var selector = _ref.selector,
+      pageCtx = _ref.pageCtx;
 
   var ctx = pageCtx;
   if (!ctx) {
     var pages = getCurrentPages();
     ctx = pages[pages.length - 1];
   }
-  var dialogCtx = ctx.selectComponent(parsedOptions.selector);
+  return ctx.selectComponent(selector);
+}
+
+function getParsedOptions() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  return Object.assign({
+    // 自定义 btn 列表
+    // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
+    buttons: []
+  }, defaultData, options);
+}
+
+// options 使用参数
+// pageCtx 页面 page 上下文
+function Dialog(options, pageCtx) {
+  var parsedOptions = getParsedOptions(options);
+
+  var dialogCtx = getDialogCtx({
+    selector: parsedOptions.selector,
+    pageCtx: pageCtx
+  });
 
   if (!dialogCtx) {
     console.error('无法找到对应的dialog组件，请于页面中注册并在 wxml 中声明 dialog 自定义组件');
@@ -60,9 +76,29 @@ function Dialog(options, pageCtx) {
       showCustomBtns: showCustomBtns,
       key: '' + new Date().getTime(),
       show: true,
-      promiseFunc: { resolve: resolve, reject: reject }
+      promiseFunc: { resolve: resolve, reject: reject },
+      openTypePromiseFunc: null
     }));
   });
 }
+
+Dialog.close = function (options, pageCtx) {
+  var parsedOptions = getParsedOptions(options);
+
+  var dialogCtx = getDialogCtx({
+    selector: parsedOptions.selector,
+    pageCtx: pageCtx
+  });
+
+  if (!dialogCtx) {
+    return;
+  }
+
+  dialogCtx.setData({
+    show: false,
+    promiseFunc: null,
+    openTypePromiseFunc: null
+  });
+};
 
 module.exports = Dialog;

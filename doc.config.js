@@ -55,7 +55,9 @@ module.exports = {
         label: '表单',
         include: {
           checkbox: require('./packages/checkbox/README.md'),
+          datetime_picker: require('./packages/datetime-picker/README.md'),
           field: require('./packages/field/README.md'),
+          radio: require('./packages/radio/README.md'),
           search: require('./packages/search/README.md'),
           select: require('./packages/select/README.md'),
           stepper: require('./packages/stepper/README.md'),
@@ -78,7 +80,6 @@ module.exports = {
         label: '交互',
         include: {
           actionsheet: require('./packages/actionsheet/README.md'),
-          datetime_picker: require('./packages/datetime-picker/README.md'),
           dialog: require('./packages/dialog/README.md'),
           popup: require('./packages/popup/README.md'),
           tab: require('./packages/tab/README.md'),

@@ -35,7 +35,7 @@
 | not-use           | `Array`   | `否`     | 无                  | 不需要显示的列 可选择`years`, `months`, `days`, `hours`, `minutes`, `seconds`中的多个                 |
 | picker-view       | `Boolean` | `否`     | 无                  | 如果为 true，相当于 picker-view 组件                                                                  |
 | format            | `String`  | `否`     | YYYY-MM-DD HH:mm:ss | 设置选中的时间显示的格式，支持 _YYYY，yyyy，YY，yy，MM，M，DD，dd，D，d，HH， hh，H，h，mm，m，ss，s_ |
-| bindchange        | `String`  | `是`     | 无                  | 用户点击`确认`触发该事件，返回值为按“年，月，日，时，分，秒”顺序的数组，可以通过`detail.value`获取    |
+| bindchange        | `String`  | `是`     | 无                  | 用户点击`确认`触发该事件，返回值为按“年，月，日，时，分，秒”顺序的数组，可以通过`detail.value`获取；3.0.8 后新增 date 值，表示当前选择时间的对象    |
 | bindcancel        | `String`  | `否`     | 无                  | 用户点击`取消`触发该事件                                                                              |
 
 ### 方法
@@ -46,4 +46,4 @@
 
 ### 增强优化
 
-* 支持可选择时间区域限制
+支持可选择时间区域限制

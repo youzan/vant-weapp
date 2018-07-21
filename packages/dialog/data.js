@@ -18,5 +18,7 @@ module.exports = {
   // 取消按钮文案
   cancelButtonText: '取消',
   // 取消按钮颜色
-  cancelButtonColor: '#333'
+  cancelButtonColor: '#333',
+  // 点击按钮自动关闭 dialog
+  autoClose: true
 };

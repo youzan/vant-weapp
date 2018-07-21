@@ -8,63 +8,72 @@
   line-height: 1.4;
   background-color: #fff;
   font-size: 14px;
+
+  &::after {
+    @mixin hairline;
+    border-bottom-width: 1px;
+    left: 15px;
+    right: 0;
+  }
+
+  &__icon {
+    margin-right: 5px;
+
+    &:empty {
+      display: none
+    }
+  }
+
+  &__title {
+    padding-right: 10px;
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__bd {
+    flex: 1;
+  }
+
+  &__text {
+    line-height: 24px;
+    font-size: 14px;
+  }
+
+  &__desc {
+    line-height: 1.2;
+    font-size: 12px;
+    color: #666;
+  }
+
+  &__ft {
+    position: relative;
+    text-align: right;
+    color: #666;
+  }
+
+  &__no-pading{
+    padding: 0;
+
+    .zan-cell__bd_padding {
+      padding: 12px 0 12px 15px;
+
+      .zan-form__input{
+        height: 26px;
+      }
+    }
+
+    .zan-cell__ft_padding {
+      padding: 12px 15px 12px 0;
+    }
+  }
+
+  &.last-cell::after, &.no-border::after {
+    display: none;
+  }
+
 }
 
-.zan-cell::after {
-  @mixin hairline;
-  border-bottom-width: 1px;
-  left: 15px;
-  right: 0;
-}
-
-.zan-cell .zan-cell__icon {
-  margin-right: 5px;
-}
-.zan-cell .zan-cell__icon:empty {
-  display: none
-}
-
-.zan-cell__title {
-  padding-right: 10px;
-}
-
-.zan-cell__title:empty {
-  display: none;
-}
-
-.zan-cell__bd {
-  flex: 1;
-}
-.zan-cell__text {
-  line-height: 24px;
-  font-size: 14px;
-}
-.zan-cell__desc {
-  line-height: 1.2;
-  font-size: 12px;
-  color: #666;
-}
-.zan-cell__ft {
-  position: relative;
-  text-align: right;
-  color: #666;
-}
-.zan-cell__no-pading{
-  padding: 0;
-}
-.zan-cell__no-pading .zan-cell__bd_padding {
-  padding: 12px 0 12px 15px;
-}
-.zan-cell__no-pading .zan-cell__bd_padding .zan-form__input{
-  height: 26px;
-}
-.zan-cell__no-pading .zan-cell__ft_padding {
-  padding: 12px 15px 12px 0;
-}
-
-.zan-cell.last-cell::after {
-  display: none;
-}
 
 .zan-cell--access .zan-cell__ft {
   padding-right: 13px;

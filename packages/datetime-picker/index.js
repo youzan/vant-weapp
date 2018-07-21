@@ -149,8 +149,13 @@ Component({
         return +item[value[index]];
       });
 
+      let day = data.slice(0, 3)
+      let time = data.slice(3, 6)
+      let date = new Date(`${ day.join('/') } ${ time.join(':') }`)
+
       this.triggerEvent('change', {
-        value: data
+        value: data,
+        date
       });
 
       // 手动触发 columnchange

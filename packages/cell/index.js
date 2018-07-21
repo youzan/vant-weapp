@@ -43,7 +43,8 @@ Component({
     url: {
       type: String,
       value: ''
-    }
+    },
+    noBorder: Boolean
   },
   data: {
     isLastCell: true,

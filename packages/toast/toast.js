@@ -1,4 +1,5 @@
 const TOAST_CONFIG_KEY = 'zanui.__zanToastPageConfig';
+const DEFAULT_SHOW_TOAST_TIME = 3000;
 
 let timeoutData = {
   timeoutId: 0,
@@ -58,11 +59,13 @@ function Toast(optionsOrMsg, pageCtx) {
   });
 
   let timeoutId = 0;
-
-  if (parsedOptions.timeout >= 0) {
+  // toast 计时，如果小于0，就不会去关闭。
+  // 如果不传，就取默认值
+  const timeoutOption = parsedOptions.timeout || DEFAULT_SHOW_TOAST_TIME;
+  if (timeoutOption >= 0) {
     timeoutId = setTimeout(() => {
       toastCtx.clear();
-    }, parsedOptions.timeout || 3000);
+    }, timeoutOption);
   }
 
 
@@ -79,7 +82,7 @@ Toast.setDefaultOptions = function (options = {}, type = 'page') {
     type: options.type || '',
     icon: options.icon || '',
     image: options.image || '',
-    timeout: options.timeout || 3000
+    timeout: options.timeout || DEFAULT_SHOW_TOAST_TIME
   };
 
   if (type === 'global') {

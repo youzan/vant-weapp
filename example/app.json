@@ -17,6 +17,7 @@
     "pages/noticebar/index",
     "pages/panel/index",
     "pages/popup/index",
+    "pages/radio/index",
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",
@@ -27,7 +28,8 @@
     "pages/toast/index",
     "pages/tree-select/index",
     "pages/select/index",
-    "pages/datetime/index"
+    "pages/datetime/index",
+    "pages/loadmore/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",

@@ -1,0 +1,35 @@
+<doc-page title="radio" without-padding>
+  <zan-panel title='基本用法'>
+    <zan-radio
+      items="{{ items }}"
+    ></zan-radio>
+  </zan-panel>
+
+  <zan-panel title='禁用状态'>
+    <zan-radio
+      items="{{ items1 }}"
+    ></zan-radio>
+  </zan-panel>
+
+  <zan-panel title='事件'>
+    <zan-radio
+      items="{{ items }}"
+      bind:change="handleRadioChange"
+    ></zan-radio>
+  </zan-panel>
+
+  <zan-panel title='自定义样式'>
+    <zan-radio
+      items="{{ items }}"
+      radio-color="radio-color"
+      radio-class="radio-demo"
+    ></zan-radio>
+  </zan-panel>
+
+  <zan-panel title='列表模式'>
+    <zan-radio
+      items="{{ items }}"
+      type="list"
+    ></zan-radio>
+  </zan-panel>
+</doc-page>

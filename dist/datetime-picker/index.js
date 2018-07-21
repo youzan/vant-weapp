@@ -184,8 +184,13 @@ Component({
         return +item[value[index]];
       });
 
+      var day = data.slice(0, 3);
+      var time = data.slice(3, 6);
+      var date = new Date(day.join('/') + ' ' + time.join(':'));
+
       this.triggerEvent('change', {
-        value: data
+        value: data,
+        date: date
       });
 
       // 手动触发 columnchange

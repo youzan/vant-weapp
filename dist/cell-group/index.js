@@ -10,6 +10,10 @@ Component({
     titleWidth: {
       type: Number,
       value: null
+    },
+    border: {
+      type: Boolean,
+      value: false
     }
   },
   relations: (_relations = {}, _relations[CELL_PATH] = {

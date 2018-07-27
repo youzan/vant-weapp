@@ -1,3 +1,3 @@
-<view class="cell-group {{ hideBorder ? 'cell-group--without-border' : '' }}">
+<view class="cell-group {{ border ? 'cell-group--with-border' : '' }}">
   <slot></slot>
 </view>

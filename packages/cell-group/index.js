@@ -7,7 +7,7 @@ Component({
       type: Number,
       value: null
     },
-    hideBorder: {
+    border: {
       type: Boolean,
       value: false
     }

@@ -4,14 +4,11 @@
   position: relative;
   background-color: #fff;
   overflow: hidden;
-
-  &::after {
-    @mixin hairline;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-  }
 }
 
-.cell-group--without-border::after {
-  display: none;
+.cell-group--with-border::after {
+  @mixin hairline;
+
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }

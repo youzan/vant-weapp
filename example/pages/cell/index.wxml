@@ -1,16 +1,16 @@
 <doc-page title="CELL" without-padding>
 
-  <zan-panel class="cell-panel-demo">
+  <zan-cell-group border class="cell-panel-demo">
     <zan-cell title="单行列表" bindtap="handleTap"></zan-cell>
-  </zan-panel>
+  </zan-cell-group>
 
-  <zan-panel class="cell-panel-demo">
+  <zan-cell-group border class="cell-panel-demo">
     <zan-cell title="单行列表" value="详细信息"></zan-cell>
-  </zan-panel>
+  </zan-cell-group>
 
-  <zan-panel class="cell-panel-demo">
+  <zan-cell-group border class="cell-panel-demo">
     <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
-  </zan-panel>
+  </zan-cell-group>
 
   <zan-panel class="cell-panel-demo" title="带 icon 的 cell">
     <zan-cell title="单行列表" value="详细信息">
@@ -32,14 +32,14 @@
     <zan-cell title="只显示箭头" is-link></zan-cell>
   </zan-panel>
 
-  <zan-panel class="cell-panel-demo">
+  <zan-cell-group border class="cell-panel-demo">
     <zan-cell
       title="跳转到首页"
       is-link
       url="/pages/dashboard/index"
       bindtap="handleTap"
     ></zan-cell>
-  </zan-panel>
+  </zan-cell-group>
 
   <zan-panel class="cell-panel-demo" title="cell 组">
     <zan-cell-group>

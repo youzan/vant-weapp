@@ -1,3 +1,14 @@
+@import "../common/_mixins";
+
 .cell-group {
+  position: relative;
   background-color: #fff;
+  overflow: hidden;
+}
+
+.cell-group--with-border::after {
+  @mixin hairline;
+
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }

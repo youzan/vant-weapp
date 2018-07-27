@@ -1,11 +1,15 @@
 const CELL_PATH = '../cell/index';
-const FIELD_PATH = '../field/index'
+const FIELD_PATH = '../field/index';
 
 Component({
   properties: {
     titleWidth: {
       type: Number,
       value: null
+    },
+    border: {
+      type: Boolean,
+      value: false
     }
   },
   relations: {
@@ -36,7 +40,7 @@ Component({
   },
 
   data: {
-   elementUpdateTimeout: 0
+    elementUpdateTimeout: 0
   },
 
   methods: {

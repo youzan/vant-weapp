@@ -1,4 +1,5 @@
 Component({
+  externalClasses: ['container-class'],
   properties: {
     show: {
       type: Boolean,

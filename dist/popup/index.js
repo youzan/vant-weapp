@@ -1,6 +1,7 @@
 'use strict';
 
 Component({
+  externalClasses: ['container-class'],
   properties: {
     show: {
       type: Boolean,

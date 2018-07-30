@@ -3,7 +3,7 @@
 ### 使用指南
 在 app.wxss 中引入组件库所有样式
 ```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+@import "path/to/vant-weapp/dist/index.wxss";
 ```
 
 ### 代码演示

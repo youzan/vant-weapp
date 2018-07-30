@@ -3,14 +3,14 @@
 ### 使用指南
 在 app.wxss 中引入组件库所有样式
 ```css
-@import "path/to/zanui-weapp/dist/index.wxss";
+@import "path/to/vant-weapp/dist/index.wxss";
 ```
 
 在 index.json 中引入组件
 ```json
 {
   "usingComponents": {
-    "zan-steps": "path/to/zanui-weapp/dist/steps/index"
+    "zan-steps": "path/to/vant-weapp/dist/steps/index"
   }
 }
 ```

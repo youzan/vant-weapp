@@ -3,7 +3,7 @@ module.exports = {
   header: {
     logo: {
       image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
-      title: 'ZanUI 小程序',
+      title: 'Vant 小程序',
       href: 'http://www.youzanyun.com/zanui'
     },
     nav: {
@@ -12,22 +12,22 @@ module.exports = {
         from: 'zh-CN',
         to: 'en-US'
       },
-      github: 'https://github.com/youzan/zanui-weapp'
+      github: 'https://github.com/youzan/vant-weapp'
     }
   },
   footer: {
-    github: 'https://github.com/youzan/zanui-weapp',
+    github: 'https://github.com/youzan/vant-weapp',
     nav: {
       'React 组件库': 'https://www.youzanyun.com/zanui/zent',
       'Vue 组件库': 'https://www.youzanyun.com/zanui/vant',
-      意见反馈: 'https://github.com/youzan/zanui-weapp/issues',
-      开发指南: 'https://github.com/youzan/zanui-weapp/blob/dev/.github/CONTRIBUTING.zh-CN.md',
+      意见反馈: 'https://github.com/youzan/vant-weapp/issues',
+      开发指南: 'https://github.com/youzan/vant-weapp/blob/dev/.github/CONTRIBUTING.zh-CN.md',
       加入我们: 'https://job.youzan.com'
     }
   },
   plugins: [require('./website/plugins/wxapp-demo.js')],
   docs: {
-    base: 'zanui',
+    base: 'vant',
     default: 'icon',
     category: [
       {

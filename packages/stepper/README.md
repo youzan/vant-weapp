@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-stepper": "path/to/zanui-weapp/dist/stepper/index"
+    "zan-stepper": "path/to/vant-weapp/dist/stepper/index"
   }
 }
 ```

@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-actionsheet": "path/to/zanui-weapp/dist/actionsheet/index"
+    "zan-actionsheet": "path/to/vant-weapp/dist/actionsheet/index"
   }
 }
 ```

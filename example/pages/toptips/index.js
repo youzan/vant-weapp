@@ -4,7 +4,7 @@ Page({
   data: {
     content: '测试toptips',
     duration: 2000,
-    $zanui: {
+    $vant: {
       toptips: {
         show: false
       }
@@ -13,7 +13,7 @@ Page({
 
   showTopTips() {
     this.setData({
-      $zanui: {
+      $vant: {
         toptips: {
           show: true
         }
@@ -22,7 +22,7 @@ Page({
 
     setTimeout(() => {
       this.setData({
-        $zanui: {
+        $vant: {
           toptips: {
             show: false
           }

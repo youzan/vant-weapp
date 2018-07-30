@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-panel": "path/to/zanui-weapp/dist/panel/index"
+    "zan-panel": "path/to/vant-weapp/dist/panel/index"
   }
 }
 ```

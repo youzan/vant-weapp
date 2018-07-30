@@ -4,7 +4,7 @@
 在 json 文件中配置tag组件
 ```json
 "usingComponents": {
-  "zan-tag": "path/to/zanui-weapp/dist/tag/index"
+  "zan-tag": "path/to/vant-weapp/dist/tag/index"
 }
 ```
 

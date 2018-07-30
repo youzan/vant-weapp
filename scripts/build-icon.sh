@@ -1,7 +1,7 @@
 #!/bin/bash
 
 basepath=$(dirname $0)
-server_prefix=/zanui-weapp
+server_prefix=/vant-weapp
 
 # convert relative path to absolute path
 function abspath() {

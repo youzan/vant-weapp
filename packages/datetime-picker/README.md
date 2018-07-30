@@ -8,7 +8,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-date-picker": "path/to/zanui-weapp/dist/datetime-picker/index"
+    "zan-date-picker": "path/to/vant-weapp/dist/datetime-picker/index"
   }
 }
 ```

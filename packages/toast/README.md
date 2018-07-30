@@ -4,7 +4,7 @@
 在 json 文件中配置 toast 组件
 ```json
 "usingComponents": {
-  "zan-toast": "/path/to/zanui-weapp/dist/toast/index"
+  "zan-toast": "/path/to/vant-weapp/dist/toast/index"
 }
 ```
 
@@ -13,7 +13,7 @@
 <zan-toast id="zan-toast-test"></zan-toast>
 ```
 ```js
-const Toast = require('path/to/zanui-weapp/dist/toast/toast');
+const Toast = require('path/to/vant-weapp/dist/toast/toast');
 
 Page({
   // ...

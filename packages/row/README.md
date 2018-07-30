@@ -5,8 +5,8 @@
 ```json
 {
   "usingComponents": {
-    "zan-row": "path/to/zanui-weapp/dist/row/index",
-    "zan-col": "path/to/zanui-weapp/dist/col/index"
+    "zan-row": "path/to/vant-weapp/dist/row/index",
+    "zan-col": "path/to/vant-weapp/dist/col/index"
   }
 }
 ```

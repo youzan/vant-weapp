@@ -6,7 +6,7 @@
 ```json
   {
     "usingComponents": {
-      "zan-cell": "path/to/zanui-weapp/dist/cell/index",
+      "zan-cell": "path/to/vant-weapp/dist/cell/index",
     }
   }
 ```
@@ -49,8 +49,8 @@
 ```json
   {
     "usingComponents": {
-      "zan-cell": "path/to/zanui-weapp/dist/cell/index",
-      "zan-cell-group": "path/to/zanui-weapp/dist/cell-group/index"
+      "zan-cell": "path/to/vant-weapp/dist/cell/index",
+      "zan-cell-group": "path/to/vant-weapp/dist/cell-group/index"
     }
   }
 ```

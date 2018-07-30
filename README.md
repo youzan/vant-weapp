@@ -8,40 +8,40 @@
 
 
 ## 概述
-[ZanUI-WeApp](https://youzan.github.io/zanui-weapp)是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
+[vant-weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 Vant 的小程序版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
 
 现已包含 badge、btn、card、cell、dialog、icon、label、noticebar、panel、popup、switch、tab、toast、toptips 等组件或元素。具体可以扫描下方小程序二维码，体验组件库示例 Demo
 
-![ZanUI-WeApp 演示](https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300)
+![vant-weapp 演示](https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300)
 
-更多背景介绍，请移步 [我们写的介绍文章](http://tech.youzan.com/zanui-weapp/)。
+更多背景介绍，请移步 [我们写的介绍文章](http://tech.youzan.com/vant-weapp/)。
 
 ## 下载
 ``` bash
-git clone https://github.com/youzan/zanui-weapp.git
+git clone https://github.com/youzan/vant-weapp.git
 ```
 
 ## 预览
-1. 在 zanui-weapp 根目录下运行
+1. 在 vant-weapp 根目录下运行
 ``` bash
 # 安装项目依赖
 npm install
 # 执行组件编译
 npm run dev
 ```
-2. 打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 zanui-weapp/example 目录添加进去就可以预览示例demo了。
+2. 打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 vant-weapp/example 目录添加进去就可以预览示例demo了。
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png)
 
 ## 使用
 
-1. 使用 [ZanUI-WeApp] 前请确保已经学习过微信官方的 [小程序简易教程] 和 [小程序框架介绍]。
-2. 然后用 [Bower] 将 [ZanUI-WeApp] 添加到你的项目中使用。
-3. 你也可以 fork 出一份你自己的 [ZanUI-WeApp]，这样可以获得更稳定的代码和更方便的进行个性定制。
+1. 使用 [vant-weapp] 前请确保已经学习过微信官方的 [小程序简易教程] 和 [小程序框架介绍]。
+2. 然后用 [Bower] 将 [vant-weapp] 添加到你的项目中使用。
+3. 你也可以 fork 出一份你自己的 [vant-weapp]，这样可以获得更稳定的代码和更方便的进行个性定制。
 
-我们推荐在你的`app.wxss`直接引入`zanui-weapp/dist/index.wxss`。
+我们推荐在你的`app.wxss`直接引入`vant-weapp/dist/index.wxss`。
 
-详细使用文档，请参考 [快速上手](https://youzan.github.io/zanui-weapp)
+详细使用文档，请参考 [快速上手](https://youzan.github.io/vant-weapp)
 
 ### 组件分类介绍
 根据功能的不同，可以将组件大致的分为2类：
@@ -52,7 +52,7 @@ npm run dev
 ```json
 {
     "usingComponents": {
-        "zan-button": "/path/to/zanui-weapp/dist/btn/index"
+        "zan-button": "/path/to/vant-weapp/dist/btn/index"
     }
 }
 ```
@@ -71,7 +71,7 @@ npm run dev
 ```json
 {
     "usingComponents": {
-        "zan-toast": "/path/to/zanui-weapp/dist/toast/index"
+        "zan-toast": "/path/to/vant-weapp/dist/toast/index"
     }
 }
 ```
@@ -84,7 +84,7 @@ npm run dev
 ```js
 // example/toast/index.js
 
-const Toast = require('/path/to/zanui-weapp/dist/toast/toast');
+const Toast = require('/path/to/vant-weapp/dist/toast/toast');
 
 Page({
   showToast() {
@@ -108,7 +108,7 @@ Page({
 
 ## 微信讨论群
 
-欢迎大家在微信上联系我们，添加下方微信并注明『交流 ZanUI-WeApp』即可
+欢迎大家在微信上联系我们，添加下方微信并注明『交流 vant-weapp』即可
 
 <img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
@@ -117,11 +117,11 @@ Page({
 
 ## 贡献
 
-如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为优化 [ZanUI-Weapp] 贡献力量
+如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为优化 [vant-weapp] 贡献力量
 
-[ZanUI-WeApp]: https://github.com/youzan/zanui-weapp
-[issue]: https://github.com/youzan/zanui-weapp/issues/new
-[PR]: https://github.com/youzan/zanui-weapp/compare
+[vant-weapp]: https://github.com/youzan/vant-weapp
+[issue]: https://github.com/youzan/vant-weapp/issues/new
+[PR]: https://github.com/youzan/vant-weapp/compare
 [MIT]: http://opensource.org/licenses/MIT
 [小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev/
 [小程序框架介绍]: https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html

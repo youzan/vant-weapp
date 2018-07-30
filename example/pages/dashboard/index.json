@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "ZanUI-WeApp",
+  "navigationBarTitleText": "vant-weapp",
   "usingComponents": {
     "zan-panel": "../../dist/panel/index",
     "zan-cell": "../../dist/cell/index",

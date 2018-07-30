@@ -21,7 +21,7 @@
 <zan-toptips
   id="zan-toptips"
   content="{{ content }}"
-  is-show="{{ $zanui.toptips.show }}"
+  is-show="{{ $vant.toptips.show }}"
 />
 
 

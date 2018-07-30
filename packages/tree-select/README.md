@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-tree-select": "path/to/zanui-weapp/dist/tree-select/index"
+    "zan-tree-select": "path/to/vant-weapp/dist/tree-select/index"
   }
 }
 ```

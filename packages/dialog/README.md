@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-dialog": "path/to/zanui-weapp/dist/dialog/index"
+    "zan-dialog": "path/to/vant-weapp/dist/dialog/index"
   }
 }
 ```
@@ -15,7 +15,7 @@
 <zan-dialog id="zan-dialog-test"></zan-dialog>
 ```
 ```js
-const Dialog = require('path/to/zanui-weapp/dist/dialog/dialog');
+const Dialog = require('path/to/vant-weapp/dist/dialog/dialog');
 
 Page({
   // ...

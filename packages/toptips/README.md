@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-toptips": "path/to/zanui-weapp/dist/toptips/index"
+    "zan-toptips": "path/to/vant-weapp/dist/toptips/index"
   }
 }
 ```
@@ -14,13 +14,13 @@
 
 **toptips提供了声明式和命令式2种调用方式，但是由于小程序本身限制，会有一定使用的要求**
 ```js
-// 使用声明式调用的方式， 必须在Page中声明 $zanui对象， 结构如下
+// 使用声明式调用的方式， 必须在Page中声明 $vant对象， 结构如下
 // 同时在其他触发toptips显示的函数中，需要手动改变对应的数值
 Page({
   data: {
     duration: 1000,
     content: 'xxx',
-    $zanui: {
+    $vant: {
       toptips: {
         show: false
       }
@@ -31,7 +31,7 @@ Page({
 // 使用命令式调用的方式，必须在 wxml 模板中声明组件id，
 // 默认我们使用了 zan-toptips， 如果使用者要更换，可以手动传入
 // 注意和 usingComponents 里引用的路径不一样
-const Toptips = require('path/to/zanui-weapp/dist/toptips/toptips');
+const Toptips = require('path/to/vant-weapp/dist/toptips/toptips');
 Page({
   customCallback() {
     Toptips('只传文案展示');
@@ -49,7 +49,7 @@ Page({
   data: {
     duration: 1000,
     content: 'xxx',
-    $zanui: {
+    $vant: {
       toptips: {
         show: false
       }
@@ -58,7 +58,7 @@ Page({
 
   customCallback() {
     this.setData({
-      $zanui: {
+      $vant: {
         toptips: {
           show: true
         }
@@ -67,7 +67,7 @@ Page({
 
     setTimeout(() => {
       this.setData({
-        $zanui: {
+        $vant: {
           toptips: {
             show: false
           }
@@ -81,7 +81,7 @@ Page({
 <zan-toptips
   content="tip内容"
   duration="{{ duration }}"
-  is-show="{{ $zanui.toptips.show }}"
+  is-show="{{ $vant.toptips.show }}"
 />
 ```
 

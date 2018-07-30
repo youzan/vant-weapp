@@ -2,7 +2,7 @@
   "cdn": {
     "basic": {
       "src": ["website/dist/**/*.*"],
-      "dist": "zanui/weapp"
+      "dist": "vant/weapp"
     }
   }
 }

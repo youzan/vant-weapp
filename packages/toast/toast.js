@@ -1,4 +1,4 @@
-const TOAST_CONFIG_KEY = 'zanui.__zanToastPageConfig';
+const TOAST_CONFIG_KEY = 'vant.__zanToastPageConfig';
 const DEFAULT_SHOW_TOAST_TIME = 3000;
 
 let timeoutData = {
@@ -22,8 +22,8 @@ function getPageCtx(pageCtx) {
 
 // 获取当前页面的 toast 配置数据
 function getPageToastConfig(pageCtx) {
-  const zanuiData = pageCtx.data.zanui || {};
-  return zanuiData.__zanToastPageConfig || {};
+  const vantData = pageCtx.data.vant || {};
+  return vantData.__zanToastPageConfig || {};
 }
 
 // Toast 显示函数

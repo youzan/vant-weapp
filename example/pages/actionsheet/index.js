@@ -21,7 +21,7 @@ Page({
 
   onShareAppMessage() {
     return {
-      title: 'ZanUI-WeApp',
+      title: 'vant-weapp',
       imageUrl: 'https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png'
     };
   },

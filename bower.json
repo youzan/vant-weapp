@@ -1,11 +1,11 @@
 {
-  "name": "zanui-weapp",
+  "name": "vant-weapp",
   "authors": [
-    "Nino <ninofocus@gmail.com>",
-    "Pangxie <pangxie@youzan.com>"
+    "Pangxie <pangxie@youzan.com>",
+    "Chenjiahan <chenjiahan@buaa.edu.cn>"
   ],
-  "directory": "zanui-weapp",
-  "description": "A UI Library for Weapp",
+  "directory": "vant-weapp",
+  "description": "Lightweight Mobile UI Components for weapp",
   "main": "zan",
   "license": "MIT",
   "homepage": "",

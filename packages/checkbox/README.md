@@ -85,6 +85,20 @@ Page({
 <zan-checkbox type="list">复选框 c</zan-checkbox>
 ```
 
+#### 自定义选中样式
+
+```html
+<zan-checkbox
+  checked-class="checked-color"
+>复选框</zan-checkbox>
+```
+
+```css
+.checked-color {
+  color: red !important;
+}
+```
+
 ### 参数
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
@@ -92,6 +106,8 @@ Page({
 | disabled | 是否可用 | Boolean| false | |
 | labelDisabled | 文字区域是否可选 | Boolean | false | |
 | type | 显示类型 | String | - | |
+| checkbox-class | 容器样式类 | String | - | |
+| checked-class | 选中样式类 | String | - | |
 
 ### 事件
 

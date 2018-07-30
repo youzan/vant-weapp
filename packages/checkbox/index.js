@@ -1,7 +1,7 @@
 const CHECKBOX_GROUP_PATH = '../checkbox-group/index';
 
 Component({
-  externalClasses: ['checkbox-class'],
+  externalClasses: ['checkbox-class', 'checked-class'],
   relations: {
     [CHECKBOX_GROUP_PATH]: {
       type: 'parent'

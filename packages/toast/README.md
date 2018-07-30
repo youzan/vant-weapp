@@ -52,4 +52,4 @@ Toast.loading({
 | type | 提示类型, 可选值：loading，success，fail | String | - |
 | icon | toast 显示图标，可以用 icon 里面支持的所有图标	 | String | - |
 | image | toast 显示图标，为图片的链接，传入此值后会覆盖 icon 值 | String | - |
-| timeout | toast 显示时间，小于0则会一直显示，需要手动调用 Toast.clear 清除 | Number | - |
+| timeout | toast 显示时间，单位为毫秒，小于0则会一直显示，需要手动调用 Toast.clear 清除 | Number | - |

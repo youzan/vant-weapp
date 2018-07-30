@@ -1,3 +1,0 @@
-<view class="button-group">
-  <slot></slot>
-</view>

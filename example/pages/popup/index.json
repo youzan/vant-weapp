@@ -2,8 +2,7 @@
   "navigationBarTitleText": "Popup 弹出层",
   "usingComponents": {
     "van-popup": "../../dist/popup/index",
-    "van-button": "../../dist/button/index",
-    "van-button-group": "../../dist/button-group/index"
+    "van-button": "../../dist/button/index"
   }  
 }
 

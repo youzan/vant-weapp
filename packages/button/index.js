@@ -1,58 +1,78 @@
-const nativeButtonBehavior = require('./native-button-behaviors');
+const nativeBehaviors = require('./behaviors');
+const classnames = require('../common/classnames');
+
+const observer = function () {
+  this.setClasses();
+};
 
 Component({
-  externalClasses: ['custom-class', 'theme-class'],
-  behaviors: [nativeButtonBehavior],
-  relations: {
-    '../button-group/index': {
-      type: 'parent',
-      linked() {
-        this.setData({ inGroup: true });
-      },
-      unlinked() {
-        this.setData({ inGroup: false });
-      }
-    }
-  },
+  externalClasses: ['custom-class'],
+
+  behaviors: [nativeBehaviors],
+
   properties: {
     type: {
       type: String,
-      value: '',
+      value: 'default',
+      observer
     },
     size: {
       type: String,
-      value: '',
+      value: 'normal',
+      observer
     },
     plain: {
       type: Boolean,
       value: false,
+      observer
     },
     disabled: {
       type: Boolean,
       value: false,
+      observer
     },
     loading: {
       type: Boolean,
       value: false,
+      observer
+    },
+    block: {
+      type: Boolean,
+      value: false,
+      observer
     }
   },
 
   data: {
-    inGroup: false,
-    isLast: false
+    classes: ''
+  },
+
+  attached() {
+    this.setClasses();
   },
 
   methods: {
-    handleTap() {
-      if (this.data.disabled) {
-        this.triggerEvent('disabledclick');
-        return;
+    onTap(event) {
+      if (!this.data.disabled && !this.data.loading) {
+        this.triggerEvent('click', event);
       }
-      this.triggerEvent('buttonclick');
     },
 
-    switchLastButtonStatus(isLast = false) {
-      this.setData({ isLast });
+    setClasses() {
+      const { type, size, plain, disabled, loading, block } = this.data;
+      this.setData({
+        classes: classnames(
+          `van-button--${type}`,
+          `van-button--${size}`,
+          {
+            'van-button--block': block,
+            'van-button--plain': plain,
+            'van-button--loading': loading,
+            'van-button--disabled': disabled,
+            'van-button--unclickable': disabled || loading
+          }
+        )
+      });
     }
   }
 });

@@ -1,5 +1,5 @@
 <button
-  class="custom-class theme-class van-button {{ inGroup ? 'van-button--group' : '' }} {{ isLast ? 'van-button--last' : '' }} {{size ? 'van-button--'+size : ''}} {{size === 'mini' ? 'van-button--plain' : ''}} {{plain ? 'van-button--plain' : ''}} {{type ? 'van-button--'+type : ''}} {{loading ? 'van-button--loading' : ''}} {{disabled ? 'van-button--disabled' : ''}}"
+  class="custom-class van-button {{ classes }}"
   disabled="{{ disabled }}"
   hover-class="button-hover"
   open-type="{{ openType }}"
@@ -13,12 +13,13 @@
   send-message-path="{{ sendMessagePath }}"
   send-message-img="{{ sendMessageImg }}"
   show-message-card="{{ showMessageCard }}"
-  bindtap="handleTap"
+  bindtap="onTap"
   bindcontact="bindcontact"
   bindgetuserinfo="bindgetuserinfo"
   bindgetphonenumber="bindgetphonenumber"
   binderror="binderror"
   bindopensetting="bindopensetting"
 >
+  <van-loading wx:if="{{ loading }}" color="{{ type === 'default' ? 'black' : 'white' }}" />
   <slot></slot>
 </button>

@@ -5,7 +5,16 @@ page {
   background: #f8f8f8;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 15rpx 0;
+  padding: 0 0 100rpx;
   -webkit-font-smoothing: antialiased;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+}
+
+.demo-margin-right {
+  margin-right: 15px;
+}
+
+.demo-margin-bottom {
+  display: block;
+  margin-bottom: 15px;
 }

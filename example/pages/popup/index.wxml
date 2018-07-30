@@ -1,20 +1,18 @@
-<van-button-group style="margin-top: 10vh;display: block;">
-  <van-button class="van-button" bind:buttonclick="togglePopup">
-    弹出popup
-  </van-button>
-  <van-button class="van-button" bind:buttonclick="toggleTopPopup">
-    从顶部弹出popup
-  </van-button>
-  <van-button class="van-button" bind:buttonclick="toggleBottomPopup">
-    从底部弹出popup
-  </van-button>
-  <van-button class="van-button" bind:buttonclick="toggleLeftPopup">
-    从左边弹出popup
-  </van-button>
-  <van-button class="van-button" bind:buttonclick="toggleRightPopup">
-    从右边弹出popup
-  </van-button>
-</van-button-group>
+<van-button class="van-button" bind:buttonclick="togglePopup">
+  弹出popup
+</van-button>
+<van-button class="van-button" bind:buttonclick="toggleTopPopup">
+  从顶部弹出popup
+</van-button>
+<van-button class="van-button" bind:buttonclick="toggleBottomPopup">
+  从底部弹出popup
+</van-button>
+<van-button class="van-button" bind:buttonclick="toggleLeftPopup">
+  从左边弹出popup
+</van-button>
+<van-button class="van-button" bind:buttonclick="toggleRightPopup">
+  从右边弹出popup
+</van-button>
 
 <!-- 中间弹出框 -->
 <van-popup

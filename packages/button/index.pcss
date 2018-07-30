@@ -1,169 +1,135 @@
-@import "../common/_mixins";
+@import '../common/var.pcss';
 
 .van-button {
   position: relative;
-  color: #333;
-  background-color: #fff;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 2px;
-  font-size: 16px;
-  line-height: 45px;
+  padding: 0;
+  display: inline-block;
   height: 45px;
+  line-height: 43px;
+  border-radius: 3px;
   box-sizing: border-box;
-  text-decoration: none;
+  font-size: 16px;
   text-align: center;
-  vertical-align: middle;
-  overflow: visible;
-}
-
-.van-button--group {
-  margin-bottom: 10px;
-}
-
-.van-button::after {
-  @mixin hairline;
-  border-width: 1px;
-  border-radius: 4px;
-}
-
-/* type */
-.van-button--primary {
-  color: #fff;
-  background-color: #4b0;
+  -webkit-appearance: none;
 
   &::after {
-    border-color: #0a0;
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    border: inherit;
+    border-color: $black;
+    background-color: $black;
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+  }
+
+  &:active::after {
+    opacity: .3;
+  }
+
+  &--unclickable::after {
+    display: none;
+  }
+
+  &--default {
+    color: $button-default-color;
+    background-color: $button-default-background-color;
+    border: 1px solid $button-default-border-color;
+  }
+
+  &--primary {
+    color: $button-primary-color;
+    background-color: $button-primary-background-color;
+    border: 1px solid $button-primary-border-color;
+  }
+
+  &--danger {
+    color: $button-danger-color;
+    background-color: $button-danger-background-color;
+    border: 1px solid $button-danger-border-color;
+  }
+
+  &--plain {
+    background-color: $white;
+
+    &.van-button--primary {
+      color: $button-primary-background-color;
+    }
+
+    &.van-button--danger {
+      color: $button-danger-background-color;
+    }
+  }
+
+  &--large {
+    width: 100%;
+    height: 50px;
+    line-height: 48px;
+  }
+
+  &--normal {
+    padding: 0 15px;
+    font-size: 14px;
+  }
+
+  &--small {
+    height: 30px;
+    padding: 0 8px;
+    min-width: 60px;
+    font-size: 12px;
+    line-height: 28px;
+  }
+
+  &--loading {
+    .van-loading {
+      display: inline-block;
+    }
+
+    .van-button__text {
+      display: none;
+    }
+  }
+
+  /* mini图标默认宽度50px，文字不能超过4个 */
+  &--mini {
+    display: inline-block;
+    width: 50px;
+    height: 22px;
+    line-height: 20px;
+    font-size: 10px;
+
+    & + .van-button--mini {
+      margin-left: 5px;
+    }
+  }
+
+  &--block {
+    width: 100%;
+    display: block;
+  }
+
+  &--bottom-action {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    border-radius: 0;
+    font-size: 16px;
+    color: $button-bottom-action-default-color;
+    background-color: $button-bottom-action-default-background-color;
+
+    &.van-button--primary {
+      background-color: $button-bottom-action-primary-background-color;
+    }
+  }
+
+  &--disabled {
+    color: $button-disabled-color;
+    background-color: $button-disabled-background-color;
+    border: 1px solid $button-disabled-border-color;
   }
 }
-
-.van-button--warn {
-  color: #fff;
-  background-color: #f85;
-
-  &::after {
-    border-color: #f85;
-  }
-}
-
-.van-button--danger {
-  color: #fff;
-  background-color: #f44;
-
-  &::after {
-    border-color: #e33;
-  }
-}
-
-/* size */
-.van-button--small {
-  display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  font-size: 12px;
-  /* margin-right: 5px; */
-}
-.van-button--small.van-button--group {
-  margin-bottom: 0;
-  margin-right: 5px;
-}
-
-.van-button--mini {
-  display: inline-block;
-  line-height: 21px;
-  height: 22px;
-  font-size: 10px;
-  /* margin-right: 5px; */
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.van-button--mini.van-button--group {
-  margin-bottom: 0;
-  margin-right: 5px;
-}
-
-.van-button--large {
-  border-radius: 0;
-  border: none;
-  line-height: 50px;
-  height: 50px;
-}
-.van-button--large.van-button--group {
-  margin-bottom: 0;
-}
-
-/* plain */
-.van-button--plain.van-button {
-  background-color: transparent;
-}
-.van-button--plain.van-button--primary {
-  color: #06BF04;
-}
-.van-button--plain.van-button--warn {
-  color: #FF6600;
-}
-.van-button--plain.van-button--danger {
-  color: #FF4444;
-}
-
-/* 重写button组件的button-hover样式 */
-.button-hover {
-  opacity: 0.9;
-}
-
-/* loading */
-.van-button--loading {
-  color: transparent;
-  opacity: 1;
-}
-.van-button--loading::before {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  content: ' ';
-  width: 16px;
-  height: 16px;
-  margin-left: -8px;
-  margin-top: -8px;
-  border: 3px solid #e5e5e5;
-  border-color: #666 #e5e5e5 #e5e5e5 #e5e5e5;
-  border-radius: 8px;
-  box-sizing: border-box;
-  animation: button-spin 0.6s linear;
-  animation-iteration-count: infinite;
-}
-.van-button--primary.van-button--loading::before,
-.van-button--warn.van-button--loading::before,
-.van-button--danger.van-button--loading::before {
-  border-color: #fff rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
-}
-
-@keyframes button-spin {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* disabled */
-.van-button.van-button--disabled {
-  /* 防止样式被 button[disabled] 的规则覆盖，所以使用了important */
-  color: #999 ! important;
-  background: #f8f8f8 ! important;
-  border-color: #e5e5e5 ! important;
-  cursor: not-allowed ! important;
-  opacity: 1 ! important;
-
-  &::after {
-    border-color: #e5e5e5 ! important;
-  }
-}
-
-/* :last-child */
-.van-button--group.van-button--last {
-  margin-bottom: 0;
-  margin-right: 0;
-}
-

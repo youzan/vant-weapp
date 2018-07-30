@@ -1,51 +1,29 @@
-<van-panel title="普通按钮">
-  <van-button-group>
-    <van-button
-      open-type="getPhoneNumber"
-      bind:getphonenumber="getPhoneNumber"
-    >获取电话</van-button>
-    <van-button type="primary">确认付款</van-button>
-    <van-button type="danger">确认付款</van-button>
-    <van-button type="warn">确认付款</van-button>
-  </van-button-group>
-</van-panel>
+<demo-section>
+  <demo-block title="按钮类型">
+    <van-button type="default" custom-class="demo-margin-right">默认按钮</van-button>
+    <van-button type="primary" custom-class="demo-margin-right">主要按钮</van-button>
+    <van-button type="danger">危险按钮</van-button>
+  </demo-block>
 
-<van-panel title="大号按钮，没有边框线及圆角">
-  <van-button size="large" type="primary">确认付款</van-button>
-  <van-button size="large" type="warn">立即购买</van-button>
-  <van-button size="large" type="danger">立即购买</van-button>
-</van-panel>
+  <demo-block title="朴素按钮">
+    <van-button type="default" plain custom-class="demo-margin-right">默认按钮</van-button>
+    <van-button type="primary" plain custom-class="demo-margin-right">主要按钮</van-button>
+    <van-button type="danger" plain>危险按钮</van-button>
+  </demo-block>
 
-<van-panel title="小号按钮">
-  <van-button-group>
-    <van-button size="small">取消订单</van-button>
-    <van-button size="small" type="primary">确认付款</van-button>
-  </van-button-group>
-</van-panel>
+  <demo-block title="按钮尺寸">
+    <van-button size="large" block custom-class="demo-margin-bottom">大号按钮</van-button>
+    <van-button size="normal" class="demo-margin-right">普通按钮</van-button>
+    <van-button size="small" class="demo-margin-right">小型按钮</van-button>
+    <van-button size="mini">迷你按钮</van-button>
+  </demo-block>
 
-<van-panel title="迷你按钮">
-  <van-button-group>
-    <van-button size="mini">取消订单</van-button>
-    <van-button size="mini" type="primary">确认付款</van-button>
-    <van-button size="mini" type="warn">确认付款</van-button>
-    <van-button size="mini" type="danger">确认付款</van-button>
-  </van-button-group>
-</van-panel>
+  <demo-block title="禁用状态">
+    <van-button disabled>禁用状态</van-button>
+  </demo-block>
 
-<van-panel title="Loading">
-  <van-button-group>
-    <van-button loading>取消订单</van-button>
-    <van-button loading type="primary">确认付款</van-button>
-    <van-button loading type="danger">确认付款</van-button>
-    <van-button loading type="warn">确认付款</van-button>
-  </van-button-group>
-</van-panel>
-
-<van-panel title="Disabled">
-  <van-button-group>
-    <van-button disabled>取消订单</van-button>
-    <van-button disabled type="primary">确认付款</van-button>
-    <van-button disabled type="danger">确认付款</van-button>
-    <van-button disabled type="warn">确认付款</van-button>
-  </van-button-group>
-</van-panel>
+  <demo-block title="加载状态">
+    <van-button loading custom-class="demo-margin-right" />
+    <van-button loading type="primary" />
+  </demo-block>
+</demo-section>

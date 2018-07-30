@@ -1,36 +1,33 @@
 <import src="/dist/toast/index.wxml" />
 
 <view class="container">
+  <van-button bind:buttonclick="showToast">
+    显示toast
+  </van-button>
 
-  <van-button-group style="margin-top: 15vh;display: block;">
-    <van-button bind:buttonclick="showToast">
-      显示toast
-    </van-button>
+  <van-button bind:buttonclick="showIconToast">
+    显示 Icon 图标的toast
+  </van-button>
 
-    <van-button bind:buttonclick="showIconToast">
-      显示 Icon 图标的toast
-    </van-button>
+  <van-button bind:buttonclick="showImageToast">
+    自定义图片作为图标的toast
+  </van-button>
 
-    <van-button bind:buttonclick="showImageToast">
-      自定义图片作为图标的toast
-    </van-button>
+  <van-button bind:buttonclick="showLoadingToast">
+    显示 Loading toast
+  </van-button>
 
-    <van-button bind:buttonclick="showLoadingToast">
-      显示 Loading toast
-    </van-button>
+  <van-button bind:buttonclick="showOnlyIcon">
+    只显示图标的toast
+  </van-button>
 
-    <van-button bind:buttonclick="showOnlyIcon">
-      只显示图标的toast
-    </van-button>
+  <van-button bind:buttonclick="showEverToast">
+    不消失的的toast
+  </van-button>
 
-    <van-button bind:buttonclick="showEverToast">
-      不消失的的toast
-    </van-button>
-
-    <van-button bind:buttonclick="showLoading">
-      显示 Loading
-    </van-button>
-  </van-button-group>
+  <van-button bind:buttonclick="showLoading">
+    显示 Loading
+  </van-button>
 </view>
 
 <!-- <template is="van-toast" data="{{ zanToast }}"></template> -->

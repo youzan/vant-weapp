@@ -100,5 +100,14 @@ export default {
         path: '/pages/toptips/index'
       }
     ]
+  },
+  complexComponent: {
+    title: '高阶组件',
+    content: [
+      {
+        name: 'TreeSelect 分类选择',
+        path: '/pages/tree-select/index'
+      }
+    ]
   }
 };

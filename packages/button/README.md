@@ -72,6 +72,13 @@
 | send-message-img | sendMessageImg | `String` | 截图 |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` |
 
+### 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| loading-class | 加载图标样式类 |
+
 ### 事件
 
 | 事件名 | 说明 | 参数 |

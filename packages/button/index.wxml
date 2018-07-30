@@ -20,6 +20,11 @@
   binderror="binderror"
   bindopensetting="bindopensetting"
 >
-  <van-loading wx:if="{{ loading }}" color="{{ type === 'default' ? 'black' : 'white' }}" />
+  <van-loading
+    wx:if="{{ loading }}"
+    size="20px"
+    custom-class="loading-class"
+    color="{{ type === 'default' ? '#c9c9c9' : '#fff' }}"
+  />
   <slot></slot>
 </button>

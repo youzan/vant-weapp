@@ -1,19 +1,9 @@
-<view class="container">
+<demo-block title="Circular">
+  <van-loading custom-class="loading" />
+  <van-loading custom-class="loading shadow" color="#fff" />
+</demo-block>
 
-  <view class="van-panel-title">circle</view>
-  <view class="loading-example van-panel">
-    <van-loading type="circle"></van-loading>
-    <van-loading type="circle" color="black"></van-loading>
-  </view>
-  <view class="van-panel-title">spinner</view>
-  <view class="loading-example van-panel">
-    <van-loading type="spinner"></van-loading>
-    <van-loading type="spinner" color="black"></van-loading>
-  </view>
-  <view class="van-panel-title">dot</view>
-  <view class="van-panel loading-example no-flex">
-    <van-loading type="dot"></van-loading>
-    <van-loading type="dot" color="black"></van-loading>
-  </view>
-
-</view>
+<demo-block title="Spinner">
+  <van-loading custom-class="loading" type="spinner" />
+  <van-loading custom-class="loading shadow" type="spinner" color="#fff" />
+</demo-block>

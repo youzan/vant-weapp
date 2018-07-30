@@ -6,7 +6,10 @@ const observer = function () {
 };
 
 Component({
-  externalClasses: ['custom-class'],
+  externalClasses: [
+    'custom-class',
+    'loading-class'
+  ],
 
   behaviors: [nativeBehaviors],
 

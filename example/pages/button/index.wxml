@@ -23,7 +23,7 @@
   </demo-block>
 
   <demo-block title="加载状态">
-    <van-button loading custom-class="demo-margin-right" />
-    <van-button loading type="primary" />
+    <van-button loading custom-class="demo-margin-right" loading-class="loading" />
+    <van-button loading type="primary" loading-class="loading" />
   </demo-block>
 </demo-section>

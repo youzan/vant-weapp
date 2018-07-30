@@ -1,6 +1,9 @@
 <view class="container">
-
-  <image class="logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png"></image>
+  <view class="title">
+    <image class="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" />
+    <view class="title-text">Vant</view>
+  </view>
+  <view class="desc">轻量、可靠的小程序 UI 组件库</view>
 
   <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
     <zan-panel title="{{ group.title }}">
@@ -15,5 +18,4 @@
       </zan-cell-group>
     </zan-panel>
   </block>
-  
 </view>

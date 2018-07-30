@@ -1,5 +1,11 @@
 @import "dist/index.wxss";
 
+page {
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+}
+
 .container {
   background: #F9F9F9;
   overflow: hidden;
@@ -7,6 +13,7 @@
   box-sizing: border-box;
   padding: 15px 0;
 }
+
 .container::before {
   position: fixed;
   top: 0;
@@ -17,6 +24,7 @@
   background-color: #e2e2e2;
   z-index: 5;
 }
+
 .doc-title {
   position: relative;
   padding: 15px 0;
@@ -25,6 +33,7 @@
   font-size: 25px;
   color: #666;
 }
+
 .doc-description {
   margin: 14px 0;
   padding: 0 15px;

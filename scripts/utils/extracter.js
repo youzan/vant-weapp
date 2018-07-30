@@ -15,7 +15,7 @@ module.exports = function (config = {}) {
   }
 };
 
-const debouncedFunc = debounce(config => extracter(config), 1000);
+const debouncedFunc = debounce(config => extracter(config), 500);
 
 function extracter(config = {}) {
   // 复制 src

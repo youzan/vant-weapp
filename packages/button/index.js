@@ -4,7 +4,7 @@ Component({
   externalClasses: ['custom-class', 'theme-class'],
   behaviors: [nativeButtonBehavior],
   relations: {
-    '../btn-group/index': {
+    '../button-group/index': {
       type: 'parent',
       linked() {
         this.setData({ inGroup: true });
@@ -45,10 +45,10 @@ Component({
   methods: {
     handleTap() {
       if (this.data.disabled) {
-        this.triggerEvent('disabledclick')
+        this.triggerEvent('disabledclick');
         return;
       }
-      this.triggerEvent('btnclick');
+      this.triggerEvent('buttonclick');
     },
 
     switchLastButtonStatus(isLast = false) {

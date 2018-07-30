@@ -7,7 +7,7 @@ export default {
         path: '/pages/badge/index'
       }, {
         name: 'Button 按钮',
-        path: '/pages/btn/index'
+        path: '/pages/button/index'
       }, {
         name: 'Capsule 胶囊',
         path: '/pages/capsule/index'

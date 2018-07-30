@@ -1,8 +1,8 @@
 {
   "navigationBarTitleText": "Button 按钮",
   "usingComponents": {
-    "van-button": "../../dist/btn/index",
-    "van-button-group": "../../dist/btn-group/index",
+    "van-button": "../../dist/button/index",
+    "van-button-group": "../../dist/button-group/index",
     "van-panel": "../../dist/panel/index",
     "doc-page": "../../components/doc-page/index"
   }

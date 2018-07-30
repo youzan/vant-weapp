@@ -4,7 +4,7 @@
 在 json 文件中配置button组件
 ```json
 "usingComponents": {
-  "van-button": "path/to/vant-weapp/dist/btn/index"
+  "van-button": "path/to/vant-weapp/dist/button/index"
 }
 ```
 
@@ -53,8 +53,8 @@
 1.在 json 文件中配置 button-group 组件
 ```json
 "usingComponents": {
-  "van-button": "path/to/vant-weapp/dist/btn/index",
-  "van-button-group": "path/to/vant-weapp/dist/btn-group/index"
+  "van-button": "path/to/vant-weapp/dist/button/index",
+  "van-button-group": "path/to/vant-weapp/dist/button-group/index"
 }
 ```
 2.在 wxml 中直接引入
@@ -90,7 +90,7 @@
 ### 事件
 | 事件名称       | 说明      | 回调参数       |
 |-----------|-----------|-----------|
-|  btnclick  | 按钮在可用状态被点击时触发 | |
+|  buttonclick  | 按钮在可用状态被点击时触发 | |
 |  disabledclick  | 在传入的 disabled 为 true 时，点击按钮会触发此事件 | |
 |  getuserinfo  | 用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同wx.getUserInfo | |
 |  contact  | 客服消息回调 | |

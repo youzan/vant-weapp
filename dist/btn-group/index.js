@@ -2,7 +2,7 @@
 
 Component({
   relations: {
-    '../btn/index': {
+    '../button/index': {
       type: 'child',
       linked: function linked() {
         updateBtnChild.call(this);
@@ -18,13 +18,13 @@ Component({
 });
 
 function updateBtnChild() {
-  var btns = this.getRelationNodes('../btn/index');
+  var buttons = this.getRelationNodes('../button/index');
 
-  if (btns.length > 0) {
-    var lastIndex = btns.length - 1;
+  if (buttons.length > 0) {
+    var lastIndex = buttons.length - 1;
 
-    btns.forEach(function (btn, index) {
-      btn.switchLastButtonStatus(index === lastIndex);
+    buttons.forEach(function (button, index) {
+      button.switchLastButtonStatus(index === lastIndex);
     });
   }
 }

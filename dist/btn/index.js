@@ -6,7 +6,7 @@ Component({
   externalClasses: ['custom-class', 'theme-class'],
   behaviors: [nativeButtonBehavior],
   relations: {
-    '../btn-group/index': {
+    '../button-group/index': {
       type: 'parent',
       linked: function linked() {
         this.setData({ inGroup: true });
@@ -50,7 +50,7 @@ Component({
         this.triggerEvent('disabledclick');
         return;
       }
-      this.triggerEvent('btnclick');
+      this.triggerEvent('buttonclick');
     },
     switchLastButtonStatus: function switchLastButtonStatus() {
       var isLast = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;

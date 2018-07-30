@@ -1,7 +1,7 @@
 
 <doc-page title="ACTIONSHEET">
-  <view class="van-btns" style="margin-top: 30vh;">
-    <van-button bind:btnclick="openActionsheet">
+  <view class="van-buttons" style="margin-top: 30vh;">
+    <van-button bind:buttonclick="openActionsheet">
       Actionsheet
     </van-button>
   </view>

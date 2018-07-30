@@ -25,7 +25,7 @@
           data-type="{{ item.type }}"
           data-open-type="{{ item.openType }}"
           open-type="{{ item.openType }}"
-          bind:btnclick="handleButtonClick"
+          bind:buttonclick="handleButtonClick"
           bind:getuserinfo="handleUserInfoResponse"
           bind:getphonenumber="handlePhoneResponse"
           bind:opensetting="handleOpenSettingResponse"

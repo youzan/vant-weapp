@@ -33,7 +33,7 @@
   </van-panel>
   
   <van-button-group>
-    <van-button type="primary" bind:btnclick="clearInput">清除输入</van-button>
+    <van-button type="primary" bind:buttonclick="clearInput">清除输入</van-button>
   </van-button-group>
 
   <!-- 去除标题后的输入框样式 -->
@@ -46,7 +46,7 @@
   </van-panel>
 
   <van-button-group>
-    <van-button type="primary" bind:btnclick="clearTextarea">清除输入</van-button>
+    <van-button type="primary" bind:buttonclick="clearTextarea">清除输入</van-button>
   </van-button-group>
 
   <!-- 使用 Field 圆角样式 -->

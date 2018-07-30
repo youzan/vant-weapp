@@ -18,7 +18,7 @@ function getParsedOptions() {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
   return Object.assign({
-    // 自定义 btn 列表
+    // 自定义 button 列表
     // { type: 按钮类型，回调时以此作为区分依据，text: 按钮文案, color: 按钮文字颜色 }
     buttons: []
   }, defaultData, options);

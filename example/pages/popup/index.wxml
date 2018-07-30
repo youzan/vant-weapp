@@ -1,18 +1,18 @@
 <doc-page title="POPUP">
   <van-button-group style="margin-top: 10vh;display: block;">
-    <van-button class="van-btn" bind:btnclick="togglePopup">
+    <van-button class="van-button" bind:buttonclick="togglePopup">
       弹出popup
     </van-button>
-    <van-button class="van-btn" bind:btnclick="toggleTopPopup">
+    <van-button class="van-button" bind:buttonclick="toggleTopPopup">
       从顶部弹出popup
     </van-button>
-    <van-button class="van-btn" bind:btnclick="toggleBottomPopup">
+    <van-button class="van-button" bind:buttonclick="toggleBottomPopup">
       从底部弹出popup
     </van-button>
-    <van-button class="van-btn" bind:btnclick="toggleLeftPopup">
+    <van-button class="van-button" bind:buttonclick="toggleLeftPopup">
       从左边弹出popup
     </van-button>
-    <van-button class="van-btn" bind:btnclick="toggleRightPopup">
+    <van-button class="van-button" bind:buttonclick="toggleRightPopup">
       从右边弹出popup
     </van-button>
   </van-button-group>
@@ -23,8 +23,8 @@
     bindclose="togglePopup"
   >
     <view class="pop-example__container">
-      <view class="van-btns"> 
-        <button class="van-btn" bindtap="togglePopup">
+      <view class="van-buttons"> 
+        <button class="van-button" bindtap="togglePopup">
           关闭 popup
         </button>
       </view>
@@ -38,8 +38,8 @@
     bindclose="toggleLeftPopup"
   >
     <view class="pop-example__container pop-example__container--left">
-      <view class="van-btns">
-        <button class="van-btn" bindtap="toggleLeftPopup">
+      <view class="van-buttons">
+        <button class="van-button" bindtap="toggleLeftPopup">
           关闭 popup
         </button>
       </view>
@@ -53,8 +53,8 @@
     bindclose="toggleRightPopup"
   >
     <view class="pop-example__container pop-example__container--right">
-      <view class="van-btns">
-        <button class="van-btn" catchtap="toggleRightPopup">
+      <view class="van-buttons">
+        <button class="van-button" catchtap="toggleRightPopup">
           关闭 popup
         </button>
       </view>
@@ -78,8 +78,8 @@
     bindclose="toggleBottomPopup"
   >
     <view class="pop-example__container pop-example__container--bottom">
-      <view class="van-btns">
-        <button class="van-btn" catchtap="toggleBottomPopup">
+      <view class="van-buttons">
+        <button class="van-button" catchtap="toggleBottomPopup">
           关闭 popup
         </button>
       </view>

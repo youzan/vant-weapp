@@ -35,7 +35,7 @@ module.exports = {
         label: '基础',
         include: {
           icon: require('./packages/icon/README.md'),
-          btn: require('./packages/btn/README.md'),
+          button: require('./packages/button/README.md'),
           helper: require('./packages/helper/README.md'),
           loading: require('./packages/loading/README.md')
         }

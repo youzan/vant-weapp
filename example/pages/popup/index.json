@@ -3,8 +3,8 @@
   "usingComponents": {
     "doc-page": "../../components/doc-page/index",
     "van-popup": "../../dist/popup/index",
-    "van-button": "../../dist/btn/index",
-    "van-button-group": "../../dist/btn-group/index"
+    "van-button": "../../dist/button/index",
+    "van-button-group": "../../dist/button-group/index"
   }  
 }
 

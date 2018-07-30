@@ -1,6 +1,6 @@
 Component({
   relations: {
-    '../btn/index': {
+    '../button/index': {
       type: 'child',
       linked() {
         updateBtnChild.call(this);
@@ -16,13 +16,13 @@ Component({
 });
 
 function updateBtnChild() {
-  let btns = this.getRelationNodes('../btn/index');
+  let buttons = this.getRelationNodes('../button/index');
 
-  if (btns.length > 0) {
-    let lastIndex = btns.length - 1;
+  if (buttons.length > 0) {
+    let lastIndex = buttons.length - 1;
 
-    btns.forEach((btn, index) => {
-      btn.switchLastButtonStatus(index === lastIndex);
+    buttons.forEach((button, index) => {
+      button.switchLastButtonStatus(index === lastIndex);
     });
   }
 }

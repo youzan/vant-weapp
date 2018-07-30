@@ -32,19 +32,24 @@ module.exports = Behavior({
     sendMessageImg: String,
     showMessageCard: String
   },
+
   methods: {
     bindgetuserinfo({ detail = {} } = {}) {
       this.triggerEvent('getuserinfo', detail);
     },
+
     bindcontact({ detail = {} } = {}) {
       this.triggerEvent('contact', detail);
     },
+
     bindgetphonenumber({ detail = {} } = {}) {
       this.triggerEvent('getphonenumber', detail);
     },
-    bindopensetting({ detail = {}} = {}) {
+
+    bindopensetting({ detail = {} } = {}) {
       this.triggerEvent('opensetting', detail);
     },
+
     binderror({ detail = {} } = {}) {
       this.triggerEvent('error', detail);
     }

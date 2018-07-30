@@ -59,12 +59,12 @@ npm run dev
 ```json
 {
     "usingComponents": {
-        "van-button": "/path/to/vant-weapp/dist/btn/index"
+        "van-button": "/path/to/vant-weapp/dist/button/index"
     }
 }
 ```
 ```html
-<!-- example/btn/index.html -->
+<!-- example/button/index.html -->
 
 <van-button>按钮</van-button>
 ```

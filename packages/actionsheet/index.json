@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "van-btn": "../btn/index"
+    "van-button": "../button/index"
   }
 }

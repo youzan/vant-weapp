@@ -1,18 +1,18 @@
 <doc-page title="TOPTIPS">
   <view style="margin-top: 30vh;">
-    <van-button bind:btnclick="showTopTips">
+    <van-button bind:buttonclick="showTopTips">
       显示toptips，声明式调用
     </van-button>
   </view>
 
   <view style="margin-top: 30px;">
-    <van-button bind:btnclick="showTopTips2">
+    <van-button bind:buttonclick="showTopTips2">
       显示toptips，命令式调用
     </van-button>
   </view>
 
   <view style="margin-top: 30px;">
-    <van-button bind:btnclick="showTopTips3">
+    <van-button bind:buttonclick="showTopTips3">
       显示toptips，持续一秒
     </van-button>
   </view>

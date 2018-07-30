@@ -1,96 +1,94 @@
-<doc-page title="Field" without-padding>
-  <!-- Field 基础用法 -->
-  <van-panel title="基础用法">
-    <van-cell-group>
-      <van-field
-        title="{{ config.base.name.title }}"
-        placeholder="{{ config.base.name.placeholder }}"
-        focus="{{ config.base.name.focus }}"
-        value="{{ value }}"
-      >
-      </van-field>
-      <van-field
-        title="{{ config.base.tel.title }}"
-        placeholder="{{ config.base.tel.placeholder }}"
-        error="{{ config.base.tel.error }}"
-        input-type="{{ config.base.tel.inputType }}"
-      >
-      </van-field>
-      <van-field
-        title="{{ config.base.address.title }}"
-        type="{{ config.base.address.type }}"
-        placeholder="{{ config.base.address.placeholder }}"
-        maxlength="50"
-      >
-      </van-field>
-      <van-field
-        title="{{ config.base.disabled.title }}"
-        value="{{ config.base.disabled.value }}"
-        disabled="{{ config.base.disabled.disabled }}"
-      >
-      </van-field>
-    </van-cell-group>
-  </van-panel>
-  
-  <van-button-group>
-    <van-button type="primary" bind:buttonclick="clearInput">清除输入</van-button>
-  </van-button-group>
-
-  <!-- 去除标题后的输入框样式 -->
-  <van-panel title="无标题输入框">
+<!-- Field 基础用法 -->
+<van-panel title="基础用法">
+  <van-cell-group>
     <van-field
-      placeholder="{{ config.notitle.placeholder }}"
-      value="{{ textareaValue }}"
-    >
-    </van-field>
-  </van-panel>
-
-  <van-button-group>
-    <van-button type="primary" bind:buttonclick="clearTextarea">清除输入</van-button>
-  </van-button-group>
-
-  <!-- 使用 Field 圆角样式 -->
-  <van-panel title="圆角输入框">
-    <van-field
-      title="{{ config.radius.totalPrice.title }}"
-      type="{{ config.radius.totalPrice.type }}"
-      placeholder="{{ config.radius.totalPrice.placeholder }}"
-      right="{{ config.radius.totalPrice.right }}"
-      mode="{{ config.radius.totalPrice.mode }}"
+      title="{{ config.base.name.title }}"
+      placeholder="{{ config.base.name.placeholder }}"
+      focus="{{ config.base.name.focus }}"
+      value="{{ value }}"
     >
     </van-field>
     <van-field
-      class="van-field--radius"
-      title="{{ config.radius.excludePrice.title }}"
-      type="{{ config.radius.excludePrice.type }}"
-      placeholder="{{ config.radius.excludePrice.placeholder }}"
-      right="{{ config.radius.excludePrice.right }}"
-      mode="{{ config.radius.excludePrice.mode }}"
-      error="{{ config.radius.excludePrice.error }}"
+      title="{{ config.base.tel.title }}"
+      placeholder="{{ config.base.tel.placeholder }}"
+      error="{{ config.base.tel.error }}"
+      input-type="{{ config.base.tel.inputType }}"
     >
     </van-field>
     <van-field
-      placeholder="{{ config.radius.notitle.placeholder }}"
-      mode="{{ config.radius.notitle.mode }}"
-      input-type="{{ config.radius.notitle.inputTitle }}"
+      title="{{ config.base.address.title }}"
+      type="{{ config.base.address.type }}"
+      placeholder="{{ config.base.address.placeholder }}"
+      maxlength="50"
     >
     </van-field>
-  </van-panel>
+    <van-field
+      title="{{ config.base.disabled.title }}"
+      value="{{ config.base.disabled.value }}"
+      disabled="{{ config.base.disabled.disabled }}"
+    >
+    </van-field>
+  </van-cell-group>
+</van-panel>
 
-  <van-panel title="Form 表单中的field应用">
-    <form bindsubmit="formSubmit" bindreset="formReset">
-      <van-field
-        name="{{ config.form.name.name }}"
-        placeholder="{{ config.form.name.placeholder }}"
-      >
-      </van-field>
-      <van-field
-        name="{{ config.form.tel.name }}"
-        placeholder="{{ config.form.tel.placeholder }}"
-        input-type="{{ config.form.tel.inputType }}"
-      >
-      </van-field>
-      <button type="primary" form-type="submit">提交表单</button>
-    </form>
-  </van-panel>
-</doc-page>
+<van-button-group>
+  <van-button type="primary" bind:buttonclick="clearInput">清除输入</van-button>
+</van-button-group>
+
+<!-- 去除标题后的输入框样式 -->
+<van-panel title="无标题输入框">
+  <van-field
+    placeholder="{{ config.notitle.placeholder }}"
+    value="{{ textareaValue }}"
+  >
+  </van-field>
+</van-panel>
+
+<van-button-group>
+  <van-button type="primary" bind:buttonclick="clearTextarea">清除输入</van-button>
+</van-button-group>
+
+<!-- 使用 Field 圆角样式 -->
+<van-panel title="圆角输入框">
+  <van-field
+    title="{{ config.radius.totalPrice.title }}"
+    type="{{ config.radius.totalPrice.type }}"
+    placeholder="{{ config.radius.totalPrice.placeholder }}"
+    right="{{ config.radius.totalPrice.right }}"
+    mode="{{ config.radius.totalPrice.mode }}"
+  >
+  </van-field>
+  <van-field
+    class="van-field--radius"
+    title="{{ config.radius.excludePrice.title }}"
+    type="{{ config.radius.excludePrice.type }}"
+    placeholder="{{ config.radius.excludePrice.placeholder }}"
+    right="{{ config.radius.excludePrice.right }}"
+    mode="{{ config.radius.excludePrice.mode }}"
+    error="{{ config.radius.excludePrice.error }}"
+  >
+  </van-field>
+  <van-field
+    placeholder="{{ config.radius.notitle.placeholder }}"
+    mode="{{ config.radius.notitle.mode }}"
+    input-type="{{ config.radius.notitle.inputTitle }}"
+  >
+  </van-field>
+</van-panel>
+
+<van-panel title="Form 表单中的field应用">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <van-field
+      name="{{ config.form.name.name }}"
+      placeholder="{{ config.form.name.placeholder }}"
+    >
+    </van-field>
+    <van-field
+      name="{{ config.form.tel.name }}"
+      placeholder="{{ config.form.tel.placeholder }}"
+      input-type="{{ config.form.tel.inputType }}"
+    >
+    </van-field>
+    <button type="primary" form-type="submit">提交表单</button>
+  </form>
+</van-panel>

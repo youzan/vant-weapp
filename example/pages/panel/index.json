@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "Panel 面板",
   "usingComponents": {
-    "van-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-panel": "../../dist/panel/index"
   }
 }

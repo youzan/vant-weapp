@@ -1,5 +1,5 @@
 .container {
-  padding: 60px 0 20px;
+  padding-top: 45px;
 }
 
 .title {

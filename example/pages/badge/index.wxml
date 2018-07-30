@@ -1,7 +1,5 @@
 <view class="container">
 
-  <view class="doc-title van-hairline--bottom van-hairline--bottom">BADGE</view>
-
   <view class="demo">
     <view class="demo__item">
       <view class="demo__icon">

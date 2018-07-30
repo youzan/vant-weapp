@@ -3,7 +3,6 @@
   "usingComponents": {
     "van-button": "../../dist/button/index",
     "van-button-group": "../../dist/button-group/index",
-    "van-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-panel": "../../dist/panel/index"
   }
 }

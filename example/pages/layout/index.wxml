@@ -1,21 +1,17 @@
-<doc-page title="LAYOUT" without-padding>
+<van-panel title="基础用法">
+  <van-row>
+    <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+    <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+    <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+  </van-row>
+</van-panel>
 
-  <van-panel title="基础用法">
-    <van-row>
-      <van-col col="8" col-class="custom-van-col">span: 8</van-col>
-      <van-col col="8" col-class="custom-van-col">span: 8</van-col>
-      <van-col col="8" col-class="custom-van-col">span: 8</van-col>
-    </van-row>
-  </van-panel>
-
-  <van-panel title="利用 offset 布局">
-    <van-row>
-      <van-col col="4" col-class="custom-van-col">span: 4</van-col>
-      <van-col col="10" offset="4" col-class="custom-van-col">offset: 4, span: 10</van-col>
-    </van-row>
-    <van-row>
-      <van-col col="12" offset="12" col-class="custom-van-col">offset: 12, span: 12</van-col>
-    </van-row>
-  </van-panel>
-
-</doc-page>
+<van-panel title="利用 offset 布局">
+  <van-row>
+    <van-col col="4" col-class="custom-van-col">span: 4</van-col>
+    <van-col col="10" offset="4" col-class="custom-van-col">offset: 4, span: 10</van-col>
+  </van-row>
+  <van-row>
+    <van-col col="12" offset="12" col-class="custom-van-col">offset: 12, span: 12</van-col>
+  </van-row>
+</van-panel>

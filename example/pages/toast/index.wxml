@@ -2,8 +2,6 @@
 
 <view class="container">
 
-  <view class="doc-title van-hairline--bottom">TOAST</view>
-
   <van-button-group style="margin-top: 15vh;display: block;">
     <van-button bind:buttonclick="showToast">
       显示toast

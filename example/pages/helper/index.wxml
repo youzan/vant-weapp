@@ -1,59 +1,57 @@
-<doc-page title="HELPER" without-padding>
-  <view class="van-panel">
-    <van-cell>
-      <view class="van-pull-right">van-pull-right: 往右靠</view>
-    </van-cell>
+<view class="van-panel">
+  <van-cell>
+    <view class="van-pull-right">van-pull-right: 往右靠</view>
+  </van-cell>
 
-    <van-cell>
-      <view class="van-text-deleted">van-text-deleted：被删除的效果</view>
-    </van-cell>
+  <van-cell>
+    <view class="van-text-deleted">van-text-deleted：被删除的效果</view>
+  </van-cell>
 
-    <van-cell>
-      <view>
-        <view class="van-font-12">van-font-12：字号12</view>
-        <view class="van-font-12 van-font-bold">van-font-bold：再来个加粗</view>
-      </view>
-    </van-cell>
+  <van-cell>
+    <view>
+      <view class="van-font-12">van-font-12：字号12</view>
+      <view class="van-font-12 van-font-bold">van-font-bold：再来个加粗</view>
+    </view>
+  </van-cell>
 
-    <van-cell>
-      <view>
-        <view class="van-font-16">van-font-16：字号16</view>
-        <view class="van-font-16 van-font-bold">van-font-bold：再来个加粗</view>
-      </view>
-    </van-cell>
+  <van-cell>
+    <view>
+      <view class="van-font-16">van-font-16：字号16</view>
+      <view class="van-font-16 van-font-bold">van-font-bold：再来个加粗</view>
+    </view>
+  </van-cell>
 
-    <van-cell>
-      <view class="">
-        <view>字体颜色</view>
-        <view class="van-c-red">van-c-red: 红色</view>
-        <view class="van-c-gray">van-c-gray: 灰色</view>
-        <view class="van-c-gray-dark">van-c-gray-dark: 再灰一点点</view>
-        <view class="van-c-gray-darker">van-c-gray-darker: 更深的灰色</view>
-        <view class="van-c-black">van-c-black: 黑色</view>
-        <view class="van-c-blue">van-c-blue: 蓝色</view>
-        <view class="van-c-green">van-c-green: 绿色</view>
-      </view>
-    </van-cell>
+  <van-cell>
+    <view class="">
+      <view>字体颜色</view>
+      <view class="van-c-red">van-c-red: 红色</view>
+      <view class="van-c-gray">van-c-gray: 灰色</view>
+      <view class="van-c-gray-dark">van-c-gray-dark: 再灰一点点</view>
+      <view class="van-c-gray-darker">van-c-gray-darker: 更深的灰色</view>
+      <view class="van-c-black">van-c-black: 黑色</view>
+      <view class="van-c-blue">van-c-blue: 蓝色</view>
+      <view class="van-c-green">van-c-green: 绿色</view>
+    </view>
+  </van-cell>
 
-    <van-cell>
-      <view>van-arrow：箭头</view>
-      <view class="van-arrow"></view>
-    </van-cell>
+  <van-cell>
+    <view>van-arrow：箭头</view>
+    <view class="van-arrow"></view>
+  </van-cell>
 
-    <van-cell>
-      <view class="van-ellipsis" style="width: 300px;">
-        van-ellipsis：单行点点点
-        ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
-      </view>
-    </van-cell>
+  <van-cell>
+    <view class="van-ellipsis" style="width: 300px;">
+      van-ellipsis：单行点点点
+      ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+    </view>
+  </van-cell>
 
-    <van-cell>
-      <view class="van-ellipsis--l2">
-        van-ellipsis--l2：单行点点点
-        ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
-      </view>
-    </van-cell>
+  <van-cell>
+    <view class="van-ellipsis--l2">
+      van-ellipsis--l2：单行点点点
+      ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+    </view>
+  </van-cell>
 
-  </view>
+</view>
 
-</doc-page>

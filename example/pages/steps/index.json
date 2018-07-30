@@ -4,7 +4,6 @@
     "van-cell": "../../dist/cell/index",
     "van-cell-group": "../../dist/cell-group/index",
     "van-panel": "../../dist/panel/index",
-    "van-steps": "../../dist/steps/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-steps": "../../dist/steps/index"
   }
 }

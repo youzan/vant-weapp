@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "Select 选择",
   "usingComponents": {
-    "doc-page": "../../components/doc-page/index",
     "van-panel": "../../dist/panel/index",
     "van-select": "../../dist/select/index"
   }

@@ -2,7 +2,6 @@
   "navigationBarTitleText": "Stepper 计数器",
   "usingComponents": {
     "van-stepper": "../../dist/stepper/index",
-    "van-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-panel": "../../dist/panel/index"
   }
 }

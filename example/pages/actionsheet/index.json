@@ -2,7 +2,6 @@
   "navigationBarTitleText": "Actionsheet 上拉菜单",
   "usingComponents": {
     "van-actionsheet": "../../dist/actionsheet/index",
-    "van-button": "../../dist/button/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-button": "../../dist/button/index"
   }
 }

@@ -1,15 +1,11 @@
-<doc-page title="PANEL" without-padding>
+<van-panel class="panel-example">
+  <view style="padding: 15px;">PANEL 内容区域</view>
+</van-panel>
 
-  <van-panel class="panel-example">
-    <view style="padding: 15px;">PANEL 内容区域</view>
-  </van-panel>
+<van-panel title="标题" class="panel-example">
+  <view style="padding: 15px;">带有标题的 PANEL</view>
+</van-panel>
 
-  <van-panel title="标题" class="panel-example">
-    <view style="padding: 15px;">带有标题的 PANEL</view>
-  </van-panel>
-
-  <van-panel title="标题" hide-border="{{ true }}" class="panel-example">
-    <view style="padding: 15px;">无边框的panel</view>
-  </van-panel>
-
-</doc-page>
+<van-panel title="标题" hide-border="{{ true }}" class="panel-example">
+  <view style="padding: 15px;">无边框的panel</view>
+</van-panel>

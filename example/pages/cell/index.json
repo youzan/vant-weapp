@@ -5,7 +5,6 @@
     "van-icon": "../../dist/icon/index",
     "van-badge": "../../dist/badge/index",
     "van-panel": "../../dist/panel/index",
-    "van-cell-group": "../../dist/cell-group/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-cell-group": "../../dist/cell-group/index"
   }
 }

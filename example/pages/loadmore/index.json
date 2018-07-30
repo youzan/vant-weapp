@@ -2,7 +2,6 @@
   "navigationBarTitleText": "loadmore 加载",
   "usingComponents": {
     "van-panel": "../../dist/panel/index",
-    "van-loadmore": "../../dist/loadmore/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-loadmore": "../../dist/loadmore/index"
   }
 }

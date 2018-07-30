@@ -1,7 +1,5 @@
 <view class="container">
 
-  <view class="doc-title van-hairline--bottom">LOADING</view>
-
   <view class="van-panel-title">circle</view>
   <view class="loading-example van-panel">
     <van-loading type="circle"></van-loading>

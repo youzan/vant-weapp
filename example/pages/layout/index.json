@@ -2,7 +2,6 @@
   "usingComponents": {
     "van-row": "../../dist/row/index",
     "van-col": "../../dist/col/index",
-    "van-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-panel": "../../dist/panel/index"
   }
 }

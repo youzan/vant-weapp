@@ -1,20 +1,18 @@
-<doc-page title="SELECT" without-padding>
-  <van-panel title='基本用法'>
-    <van-select
-      items="{{ items }}"
-      data-type="base"
-      checkedValue="{{ checked.base }}"
-      bind:change="handleSelectChange"
-    />
-  </van-panel>
+<van-panel title='基本用法'>
+  <van-select
+    items="{{ items }}"
+    data-type="base"
+    checkedValue="{{ checked.base }}"
+    bind:change="handleSelectChange"
+  />
+</van-panel>
 
-  <van-panel title='自定义高亮颜色'>
-    <van-select
-      items="{{ items }}"
-      data-type="color"
-      checkedValue="{{ checked.color }}"
-      activeColor="{{ activeColor }}"
-      bind:change="handleSelectChange"
-    />
-  </van-panel>
-</doc-page>
+<van-panel title='自定义高亮颜色'>
+  <van-select
+    items="{{ items }}"
+    data-type="color"
+    checkedValue="{{ checked.color }}"
+    activeColor="{{ activeColor }}"
+    bind:change="handleSelectChange"
+  />
+</van-panel>

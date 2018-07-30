@@ -36,7 +36,7 @@
     "navigationBarTitleText": "vant-weapp",
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#f9f9f9"
+    "backgroundColor": "#f8f8f8"
   },
   "debug": true
 }

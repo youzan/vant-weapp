@@ -1,7 +1,6 @@
 {
   "navigationBarTitleText": "Icon 图标",
   "usingComponents": {
-    "van-icon": "../../dist/icon/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-icon": "../../dist/icon/index"
   }
 }

@@ -3,7 +3,6 @@
   "usingComponents": {
     "van-switch": "../../dist/switch/index",
     "van-panel": "../../dist/panel/index",
-    "van-cell": "../../dist/cell/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-cell": "../../dist/cell/index"
   }
 }

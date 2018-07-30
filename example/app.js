@@ -1,5 +1,4 @@
 
 App({
-  globalData: {
-  },
+  globalData: {}
 });

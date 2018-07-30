@@ -1,54 +1,51 @@
-<doc-page title="NOTICEBAR" without-padding>
 
-  <van-panel title="滚动通告栏">
-    <van-noticebar
-      text="{{ bar1.text }}"
-      scrollable="{{ bar1.scrollable }}"
-    />
-  </van-panel>
+<van-panel title="滚动通告栏">
+  <van-noticebar
+    text="{{ bar1.text }}"
+    scrollable="{{ bar1.scrollable }}"
+  />
+</van-panel>
 
-  <van-panel title="延时滚动通告栏">
-    <van-noticebar
-      text="{{ bar1.text }}"
-      scrollable="{{ bar1.scrollable }}"
-      delay="{{ bar1.delay }}"
-    />
-  </van-panel>
+<van-panel title="延时滚动通告栏">
+  <van-noticebar
+    text="{{ bar1.text }}"
+    scrollable="{{ bar1.scrollable }}"
+    delay="{{ bar1.delay }}"
+  />
+</van-panel>
 
-  <van-panel title="初始速度低滚动通告栏">
-    <van-noticebar
-      text="{{ bar1.text }}"
-      scrollable="{{ bar1.scrollable }}"
-      speed="{{ bar5.speed }}"
-    />
-  </van-panel>
+<van-panel title="初始速度低滚动通告栏">
+  <van-noticebar
+    text="{{ bar1.text }}"
+    scrollable="{{ bar1.scrollable }}"
+    speed="{{ bar5.speed }}"
+  />
+</van-panel>
 
-  <van-panel title="改变颜色通告栏">
-    <van-noticebar
-      text="{{ bar2.text }}"
-      color="{{ bar2.color }}"
-      background-color="{{ bar2.backgroundColor }}"
-    />
-  </van-panel>
+<van-panel title="改变颜色通告栏">
+  <van-noticebar
+    text="{{ bar2.text }}"
+    color="{{ bar2.color }}"
+    background-color="{{ bar2.backgroundColor }}"
+  />
+</van-panel>
 
-  <van-panel title="静止通告栏">
-    <van-noticebar
-      text="{{ bar3.text }}"
-    />
-  </van-panel>
+<van-panel title="静止通告栏">
+  <van-noticebar
+    text="{{ bar3.text }}"
+  />
+</van-panel>
 
-  <van-panel title="带icon公告">
-    <van-noticebar
-      text="{{ bar4.text }}"
-      left-icon="{{ bar4.leftIcon }}"
-    />
-  </van-panel>
+<van-panel title="带icon公告">
+  <van-noticebar
+    text="{{ bar4.text }}"
+    left-icon="{{ bar4.leftIcon }}"
+  />
+</van-panel>
 
-  <van-panel title="可关闭公告">
-    <van-noticebar
-      text="{{ bar5.text }}"
-      mode="{{ bar5.mode }}"
-    />
-  </van-panel>
-
-</doc-page>
+<van-panel title="可关闭公告">
+  <van-noticebar
+    text="{{ bar5.text }}"
+    mode="{{ bar5.mode }}"
+  />
+</van-panel>

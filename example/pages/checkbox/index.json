@@ -4,7 +4,6 @@
     "van-checkbox-group": "../../dist/checkbox-group/index",
     "van-checkbox": "../../dist/checkbox/index",
     "van-panel": "../../dist/panel/index",
-    "van-cell": "../../dist/cell/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-cell": "../../dist/cell/index"
   }
 }

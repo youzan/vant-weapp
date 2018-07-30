@@ -1,18 +1,15 @@
+<view class="van-buttons" style="margin-top: 30vh;">
+  <van-button bind:buttonclick="openActionsheet">
+    Actionsheet
+  </van-button>
+</view>
 
-<doc-page title="ACTIONSHEET">
-  <view class="van-buttons" style="margin-top: 30vh;">
-    <van-button bind:buttonclick="openActionsheet">
-      Actionsheet
-    </van-button>
-  </view>
-
-  <van-actionsheet
-    show="{{ show }}"
-    actions="{{ actions }}"
-    cancel-text="{{ cancelText }}"
-    cancel-with-mask="{{ cancelWithMask }}"
-    bind:cancel="closeActionSheet"
-    bind:actionclick="clickAction"
-    mask-class="tiny"
-  />
-</doc-page>
+<van-actionsheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="{{ cancelText }}"
+  cancel-with-mask="{{ cancelWithMask }}"
+  bind:cancel="closeActionSheet"
+  bind:actionclick="clickAction"
+  mask-class="tiny"
+/>

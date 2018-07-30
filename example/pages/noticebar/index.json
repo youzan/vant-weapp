@@ -2,7 +2,6 @@
   "navigationBarTitleText": "Noticebar 通告栏",
   "usingComponents": {
     "van-noticebar": "../../dist/noticebar/index",
-    "van-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
+    "van-panel": "../../dist/panel/index"
   }
 }

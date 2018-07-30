@@ -1,9 +1,9 @@
-<view class="zan-panel">
+<view class="van-panel">
   <view
     wx:if="{{ title }}"
-    class="zan-panel__title">{{ title }}</view>
+    class="van-panel__title">{{ title }}</view>
   <view
-    class="zan-panel__content {{ hideBorder ? 'zan-panel--without-border' : '' }}"
+    class="van-panel__content {{ hideBorder ? 'van-panel--without-border' : '' }}"
   >
     <slot></slot>
   </view>

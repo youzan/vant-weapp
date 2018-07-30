@@ -4,7 +4,7 @@
 在 json 文件中配置button组件
 ```json
 "usingComponents": {
-  "zan-button": "path/to/vant-weapp/dist/btn/index"
+  "van-button": "path/to/vant-weapp/dist/btn/index"
 }
 ```
 
@@ -12,57 +12,57 @@
 
 #### 基础用法
 ```html
-<zan-button>取消订单</zan-button>
+<van-button>取消订单</van-button>
 ```
 
 #### 按钮类型
 按钮支持额外的三种类型 primary, danger, warn
 ```html
-<zan-button type="primary">确认付款</zan-button>
-<zan-button type="danger">确认付款</zan-button>
-<zan-button type="warn">确认付款</zan-button>
+<van-button type="primary">确认付款</van-button>
+<van-button type="danger">确认付款</van-button>
+<van-button type="warn">确认付款</van-button>
 ```
 
 #### 按钮大小
 按钮支持额外三种大小 large, small, mini
 ```html
-<zan-button size="large">确认付款</zan-button>
-<zan-button size="small">取消订单</zan-button>
-<zan-button size="mini">确认付款</zan-button>
+<van-button size="large">确认付款</van-button>
+<van-button size="small">取消订单</van-button>
+<van-button size="mini">确认付款</van-button>
 ```
 
 #### 其他
 按钮镂空状态
 ```html
-<zan-button plain>确认付款</zan-button>
+<van-button plain>确认付款</van-button>
 ```
 
 按钮加载状态
 ```html
-<zan-button loading>确认付款</zan-button>
+<van-button loading>确认付款</van-button>
 ```
 
 按钮禁用状态
 ```html
-<zan-button disabled>确认付款</zan-button>
+<van-button disabled>确认付款</van-button>
 ```
 
 ### 配合 button-group 使用
-通过配合 zan-button-group 使用，可以让按钮之间自动有合适的间距出现，使用方式如下
+通过配合 van-button-group 使用，可以让按钮之间自动有合适的间距出现，使用方式如下
 
 1.在 json 文件中配置 button-group 组件
 ```json
 "usingComponents": {
-  "zan-button": "path/to/vant-weapp/dist/btn/index",
-  "zan-button-group": "path/to/vant-weapp/dist/btn-group/index"
+  "van-button": "path/to/vant-weapp/dist/btn/index",
+  "van-button-group": "path/to/vant-weapp/dist/btn-group/index"
 }
 ```
 2.在 wxml 中直接引入
 ```html
-<zan-button-group>
-  <zan-button>确认付款</zan-button>
-  <zan-button>再考虑下</zan-button>
-</zan-button-group>
+<van-button-group>
+  <van-button>确认付款</van-button>
+  <van-button>再考虑下</van-button>
+</van-button-group>
 ```
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)

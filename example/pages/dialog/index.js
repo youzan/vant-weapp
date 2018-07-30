@@ -6,7 +6,7 @@ Page({
     Dialog({
       title: '弹窗',
       message: '这是一个模态弹窗\n换行',
-      selector: '#zan-base-dialog',
+      selector: '#van-base-dialog',
       showCancelButton: true
     }).then(() => {
       console.log('=== dialog resolve ===', 'type: confirm');
@@ -18,7 +18,7 @@ Page({
   toggleWithoutTitleDialog() {
     Dialog({
       message: '这是一个模态弹窗',
-      selector: '#zan-no-title-dialog'
+      selector: '#van-no-title-dialog'
     }).then(() => {
       console.log('=== dialog ===', 'type: confirm');
     });
@@ -28,7 +28,7 @@ Page({
     Dialog({
       title: '弹窗',
       message: '这是一个模态弹窗',
-      selector: '#zan-button-dialog',
+      selector: '#van-button-dialog',
       buttons: [{
         text: '现金支付',
         color: 'red',
@@ -54,7 +54,7 @@ Page({
     Dialog({
       title: '弹窗',
       message: '这是一个模态弹窗',
-      selector: '#zan-vertical-dialog',
+      selector: '#van-vertical-dialog',
       buttonsShowVertical: true,
       buttons: [{
         text: '现金支付',
@@ -81,7 +81,7 @@ Page({
     Dialog({
       title: '弹窗',
       message: '获取用户数据',
-      selector: '#zan-open-dialog',
+      selector: '#van-open-dialog',
       buttons: [{
         text: '用户信息',
         type: 'userInfo',
@@ -115,17 +115,17 @@ Page({
     Dialog({
       title: '弹窗',
       message: '这是一个自由控制关闭的弹窗',
-      selector: '#zan-close-dialog',
+      selector: '#van-close-dialog',
       autoClose: false
     }).then(() => {
       console.log('=== dialog resolve ===', 'type: confirm');
       Toast.loading({
-        selector: '#zan-toast'
+        selector: '#van-toast'
       });
 
       // 2s 后自动关闭弹窗
       setTimeout(() => {
-        Dialog.close({ selector: '#zan-close-dialog' });
+        Dialog.close({ selector: '#van-close-dialog' });
         Toast.clear();
       }, 2000);
     });

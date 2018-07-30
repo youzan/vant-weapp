@@ -1,1 +1,1 @@
-<view class="row-class zan-row"><slot></slot></view>
+<view class="row-class van-row"><slot></slot></view>

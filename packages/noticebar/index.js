@@ -86,7 +86,7 @@ Component({
     _init() {
       wx.createSelectorQuery()
         .in(this)
-        .select('.zan-noticebar__content')
+        .select('.van-noticebar__content')
         .boundingClientRect((rect) => {
           if (!rect || !rect.width) {
             return;
@@ -97,7 +97,7 @@ Component({
 
           wx.createSelectorQuery()
             .in(this)
-            .select('.zan-noticebar__content-wrap')
+            .select('.van-noticebar__content-wrap')
             .boundingClientRect((rect) => {
               if (!rect || !rect.width) {
                 return;

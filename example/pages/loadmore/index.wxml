@@ -1,11 +1,11 @@
 <doc-page title="LOADMORE" without-padding>
-  <zan-panel title="nodata">
-    <zan-loadmore type="text"></zan-loadmore>
-  </zan-panel>
-  <zan-panel title="loading">
-    <zan-loadmore type="loading"></zan-loadmore>
-  </zan-panel>
-  <zan-panel title="text">
-      <zan-loadmore type="text" text="暂无数据"></zan-loadmore>
-  </zan-panel>
+  <van-panel title="nodata">
+    <van-loadmore type="text"></van-loadmore>
+  </van-panel>
+  <van-panel title="loading">
+    <van-loadmore type="loading"></van-loadmore>
+  </van-panel>
+  <van-panel title="text">
+      <van-loadmore type="text" text="暂无数据"></van-loadmore>
+  </van-panel>
 </doc-page>

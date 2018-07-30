@@ -89,7 +89,7 @@ Component({
     _init: function _init() {
       var _this = this;
 
-      wx.createSelectorQuery().in(this).select('.zan-noticebar__content').boundingClientRect(function (rect) {
+      wx.createSelectorQuery().in(this).select('.van-noticebar__content').boundingClientRect(function (rect) {
         if (!rect || !rect.width) {
           return;
         }
@@ -97,7 +97,7 @@ Component({
           width: rect.width
         });
 
-        wx.createSelectorQuery().in(_this).select('.zan-noticebar__content-wrap').boundingClientRect(function (rect) {
+        wx.createSelectorQuery().in(_this).select('.van-noticebar__content-wrap').boundingClientRect(function (rect) {
           if (!rect || !rect.width) {
             return;
           }

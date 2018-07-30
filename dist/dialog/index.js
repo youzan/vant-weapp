@@ -15,7 +15,7 @@ Component({
     // 内容
     message: ' ',
     // 选择节点
-    selector: '#zan-dialog',
+    selector: '#van-dialog',
     // 按钮是否展示为纵向
     buttonsShowVertical: false,
     // 是否展示确定

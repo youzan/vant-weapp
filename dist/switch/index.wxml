@@ -1,12 +1,12 @@
 <view
-  class="custom-class theme-class zan-switch zan-switch--{{ checked ? 'on' : 'off' }} {{ disabled ? 'zan-swtich--disabled' : '' }}"
+  class="custom-class theme-class van-switch van-switch--{{ checked ? 'on' : 'off' }} {{ disabled ? 'van-swtich--disabled' : '' }}"
   checked="{{ checked }}"
   loading="{{ loading }}"
   disabled="{{ disabled }}"
   bindtap="handleZanSwitchChange"
 >
-  <view class="zan-switch__circle">
-    <view hidden="{{ !loading }}" class="zan-switch__loading"></view>
+  <view class="van-switch__circle">
+    <view hidden="{{ !loading }}" class="van-switch__loading"></view>
   </view>
-  <view class="zan-switch__bg"></view>
+  <view class="van-switch__bg"></view>
 </view>

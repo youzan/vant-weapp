@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-capsule": "path/to/vant-weapp/dist/capsule/index"
+    "van-capsule": "path/to/vant-weapp/dist/capsule/index"
   }
 }
 ```
@@ -13,7 +13,7 @@
 ### 代码演示
 Panel 提供了一块白色的展示区域，使用方式如下
 ```html
-<zan-capsule color="#38f" leftText="1折扣" rightText="限购一份" />
+<van-capsule color="#38f" leftText="1折扣" rightText="限购一份" />
 ```
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|

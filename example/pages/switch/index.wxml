@@ -1,27 +1,27 @@
 <doc-page title="SWITCH" without-padding>
 
-  <zan-panel title='同步开关'>
-    <zan-cell>
-      <zan-switch checked="{{sync.checked}}" bind:change="syncChange" />
-    </zan-cell>
-  </zan-panel>
+  <van-panel title='同步开关'>
+    <van-cell>
+      <van-switch checked="{{sync.checked}}" bind:change="syncChange" />
+    </van-cell>
+  </van-panel>
 
-  <zan-panel title='异步开关'>
-    <zan-cell>
-      <zan-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
-    </zan-cell>
-  </zan-panel>
+  <van-panel title='异步开关'>
+    <van-cell>
+      <van-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
+    </van-cell>
+  </van-panel>
 
-  <zan-panel title='禁止改动的开关'>
-    <zan-cell>
-      <zan-switch disabled="{{ false }}" />
-    </zan-cell>
-  </zan-panel>
+  <van-panel title='禁止改动的开关'>
+    <van-cell>
+      <van-switch disabled="{{ false }}" />
+    </van-cell>
+  </van-panel>
 
-  <zan-panel title='自定义高亮样式'>
-    <zan-cell>
-      <zan-switch theme-class="switch-theme" disabled="{{ false }}" checked/>
-    </zan-cell>
-  </zan-panel>
+  <van-panel title='自定义高亮样式'>
+    <van-cell>
+      <van-switch theme-class="switch-theme" disabled="{{ false }}" checked/>
+    </van-cell>
+  </van-panel>
 
 </doc-page>

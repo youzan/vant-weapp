@@ -5,36 +5,36 @@
 ```json
 {
   "usingComponents": {
-    "zan-popup": "path/to/vant-weapp/dist/popup/index"
+    "van-popup": "path/to/vant-weapp/dist/popup/index"
   }
 }
 ```
 
 ### 代码演示
-可以在页面任意位置上使用 zan-popup 标签。通过 show 可以控制弹窗是否展示
+可以在页面任意位置上使用 van-popup 标签。通过 show 可以控制弹窗是否展示
 ```html
-<zan-popup show="{{ show }}"></zan-popup>
+<van-popup show="{{ show }}"></van-popup>
 ```
 #### popup 动画
 popup 额外支持了 上下左右 四种动画方式，通过增加 type 属性即可控制。使用方式如下
 ```html
 <!-- 从底部弹出的弹层 -->
-<zan-popup type="bottom" show="{{ show }}"></zan-popup>
+<van-popup type="bottom" show="{{ show }}"></van-popup>
 
 <!-- 从顶部弹出的弹层 -->
-<zan-popup type="top" show="{{ show }}"></zan-popup>
+<van-popup type="top" show="{{ show }}"></van-popup>
 
 <!-- 从左侧弹出的弹层 -->
-<zan-popup type="left" show="{{ show }}"></zan-popup>
+<van-popup type="left" show="{{ show }}"></van-popup>
 
 <!-- 从右侧弹出的弹层 -->
-<zan-popup type="right" show="{{ show }}"></zan-popup>
+<van-popup type="right" show="{{ show }}"></van-popup>
 ```
 
 #### 控制显示，隐藏
 
 ```html
-<zan-popup show="{{ isShow }}" bindclose="togglePopup"></zan-popup>
+<van-popup show="{{ isShow }}" bindclose="togglePopup"></van-popup>
 ```
 
 ```js

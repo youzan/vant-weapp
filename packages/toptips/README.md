@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-toptips": "path/to/vant-weapp/dist/toptips/index"
+    "van-toptips": "path/to/vant-weapp/dist/toptips/index"
   }
 }
 ```
@@ -29,7 +29,7 @@ Page({
 })
 
 // 使用命令式调用的方式，必须在 wxml 模板中声明组件id，
-// 默认我们使用了 zan-toptips， 如果使用者要更换，可以手动传入
+// 默认我们使用了 van-toptips， 如果使用者要更换，可以手动传入
 // 注意和 usingComponents 里引用的路径不一样
 const Toptips = require('path/to/vant-weapp/dist/toptips/toptips');
 Page({
@@ -78,7 +78,7 @@ Page({
 })
 ```
 ```html
-<zan-toptips
+<van-toptips
   content="tip内容"
   duration="{{ duration }}"
   is-show="{{ $vant.toptips.show }}"
@@ -94,8 +94,8 @@ Page({
 })
 ```
 ```html
-<zan-toptips
-  id="zan-toptips"
+<van-toptips
+  id="van-toptips"
   contetn="{{ content }}"
 />
 ```
@@ -113,7 +113,7 @@ Page({
 })
 ```
 ```html
-<zan-toptips
+<van-toptips
   id="other-id"
   contetn="{{ content }}"
 />

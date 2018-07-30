@@ -1,7 +1,7 @@
 @import '../common/_var';
 @import "../common/_mixins";
 
-.zan-tag {
+.van-tag {
   display: inline-block;
   position: relative;
   box-sizing: border-box;
@@ -20,13 +20,13 @@
   }
 }
 
-.zan-tag--plain {
+.van-tag--plain {
   color: $gray;
   background: $white;
 }
 
 /* 各种主题代码 */
-.zan-tag--primary {
+.van-tag--primary {
   color: $button-primary-color;
   background-color: $button-primary-background-color;
 
@@ -35,13 +35,13 @@
   }
 
   /* 空心形式 */
-  &.zan-tag--plain {
+  &.van-tag--plain {
     color: $button-primary-background-color;
     background: $white;
   }
 }
 
-.zan-tag--danger {
+.van-tag--danger {
   color: $button-danger-color;
   background: $button-danger-background-color;
 
@@ -50,13 +50,13 @@
   }
 
   /* 空心形式 */
-  &.zan-tag--plain {
+  &.van-tag--plain {
     color: $button-danger-background-color;
     background: $button-danger-color;
   }
 }
 
-.zan-tag--warn {
+.van-tag--warn {
   color: $white;
   background: #f85;
 
@@ -65,7 +65,7 @@
   }
 
   /* 空心形式 */
-  &.zan-tag--plain {
+  &.van-tag--plain {
     color: #f85;
     background: $white;
   }
@@ -73,7 +73,7 @@
 
 
 /* disabled tag */
-.zan-tag--disabled {
+.van-tag--disabled {
   color: $button-disabled-color !important;
   background: $button-disabled-background-color;
 

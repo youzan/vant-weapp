@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "zan-icon": "../icon/index",
-    "zan-cell": "../cell/index"
+    "van-icon": "../icon/index",
+    "van-cell": "../cell/index"
   }
 }

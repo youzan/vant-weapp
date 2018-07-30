@@ -10,7 +10,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-steps": "path/to/vant-weapp/dist/steps/index"
+    "van-steps": "path/to/vant-weapp/dist/steps/index"
   }
 }
 ```
@@ -20,13 +20,13 @@
 #### 基础用法
 
 ```html
-<zan-steps type="horizon" steps="{{steps}}"></zan-steps>
+<van-steps type="horizon" steps="{{steps}}"></van-steps>
 ```
 
 #### 2步完成
 
 ```html
-<zan-steps type="horizon" steps="{{steps}}"></zan-steps>
+<van-steps type="horizon" steps="{{steps}}"></van-steps>
 ```
 
 ```js
@@ -49,25 +49,25 @@ steps: [
 #### 有描述的steps
 
 ```html
-<zan-steps type="horizon" hasDesc steps="{{steps}}"></zan-steps>
+<van-steps type="horizon" hasDesc steps="{{steps}}"></van-steps>
 ```
 
 #### 垂直方向的steps
 
 ```html
-<zan-steps type="vertical" steps="{{steps}}"></zan-steps>
+<van-steps type="vertical" steps="{{steps}}"></van-steps>
 ```
 
 #### 自定义 class
 
 ```html
-<zan-steps
+<van-steps
   steps-class="my-class"
   icon-class="gray"
   title-class="white"
   type="horizon"
   steps="{{steps}}"
-></zan-steps>
+></van-steps>
 ```
 
 

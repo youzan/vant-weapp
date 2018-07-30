@@ -6,7 +6,7 @@
   flex-direction: row;
   background: transparent;
 }
-.loading-example zan-loading {
+.loading-example van-loading {
   flex: 1;
 }
 .no-flex {

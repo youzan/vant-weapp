@@ -1,8 +1,8 @@
 <doc-page title="DATETIME PICKER" without-padding>
-  <zan-panel class="picker-panel-demo">
-    <zan-cell-group>
-      <zan-cell title="选择时间">
-        <zan-date-picker
+  <van-panel class="picker-panel-demo">
+    <van-cell-group>
+      <van-cell title="选择时间">
+        <van-date-picker
           slot="footer"
           date="{{ date }}"
           bindchange="change"  
@@ -10,49 +10,49 @@
           placeholder="异步初始值"
           placeholder-class="my-customer-class-name"
         />
-      </zan-cell>
+      </van-cell>
 
-      <zan-cell title="选择时间">
-        <zan-date-picker
+      <van-cell title="选择时间">
+        <van-date-picker
           slot="footer"
           not-use="{{['years', 'seconds']}}"
           bindchange="change"  
           bindcancel="cancel"
           placeholder="只显示部分列的 picker"
         />
-      </zan-cell>
+      </van-cell>
 
-      <zan-cell title="选择时间">
-        <zan-date-picker
+      <van-cell title="选择时间">
+        <van-date-picker
           slot="footer"
           bindchange="change"  
           bindcancel="cancel"
           placeholder="自定义显示格式的 picker"
           format="选择的是YYYY-MM-DD HH:mm:ss"
         />
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+      </van-cell>
+    </van-cell-group>
+  </van-panel>
 
 
-  <zan-panel class="picker-panel-demo">
-    <zan-cell title="选择时间" value="{{pickerView1 || '自定义组件'}}"></zan-cell>
-    <zan-date-picker
+  <van-panel class="picker-panel-demo">
+    <van-cell title="选择时间" value="{{pickerView1 || '自定义组件'}}"></van-cell>
+    <van-date-picker
       picker-view
       bindchange="customChange"  
       bindcancel="cancel"
     />
-  </zan-panel>
+  </van-panel>
 
-  <zan-panel class="picker-panel-demo">
-    <zan-cell title="选择时间" value="{{ pickerView2 || '只显示部分列'}}"></zan-cell>
-    <zan-date-picker
+  <van-panel class="picker-panel-demo">
+    <van-cell title="选择时间" value="{{ pickerView2 || '只显示部分列'}}"></van-cell>
+    <van-date-picker
       picker-view
       bindchange="nativeChange"
       bindcancel="cancel"
       not-use="{{['years', 'seconds']}}"
     />
-  </zan-panel>
+  </van-panel>
 
 </doc-page>
 

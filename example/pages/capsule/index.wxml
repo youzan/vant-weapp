@@ -1,15 +1,15 @@
 <doc-page title="CAPSULE" without-padding>
 
-  <zan-panel title='基本用法'>
+  <van-panel title='基本用法'>
     <view class="capsule-demo">
-      <zan-capsule leftText="折扣" rightText="限购一份" />
-      <zan-capsule type="danger" leftText="折扣" rightText="限购一份" />
+      <van-capsule leftText="折扣" rightText="限购一份" />
+      <van-capsule type="danger" leftText="折扣" rightText="限购一份" />
     </view>
-  </zan-panel>
+  </van-panel>
 
-  <zan-panel title='自定义颜色'>
+  <van-panel title='自定义颜色'>
     <view class="capsule-demo">
-      <zan-capsule color="#38f" leftText="折扣" rightText="限购一份" />
+      <van-capsule color="#38f" leftText="折扣" rightText="限购一份" />
     </view>
-  </zan-panel>
+  </van-panel>
 </doc-page>

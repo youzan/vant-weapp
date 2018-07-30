@@ -5,7 +5,7 @@
   <view class="tree-select__nav">
     <view
       wx:for="{{ items }}"
-      class="tree-select__nitem zan-ellipsis {{ mainActiveIndex === index ? 'tree-select__nitem--active' : '' }}"
+      class="tree-select__nitem van-ellipsis {{ mainActiveIndex === index ? 'tree-select__nitem--active' : '' }}"
       data-index="{{ index }}"
       bindtap="handleNavClick"
     >
@@ -19,16 +19,16 @@
     <view
       wx:for="{{ subItems }}"
       wx:key="id"
-      class="tree-select__item zan-ellipsis {{ activeId === item.id ? 'tree-select__item--active' : '' }}"
+      class="tree-select__item van-ellipsis {{ activeId === item.id ? 'tree-select__item--active' : '' }}"
       data-item="{{ item }}"
       bindtap="onItemSelect"
     >
       {{ item.text }}
-      <zan-icon
+      <van-icon
         wx:if="{{ activeId === item.id }}"
         type="success"
         class="tree-select__selected"
-      ></zan-icon>
+      ></van-icon>
     </view>
   </view>
 </view>

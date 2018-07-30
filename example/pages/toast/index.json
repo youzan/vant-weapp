@@ -1,8 +1,8 @@
 {
   "navigationBarTitleText": "Toast 轻提示",
   "usingComponents": {
-    "zan-button": "../../dist/btn/index",
-    "zan-button-group": "../../dist/btn-group/index",
-    "zan-toast": "../../dist/toast/index"
+    "van-button": "../../dist/btn/index",
+    "van-button-group": "../../dist/btn-group/index",
+    "van-toast": "../../dist/toast/index"
   }
 }

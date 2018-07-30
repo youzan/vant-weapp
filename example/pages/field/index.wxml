@@ -1,66 +1,66 @@
 <doc-page title="Field" without-padding>
   <!-- Field 基础用法 -->
-  <zan-panel title="基础用法">
-    <zan-cell-group>
-      <zan-field
+  <van-panel title="基础用法">
+    <van-cell-group>
+      <van-field
         title="{{ config.base.name.title }}"
         placeholder="{{ config.base.name.placeholder }}"
         focus="{{ config.base.name.focus }}"
         value="{{ value }}"
       >
-      </zan-field>
-      <zan-field
+      </van-field>
+      <van-field
         title="{{ config.base.tel.title }}"
         placeholder="{{ config.base.tel.placeholder }}"
         error="{{ config.base.tel.error }}"
         input-type="{{ config.base.tel.inputType }}"
       >
-      </zan-field>
-      <zan-field
+      </van-field>
+      <van-field
         title="{{ config.base.address.title }}"
         type="{{ config.base.address.type }}"
         placeholder="{{ config.base.address.placeholder }}"
         maxlength="50"
       >
-      </zan-field>
-      <zan-field
+      </van-field>
+      <van-field
         title="{{ config.base.disabled.title }}"
         value="{{ config.base.disabled.value }}"
         disabled="{{ config.base.disabled.disabled }}"
       >
-      </zan-field>
-    </zan-cell-group>
-  </zan-panel>
+      </van-field>
+    </van-cell-group>
+  </van-panel>
   
-  <zan-button-group>
-    <zan-button type="primary" bind:btnclick="clearInput">清除输入</zan-button>
-  </zan-button-group>
+  <van-button-group>
+    <van-button type="primary" bind:btnclick="clearInput">清除输入</van-button>
+  </van-button-group>
 
   <!-- 去除标题后的输入框样式 -->
-  <zan-panel title="无标题输入框">
-    <zan-field
+  <van-panel title="无标题输入框">
+    <van-field
       placeholder="{{ config.notitle.placeholder }}"
       value="{{ textareaValue }}"
     >
-    </zan-field>
-  </zan-panel>
+    </van-field>
+  </van-panel>
 
-  <zan-button-group>
-    <zan-button type="primary" bind:btnclick="clearTextarea">清除输入</zan-button>
-  </zan-button-group>
+  <van-button-group>
+    <van-button type="primary" bind:btnclick="clearTextarea">清除输入</van-button>
+  </van-button-group>
 
   <!-- 使用 Field 圆角样式 -->
-  <zan-panel title="圆角输入框">
-    <zan-field
+  <van-panel title="圆角输入框">
+    <van-field
       title="{{ config.radius.totalPrice.title }}"
       type="{{ config.radius.totalPrice.type }}"
       placeholder="{{ config.radius.totalPrice.placeholder }}"
       right="{{ config.radius.totalPrice.right }}"
       mode="{{ config.radius.totalPrice.mode }}"
     >
-    </zan-field>
-    <zan-field
-      class="zan-field--radius"
+    </van-field>
+    <van-field
+      class="van-field--radius"
       title="{{ config.radius.excludePrice.title }}"
       type="{{ config.radius.excludePrice.type }}"
       placeholder="{{ config.radius.excludePrice.placeholder }}"
@@ -68,29 +68,29 @@
       mode="{{ config.radius.excludePrice.mode }}"
       error="{{ config.radius.excludePrice.error }}"
     >
-    </zan-field>
-    <zan-field
+    </van-field>
+    <van-field
       placeholder="{{ config.radius.notitle.placeholder }}"
       mode="{{ config.radius.notitle.mode }}"
       input-type="{{ config.radius.notitle.inputTitle }}"
     >
-    </zan-field>
-  </zan-panel>
+    </van-field>
+  </van-panel>
 
-  <zan-panel title="Form 表单中的field应用">
+  <van-panel title="Form 表单中的field应用">
     <form bindsubmit="formSubmit" bindreset="formReset">
-      <zan-field
+      <van-field
         name="{{ config.form.name.name }}"
         placeholder="{{ config.form.name.placeholder }}"
       >
-      </zan-field>
-      <zan-field
+      </van-field>
+      <van-field
         name="{{ config.form.tel.name }}"
         placeholder="{{ config.form.tel.placeholder }}"
         input-type="{{ config.form.tel.inputType }}"
       >
-      </zan-field>
+      </van-field>
       <button type="primary" form-type="submit">提交表单</button>
     </form>
-  </zan-panel>
+  </van-panel>
 </doc-page>

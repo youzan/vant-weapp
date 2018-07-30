@@ -1,21 +1,21 @@
 <doc-page title="Stepper" without-padding>
-  <zan-panel title="基础用法">
+  <van-panel title="基础用法">
     <view style="padding: 40px 15px">
-      <zan-stepper
+      <van-stepper
         stepper="{{ stepper1.stepper }}"
         min="{{ stepper1.min }}"
         data-component-id="stepper1"
         bind:change="handleZanStepperChange"
       >
-      </zan-stepper>
+      </van-stepper>
     </view>
-  </zan-panel>
+  </van-panel>
 
   <!-- small size -->
-  <zan-panel title="不同尺寸-小尺寸类型">
+  <van-panel title="不同尺寸-小尺寸类型">
     <view style="padding: 40px 15px">
       <view style="margin-bottom: 5px">small:</view>
-      <zan-stepper
+      <van-stepper
         stepper="{{ stepper2.stepper }}"
         min="{{ stepper2.min }}"
         max="{{ stepper2.max }}"
@@ -23,32 +23,32 @@
         data-component-id="stepper2"
         bind:change="handleZanStepperChange"
 
-      ></zan-stepper>
+      ></van-stepper>
 
       <view style="margin: 10px 0 5px;">middle:</view>
-      <zan-stepper
+      <van-stepper
         stepper="{{ stepper2.stepper }}"
         min="{{ stepper2.min }}"
         max="{{ stepper2.max }}"
         data-component-id="stepper2-1"
         bind:change="handleZanStepperChange"
-      ></zan-stepper>
+      ></van-stepper>
 
       <view style="margin: 10px 0 5px;">large:</view>
-      <zan-stepper
+      <van-stepper
         stepper="{{ stepper2.stepper }}"
         min="{{ stepper2.min }}"
         max="{{ stepper2.max }}"
         size="large"
         data-component-id="stepper2-2"
         bind:change="handleZanStepperChange"
-      ></zan-stepper>
+      ></van-stepper>
     </view>
-  </zan-panel>
+  </van-panel>
 
-  <zan-panel title="高级用法-每次变动数量自定义">
+  <van-panel title="高级用法-每次变动数量自定义">
     <view style="padding: 40px 15px">
-      <zan-stepper
+      <van-stepper
         stepper="{{ stepper3.stepper }}"
         min="{{ stepper3.min }}"
         max="{{ stepper3.max }}"
@@ -56,7 +56,7 @@
         data-component-id="stepper3"
         bind:change="handleZanStepperChange"
       >
-      </zan-stepper>
+      </van-stepper>
     </view>
-  </zan-panel>
+  </van-panel>
 </doc-page>

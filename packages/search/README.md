@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-search": "/packages/search/index"
+    "van-search": "/packages/search/index"
   }
 }
 ```
@@ -13,7 +13,7 @@
 ### 代码演示
 
 ```wxml
-<zan-search
+<van-search
   placeholder="搜索..."
   keyword="{{ inputValue }}"
   placeholder="搜索商品"

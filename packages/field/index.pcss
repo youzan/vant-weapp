@@ -1,27 +1,27 @@
 @import "../common/_mixins";
 
-.zan-field {
+.van-field {
   display: block;
   position: relative;
   color: #333;
 }
 
-.zan-field::after {
+.van-field::after {
   @mixin hairline;
   border-bottom-width: 1px;
   left: 15px;
   right: 0;
 }
 
-.zan-field--no-border::after {
+.van-field--no-border::after {
   border-bottom-width: 0;
 }
 
-.zan-cell--field {
+.van-cell--field {
   padding: 7px 15px;
 }
 
-.zan-field--wrapped {
+.van-field--wrapped {
   margin: 10px 15px;
   background-color: #fff;
 
@@ -33,26 +33,26 @@
 }
 
 /* 圆角输入框，强制展示边框 */
-.zan-field--wrapped::after {
+.van-field--wrapped::after {
   display: block;
 }
 
-.zan-field--error {
+.van-field--error {
   color: #f40;
 }
 
 /* 圆角输入框出现错误时，将边框也置红 */
-.zan-field--wrapped.zan-field--error::after  {
+.van-field--wrapped.van-field--error::after  {
   border-color: #f40;
 }
 
-.zan-field__title {
+.van-field__title {
   color: #333;
   min-width: 65px;
   padding-right: 10px;
 }
 
-.zan-field__input {
+.van-field__input {
   flex: 1;
   line-height: 1.6;
   padding: 4px 0;
@@ -61,10 +61,10 @@
   font-size: 14px;
 }
 
-.zan-field__placeholder {
+.van-field__placeholder {
   font-size: 14px;
 }
 
-.zan-field__input--right {
+.van-field__input--right {
   text-align: right;
 }

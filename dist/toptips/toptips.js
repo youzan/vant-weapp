@@ -6,7 +6,7 @@ function Toptips() {
   var pages = getCurrentPages();
   var ctx = pages[pages.length - 1];
   var defaultOptions = {
-    selector: '#zan-toptips',
+    selector: '#van-toptips',
     duration: 3000
   };
 

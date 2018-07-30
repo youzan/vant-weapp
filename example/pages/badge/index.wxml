@@ -1,25 +1,25 @@
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom zan-hairline--bottom">BADGE</view>
+  <view class="doc-title van-hairline--bottom van-hairline--bottom">BADGE</view>
 
   <view class="demo">
     <view class="demo__item">
       <view class="demo__icon">
-        <zan-badge>9</zan-badge>
+        <van-badge>9</van-badge>
       </view>
     </view>
     <view class="demo__item">
       <view class="demo__icon">
-        <zan-badge>19</zan-badge>
+        <van-badge>19</van-badge>
       </view>
     </view>
     <view class="demo__item">
       <view class="demo__icon">
-        <zan-badge
+        <van-badge
           background-color="#4b0"
           box-shadow="none"
           font-size="{{ 12 }}"
-        >99+</zan-badge>
+        >99+</van-badge>
       </view>
     </view>
   </view>

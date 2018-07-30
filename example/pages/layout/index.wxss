@@ -1,4 +1,4 @@
-.custom-zan-col {
+.custom-van-col {
   line-height: 30px;
   text-align: center;
   background-color: #39a9ed;
@@ -6,6 +6,6 @@
   color: #fff;
 }
 
-.custom-zan-col:nth-child(even) {
+.custom-van-col:nth-child(even) {
   background-color: #66c6f2;
 }

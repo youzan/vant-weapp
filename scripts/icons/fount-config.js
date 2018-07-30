@@ -6,7 +6,7 @@ module.exports = {
     license: 'MIT',
     license_url: 'https://opensource.org/licenses/MIT',
     homepage: 'http://github.com/youzan',
-    css_prefix_text: 'zan-icon-',
+    css_prefix_text: 'van-icon-',
     filename_hash: true
   },
   hinting: true,

@@ -1,7 +1,7 @@
 @import "../common/_mixins";
 
 /* 基础样式 */
-.zan-dialog--container {
+.van-dialog--container {
   width: 80vw;
   font-size: 16px;
   overflow: hidden;
@@ -11,12 +11,12 @@
 }
 
 /* 弹出层内容 */
-.zan-dialog__header {
+.van-dialog__header {
   padding: 15px 0 0;
   text-align: center;
 }
 
-.zan-dialog__content {
+.van-dialog__content {
   position: relative;
   padding: 15px 20px;
   line-height: 1.5;
@@ -29,20 +29,20 @@
 }
 
 /* 在有标题时，需要减弱内容的存在感 */
-.zan-dialog__content--title {
+.van-dialog__content--title {
   color: #999;
   font-size: 14px;
 }
 
-.zan-dialog__footer {
+.van-dialog__footer {
   overflow: hidden;
 }
 
-.zan-dialog__button {
+.van-dialog__button {
   flex: 1;
 }
 
-.zan-dialog__button-inside, .zan-dialog__button-inside--first {
+.van-dialog__button-inside, .van-dialog__button-inside--first {
   margin-bottom: 0;
   line-height: 50px;
   height: 50px;
@@ -54,17 +54,17 @@
 }
 
 /* 水平/垂直布局 */
-.zan-dialog__footer--horizon {
+.van-dialog__footer--horizon {
   display: flex;
 }
 
-.zan-dialog__footer--horizon .zan-dialog__button-inside {
+.van-dialog__footer--horizon .van-dialog__button-inside {
   &::after {
     border-left-width: 1px;
   }
 }
 
-.zan-dialog__footer--vertical .zan-dialog__button-inside {
+.van-dialog__footer--vertical .van-dialog__button-inside {
   &::after {
     border-top-width: 1px;
   }

@@ -2,6 +2,6 @@
   "component": true,
   "usingComponents": {
     "pop-manager": "../common/pop-manager/index",
-    "zan-button": "../btn/index"
+    "van-button": "../btn/index"
   } 
 }

@@ -1,66 +1,66 @@
 <doc-page title="STEPS" without-padding>
-  <zan-panel title="基础用法">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps2}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps3}}"></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+  <van-panel title="基础用法">
+    <van-cell-group>
+      <van-cell>
+        <van-steps type="horizon" steps="{{steps}}"></van-steps>
+      </van-cell>
+      <van-cell>
+        <van-steps type="horizon" steps="{{steps2}}"></van-steps>
+      </van-cell>
+      <van-cell>
+        <van-steps type="horizon" steps="{{steps3}}"></van-steps>
+      </van-cell>
+    </van-cell-group>
+  </van-panel>
 
-  <zan-panel title="2步完成">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps4}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps5}}"></zan-steps>
-      </zan-cell>
-      </zan-cell-group>
-  </zan-panel>
+  <van-panel title="2步完成">
+    <van-cell-group>
+      <van-cell>
+        <van-steps type="horizon" steps="{{steps4}}"></van-steps>
+      </van-cell>
+      <van-cell>
+        <van-steps type="horizon" steps="{{steps5}}"></van-steps>
+      </van-cell>
+      </van-cell-group>
+  </van-panel>
 
-  <zan-panel title="有描述的steps">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="horizon" hasDesc steps="{{steps}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" hasDesc steps="{{steps2}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" hasDesc steps="{{steps3}}"></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+  <van-panel title="有描述的steps">
+    <van-cell-group>
+      <van-cell>
+        <van-steps type="horizon" hasDesc steps="{{steps}}"></van-steps>
+      </van-cell>
+      <van-cell>
+        <van-steps type="horizon" hasDesc steps="{{steps2}}"></van-steps>
+      </van-cell>
+      <van-cell>
+        <van-steps type="horizon" hasDesc steps="{{steps3}}"></van-steps>
+      </van-cell>
+    </van-cell-group>
+  </van-panel>
 
-  <zan-panel title="垂直方向的steps">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="vertical" hasDesc steps="{{steps}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="vertical" hasDesc steps="{{steps2}}"></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+  <van-panel title="垂直方向的steps">
+    <van-cell-group>
+      <van-cell>
+        <van-steps type="vertical" hasDesc steps="{{steps}}"></van-steps>
+      </van-cell>
+      <van-cell>
+        <van-steps type="vertical" hasDesc steps="{{steps2}}"></van-steps>
+      </van-cell>
+    </van-cell-group>
+  </van-panel>
 
-  <zan-panel title="自定义 class">
-    <zan-cell-group>
-      <zan-cell cell-class="gray">
-        <zan-steps
+  <van-panel title="自定义 class">
+    <van-cell-group>
+      <van-cell cell-class="gray">
+        <van-steps
           steps-class="my-class"
           icon-class="gray"
           title-class="white"
           type="horizon"
           steps="{{steps}}"
-        ></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+        ></van-steps>
+      </van-cell>
+    </van-cell-group>
+  </van-panel>
 </doc-page>
 

@@ -5,20 +5,20 @@
 ```json
 {
   "usingComponents": {
-    "zan-switch": "path/to/vant-weapp/dist/switch/index"
+    "van-switch": "path/to/vant-weapp/dist/switch/index"
   }
 }
 ```
 
 ### 代码演示
-可以在页面任意位置上使用 zan-switch 标签。
+可以在页面任意位置上使用 van-switch 标签。
 ```html
-<zan-switch
+<van-switch
   disabled="{{ disabled }}"
   checked="{{ checked }}"
   loading="{{ loading }}"
   bind:change="handleFieldChange"
-></zan-switch>
+></van-switch>
 ```
 
 ```js

@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-tab": "path/to/vant-weapp/dist/tab/index"
+    "van-tab": "path/to/vant-weapp/dist/tab/index"
   }
 }
 ```
@@ -26,9 +26,9 @@ Page({
 ```
 
 ### 代码演示
-可以在任意位置上使用 zan-tab 标签。传入对应的数据即可。
+可以在任意位置上使用 van-tab 标签。传入对应的数据即可。
 ```html
-<zan-tab
+<van-tab
   scroll="{{ scroll }}"
   list="{{ list }}"
   selected-id="{{ selectedId }}"

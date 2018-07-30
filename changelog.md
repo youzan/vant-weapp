@@ -246,7 +246,7 @@
 
 **Improvements**
 
-- 修复 zan-icon-new 展示 [\#66](https://github.com/youzan/vant-weapp/pull/66) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 van-icon-new 展示 [\#66](https://github.com/youzan/vant-weapp/pull/66) ([pangxie1991](https://github.com/pangxie1991))
 
 ## [v2.3.4](https://github.com/youzan/vant-weapp/tree/v2.3.4) (2017-11-24)
 [Full Changelog](https://github.com/youzan/vant-weapp/compare/v2.3.3...v2.3.4)

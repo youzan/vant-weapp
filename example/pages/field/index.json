@@ -1,11 +1,11 @@
 {
   "navigationBarTitleText": "Field 输入框",
   "usingComponents": {
-    "zan-button": "../../dist/btn/index",
-    "zan-button-group": "../../dist/btn-group/index",
-    "zan-cell-group": "../../dist/cell-group/index",
-    "zan-field": "../../dist/field/index",
-    "zan-panel": "../../dist/panel/index",
+    "van-button": "../../dist/btn/index",
+    "van-button-group": "../../dist/btn-group/index",
+    "van-cell-group": "../../dist/cell-group/index",
+    "van-field": "../../dist/field/index",
+    "van-panel": "../../dist/panel/index",
     "doc-page": "../../components/doc-page/index"
   }
 }

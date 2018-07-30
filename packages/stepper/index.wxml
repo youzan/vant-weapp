@@ -1,20 +1,20 @@
-<view class="zan-stepper zan-stepper--{{ size }}">
+<view class="van-stepper van-stepper--{{ size }}">
   <view
-    class="zan-stepper__minus {{ stepper <= min ? 'zan-stepper--disabled' : '' }}"
+    class="van-stepper__minus {{ stepper <= min ? 'van-stepper--disabled' : '' }}"
     data-disabled="{{ stepper <= min }}"
     bindtap="handleZanStepperMinus"
   >
     -
   </view>
   <input
-    class="zan-stepper__text {{ min >= max ? 'zan-stepper--disabled' : '' }}"
+    class="van-stepper__text {{ min >= max ? 'van-stepper--disabled' : '' }}"
     type="number"
     value="{{ stepper }}"
     disabled="{{ min >= max }}"
     bindblur="handleZanStepperBlur"
   />
   <view
-    class="zan-stepper__plus {{ stepper >= max ? 'zan-stepper--disabled' : '' }}"
+    class="van-stepper__plus {{ stepper >= max ? 'van-stepper--disabled' : '' }}"
     data-disabled="{{ stepper >= max }}"
     bindtap="handleZanStepperPlus"
   >

@@ -4,13 +4,13 @@
 在 json 文件中配置 toast 组件
 ```json
 "usingComponents": {
-  "zan-toast": "/path/to/vant-weapp/dist/toast/index"
+  "van-toast": "/path/to/vant-weapp/dist/toast/index"
 }
 ```
 
 在需要使用的页面里引入组件库模板和脚本
 ```html
-<zan-toast id="zan-toast-test"></zan-toast>
+<van-toast id="van-toast-test"></van-toast>
 ```
 ```js
 const Toast = require('path/to/vant-weapp/dist/toast/toast');
@@ -21,7 +21,7 @@ Page({
   handleClick() {
     Toast({
       message: 'toast me',
-      selector: '#zan-toast-test'
+      selector: '#van-toast-test'
     });
   }
 });
@@ -30,7 +30,7 @@ Page({
 #### 加载提示
 ```js
 Toast.loading({
-  selector: '#zan-toast-test'
+  selector: '#van-toast-test'
 });
 ```
 

@@ -1,4 +1,4 @@
-.zan-radio {
+.van-radio {
     display: block;
     padding: 0 10px;
     font-size: 14px;
@@ -17,7 +17,7 @@
         display: block;
         padding: 10px 10px 10px 0;
         border-bottom: 1px solid #e5e5e5;
-        .zan-radio__icon-wrap {
+        .van-radio__icon-wrap {
             float: right;
             margin-top: 3px;
         }
@@ -30,12 +30,12 @@
         display: inline-flex;
         align-items: center;
         color: #aaa;
-        .zan-radio__origin {
+        .van-radio__origin {
             opacity: 0;
             width: 14px;
             height: 20px;
         }
-        .zan-radio__icon {
+        .van-radio__icon {
             position: absolute;
             left: 50%;
             top: 50%;
@@ -48,7 +48,7 @@
             cursor: pointer;
             box-sizing: border-box;
 
-            .zan-radio__icon-inside {
+            .van-radio__icon-inside {
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -58,15 +58,15 @@
                 border-radius: 50%;
             }
 
-            &.zan-radio--checked {
+            &.van-radio--checked {
                 border-color: #06bf04;
                 background: #06bf04;
-                .zan-radio__icon-inside {
+                .van-radio__icon-inside {
                     background-color: #fff;
                 }
             }
 
-            &.zan-radio--disabled {
+            &.van-radio--disabled {
                 opacity: .6;
             }
         }

@@ -1,7 +1,7 @@
 <doc-page title="Search" without-padding>
 
-  <zan-panel title='基本用法'>
-    <zan-search
+  <van-panel title='基本用法'>
+    <van-search
       alignLeft="{{ true }}"
       placeholder="搜索..."
       keyword="{{ inputValue }}"
@@ -10,19 +10,19 @@
       bindchange="searchChange"
       bindsearch="searchDone"
     />
-  </zan-panel>
+  </van-panel>
 
-  <zan-panel title='不可用'>
-    <zan-search
+  <van-panel title='不可用'>
+    <van-search
       alignLeft="{{ true }}"
       placeholder="搜索..."
       disabled="{{ true }}"
       placeholder="搜索商品"
     />
-  </zan-panel>
+  </van-panel>
 
-  <zan-panel title='自定义样式'>
-    <zan-search
+  <van-panel title='自定义样式'>
+    <van-search
       alignLeft="{{ true }}"
       placeholder="搜索..."
       searchStyle="height: 88rpx; padding: 0 30rpx; background: {{ searchbg || '#F2F2F2' }};"
@@ -33,10 +33,10 @@
       bindchange="searchChange"
       bindsearch="searchDone"
     />
-  </zan-panel>
+  </van-panel>
 
-  <zan-panel title='取消按钮'>
-    <zan-search
+  <van-panel title='取消按钮'>
+    <van-search
       alignLeft="{{ true }}"
       placeholder="搜索..."
       keyword="{{ inputValue }}"
@@ -47,5 +47,5 @@
       bindsearch="searchDone"
       bindcancel="handleCancel"
     />
-  </zan-panel>
+  </van-panel>
 </doc-page>

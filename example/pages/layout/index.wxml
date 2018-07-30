@@ -1,21 +1,21 @@
 <doc-page title="LAYOUT" without-padding>
 
-  <zan-panel title="基础用法">
-    <zan-row>
-      <zan-col col="8" col-class="custom-zan-col">span: 8</zan-col>
-      <zan-col col="8" col-class="custom-zan-col">span: 8</zan-col>
-      <zan-col col="8" col-class="custom-zan-col">span: 8</zan-col>
-    </zan-row>
-  </zan-panel>
+  <van-panel title="基础用法">
+    <van-row>
+      <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+      <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+      <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+    </van-row>
+  </van-panel>
 
-  <zan-panel title="利用 offset 布局">
-    <zan-row>
-      <zan-col col="4" col-class="custom-zan-col">span: 4</zan-col>
-      <zan-col col="10" offset="4" col-class="custom-zan-col">offset: 4, span: 10</zan-col>
-    </zan-row>
-    <zan-row>
-      <zan-col col="12" offset="12" col-class="custom-zan-col">offset: 12, span: 12</zan-col>
-    </zan-row>
-  </zan-panel>
+  <van-panel title="利用 offset 布局">
+    <van-row>
+      <van-col col="4" col-class="custom-van-col">span: 4</van-col>
+      <van-col col="10" offset="4" col-class="custom-van-col">offset: 4, span: 10</van-col>
+    </van-row>
+    <van-row>
+      <van-col col="12" offset="12" col-class="custom-van-col">offset: 12, span: 12</van-col>
+    </van-row>
+  </van-panel>
 
 </doc-page>

@@ -1,6 +1,6 @@
 @import "../common/_mixins";
 
-.zan-btn {
+.van-btn {
   position: relative;
   color: #333;
   background-color: #fff;
@@ -17,18 +17,18 @@
   overflow: visible;
 }
 
-.zan-btn--group {
+.van-btn--group {
   margin-bottom: 10px;
 }
 
-.zan-btn::after {
+.van-btn::after {
   @mixin hairline;
   border-width: 1px;
   border-radius: 4px;
 }
 
 /* type */
-.zan-btn--primary {
+.van-btn--primary {
   color: #fff;
   background-color: #4b0;
 
@@ -37,7 +37,7 @@
   }
 }
 
-.zan-btn--warn {
+.van-btn--warn {
   color: #fff;
   background-color: #f85;
 
@@ -46,7 +46,7 @@
   }
 }
 
-.zan-btn--danger {
+.van-btn--danger {
   color: #fff;
   background-color: #f44;
 
@@ -56,19 +56,19 @@
 }
 
 /* size */
-.zan-btn--small {
+.van-btn--small {
   display: inline-block;
   height: 30px;
   line-height: 30px;
   font-size: 12px;
   /* margin-right: 5px; */
 }
-.zan-btn--small.zan-btn--group {
+.van-btn--small.van-btn--group {
   margin-bottom: 0;
   margin-right: 5px;
 }
 
-.zan-btn--mini {
+.van-btn--mini {
   display: inline-block;
   line-height: 21px;
   height: 22px;
@@ -77,32 +77,32 @@
   padding-left: 5px;
   padding-right: 5px;
 }
-.zan-btn--mini.zan-btn--group {
+.van-btn--mini.van-btn--group {
   margin-bottom: 0;
   margin-right: 5px;
 }
 
-.zan-btn--large {
+.van-btn--large {
   border-radius: 0;
   border: none;
   line-height: 50px;
   height: 50px;
 }
-.zan-btn--large.zan-btn--group {
+.van-btn--large.van-btn--group {
   margin-bottom: 0;
 }
 
 /* plain */
-.zan-btn--plain.zan-btn {
+.van-btn--plain.van-btn {
   background-color: transparent;
 }
-.zan-btn--plain.zan-btn--primary {
+.van-btn--plain.van-btn--primary {
   color: #06BF04;
 }
-.zan-btn--plain.zan-btn--warn {
+.van-btn--plain.van-btn--warn {
   color: #FF6600;
 }
-.zan-btn--plain.zan-btn--danger {
+.van-btn--plain.van-btn--danger {
   color: #FF4444;
 }
 
@@ -112,11 +112,11 @@
 }
 
 /* loading */
-.zan-btn--loading {
+.van-btn--loading {
   color: transparent;
   opacity: 1;
 }
-.zan-btn--loading::before {
+.van-btn--loading::before {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -132,9 +132,9 @@
   animation: btn-spin 0.6s linear;
   animation-iteration-count: infinite;
 }
-.zan-btn--primary.zan-btn--loading::before,
-.zan-btn--warn.zan-btn--loading::before,
-.zan-btn--danger.zan-btn--loading::before {
+.van-btn--primary.van-btn--loading::before,
+.van-btn--warn.van-btn--loading::before,
+.van-btn--danger.van-btn--loading::before {
   border-color: #fff rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
 }
 
@@ -148,7 +148,7 @@
 }
 
 /* disabled */
-.zan-btn.zan-btn--disabled {
+.van-btn.van-btn--disabled {
   /* 防止样式被 button[disabled] 的规则覆盖，所以使用了important */
   color: #999 ! important;
   background: #f8f8f8 ! important;
@@ -162,7 +162,7 @@
 }
 
 /* :last-child */
-.zan-btn--group.zan-btn--last {
+.van-btn--group.van-btn--last {
   margin-bottom: 0;
   margin-right: 0;
 }

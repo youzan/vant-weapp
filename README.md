@@ -59,14 +59,14 @@ npm run dev
 ```json
 {
     "usingComponents": {
-        "zan-button": "/path/to/vant-weapp/dist/btn/index"
+        "van-button": "/path/to/vant-weapp/dist/btn/index"
     }
 }
 ```
 ```html
 <!-- example/btn/index.html -->
 
-<zan-button>按钮</zan-button>
+<van-button>按钮</van-button>
 ```
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)
@@ -78,12 +78,12 @@ npm run dev
 ```json
 {
     "usingComponents": {
-        "zan-toast": "/path/to/vant-weapp/dist/toast/index"
+        "van-toast": "/path/to/vant-weapp/dist/toast/index"
     }
 }
 ```
 ```html
-<zan-toast id="zan-toast-test"></zan-toast>
+<van-toast id="van-toast-test"></van-toast>
 ```
 
 将对应的 Toast 的函数引入页面，就可以直接调用来展示 Toast 了
@@ -96,7 +96,7 @@ const Toast = require('/path/to/vant-weapp/dist/toast/toast');
 Page({
   showToast() {
     Toast({
-        selector: '#zan-toast-test',
+        selector: '#van-toast-test',
         message: 'toast内容'
     });
   }

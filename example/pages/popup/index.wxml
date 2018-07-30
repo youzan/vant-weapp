@@ -1,89 +1,89 @@
 <doc-page title="POPUP">
-  <zan-button-group style="margin-top: 10vh;display: block;">
-    <zan-button class="zan-btn" bind:btnclick="togglePopup">
+  <van-button-group style="margin-top: 10vh;display: block;">
+    <van-button class="van-btn" bind:btnclick="togglePopup">
       弹出popup
-    </zan-button>
-    <zan-button class="zan-btn" bind:btnclick="toggleTopPopup">
+    </van-button>
+    <van-button class="van-btn" bind:btnclick="toggleTopPopup">
       从顶部弹出popup
-    </zan-button>
-    <zan-button class="zan-btn" bind:btnclick="toggleBottomPopup">
+    </van-button>
+    <van-button class="van-btn" bind:btnclick="toggleBottomPopup">
       从底部弹出popup
-    </zan-button>
-    <zan-button class="zan-btn" bind:btnclick="toggleLeftPopup">
+    </van-button>
+    <van-button class="van-btn" bind:btnclick="toggleLeftPopup">
       从左边弹出popup
-    </zan-button>
-    <zan-button class="zan-btn" bind:btnclick="toggleRightPopup">
+    </van-button>
+    <van-button class="van-btn" bind:btnclick="toggleRightPopup">
       从右边弹出popup
-    </zan-button>
-  </zan-button-group>
+    </van-button>
+  </van-button-group>
 
   <!-- 中间弹出框 -->
-  <zan-popup
+  <van-popup
     show="{{ showPopup }}"
     bindclose="togglePopup"
   >
     <view class="pop-example__container">
-      <view class="zan-btns"> 
-        <button class="zan-btn" bindtap="togglePopup">
+      <view class="van-btns"> 
+        <button class="van-btn" bindtap="togglePopup">
           关闭 popup
         </button>
       </view>
     </view>
-  </zan-popup>
+  </van-popup>
 
   <!-- 左侧弹出框 -->
-  <zan-popup
+  <van-popup
     show="{{ showLeftPopup }}"
     type="left"
     bindclose="toggleLeftPopup"
   >
     <view class="pop-example__container pop-example__container--left">
-      <view class="zan-btns">
-        <button class="zan-btn" bindtap="toggleLeftPopup">
+      <view class="van-btns">
+        <button class="van-btn" bindtap="toggleLeftPopup">
           关闭 popup
         </button>
       </view>
     </view>
-  </zan-popup>
+  </van-popup>
 
   <!-- 右侧弹出框 -->
-  <zan-popup
+  <van-popup
     show="{{ showRightPopup }}"
     type="right"
     bindclose="toggleRightPopup"
   >
     <view class="pop-example__container pop-example__container--right">
-      <view class="zan-btns">
-        <button class="zan-btn" catchtap="toggleRightPopup">
+      <view class="van-btns">
+        <button class="van-btn" catchtap="toggleRightPopup">
           关闭 popup
         </button>
       </view>
     </view>
-  </zan-popup>
+  </van-popup>
 
   <!-- 顶部弹出框 -->
-  <zan-popup
+  <van-popup
     show="{{ showTopPopup }}"
     overlay="{{ false }}"
     type="top"
     bindclose="toggleTopPopup"
   >
     <view class="pop-example--top">内容</view>
-  </zan-popup>
+  </van-popup>
 
   <!-- 底部弹出框 -->
-  <zan-popup
+  <van-popup
     show="{{ showBottomPopup }}"
     type="bottom"
     bindclose="toggleBottomPopup"
   >
     <view class="pop-example__container pop-example__container--bottom">
-      <view class="zan-btns">
-        <button class="zan-btn" catchtap="toggleBottomPopup">
+      <view class="van-btns">
+        <button class="van-btn" catchtap="toggleBottomPopup">
           关闭 popup
         </button>
       </view>
     </view>
-  </zan-popup>
+  </van-popup>
 
 </doc-page>

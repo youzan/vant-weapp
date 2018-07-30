@@ -6,13 +6,13 @@
 ```json
   {
     "usingComponents": {
-      "zan-cell": "path/to/vant-weapp/dist/cell/index",
+      "van-cell": "path/to/vant-weapp/dist/cell/index",
     }
   }
 ```
 
 ```wxml
-  <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
+  <van-cell title="单行列表" label="附加描述" value="详细信息"></van-cell>
 ```
 
 ### 属性与事件
@@ -49,25 +49,25 @@
 ```json
   {
     "usingComponents": {
-      "zan-cell": "path/to/vant-weapp/dist/cell/index",
-      "zan-cell-group": "path/to/vant-weapp/dist/cell-group/index"
+      "van-cell": "path/to/vant-weapp/dist/cell/index",
+      "van-cell-group": "path/to/vant-weapp/dist/cell-group/index"
     }
   }
 ```
 
 `cell-group`提供`title-width`控制组内整体 cell 的 title 区域宽度
 ```wxml
-<zan-cell-group border title-width="90">
-    <zan-cell title="只显示箭头" is-link></zan-cell>
-    <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
-    <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
-    <zan-cell title="表单">
+<van-cell-group border title-width="90">
+    <van-cell title="只显示箭头" is-link></van-cell>
+    <van-cell title="跳转到首页" is-link url="/pages/dashboard/index"></van-cell>
+    <van-cell title="单行列表" label="附加描述" value="详细信息"></van-cell>
+    <van-cell title="表单">
 		<input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
-	</zan-cell>
-    <zan-cell title="开关">
+	</van-cell>
+    <van-cell title="开关">
     	<switch slot="footer" checked/>
-    </zan-cell>
-</zan-cell-group>
+    </van-cell>
+</van-cell-group>
 ```
 
 ### 属性与事件

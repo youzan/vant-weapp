@@ -4,7 +4,7 @@
 在 json 文件中配置tag组件
 ```json
 "usingComponents": {
-  "zan-tag": "path/to/vant-weapp/dist/tag/index"
+  "van-tag": "path/to/vant-weapp/dist/tag/index"
 }
 ```
 
@@ -12,27 +12,27 @@
 
 #### 基础用法
 ```html
-<zan-tag>取消订单</zan-tag>
+<van-tag>取消订单</van-tag>
 ```
 
 #### 类型
 tag支持额外的三种类型 primary, danger, warn
 ```html
-<zan-tag type="primary">会员折扣</zan-tag>
-<zan-tag type="danger">返现</zan-tag>
-<zan-tag type="warn">返现</zan-tag>
+<van-tag type="primary">会员折扣</van-tag>
+<van-tag type="danger">返现</van-tag>
+<van-tag type="warn">返现</van-tag>
 ```
 
 
 #### 其他
 tag镂空状态
 ```html
-<zan-tag plain>返现</zan-tag>
+<van-tag plain>返现</van-tag>
 ```
 
 tag禁用状态
 ```html
-<zan-tag disabled>不可用</zan-tag>
+<van-tag disabled>不可用</van-tag>
 ```
 
 

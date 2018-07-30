@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-badge": "path/to/vant-weapp/dist/badge/index"
+    "van-badge": "path/to/vant-weapp/dist/badge/index"
   }
 }
 ```
@@ -15,19 +15,19 @@
 #### 基础用法
 ```html
 <view class="badge-container">
-  <zan-badge>10</zan-badge>
+  <van-badge>10</van-badge>
 </view>
 ```
 
 #### 自定义参数
 ```html
 <view class="badge-container">
-  <zan-badge
+  <van-badge
     color="{{ color }}"
     background-color="{{ backgroundColor }}"
     font-size="{{ fontSize }}"
     box-shadow="{{ boxShadow }}"
-  >10</zan-badge>
+  >10</van-badge>
 </view>
 ```
 

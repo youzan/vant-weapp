@@ -5,14 +5,14 @@
 ```json
 {
   "usingComponents": {
-    "zan-dialog": "path/to/vant-weapp/dist/dialog/index"
+    "van-dialog": "path/to/vant-weapp/dist/dialog/index"
   }
 }
 ```
 
 在需要使用的页面里引入组件库模板和脚本
 ```html
-<zan-dialog id="zan-dialog-test"></zan-dialog>
+<van-dialog id="van-dialog-test"></van-dialog>
 ```
 ```js
 const Dialog = require('path/to/vant-weapp/dist/dialog/dialog');
@@ -24,7 +24,7 @@ Page({
     Dialog({
       title: '',
       message: '',
-      selector: '#zan-dialog-test'
+      selector: '#van-dialog-test'
     }).then((res) => {
       console.log(res);
     })

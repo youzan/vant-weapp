@@ -2,6 +2,6 @@
   padding: 15px 0;
 }
 
-.zan-capsule + .zan-capsule {
+.van-capsule + .van-capsule {
   margin-left: 10px;
 }

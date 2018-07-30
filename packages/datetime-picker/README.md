@@ -8,15 +8,15 @@
 ```json
 {
   "usingComponents": {
-    "zan-date-picker": "path/to/vant-weapp/dist/datetime-picker/index"
+    "van-date-picker": "path/to/vant-weapp/dist/datetime-picker/index"
   }
 }
 ```
 
 ### 代码演示
-可以在任意位置上使用 zan-date-picker 标签。
+可以在任意位置上使用 van-date-picker 标签。
 ```wxml
-<zan-date-picker
+<van-date-picker
   bindchange="change"
   bindcancel="cancel"
   placeholder="请选择一个时间"

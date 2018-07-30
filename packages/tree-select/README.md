@@ -5,15 +5,15 @@
 ```json
 {
   "usingComponents": {
-    "zan-tree-select": "path/to/vant-weapp/dist/tree-select/index"
+    "van-tree-select": "path/to/vant-weapp/dist/tree-select/index"
   }
 }
 ```
 
 ### 代码演示
-可以在任意位置上使用 zan-tree-select 标签。传入对应的数据即可。
+可以在任意位置上使用 van-tree-select 标签。传入对应的数据即可。
 ```html
-<zan-tree-select
+<van-tree-select
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"

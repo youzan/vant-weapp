@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "zan-cell": "../cell/index"
+    "van-cell": "../cell/index"
   }
 }

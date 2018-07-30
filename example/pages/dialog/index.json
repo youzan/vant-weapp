@@ -2,9 +2,9 @@
   "navigationBarTitleText": "Dialog 弹出框",
   "usingComponents": {
     "doc-page": "../../components/doc-page/index",
-    "zan-dialog": "../../dist/dialog/index",
-    "zan-button": "../../dist/btn/index",
-    "zan-button-group": "../../dist/btn-group/index",
-    "zan-toast": "../../dist/toast/index"
+    "van-dialog": "../../dist/dialog/index",
+    "van-button": "../../dist/btn/index",
+    "van-button-group": "../../dist/btn-group/index",
+    "van-toast": "../../dist/toast/index"
   }  
 }

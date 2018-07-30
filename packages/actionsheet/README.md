@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-actionsheet": "path/to/vant-weapp/dist/actionsheet/index"
+    "van-actionsheet": "path/to/vant-weapp/dist/actionsheet/index"
   }
 }
 ```
@@ -16,7 +16,7 @@
 <button bindtap="openActionSheet">Open ActionSheet</button>
 <view class="actionsheet-container">
   <!-- 监听自定义事件 cancel 和 actionclick，绑定回调函数 -->
-  <zan-actionsheet
+  <van-actionsheet
     show="{{ show }}"
     actions="{{ actions }}"
     cancel-text="{{ cancelText }}"
@@ -24,7 +24,7 @@
     bind:cancel="closeActionSheet"
     bind:actionclick="handleActionClick"
   >
-  </zan-actionsheet>
+  </van-actionsheet>
 </view>
 ```
 

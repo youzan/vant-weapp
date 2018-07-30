@@ -1,19 +1,19 @@
 <doc-page title="DIALOG">
-  <zan-button-group style="margin-top: 30vh; display: block;">
-    <zan-button bindtap="toggleBaseDialog">基础 Dialog</zan-button>
-    <zan-button bindtap="toggleWithoutTitleDialog">Dialog - 无标题</zan-button>
-    <zan-button bindtap="toggleButtonDialog">Dialog - 自定义显示按钮</zan-button>
-    <zan-button bindtap="toggleVerticalDialog">Dialog - 按钮纵向排布</zan-button>
-    <zan-button bindtap="toggleOpenDialog">Dialog - 获取 Open 数据的弹窗</zan-button>
-    <zan-button bindtap="toggleCloseDialog">Dialog - 控制弹窗关闭</zan-button>
-  </zan-button-group>
+  <van-button-group style="margin-top: 30vh; display: block;">
+    <van-button bindtap="toggleBaseDialog">基础 Dialog</van-button>
+    <van-button bindtap="toggleWithoutTitleDialog">Dialog - 无标题</van-button>
+    <van-button bindtap="toggleButtonDialog">Dialog - 自定义显示按钮</van-button>
+    <van-button bindtap="toggleVerticalDialog">Dialog - 按钮纵向排布</van-button>
+    <van-button bindtap="toggleOpenDialog">Dialog - 获取 Open 数据的弹窗</van-button>
+    <van-button bindtap="toggleCloseDialog">Dialog - 控制弹窗关闭</van-button>
+  </van-button-group>
 
-  <zan-dialog id="zan-base-dialog"></zan-dialog>
-  <zan-dialog id="zan-no-title-dialog"></zan-dialog>
-  <zan-dialog id="zan-button-dialog"></zan-dialog>
-  <zan-dialog id="zan-vertical-dialog"></zan-dialog>
-  <zan-dialog id="zan-open-dialog"></zan-dialog>
-  <zan-dialog id="zan-close-dialog"></zan-dialog>
+  <van-dialog id="van-base-dialog"></van-dialog>
+  <van-dialog id="van-no-title-dialog"></van-dialog>
+  <van-dialog id="van-button-dialog"></van-dialog>
+  <van-dialog id="van-vertical-dialog"></van-dialog>
+  <van-dialog id="van-open-dialog"></van-dialog>
+  <van-dialog id="van-close-dialog"></van-dialog>
 
-  <zan-toast id="zan-toast"></zan-toast>
+  <van-toast id="van-toast"></van-toast>
 </doc-page>

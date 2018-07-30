@@ -6,16 +6,16 @@
   <view class="desc">轻量、可靠的小程序 UI 组件库</view>
 
   <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
-    <zan-panel title="{{ group.title }}">
-      <zan-cell-group>
-        <zan-cell
+    <van-panel title="{{ group.title }}">
+      <van-cell-group>
+        <van-cell
           wx:for="{{ group.content }}"
           wx:key="name"
           is-link
           url="{{ item.path }}"
           title="{{ item.name }}"
-        ></zan-cell>
-      </zan-cell-group>
-    </zan-panel>
+        ></van-cell>
+      </van-cell-group>
+    </van-panel>
   </block>
 </view>

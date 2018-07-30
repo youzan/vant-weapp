@@ -3,7 +3,7 @@ function Toptips(options = {}) {
   const pages = getCurrentPages();
   const ctx = pages[pages.length - 1];
   const defaultOptions = {
-    selector: '#zan-toptips',
+    selector: '#van-toptips',
     duration: 3000
   };
 

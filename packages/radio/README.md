@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-radio": "/packages/radio/index"
+    "van-radio": "/packages/radio/index"
   }
 }
 ```
@@ -25,13 +25,13 @@ items: [
 #### 基础用法
 
 ```html
-<zan-radio items="{{ items }}"></zan-radio>
+<van-radio items="{{ items }}"></van-radio>
 ```
 
 #### 禁用状态
 
 ```html
-<zan-radio items="{{ items }}"></zan-radio>
+<van-radio items="{{ items }}"></van-radio>
 ```
 
 ```js
@@ -49,11 +49,11 @@ Page({
 #### 自定义样式
 
 ```html
-<zan-radio
+<van-radio
   items="{{ items }}"
   radio-color="radio-color"
   radio-class="radio-demo"
-></zan-radio>
+></van-radio>
 ```
 
 ```css
@@ -69,12 +69,12 @@ Page({
 #### 事件
 
 ```html
-<zan-panel title='事件'>
-  <zan-radio
+<van-panel title='事件'>
+  <van-radio
     items="{{ items }}"
     bind:change="handleRadioChange"
-  ></zan-radio>
-</zan-panel>
+  ></van-radio>
+</van-panel>
 ```
 
 ```js
@@ -88,7 +88,7 @@ Page({
 #### 列表模式
 
 ```html
-<zan-radio items="{{ items }}" type="list"></zan-radio>
+<van-radio items="{{ items }}" type="list"></van-radio>
 ```
 
 ### 参数

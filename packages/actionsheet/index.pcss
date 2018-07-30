@@ -1,11 +1,11 @@
 @import "../common/_var";
 @import "../common/_mixins";
 
-.zan-actionsheet {
+.van-actionsheet {
   background-color: #f8f8f8;
 }
 
-.zan-actionsheet__mask {
+.van-actionsheet__mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
   display: none;
 }
 
-.zan-actionsheet__container {
+.van-actionsheet__container {
   position: fixed;
   left: 0;
   right: 0;
@@ -30,57 +30,57 @@
   visibility: hidden;
 }
 
-.zan-actionsheet__btn {
+.van-actionsheet__btn {
   margin-bottom: 0 !important;
 }
 
-.zan-actionsheet__footer .zan-actionsheet__btn {
+.van-actionsheet__footer .van-actionsheet__btn {
   background: #fff;
 }
 
-.zan-actionsheet__btn-content {
+.van-actionsheet__btn-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.zan-actionsheet__subname {
+.van-actionsheet__subname {
   color: $gray-dark;
 }
 
-.zan-actionsheet__subname,
-.zan-actionsheet__name {
+.van-actionsheet__subname,
+.van-actionsheet__name {
   height: 45px;
   line-height: 45px;
 }
 
 
-.zan-actionsheet__btn.zan-btn:last-child {
+.van-actionsheet__btn.van-btn:last-child {
   &::after {
     border-bottom-width: 0;
   }
 }
 
-.zan-actionsheet__subname {
+.van-actionsheet__subname {
   margin-left: 2px;
   font-size: 12px;
 }
 
-.zan-actionsheet__footer {
+.van-actionsheet__footer {
   margin-top: 10px;
 }
 
 /* btn-loading 状态 */
-.zan-actionsheet__btn--loading .zan-actionsheet__subname {
+.van-actionsheet__btn--loading .van-actionsheet__subname {
   color: transparent;
 }
 
-/* zan-actionsheet 展示出来的样式 */
-.zan-actionsheet--show .zan-actionsheet__container {
+/* van-actionsheet 展示出来的样式 */
+.van-actionsheet--show .van-actionsheet__container {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   visibility: visible;
 }
-.zan-actionsheet--show .zan-actionsheet__mask {
+.van-actionsheet--show .van-actionsheet__mask {
   display: block;
 }

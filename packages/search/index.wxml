@@ -1,16 +1,16 @@
 <view
-  class="zan-search {{ searchClass }}"
+  class="van-search {{ searchClass }}"
   style="{{ searchStyle }}"
 >
   <view
-    class="zan-search__form {{ useCancel ? 'zan-search__form--cancel' : '' }} input-class"
+    class="van-search__form {{ useCancel ? 'van-search__form--cancel' : '' }} input-class"
     style="{{ inputStyle }}"
   >
     <icon type="search" size="15" color="#a9a9a9" />
     <input
-      class="zan-search__input"
+      class="van-search__input"
       placeholder="{{ placeholder }}"
-      placeholder-class="zan-search__placeholder"
+      placeholder-class="van-search__placeholder"
       confirm-type="search"
       bindfocus="focus"
       bindblur="blur"
@@ -22,7 +22,7 @@
     />
     <icon
       wx:if="{{keyword}}"
-      class="zan-search__clear"
+      class="van-search__clear"
       type="clear"
       size="14"
       color="#bbb"
@@ -30,7 +30,7 @@
     />
   </view>
   <view
-    class="zan-search__cancel cancel-class"
+    class="van-search__cancel cancel-class"
     wx:if="{{ useCancel }}"
     bindtap="cancelSearch"
     style="{{ cancelStyle }}"

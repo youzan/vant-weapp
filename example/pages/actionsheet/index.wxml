@@ -1,12 +1,12 @@
 
 <doc-page title="ACTIONSHEET">
-  <view class="zan-btns" style="margin-top: 30vh;">
-    <zan-button bind:btnclick="openActionsheet">
+  <view class="van-btns" style="margin-top: 30vh;">
+    <van-button bind:btnclick="openActionsheet">
       Actionsheet
-    </zan-button>
+    </van-button>
   </view>
 
-  <zan-actionsheet
+  <van-actionsheet
     show="{{ show }}"
     actions="{{ actions }}"
     cancel-text="{{ cancelText }}"

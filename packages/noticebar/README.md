@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-noticebar": "path/to/vant-weapp/dist/noticebar/index"
+    "van-noticebar": "path/to/vant-weapp/dist/noticebar/index"
   }
 }
 ```
@@ -27,14 +27,14 @@ Page({
 
 ### 静止公告栏
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
 />
 ```
 
 ### 滚动通告栏
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
   scrollable="true"
 />
@@ -42,7 +42,7 @@ Page({
 
 ### 延时滚动通告栏
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
   scrollable="true"
   delay="{{ delay }}"
@@ -51,7 +51,7 @@ Page({
 
 ### 改变滚动通告栏滚动速度
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
   scrollable="true"
   speed="{{ speed }}"
@@ -60,7 +60,7 @@ Page({
 
 ### 自定义通告栏字体颜色和背景色
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
   color="{{ color }}"
   background-color="{{ backgroundColor }}"
@@ -69,7 +69,7 @@ Page({
 
 ### 添加左侧icon通告栏
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
   left-icon="https://img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
 />
@@ -77,7 +77,7 @@ Page({
 
 ### 可关闭通告栏
 ```html
-<zan-noticebar
+<van-noticebar
   text="{{ text }}"
   mode="closeable"
 />

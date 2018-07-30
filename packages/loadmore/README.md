@@ -6,17 +6,17 @@
   {
     ...
     "usingComponents": {
-      "zan-loadmore": "../../dist/loadmore/index"
+      "van-loadmore": "../../dist/loadmore/index"
     }
     ...
   }
 ```
 
-在页面上直接使用 zan-loadmore 标签即可
+在页面上直接使用 van-loadmore 标签即可
 ```html
-  <zan-loadmore type="text"></zan-loadmore>
-  <zan-loadmore type="loading"></zan-loadmore>
-  <zan-loadmore type="text" text="暂无数据"></zan-loadmore>
+  <van-loadmore type="text"></van-loadmore>
+  <van-loadmore type="loading"></van-loadmore>
+  <van-loadmore type="text" text="暂无数据"></van-loadmore>
 ```
 
 ### 具体参数

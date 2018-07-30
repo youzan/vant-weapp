@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-field": "path/to/vant-weapp/dist/field/index"
+    "van-field": "path/to/vant-weapp/dist/field/index"
   }
 }
 ```
@@ -15,14 +15,14 @@
 #### 基础用法
 field 支持多种展示方式，在 `data` 中传入对应的设置即可。
 ```html
-<zan-field
+<van-field
   title="{{ field.title }}"
   placeholder="{{ field.placeholder }}"
   focus="{{ field.focus }}"
   value="{{ field.value }}"
   bind:change="handleFieldChange"
 >
-</zan-field>
+</van-field>
 ```
 
 ```js
@@ -40,10 +40,10 @@ Page({
 
 #### Field 列表
 ```html
-<zan-cell-group>
-  <zan-field title="姓名"></zan-field>
-  <zan-field title="邮件"></zan-field>
-</zan-cell-group>
+<van-cell-group>
+  <van-field title="姓名"></van-field>
+  <van-field title="邮件"></van-field>
+</van-cell-group>
 ```
 
 #### 监听事件
@@ -51,7 +51,7 @@ Page({
 field会触发一些事件，当你需要监听这些事件时，可以绑定对应的事件。
 
 ```html
-<zan-field
+<van-field
   title="{{ field.title }}"
   placeholder="{{ field.placeholder }}"
   focus="{{ field.focus }}"
@@ -60,7 +60,7 @@ field会触发一些事件，当你需要监听这些事件时，可以绑定对
   bind:focus="handleFieldFocus"
   bind:blur="handleFieldBlur"
 >
-</zan-field>
+</van-field>
 ```
 
 ```js

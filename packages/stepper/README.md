@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-stepper": "path/to/vant-weapp/dist/stepper/index"
+    "van-stepper": "path/to/vant-weapp/dist/stepper/index"
   }
 }
 ```
@@ -45,13 +45,13 @@ Page({
 当 stepper 被点击时，需要监听`change`事件，处理计数器值的改变。
 
 ```js
-<zan-stepper
+<van-stepper
   stepper="{{ stepper.stepper }}"
   min="{{ stepper.min }}"
   max="{{ stepper.max }}"
   bind:change="handleZanStepperChange"
 >
-</zan-stepper>
+</van-stepper>
 ```
 
 ### API

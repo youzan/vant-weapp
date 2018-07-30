@@ -1,21 +1,21 @@
 <view class="container">
 
-  <view class="doc-title zan-hairline--bottom">LOADING</view>
+  <view class="doc-title van-hairline--bottom">LOADING</view>
 
-  <view class="zan-panel-title">circle</view>
-  <view class="loading-example zan-panel">
-    <zan-loading type="circle"></zan-loading>
-    <zan-loading type="circle" color="black"></zan-loading>
+  <view class="van-panel-title">circle</view>
+  <view class="loading-example van-panel">
+    <van-loading type="circle"></van-loading>
+    <van-loading type="circle" color="black"></van-loading>
   </view>
-  <view class="zan-panel-title">spinner</view>
-  <view class="loading-example zan-panel">
-    <zan-loading type="spinner"></zan-loading>
-    <zan-loading type="spinner" color="black"></zan-loading>
+  <view class="van-panel-title">spinner</view>
+  <view class="loading-example van-panel">
+    <van-loading type="spinner"></van-loading>
+    <van-loading type="spinner" color="black"></van-loading>
   </view>
-  <view class="zan-panel-title">dot</view>
-  <view class="zan-panel loading-example no-flex">
-    <zan-loading type="dot"></zan-loading>
-    <zan-loading type="dot" color="black"></zan-loading>
+  <view class="van-panel-title">dot</view>
+  <view class="van-panel loading-example no-flex">
+    <van-loading type="dot"></van-loading>
+    <van-loading type="dot" color="black"></van-loading>
   </view>
 
 </view>

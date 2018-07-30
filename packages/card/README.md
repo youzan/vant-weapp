@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-card": "path/to/vant-weapp/dist/card/index"
+    "van-card": "path/to/vant-weapp/dist/card/index"
   }
 }
 ```
@@ -15,7 +15,7 @@
 卡片可以用于左侧图片，右侧描述信息的展示。默认是商品相关内容的展示，需要展示其他内容可以使用自定义slot。
 
 ```html
-<zan-card
+<van-card
   card-class="test-card"
   thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
   price="999.99"
@@ -24,22 +24,22 @@
   desc="3000克 50%"
   status="已发货"
 >
-</zan-card>
+</van-card>
 ```
 
 #### 使用slot
-`zan-card` 由 `zan-card__thumb` 和 `zan-card__detail` 组成。分别负责左侧图片展示和右侧内容区域展示。两部分内容可以使用slot进行替换。
+`van-card` 由 `van-card__thumb` 和 `van-card__detail` 组成。分别负责左侧图片展示和右侧内容区域展示。两部分内容可以使用slot进行替换。
 
 ```html
-<zan-card
+<van-card
   card-class="test-card"
   useDetailSlot="{{ true }}"
 >
   <!-- 右侧详情 -->
-  <view slot="detail-slot" class="zan-card__detail">
+  <view slot="detail-slot" class="van-card__detail">
     我是标题
   </view>
-</zan-card>
+</van-card>
 ```
 
 ### API

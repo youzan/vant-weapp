@@ -1,66 +1,66 @@
 <doc-page title="CELL" without-padding>
 
-  <zan-cell-group border class="cell-panel-demo">
-    <zan-cell title="单行列表" bindtap="handleTap"></zan-cell>
-  </zan-cell-group>
+  <van-cell-group border class="cell-panel-demo">
+    <van-cell title="单行列表" bindtap="handleTap"></van-cell>
+  </van-cell-group>
 
-  <zan-cell-group border class="cell-panel-demo">
-    <zan-cell title="单行列表" value="详细信息"></zan-cell>
-  </zan-cell-group>
+  <van-cell-group border class="cell-panel-demo">
+    <van-cell title="单行列表" value="详细信息"></van-cell>
+  </van-cell-group>
 
-  <zan-cell-group border class="cell-panel-demo">
-    <zan-cell title="单行列表" label="附加描述" value="详细信息"></zan-cell>
-  </zan-cell-group>
+  <van-cell-group border class="cell-panel-demo">
+    <van-cell title="单行列表" label="附加描述" value="详细信息"></van-cell>
+  </van-cell-group>
 
-  <zan-panel class="cell-panel-demo" title="带 icon 的 cell">
-    <zan-cell title="单行列表" value="详细信息">
-      <zan-icon slot="icon" type="checked"></zan-icon>
-    </zan-cell>
-  </zan-panel>
+  <van-panel class="cell-panel-demo" title="带 icon 的 cell">
+    <van-cell title="单行列表" value="详细信息">
+      <van-icon slot="icon" type="checked"></van-icon>
+    </van-cell>
+  </van-panel>
 
-  <zan-panel class="cell-panel-demo">
-    <zan-cell title="单行列表">
+  <van-panel class="cell-panel-demo">
+    <van-cell title="单行列表">
       <picker mode="date" value="{{date}}" start="2018-07-01" end="2018-09-01" bindchange="bindDateChange">
         <view class="picker">
           选择日期: {{date}}
         </view>
       </picker>
-    </zan-cell>
-  </zan-panel>
+    </van-cell>
+  </van-panel>
 
-  <zan-panel class="cell-panel-demo" title="带箭头的 cell">
-    <zan-cell title="只显示箭头" is-link></zan-cell>
-  </zan-panel>
+  <van-panel class="cell-panel-demo" title="带箭头的 cell">
+    <van-cell title="只显示箭头" is-link></van-cell>
+  </van-panel>
 
-  <zan-cell-group border class="cell-panel-demo">
-    <zan-cell
+  <van-cell-group border class="cell-panel-demo">
+    <van-cell
       title="跳转到首页"
       is-link
       url="/pages/dashboard/index"
       bindtap="handleTap"
-    ></zan-cell>
-  </zan-cell-group>
+    ></van-cell>
+  </van-cell-group>
 
-  <zan-panel class="cell-panel-demo" title="cell 组">
-    <zan-cell-group>
-      <zan-cell title="只显示箭头" is-link></zan-cell>
-      <zan-cell title="跳转到首页" is-link url="/pages/dashboard/index"></zan-cell>
-      <zan-cell
+  <van-panel class="cell-panel-demo" title="cell 组">
+    <van-cell-group>
+      <van-cell title="只显示箭头" is-link></van-cell>
+      <van-cell title="跳转到首页" is-link url="/pages/dashboard/index"></van-cell>
+      <van-cell
         is-link
         only-tap-footer
         url="/pages/dashboard/index"
         title="只有 footer 点击有效"
         bindtap="handleTap"
-      ></zan-cell>
+      ></van-cell>
       <block wx:if="{{ show }}">
-        <zan-cell no-border title="单行列表" label="附加描述" value="不想有 border"></zan-cell>
-        <zan-cell title="表单">
+        <van-cell no-border title="单行列表" label="附加描述" value="不想有 border"></van-cell>
+        <van-cell title="表单">
           <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
-        </zan-cell>
+        </van-cell>
       </block>
-      <zan-cell title="开关">
+      <van-cell title="开关">
         <switch slot="footer" checked/>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+      </van-cell>
+    </van-cell-group>
+  </van-panel>
 </doc-page>

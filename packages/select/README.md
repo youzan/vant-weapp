@@ -5,14 +5,14 @@
 ```json
 {
   "usingComponents": {
-    "zan-select": "path/to/vant-weapp/dist/select/index"
+    "van-select": "path/to/vant-weapp/dist/select/index"
   }
 }
 ```
 
 ### 代码演示
 ```html
-<zan-select
+<van-select
   items="{{ items }}"
   checkedValue="{{ checkedValue }}"
   activeColor="{{ activeColor }}"

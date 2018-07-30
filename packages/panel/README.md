@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-panel": "path/to/vant-weapp/dist/panel/index"
+    "van-panel": "path/to/vant-weapp/dist/panel/index"
   }
 }
 ```
@@ -13,9 +13,9 @@
 ### 代码演示
 Panel 提供了一块白色的展示区域，使用方式如下
 ```html
-<zan-panel title='我是标题'>
+<van-panel title='我是标题'>
   <view>内容</view>
-</zan-panel>
+</van-panel>
 ```
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|

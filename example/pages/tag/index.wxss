@@ -3,6 +3,6 @@
   margin: 15px 0;
 }
 
-zan-tag + zan-tag {
+van-tag + van-tag {
   margin-left: 10px;
 }

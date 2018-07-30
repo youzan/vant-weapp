@@ -1,21 +1,21 @@
 <doc-page title="TAB" without-padding>
 
   <view style="margin: 30px 0">
-    <zan-tab
+    <van-tab
       list="{{ tab.list }}"
       selected-id="{{ tab.selectedId }}"
     />
   </view>
 
   <view style="margin: 30px 0">
-    <zan-tab
+    <van-tab
       list="{{ tab1.list }}"
       selected-id="{{ tab1.selectedId }}"
     />
   </view>
 
   <view style="margin: 30px 0">
-    <zan-tab
+    <van-tab
       list="{{ tab2.list }}"
       selected-id="{{ tab2.selectedId }}"
       scroll="{{ tab2.scroll }}"

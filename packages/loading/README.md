@@ -5,16 +5,16 @@
 ```json
   {
     "usingComponents": {
-      "zan-loading": "path/to/vant-weapp/dist/loading/index"
+      "van-loading": "path/to/vant-weapp/dist/loading/index"
     }
   }
 ```
 
-在页面上直接使用 zan-loading 标签即可
+在页面上直接使用 van-loading 标签即可
 ```html
-  <zan-loading type="circle"></zan-loading>
-  <zan-loading type="spinner" color="black"></zan-loading>
-  <zan-loading type="dot"></zan-loading>
+  <van-loading type="circle"></van-loading>
+  <van-loading type="spinner" color="black"></van-loading>
+  <van-loading type="dot"></van-loading>
 ```
 
 ### 具体参数

@@ -1,5 +1,5 @@
 <button
-  class="custom-class theme-class zan-btn {{ inGroup ? 'zan-btn--group' : '' }} {{ isLast ? 'zan-btn--last' : '' }} {{size ? 'zan-btn--'+size : ''}} {{size === 'mini' ? 'zan-btn--plain' : ''}} {{plain ? 'zan-btn--plain' : ''}} {{type ? 'zan-btn--'+type : ''}} {{loading ? 'zan-btn--loading' : ''}} {{disabled ? 'zan-btn--disabled' : ''}}"
+  class="custom-class theme-class van-btn {{ inGroup ? 'van-btn--group' : '' }} {{ isLast ? 'van-btn--last' : '' }} {{size ? 'van-btn--'+size : ''}} {{size === 'mini' ? 'van-btn--plain' : ''}} {{plain ? 'van-btn--plain' : ''}} {{type ? 'van-btn--'+type : ''}} {{loading ? 'van-btn--loading' : ''}} {{disabled ? 'van-btn--disabled' : ''}}"
   disabled="{{ disabled }}"
   hover-class="button-hover"
   open-type="{{ openType }}"

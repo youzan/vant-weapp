@@ -5,15 +5,15 @@
 ```json
 {
   "usingComponents": {
-    "zan-icon": "path/to/vant-weapp/dist/icon/index"
+    "van-icon": "path/to/vant-weapp/dist/icon/index"
   }
 }
 ```
 
 ### 代码演示
-可以在任意位置上使用 zan-icon 标签。通过 type 可以控制 icon 显示的图标
+可以在任意位置上使用 van-icon 标签。通过 type 可以控制 icon 显示的图标
 ```html
-<zan-icon type="success"></zan-icon>
+<van-icon type="success"></van-icon>
 ```
 
 支持的 icon 和 名称 见下图

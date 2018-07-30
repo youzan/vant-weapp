@@ -39,10 +39,10 @@ cat > $basepath/../packages/icon/index.pcss <<EOF
        url('$(fontname ttf)') format('truetype')
 }
 
-.zan-icon {
+.van-icon {
     display: inline-block;
 }
-.zan-icon::before {
+.van-icon::before {
   font-family: "zanui-weapp-icon" !important;
   font-style: normal;
   font-weight: normal;

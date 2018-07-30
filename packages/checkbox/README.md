@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "zan-checkbox": "/packages/checkbox/index"
+    "van-checkbox": "/packages/checkbox/index"
   }
 }
 ```
@@ -15,45 +15,45 @@
 #### 基础用法
 
 ```html
-<zan-checkbox
+<van-checkbox
   checkbox-class="checkbox-demo"
   bindchange="handleCheckboxChange"
->复选框</zan-checkbox>
+>复选框</van-checkbox>
 ```
 
 #### 基础用法
 
 ```html
-<zan-checkbox
+<van-checkbox
   checkbox-class="checkbox-demo"
   bindchange="handleCheckboxChange"
->复选框</zan-checkbox>
+>复选框</van-checkbox>
 ```
 
 #### 禁用状态
 
 ```html
-<zan-checkbox
+<van-checkbox
   checkbox-class="checkbox-demo"
   disabled
   checked="{{ true }}"
->复选框</zan-checkbox>
+>复选框</van-checkbox>
 ```
 
 #### 禁用内容部分点击事件
 
 ```html
-<zan-checkbox
+<van-checkbox
   checkbox-class="checkbox-demo"
   label-disabled
->复选框</zan-checkbox>
+>复选框</van-checkbox>
 ```
 
 #### Checkbox组
 
 ```html
-<zan-checkbox-group>
-  <zan-checkbox
+<van-checkbox-group>
+  <van-checkbox
     wx:for="{{ items }}"
     wx:for-item="item"
     wx:for-index="index"
@@ -61,8 +61,8 @@
     checked="{{ item.checked }}"
     data-index="{{ index }}"
     bindchange="handleCheckboxChange"
-  >复选框 {{ item.name }}</zan-checkbox>
-</zan-checkbox-group>
+  >复选框 {{ item.name }}</van-checkbox>
+</van-checkbox-group>
 ```
 
 ```js
@@ -80,9 +80,9 @@ Page({
 #### 列表模式
 
 ```html
-<zan-checkbox type="list">复选框 a</zan-checkbox>
-<zan-checkbox type="list">复选框 b</zan-checkbox>
-<zan-checkbox type="list">复选框 c</zan-checkbox>
+<van-checkbox type="list">复选框 a</van-checkbox>
+<van-checkbox type="list">复选框 b</van-checkbox>
+<van-checkbox type="list">复选框 c</van-checkbox>
 ```
 
 ### 参数

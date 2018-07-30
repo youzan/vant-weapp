@@ -1,6 +1,6 @@
 @import "../common/_mixins";
 
-.zan-cell {
+.van-cell {
   position: relative;
   padding: 12px 15px;
   display: flex;
@@ -55,15 +55,15 @@
   &__no-pading{
     padding: 0;
 
-    .zan-cell__bd_padding {
+    .van-cell__bd_padding {
       padding: 12px 0 12px 15px;
 
-      .zan-form__input{
+      .van-form__input{
         height: 26px;
       }
     }
 
-    .zan-cell__ft_padding {
+    .van-cell__ft_padding {
       padding: 12px 15px 12px 0;
     }
   }
@@ -75,11 +75,11 @@
 }
 
 
-.zan-cell--access .zan-cell__ft {
+.van-cell--access .van-cell__ft {
   padding-right: 13px;
 }
 
-.zan-cell--access .zan-cell__ft::after {
+.van-cell--access .van-cell__ft::after {
   position: absolute;
   top: 50%;
   right: 2px;
@@ -92,7 +92,7 @@
   border-style: solid;
   transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
-.zan-cell--switch {
+.van-cell--switch {
   padding-top: 6px;
   padding-bottom: 6px;
 }

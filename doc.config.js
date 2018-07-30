@@ -71,7 +71,7 @@ module.exports = {
           tag: require('./packages/tag/README.md'),
           badge: require('./packages/badge/README.md'),
           capsule: require('./packages/capsule/README.md'),
-          notice-bar: require('./packages/notice-bar/README.md'),
+          notice_bar: require('./packages/notice-bar/README.md'),
           steps: require('./packages/steps/README.md')
         }
       },

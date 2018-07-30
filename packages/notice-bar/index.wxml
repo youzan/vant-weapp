@@ -27,5 +27,4 @@
       <van-icon class="van-notice-bar__right-icon" type="arrow" />
     </navigator>
   </block>
-
 </view>

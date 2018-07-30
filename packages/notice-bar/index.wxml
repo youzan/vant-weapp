@@ -1,13 +1,13 @@
 <view
   wx:if="{{ show }}"
-  class="van-noticebar {{ hasRightIcon ? 'van-noticebar--within-icon' : '' }}"
+  class="van-notice-bar {{ hasRightIcon ? 'van-notice-bar--within-icon' : '' }}"
   style="color: {{ color }};background-color: {{ backgroundColor }}"
 >
-  <view wx:if="{{ leftIcon }}" class="van-noticebar__left-icon">
+  <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
     <image src="{{ leftIcon }}" />
   </view>
-  <view class="van-noticebar__content-wrap">
-    <view class="van-noticebar__content" animation="{{ animationData }}">
+  <view class="van-notice-bar__content-wrap">
+    <view class="van-notice-bar__content" animation="{{ animationData }}">
       {{ text }}
     </view>
   </view>
@@ -15,8 +15,8 @@
   <block wx:if="{{ mode }}">
     <van-icon
       wx:if="{{ mode === 'closeable' }}"
-      class="van-noticebar__right-icon"
-      type="close"
+      class="van-notice-bar__right-icon"
+      name="close"
       bindtap="_handleButtonClick"
     />
     <navigator
@@ -24,7 +24,7 @@
       url="{{ url }}"
       open-type="{{ openType }}"
     >
-      <van-icon class="van-noticebar__right-icon" type="arrow" />
+      <van-icon class="van-notice-bar__right-icon" type="arrow" />
     </navigator>
   </block>
 

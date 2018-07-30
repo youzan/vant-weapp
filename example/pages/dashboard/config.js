@@ -30,8 +30,8 @@ export default {
         name: 'loading 加载',
         path: '/pages/loading/index'
       }, {
-        name: 'Noticebar 通告栏',
-        path: '/pages/noticebar/index'
+        name: 'NoticeBar 通告栏',
+        path: '/pages/notice-bar/index'
       }, {
         name: 'Panel 面板',
         path: '/pages/panel/index'

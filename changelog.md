@@ -71,7 +71,7 @@
 - Stepper 组件 size 属性支持 small middle large [\#306](https://github.com/youzan/vant-weapp/pull/306) ([jerryni](https://github.com/jerryni))
 - 优化 Field 组件在列表中输入框表现 [\#296](https://github.com/youzan/vant-weapp/pull/296) ([pangxie1991](https://github.com/pangxie1991))
 - datepicker 使用原生 picker-view 重写 [\#294](https://github.com/youzan/vant-weapp/pull/294) ([realywithoutname](https://github.com/realywithoutname))
-- Noticebar 组件支持动态更新text [\#314](https://github.com/youzan/vant-weapp/pull/314) ([rex-zsd](https://github.com/rex-zsd))
+- NoticeBar 组件支持动态更新text [\#314](https://github.com/youzan/vant-weapp/pull/314) ([rex-zsd](https://github.com/rex-zsd))
 - datetime-picker 组件在 demo 中增加 datetime 示例入口 [\#313](https://github.com/youzan/vant-weapp/pull/313) ([rex-zsd](https://github.com/rex-zsd))
 
 
@@ -168,7 +168,7 @@
 **Bug Fixes**
 
 - 修复 Field 组件圆角输入框，边框显示问题 [\#134](https://github.com/youzan/vant-weapp/pull/134) ([pangxie1991](https://github.com/pangxie1991))
-- 修复 Noticebar 组件元素查询返回空，导致报错的问题 [\#130](https://github.com/youzan/vant-weapp/pull/130) ([pangxie1991](https://github.com/pangxie1991))
+- 修复 NoticeBar 组件元素查询返回空，导致报错的问题 [\#130](https://github.com/youzan/vant-weapp/pull/130) ([pangxie1991](https://github.com/pangxie1991))
 
 ## [v2.4.5](https://github.com/youzan/vant-weapp/tree/v2.4.5) (2018-02-07)
 [Full Changelog](https://github.com/youzan/vant-weapp/compare/v2.4.4...v2.4.5)
@@ -302,7 +302,7 @@
 **Improvements**
 
 - \[new feature\] 增加发布脚本 [\#35](https://github.com/youzan/vant-weapp/pull/35) ([pangxie1991](https://github.com/pangxie1991))
-- \[new feature\] 增加Capsule, Noticebar, Popup；修正Dialog在非最外层情况下引入的样式问题；更新readme。 [\#32](https://github.com/youzan/vant-weapp/pull/32) ([everywill](https://github.com/everywill))
+- \[new feature\] 增加Capsule, NoticeBar, Popup；修正Dialog在非最外层情况下引入的样式问题；更新readme。 [\#32](https://github.com/youzan/vant-weapp/pull/32) ([everywill](https://github.com/everywill))
 - \[new feature\] 增加单选 和一个验证码的样式 [\#30](https://github.com/youzan/vant-weapp/pull/30) ([muzea](https://github.com/muzea))
 - \[new feature\] Docs: 文档更新 [\#29](https://github.com/youzan/vant-weapp/pull/29) ([pangxie1991](https://github.com/pangxie1991))
 

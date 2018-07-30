@@ -1,18 +1,18 @@
-## Noticebar 通告栏
+## NoticeBar 通告栏
 
 ### 使用指南
 在 index.json 中引入组件
 ```json
 {
   "usingComponents": {
-    "van-noticebar": "path/to/vant-weapp/dist/noticebar/index"
+    "van-notice-bar": "path/to/vant-weapp/dist/notice-bar/index"
   }
 }
 ```
 
 在 index.js 中声明组件数据
 ```js
-// 在 Page 中声明 Noticebar 依赖的展示数据
+// 在 Page 中声明 NoticeBar 依赖的展示数据
 Page({
   data: {
     text: 'xxx',
@@ -23,18 +23,18 @@ Page({
 ```
 
 ### 代码演示
-`Noticebar` 组件支持滚动和静止两种展示方式，通过 text 传入展示文案
+`NoticeBar` 组件支持滚动和静止两种展示方式，通过 text 传入展示文案
 
 ### 静止公告栏
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
 />
 ```
 
 ### 滚动通告栏
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
   scrollable="true"
 />
@@ -42,7 +42,7 @@ Page({
 
 ### 延时滚动通告栏
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
   scrollable="true"
   delay="{{ delay }}"
@@ -51,7 +51,7 @@ Page({
 
 ### 改变滚动通告栏滚动速度
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
   scrollable="true"
   speed="{{ speed }}"
@@ -60,7 +60,7 @@ Page({
 
 ### 自定义通告栏字体颜色和背景色
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
   color="{{ color }}"
   background-color="{{ backgroundColor }}"
@@ -69,7 +69,7 @@ Page({
 
 ### 添加左侧icon通告栏
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
   left-icon="https://img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
 />
@@ -77,7 +77,7 @@ Page({
 
 ### 可关闭通告栏
 ```html
-<van-noticebar
+<van-notice-bar
   text="{{ text }}"
   mode="closeable"
 />

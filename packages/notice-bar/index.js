@@ -7,7 +7,7 @@ Component({
     text: {
       type: String,
       value: '',
-      observer(newVal) {
+      observer() {
         this.setData({}, this._init);
       }
     },
@@ -86,7 +86,7 @@ Component({
     _init() {
       wx.createSelectorQuery()
         .in(this)
-        .select('.van-noticebar__content')
+        .select('.van-notice-bar__content')
         .boundingClientRect((rect) => {
           if (!rect || !rect.width) {
             return;
@@ -97,7 +97,7 @@ Component({
 
           wx.createSelectorQuery()
             .in(this)
-            .select('.van-noticebar__content-wrap')
+            .select('.van-notice-bar__content-wrap')
             .boundingClientRect((rect) => {
               if (!rect || !rect.width) {
                 return;

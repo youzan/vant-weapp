@@ -188,7 +188,7 @@
 
 - Actionsheet 组件新增 open-type 支持 [\#106](https://github.com/youzan/vant-weapp/pull/106) ([pangxie1991](https://github.com/pangxie1991))
 - Select 组件新增支持 form 中 submit 使用 [\#104](https://github.com/youzan/vant-weapp/pull/104) ([pangxie1991](https://github.com/pangxie1991))
-- 新增 Actionsheet 行动按钮组件 [\#97](https://github.com/youzan/vant-weapp/pull/97) ([pangxie1991](https://github.com/pangxie1991))
+- 新增 Actionsheet 上拉菜单组件 [\#97](https://github.com/youzan/vant-weapp/pull/97) ([pangxie1991](https://github.com/pangxie1991))
 
 **Bug Fixes**
 - 修复 actionsheet 隐藏时阻挡页面元素点击 [\#99](https://github.com/youzan/vant-weapp/pull/99) ([yun77op](https://github.com/yun77op))

@@ -1,4 +1,4 @@
-## Actionsheet 行动按钮
+## Actionsheet 上拉菜单
 
 ### 使用指南
 在 index.json 中引入组件
@@ -69,10 +69,10 @@ Page({
 #### `Actionsheet` 支持的具体参数如下（ 传入时使用分隔线写法 ）
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| show | 用来表示是否展示行动按钮 | Boolean | false | |
+| show | 用来表示是否展示上拉菜单 | Boolean | false | |
 | actions | 指定弹层里的按钮 | Array  | [] | |
-| cancelText | 行动按钮底部取消按钮的文案，不传则不显示取消按钮 | String  | | |
-| cancelWithMask | 是否在点击背景时，关闭行动按钮 | Boolean  | false | |
+| cancelText | 上拉菜单底部取消按钮的文案，不传则不显示取消按钮 | String  | | |
+| cancelWithMask | 是否在点击背景时，关闭上拉菜单 | Boolean  | false | |
 | mask-class | 用于控制蒙层样式的外部类 | String  | | |
 | container-class | 用于控制容器样式的外部类 | String  | | |
 

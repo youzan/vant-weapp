@@ -1,35 +1,42 @@
 <p>
-<a href="https://github.com/youzan/"><img alt="有赞logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-</p></a>
-<p align="center">
-    <img alt="项目logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png">
+    <a href="https://github.com/youzan/"><img alt="logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
+    </a>
 </p>
-<p align="center">高颜值、好用、易扩展的小程序 UI 库</p>
+<p align="center">
+    <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" style="margin-bottom: 10px;">
+</p>
+<p align="center">轻量、可靠的小程序组件库</p>
 
 
 ## 概述
-[vant-weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 Vant 的小程序版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。
+[vant-weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 Vant 的小程序版本，使用统一的视觉规范，为用户提供更加统一的使用感受。
 
-现已包含 badge、btn、card、cell、dialog、icon、label、noticebar、panel、popup、switch、tab、toast、toptips 等组件或元素。具体可以扫描下方小程序二维码，体验组件库示例 Demo
+扫描下方小程序二维码，体验组件库示例 Demo：
 
 ![vant-weapp 演示](https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300)
 
-更多背景介绍，请移步 [我们写的介绍文章](http://tech.youzan.com/vant-weapp/)。
+## 文档
+
+[https://youzan.github.io/vant-weapp](https://youzan.github.io/vant-weapp)
 
 ## 下载
+
 ``` bash
 git clone https://github.com/youzan/vant-weapp.git
 ```
 
 ## 预览
+
 1. 在 vant-weapp 根目录下运行
+
 ``` bash
 # 安装项目依赖
 npm install
 # 执行组件编译
 npm run dev
 ```
-2. 打开[微信web开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 vant-weapp/example 目录添加进去就可以预览示例demo了。
+
+2. 打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 vant-weapp/example 目录添加进去就可以预览示例demo了。
 
 ![](https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png)
 

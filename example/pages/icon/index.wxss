@@ -1,17 +1,17 @@
-.icon-wrap {
-  width: 33.33333%;
-  height: 100px;
-  float: left;
+.col {
   text-align: center;
+  height: 100px;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.example-icon {
-  font-size: 24px;
-  padding: 10px;
+.icon {
+  display: block;
+  margin: 15px 0;
   color: rgba(69, 90, 100, .8);
 }
 
-.icon-classname {
-  color: #999;
-  font-size: 10px;
+.text {
+  font-size: 14px;
 }

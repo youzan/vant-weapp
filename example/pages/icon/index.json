@@ -2,7 +2,7 @@
   "navigationBarTitleText": "Icon 图标",
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
-    "van-col": "../../dist/icon/index",
+    "van-col": "../../dist/col/index",
     "van-icon": "../../dist/icon/index"
   }
 }

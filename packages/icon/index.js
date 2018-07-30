@@ -4,6 +4,7 @@ Component({
   properties: {
     info: null,
     name: String,
+    size: String,
     color: String
   }
 });

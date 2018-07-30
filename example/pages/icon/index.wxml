@@ -1,6 +1,6 @@
 <demo-block title="图标列表">
-  <van-col span="8" wx:for="{{ icons }}" wx:key="index">
-    <van-icon name="{{ item }}" />
-    <view>{{ item }}</view>
+  <van-col custom-class="col" span="8" wx:for="{{ icons }}" wx:for-item="icon" wx:key="index">
+    <van-icon custom-class="icon" name="{{ icon }}" size="32px" />
+    <view class="text">{{ icon }}</view>
   </van-col>
 </demo-block>

@@ -11,11 +11,12 @@
 ### 代码演示
 
 #### 按钮类型
-支持`default`、`primary`、`danger`三种类型，默认为`default`
+支持`default`、`primary`、`warning`、`danger`四种类型，默认为`default`
 
 ```html
 <van-button type="default">默认按钮</van-button>
 <van-button type="primary">主要按钮</van-button>
+<van-button type="warning">警告按钮</van-button>
 <van-button type="danger">危险按钮</van-button>
 ```
 
@@ -24,6 +25,7 @@
 ```html
 <van-button type="default" plain>默认按钮</van-button>
 <van-button type="primary" plain>主要按钮</van-button>
+<van-button type="warning" plain>警告按钮</van-button>
 <van-button type="danger" plain>危险按钮</van-button>
 ```
 
@@ -55,7 +57,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| type | 按钮类型，可选值为 `default` `primary` `danger` | `String` | `default` |
+| type | 按钮类型，可选值为 `primary` `warning` `danger` | `String` | `default` |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` |
 | plain | 是否为朴素按钮 | `Boolean` | `false` |
 | disabled | 是否禁用 | `Boolean` | `false` |

@@ -1,13 +1,19 @@
 <demo-section>
   <demo-block title="按钮类型">
-    <van-button type="default" custom-class="demo-margin-right">默认按钮</van-button>
-    <van-button type="primary" custom-class="demo-margin-right">主要按钮</van-button>
+    <view class="row">
+      <van-button type="default" custom-class="demo-margin-right">默认按钮</van-button>
+      <van-button type="primary">主要按钮</van-button>
+    </view>
+    <van-button type="warning" custom-class="demo-margin-right">警告按钮</van-button>
     <van-button type="danger">危险按钮</van-button>
   </demo-block>
 
   <demo-block title="朴素按钮">
-    <van-button type="default" plain custom-class="demo-margin-right">默认按钮</van-button>
-    <van-button type="primary" plain custom-class="demo-margin-right">主要按钮</van-button>
+    <view class="row">
+      <van-button type="default" plain custom-class="demo-margin-right">默认按钮</van-button>
+      <van-button type="primary" plain>主要按钮</van-button>
+    </view>
+    <van-button type="warning" plain custom-class="demo-margin-right">警告按钮</van-button>
     <van-button type="danger" plain>危险按钮</van-button>
   </demo-block>
 

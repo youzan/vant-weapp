@@ -11,6 +11,7 @@
   font-size: 16px;
   text-align: center;
   -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
 
   &::after {
     content: " ";
@@ -53,6 +54,12 @@
     border: 1px solid $button-danger-border-color;
   }
 
+  &--warning {
+    color: $button-warning-color;
+    background-color: $button-warning-background-color;
+    border: 1px solid $button-warning-border-color;
+  }
+
   &--plain {
     background-color: $white;
 
@@ -62,6 +69,10 @@
 
     &.van-button--danger {
       color: $button-danger-background-color;
+    }
+
+    &.van-button--warning {
+      color: $button-warning-background-color;
     }
   }
 
@@ -110,21 +121,6 @@
   &--block {
     width: 100%;
     display: block;
-  }
-
-  &--bottom-action {
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    border: 0;
-    border-radius: 0;
-    font-size: 16px;
-    color: $button-bottom-action-default-color;
-    background-color: $button-bottom-action-default-background-color;
-
-    &.van-button--primary {
-      background-color: $button-bottom-action-primary-background-color;
-    }
   }
 
   &--disabled {

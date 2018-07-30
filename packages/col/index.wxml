@@ -1,1 +1,6 @@
-  <view class="col-class van-col {{ col ? 'van-col-' + col : '' }} {{ offset ? 'van-col-offset-' + offset : '' }}"><slot></slot></view>
+<view
+  class="custom-class van-col {{ span ? 'van-col--' + span : '' }} {{ offset ? 'van-col--offset-' + offset : '' }}"
+  style="{{ style }}"
+>
+  <slot />
+</view>

@@ -1,6 +1,6 @@
-<view wx:for="{{ icons }}" wx:for-item="icon" wx:key="icon" class="icon-wrap">
-  <view class="example-icon">
-    <van-icon type="{{ icon }}"></van-icon>
-  </view>
-  <view class="icon-classname">van-icon-{{ icon }}</view>
-</view>
+<demo-block title="图标列表">
+  <van-col span="8" wx:for="{{ icons }}" wx:key="index">
+    <van-icon name="{{ item }}" />
+    <view>{{ item }}</view>
+  </van-col>
+</demo-block>

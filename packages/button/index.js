@@ -46,10 +46,6 @@ Component({
     }
   },
 
-  data: {
-    classes: ''
-  },
-
   attached() {
     this.setClasses();
   },

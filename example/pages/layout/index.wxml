@@ -1,17 +1,24 @@
-<van-panel title="基础用法">
+<demo-block title="基础用法">
   <van-row>
-    <van-col col="8" col-class="custom-van-col">span: 8</van-col>
-    <van-col col="8" col-class="custom-van-col">span: 8</van-col>
-    <van-col col="8" col-class="custom-van-col">span: 8</van-col>
+    <van-col span="8" custom-class="dark">span: 8</van-col>
+    <van-col span="8" custom-class="light">span: 8</van-col>
+    <van-col span="8" custom-class="dark">span: 8</van-col>
   </van-row>
-</van-panel>
 
-<van-panel title="利用 offset 布局">
   <van-row>
-    <van-col col="4" col-class="custom-van-col">span: 4</van-col>
-    <van-col col="10" offset="4" col-class="custom-van-col">offset: 4, span: 10</van-col>
+    <van-col span="4" custom-class="dark">span: 4</van-col>
+    <van-col span="10" offset="4" custom-class="light">offset: 4, span: 10</van-col>
   </van-row>
+
   <van-row>
-    <van-col col="12" offset="12" col-class="custom-van-col">offset: 12, span: 12</van-col>
+    <van-col offset="12" span="12" custom-class="dark">offset: 12, span: 12</van-col>
   </van-row>
-</van-panel>
+</demo-block>
+
+<demo-block title="在列元素之间增加间距">
+  <van-row gutter="20">
+    <van-col span="8" custom-class="dark">span: 8</van-col>
+    <van-col span="8" custom-class="light">span: 8</van-col>
+    <van-col span="8" custom-class="dark">span: 8</van-col>
+  </van-row>
+</demo-block>

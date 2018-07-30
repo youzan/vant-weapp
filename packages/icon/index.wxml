@@ -1,1 +1,3 @@
-<view class="van-icon van-icon-{{ type }}"></view>
+<view class="custom-class van-icon van-icon-{{ name }}" style="color: {{ color }}">
+  <view wx:if="{{ info !== null }}" class="van-icon__info">{{ info }}</view>
+</view>

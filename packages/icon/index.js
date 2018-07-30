@@ -1,8 +1,9 @@
 Component({
+  externalClasses: ['custom-class'],
+
   properties: {
-    type: {
-      type: String,
-      value: ''
-    }
+    info: null,
+    name: String,
+    color: String
   }
 });

@@ -1,7 +1,7 @@
 {
   "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
     "van-row": "../../dist/row/index",
-    "van-col": "../../dist/col/index",
-    "van-panel": "../../dist/panel/index"
+    "van-col": "../../dist/col/index"
   }
 }

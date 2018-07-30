@@ -1,4 +1,4 @@
-<view class="demo-block">
+<view class="custom-class demo-block">
   <view wx:if="{{ title }}" class="demo-block__title">{{ title }}</view>
   <slot />
 </view>

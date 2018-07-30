@@ -1,27 +1,29 @@
-<van-panel without-border>
-  <van-card
-    card-class="test-card"
-    thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
-    price="999.99"
-    title="红烧牛肉【虚拟商品】【有库存】【有sku】"
-    num="2"
-    desc="3000克 50%"
-    status="已发货"
-  >
-  </van-card>
+<view class="container">
+  <demo-block title="基础用法">
+    <van-card
+      title="标题"
+      desc="描述信息"
+      num="2"
+      price="2.00"
+      thumb="{{ imageURL }}"
+      custom-class="card"
+    />
+  </demo-block>
 
-</van-panel>
-
-<van-panel title="使用slot">
-  <van-card
-    card-class="test-card"
-    thumb="https://img.yzcdn.cn/upload_files/2016/11/25/FpqPXlrMRjKwJs8VdTu3ZDJCj4j5.jpeg?imageView2/2/w/200/h/200/q/90/format/jpeg"
-    useThumbSlot="{{ true }}"
-    useDetailSlot="{{ true }}"
-  >
-    <!-- 右侧详情 -->
-    <view slot="detail-slot" class="van-card__detail">
-      我是自定义内容区域
-    </view>
-  </van-card>
-</van-panel>
+  <demo-block title="高级用法">
+    <van-card
+      title="标题"
+      desc="描述信息"
+      num="2"
+      price="2.00"
+      thumb="{{ imageURL }}"
+      custom-class="card"
+      use-footer-slot="{{ true }}"
+    >
+      <div slot="footer">
+        <van-button size="mini" custom-class="button">按钮</van-button>
+        <van-button size="mini">按钮</van-button>
+      </div>
+    </van-card>
+  </demo-block>
+</view>

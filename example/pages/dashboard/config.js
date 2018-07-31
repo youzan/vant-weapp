@@ -69,9 +69,6 @@ export default {
         name: 'Search 搜索',
         path: '/pages/search/index'
       }, {
-        name: 'Select 选择',
-        path: '/pages/select/index'
-      }, {
         name: 'Stepper 步进器',
         path: '/pages/stepper/index'
       }, {

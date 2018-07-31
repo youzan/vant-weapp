@@ -18,66 +18,65 @@
     border-width: 1px;
     border-radius: 4px;
   }
-}
 
-.zan-tag--plain {
-  color: $gray;
-  background: $white;
-}
-
-/* 各种主题代码 */
-.zan-tag--primary {
-  color: $button-primary-color;
-  background-color: $button-primary-background-color;
-
-  &::after {
-    border-color: $button-primary-background-color;
-  }
-
-  /* 空心形式 */
-  &.zan-tag--plain {
-    color: $button-primary-background-color;
+  &--plain {
+    color: $gray;
     background: $white;
   }
-}
 
-.zan-tag--danger {
-  color: $button-danger-color;
-  background: $button-danger-background-color;
+  /* 各种主题代码 */
+  &--primary {
+    color: $button-primary-color;
+    background-color: $button-primary-background-color;
 
-  &::after {
-    border-color: $button-danger-background-color;
+    &::after {
+      border-color: $button-primary-background-color;
+    }
+
+    /* 空心形式 */
+    &.zan-tag--plain {
+      color: $button-primary-background-color;
+      background: $white;
+    }
   }
 
-  /* 空心形式 */
-  &.zan-tag--plain {
-    color: $button-danger-background-color;
-    background: $button-danger-color;
+  &--danger {
+    color: $button-danger-color;
+    background: $button-danger-background-color;
+
+    &::after {
+      border-color: $button-danger-background-color;
+    }
+
+    /* 空心形式 */
+    &.zan-tag--plain {
+      color: $button-danger-background-color;
+      background: $button-danger-color;
+    }
   }
-}
 
-.zan-tag--warn {
-  color: $white;
-  background: #f85;
+  &--warn {
+    color: $white;
+    background: #f85;
 
-  &::after {
-    border-color: #f85;
+    &::after {
+      border-color: #f85;
+    }
+
+    /* 空心形式 */
+    &.zan-tag--plain {
+      color: #f85;
+      background: $white;
+    }
   }
 
-  /* 空心形式 */
-  &.zan-tag--plain {
-    color: #f85;
-    background: $white;
-  }
-}
+  /* disabled tag */
+  &--disabled {
+    color: $button-disabled-color !important;
+    background: $button-disabled-background-color;
 
-
-/* disabled tag */
-.zan-tag--disabled {
-  color: $button-disabled-color !important;
-  background: $button-disabled-background-color;
-
-  &::after {
-    border-color: $button-disabled-border-color;
+    &::after {
+      border-color: $button-disabled-border-color;
+    }
   }
 }

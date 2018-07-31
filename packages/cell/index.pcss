@@ -26,6 +26,7 @@
 
   &__title {
     padding-right: 10px;
+
     &:empty {
       display: none;
     }
@@ -52,7 +53,7 @@
     color: #666;
   }
 
-  &__no-pading{
+  &__no-pading {
     padding: 0;
 
     .zan-cell__bd_padding {
@@ -68,31 +69,31 @@
     }
   }
 
-  &.last-cell::after, &.no-border::after {
+  &.last-cell::after,
+  &.no-border::after {
     display: none;
   }
 
-}
+  &--access .zan-cell__ft {
+    padding-right: 13px;
 
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      content: " ";
+      display: inline-block;
+      height: 6px;
+      width: 6px;
+      border-width: 2px 2px 0 0;
+      border-color: #c8c8c8;
+      border-style: solid;
+      transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    }
+  }
 
-.zan-cell--access .zan-cell__ft {
-  padding-right: 13px;
-}
-
-.zan-cell--access .zan-cell__ft::after {
-  position: absolute;
-  top: 50%;
-  right: 2px;
-  content: " ";
-  display: inline-block;
-  height: 6px;
-  width: 6px;
-  border-width: 2px 2px 0 0;
-  border-color: #c8c8c8;
-  border-style: solid;
-  transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-}
-.zan-cell--switch {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  &--switch {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
 }

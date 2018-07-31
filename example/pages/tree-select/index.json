@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "Tree Select 分类选择",
   "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
     "van-tree-select": "../../dist/tree-select/index"
   }
 }

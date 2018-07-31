@@ -1,12 +1,11 @@
 ## TreeSelect 分类选择
 
 ### 使用指南
+
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "van-tree-select": "path/to/vant-weapp/dist/tree-select/index"
-  }
+"usingComponents": {
+  "van-tree-select": "path/to/vant-weapp/dist/tree-select/index"
 }
 ```
 
@@ -17,8 +16,8 @@
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
-  bind:navclick="handleNavClick"
-  bind:itemclick="handleItemClick"
+  bind:navclick="onNavClick"
+  bind:itemclick="onItemClick"
 />
 ```
 ```javascript
@@ -27,13 +26,13 @@ Page({
     // ...
   },
 
-  handleNavClick({ detail = {} }) {
+  onNavClick({ detail = {} }) {
     this.setData({
       mainActiveIndex: detail.index || 0
     });
   },
 
-  handleItemClick({ detail = {} }) {
+  onItemClick({ detail = {} }) {
     this.setData({
       activeId: detail.id
     });

@@ -7,6 +7,7 @@
     style="{{ inputStyle }}"
   >
     <icon type="search" size="15" color="#a9a9a9" />
+    <slot name="input"></slot>
     <input
       class="zan-search__input"
       placeholder="{{ placeholder }}"

@@ -53,7 +53,7 @@ Component({
   methods: {
     onTap(event) {
       if (!this.data.disabled && !this.data.loading) {
-        this.triggerEvent('click', event);
+        this.triggerEvent('tap', event);
       }
     },
 

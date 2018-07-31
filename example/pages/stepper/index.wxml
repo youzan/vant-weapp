@@ -1,60 +1,17 @@
-<van-panel title="基础用法">
-  <view style="padding: 40px 15px">
-    <van-stepper
-      stepper="{{ stepper1.stepper }}"
-      min="{{ stepper1.min }}"
-      data-component-id="stepper1"
-      bind:change="handleZanStepperChange"
-    >
-    </van-stepper>
-  </view>
-</van-panel>
+<demo-block title="基础用法">
+  <van-stepper value="{{ value1 }}" />
+</demo-block>
 
-<!-- small size -->
-<van-panel title="不同尺寸-小尺寸类型">
-  <view style="padding: 40px 15px">
-    <view style="margin-bottom: 5px">small:</view>
-    <van-stepper
-      stepper="{{ stepper2.stepper }}"
-      min="{{ stepper2.min }}"
-      max="{{ stepper2.max }}"
-      size="small"
-      data-component-id="stepper2"
-      bind:change="handleZanStepperChange"
+<demo-block title="禁用状态">
+  <van-stepper value="{{ value1 }}" disabled />
+</demo-block>
 
-    ></van-stepper>
-
-    <view style="margin: 10px 0 5px;">middle:</view>
-    <van-stepper
-      stepper="{{ stepper2.stepper }}"
-      min="{{ stepper2.min }}"
-      max="{{ stepper2.max }}"
-      data-component-id="stepper2-1"
-      bind:change="handleZanStepperChange"
-    ></van-stepper>
-
-    <view style="margin: 10px 0 5px;">large:</view>
-    <van-stepper
-      stepper="{{ stepper2.stepper }}"
-      min="{{ stepper2.min }}"
-      max="{{ stepper2.max }}"
-      size="large"
-      data-component-id="stepper2-2"
-      bind:change="handleZanStepperChange"
-    ></van-stepper>
-  </view>
-</van-panel>
-
-<van-panel title="高级用法-每次变动数量自定义">
-  <view style="padding: 40px 15px">
-    <van-stepper
-      stepper="{{ stepper3.stepper }}"
-      min="{{ stepper3.min }}"
-      max="{{ stepper3.max }}"
-      step="{{ stepper3.step }}"
-      data-component-id="stepper3"
-      bind:change="handleZanStepperChange"
-    >
-    </van-stepper>
-  </view>
-</van-panel>
+<demo-block title="高级用法">
+  <van-stepper
+    value="{{ value2 }}"
+    integer
+    min="5"
+    max="40"
+    step="2"
+  />
+</demo-block>

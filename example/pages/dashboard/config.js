@@ -75,7 +75,7 @@ export default {
         name: 'Select 选择',
         path: '/pages/select/index'
       }, {
-        name: 'Stepper 计数器',
+        name: 'Stepper 步进器',
         path: '/pages/stepper/index'
       }, {
         name: 'Switch 开关',

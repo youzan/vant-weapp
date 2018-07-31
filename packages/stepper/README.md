@@ -1,73 +1,72 @@
-## Stepper 计数器
+## Stepper 步进器
 
 ### 使用指南
+
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "van-stepper": "path/to/vant-weapp/dist/stepper/index"
-  }
+"usingComponents": {
+  "van-stepper": "path/to/vant-weapp/dist/stepper/index"
 }
 ```
 
 ### 代码演示
 
 #### 基础用法
-`Stepper` 组件通过传入的 stepper 对象控制，内部数据格式如下：
-```js
-Page({
-  data: {
-    stepper: {
-      // 当前 stepper 数字
-      stepper: 1,
-      // 最小可到的数字
-      min: 1,
-      // 最大可到的数字
-      max: 1,
-      // 尺寸
-      size: 'small'
-    }
-  },
 
-  handleZanStepperChange({
-    // stepper 代表操作后，应该要展示的数字，需要设置到数据对象里，才会更新页面展示
-    detail: stepper
-  }) {
-    this.setData({
-      'stepper.stepper': stepper
-    });
-  }
-});
+```html
+<van-stepper value="{{ 1 }}" bind:change="onChange" />
 ```
 
-当一个 `Stepper` 中，min 超过 max，就会导致组件被置灰。
+#### 禁用状态
 
-当 stepper 被点击时，需要监听`change`事件，处理计数器值的改变。
+通过设置`disabled`属性来禁用 stepper
 
-```js
+```html
+<van-stepper value="{{ 1 }}" disabled bind:change="onChange" />
+```
+
+#### 高级用法
+
+默认是每次加减为1，可以对组件设置`step`、`min`、`max`属性
+
+```html
 <van-stepper
-  stepper="{{ stepper.stepper }}"
-  min="{{ stepper.min }}"
-  max="{{ stepper.max }}"
-  bind:change="handleZanStepperChange"
->
-</van-stepper>
+  value="{{ value }}"
+  integer
+  min="5"
+  max="40"
+  step="2"
+  bind:change="onChange"
+/>
 ```
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
-|-----------|-----------|-----------|-------------|-------------|
-| size | 计数器尺寸：small、middle、large | String | middle | |
-| stepper | 计数器的值 | Number | `1` | 必须 |
-| min | 计数器最小值 | Number | `1` | |
-| max | 计数器最大值 | Number | 无穷大 | |
-| step | 步数 | Number | `1` | |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| value | 输入值 | `String | Number` | 最小值 |
+| min | 最小值 | `String | Number` | `1` |
+| max | 最大值 | `String | Number` | - |
+| step | 步数 | `String | Number` | `1` |
+| integer | 是否只允许输入整数 | `Boolean` | `false` |
+| disabled | 是否禁用 | `Boolean` | `false` |
+| disable-input | 是否禁用input框 | `Boolean` | `false` |
 
 ### Event
 
-| 事件名称       | 说明      | 回调参数       |
+| 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| change | 当绑定值变化时触发的事件 | `{ index, stepper }` |
-| minus | 点击减少按钮时触发 | - |
+| change | 当绑定值变化时触发的事件 | event.detail: 当前输入的值 |
+| overlimit | 点击不可用的按钮时触发 | - |
 | plus | 点击增加按钮时触发 | - |
+| minus | 点击减少按钮时触发 | - |
+| blur | 输入框失焦时触发 | - |
+
+### 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| input-class | 输入框样式类 |
+| plus-class | 加号按钮样式类 |
+| minus-class | 减号按钮样式类 |

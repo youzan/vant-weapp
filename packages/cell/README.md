@@ -49,7 +49,13 @@
 <van-cell-group>
   <van-cell title="单元格" is-link />
   <van-cell title="单元格" is-link value="内容" />
-  <van-cell title="单元格" is-link arrow-direction="down" value="内容" />
+  <van-cell
+    title="单元格"
+    is-link
+    arrow-direction="down"
+    value="内容"
+    url="/pages/dashboard/index"
+  />
 </van-cell-group>
 ```
 
@@ -77,6 +83,12 @@
 |-----------|-----------|-----------|-------------|
 | border | 是否显示外边框 | `Boolean` | `true` |
 
+### CellGroup 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+
 ### Cell API
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -85,11 +97,10 @@
 | title | 左侧标题 | `String | Number` | - |
 | value | 右侧内容 | `String | Number` | - |
 | label | 标题下方的描述信息 | `String` | - |
-| border | 是否显示内边框 | `Boolean` | `true` |
+| border | 是否显示下边框 | `Boolean` | `true` |
 | center | 是否使内容垂直居中 | `Boolean` | `false` |
 | url | 跳转链接 | `String` | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` |
+| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
 | clickable | 是否开启点击反馈 | `Boolean` | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
@@ -99,13 +110,24 @@
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| click | 点击 cell 时触发 | - |
+| tap | 点击 cell 时触发 | - |
 
 ### Cell Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
 | - | 自定义显示内容 |
-| icon | 自定义`icon` |
-| title | 自定义`title` |
-| right-icon | 自定义右侧按钮，默认是`arrow` |
+| icon | 自定义`icon`，如果设置了`icon`属性则不生效 |
+| title | 自定义`title`，如果设置了`title`属性则不生效 |
+| right-icon | 自定义右侧按钮，默认是`arrow`，如果设置了`is-link`属性则不生效 |
+
+### Cell 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| title-class | 标题样式类 |
+| label-class | 描述信息样式类 |
+| value-class | 右侧内容样式类 |
+| left-icon-class | 左侧图标样式类 |
+| right-icon-class | 右侧图标样式类 |

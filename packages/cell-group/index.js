@@ -1,4 +1,6 @@
 Component({
+  externalClasses: ['custom-class'],
+
   properties: {
     border: {
       type: Boolean,

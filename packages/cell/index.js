@@ -1,5 +1,12 @@
 Component({
-  externalClasses: ['cell-class', 'title-class'],
+  externalClasses: [
+    'custom-class',
+    'title-class',
+    'label-class',
+    'value-class',
+    'left-icon-class',
+    'right-icon-class'
+  ],
 
   options: {
     multipleSlots: true
@@ -8,6 +15,7 @@ Component({
   properties: {
     title: null,
     value: null,
+    url: String,
     icon: String,
     label: String,
     center: Boolean,
@@ -15,6 +23,10 @@ Component({
     required: Boolean,
     clickable: Boolean,
     arrowDirection: String,
+    linkType: {
+      type: String,
+      value: 'navigateTo'
+    },
     border: {
       type: Boolean,
       value: true
@@ -24,15 +36,10 @@ Component({
   methods: {
     onTap() {
       this.triggerEvent('tap');
-      this.navigate();
-    },
-
-    navigate() {
-      const { url = '' } = this.data;
-
-      if (!this.data.isLink || !url || url === 'true' || url === 'false') return;
-
-      wx[this.data.linkType].call(wx, { url });
+      const { url } = this.data;
+      if (url) {
+        wx[this.data.linkType]({ url });
+      }
     }
   }
 });

@@ -11,10 +11,10 @@ Page({
   },
 
   searchDone(e) {
-    console.error('search', e.detail.value)
+    console.error('search', e.detail.value);
   },
 
   handleCancel() {
-    console.error('cancel')
+    console.error('cancel');
   }
 });

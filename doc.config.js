@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable global-require */
 module.exports = {
   header: {
     logo: {
@@ -96,4 +96,4 @@ module.exports = {
     ],
     include: {}
   }
-}
+};

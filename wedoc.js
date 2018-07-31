@@ -1,14 +1,14 @@
-const path = require('path')
-const getDemoTemplate = require('./website/demo')
+const path = require('path');
+const getDemoTemplate = require('./website/demo');
 
 module.exports = {
   async: false,
   config: path.resolve(__dirname, 'doc.config.js'),
-  docs: [ path.resolve(__dirname, 'packages') ],
+  docs: [path.resolve(__dirname, 'packages')],
   out: path.resolve(__dirname, 'website/dist'),
   markdown: {
-    before (source) {
-      return getDemoTemplate.call(this, source)
+    before(source) {
+      return getDemoTemplate.call(this, source);
     }
   },
   webpack: {
@@ -17,4 +17,4 @@ module.exports = {
       filename: '[name].[hash].js'
     }
   }
-}
+};

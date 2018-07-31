@@ -1,7 +1,6 @@
-var Zan = require('../../dist/index');
+// var Zan = require('../../dist/index');
 
 Page({
-
   data: {
     items: [
       {
@@ -28,7 +27,7 @@ Page({
   handleSelectChange({ currentTarget = {}, detail = {} }) {
     const { value = '' } = detail;
     const { dataset = {} } = currentTarget;
-    const type = dataset.type;
+    const { type } = dataset;
     this.setData({
       [`checked.${type}`]: value
     });

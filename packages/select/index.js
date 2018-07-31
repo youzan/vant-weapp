@@ -19,8 +19,8 @@ Component({
   },
 
   methods: {
-    handleSelectChange(e) {
-      const value = e.detail.value;
+    handleSelectChange({ detail }) {
+      const { value } = detail;
       this.triggerEvent('change', { value });
     }
   }

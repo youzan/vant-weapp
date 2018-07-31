@@ -5,7 +5,6 @@ Page({
     actions: [{
       name: '选项1',
       subname: '选项描述语1',
-      className: 'action-class',
       loading: false
     }, {
       name: '选项2',
@@ -28,13 +27,13 @@ Page({
 
   openActionsheet() {
     this.setData({
-      'show': true
+      show: true
     });
   },
 
   closeActionSheet() {
     this.setData({
-      'show': false
+      show: false
     });
   },
 
@@ -49,7 +48,7 @@ Page({
     });
     setTimeout(() => {
       this.setData({
-        [`show`]: false,
+        show: false,
         [`actions[${index}].loading`]: false
       });
     }, 1500);

@@ -26,7 +26,7 @@ module.exports = {
       keywords: ['exchange'],
       src: '兑换.svg',
       css: 'exchange',
-      'correct_contour_direction': true
+      correct_contour_direction: true
     },
     {
       keywords: ['close'],
@@ -37,7 +37,7 @@ module.exports = {
       keywords: ['location'],
       src: '其他分店.svg',
       css: 'location',
-      'correct_contour_direction': true
+      correct_contour_direction: true
     },
     {
       keywords: ['upgrade'],
@@ -68,7 +68,7 @@ module.exports = {
       keywords: ['chat'],
       src: '客服.svg',
       css: 'chat',
-      'correct_contour_direction': true
+      correct_contour_direction: true
     },
     {
       keywords: ['shop'],
@@ -104,7 +104,7 @@ module.exports = {
       keywords: ['logistics'],
       src: '物流.svg',
       css: 'logistics',
-      'correct_contour_direction': true
+      correct_contour_direction: true
     },
     {
       keywords: ['edit'],
@@ -196,7 +196,7 @@ module.exports = {
       keywords: ['ecard', 'pay'],
       src: '有赞E卡.svg',
       css: 'ecard-pay',
-      'correct_contour_direction': true
+      correct_contour_direction: true
     },
     {
       keywords: ['balance', 'pay'],
@@ -242,7 +242,7 @@ module.exports = {
       keywords: ['receive', 'gift'],
       src: '收礼物.svg',
       css: 'receive-gift',
-      'correct_contour_direction': true
+      correct_contour_direction: true
     },
     {
       keywords: ['send', 'gift'],

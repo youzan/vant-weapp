@@ -7,7 +7,7 @@ Component({
     text: {
       type: String,
       value: '',
-      observer(newVal) {
+      observer() {
         this.setData({}, this._init);
       }
     },
@@ -109,7 +109,7 @@ Component({
               } = this.data;
 
               if (scrollable && wrapWidth < width) {
-                const elapse = width / speed * 1000;
+                const elapse = (width / speed) * 1000;
                 const animation = wx.createAnimation({
                   duration: elapse,
                   timeingFunction: 'linear',

@@ -1,9 +1,7 @@
 Page({
-  data: {
-  },
+  data: {},
 
   onLoad() {
-
   },
 
   onShow() {

@@ -59,7 +59,7 @@ Component({
           let lastIndex = elements.length - 1;
 
           elements.forEach((cell, index) => {
-            titleWidth && cell.setTitleWidth(titleWidth)
+            titleWidth && cell.setTitleWidth(titleWidth);
             cell.updateIsLastElement(index === lastIndex);
           });
         }

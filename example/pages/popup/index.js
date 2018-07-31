@@ -1,5 +1,4 @@
 Page({
-
   data: {
     showPopup: false,
     showLeftPopup: false,

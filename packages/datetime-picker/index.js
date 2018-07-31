@@ -1,6 +1,5 @@
-const DatePicker = require('./date-picker')
-const { genNumber, moment } = require('./utils')
-
+const DatePicker = require('./date-picker');
+const { moment } = require('./utils');
 
 Component({
   properties: {
@@ -19,13 +18,13 @@ Component({
       type: String,
       observer(value) {
         if (value === ({}).toString()) {
-          throw new Error('参数必须是一个字符串')
+          throw new Error('参数必须是一个字符串');
         }
         if (/^[0-9]+$/.test(value)) {
-          value = +value
+          value = +value;
         }
-        !this._inited && this._init()
-        this.updateDate(value)
+        !this._inited && this._init();
+        this.updateDate(value);
       }
     },
     notUse: {
@@ -37,23 +36,23 @@ Component({
     transPos: [0, 0, 0, 0, 0, 0]
   },
   attached() {
-    !this._inited && this._init()
+    !this._inited && this._init();
   },
-  
+
   methods: {
-    _init () {
-      this._inited = true
+    _init() {
+      this._inited = true;
       this.use = {};
 
       ['years', 'months', 'days', 'hours', 'minutes', 'seconds'].forEach((item) => {
         if ((this.data.notUse || []).indexOf(item) === -1) {
-          this.use[item] = true
+          this.use[item] = true;
         }
       });
 
-      this.picker = new DatePicker(this.data.date)
+      this.picker = new DatePicker(this.data.date);
 
-      let { dataList, selected } = this.picker.getData(this.data.date)
+      let { dataList, selected } = this.picker.getData(this.data.date);
 
       // 鬼他么知道为什么 dataList, selected 不能一起 setData
       this.setData({
@@ -62,39 +61,39 @@ Component({
       }, () => {
         this.setData({
           selected
-        })
+        });
       });
-      
-      this._indexs = selected
+
+      this._indexs = selected;
     },
     updatePicker(updateData = []) {
       let _updateData = {};
-      
-      for (const { col, index, data } of updateData) {
-        if (~index && this._indexs[col] !== index || col === 0) {
-          _updateData[`selected[${col}]`] = index // 更新索引
-          this._indexs[col] = index
+
+      updateData.forEach(({ col, index, data }) => {
+        if ((~index && this._indexs[col] !== index) || col === 0) {
+          _updateData[`selected[${col}]`] = index; // 更新索引
+          this._indexs[col] = index;
         }
 
         if (data) {
           _updateData[`dataList[${col}]`] = data;
         }
-      }
+      });
 
       this.setData(_updateData);
     },
 
-    updateDate (date) {
-      let { dataList, selected } = this.picker.getData(date)
-      this._indexs = selected
-      
+    updateDate(date) {
+      let { dataList, selected } = this.picker.getData(date);
+      this._indexs = selected;
+
       // 好像必须要等到 datalist 完成
       this.setData({ dataList }, () => {
         this.setData({
           selected,
           text: this.getFormatStr()
-        })
-      })
+        });
+      });
     },
 
     getFormatStr() {
@@ -135,11 +134,11 @@ Component({
         });
       }
     },
-    
+
     columnchange(e) {
       let { column, value } = e.detail;
       let updateData = this.picker.update(column, value);
-      this.updatePicker(updateData)
+      this.updatePicker(updateData);
     },
 
     change(e) {
@@ -149,9 +148,9 @@ Component({
         return +item[value[index]];
       });
 
-      let day = data.slice(0, 3)
-      let time = data.slice(3, 6)
-      let date = new Date(`${ day.join('/') } ${ time.join(':') }`)
+      let day = data.slice(0, 3);
+      let time = data.slice(3, 6);
+      let date = new Date(`${ day.join('/') } ${ time.join(':') }`);
 
       this.triggerEvent('change', {
         value: data,
@@ -166,7 +165,7 @@ Component({
               column: index,
               value: value[index]
             }
-          })
+          });
         }
       }
 

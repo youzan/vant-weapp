@@ -28,7 +28,7 @@ Page({
           }
         }
       });
-    },this.data.duration);
+    }, this.data.duration);
   },
 
   showTopTips2() {
@@ -39,6 +39,6 @@ Page({
     Toptips({
       duration: 1000,
       content: '测试时间1秒'
-    })
+    });
   }
 });

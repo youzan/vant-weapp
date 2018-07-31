@@ -1,11 +1,9 @@
 Page({
-  data: {
+  data: {},
+
+  onLoad() {
   },
 
-  onLoad: function () {
-
-  },
-
-  onShow: function() {
-  },
-})
+  onShow() {
+  }
+});

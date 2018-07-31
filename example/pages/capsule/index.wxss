@@ -1,7 +1,0 @@
-.capsule-demo {
-  padding: 15px 0;
-}
-
-.van-capsule + .van-capsule {
-  margin-left: 10px;
-}

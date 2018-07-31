@@ -9,9 +9,6 @@ export default {
         name: 'Button 按钮',
         path: '/pages/button/index'
       }, {
-        name: 'Capsule 胶囊',
-        path: '/pages/capsule/index'
-      }, {
         name: 'Card 卡片',
         path: '/pages/card/index'
       }, {

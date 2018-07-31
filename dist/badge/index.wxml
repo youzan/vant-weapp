@@ -1,8 +1,0 @@
-<view class="van-badge">
-  <view
-    class="van-badge__text"
-    style="color: {{ color }}; background-color: {{ backgroundColor }};font-size: {{ fontSize * 2 }}px; box-shadow: {{ boxShadow }};"
-  >
-    <slot></slot>
-  </view>
-</view>

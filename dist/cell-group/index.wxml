@@ -1,3 +1,0 @@
-<view class="cell-group {{ border ? 'cell-group--with-border' : '' }}">
-  <slot></slot>
-</view>

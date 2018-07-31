@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "Capsule 胶囊",
-  "usingComponents": {
-    "van-panel": "../../dist/panel/index",
-    "van-capsule": "../../dist/capsule/index"
-  }
-}

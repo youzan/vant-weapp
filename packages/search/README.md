@@ -39,6 +39,28 @@ searchDone(e) {
 }
 ```
 
+### 使用slot
+
+```js
+<zan-search
+  placeholder="搜索..."
+  useCancel
+>
+  <picker
+    slot="input"
+    mode="selector"
+    range="{{ range }}"
+    value="{{ rangeIndex }}"
+    bindchange="pickerChange"
+    class="zan-search__selector"
+    style="width: 60px"
+    wx:if="{{ range.length > 0}}"
+  >
+    <view class="picker">{{ range[rangeIndex] }}</view>
+  </picker>
+</zan-search>
+```
+
 ### API
 
 #### 参数

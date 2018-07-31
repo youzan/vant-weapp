@@ -1,5 +1,5 @@
 Component({
-  props: {
+  properties: {
     border: {
       type: Boolean,
       value: true

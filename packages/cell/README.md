@@ -2,77 +2,110 @@
 
 ### 使用指南
 
-#### 单个 cell 使用示例
+在 index.json 中引入组件
 ```json
-  {
-    "usingComponents": {
-      "van-cell": "path/to/vant-weapp/dist/cell/index",
-    }
-  }
+"usingComponents": {
+  "van-cell": "path/to/vant-weapp/dist/cell/index",
+  "van-cell-group": "path/to/vant-weapp/dist/cell-group/index"
+}
 ```
 
-```wxml
-  <van-cell title="单行列表" label="附加描述" value="详细信息"></van-cell>
-```
+### 代码演示
 
-### 属性与事件
+#### 基础用法
 
-| 名称          | 类型        | 是否必须 | 默认  | 描述                                                                                                     |
-| ------------- | ----------- | -------- | ----- | -------------------------------------------------------------------------------------------------------- |
-| title         | String      | 否       | 无    | 左侧标题                                                                                                 |
-| label         | Boolean     | 否       | false | 标题下方的描述信息                                                                                       |
-| value         | String      | 否       | 取消  | 右侧内容                                                                                                 |
-| noBorder        | Boolean      | 否      | false   | 不显示下边线 |
-| isLink        | Boolean      | 否       | false    | 是否展示右侧箭头并开启尝试以 url 跳转 |
-| url        | String      | 否      | -    | 当 isLink 设置为 true 时，点击 cell 会尝试跳转到该路径 |
-| linkType      | String      | 否       | navigateTo    | 链接跳转类型，可选值为 `navigateTo`，`redirectTo`，`switchTab`，`reLaunch`                               |
-| onlyTapFooter | Boolean     | 否       | false | 只有点击 footer 区域才触发 tab 事件                                                                      |
-| bindtap       | EventHandle | 否       | 无    | 点击 cell 时触发，`onlyTapFooter` 为 `true` 时点击 footer 区域触发                                       |
+将`van-cell-group`组件看成一个容器即可
 
-### 可用的 slot
-
-| 名称          | 是否必须    | 默认 | 描述                                                                  |
-| ------------- | ----------- | ---- | --------------------------------------------------------------------- |
-| 默认            | 否          | 无   | 左侧除了 `title`，`label` 外的自定义 wxml 内容                              |
-| icon          | 否          | 无   | 标题前自定义的 icon，可使用 `icon` 自定义组件，具体使用参考 icon 组件 |
-| footer          | 否          | 无   | 右侧自定义 wxml 内容，如果设置了 `value` 属性，则不生效 |
-
-### 外部样式类
-| 类名       | 说明      |
-|-----------|-----------|
-| cell-class | 根节点自定义样式类，通过这个可以改变根节点上的样式 |
-| title-class | title区域自定义样式 |
-
-#### cell 组使用示例
-多个 cell 组件必须作为 `cell-group` 组件的子组件，否则可能出现显示问题。
-
-```json
-  {
-    "usingComponents": {
-      "van-cell": "path/to/vant-weapp/dist/cell/index",
-      "van-cell-group": "path/to/vant-weapp/dist/cell-group/index"
-    }
-  }
-```
-
-`cell-group`提供`title-width`控制组内整体 cell 的 title 区域宽度
-```wxml
-<van-cell-group border title-width="90">
-    <van-cell title="只显示箭头" is-link></van-cell>
-    <van-cell title="跳转到首页" is-link url="/pages/dashboard/index"></van-cell>
-    <van-cell title="单行列表" label="附加描述" value="详细信息"></van-cell>
-    <van-cell title="表单">
-		<input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
-	</van-cell>
-    <van-cell title="开关">
-    	<switch slot="footer" checked/>
-    </van-cell>
+```html
+<van-cell-group>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
 </van-cell-group>
 ```
 
-### 属性与事件
+#### 只设置value
+只设置`value`时会向左对齐
 
-| 名称       | 类型    | 是否必须 | 默认  | 描述             |
-| ---------- | ------- | -------- | ----- | ---------------- |
-| titleWidth | Number  | 否       | 无    | title宽度        |
-| border     | Boolean | 否       | false | 是否显示上下边框 |
+```html
+<van-cell-group>
+  <van-cell value="内容" />
+</van-cell-group>
+```
+
+#### 展示图标
+通过`icon`属性在标题左侧展示图标
+
+```html
+<van-cell-group>
+  <van-cell title="单元格" icon="location" />
+</van-cell-group>
+```
+
+
+#### 展示箭头
+传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
+
+```html
+<van-cell-group>
+  <van-cell title="单元格" is-link />
+  <van-cell title="单元格" is-link value="内容" />
+  <van-cell title="单元格" is-link arrow-direction="down" value="内容" />
+</van-cell-group>
+```
+
+#### 高级用法
+如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
+
+```html
+<van-cell-group>
+  <van-cell value="内容" icon="shop" is-link>
+    <template slot="title">
+      <span class="van-cell-text">单元格</span>
+      <van-tag type="danger">标签</van-tag>
+    </template>
+  </van-cell>
+  <van-cell title="单元格" icon="location" is-link />
+  <van-cell title="单元格">
+    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
+  </van-cell>
+</van-cell-group>
+```
+
+### CellGroup API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| border | 是否显示外边框 | `Boolean` | `true` |
+
+### Cell API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
+| title | 左侧标题 | `String | Number` | - |
+| value | 右侧内容 | `String | Number` | - |
+| label | 标题下方的描述信息 | `String` | - |
+| border | 是否显示内边框 | `Boolean` | `true` |
+| center | 是否使内容垂直居中 | `Boolean` | `false` |
+| url | 跳转链接 | `String` | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` |
+| clickable | 是否开启点击反馈 | `Boolean` | `false` |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
+| required | 是否显示表单必填星号 | `Boolean` | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
+
+### Cell Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 点击 cell 时触发 | - |
+
+### Cell Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 自定义显示内容 |
+| icon | 自定义`icon` |
+| title | 自定义`title` |
+| right-icon | 自定义右侧按钮，默认是`arrow` |

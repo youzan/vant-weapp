@@ -1,64 +1,35 @@
-
-<van-cell-group border class="cell-panel-demo">
-  <van-cell title="单行列表" bindtap="handleTap"></van-cell>
-</van-cell-group>
-
-<van-cell-group border class="cell-panel-demo">
-  <van-cell title="单行列表" value="详细信息"></van-cell>
-</van-cell-group>
-
-<van-cell-group border class="cell-panel-demo">
-  <van-cell title="单行列表" label="附加描述" value="详细信息"></van-cell>
-</van-cell-group>
-
-<van-panel class="cell-panel-demo" title="带 icon 的 cell">
-  <van-cell title="单行列表" value="详细信息">
-    <van-icon slot="icon" type="checked"></van-icon>
-  </van-cell>
-</van-panel>
-
-<van-panel class="cell-panel-demo">
-  <van-cell title="单行列表">
-    <picker mode="date" value="{{date}}" start="2018-07-01" end="2018-09-01" bindchange="bindDateChange">
-      <view class="picker">
-        选择日期: {{date}}
-      </view>
-    </picker>
-  </van-cell>
-</van-panel>
-
-<van-panel class="cell-panel-demo" title="带箭头的 cell">
-  <van-cell title="只显示箭头" is-link></van-cell>
-</van-panel>
-
-<van-cell-group border class="cell-panel-demo">
-  <van-cell
-    title="跳转到首页"
-    is-link
-    url="/pages/dashboard/index"
-    bindtap="handleTap"
-  ></van-cell>
-</van-cell-group>
-
-<van-panel class="cell-panel-demo" title="cell 组">
+<demo-block title="基础用法">
   <van-cell-group>
-    <van-cell title="只显示箭头" is-link></van-cell>
-    <van-cell title="跳转到首页" is-link url="/pages/dashboard/index"></van-cell>
-    <van-cell
-      is-link
-      only-tap-footer
-      url="/pages/dashboard/index"
-      title="只有 footer 点击有效"
-      bindtap="handleTap"
-    ></van-cell>
-    <block wx:if="{{ show }}">
-      <van-cell no-border title="单行列表" label="附加描述" value="不想有 border"></van-cell>
-      <van-cell title="表单">
-        <input slot="footer" type="digit" placeholder="带小数点的数字键盘"/>
-      </van-cell>
-    </block>
-    <van-cell title="开关">
-      <switch slot="footer" checked/>
+    <van-cell title="单元格" value="内容" />
+    <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+  </van-cell-group>
+</demo-block>
+
+<demo-block title="展示图标">
+  <van-cell-group>
+    <van-cell title="单元格" icon="location" border="{{ false }}" />
+  </van-cell-group>
+</demo-block>
+
+<demo-block title="展示箭头">
+  <van-cell-group>
+    <van-cell title="单元格" is-link />
+    <van-cell title="单元格" is-link value="内容" />
+    <van-cell title="单元格" is-link arrow-direction="down" value="内容" border="{{ false }}" />
+  </van-cell-group>
+</demo-block>
+
+<demo-block title="高级用法">
+  <van-cell-group>
+    <van-cell value="内容" icon="shop" is-link>
+      <view slot="title">
+        <view class="title">单元格</view>
+        <van-tag type="danger">标签</van-tag>
+      </view>
+    </van-cell>
+    <van-cell title="单元格" icon="location" is-link />
+    <van-cell title="单元格" border="{{ false }}">
+      <van-icon slot="right-icon" name="search" />
     </van-cell>
   </van-cell-group>
-</van-panel>
+</demo-block>

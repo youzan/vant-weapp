@@ -1,25 +1,31 @@
-<view 
-  catchtap="cellTap"
-  class="cell-class van-cell {{ isLastCell ? 'last-cell' : '' }} {{ isLink ? 'van-cell--access' : '' }} {{  noBorder ? 'no-border' : ''}}"
+<div
+  class="van-cell {{ center ? 'van-cell--center' : '' }} {{ required ? 'van-cell--required' : '' }} {{ isLink || clickable ? 'van-cell--clickable' : '' }} {{ border ? 'van-hairline' : '' }}"  
+  bind:tap="onTap"
 >
+  <van-icon wx:if="icon" custom-class="van-cell__left-icon" name="{{ icon }}" />
+  <slot wx:else name="icon" />
 
-  <view class="van-cell__icon">
-    <slot name="icon"></slot>
+  <view wx:if="{{ title }}" class="van-cell__title">
+    <view>{{ title }}</view>
+    <view wx:if="{{ label }}" class="van-cell__label">{{ label }}</view>
+  </view>
+  <view wx:else class="van-cell__title">
+    <slot name="title" />
   </view>
 
-  <view class="title-class van-cell__title" style="width: {{ titleWidth }}">
-    <view wx:if="{{ title }}" class="van-cell__text">{{ title }}</view>
-    <view wx:if="{{ label }}" class="van-cell__desc">{{ label }}</view>
+  <view wx:if="{{ value }}" class="van-cell__value">
+    <view>{{ value }}</view>
+  </view>
+  <view wx:else>
+    <slot />
   </view>
 
-  <view class="van-cell__bd">
-    <slot></slot>
-  </view>
+  <van-icon
+    wx:if="{{ isLink }}"
+    name="arrow"
+    custom-class="van-cell__right-icon {{ arrowDirection ? 'van-cell__right-icon--' + arrowDirection : '' }}"
+  />
+  <slot wx:else name="right-icon" />
 
-  <view bindtap="footerTap" class="van-cell__ft">
-    <block wx:if="{{value}}">{{ value }}</block>
-    <block wx:else>
-      <slot name="footer"></slot>
-    </block>
-  </view>
-</view>
+  <slot name="extra" />
+</div>

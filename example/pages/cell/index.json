@@ -1,10 +1,10 @@
 {
   "navigationBarTitleText": "Cell 单元格",
   "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
     "van-cell": "../../dist/cell/index",
     "van-icon": "../../dist/icon/index",
-    "van-badge": "../../dist/badge/index",
-    "van-panel": "../../dist/panel/index",
+    "van-tag": "../../dist/tag/index",
     "van-cell-group": "../../dist/cell-group/index"
   }
 }

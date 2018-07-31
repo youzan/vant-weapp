@@ -6,12 +6,10 @@ Component({
       type: Boolean,
       value: false
     },
-
     loading: {
       type: Boolean,
       value: false
     },
-
     disabled: {
       type: Boolean,
       value: false

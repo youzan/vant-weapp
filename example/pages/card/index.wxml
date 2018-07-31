@@ -1,5 +1,4 @@
 <doc-page title="CARD" without-padding>
-
   <zan-panel without-border>
     <zan-card
       card-class="test-card"
@@ -11,7 +10,6 @@
       status="已发货"
     >
     </zan-card>
-
   </zan-panel>
 
   <zan-panel title="使用slot">

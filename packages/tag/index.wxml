@@ -1,6 +1,5 @@
-
-<view 
-  class="custom-class theme-class van-tag {{type ? 'van-tag--'+type : ''}} {{disabled ? 'van-tag--disabled' : ''}} {{plain ? 'van-tag--plain' : ''}}"
+<view
+  class="van-hairline--surround van-tag custom-class {{ mark ? 'van-tag--mark' : '' }} {{ plain ? 'van-tag--plain' : '' }} {{ type ? 'van-tag--' + type : '' }}"
 >
-  <slot></slot>
+  <slot />
 </view>

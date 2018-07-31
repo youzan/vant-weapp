@@ -1,8 +1,0 @@
-.tag-demo {
-  display: block;
-  margin: 15px 0;
-}
-
-van-tag + van-tag {
-  margin-left: 10px;
-}

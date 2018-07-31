@@ -54,6 +54,14 @@
       </view>
     </zan-cell>
 
+    <zan-cell>
+      <view class="zan-ellipsis--l3">
+        zan-ellipsis--l3：单行点点点
+        ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+        ->我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符我是占位的字符
+      </view>
+    </zan-cell>
+
   </view>
 
 </doc-page>

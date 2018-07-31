@@ -34,6 +34,13 @@
     </zan-button-group>
   </zan-panel>
 
+  <zan-panel title="镂空按钮">
+    <zan-button-group>
+      <zan-button plain type="primary">确认付款</zan-button>
+      <zan-button plain size="large" type="danger">确认付款</zan-button>
+    </zan-button-group>
+  </zan-panel>
+
   <zan-panel title="Loading">
     <zan-button-group>
       <zan-button loading>取消订单</zan-button>

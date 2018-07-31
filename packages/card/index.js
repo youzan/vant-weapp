@@ -22,10 +22,6 @@ Component({
     currency: {
       type: String,
       default: '¥'
-    },
-    useDescSlot: Boolean,
-    useTitleSlot: Boolean,
-    useThumbSlot: Boolean,
-    useFooterSlot: Boolean
+    }
   }
 });

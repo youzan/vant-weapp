@@ -1,22 +1,22 @@
 <view class="custom-class van-card">
   <view class="van-card__thumb">
-    <slot wx:if="{{ useThumbSlot }}" name="thumb" />
-    <image wx:else src="{{ thumb }}" class="van-card__img thumb-class" />
+    <image wx:if="{{ thumb }}" src="{{ thumb }}" class="van-card__img thumb-class" />
+    <slot wx:else name="thumb" />
   </view>
   <view class="van-card__content">
-    <slot wx:if="{{ useTitleSlot }}" name="title" />
-    <view wx:elseif="{{ title || price }}" class="van-card__row">
+    <view wx:if="{{ title || price }}" class="van-card__row">
       <view wx:if="{{ title }}" class="van-card__title title-class">{{ title }}</view>
       <view wx:if="{{ price }}" class="van-card__price price-class">{{ currency }} {{ price }}</view>
     </view>
-    <slot wx:if="{{ useDescSlot }}" name="desc" />
-    <view wx:elseif="{{ desc || num }}" class="van-card__row">
+    <slot wx:else name="title" />
+    <view wx:if="{{ desc || num }}" class="van-card__row">
       <view wx:if="{{ desc }}" class="van-card__desc desc-class">{{ desc }}</view>
       <view wx:if="{{ num }}" class="van-card__num num-class">x {{ num }}</view>
     </view>
+    <slot wx:else name="desc" />
     <slot name="tags" />
   </view>
-  <view class="van-card__footer" wx:if="{{ useFooterSlot }}">
+  <view class="van-card__footer">
     <slot name="footer" />
   </view>
 </view>

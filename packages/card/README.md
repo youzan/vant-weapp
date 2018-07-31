@@ -53,20 +53,16 @@
 | price | 商品价格 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |
 | currency | 货币符号 |  `String` | `¥` |
-| use-desc-slot | 是否使用 desc slot | `Boolean` | `false` |
-| use-title-slot | 是否使用 title slot | `Boolean` | `false` |
-| use-thumb-slot | 是否使用 thumb slot | `Boolean` | `false` |
-| use-footer-slot | 是否使用 footer slot | `Boolean` | `false` |
 
 ### Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
-| title | 自定义标题 |
-| desc | 自定义描述 |
-| tags | 自定义 tags |
-| thumb | 自定义 thumb |
+| title | 自定义标题栏，如果设置了`title`或`price`属性，则不生效 |
+| desc | 自定义描述栏，如果设置了`desc`或`num`属性，则不生效 |
+| thumb | 自定义 thumb，如果设置了`thumb`属性，则不生效 |
 | footer | 自定义 footer |
+| tags | 自定义 tags |
 
 ### 外部样式类
 

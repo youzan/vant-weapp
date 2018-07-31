@@ -1,6 +1,7 @@
 Component({
   properties: {
-    title: String
+    title: String,
+    padding: Boolean
   },
 
   externalClasses: ['custom-class']

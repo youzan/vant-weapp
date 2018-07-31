@@ -1,9 +1,9 @@
-<demo-block title="Circular">
+<demo-block title="Circular" padding>
   <van-loading custom-class="loading" />
   <van-loading custom-class="loading shadow" color="#fff" />
 </demo-block>
 
-<demo-block title="Spinner">
+<demo-block title="Spinner" padding>
   <van-loading custom-class="loading" type="spinner" />
   <van-loading custom-class="loading shadow" type="spinner" color="#fff" />
 </demo-block>

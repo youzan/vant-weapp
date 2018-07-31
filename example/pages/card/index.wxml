@@ -6,7 +6,6 @@
       num="2"
       price="2.00"
       thumb="{{ imageURL }}"
-      custom-class="card"
     />
   </demo-block>
 
@@ -17,7 +16,6 @@
       num="2"
       price="2.00"
       thumb="{{ imageURL }}"
-      custom-class="card"
       use-footer-slot="{{ true }}"
     >
       <div slot="footer">

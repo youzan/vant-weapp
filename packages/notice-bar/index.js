@@ -1,8 +1,10 @@
-const VALID_MODE = ['closeable'];
+const VALID_MODE = ['closeable', 'link'];
 const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
 Component({
+  externalClasses: ['custom-class'],
+
   properties: {
     text: {
       type: String,
@@ -29,11 +31,11 @@ Component({
     },
     speed: {
       type: Number,
-      value: 40
+      value: 50
     },
     scrollable: {
       type: Boolean,
-      value: false
+      value: true
     },
     leftIcon: {
       type: String,
@@ -166,6 +168,10 @@ Component({
         show: false,
         timer: null
       });
+    },
+
+    onTap(event) {
+      this.triggerEvent('tap', event);
     }
   }
 });

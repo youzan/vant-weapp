@@ -1,51 +1,15 @@
-
-<van-panel title="滚动通告栏">
+<demo-block title="基础用法">
   <van-notice-bar
-    text="{{ bar1.text }}"
-    scrollable="{{ bar1.scrollable }}"
+    text="{{ text }}"
+    left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
   />
-</van-panel>
+</demo-block>
 
-<van-panel title="延时滚动通告栏">
-  <van-notice-bar
-    text="{{ bar1.text }}"
-    scrollable="{{ bar1.scrollable }}"
-    delay="{{ bar1.delay }}"
-  />
-</van-panel>
+<demo-block title="禁用滚动">
+  <van-notice-bar scrollable="{{ false }}" text="{{ text }}" />
+</demo-block>
 
-<van-panel title="初始速度低滚动通告栏">
-  <van-notice-bar
-    text="{{ bar1.text }}"
-    scrollable="{{ bar1.scrollable }}"
-    speed="{{ bar5.speed }}"
-  />
-</van-panel>
-
-<van-panel title="改变颜色通告栏">
-  <van-notice-bar
-    text="{{ bar2.text }}"
-    color="{{ bar2.color }}"
-    background-color="{{ bar2.backgroundColor }}"
-  />
-</van-panel>
-
-<van-panel title="静止通告栏">
-  <van-notice-bar
-    text="{{ bar3.text }}"
-  />
-</van-panel>
-
-<van-panel title="带icon公告">
-  <van-notice-bar
-    text="{{ bar4.text }}"
-    left-icon="{{ bar4.leftIcon }}"
-  />
-</van-panel>
-
-<van-panel title="可关闭公告">
-  <van-notice-bar
-    text="{{ bar5.text }}"
-    mode="{{ bar5.mode }}"
-  />
-</van-panel>
+<demo-block title="通告栏模式">
+  <van-notice-bar mode="closeable" text="{{ text }}" custom-class="demo-margin-bottom" />
+  <van-notice-bar mode="link" text="{{ text }}" />
+</demo-block>

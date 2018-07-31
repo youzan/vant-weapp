@@ -1,7 +1,8 @@
 <view
   wx:if="{{ show }}"
-  class="van-notice-bar {{ hasRightIcon ? 'van-notice-bar--within-icon' : '' }}"
+  class="custom-class van-notice-bar {{ hasRightIcon ? 'van-notice-bar--within-icon' : '' }}"
   style="color: {{ color }};background-color: {{ backgroundColor }}"
+  bind:tap="onTap"
 >
   <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
     <image src="{{ leftIcon }}" />
@@ -24,7 +25,7 @@
       url="{{ url }}"
       open-type="{{ openType }}"
     >
-      <van-icon class="van-notice-bar__right-icon" type="arrow" />
+      <van-icon class="van-notice-bar__right-icon" name="arrow" />
     </navigator>
   </block>
 </view>

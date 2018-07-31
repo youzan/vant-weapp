@@ -13,3 +13,21 @@
   box-sizing: border-box;
   border: 0 solid $border-retina-color;
 }
+
+@define-mixin ellipsis $clamp: 1, $line-height: 20px {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if $clamp == 1 {
+    white-space: nowrap;
+    word-wrap: normal;
+  } @else if $clamp > 1 {
+    max-height: $line-height * $clamp;
+    line-height: $line-height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+  }
+}

@@ -7,7 +7,7 @@ Page({
         // 导航名称
         text: '所有城市',
         // 该导航下所有的可选项
-        children: [ ...config.pro1, ...config.pro2 ]
+        children: [...config.pro1, ...config.pro2]
       }, {
         // 导航名称
         text: config.pro1Name,
@@ -18,7 +18,7 @@ Page({
         children: config.pro2
       }
     ],
-    
+
     mainActiveIndex: 0,
 
     activeId: 1002

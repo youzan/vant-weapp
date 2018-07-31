@@ -2,85 +2,80 @@
 @import "../common/_mixins";
 
 .zan-actionsheet {
-  background-color: #f8f8f8;
-}
-
-.zan-actionsheet__mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-}
-
-.zan-actionsheet__container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $background-color;
-  transform: translate3d(0, 50%, 0);
-  transform-origin: center;
-  transition: all 0.2s ease;
-  z-index: 11;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.zan-actionsheet__btn {
-  margin-bottom: 0 !important;
-}
-
-.zan-actionsheet__footer .zan-actionsheet__btn {
-  background: #fff;
-}
-
-.zan-actionsheet__btn-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.zan-actionsheet__subname {
-  color: $gray-dark;
-}
-
-.zan-actionsheet__subname,
-.zan-actionsheet__name {
-  height: 45px;
-  line-height: 45px;
-}
-
-
-.zan-actionsheet__btn.zan-btn:last-child {
-  &::after {
-    border-bottom-width: 0;
+  &__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
   }
-}
 
-.zan-actionsheet__subname {
-  margin-left: 2px;
-  font-size: 12px;
-}
+  &__container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $bg-color;
+    transform: translate3d(0, 50%, 0);
+    transform-origin: center;
+    transition: all 0.2s ease;
+    z-index: 11;
+    opacity: 0;
+    visibility: hidden;
+  }
 
-.zan-actionsheet__footer {
-  margin-top: 10px;
-}
+  &__btn {
+    margin-bottom: 0 !important;
 
-/* btn-loading 状态 */
-.zan-actionsheet__btn--loading .zan-actionsheet__subname {
-  color: transparent;
-}
+    &-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
 
-/* zan-actionsheet 展示出来的样式 */
-.zan-actionsheet--show .zan-actionsheet__container {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  visibility: visible;
-}
-.zan-actionsheet--show .zan-actionsheet__mask {
-  display: block;
+    &.zan-btn:last-child::after {
+      border-bottom-width: 0;
+    }
+
+    /* btn-loading 状态 */
+    &--loading .zan-actionsheet__subname {
+      color: transparent;
+    }
+  }
+
+  &__footer .&__btn {
+    background: #fff;
+  }
+
+  &__subname {
+    margin-left: 2px;
+    font-size: 12px;
+    color: $gray-dark;
+  }
+
+  &__subname,
+  &__name {
+    height: 45px;
+    line-height: 45px;
+  }
+
+  &__footer {
+    margin-top: 10px;
+  }
+
+  /* zan-actionsheet 展示出来的样式 */
+  &--show {
+    .zan-actionsheet__container {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+
+    .zan-actionsheet__mask {
+      display: block;
+    }
+  }
 }

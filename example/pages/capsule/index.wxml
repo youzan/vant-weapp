@@ -1,5 +1,4 @@
 <doc-page title="CAPSULE" without-padding>
-
   <zan-panel title='基本用法'>
     <view class="capsule-demo">
       <zan-capsule leftText="折扣" rightText="限购一份" />

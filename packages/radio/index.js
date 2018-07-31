@@ -10,22 +10,22 @@ Component({
 
   methods: {
     radioChange(e) {
-      this.selectItem(e.detail.value)
-      this.triggerEvent('change', e)
+      this.selectItem(e.detail.value);
+      this.triggerEvent('change', e);
     },
 
     selectItem(value) {
       let { items } = this.data;
 
-      items.forEach(item => {
-        if ( item.name === value ) {
+      items.forEach((item) => {
+        if (item.name === value) {
           item.checked = true;
         } else {
           item.checked = false;
         }
-      })
+      });
 
-      this.setData({ items })
+      this.setData({ items });
     }
   }
 });

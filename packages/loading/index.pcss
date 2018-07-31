@@ -6,28 +6,28 @@ $spinners: 12;
   text-align: center;
   display: flex;
   justify-content: center;
-  
-  & .circle {
+
+  .circle {
     display: inline-block;
     height: 24px;
     width: 24px;
     border-radius: 100%;
-    border: 3px solid transparent;
-    box-sizing: border-box;
-    border-color: rgba(0, 0, 0, .1);
+    border: 3px solid rgba(0, 0, 0, .1);
     border-top-color: rgba(255, 255, 255, .7);
+    box-sizing: border-box;
     animation: loading 1s linear infinite;
   }
+
   &.black .circle {
     border-color: #c9c9c9;
     border-top-color: #666;
-  } 
+  }
 
-  & .circular {
+  .circular {
     display: inline-block;
     height: 24px;
     width: 24px;
-    animation: loading 2s linear infinite;  
+    animation: loading 2s linear infinite;
 
     &::after {
       content: '';
@@ -36,19 +36,20 @@ $spinners: 12;
       height: 100%;
       border-radius: 100%;
       border: 3px solid transparent;
-      box-sizing: border-box;  
+      box-sizing: border-box;
       animation: circular 2s ease infinite;
     }
   }
 
-  & .spinner {
+  .spinner {
     width: 30px;
     height: 30px;
     display: inline-block;
     position: relative;
-    animation: loading 1s linear infinite;  
+    animation: loading 1s linear infinite;
     animation-timing-function: steps(12);
-    & view {
+
+    view {
       width: 100%;
       height: 100%;
       position: absolute;
@@ -74,6 +75,7 @@ $spinners: 12;
       }
     }
   }
+
   &.black .spinner view::after {
     content: '';
     background: #c9c9c9;
@@ -86,11 +88,11 @@ $spinners: 12;
 }
 
 .loading.block {
-  & .dot-spinner {
+  .dot-spinner {
     margin: 15px 15px;
     overflow: hidden;
 
-    & view {
+    view {
       width: 8px;
       height: 8px;
       border-radius: 8px;

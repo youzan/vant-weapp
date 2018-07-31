@@ -11,7 +11,7 @@
       bind:btnclick="handleBtnClick"
       data-index="{{ index }}"
       open-type="{{ item.openType }}"
-      custom-class="zan-actionsheet__btn"
+      custom-class="zan-actionsheet__btn {{item.className}}"
       loading="{{ item.loading }}"
     >
       <!-- 自定义组件控制 slot 样式有问题，故在 slot 容器上传入 loading 信息 -->

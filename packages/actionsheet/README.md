@@ -41,6 +41,7 @@ Page({
     }, {
       name: '选项2',
       subname: '选项描述语2',
+      className: 'action-class',
       loading: false
     }, {
       name: '去分享',
@@ -50,12 +51,12 @@ Page({
   },
   openActionSheet() {
     this.setData({
-      'show': true
+      show: true
     });
   },
   closeActionSheet() {
     this.setData({
-      'show': false
+      show: false
     });
   },
   handleActionClick({ detail }) {
@@ -84,6 +85,8 @@ actions 的具体数据结构
   name: '选项1',
   // 按钮描述文案，不传就不显示
   subname: '选项描述语1',
+  // 按钮样式外部类
+  className: 'action-class',
   // 按钮是否显示为 loading
   loading: false,
   // 按钮的微信开放能力

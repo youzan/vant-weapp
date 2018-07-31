@@ -62,7 +62,7 @@ Component({
     updateMainHeight() {
       const maxHeight = Math.max(this.data.items.length * ITEM_HEIGHT, this.data.subItems.length * ITEM_HEIGHT);
 
-      this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) })
+      this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
     },
 
     // 更新子项列表高度，根据可展示的最大高度和当前子项列表的高度决定

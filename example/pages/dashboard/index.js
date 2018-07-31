@@ -5,10 +5,9 @@ Page({
     list: componentsConfig
   },
 
-  onLoad: function () {
-
+  onLoad() {
   },
 
-  onShow: function() {
+  onShow() {
   },
-})
+});

@@ -7,6 +7,11 @@
     <zan-loading type="circle"></zan-loading>
     <zan-loading type="circle" color="black"></zan-loading>
   </view>
+  <view class="zan-panel-title">circular</view>
+  <view class="loading-example zan-panel">
+    <zan-loading type="circular"></zan-loading>
+    <zan-loading type="circular" color="black"></zan-loading>
+  </view>
   <view class="zan-panel-title">spinner</view>
   <view class="loading-example zan-panel">
     <zan-loading type="spinner"></zan-loading>

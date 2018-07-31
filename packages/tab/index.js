@@ -34,9 +34,9 @@ Component({
       query.select(`#item-${selectedId}`).boundingClientRect();
       query.select('#scroll-view').boundingClientRect();
       query.select('#scroll-view').scrollOffset();
-      query.exec(res => {
+      query.exec((res) => {
         this.setData({
-          scrollLeft: res[2].scrollLeft + res[0].left + res[0].width / 2 - res[1].width / 2
+          scrollLeft: (res[2].scrollLeft + res[0].left + (res[0].width / 2)) - (res[1].width / 2)
         });
       });
     },

@@ -28,8 +28,7 @@ Component({
       this.triggerEvent('cancel');
     },
     handleBtnClick({ currentTarget = {} }) {
-      const dataset = currentTarget.dataset || {};
-      const { index } = dataset;
+      const { index } = currentTarget.dataset || {};
       this.triggerEvent('actionclick', { index });
     }
   }

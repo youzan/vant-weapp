@@ -1,5 +1,31 @@
 `ZanUI-WeApp` 严格遵循 [Semantic Versioning 2.0.0](http://semver.org/lang/zh-CN/) 语义化版本规范。
 
+## [v3.1.0](https://github.com/youzan/zanui-weapp/tree/v3.1.0) (2018-07-31)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.10...v3.1.0)
+
+**Breaking changes**
+
+- 修复 Field 组件错误的事件参数 [\#391](https://github.com/youzan/zanui-weapp/pull/391) ([pangxie1991](https://github.com/pangxie1991))
+
+**Improvements**
+
+- 示例小程序增加 tree-select DEMO [\#392](https://github.com/youzan/zanui-weapp/pull/392) ([pangxie1991](https://github.com/pangxie1991))
+- 文档增加 timeout 的单位标注 [\#389](https://github.com/youzan/zanui-weapp/pull/389) ([upupming](https://github.com/upupming))
+- 修复文档 Card 示例页 title 错误标注为 CAPSULE 的问题 [\#385](https://github.com/youzan/zanui-weapp/pull/385) ([Fyerl](https://github.com/Fyerl))
+
+
+## [v3.0.10](https://github.com/youzan/zanui-weapp/tree/v3.0.10) (2018-07-27)
+[Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.9...v3.0.10)
+
+**new feature**
+
+- cell-group 组件支持显示上下边框 [\#380](https://github.com/youzan/zanui-weapp/pull/380) ([rex-zsd](https://github.com/rex-zsd))
+
+**Improvements**
+
+- Cell 组件去掉 title 区域的最小宽度 [\#376](https://github.com/youzan/zanui-weapp/pull/376) ([ylethe](https://github.com/ylethe))
+
+
 ## [v3.0.9](https://github.com/youzan/zanui-weapp/tree/v3.0.9) (2018-07-17)
 [Full Changelog](https://github.com/youzan/zanui-weapp/compare/v3.0.8...v3.0.9)
 

@@ -85,7 +85,7 @@
 | sendMessageTitle | String | 否   | 当前标题 | 会话内消息卡片标题 |
 | sendMessagePath | String | 否   | 当前分享路径 | 会话内消息卡片点击跳转小程序路径	 |
 | sendMessageImg | String | 否   | 截图 | 会话内消息卡片图片 |
-| showMessageCard | String | 否   | false | 显示会话内消息卡片 |
+| showMessageCard | Boolean | 否   | false | 显示会话内消息卡片 |
 
 ### 事件
 | 事件名称       | 说明      | 回调参数       |

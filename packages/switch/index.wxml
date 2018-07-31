@@ -1,12 +1,9 @@
-<view
-  class="custom-class theme-class van-switch van-switch--{{ checked ? 'on' : 'off' }} {{ disabled ? 'van-swtich--disabled' : '' }}"
-  checked="{{ checked }}"
-  loading="{{ loading }}"
-  disabled="{{ disabled }}"
-  bindtap="handleZanSwitchChange"
+<div
+  class="van-switch custom-class {{ checked ? 'van-switch--on' : '' }} {{ disabled ? 'van-switch--disabled' : '' }}"
+  style="font-size: {{ size }};"
+  bind:tap="onClick"
 >
-  <view class="van-switch__circle">
-    <view hidden="{{ !loading }}" class="van-switch__loading"></view>
-  </view>
-  <view class="van-switch__bg"></view>
-</view>
+  <div class="van-switch__node node-class">
+    <van-loading wx:if="{{ loading }}" size="50%" custom-class="van-switch__loading" />
+  </div>
+</div>

@@ -1,33 +1,23 @@
 Component({
-  externalClasses: ['custom-class', 'theme-class'],
+  externalClasses: ['custom-class', 'node-class'],
 
   properties: {
-    checked: {
-      type: Boolean,
-      value: false
-    },
-
-    loading: {
-      type: Boolean,
-      value: false
-    },
-
-    disabled: {
-      type: Boolean,
-      value: false
+    checked: Boolean,
+    loading: Boolean,
+    disabled: Boolean,
+    size: {
+      type: String,
+      value: '30px'
     }
   },
 
   methods: {
-    handleZanSwitchChange() {
-      if (this.data.loading || this.data.disabled) {
-        return;
+    onClick() {
+      if (!this.data.disabled && !this.data.loading) {
+        const checked = !this.data.checked;
+        this.triggerEvent('input', checked);
+        this.triggerEvent('change', checked);
       }
-      let checked = !this.data.checked;
-      this.triggerEvent('change', {
-        checked,
-        loading: this.data.loading
-      });
     }
   }
 });

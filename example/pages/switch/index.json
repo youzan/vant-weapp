@@ -1,8 +1,7 @@
 {
   "navigationBarTitleText": "Switch 开关",
   "usingComponents": {
-    "van-switch": "../../dist/switch/index",
-    "van-panel": "../../dist/panel/index",
-    "van-cell": "../../dist/cell/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-switch": "../../dist/switch/index"
   }
 }

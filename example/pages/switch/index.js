@@ -1,31 +1,22 @@
-var Zan = require('../../dist/index');
-
-Page(Object.assign({}, Zan.Switch, {
+Page({
   data: {
-    sync: {
-      checked: false
-    },
-    async: {
-      checked: true,
-      loading: false
-    },
+    checked: true,
+    checked2: true
   },
 
-  syncChange({ detail }) {
-    this.setData({
-      'sync.checked': detail.checked
-    });
+  onChange({ detail }) {
+    this.setData({ checked: detail });
   },
 
-  asyncChange({ detail }) {
-    this.setData({
-      'async.loading': true
+  onChange2({ detail }) {
+    wx.showModal({
+      title: '提示',
+      content: '是否切换开关？',
+      success: res => {
+        if (res.confirm) {
+          this.setData({ checked2: detail });
+        }
+      }
     });
-    setTimeout(() => {
-      this.setData({
-        'async.loading': false,
-        'async.checked': detail.checked
-      });
-    }, 500);
   }
-}));
+});

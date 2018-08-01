@@ -1,5 +1,5 @@
 <view class="van-buttons" style="margin-top: 30vh;">
-  <van-button bind:buttonclick="openActionsheet">
+  <van-button bind:tap="openActionsheet">
     Actionsheet
   </van-button>
 </view>

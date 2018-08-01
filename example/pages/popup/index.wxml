@@ -1,16 +1,16 @@
-<van-button class="van-button" bind:buttonclick="togglePopup">
+<van-button class="van-button" bind:tap="togglePopup">
   弹出popup
 </van-button>
-<van-button class="van-button" bind:buttonclick="toggleTopPopup">
+<van-button class="van-button" bind:tap="toggleTopPopup">
   从顶部弹出popup
 </van-button>
-<van-button class="van-button" bind:buttonclick="toggleBottomPopup">
+<van-button class="van-button" bind:tap="toggleBottomPopup">
   从底部弹出popup
 </van-button>
-<van-button class="van-button" bind:buttonclick="toggleLeftPopup">
+<van-button class="van-button" bind:tap="toggleLeftPopup">
   从左边弹出popup
 </van-button>
-<van-button class="van-button" bind:buttonclick="toggleRightPopup">
+<van-button class="van-button" bind:tap="toggleRightPopup">
   从右边弹出popup
 </van-button>
 

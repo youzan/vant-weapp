@@ -1,70 +1,88 @@
-@import "../common/_mixins";
+@import '../helper/index.pcss';
 
 .van-field {
-  display: block;
-  position: relative;
-  color: #333;
-}
+  &__body {
+    display: flex;
+    align-items: center;
 
-.van-field::after {
-  @mixin hairline;
-  border-bottom-width: 1px;
-  left: 15px;
-  right: 0;
-}
-
-.van-field--no-border::after {
-  border-bottom-width: 0;
-}
-
-.van-cell--field {
-  padding: 7px 15px;
-}
-
-.van-field--wrapped {
-  margin: 10px 15px;
-  background-color: #fff;
-
-  &::after {
-    left: 0;
-    border-width: 1px;
-    border-radius: 4px;
+    &--textarea {
+      min-height: 24px;
+    }
   }
-}
 
-/* 圆角输入框，强制展示边框 */
-.van-field--wrapped::after {
-  display: block;
-}
+  &__control {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    resize: none;
+    display: block;
+    text-align: left;
+    box-sizing: border-box;
+    line-height: inherit;
+    background-color: transparent;
 
-.van-field--error {
-  color: #f40;
-}
+    &--disabled {
+      opacity: 1;
+      color: $gray-darker;
+      background-color: transparent;
+    }
 
-/* 圆角输入框出现错误时，将边框也置红 */
-.van-field--wrapped.van-field--error::after  {
-  border-color: #f40;
-}
+    &--center {
+      text-align: center;
+    }
 
-.van-field__title {
-  color: #333;
-  min-width: 65px;
-  padding-right: 10px;
-}
+    &--right {
+      text-align: right;
+    }
+  }
 
-.van-field__input {
-  flex: 1;
-  line-height: 1.6;
-  padding: 4px 0;
-  min-height: 22px;
-  height: auto;
-  font-size: 14px;
-}
+  &__clear,
+  &__icon-container,
+  &__button {
+    flex-shrink: 0;
+  }
 
-.van-field__placeholder {
-  font-size: 14px;
-}
+  &__clear,
+  &__icon-container {
+    padding: 0 10px;
+    color: $gray-dark;
+    line-height: inherit;
+    margin-right: -10px;
+    vertical-align: middle;
+  }
 
-.van-field__input--right {
-  text-align: right;
+  &__icon {
+    display: block;
+    font-size: 16px;
+    line-height: inherit;
+  }
+
+  &__button {
+    padding-left: 10px;
+  }
+
+  &__error-message {
+    color: $red;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  &--error {
+    color: $red;
+  }
+
+  &--label {
+    &-center {
+      .van-cell__title {
+        text-align: center;
+      }
+    }
+
+    &-right {
+      .van-cell__title {
+        text-align: right;
+      }
+    }
+  }
 }

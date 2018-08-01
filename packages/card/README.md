@@ -58,9 +58,9 @@
 
 | 名称 | 说明 |
 |-----------|-----------|
-| title | 自定义标题栏，如果设置了`title`或`price`属性，则不生效 |
-| desc | 自定义描述栏，如果设置了`desc`或`num`属性，则不生效 |
-| thumb | 自定义 thumb，如果设置了`thumb`属性，则不生效 |
+| title | 自定义标题栏，如果设置了`title`或`price`属性则不生效 |
+| desc | 自定义描述栏，如果设置了`desc`或`num`属性则不生效 |
+| thumb | 自定义 thumb，如果设置了`thumb`属性则不生效 |
 | footer | 自定义 footer |
 | tags | 自定义 tags |
 

@@ -14,12 +14,12 @@
 
 #### 基础用法
 
-将`van-cell-group`组件看成一个容器即可
+`cell-group`组件是承载`cell`组件的容器，对于容器中的最后一个 cell，需要将 border 属性设置成 `false`
 
 ```html
 <van-cell-group>
   <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" />
+  <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
 </van-cell-group>
 ```
 
@@ -28,7 +28,7 @@
 
 ```html
 <van-cell-group>
-  <van-cell value="内容" />
+  <van-cell value="内容" border="{{ false }}" />
 </van-cell-group>
 ```
 
@@ -37,7 +37,7 @@
 
 ```html
 <van-cell-group>
-  <van-cell title="单元格" icon="location" />
+  <van-cell title="单元格" icon="location" border="{{ false }}" />
 </van-cell-group>
 ```
 
@@ -54,6 +54,7 @@
     is-link
     arrow-direction="down"
     value="内容"
+    border="{{ false }}"
     url="/pages/dashboard/index"
   />
 </van-cell-group>
@@ -71,7 +72,7 @@
     </template>
   </van-cell>
   <van-cell title="单元格" icon="location" is-link />
-  <van-cell title="单元格">
+  <van-cell title="单元格" border="{{ false }}">
     <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
   </van-cell>
 </van-cell-group>

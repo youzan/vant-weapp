@@ -59,7 +59,6 @@ module.exports = {
           field: require('./packages/field/README.md'),
           radio: require('./packages/radio/README.md'),
           search: require('./packages/search/README.md'),
-          select: require('./packages/select/README.md'),
           stepper: require('./packages/stepper/README.md'),
           switch: require('./packages/switch/README.md')
         }

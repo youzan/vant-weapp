@@ -1,17 +1,15 @@
-<div
+<view
   class="custom-class van-cell {{ center ? 'van-cell--center' : '' }} {{ required ? 'van-cell--required' : '' }} {{ isLink || clickable ? 'van-cell--clickable' : '' }} {{ border ? 'van-hairline' : '' }}"  
   bind:tap="onTap"
 >
-  <van-icon wx:if="icon" custom-class="van-cell__left-icon left-icon-class" name="{{ icon }}" />
+  <van-icon wx:if="{{ icon }}" custom-class="van-cell__left-icon left-icon-class" name="{{ icon }}" />
   <slot wx:else name="icon" />
 
-  <view wx:if="{{ title }}" class="van-cell__title title-class">
+  <view wx:if="{{ title }}" class="van-cell__title title-class" style="{{ titleWidth ? 'max-width: ' + titleWidth : '' }}">
     {{ title }}
     <view wx:if="{{ label }}" class="van-cell__label label-class">{{ label }}</view>
   </view>
-  <view wx:else class="van-cell__title title-class">
-    <slot name="title" />
-  </view>
+  <slot name="title" />
 
   <view class="van-cell__value value-class">
     <view wx:if="{{ value }}">{{ value }}</view>
@@ -26,4 +24,4 @@
   <slot wx:else name="right-icon" />
 
   <slot name="extra" />
-</div>
+</view>

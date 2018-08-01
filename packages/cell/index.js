@@ -22,6 +22,7 @@ Component({
     isLink: Boolean,
     required: Boolean,
     clickable: Boolean,
+    titleWidth: String,
     arrowDirection: String,
     linkType: {
       type: String,

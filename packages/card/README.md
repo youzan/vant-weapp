@@ -35,10 +35,10 @@
   thumb="{{ imageURL }}"
   use-footer-slot="{{ true }}"
 >
-  <div slot="footer">
+  <view slot="footer">
     <van-button size="mini">按钮</van-button>
     <van-button size="mini">按钮</van-button>
-  </div>
+  </view>
 </van-card>
 ```
 

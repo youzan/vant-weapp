@@ -21,7 +21,7 @@ Component({
     center: Boolean,
     isLink: Boolean,
     required: Boolean,
-    clickable: Boolean,
+    tapable: Boolean,
     titleWidth: String,
     arrowDirection: String,
     linkType: {

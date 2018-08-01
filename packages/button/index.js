@@ -68,7 +68,7 @@ Component({
             'van-button--plain': plain,
             'van-button--loading': loading,
             'van-button--disabled': disabled,
-            'van-button--unclickable': disabled || loading
+            'van-button--untapable': disabled || loading
           }
         )
       });

@@ -3,12 +3,12 @@ export default {
     title: '基础组件',
     content: [
       {
-        name: 'Layout 布局',
-        path: '/pages/layout/index'
+        name: 'Common 基础样式',
+        path: '/pages/common/index'
       },
       {
-        name: 'Base 基础样式',
-        path: '/pages/helper/index'
+        name: 'Layout 布局',
+        path: '/pages/layout/index'
       },
       {
         name: 'Badge 徽章',

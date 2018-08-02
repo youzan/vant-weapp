@@ -9,7 +9,7 @@
     "pages/cell/index",
     "pages/dialog/index",
     "pages/field/index",
-    "pages/helper/index",
+    "pages/common/index",
     "pages/icon/index",
     "pages/layout/index",
     "pages/loading/index",

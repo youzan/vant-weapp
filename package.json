@@ -10,7 +10,6 @@
     "release": "sh scripts/release.sh",
     "components": "cross-env NODE_ENV=production node scripts/build-components.js --color",
     "changelog": "sh scripts/build-changelog.sh",
-    "icon": "sh scripts/build-icon.sh",
     "dev": "node scripts/build-dev.js --color",
     "build": "sh scripts/deploy.sh",
     "watch:doc": "NODE_ENV=development wedoc run watch",

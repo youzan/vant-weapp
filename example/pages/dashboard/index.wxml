@@ -5,17 +5,19 @@
   </view>
   <view class="desc">轻量、可靠的小程序 UI 组件库</view>
 
-  <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
-    <van-panel title="{{ group.title }}">
+  <block wx:for="{{ list }}" wx:for-item="group" wx:key="group.title">
+    <view class="mobile-nav">
+      <view class="mobile-nav__title">{{ group.title }}</view>
       <van-cell-group>
         <van-cell
           wx:for="{{ group.content }}"
           wx:key="name"
           is-link
+          title-width="200px"
           url="{{ item.path }}"
           title="{{ item.name }}"
         ></van-cell>
       </van-cell-group>
-    </van-panel>
+    </view>
   </block>
 </view>

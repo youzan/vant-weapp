@@ -1,5 +1,5 @@
 .container {
-  padding-top: 45px;
+  padding: 45px 15px 0;
 }
 
 .title {
@@ -29,6 +29,16 @@
 .desc {
   font-size: 14px;
   color: #455a64;
-  margin: 0 0 20px;
+  margin: 0 0 60px;
   text-align: center;
+}
+
+.mobile-nav {
+  margin-bottom: 20px;
+}
+
+.mobile-nav__title {
+  font-size: 16px;
+  background-color: #fff;
+  padding: 17px 15px;
 }

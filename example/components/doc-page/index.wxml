@@ -1,5 +1,11 @@
+<wxs module="filter">
+  module.exports.toUpperCase = function(v) {
+    return v.toUpperCase();
+  }
+</wxs>
+
 <view class="doc-container">
-  <view class="doc-title">{{ title }}</view>
+  <view class="doc-title">{{ filter.toUpperCase(title) }}</view>
   <view class="doc-content {{ withoutPadding ? 'doc-content--without-pd' : '' }}">
     <slot></slot>
   </view>

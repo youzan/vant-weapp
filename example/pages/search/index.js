@@ -1,7 +1,9 @@
 Page({
   data: {
     inputValue: '',
-    focus: true
+    focus: true,
+    range: ['门店', '配送至'],
+    rangeIndex: 0
   },
 
   searchChange(e) {
@@ -16,5 +18,11 @@ Page({
 
   handleCancel() {
     console.error('cancel')
+  },
+
+  pickerChange(e) {
+    this.setData({
+      rangeIndex: e.detail.value
+    })
   }
 });

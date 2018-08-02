@@ -44,15 +44,15 @@ Component({
       const { value = '' } = detail;
       this.setData({ value });
 
-      this.triggerEvent('change', event);
+      this.triggerEvent('change', { ...detail });
     },
 
-    handleFieldFocus(event) {
-      this.triggerEvent('focus', event);
+    handleFieldFocus({ detail = {} }) {
+      this.triggerEvent('focus', { ...detail });
     },
 
-    handleFieldBlur(event) {
-      this.triggerEvent('blur', event);
+    handleFieldBlur({ detail = {} }) {
+      this.triggerEvent('blur', { ...detail });
     },
 
     updateIsLastElement(isLastField) {

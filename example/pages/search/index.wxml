@@ -2,10 +2,8 @@
 
   <zan-panel title='基本用法'>
     <zan-search
-      alignLeft="{{ true }}"
       placeholder="搜索..."
       keyword="{{ inputValue }}"
-      placeholder="搜索商品"
       focus="{{ focus }}"
       bindchange="searchChange"
       bindsearch="searchDone"
@@ -14,21 +12,17 @@
 
   <zan-panel title='不可用'>
     <zan-search
-      alignLeft="{{ true }}"
       placeholder="搜索..."
       disabled="{{ true }}"
-      placeholder="搜索商品"
     />
   </zan-panel>
 
   <zan-panel title='自定义样式'>
     <zan-search
-      alignLeft="{{ true }}"
       placeholder="搜索..."
       searchStyle="height: 88rpx; padding: 0 30rpx; background: {{ searchbg || '#F2F2F2' }};"
       inputStyle="height: 56rpx; border-radius: 8rpx;"
       keyword="{{ inputValue }}"
-      placeholder="搜索商品"
       focus="{{ focus }}"
       bindchange="searchChange"
       bindsearch="searchDone"
@@ -37,15 +31,38 @@
 
   <zan-panel title='取消按钮'>
     <zan-search
-      alignLeft="{{ true }}"
       placeholder="搜索..."
       keyword="{{ inputValue }}"
-      placeholder="搜索商品"
       focus="{{ focus }}"
       useCancel="{{ true }}"
       bindchange="searchChange"
       bindsearch="searchDone"
       bindcancel="handleCancel"
     />
+  </zan-panel>
+
+  <zan-panel title="高级用法 自定义input插槽">
+    <zan-search
+      placeholder="搜索..."
+      keyword="{{ inputValue }}"
+      focus="{{ focus }}"
+      useCancel="{{ true }}"
+      bindchange="searchChange"
+      bindsearch="searchDone"
+      bindcancel="handleCancel"
+    >
+      <picker
+        slot="input"
+        mode="selector"
+        class="zan-search__selector"
+        bindchange="pickerChange"
+        style="width: 60px"
+        range="{{ range }}"
+        value="{{ rangeIndex }}"
+        wx:if="{{ range.length > 0}}"
+      >
+        <view class="picker">{{ range[rangeIndex] }}</view>
+      </picker>
+    </zan-search>
   </zan-panel>
 </doc-page>

@@ -1,6 +1,6 @@
 {
   "name": "zanui-weapp",
-  "version": "3.0.10",
+  "version": "3.1.1",
   "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
   "main": "app.js",
   "directories": {
@@ -57,6 +57,7 @@
     "gulp-remove-logging": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
+    "lodash": "^4.17.10",
     "node-watch": "^0.5.5",
     "postcss-calc": "^6.0.1",
     "postcss-easy-import": "^3.0.0",

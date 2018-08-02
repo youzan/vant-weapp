@@ -7,6 +7,9 @@
         placeholder="{{ config.base.name.placeholder }}"
         focus="{{ config.base.name.focus }}"
         value="{{ value }}"
+        bind:change="handleZanFieldChange"
+        bind:focus="handleZanFieldFocus"
+        bind:blur="handleZanFieldBlur"
       >
       </zan-field>
       <zan-field
@@ -14,6 +17,7 @@
         placeholder="{{ config.base.tel.placeholder }}"
         error="{{ config.base.tel.error }}"
         input-type="{{ config.base.tel.inputType }}"
+        bind:change="handleZanFieldChange"
       >
       </zan-field>
       <zan-field
@@ -21,12 +25,14 @@
         type="{{ config.base.address.type }}"
         placeholder="{{ config.base.address.placeholder }}"
         maxlength="50"
+        bind:change="handleZanFieldChange"
       >
       </zan-field>
       <zan-field
         title="{{ config.base.disabled.title }}"
         value="{{ config.base.disabled.value }}"
         disabled="{{ config.base.disabled.disabled }}"
+        bind:change="handleZanFieldChange"
       >
       </zan-field>
     </zan-cell-group>

@@ -49,13 +49,19 @@ Component({
 
       this.setData({ value: value });
 
-      this.triggerEvent('change', event);
+      this.triggerEvent('change', Object.assign({}, detail));
     },
-    handleFieldFocus: function handleFieldFocus(event) {
-      this.triggerEvent('focus', event);
+    handleFieldFocus: function handleFieldFocus(_ref) {
+      var _ref$detail = _ref.detail,
+          detail = _ref$detail === undefined ? {} : _ref$detail;
+
+      this.triggerEvent('focus', Object.assign({}, detail));
     },
-    handleFieldBlur: function handleFieldBlur(event) {
-      this.triggerEvent('blur', event);
+    handleFieldBlur: function handleFieldBlur(_ref2) {
+      var _ref2$detail = _ref2.detail,
+          detail = _ref2$detail === undefined ? {} : _ref2$detail;
+
+      this.triggerEvent('blur', Object.assign({}, detail));
     },
     updateIsLastElement: function updateIsLastElement(isLastField) {
       var showBorder = true;

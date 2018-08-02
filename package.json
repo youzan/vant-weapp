@@ -22,7 +22,7 @@
     "url": "git+ssh://git@github.com/youzan/zanui-weapp.git"
   },
   "author": "youzan",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/youzan/zanui-weapp/issues"
   },

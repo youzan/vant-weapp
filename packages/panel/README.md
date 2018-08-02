@@ -1,25 +1,58 @@
-## Panel 面板组件
+## Panel 面板
 
 ### 使用指南
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "van-panel": "path/to/vant-weapp/dist/panel/index"
-  }
+"usingComponents": {
+  "van-panel": "path/to/vant-weapp/dist/panel/index"
 }
 ```
 
 ### 代码演示
-Panel 提供了一块白色的展示区域，使用方式如下
+
+#### 基础用法
+面板只是一个容器，里面可以放入自定义的内容
+
 ```html
-<van-panel title='我是标题'>
+<van-panel title="标题" desc="描述信息" status="状态">
   <view>内容</view>
 </van-panel>
 ```
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
-|-----------|-----------|-----------|-------------|-------------|
-| title | panel的标题 | String | - | |
-| hide-border | 内容区隐藏边框 | Boolean | - | |
 
+#### 高级用法
+使用`slot`自定义内容
 
+```html
+<van-panel title="标题" desc="描述信息" status="状态" use-footer-slot>
+  <view>内容</view>
+  <view slot="footer">
+    <van-button size="small">按钮</van-button>
+    <van-button size="small" type="danger">按钮</van-button>
+  </view>
+</van-panel>
+```
+
+### API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| title | 标题 | `String` | - |
+| desc | 描述 | `String` | - |
+| status | 状态 | `String` | - |
+| use-footer-slot | 是否使用 footer slot | `Boolean` | `false` |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 自定义内容 |
+| header | 自定义 header，如果设置了`title`、`desc`、`status`属性则不生效 |
+| footer | 自定义 footer，需要设置 `use-footer-slot`属性 |
+
+### 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| header-class | 头部样式类 |
+| footer-class | 底部样式类 |

@@ -1,11 +1,15 @@
-<van-panel class="panel-example">
-  <view style="padding: 15px;">PANEL 内容区域</view>
-</van-panel>
+<demo-block title="基础用法">
+  <van-panel title="标题" desc="描述信息" status="状态">
+    <view class="content">内容</view>
+  </van-panel>
+</demo-block>
 
-<van-panel title="标题" class="panel-example">
-  <view style="padding: 15px;">带有标题的 PANEL</view>
-</van-panel>
-
-<van-panel title="标题" hide-border="{{ true }}" class="panel-example">
-  <view style="padding: 15px;">无边框的panel</view>
-</van-panel>
+<demo-block title="高级用法">
+  <van-panel title="标题" desc="描述信息" status="状态" use-footer-slot>
+    <view class="content">内容</view>
+    <view slot="footer" class="footer">
+      <van-button size="small" custom-class="demo-margin-right">按钮</van-button>
+      <van-button size="small" type="danger">按钮</van-button>
+    </view>
+  </van-panel>
+</demo-block>

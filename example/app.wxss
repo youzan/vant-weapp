@@ -11,7 +11,7 @@ page {
 }
 
 .demo-margin-right {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .demo-margin-bottom {

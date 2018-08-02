@@ -1,25 +1,29 @@
-const DEFAULT_COLOR = '#fff';
-const DEFAULT_BACKGROUND_COLOR = '#f44';
-const DEFAULT_FONT_SIZE = 10;
-const DEFAULT_BOX_SHADOW = '0 0 0 2px #fff';
+const BADGE_GROUP_PATH = '../badge-group/index';
 
 Component({
+  externalClasses: ['custom-class'],
+
+  relations: {
+    [BADGE_GROUP_PATH]: {
+      type: 'ancestor'
+    }
+  },
+
   properties: {
-    color: {
-      type: String,
-      value: DEFAULT_COLOR
+    info: Number,
+    title: String
+  },
+
+  methods: {
+    onTap() {
+      const group = this.getRelationNodes(BADGE_GROUP_PATH)[0];
+      if (group) {
+        group.setActive(this);
+      }
     },
-    backgroundColor: {
-      type: String,
-      value: DEFAULT_BACKGROUND_COLOR
-    },
-    fontSize: {
-      type: Number,
-      value: DEFAULT_FONT_SIZE
-    },
-    boxShadow: {
-      type: String,
-      value: DEFAULT_BOX_SHADOW
+
+    setActive(active) {
+      this.setData({ active });
     }
   }
 });

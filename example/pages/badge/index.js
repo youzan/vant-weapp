@@ -1,11 +1,8 @@
 Page({
-  data: {
-  },
-
-  onLoad: function () {
-
-  },
-
-  onShow: function() {
-  },
-})
+  onChange(event) {
+    wx.showToast({
+      icon: 'none',
+      title: `切换至第${event.detail}项`
+    });
+  }
+});

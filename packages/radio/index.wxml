@@ -16,13 +16,13 @@
       </view>
       <radio
         class="zan-radio__origin"
-        value="{{ item.name }}"
+        value="{{ item.value }}"
         checked="{{ item.checked }}"
         disabled="{{ item.disabled }}"
       />
     </view>
     <view class="zan-radio__name">
-      {{item.value}}
+      {{item.name}}
     </view>
   </label>
 </radio-group>

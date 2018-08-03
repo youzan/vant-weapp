@@ -18,7 +18,7 @@ Component({
       let { items } = this.data;
 
       items.forEach((item) => {
-        if (item.name === value) {
+        if (item.value === value) {
           item.checked = true;
         } else {
           item.checked = false;

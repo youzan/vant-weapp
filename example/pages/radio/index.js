@@ -1,14 +1,14 @@
 Page({
   data: {
     items: [
-      { name: 'USA', value: '美国' },
-      { name: 'CHN', value: '中国', checked: 'true' }
+      { value: 'USA', name: '美国' },
+      { value: 'CHN', name: '中国', checked: 'true' }
     ],
 
     items1: [
-      { name: 'USA', value: '美国' },
-      { name: 'BRA', value: '巴西', disabled: true },
-      { name: 'CHN', value: '中国', checked: 'true' }
+      { value: 'USA', name: '美国' },
+      { value: 'BRA', name: '巴西', disabled: true },
+      { value: 'CHN', name: '中国', checked: 'true' }
     ]
   },
 

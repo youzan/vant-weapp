@@ -3,7 +3,7 @@ export default {
     title: '基础组件',
     content: [
       {
-        name: 'Common 基础样式',
+        name: 'Common 内置样式',
         path: '/pages/common/index'
       },
       {

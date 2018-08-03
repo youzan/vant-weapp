@@ -36,7 +36,7 @@ module.exports = {
         include: {
           icon: require('./packages/icon/README.md'),
           button: require('./packages/button/README.md'),
-          helper: require('./packages/helper/README.md'),
+          common: require('./packages/common/README.md'),
           loading: require('./packages/loading/README.md')
         }
       },

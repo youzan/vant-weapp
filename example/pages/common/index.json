@@ -1,8 +1,6 @@
 {
-  "navigationBarTitleText": "Common 基础样式",
+  "navigationBarTitleText": "Common 内置样式",
   "usingComponents": {
-    "van-cell": "../../dist/cell/index",
-    "van-panel": "../../dist/panel/index",
-    "van-cell-group": "../../dist/cell-group/index"
+    "demo-block": "../../components/demo-block/index"
   }
 }

@@ -36,7 +36,6 @@ Component({
 
   methods: {
     onTap() {
-      this.triggerEvent('tap');
       const { url } = this.data;
       if (url) {
         wx[this.data.linkType]({ url });

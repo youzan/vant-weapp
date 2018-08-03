@@ -1,0 +1,27 @@
+picker {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 20rpx;
+}
+
+.picker {
+  position: relative;
+  width: 110rpx;
+  height: 100%;
+  color: #666;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.picker::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -6rpx;
+  border-top: 12rpx solid #333;
+  border-right: 8rpx solid transparent;
+  border-left: 8rpx solid transparent;
+}

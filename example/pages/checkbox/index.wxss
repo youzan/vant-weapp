@@ -2,3 +2,6 @@
   display: block;
   margin: 15px 0;
 }
+.checked-color {
+  color: red !important;
+}

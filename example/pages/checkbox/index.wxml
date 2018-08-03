@@ -40,4 +40,13 @@
     <zan-checkbox type="list">复选框 b</zan-checkbox>
     <zan-checkbox type="list">复选框 c</zan-checkbox>
   </zan-panel>
+
+  <zan-panel title='自定义选中颜色'>
+    <zan-checkbox
+      checkbox-class="checkbox-demo"
+      checked-class="checked-color"
+      bindchange="handleCheckboxChange"
+    >复选框</zan-checkbox>
+  </zan-panel>
+
 </doc-page>

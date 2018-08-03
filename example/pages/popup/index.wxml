@@ -1,84 +1,54 @@
-<van-button class="van-button" bind:tap="togglePopup">
-  弹出popup
-</van-button>
-<van-button class="van-button" bind:tap="toggleTopPopup">
-  从顶部弹出popup
-</van-button>
-<van-button class="van-button" bind:tap="toggleBottomPopup">
-  从底部弹出popup
-</van-button>
-<van-button class="van-button" bind:tap="toggleLeftPopup">
-  从左边弹出popup
-</van-button>
-<van-button class="van-button" bind:tap="toggleRightPopup">
-  从右边弹出popup
-</van-button>
+<demo-block title="基础用法" padding>
+  <van-button bind:tap="togglePopup">弹出 Popup</van-button>
+  <van-popup
+    show="{{ show.middle }}"
+    custom-class="center"
+    bind:close="togglePopup"
+  >
+    内容
+  </van-popup>
+</demo-block>
 
-<!-- 中间弹出框 -->
-<van-popup
-  show="{{ showPopup }}"
-  bindclose="togglePopup"
->
-  <view class="pop-example__container">
-    <view class="van-buttons"> 
-      <button class="van-button" bindtap="togglePopup">
-        关闭 popup
-      </button>
-    </view>
-  </view>
-</van-popup>
+<demo-block title="弹出位置" padding>
+  <van-button bind:tap="toggleBottomPopup" custom-class="demo-margin-right">底部弹出</van-button>
 
-<!-- 左侧弹出框 -->
-<van-popup
-  show="{{ showLeftPopup }}"
-  type="left"
-  bindclose="toggleLeftPopup"
->
-  <view class="pop-example__container pop-example__container--left">
-    <view class="van-buttons">
-      <button class="van-button" bindtap="toggleLeftPopup">
-        关闭 popup
-      </button>
-    </view>
-  </view>
-</van-popup>
+  <van-popup
+    show="{{ show.bottom }}"
+    position="bottom"
+    custom-class="bottom"
+    bind:close="toggleBottomPopup"
+  >
+    内容
+  </van-popup>
 
-<!-- 右侧弹出框 -->
-<van-popup
-  show="{{ showRightPopup }}"
-  type="right"
-  bindclose="toggleRightPopup"
->
-  <view class="pop-example__container pop-example__container--right">
-    <view class="van-buttons">
-      <button class="van-button" catchtap="toggleRightPopup">
-        关闭 popup
-      </button>
-    </view>
-  </view>
-</van-popup>
+  <van-button bind:tap="toggleTopPopup" custom-class="demo-margin-right">顶部弹出</van-button>
+  <van-popup
+    show="{{ show.top }}"
+    position="top"
+    overlay="{{ false }}"
+    custom-class="top"
+    bind:close="toggleTopPopup"
+  >
+    内容
+  </van-popup>
 
-<!-- 顶部弹出框 -->
-<van-popup
-  show="{{ showTopPopup }}"
-  overlay="{{ false }}"
-  type="top"
-  bindclose="toggleTopPopup"
->
-  <view class="pop-example--top">内容</view>
-</van-popup>
+  <van-button bind:tap="toggleRightPopup">右侧弹出</van-button>
+  <van-popup
+    show="{{ show.right }}"
+    position="right"
+    custom-class="right"
+    bind:close="toggleRightPopup"
+  >
+    <van-button bind:tap="toggleRightPopup" custom-class="demo-margin-right">关闭弹层</van-button>
 
-<!-- 底部弹出框 -->
-<van-popup
-  show="{{ showBottomPopup }}"
-  type="bottom"
-  bindclose="toggleBottomPopup"
->
-  <view class="pop-example__container pop-example__container--bottom">
-    <view class="van-buttons">
-      <button class="van-button" catchtap="toggleBottomPopup">
-        关闭 popup
-      </button>
-    </view>
-  </view>
-</van-popup>
+    <van-button bind:tap="toggleRightPopup2">右侧弹出</van-button>
+    <van-popup
+      show="{{ show.right2 }}"
+      position="right"
+      custom-class="right"
+      bind:close="toggleRightPopup2"
+    >
+      <van-button bind:tap="toggleRightPopup2">关闭弹层</van-button>
+    </van-popup>
+  </van-popup>
+</demo-block>

@@ -3,62 +3,65 @@
 ### 使用指南
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "van-popup": "path/to/vant-weapp/dist/popup/index"
-  }
+"usingComponents": {
+  "van-popup": "path/to/vant-weapp/dist/popup/index"
 }
 ```
-
 ### 代码演示
-可以在页面任意位置上使用 van-popup 标签。通过 show 可以控制弹窗是否展示
-```html
-<van-popup show="{{ show }}"></van-popup>
-```
-#### popup 动画
-popup 额外支持了 上下左右 四种动画方式，通过增加 type 属性即可控制。使用方式如下
-```html
-<!-- 从底部弹出的弹层 -->
-<van-popup type="bottom" show="{{ show }}"></van-popup>
 
-<!-- 从顶部弹出的弹层 -->
-<van-popup type="top" show="{{ show }}"></van-popup>
-
-<!-- 从左侧弹出的弹层 -->
-<van-popup type="left" show="{{ show }}"></van-popup>
-
-<!-- 从右侧弹出的弹层 -->
-<van-popup type="right" show="{{ show }}"></van-popup>
-```
-
-#### 控制显示，隐藏
+#### 基础用法
+`popup`默认从中间弹出
 
 ```html
-<van-popup show="{{ isShow }}" bindclose="togglePopup"></van-popup>
+<van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
 ```
 
-```js
-data: {
-  isShow: false
-},
-togglePopup() {
-  this.setData({
-    isShow: !this.data.isShow
-  });
-}
+```javascript
+Page({
+  data: {
+    show: false
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  }
+});
 ```
 
-### 具体参数和事件
-#### 参数说明
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
-|-----------|-----------|-----------|-------------|-------------|
-| show | 是否显示弹出层 | Boolean | false | |
-| overlay | 是否显示遮罩层 | Boolean | true | |
-| closeOnClickOverlay | 遮罩层点击时，是否触发关闭事件 | Boolean | true | |
-| type | 弹出层动画方式, 可选`center`, `left`, `right`, `top`, `bottom` | String | center | |
+#### 弹出位置
+通过`position`属性设置 Popup 弹出位置
 
-#### 事件说明
-| 事件名       | 说明      | 参数       |
+```html
+<van-popup
+  show="{{ show }}"
+  position="top"
+  overlay="{{ false }}"
+  bind:close="onClose"
+>
+  内容
+</van-popup>
+```
+
+### API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| show | 当前组件是否显示 | `Boolean` | `false` |
+| overlay | 是否显示背景蒙层 | `Boolean` | `true` |
+| position | 可选值为 `top` `bottom` `right` `left` | `String` | - |
+| overlay-style | 自定义蒙层样式 | `Object` | `` |
+| close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| click-overlay | 遮罩层点击触发 |  |
-| close | 遮罩层关闭时触发 |  |
+| click-overlay | 点击蒙层时触发 | - |
+| close | 蒙层关闭时触发 | - |
+
+### 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| overlay-class | 蒙层样式类 |

@@ -1,40 +1,40 @@
 Page({
-
   data: {
-    showPopup: false,
-    showLeftPopup: false,
-    showRightPopup: false,
-    showTopPopup: false,
-    showBottomPopup: false
+    show: {
+      middle: false,
+      top: false,
+      bottom: false,
+      right: false,
+      right2: false
+    }
+  },
+
+  toggle(type) {
+    this.setData({
+      [`show.${type}`]: !this.data.show[type]
+    });
   },
 
   togglePopup() {
-    this.setData({
-      showPopup: !this.data.showPopup
-    });
-  },
-
-  toggleLeftPopup() {
-    this.setData({
-      showLeftPopup: !this.data.showLeftPopup
-    });
+    this.toggle('middle');
   },
 
   toggleRightPopup() {
-    this.setData({
-      showRightPopup: !this.data.showRightPopup
-    });
+    this.toggle('right');
+  },
+
+  toggleRightPopup2() {
+    this.toggle('right2');
   },
 
   toggleBottomPopup() {
-    this.setData({
-      showBottomPopup: !this.data.showBottomPopup
-    });
+    this.toggle('bottom');
   },
 
   toggleTopPopup() {
-    this.setData({
-      showTopPopup: !this.data.showTopPopup
-    });
+    this.toggle('top');
+    setTimeout(() => {
+      this.toggle('top');
+    }, 2000);
   }
 });

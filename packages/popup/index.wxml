@@ -3,6 +3,7 @@
   type="{{ type }}"
   show-overlay="{{ overlay }}"
   bindclickmask="handleMaskClick"
+  container-class="container-class"
 >
   <slot></slot>
 </pop-manager>

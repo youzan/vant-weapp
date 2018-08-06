@@ -1,63 +1,18 @@
-<van-panel title="基础用法">
-  <van-cell-group>
-    <van-cell>
-      <van-steps type="horizon" steps="{{steps}}"></van-steps>
-    </van-cell>
-    <van-cell>
-      <van-steps type="horizon" steps="{{steps2}}"></van-steps>
-    </van-cell>
-    <van-cell>
-      <van-steps type="horizon" steps="{{steps3}}"></van-steps>
-    </van-cell>
-  </van-cell-group>
-</van-panel>
+<demo-block title="基础用法">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    custom-class="demo-margin-bottom"
+  />
 
-<van-panel title="2步完成">
-  <van-cell-group>
-    <van-cell>
-      <van-steps type="horizon" steps="{{steps4}}"></van-steps>
-    </van-cell>
-    <van-cell>
-      <van-steps type="horizon" steps="{{steps5}}"></van-steps>
-    </van-cell>
-    </van-cell-group>
-</van-panel>
+  <van-button custom-class="demo-margin-left" bind:tap="nextStep">下一步</van-button>
+</demo-block>
 
-<van-panel title="有描述的steps">
-  <van-cell-group>
-    <van-cell>
-      <van-steps type="horizon" hasDesc steps="{{steps}}"></van-steps>
-    </van-cell>
-    <van-cell>
-      <van-steps type="horizon" hasDesc steps="{{steps2}}"></van-steps>
-    </van-cell>
-    <van-cell>
-      <van-steps type="horizon" hasDesc steps="{{steps3}}"></van-steps>
-    </van-cell>
-  </van-cell-group>
-</van-panel>
-
-<van-panel title="垂直方向的steps">
-  <van-cell-group>
-    <van-cell>
-      <van-steps type="vertical" hasDesc steps="{{steps}}"></van-steps>
-    </van-cell>
-    <van-cell>
-      <van-steps type="vertical" hasDesc steps="{{steps2}}"></van-steps>
-    </van-cell>
-  </van-cell-group>
-</van-panel>
-
-<van-panel title="自定义 class">
-  <van-cell-group>
-    <van-cell cell-class="gray">
-      <van-steps
-        steps-class="my-class"
-        icon-class="gray"
-        title-class="white"
-        type="horizon"
-        steps="{{steps}}"
-      ></van-steps>
-    </van-cell>
-  </van-cell-group>
-</van-panel>
+<demo-block title="竖向步骤条">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    direction="vertical"
+    active-color="#f60"
+  />
+</demo-block>

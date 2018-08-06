@@ -1,13 +1,18 @@
-<view class="steps-class van-steps van-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} van-steps--{{ steps.length }} {{ className }}">
+<view class="custom-class van-steps van-steps--{{ direction }}">
   <view
-    wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
-    class="van-steps__step {{ hasDesc ? 'van-steps__step--db-title' : '' }} {{ index == 0 ? 'van-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'van-steps__step--last-child' : '' }} {{ step.done ? 'van-steps__step--done' : '' }} {{ step.current ? 'van-steps__step--cur' : '' }}"
+    wx:for="{{ formattedSteps }}"
+    wx:key="index"
+    class="van-step van-hairline van-step--{{ direction }} {{ item.status ? 'van-step--' + item.status : '' }}"
+    style="{{ width ? 'width:' + width + 'px' : '' }}"
   >
-    <view class="van-steps__title title-class">{{ step.text }}</view>
-    <view wx:if="{{ hasDesc && step.desc }}" class="van-steps__title van-steps__title--desc desc-class">{{ step.desc }}</view>
-    <view class="van-steps__icons icon-class">
-      <view class="van-steps__circle"></view>
+    <view class="van-step__title" style="{{ item.status === 'process' ? 'color: ' + activeColor : '' }}">
+      <view>{{ item.text }}</view>
+      <view>{{ item.desc }}</view>
     </view>
-    <view class="van-steps__line"></view>
+    <view class="van-step__circle-container">
+      <view class="van-step__circle" wx:if="{{ item.status !== 'process' }}" style="{{ item.status === 'finish' ? 'background-color: ' + activeColor : '' }}" />
+      <van-icon wx:else name="checked" color="{{ activeColor }}" custom-class="van-step__active" />
+    </view>
+    <view class="van-step__line" style="{{ item.status === 'finish' ? 'background-color: ' + activeColor : '' }}" />
   </view>
 </view>

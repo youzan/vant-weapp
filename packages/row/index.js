@@ -29,8 +29,8 @@ Component({
       const style = gutter ? `margin-right: ${margin}; margin-left: ${margin};` : '';
 
       this.setData({ style });
-      this.getRelationNodes(COL_PATH).forEach(col => {
-        col.setGutter(this.data.gutter)
+      this.getRelationNodes(COL_PATH).forEach((col) => {
+        col.setGutter(this.data.gutter);
       });
     }
   }

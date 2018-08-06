@@ -1,6 +1,158 @@
-@import "wxss/step.pcss";
-@import "wxss/vstep.pcss";
+@import '../common/index.pcss';
 
 .van-steps {
+  overflow: hidden;
+  background-color: $white;
+
+  &--horizontal {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 10px 15px;
+  }
+
+  &--vertical {
+    padding: 0 0 0 35px;
+  }
+}
+
+.van-step {
+  flex: 1;
+  font-size: 14px;
   position: relative;
+  color: $gray-dark;
+
+  &--finish {
+    color: $text-color;
+  }
+
+  &__circle {
+    width: 5px;
+    height: 5px;
+    background-color: #999;
+    border-radius: 50%;
+  }
+
+  &--horizontal {
+    float: left;
+    padding-bottom: 10px;
+
+    &:first-child {
+      .van-step__title {
+        transform: none;
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      position: absolute;
+      right: 10px;
+      width: auto;
+
+      .van-step__title {
+        transform: none;
+        margin-left: 0;
+        text-align: right;
+      }
+
+      .van-step__circle-container {
+        left: auto;
+        right: -9px;
+      }
+
+      .van-step__line {
+        width: 0;
+      }
+    }
+
+    .van-step__circle-container {
+      position: absolute;
+      bottom: 0;
+      left: -8px;
+      padding: 0 8px;
+      background-color: $white;
+      z-index: 1;
+    }
+
+    .van-step__title {
+      font-size: 12px;
+      transform: translate3d(-50%, 0, 0);
+      display: inline-block;
+      margin-left: 3px;
+    }
+
+    .van-step__line {
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 1px;
+      background-color: $border-color;
+    }
+
+    &.van-step--process {
+      color: $text-color;
+
+      .van-step__circle-container {
+        bottom: -4px;
+      }
+
+      .van-step__active {
+        font-size: 12px;
+        color: $green;
+        display: block;
+        line-height: 1;
+      }
+    }
+  }
+
+  &--vertical {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 10px 10px 0;
+
+    &:not(:last-child)::after {
+      border-bottom-width: 1px;
+    }
+
+    &:first-child {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        background-color: $white;
+        top: 0;
+        left: -15px;
+        z-index: 1;
+      }
+    }
+
+    .van-step__active,
+    .van-step__circle {
+      z-index: 2;
+      position: absolute;
+    }
+
+    .van-step__active {
+      top: 12px;
+      left: -20px;
+      line-height: 1;
+      font-size: 12px;
+    }
+
+    .van-step__circle {
+      top: 16px;
+      left: -17px;
+    }
+
+    .van-step__line {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      width: 1px;
+      height: 100%;
+      background-color: $border-color;
+    }
+  }
 }

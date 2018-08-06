@@ -10,6 +10,10 @@ page {
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
 }
 
+.demo-margin-left {
+  margin-left: 10px;
+}
+
 .demo-margin-right {
   margin-right: 10px;
 }

@@ -1,36 +1,39 @@
 Component({
   externalClasses: ['mask-class', 'container-class'],
+
   properties: {
+    show: Boolean,
+    title: String,
+    cancelText: String,
     actions: {
       type: Array,
       value: []
     },
-    show: {
-      type: Boolean,
-      value: false
-    },
-    cancelWithMask: {
+    overlay: {
       type: Boolean,
       value: true
     },
-    cancelText: {
-      type: String,
-      value: ''
+    closeOnClickOverlay: {
+      type: Boolean,
+      value: true
     }
   },
+
   methods: {
-    onMaskClick() {
-      if (this.data.cancelWithMask) {
-        this.cancelClick();
+    onSelect(event) {
+      const { index } = event.currentTarget.dataset;
+      const item = this.data.actions[index];
+      if (item && !item.disabled && !item.loading) {
+        this.triggerEvent('select', item);
       }
     },
-    cancelClick() {
+
+    onCancel() {
       this.triggerEvent('cancel');
     },
-    handleBtnClick({ currentTarget = {} }) {
-      const dataset = currentTarget.dataset || {};
-      const { index } = dataset;
-      this.triggerEvent('actionclick', { index });
+
+    onClose() {
+      this.triggerEvent('close');
     }
   }
 });

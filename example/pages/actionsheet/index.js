@@ -1,57 +1,36 @@
 Page({
   data: {
-    show: false,
-    cancelWithMask: true,
-    actions: [{
-      name: '选项1',
-      subname: '选项描述语1',
-      className: 'action-class',
-      loading: false
-    }, {
-      name: '选项2',
-      subname: '选项描述语2',
-      className: 'action-class',
-      loading: false
-    }, {
-      name: '去分享',
-      openType: 'share'
-    }],
-    cancelText: '关闭 Action'
+    show1: false,
+    show2: false,
+    show3: false
   },
 
-  onShareAppMessage() {
-    return {
-      title: 'vant-weapp',
-      imageUrl: 'https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png'
-    };
-  },
-
-  openActionsheet() {
+  onLoad() {
     this.setData({
-      'show': true
+      actions: [
+        { name: '选项' },
+        { name: '选项', subname: '禁用' },
+        { name: '选项', loading: true },
+        { name: '禁用选项', disabled: true }
+      ]
     });
   },
 
-  closeActionSheet() {
+  toggle(type) {
     this.setData({
-      'show': false
+      [type]: !this.data[type]
     });
   },
 
-  clickAction({ detail }) {
-    // 如果是分享按钮被点击, 不处理关闭
-    const { index } = detail;
-    if (index === 2) {
-      return;
-    }
-    this.setData({
-      [`actions[${index}].loading`]: true
-    });
-    setTimeout(() => {
-      this.setData({
-        [`show`]: false,
-        [`actions[${index}].loading`]: false
-      });
-    }, 1500);
+  toggleActionsheet1() {
+    this.toggle('show1');
+  },
+
+  toggleActionsheet2() {
+    this.toggle('show2');
+  },
+
+  toggleActionsheet3() {
+    this.toggle('show3');
   }
 });

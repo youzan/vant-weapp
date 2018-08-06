@@ -1,39 +1,38 @@
-<view class="van-actionsheet {{ show ? 'van-actionsheet--show' : '' }}">
-  <view
-    class="mask-class van-actionsheet__mask"
-    bindtap="onMaskClick"
-  ></view>
-  <view class="container-class van-actionsheet__container">
-    <!-- 选项按钮 -->
-    <van-button
-      wx:for="{{ actions }}"
-      wx:key="{{ index }}-{{ item.name }}"
-      bind:tap="handleBtnClick"
-      data-index="{{ index }}"
-      open-type="{{ item.openType }}"
-      custom-class="van-actionsheet__button"
-      loading="{{ item.loading }}"
-    >
-      <!-- 自定义组件控制 slot 样式有问题，故在 slot 容器上传入 loading 信息 -->
-      <view class="van-actionsheet__button-content {{ item.loading ? 'van-actionsheet__button--loading' : '' }}">
-        <view class="van-actionsheet__name">{{ item.name }}</view>
-        <view
-          wx:if="{{ item.subname }}"
-          class="van-actionsheet__subname">
-          {{ item.subname }}
-        </view>
-      </view>
-    </van-button>
-
-    <!-- 关闭按钮 -->
+<van-popup
+  show="{{ show }}"
+  overlay="{{ overlay }}"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
+  custom-class="van-actionsheet {{ title ? 'van-actionsheet--withtitle' : '' }}"
+  position="bottom"
+  bind:close="onClose"
+>
+  <view wx:if="{{ title }}" class="van-hairline--top-bottom van-actionsheet__header">
+    <view>{{ title }}</view>
+    <van-icon custom-class="van-actionsheet__close" name="close" bind:tap="onClose" />
+  </view>
+  <view wx:else class="van-hairline--bottom">
     <view
-      wx:if="{{ cancelText }}"
-      class="van-actionsheet__footer"
+      wx:for="{{ actions }}"
+      wx:key="index"
+      class="van-actionsheet__item van-hairline--top {{ item.disabled || item.loading ? 'van-actionsheet__item--disabled' : '' }} {{ item.className || '' }}"
+      data-index="{{ index }}"
+      bind:tap="onSelect"
     >
-      <van-button
-        custom-class="van-actionsheet__button"
-        catchtap="cancelClick"
-      >{{ cancelText }}</van-button>
+      <block wx:if="{{ !item.loading }}">
+        <view class="van-actionsheet__name">{{ item.name }}</view>
+        <view class="van-actionsheet__subname" wx:if="{{ item.subname }}">{{ item.subname }}</view>
+      </block>
+      <van-loading wx:else custom-class="van-actionsheet__loading" size="20px" />
     </view>
   </view>
-</view>
+  <view
+    wx:if="{{ cancelText }}"
+    class="van-actionsheet__cancel van-hairline--top"
+    bind:tap="onCancel"
+  >
+    {{ cancelText }}
+  </view>
+  <view wx:else class="van-actionsheet__content">
+    <slot />
+  </view>
+</van-popup>

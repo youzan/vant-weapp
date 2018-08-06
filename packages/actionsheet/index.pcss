@@ -1,85 +1,64 @@
-@import "../common/index.pcss";
+@import '../common/index.pcss';
 
 .van-actionsheet {
-  background-color: #f8f8f8;
-}
+  color: $text-color;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: $background-color;
 
-.van-actionsheet__mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-}
-
-.van-actionsheet__container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $background-color;
-  transform: translate3d(0, 50%, 0);
-  transform-origin: center;
-  transition: all 0.2s ease;
-  z-index: 11;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.van-actionsheet__button {
-  margin-bottom: 0 !important;
-}
-
-.van-actionsheet__footer .van-actionsheet__button {
-  background: #fff;
-}
-
-.van-actionsheet__button-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.van-actionsheet__subname {
-  color: $gray-dark;
-}
-
-.van-actionsheet__subname,
-.van-actionsheet__name {
-  height: 45px;
-  line-height: 45px;
-}
-
-
-.van-actionsheet__button.van-button:last-child {
-  &::after {
-    border-bottom-width: 0;
+  &--withtitle {
+    background-color: $white;
   }
-}
 
-.van-actionsheet__subname {
-  margin-left: 2px;
-  font-size: 12px;
-}
+  &__item,
+  &__cancel {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: $white;
 
-.van-actionsheet__footer {
-  margin-top: 10px;
-}
+    &:active {
+      background-color: $active-color;
+    }
+  }
 
-/* button-loading 状态 */
-.van-actionsheet__button--loading .van-actionsheet__subname {
-  color: transparent;
-}
+  &__item--disabled {
+    color: $gray;
 
-/* van-actionsheet 展示出来的样式 */
-.van-actionsheet--show .van-actionsheet__container {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  visibility: visible;
-}
-.van-actionsheet--show .van-actionsheet__mask {
-  display: block;
+    &:active {
+      background-color: $white;
+    }
+  }
+
+  &__subname {
+    font-size: 12px;
+    color: $gray-darker;
+    margin-left: 5px;
+  }
+
+  &__loading {
+    display: inline-block;
+  }
+
+  &__cancel {
+    margin-top: 10px;
+  }
+
+  &__header {
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+  }
+
+  &__close {
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+    font-size: 18px;
+    color: $gray-dark;
+    position: absolute;
+    line-height: inherit;
+  }
 }

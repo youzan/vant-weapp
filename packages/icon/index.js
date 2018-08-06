@@ -6,11 +6,5 @@ Component({
     name: String,
     size: String,
     color: String
-  },
-
-  methods: {
-    onTap(event) {
-      this.triggerEvent('tap', event);
-    }
   }
 });

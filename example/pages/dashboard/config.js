@@ -31,10 +31,6 @@ export default {
         path: '/pages/loading/index'
       },
       {
-        name: 'Loadmore 加载更多',
-        path: '/pages/loadmore/index'
-      },
-      {
         name: 'NoticeBar 通告栏',
         path: '/pages/notice-bar/index'
       },

@@ -26,8 +26,7 @@
     "pages/toptips/index",
     "pages/toast/index",
     "pages/tree-select/index",
-    "pages/datetime/index",
-    "pages/loadmore/index"
+    "pages/datetime/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",

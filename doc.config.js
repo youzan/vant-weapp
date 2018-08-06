@@ -82,8 +82,7 @@ module.exports = {
           popup: require('./packages/popup/README.md'),
           tab: require('./packages/tab/README.md'),
           toast: require('./packages/toast/README.md'),
-          toptips: require('./packages/toptips/README.md'),
-          loadmore: require('./packages/loadmore/README.md')
+          toptips: require('./packages/toptips/README.md')
         }
       },
       {

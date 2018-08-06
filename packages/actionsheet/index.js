@@ -1,6 +1,4 @@
 Component({
-  externalClasses: ['mask-class', 'container-class'],
-
   properties: {
     show: Boolean,
     title: String,

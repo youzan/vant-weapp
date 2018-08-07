@@ -20,7 +20,7 @@ Component({
     return {
       isInGroup: false,
       isInCell: false
-    }
+    };
   },
 
   methods: {
@@ -31,8 +31,8 @@ Component({
 
       const checked = !this.data.checked;
 
-      this.triggerEvent('change', checked)
-      this.setData({ checked })
+      this.triggerEvent('change', checked);
+      this.setData({ checked });
     },
 
     updateData(data) {

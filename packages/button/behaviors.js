@@ -34,24 +34,24 @@ module.exports = Behavior({
   },
 
   methods: {
-    bindgetuserinfo({ detail = {} } = {}) {
-      this.triggerEvent('getuserinfo', detail);
+    bindgetuserinfo(event = {}) {
+      this.triggerEvent('getuserinfo', event.detail || {});
     },
 
-    bindcontact({ detail = {} } = {}) {
-      this.triggerEvent('contact', detail);
+    bindcontact(event = {}) {
+      this.triggerEvent('contact', event.detail || {});
     },
 
-    bindgetphonenumber({ detail = {} } = {}) {
-      this.triggerEvent('getphonenumber', detail);
+    bindgetphonenumber(event = {}) {
+      this.triggerEvent('getphonenumber', event.detail || {});
     },
 
-    bindopensetting({ detail = {} } = {}) {
-      this.triggerEvent('opensetting', detail);
+    bindopensetting(event = {}) {
+      this.triggerEvent('opensetting', event.detail || {});
     },
 
-    binderror({ detail = {} } = {}) {
-      this.triggerEvent('error', detail);
+    binderror(event = {}) {
+      this.triggerEvent('error', event.detail || {});
     }
   }
 });

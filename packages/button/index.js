@@ -1,15 +1,12 @@
 const nativeBehaviors = require('./behaviors');
 const classnames = require('../common/classnames');
 
-const observer = function () {
+const observer = function() {
   this.setClasses();
 };
 
 Component({
-  externalClasses: [
-    'custom-class',
-    'loading-class'
-  ],
+  externalClasses: ['custom-class', 'loading-class'],
 
   behaviors: [nativeBehaviors],
 
@@ -60,17 +57,13 @@ Component({
     setClasses() {
       const { type, size, plain, disabled, loading, block } = this.data;
       this.setData({
-        classes: classnames(
-          `van-button--${type}`,
-          `van-button--${size}`,
-          {
-            'van-button--block': block,
-            'van-button--plain': plain,
-            'van-button--loading': loading,
-            'van-button--disabled': disabled,
-            'van-button--untapable': disabled || loading
-          }
-        )
+        classes: classnames(`van-button--${type}`, `van-button--${size}`, {
+          'van-button--block': block,
+          'van-button--plain': plain,
+          'van-button--loading': loading,
+          'van-button--disabled': disabled,
+          'van-button--untapable': disabled || loading
+        })
       });
     }
   }

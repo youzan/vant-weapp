@@ -1,6 +1,6 @@
 Component({
   externalClasses: [
-    'custom-class',
+    'custom-class'
   ],
 
   properties: {

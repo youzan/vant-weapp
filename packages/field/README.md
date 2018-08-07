@@ -142,6 +142,7 @@
 | autosize | 自适应内容高度，只对 textarea 有效 | `Boolean` | `false` |
 | icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |
 | left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
+| confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | `String` | `done` |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | `Number` | `50` |
 | use-button-slot | 是否使用 button slot  | `Boolean` | `false` |
 
@@ -149,8 +150,9 @@
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| inout | 输入内容时触发 | value: 当前输入值 |
+| input | 输入内容时触发 | value: 当前输入值 |
 | change | 输入内容时触发 | value: 当前输入值 |
+| confirm | 点击完成按钮时触发 | value: 当前输入值 |
 | tap-icon | 点击尾部图标时触发 | - |
 | focus | 输入框聚焦时触发 | - |
 | blur | 输入框失焦时触发 | - |

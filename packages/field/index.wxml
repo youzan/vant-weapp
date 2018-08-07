@@ -5,8 +5,9 @@
   border="{{ border }}"
   is-link="{{ isLink }}"
   required="{{ required }}"
+  custom-style="{{ customStyle }}"
   title-width="90px"
-  custom-class="custom-class van-field {{ labelAlign ? 'van-field--label-' + labelAlign : '' }}"
+  custom-class="{{ customClass }} van-field {{ labelAlign ? 'van-field--label-' + labelAlign : '' }}"
 >
   <slot name="label" slot="title" />
   <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
@@ -23,8 +24,9 @@
       placeholder-class="{{ placeholderClass }} {{ error ? 'van-field--error' : '' }}"
       cursor-spacing="{{ cursorSpacing }}"
       bindinput="onInput"
-      bind:focus="onFocus"
       bind:blur="onBlur"
+      bind:focus="onFocus"
+      bind:confirm="onConfirm"
     />
     <input
       wx:else
@@ -37,10 +39,12 @@
       maxlength="{{ maxlength }}"
       placeholder="{{ placeholder }}"
       placeholder-class="{{ placeholderClass }} {{ error ? 'van-field--error' : '' }}"
+      confirm-type="{{ confirmType }}"
       cursor-spacing="{{ cursorSpacing }}"
       bindinput="onInput"
-      bind:focus="onFocus"
       bind:blur="onBlur"
+      bind:focus="onFocus"
+      bind:confirm="onConfirm"
     />
     <van-icon
       wx:if="{{ showClear }}"
@@ -51,8 +55,8 @@
     <view class="van-field__icon-container" bind:tap="onTapIcon">
       <van-icon
         wx:if="{{ icon }}"
-        custom-class="van-field__icon {{ iconClass }}"
         name="{{ icon }}"
+        custom-class="van-field__icon {{ iconClass }}"
       />
       <slot wx:else name="icon" />
     </view>

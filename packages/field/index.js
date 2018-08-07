@@ -2,7 +2,6 @@ Component({
   behaviors: ['wx://form-field'],
 
   externalClasses: [
-    'custom-class',
     'input-class'
   ],
 
@@ -26,8 +25,11 @@ Component({
     clearable: Boolean,
     labelAlign: String,
     inputAlign: String,
+    customClass: String,
+    confirmType: String,
     errorMessage: String,
     placeholder: String,
+    customStyle: String,
     useButtonSlot: Boolean,
     placeholderClass: String,
     cursorSpacing: {
@@ -40,14 +42,14 @@ Component({
     },
     value: {
       type: null,
-      value: ''
-    },
-    type: {
-      type: String,
-      value: 'text',
+      value: '',
       observer(currentValue) {
         this.setData({ currentValue });
       }
+    },
+    type: {
+      type: String,
+      value: 'text'
     },
     border: {
       type: Boolean,
@@ -113,6 +115,12 @@ Component({
         currentValue: '',
         showClear: this.getShowClear({ value: '' })
       });
+      this.triggerEvent('input', '');
+      this.triggerEvent('change', '');
+    },
+
+    onConfirm() {
+      this.triggerEvent('confirm', this.data.currentValue);
     }
   }
 });

@@ -1,5 +1,6 @@
 <view
   class="custom-class van-cell {{ center ? 'van-cell--center' : '' }} {{ required ? 'van-cell--required' : '' }} {{ isLink || tapable ? 'van-cell--tapable' : '' }} {{ border ? 'van-hairline' : '' }}"  
+  style="{{ customStyle }}"
   bind:tap="onTap"
 >
   <van-icon wx:if="{{ icon }}" custom-class="van-cell__left-icon left-icon-class" name="{{ icon }}" />

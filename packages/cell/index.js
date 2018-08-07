@@ -23,6 +23,7 @@ Component({
     required: Boolean,
     tapable: Boolean,
     titleWidth: String,
+    customStyle: String,
     arrowDirection: String,
     linkType: {
       type: String,

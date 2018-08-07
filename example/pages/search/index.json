@@ -1,8 +1,7 @@
 {
   "navigationBarTitleText": "Search 搜索",
   "usingComponents": {
-    "van-icon": "../icon/index",
-    "van-search": "../../dist/search/index",
-    "van-panel": "../../dist/panel/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-search": "../../dist/search/index"
   }
 }

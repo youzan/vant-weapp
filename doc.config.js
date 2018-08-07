@@ -31,12 +31,16 @@ module.exports = {
     default: 'icon',
     category: [
       {
+        base: 'guide',
+        label: '开发指南',
+        include: { common: require('./packages/common/README.md') }
+      },
+      {
         base: 'base',
         label: '基础',
         include: {
           icon: require('./packages/icon/README.md'),
           button: require('./packages/button/README.md'),
-          common: require('./packages/common/README.md'),
           loading: require('./packages/loading/README.md')
         }
       },

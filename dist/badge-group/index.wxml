@@ -1,0 +1,3 @@
+<view class="van-badge-group van-hairline--top-bottom custom-class">
+  <slot />
+</view>

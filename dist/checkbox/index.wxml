@@ -1,0 +1,13 @@
+<view
+  class="checkbox-class van-checkbox {{ isInGroup ? 'van-checkbox__item' : ''}} {{ type === 'list' ? 'van-checkbox__list-item' : ''}}"
+  bindtap="{{ labelDisabled ? '' : 'handleClick' }}"
+  >
+  <van-icon
+    type="{{ checked ? 'checked' : 'check'}}"
+    class="van-checkbox__icon {{ disabled ? 'van-checkbox--disabled' : '' }} {{ checked ? 'van-checkbox--checked' : '' }}"
+    bindtap="{{ labelDisabled ? 'handleClick': '' }}"
+  ></van-icon>
+  <text class="van-checkbox__label">
+    <slot></slot>
+  </text>
+</view>

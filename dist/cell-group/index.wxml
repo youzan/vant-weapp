@@ -1,0 +1,3 @@
+<view class="custom-class van-cell-group {{ border ? 'van-hairline--top-bottom' : '' }}">
+  <slot />
+</view>

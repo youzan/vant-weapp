@@ -1,0 +1,5 @@
+<view
+  class="van-hairline--surround van-tag custom-class {{ mark ? 'van-tag--mark' : '' }} {{ plain ? 'van-tag--plain' : '' }} {{ type ? 'van-tag--' + type : '' }}"
+>
+  <slot />
+</view>

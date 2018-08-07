@@ -1,0 +1,28 @@
+<radio-group
+  class="van-radio radio-class"
+  bindchange="radioChange"
+  wx:if="{{ items && items.length }}"
+>
+  <label
+    class="van-radio__label {{ type === 'list' ? 'van-radio__list-item' : 'van-radio__item'}}"
+    wx:for="{{ items }}"
+    wx:key="{{ item.value }}"
+    wx:for-item="item"
+    wx:for-index="index"
+  >
+    <view class="van-radio__icon-wrap">
+      <view class="van-radio__icon {{ item.disabled ? 'van-radio--disabled' : '' }} {{ item.checked ? 'van-radio--checked radio-color' : '' }}">
+        <view class="van-radio__icon-inside"></view>
+      </view>
+      <radio
+        class="van-radio__origin"
+        value="{{ item.name }}"
+        checked="{{ item.checked }}"
+        disabled="{{ item.disabled }}"
+      />
+    </view>
+    <view class="van-radio__name">
+      {{item.value}}
+    </view>
+  </label>
+</radio-group>

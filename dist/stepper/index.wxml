@@ -1,0 +1,18 @@
+<view class="van-stepper custom-class">
+  <view
+    class="minus-class van-stepper__minus {{ disabled || currentValue <= min ? 'van-stepper__minus--disabled' : '' }}"
+    bind:tap="onMinus"
+  />
+  <input
+    type="{{ integer ? 'number' : 'digit' }}"
+    class="input-class van-stepper__input {{ disabled || disableInput ? 'van-stepper__input--disabled' : '' }}"
+    value="{{ currentValue }}"
+    disabled="{{ disabled || disableInput }}"
+    bindinput="onInput"
+    bind:blur="onBlur"
+  />
+  <view
+    class="plus-class van-stepper__plus {{ disabled || currentValue >= max ? 'van-stepper__plus--disabled' : '' }}"
+    bind:tap="onPlus"
+  />
+</view>

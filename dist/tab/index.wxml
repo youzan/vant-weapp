@@ -1,0 +1,51 @@
+<view
+  class="van-tab"
+  style="{{ height ? 'height:' + height + 'px' : '' }}"
+>
+  <block wx:if="{{ scroll }}">
+    <scroll-view
+      id="scroll-view"
+      class="van-tab__bd van-tab__bd--scroll {{ fixed ? 'van-tab__bd--fixed' : '' }}"
+      scroll-x
+      scroll-with-animation
+      scroll-left="{{ scrollLeft }}"
+      style="height: {{ height ? height + 'px' : 'auto' }}"
+    >
+      <template
+        is="van-tab-list"
+        data="{{ list, selectedId, height }}"
+      />
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <view
+      class="van-tab__bd {{ fixed ? 'van-tab__bd--fixed' : '' }}"
+      style="height: {{ height ? height + 'px' : 'auto' }}"
+    >
+      <template
+        is="van-tab-list"
+        data="{{ list, selectedId, height }}"
+      />
+    </view>
+  </block>
+</view>
+<!-- 插入内容 -->
+<slot></slot>
+
+<template name="van-tab-list">
+  <view
+    wx:for="{{ list }}"
+    wx:key="id"
+    class="van-tab__item {{ selectedId == item.id ? 'van-tab__item--selected' : '' }}"
+    id="item-{{ item.id }}"
+    data-item-id="{{ item.id }}"
+    bindtap="_handleZanTabChange"
+  >
+    <view
+      class="van-tab__title"
+      style="{{ height ? 'height:' + height + 'px;line-height:' + height + 'px' : '' }}"
+    >
+      {{ item.title }}
+    </view>
+  </view>
+</template>

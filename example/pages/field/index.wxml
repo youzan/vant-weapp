@@ -1,6 +1,6 @@
 <demo-block title="基础用法">
   <van-cell-group>
-    <van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" />
+    <van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" clearable />
   </van-cell-group>
 </demo-block>
 

@@ -52,7 +52,7 @@
       custom-class="van-field__clear"
       bind:touchstart="onClear"
     />
-    <view class="van-field__icon-container" bind:tap="onTapIcon">
+    <view class="van-field__icon-container" wx:if="{{ icon || useIconSlot }}" bind:tap="onTapIcon">
       <van-icon
         wx:if="{{ icon }}"
         name="{{ icon }}"

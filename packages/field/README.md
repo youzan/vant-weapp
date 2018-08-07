@@ -144,6 +144,7 @@
 | left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | `String` | `done` |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | `Number` | `50` |
+| use-icon-slot | 是否使用 icon slot  | `Boolean` | `false` |
 | use-button-slot | 是否使用 button slot  | `Boolean` | `false` |
 
 ### Event
@@ -162,7 +163,7 @@
 | 名称 | 说明 |
 |-----------|-----------|
 | label | 自定义输入框标签，如果设置了`label`属性则不生效 |
-| icon | 自定义输入框尾部图标，如果设置了`icon`属性则不生效 |
+| icon | 自定义输入框尾部图标，需要设置`use-icon-slot`属性，如果设置了`icon`属性则不生效 |
 | button | 自定义输入框尾部按钮，需要设置`use-button-slot`属性 |
 
 ### 外部样式类

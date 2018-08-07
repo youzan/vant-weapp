@@ -14,7 +14,8 @@
     "build": "sh scripts/deploy.sh",
     "watch:doc": "NODE_ENV=development wedoc run watch",
     "build:doc": "NODE_ENV=production wedoc run build",
-    "deploy:doc": "npm run build:doc && superman cdn basic && gh-pages -d website/dist"
+    "deploy:doc": "npm run build:doc && superman cdn basic && gh-pages -d website/dist",
+    "lint": "eslint ./packages --ext .js"
   },
   "repository": {
     "type": "git",
@@ -42,11 +43,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
     "eslint": "^5.1.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-vue": "^4.7.0",
+    "eslint-plugin-vue-libs": "^3.0.0",
     "fs-extra": "^4.0.2",
     "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",

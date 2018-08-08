@@ -49,6 +49,14 @@
     </zan-cell-group>
   </zan-panel>
 
+  <zan-panel title="有事件绑定的steps">
+    <zan-cell-group>
+      <zan-cell>
+        <zan-steps steps="{{steps}}" bind:stepclick="handleTap"></zan-steps>
+      </zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+
   <zan-panel title="自定义 class">
     <zan-cell-group>
       <zan-cell cell-class="gray">
@@ -64,3 +72,4 @@
   </zan-panel>
 </doc-page>
 
+<zan-toast id="tap"></zan-toast>

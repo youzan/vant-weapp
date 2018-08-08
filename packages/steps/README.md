@@ -58,6 +58,12 @@ steps: [
 <zan-steps type="vertical" steps="{{steps}}"></zan-steps>
 ```
 
+#### 带事件的steps
+
+```html
+<zan-steps steps="{{steps}}" bind:stepclick="handleTap"></zan-steps>
+```
+
 #### 自定义 class
 
 ```html
@@ -93,13 +99,16 @@ steps 数据格式如下：
     // 此步骤显示文案
     text: '步骤一',
     // 此步骤描述语
-    desc: '10.01'
+    desc: '10.01',
+    // 用于事件回调
+    id: 'step-1'
   },
   {
     done: true,
     current: false,
     text: '步骤二',
-    desc: '10.02'
+    desc: '10.02',
+    id: 'step-2'
   },
   {
     done: true,
@@ -109,3 +118,9 @@ steps 数据格式如下：
   }
 ]
 ```
+
+### 事件
+
+| 事件名称       | 说明      | 回调参数       |
+|-----------|-----------|-----------|
+|  stepclick  | 在 step 被点击时被触发 | id |

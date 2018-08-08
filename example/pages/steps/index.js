@@ -1,13 +1,17 @@
+const Toast = require('../../dist/toast/toast');
+
 Page({
   data: {
     steps: [
       {
+        id: 'step-1',
         current: true,
         done: true,
         text: '步骤一',
         desc: '10.01'
       },
       {
+        id: 'step-2',
         done: false,
         current: false,
         text: '步骤二',
@@ -87,6 +91,19 @@ Page({
           desc: '10.02'
         }
     ]
+  },
+
+  handleTap(event) {
+    let message;
+    if (event.detail.id) {
+      message = `选中元素的id为${event.detail.id}`;
+    } else {
+      message = '选中元素没有id';
+    }
+    Toast({
+      message,
+      selector: '#tap',
+    });
   },
 
   onLoad() {

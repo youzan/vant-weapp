@@ -17,5 +17,10 @@ Component({
     },
 
     className: String
+  },
+  methods: {
+    handleTap(event) {
+      this.triggerEvent('stepclick', {id: event.currentTarget.id});
+    }
   }
 });

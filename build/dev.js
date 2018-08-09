@@ -4,6 +4,9 @@ const path = require('path');
 const tips = '// This file is auto gererated by build/build-entry.js';
 const root = path.join(__dirname, '../');
 const join = dir => path.join(root, dir);
+const serve = require('webpack-serve');
+const config = require('./webpack.dev');
+const extracter = require('./extracter');
 
 // generate webpack entry file for markdown docs
 function buildDocsEntry() {
@@ -29,3 +32,11 @@ export default {
 }
 
 buildDocsEntry();
+
+serve({}, { config });
+
+extracter({
+  src: path.resolve(__dirname, '../packages'),
+  dist: path.resolve(__dirname, '../example/dist'),
+  watch: true
+});

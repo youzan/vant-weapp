@@ -30,9 +30,6 @@
     "dist"
   ],
   "homepage": "https://github.com/youzan/vant-weapp#readme",
-  "browserslist": [
-    "safari 6"
-  ],
   "devDependencies": {
     "autoprefixer": "^9.0.2",
     "babel-cli": "^6.26.0",

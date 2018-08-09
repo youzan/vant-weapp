@@ -9,11 +9,11 @@
 
 
 ## 概述
-[vant-weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 Vant 的小程序版本，基于相同的视觉规范，为用户提供更加统一的使用感受。
+[Vant Weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，并提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
 扫描下方小程序二维码，体验组件库示例：
 
-![vant-weapp 演示](https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300)
+<img src="https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300" width="220" height="220" >
 
 ## 文档
 
@@ -36,9 +36,7 @@ npm install
 npm run dev
 ```
 
-2. 打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，'本地小程序项目 - 添加项目'，把 vant-weapp/example 目录添加进去就可以预览示例了。
-
-![](https://img.yzcdn.cn/public_files/2017/02/08/a5e6445075826183659742cc6946c477.png)
+2. 打开[微信开发者工具]，'本地小程序项目 - 添加项目'，把 vant-weapp/example 目录添加进去就可以预览示例了。
 
 ## 使用
 
@@ -104,8 +102,6 @@ Page({
 
 ```
 
-![](https://img.yzcdn.cn/public_files/2017/02/08/ada80798c88df08060ce96964384e88e.png)
-
 更多示例可以在项目的`example`目录中查看
 
 ## 旧版组件库
@@ -132,3 +128,4 @@ Page({
 [MIT]: http://opensource.org/licenses/MIT
 [小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev/
 [小程序框架介绍]: https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html
+[微信开发者工具]: https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html

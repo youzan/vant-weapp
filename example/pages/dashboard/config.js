@@ -78,6 +78,15 @@ export default {
       }
     ]
   },
+  high: {
+    title: '高阶组件',
+    content: [
+      {
+        name: 'TresSelect 分类选择',
+        path: '/pages/tree-select/index'
+      }
+    ]
+  },
   bussiness: {
     title: '业务组件',
     content: [

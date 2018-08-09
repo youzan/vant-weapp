@@ -5,6 +5,7 @@
   <view class="tree-select__nav">
     <view
       wx:for="{{ items }}"
+      wx:key="index"
       class="tree-select__nitem van-ellipsis {{ mainActiveIndex === index ? 'tree-select__nitem--active' : '' }}"
       data-index="{{ index }}"
       bindtap="handleNavClick"

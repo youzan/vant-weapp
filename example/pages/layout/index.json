@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Layout 布局",
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
     "van-row": "../../dist/row/index",

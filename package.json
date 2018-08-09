@@ -1,8 +1,10 @@
 {
   "name": "vant-weapp",
   "version": "0.0.1-beta",
+  "author": "youzan",
+  "license": "MIT",
+  "miniprogram": "dist",
   "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
-  "main": "app.js",
   "scripts": {
     "dev": "node build/dev.js",
     "lint": "eslint ./packages --ext .js",
@@ -11,18 +13,16 @@
     "build:lib": "cross-env NODE_ENV=production node scripts/build-components.js --color",
     "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/youzan/vant-weapp.git"
   },
-  "author": "youzan",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/youzan/vant-weapp/issues"
   },
-  "files": [
-    "dist"
-  ],
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
     "autoprefixer": "^9.0.2",

@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs-extra');
 const nodeWatch = require('node-watch');
+const debounce = require('lodash/debounce');
 require('shelljs/global');
 
 module.exports = function (config = {}) {
@@ -10,10 +11,11 @@ module.exports = function (config = {}) {
   extracter(config);
 
   if (config.watch) {
-    nodeWatch(config.src, { recursive: true }, () => extracter(config));
+    nodeWatch(config.src, { recursive: true }, () => debouncedFunc(config));
   }
 };
 
+const debouncedFunc = debounce(config => extracter(config), 500);
 
 function extracter(config = {}) {
   // 复制 src

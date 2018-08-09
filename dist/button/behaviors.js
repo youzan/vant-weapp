@@ -37,39 +37,29 @@ module.exports = Behavior({
 
   methods: {
     bindgetuserinfo: function bindgetuserinfo() {
-      var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref$detail = _ref.detail,
-          detail = _ref$detail === undefined ? {} : _ref$detail;
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      this.triggerEvent('getuserinfo', detail);
+      this.triggerEvent('getuserinfo', event.detail || {});
     },
     bindcontact: function bindcontact() {
-      var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref2$detail = _ref2.detail,
-          detail = _ref2$detail === undefined ? {} : _ref2$detail;
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      this.triggerEvent('contact', detail);
+      this.triggerEvent('contact', event.detail || {});
     },
     bindgetphonenumber: function bindgetphonenumber() {
-      var _ref3 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref3$detail = _ref3.detail,
-          detail = _ref3$detail === undefined ? {} : _ref3$detail;
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      this.triggerEvent('getphonenumber', detail);
+      this.triggerEvent('getphonenumber', event.detail || {});
     },
     bindopensetting: function bindopensetting() {
-      var _ref4 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref4$detail = _ref4.detail,
-          detail = _ref4$detail === undefined ? {} : _ref4$detail;
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      this.triggerEvent('opensetting', detail);
+      this.triggerEvent('opensetting', event.detail || {});
     },
     binderror: function binderror() {
-      var _ref5 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-          _ref5$detail = _ref5.detail,
-          detail = _ref5$detail === undefined ? {} : _ref5$detail;
+      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      this.triggerEvent('error', detail);
+      this.triggerEvent('error', event.detail || {});
     }
   }
 });

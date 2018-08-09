@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 Component({
   externalClasses: ['custom-class'],
 
@@ -39,7 +41,7 @@ Component({
       var steps = this.data.steps;
 
       var formattedSteps = steps.map(function (step, index) {
-        return Object.assign({}, step, {
+        return _extends({}, step, {
           status: _this.getStatus(index)
         });
       });

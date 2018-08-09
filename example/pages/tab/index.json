@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "Tab 标签",
-  "usingComponents": {
-    "van-tab": "../../dist/tab/index"
-  }
-}

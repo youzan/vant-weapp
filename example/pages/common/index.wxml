@@ -1,7 +1,0 @@
-<demo-block title="文字省略">
-  <view class="van-ellipsis ellipsis">这是一段宽度限制 250px 的文字，后面的内容会省略</view>
-</demo-block>
-
-<demo-block title="1px 边框">
-  <view class="van-hairline--top hairline" />
-</demo-block>

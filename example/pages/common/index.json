@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "内置样式",
-  "usingComponents": {
-    "demo-block": "../../components/demo-block/index"
-  }
-}

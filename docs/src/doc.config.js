@@ -82,10 +82,6 @@ module.exports = {
               title: 'Steps 步骤条'
             },
             {
-              path: '/tab',
-              title: 'Tab 标签页'
-            },
-            {
               path: '/tag',
               title: 'Tag 标记'
             }
@@ -95,16 +91,8 @@ module.exports = {
           groupName: '表单组件',
           list: [
             {
-              path: '/checkbox',
-              title: 'Checkbox 复选框'
-            },
-            {
               path: '/field',
               title: 'Field 输入框'
-            },
-            {
-              path: '/radio',
-              title: 'Radio 单选框'
             },
             {
               path: '/search',
@@ -126,18 +114,6 @@ module.exports = {
             {
               path: '/actionsheet',
               title: 'Actionsheet 上拉菜单'
-            },
-            {
-              path: '/datetime-picker',
-              title: 'DatetimePicker 时间选择'
-            },
-            {
-              path: '/dialog',
-              title: 'Dialog 弹出框'
-            },
-            {
-              path: '/toast',
-              title: 'Toast 轻提示'
             }
           ]
         },

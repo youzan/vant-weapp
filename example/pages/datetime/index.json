@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "时间选择器",
-  "usingComponents": {
-    "van-date-picker": "../../dist/datetime-picker/index",
-    "van-cell": "../../dist/cell/index",
-    "van-cell-group": "../../dist/cell-group/index",
-    "van-panel": "../../dist/panel/index"
-  }
-}

@@ -1,5 +1,5 @@
 const path = require('path');
-const extracter = require('./utils/extracter');
+const extracter = require('./extracter');
 
 extracter({
   src: path.resolve(__dirname, '../packages'),

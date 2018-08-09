@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "Toptips 顶部提示",
-  "usingComponents": {
-    "van-button": "../../dist/button/index",
-    "van-toptips": "../../dist/toptips/index"
-  }
-}

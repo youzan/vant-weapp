@@ -3,10 +3,6 @@ export default {
     title: '基础组件',
     content: [
       {
-        name: '内置样式',
-        path: '/pages/common/index'
-      },
-      {
         name: 'Layout 布局',
         path: '/pages/layout/index'
       },
@@ -47,10 +43,6 @@ export default {
         path: '/pages/steps/index'
       },
       {
-        name: 'Tab 标签',
-        path: '/pages/tab/index'
-      },
-      {
         name: 'Tag 标记',
         path: '/pages/tag/index'
       }
@@ -60,16 +52,8 @@ export default {
     title: '表单',
     content: [
       {
-        name: 'Checkbox 复选框',
-        path: '/pages/checkbox/index'
-      },
-      {
         name: 'Field 输入框',
         path: '/pages/field/index'
-      },
-      {
-        name: 'Radio 单选框',
-        path: '/pages/radio/index'
       },
       {
         name: 'Search 搜索',
@@ -91,22 +75,6 @@ export default {
       {
         name: 'Actionsheet 上拉菜单',
         path: '/pages/actionsheet/index'
-      },
-      {
-        name: 'Dialog 弹出框',
-        path: '/pages/dialog/index'
-      },
-      {
-        name: 'DatetimePicker 时间选择器',
-        path: '/pages/datetime/index'
-      },
-      {
-        name: 'Toast 轻提示',
-        path: '/pages/toast/index'
-      },
-      {
-        name: 'TopTips 顶部提示',
-        path: '/pages/toptips/index'
       }
     ]
   },

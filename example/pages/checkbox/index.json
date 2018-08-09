@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "Checkbox 选择",
-  "usingComponents": {
-    "van-checkbox-group": "../../dist/checkbox-group/index",
-    "van-checkbox": "../../dist/checkbox/index",
-    "van-panel": "../../dist/panel/index",
-    "van-cell": "../../dist/cell/index"
-  }
-}

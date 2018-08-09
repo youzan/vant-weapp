@@ -10,7 +10,7 @@
     "lint": "eslint ./packages --ext .js",
     "release": "sh scripts/release.sh",
     "build": "sh scripts/deploy.sh",
-    "build:lib": "cross-env NODE_ENV=production node scripts/build-components.js --color",
+    "build:lib": "cross-env NODE_ENV=production node build/build-components.js --color",
     "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist"
   },
   "files": [

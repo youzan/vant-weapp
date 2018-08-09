@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var ITEM_HEIGHT = 44;
 
 Component({
@@ -40,24 +42,22 @@ Component({
 
   methods: {
     // 当一个子项被选择时
-    onItemSelect: function onItemSelect(_ref) {
-      var _ref$currentTarget = _ref.currentTarget,
-          currentTarget = _ref$currentTarget === undefined ? {} : _ref$currentTarget;
-      var _currentTarget$datase = currentTarget.dataset,
-          data = _currentTarget$datase === undefined ? {} : _currentTarget$datase;
+    onItemSelect: function onItemSelect(event) {
+      var _ref = event.currentTarget || {},
+          _ref$dataset = _ref.dataset,
+          dataset = _ref$dataset === undefined ? {} : _ref$dataset;
 
-      this.triggerEvent('itemclick', Object.assign({}, data.item || {}));
+      this.triggerEvent('itemclick', _extends({}, dataset.item || {}));
     },
 
 
     // 当一个导航被点击时
-    handleNavClick: function handleNavClick(_ref2) {
-      var _ref2$currentTarget = _ref2.currentTarget,
-          currentTarget = _ref2$currentTarget === undefined ? {} : _ref2$currentTarget;
-      var _currentTarget$datase2 = currentTarget.dataset,
-          data = _currentTarget$datase2 === undefined ? {} : _currentTarget$datase2;
+    handleNavClick: function handleNavClick(event) {
+      var _ref2 = event.currentTarget || {},
+          _ref2$dataset = _ref2.dataset,
+          dataset = _ref2$dataset === undefined ? {} : _ref2$dataset;
 
-      this.triggerEvent('navclick', { index: data.index });
+      this.triggerEvent('navclick', { index: dataset.index });
     },
 
 

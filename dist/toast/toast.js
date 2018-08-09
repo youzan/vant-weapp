@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var TOAST_CONFIG_KEY = 'vant.__zanToastPageConfig';
 var DEFAULT_SHOW_TOAST_TIME = 3000;
 
@@ -39,7 +41,7 @@ function Toast(optionsOrMsg, pageCtx) {
 
   var ctx = getPageCtx(pageCtx);
   var pageToastUserSetting = getPageToastConfig(ctx);
-  var parsedOptions = Object.assign({}, globalToastUserConfig, pageToastUserSetting, options);
+  var parsedOptions = _extends({}, globalToastUserConfig, pageToastUserSetting, options);
   var toastCtx = ctx.selectComponent(parsedOptions.selector);
 
   if (!toastCtx) {
@@ -51,7 +53,7 @@ function Toast(optionsOrMsg, pageCtx) {
     Toast.clear();
   }
 
-  toastCtx.show(Object.assign({}, parsedOptions, {
+  toastCtx.show(_extends({}, parsedOptions, {
     show: true
   }));
 
@@ -85,7 +87,7 @@ Toast.setDefaultOptions = function () {
   };
 
   if (type === 'global') {
-    globalToastUserConfig = Object.assign({}, parsedDefaultOptions);
+    globalToastUserConfig = _extends({}, parsedDefaultOptions);
   } else if (type === 'page') {
     var _ctx$setData;
 
@@ -126,7 +128,7 @@ Toast.clear = function () {
 Toast.loading = function () {
   var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-  Toast(Object.assign({}, options, {
+  Toast(_extends({}, options, {
     type: 'loading'
   }));
 };

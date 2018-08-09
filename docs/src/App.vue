@@ -1,5 +1,5 @@
 <template>
-  <van-doc :config="config">
+  <van-doc :config="config" simulator="./preview.html">
     <router-view />
   </van-doc>
 </template>

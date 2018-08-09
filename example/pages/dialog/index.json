@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "Dialog 弹出框",
-  "usingComponents": {
-    "van-dialog": "../../dist/dialog/index",
-    "van-button": "../../dist/button/index",
-    "van-toast": "../../dist/toast/index"
-  }  
-}

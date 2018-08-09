@@ -6,7 +6,8 @@ const { VueLoaderPlugin } = require('vue-loader');
 module.exports = {
   mode: 'development',
   entry: {
-    'vant-docs': './docs/src/index.js'
+    'vant-docs': './docs/src/index.js',
+    'vant-preview': './docs/src/preview.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -81,6 +82,12 @@ module.exports = {
       chunks: ['vant-docs'],
       template: 'docs/src/index.tpl',
       filename: 'index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vant-preview'],
+      template: 'docs/src/index.tpl',
+      filename: 'preview.html',
       inject: true
     })
   ]

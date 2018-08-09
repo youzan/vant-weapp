@@ -1,3 +1,4 @@
+const path = require('path');
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
 const cssmin = require('gulp-clean-css');
@@ -10,30 +11,31 @@ const options = gutil.env;
 const isProduction = process.env.NODE_ENV === 'production';
 
 gulp.task('compile-css', () => {
-  return gulp.src(['../../packages/**/*.pcss', '!../../packages/**/_*.pcss'])
+  return gulp
+    .src(['../packages/**/*.pcss', '!../packages/**/_*.pcss'])
     .pipe(postcss())
     .pipe(cssmin())
-    .pipe(rename((path) => {
-      path.extname = '.wxss';
-    }))
+    .pipe(
+      rename(path => {
+        path.extname = '.wxss';
+      })
+    )
     .pipe(gulp.dest(options.dist));
 });
 
 gulp.task('compile-js', () => {
-  return gulp.src(['../../packages/**/*.js'])
-    .pipe(removeLogging({
-      methods: isProduction ? ['log', 'info'] : []
-    }))
-    .pipe(babel({
-      plugins: [['transform-object-rest-spread', { useBuiltIns: true }]],
-      presets: [
-        ['env', {
-          loose: true,
-          useBuiltIns: true,
-          exclude: ['transform-es2015-typeof-symbol']
-        }]
-      ]
-    }))
+  return gulp
+    .src(['../packages/**/*.js'])
+    .pipe(
+      removeLogging({
+        methods: isProduction ? ['log', 'info'] : []
+      })
+    )
+    .pipe(
+      babel({
+        extends: path.join(__dirname, '../.babelrc')
+      })
+    )
     .pipe(gulp.dest(options.dist));
 });
 

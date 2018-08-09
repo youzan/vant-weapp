@@ -4,11 +4,9 @@
 
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "van-row": "path/to/vant-weapp/dist/row/index",
-    "van-col": "path/to/vant-weapp/dist/col/index"
-  }
+"usingComponents": {
+  "van-row": "path/to/vant-weapp/dist/row/index",
+  "van-col": "path/to/vant-weapp/dist/col/index"
 }
 ```
 

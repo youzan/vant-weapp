@@ -23,7 +23,9 @@
 
 ## 迁移指南
 
-Vant Weapp 是基于有赞 Zanui Weapp 组件库进行的品牌升级，对于仍在使用 zanui-weapp 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。Zanui Weapp 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
+Vant Weapp 是基于有赞 Zanui 组件库进行的品牌升级，对于仍在使用 Zanui 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。
+  
+Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
 
 ## 使用之前
 

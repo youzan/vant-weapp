@@ -10,27 +10,62 @@
 ---
 
 ## 概述
-[Vant Weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，并提供一致的 API 接口，助力开发者快速搭建小程序应用。
+[Vant Weapp](https://youzan.github.io/vant-weapp) 是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
 扫描下方小程序二维码，体验组件库示例：
 
-<img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg" width="220" height="220" >
+<img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg" width="200" height="200" style="margin-top: 10px;" >
 
 ## 文档
 
 [https://youzan.github.io/vant-weapp](https://youzan.github.io/vant-weapp)
 
-## 下载
+### 使用之前
 
-``` bash
+使用 Vant Weapp 前，请确保你已经学习过微信官方的 [小程序简易教程](https://mp.weixin.qq.com/debug/wxadoc/dev/) 和 [自定义组件介绍](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)。
+
+### 安装
+
+#### 方式一. 通过 npm 安装 (推荐)
+
+小程序已经支持使用 npm 安装第三方包，详见 [npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html?search-key=npm)
+
+```bash
+# npm
+npm i vant-weapp -S --production
+
+# yarn
+yarn add vant-weapp --production
+```
+
+#### 方式二. 下载代码
+
+直接通过 git 下载 Vant Weapp 源代码，并将`dist`目录拷贝到自己的项目中
+```bash
 git clone https://github.com/youzan/vant-weapp.git
 ```
 
-## 预览
+### 使用组件
 
-1. 在 vant-weapp 根目录下运行
+以按钮组件为例，只需要在 json 文件中引入按钮对应的自定义组件即可
 
-``` bash
+```json
+{
+  "usingComponents": {
+    "van-button": "/path/to/vant-weapp/dist/button/index"
+  }
+}
+```
+
+接着就可以在 wxml 中直接使用组件
+
+```xml
+<van-button type="primary">按钮</van-button>
+```
+
+### 在开发者工具中预览
+
+```bash
 # 安装项目依赖
 npm install
 
@@ -38,78 +73,15 @@ npm install
 npm run dev
 ```
 
-2. 打开[微信开发者工具]，把 vant-weapp/example 目录添加进去就可以预览示例了。
+打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
 
-## 使用
+### 链接
 
-1. 使用 [vant-weapp] 前请确保已经学习过微信官方的 [小程序简易教程] 和 [小程序框架介绍]。
-2. 然后用 [Bower] 将 [vant-weapp] 添加到你的项目中使用。
-3. 你也可以 fork 出一份你自己的 [vant-weapp]，这样可以获得更稳定的代码和更方便的进行个性定制。
-
-我们推荐在你的`app.wxss`直接引入`vant-weapp/dist/index.wxss`。
-
-详细使用文档，请参考 [快速上手](https://youzan.github.io/vant-weapp)
-
-### 组件分类介绍
-根据功能的不同，可以将组件大致的分为2类：
-
-#### 1. 正常引用
-
-如按钮组件，只需要在页面中引入按钮自定义组件即可
-```json
-{
-    "usingComponents": {
-        "van-button": "/path/to/vant-weapp/dist/button/index"
-    }
-}
-```
-```html
-<!-- example/button/index.html -->
-
-<van-button>按钮</van-button>
-```
-
-![](https://img.yzcdn.cn/public_files/2017/02/08/1b1e39ed3dc6b63519a68ba1e2650cfc.png)
-
-
-#### 2. API类组件
-
-如 Toast 组件，需要先在页面上引入自定义组件。之后在逻辑运行时，直接调用方法即可展示
-```json
-{
-    "usingComponents": {
-        "van-toast": "/path/to/vant-weapp/dist/toast/index"
-    }
-}
-```
-```html
-<van-toast id="van-toast-test"></van-toast>
-```
-
-将对应的 Toast 的函数引入页面，就可以直接调用来展示 Toast 了
-
-```js
-// example/toast/index.js
-
-const Toast = require('/path/to/vant-weapp/dist/toast/toast');
-
-Page({
-  showToast() {
-    Toast({
-        selector: '#van-toast-test',
-        message: 'toast内容'
-    });
-  }
-});
-
-```
-
-更多示例可以在项目的`example`目录中查看
-
-## 旧版组件库
-组件库现在已经全部升级至自定义组件，如果项目暂时无法切换到自定义组件的形式，可以将使用的版本号设置为低于 3.0.0。同时，旧的代码会在分支 old_code 上保留一段时间。
-
-建议新使用的用户，直接以自定义组件形式接入
+* [意见反馈](https://github.com/youzan/vant-weapp/issues)
+* [加入我们](https://job.youzan.com)
+* [更新日志](#/changelog)
+* [Vue 组件库](https://github.com/youzan/vant)
+* [React 组件库](https://www.youzanyun.com/zanui/zent)
 
 ## 微信讨论群
 
@@ -118,6 +90,7 @@ Page({
 <img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## 开源协议
+
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
 ## 贡献

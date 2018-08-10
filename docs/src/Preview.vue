@@ -105,14 +105,15 @@ body {
     user-select: none;
 
     img {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       margin-bottom: 15px;
       display: inline-block;
     }
 
     p {
       margin: 0;
+      color: #34495e;
       line-height: 1.5;
       font-size: 16px;
     }

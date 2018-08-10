@@ -13,11 +13,10 @@ then
   echo "Releasing $VERSION ..."
 
   # build
-  npm run components
+  npm run build:lib
 
   # commit build
-  git add -A
-  git commit -m "[build] $VERSION"
+  git commit -am "[build] $VERSION"
 
   # commit
   npm version $VERSION --message "[release] $VERSION"

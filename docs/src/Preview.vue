@@ -3,7 +3,7 @@
     <img class="preview-image" :src="image">
     <div class="preview-popup">
       <div class="preview-content">
-        <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808092223.jpg">
+        <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg">
         <p>微信扫码体验</p>
       </div>
     </div>

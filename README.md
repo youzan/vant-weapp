@@ -14,7 +14,7 @@
 
 扫描下方小程序二维码，体验组件库示例：
 
-<img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808092223.jpg" width="220" height="220" >
+<img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg" width="220" height="220" >
 
 ## 文档
 

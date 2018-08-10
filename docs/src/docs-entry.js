@@ -13,6 +13,7 @@ export default {
   'field': () => import('../../packages/field/README.md'),
   'icon': () => import('../../packages/icon/README.md'),
   'loading': () => import('../../packages/loading/README.md'),
+  'nav-bar': () => import('../../packages/nav-bar/README.md'),
   'notice-bar': () => import('../../packages/notice-bar/README.md'),
   'panel': () => import('../../packages/panel/README.md'),
   'popup': () => import('../../packages/popup/README.md'),
@@ -21,6 +22,5 @@ export default {
   'steps': () => import('../../packages/steps/README.md'),
   'switch': () => import('../../packages/switch/README.md'),
   'tag': () => import('../../packages/tag/README.md'),
-  'toast': () => import('../../packages/toast/README.md'),
   'tree-select': () => import('../../packages/tree-select/README.md')
 };

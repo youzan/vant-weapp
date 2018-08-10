@@ -16,6 +16,7 @@
 - 新增 Loading 组件
 - 新增 Panel 组件
 - 新增 Popup 组件
+- 新增 NavBar 组件
 - 新增 NoticeBar 组件
 - 新增 Search 组件
 - 新增 Steps 组件

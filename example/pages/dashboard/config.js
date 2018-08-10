@@ -27,6 +27,10 @@ export default {
         path: '/pages/loading/index'
       },
       {
+        name: 'NavBar 导航栏',
+        path: '/pages/nav-bar/index'
+      },
+      {
         name: 'NoticeBar 通告栏',
         path: '/pages/notice-bar/index'
       },

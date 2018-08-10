@@ -23,6 +23,7 @@ const MAP = {
   icon: 'icon-201808092138.png',
   col: 'layout-201808092138.png',
   loading: 'loading-201808092138.png',
+  'nav-bar': 'nav-bar-201808110751.png',
   'notice-bar': 'notice-bar-201808092138.png',
   popup: 'popup-201808092138.png',
   panel: 'panel-201808092138.png',

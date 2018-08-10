@@ -1,4 +1,4 @@
-@import '../common/index.pcss';
+@import '../common/style/var.pcss';
 
 .van-loading {
   z-index: 0;
@@ -52,5 +52,15 @@
   .van-loading__dot:nth-of-type($i) {
     opacity: calc(1 - (0.75 / 12) * ($i - 1));
     transform: rotate(calc($i * 30deg));
+  }
+}
+
+@keyframes van-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -1,4 +1,4 @@
-@import '../common/index.pcss';
+@import '../common/style/var.pcss';
 
 .van-popup {
   top: 50%;
@@ -91,5 +91,15 @@
 @keyframes van-popup-right {
   from {
     transform: translate3d(100%, -50%, 0);
+  }
+}
+
+@keyframes van-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

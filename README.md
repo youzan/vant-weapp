@@ -10,6 +10,7 @@
 ---
 
 ## 概述
+
 [Vant Weapp](https://youzan.github.io/vant-weapp) 是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
 扫描下方小程序二维码，体验组件库示例：
@@ -20,13 +21,17 @@
 
 [https://youzan.github.io/vant-weapp](https://youzan.github.io/vant-weapp)
 
-### 使用之前
+## 迁移指南
+
+Vant Weapp 是基于有赞 Zanui Weapp 组件库进行的品牌升级，对于仍在使用 zanui-weapp 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。Zanui Weapp 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
+
+## 使用之前
 
 使用 Vant Weapp 前，请确保你已经学习过微信官方的 [小程序简易教程](https://mp.weixin.qq.com/debug/wxadoc/dev/) 和 [自定义组件介绍](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)。
 
-### 安装
+## 安装
 
-#### 方式一. 通过 npm 安装 (推荐)
+### 方式一. 通过 npm 安装 (推荐)
 
 小程序已经支持使用 npm 安装第三方包，详见 [npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html?search-key=npm)
 
@@ -38,14 +43,14 @@ npm i vant-weapp -S --production
 yarn add vant-weapp --production
 ```
 
-#### 方式二. 下载代码
+### 方式二. 下载代码
 
 直接通过 git 下载 Vant Weapp 源代码，并将`dist`目录拷贝到自己的项目中
 ```bash
 git clone https://github.com/youzan/vant-weapp.git
 ```
 
-### 使用组件
+## 使用组件
 
 以按钮组件为例，只需要在 json 文件中引入按钮对应的自定义组件即可
 
@@ -63,7 +68,7 @@ git clone https://github.com/youzan/vant-weapp.git
 <van-button type="primary">按钮</van-button>
 ```
 
-### 在开发者工具中预览
+## 在开发者工具中预览
 
 ```bash
 # 安装项目依赖
@@ -75,7 +80,7 @@ npm run dev
 
 打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
 
-### 链接
+## 链接
 
 * [意见反馈](https://github.com/youzan/vant-weapp/issues)
 * [加入我们](https://job.youzan.com)

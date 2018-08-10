@@ -5,15 +5,16 @@
 <p align="center">
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" style="margin-bottom: 10px;">
 </p>
-<p align="center">轻量、可靠的小程序 UI 组件库</p>
+<h3 align="center">轻量、可靠的小程序 UI 组件库</h3>
 
+---
 
 ## 概述
 [Vant Weapp](https://youzan.github.io/vant-weapp)是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，并提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
 扫描下方小程序二维码，体验组件库示例：
 
-<img src="https://img.yzcdn.cn/public_files/2017/10/30/554dd940eb1a269d4ac9133e78ae321f.jpg?imageView2/2/w/300/h/300" width="220" height="220" >
+<img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808092223.jpg" width="220" height="220" >
 
 ## 文档
 
@@ -32,11 +33,12 @@ git clone https://github.com/youzan/vant-weapp.git
 ``` bash
 # 安装项目依赖
 npm install
+
 # 执行组件编译
 npm run dev
 ```
 
-2. 打开[微信开发者工具]，'本地小程序项目 - 添加项目'，把 vant-weapp/example 目录添加进去就可以预览示例了。
+2. 打开[微信开发者工具]，把 vant-weapp/example 目录添加进去就可以预览示例了。
 
 ## 使用
 

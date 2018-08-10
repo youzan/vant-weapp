@@ -19,9 +19,7 @@ function iframeReady(iframe, callback) {
 
 function syncPath(path) {
   const iframe = document.querySelector('iframe');
-  console.log(iframe);
   iframeReady(iframe, () => {
-    console.log('ready');
     iframe.contentWindow.switchImage(path);
   });
 }

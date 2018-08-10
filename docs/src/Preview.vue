@@ -1,6 +1,12 @@
 <template>
   <div>
-    <img :src="image">
+    <img class="preview-image" :src="image">
+    <div class="preview-popup">
+      <div class="preview-content">
+        <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808092223.jpg">
+        <p>微信扫码体验</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -48,13 +54,12 @@ export default {
     window.switchImage = path => {
       path = path.replace('/', '');
       this.currentPage = path;
-      console.log('currentPage', this.currentPage);
     };
   }
 };
 </script>
 
-<style>
+<style lang="postcss">
 body {
   margin: 0;
   color: #333;
@@ -65,9 +70,52 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img {
-  width: 100%;
-  display: block;
-  margin-top: -62px;
+.preview {
+  &-image {
+    width: 100%;
+    display: block;
+    margin-top: -62px;
+  }
+
+  &-popup {
+    opacity: 0;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .95);
+    transition: .3s;
+    text-align: center;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &-content {
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    text-align: center;
+    transform: translateY(-60%);
+    user-select: none;
+
+    img {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+  }
 }
 </style>

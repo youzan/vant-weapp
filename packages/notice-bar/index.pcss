@@ -1,0 +1,43 @@
+.van-notice-bar {
+  display: flex;
+  padding: 9px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+
+  &--within-icon {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  &__left-icon {
+    height: 18px;
+    min-width: 20px;
+    padding-top: 1px;
+    box-sizing: border-box;
+
+    > image {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__right-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  &__content-wrap {
+    position: relative;
+    flex: 1;
+    height: 18px;
+    overflow: hidden;
+  }
+
+  &__content {
+    position: absolute;
+    white-space: nowrap;
+  }
+}

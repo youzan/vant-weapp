@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "Helper 基础样式",
-  "usingComponents": {
-    "zan-cell": "../../dist/cell/index",
-    "zan-panel": "../../dist/panel/index",
-    "zan-cell-group": "../../dist/cell-group/index",
-    "doc-page": "../../components/doc-page/index"
-  }
-}

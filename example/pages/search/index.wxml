@@ -1,68 +1,31 @@
-<doc-page title="Search" without-padding>
+<demo-block title="基本用法">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    bind:change="onChange"
+    bind:search="onSearch"
+  />
+</demo-block>
 
-  <zan-panel title='基本用法'>
-    <zan-search
-      placeholder="搜索..."
-      keyword="{{ inputValue }}"
-      focus="{{ focus }}"
-      bindchange="searchChange"
-      bindsearch="searchDone"
-    />
-  </zan-panel>
+<demo-block title="监听对应事件">
+  <van-search
+    value="{{ value }}"
+    show-action
+    placeholder="请输入搜索关键词"
+    bind:change="onChange"
+    bind:search="onSearch"
+    bind:cancel="onCancel"
+  />
+</demo-block>
 
-  <zan-panel title='不可用'>
-    <zan-search
-      placeholder="搜索..."
-      disabled="{{ true }}"
-    />
-  </zan-panel>
-
-  <zan-panel title='自定义样式'>
-    <zan-search
-      placeholder="搜索..."
-      searchStyle="height: 88rpx; padding: 0 30rpx; background: {{ searchbg || '#F2F2F2' }};"
-      inputStyle="height: 56rpx; border-radius: 8rpx;"
-      keyword="{{ inputValue }}"
-      focus="{{ focus }}"
-      bindchange="searchChange"
-      bindsearch="searchDone"
-    />
-  </zan-panel>
-
-  <zan-panel title='取消按钮'>
-    <zan-search
-      placeholder="搜索..."
-      keyword="{{ inputValue }}"
-      focus="{{ focus }}"
-      useCancel="{{ true }}"
-      bindchange="searchChange"
-      bindsearch="searchDone"
-      bindcancel="handleCancel"
-    />
-  </zan-panel>
-
-  <zan-panel title="高级用法 自定义input插槽">
-    <zan-search
-      placeholder="搜索..."
-      keyword="{{ inputValue }}"
-      focus="{{ focus }}"
-      useCancel="{{ true }}"
-      bindchange="searchChange"
-      bindsearch="searchDone"
-      bindcancel="handleCancel"
-    >
-      <picker
-        slot="input"
-        mode="selector"
-        class="zan-search__selector"
-        bindchange="pickerChange"
-        style="width: 60px"
-        range="{{ range }}"
-        value="{{ rangeIndex }}"
-        wx:if="{{ range.length > 0}}"
-      >
-        <view class="picker">{{ range[rangeIndex] }}</view>
-      </picker>
-    </zan-search>
-  </zan-panel>
-</doc-page>
+<demo-block title="自定义行动按钮">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    use-action-slot
+    bind:change="onChange"
+    bind:search="onSearch"
+  >
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+</demo-block>

@@ -1,63 +1,93 @@
-.zan-stepper {
-  color: #666;
-}
-.zan-stepper view {
-  display: inline-block;
-  padding: 5px 0;
-  text-align: center;
-  box-sizing: border-box;
-  vertical-align: middle;
-  font-size: 12px;
-  border: 1rpx solid #999;
-}
-.zan-stepper .zan-stepper__minus {
-  border-right: none;
-  border-radius: 2px 0 0 2px;
-}
-.zan-stepper .zan-stepper__text {
-  border: 1rpx solid #999;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  /* 重置 input 默认样式 */
-  min-height: auto;
-  font-size: 12px;
-}
-.zan-stepper .zan-stepper__plus {
-  border-left: none;
-  border-radius: 0 2px 2px 0;
-}
-.zan-stepper .zan-stepper--disabled {
-  background: #f8f8f8;
-  color: #bbb;
-  border-color: #e8e8e8;
-}
-.zan-stepper--small view {
-  min-width: 36px;
-  line-height: 18px;
-}
-.zan-stepper--small .zan-stepper__text {
-  width: 36px;
-  line-height: 28px;
-  height: 28px;
-}
+@import '../common/style/var.pcss';
 
-.zan-stepper--middle view {
-  min-width: 40px;
-  line-height: 20px;
-}
-.zan-stepper--middle .zan-stepper__text {
-  width: 40px;
-  line-height: 30px;
-  height: 30px;
-}
+.van-stepper {
+  font-size: 0;
 
-.zan-stepper--large view {
-  min-width: 44px;
-  line-height: 22px;
-}
-.zan-stepper--large .zan-stepper__text {
-  width: 44px;
-  line-height: 32px;
-  height: 32px;
+  &__minus,
+  &__plus,
+  &__input {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: $white;
+  }
+
+  &__minus,
+  &__plus {
+    width: 40px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    position: relative;
+    padding: 5px;
+
+    &::before {
+      width: 9px;
+      height: 1px;
+    }
+
+    &::after {
+      width: 1px;
+      height: 9px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #6c6c6c;
+    }
+
+    &:active {
+      background-color: $active-color;
+    }
+
+    &--disabled {
+      background-color: $background-color;
+
+      &::before,
+      &::after {
+        background-color: $gray;
+      }
+    }
+
+    &--disabled:active {
+      background-color: $background-color;
+    }
+  }
+
+  &__minus {
+    border-radius: 2px 0 0 2px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__plus {
+    border-radius: 0 2px 2px 0;
+  }
+
+  &__input {
+    width: 33px;
+    height: 26px;
+    padding: 1px;
+    border: 1px solid $border-color;
+    border-width: 1px 0;
+    border-radius: 0;
+    box-sizing: content-box;
+    color: $gray-darker;
+    font-size: 14px;
+    text-align: center;
+    -webkit-appearance: none;
+
+    &--disabled {
+      color: $gray;
+      background-color: $background-color;
+    }
+  }
 }

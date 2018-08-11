@@ -1,26 +1,10 @@
-<view class="container">
-
-  <view class="doc-title zan-hairline--bottom zan-hairline--bottom">BADGE</view>
-
-  <view class="demo">
-    <view class="demo__item">
-      <view class="demo__icon">
-        <zan-badge>9</zan-badge>
-      </view>
-    </view>
-    <view class="demo__item">
-      <view class="demo__icon">
-        <zan-badge>19</zan-badge>
-      </view>
-    </view>
-    <view class="demo__item">
-      <view class="demo__icon">
-        <zan-badge
-          background-color="#4b0"
-          box-shadow="none"
-          font-size="{{ 12 }}"
-        >99+</zan-badge>
-      </view>
-    </view>
+<demo-block title="基础用法">
+  <view class="container">
+    <van-badge-group active="0" bind:change="onChange" custom-class="group">
+      <van-badge title="标签名称" />
+      <van-badge title="标签名称" info="8" />
+      <van-badge title="标签名称" info="99" />
+      <van-badge title="标签名称" info="199" />
+    </van-badge-group>
   </view>
-</view>
+</demo-block>

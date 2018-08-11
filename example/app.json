@@ -2,41 +2,32 @@
   "pages": [
     "pages/dashboard/index",
     "pages/actionsheet/index",
-    "pages/btn/index",
-    "pages/checkbox/index",
     "pages/badge/index",
-    "pages/capsule/index",
+    "pages/button/index",
     "pages/card/index",
     "pages/cell/index",
-    "pages/dialog/index",
     "pages/field/index",
-    "pages/helper/index",
     "pages/icon/index",
     "pages/layout/index",
     "pages/loading/index",
-    "pages/noticebar/index",
+    "pages/nav-bar/index",
+    "pages/notice-bar/index",
+    "pages/notify/index",
     "pages/panel/index",
     "pages/popup/index",
-    "pages/radio/index",
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",
     "pages/search/index",
-    "pages/tab/index",
     "pages/tag/index",
-    "pages/toptips/index",
-    "pages/toast/index",
-    "pages/tree-select/index",
-    "pages/select/index",
-    "pages/datetime/index",
-    "pages/loadmore/index"
+    "pages/tree-select/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",
-    "navigationBarTitleText": "ZanUI-WeApp",
+    "navigationBarTitleText": "Vant Weapp",
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "dark",
-    "backgroundColor": "#f9f9f9"
+    "backgroundColor": "#f8f8f8"
   },
   "debug": true
 }

@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "zan-btn": "../btn/index"
+    "van-icon": "../icon/index",
+    "van-popup": "../popup/index",
+    "van-loading": "../loading/index"
   }
 }

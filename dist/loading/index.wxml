@@ -1,18 +1,16 @@
-<view class="loading {{color}} {{type === 'dot' ? 'block' : 'inline'}}">
-  <view wx:if="{{type === 'circle'}}" class="circle"></view>
-  <view wx:if="{{type === 'circular'}}" class="circular"></view>
-  <view wx:if="{{type === 'spinner' || type === 'dot'}}" class="{{ type === 'dot' ? 'dot-spinner' : 'spinner'}}">
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
-    <view></view>
+<view
+  class="van-loading custom-class"
+  style="width: {{ size }}; height: {{ size }}"
+>
+  <view
+    class="van-loading__spinner van-loading__spinner--{{ type }}"
+    style="color: {{ color }};"
+  >
+    <view
+      wx:if="{{ type === 'spinner' }}"
+      wx:for="item in 12"
+      wx:key="{{ index }}"
+      class="van-loading__dot"
+    />
   </view>
 </view>

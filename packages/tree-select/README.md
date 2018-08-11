@@ -1,24 +1,23 @@
 ## TreeSelect 分类选择
 
 ### 使用指南
+
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "zan-tree-select": "path/to/zanui-weapp/dist/tree-select/index"
-  }
+"usingComponents": {
+  "van-tree-select": "path/to/vant-weapp/dist/tree-select/index"
 }
 ```
 
 ### 代码演示
-可以在任意位置上使用 zan-tree-select 标签。传入对应的数据即可。
+可以在任意位置上使用 van-tree-select 标签。传入对应的数据即可。
 ```html
-<zan-tree-select
+<van-tree-select
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
-  bind:navclick="handleNavClick"
-  bind:itemclick="handleItemClick"
+  bind:navclick="onNavClick"
+  bind:itemclick="onItemClick"
 />
 ```
 ```javascript
@@ -27,13 +26,13 @@ Page({
     // ...
   },
 
-  handleNavClick({ detail = {} }) {
+  onNavClick({ detail = {} }) {
     this.setData({
       mainActiveIndex: detail.index || 0
     });
   },
 
-  handleItemClick({ detail = {} }) {
+  onItemClick({ detail = {} }) {
     this.setData({
       activeId: detail.id
     });

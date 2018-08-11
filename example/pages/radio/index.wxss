@@ -1,8 +1,0 @@
-.radio-demo {
-  font-size: 12px !important;
-}
-
-.radio-color {
-  background-color: red !important;
-  border-color: red !important;
-}

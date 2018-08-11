@@ -1,22 +1,26 @@
 'use strict';
 
-Component({
-  externalClasses: ['col-class'],
+var _relations;
 
-  relations: {
-    '../row/index': {
-      type: 'parent'
-    }
-  },
+var ROW_PATH = '../row/index';
+
+Component({
+  externalClasses: ['custom-class'],
+
+  relations: (_relations = {}, _relations[ROW_PATH] = {
+    type: 'ancestor'
+  }, _relations),
 
   properties: {
-    col: {
-      value: 0,
-      type: Number
-    },
-    offset: {
-      value: 0,
-      type: Number
+    span: Number,
+    offset: Number
+  },
+
+  methods: {
+    setGutter: function setGutter(gutter) {
+      var padding = gutter / 2 + 'px';
+      var style = gutter ? 'padding-left: ' + padding + '; padding-right: ' + padding + ';' : '';
+      this.setData({ style: style });
     }
   }
 });

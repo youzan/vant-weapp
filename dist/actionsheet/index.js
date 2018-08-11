@@ -1,42 +1,38 @@
 'use strict';
 
 Component({
-  externalClasses: ['mask-class', 'container-class'],
   properties: {
+    show: Boolean,
+    title: String,
+    cancelText: String,
     actions: {
       type: Array,
       value: []
     },
-    show: {
-      type: Boolean,
-      value: false
-    },
-    cancelWithMask: {
+    overlay: {
       type: Boolean,
       value: true
     },
-    cancelText: {
-      type: String,
-      value: ''
+    closeOnClickOverlay: {
+      type: Boolean,
+      value: true
     }
   },
+
   methods: {
-    onMaskClick: function onMaskClick() {
-      if (this.data.cancelWithMask) {
-        this.cancelClick();
+    onSelect: function onSelect(event) {
+      var index = event.currentTarget.dataset.index;
+
+      var item = this.data.actions[index];
+      if (item && !item.disabled && !item.loading) {
+        this.triggerEvent('select', item);
       }
     },
-    cancelClick: function cancelClick() {
+    onCancel: function onCancel() {
       this.triggerEvent('cancel');
     },
-    handleBtnClick: function handleBtnClick(_ref) {
-      var _ref$currentTarget = _ref.currentTarget,
-          currentTarget = _ref$currentTarget === undefined ? {} : _ref$currentTarget;
-
-      var dataset = currentTarget.dataset || {};
-      var index = dataset.index;
-
-      this.triggerEvent('actionclick', { index: index });
+    onClose: function onClose() {
+      this.triggerEvent('close');
     }
   }
 });

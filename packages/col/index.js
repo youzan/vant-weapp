@@ -1,20 +1,24 @@
+const ROW_PATH = '../row/index';
+
 Component({
-  externalClasses: ['col-class'],
+  externalClasses: ['custom-class'],
 
   relations: {
-    '../row/index': {
-      type: 'parent'
+    [ROW_PATH]: {
+      type: 'ancestor'
     }
   },
 
   properties: {
-    col: {
-      value: 0,
-      type: Number
-    },
-    offset: {
-      value: 0,
-      type: Number
+    span: Number,
+    offset: Number
+  },
+
+  methods: {
+    setGutter(gutter) {
+      const padding = `${gutter / 2}px`;
+      const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
+      this.setData({ style });
     }
   }
 });

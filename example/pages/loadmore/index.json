@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "loadmore 加载",
-  "usingComponents": {
-    "zan-panel": "../../dist/panel/index",
-    "zan-loadmore": "../../dist/loadmore/index",
-    "doc-page": "../../components/doc-page/index"
-  }
-}

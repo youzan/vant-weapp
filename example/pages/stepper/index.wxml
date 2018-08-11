@@ -1,62 +1,17 @@
-<doc-page title="Stepper" without-padding>
-  <zan-panel title="基础用法">
-    <view style="padding: 40px 15px">
-      <zan-stepper
-        stepper="{{ stepper1.stepper }}"
-        min="{{ stepper1.min }}"
-        data-component-id="stepper1"
-        bind:change="handleZanStepperChange"
-      >
-      </zan-stepper>
-    </view>
-  </zan-panel>
+<demo-block title="基础用法" padding>
+  <van-stepper value="{{ value1 }}" />
+</demo-block>
 
-  <!-- small size -->
-  <zan-panel title="不同尺寸-小尺寸类型">
-    <view style="padding: 40px 15px">
-      <view style="margin-bottom: 5px">small:</view>
-      <zan-stepper
-        stepper="{{ stepper2.stepper }}"
-        min="{{ stepper2.min }}"
-        max="{{ stepper2.max }}"
-        size="small"
-        data-component-id="stepper2"
-        bind:change="handleZanStepperChange"
+<demo-block title="禁用状态" padding>
+  <van-stepper value="{{ value1 }}" disabled />
+</demo-block>
 
-      ></zan-stepper>
-
-      <view style="margin: 10px 0 5px;">middle:</view>
-      <zan-stepper
-        stepper="{{ stepper2.stepper }}"
-        min="{{ stepper2.min }}"
-        max="{{ stepper2.max }}"
-        data-component-id="stepper2-1"
-        bind:change="handleZanStepperChange"
-      ></zan-stepper>
-
-      <view style="margin: 10px 0 5px;">large:</view>
-      <zan-stepper
-        stepper="{{ stepper2.stepper }}"
-        min="{{ stepper2.min }}"
-        max="{{ stepper2.max }}"
-        size="large"
-        data-component-id="stepper2-2"
-        bind:change="handleZanStepperChange"
-      ></zan-stepper>
-    </view>
-  </zan-panel>
-
-  <zan-panel title="高级用法-每次变动数量自定义">
-    <view style="padding: 40px 15px">
-      <zan-stepper
-        stepper="{{ stepper3.stepper }}"
-        min="{{ stepper3.min }}"
-        max="{{ stepper3.max }}"
-        step="{{ stepper3.step }}"
-        data-component-id="stepper3"
-        bind:change="handleZanStepperChange"
-      >
-      </zan-stepper>
-    </view>
-  </zan-panel>
-</doc-page>
+<demo-block title="高级用法" padding>
+  <van-stepper
+    value="{{ value2 }}"
+    integer
+    min="5"
+    max="40"
+    step="2"
+  />
+</demo-block>

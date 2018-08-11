@@ -1,11 +1,10 @@
 {
   "navigationBarTitleText": "Cell 单元格",
   "usingComponents": {
-    "zan-cell": "../../dist/cell/index",
-    "zan-icon": "../../dist/icon/index",
-    "zan-badge": "../../dist/badge/index",
-    "zan-panel": "../../dist/panel/index",
-    "zan-cell-group": "../../dist/cell-group/index",
-    "doc-page": "../../components/doc-page/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-cell": "../../dist/cell/index",
+    "van-icon": "../../dist/icon/index",
+    "van-tag": "../../dist/tag/index",
+    "van-cell-group": "../../dist/cell-group/index"
   }
 }

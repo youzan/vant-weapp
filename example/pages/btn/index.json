@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "Button 按钮",
-  "usingComponents": {
-    "zan-button": "../../dist/btn/index",
-    "zan-button-group": "../../dist/btn-group/index",
-    "zan-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
-  }
-}

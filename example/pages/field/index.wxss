@@ -1,17 +1,7 @@
-.field__title--radius {
-  padding-bottom: 10px;
+.button {
+  vertical-align: middle;
 }
 
-.popup-field-example--bottom {
-  width: 100%;
-  height: 150px;
-}
-
-.picker-view-example {
-  height: 120px;
-}
-
-.picker-view-column-example {
-  line-height: 50px;
-  text-align: center;
+.icon {
+  color: #38f;
 }

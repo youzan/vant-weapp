@@ -1,19 +1,23 @@
 <view class="container">
+  <view class="title">
+    <image class="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" />
+    <view class="title-text">Vant</view>
+  </view>
+  <view class="desc">轻量、可靠的小程序 UI 组件库</view>
 
-  <image class="logo" src="https://img.yzcdn.cn/public_files/2017/02/06/ee0ebced79a80457d77ce71c7d414c74.png"></image>
-
-  <block wx:for="{{ list }}" wx:for-item="group" wx:key="title">
-    <zan-panel title="{{ group.title }}">
-      <zan-cell-group>
-        <zan-cell
+  <block wx:for="{{ list }}" wx:for-item="group" wx:key="group.title">
+    <view class="mobile-nav">
+      <view class="mobile-nav__title">{{ group.title }}</view>
+      <van-cell-group>
+        <van-cell
           wx:for="{{ group.content }}"
           wx:key="name"
           is-link
+          title-width="200px"
           url="{{ item.path }}"
           title="{{ item.name }}"
-        ></zan-cell>
-      </zan-cell-group>
-    </zan-panel>
+        ></van-cell>
+      </van-cell-group>
+    </view>
   </block>
-  
 </view>

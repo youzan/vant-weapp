@@ -1,8 +1,8 @@
 {
+  "navigationBarTitleText": "Layout 布局",
   "usingComponents": {
-    "zan-row": "../../dist/row/index",
-    "zan-col": "../../dist/col/index",
-    "zan-panel": "../../dist/panel/index",
-    "doc-page": "../../components/doc-page/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-row": "../../dist/row/index",
+    "van-col": "../../dist/col/index"
   }
 }

@@ -1,9 +1,0 @@
-.my-customer-class {
-  font-size: 16px;
-  margin-top: 15px;
-  margin-left: 15px;
-}
-.picker-panel-demo {  
-  display: block;
-  margin-top: 15px;
-}

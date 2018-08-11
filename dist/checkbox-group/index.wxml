@@ -1,3 +1,0 @@
-<view class="checkbox-group">
-  <slot></slot>
-</view>

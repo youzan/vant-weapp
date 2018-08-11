@@ -1,94 +1,113 @@
-## Actionsheet 行动按钮
+## Actionsheet 上拉菜单
 
 ### 使用指南
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "zan-actionsheet": "path/to/zanui-weapp/dist/actionsheet/index"
-  }
+"usingComponents": {
+  "van-actionsheet": "path/to/vant-weapp/dist/actionsheet/index"
 }
 ```
 
-### 使用指南
+### 代码演示
+
+#### 基础用法
+需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<button bindtap="openActionSheet">Open ActionSheet</button>
-<view class="actionsheet-container">
-  <!-- 监听自定义事件 cancel 和 actionclick，绑定回调函数 -->
-  <zan-actionsheet
-    show="{{ show }}"
-    actions="{{ actions }}"
-    cancel-text="{{ cancelText }}"
-    cancel-with-mask="{{ cancelWithMask }}"
-    bind:cancel="closeActionSheet"
-    bind:actionclick="handleActionClick"
-  >
-  </zan-actionsheet>
-</view>
+<van-actionsheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
 ```
 
-```js
-// 在 Page 中混入 Actionsheet 里面声明的方法
+```javascript
 Page({
-  data: {
-    show: false,
-    cancelWithMask: true,
-    actions: [{
-      name: '选项1',
-      subname: '选项描述语1',
-      loading: false
-    }, {
-      name: '选项2',
-      subname: '选项描述语2',
-      loading: false
-    }, {
-      name: '去分享',
-      openType: 'share'
-    }],
-    cancelText: '关闭 Action'
+  data() {
+    return {
+      show: false,
+      actions: [
+        {
+          name: '选项'
+        },
+        {
+          name: '选项',
+          subname: '描述信息'
+        },
+        {
+          name: '选项',
+          loading: true
+        },
+        {
+          name: '禁用选项',
+          disabled: true
+        }
+      ]
+    };
   },
-  openActionSheet() {
-    this.setData({
-      'show': true
-    });
-  },
-  closeActionSheet() {
-    this.setData({
-      'show': false
-    });
-  },
-  handleActionClick({ detail }) {
-    // 获取被点击的按钮 index
-    const { index } = detail;
+
+  methods: {
+    onClose() {
+      this.setData({ show: false });
+    },
+
+    onSelect(event) {
+      console.log(event.detail);
+    }
   }
 });
 ```
 
+#### 带取消按钮的 Actionsheet
 
-#### `Actionsheet` 支持的具体参数如下（ 传入时使用分隔线写法 ）
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
-|-----------|-----------|-----------|-------------|-------------|
-| show | 用来表示是否展示行动按钮 | Boolean | false | |
-| actions | 指定弹层里的按钮 | Array  | [] | |
-| cancelText | 行动按钮底部取消按钮的文案，不传则不显示取消按钮 | String  | | |
-| cancelWithMask | 是否在点击背景时，关闭行动按钮 | Boolean  | false | |
-| mask-class | 用于控制蒙层样式的外部类 | String  | | |
-| container-class | 用于控制容器样式的外部类 | String  | | |
+如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
 
-actions 的具体数据结构
-```js
-// actions 为数组结构传入
-[{
-  // 按钮文案
-  name: '选项1',
-  // 按钮描述文案，不传就不显示
-  subname: '选项描述语1',
-  // 按钮是否显示为 loading
-  loading: false,
-  // 按钮的微信开放能力
-  // 具体支持可参考微信官方文档：https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html
-  openType: 'share'
-}]
+```html
+<van-actionsheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+  bind:close="onClose"
+/>
 ```
 
+#### 带标题的 Actionsheet
+
+如果传入了`title`属性，且不为空，则另外一种样式的`Actionsheet`，里面内容需要自定义。
+
+```html
+<van-actionsheet show="{{ show }}" title="支持以下配送方式">
+  <view>一些内容</view>
+</van-actionsheet>
+```
+
+### API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| actions | 菜单选项 | `Array` | `[]` |
+| title | 标题 | `String` | - |
+| cancel-text | 取消按钮文字 | `String` | - |
+| overlay | 是否显示遮罩层 | `Boolean` | - |
+| close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| select | 选中选项时触发，禁用或加载状态下不会触发 | event.detail: 选项对应的对象 |
+| close | 关闭时触发 | - |
+| cancel | 取消按钮点击时触发 | - |
+
+### actions
+
+`API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
+
+| key | 说明 |
+|-----------|-----------|
+| name | 标题 |
+| subname | 二级标题 |
+| className | 为对应列添加额外的 class |
+| loading | 是否为加载状态 |
+| disabled | 是否为禁用状态 |

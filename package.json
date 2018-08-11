@@ -1,68 +1,71 @@
 {
-  "name": "zanui-weapp",
-  "version": "3.1.1",
-  "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
-  "main": "app.js",
-  "directories": {
-    "example": "example"
-  },
-  "scripts": {
-    "release": "sh scripts/release.sh",
-    "components": "cross-env NODE_ENV=production node scripts/build-components.js --color",
-    "changelog": "sh scripts/build-changelog.sh",
-    "icon": "sh scripts/build-icon.sh",
-    "dev": "node scripts/build-dev.js --color",
-    "build": "sh scripts/deploy.sh",
-    "watch:doc": "NODE_ENV=development wedoc run watch",
-    "build:doc": "NODE_ENV=production wedoc run build",
-    "deploy:doc": "npm run build:doc && superman cdn basic && gh-pages -d website/dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/youzan/zanui-weapp.git"
-  },
+  "name": "vant-weapp",
+  "version": "0.0.1",
   "author": "youzan",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/youzan/zanui-weapp/issues"
+  "miniprogram": "dist",
+  "description": "高颜值、好用、易扩展的小程序 UI 库，Powered by 有赞",
+  "scripts": {
+    "dev": "node build/dev.js",
+    "lint": "eslint ./packages --ext .js",
+    "release": "sh scripts/release.sh",
+    "build": "sh scripts/deploy.sh",
+    "build:lib": "cross-env NODE_ENV=production node build/build-components.js --color",
+    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist"
   },
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/youzan/zanui-weapp#readme",
-  "browserslist": [
-    "safari 6"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/youzan/vant-weapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/youzan/vant-weapp/issues"
+  },
+  "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "autoprefixer": "^8.5.0",
+    "autoprefixer": "^9.0.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-plugin-transform-es2015-spread": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
+    "css-loader": "^1.0.0",
     "eslint": "^5.1.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-vue": "^4.7.0",
-    "fs-extra": "^4.0.2",
+    "eslint-plugin-vue-libs": "^3.0.0",
+    "fast-glob": "^2.2.2",
+    "fast-vue-md-loader": "^1.0.3",
+    "fs-extra": "^7.0.0",
     "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.9.0",
-    "gulp-postcss": "^7.0.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-remove-logging": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
-    "lodash": "^4.17.10",
+    "html-webpack-plugin": "^3.2.0",
     "node-watch": "^0.5.5",
     "postcss-calc": "^6.0.1",
     "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^3.0.0",
     "precss": "^2.0.0",
-    "shelljs": "^0.7.8",
-    "wedoc": "0.0.16"
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "shelljs": "^0.8.2",
+    "style-loader": "^0.22.1",
+    "url-loader": "^1.0.1",
+    "vant-doc": "^1.0.13",
+    "vue": "2.5.17",
+    "vue-loader": "^15.2.6",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "2.5.17",
+    "vue-template-es2015-compiler": "^1.6.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-serve": "^2.0.2"
   }
 }

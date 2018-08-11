@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "Badge 徽章",
   "usingComponents": {
-    "zan-badge": "../../dist/badge/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-badge": "../../dist/badge/index",
+    "van-badge-group": "../../dist/badge-group/index"
   }
 }

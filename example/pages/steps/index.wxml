@@ -1,66 +1,18 @@
-<doc-page title="STEPS" without-padding>
-  <zan-panel title="基础用法">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps2}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps3}}"></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
+<demo-block title="基础用法">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    custom-class="demo-margin-bottom"
+  />
 
-  <zan-panel title="2步完成">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps4}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" steps="{{steps5}}"></zan-steps>
-      </zan-cell>
-      </zan-cell-group>
-  </zan-panel>
+  <van-button custom-class="demo-margin-left" bind:tap="nextStep">下一步</van-button>
+</demo-block>
 
-  <zan-panel title="有描述的steps">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="horizon" hasDesc steps="{{steps}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" hasDesc steps="{{steps2}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="horizon" hasDesc steps="{{steps3}}"></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
-
-  <zan-panel title="垂直方向的steps">
-    <zan-cell-group>
-      <zan-cell>
-        <zan-steps type="vertical" hasDesc steps="{{steps}}"></zan-steps>
-      </zan-cell>
-      <zan-cell>
-        <zan-steps type="vertical" hasDesc steps="{{steps2}}"></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
-
-  <zan-panel title="自定义 class">
-    <zan-cell-group>
-      <zan-cell cell-class="gray">
-        <zan-steps
-          steps-class="my-class"
-          icon-class="gray"
-          title-class="white"
-          type="horizon"
-          steps="{{steps}}"
-        ></zan-steps>
-      </zan-cell>
-    </zan-cell-group>
-  </zan-panel>
-</doc-page>
-
+<demo-block title="竖向步骤条">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    direction="vertical"
+    active-color="#f60"
+  />
+</demo-block>

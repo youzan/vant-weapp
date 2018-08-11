@@ -3,45 +3,65 @@
 ### 使用指南
 在 index.json 中引入组件
 ```json
-{
-  "usingComponents": {
-    "zan-badge": "path/to/zanui-weapp/dist/badge/index"
-  }
+"usingComponents": {
+  "van-badge": "path/to/vant-weapp/dist/badge/index",
+  "van-badge-group": "path/to/vant-weapp/dist/badge-group/index"
 }
 ```
 
 ### 代码演示
 
 #### 基础用法
+
+通过在`van-badge-group`上设置`active`属性来控制选中的`badge`
+
 ```html
-<view class="badge-container">
-  <zan-badge>10</zan-badge>
-</view>
+<van-badge-group :active="active" bind:change="onChange">
+  <van-badge title="标签名称" />
+  <van-badge title="标签名称" info="8" />
+  <van-badge title="标签名称" info="99" />
+  <van-badge title="标签名称" info="199" />
+</van-badge-group>
 ```
 
-#### 自定义参数
-```html
-<view class="badge-container">
-  <zan-badge
-    color="{{ color }}"
-    background-color="{{ backgroundColor }}"
-    font-size="{{ fontSize }}"
-    box-shadow="{{ boxShadow }}"
-  >10</zan-badge>
-</view>
+``` javascript
+export default {
+  data: {
+    active: 0
+  },
+
+  methods: {
+    onChange(event) {
+      wx.showToast({
+        icon: 'none',
+        title: `切换至第${event.detail}项`
+      });
+    }
+  }
+};
 ```
 
-```css
-.badge-container {
-  width: 100px;
-  height: 100px;
-}
-```
+### BadgeGroup API
 
-### API
 | 参数 | 说明 | 类型 | 默认值 |
-|-----|-----|-----|-----|
-| color | 字体颜色 | String | `#fff`
-| background-color | 背景颜色 | String | `#f44`
-| font-size | 字体大小 | Number | 10
-| box-shadow | 同css box-shadow语法 | String | `0 0 0 2px #fff`
+|-----------|-----------|-----------|-------------|
+| active | 选中`badge`的索引 | `String | Number` | `0` |
+
+### Badge API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| title | 内容 | `String` | `''` |
+| info | 提示消息 | `String | Number` | `''` |
+
+### BadgeGroup 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+
+### Badge 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |

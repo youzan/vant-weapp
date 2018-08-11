@@ -1,19 +1,11 @@
 'use strict';
 
 Component({
-  externalClasses: ['custom-class', 'theme-class'],
+  externalClasses: ['custom-class'],
 
   properties: {
-    type: {
-      type: String
-    },
-    plain: {
-      type: Boolean,
-      value: false
-    },
-    disabled: {
-      type: Boolean,
-      value: false
-    }
+    type: String,
+    mark: Boolean,
+    plain: Boolean
   }
 });

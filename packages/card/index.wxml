@@ -1,33 +1,22 @@
-<view class="card-class zan-card">
-  <!-- 左侧图片 -->
-  
-  <view class="thumb-class zan-card__thumb">
-    <image class="zan-card__img"
-      src="{{ thumb }}"
-      mode="aspectFit"
-    ></image>
+<view class="custom-class van-card">
+  <view class="van-card__thumb">
+    <image wx:if="{{ thumb }}" src="{{ thumb }}" class="van-card__img thumb-class" />
+    <slot wx:else name="thumb" />
   </view>
-  <!-- 右侧详情 -->
-  <view class="zan-card__detail">
-    <slot wx:if="{{ useDetailSlot }}" name="detail-slot"></slot>
-    <block wx:else>
-      <view class="zan-card__detail-row">
-        <view class="zan-card__right-col">¥ {{ price }}</view>
-        <view class="zan-card__left-col zan-ellipsis--l2">
-          {{ title }}
-        </view>
-      </view>
-
-      <view class="zan-card__detail-row zan-c-gray-darker">
-        <view wx:if="{{ num }}" class="zan-card__right-col">x {{ num }}</view>
-        <view wx:if="{{ desc }}" class="zan-card__left-col">
-          {{ desc }}
-        </view>
-      </view>
-
-      <view wx:if="{{ status }}" class="zan-card__detail-row">
-        <view class="zan-card__left-col zan-c-red">{{ status }}</view>
-      </view>
-    </block>
+  <view class="van-card__content">
+    <view wx:if="{{ title || price }}" class="van-card__row">
+      <view wx:if="{{ title }}" class="van-card__title title-class">{{ title }}</view>
+      <view wx:if="{{ price }}" class="van-card__price price-class">{{ currency }} {{ price }}</view>
+    </view>
+    <slot wx:else name="title" />
+    <view wx:if="{{ desc || num }}" class="van-card__row">
+      <view wx:if="{{ desc }}" class="van-card__desc desc-class">{{ desc }}</view>
+      <view wx:if="{{ num }}" class="van-card__num num-class">x {{ num }}</view>
+    </view>
+    <slot wx:else name="desc" />
+    <slot name="tags" />
+  </view>
+  <view class="van-card__footer">
+    <slot name="footer" />
   </view>
 </view>

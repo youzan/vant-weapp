@@ -38,15 +38,19 @@ Component({
 
   methods: {
     // 当一个子项被选择时
-    onItemSelect({ currentTarget = {} }) {
-      const { dataset: data = {} } = currentTarget;
-      this.triggerEvent('itemclick', { ...(data.item || {}) });
+    onItemSelect(event) {
+      const {
+        dataset = {}
+      } = event.currentTarget || {};
+      this.triggerEvent('itemclick', { ...(dataset.item || {}) });
     },
 
     // 当一个导航被点击时
-    handleNavClick({ currentTarget = {} }) {
-      const { dataset: data = {} } = currentTarget;
-      this.triggerEvent('navclick', { index: data.index });
+    handleNavClick(event) {
+      const {
+        dataset = {}
+      } = event.currentTarget || {};
+      this.triggerEvent('navclick', { index: dataset.index });
     },
 
     // 更新子项列表
@@ -62,7 +66,7 @@ Component({
     updateMainHeight() {
       const maxHeight = Math.max(this.data.items.length * ITEM_HEIGHT, this.data.subItems.length * ITEM_HEIGHT);
 
-      this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) })
+      this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
     },
 
     // 更新子项列表高度，根据可展示的最大高度和当前子项列表的高度决定

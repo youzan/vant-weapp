@@ -1,0 +1,15 @@
+<demo-block title="基础用法">
+  <van-notice-bar
+    text="{{ text }}"
+    left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+  />
+</demo-block>
+
+<demo-block title="禁用滚动">
+  <van-notice-bar scrollable="{{ false }}" text="{{ text }}" />
+</demo-block>
+
+<demo-block title="通告栏模式">
+  <van-notice-bar mode="closeable" text="{{ text }}" custom-class="demo-margin-bottom" />
+  <van-notice-bar mode="link" text="{{ text }}" />
+</demo-block>

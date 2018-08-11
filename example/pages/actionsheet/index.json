@@ -1,8 +1,8 @@
 {
-  "navigationBarTitleText": "Actionsheet 行动按钮",
+  "navigationBarTitleText": "Actionsheet 上拉菜单",
   "usingComponents": {
-    "zan-actionsheet": "../../dist/actionsheet/index",
-    "zan-button": "../../dist/btn/index",
-    "doc-page": "../../components/doc-page/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-actionsheet": "../../dist/actionsheet/index",
+    "van-button": "../../dist/button/index"
   }
 }

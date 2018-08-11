@@ -1,1 +1,1 @@
-.zan-row:after{content:"";display:table;clear:both}
+.van-row::after{content:"";display:table;clear:both}

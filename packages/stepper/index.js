@@ -1,79 +1,88 @@
 // Note that the bitwise operators and shift operators operate on 32-bit ints
 // so in that case, the max safe integer is 2^31-1, or 2147483647
-const VERY_LARGE_NUMBER = 2147483647;
+const MAX = 2147483647;
 
 Component({
+  externalClasses: [
+    'custom-class',
+    'input-class',
+    'plus-class',
+    'minus-class'
+  ],
+
   properties: {
-    size: {
-      type: String,
-      value: 'middle'
+    value: {
+      type: null,
+      observer(val) {
+        if (val !== this.currentValue) {
+          this.setData({ currentValue: this.range(val) });
+        }
+      }
     },
-    stepper: {
-      type: Number,
-      value: 1
-    },
+    integer: Boolean,
+    disabled: Boolean,
+    disableInput: Boolean,
     min: {
-      type: Number,
+      type: null,
       value: 1
     },
     max: {
-      type: Number,
-      value: VERY_LARGE_NUMBER
+      type: null,
+      value: MAX
     },
     step: {
-      type: Number,
+      type: null,
       value: 1
     }
   },
 
+  attached() {
+    this.setData({
+      currentValue: this.range(this.data.value)
+    });
+  },
+
   methods: {
-    handleZanStepperChange(e, type) {
-      const { dataset = {} } = e.currentTarget;
-      const { disabled } = dataset;
-      const { step } = this.data;
-      let { stepper } = this.data;
-
-      if (disabled) return null;
-
-      if (type === 'minus') {
-        stepper -= step;
-      } else if (type === 'plus') {
-        stepper += step;
-      }
-
-      if (stepper < this.data.min || stepper > this.data.max) return null;
-
-      this.triggerEvent('change', stepper);
-      this.triggerEvent(type);
+    // limit value range
+    range(value) {
+      return Math.max(Math.min(this.data.max, value), this.data.min);
     },
 
-    handleZanStepperMinus(e) {
-      this.handleZanStepperChange(e, 'minus');
+    onInput(event) {
+      const { value = '' } = event.detail || {};
+      this.triggerInput(value);
     },
 
-    handleZanStepperPlus(e) {
-      this.handleZanStepperChange(e, 'plus');
-    },
-
-    handleZanStepperBlur(e) {
-      let { value } = e.detail;
-      const { min, max } = this.data;
-
-      if (!value) {
-        setTimeout(() => {
-          this.triggerEvent('change', min);
-        }, 16);
+    onChange(type) {
+      if (this[`${type}Disabled`]) {
+        this.triggerEvent('overlimit', type);
         return;
       }
 
-      value = +value;
-      if (value > max) {
-        value = max;
-      } else if (value < min) {
-        value = min;
-      }
+      const diff = type === 'minus' ? -this.data.step : +this.data.step;
+      const value = Math.round((this.data.currentValue + diff) * 100) / 100;
+      this.triggerInput(this.range(value));
+      this.triggerEvent(type);
+    },
 
-      this.triggerEvent('change', value);
+    onBlur(event) {
+      const currentValue = this.range(this.data.currentValue);
+      this.triggerInput(currentValue);
+      this.triggerEvent('blur', event);
+    },
+
+    onMinus() {
+      this.onChange('minus');
+    },
+
+    onPlus() {
+      this.onChange('plus');
+    },
+
+    triggerInput(currentValue) {
+      this.setData({ currentValue });
+      this.triggerEvent('input', currentValue);
+      this.triggerEvent('change', currentValue);
     }
   }
 });

@@ -1,35 +1,33 @@
 Component({
-  properties: {
-    show: {
-      type: Boolean,
-      value: false
-    },
+  externalClasses: [
+    'custom-class',
+    'overlay-class'
+  ],
 
+  properties: {
+    show: Boolean,
+    overlayStyle: String,
     overlay: {
       type: Boolean,
       value: true
     },
-
     closeOnClickOverlay: {
       type: Boolean,
       value: true
     },
-
-    // 弹出方向
-    type: {
+    position: {
       type: String,
       value: 'center'
     }
   },
 
   methods: {
-    handleMaskClick() {
-      this.triggerEvent('click-overlay', {});
+    onClickOverlay() {
+      this.triggerEvent('click-overlay');
 
-      if (!this.data.closeOnClickOverlay) {
-        return;
+      if (this.data.closeOnClickOverlay) {
+        this.triggerEvent('close');
       }
-      this.triggerEvent('close', {});
     }
   }
 });

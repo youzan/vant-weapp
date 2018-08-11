@@ -1,10 +1,8 @@
 {
   "navigationBarTitleText": "Steps 步骤条",
   "usingComponents": {
-    "zan-cell": "../../dist/cell/index",
-    "zan-cell-group": "../../dist/cell-group/index",
-    "zan-panel": "../../dist/panel/index",
-    "zan-steps": "../../dist/steps/index",
-    "doc-page": "../../components/doc-page/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-button": "../../dist/button/index",
+    "van-steps": "../../dist/steps/index"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "stage-0",
+    [
+      "env",
+      {
+        "loose": true,
+        "exclude": ["transform-es2015-typeof-symbol"]
+      }
+    ]
+  ]
+}

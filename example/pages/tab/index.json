@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "Tab 标签",
-  "usingComponents": {
-    "zan-tab": "../../dist/tab/index",
-    "doc-page": "../../components/doc-page/index"
-  }
-}

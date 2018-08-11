@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "Capsule 胶囊",
-  "usingComponents": {
-    "zan-panel": "../../dist/panel/index",
-    "zan-capsule": "../../dist/capsule/index",
-    "doc-page": "../../components/doc-page/index"
-  }
-}

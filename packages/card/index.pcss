@@ -1,55 +1,94 @@
-@import "../color/index.pcss";
-@import "../helper/index.pcss";
+@import '../common/style/var.pcss';
+@import '../common/style/mixins/ellipsis.pcss';
 
-.zan-card {
-  display: flex;
-  margin-left: 0px;
-  padding: 5px 15px;
-  overflow: hidden;
+.van-card {
+  color: $text-color;
+  height: 100px;
+  font-size: 16px;
+  background: #fafafa;
   position: relative;
-  font-size: 14px;
-}
+  box-sizing: border-box;
+  padding: 5px 15px 5px 115px;
 
-.zan-card__thumb {
-  width: 90px;
-  height: 90px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  background-size: cover;
-}
+  &--center,
+  &__thumb {
+    align-items: center;
+    justify-content: center;
+  }
 
-.zan-card__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-}
+  &__thumb {
+    top: 5px;
+    left: 15px;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+  }
 
-.zan-card__detail {
-  flex: 1;
-  margin-left: 10px;
-  position: relative;
-}
+  &__img {
+    border: none;
+    max-width: 100%;
+    max-height: 100%;
+  }
 
-.zan-card__detail-row {
-  overflow: hidden;
-  line-height: 20px;
-  min-height: 20px;
-  margin-bottom: 3px;
-}
+  &,
+  &__thumb,
+  &__row {
+    display: flex;
+  }
 
-.zan-card__right-col {
-  float: right;
-}
+  &__content {
+    width: 100%;
 
-.zan-card__left-col {
-  margin-right: 80px;
-}
+    &--center {
+      height: 90px;
+      align-items: center;
+    }
+  }
 
+  &__title,
+  &__desc {
+    line-height: 20px;
+    word-break: break-all;
+  }
+
+  &__title {
+    max-height: 40px;
+
+    @mixin multi-ellipsis 2;
+  }
+
+  &__desc {
+    color: $gray-darker;
+    font-size: 12px;
+    max-height: 20px;
+
+    @mixin ellipsis;
+  }
+
+  &__price,
+  &__num {
+    flex: 1;
+    min-width: 80px;
+    line-height: 20px;
+    text-align: right;
+  }
+
+  &__price {
+    font-size: 14px;
+  }
+
+  &__num {
+    color: $gray-darker;
+    font-size: 12px;
+  }
+
+  &__footer {
+    right: 15px;
+    bottom: 5px;
+    position: absolute;
+
+    .van-button {
+      margin-left: 5px;
+    }
+  }
+}

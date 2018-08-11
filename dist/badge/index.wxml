@@ -1,8 +1,4 @@
-<view class="zan-badge">
-  <view
-    class="zan-badge__text"
-    style="color: {{ color }}; background-color: {{ backgroundColor }};font-size: {{ fontSize * 2 }}px; box-shadow: {{ boxShadow }};"
-  >
-    <slot></slot>
-  </view>
+<view class="van-badge van-hairline custom-class {{ active ? 'van-badge--active' : '' }}" bind:tap="onTap">
+  <view wx:if="{{ info }}" class="van-badge__info">{{ info }}</view>
+  {{ title }}
 </view>

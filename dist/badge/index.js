@@ -1,27 +1,30 @@
 'use strict';
 
-var DEFAULT_COLOR = '#fff';
-var DEFAULT_BACKGROUND_COLOR = '#f44';
-var DEFAULT_FONT_SIZE = 10;
-var DEFAULT_BOX_SHADOW = '0 0 0 2px #fff';
+var _relations;
+
+var BADGE_GROUP_PATH = '../badge-group/index';
 
 Component({
+  externalClasses: ['custom-class'],
+
+  relations: (_relations = {}, _relations[BADGE_GROUP_PATH] = {
+    type: 'ancestor'
+  }, _relations),
+
   properties: {
-    color: {
-      type: String,
-      value: DEFAULT_COLOR
+    info: Number,
+    title: String
+  },
+
+  methods: {
+    onTap: function onTap() {
+      var group = this.getRelationNodes(BADGE_GROUP_PATH)[0];
+      if (group) {
+        group.setActive(this);
+      }
     },
-    backgroundColor: {
-      type: String,
-      value: DEFAULT_BACKGROUND_COLOR
-    },
-    fontSize: {
-      type: Number,
-      value: DEFAULT_FONT_SIZE
-    },
-    boxShadow: {
-      type: String,
-      value: DEFAULT_BOX_SHADOW
+    setActive: function setActive(active) {
+      this.setData({ active: active });
     }
   }
 });

@@ -1,5 +1,5 @@
 <view
-  class="zan-toast {{ !message ? 'zan-toast--notitle' : '' }}"
+  class="van-toast {{ !message ? 'van-toast--notitle' : '' }}"
   wx:if="{{ show }}"
   bindtap="clearZanToast"
 >
@@ -9,20 +9,20 @@
   >
     <view
       wx:if="{{ image }}"
-      class="zan-toast__icon zan-toast__icon-image"
+      class="van-toast__icon van-toast__icon-image"
       style="background-image: url({{ image }});"
     ></view>
     <view
       wx:elif="{{ icon === 'loading' }}"
-      class="zan-toast__icon zan-toast__icon-loading"
+      class="van-toast__icon van-toast__icon-loading"
     >
-      <view class="zan-loading"></view>
+      <view class="van-loading"></view>
     </view>
-    <zan-icon
+    <van-icon
       wx:else
       type="{{ icon }}"
-      class="zan-toast__icon"
-    ></zan-icon>
+      class="van-toast__icon"
+    ></van-icon>
   </block>
 
   <!-- 文案展示 -->

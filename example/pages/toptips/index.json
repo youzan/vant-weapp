@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "Toptips 顶部提示",
-  "usingComponents": {
-    "zan-button": "../../dist/btn/index",
-    "zan-toptips": "../../dist/toptips/index",
-    "doc-page": "../../components/doc-page/index"
-  }
-}

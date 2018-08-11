@@ -1,41 +1,28 @@
 <view
-  class="zan-search {{ searchClass }}"
-  style="{{ searchStyle }}"
+  class="van-search custom-class {{ showAction || useActionSlot ? 'van-search--show-action' : '' }}"
+  style="background: {{ background }}"
 >
-  <view
-    class="zan-search__form {{ useCancel ? 'zan-search__form--cancel' : '' }} input-class"
-    style="{{ inputStyle }}"
-  >
-    <icon type="search" size="15" color="#a9a9a9" />
-    <slot name="input"></slot>
-    <input
-      class="zan-search__input"
-      placeholder="{{ placeholder }}"
-      placeholder-class="zan-search__placeholder"
+  <view class="van-search__field">
+    <van-field
+      clearable
+      type="search"
+      left-icon="search"
+      border="{{ false }}"
       confirm-type="search"
-      bindfocus="focus"
-      bindblur="blur"
-      value="{{ keyword }}"
-      bindconfirm="search"
-      bindinput="inputChange"
-      focus="{{ focus }}"
+      value="{{ currentValue }}"
       disabled="{{ disabled }}"
-    />
-    <icon
-      wx:if="{{keyword}}"
-      class="zan-search__clear"
-      type="clear"
-      size="14"
-      color="#bbb"
-      bindtap="clearInput"
+      readonly="{{ readony }}"
+      maxlength="{{ maxlength }}"
+      placeholder="{{ placeholder }}"
+      custom-style="padding: 3px 10px"
+      bind:blur="onBlur"
+      bind:focus="onFocus"
+      bind:change="onChange"
+      bind:confirm="onSearch"
     />
   </view>
-  <view
-    class="zan-search__cancel cancel-class"
-    wx:if="{{ useCancel }}"
-    bindtap="cancelSearch"
-    style="{{ cancelStyle }}"
-  >
-    {{cancelText || '取消'}}
+  <view wx:if="{{ showAction || useActionSlot }}" class="van-search__action">
+    <slot wx:if="{{ useActionSlot }}" name="action" />
+    <view wx:else bind:tap="onCancel" class="cancel-class">取消</view>
   </view>
 </view>

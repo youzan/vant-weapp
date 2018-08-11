@@ -1,8 +1,6 @@
-<doc-page title="ICON">
-  <view wx:for="{{ icons }}" wx:for-item="icon" wx:key="icon" class="icon-wrap">
-    <view class="example-icon">
-      <zan-icon type="{{ icon }}"></zan-icon>
-    </view>
-    <view class="icon-classname">zan-icon-{{ icon }}</view>
-  </view>
-</doc-page>
+<demo-block title="图标列表">
+  <van-col custom-class="col" span="8" wx:for="{{ icons }}" wx:for-item="icon" wx:key="index">
+    <van-icon custom-class="icon" name="{{ icon }}" size="32px" />
+    <view class="text">{{ icon }}</view>
+  </van-col>
+</demo-block>

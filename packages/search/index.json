@@ -1,3 +1,7 @@
 {
-  "component": true
+  "component": true,
+  "usingComponents": {
+    "van-icon": "../icon/index",
+    "van-field": "../field/index"
+  }
 }

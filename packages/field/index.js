@@ -1,69 +1,126 @@
 Component({
   behaviors: ['wx://form-field'],
 
-  externalClasses: ['field-class'],
+  externalClasses: [
+    'input-class'
+  ],
 
-  relations: {
-    '../cell-group/index': {
-      type: 'parent'
-    }
+  options: {
+    multipleSlots: true
   },
 
   properties: {
-    title: String,
-    type: {
-      type: String,
-      value: 'input'
-    },
-    disabled: Boolean,
+    icon: String,
+    label: String,
+    error: Boolean,
     focus: Boolean,
-    inputType: {
+    center: Boolean,
+    isLink: Boolean,
+    leftIcon: String,
+    disabled: Boolean,
+    autosize: Boolean,
+    readonly: Boolean,
+    required: Boolean,
+    iconClass: String,
+    clearable: Boolean,
+    labelAlign: String,
+    inputAlign: String,
+    customClass: String,
+    confirmType: String,
+    errorMessage: String,
+    placeholder: String,
+    customStyle: String,
+    useButtonSlot: Boolean,
+    placeholderClass: String,
+    cursorSpacing: {
+      type: Number,
+      value: 50
+    },
+    maxlength: {
+      type: Number,
+      value: -1
+    },
+    value: {
+      type: null,
+      value: '',
+      observer(currentValue) {
+        this.setData({ currentValue });
+      }
+    },
+    type: {
       type: String,
       value: 'text'
     },
-    placeholder: String,
-    mode: {
-      type: String,
-      value: 'normal'
-    },
-    right: Boolean,
-    error: Boolean,
-    maxlength: {
-      type: Number,
-      value: 140
+    border: {
+      type: Boolean,
+      value: true
     }
   },
 
   data: {
-    showBorder: true
+    focused: false,
+    showClear: false,
+    currentValue: ''
+  },
+
+  attached() {
+    this.setData({
+      currentValue: this.data.value
+    });
   },
 
   methods: {
-    handleFieldChange(event) {
-      const { detail = {} } = event;
-      const { value = '' } = detail;
-      this.setData({ value });
-
-      this.triggerEvent('change', { ...detail });
-    },
-
-    handleFieldFocus({ detail = {} }) {
-      this.triggerEvent('focus', { ...detail });
-    },
-
-    handleFieldBlur({ detail = {} }) {
-      this.triggerEvent('blur', { ...detail });
-    },
-
-    updateIsLastElement(isLastField) {
-      let showBorder = true;
-      if (isLastField && this.data.mode === 'normal') {
-        showBorder = false;
-      }
-
+    onInput(event) {
+      const { value = '' } = event.detail || {};
+      this.triggerEvent('input', value);
+      this.triggerEvent('change', value);
       this.setData({
-        showBorder
+        currentValue: value,
+        showClear: this.getShowClear({ value })
       });
+    },
+
+    onFocus(event) {
+      this.triggerEvent('focus', event);
+      this.setData({
+        focused: true,
+        showClear: this.getShowClear({ focused: true })
+      });
+    },
+
+    onBlur(event) {
+      this.focused = false;
+      this.triggerEvent('blur', event);
+      this.setData({
+        focused: false,
+        showClear: this.getShowClear({ focused: false })
+      });
+    },
+
+    onTapIcon() {
+      this.triggerEvent('tap-icon');
+    },
+
+    getShowClear(options) {
+      const {
+        focused = this.data.focused,
+        value = this.data.currentValue
+      } = options;
+
+      return this.data.clearable && focused && value !== '' && !this.data.readonly;
+    },
+
+    onClear() {
+      this.setData({
+        currentValue: '',
+        showClear: this.getShowClear({ value: '' })
+      });
+      this.triggerEvent('input', '');
+      this.triggerEvent('change', '');
+    },
+
+    onConfirm() {
+      this.triggerEvent('confirm', this.data.currentValue);
     }
   }
 });

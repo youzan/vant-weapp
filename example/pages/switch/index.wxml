@@ -1,27 +1,30 @@
-<doc-page title="SWITCH" without-padding>
+<demo-block title="基础用法" padding>
+  <van-switch
+    checked="{{ checked }}"
+    bind:change="onChange"
+  />
+</demo-block>
 
-  <zan-panel title='同步开关'>
-    <zan-cell>
-      <zan-switch checked="{{sync.checked}}" bind:change="syncChange" />
-    </zan-cell>
-  </zan-panel>
+<demo-block title="禁用状态" padding>
+  <van-switch
+    checked="{{ checked }}"
+    disabled
+    bind:change="onChange"
+  />
+</demo-block>
 
-  <zan-panel title='异步开关'>
-    <zan-cell>
-      <zan-switch checked="{{async.checked}}" disabled="{{ async.disabled }}" loading="{{ async.loading }}" bind:change="asyncChange" />
-    </zan-cell>
-  </zan-panel>
+<demo-block title="加载状态" padding>
+  <van-switch
+    checked="{{ checked }}"
+    loading
+    bind:change="onChange"
+  />
+</demo-block>
 
-  <zan-panel title='禁止改动的开关'>
-    <zan-cell>
-      <zan-switch disabled="{{ false }}" />
-    </zan-cell>
-  </zan-panel>
-
-  <zan-panel title='自定义高亮样式'>
-    <zan-cell>
-      <zan-switch theme-class="switch-theme" disabled="{{ false }}" checked/>
-    </zan-cell>
-  </zan-panel>
-
-</doc-page>
+<demo-block title="高级用法" padding>
+  <van-switch
+    checked="{{ checked2 }}"
+    size="36px"
+    bind:change="onChange2"
+  />
+</demo-block>

@@ -1,105 +1,46 @@
-const warn = (msg, getValue) => {
-  console.warn(msg);
-  console.log('接受到的值为：', getValue);
-};
-
 Component({
-  externalClasses: ['cell-class', 'title-class'],
+  externalClasses: [
+    'custom-class',
+    'title-class',
+    'label-class',
+    'value-class',
+    'left-icon-class',
+    'right-icon-class'
+  ],
+
   options: {
     multipleSlots: true
   },
-  relations: {
-    '../cell-group/index': {
-      type: 'parent'
-    }
-  },
+
   properties: {
-    title: {
-      type: String,
-      description: '左侧标题'
-    },
-    label: {
-      type: String,
-      description: '标题下方的描述信息'
-    },
-    value: {
-      type: String,
-      description: '右侧内容'
-    },
-    onlyTapFooter: {
-      type: Boolean,
-      description: '只有点击 footer 区域才触发 tab 事件'
-    },
-    isLink: {
-      type: null,
-      value: '',
-      description: '是否展示右侧箭头并开启尝试以 url 跳转'
-    },
+    title: null,
+    value: null,
+    url: String,
+    icon: String,
+    label: String,
+    center: Boolean,
+    isLink: Boolean,
+    required: Boolean,
+    tapable: Boolean,
+    titleWidth: String,
+    customStyle: String,
+    arrowDirection: String,
     linkType: {
       type: String,
-      value: 'navigateTo',
-      description: '链接类型，可选值为 navigateTo，redirectTo，switchTab，reLaunch'
+      value: 'navigateTo'
     },
-    url: {
-      type: String,
-      value: ''
-    },
-    noBorder: Boolean
+    border: {
+      type: Boolean,
+      value: true
+    }
   },
-  data: {
-    isLastCell: true,
-    titleWidth: 'auto'
-  },
+
   methods: {
-    footerTap() {
-      // 如果并没有设置只点击 footer 生效，那就不需要额外处理。cell 上有事件会自动处理
-      if (!this.data.onlyTapFooter) {
-        return;
+    onTap() {
+      const { url } = this.data;
+      if (url) {
+        wx[this.data.linkType]({ url });
       }
-
-      this.triggerEvent('tap', {});
-      doNavigate.call(this);
-    },
-
-    cellTap() {
-      // 如果只点击 footer 生效，那就不需要在 cell 根节点上处理
-      if (this.data.onlyTapFooter) {
-        return;
-      }
-
-      this.triggerEvent('tap', {});
-      doNavigate.call(this);
-    },
-
-    // 用于被 cell-group 更新，标志是否是最后一个 cell
-    updateIsLastElement(isLastCell) {
-      this.setData({ isLastCell });
-    },
-
-    // 设置统一的title区域宽度
-    setTitleWidth(titleWidth) {
-      this.setData({
-        titleWidth: `${titleWidth}px`
-      });
     }
   }
 });
-
-// 处理跳转
-function doNavigate() {
-  const { url = '' } = this.data;
-  const type = typeof this.data.isLink;
-
-  if (!this.data.isLink || !url || url === 'true' || url === 'false') return;
-
-  if (type !== 'boolean' && type !== 'string') {
-    warn('isLink 属性值必须是一个字符串或布尔值', this.data.isLink);
-    return;
-  }
-
-  if (['navigateTo', 'redirectTo', 'switchTab', 'reLaunch'].indexOf(this.data.linkType) === -1) {
-    warn('linkType 属性可选值为 navigateTo，redirectTo，switchTab，reLaunch', this.data.linkType);
-    return;
-  }
-  wx[this.data.linkType].call(wx, { url });
-}

@@ -1,0 +1,35 @@
+<demo-section>
+  <demo-block title="按钮类型" padding>
+    <view class="row">
+      <van-button type="default" custom-class="demo-margin-right">默认按钮</van-button>
+      <van-button type="primary">主要按钮</van-button>
+    </view>
+    <van-button type="warning" custom-class="demo-margin-right">警告按钮</van-button>
+    <van-button type="danger">危险按钮</van-button>
+  </demo-block>
+
+  <demo-block title="朴素按钮" padding>
+    <view class="row">
+      <van-button type="default" plain custom-class="demo-margin-right">默认按钮</van-button>
+      <van-button type="primary" plain>主要按钮</van-button>
+    </view>
+    <van-button type="warning" plain custom-class="demo-margin-right">警告按钮</van-button>
+    <van-button type="danger" plain>危险按钮</van-button>
+  </demo-block>
+
+  <demo-block title="按钮尺寸" padding>
+    <van-button size="large" block custom-class="demo-margin-bottom">大号按钮</van-button>
+    <van-button size="normal" class="demo-margin-right">普通按钮</van-button>
+    <van-button size="small" class="demo-margin-right">小型按钮</van-button>
+    <van-button size="mini">迷你按钮</van-button>
+  </demo-block>
+
+  <demo-block title="禁用状态" padding>
+    <van-button disabled>禁用状态</van-button>
+  </demo-block>
+
+  <demo-block title="加载状态" padding>
+    <van-button loading custom-class="demo-margin-right" loading-class="loading" />
+    <van-button loading type="primary" loading-class="loading" />
+  </demo-block>
+</demo-section>

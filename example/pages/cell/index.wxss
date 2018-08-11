@@ -1,4 +1,5 @@
-.cell-panel-demo {
-  display: block;
-  margin-top: 15px;
+.title {
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
 }

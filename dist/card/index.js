@@ -5,22 +5,18 @@ Component({
     multipleSlots: true
   },
 
-  externalClasses: ['card-class', 'thumb-class'],
+  externalClasses: ['custom-class', 'thumb-class', 'title-class', 'price-class', 'desc-class', 'num-class'],
 
   properties: {
-    useThumbSlot: {
-      type: Boolean,
-      value: false
-    },
-    useDetailSlot: {
-      type: Boolean,
-      value: false
-    },
-    thumb: String,
-    price: String,
-    title: String,
-    num: Number,
+    num: String,
     desc: String,
-    status: String
+    thumb: String,
+    title: String,
+    price: String,
+    centered: Boolean,
+    currency: {
+      type: String,
+      default: '¥'
+    }
   }
 });

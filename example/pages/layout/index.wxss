@@ -1,11 +1,17 @@
-.custom-zan-col {
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
   line-height: 30px;
   text-align: center;
-  background-color: #39a9ed;
-  font-size: 12px;
-  color: #fff;
+  margin-bottom: 10px;
+  background-clip: content-box;
 }
 
-.custom-zan-col:nth-child(even) {
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
   background-color: #66c6f2;
 }

@@ -1,98 +1,91 @@
-@import "../common/_mixins";
+@import '../common/style/var.pcss';
+@import '../common/style/hairline.pcss';
 
-.zan-cell {
-  position: relative;
-  padding: 12px 15px;
+.van-cell {
+  width: 100%;
   display: flex;
-  align-items: center;
-  line-height: 1.4;
-  background-color: #fff;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  line-height: 24px;
+  position: relative;
+  background-color: $white;
+  color: $text-color;
   font-size: 14px;
 
   &::after {
-    @mixin hairline;
-    border-bottom-width: 1px;
     left: 15px;
     right: 0;
+    width: auto;
+    transform: scale(1, .5);
+    border-bottom-width: 1px;
   }
 
-  &__icon {
-    margin-right: 5px;
-
-    &:empty {
-      display: none
-    }
+  &-group {
+    background-color: $white;
   }
 
-  &__title {
-    padding-right: 10px;
-    &:empty {
-      display: none;
-    }
+  &__label {
+    font-size: 12px;
+    line-height: 1.2;
+    color: $gray-darker;
   }
 
-  &__bd {
+  &__title,
+  &__value {
     flex: 1;
   }
 
-  &__text {
-    line-height: 24px;
-    font-size: 14px;
-  }
-
-  &__desc {
-    line-height: 1.2;
-    font-size: 12px;
-    color: #666;
-  }
-
-  &__ft {
-    position: relative;
+  &__value {
+    overflow: hidden;
     text-align: right;
-    color: #666;
+    vertical-align: middle;
   }
 
-  &__no-pading{
-    padding: 0;
+  &__left-icon {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 5px;
+    vertical-align:middle;
+  }
 
-    .zan-cell__bd_padding {
-      padding: 12px 0 12px 15px;
+  &__right-icon {
+    color: $gray-dark;
+    font-size: 12px;
+    line-height: 24px;
+    margin-left: 5px;
 
-      .zan-form__input{
-        height: 26px;
-      }
+    &--left::before {
+      transform: rotate(180deg);
     }
 
-    .zan-cell__ft_padding {
-      padding: 12px 15px 12px 0;
+    &--up::before {
+      transform: rotate(-90deg);
+    }
+
+    &--down::before {
+      transform: rotate(90deg);
     }
   }
 
-  &.last-cell::after, &.no-border::after {
-    display: none;
+  &--tapable {
+    &:active {
+      background-color: $active-color;
+    }
   }
 
-}
+  &--required {
+    overflow: visible;
 
+    &::before {
+      content: '*';
+      position: absolute;
+      left: 7px;
+      font-size: 14px;
+      color: $red;
+    }
+  }
 
-.zan-cell--access .zan-cell__ft {
-  padding-right: 13px;
-}
-
-.zan-cell--access .zan-cell__ft::after {
-  position: absolute;
-  top: 50%;
-  right: 2px;
-  content: " ";
-  display: inline-block;
-  height: 6px;
-  width: 6px;
-  border-width: 2px 2px 0 0;
-  border-color: #c8c8c8;
-  border-style: solid;
-  transform: translateY(-50%) matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-}
-.zan-cell--switch {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  &--center {
+    align-items: center;
+  }
 }

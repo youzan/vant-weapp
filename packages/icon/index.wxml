@@ -1,1 +1,6 @@
-<view class="zan-icon zan-icon-{{ type }}"></view>
+<view
+  class="custom-class van-icon van-icon-{{ name }}"
+  style="{{ color ? 'color: ' + color : '' }}; {{ size ? 'font-size: ' + size : '' }}"
+>
+  <view wx:if="{{ info !== null }}" class="van-icon__info">{{ info }}</view>
+</view>

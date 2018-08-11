@@ -1,86 +1,65 @@
-@import "../common/_var";
-@import "../common/_mixins";
+@import '../common/style/var.pcss';
+@import '../common/style/hairline.pcss';
 
-.zan-actionsheet {
-  background-color: #f8f8f8;
-}
+.van-actionsheet {
+  color: $text-color;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: $background-color;
 
-.zan-actionsheet__mask {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-}
-
-.zan-actionsheet__container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: $background-color;
-  transform: translate3d(0, 50%, 0);
-  transform-origin: center;
-  transition: all 0.2s ease;
-  z-index: 11;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.zan-actionsheet__btn {
-  margin-bottom: 0 !important;
-}
-
-.zan-actionsheet__footer .zan-actionsheet__btn {
-  background: #fff;
-}
-
-.zan-actionsheet__btn-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.zan-actionsheet__subname {
-  color: $gray-dark;
-}
-
-.zan-actionsheet__subname,
-.zan-actionsheet__name {
-  height: 45px;
-  line-height: 45px;
-}
-
-
-.zan-actionsheet__btn.zan-btn:last-child {
-  &::after {
-    border-bottom-width: 0;
+  &--withtitle {
+    background-color: $white;
   }
-}
 
-.zan-actionsheet__subname {
-  margin-left: 2px;
-  font-size: 12px;
-}
+  &__item,
+  &__cancel {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: $white;
 
-.zan-actionsheet__footer {
-  margin-top: 10px;
-}
+    &:active {
+      background-color: $active-color;
+    }
+  }
 
-/* btn-loading 状态 */
-.zan-actionsheet__btn--loading .zan-actionsheet__subname {
-  color: transparent;
-}
+  &__item--disabled {
+    color: $gray;
 
-/* zan-actionsheet 展示出来的样式 */
-.zan-actionsheet--show .zan-actionsheet__container {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  visibility: visible;
-}
-.zan-actionsheet--show .zan-actionsheet__mask {
-  display: block;
+    &:active {
+      background-color: $white;
+    }
+  }
+
+  &__subname {
+    font-size: 12px;
+    color: $gray-darker;
+    margin-left: 5px;
+  }
+
+  &__loading {
+    display: inline-block;
+  }
+
+  &__cancel {
+    margin-top: 10px;
+  }
+
+  &__header {
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+  }
+
+  &__close {
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+    font-size: 18px;
+    color: $gray-dark;
+    position: absolute;
+    line-height: inherit;
+  }
 }

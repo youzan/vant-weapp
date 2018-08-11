@@ -1,9 +1,7 @@
 {
   "navigationBarTitleText": "Tag 标记",
   "usingComponents": {
-    "zan-cell": "../../dist/cell/index",
-    "zan-panel": "../../dist/panel/index",
-    "zan-tag": "../../dist/tag/index",
-    "doc-page": "../../components/doc-page/index"
+    "demo-block": "../../components/demo-block/index",
+    "van-tag": "../../dist/tag/index"
   }
 }

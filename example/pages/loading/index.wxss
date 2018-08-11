@@ -1,14 +1,9 @@
-.container {
-  background: #f0f0f0;  
+.loading {
+  margin-right: 20px;
 }
-.loading-example {
-  display: flex;
-  flex-direction: row;
-  background: transparent;
-}
-.loading-example zan-loading {
-  flex: 1;
-}
-.no-flex {
-  display: block;
+
+.shadow {
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, .5);
 }

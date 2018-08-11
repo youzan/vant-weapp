@@ -1,28 +1,27 @@
 Page({
   data: {
-    inputValue: '',
-    focus: true,
-    range: ['门店', '配送至'],
-    rangeIndex: 0
+    value: ''
   },
 
-  searchChange(e) {
+  onChange(e) {
     this.setData({
-      inputValue: e.detail.value
+      value: e.detail
     });
   },
 
-  searchDone(e) {
-    console.error('search', e.detail.value)
+  onSearch(event) {
+    if (event.detail) {
+      wx.showToast({
+        title: '搜索：' + event.detail,
+        icon: 'none'
+      });
+    }
   },
 
-  handleCancel() {
-    console.error('cancel')
-  },
-
-  pickerChange(e) {
-    this.setData({
-      rangeIndex: e.detail.value
-    })
+  onCancel() {
+    wx.showToast({
+      title: '取消',
+      icon: 'none'
+    });
   }
 });

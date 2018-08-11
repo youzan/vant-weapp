@@ -1,30 +1,14 @@
-@import "../common/_mixins";
+@import '../common/style/var.pcss';
+@import '../common/style/hairline.pcss';
 
-.zan-panel {
-  position: relative;
-  overflow: hidden;
-}
+.van-panel {
+  background: $white;
 
-.zan-panel__title {
-  font-size: 14px;
-  line-height: 1;
-  color: #999;
-  padding: 20px 15px 10px 15px;
-}
-
-.zan-panel__content {
-  position: relative;
-  background: #fff;
-  overflow: hidden;
-  &::after {
-    @mixin hairline;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
+  &__header-value {
+    color: $red;
   }
-}
 
-.zan-panel--without-border {
-  &::after {
-    border: 0 none;
+  &__footer {
+    padding: 10px 15px;
   }
 }

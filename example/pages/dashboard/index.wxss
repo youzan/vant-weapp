@@ -1,6 +1,44 @@
+.container {
+  padding: 45px 15px 0;
+}
+
+.title {
+  margin: 0 0 15px;
+  text-align: center;
+  user-select: none;
+}
+
+.logo,
+.title-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title-text {
+  font-size: 40px;
+  margin-left: 15px;
+  font-weight: 400;
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
 .logo {
-  display: block;
-  margin: 40px auto;
-  width: 92px;
-  height: 82px;
+  width: 36px;
+  height: 36px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #455a64;
+  margin: 0 0 60px;
+  text-align: center;
+}
+
+.mobile-nav {
+  margin-bottom: 20px;
+}
+
+.mobile-nav__title {
+  font-size: 16px;
+  background-color: #fff;
+  padding: 17px 15px;
 }

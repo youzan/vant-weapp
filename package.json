@@ -40,7 +40,7 @@
     "fast-glob": "^2.2.2",
     "fast-vue-md-loader": "^1.0.3",
     "fs-extra": "^7.0.0",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.9.0",

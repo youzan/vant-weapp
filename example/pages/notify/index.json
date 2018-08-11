@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Notify 消息通知",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-button": "../../dist/button/index",
+    "van-notify": "../../dist/notify/index"
+  }
+}

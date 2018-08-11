@@ -118,6 +118,10 @@ module.exports = {
             {
               path: '/actionsheet',
               title: 'Actionsheet 上拉菜单'
+            },
+            {
+              path: '/notify',
+              title: 'Notify 消息通知'
             }
           ]
         },

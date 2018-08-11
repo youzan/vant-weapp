@@ -15,6 +15,7 @@ export default {
   'loading': () => import('../../packages/loading/README.md'),
   'nav-bar': () => import('../../packages/nav-bar/README.md'),
   'notice-bar': () => import('../../packages/notice-bar/README.md'),
+  'notify': () => import('../../packages/notify/README.md'),
   'panel': () => import('../../packages/panel/README.md'),
   'popup': () => import('../../packages/popup/README.md'),
   'search': () => import('../../packages/search/README.md'),

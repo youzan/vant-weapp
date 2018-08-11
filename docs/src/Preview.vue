@@ -25,6 +25,7 @@ const MAP = {
   loading: 'loading-201808092138.png',
   'nav-bar': 'nav-bar-201808110751.png',
   'notice-bar': 'notice-bar-201808092138.png',
+  notify: 'notify-201808112050.png',
   popup: 'popup-201808092138.png',
   panel: 'panel-201808092138.png',
   stepper: 'stepper-201808092138.png',

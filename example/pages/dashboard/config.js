@@ -79,6 +79,10 @@ export default {
       {
         name: 'Actionsheet 上拉菜单',
         path: '/pages/actionsheet/index'
+      },
+      {
+        name: 'Notify 消息提示',
+        path: '/pages/notify/index'
       }
     ]
   },

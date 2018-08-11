@@ -12,6 +12,7 @@
     "pages/loading/index",
     "pages/nav-bar/index",
     "pages/notice-bar/index",
+    "pages/notify/index",
     "pages/panel/index",
     "pages/popup/index",
     "pages/stepper/index",

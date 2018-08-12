@@ -1,4 +1,3 @@
-
 App({
   globalData: {}
 });

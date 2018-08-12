@@ -1,4 +1,5 @@
-const config = require('./config');
+import Page from '../../common/page';
+import config from './config';
 
 Page({
   data: {
@@ -22,13 +23,13 @@ Page({
     activeId: 1002
   },
 
-  onNavClick({ detail = {} }) {
+  onNavClick({ detail }) {
     this.setData({
       mainActiveIndex: detail.index || 0
     });
   },
 
-  onItemClick({ detail = {} }) {
+  onItemClick({ detail }) {
     this.setData({
       activeId: detail.id
     });

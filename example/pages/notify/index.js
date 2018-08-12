@@ -1,4 +1,5 @@
-const Notify = require('../../dist/notify/index');
+import Page from '../../common/page';
+import Notify from '../../dist/notify/index';
 
 Page({
   showNotify() {

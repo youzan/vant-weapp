@@ -1,3 +1,6 @@
+
+import Page from '../../common/page';
+
 Page({
   data: {
     show1: false,

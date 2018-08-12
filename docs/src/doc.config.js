@@ -30,6 +30,10 @@ module.exports = {
             {
               path: '/changelog',
               title: '更新日志'
+            },
+            {
+              path: '/common',
+              title: '内置样式'
             }
           ]
         }

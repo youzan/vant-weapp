@@ -1,11 +1,3 @@
-Page({
-  data: {
-  },
+import Page from '../../common/page';
 
-  onLoad: function () {
-
-  },
-
-  onShow: function() {
-  },
-})
+Page();

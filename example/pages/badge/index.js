@@ -1,3 +1,5 @@
+import Page from '../../common/page';
+
 Page({
   onChange(event) {
     wx.showToast({

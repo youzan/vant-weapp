@@ -1,3 +1,5 @@
+import Page from '../../common/page';
+
 Page({
   onTapLeft() {
     wx.showToast({ title: '点击返回', icon: 'none' });

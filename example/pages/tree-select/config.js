@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   pro1Name: '浙江',
   pro1: [{
     text: '杭州',

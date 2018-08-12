@@ -1,5 +1,5 @@
 <template>
-  <van-doc :config="config" simulator="./preview.html">
+  <van-doc :config="config" simulator="./preview.html" active="小程序组件">
     <router-view />
   </van-doc>
 </template>

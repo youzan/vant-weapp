@@ -10,7 +10,9 @@ module.exports = {
       href: '#/'
     },
     nav: {
-      github: 'https://github.com/youzan/vant'
+      'Vue 组件': 'https://youzan.github.io/vant/',
+      '小程序组件': 'https://youzan.github.io/vant-weapp/',
+      github: 'https://github.com/youzan/vant-weapp'
     }
   },
   nav: [

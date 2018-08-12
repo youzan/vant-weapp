@@ -6,6 +6,14 @@
 </p>
 <p align="center">高颜值、好用、易扩展的小程序 UI 库</p>
 
+## 升级提示
+
+ZanUI-WeApp 现已升级为 [Vant Weapp](https://github.com/youzan/vant-weapp)，Vant Weapp 是有赞移动端组件库 Vant 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
+
+本仓库后续进入维护状态，不会再有大的版本更新。建议用户逐渐迁移至 Vant Weapp.
+
+Vant Weapp 仓库地址: [https://github.com/youzan/vant-weapp](https://github.com/youzan/vant-weapp)
+
 
 ## 概述
 [ZanUI-WeApp](https://youzan.github.io/zanui-weapp)是有赞移动 Web UI 规范 `ZanUI` 的小程序现实版本，结合了微信的视觉规范，为用户提供更加统一的使用感受。

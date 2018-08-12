@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Vant 组件库演示",
+  "navigationBarTitleText": "Vant Weapp",
   "usingComponents": {
     "van-panel": "../../dist/panel/index",
     "van-cell": "../../dist/cell/index",

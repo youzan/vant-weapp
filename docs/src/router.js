@@ -4,7 +4,7 @@ import componentDocs from './docs-entry';
 const registerRoute = () => {
   const route = [{
     path: '*',
-    redirect: to => `/quickstart`
+    redirect: to => `/intro`
   }];
 
   const navs = docConfig.nav || [];

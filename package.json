@@ -58,7 +58,7 @@
     "shelljs": "^0.8.2",
     "style-loader": "^0.22.1",
     "url-loader": "^1.0.1",
-    "vant-doc": "^1.0.13",
+    "vant-doc": "^1.0.14",
     "vue": "2.5.17",
     "vue-loader": "^15.2.6",
     "vue-router": "^3.0.1",

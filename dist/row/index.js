@@ -1,42 +1,36 @@
-'use strict';
-
-var _relations;
-
-var COL_PATH = '../col/index';
+const COL_PATH = '../col/index';
 
 Component({
   externalClasses: ['custom-class'],
 
-  relations: (_relations = {}, _relations[COL_PATH] = {
-    type: 'descendant'
-  }, _relations),
+  relations: {
+    [COL_PATH]: {
+      type: 'descendant'
+    }
+  },
 
   properties: {
     gutter: {
       type: Number,
-      observer: function observer() {
+      observer() {
         this.setGutter();
       }
     }
   },
 
-  ready: function ready() {
+  ready() {
     this.setGutter();
   },
 
-
   methods: {
-    setGutter: function setGutter() {
-      var _this = this;
+    setGutter() {
+      const { gutter } = this.data;
+      const margin = `-${Number(gutter) / 2}px`;
+      const style = gutter ? `margin-right: ${margin}; margin-left: ${margin};` : '';
 
-      var gutter = this.data.gutter;
-
-      var margin = '-' + Number(gutter) / 2 + 'px';
-      var style = gutter ? 'margin-right: ' + margin + '; margin-left: ' + margin + ';' : '';
-
-      this.setData({ style: style });
-      this.getRelationNodes(COL_PATH).forEach(function (col) {
-        col.setGutter(_this.data.gutter);
+      this.setData({ style });
+      this.getRelationNodes(COL_PATH).forEach((col) => {
+        col.setGutter(this.data.gutter);
       });
     }
   }

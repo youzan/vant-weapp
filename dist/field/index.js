@@ -1,9 +1,9 @@
-'use strict';
-
 Component({
   behaviors: ['wx://form-field'],
 
-  externalClasses: ['input-class'],
+  externalClasses: [
+    'input-class'
+  ],
 
   options: {
     multipleSlots: true
@@ -43,8 +43,8 @@ Component({
     value: {
       type: null,
       value: '',
-      observer: function observer(currentValue) {
-        this.setData({ currentValue: currentValue });
+      observer(currentValue) {
+        this.setData({ currentValue });
       }
     },
     type: {
@@ -63,34 +63,32 @@ Component({
     currentValue: ''
   },
 
-  attached: function attached() {
+  attached() {
     this.setData({
       currentValue: this.data.value
     });
   },
 
-
   methods: {
-    onInput: function onInput(event) {
-      var _ref = event.detail || {},
-          _ref$value = _ref.value,
-          value = _ref$value === undefined ? '' : _ref$value;
-
+    onInput(event) {
+      const { value = '' } = event.detail || {};
       this.triggerEvent('input', value);
       this.triggerEvent('change', value);
       this.setData({
         currentValue: value,
-        showClear: this.getShowClear({ value: value })
+        showClear: this.getShowClear({ value })
       });
     },
-    onFocus: function onFocus(event) {
+
+    onFocus(event) {
       this.triggerEvent('focus', event);
       this.setData({
         focused: true,
         showClear: this.getShowClear({ focused: true })
       });
     },
-    onBlur: function onBlur(event) {
+
+    onBlur(event) {
       this.focused = false;
       this.triggerEvent('blur', event);
       this.setData({
@@ -98,19 +96,21 @@ Component({
         showClear: this.getShowClear({ focused: false })
       });
     },
-    onClickIcon: function onClickIcon() {
+
+    onClickIcon() {
       this.triggerEvent('click-icon');
     },
-    getShowClear: function getShowClear(options) {
-      var _options$focused = options.focused,
-          focused = _options$focused === undefined ? this.data.focused : _options$focused,
-          _options$value = options.value,
-          value = _options$value === undefined ? this.data.currentValue : _options$value;
 
+    getShowClear(options) {
+      const {
+        focused = this.data.focused,
+        value = this.data.currentValue
+      } = options;
 
       return this.data.clearable && focused && value !== '' && !this.data.readonly;
     },
-    onClear: function onClear() {
+
+    onClear() {
       this.setData({
         currentValue: '',
         showClear: this.getShowClear({ value: '' })
@@ -118,7 +118,8 @@ Component({
       this.triggerEvent('input', '');
       this.triggerEvent('change', '');
     },
-    onConfirm: function onConfirm() {
+
+    onConfirm() {
       this.triggerEvent('confirm', this.data.currentValue);
     }
   }

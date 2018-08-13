@@ -1,21 +1,19 @@
-'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 Component({
-  externalClasses: ['custom-class'],
+  externalClasses: [
+    'custom-class'
+  ],
 
   properties: {
     icon: String,
     steps: {
       type: Array,
-      observer: function observer() {
+      observer() {
         this.formatSteps();
       }
     },
     active: {
       type: Number,
-      observer: function observer() {
+      observer() {
         this.formatSteps();
       }
     },
@@ -29,30 +27,27 @@ Component({
     }
   },
 
-  attached: function attached() {
+  attached() {
     this.formatSteps();
   },
 
-
   methods: {
-    formatSteps: function formatSteps() {
-      var _this = this;
-
-      var steps = this.data.steps;
-
-      var formattedSteps = steps.map(function (step, index) {
-        return _extends({}, step, {
-          status: _this.getStatus(index)
-        });
+    formatSteps() {
+      const { steps } = this.data;
+      const formattedSteps = steps.map((step, index) => {
+        return {
+          ...step,
+          status: this.getStatus(index)
+        };
       });
 
       this.setData({
-        formattedSteps: formattedSteps
+        formattedSteps
       });
     },
-    getStatus: function getStatus(index) {
-      var active = this.data.active;
 
+    getStatus(index) {
+      const { active } = this.data;
 
       if (index < active) {
         return 'finish';

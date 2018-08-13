@@ -1,5 +1,3 @@
-'use strict';
-
 Component({
   externalClasses: ['custom-class'],
 

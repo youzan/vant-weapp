@@ -1,7 +1,12 @@
-'use strict';
-
 Component({
-  externalClasses: ['custom-class', 'title-class', 'label-class', 'value-class', 'left-icon-class', 'right-icon-class'],
+  externalClasses: [
+    'custom-class',
+    'title-class',
+    'label-class',
+    'value-class',
+    'left-icon-class',
+    'right-icon-class'
+  ],
 
   options: {
     multipleSlots: true
@@ -31,11 +36,10 @@ Component({
   },
 
   methods: {
-    onClick: function onClick() {
-      var url = this.data.url;
-
+    onClick() {
+      const { url } = this.data;
       if (url) {
-        wx[this.data.linkType]({ url: url });
+        wx[this.data.linkType]({ url });
       }
       this.triggerEvent('click');
     }

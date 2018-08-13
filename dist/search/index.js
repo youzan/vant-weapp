@@ -1,5 +1,3 @@
-'use strict';
-
 Component({
   externalClasses: ['custom-class', 'cancel-class'],
 
@@ -15,8 +13,8 @@ Component({
     placeholder: String,
     value: {
       type: String,
-      observer: function observer(currentValue) {
-        this.setData({ currentValue: currentValue });
+      observer(currentValue) {
+        this.setData({ currentValue });
       }
     },
     background: {
@@ -29,27 +27,30 @@ Component({
     }
   },
 
-  attached: function attached() {
+  attached() {
     this.setData({ currentValue: this.data.value });
   },
 
-
   methods: {
-    onChange: function onChange(event) {
+    onChange(event) {
       this.triggerEvent('change', event.detail);
     },
-    onCancel: function onCancel() {
+
+    onCancel() {
       this.setData({ currentValue: '' });
       this.triggerEvent('cancel');
       this.triggerEvent('change', '');
     },
-    onSearch: function onSearch() {
+
+    onSearch() {
       this.triggerEvent('search', this.data.currentValue);
     },
-    onFocus: function onFocus() {
+
+    onFocus() {
       this.triggerEvent('focus');
     },
-    onBlur: function onBlur() {
+
+    onBlur() {
       this.triggerEvent('blur');
     }
   }

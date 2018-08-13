@@ -1,7 +1,8 @@
-'use strict';
-
 Component({
-  externalClasses: ['custom-class', 'title-class'],
+  externalClasses: [
+    'custom-class',
+    'title-class'
+  ],
 
   options: {
     multipleSlots: true
@@ -20,10 +21,11 @@ Component({
   },
 
   methods: {
-    onClickLeft: function onClickLeft() {
+    onClickLeft() {
       this.triggerEvent('click-left');
     },
-    onClickRight: function onClickRight() {
+
+    onClickRight() {
       this.triggerEvent('click-right');
     }
   }

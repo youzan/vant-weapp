@@ -29,10 +29,7 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['.js', '.vue', '.css'],
-    alias: {
-      packages: path.join(__dirname, '../packages')
-    }
+    extensions: ['.js', '.vue', '.css']
   },
   module: {
     rules: [
@@ -68,10 +65,6 @@ module.exports = {
           'vue-loader',
           'fast-vue-md-loader'
         ]
-      },
-      {
-        test: /\.(ttf|svg)$/,
-        loader: 'url-loader'
       }
     ]
   },

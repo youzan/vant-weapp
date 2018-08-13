@@ -1,32 +1,29 @@
-'use strict';
-
-var _relations;
-
-var BADGE_PATH = '../badge/index';
+const BADGE_PATH = '../badge/index';
 
 Component({
   externalClasses: ['custom-class'],
 
-  relations: (_relations = {}, _relations[BADGE_PATH] = {
-    type: 'descendant',
+  relations: {
+    [BADGE_PATH]: {
+      type: 'descendant',
 
-    linked: function linked(target) {
-      this.data.badges.push(target);
-      this.setActive();
-    },
-    unlinked: function unlinked(target) {
-      this.data.badges = this.data.badges.filter(function (item) {
-        return item !== target;
-      });
-      this.setActive();
+      linked(target) {
+        this.data.badges.push(target);
+        this.setActive();
+      },
+
+      unlinked(target) {
+        this.data.badges = this.data.badges.filter(item => item !== target);
+        this.setActive();
+      }
     }
-  }, _relations),
+  },
 
   properties: {
     active: {
       type: Number,
       value: 0,
-      observer: function observer() {
+      observer() {
         this.setActive();
       }
     }
@@ -36,15 +33,13 @@ Component({
     badges: []
   },
 
-  attached: function attached() {
+  attached() {
     this.currentActive = -1;
   },
 
-
   methods: {
-    setActive: function setActive(badge) {
-      var active = this.data.active;
-
+    setActive(badge) {
+      let { active } = this.data;
       if (badge) {
         active = this.data.badges.indexOf(badge);
       }
@@ -58,7 +53,7 @@ Component({
       }
 
       this.currentActive = active;
-      this.data.badges.forEach(function (badge, index) {
+      this.data.badges.forEach((badge, index) => {
         badge.setActive(index === active);
       });
     }

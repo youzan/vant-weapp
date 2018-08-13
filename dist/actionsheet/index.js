@@ -1,5 +1,3 @@
-'use strict';
-
 Component({
   properties: {
     show: Boolean,
@@ -20,18 +18,19 @@ Component({
   },
 
   methods: {
-    onSelect: function onSelect(event) {
-      var index = event.currentTarget.dataset.index;
-
-      var item = this.data.actions[index];
+    onSelect(event) {
+      const { index } = event.currentTarget.dataset;
+      const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {
         this.triggerEvent('select', item);
       }
     },
-    onCancel: function onCancel() {
+
+    onCancel() {
       this.triggerEvent('cancel');
     },
-    onClose: function onClose() {
+
+    onClose() {
       this.triggerEvent('close');
     }
   }

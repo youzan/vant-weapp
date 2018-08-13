@@ -16,7 +16,6 @@
       num="2"
       price="2.00"
       thumb="{{ imageURL }}"
-      use-footer-slot="{{ true }}"
     >
       <div slot="footer">
         <van-button size="mini" custom-class="button">按钮</van-button>

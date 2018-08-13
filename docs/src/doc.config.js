@@ -6,9 +6,9 @@ const { version } = packageJson;
 export default {
   header: {
     logo: {
+      version,
       image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
       title: 'Vant Weapp',
-      version,
       href: '#/'
     },
     nav: {
@@ -25,15 +25,18 @@ export default {
           list: [
             {
               path: '/intro',
-              title: '介绍'
+              title: '介绍',
+              md: true
             },
             {
               path: '/quickstart',
-              title: '快速上手'
+              title: '快速上手',
+              md: true
             },
             {
               path: '/changelog',
-              title: '更新日志'
+              title: '更新日志',
+              md: true
             },
             {
               path: '/common',

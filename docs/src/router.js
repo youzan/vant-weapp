@@ -1,11 +1,12 @@
 import docConfig from './doc.config';
-import componentDocs from './docs-entry';
 
 const registerRoute = () => {
-  const route = [{
-    path: '*',
-    redirect: to => `/intro`
-  }];
+  const route = [
+    {
+      path: '*',
+      redirect: to => `/intro`
+    }
+  ];
 
   const navs = docConfig.nav || [];
 
@@ -19,12 +20,15 @@ const registerRoute = () => {
     }
   });
 
-  function addRoute(page) {
+  function addRoute(page, isComponent) {
     let { path } = page;
     if (path) {
       path = path.replace('/', '');
 
-      const component = componentDocs[`${path}`];
+      const component = () =>
+        page.md
+          ? import(`../markdown/${path}.md`)
+          : import(`../../packages/${path}/README.md`);
 
       if (!component) {
         return;

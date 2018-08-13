@@ -1,4 +1,4 @@
-import config from './config';
+import config from '../../config';
 import Page from '../../common/page';
 
 Page({

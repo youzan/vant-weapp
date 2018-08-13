@@ -39,7 +39,7 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
   use-action-slot
   @search="onSearch"
 >
-  <view slot="action" @click="onSearch">搜索</view>
+  <view slot="action" bind:tap="onSearch">搜索</view>
 </van-search>
 ```
 

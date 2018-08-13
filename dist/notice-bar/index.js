@@ -174,8 +174,8 @@ Component({
         timer: null
       });
     },
-    onTap: function onTap(event) {
-      this.triggerEvent('tap', event);
+    onClick: function onClick(event) {
+      this.triggerEvent('click', event);
     }
   }
 });

@@ -8,5 +8,11 @@ Component({
     name: String,
     size: String,
     color: String
+  },
+
+  methods: {
+    onClick: function onClick() {
+      this.triggerEvent('click');
+    }
   }
 });

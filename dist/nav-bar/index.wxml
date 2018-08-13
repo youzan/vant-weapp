@@ -2,7 +2,7 @@
   class="custom-class van-nav-bar van-hairline--bottom {{ fixed ? 'van-nav-bar--fixed' : '' }}"
   style="z-index: {{ zIndex }}"
 >
-  <view class="van-nav-bar__left" bind:tap="onTapLeft">
+  <view class="van-nav-bar__left" bind:tap="onClickLeft">
     <block wx:if="{{ leftArrow || leftText }}">
       <van-icon
         wx:if="{{ leftArrow }}"
@@ -17,7 +17,7 @@
     <block wx:if="{{ title }}">{{ title }}</block>
     <slot wx:else name="title" />
   </view>
-  <view class="van-nav-bar__right" bind:tap="onTapRight">
+  <view class="van-nav-bar__right" bind:tap="onClickRight">
     <view wx:if="{{ rightText }}" class="van-nav-bar__text">{{ rightText }}</view>
     <slot wx:else name="right" />
   </view>

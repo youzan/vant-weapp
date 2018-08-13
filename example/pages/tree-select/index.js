@@ -23,13 +23,13 @@ Page({
     activeId: 1002
   },
 
-  onNavClick({ detail }) {
+  onClickNav({ detail }) {
     this.setData({
       mainActiveIndex: detail.index || 0
     });
   },
 
-  onItemClick({ detail }) {
+  onClickItem({ detail }) {
     this.setData({
       activeId: detail.id
     });

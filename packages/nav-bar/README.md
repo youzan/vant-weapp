@@ -17,18 +17,18 @@ Vue.use(NavBar);
   left-text="返回"
   right-text="按钮"
   left-arrow
-  bind:tap-left="onTapLeft"
-  bind:tap-right="onTapRight"
+  bind:click-left="onClickLeft"
+  bind:click-right="onClickRight"
 />
 ```
 
 ```js
 export default {
   methods: {
-    onTapLeft() {
+    onClickLeft() {
       wx.showToast({ title: '点击返回', icon: 'none' });
     },
-    onTapRight() {
+    onClickRight() {
       wx.showToast({ title: '点击按钮', icon: 'none' });
     }
   }
@@ -68,8 +68,8 @@ export default {
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| tap-left | 点击左侧按钮时触发 | - |
-| tap-right | 点击右侧按钮时触发 | - |
+| click-left | 点击左侧按钮时触发 | - |
+| click-right | 点击右侧按钮时触发 | - |
 
 ### 外部样式类
 

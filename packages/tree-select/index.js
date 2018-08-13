@@ -38,19 +38,19 @@ Component({
 
   methods: {
     // 当一个子项被选择时
-    onItemSelect(event) {
+    onSelectItem(event) {
       const {
         dataset = {}
       } = event.currentTarget || {};
-      this.triggerEvent('itemclick', { ...(dataset.item || {}) });
+      this.triggerEvent('click-item', { ...(dataset.item || {}) });
     },
 
     // 当一个导航被点击时
-    handleNavClick(event) {
+    onClickNav(event) {
       const {
         dataset = {}
       } = event.currentTarget || {};
-      this.triggerEvent('navclick', { index: dataset.index });
+      this.triggerEvent('click-nav', { index: dataset.index });
     },
 
     // 更新子项列表

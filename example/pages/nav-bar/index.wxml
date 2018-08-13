@@ -4,8 +4,8 @@
     left-text="返回"
     right-text="按钮"
     left-arrow
-    bind:tap-left="onTapLeft"
-    bind:tap-right="onTapRight"
+    bind:click-left="onClickLeft"
+    bind:click-right="onClickRight"
   />
 </demo-block>
 

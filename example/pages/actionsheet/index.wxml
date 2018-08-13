@@ -1,5 +1,5 @@
 <demo-block title="基础用法" padding>
-  <van-button bind:tap="toggleActionsheet1">弹出 Actionsheet</van-button>
+  <van-button bind:click="toggleActionsheet1">弹出 Actionsheet</van-button>
   <van-actionsheet
     show="{{ show1 }}"
     actions="{{ actions }}"
@@ -9,7 +9,7 @@
 </demo-block>
 
 <demo-block title="带取消按钮的 Actionsheet" padding>
-  <van-button bind:tap="toggleActionsheet2">弹出带取消按钮的 Actionsheet</van-button>
+  <van-button bind:click="toggleActionsheet2">弹出带取消按钮的 Actionsheet</van-button>
   <van-actionsheet
     show="{{ show2 }}"
     actions="{{ actions }}"
@@ -21,7 +21,7 @@
 </demo-block>
 
 <demo-block title="带标题的 Actionsheet" padding>
-  <van-button bind:tap="toggleActionsheet3">弹出带标题的 Actionsheet</van-button>
+  <van-button bind:click="toggleActionsheet3">弹出带标题的 Actionsheet</van-button>
   <van-actionsheet
     show="{{ show3 }}"
     title="标题"

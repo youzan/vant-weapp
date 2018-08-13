@@ -16,23 +16,24 @@
   items="{{ items }}"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
-  bind:navclick="onNavClick"
-  bind:itemclick="onItemClick"
+  bind:click-nav="onClickNav"
+  bind:click-item="onClickItem"
 />
 ```
+
 ```javascript
 Page({
   data: {
     // ...
   },
 
-  onNavClick({ detail = {} }) {
+  onClickNav({ detail = {} }) {
     this.setData({
       mainActiveIndex: detail.index || 0
     });
   },
 
-  onItemClick({ detail = {} }) {
+  onClickItem({ detail = {} }) {
     this.setData({
       activeId: detail.id
     });
@@ -50,10 +51,10 @@ Page({
 
 ### Event
 
-| 事件名称       | 说明      | 回调参数       |
+| 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| navclick | 左侧导航点击时，触发的事件	 | index：被点击的导航的索引 |
-| itemclick | 右侧选择项被点击时，会触发的事件 | data: 该点击项的数据 |
+| click-nav | 左侧导航点击时，触发的事件 | index：被点击的导航的索引 |
+| click-item | 右侧选择项被点击时，会触发的事件 | data: 该点击项的数据 |
 
 ### 数据格式
 #### items 分类显示所需数据的数据结构

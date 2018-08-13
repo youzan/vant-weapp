@@ -21,12 +21,12 @@ Component({
   },
 
   methods: {
-    onTapLeft() {
-      this.triggerEvent('tap-left');
+    onClickLeft() {
+      this.triggerEvent('click-left');
     },
 
-    onTapRight() {
-      this.triggerEvent('tap-right');
+    onClickRight() {
+      this.triggerEvent('click-right');
     }
   }
 });

@@ -14,7 +14,7 @@ Component({
   },
 
   methods: {
-    onTap: function onTap() {
+    onClick: function onClick() {
       if (!this.data.disabled && !this.data.loading) {
         var checked = !this.data.checked;
         this.triggerEvent('input', checked);

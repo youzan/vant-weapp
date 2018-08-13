@@ -42,22 +42,22 @@ Component({
 
   methods: {
     // 当一个子项被选择时
-    onItemSelect: function onItemSelect(event) {
+    onSelectItem: function onSelectItem(event) {
       var _ref = event.currentTarget || {},
           _ref$dataset = _ref.dataset,
           dataset = _ref$dataset === undefined ? {} : _ref$dataset;
 
-      this.triggerEvent('itemclick', _extends({}, dataset.item || {}));
+      this.triggerEvent('click-item', _extends({}, dataset.item || {}));
     },
 
 
     // 当一个导航被点击时
-    handleNavClick: function handleNavClick(event) {
+    onClickNav: function onClickNav(event) {
       var _ref2 = event.currentTarget || {},
           _ref2$dataset = _ref2.dataset,
           dataset = _ref2$dataset === undefined ? {} : _ref2$dataset;
 
-      this.triggerEvent('navclick', { index: dataset.index });
+      this.triggerEvent('click-nav', { index: dataset.index });
     },
 
 

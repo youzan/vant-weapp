@@ -13,7 +13,7 @@
   send-message-path="{{ sendMessagePath }}"
   send-message-img="{{ sendMessageImg }}"
   show-message-card="{{ showMessageCard }}"
-  catch:tap="onTap"
+  bind:tap="onClick"
   bindcontact="bindcontact"
   bindgetuserinfo="bindgetuserinfo"
   bindgetphonenumber="bindgetphonenumber"

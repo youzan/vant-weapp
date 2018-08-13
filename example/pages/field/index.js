@@ -11,7 +11,7 @@ Page({
     phone: '1365577'
   },
 
-  onTapIcon() {
+  onClickIcon() {
     wx.showToast({
       icon: 'none',
       title: '点击图标'

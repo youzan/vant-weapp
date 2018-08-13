@@ -1,5 +1,5 @@
 <demo-block title="基础用法" padding>
-  <van-button bind:tap="togglePopup">弹出 Popup</van-button>
+  <van-button bind:click="togglePopup">弹出 Popup</van-button>
   <van-popup
     show="{{ show.middle }}"
     custom-class="center"
@@ -10,7 +10,7 @@
 </demo-block>
 
 <demo-block title="弹出位置" padding>
-  <van-button bind:tap="toggleBottomPopup" custom-class="demo-margin-right">底部弹出</van-button>
+  <van-button bind:click="toggleBottomPopup" custom-class="demo-margin-right">底部弹出</van-button>
 
   <van-popup
     show="{{ show.bottom }}"
@@ -21,7 +21,7 @@
     内容
   </van-popup>
 
-  <van-button bind:tap="toggleTopPopup" custom-class="demo-margin-right">顶部弹出</van-button>
+  <van-button bind:click="toggleTopPopup" custom-class="demo-margin-right">顶部弹出</van-button>
   <van-popup
     show="{{ show.top }}"
     position="top"
@@ -32,23 +32,23 @@
     内容
   </van-popup>
 
-  <van-button bind:tap="toggleRightPopup">右侧弹出</van-button>
+  <van-button bind:click="toggleRightPopup">右侧弹出</van-button>
   <van-popup
     show="{{ show.right }}"
     position="right"
     custom-class="right"
     bind:close="toggleRightPopup"
   >
-    <van-button bind:tap="toggleRightPopup" custom-class="demo-margin-right">关闭弹层</van-button>
+    <van-button bind:click="toggleRightPopup" custom-class="demo-margin-right">关闭弹层</van-button>
 
-    <van-button bind:tap="toggleRightPopup2">右侧弹出</van-button>
+    <van-button bind:click="toggleRightPopup2">右侧弹出</van-button>
     <van-popup
       show="{{ show.right2 }}"
       position="right"
       custom-class="right"
       bind:close="toggleRightPopup2"
     >
-      <van-button bind:tap="toggleRightPopup2">关闭弹层</van-button>
+      <van-button bind:click="toggleRightPopup2">关闭弹层</van-button>
     </van-popup>
   </van-popup>
 </demo-block>

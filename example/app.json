@@ -6,9 +6,9 @@
     "pages/button/index",
     "pages/card/index",
     "pages/cell/index",
+    "pages/col/index",
     "pages/field/index",
     "pages/icon/index",
-    "pages/layout/index",
     "pages/loading/index",
     "pages/nav-bar/index",
     "pages/notice-bar/index",
@@ -23,7 +23,7 @@
     "pages/tree-select/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarBackgroundColor": "#f8f8f8",
     "navigationBarTitleText": "Vant Weapp",
     "navigationBarTextStyle": "black",
     "backgroundTextStyle": "dark",

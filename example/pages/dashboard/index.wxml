@@ -7,15 +7,15 @@
 
   <block wx:for="{{ list }}" wx:for-item="group" wx:key="group.title">
     <view class="mobile-nav">
-      <view class="mobile-nav__title">{{ group.title }}</view>
+      <view class="mobile-nav__title">{{ group.groupName }}</view>
       <van-cell-group>
         <van-cell
-          wx:for="{{ group.content }}"
-          wx:key="name"
+          wx:for="{{ group.list }}"
+          wx:key="item.title"
           is-link
           title-width="200px"
-          url="{{ item.path }}"
-          title="{{ item.name }}"
+          url="/pages{{ item.path }}/index"
+          title="{{ item.title }}"
         ></van-cell>
       </van-cell-group>
     </view>

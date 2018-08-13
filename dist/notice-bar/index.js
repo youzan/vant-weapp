@@ -1,8 +1,6 @@
-'use strict';
-
-var VALID_MODE = ['closeable', 'link'];
-var FONT_COLOR = '#f60';
-var BG_COLOR = '#fff7cc';
+const VALID_MODE = ['closeable', 'link'];
+const FONT_COLOR = '#f60';
+const BG_COLOR = '#fff7cc';
 
 Component({
   externalClasses: ['custom-class'],
@@ -11,7 +9,7 @@ Component({
     text: {
       type: String,
       value: '',
-      observer: function observer() {
+      observer() {
         this.setData({}, this._init);
       }
     },
@@ -64,117 +62,115 @@ Component({
     timer: null
   },
 
-  attached: function attached() {
-    var mode = this.data.mode;
-
+  attached() {
+    const { mode } = this.data;
     if (mode && this._checkMode(mode)) {
       this.setData({
         hasRightIcon: true
       });
     }
   },
-  detached: function detached() {
-    var timer = this.data.timer;
 
+  detached() {
+    const { timer } = this.data;
     timer && clearTimeout(timer);
   },
 
-
   methods: {
-    _checkMode: function _checkMode(val) {
-      var isValidMode = ~VALID_MODE.indexOf(val);
+    _checkMode(val) {
+      const isValidMode = ~VALID_MODE.indexOf(val);
       if (!isValidMode) {
-        console.warn('mode only accept value of ' + VALID_MODE + ', now get ' + val + '.');
+        console.warn(`mode only accept value of ${VALID_MODE}, now get ${val}.`);
       }
       return isValidMode;
     },
-    _init: function _init() {
-      var _this = this;
 
-      wx.createSelectorQuery().in(this).select('.van-notice-bar__content').boundingClientRect(function (rect) {
-        if (!rect || !rect.width) {
-          return;
-        }
-        _this.setData({
-          width: rect.width
-        });
-
-        wx.createSelectorQuery().in(_this).select('.van-notice-bar__content-wrap').boundingClientRect(function (rect) {
+    _init() {
+      wx.createSelectorQuery()
+        .in(this)
+        .select('.van-notice-bar__content')
+        .boundingClientRect((rect) => {
           if (!rect || !rect.width) {
             return;
           }
+          this.setData({
+            width: rect.width
+          });
 
-          var wrapWidth = rect.width;
-          var _data = _this.data,
-              width = _data.width,
-              speed = _data.speed,
-              scrollable = _data.scrollable,
-              delay = _data.delay;
+          wx.createSelectorQuery()
+            .in(this)
+            .select('.van-notice-bar__content-wrap')
+            .boundingClientRect((rect) => {
+              if (!rect || !rect.width) {
+                return;
+              }
 
+              const wrapWidth = rect.width;
+              const {
+                width, speed, scrollable, delay
+              } = this.data;
 
-          if (scrollable && wrapWidth < width) {
-            var elapse = width / speed * 1000;
-            var animation = wx.createAnimation({
-              duration: elapse,
-              timeingFunction: 'linear',
-              delay: delay
-            });
-            var resetAnimation = wx.createAnimation({
-              duration: 0,
-              timeingFunction: 'linear'
-            });
+              if (scrollable && wrapWidth < width) {
+                const elapse = width / speed * 1000;
+                const animation = wx.createAnimation({
+                  duration: elapse,
+                  timeingFunction: 'linear',
+                  delay
+                });
+                const resetAnimation = wx.createAnimation({
+                  duration: 0,
+                  timeingFunction: 'linear'
+                });
 
-            _this.setData({
-              elapse: elapse,
-              wrapWidth: wrapWidth,
-              animation: animation,
-              resetAnimation: resetAnimation
-            }, function () {
-              _this._scroll();
-            });
-          }
-        }).exec();
-      }).exec();
+                this.setData({
+                  elapse,
+                  wrapWidth,
+                  animation,
+                  resetAnimation
+                }, () => {
+                  this._scroll();
+                });
+              }
+            })
+            .exec();
+        })
+        .exec();
     },
-    _scroll: function _scroll() {
-      var _this2 = this;
 
-      var _data2 = this.data,
-          animation = _data2.animation,
-          resetAnimation = _data2.resetAnimation,
-          wrapWidth = _data2.wrapWidth,
-          elapse = _data2.elapse,
-          speed = _data2.speed;
-
+    _scroll() {
+      const {
+        animation, resetAnimation, wrapWidth, elapse, speed
+      } = this.data;
       resetAnimation.translateX(wrapWidth).step();
-      var animationData = animation.translateX(-(elapse * speed) / 1000).step();
+      const animationData = animation.translateX(-(elapse * speed) / 1000).step();
       this.setData({
         animationData: resetAnimation.export()
       });
-      setTimeout(function () {
-        _this2.setData({
+      setTimeout(() => {
+        this.setData({
           animationData: animationData.export()
         });
       }, 100);
 
-      var timer = setTimeout(function () {
-        _this2._scroll();
+      const timer = setTimeout(() => {
+        this._scroll();
       }, elapse);
 
       this.setData({
-        timer: timer
+        timer
       });
     },
-    _handleButtonClick: function _handleButtonClick() {
-      var timer = this.data.timer;
 
+    _handleButtonClick() {
+      const { timer } = this.data;
       timer && clearTimeout(timer);
       this.setData({
         show: false,
         timer: null
       });
     },
-    onClick: function onClick(event) {
+
+    onClick(event) {
       this.triggerEvent('click', event);
     }
   }

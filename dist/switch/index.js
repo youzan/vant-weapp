@@ -1,5 +1,3 @@
-'use strict';
-
 Component({
   externalClasses: ['custom-class', 'node-class'],
 
@@ -14,9 +12,9 @@ Component({
   },
 
   methods: {
-    onClick: function onClick() {
+    onClick() {
       if (!this.data.disabled && !this.data.loading) {
-        var checked = !this.data.checked;
+        const checked = !this.data.checked;
         this.triggerEvent('input', checked);
         this.triggerEvent('change', checked);
       }

@@ -10,8 +10,8 @@
     "lint": "eslint ./packages --ext .js",
     "release": "sh build/release.sh",
     "build": "sh scripts/deploy.sh",
-    "build:lib": "cross-env NODE_ENV=production node build/build-components.js --color",
-    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist"
+    "build:lib": "NODE_ENV=production node build/compiler.js",
+    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.prd.js && gh-pages -d docs/dist"
   },
   "files": [
     "dist"
@@ -45,7 +45,6 @@
     "gulp-babel": "^7.0.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-remove-logging": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^3.2.0",

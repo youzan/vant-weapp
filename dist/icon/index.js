@@ -1,5 +1,3 @@
-'use strict';
-
 Component({
   externalClasses: ['custom-class'],
 
@@ -11,7 +9,7 @@ Component({
   },
 
   methods: {
-    onClick: function onClick() {
+    onClick() {
       this.triggerEvent('click');
     }
   }

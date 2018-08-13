@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = Behavior({
   properties: {
     loading: Boolean,
@@ -36,29 +34,23 @@ module.exports = Behavior({
   },
 
   methods: {
-    bindgetuserinfo: function bindgetuserinfo() {
-      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
+    bindgetuserinfo(event = {}) {
       this.triggerEvent('getuserinfo', event.detail || {});
     },
-    bindcontact: function bindcontact() {
-      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
+    bindcontact(event = {}) {
       this.triggerEvent('contact', event.detail || {});
     },
-    bindgetphonenumber: function bindgetphonenumber() {
-      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
+    bindgetphonenumber(event = {}) {
       this.triggerEvent('getphonenumber', event.detail || {});
     },
-    bindopensetting: function bindopensetting() {
-      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
+    bindopensetting(event = {}) {
       this.triggerEvent('opensetting', event.detail || {});
     },
-    binderror: function binderror() {
-      var event = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
+    binderror(event = {}) {
       this.triggerEvent('error', event.detail || {});
     }
   }

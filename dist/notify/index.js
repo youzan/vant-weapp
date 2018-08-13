@@ -1,7 +1,3 @@
-'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 Component({
   properties: {
     text: String,
@@ -20,11 +16,8 @@ Component({
   },
 
   methods: {
-    show: function show() {
-      var _this = this;
-
-      var duration = this.data.duration;
-
+    show() {
+      const { duration } = this.data;
 
       clearTimeout(this.timer);
       this.setData({
@@ -32,12 +25,13 @@ Component({
       });
 
       if (duration > 0 && duration !== Infinity) {
-        this.timer = setTimeout(function () {
-          _this.hide();
+        this.timer = setTimeout(() => {
+          this.hide();
         }, duration);
       }
     },
-    hide: function hide() {
+
+    hide() {
       clearTimeout(this.timer);
       this.setData({
         show: false
@@ -46,31 +40,29 @@ Component({
   }
 });
 
-var defaultOptions = {
+const defaultOptions = {
   selector: '#van-notify',
   duration: 3000
 };
 
-function Notify() {
-  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  var pages = getCurrentPages();
-  var ctx = pages[pages.length - 1];
+function Notify(options = {}) {
+  const pages = getCurrentPages();
+  const ctx = pages[pages.length - 1];
 
   options = Object.assign({}, defaultOptions, parseParam(options));
 
-  var el = ctx.selectComponent(options.selector);
+  const el = ctx.selectComponent(options.selector);
   delete options.selector;
 
   if (el) {
-    el.setData(_extends({}, options));
+    el.setData({
+      ...options
+    });
     el.show();
   }
 }
 
-function parseParam() {
-  var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
+function parseParam(params = '') {
   return typeof params === 'object' ? params : { text: params };
 }
 

@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.1.0](https://github.com/youzan/vant-weapp/tree/v0.1.0)
+
+**Breaking changes**
+
+- 统一采用 click 作为点击事件名
+
+**Improvements**
+
+- 新增 Utils 工具方法
+- 优化文档对事件名的描述
+
+**Bug Fixes**
+
+- 修复 Card 金额为 0 时无法展示的问题
+
+
 ### [0.0.1](https://github.com/youzan/vant-weapp/tree/v0.0.1)
 `2018-08-10`
 

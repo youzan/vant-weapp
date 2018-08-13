@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "node build/dev.js",
     "lint": "eslint ./packages --ext .js",
-    "release": "sh scripts/release.sh",
+    "release": "sh build/release.sh",
     "build": "sh scripts/deploy.sh",
     "build:lib": "cross-env NODE_ENV=production node build/build-components.js --color",
     "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist"

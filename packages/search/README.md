@@ -62,11 +62,11 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| search | 确定搜索时触发 | event.detail: 当前输入值 |
-| change | 输入内容变化时触发 | event.detail: 当前输入值 |
-| cancel | 取消搜索搜索时触发 | - |
-| focus | 输入框聚焦时触发 | - |
-| blur | 输入框失焦时触发 | - |
+| bind:search | 确定搜索时触发 | event.detail: 当前输入值 |
+| bind:change | 输入内容变化时触发 | event.detail: 当前输入值 |
+| bind:cancel | 取消搜索搜索时触发 | - |
+| bind:focus | 输入框聚焦时触发 | - |
+| bind:blur | 输入框失焦时触发 | - |
 
 ### Slot
 

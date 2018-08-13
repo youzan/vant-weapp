@@ -151,12 +151,12 @@
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| input | 输入内容时触发 | value: 当前输入值 |
-| change | 输入内容时触发 | value: 当前输入值 |
-| confirm | 点击完成按钮时触发 | value: 当前输入值 |
-| click-icon | 点击尾部图标时触发 | - |
-| focus | 输入框聚焦时触发 | - |
-| blur | 输入框失焦时触发 | - |
+| bind:input | 输入内容时触发 | value: 当前输入值 |
+| bind:change | 输入内容时触发 | value: 当前输入值 |
+| bind:confirm | 点击完成按钮时触发 | value: 当前输入值 |
+| bind:click-icon | 点击尾部图标时触发 | - |
+| bind:focus | 输入框聚焦时触发 | - |
+| bind:blur | 输入框失焦时触发 | - |
 
 ### Slot
 

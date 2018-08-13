@@ -31,7 +31,6 @@
     "css-loader": "^1.0.0",
     "eslint": "^5.1.0",
     "eslint-plugin-vue-libs": "^3.0.0",
-    "fast-glob": "^2.2.2",
     "fast-vue-md-loader": "^1.0.3",
     "gh-pages": "^1.2.0",
     "gulp": "^3.9.1",

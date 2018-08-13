@@ -1,5 +1,5 @@
 require('./compiler');
-const fs = require('fs-extra');
+const fs = require('fs');
 const path = require('path');
 const glob = require('fast-glob');
 const serve = require('webpack-serve');

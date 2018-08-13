@@ -8,7 +8,7 @@
       wx:key="index"
       class="tree-select__nitem van-ellipsis {{ mainActiveIndex === index ? 'tree-select__nitem--active' : '' }}"
       data-index="{{ index }}"
-      bindtap="handleNavClick"
+      bind:tap="onClickNav"
     >
       {{ item.text }}
     </view>
@@ -22,7 +22,7 @@
       wx:key="id"
       class="tree-select__item van-ellipsis {{ activeId === item.id ? 'tree-select__item--active' : '' }}"
       data-item="{{ item }}"
-      bindtap="onItemSelect"
+      bind:tap="onSelectItem"
     >
       {{ item.text }}
       <van-icon

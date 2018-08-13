@@ -15,7 +15,7 @@ Component({
   },
 
   methods: {
-    onTap() {
+    onClick() {
       const group = this.getRelationNodes(BADGE_GROUP_PATH)[0];
       if (group) {
         group.setActive(this);

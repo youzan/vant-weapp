@@ -25,22 +25,18 @@ Component({
     },
     plain: {
       type: Boolean,
-      value: false,
       observer: observer
     },
     disabled: {
       type: Boolean,
-      value: false,
       observer: observer
     },
     loading: {
       type: Boolean,
-      value: false,
       observer: observer
     },
     block: {
       type: Boolean,
-      value: false,
       observer: observer
     }
   },
@@ -51,9 +47,9 @@ Component({
 
 
   methods: {
-    onTap: function onTap(event) {
+    onClick: function onClick() {
       if (!this.data.disabled && !this.data.loading) {
-        this.triggerEvent('tap', event);
+        this.triggerEvent('click');
       }
     },
     setClasses: function setClasses() {
@@ -71,7 +67,7 @@ Component({
           'van-button--plain': plain,
           'van-button--loading': loading,
           'van-button--disabled': disabled,
-          'van-button--untapable': disabled || loading
+          'van-button--unclickable': disabled || loading
         })
       });
     }

@@ -35,7 +35,7 @@
     label="用户名"
     icon="question"
     placeholder="请输入用户名"
-    bind:tap-icon="onTapIcon"
+    bind:click-icon="onClickIcon"
   />
 
   <van-field
@@ -154,7 +154,7 @@
 | input | 输入内容时触发 | value: 当前输入值 |
 | change | 输入内容时触发 | value: 当前输入值 |
 | confirm | 点击完成按钮时触发 | value: 当前输入值 |
-| tap-icon | 点击尾部图标时触发 | - |
+| click-icon | 点击尾部图标时触发 | - |
 | focus | 输入框聚焦时触发 | - |
 | blur | 输入框失焦时触发 | - |
 

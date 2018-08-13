@@ -170,8 +170,8 @@ Component({
       });
     },
 
-    onTap(event) {
-      this.triggerEvent('tap', event);
+    onClick(event) {
+      this.triggerEvent('click', event);
     }
   }
 });

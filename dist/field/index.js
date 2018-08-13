@@ -98,8 +98,8 @@ Component({
         showClear: this.getShowClear({ focused: false })
       });
     },
-    onTapIcon: function onTapIcon() {
-      this.triggerEvent('tap-icon');
+    onClickIcon: function onClickIcon() {
+      this.triggerEvent('click-icon');
     },
     getShowClear: function getShowClear(options) {
       var _options$focused = options.focused,

@@ -16,7 +16,7 @@ Component({
     center: Boolean,
     isLink: Boolean,
     required: Boolean,
-    tapable: Boolean,
+    clickable: Boolean,
     titleWidth: String,
     customStyle: String,
     arrowDirection: String,
@@ -31,12 +31,13 @@ Component({
   },
 
   methods: {
-    onTap: function onTap() {
+    onClick: function onClick() {
       var url = this.data.url;
 
       if (url) {
         wx[this.data.linkType]({ url: url });
       }
+      this.triggerEvent('click');
     }
   }
 });

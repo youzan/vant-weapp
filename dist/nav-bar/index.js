@@ -20,11 +20,11 @@ Component({
   },
 
   methods: {
-    onTapLeft: function onTapLeft() {
-      this.triggerEvent('tap-left');
+    onClickLeft: function onClickLeft() {
+      this.triggerEvent('click-left');
     },
-    onTapRight: function onTapRight() {
-      this.triggerEvent('tap-right');
+    onClickRight: function onClickRight() {
+      this.triggerEvent('click-right');
     }
   }
 });

@@ -97,8 +97,8 @@ Component({
       });
     },
 
-    onTapIcon() {
-      this.triggerEvent('tap-icon');
+    onClickIcon() {
+      this.triggerEvent('click-icon');
     },
 
     getShowClear(options) {

@@ -63,6 +63,7 @@
 | disabled | 是否禁用 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
+| square | 是否为方形按钮 | `Boolean` | `false` |
 | open-type | 微信开放能力 | `String` | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - |
 | hover-start-time | 按住后多久出现点击态，单位毫秒 | `Number` | 20 |

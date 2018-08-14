@@ -30,6 +30,7 @@ Component({
     errorMessage: String,
     placeholder: String,
     customStyle: String,
+    useIconSlot: Boolean,
     useButtonSlot: Boolean,
     placeholderClass: String,
     cursorSpacing: {

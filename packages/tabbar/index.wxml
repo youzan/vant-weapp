@@ -1,0 +1,6 @@
+<view
+  class="custom-class van-tabbar van-hairline--top-bottom {{ fixed ? 'van-tabbar--fixed' : '' }}"
+  style="{{ zIndex ? 'style: ' + this.zIndex : '' }}"
+>
+  <slot />
+</view>

@@ -66,10 +66,10 @@
 ```html
 <van-cell-group>
   <van-cell value="内容" icon="shop" is-link>
-    <template slot="title">
+    <view slot="title">
       <span class="van-cell-text">单元格</span>
       <van-tag type="danger">标签</van-tag>
-    </template>
+    </view>
   </van-cell>
   <van-cell title="单元格" icon="location" is-link />
   <van-cell title="单元格" border="{{ false }}">

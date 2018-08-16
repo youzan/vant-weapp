@@ -83,10 +83,6 @@ export default [
       {
         path: '/notify',
         title: 'Notify 消息通知'
-      },
-      {
-        path: '/toast',
-        title: 'Toast 轻提示'
       }
     ]
   },

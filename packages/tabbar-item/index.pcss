@@ -1,0 +1,45 @@
+@import '../common/style/var.pcss';
+
+.van-tabbar-item {
+  float: left;
+  color: #666;
+  height: 100%;
+  display: flex;
+  line-height: 1;
+  font-size: 12px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  &__icon {
+    font-size: 18px;
+    margin-bottom: 5px;
+    position: relative;
+
+    .van-icon {
+      display: block;
+    }
+
+    &--dot {
+      &::after {
+        top: 0;
+        right: -8px;
+        width: 8px;
+        height: 8px;
+        content: ' ';
+        position: absolute;
+        border-radius: 100%;
+        background-color: $red;
+      }
+    }
+
+    image {
+      width: 50px;
+      height: 18px;
+    }
+  }
+
+  &--active {
+    color: $blue;
+  }
+}

@@ -20,6 +20,7 @@
     "pages/switch/index",
     "pages/search/index",
     "pages/tag/index",
+    "pages/tabbar/index",
     "pages/tree-select/index"
   ],
   "window": {

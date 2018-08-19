@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Toast 轻提示",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-toast": "../../dist/toast/index",
+    "van-button": "../../dist/button/index"
+  }
+}

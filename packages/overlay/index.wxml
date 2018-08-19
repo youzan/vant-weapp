@@ -1,0 +1,5 @@
+<view
+  class="overlay-class van-popup__overlay {{ show ? 'van-popup--show' : '' }}"
+  style="{{ overlayStyle }}"
+  bind:tap="onClickOverlay"
+/>

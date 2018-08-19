@@ -31,7 +31,7 @@ Page({
     const timer = setInterval(() => {
       second--;
       if (second) {
-        toast.message = text(second);
+        toast.setData({ message: text(second) });
       } else {
         clearInterval(timer);
         Toast.clear();

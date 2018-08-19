@@ -4,12 +4,12 @@ const defaultOptions = {
   type: 'text',
   mask: false,
   message: '',
-  value: true,
+  show: true,
   duration: 3000,
   position: 'middle',
+  forbidClick: false,
   loadingType: 'circular',
-  selector: '#van-toast',
-  overlayStyle: {}
+  selector: '#van-toast'
 };
 const parseOptions = message => isObj(message) ? message : { message };
 
@@ -28,12 +28,14 @@ function Toast(options = {}) {
   const toast = ctx.selectComponent(options.selector);
   delete options.selector;
 
+  queue.push(toast);
   toast.setData(options);
   clearTimeout(toast.timer);
 
   if (options.duration > 0) {
     toast.timer = setTimeout(() => {
       toast.clear();
+      queue = queue.filter(item => item !== toast);
     }, options.duration);
   }
 
@@ -49,18 +51,10 @@ const createMethod = type => options => Toast({
 });
 
 Toast.clear = all => {
-  if (queue.length) {
-    if (all) {
-      queue.forEach(toast => {
-        toast.clear();
-      });
-      queue = [];
-    } else if (singleton) {
-      queue[0].clear();
-    } else {
-      queue.shift().clear();
-    }
-  }
+  queue.forEach(toast => {
+    toast.clear();
+  });
+  queue = [];
 };
 
 Toast.setDefaultOptions = options => {

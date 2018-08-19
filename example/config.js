@@ -85,6 +85,10 @@ export default [
         title: 'Actionsheet 上拉菜单'
       },
       {
+        path: '/toast',
+        title: 'Toast 轻提示'
+      },
+      {
         path: '/notify',
         title: 'Notify 消息通知'
       }

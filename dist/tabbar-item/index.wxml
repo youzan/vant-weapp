@@ -1,0 +1,18 @@
+<view
+  class="van-tabbar-item {{ active ? 'van-tabbar-item--active' : '' }}"
+  style="{{ count ? 'width: ' + 100 / count + '%' : '' }}"
+  bind:tap="onClick"
+>
+  <view class="van-tabbar-item__icon {{ dot ? 'van-tabbar-item__icon--dot' : '' }}">
+    <block wx:if="{{ active }}">
+      <slot name="icon-active" />
+    </block>
+    <block wx:else>
+      <slot name="icon" />
+    </block>
+    <van-icon wx:if="{{ icon }}" name="{{ icon }}" info="{{ info }}" />
+  </view>
+  <view class="van-tabbar-item__text">
+    <slot />
+  </view>
+</view>

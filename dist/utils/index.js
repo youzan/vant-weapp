@@ -7,7 +7,7 @@ function isObj(x) {
   return x !== null && (type === 'object' || type === 'function');
 }
 
-export {
+module.exports = {
   isObj,
   isDef
 };

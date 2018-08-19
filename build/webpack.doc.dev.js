@@ -20,7 +20,6 @@ module.exports = {
   },
   serve: {
     open: true,
-    host: '0.0.0.0',
     devMiddleware: {
       logLevel: 'warn'
     },
@@ -29,10 +28,7 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: ['.js', '.vue', '.css'],
-    alias: {
-      packages: path.join(__dirname, '../packages')
-    }
+    extensions: ['.js', '.vue', '.css']
   },
   module: {
     rules: [
@@ -68,10 +64,6 @@ module.exports = {
           'vue-loader',
           'fast-vue-md-loader'
         ]
-      },
-      {
-        test: /\.(ttf|svg)$/,
-        loader: 'url-loader'
       }
     ]
   },

@@ -21,6 +21,7 @@
     "pages/search/index",
     "pages/tag/index",
     "pages/toast/index",
+    "pages/tabbar/index",
     "pages/tree-select/index"
   ],
   "window": {

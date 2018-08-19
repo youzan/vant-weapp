@@ -14,7 +14,6 @@ const router = new VueRouter({
 
 router.beforeEach((route, redirect, next) => {
   progress.start();
-  document.title = route.meta.title || document.title;
   next();
 });
 
@@ -24,11 +23,7 @@ router.afterEach(() => {
   syncPath(router.history.current.path);
 });
 
-window.vueRouter = router;
-
-if (process.env.NODE_ENV !== 'production') {
-  Vue.config.productionTip = false;
-}
+Vue.config.productionTip = false;
 
 new Vue({ // eslint-disable-line
   render: h => h(App),

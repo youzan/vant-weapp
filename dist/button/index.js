@@ -1,9 +1,7 @@
-'use strict';
+const nativeBehaviors = require('./behaviors');
+const classnames = require('../common/classnames');
 
-var nativeBehaviors = require('./behaviors');
-var classnames = require('../common/classnames');
-
-var observer = function observer() {
+const observer = function() {
   this.setClasses();
 };
 
@@ -16,62 +14,51 @@ Component({
     type: {
       type: String,
       value: 'default',
-      observer: observer
+      observer
     },
     size: {
       type: String,
       value: 'normal',
-      observer: observer
+      observer
     },
     plain: {
       type: Boolean,
-      value: false,
-      observer: observer
+      observer
     },
     disabled: {
       type: Boolean,
-      value: false,
-      observer: observer
+      observer
     },
     loading: {
       type: Boolean,
-      value: false,
-      observer: observer
+      observer
     },
     block: {
       type: Boolean,
-      value: false,
-      observer: observer
+      observer
     }
   },
 
-  attached: function attached() {
+  attached() {
     this.setClasses();
   },
 
-
   methods: {
-    onTap: function onTap(event) {
+    onClick() {
       if (!this.data.disabled && !this.data.loading) {
-        this.triggerEvent('tap', event);
+        this.triggerEvent('click');
       }
     },
-    setClasses: function setClasses() {
-      var _data = this.data,
-          type = _data.type,
-          size = _data.size,
-          plain = _data.plain,
-          disabled = _data.disabled,
-          loading = _data.loading,
-          block = _data.block;
 
+    setClasses() {
+      const { type, size, plain, disabled, loading, block } = this.data;
       this.setData({
-        classes: classnames('van-button--' + type, 'van-button--' + size, {
+        classes: classnames(`van-button--${type}`, `van-button--${size}`, {
           'van-button--block': block,
           'van-button--plain': plain,
           'van-button--loading': loading,
           'van-button--disabled': disabled,
-          'van-button--untapable': disabled || loading
+          'van-button--unclickable': disabled || loading
         })
       });
     }

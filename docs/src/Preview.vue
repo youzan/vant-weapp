@@ -33,6 +33,7 @@ const MAP = {
   steps: 'steps-201808092138.png',
   switch: 'switch-201808092138.png',
   tag: 'tag-201808092138.png',
+  tabbar: 'tabbar-201808160922.png',
   'tree-select': 'tree-select-201808092138.png'
 };
 

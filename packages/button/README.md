@@ -53,7 +53,7 @@
 <van-button loading type="primary" />
 ```
 
-### 属性
+### API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -63,26 +63,27 @@
 | disabled | 是否禁用 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
+| square | 是否为方形按钮 | `Boolean` | `false` |
 | open-type | 微信开放能力 | `String` | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - |
 | hover-start-time | 按住后多久出现点击态，单位毫秒 | `Number` | 20 |
 | hover-stay-time | 手指松开后点击态保留时间，单位毫秒 | `Number` | 70 |
-| lang | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文 | `String` | `en` |
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` |
 | session-from | 会话来源 | `String` | - |
 | send-message-title | 会话内消息卡片标题 | `String` | 当前标题 |
 | send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 |
 | send-message-img | sendMessageImg | `String` | 截图 |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` |
 
-### 事件
+### Event
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| tap | 点击按钮且按钮状态不为加载或禁用时触发 | - |
-| getuserinfo | 用户点击该按钮时，会返回获取到的用户信息，从返回参数的 detail 中获取到的值同 wx.getUserInfo | - |
-| contact | 客服消息回调 | - |
-| getphonenumber | 获取用户手机号回调 | - |
-| error | 当使用开放能力时，发生错误的回调 | - |
+| bind:click | 点击按钮且按钮状态不为加载或禁用时触发 | - |
+| bind:getuserinfo | 用户点击该按钮时，会返回获取到的用户信息，从返回参数的 detail 中获取到的值同 wx.getUserInfo | - |
+| bind:contact | 客服消息回调 | - |
+| bind:getphonenumber | 获取用户手机号回调 | - |
+| bind:error | 当使用开放能力时，发生错误的回调 | - |
 
 ### 外部样式类
 

@@ -14,7 +14,7 @@
       icon="question"
       icon-class="icon"
       required
-      bind:tap-icon="onTapIcon"
+      bind:click-icon="onClickIcon"
     />
     <van-field
       value="{{ password }}"

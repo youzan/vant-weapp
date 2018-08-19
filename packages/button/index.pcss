@@ -33,7 +33,7 @@
     opacity: .3;
   }
 
-  &--untapable::after {
+  &--unclickable::after {
     display: none;
   }
 
@@ -122,6 +122,10 @@
   &--block {
     width: 100%;
     display: block;
+  }
+
+  &--square {
+    border-radius: 0;
   }
 
   &--disabled {

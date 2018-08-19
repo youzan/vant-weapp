@@ -1,5 +1,5 @@
 const path = require('path');
-const config = require('./webpack.dev.js');
+const config = require('./webpack.doc.dev.js');
 
 delete config.serve;
 

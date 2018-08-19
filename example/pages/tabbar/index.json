@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Tabbar 标签页",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-tabbar": "../../dist/tabbar/index",
+    "van-tabbar-item": "../../dist/tabbar-item/index"
+  }
+}

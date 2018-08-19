@@ -30,6 +30,7 @@ Component({
     errorMessage: String,
     placeholder: String,
     customStyle: String,
+    useIconSlot: Boolean,
     useButtonSlot: Boolean,
     placeholderClass: String,
     cursorSpacing: {
@@ -97,8 +98,8 @@ Component({
       });
     },
 
-    onTapIcon() {
-      this.triggerEvent('tap-icon');
+    onClickIcon() {
+      this.triggerEvent('click-icon');
     },
 
     getShowClear(options) {

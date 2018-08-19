@@ -1,7 +1,8 @@
-'use strict';
-
 Component({
-  externalClasses: ['custom-class', 'footer-class'],
+  externalClasses: [
+    'custom-class',
+    'footer-class'
+  ],
 
   options: {
     multipleSlots: true

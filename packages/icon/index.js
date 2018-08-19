@@ -6,5 +6,11 @@ Component({
     name: String,
     size: String,
     color: String
+  },
+
+  methods: {
+    onClick() {
+      this.triggerEvent('click');
+    }
   }
 });

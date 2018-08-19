@@ -23,22 +23,22 @@ Component({
     },
     plain: {
       type: Boolean,
-      value: false,
       observer
     },
     disabled: {
       type: Boolean,
-      value: false,
       observer
     },
     loading: {
       type: Boolean,
-      value: false,
       observer
     },
     block: {
       type: Boolean,
-      value: false,
+      observer
+    },
+    square: {
+      type: Boolean,
       observer
     }
   },
@@ -48,21 +48,22 @@ Component({
   },
 
   methods: {
-    onTap(event) {
+    onClick() {
       if (!this.data.disabled && !this.data.loading) {
-        this.triggerEvent('tap', event);
+        this.triggerEvent('click');
       }
     },
 
     setClasses() {
-      const { type, size, plain, disabled, loading, block } = this.data;
+      const { type, size, plain, disabled, loading, square, block } = this.data;
       this.setData({
         classes: classnames(`van-button--${type}`, `van-button--${size}`, {
           'van-button--block': block,
           'van-button--plain': plain,
+          'van-button--square': square,
           'van-button--loading': loading,
           'van-button--disabled': disabled,
-          'van-button--untapable': disabled || loading
+          'van-button--unclickable': disabled || loading
         })
       });
     }

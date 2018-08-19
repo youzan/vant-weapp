@@ -1,11 +1,16 @@
-'use strict';
-
 Component({
   options: {
     multipleSlots: true
   },
 
-  externalClasses: ['custom-class', 'thumb-class', 'title-class', 'price-class', 'desc-class', 'num-class'],
+  externalClasses: [
+    'custom-class',
+    'thumb-class',
+    'title-class',
+    'price-class',
+    'desc-class',
+    'num-class'
+  ],
 
   properties: {
     num: String,

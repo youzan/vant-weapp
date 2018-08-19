@@ -8,7 +8,7 @@
 >
   <view wx:if="{{ title }}" class="van-hairline--top-bottom van-actionsheet__header">
     <view>{{ title }}</view>
-    <van-icon custom-class="van-actionsheet__close" name="close" bind:tap="onClose" />
+    <van-icon custom-class="van-actionsheet__close" name="close" bind:click="onClose" />
   </view>
   <view wx:else class="van-hairline--bottom">
     <view

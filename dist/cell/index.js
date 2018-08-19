@@ -1,7 +1,12 @@
-'use strict';
-
 Component({
-  externalClasses: ['custom-class', 'title-class', 'label-class', 'value-class', 'left-icon-class', 'right-icon-class'],
+  externalClasses: [
+    'custom-class',
+    'title-class',
+    'label-class',
+    'value-class',
+    'left-icon-class',
+    'right-icon-class'
+  ],
 
   options: {
     multipleSlots: true
@@ -16,7 +21,7 @@ Component({
     center: Boolean,
     isLink: Boolean,
     required: Boolean,
-    tapable: Boolean,
+    clickable: Boolean,
     titleWidth: String,
     customStyle: String,
     arrowDirection: String,
@@ -31,12 +36,12 @@ Component({
   },
 
   methods: {
-    onTap: function onTap() {
-      var url = this.data.url;
-
+    onClick() {
+      const { url } = this.data;
       if (url) {
-        wx[this.data.linkType]({ url: url });
+        wx[this.data.linkType]({ url });
       }
+      this.triggerEvent('click');
     }
   }
 });

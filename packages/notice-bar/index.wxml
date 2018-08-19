@@ -2,7 +2,7 @@
   wx:if="{{ show }}"
   class="custom-class van-notice-bar {{ hasRightIcon ? 'van-notice-bar--within-icon' : '' }}"
   style="color: {{ color }};background-color: {{ backgroundColor }}"
-  bind:tap="onTap"
+  bind:tap="onClick"
 >
   <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
     <image src="{{ leftIcon }}" />
@@ -18,7 +18,7 @@
       wx:if="{{ mode === 'closeable' }}"
       class="van-notice-bar__right-icon"
       name="close"
-      bindtap="_handleButtonClick"
+      bind:tap="_handleButtonClick"
     />
     <navigator
       wx:if="{{ mode === 'link' }}"

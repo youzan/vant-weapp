@@ -66,10 +66,10 @@
 ```html
 <van-cell-group>
   <van-cell value="内容" icon="shop" is-link>
-    <template slot="title">
+    <view slot="title">
       <span class="van-cell-text">单元格</span>
       <van-tag type="danger">标签</van-tag>
-    </template>
+    </view>
   </van-cell>
   <van-cell title="单元格" icon="location" is-link />
   <van-cell title="单元格" border="{{ false }}">
@@ -102,7 +102,7 @@
 | center | 是否使内容垂直居中 | `Boolean` | `false` |
 | url | 跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
-| tapable | 是否开启点击反馈 | `Boolean` | `false` |
+| clickable | 是否开启点击反馈 | `Boolean` | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
@@ -111,7 +111,7 @@
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| tap | 点击 cell 时触发 | - |
+| bind:click | 点击 cell 时触发 | - |
 
 ### Cell Slot
 

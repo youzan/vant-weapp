@@ -1,9 +1,9 @@
 <demo-block padding title="基础用法">
-  <van-button bind:tap="showNotify">显示消息通知</van-button>
+  <van-button bind:click="showNotify">显示消息通知</van-button>
 </demo-block>
 
 <demo-block padding title="自定义配置">
-  <van-button bind:tap="showNotify2">显示自定义消息通知</van-button>
+  <van-button bind:click="showNotify2">显示自定义消息通知</van-button>
 </demo-block>
 
 <van-notify id="van-notify" />

@@ -1,5 +1,3 @@
-'use strict';
-
 Component({
   externalClasses: ['custom-class'],
 
@@ -8,5 +6,11 @@ Component({
     name: String,
     size: String,
     color: String
+  },
+
+  methods: {
+    onClick() {
+      this.triggerEvent('click');
+    }
   }
 });

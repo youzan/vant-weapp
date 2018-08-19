@@ -49,6 +49,10 @@ export default [
       {
         path: '/tag',
         title: 'Tag 标记'
+      },
+      {
+        path: '/tabbar',
+        title: 'Tabbar 标签栏'
       }
     ]
   },
@@ -83,10 +87,6 @@ export default [
       {
         path: '/notify',
         title: 'Notify 消息通知'
-      },
-      {
-        path: '/toast',
-        title: 'Toast 轻提示'
       }
     ]
   },

@@ -3,7 +3,7 @@
     items="{{ items }}"
     main-active-index="{{ mainActiveIndex }}"
     active-id="{{ activeId }}"
-    bind:itemclick="onItemClick"
-    bind:navclick="onNavClick"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
   ></van-tree-select>
 </demo-block>

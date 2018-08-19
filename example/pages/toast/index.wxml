@@ -1,0 +1,18 @@
+<demo-block title="文字提示" padding>
+  <van-button bind:tap="showToast">文字提示</van-button>
+</demo-block>
+
+<demo-block title="加载提示" padding>
+  <van-button bind:tap="showLoadingToast">加载提示</van-button>
+</demo-block>
+
+<demo-block title="成功/失败提示" padding>
+  <van-button bind:tap="showSuccessToast" custom-class="demo-margin-right">成功提示</van-button>
+  <van-button bind:tap="showFailToast">失败提示</van-button>
+</demo-block>
+
+<demo-block title="高级用法" padding>
+  <van-button bind:tap="showCustomizedToast">高级用法</van-button>
+</demo-block>
+
+<van-toast id="van-toast" />

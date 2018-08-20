@@ -1,0 +1,8 @@
+<view
+  wx:if="{{ inited }}"
+  class="van-transition custom-class"
+  style="animation-name: van-{{ name }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}"
+  bind:animationend="onAnimationEnd"
+>
+  <slot />
+</view>

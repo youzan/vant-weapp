@@ -1,10 +1,7 @@
 @import '../common/style/var.pcss';
 
 .van-toast {
-  top: 50%;
-  left: 50%;
   display: flex;
-  position: fixed;
   color: $white;
   font-size: 12px;
   line-height: 1.2;
@@ -14,9 +11,15 @@
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, .7);
-  z-index: 3001;
+
+  &__container {
+    top: 50%;
+    left: 50%;
+    z-index: 3001;
+    position: fixed;
+    transform: translate(-50%, -50%);
+  }
 
   &__overlay {
     z-index: 3000;
@@ -25,10 +28,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-
-    &--mask {
-      background-color: rgba(0, 0, 0, .7);
-    }
   }
 
   &--text {
@@ -57,13 +56,10 @@
   }
 
   &--top {
-    top: 50px;
-    transform: translate(-50%, 0);
+    transform: translate(0, -30vh);
   }
 
   &--bottom {
-    top: auto;
-    bottom: 50px;
-    transform: translate(-50%, 0);
+    transform: translate(0, 30vh);
   }
 }

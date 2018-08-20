@@ -1,7 +1,7 @@
-<van-transition
+<van-overlay
   show="{{ show && (mask || forbidClick) }}"
-  custom-class="van-toast__overlay"
-  custom-style="{{ mask ? 'background-color: rgba(0, 0, 0, .7);' : '' }}"
+  mask="{{ mask }}"
+  z-index="3000"
 />
 <van-transition
   show="{{ show }}"

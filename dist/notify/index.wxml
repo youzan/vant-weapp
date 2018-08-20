@@ -1,7 +1,6 @@
 <van-transition
   name="slide-down"
   show="{{ show }}"
-  duration="300"
   custom-class="van-notify"
   custom-style="background-color:{{ backgroundColor }}"
 >

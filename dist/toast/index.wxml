@@ -1,23 +1,26 @@
-<view
-  wx:if="{{ show && (mask || forbidClick) }}"
-  class="van-toast__overlay {{ mask ? 'van-toast__overlay--mask' : '' }}"
+<van-transition
+  show="{{ show && (mask || forbidClick) }}"
+  custom-class="van-toast__overlay"
+  custom-style="{{ mask ? 'background-color: rgba(0, 0, 0, .7);' : '' }}"
 />
-<view
-  wx:if="{{ show }}"
-  class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}"
+<van-transition
+  show="{{ show }}"
+  custom-class="van-toast__container"
 >
-  <!-- text only -->
-  <view wx:if="{{ type === 'text' }}">{{ message }}</view>
+  <view class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}">
+    <!-- text only -->
+    <view wx:if="{{ type === 'text' }}">{{ message }}</view>
 
-  <!-- with icon -->
-  <block wx:else>
-    <van-loading
-      wx:if="{{ type === 'loading' }}"
-      color="white"
-      type="{{ loadingType }}"
-      custom-class="van-toast__loading"
-    />
-    <van-icon wx:else class="van-toast__icon" name="{{ type }}" />
-    <view wx:if="{{ message }}" class="van-toast__text">{{ message }}</view>
-  </block>
-</view>
+    <!-- with icon -->
+    <block wx:else>
+      <van-loading
+        wx:if="{{ type === 'loading' }}"
+        color="white"
+        type="{{ loadingType }}"
+        custom-class="van-toast__loading"
+      />
+      <van-icon wx:else class="van-toast__icon" name="{{ type }}" />
+      <view wx:if="{{ message }}" class="van-toast__text">{{ message }}</view>
+    </block>
+  </view>
+</van-transition>

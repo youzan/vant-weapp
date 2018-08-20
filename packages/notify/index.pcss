@@ -2,7 +2,6 @@
 
 .van-notify {
   top: 0;
-  opacity: 0;
   width: 100%;
   z-index: 110;
   color: $white;
@@ -12,11 +11,4 @@
   font-size: 14px;
   text-align: center;
   background-color: #E64340;
-  transition: all 0.4s ease;
-  transform: translateZ(0) translateY(-100%);
-
-  &--show {
-    opacity: 1;
-    transform: translateZ(0) translateY(0);
-  }
 }

@@ -24,7 +24,8 @@ module.exports = {
       logLevel: 'warn'
     },
     hotClient: {
-      logLevel: 'warn'
+      logLevel: 'warn',
+      allEntries: true
     }
   },
   resolve: {

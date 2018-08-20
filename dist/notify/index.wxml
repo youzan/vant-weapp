@@ -1,6 +1,9 @@
-<view
-  class="van-notify {{ show ? 'van-notify--show' : '' }}"
-  style="background-color:{{ backgroundColor }}"
+<van-transition
+  name="slide-down"
+  show="{{ show }}"
+  duration="300"
+  custom-class="van-notify"
+  custom-style="background-color:{{ backgroundColor }}"
 >
   {{ text }}
-</view>
+</van-transition>

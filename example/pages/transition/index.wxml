@@ -1,0 +1,17 @@
+<demo-block title="基础用法" padding>
+  <van-cell title="Fade" bind:click="onClickFade" is-link />
+  <van-cell title="Fade Up" bind:click="onClickFadeUp" is-link />
+  <van-cell title="Fade Down" bind:click="onClickFadeDown" is-link />
+  <van-cell title="Fade Left" bind:click="onClickFadeLeft" is-link />
+  <van-cell title="Fade Right" bind:click="onClickFadeRight" is-link />
+  <van-cell title="Slide Up" bind:click="onClickSlideUp" is-link />
+  <van-cell title="Slide Down" bind:click="onClickSlideDown" is-link />
+  <van-cell title="Slide Left" bind:click="onClickSlideLeft" is-link />
+  <van-cell title="Slide Right" bind:click="onClickSlideRight" is-link />
+
+  <van-transition
+    show="{{ show }}"
+    name="{{ name }}"
+    custom-class="block"
+  />
+</demo-block>

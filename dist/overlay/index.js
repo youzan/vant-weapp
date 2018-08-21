@@ -1,11 +1,17 @@
 Component({
   properties: {
-    show: Boolean
+    show: Boolean,
+    mask: Boolean,
+    customStyle: String,
+    zIndex: {
+      type: Number,
+      value: 1
+    }
   },
 
   methods: {
-    onClickOverlay() {
-
+    onClick() {
+      this.triggerEvent('click');
     }
   }
 });

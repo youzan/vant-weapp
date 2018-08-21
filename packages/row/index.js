@@ -1,6 +1,10 @@
 const COL_PATH = '../col/index';
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class'],
 
   relations: {

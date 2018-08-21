@@ -43,10 +43,7 @@ Component({
     },
     value: {
       type: null,
-      value: '',
-      observer(currentValue) {
-        this.setData({ currentValue });
-      }
+      value: ''
     },
     type: {
       type: String,
@@ -60,14 +57,7 @@ Component({
 
   data: {
     focused: false,
-    showClear: false,
-    currentValue: ''
-  },
-
-  attached() {
-    this.setData({
-      currentValue: this.data.value
-    });
+    showClear: false
   },
 
   methods: {
@@ -76,7 +66,7 @@ Component({
       this.triggerEvent('input', value);
       this.triggerEvent('change', value);
       this.setData({
-        currentValue: value,
+        value,
         showClear: this.getShowClear({ value })
       });
     },
@@ -105,7 +95,7 @@ Component({
     getShowClear(options) {
       const {
         focused = this.data.focused,
-        value = this.data.currentValue
+        value = this.data.value
       } = options;
 
       return this.data.clearable && focused && value !== '' && !this.data.readonly;
@@ -113,7 +103,7 @@ Component({
 
     onClear() {
       this.setData({
-        currentValue: '',
+        value: '',
         showClear: this.getShowClear({ value: '' })
       });
       this.triggerEvent('input', '');
@@ -121,7 +111,7 @@ Component({
     },
 
     onConfirm() {
-      this.triggerEvent('confirm', this.data.currentValue);
+      this.triggerEvent('confirm', this.data.value);
     }
   }
 });

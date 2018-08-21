@@ -23,14 +23,14 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "autoprefixer": "^9.1.1",
+    "autoprefixer": "^9.1.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.1.4",
     "css-loader": "^1.0.0",
-    "eslint": "^5.1.0",
+    "eslint": "^5.4.0",
     "eslint-plugin-vue-libs": "^3.0.0",
     "fast-vue-md-loader": "^1.0.3",
     "gh-pages": "^1.2.0",
@@ -45,12 +45,12 @@
     "precss": "^2.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^0.22.1",
-    "vant-doc": "^1.0.14",
+    "vant-doc": "^1.0.15",
     "vue": "2.5.17",
-    "vue-loader": "^15.2.6",
+    "vue-loader": "^15.4.0",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "2.5.17",
-    "webpack": "^4.16.5",
+    "webpack": "^4.17.0",
     "webpack-serve": "^2.0.2"
   }
 }

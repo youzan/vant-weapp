@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```js
-const Notify = require('path/to/zanui-weapp/dist/notify/index');
+import Notify from 'path/to/zanui-weapp/dist/notify/index';
 
 Notify('通知内容')
 ```

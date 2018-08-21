@@ -45,7 +45,7 @@ const defaultOptions = {
   duration: 3000
 };
 
-function Notify(options = {}) {
+export default function Notify(options = {}) {
   const pages = getCurrentPages();
   const ctx = pages[pages.length - 1];
 
@@ -65,5 +65,3 @@ function Notify(options = {}) {
 function parseParam(params = '') {
   return typeof params === 'object' ? params : { text: params };
 }
-
-module.exports = Notify;

@@ -14,7 +14,7 @@
 #### 文字提示
 
 ```javascript
-const Toast = require('path/to/vant-weapp/dist/toast/index');
+import Toast from 'path/to/vant-weapp/dist/toast/index';
 
 Toast('我是提示文案，建议不超过十五字~');
 ```

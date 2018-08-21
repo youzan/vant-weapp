@@ -6,6 +6,10 @@ const observer = function() {
 };
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class', 'loading-class'],
 
   behaviors: [nativeBehaviors],

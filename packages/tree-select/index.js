@@ -1,6 +1,10 @@
 const ITEM_HEIGHT = 44;
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   properties: {
     items: {
       type: Array,

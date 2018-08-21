@@ -1,4 +1,8 @@
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: [
     'custom-class',
     'overlay-class'

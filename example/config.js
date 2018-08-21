@@ -53,6 +53,10 @@ export default [
       {
         path: '/tabbar',
         title: 'Tabbar 标签栏'
+      },
+      {
+        path: '/transition',
+        title: 'Transition 动画'
       }
     ]
   },

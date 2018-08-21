@@ -35,6 +35,7 @@ const MAP = {
   tag: 'tag-201808092138.png',
   tabbar: 'tabbar-201808160922.png',
   toast: 'toast-201808191046.png',
+  transition: 'transition-20180821.png',
   'tree-select': 'tree-select-201808092138.png'
 };
 

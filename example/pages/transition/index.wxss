@@ -1,0 +1,9 @@
+.block {
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  margin: -50px 0 0 -50px;
+  background-color: #38f;
+}

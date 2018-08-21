@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Transition 动画",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-cell": "../../dist/cell/index",
+    "van-transition": "../../dist/transition/index"
+  }
+}

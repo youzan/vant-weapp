@@ -4,6 +4,7 @@ Component({
   properties: {
     customStyle: String,
     show: {
+      value: true,
       type: Boolean,
       observer(value) {
         if (value) {
@@ -26,7 +27,7 @@ Component({
   },
 
   data: {
-    type: 'enter',
+    type: '',
     inited: false,
     display: false
   },

@@ -1,6 +1,10 @@
 const BADGE_GROUP_PATH = '../badge-group/index';
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class'],
 
   relations: {

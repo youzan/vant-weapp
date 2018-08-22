@@ -28,6 +28,7 @@ const MAP = {
   notify: 'notify-201808112050.png',
   popup: 'popup-201808092138.png',
   panel: 'panel-201808092138.png',
+  slider: 'slider-201808221024.png',
   stepper: 'stepper-201808092138.png',
   search: 'search-201808092138.png',
   steps: 'steps-201808092138.png',

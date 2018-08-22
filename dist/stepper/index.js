@@ -3,6 +3,10 @@
 const MAX = 2147483647;
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: [
     'custom-class',
     'input-class',

@@ -19,6 +19,7 @@
     "pages/steps/index",
     "pages/switch/index",
     "pages/search/index",
+    "pages/slider/index",
     "pages/tag/index",
     "pages/toast/index",
     "pages/tabbar/index",

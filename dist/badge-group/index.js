@@ -1,6 +1,10 @@
 const BADGE_PATH = '../badge/index';
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class'],
 
   relations: {

@@ -72,6 +72,10 @@ export default [
         title: 'Search 搜索'
       },
       {
+        path: '/slider',
+        title: 'Slider 滑块'
+      },
+      {
         path: '/stepper',
         title: 'Stepper 步进器'
       },

@@ -17,6 +17,7 @@ Page({
       'more-o',
       'info-o',
       'share',
+      'aim',
       'like-o',
       'logistics',
       'edit',

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "SwitchCell 开关单元格",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-switch-cell": "../../dist/switch-cell/index"
+  }
+}

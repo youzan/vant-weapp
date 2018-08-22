@@ -33,6 +33,7 @@ const MAP = {
   search: 'search-201808092138.png',
   steps: 'steps-201808092138.png',
   switch: 'switch-201808092138.png',
+  'switch-cell': 'switch-cell-201808221124.png',
   tag: 'tag-201808092138.png',
   tabbar: 'tabbar-201808160922.png',
   toast: 'toast-201808191046.png',

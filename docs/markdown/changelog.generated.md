@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v0.2.0](https://github.com/youzan/vant-weapp/tree/v0.2.0) (2018-08-22)
+[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.1.1...v0.2.0)
+
+**Issue**
+
+- button 无法提交表单触发form 的bindsubmit事件 [\#454](https://github.com/youzan/vant-weapp/issues/454)
+- field组件在form表单中的submit事件无法获取值 [\#443](https://github.com/youzan/vant-weapp/issues/443)
+
+**Improvements**
+
+- \[Improvement\] Icon: add aim icon [\#457](https://github.com/youzan/vant-weapp/pull/457) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] 新增内置样式类van-multi-ellipsis--l2、van-multi-ellipsis--l3 [\#456](https://github.com/youzan/vant-weapp/pull/456) ([ylethe](https://github.com/ylethe))
+- \[new feature\] add SwitchCell component [\#455](https://github.com/youzan/vant-weapp/pull/455) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add slider component [\#453](https://github.com/youzan/vant-weapp/pull/453) ([chenjiahan](https://github.com/chenjiahan))
+- update dependencies [\#451](https://github.com/youzan/vant-weapp/pull/451) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Field: add name prop [\#450](https://github.com/youzan/vant-weapp/pull/450) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] support addGlobalClass [\#449](https://github.com/youzan/vant-weapp/pull/449) ([chenjiahan](https://github.com/chenjiahan))
+- \[breaking change\] Notify: export default [\#448](https://github.com/youzan/vant-weapp/pull/448) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.1.1](https://github.com/youzan/vant-weapp/tree/v0.1.1) (2018-08-21)
 [Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.1.0...v0.1.1)
 
@@ -61,7 +80,6 @@
 - textfield下边缘没有横线 [\#401](https://github.com/youzan/vant-weapp/issues/401)
 - Bug: 填写 Field 时使用键盘中的确认按钮无法正确调用处理函数 [\#388](https://github.com/youzan/vant-weapp/issues/388)
 - DatetimePicker在开发环境日期组件可以上下滚动 但在真机上不能上下滚动 [\#298](https://github.com/youzan/vant-weapp/issues/298)
-- zanui-weapp的样式覆盖 [\#243](https://github.com/youzan/vant-weapp/issues/243)
 
 **Improvements**
 

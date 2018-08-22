@@ -18,6 +18,7 @@
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",
+    "pages/switch-cell/index",
     "pages/search/index",
     "pages/slider/index",
     "pages/tag/index",

@@ -106,6 +106,10 @@ export default [
     groupName: '高阶组件',
     list: [
       {
+        path: '/switch-cell',
+        title: 'SwitchCell 开关单元格'
+      },
+      {
         path: '/tree-select',
         title: 'TreeSelect 分类选择'
       }

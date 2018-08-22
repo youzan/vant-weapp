@@ -1,6 +1,10 @@
 const ITEM_PATH = '../tabbar-item/index';
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class'],
 
   properties: {

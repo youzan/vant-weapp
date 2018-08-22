@@ -1,8 +1,6 @@
 const TABBAR_PATH = '../tabbar/index';
 
 Component({
-  name: 'tabbar-item',
-
   properties: {
     info: null,
     icon: String,
@@ -10,7 +8,8 @@ Component({
   },
 
   options: {
-    multipleSlots: true
+    multipleSlots: true,
+    addGlobalClass: true
   },
 
   relations: {

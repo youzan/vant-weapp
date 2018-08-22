@@ -1,4 +1,4 @@
-const nativeBehaviors = require('./behaviors');
+const buttonBehaviors = require('../behaviors/button');
 const classnames = require('../common/classnames');
 
 const observer = function() {
@@ -6,9 +6,13 @@ const observer = function() {
 };
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class', 'loading-class'],
 
-  behaviors: [nativeBehaviors],
+  behaviors: [buttonBehaviors],
 
   properties: {
     type: {

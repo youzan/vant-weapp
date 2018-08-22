@@ -1,0 +1,11 @@
+<view class="custom-class van-slider {{ disabled ? 'van-slider--disabled' : '' }}" bind:tap="onClick">
+  <view class="van-slider__bar" style="{{ barStyle }}">
+    <view
+      class="van-slider__button"
+      bind:touchstart="onTouchStart"
+      catch:touchmove="onTouchMove"
+      bind:touchend="onTouchEnd"
+      bind:touchcancel="onTouchEnd"
+    />
+  </view>
+</view>

@@ -6,7 +6,8 @@ Component({
   ],
 
   options: {
-    multipleSlots: true
+    multipleSlots: true,
+    addGlobalClass: true
   },
 
   properties: {

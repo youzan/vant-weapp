@@ -3,6 +3,10 @@ const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class'],
 
   properties: {

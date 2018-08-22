@@ -1,6 +1,10 @@
 const ROW_PATH = '../row/index';
 
 Component({
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: ['custom-class'],
 
   relations: {

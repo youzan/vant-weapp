@@ -2,7 +2,8 @@ Component({
   externalClasses: ['custom-class', 'cancel-class'],
 
   options: {
-    multipleSlots: true
+    multipleSlots: true,
+    addGlobalClass: true
   },
 
   properties: {

@@ -1,0 +1,19 @@
+<demo-block title="基础用法">
+  <van-progress custom-class="progress" percentage="50" />
+</demo-block>
+
+<demo-block title="置灰">
+  <van-progress custom-class="progress" inactive percentage="50" />
+</demo-block>
+
+<demo-block title="样式定制">
+  <van-progress custom-class="progress" pivot-text="橙色" color="#f2826a" percentage="25" />
+  <van-progress custom-class="progress" pivot-text="红色" color="#f3594b" percentage="50" />
+  <van-progress
+    custom-class="progress"
+    percentage="75"
+    pivot-text="紫色"
+    pivot-color="#7232dd"
+    color="linear-gradient(to right, #be99ff, #7232dd)"
+  />
+</demo-block>

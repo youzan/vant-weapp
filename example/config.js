@@ -43,6 +43,10 @@ export default [
         title: 'Popup 弹出层'
       },
       {
+        path: '/progress',
+        title: 'Progress 进度条'
+      },
+      {
         path: '/steps',
         title: 'Steps 步骤条'
       },

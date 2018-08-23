@@ -15,6 +15,7 @@
     "pages/notify/index",
     "pages/panel/index",
     "pages/popup/index",
+    "pages/progress/index",
     "pages/stepper/index",
     "pages/steps/index",
     "pages/switch/index",

@@ -1,0 +1,3 @@
+.progress {
+  margin: 5px 15px 20px;
+}

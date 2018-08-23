@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [0.2.0](https://github.com/youzan/vant-weapp/tree/v0.2.0)
+`2018-08-22`
+
+**Breaking changes**
+
+- 组件增加 addGlobalClass 属性，支持外部样式覆盖 [\#449](https://github.com/youzan/vant-weapp/pull/449)
+- 优化 Notify 模块导出方式，支持 ES6 模块引入 [\#448](https://github.com/youzan/vant-weapp/pull/448)
+
+**Improvements**
+
+- 新增 Slider 组件 [\#453](https://github.com/youzan/vant-weapp/pull/453)
+- 新增 SwitchCell 组件 [\#455](https://github.com/youzan/vant-weapp/pull/455)
+- 新增 Icon aim 类型 [\#457](https://github.com/youzan/vant-weapp/pull/457)
+- 新增 Field name 属性 [\#450](https://github.com/youzan/vant-weapp/pull/450)
+- 新增 multi-ellipsis 内部样式类 [\#456](https://github.com/youzan/vant-weapp/pull/456)
+
+**Bug Fixes**
+
+- 修复 share 图标无法加粗的问题 [\#457](https://github.com/youzan/vant-weapp/pull/457)
+
 ### [0.1.1](https://github.com/youzan/vant-weapp/tree/v0.1.1)
 `2018-08-21`
 

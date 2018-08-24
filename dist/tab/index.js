@@ -1,7 +1,7 @@
 'use strict';
 
 Component({
-  externalClasses: 'class',
+  externalClasses: ['active-tab-class'],
 
   properties: {
     scroll: {

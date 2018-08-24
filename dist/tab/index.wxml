@@ -42,7 +42,7 @@
     bindtap="_handleZanTabChange"
   >
     <view
-      class="zan-tab__title"
+      class="zan-tab__title  {{ selectedId == item.id ? 'active-tab-class' : '' }}"
       style="{{ height ? 'height:' + height + 'px;line-height:' + height + 'px' : '' }}"
     >
       {{ item.title }}

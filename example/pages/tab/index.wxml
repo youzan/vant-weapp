@@ -17,6 +17,7 @@
   <view style="margin: 30px 0">
     <zan-tab
       list="{{ tab2.list }}"
+      active-tab-class="active-tab"
       selected-id="{{ tab2.selectedId }}"
       scroll="{{ tab2.scroll }}"
       height="{{ tab2.height }}"

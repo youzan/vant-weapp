@@ -45,6 +45,7 @@ Page({
 | selectedId | 选中id | - | - | |
 | height | tab高度 | Number | - | |
 | fixed | 是否固定位置 | Boolean | - | |
+| active-tab-class | 选择 tab 的样式| String |-||
 
 
 tab 组件中，list 数据格式如下

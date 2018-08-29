@@ -1,4 +1,6 @@
 Component({
+  behaviors: ['wx://form-field'],
+
   options: {
     addGlobalClass: true
   },
@@ -6,13 +8,22 @@ Component({
   externalClasses: ['custom-class', 'node-class'],
 
   properties: {
-    checked: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    checked: {
+      type: Boolean,
+      observer(value) {
+        this.setData({ value });
+      }
+    },
     size: {
       type: String,
       value: '30px'
     }
+  },
+
+  attached() {
+    this.setData({ value: this.data.checked });
   },
 
   methods: {

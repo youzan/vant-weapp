@@ -1,5 +1,5 @@
 <view
-  class="custom-class van-icon van-icon-{{ name }}"
+  class="custom-class {{ classPrefix }} {{ classPrefix }}-{{ name }}"
   style="{{ color ? 'color: ' + color : '' }}; {{ size ? 'font-size: ' + size : '' }}"
   bind:tap="onClick"
 >

@@ -10,7 +10,10 @@ Component({
     name: String,
     size: String,
     color: String,
-    classPrefix: String
+    classPrefix: {
+      type: String,
+      value: 'van-icon'
+    }
   },
 
   methods: {

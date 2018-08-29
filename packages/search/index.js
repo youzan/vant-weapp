@@ -1,4 +1,6 @@
 Component({
+  behaviors: ['wx://form-field'],
+
   externalClasses: ['custom-class', 'cancel-class'],
 
   options: {
@@ -12,12 +14,6 @@ Component({
     showAction: Boolean,
     useActionSlot: Boolean,
     placeholder: String,
-    value: {
-      type: String,
-      observer(currentValue) {
-        this.setData({ currentValue });
-      }
-    },
     background: {
       type: String,
       value: '#f2f2f2'
@@ -28,23 +24,19 @@ Component({
     }
   },
 
-  attached() {
-    this.setData({ currentValue: this.data.value });
-  },
-
   methods: {
     onChange(event) {
       this.triggerEvent('change', event.detail);
     },
 
     onCancel() {
-      this.setData({ currentValue: '' });
+      this.setData({ value: '' });
       this.triggerEvent('cancel');
       this.triggerEvent('change', '');
     },
 
     onSearch() {
-      this.triggerEvent('search', this.data.currentValue);
+      this.triggerEvent('search', this.data.value);
     },
 
     onFocus() {

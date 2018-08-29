@@ -9,7 +9,7 @@
       left-icon="search"
       border="{{ false }}"
       confirm-type="search"
-      value="{{ currentValue }}"
+      value="{{ value }}"
       disabled="{{ disabled }}"
       readonly="{{ readony }}"
       maxlength="{{ maxlength }}"

@@ -9,6 +9,7 @@ Component({
   },
 
   properties: {
+    focus: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     showAction: Boolean,

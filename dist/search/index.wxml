@@ -7,6 +7,7 @@
       clearable
       type="search"
       left-icon="search"
+      focus="{{ focus }}"
       border="{{ false }}"
       confirm-type="search"
       value="{{ value }}"

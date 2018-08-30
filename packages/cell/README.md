@@ -96,6 +96,7 @@
 |-----------|-----------|-----------|-------------|
 | icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
 | title | 左侧标题 | `String | Number` | - |
+| titleWidth | 标题宽度 | `Number` | - |
 | value | 右侧内容 | `String | Number` | - |
 | label | 标题下方的描述信息 | `String` | - |
 | border | 是否显示下边框 | `Boolean` | `true` |

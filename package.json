@@ -51,6 +51,7 @@
     "vue-router": "^3.0.1",
     "vue-template-compiler": "2.5.17",
     "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
     "webpack-serve": "^2.0.2"
   }
 }

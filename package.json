@@ -9,7 +9,6 @@
     "dev": "node build/dev.js",
     "lint": "eslint ./packages --ext .js",
     "release": "sh build/release.sh",
-    "build": "sh scripts/deploy.sh",
     "build:lib": "NODE_ENV=production node build/compiler.js",
     "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.prd.js && gh-pages -d docs/dist",
     "build:changelog": "vant-doc changelog --tag v0.2.0 ./docs/markdown/changelog.generated.md"

@@ -5,7 +5,7 @@
 ```json
 {
   "usingComponents": {
-    "van-notify": "path/to/zanui-weapp/dist/notify/index"
+    "van-notify": "path/to/vant-weapp/dist/toast/index"
   }
 }
 ```

@@ -1,97 +1,45 @@
 ## 更新日志
 
-## [v0.2.0](https://github.com/youzan/vant-weapp/tree/v0.2.0) (2018-08-22)
-[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.1.1...v0.2.0)
-
-**Issue**
-
-- button 无法提交表单触发form 的bindsubmit事件 [\#454](https://github.com/youzan/vant-weapp/issues/454)
-- field组件在form表单中的submit事件无法获取值 [\#443](https://github.com/youzan/vant-weapp/issues/443)
-
-**Improvements**
-
-- \[Improvement\] Icon: add aim icon [\#457](https://github.com/youzan/vant-weapp/pull/457) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] 新增内置样式类van-multi-ellipsis--l2、van-multi-ellipsis--l3 [\#456](https://github.com/youzan/vant-weapp/pull/456) ([ylethe](https://github.com/ylethe))
-- \[new feature\] add SwitchCell component [\#455](https://github.com/youzan/vant-weapp/pull/455) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] add slider component [\#453](https://github.com/youzan/vant-weapp/pull/453) ([chenjiahan](https://github.com/chenjiahan))
-- update dependencies [\#451](https://github.com/youzan/vant-weapp/pull/451) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Field: add name prop [\#450](https://github.com/youzan/vant-weapp/pull/450) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] support addGlobalClass [\#449](https://github.com/youzan/vant-weapp/pull/449) ([chenjiahan](https://github.com/chenjiahan))
-- \[breaking change\] Notify: export default [\#448](https://github.com/youzan/vant-weapp/pull/448) ([chenjiahan](https://github.com/chenjiahan))
-
-## [v0.1.1](https://github.com/youzan/vant-weapp/tree/v0.1.1) (2018-08-21)
-[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.1.0...v0.1.1)
-
-**Issue**
-
-- 小程序支持iPad了，能否将组件样式单位px改为rpx [\#440](https://github.com/youzan/vant-weapp/issues/440)
-- 组件自适应屏幕   px-\>rpx [\#436](https://github.com/youzan/vant-weapp/issues/436)
-- 文档错误 ？ [\#434](https://github.com/youzan/vant-weapp/issues/434)
-- field表单只显示输入框其他什么都不显示，怎么回事 [\#433](https://github.com/youzan/vant-weapp/issues/433)
-- 为何vant 没有zanui 组件库丰富 [\#432](https://github.com/youzan/vant-weapp/issues/432)
-- Vant组件库不包括所有的ZanUI 的组建吗  比如日期选择 这个组件我就没找到 [\#431](https://github.com/youzan/vant-weapp/issues/431)
-- search文档示例代码错误 [\#430](https://github.com/youzan/vant-weapp/issues/430)
-- 从 zanui 迁移到 vant，我发现的一些问题 [\#429](https://github.com/youzan/vant-weapp/issues/429)
-- field组件click-icon事件不触发 [\#426](https://github.com/youzan/vant-weapp/issues/426)
-- 最需要【表单验证】，谢谢！ [\#425](https://github.com/youzan/vant-weapp/issues/425)
-- Button的size为large时不使用圆角 [\#424](https://github.com/youzan/vant-weapp/issues/424)
-- form 组件不能使用 name 属性 在提交表单后没有值. [\#419](https://github.com/youzan/vant-weapp/issues/419)
-
-**Improvements**
-
-- \[bugfix\] Field: with form component [\#447](https://github.com/youzan/vant-weapp/pull/447) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Transition: support more animation [\#445](https://github.com/youzan/vant-weapp/pull/445) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] add overlay component [\#442](https://github.com/youzan/vant-weapp/pull/442) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] add Transition component [\#441](https://github.com/youzan/vant-weapp/pull/441) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] add toast preview [\#439](https://github.com/youzan/vant-weapp/pull/439) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Switch: can't change status [\#438](https://github.com/youzan/vant-weapp/pull/438) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] add Toast component [\#437](https://github.com/youzan/vant-weapp/pull/437) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] add Tabbar component [\#435](https://github.com/youzan/vant-weapp/pull/435) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Field: use icon slot [\#428](https://github.com/youzan/vant-weapp/pull/428) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Button: add square prop [\#427](https://github.com/youzan/vant-weapp/pull/427) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] optimize markdown dynamic import [\#423](https://github.com/youzan/vant-weapp/pull/423) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] reduce dependencies [\#422](https://github.com/youzan/vant-weapp/pull/422) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] optimize build process [\#421](https://github.com/youzan/vant-weapp/pull/421) ([chenjiahan](https://github.com/chenjiahan))
-
-## [v0.1.0](https://github.com/youzan/vant-weapp/tree/v0.1.0) (2018-08-13)
-[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.0.1...v0.1.0)
-
-**Breaking changes**
-
-- Dialog弹出提示允许获取用户信息, 设置了autoClose: false, 如果点了否, 这时想再确认,就不能再点了,会报错 [\#384](https://github.com/youzan/vant-weapp/issues/384)
-- \*新增功能\*checkbox如果能支持选中颜色的配置就更好了 [\#379](https://github.com/youzan/vant-weapp/issues/379)
-- DatetimePicker组件怎么控制'支持可选择时间区域限制' [\#377](https://github.com/youzan/vant-weapp/issues/377)
-- toast组件建议新增onShow,onHide两个回调函数 [\#373](https://github.com/youzan/vant-weapp/issues/373)
-- zan-feild和zan-cell 混用border不显示 [\#353](https://github.com/youzan/vant-weapp/issues/353)
-- tab的border建议可以设置 [\#343](https://github.com/youzan/vant-weapp/issues/343)
-- cell 组件无法重置样式加了 !important也无效 [\#261](https://github.com/youzan/vant-weapp/issues/261)
+## [v0.2.1](https://github.com/youzan/vant-weapp/tree/v0.2.1) (2018-08-31)
+[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.2.0...v0.2.1)
 
 **Bug Fixes**
 
-- 这里的宽度设置会导致小程序页面宽度超过100%，左右晃动 [\#386](https://github.com/youzan/vant-weapp/issues/386)
-- zan-field 的border 不显示的bug [\#349](https://github.com/youzan/vant-weapp/issues/349)
+- tabbar z-index代码错误 [\#473](https://github.com/youzan/vant-weapp/issues/473)
 
 **Issue**
 
-- Button的自定义按钮样式不生效 [\#414](https://github.com/youzan/vant-weapp/issues/414)
-- \[BUG\] 这里没有考虑到 price = 0 的情况 [\#410](https://github.com/youzan/vant-weapp/issues/410)
-- form 不能获取到 radio 到值,  input 的可以.   [\#406](https://github.com/youzan/vant-weapp/issues/406)
-- step 组件支持点击事件 [\#403](https://github.com/youzan/vant-weapp/issues/403)
-- textfield下边缘没有横线 [\#401](https://github.com/youzan/vant-weapp/issues/401)
-- Bug: 填写 Field 时使用键盘中的确认按钮无法正确调用处理函数 [\#388](https://github.com/youzan/vant-weapp/issues/388)
-- DatetimePicker在开发环境日期组件可以上下滚动 但在真机上不能上下滚动 [\#298](https://github.com/youzan/vant-weapp/issues/298)
+- cell模块中的icon不能自定义吗 [\#485](https://github.com/youzan/vant-weapp/issues/485)
+- Search focus属性没有生效 [\#483](https://github.com/youzan/vant-weapp/issues/483)
+- 建议新增三级联动菜单组件 [\#472](https://github.com/youzan/vant-weapp/issues/472)
+- Popup 蒙版弹出时没有禁止滚动 [\#471](https://github.com/youzan/vant-weapp/issues/471)
+- icon加一个减号吧 [\#470](https://github.com/youzan/vant-weapp/issues/470)
+- 建议支持Flex的Layout布局，很简单的Grid还没有提供 [\#469](https://github.com/youzan/vant-weapp/issues/469)
+- Stepper 为什么不做成 form-field [\#468](https://github.com/youzan/vant-weapp/issues/468)
+- 希望官方能公布下组件的开发计划 [\#467](https://github.com/youzan/vant-weapp/issues/467)
+- 急需评分组件，不知是否有计划引入？ [\#466](https://github.com/youzan/vant-weapp/issues/466)
+- 希望官方团队更新一下Roadmap [\#465](https://github.com/youzan/vant-weapp/issues/465)
+- Card的desc-class不生效 [\#464](https://github.com/youzan/vant-weapp/issues/464)
+- 图标显示不全 [\#463](https://github.com/youzan/vant-weapp/issues/463)
+- 缺少一个Tabs的控件 [\#462](https://github.com/youzan/vant-weapp/issues/462)
+- 页面的wxss优先度没有插件的高 [\#461](https://github.com/youzan/vant-weapp/issues/461)
+- button增加icon [\#458](https://github.com/youzan/vant-weapp/issues/458)
+- 搜索组件无法获取值 [\#452](https://github.com/youzan/vant-weapp/issues/452)
+- vant-weapp导出插件的时候，可否使用ES6的语法，可以有更好的兼容性。 [\#446](https://github.com/youzan/vant-weapp/issues/446)
 
 **Improvements**
 
-- \[Doc\] optimize event description [\#420](https://github.com/youzan/vant-weapp/pull/420) ([chenjiahan](https://github.com/chenjiahan))
-- \[breaking change\] use click instead of tap for all components [\#418](https://github.com/youzan/vant-weapp/pull/418) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] add utils [\#416](https://github.com/youzan/vant-weapp/pull/416) ([chenjiahan](https://github.com/chenjiahan))
-- remove ununsed component [\#415](https://github.com/youzan/vant-weapp/pull/415) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] reduce config file [\#412](https://github.com/youzan/vant-weapp/pull/412) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Card: price zero [\#411](https://github.com/youzan/vant-weapp/pull/411) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] support share demo [\#409](https://github.com/youzan/vant-weapp/pull/409) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] add nav link [\#408](https://github.com/youzan/vant-weapp/pull/408) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] update doc site [\#407](https://github.com/youzan/vant-weapp/pull/407) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Search: focus properties not work [\#484](https://github.com/youzan/vant-weapp/pull/484) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Field：增加titleWidth属性 [\#482](https://github.com/youzan/vant-weapp/pull/482) ([rex-zsd](https://github.com/rex-zsd))
+- \[Bug Fix\] fix v-if in progress component [\#481](https://github.com/youzan/vant-weapp/pull/481) ([hebingchang](https://github.com/hebingchang))
+- \[improvement\] Search: support form-field [\#480](https://github.com/youzan/vant-weapp/pull/480) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] SwitchCell: support form-filed [\#479](https://github.com/youzan/vant-weapp/pull/479) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Switch: support form-field [\#478](https://github.com/youzan/vant-weapp/pull/478) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Stepper: support form-field [\#477](https://github.com/youzan/vant-weapp/pull/477) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Field: update clear icon color [\#476](https://github.com/youzan/vant-weapp/pull/476) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Icon: add class-prefix prop [\#475](https://github.com/youzan/vant-weapp/pull/475) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tabbar: z-index not work [\#474](https://github.com/youzan/vant-weapp/pull/474) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add Progress component [\#459](https://github.com/youzan/vant-weapp/pull/459) ([chenjiahan](https://github.com/chenjiahan))
 
 
 

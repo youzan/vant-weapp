@@ -55,8 +55,8 @@ Component({
       value: true
     },
     titleWidth: {
-      type: Number,
-      value: 90
+      type: String,
+      value: '90px'
     }
   },
 

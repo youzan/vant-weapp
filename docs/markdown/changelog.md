@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [0.2.1](https://github.com/youzan/vant-weapp/tree/v0.2.1)
+`2018-08-31`
+
+**Improvements**
+
+- 新增 Progress 进度条组件 [\#459](https://github.com/youzan/vant-weapp/pull/459)
+- Field：增加 title-width 属性 [\#482](https://github.com/youzan/vant-weapp/pull/482)
+- Search: 支持在原生 form 组件内使用 [\#480](https://github.com/youzan/vant-weapp/pull/480)
+- Switch: 支持在原生 form 组件内使用 [\#478](https://github.com/youzan/vant-weapp/pull/478)
+- Stepper: 支持在原生 form 组件内使用 [\#477](https://github.com/youzan/vant-weapp/pull/477)
+- SwitchCell: 支持在原生 form 组件内使用 [\#479](https://github.com/youzan/vant-weapp/pull/479)
+- Field: 优化清除按钮颜色 [\#476](https://github.com/youzan/vant-weapp/pull/476)
+- Icon: 新增 class-prefix 属性 [\#475](https://github.com/youzan/vant-weapp/pull/475)
+
+**Bug Fixes**
+
+- 修复 Search focus 属性不生效的问题 [\#484](https://github.com/youzan/vant-weapp/pull/484)
+- 修复 Tabbar z-index 不生效的问题 [\#474](https://github.com/youzan/vant-weapp/pull/474)
+
+
 ### [0.2.0](https://github.com/youzan/vant-weapp/tree/v0.2.0)
 `2018-08-22`
 

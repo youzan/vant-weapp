@@ -5,28 +5,12 @@ Component({
     addGlobalClass: true
   },
 
-  externalClasses: [
-    'custom-class',
-    'overlay-class'
-  ],
+  externalClasses: ['custom-class'],
 
-  behaviors: [transitionBehaviors],
+  behaviors: [transitionBehaviors(false)],
 
   properties: {
     overlayStyle: String,
-    show: {
-      value: false,
-      type: Boolean,
-      observer(value) {
-        if (value) {
-          this.show();
-        } else {
-          this.setData({
-            type: 'leave'
-          });
-        }
-      }
-    },
     overlay: {
       type: Boolean,
       value: true

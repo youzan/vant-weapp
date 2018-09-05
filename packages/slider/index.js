@@ -1,4 +1,4 @@
-const touchBehaviors = require('../behaviors/touch');
+import touchBehaviors from '../behaviors/touch';
 
 Component({
   options: {

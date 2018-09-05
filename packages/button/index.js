@@ -1,8 +1,9 @@
-const buttonBehaviors = require('../behaviors/button');
-const classnames = require('../common/classnames');
+import buttonBehaviors from '../behaviors/button';
+import classnames from '../common/classnames';
 
-const observer = function() {
-  this.setClasses();
+const booleanProp = {
+  type: Boolean,
+  observer: 'setClasses'
 };
 
 Component({
@@ -18,33 +19,18 @@ Component({
     type: {
       type: String,
       value: 'default',
-      observer
+      observer: 'setClasses'
     },
     size: {
       type: String,
       value: 'normal',
-      observer
+      observer: 'setClasses'
     },
-    plain: {
-      type: Boolean,
-      observer
-    },
-    disabled: {
-      type: Boolean,
-      observer
-    },
-    loading: {
-      type: Boolean,
-      observer
-    },
-    block: {
-      type: Boolean,
-      observer
-    },
-    square: {
-      type: Boolean,
-      observer
-    }
+    plain: booleanProp,
+    block: booleanProp,
+    square: booleanProp,
+    loading: booleanProp,
+    disabled: booleanProp
   },
 
   attached() {

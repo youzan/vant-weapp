@@ -49,8 +49,9 @@ Page({
 | show | 当前组件是否显示 | `Boolean` | `false` |
 | overlay | 是否显示背景蒙层 | `Boolean` | `true` |
 | position | 可选值为 `top` `bottom` `right` `left` | `String` | - |
-| overlay-style | 自定义蒙层样式 | `Object` | `` |
+| overlay-style | 自定义蒙层样式 | `String` | `` |
 | close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
+| duration | 动画时长，单位为毫秒 | `Number` | `300` |
 
 ### Event
 
@@ -64,4 +65,3 @@ Page({
 | 类名 | 说明 |
 |-----------|-----------|
 | custom-class | 根节点样式类 |
-| overlay-class | 蒙层样式类 |

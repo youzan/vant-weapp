@@ -1,0 +1,14 @@
+<view class="van-progress custom-class">
+  <view
+    class="van-progress__portion {{ showPivot && text ? 'van-progress__portion--with-pivot' : '' }}"
+    style="{{ portionStyle }}"
+  >
+    <view
+      wx:if="{{ showPivot && text }}"
+      style="{{ pivotStyle }}"
+      class="van-progress__pivot"
+    >
+      {{ text }}
+    </view>
+  </view>
+</view>

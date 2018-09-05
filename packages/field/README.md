@@ -123,7 +123,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| name | 标识符 | `String` | - |
+| name | 在表单内提交时的标识符 | `String` | - |
 | label | 输入框左侧文本 | `String` | - |
 | value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | `String` | `text` |
@@ -133,6 +133,7 @@
 | readonly | 是否只读 | `Boolean` | `false` |
 | clearable | 是否启用清除控件 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
+| title-width | 标题宽度 | `String` | `90px` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
 | placeholder | 输入框为空时占位符 | `String` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |

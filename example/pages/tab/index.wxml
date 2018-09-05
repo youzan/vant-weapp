@@ -1,0 +1,70 @@
+<demo-block title="基础用法">
+  <van-tabs active="{{ 1 }}" bind:change="onChange">
+    <van-tab
+      wx:for="1234"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
+<demo-block title="横向滚动">
+  <van-tabs>
+    <van-tab
+      wx:for="123456"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
+<demo-block title="禁用标签">
+  <van-tabs bind:disabled="onClickDisabled">
+    <van-tab
+      wx:for="123"
+      wx:key="index"
+      disabled="{{ index === 1 }}"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
+<demo-block title="样式风格">
+  <van-tabs type="card">
+    <van-tab
+      wx:for="123"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content-2">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
+<demo-block title="点击事件">
+  <van-tabs bind:click="onClick">
+    <van-tab
+      wx:for="12"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>

@@ -1,0 +1,8 @@
+.content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.content-2 {
+  padding: 20px;
+}

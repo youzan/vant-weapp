@@ -1,11 +1,15 @@
+import transitionBehaviors from '../behaviors/transition';
+
 Component({
-  externalClasses: [
-    'custom-class',
-    'overlay-class'
-  ],
+  options: {
+    addGlobalClass: true
+  },
+
+  externalClasses: ['custom-class'],
+
+  behaviors: [transitionBehaviors(false)],
 
   properties: {
-    show: Boolean,
     overlayStyle: String,
     overlay: {
       type: Boolean,

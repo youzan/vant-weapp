@@ -47,6 +47,7 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
+| name | 在表单内提交时的标识符 | `String` | - |
 | value | 当前输入的值 | `String | Number` | - |
 | background | 搜索框背景色 | `String` | `#f2f2f2` |
 | show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` |

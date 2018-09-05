@@ -3,6 +3,12 @@
 const MAX = 2147483647;
 
 Component({
+  behaviors: ['wx://form-field'],
+
+  options: {
+    addGlobalClass: true
+  },
+
   externalClasses: [
     'custom-class',
     'input-class',
@@ -11,14 +17,6 @@ Component({
   ],
 
   properties: {
-    value: {
-      type: null,
-      observer(val) {
-        if (val !== this.currentValue) {
-          this.setData({ currentValue: this.range(val) });
-        }
-      }
-    },
     integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
@@ -38,7 +36,7 @@ Component({
 
   attached() {
     this.setData({
-      currentValue: this.range(this.data.value)
+      value: this.range(this.data.value)
     });
   },
 
@@ -60,14 +58,14 @@ Component({
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
-      const value = Math.round((this.data.currentValue + diff) * 100) / 100;
+      const value = Math.round((this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.triggerEvent(type);
     },
 
     onBlur(event) {
-      const currentValue = this.range(this.data.currentValue);
-      this.triggerInput(currentValue);
+      const value = this.range(this.data.value);
+      this.triggerInput(value);
       this.triggerEvent('blur', event);
     },
 
@@ -79,10 +77,9 @@ Component({
       this.onChange('plus');
     },
 
-    triggerInput(currentValue) {
-      this.setData({ currentValue });
-      this.triggerEvent('input', currentValue);
-      this.triggerEvent('change', currentValue);
+    triggerInput(value) {
+      this.setData({ value });
+      this.triggerEvent('change', value);
     }
   }
 });

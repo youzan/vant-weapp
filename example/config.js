@@ -43,12 +43,20 @@ export default [
         title: 'Popup 弹出层'
       },
       {
+        path: '/progress',
+        title: 'Progress 进度条'
+      },
+      {
         path: '/steps',
         title: 'Steps 步骤条'
       },
       {
         path: '/tag',
         title: 'Tag 标记'
+      },
+      {
+        path: '/tab',
+        title: 'Tab 标签页'
       },
       {
         path: '/tabbar',
@@ -70,6 +78,10 @@ export default [
       {
         path: '/search',
         title: 'Search 搜索'
+      },
+      {
+        path: '/slider',
+        title: 'Slider 滑块'
       },
       {
         path: '/stepper',
@@ -105,6 +117,10 @@ export default [
   {
     groupName: '高阶组件',
     list: [
+      {
+        path: '/switch-cell',
+        title: 'SwitchCell 开关单元格'
+      },
       {
         path: '/tree-select',
         title: 'TreeSelect 分类选择'

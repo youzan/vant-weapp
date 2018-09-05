@@ -53,6 +53,10 @@ Component({
     border: {
       type: Boolean,
       value: true
+    },
+    titleWidth: {
+      type: String,
+      value: '90px'
     }
   },
 

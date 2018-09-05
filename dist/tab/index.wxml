@@ -1,0 +1,7 @@
+<view
+  wx:if="{{ inited }}"
+  class="van-tab__pane"
+  style="{{ active ? '' : 'display: none' }}"
+>
+  <slot />
+</view>

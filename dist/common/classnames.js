@@ -1,6 +1,6 @@
 const hasOwn = {}.hasOwnProperty;
 
-module.exports = function classNames() {
+export default function classNames() {
   const classes = [];
 
   for (let i = 0; i < arguments.length; i++) {

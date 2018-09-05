@@ -6,7 +6,8 @@ Component({
   ],
 
   options: {
-    multipleSlots: true
+    multipleSlots: true,
+    addGlobalClass: true
   },
 
   properties: {
@@ -52,6 +53,10 @@ Component({
     border: {
       type: Boolean,
       value: true
+    },
+    titleWidth: {
+      type: String,
+      value: '90px'
     }
   },
 

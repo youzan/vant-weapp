@@ -6,7 +6,7 @@
   is-link="{{ isLink }}"
   required="{{ required }}"
   custom-style="{{ customStyle }}"
-  title-width="90px"
+  title-width="{{ titleWidth }}"
   custom-class="{{ customClass }} van-field {{ labelAlign ? 'van-field--label-' + labelAlign : '' }}"
 >
   <slot name="label" slot="title" />

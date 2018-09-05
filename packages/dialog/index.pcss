@@ -1,0 +1,61 @@
+@import '../common/style/var.pcss';
+@import '../common/style/hairline.pcss';
+
+.van-dialog {
+  width: 85%;
+  font-size: 16px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: $white;
+
+  &__header {
+    padding: 15px 0 0;
+    text-align: center;
+
+    &--isolated {
+      padding: 25px 0;
+    }
+  }
+
+  &__message {
+    line-height: 1.5;
+    padding: 15px 20px;
+
+    &--has-title {
+      color: $gray-dark;
+      font-size: 14px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  &__button {
+    flex: 1;
+  }
+
+  &__confirm,
+  &__cancel {
+    border: 0 !important;
+  }
+
+  &__confirm {
+    &,
+    &:active {
+      color: #00c000 !important;
+    }
+  }
+
+  &-bounce-enter {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.7);
+  }
+
+  &-bounce-leave-active {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) scale(0.9);
+  }
+}

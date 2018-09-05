@@ -26,5 +26,5 @@
     custom-class="loading-class"
     color="{{ type === 'default' ? '#c9c9c9' : '#fff' }}"
   />
-  <slot></slot>
+  <slot wx:else></slot>
 </button>

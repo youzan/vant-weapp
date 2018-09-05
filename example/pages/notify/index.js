@@ -1,5 +1,5 @@
 import Page from '../../common/page';
-import Notify from '../../dist/notify/index';
+import Notify from '../../dist/notify/notify';
 
 Page({
   showNotify() {

@@ -1,3 +1,5 @@
+const transitionBehaviors = require('../behaviors/transition');
+
 Component({
   options: {
     addGlobalClass: true
@@ -8,9 +10,23 @@ Component({
     'overlay-class'
   ],
 
+  behaviors: [transitionBehaviors],
+
   properties: {
-    show: Boolean,
     overlayStyle: String,
+    show: {
+      value: false,
+      type: Boolean,
+      observer(value) {
+        if (value) {
+          this.show();
+        } else {
+          this.setData({
+            type: 'leave'
+          });
+        }
+      }
+    },
     overlay: {
       type: Boolean,
       value: true

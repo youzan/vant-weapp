@@ -6,6 +6,7 @@ Component({
   },
 
   properties: {
+    disabled: Boolean,
     title: {
       type: String,
       observer() {
@@ -14,8 +15,7 @@ Component({
           parent.setLine();
         }
       }
-    },
-    disabled: Boolean
+    }
   },
 
   relations: {

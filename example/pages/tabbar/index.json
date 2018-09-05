@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Tabbar 标签页",
+  "navigationBarTitleText": "Tabbar 标签栏",
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
     "van-tabbar": "../../dist/tabbar/index",

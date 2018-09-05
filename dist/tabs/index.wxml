@@ -1,0 +1,26 @@
+<view class="van-tabs van-tabs--{{ type }}">
+  <view class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' ? 'van-hairline--top-bottom' : '' }}">
+    <scroll-view
+      scroll-x="{{ scrollable }}"
+      scroll-with-animation
+      scroll-left="{{ scrollLeft }}"
+    >
+      <view class="van-tabs__nav van-tabs__nav--{{ type }}">
+        <view wx:if="{{ type === 'line' }}" class="van-tabs__line" style="{{ lineStyle }}" />
+        <view
+          wx:for="{{ tabs }}"
+          wx:key="index"
+          data-index="{{ index }}"
+          class="van-tab {{ index === active ? 'van-tab--active' : '' }} {{ item.data.disabled ? 'van-tab--disabled' : '' }}"
+          style="{{ color ? 'color: ' + color : '' }}"
+          bind:tap="onTap"
+        >
+          <view class="van-ellipsis">{{ item.data.title }}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="van-tabs__content">
+    <slot />
+  </view>
+</view>

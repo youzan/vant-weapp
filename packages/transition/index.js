@@ -1,4 +1,4 @@
-const transitionBehaviors = require('../behaviors/transition');
+import transitionBehaviors from '../behaviors/transition';
 
 Component({
   options: {

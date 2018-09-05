@@ -1,6 +1,11 @@
 import buttonBehaviors from '../behaviors/button';
 import classnames from '../common/classnames';
 
+const booleanProp = {
+  type: Boolean,
+  observer: 'setClasses'
+};
+
 Component({
   options: {
     addGlobalClass: true
@@ -21,26 +26,11 @@ Component({
       value: 'normal',
       observer: 'setClasses'
     },
-    plain: {
-      type: Boolean,
-      observer: 'setClasses'
-    },
-    disabled: {
-      type: Boolean,
-      observer: 'setClasses'
-    },
-    loading: {
-      type: Boolean,
-      observer: 'setClasses'
-    },
-    block: {
-      type: Boolean,
-      observer: 'setClasses'
-    },
-    square: {
-      type: Boolean,
-      observer: 'setClasses'
-    }
+    plain: booleanProp,
+    block: booleanProp,
+    square: booleanProp,
+    loading: booleanProp,
+    disabled: booleanProp
   },
 
   attached() {

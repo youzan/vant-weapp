@@ -7,7 +7,7 @@ Component({
 
   externalClasses: ['custom-class'],
 
-  behaviors: [transitionBehaviors],
+  behaviors: [transitionBehaviors(true)],
 
   properties: {
     name: {

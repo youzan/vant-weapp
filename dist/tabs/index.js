@@ -34,8 +34,14 @@ Component({
   },
 
   properties: {
-    color: String,
-    lineWidth: Number,
+    color: {
+      type: String,
+      observer: 'setLine'
+    },
+    lineWidth: {
+      type: Number,
+      observer: 'setLine'
+    },
     active: {
       type: null,
       value: 0

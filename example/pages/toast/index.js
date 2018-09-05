@@ -1,5 +1,5 @@
 import Page from '../../common/page';
-import Toast from '../../dist/toast/index';
+import Toast from '../../dist/toast/toast';
 
 Page({
   showToast() {

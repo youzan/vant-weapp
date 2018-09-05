@@ -118,7 +118,7 @@ Page({
 | active | 当前激活标签的索引 | `String` `Number` | `0` |
 | color | 标签颜色 | `String` | `#f44` |
 | type | 样式风格，可选值为 `card` | `String` | `line` |
-| duration | 动画时间 (单位秒))  | `Number` | `0.2` |
+| duration | 动画时间 (单位秒)  | `Number` | `0.2` |
 | line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | `Number` | `4` |
 

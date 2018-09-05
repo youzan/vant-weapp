@@ -7,6 +7,7 @@
     "pages/card/index",
     "pages/cell/index",
     "pages/col/index",
+    "pages/dialog/index",
     "pages/field/index",
     "pages/icon/index",
     "pages/loading/index",

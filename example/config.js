@@ -101,6 +101,10 @@ export default [
         title: 'Actionsheet 上拉菜单'
       },
       {
+        path: '/dialog',
+        title: 'Dialog 弹出框'
+      },
+      {
         path: '/toast',
         title: 'Toast 轻提示'
       },

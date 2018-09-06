@@ -30,7 +30,8 @@ Dialog.defaultOptions = {
   cancelButtonText: '取消',
   showConfirmButton: true,
   showCancelButton: false,
-  closeOnClickOverlay: false
+  closeOnClickOverlay: false,
+  confirmButtonOpenType: ''
 };
 
 Dialog.alert = options =>

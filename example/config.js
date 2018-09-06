@@ -97,8 +97,8 @@ export default [
     groupName: '操作反馈',
     list: [
       {
-        path: '/actionsheet',
-        title: 'Actionsheet 上拉菜单'
+        path: '/action-sheet',
+        title: 'ActionSheet 上拉菜单'
       },
       {
         path: '/dialog',

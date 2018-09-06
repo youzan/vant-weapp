@@ -1,10 +1,10 @@
-## Actionsheet 上拉菜单
+## ActionSheet 上拉菜单
 
 ### 使用指南
 在 index.json 中引入组件
 ```json
 "usingComponents": {
-  "van-actionsheet": "path/to/vant-weapp/dist/actionsheet/index"
+  "van-action-sheet": "path/to/vant-weapp/dist/action-sheet/index"
 }
 ```
 
@@ -14,7 +14,7 @@
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<van-actionsheet
+<van-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   bind:close="onClose"
@@ -59,12 +59,12 @@ Page({
 });
 ```
 
-#### 带取消按钮的 Actionsheet
+#### 带取消按钮的 ActionSheet
 
-如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
+如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`ActionSheet`关闭。
 
 ```html
-<van-actionsheet
+<van-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   cancel-text="取消"
@@ -72,14 +72,14 @@ Page({
 />
 ```
 
-#### 带标题的 Actionsheet
+#### 带标题的 ActionSheet
 
-如果传入了`title`属性，且不为空，则另外一种样式的`Actionsheet`，里面内容需要自定义。
+如果传入了`title`属性，且不为空，则另外一种样式的`ActionSheet`，里面内容需要自定义。
 
 ```html
-<van-actionsheet show="{{ show }}" title="支持以下配送方式">
+<van-action-sheet show="{{ show }}" title="支持以下配送方式">
   <view>一些内容</view>
-</van-actionsheet>
+</van-action-sheet>
 ```
 
 ### API

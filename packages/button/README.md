@@ -64,7 +64,7 @@
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
 | square | 是否为方形按钮 | `Boolean` | `false` |
-| open-type | 微信开放能力 | `String` | - |
+| open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - |
 | hover-start-time | 按住后多久出现点击态，单位毫秒 | `Number` | 20 |
 | hover-stay-time | 手指松开后点击态保留时间，单位毫秒 | `Number` | 70 |

@@ -12,8 +12,8 @@ Page({
     this.setData({
       actions: [
         { name: '选项' },
-        { name: '选项', subname: '禁用' },
-        { name: '选项', loading: true },
+        { name: '分享', subname: '描述信息', openType: 'share' },
+        { loading: true },
         { name: '禁用选项', disabled: true }
       ]
     });

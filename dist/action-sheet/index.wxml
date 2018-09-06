@@ -11,9 +11,10 @@
     <van-icon custom-class="van-action-sheet__close" name="close" bind:click="onClose" />
   </view>
   <view wx:else class="van-hairline--bottom">
-    <view
+    <button
       wx:for="{{ actions }}"
       wx:key="index"
+      open-type="{{ item.openType }}"
       class="van-action-sheet__item van-hairline--top {{ item.disabled || item.loading ? 'van-action-sheet__item--disabled' : '' }} {{ item.className || '' }}"
       data-index="{{ index }}"
       bind:tap="onSelect"
@@ -23,7 +24,7 @@
         <view class="van-action-sheet__subname" wx:if="{{ item.subname }}">{{ item.subname }}</view>
       </block>
       <van-loading wx:else custom-class="van-action-sheet__loading" size="20px" />
-    </view>
+    </button>
   </view>
   <view
     wx:if="{{ cancelText }}"

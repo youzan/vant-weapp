@@ -32,11 +32,11 @@ Page({
           name: '选项'
         },
         {
-          name: '选项',
-          subname: '描述信息'
+          name: '分享',
+          subname: '描述信息',
+          openType: 'share'
         },
         {
-          name: '选项',
           loading: true
         },
         {
@@ -108,6 +108,7 @@ Page({
 |-----------|-----------|
 | name | 标题 |
 | subname | 二级标题 |
-| className | 为对应列添加额外的 class |
 | loading | 是否为加载状态 |
 | disabled | 是否为禁用状态 |
+| className | 为对应列添加额外的 class 类名 |
+| openType | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) |

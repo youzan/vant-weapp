@@ -1,3 +1,4 @@
+import { create } from '../utils/create';
 import buttonBehaviors from '../behaviors/button';
 import classnames from '../common/classnames';
 
@@ -6,16 +7,12 @@ const booleanProp = {
   observer: 'setClasses'
 };
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class', 'loading-class'],
 
-  behaviors: [buttonBehaviors],
+  mixins: [buttonBehaviors],
 
-  properties: {
+  props: {
     type: {
       type: String,
       value: 'default',

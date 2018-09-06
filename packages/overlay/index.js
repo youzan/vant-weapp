@@ -1,9 +1,7 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../utils/create';
 
-  properties: {
+create({
+  props: {
     show: Boolean,
     mask: Boolean,
     customStyle: String,

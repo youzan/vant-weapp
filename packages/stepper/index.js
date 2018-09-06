@@ -1,13 +1,11 @@
+import { create } from '../utils/create';
+
 // Note that the bitwise operators and shift operators operate on 32-bit ints
 // so in that case, the max safe integer is 2^31-1, or 2147483647
 const MAX = 2147483647;
 
-Component({
-  behaviors: ['wx://form-field'],
-
-  options: {
-    addGlobalClass: true
-  },
+create({
+  form: true,
 
   externalClasses: [
     'custom-class',
@@ -16,7 +14,7 @@ Component({
     'minus-class'
   ],
 
-  properties: {
+  props: {
     integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,

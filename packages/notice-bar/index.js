@@ -1,15 +1,13 @@
+import { create } from '../utils/create';
+
 const VALID_MODE = ['closeable', 'link'];
 const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
-  properties: {
+  props: {
     text: {
       type: String,
       value: '',

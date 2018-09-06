@@ -1,16 +1,13 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../utils/create';
+
+create({
+  form: true,
 
   externalClasses: [
     'input-class'
   ],
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+  props: {
     icon: String,
     label: String,
     error: Boolean,

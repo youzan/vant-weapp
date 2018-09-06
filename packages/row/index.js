@@ -1,19 +1,15 @@
-const COL_PATH = '../col/index';
+import { create } from '../utils/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
   relations: {
-    [COL_PATH]: {
+    '../col/index': {
       type: 'descendant'
     }
   },
 
-  properties: {
+  props: {
     gutter: {
       type: Number,
       observer() {
@@ -33,7 +29,7 @@ Component({
       const style = gutter ? `margin-right: ${margin}; margin-left: ${margin};` : '';
 
       this.setData({ style });
-      this.getRelationNodes(COL_PATH).forEach((col) => {
+      this.getRelationNodes('../col/index').forEach((col) => {
         col.setGutter(this.data.gutter);
       });
     }

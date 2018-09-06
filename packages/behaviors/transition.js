@@ -1,6 +1,6 @@
 export default function(showDefaultValue) {
   return Behavior({
-    properties: {
+    props: {
       customStyle: String,
       show: {
         value: showDefaultValue,

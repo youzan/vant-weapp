@@ -1,5 +1,5 @@
 export default Behavior({
-  properties: {
+  props: {
     loading: Boolean,
     // 在自定义组件中，无法与外界的 form 组件联动，暂时不开放
     // formType: String,

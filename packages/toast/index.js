@@ -1,11 +1,8 @@
+import { create } from '../utils/create';
 import Toast from './toast';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     show: Boolean,
     mask: Boolean,
     message: String,

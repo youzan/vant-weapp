@@ -1,13 +1,9 @@
-const ITEM_PATH = '../tabbar-item/index';
+import { create } from '../utils/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
-  properties: {
+  props: {
     active: {
       type: Number,
       observer(active) {
@@ -35,7 +31,7 @@ Component({
   },
 
   relations: {
-    [ITEM_PATH]: {
+    '../tabbar-item/index': {
       type: 'descendant',
 
       linked(target) {

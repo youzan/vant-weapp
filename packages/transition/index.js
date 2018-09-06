@@ -1,15 +1,12 @@
+import { create } from '../utils/create';
 import transitionBehaviors from '../behaviors/transition';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
-  behaviors: [transitionBehaviors(true)],
+  mixins: [transitionBehaviors(true)],
 
-  properties: {
+  props: {
     name: {
       type: String,
       value: 'fade'

@@ -1,26 +1,22 @@
-const BADGE_GROUP_PATH = '../badge-group/index';
+import { create } from '../utils/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
   relations: {
-    [BADGE_GROUP_PATH]: {
+    '../badge-group/index': {
       type: 'ancestor'
     }
   },
 
-  properties: {
+  props: {
     info: Number,
     title: String
   },
 
   methods: {
     onClick() {
-      const group = this.getRelationNodes(BADGE_GROUP_PATH)[0];
+      const group = this.getRelationNodes('../badge-group/index')[0];
       if (group) {
         group.setActive(this);
       }

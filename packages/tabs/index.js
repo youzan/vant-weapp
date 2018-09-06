@@ -1,12 +1,8 @@
-const TAB_PATH = '../tab/index';
+import { create } from '../utils/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   relations: {
-    [TAB_PATH]: {
+    '../tab/index': {
       type: 'descendant',
 
       linked(target) {
@@ -33,7 +29,7 @@ Component({
     }
   },
 
-  properties: {
+  props: {
     color: {
       type: String,
       observer: 'setLine'

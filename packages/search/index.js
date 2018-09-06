@@ -1,14 +1,11 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../utils/create';
+
+create({
+  form: true,
 
   externalClasses: ['custom-class', 'cancel-class'],
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+  props: {
     focus: Boolean,
     disabled: Boolean,
     readonly: Boolean,

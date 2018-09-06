@@ -1,19 +1,15 @@
-const ROW_PATH = '../row/index';
+import { create } from '../utils/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
   relations: {
-    [ROW_PATH]: {
+    '../badge-group/index': {
       type: 'ancestor'
     }
   },
 
-  properties: {
+  props: {
     span: Number,
     offset: Number
   },

@@ -1,11 +1,9 @@
+import { create } from '../utils/create';
+
 const ITEM_HEIGHT = 44;
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     items: {
       type: Array,
       observer() {

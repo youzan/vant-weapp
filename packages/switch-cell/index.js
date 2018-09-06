@@ -1,11 +1,9 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../utils/create';
 
-  options: {
-    addGlobalClass: true
-  },
+create({
+  form: true,
 
-  properties: {
+  props: {
     title: String,
     border: Boolean,
     loading: Boolean,

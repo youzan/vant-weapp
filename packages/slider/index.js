@@ -1,15 +1,12 @@
+import { create } from '../utils/create';
 import touchBehaviors from '../behaviors/touch';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
-  behaviors: [touchBehaviors],
+  mixins: [touchBehaviors],
 
-  properties: {
+  props: {
     disabled: Boolean,
     max: {
       type: Number,

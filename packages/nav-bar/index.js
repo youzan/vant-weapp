@@ -1,15 +1,12 @@
-Component({
+import { create } from '../utils/create';
+
+create({
   externalClasses: [
     'custom-class',
     'title-class'
   ],
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+  props: {
     title: String,
     leftText: String,
     rightText: String,

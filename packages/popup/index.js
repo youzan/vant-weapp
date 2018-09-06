@@ -1,15 +1,12 @@
+import { create } from '../utils/create';
 import transitionBehaviors from '../behaviors/transition';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
-  behaviors: [transitionBehaviors(false)],
+  mixins: [transitionBehaviors(false)],
 
-  properties: {
+  props: {
     overlayStyle: String,
     overlay: {
       type: Boolean,

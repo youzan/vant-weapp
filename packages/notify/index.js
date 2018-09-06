@@ -1,11 +1,8 @@
+import { create } from '../utils/create';
 import Notify from './notify';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     text: String,
     color: {
       type: String,

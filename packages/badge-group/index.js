@@ -1,14 +1,10 @@
-const BADGE_PATH = '../badge/index';
+import { create } from '../utils/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   externalClasses: ['custom-class'],
 
   relations: {
-    [BADGE_PATH]: {
+    '../badge/index': {
       type: 'descendant',
 
       linked(target) {
@@ -23,13 +19,11 @@ Component({
     }
   },
 
-  properties: {
+  props: {
     active: {
       type: Number,
       value: 0,
-      observer() {
-        this.setActive();
-      }
+      observer: 'setActive'
     }
   },
 

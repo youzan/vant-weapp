@@ -1,15 +1,12 @@
-Component({
+import { create } from '../utils/create';
+
+create({
   externalClasses: [
     'custom-class',
     'footer-class'
   ],
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+  props: {
     desc: String,
     title: String,
     status: String,

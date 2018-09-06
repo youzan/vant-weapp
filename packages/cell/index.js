@@ -1,4 +1,6 @@
-Component({
+import { create } from '../utils/create';
+
+create({
   externalClasses: [
     'custom-class',
     'title-class',
@@ -8,12 +10,7 @@ Component({
     'right-icon-class'
   ],
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+  props: {
     title: null,
     value: null,
     url: String,

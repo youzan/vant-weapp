@@ -1,13 +1,11 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../utils/create';
 
+create({
   externalClasses: [
     'custom-class'
   ],
 
-  properties: {
+  props: {
     icon: String,
     steps: {
       type: Array,

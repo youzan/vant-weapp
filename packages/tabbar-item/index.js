@@ -1,19 +1,14 @@
-const TABBAR_PATH = '../tabbar/index';
+import { create } from '../utils/create';
 
-Component({
-  properties: {
+create({
+  props: {
     info: null,
     icon: String,
     dot: Boolean
   },
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
   relations: {
-    [TABBAR_PATH]: {
+    '../tabbar/index': {
       type: 'ancestor'
     }
   },
@@ -25,7 +20,7 @@ Component({
 
   methods: {
     onClick() {
-      const parent = this.getRelationNodes(TABBAR_PATH)[0];
+      const parent = this.getRelationNodes('../tabbar/index')[0];
       if (parent) {
         parent.onChange(this);
       }

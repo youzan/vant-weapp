@@ -23,6 +23,19 @@
 </van-cell-group>
 ```
 
+```js
+Page({
+  data: {
+    value: ''
+  },
+
+  onChange(event) {
+    // event.detail 为当前输入的值
+    console.log(event.detail);
+  }
+});
+```
+
 #### 自定义类型
 根据`type`属性定义不同类型的输入框
 

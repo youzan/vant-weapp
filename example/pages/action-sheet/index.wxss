@@ -1,1 +1,3 @@
-/* pages/action-sheet/index.wxss */
+.content {
+  padding: 20px;
+}

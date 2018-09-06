@@ -1,66 +1,39 @@
-// pages/action-sheet/index.js
+
+import Page from '../../common/page';
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    show1: false,
+    show2: false,
+    show3: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    this.setData({
+      actions: [
+        { name: '选项' },
+        { name: '选项', subname: '禁用' },
+        { name: '选项', loading: true },
+        { name: '禁用选项', disabled: true }
+      ]
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  toggle(type) {
+    this.setData({
+      [type]: !this.data[type]
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  toggleActionSheet1() {
+    this.toggle('show1');
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  toggleActionSheet2() {
+    this.toggle('show2');
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  toggleActionSheet3() {
+    this.toggle('show3');
   }
-})
+});

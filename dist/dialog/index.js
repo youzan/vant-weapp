@@ -60,6 +60,10 @@ Component({
       this.handleAction('cancel');
     },
 
+    onClickOverlay() {
+      this.onClose('overlay');
+    },
+
     handleAction(action) {
       if (this.data.asyncClose) {
         this.setData({

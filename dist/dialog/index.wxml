@@ -1,4 +1,10 @@
-<van-popup show="{{ show }}" custom-class="van-dialog">
+<van-popup
+  show="{{ show }}"
+  overlay="{{ overlay }}"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
+  custom-class="van-dialog"
+  bind:close="onClickOverlay"
+>
   <view wx:if="{{ title }}" class="van-dialog__header {{ !message && !useSlot ? 'van-dialog--isolated' : '' }}">
     {{ title }}
   </view>

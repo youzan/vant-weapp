@@ -33,6 +33,7 @@
         size="large"
         loading="{{ loading.confirm }}"
         custom-class="van-dialog__confirm"
+        open-type="{{ confirmButtonOpenType }}"
         bind:click="onConfirm"
       >
         {{ confirmButtonText }}

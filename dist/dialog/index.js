@@ -9,6 +9,7 @@ Component({
     useSlot: Boolean,
     asyncClose: Boolean,
     showCancelButton: Boolean,
+    confirmButtonOpenType: String,
     show: {
       type: Boolean,
       observer(show) {

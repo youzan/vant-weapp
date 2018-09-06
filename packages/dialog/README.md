@@ -129,9 +129,10 @@ Page({
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` |
 | confirmButtonText | 确认按钮的文案 | `String` | `确认` |
 | cancelButtonText | 取消按钮的文案 | `String` | `取消` |
+| confirmButtonOpenType | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
-| async-close | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
+| asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
 
 ### API
 
@@ -146,6 +147,7 @@ Page({
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` |
 | cancel-button-text | 取消按钮的文案 | `String` | `取消` |
+| confirm-button-open-type | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | close-on-click-overlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | use-slot | 是否使用自定义内容的插槽 | `Boolean` | `false` |

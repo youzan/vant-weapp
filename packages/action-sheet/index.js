@@ -24,16 +24,16 @@ create({
       const { index } = event.currentTarget.dataset;
       const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {
-        this.triggerEvent('select', item);
+        this.$emit('select', item);
       }
     },
 
     onCancel() {
-      this.triggerEvent('cancel');
+      this.$emit('cancel');
     },
 
     onClose() {
-      this.triggerEvent('close');
+      this.$emit('close');
     }
   }
 });

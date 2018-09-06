@@ -1,10 +1,7 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: [
-    'custom-class',
-    'footer-class'
-  ],
+  classes: ['footer-class'],
 
   props: {
     desc: String,

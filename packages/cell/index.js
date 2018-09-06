@@ -1,8 +1,7 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: [
-    'custom-class',
+  classes: [
     'title-class',
     'label-class',
     'value-class',
@@ -39,7 +38,7 @@ create({
       if (url) {
         wx[this.data.linkType]({ url });
       }
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

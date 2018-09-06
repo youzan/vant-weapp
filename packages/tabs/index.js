@@ -74,7 +74,7 @@ create({
 
   methods: {
     trigger(eventName, index) {
-      this.triggerEvent(eventName, {
+      this.$emit(eventName, {
         index,
         title: this.data.tabs[index].data.title
       });

@@ -1,10 +1,7 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: [
-    'custom-class',
-    'title-class'
-  ],
+  classes: ['title-class'],
 
   props: {
     title: String,
@@ -20,11 +17,11 @@ create({
 
   methods: {
     onClickLeft() {
-      this.triggerEvent('click-left');
+      this.$emit('click-left');
     },
 
     onClickRight() {
-      this.triggerEvent('click-right');
+      this.$emit('click-right');
     }
   }
 });

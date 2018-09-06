@@ -26,7 +26,7 @@ create({
 
   methods: {
     onChange(event) {
-      this.triggerEvent('change', event.detail);
+      this.$emit('change', event.detail);
     }
   }
 });

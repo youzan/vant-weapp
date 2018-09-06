@@ -13,7 +13,7 @@ create({
 
   methods: {
     onClick() {
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

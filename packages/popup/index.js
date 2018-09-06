@@ -1,10 +1,8 @@
 import { create } from '../utils/create';
-import transitionBehaviors from '../behaviors/transition';
+import { transition } from '../mixins/transition';
 
 create({
-  externalClasses: ['custom-class'],
-
-  mixins: [transitionBehaviors(false)],
+  mixins: [transition(false)],
 
   props: {
     overlayStyle: String,
@@ -24,10 +22,10 @@ create({
 
   methods: {
     onClickOverlay() {
-      this.triggerEvent('click-overlay');
+      this.$emit('click-overlay');
 
       if (this.data.closeOnClickOverlay) {
-        this.triggerEvent('close');
+        this.$emit('close');
       }
     }
   }

@@ -1,10 +1,8 @@
 import { create } from '../utils/create';
-import touchBehaviors from '../behaviors/touch';
+import { touch } from '../mixins/touch';
 
 create({
-  externalClasses: ['custom-class'],
-
-  mixins: [touchBehaviors],
+  mixins: [touch],
 
   props: {
     disabled: Boolean,
@@ -83,7 +81,7 @@ create({
       });
 
       if (end) {
-        this.triggerEvent('change', value);
+        this.$emit('change', value);
       }
     },
 

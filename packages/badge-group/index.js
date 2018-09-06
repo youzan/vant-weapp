@@ -1,8 +1,6 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: ['custom-class'],
-
   relations: {
     '../badge/index': {
       type: 'descendant',
@@ -47,7 +45,7 @@ create({
       }
 
       if (this.currentActive !== -1) {
-        this.triggerEvent('change', active);
+        this.$emit('change', active);
       }
 
       this.currentActive = active;

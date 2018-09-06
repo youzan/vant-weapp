@@ -1,10 +1,8 @@
 import { create } from '../utils/create';
-import transitionBehaviors from '../behaviors/transition';
+import { transition } from '../mixins/transition';
 
 create({
-  externalClasses: ['custom-class'],
-
-  mixins: [transitionBehaviors(true)],
+  mixins: [transition(true)],
 
   props: {
     name: {

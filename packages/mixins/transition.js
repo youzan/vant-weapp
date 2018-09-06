@@ -1,6 +1,6 @@
-export default function(showDefaultValue) {
+export const transition = function(showDefaultValue) {
   return Behavior({
-    props: {
+    properties: {
       customStyle: String,
       show: {
         value: showDefaultValue,
@@ -51,4 +51,4 @@ export default function(showDefaultValue) {
       }
     }
   });
-}
+};

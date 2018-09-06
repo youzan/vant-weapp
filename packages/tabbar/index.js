@@ -1,8 +1,6 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: ['custom-class'],
-
   props: {
     active: {
       type: Number,
@@ -59,7 +57,7 @@ create({
     onChange(child) {
       const active = this.data.items.indexOf(child);
       if (active !== this.data.currentActive && active !== -1) {
-        this.triggerEvent('change', active);
+        this.$emit('change', active);
         this.setData({ currentActive: active });
         this.setActiveItem();
       }

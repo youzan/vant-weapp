@@ -7,8 +7,7 @@ const MAX = 2147483647;
 create({
   form: true,
 
-  externalClasses: [
-    'custom-class',
+  classes: [
     'input-class',
     'plus-class',
     'minus-class'
@@ -51,20 +50,20 @@ create({
 
     onChange(type) {
       if (this[`${type}Disabled`]) {
-        this.triggerEvent('overlimit', type);
+        this.$emit('overlimit', type);
         return;
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
       const value = Math.round((this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
-      this.triggerEvent(type);
+      this.$emit(type);
     },
 
     onBlur(event) {
       const value = this.range(this.data.value);
       this.triggerInput(value);
-      this.triggerEvent('blur', event);
+      this.$emit('blur', event);
     },
 
     onMinus() {
@@ -77,7 +76,7 @@ create({
 
     triggerInput(value) {
       this.setData({ value });
-      this.triggerEvent('change', value);
+      this.$emit('change', value);
     }
   }
 });

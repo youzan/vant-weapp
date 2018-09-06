@@ -1,8 +1,6 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: ['custom-class'],
-
   relations: {
     '../badge-group/index': {
       type: 'ancestor'

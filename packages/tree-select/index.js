@@ -44,7 +44,7 @@ create({
       const {
         dataset = {}
       } = event.currentTarget || {};
-      this.triggerEvent('click-item', { ...(dataset.item || {}) });
+      this.$emit('click-item', { ...(dataset.item || {}) });
     },
 
     // 当一个导航被点击时
@@ -52,7 +52,7 @@ create({
       const {
         dataset = {}
       } = event.currentTarget || {};
-      this.triggerEvent('click-nav', { index: dataset.index });
+      this.$emit('click-nav', { index: dataset.index });
     },
 
     // 更新子项列表

@@ -3,7 +3,7 @@ import { create } from '../utils/create';
 create({
   form: true,
 
-  externalClasses: ['custom-class', 'node-class'],
+  classes: ['node-class'],
 
   props: {
     loading: Boolean,
@@ -28,8 +28,8 @@ create({
     onClick() {
       if (!this.data.disabled && !this.data.loading) {
         const checked = !this.data.checked;
-        this.triggerEvent('input', checked);
-        this.triggerEvent('change', checked);
+        this.$emit('input', checked);
+        this.$emit('change', checked);
       }
     }
   }

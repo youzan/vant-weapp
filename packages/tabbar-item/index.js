@@ -24,7 +24,7 @@ create({
       if (parent) {
         parent.onChange(this);
       }
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

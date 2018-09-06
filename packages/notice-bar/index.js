@@ -5,8 +5,6 @@ const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
 create({
-  externalClasses: ['custom-class'],
-
   props: {
     text: {
       type: String,
@@ -173,7 +171,7 @@ create({
     },
 
     onClick(event) {
-      this.triggerEvent('click', event);
+      this.$emit('click', event);
     }
   }
 });

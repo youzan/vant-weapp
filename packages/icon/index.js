@@ -1,8 +1,6 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: ['custom-class'],
-
   props: {
     info: null,
     name: String,
@@ -16,7 +14,7 @@ create({
 
   methods: {
     onClick() {
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

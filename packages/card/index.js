@@ -1,8 +1,7 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: [
-    'custom-class',
+  classes: [
     'thumb-class',
     'title-class',
     'price-class',

@@ -77,8 +77,8 @@ create({
       if (!this.data.asyncClose) {
         this.setData({ show: false });
       }
-      this.triggerEvent('close', action);
-      this.triggerEvent(action);
+      this.$emit('close', action);
+      this.$emit(action);
     }
   }
 });

@@ -3,9 +3,7 @@ import { create } from '../utils/create';
 create({
   form: true,
 
-  externalClasses: [
-    'input-class'
-  ],
+  classes: ['input-class'],
 
   props: {
     icon: String,
@@ -65,8 +63,8 @@ create({
   methods: {
     onInput(event) {
       const { value = '' } = event.detail || {};
-      this.triggerEvent('input', value);
-      this.triggerEvent('change', value);
+      this.$emit('input', value);
+      this.$emit('change', value);
       this.setData({
         value,
         showClear: this.getShowClear({ value })
@@ -74,7 +72,7 @@ create({
     },
 
     onFocus(event) {
-      this.triggerEvent('focus', event);
+      this.$emit('focus', event);
       this.setData({
         focused: true,
         showClear: this.getShowClear({ focused: true })
@@ -83,7 +81,7 @@ create({
 
     onBlur(event) {
       this.focused = false;
-      this.triggerEvent('blur', event);
+      this.$emit('blur', event);
       this.setData({
         focused: false,
         showClear: this.getShowClear({ focused: false })
@@ -91,16 +89,15 @@ create({
     },
 
     onClickIcon() {
-      this.triggerEvent('click-icon');
+      this.$emit('click-icon');
     },
 
     getShowClear(options) {
-      const {
-        focused = this.data.focused,
-        value = this.data.value
-      } = options;
+      const { focused = this.data.focused, value = this.data.value } = options;
 
-      return this.data.clearable && focused && value !== '' && !this.data.readonly;
+      return (
+        this.data.clearable && focused && value !== '' && !this.data.readonly
+      );
     },
 
     onClear() {
@@ -108,12 +105,12 @@ create({
         value: '',
         showClear: this.getShowClear({ value: '' })
       });
-      this.triggerEvent('input', '');
-      this.triggerEvent('change', '');
+      this.$emit('input', '');
+      this.$emit('change', '');
     },
 
     onConfirm() {
-      this.triggerEvent('confirm', this.data.value);
+      this.$emit('confirm', this.data.value);
     }
   }
 });

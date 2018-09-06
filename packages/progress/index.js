@@ -1,10 +1,6 @@
 import { create } from '../utils/create';
 
 create({
-  externalClasses: [
-    'custom-class'
-  ],
-
   props: {
     inactive: {
       type: Boolean,

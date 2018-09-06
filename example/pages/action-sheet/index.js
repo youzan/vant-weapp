@@ -25,15 +25,15 @@ Page({
     });
   },
 
-  toggleActionsheet1() {
+  toggleActionSheet1() {
     this.toggle('show1');
   },
 
-  toggleActionsheet2() {
+  toggleActionSheet2() {
     this.toggle('show2');
   },
 
-  toggleActionsheet3() {
+  toggleActionSheet3() {
     this.toggle('show3');
   }
 });

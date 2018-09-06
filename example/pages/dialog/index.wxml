@@ -1,0 +1,34 @@
+<demo-block title="消息提示" padding>
+  <van-button bind:click="onClickAlert" custom-class="demo-margin-right">Alert</van-button>
+  <van-button bind:click="onClickAlert2">无标题 Alert</van-button>
+</demo-block>
+
+<demo-block title="消息确认" padding>
+  <van-button bind:click="onClickConfirm">Confirm</van-button>
+</demo-block>
+
+<demo-block title="高级用法" padding>
+  <van-button bind:click="showCustomDialog">高级用法</van-button>
+  <van-dialog
+    use-slot
+    async-close
+    show="{{ show }}"
+    show-cancel-button
+    bind:close="onClose"
+  >
+    <van-field
+      value="{{ username }}"
+      label="用户名"
+      placeholder="请输入用户名"
+    />
+    <van-field
+      value="{{ password }}"
+      type="password"
+      label="密码"
+      :border="false"
+      placeholder="请输入密码"
+    />
+  </van-dialog>
+</demo-block>
+
+<van-dialog id="van-dialog" />

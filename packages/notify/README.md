@@ -15,7 +15,7 @@
 ### 基础用法
 
 ```js
-import Notify from 'path/to/vant-weapp/dist/notify/index';
+import Notify from 'path/to/vant-weapp/dist/notify/notify';
 
 Notify('通知内容')
 ```

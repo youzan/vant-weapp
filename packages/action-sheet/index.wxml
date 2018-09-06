@@ -1,0 +1,38 @@
+<van-popup
+  show="{{ show }}"
+  overlay="{{ overlay }}"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
+  custom-class="van-action-sheet {{ title ? 'van-action-sheet--withtitle' : '' }}"
+  position="bottom"
+  bind:close="onClose"
+>
+  <view wx:if="{{ title }}" class="van-hairline--top-bottom van-action-sheet__header">
+    <view>{{ title }}</view>
+    <van-icon custom-class="van-action-sheet__close" name="close" bind:click="onClose" />
+  </view>
+  <view wx:else class="van-hairline--bottom">
+    <view
+      wx:for="{{ actions }}"
+      wx:key="index"
+      class="van-action-sheet__item van-hairline--top {{ item.disabled || item.loading ? 'van-action-sheet__item--disabled' : '' }} {{ item.className || '' }}"
+      data-index="{{ index }}"
+      bind:tap="onSelect"
+    >
+      <block wx:if="{{ !item.loading }}">
+        <view class="van-action-sheet__name">{{ item.name }}</view>
+        <view class="van-action-sheet__subname" wx:if="{{ item.subname }}">{{ item.subname }}</view>
+      </block>
+      <van-loading wx:else custom-class="van-action-sheet__loading" size="20px" />
+    </view>
+  </view>
+  <view
+    wx:if="{{ cancelText }}"
+    class="van-action-sheet__cancel van-hairline--top"
+    bind:tap="onCancel"
+  >
+    {{ cancelText }}
+  </view>
+  <view wx:else class="van-action-sheet__content">
+    <slot />
+  </view>
+</van-popup>

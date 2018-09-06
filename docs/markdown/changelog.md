@@ -78,7 +78,7 @@
 
 **Improvements**
 
-- 新增 Actionsheet 组件
+- 新增 ActionSheet 组件
 - 新增 Badge 组件
 - 新增 BadgeGroup 组件
 - 新增 Button 组件

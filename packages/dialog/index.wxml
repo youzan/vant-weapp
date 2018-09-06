@@ -1,0 +1,36 @@
+<van-popup show="{{ show }}" custom-class="van-dialog">
+  <view wx:if="{{ title }}" class="van-dialog__header {{ !message && !useSlot ? 'van-dialog--isolated' : '' }}">
+    {{ title }}
+  </view>
+  <view class="van-dialog__content" wx:if="{{ message || useSlot }}">
+    <slot wx:if="{{ useSlot }}" />
+    <view wx:elif="{{ message }}" class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }}">
+      {{ message }}
+    </view>
+  </view>
+  <view class="van-hairline--top van-dialog__footer {{ showCancelButton && showConfirmButton ? 'van-dialog__footer--buttons' : '' }}">
+    <view wx:if="{{ showCancelButton }}" class="van-dialog__button">
+      <van-button
+        loading="{{ loading.cancel }}"
+        size="large"
+        custom-class="van-dialog__cancel"
+        bind:click="onCancel"
+      >
+        {{ cancelButtonText }}
+      </van-button>
+    </view>
+    <view
+      wx:if="{{ showConfirmButton }}"
+      class="van-dialog__button {{ showCancelButton ? 'van-hairline--left' : '' }}"
+    >
+      <van-button
+        size="large"
+        loading="{{ loading.confirm }}"
+        custom-class="van-dialog__confirm"
+        bind:click="onConfirm"
+      >
+        {{ confirmButtonText }}
+      </van-button>
+    </view>
+  </view>
+</van-popup>

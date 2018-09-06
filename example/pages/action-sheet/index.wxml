@@ -1,0 +1,32 @@
+<demo-block title="基础用法" padding>
+  <van-button bind:click="toggleActionSheet1">弹出 ActionSheet</van-button>
+  <van-action-sheet
+    show="{{ show1 }}"
+    actions="{{ actions }}"
+    bind:close="toggleActionSheet1"
+    bind:select="toggleActionSheet1"
+  />
+</demo-block>
+
+<demo-block title="带取消按钮的 ActionSheet" padding>
+  <van-button bind:click="toggleActionSheet2">弹出带取消按钮的 ActionSheet</van-button>
+  <van-action-sheet
+    show="{{ show2 }}"
+    actions="{{ actions }}"
+    cancel-text="取消"
+    bind:close="toggleActionSheet2"
+    bind:cancel="toggleActionSheet2"
+    bind:select="toggleActionSheet2"
+  />
+</demo-block>
+
+<demo-block title="带标题的 ActionSheet" padding>
+  <van-button bind:click="toggleActionSheet3">弹出带标题的 ActionSheet</van-button>
+  <van-action-sheet
+    show="{{ show3 }}"
+    title="标题"
+    bind:close="toggleActionSheet3"
+  >
+    <view class="content">内容</view>
+  </van-action-sheet>
+</demo-block>

@@ -100,21 +100,12 @@ create({
       }
     },
 
-    getRect(selector, callback, all) {
-      wx.createSelectorQuery()
-        .in(this)[all ? 'selectAll' : 'select'](selector)
-        .boundingClientRect(rect => {
-          rect && callback(rect);
-        })
-        .exec();
-    },
-
     setLine() {
       if (this.data.type !== 'line') {
         return;
       }
 
-      this.getRect('.van-tab', rects => {
+      this.getRect('.van-tab', true).then(rects => {
         const rect = rects[this.data.active];
         const width = this.data.lineWidth || rect.width;
         let left = rects
@@ -130,7 +121,7 @@ create({
             transition-duration: ${this.data.duration}s;
           `
         });
-      }, true);
+      });
     },
 
     setActiveTab() {
@@ -155,20 +146,20 @@ create({
         return;
       }
 
-      this.getRect('.van-tab', tabRects => {
+      this.getRect('.van-tab', true).then(tabRects => {
         const tabRect = tabRects[this.data.active];
         const offsetLeft = tabRects
           .slice(0, this.data.active)
           .reduce((prev, curr) => prev + curr.width, 0);
         const tabWidth = tabRect.width;
 
-        this.getRect('.van-tabs__nav', navRect => {
+        this.getRect('.van-tabs__nav').then(navRect => {
           const navWidth = navRect.width;
           this.setData({
             scrollLeft: offsetLeft - (navWidth - tabWidth) / 2
           });
         });
-      }, true);
+      });
     }
   }
 });

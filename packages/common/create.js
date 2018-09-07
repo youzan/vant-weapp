@@ -1,6 +1,4 @@
-function $emit() {
-  this.triggerEvent.apply(this, arguments);
-}
+import { basic } from '../mixins/basic';
 
 export function create(sfc) {
   // map props to properties
@@ -15,25 +13,26 @@ export function create(sfc) {
     delete sfc.mixins;
   }
 
-  // map field to form-field behavior
-  if (sfc.field) {
-    sfc.behaviors = sfc.behaviors || [];
-    sfc.behaviors.push('wx://form-field');
-  }
+  // map classes to externalClasses
+  sfc.externalClasses = sfc.classes || [];
+  delete sfc.classes;
+
+  // add default externalClasses
+  sfc.externalClasses.push('custom-class');
+
+  // add default behaviors
+  sfc.behaviors = sfc.behaviors || [];
+  sfc.behaviors.push(basic);
 
   // add default options
   sfc.options = sfc.options || {};
   sfc.options.multipleSlots = true;
   sfc.options.addGlobalClass = true;
 
-  // add default externalClasses
-  sfc.externalClasses = sfc.classes || [];
-  sfc.externalClasses.push('custom-class');
-
-  // add default methods
-  sfc.methods = sfc.methods || {};
-  sfc.methods.$emit = $emit;
+  // map field to form-field behavior
+  if (sfc.field) {
+    sfc.behaviors.push('wx://form-field');
+  }
 
   Component(sfc);
 };
-

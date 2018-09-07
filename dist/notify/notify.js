@@ -5,8 +5,8 @@ const defaultOptions = {
   duration: 3000
 };
 
-function parseOptions(message) {
-  return isObj(message) ? message : { message };
+function parseOptions(text) {
+  return isObj(text) ? text : { text };
 }
 
 export default function Notify(options = {}) {

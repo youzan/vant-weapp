@@ -1,4 +1,4 @@
-export default Behavior({
+export const button = Behavior({
   properties: {
     loading: Boolean,
     // 在自定义组件中，无法与外界的 form 组件联动，暂时不开放
@@ -35,23 +35,23 @@ export default Behavior({
 
   methods: {
     bindgetuserinfo(event = {}) {
-      this.triggerEvent('getuserinfo', event.detail || {});
+      this.$emit('getuserinfo', event.detail || {});
     },
 
     bindcontact(event = {}) {
-      this.triggerEvent('contact', event.detail || {});
+      this.$emit('contact', event.detail || {});
     },
 
     bindgetphonenumber(event = {}) {
-      this.triggerEvent('getphonenumber', event.detail || {});
+      this.$emit('getphonenumber', event.detail || {});
     },
 
     bindopensetting(event = {}) {
-      this.triggerEvent('opensetting', event.detail || {});
+      this.$emit('opensetting', event.detail || {});
     },
 
     binderror(event = {}) {
-      this.triggerEvent('error', event.detail || {});
+      this.$emit('error', event.detail || {});
     }
   }
 });

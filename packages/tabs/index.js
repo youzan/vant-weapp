@@ -1,12 +1,8 @@
-const TAB_PATH = '../tab/index';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
+create({
   relations: {
-    [TAB_PATH]: {
+    '../tab/index': {
       type: 'descendant',
 
       linked(target) {
@@ -33,7 +29,7 @@ Component({
     }
   },
 
-  properties: {
+  props: {
     color: {
       type: String,
       observer: 'setLine'
@@ -78,7 +74,7 @@ Component({
 
   methods: {
     trigger(eventName, index) {
-      this.triggerEvent(eventName, {
+      this.$emit(eventName, {
         index,
         title: this.data.tabs[index].data.title
       });

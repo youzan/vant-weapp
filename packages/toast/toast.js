@@ -1,4 +1,4 @@
-import { isObj } from '../utils/index';
+import { isObj } from '../common/utils';
 
 const defaultOptions = {
   type: 'text',

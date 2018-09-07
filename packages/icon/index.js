@@ -1,11 +1,7 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  externalClasses: ['custom-class'],
-
-  properties: {
+create({
+  props: {
     info: null,
     name: String,
     size: String,
@@ -18,7 +14,7 @@ Component({
 
   methods: {
     onClick() {
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

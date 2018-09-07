@@ -1,16 +1,12 @@
-const TABS_PATH = '../tabs/index';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     disabled: Boolean,
     title: {
       type: String,
       observer() {
-        const parent = this.getRelationNodes(TABS_PATH)[0];
+        const parent = this.getRelationNodes('../tabs/index')[0];
         if (parent) {
           parent.setLine();
         }
@@ -19,7 +15,7 @@ Component({
   },
 
   relations: {
-    [TABS_PATH]: {
+    '../tabs/index': {
       type: 'ancestor'
     }
   },

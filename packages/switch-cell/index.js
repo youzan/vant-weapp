@@ -1,11 +1,9 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../common/create';
 
-  options: {
-    addGlobalClass: true
-  },
+create({
+  field: true,
 
-  properties: {
+  props: {
     title: String,
     border: Boolean,
     loading: Boolean,
@@ -28,7 +26,7 @@ Component({
 
   methods: {
     onChange(event) {
-      this.triggerEvent('change', event.detail);
+      this.$emit('change', event.detail);
     }
   }
 });

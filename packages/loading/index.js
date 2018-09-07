@@ -1,11 +1,7 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  externalClasses: ['custom-class'],
-
-  properties: {
+create({
+  props: {
     size: {
       type: String,
       value: '30px'

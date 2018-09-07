@@ -1,9 +1,7 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  properties: {
+create({
+  props: {
     title: String,
     message: String,
     useSlot: Boolean,
@@ -79,8 +77,8 @@ Component({
       if (!this.data.asyncClose) {
         this.setData({ show: false });
       }
-      this.triggerEvent('close', action);
-      this.triggerEvent(action);
+      this.$emit('close', action);
+      this.$emit(action);
     }
   }
 });

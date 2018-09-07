@@ -1,11 +1,7 @@
-Component({
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  externalClasses: [
-    'custom-class',
+create({
+  classes: [
     'thumb-class',
     'title-class',
     'price-class',
@@ -13,7 +9,7 @@ Component({
     'num-class'
   ],
 
-  properties: {
+  props: {
     num: String,
     desc: String,
     thumb: String,

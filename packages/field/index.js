@@ -1,16 +1,11 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../common/create';
 
-  externalClasses: [
-    'input-class'
-  ],
+create({
+  field: true,
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
+  classes: ['input-class'],
 
-  properties: {
+  props: {
     icon: String,
     label: String,
     error: Boolean,
@@ -68,8 +63,8 @@ Component({
   methods: {
     onInput(event) {
       const { value = '' } = event.detail || {};
-      this.triggerEvent('input', value);
-      this.triggerEvent('change', value);
+      this.$emit('input', value);
+      this.$emit('change', value);
       this.setData({
         value,
         showClear: this.getShowClear({ value })
@@ -77,7 +72,7 @@ Component({
     },
 
     onFocus(event) {
-      this.triggerEvent('focus', event);
+      this.$emit('focus', event);
       this.setData({
         focused: true,
         showClear: this.getShowClear({ focused: true })
@@ -86,7 +81,7 @@ Component({
 
     onBlur(event) {
       this.focused = false;
-      this.triggerEvent('blur', event);
+      this.$emit('blur', event);
       this.setData({
         focused: false,
         showClear: this.getShowClear({ focused: false })
@@ -94,16 +89,15 @@ Component({
     },
 
     onClickIcon() {
-      this.triggerEvent('click-icon');
+      this.$emit('click-icon');
     },
 
     getShowClear(options) {
-      const {
-        focused = this.data.focused,
-        value = this.data.value
-      } = options;
+      const { focused = this.data.focused, value = this.data.value } = options;
 
-      return this.data.clearable && focused && value !== '' && !this.data.readonly;
+      return (
+        this.data.clearable && focused && value !== '' && !this.data.readonly
+      );
     },
 
     onClear() {
@@ -111,12 +105,12 @@ Component({
         value: '',
         showClear: this.getShowClear({ value: '' })
       });
-      this.triggerEvent('input', '');
-      this.triggerEvent('change', '');
+      this.$emit('input', '');
+      this.$emit('change', '');
     },
 
     onConfirm() {
-      this.triggerEvent('confirm', this.data.value);
+      this.$emit('confirm', this.data.value);
     }
   }
 });

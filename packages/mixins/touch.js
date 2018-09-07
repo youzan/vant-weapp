@@ -1,4 +1,4 @@
-export default Behavior({
+export const touch = Behavior({
   methods: {
     touchStart(event) {
       this.direction = '';

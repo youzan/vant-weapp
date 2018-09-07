@@ -1,4 +1,4 @@
-export default function(showDefaultValue) {
+export const transition = function(showDefaultValue) {
   return Behavior({
     properties: {
       customStyle: String,
@@ -51,4 +51,4 @@ export default function(showDefaultValue) {
       }
     }
   });
-}
+};

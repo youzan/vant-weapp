@@ -1,11 +1,9 @@
+import { create } from '../common/create';
+
 const ITEM_HEIGHT = 44;
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     items: {
       type: Array,
       observer() {
@@ -16,9 +14,7 @@ Component({
     mainActiveIndex: {
       type: Number,
       value: 0,
-      observer() {
-        this.updateSubItems();
-      }
+      observer: 'updateSubItems'
     },
     activeId: {
       type: Number,
@@ -46,7 +42,7 @@ Component({
       const {
         dataset = {}
       } = event.currentTarget || {};
-      this.triggerEvent('click-item', { ...(dataset.item || {}) });
+      this.$emit('click-item', { ...(dataset.item || {}) });
     },
 
     // 当一个导航被点击时
@@ -54,7 +50,7 @@ Component({
       const {
         dataset = {}
       } = event.currentTarget || {};
-      this.triggerEvent('click-nav', { index: dataset.index });
+      this.$emit('click-nav', { index: dataset.index });
     },
 
     // 更新子项列表

@@ -1,6 +1,7 @@
-Component({
-  externalClasses: [
-    'custom-class',
+import { create } from '../common/create';
+
+create({
+  classes: [
     'title-class',
     'label-class',
     'value-class',
@@ -8,12 +9,7 @@ Component({
     'right-icon-class'
   ],
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
-  properties: {
+  props: {
     title: null,
     value: null,
     url: String,
@@ -42,7 +38,7 @@ Component({
       if (url) {
         wx[this.data.linkType]({ url });
       }
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

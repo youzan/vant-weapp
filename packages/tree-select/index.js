@@ -1,4 +1,4 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 
 const ITEM_HEIGHT = 44;
 
@@ -14,9 +14,7 @@ create({
     mainActiveIndex: {
       type: Number,
       value: 0,
-      observer() {
-        this.updateSubItems();
-      }
+      observer: 'updateSubItems'
     },
     activeId: {
       type: Number,

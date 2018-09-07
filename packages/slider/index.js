@@ -1,4 +1,4 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 import { touch } from '../mixins/touch';
 
 create({

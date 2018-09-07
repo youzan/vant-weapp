@@ -1,4 +1,4 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 import { transition } from '../mixins/transition';
 
 create({

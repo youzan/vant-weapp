@@ -1,4 +1,4 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 import { classNames } from '../common/class-names';
 import { button } from '../mixins/button';
 

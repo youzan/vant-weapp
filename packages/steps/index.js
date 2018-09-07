@@ -1,19 +1,15 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 
 create({
   props: {
     icon: String,
     steps: {
       type: Array,
-      observer() {
-        this.formatSteps();
-      }
+      observer: 'formatSteps'
     },
     active: {
       type: Number,
-      observer() {
-        this.formatSteps();
-      }
+      observer: 'formatSteps'
     },
     direction: {
       type: String,

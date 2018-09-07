@@ -1,4 +1,4 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 
 // Note that the bitwise operators and shift operators operate on 32-bit ints
 // so in that case, the max safe integer is 2^31-1, or 2147483647

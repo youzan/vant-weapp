@@ -1,6 +1,5 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 
-const VALID_MODE = ['closeable', 'link'];
 const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
@@ -10,7 +9,7 @@ create({
       type: String,
       value: '',
       observer() {
-        this.setData({}, this._init);
+        this.setData({}, this.init);
       }
     },
     mode: {
@@ -63,8 +62,7 @@ create({
   },
 
   attached() {
-    const { mode } = this.data;
-    if (mode && this._checkMode(mode)) {
+    if (this.data.mode) {
       this.setData({
         hasRightIcon: true
       });
@@ -77,15 +75,7 @@ create({
   },
 
   methods: {
-    _checkMode(val) {
-      const isValidMode = ~VALID_MODE.indexOf(val);
-      if (!isValidMode) {
-        console.warn(`mode only accept value of ${VALID_MODE}, now get ${val}.`);
-      }
-      return isValidMode;
-    },
-
-    _init() {
+    init() {
       wx.createSelectorQuery()
         .in(this)
         .select('.van-notice-bar__content')
@@ -128,7 +118,7 @@ create({
                   animation,
                   resetAnimation
                 }, () => {
-                  this._scroll();
+                  this.scroll();
                 });
               }
             })
@@ -137,7 +127,7 @@ create({
         .exec();
     },
 
-    _scroll() {
+    scroll() {
       const {
         animation, resetAnimation, wrapWidth, elapse, speed
       } = this.data;
@@ -153,7 +143,7 @@ create({
       }, 100);
 
       const timer = setTimeout(() => {
-        this._scroll();
+        this.scroll();
       }, elapse);
 
       this.setData({
@@ -161,7 +151,7 @@ create({
       });
     },
 
-    _handleButtonClick() {
+    onClickIcon() {
       const { timer } = this.data;
       timer && clearTimeout(timer);
       this.setData({

@@ -1,4 +1,4 @@
-import { create } from '../utils/create';
+import { create } from '../common/create';
 
 create({
   relations: {
@@ -10,9 +10,7 @@ create({
   props: {
     gutter: {
       type: Number,
-      observer() {
-        this.setGutter();
-      }
+      observer: 'setGutter'
     }
   },
 

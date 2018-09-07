@@ -1,5 +1,3 @@
-@import "./dist/common/index.wxss";
-
 page {
   color: #333;
   background: #f8f8f8;

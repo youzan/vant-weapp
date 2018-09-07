@@ -44,7 +44,8 @@ create({
 
     // 当一个导航被点击时
     onClickNav(event) {
-      this.$emit('click-nav', event.currentTarget.dataset.index);
+      const { index } = event.currentTarget.dataset;
+      this.$emit('click-nav', { index });
     },
 
     // 更新子项列表

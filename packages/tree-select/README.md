@@ -53,8 +53,8 @@ Page({
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| bind:click-nav | 左侧导航点击时，触发的事件 | index：被点击的导航的索引 |
-| bind:click-item | 右侧选择项被点击时，会触发的事件 | data: 该点击项的数据 |
+| bind:click-nav | 左侧导航点击时，触发的事件 | event.detail.index：被点击的导航的索引 |
+| bind:click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据 |
 
 ### 数据格式
 #### items 分类显示所需数据的数据结构

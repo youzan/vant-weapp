@@ -5,7 +5,7 @@ import { create } from '../common/create';
 const MAX = 2147483647;
 
 create({
-  form: true,
+  field: true,
 
   classes: [
     'input-class',

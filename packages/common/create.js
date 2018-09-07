@@ -15,8 +15,8 @@ export function create(sfc) {
     delete sfc.mixins;
   }
 
-  // map form to form-field behavior
-  if (sfc.form) {
+  // map field to form-field behavior
+  if (sfc.field) {
     sfc.behaviors = sfc.behaviors || [];
     sfc.behaviors.push('wx://form-field');
   }

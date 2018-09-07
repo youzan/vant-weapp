@@ -1,7 +1,7 @@
 import { create } from '../common/create';
 
 create({
-  form: true,
+  field: true,
 
   classes: ['cancel-class'],
 

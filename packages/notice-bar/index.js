@@ -76,55 +76,47 @@ create({
 
   methods: {
     init() {
-      wx.createSelectorQuery()
-        .in(this)
-        .select('.van-notice-bar__content')
-        .boundingClientRect((rect) => {
+      this.getRect('.van-notice-bar__content').then(rect => {
+        if (!rect || !rect.width) {
+          return;
+        }
+        this.setData({
+          width: rect.width
+        });
+
+        this.getRect('.van-notice-bar__content-wrap').then(rect => {
           if (!rect || !rect.width) {
             return;
           }
-          this.setData({
-            width: rect.width
-          });
 
-          wx.createSelectorQuery()
-            .in(this)
-            .select('.van-notice-bar__content-wrap')
-            .boundingClientRect((rect) => {
-              if (!rect || !rect.width) {
-                return;
-              }
+          const wrapWidth = rect.width;
+          const {
+            width, speed, scrollable, delay
+          } = this.data;
 
-              const wrapWidth = rect.width;
-              const {
-                width, speed, scrollable, delay
-              } = this.data;
+          if (scrollable && wrapWidth < width) {
+            const elapse = width / speed * 1000;
+            const animation = wx.createAnimation({
+              duration: elapse,
+              timeingFunction: 'linear',
+              delay
+            });
+            const resetAnimation = wx.createAnimation({
+              duration: 0,
+              timeingFunction: 'linear'
+            });
 
-              if (scrollable && wrapWidth < width) {
-                const elapse = width / speed * 1000;
-                const animation = wx.createAnimation({
-                  duration: elapse,
-                  timeingFunction: 'linear',
-                  delay
-                });
-                const resetAnimation = wx.createAnimation({
-                  duration: 0,
-                  timeingFunction: 'linear'
-                });
-
-                this.setData({
-                  elapse,
-                  wrapWidth,
-                  animation,
-                  resetAnimation
-                }, () => {
-                  this.scroll();
-                });
-              }
-            })
-            .exec();
-        })
-        .exec();
+            this.setData({
+              elapse,
+              wrapWidth,
+              animation,
+              resetAnimation
+            }, () => {
+              this.scroll();
+            });
+          }
+        });
+      });
     },
 
     scroll() {

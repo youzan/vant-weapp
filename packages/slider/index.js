@@ -33,14 +33,6 @@ create({
   },
 
   methods: {
-    getRect(callback) {
-      wx.createSelectorQuery()
-        .in(this)
-        .select('.van-slider')
-        .boundingClientRect(callback)
-        .exec();
-    },
-
     onTouchStart(event) {
       if (this.data.disabled) return;
 
@@ -52,7 +44,7 @@ create({
       if (this.data.disabled) return;
 
       this.touchMove(event);
-      this.getRect(rect => {
+      this.getRect('.van-slider').then(rect => {
         const diff = this.deltaX / rect.width * 100;
         this.updateValue(this.startValue + diff);
       });

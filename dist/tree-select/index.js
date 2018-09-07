@@ -39,18 +39,12 @@ create({
   methods: {
     // 当一个子项被选择时
     onSelectItem(event) {
-      const {
-        dataset = {}
-      } = event.currentTarget || {};
-      this.$emit('click-item', { ...(dataset.item || {}) });
+      this.$emit('click-item', event.currentTarget.dataset.item);
     },
 
     // 当一个导航被点击时
     onClickNav(event) {
-      const {
-        dataset = {}
-      } = event.currentTarget || {};
-      this.$emit('click-nav', { index: dataset.index });
+      this.$emit('click-nav', event.currentTarget.dataset.index);
     },
 
     // 更新子项列表

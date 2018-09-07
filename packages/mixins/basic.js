@@ -1,9 +1,4 @@
 export const basic = Behavior({
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
-
   methods: {
     $emit() {
       this.triggerEvent.apply(this, arguments);

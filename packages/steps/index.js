@@ -28,16 +28,10 @@ create({
   methods: {
     formatSteps() {
       const { steps } = this.data;
-      const formattedSteps = steps.map((step, index) => {
-        return {
-          ...step,
-          status: this.getStatus(index)
-        };
+      steps.forEach((step, index) => {
+        step.status = this.getStatus(index);
       });
-
-      this.setData({
-        formattedSteps
-      });
+      this.setData({ steps });
     },
 
     getStatus(index) {

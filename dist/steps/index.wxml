@@ -1,6 +1,6 @@
 <view class="custom-class van-steps van-steps--{{ direction }}">
   <view
-    wx:for="{{ formattedSteps }}"
+    wx:for="{{ steps }}"
     wx:key="index"
     class="van-step van-hairline van-step--{{ direction }} {{ item.status ? 'van-step--' + item.status : '' }}"
     style="{{ width ? 'width:' + width + 'px' : '' }}"

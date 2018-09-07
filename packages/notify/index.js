@@ -1,5 +1,4 @@
 import { create } from '../common/create';
-import Notify from './notify';
 
 create({
   props: {
@@ -42,5 +41,3 @@ create({
     }
   }
 });
-
-export default Notify;

@@ -1,5 +1,4 @@
 import { create } from '../common/create';
-import Toast from './toast';
 
 create({
   props: {
@@ -29,5 +28,3 @@ create({
     }
   }
 });
-
-export default Toast;

@@ -1,15 +1,10 @@
-import transitionBehaviors from '../behaviors/transition';
+import { create } from '../common/create';
+import { transition } from '../mixins/transition';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
+create({
+  mixins: [transition(false)],
 
-  externalClasses: ['custom-class'],
-
-  behaviors: [transitionBehaviors(false)],
-
-  properties: {
+  props: {
     overlayStyle: String,
     overlay: {
       type: Boolean,
@@ -27,10 +22,10 @@ Component({
 
   methods: {
     onClickOverlay() {
-      this.triggerEvent('click-overlay');
+      this.$emit('click-overlay');
 
       if (this.data.closeOnClickOverlay) {
-        this.triggerEvent('close');
+        this.$emit('close');
       }
     }
   }

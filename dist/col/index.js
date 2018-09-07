@@ -1,19 +1,13 @@
-const ROW_PATH = '../row/index';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  externalClasses: ['custom-class'],
-
+create({
   relations: {
-    [ROW_PATH]: {
+    '../row/index': {
       type: 'ancestor'
     }
   },
 
-  properties: {
+  props: {
     span: Number,
     offset: Number
   },

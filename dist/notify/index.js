@@ -1,11 +1,7 @@
-import Notify from './notify';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     text: String,
     color: {
       type: String,
@@ -45,5 +41,3 @@ Component({
     }
   }
 });
-
-export default Notify;

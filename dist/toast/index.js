@@ -1,11 +1,7 @@
-import Toast from './toast';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  properties: {
+create({
+  props: {
     show: Boolean,
     mask: Boolean,
     message: String,
@@ -32,5 +28,3 @@ Component({
     }
   }
 });
-
-export default Toast;

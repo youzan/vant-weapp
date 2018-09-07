@@ -18,7 +18,7 @@ create({
     centered: Boolean,
     currency: {
       type: String,
-      default: '¥'
+      value: '¥'
     }
   }
 });

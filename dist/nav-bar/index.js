@@ -1,15 +1,9 @@
-Component({
-  externalClasses: [
-    'custom-class',
-    'title-class'
-  ],
+import { create } from '../common/create';
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
+create({
+  classes: ['title-class'],
 
-  properties: {
+  props: {
     title: String,
     leftText: String,
     rightText: String,
@@ -23,11 +17,11 @@ Component({
 
   methods: {
     onClickLeft() {
-      this.triggerEvent('click-left');
+      this.$emit('click-left');
     },
 
     onClickRight() {
-      this.triggerEvent('click-right');
+      this.$emit('click-right');
     }
   }
 });

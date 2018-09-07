@@ -1,14 +1,11 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../common/create';
 
-  externalClasses: ['custom-class', 'cancel-class'],
+create({
+  field: true,
 
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true
-  },
+  classes: ['cancel-class'],
 
-  properties: {
+  props: {
     focus: Boolean,
     disabled: Boolean,
     readonly: Boolean,
@@ -27,25 +24,25 @@ Component({
 
   methods: {
     onChange(event) {
-      this.triggerEvent('change', event.detail);
+      this.$emit('change', event.detail);
     },
 
     onCancel() {
       this.setData({ value: '' });
-      this.triggerEvent('cancel');
-      this.triggerEvent('change', '');
+      this.$emit('cancel');
+      this.$emit('change', '');
     },
 
     onSearch() {
-      this.triggerEvent('search', this.data.value);
+      this.$emit('search', this.data.value);
     },
 
     onFocus() {
-      this.triggerEvent('focus');
+      this.$emit('focus');
     },
 
     onBlur() {
-      this.triggerEvent('blur');
+      this.$emit('blur');
     }
   }
 });

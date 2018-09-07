@@ -1,13 +1,11 @@
-Component({
-  behaviors: ['wx://form-field'],
+import { create } from '../common/create';
 
-  options: {
-    addGlobalClass: true
-  },
+create({
+  field: true,
 
-  externalClasses: ['custom-class', 'node-class'],
+  classes: ['node-class'],
 
-  properties: {
+  props: {
     loading: Boolean,
     disabled: Boolean,
     checked: {
@@ -30,8 +28,8 @@ Component({
     onClick() {
       if (!this.data.disabled && !this.data.loading) {
         const checked = !this.data.checked;
-        this.triggerEvent('input', checked);
-        this.triggerEvent('change', checked);
+        this.$emit('input', checked);
+        this.$emit('change', checked);
       }
     }
   }

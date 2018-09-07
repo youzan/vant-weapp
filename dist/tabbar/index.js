@@ -1,13 +1,7 @@
-const ITEM_PATH = '../tabbar-item/index';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  externalClasses: ['custom-class'],
-
-  properties: {
+create({
+  props: {
     active: {
       type: Number,
       observer(active) {
@@ -35,7 +29,7 @@ Component({
   },
 
   relations: {
-    [ITEM_PATH]: {
+    '../tabbar-item/index': {
       type: 'descendant',
 
       linked(target) {
@@ -63,7 +57,7 @@ Component({
     onChange(child) {
       const active = this.data.items.indexOf(child);
       if (active !== this.data.currentActive && active !== -1) {
-        this.triggerEvent('change', active);
+        this.$emit('change', active);
         this.setData({ currentActive: active });
         this.setActiveItem();
       }

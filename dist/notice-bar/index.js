@@ -1,20 +1,15 @@
-const VALID_MODE = ['closeable', 'link'];
+import { create } from '../common/create';
+
 const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  externalClasses: ['custom-class'],
-
-  properties: {
+create({
+  props: {
     text: {
       type: String,
       value: '',
       observer() {
-        this.setData({}, this._init);
+        this.setData({}, this.init);
       }
     },
     mode: {
@@ -67,8 +62,7 @@ Component({
   },
 
   attached() {
-    const { mode } = this.data;
-    if (mode && this._checkMode(mode)) {
+    if (this.data.mode) {
       this.setData({
         hasRightIcon: true
       });
@@ -81,15 +75,7 @@ Component({
   },
 
   methods: {
-    _checkMode(val) {
-      const isValidMode = ~VALID_MODE.indexOf(val);
-      if (!isValidMode) {
-        console.warn(`mode only accept value of ${VALID_MODE}, now get ${val}.`);
-      }
-      return isValidMode;
-    },
-
-    _init() {
+    init() {
       wx.createSelectorQuery()
         .in(this)
         .select('.van-notice-bar__content')
@@ -132,7 +118,7 @@ Component({
                   animation,
                   resetAnimation
                 }, () => {
-                  this._scroll();
+                  this.scroll();
                 });
               }
             })
@@ -141,7 +127,7 @@ Component({
         .exec();
     },
 
-    _scroll() {
+    scroll() {
       const {
         animation, resetAnimation, wrapWidth, elapse, speed
       } = this.data;
@@ -157,7 +143,7 @@ Component({
       }, 100);
 
       const timer = setTimeout(() => {
-        this._scroll();
+        this.scroll();
       }, elapse);
 
       this.setData({
@@ -165,7 +151,7 @@ Component({
       });
     },
 
-    _handleButtonClick() {
+    onClickIcon() {
       const { timer } = this.data;
       timer && clearTimeout(timer);
       this.setData({
@@ -175,7 +161,7 @@ Component({
     },
 
     onClick(event) {
-      this.triggerEvent('click', event);
+      this.$emit('click', event);
     }
   }
 });

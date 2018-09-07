@@ -1,14 +1,8 @@
-const BADGE_PATH = '../badge/index';
+import { create } from '../common/create';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
-
-  externalClasses: ['custom-class'],
-
+create({
   relations: {
-    [BADGE_PATH]: {
+    '../badge/index': {
       type: 'descendant',
 
       linked(target) {
@@ -23,13 +17,11 @@ Component({
     }
   },
 
-  properties: {
+  props: {
     active: {
       type: Number,
       value: 0,
-      observer() {
-        this.setActive();
-      }
+      observer: 'setActive'
     }
   },
 
@@ -53,7 +45,7 @@ Component({
       }
 
       if (this.currentActive !== -1) {
-        this.triggerEvent('change', active);
+        this.$emit('change', active);
       }
 
       this.currentActive = active;

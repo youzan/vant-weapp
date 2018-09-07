@@ -1,9 +1,7 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  properties: {
+create({
+  props: {
     show: Boolean,
     mask: Boolean,
     customStyle: String,
@@ -15,7 +13,7 @@ Component({
 
   methods: {
     onClick() {
-      this.triggerEvent('click');
+      this.$emit('click');
     }
   }
 });

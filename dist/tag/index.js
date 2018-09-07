@@ -1,11 +1,7 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  externalClasses: ['custom-class'],
-
-  properties: {
+create({
+  props: {
     type: String,
     mark: Boolean,
     plain: Boolean

@@ -1,15 +1,10 @@
-import touchBehaviors from '../behaviors/touch';
+import { create } from '../common/create';
+import { touch } from '../mixins/touch';
 
-Component({
-  options: {
-    addGlobalClass: true
-  },
+create({
+  mixins: [touch],
 
-  externalClasses: ['custom-class'],
-
-  behaviors: [touchBehaviors],
-
-  properties: {
+  props: {
     disabled: Boolean,
     max: {
       type: Number,
@@ -86,7 +81,7 @@ Component({
       });
 
       if (end) {
-        this.triggerEvent('change', value);
+        this.$emit('change', value);
       }
     },
 

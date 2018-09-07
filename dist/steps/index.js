@@ -1,25 +1,15 @@
-Component({
-  options: {
-    addGlobalClass: true
-  },
+import { create } from '../common/create';
 
-  externalClasses: [
-    'custom-class'
-  ],
-
-  properties: {
+create({
+  props: {
     icon: String,
     steps: {
       type: Array,
-      observer() {
-        this.formatSteps();
-      }
+      observer: 'formatSteps'
     },
     active: {
       type: Number,
-      observer() {
-        this.formatSteps();
-      }
+      observer: 'formatSteps'
     },
     direction: {
       type: String,

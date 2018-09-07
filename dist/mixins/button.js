@@ -1,15 +1,12 @@
 export const button = Behavior({
   properties: {
     loading: Boolean,
-    // 在自定义组件中，无法与外界的 form 组件联动，暂时不开放
-    // formType: String,
     openType: String,
     appParameter: String,
-    // 暂时不开放，直接传入无法设置样式
-    // hoverClass: {
-    //   type: String,
-    //   value: 'button-hover'
-    // },
+    sendMessageTitle: String,
+    sendMessagePath: String,
+    sendMessageImg: String,
+    showMessageCard: String,
     hoverStopPropagation: Boolean,
     hoverStartTime: {
       type: Number,
@@ -26,32 +23,28 @@ export const button = Behavior({
     sessionFrom: {
       type: String,
       value: ''
-    },
-    sendMessageTitle: String,
-    sendMessagePath: String,
-    sendMessageImg: String,
-    showMessageCard: String
+    }
   },
 
   methods: {
     bindgetuserinfo(event = {}) {
-      this.$emit('getuserinfo', event.detail || {});
+      this.$emit('getuserinfo', event.detail);
     },
 
     bindcontact(event = {}) {
-      this.$emit('contact', event.detail || {});
+      this.$emit('contact', event.detail);
     },
 
     bindgetphonenumber(event = {}) {
-      this.$emit('getphonenumber', event.detail || {});
+      this.$emit('getphonenumber', event.detail);
     },
 
     bindopensetting(event = {}) {
-      this.$emit('opensetting', event.detail || {});
+      this.$emit('opensetting', event.detail);
     },
 
     binderror(event = {}) {
-      this.$emit('error', event.detail || {});
+      this.$emit('error', event.detail);
     }
   }
 });

@@ -1,5 +1,31 @@
 ## 更新日志
 
+### [0.3.0](https://github.com/youzan/vant-weapp/tree/v0.3.0)
+`2018-09-07`
+
+**Breaking changes**
+
+- Actionsheet: 重命名为 ActionSheet [\#514](https://github.com/youzan/vant-weapp/pull/514)
+- Toast: 修改组件引入路径，避免编辑器报错的问题 [\#524](https://github.com/youzan/vant-weapp/pull/524)
+- 组件统一使用 ES module 进行模块引用 [\#499](https://github.com/youzan/vant-weapp/pull/499)
+
+**Improvements**
+
+- 新增 Tab 标签页组件 [\#496](https://github.com/youzan/vant-weapp/pull/496)
+- 新增 Dialog 对话框组件 [\#496](https://github.com/youzan/vant-weapp/pull/496)
+- 优化 Popup 动画，支持退场动画 [\#498](https://github.com/youzan/vant-weapp/pull/498)
+- 优化组件风格、代码体积 [\#523](https://github.com/youzan/vant-weapp/pull/523)
+- ActionSheet 支持微信开放能力 [\#516](https://github.com/youzan/vant-weapp/pull/516)
+
+**Bug Fixes**
+
+- 修复 ActionSheet subname 属性不生效的问题 [\#515](https://github.com/youzan/vant-weapp/pull/515)
+- 修复 Card currency 默认值不生效的问题 [\#525](https://github.com/youzan/vant-weapp/pull/525)
+- 修复 Field title 宽度错误的问题 [\#525](https://github.com/youzan/vant-weapp/pull/525)
+- 修复 Tab card 类型下 color 属性不生效的问题 [\#520](https://github.com/youzan/vant-weapp/pull/520)
+- 修复 Button 在加载状态下仍然显示文字的问题 [\#503](https://github.com/youzan/vant-weapp/pull/503)
+
+
 ### [0.2.1](https://github.com/youzan/vant-weapp/tree/v0.2.1)
 `2018-08-31`
 

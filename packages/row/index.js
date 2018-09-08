@@ -3,7 +3,13 @@ import { create } from '../common/create';
 create({
   relations: {
     '../col/index': {
-      type: 'descendant'
+      type: 'descendant',
+
+      linked(target) {
+        if (this.data.gutter) {
+          target.setGutter(this.data.gutter);
+        }
+      }
     }
   },
 
@@ -15,7 +21,9 @@ create({
   },
 
   ready() {
-    this.setGutter();
+    if (this.data.gutter) {
+      this.setGutter();
+    }
   },
 
   methods: {

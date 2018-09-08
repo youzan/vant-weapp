@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v0.3.1](https://github.com/youzan/vant-weapp/tree/v0.3.1) (2018-09-08)
+[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.3.0...v0.3.1)
+
+**Breaking changes**
+
+- ActionSheet 不支持 open-type 吗？ [\#510](https://github.com/youzan/vant-weapp/issues/510)
+- Popup 组件 关闭时缺少动画 [\#494](https://github.com/youzan/vant-weapp/issues/494)
+
+**Bug Fixes**
+
+- Cell组件 titleWidth属性 未加上单位，不生效导致基础样式错误 [\#490](https://github.com/youzan/vant-weapp/issues/490)
+
+**Issue**
+
+- 请问支持修改button的背景色和字体大小吗？ [\#534](https://github.com/youzan/vant-weapp/issues/534)
+- Field 输入框 这个组件官网上面怎么只有html没有pages数据与方法呢？ [\#508](https://github.com/youzan/vant-weapp/issues/508)
+- Tab组件会计划在什么时候加入？ [\#495](https://github.com/youzan/vant-weapp/issues/495)
+
+**Improvements**
+
+- \[bugfix\] common style entry [\#535](https://github.com/youzan/vant-weapp/pull/535) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add dialog preview [\#532](https://github.com/youzan/vant-weapp/pull/532) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.3.0](https://github.com/youzan/vant-weapp/tree/v0.3.0) (2018-09-07)
 [Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.2.1...v0.3.0)
 
@@ -7,7 +30,6 @@
 
 - VM5531:1 thirdScriptError consloe is not defined; \[Component\] Event Listener Error @ dist/search/index\#\(anonymous\) ReferenceError: consloe is not defined [\#522](https://github.com/youzan/vant-weapp/issues/522)
 - tab标签在修改了color无效 [\#513](https://github.com/youzan/vant-weapp/issues/513)
-- Layout 布局组件Bug [\#512](https://github.com/youzan/vant-weapp/issues/512)
 - 8.30号更新开发者工具后，有一部分组件报错，影响项目编译 [\#511](https://github.com/youzan/vant-weapp/issues/511)
 - 官方网站怎么没有找到tabs标签页，扫码看到是有这个功能的呀 [\#507](https://github.com/youzan/vant-weapp/issues/507)
 - Tabbar 标签栏可否支持自定义颜色 [\#489](https://github.com/youzan/vant-weapp/issues/489)

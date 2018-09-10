@@ -5,6 +5,7 @@ create({
   mixins: [transition(false)],
 
   props: {
+    transition: String,
     overlayStyle: String,
     overlay: {
       type: Boolean,

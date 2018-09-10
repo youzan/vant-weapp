@@ -25,6 +25,13 @@ create({
         parent.onChange(this);
       }
       this.$emit('click');
+    },
+
+    setActive(data) {
+      const { active, count } = this.data;
+      if (active !== data.active || count !== data.count) {
+        this.setData(data);
+      }
     }
   }
 });

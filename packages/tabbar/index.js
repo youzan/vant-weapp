@@ -34,12 +34,16 @@ create({
 
       linked(target) {
         this.data.items.push(target);
-        this.setActiveItem();
+        setTimeout(() => {
+          this.setActiveItem();
+        });
       },
 
       unlinked(target) {
         this.data.items = this.data.items.filter(item => item !== target);
-        this.setActiveItem();
+        setTimeout(() => {
+          this.setActiveItem();
+        });
       }
     }
   },
@@ -47,7 +51,7 @@ create({
   methods: {
     setActiveItem() {
       this.data.items.forEach((item, index) => {
-        item.setData({
+        item.setActive({
           active: index === this.data.currentActive,
           count: this.data.items.length
         });

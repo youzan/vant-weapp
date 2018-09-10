@@ -16,7 +16,9 @@ create({
     setGutter(gutter) {
       const padding = `${gutter / 2}px`;
       const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
-      this.setData({ style });
+      if (style !== this.data.style) {
+        this.setData({ style });
+      }
     }
   }
 });

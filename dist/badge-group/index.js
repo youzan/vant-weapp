@@ -36,8 +36,10 @@ create({
   methods: {
     setActive(badge) {
       let { active } = this.data;
+      const { badges } = this.data;
+
       if (badge) {
-        active = this.data.badges.indexOf(badge);
+        active = badges.indexOf(badge);
       }
 
       if (active === this.currentActive) {
@@ -46,12 +48,11 @@ create({
 
       if (this.currentActive !== -1) {
         this.$emit('change', active);
+        badges[this.currentActive].setActive(false);
       }
 
+      badges[active].setActive(true);
       this.currentActive = active;
-      this.data.badges.forEach((badge, index) => {
-        badge.setActive(index === active);
-      });
     }
   }
 });

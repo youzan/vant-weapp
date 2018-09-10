@@ -14,3 +14,4 @@
     />
   </view>
 </view>
+<view>{{ customColor }}</view>

@@ -19,7 +19,6 @@ create({
     required: Boolean,
     iconClass: String,
     clearable: Boolean,
-    labelAlign: String,
     inputAlign: String,
     customClass: String,
     confirmType: String,
@@ -58,6 +57,18 @@ create({
   data: {
     focused: false,
     showClear: false
+  },
+
+  computed: {
+    inputClass() {
+      const { data } = this;
+      return this.classNames('input-class', 'van-field__input', {
+        'van-field--error': data.error,
+        'van-field__textarea': data.type === 'textarea',
+        'van-field__input--disabled': data.disabled,
+        [`van-field--${data.inputAlign}`]: data.inputAlign
+      });
+    }
   },
 
   methods: {

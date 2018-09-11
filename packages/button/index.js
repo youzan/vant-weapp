@@ -1,35 +1,37 @@
 import { create } from '../common/create';
-import { classNames } from '../common/class-names';
 import { button } from '../mixins/button';
-
-const booleanProp = {
-  type: Boolean,
-  observer: 'setClasses'
-};
 
 create({
   mixins: [button],
 
   props: {
+    plain: Boolean,
+    block: Boolean,
+    square: Boolean,
+    loading: Boolean,
+    disabled: Boolean,
     type: {
       type: String,
-      value: 'default',
-      observer: 'setClasses'
+      value: 'default'
     },
     size: {
       type: String,
-      value: 'normal',
-      observer: 'setClasses'
-    },
-    plain: booleanProp,
-    block: booleanProp,
-    square: booleanProp,
-    loading: booleanProp,
-    disabled: booleanProp
+      value: 'normal'
+    }
   },
 
-  attached() {
-    this.setClasses();
+  computed: {
+    classes() {
+      const { type, size, plain, disabled, loading, square, block } = this.data;
+      return this.classNames(`van-button--${type}`, `van-button--${size}`, {
+        'van-button--block': block,
+        'van-button--plain': plain,
+        'van-button--square': square,
+        'van-button--loading': loading,
+        'van-button--disabled': disabled,
+        'van-button--unclickable': disabled || loading
+      });
+    }
   },
 
   methods: {
@@ -37,20 +39,6 @@ create({
       if (!this.data.disabled && !this.data.loading) {
         this.$emit('click');
       }
-    },
-
-    setClasses() {
-      const { type, size, plain, disabled, loading, square, block } = this.data;
-      this.setData({
-        classes: classNames(`van-button--${type}`, `van-button--${size}`, {
-          'van-button--block': block,
-          'van-button--plain': plain,
-          'van-button--square': square,
-          'van-button--loading': loading,
-          'van-button--disabled': disabled,
-          'van-button--unclickable': disabled || loading
-        })
-      });
     }
   }
 });

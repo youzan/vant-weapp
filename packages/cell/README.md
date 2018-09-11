@@ -106,7 +106,6 @@
 | clickable | 是否开启点击反馈 | `Boolean` | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
 
 ### Cell Event
 
@@ -131,5 +130,3 @@
 | title-class | 标题样式类 |
 | label-class | 描述信息样式类 |
 | value-class | 右侧内容样式类 |
-| left-icon-class | 左侧图标样式类 |
-| right-icon-class | 右侧图标样式类 |

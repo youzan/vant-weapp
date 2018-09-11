@@ -2,13 +2,22 @@ import { create } from '../common/create';
 
 create({
   props: {
-    disabled: Boolean,
+    disabled: {
+      type: Boolean,
+      observer() {
+        const parent = this.getRelationNodes('../tabs/index')[0];
+        if (parent) {
+          parent.updateTabs();
+        }
+      }
+    },
     title: {
       type: String,
       observer() {
         const parent = this.getRelationNodes('../tabs/index')[0];
         if (parent) {
           parent.setLine();
+          parent.updateTabs();
         }
       }
     }

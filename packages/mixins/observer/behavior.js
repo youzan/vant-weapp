@@ -5,9 +5,9 @@ export const behavior = Behavior({
     }
 
     const cache = {};
-    const keys = Object.keys(computed);
     const { setData } = this;
     const { computed } = this.$options();
+    const keys = Object.keys(computed);
 
     const calcComputed = () => {
       const needUpdate = {};

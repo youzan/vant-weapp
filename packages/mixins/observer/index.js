@@ -1,27 +1,14 @@
-import { isObj } from '../../common/utils';
-
-const behavior = Behavior({
-  created() {
-    if (!this.computed) {
-      return;
-    }
-
-    const computed = this.computed();
-    if (!isObj(computed)) {
-      return;
-    }
-
-    const { data } = this;
-    Object.keys(computed).forEach(key => {
-
-    });
-  }
-});
+import { behavior } from './behavior';
+import { observeProps } from './props';
 
 export function observe(sfc) {
-  sfc.behaviors.push(behavior);
   if (sfc.computed) {
+    sfc.behaviors.push(behavior);
     sfc.methods = sfc.methods || {};
-    sfc.methods.computed = () => sfc.computed;
+    sfc.methods.$options = () => sfc;
+
+    if (sfc.properties) {
+      observeProps(sfc.properties);
+    }
   }
 }

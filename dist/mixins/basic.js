@@ -9,7 +9,13 @@ export const basic = Behavior({
         wx.createSelectorQuery()
           .in(this)[all ? 'selectAll' : 'select'](selector)
           .boundingClientRect(rect => {
-            rect && resolve(rect);
+            if (all && Array.isArray(rect) && rect.length) {
+              resolve(rect);
+            }
+
+            if (!all && rect) {
+              resolve(rect);
+            }
           })
           .exec();
       });

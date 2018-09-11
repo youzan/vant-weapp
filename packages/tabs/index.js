@@ -5,21 +5,16 @@ create({
     '../tab/index': {
       type: 'descendant',
 
-      linked(target) {
-        const { tabs } = this.data;
-        tabs.push({
-          instance: target,
-          data: target.data
+      linked(child) {
+        this.data.tabs.push({
+          instance: child,
+          data: child.data
         });
-        this.setData({
-          tabs,
-          scrollable: tabs.length > this.data.swipeThreshold
-        });
-        this.setActiveTab();
+        this.updateTabs();
       },
 
-      unlinked(target) {
-        const tabs = this.data.tabs.filter(item => item.instance !== target);
+      unlinked(child) {
+        const tabs = this.data.tabs.filter(item => item.instance !== child);
         this.setData({
           tabs,
           scrollable: tabs.length > this.data.swipeThreshold
@@ -40,7 +35,8 @@ create({
     },
     active: {
       type: null,
-      value: 0
+      value: 0,
+      observer: 'setActiveTab'
     },
     type: {
       type: String,
@@ -73,6 +69,15 @@ create({
   },
 
   methods: {
+    updateTabs() {
+      const { tabs } = this.data;
+      this.setData({
+        tabs,
+        scrollable: tabs.length > this.data.swipeThreshold
+      });
+      this.setActiveTab();
+    },
+
     trigger(eventName, index) {
       this.$emit(eventName, {
         index,
@@ -95,8 +100,6 @@ create({
         this.trigger('change', active);
         this.setData({ active });
         this.setActiveTab();
-        this.setLine();
-        this.scrollIntoView();
       }
     },
 
@@ -138,6 +141,9 @@ create({
           item.instance.setData(data);
         }
       });
+
+      this.setLine();
+      this.scrollIntoView();
     },
 
     // scroll active tab into view

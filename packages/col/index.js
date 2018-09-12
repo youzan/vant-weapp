@@ -12,6 +12,16 @@ create({
     offset: Number
   },
 
+  computed: {
+    classes() {
+      const { span, offset } = this.data;
+      return this.classNames('custom-class', 'van-col', {
+        [`van-col--${span}`]: span,
+        [`van-col--${offset}`]: offset
+      });
+    }
+  },
+
   methods: {
     setGutter(gutter) {
       const padding = `${gutter / 2}px`;

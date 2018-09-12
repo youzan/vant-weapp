@@ -86,11 +86,11 @@ npm run dev
 
 ## 链接
 
+* [更新日志](#/changelog)
 * [意见反馈](https://github.com/youzan/vant-weapp/issues)
 * [加入我们](https://job.youzan.com)
-* [更新日志](#/changelog)
-* [Vue 组件库](https://github.com/youzan/vant)
-* [React 组件库](https://www.youzanyun.com/zanui/zent)
+* [Vant: 移动端 Vue UI](https://github.com/youzan/vant)
+* [React: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
 
 ## 微信讨论群
 

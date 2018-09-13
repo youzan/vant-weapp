@@ -5,6 +5,7 @@ const defaultOptions = {
   mask: false,
   message: '',
   show: true,
+  zIndex: 1000,
   duration: 3000,
   position: 'middle',
   forbidClick: false,

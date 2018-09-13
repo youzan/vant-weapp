@@ -1,6 +1,7 @@
 <van-popup
   show="{{ show }}"
   transition="scale"
+  z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   close-on-click-overlay="{{ closeOnClickOverlay }}"
   custom-class="van-dialog"

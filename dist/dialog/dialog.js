@@ -23,6 +23,7 @@ Dialog.defaultOptions = {
   show: true,
   title: '',
   message: '',
+  zIndex: 100,
   overlay: true,
   asyncClose: false,
   selector: '#van-dialog',

@@ -7,6 +7,10 @@ create({
   props: {
     transition: String,
     overlayStyle: String,
+    zIndex: {
+      type: Number,
+      value: 100
+    },
     overlay: {
       type: Boolean,
       value: true

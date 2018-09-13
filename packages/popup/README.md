@@ -51,6 +51,7 @@ Page({
 | position | 可选值为 `top` `bottom` `right` `left` | `String` | - |
 | overlay-style | 自定义蒙层样式 | `String` | `` |
 | close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
+| z-index | z-index 层级 | `Number` | `100` |
 | duration | 动画时长，单位为毫秒 | `Number` | `300` |
 
 ### Event

@@ -1,9 +1,9 @@
 <van-popup
   show="{{ show }}"
-  overlay="{{ overlay }}"
-  close-on-click-overlay="{{ closeOnClickOverlay }}"
-  custom-class="van-action-sheet {{ title ? 'van-action-sheet--withtitle' : '' }}"
   position="bottom"
+  overlay="{{ overlay }}"
+  custom-class="van-action-sheet"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
   bind:close="onClose"
 >
   <view wx:if="{{ title }}" class="van-hairline--top-bottom van-action-sheet__header">

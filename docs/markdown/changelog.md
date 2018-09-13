@@ -1,5 +1,29 @@
 ## 更新日志
 
+### [0.3.2](https://github.com/youzan/vant-weapp/tree/v0.3.2)
+`2018-09-13`
+
+**Improvements**
+
+- Dialog: 新增弹出动画 [\#548](https://github.com/youzan/vant-weapp/pull/548)
+- Dialog: 更新按钮色值 [\#543](https://github.com/youzan/vant-weapp/pull/543)
+- Dialog: 新增 z-index 属性 [\#573](https://github.com/youzan/vant-weapp/pull/573)
+- Popup: 新增 z-index 属性 [\#572](https://github.com/youzan/vant-weapp/pull/572)
+- Toast: 新增 z-index 属性 [\#571](https://github.com/youzan/vant-weapp/pull/571)
+- Badge: 性能优化 [\#546](https://github.com/youzan/vant-weapp/pull/546)
+- Tabbar: 性能优化 [\#547](https://github.com/youzan/vant-weapp/pull/547)
+- 调整组件边框色值 [\#554](https://github.com/youzan/vant-weapp/pull/554)
+
+**Bug Fixes**
+
+- 修复 Badge active 属性不生效的问题 [\#569](https://github.com/youzan/vant-weapp/pull/569)
+- 修复 Tab color 属性会改变未激活标签的颜色的问题 [\#570](https://github.com/youzan/vant-weapp/pull/570)
+- 修复 Field 展示清除按钮时导致输入框高度变化的问题 [\#560](https://github.com/youzan/vant-weapp/pull/560)
+- 修复 Tab 组件部分情况下代码报错的问题 [\#553](https://github.com/youzan/vant-weapp/pull/553)
+- 修复 Layout 动态渲染时 gutter 属性不生效的问题 [\#536](https://github.com/youzan/vant-weapp/pull/536)
+- 移除 Cell 目前无法生效的 arrow-direction 属性 [\#559](https://github.com/youzan/vant-weapp/pull/559)
+
+
 ### [0.3.1](https://github.com/youzan/vant-weapp/tree/v0.3.1)
 `2018-09-08`
 

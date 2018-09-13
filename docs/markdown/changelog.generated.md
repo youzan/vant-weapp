@@ -1,5 +1,54 @@
 ## 更新日志
 
+## [v0.3.2](https://github.com/youzan/vant-weapp/tree/v0.3.2) (2018-09-13)
+[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.3.1...v0.3.2)
+
+**Issue**
+
+- 没有上传组件么 [\#568](https://github.com/youzan/vant-weapp/issues/568)
+- Dialog 组件蒙版层是否能支持z-index 层级设置？ [\#565](https://github.com/youzan/vant-weapp/issues/565)
+- vant 小程序 不支持ES6吗？ [\#564](https://github.com/youzan/vant-weapp/issues/564)
+- search组件中的onsearch触发不能输出当前输入值 [\#563](https://github.com/youzan/vant-weapp/issues/563)
+- van-badge-group 设置了active,没有生效 [\#562](https://github.com/youzan/vant-weapp/issues/562)
+- vant-field 密码显示，隐藏问题 [\#556](https://github.com/youzan/vant-weapp/issues/556)
+- icon生成问题 [\#555](https://github.com/youzan/vant-weapp/issues/555)
+- icon size 属性 [\#552](https://github.com/youzan/vant-weapp/issues/552)
+- 请问业务组件近期有支持的计划吗 [\#551](https://github.com/youzan/vant-weapp/issues/551)
+- van-field 使用focus的时候 出现BUG [\#550](https://github.com/youzan/vant-weapp/issues/550)
+- \[BUG\] Tabs: 在js里改变 active、title 无效 [\#549](https://github.com/youzan/vant-weapp/issues/549)
+- \[BUG\] Tab组件报错 [\#541](https://github.com/youzan/vant-weapp/issues/541)
+- van-field 貌似不支持 v-model ？ [\#540](https://github.com/youzan/vant-weapp/issues/540)
+- Dialog上面的表单输入如何统一获取？ [\#539](https://github.com/youzan/vant-weapp/issues/539)
+- van-popup 蒙层样式不起作用 [\#538](https://github.com/youzan/vant-weapp/issues/538)
+- icon 只有加号 +  ，  没有减号 [\#537](https://github.com/youzan/vant-weapp/issues/537)
+- 最新3.00版本common引用不进去 [\#533](https://github.com/youzan/vant-weapp/issues/533)
+- search组件 返回的detail 为空 [\#530](https://github.com/youzan/vant-weapp/issues/530)
+- Layout 布局组件Bug [\#512](https://github.com/youzan/vant-weapp/issues/512)
+- Toast点击没有反应 [\#509](https://github.com/youzan/vant-weapp/issues/509)
+
+**Improvements**
+
+- \[improvement\] Dialog: add z-index prop [\#573](https://github.com/youzan/vant-weapp/pull/573) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Popup: add z-index prop [\#572](https://github.com/youzan/vant-weapp/pull/572) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Toast: add z-index prop [\#571](https://github.com/youzan/vant-weapp/pull/571) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: color prop [\#570](https://github.com/youzan/vant-weapp/pull/570) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Badge: active prop not work [\#569](https://github.com/youzan/vant-weapp/pull/569) ([chenjiahan](https://github.com/chenjiahan))
+- update README.md [\#561](https://github.com/youzan/vant-weapp/pull/561) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Field: optimize template [\#560](https://github.com/youzan/vant-weapp/pull/560) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell: remove unworked props [\#559](https://github.com/youzan/vant-weapp/pull/559) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] ActionSheet: optimize [\#558](https://github.com/youzan/vant-weapp/pull/558) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] support computed [\#557](https://github.com/youzan/vant-weapp/pull/557) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Icon: size [\#554](https://github.com/youzan/vant-weapp/pull/554) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: props observer [\#553](https://github.com/youzan/vant-weapp/pull/553) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Dialog: add scale animation [\#548](https://github.com/youzan/vant-weapp/pull/548) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Tabbar: optimize performance [\#547](https://github.com/youzan/vant-weapp/pull/547) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Badge: optimize performance [\#546](https://github.com/youzan/vant-weapp/pull/546) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] hairline [\#545](https://github.com/youzan/vant-weapp/pull/545) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Tab: remove active color [\#544](https://github.com/youzan/vant-weapp/pull/544) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Dialog: update style [\#543](https://github.com/youzan/vant-weapp/pull/543) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] update border-color [\#542](https://github.com/youzan/vant-weapp/pull/542) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Layout: gutter not work when dynamic render [\#536](https://github.com/youzan/vant-weapp/pull/536) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.3.1](https://github.com/youzan/vant-weapp/tree/v0.3.1) (2018-09-08)
 [Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.3.0...v0.3.1)
 

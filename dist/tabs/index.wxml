@@ -12,7 +12,7 @@
           wx:key="index"
           data-index="{{ index }}"
           class="van-tab {{ index === active ? 'van-tab--active' : '' }} {{ item.data.disabled ? 'van-tab--disabled' : '' }}"
-          style="{{ color && !(index === active && type === 'card') && !item.data.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }}"
+          style="{{ color && (index === active) !== (type === 'card') && !item.data.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }}"
           bind:tap="onTap"
         >
           <view class="van-ellipsis">{{ item.data.title }}</view>

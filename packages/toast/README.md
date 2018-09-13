@@ -92,5 +92,6 @@ const timer = setInterval(() => {
 | mask | 是否显示背景蒙层 | `Boolean` | `false` |
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` |
+| zIndex | z-index 层级 | `Number` | `1000` |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
 | selector | 自定义选择器 | `String` | `van-toast` |

@@ -1,10 +1,11 @@
 <van-overlay
   show="{{ show && (mask || forbidClick) }}"
   mask="{{ mask }}"
-  z-index="3000"
+  z-index="{{ zIndex }}"
 />
 <van-transition
   show="{{ show }}"
+  custom-style="z-index: {{ zIndex }}"
   custom-class="van-toast__container"
 >
   <view class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}">

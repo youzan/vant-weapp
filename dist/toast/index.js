@@ -6,6 +6,10 @@ create({
     mask: Boolean,
     message: String,
     forbidClick: Boolean,
+    zIndex: {
+      type: Number,
+      value: 1000
+    },
     type: {
       type: String,
       value: 'text'

@@ -29,7 +29,7 @@ create({
     badges: []
   },
 
-  attached() {
+  created() {
     this.currentActive = -1;
   },
 
@@ -46,13 +46,15 @@ create({
         return;
       }
 
-      if (this.currentActive !== -1) {
+      if (this.currentActive !== -1 && badges[this.currentActive]) {
         this.$emit('change', active);
         badges[this.currentActive].setActive(false);
       }
 
-      badges[active].setActive(true);
-      this.currentActive = active;
+      if (badges[active]) {
+        badges[active].setActive(true);
+        this.currentActive = active;
+      }
     }
   }
 });

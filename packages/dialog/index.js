@@ -21,6 +21,10 @@ create({
         }
       }
     },
+    zIndex: {
+      type: Number,
+      value: 100
+    },
     confirmButtonText: {
       type: String,
       value: '确认'

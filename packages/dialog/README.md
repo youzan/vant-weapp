@@ -124,6 +124,7 @@ Page({
 |-----------|-----------|-----------|-------------|
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
+| zIndex | z-index 层级 | `Number` | `100` |
 | selector | 自定义选择器 | `String` | `van-dialog` |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` |
@@ -143,6 +144,7 @@ Page({
 | show | 是否显示弹窗 | `Boolean` | - |
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
+| z-index | z-index 层级 | `Number` | `100` |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` |

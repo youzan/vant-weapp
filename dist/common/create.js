@@ -1,4 +1,5 @@
 import { basic } from '../mixins/basic';
+import { observe } from '../mixins/observer/index';
 
 export function create(sfc) {
   // map props to properties
@@ -34,5 +35,6 @@ export function create(sfc) {
     sfc.behaviors.push('wx://form-field');
   }
 
+  observe(sfc);
   Component(sfc);
 };

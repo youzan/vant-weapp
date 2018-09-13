@@ -7,13 +7,13 @@
   required="{{ required }}"
   custom-style="{{ customStyle }}"
   title-width="{{ titleWidth }}"
-  custom-class="{{ customClass }} van-field {{ labelAlign ? 'van-field--label-' + labelAlign : '' }}"
+  custom-class="van-field"
 >
   <slot name="label" slot="title" />
   <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
-      class="input-class van-field__control van-field__textarea {{ inputAlign ? 'van-field--' + inputAlign : '' }} {{ error ? 'van-field--error' : '' }} {{ disabled ? 'van-field__control--disabled' : '' }}"
+      class="{{ inputClass }}"
       focus="{{ focus }}"
       value="{{ value }}"
       disabled="{{ disabled }}"
@@ -30,7 +30,7 @@
     />
     <input
       wx:else
-      class="input-class van-field__control {{ inputAlign ? 'van-field--' + inputAlign : '' }} {{ error ? 'van-field--error' : '' }} {{ disabled ? 'van-field__control--disabled' : '' }}"
+      class="{{ inputClass }}"
       type="{{ type }}"
       focus="{{ focus }}"
       value="{{ value }}"
@@ -49,6 +49,7 @@
     <van-icon
       wx:if="{{ showClear }}"
       name="clear"
+      class="van-field__clear-root"
       custom-class="van-field__clear"
       bind:touchstart="onClear"
     />

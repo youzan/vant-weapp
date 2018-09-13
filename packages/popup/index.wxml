@@ -1,13 +1,14 @@
 <van-overlay
   mask
   show="{{ overlay && show }}"
+  z-index="{{ zIndex }}"
   custom-style="{{ overlayStyle }}"
   bind:click="onClickOverlay"
 />
 <view
   wx:if="{{ inited }}"
   class="custom-class van-popup {{ position ? 'van-popup--' + position : '' }}"
-  style="animation-name: van-{{ transition || position }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }}"
+  style="z-index: {{ zIndex }}; animation-name: van-{{ transition || position }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }}"
   bind:animationend="onAnimationEnd"
 >
   <slot />

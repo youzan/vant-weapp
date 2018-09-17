@@ -54,10 +54,6 @@ create({
           scrollable: this.data.tabs.length > this.data.swipeThreshold
         });
       }
-    },
-    border: {
-      type: Boolean,
-      value: false
     }
   },
 

@@ -8,7 +8,10 @@
   custom-style="z-index: {{ zIndex }}"
   custom-class="van-toast__container"
 >
-  <view class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}">
+  <view
+    class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}"
+    catch:touchmove
+  >
     <!-- text only -->
     <view wx:if="{{ type === 'text' }}">{{ message }}</view>
 

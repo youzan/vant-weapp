@@ -77,12 +77,21 @@ create({
       this.onClose(action);
     },
 
+    close() {
+      this.setData({ show: false });
+    },
+
     onClose(action) {
       if (!this.data.asyncClose) {
-        this.setData({ show: false });
+        this.close();
       }
       this.$emit('close', action);
       this.$emit(action);
+
+      const callback = this.data[action === 'confirm' ? 'onConfirm' : 'onCancel'];
+      if (callback) {
+        callback(this);
+      }
     }
   }
 });

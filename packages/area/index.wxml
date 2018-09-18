@@ -25,6 +25,7 @@
     >
       <view
         wx:for="{{ row }}"
+        wx:key="{{ item.code }}"
         style="line-height: {{ itemHeight }}px;"
         class="van-picker-column__item {{ index === pickerValue[rowIndex] ? 'van-picker-column__item--selected' : '' }}"
       >{{ item.name }}</view>

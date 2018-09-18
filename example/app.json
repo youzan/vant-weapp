@@ -28,7 +28,8 @@
     "pages/tag/index",
     "pages/toast/index",
     "pages/transition/index",
-    "pages/tree-select/index"
+    "pages/tree-select/index",
+    "pages/area/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",

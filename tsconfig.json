@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "module": "commonjs",
     "removeComments": true,
+    "noImplicitThis": true,
     "noImplicitUseStrict": true
   },
-  "files": ["packages/**/*"]
+  "include": [
+    "types/**/*",
+    "packages/**/*"
+  ]
 }

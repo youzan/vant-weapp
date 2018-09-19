@@ -48,3 +48,9 @@ Notify({
 | selector | 自定义选择器 | `String` | `van-notify` |
 | color | 字体颜色 | `String` | `#fff` | |
 | backgroundColor | 背景色 | `String` | `#e64340` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 0.0.1 | feature | 新增组件 |

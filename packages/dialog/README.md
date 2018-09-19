@@ -162,3 +162,11 @@ Page({
 | bind:close | 弹窗关闭时触发 | event.detail: 触发关闭事件的来源，枚举为`confirm`,`cancel`,`overlay` |
 | bind:confirm | 点击确认按钮时触发 | - |
 | bind:cancel | 点击取消按钮时触发 | - |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 0.3.0 | feature | 新增组件 |
+| 0.3.2 | improvement | 新增弹出动画 |
+| 0.3.2 | feature | 新增 z-index 属性 |

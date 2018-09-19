@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Steps 步骤条",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-submit-bar": "../../dist/submit-bar/index",
+    "van-tag": "../../dist/tag/index",
+    "van-toast": "../../dist/toast/index"
+  }
+}

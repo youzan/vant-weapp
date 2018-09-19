@@ -1,4 +1,5 @@
-/// <reference path="./weapp.d.ts" />
+import { Vue } from './vue';
+import { Weapp } from './weapp';
 
 type LooseObject = {
   [key: string]: any;
@@ -13,9 +14,7 @@ type Relations<Instance> = {
 };
 type ExternalClasses = string[];
 
-export interface Vue {
-  $emit(name: string, detail?: any): void;
-}
+
 
 export type CombinedComponentInstance<Props, Data, Methods> = Vue &
   LooseObject &

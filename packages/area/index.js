@@ -60,6 +60,11 @@ create({
       const { value } = event.detail;
       const { pickerValue, displayColumns } = this.data;
       const index = pickerValue.findIndex((item, index) => item !== value[index]);
+      // 没有变更 或 选中项序号小于0 不处理
+      if (index < 0 || value[index] < 0) {
+        return;
+      }
+
       const values = displayColumns[index];
 
       this.code = values[value[index]].code;

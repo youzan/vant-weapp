@@ -88,6 +88,14 @@ Page({
   <van-tab title="标签 3">内容 3</van-tab>
 </van-tabs>
 ```
+外边框控制：`border`,只在`type`为`line`时生效
+```html
+<van-tabs type="line" border="{{false}}">
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+</van-tabs>
+```
 
 #### 点击事件
 
@@ -118,6 +126,7 @@ Page({
 | active | 当前激活标签的索引 | `String` `Number` | `0` |
 | color | 标签颜色 | `String` | `#f44` |
 | type | 样式风格，可选值为 `card` | `String` | `line` |
+| border | 外边框,只在 `type=line` 模式下有效 | `Boolean` | `true`
 | duration | 动画时间 (单位秒)  | `Number` | `0.2` |
 | line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | `Number` | `4` |

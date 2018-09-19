@@ -1,3 +1,5 @@
+/// <reference path="./weapp.d.ts" />
+
 type Mixins = any[];
 type Relations = object;
 type ExternalClasses = string[];

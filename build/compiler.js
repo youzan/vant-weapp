@@ -29,13 +29,13 @@ gulp.task('compile-pcss', () => {
 });
 
 gulp.task('compile-js', () => copy('js'));
-gulp.task('compile-ts', () => {
-  console.log('compile-ts');
-  return gulp
+gulp.task('compile-ts', () =>
+  gulp
     .src([src + '/**/*.ts'])
     .pipe(tsProject())
-    .pipe(gulp.dest(dist));
-});
+    .on('error', () => {})
+    .pipe(gulp.dest(dist))
+);
 gulp.task('compile-json', () => copy('json'));
 gulp.task('compile-wxml', () => copy('wxml'));
 gulp.task('build', ext.map(ext => 'compile-' + ext));

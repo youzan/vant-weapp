@@ -8,7 +8,7 @@
 <view
   wx:if="{{ inited }}"
   class="custom-class van-popup {{ position ? 'van-popup--' + position : '' }}"
-  style="z-index: {{ zIndex }}; animation-name: van-{{ transition || position }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }}"
+  style="z-index: {{ zIndex }}; animation-name: van-{{ transition || position }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }}{{ customStyle }}"
   bind:animationend="onAnimationEnd"
 >
   <slot />

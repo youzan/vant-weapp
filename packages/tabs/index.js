@@ -42,6 +42,10 @@ create({
       type: String,
       value: 'line'
     },
+    border: {
+      type: Boolean,
+      value: false
+    },
     duration: {
       type: Number,
       value: 0.2

@@ -88,7 +88,7 @@ Page({
   <van-tab title="标签 3">内容 3</van-tab>
 </van-tabs>
 ```
-外边框控制：`border`,只在`type`为`line`时生效
+外边框控制：`border`，只在`type`为`line`时生效
 ```html
 <van-tabs type="line" border="{{false}}">
   <van-tab title="标签 1">内容 1</van-tab>

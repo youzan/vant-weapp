@@ -187,3 +187,15 @@ Page({
 | input-class | 输入框样式类 |
 | icon-class | 右侧图标样式类 |
 | placeholder-class | 占位内容样式类 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 0.0.1 | feature | 新增组件 |
+| 0.1.1 | bugfix | 修复在 form 组件内无法获取值的问题 |
+| 0.1.1 | bugfix | 修复 icon 插槽无法使用的问题 |
+| 0.2.0 | feature | 新增 name 属性 |
+| 0.2.1 | feature | 新增 title-width 属性 |
+| 0.3.0 | bugfix | 修复 title 宽度错误的问题 |
+| 0.3.2 | bugfix | 修复展示清除按钮时导致输入框高度变化的问题 |

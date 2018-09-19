@@ -95,3 +95,11 @@ const timer = setInterval(() => {
 | zIndex | z-index 层级 | `Number` | `1000` |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
 | selector | 自定义选择器 | `String` | `van-toast` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 0.1.1 | feature | 新增组件 |
+| 0.3.0 | breaking change | 修改组件引入路径，避免编辑器报错的问题 |
+| 0.3.2 | feature | 新增 z-index 属性 |

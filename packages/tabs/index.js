@@ -44,7 +44,7 @@ create({
     },
     border: {
       type: Boolean,
-      value: false
+      value: true
     },
     duration: {
       type: Number,

@@ -68,3 +68,17 @@
     </van-tab>
   </van-tabs>
 </demo-block>
+
+<demo-block title="禁用border">
+  <van-tabs bind:click="onClick" border="{{false}}">
+    <van-tab
+      wx:for="12"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>

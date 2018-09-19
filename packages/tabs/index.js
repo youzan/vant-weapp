@@ -42,6 +42,10 @@ VantComponent({
       type: String,
       value: 'line'
     },
+    border: {
+      type: Boolean,
+      value: true
+    },
     duration: {
       type: Number,
       value: 0.2

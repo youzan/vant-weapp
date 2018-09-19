@@ -1,0 +1,29 @@
+<view class="van-submit-bar custom-class">
+  <slot name="top" />
+
+  <view wx:if="{{ tip }}" class="van-submit-bar__tip">
+    {{ tipStr }}<slot name="tip" />
+  </view>
+
+  <view class="van-submit-bar__bar">
+    <slot />
+    <view class="van-submit-bar__text">
+      <block wx:if="{{ hasPrice }}">
+        <text>{{ label || '合计：' }}</text>
+        <text class="van-submit-bar__price price-class">{{ currency }} {{ priceStr }}</text>
+      </block>
+    </view>
+    <van-button
+      type="{{ buttonType }}"
+      disabled="{{ disabled }}"
+      loading="{{ loading }}"
+      bind:click="onSubmit"
+      square
+      size="large"
+      class="van-submit-bar__button {{ disabled ? 'van-submit-bar__button--disabled' : '' }}"
+      custom-class="button-class"
+    >
+      {{ loading ? '' : buttonText }}
+    </van-button>
+  </view>
+</view>

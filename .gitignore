@@ -7,3 +7,4 @@ node_modules
 project.config.json
 docs/dist
 example/dist
+.history

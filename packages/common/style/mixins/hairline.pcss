@@ -1,0 +1,14 @@
+@import '../var.pcss';
+
+@define-mixin hairline $border-retina-color: $border-color {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  transform: scale(0.5);
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid $border-retina-color;
+}

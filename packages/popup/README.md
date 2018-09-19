@@ -46,13 +46,14 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| show | 当前组件是否显示 | `Boolean` | `false` |
+| show | 是否显示弹出层 | `Boolean` | `false` |
+| z-index | z-index 层级 | `Number` | `100` |
 | overlay | 是否显示背景蒙层 | `Boolean` | `true` |
 | position | 可选值为 `top` `bottom` `right` `left` | `String` | - |
-| overlay-style | 自定义蒙层样式 | `String` | `` |
-| close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
-| z-index | z-index 层级 | `Number` | `100` |
 | duration | 动画时长，单位为毫秒 | `Number` | `300` |
+| custom-style | 自定义弹出层样式 | `String` | `` |
+| overlay-style | 自定义背景蒙层样式 | `String` | `` |
+| close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
 
 ### Event
 
@@ -66,3 +67,11 @@ Page({
 | 类名 | 说明 |
 |-----------|-----------|
 | custom-class | 根节点样式类 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 0.0.1 | feature | 新增组件 |
+| 0.3.2 | feature | 支持退场动画 |
+| 0.3.2 | feature | 新增 z-index 属性 |

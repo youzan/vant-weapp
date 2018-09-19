@@ -1,0 +1,11 @@
+<demo-block title="基础用法">
+  <van-area area-list="{{ areaList }}" />
+</demo-block>
+
+<demo-block title="选中省市县">
+  <van-area area-list="{{ areaList }}" value="{{ value }}" />
+</demo-block>
+
+<demo-block title="配置显示列">
+  <van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" title="标题" bind:confirm="onChange" bind:change="onChange" />
+</demo-block>

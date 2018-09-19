@@ -6,6 +6,7 @@ VantComponent({
 
   props: {
     transition: String,
+    customStyle: String,
     overlayStyle: String,
     zIndex: {
       type: Number,

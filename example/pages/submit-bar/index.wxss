@@ -1,0 +1,11 @@
+.van-submit-bar {
+  position: relative !important;
+}
+
+.van-edit-address {
+  color: #38f;
+}
+
+.van-tag {
+  margin-left: 15px;
+}

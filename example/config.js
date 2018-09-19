@@ -137,6 +137,10 @@ export default [
       {
         path: '/card',
         title: 'Card 卡片'
+      },
+      {
+        path: '/submit-bar',
+        title: 'SubmitBar 提交订单栏'
       }
     ]
   }

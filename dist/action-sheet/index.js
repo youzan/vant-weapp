@@ -20,7 +20,6 @@ create_1.create({
     },
     methods: {
         onSelect: function (event) {
-            this.onCancel(123);
             var index = event.currentTarget.dataset.index;
             var item = this.data.actions[index];
             if (item && !item.disabled && !item.loading) {

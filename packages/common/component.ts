@@ -1,9 +1,17 @@
 import { basic } from '../mixins/basic';
 import { observe } from '../mixins/observer/index';
-import { VantComponentOptions } from '../../types/index';
+import {
+  VantComponentOptions,
+  CombinedComponentInstance
+} from '../../types/index';
 
 function VantComponent<Props, Data, Methods>(
-  sfc: VantComponentOptions<Props, Data, Methods>
+  sfc: VantComponentOptions<
+    Props,
+    Data,
+    Methods,
+    CombinedComponentInstance<Props, Data, Methods>
+  >
 ): void {
   const options: any = {};
 

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Area 省市区选择",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-area": "../../dist/area/index"
+  }
+}

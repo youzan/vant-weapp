@@ -36,3 +36,7 @@ declare namespace Weapp {
     detail: any;
   }
 }
+
+export {
+  Weapp
+};

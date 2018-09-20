@@ -31,16 +31,19 @@ VantComponent({
       }
     }
   },
+
   data: {
     pickerValue: [0, 0, 0],
     columns: []
   },
+
   computed: {
     displayColumns() {
       const { columns = [], columnsNum } = this.data;
       return columns.slice(0, +columnsNum);
     }
   },
+
   methods: {
     onCancel() {
       this.triggerEvent('cancel', {

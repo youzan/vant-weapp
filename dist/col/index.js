@@ -17,7 +17,7 @@ create({
       const { span, offset } = this.data;
       return this.classNames('custom-class', 'van-col', {
         [`van-col--${span}`]: span,
-        [`van-col--${offset}`]: offset
+        [`van-col--offset-${offset}`]: offset
       });
     }
   },

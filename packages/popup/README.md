@@ -75,3 +75,4 @@ Page({
 | 0.0.1 | feature | 新增组件 |
 | 0.3.2 | feature | 支持退场动画 |
 | 0.3.2 | feature | 新增 z-index 属性 |
+| 0.3.3 | feature | 新增 custom-style 属性 |

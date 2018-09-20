@@ -1,5 +1,30 @@
 ## 更新日志
 
+### [0.3.3](https://github.com/youzan/vant-weapp/tree/v0.3.3)
+`2018-09-20`
+
+**Improvements**
+
+- 新增 Area 组件 [\#591](https://github.com/youzan/vant-weapp/pull/591)
+- 新增 SubmitBar 组件 [\#597](https://github.com/youzan/vant-weapp/pull/597)
+- ActionSheet: 新增 z-index 属性 [\#610](https://github.com/youzan/vant-weapp/pull/610)
+- Popup: 新增 custom-style 属性 [\#598](https://github.com/youzan/vant-weapp/pull/598)
+- Tab: 新增 border 属性 [\#595](https://github.com/youzan/vant-weapp/pull/595)
+- Tab: 支持传入外部样式类 [\#612](https://github.com/youzan/vant-weapp/pull/612)
+
+**Bug Fixes**
+
+- 修复部分组件在基础库 2.2.3 以下版本报错的问题 [\#613](https://github.com/youzan/vant-weapp/pull/613)
+- 修复 Card centered 属性不生效的问题 [\#584](https://github.com/youzan/vant-weapp/pull/584)
+- 修复 Cell value 为空时 title 最大宽度错误的问题 [\#609](https://github.com/youzan/vant-weapp/pull/609)
+- 修复 Dialog Promise 状态错误的问题 [\#585](https://github.com/youzan/vant-weapp/pull/585)
+- 修复 Field 边框长度溢出的问题 [\#601](https://github.com/youzan/vant-weapp/pull/601)
+- 修复 Field input-align 属性不生效的问题 [\#607](https://github.com/youzan/vant-weapp/pull/607)
+- 修复 Layout offset 属性不生效的问题 [\#615](https://github.com/youzan/vant-weapp/pull/615)
+- 修复 Tag 边框样式问题 [\#606](https://github.com/youzan/vant-weapp/pull/606)
+- 修复 Toast 滚动穿透问题 [\#586](https://github.com/youzan/vant-weapp/pull/586)
+
+
 ### [0.3.2](https://github.com/youzan/vant-weapp/tree/v0.3.2)
 `2018-09-13`
 

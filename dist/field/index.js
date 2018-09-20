@@ -66,7 +66,7 @@ create({
         'van-field--error': data.error,
         'van-field__textarea': data.type === 'textarea',
         'van-field__input--disabled': data.disabled,
-        [`van-field__input--${data.inputAlign}`]: data.inputAlign
+        [`van-field--${data.inputAlign}`]: data.inputAlign
       });
     }
   },

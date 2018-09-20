@@ -199,3 +199,5 @@ Page({
 | 0.2.1 | feature | 新增 title-width 属性 |
 | 0.3.0 | bugfix | 修复 title 宽度错误的问题 |
 | 0.3.2 | bugfix | 修复展示清除按钮时导致输入框高度变化的问题 |
+| 0.3.3 | bugfix | 修复边框长度溢出的问题 |
+| 0.3.3 | bugfix | 修复 input-align 属性不生效的问题 |

@@ -84,6 +84,10 @@ npm run dev
 
 打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
 
+## 基础库版本
+
+Vant Weapp 最低支持到小程序基础库 1.9.9 版本
+
 ## 链接
 
 * [更新日志](#/changelog)

@@ -13,7 +13,6 @@
           wx:for="{{ group.list }}"
           wx:key="item.title"
           is-link
-          title-width="200px"
           url="/pages{{ item.path }}/index"
           title="{{ item.title }}"
         ></van-cell>

@@ -88,6 +88,7 @@ Page({
 |-----------|-----------|-----------|-------------|
 | actions | 菜单选项 | `Array` | `[]` |
 | title | 标题 | `String` | - |
+| z-index | z-index 层级 | `Number` | `100` |
 | cancel-text | 取消按钮文字 | `String` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |

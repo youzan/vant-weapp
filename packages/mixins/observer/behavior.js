@@ -22,6 +22,8 @@ export const behavior = Behavior({
       return needUpdate;
     };
 
+    Object.defineProperty(this, 'setData', { writable: true });
+
     this.setData = (data, callback) => {
       data && setData.call(this, data, callback);
       setData.call(this, calcComputed());

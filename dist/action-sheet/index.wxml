@@ -1,6 +1,7 @@
 <van-popup
   show="{{ show }}"
   position="bottom"
+  z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   custom-class="van-action-sheet"
   close-on-click-overlay="{{ closeOnClickOverlay }}"

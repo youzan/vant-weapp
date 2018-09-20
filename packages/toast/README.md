@@ -103,3 +103,4 @@ const timer = setInterval(() => {
 | 0.1.1 | feature | 新增组件 |
 | 0.3.0 | breaking change | 修改组件引入路径，避免编辑器报错的问题 |
 | 0.3.2 | feature | 新增 z-index 属性 |
+| 0.3.3 | bugfix | 修复滚动穿透问题 |

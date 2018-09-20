@@ -1,5 +1,50 @@
 ## 更新日志
 
+## [v0.3.3](https://github.com/youzan/vant-weapp/tree/v0.3.3) (2018-09-20)
+[Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.3.2...v0.3.3)
+
+**Issue**
+
+- vant-weapp cell在iphone7 plus上报错 [\#611](https://github.com/youzan/vant-weapp/issues/611)
+- layout的偏移量有bug [\#608](https://github.com/youzan/vant-weapp/issues/608)
+- 表单问题 [\#603](https://github.com/youzan/vant-weapp/issues/603)
+- tag组件的custom-class无效 [\#596](https://github.com/youzan/vant-weapp/issues/596)
+- mpvue引入dialog报错 [\#589](https://github.com/youzan/vant-weapp/issues/589)
+- Icon 如何加载本地图标呢？ [\#583](https://github.com/youzan/vant-weapp/issues/583)
+- mpvue引入vant报错thirdScriptError [\#582](https://github.com/youzan/vant-weapp/issues/582)
+- ActionSheet滚动问题 [\#581](https://github.com/youzan/vant-weapp/issues/581)
+- GoodsAction和SubmitBar有计划么？ [\#579](https://github.com/youzan/vant-weapp/issues/579)
+- 【card组件】centered	内容是否垂直居中	String	false [\#578](https://github.com/youzan/vant-weapp/issues/578)
+- 能考虑加上Dropdown样式的组件吗 [\#575](https://github.com/youzan/vant-weapp/issues/575)
+- 请问，为什么没有看到时间选择器组件呢 [\#574](https://github.com/youzan/vant-weapp/issues/574)
+- tabs缺少active-color api [\#567](https://github.com/youzan/vant-weapp/issues/567)
+
+**Improvements**
+
+- update README.md [\#616](https://github.com/youzan/vant-weapp/pull/616) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Layout: offset not work [\#615](https://github.com/youzan/vant-weapp/pull/615) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] setData writeable [\#613](https://github.com/youzan/vant-weapp/pull/613) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Tab: support custom-class [\#612](https://github.com/youzan/vant-weapp/pull/612) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] ActionSheet: add z-index prop [\#610](https://github.com/youzan/vant-weapp/pull/610) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Cell: value should not has width when empty [\#609](https://github.com/youzan/vant-weapp/pull/609) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: input-align not work [\#607](https://github.com/youzan/vant-weapp/pull/607) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tag: white border [\#606](https://github.com/youzan/vant-weapp/pull/606) ([chenjiahan](https://github.com/chenjiahan))
+- \[type\] update type definition [\#605](https://github.com/youzan/vant-weapp/pull/605) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell: border overlimit [\#601](https://github.com/youzan/vant-weapp/pull/601) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add component changelog [\#600](https://github.com/youzan/vant-weapp/pull/600) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Area: 修复Area组件边界条件时报错 [\#599](https://github.com/youzan/vant-weapp/pull/599) ([rex-zsd](https://github.com/rex-zsd))
+- \[improvement\] Popup: support custom style [\#598](https://github.com/youzan/vant-weapp/pull/598) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add SubmitBar component [\#597](https://github.com/youzan/vant-weapp/pull/597) ([rex-zsd](https://github.com/rex-zsd))
+- \[new feature\] Tab: add border prop [\#595](https://github.com/youzan/vant-weapp/pull/595) ([tkggusraqk](https://github.com/tkggusraqk))
+- \[new feature\] add Area component [\#591](https://github.com/youzan/vant-weapp/pull/591) ([rex-zsd](https://github.com/rex-zsd))
+- \[type\] add type definition [\#590](https://github.com/youzan/vant-weapp/pull/590) ([chenjiahan](https://github.com/chenjiahan))
+- \[build\] add tsconfig.json [\#588](https://github.com/youzan/vant-weapp/pull/588) ([chenjiahan](https://github.com/chenjiahan))
+- \[build\] support compile typescript file [\#587](https://github.com/youzan/vant-weapp/pull/587) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Toast: lock scroll [\#586](https://github.com/youzan/vant-weapp/pull/586) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Dialog: promise status not change [\#585](https://github.com/youzan/vant-weapp/pull/585) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Card: centered prop not work [\#584](https://github.com/youzan/vant-weapp/pull/584) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] hairline [\#577](https://github.com/youzan/vant-weapp/pull/577) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.3.2](https://github.com/youzan/vant-weapp/tree/v0.3.2) (2018-09-13)
 [Full Changelog](https://github.com/youzan/vant-weapp/compare/v0.3.1...v0.3.2)
 

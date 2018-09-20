@@ -5,6 +5,10 @@ VantComponent({
     show: Boolean,
     title: String,
     cancelText: String,
+    zIndex: {
+      type: Number,
+      value: 100
+    },
     actions: {
       type: Array,
       value: []

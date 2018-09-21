@@ -1,5 +1,5 @@
 /// <reference path="./weapp.d.ts" />
-import { Vue } from './vue';
+import { ComponentInstance } from './instance';
 
 type Mixins = any[];
 type ExternalClasses = string[];
@@ -15,10 +15,15 @@ type Relations<Instance> = {
 };
 type RecordToAny<T> = { [K in keyof T]: any };
 
-export type CombinedComponentInstance<Data, Props, Methods, Computed> = Vue &
-  Methods &
+export type CombinedComponentInstance<
+  Data,
+  Props,
+  Methods,
+  Computed
+> = Methods &
   LooseObject &
-  Weapp.Component & {
+  Weapp.Component &
+  ComponentInstance & {
     data: Data & RecordToAny<Props> & RecordToAny<Computed>;
   };
 

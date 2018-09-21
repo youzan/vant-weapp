@@ -1,8 +1,8 @@
-import { create } from '../common/create';
+import { VantComponent } from '../common/component';
 
 const ITEM_HEIGHT = 44;
 
-create({
+VantComponent({
   props: {
     items: {
       type: Array,

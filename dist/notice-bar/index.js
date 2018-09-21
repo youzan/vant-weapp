@@ -1,9 +1,9 @@
-import { create } from '../common/create';
+import { VantComponent } from '../common/component';
 
 const FONT_COLOR = '#f60';
 const BG_COLOR = '#fff7cc';
 
-create({
+VantComponent({
   props: {
     text: {
       type: String,

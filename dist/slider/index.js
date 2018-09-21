@@ -1,7 +1,7 @@
-import { create } from '../common/create';
+import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 
-create({
+VantComponent({
   mixins: [touch],
 
   props: {

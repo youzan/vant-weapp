@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
-    "removeComments": true,
+    "target": "es6",
     "noImplicitThis": true,
     "noImplicitUseStrict": true
   },

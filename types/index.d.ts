@@ -1,10 +1,11 @@
+/// <reference path="./weapp.d.ts" />
 import { Vue } from './vue';
-import { Weapp } from './weapp';
 
+type Mixins = any[];
+type ExternalClasses = string[];
 type LooseObject = {
   [key: string]: any;
 };
-type Mixins = any[];
 type Relations<Instance> = {
   [key: string]: {
     type: string;
@@ -12,13 +13,13 @@ type Relations<Instance> = {
     unlinked?: (this: Instance, target?: any) => void;
   }
 };
-type ExternalClasses = string[];
-
-
+type RecordProps<T> = {
+  [K in keyof T]: any
+}
 
 export type CombinedComponentInstance<Props, Data, Methods> = Vue &
   LooseObject &
-  Weapp.Component & { data: Data & Props } & Methods;
+  Weapp.Component & { data: Data & RecordProps<Props> } & Methods;
 
 export type VantComponentOptions<Props, Data, Methods, Instance> = {
   data?: Data;

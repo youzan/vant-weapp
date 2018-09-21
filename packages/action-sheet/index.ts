@@ -1,6 +1,6 @@
-import { create } from '../common/create';
+import { VantComponent } from '../common/component';
 
-create({
+VantComponent({
   props: {
     show: Boolean,
     title: String,
@@ -24,7 +24,7 @@ create({
   },
 
   methods: {
-    onSelect(event) {
+    onSelect(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
       const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {

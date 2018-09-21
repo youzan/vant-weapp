@@ -33,6 +33,9 @@ gulp.task('compile-ts', () =>
   gulp
     .src([src + '/**/*.ts'])
     .pipe(tsProject())
+    .on('error', (err) => {
+      console.log(err);
+    })
     .pipe(gulp.dest(dist))
 );
 gulp.task('compile-json', () => copy('json'));

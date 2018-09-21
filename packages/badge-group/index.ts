@@ -1,6 +1,6 @@
-import { create } from '../common/create';
+import { VantComponent } from '../common/component';
 
-create({
+VantComponent({
   relations: {
     '../badge/index': {
       type: 'descendant',
@@ -29,7 +29,7 @@ create({
     badges: []
   },
 
-  created() {
+  beforeCreate() {
     this.currentActive = -1;
   },
 

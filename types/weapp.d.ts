@@ -1,4 +1,6 @@
+declare function Behavior(options: any): void;
 declare function Component(options: any): void;
+declare function getCurrentPages(): Weapp.Page[];
 
 interface wx {
   [key: string]: any
@@ -37,5 +39,9 @@ declare namespace Weapp {
   interface TouchEvent extends Event {
     touches: Array<Touch>;
     changedTouches: Array<Touch>;
+  }
+
+  interface Page {
+    selectComponent(selector: string): Component
   }
 }

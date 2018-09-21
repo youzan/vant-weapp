@@ -60,7 +60,7 @@ VantComponent({
   },
 
   computed: {
-    inputClass() {
+    inputClass(): string {
       const { data } = this;
       return this.classNames('input-class', 'van-field__input', {
         'van-field--error': data.error,
@@ -72,7 +72,7 @@ VantComponent({
   },
 
   methods: {
-    onInput(event) {
+    onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
       this.$emit('input', value);
       this.$emit('change', value);
@@ -82,17 +82,17 @@ VantComponent({
       });
     },
 
-    onFocus(event) {
-      this.$emit('focus', event);
+    onFocus() {
+      this.$emit('focus');
       this.setData({
         focused: true,
         showClear: this.getShowClear({ focused: true })
       });
     },
 
-    onBlur(event) {
+    onBlur() {
       this.focused = false;
-      this.$emit('blur', event);
+      this.$emit('blur');
       this.setData({
         focused: false,
         showClear: this.getShowClear({ focused: false })
@@ -103,7 +103,7 @@ VantComponent({
       this.$emit('click-icon');
     },
 
-    getShowClear(options) {
+    getShowClear(options): boolean {
       const { focused = this.data.focused, value = this.data.value } = options;
 
       return (

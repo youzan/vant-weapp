@@ -9,7 +9,7 @@ export const basic = Behavior({
     },
 
     getRect(selector, all) {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         wx.createSelectorQuery()
           .in(this)[all ? 'selectAll' : 'select'](selector)
           .boundingClientRect(rect => {

@@ -1,5 +1,5 @@
 /// <reference path="./weapp.d.ts" />
-import { Vue } from './vue';
+import { ComponentInstance } from './instance';
 
 type Mixins = any[];
 type ExternalClasses = string[];
@@ -14,12 +14,20 @@ type Relations<Instance> = {
   };
 };
 type RecordToAny<T> = { [K in keyof T]: any };
+type Accessors<T> = {
+  [K in keyof T]: (() => T[K])
+}
 
-export type CombinedComponentInstance<Data, Props, Methods, Computed> = Vue &
-  Methods &
+export type CombinedComponentInstance<
+  Data,
+  Props,
+  Methods,
+  Computed
+> = Methods &
   LooseObject &
-  Weapp.Component & {
-    data: Data & RecordToAny<Props> & RecordToAny<Computed>;
+  Weapp.Component &
+  ComponentInstance & {
+    data: Data & RecordToAny<Props> & Computed;
   };
 
 export type VantComponentOptions<Data, Props, Methods, Computed, Instance> = {
@@ -27,7 +35,7 @@ export type VantComponentOptions<Data, Props, Methods, Computed, Instance> = {
   props?: Props;
   field?: boolean;
   mixins?: Mixins;
-  computed?: Computed & ThisType<Instance>;
+  computed?: Accessors<Computed> & ThisType<Instance>;
   relations?: Relations<Instance>;
   classes?: ExternalClasses;
   methods?: Methods & ThisType<Instance>;

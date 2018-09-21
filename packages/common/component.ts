@@ -5,12 +5,13 @@ import {
   CombinedComponentInstance
 } from '../../types/index';
 
-function VantComponent<Props, Data, Methods>(
+function VantComponent<Data, Props, Methods, Computed>(
   sfc: VantComponentOptions<
-    Props,
     Data,
+    Props,
     Methods,
-    CombinedComponentInstance<Props, Data, Methods>
+    Computed,
+    CombinedComponentInstance<Data, Props, Methods, Computed>
   >
 ): void {
   const options: any = {};

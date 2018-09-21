@@ -11,21 +11,23 @@ type Relations<Instance> = {
     type: string;
     linked?: (this: Instance, target?: any) => void;
     unlinked?: (this: Instance, target?: any) => void;
-  }
+  };
 };
-type RecordProps<T> = {
-  [K in keyof T]: any
-}
+type RecordToAny<T> = { [K in keyof T]: any };
 
-export type CombinedComponentInstance<Props, Data, Methods> = Vue &
+export type CombinedComponentInstance<Data, Props, Methods, Computed> = Vue &
+  Methods &
   LooseObject &
-  Weapp.Component & { data: Data & RecordProps<Props> } & Methods;
+  Weapp.Component & {
+    data: Data & RecordToAny<Props> & RecordToAny<Computed>;
+  };
 
-export type VantComponentOptions<Props, Data, Methods, Instance> = {
+export type VantComponentOptions<Data, Props, Methods, Computed, Instance> = {
   data?: Data;
   props?: Props;
   field?: boolean;
   mixins?: Mixins;
+  computed?: Computed & ThisType<Instance>;
   relations?: Relations<Instance>;
   classes?: ExternalClasses;
   methods?: Methods & ThisType<Instance>;

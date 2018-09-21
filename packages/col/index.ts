@@ -12,8 +12,12 @@ VantComponent({
     offset: Number
   },
 
+  data: {
+    style: ''
+  },
+
   computed: {
-    classes() {
+    classes(): string {
       const { span, offset } = this.data;
       return this.classNames('custom-class', 'van-col', {
         [`van-col--${span}`]: span,
@@ -23,7 +27,7 @@ VantComponent({
   },
 
   methods: {
-    setGutter(gutter) {
+    setGutter(gutter: number) {
       const padding = `${gutter / 2}px`;
       const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
       if (style !== this.data.style) {

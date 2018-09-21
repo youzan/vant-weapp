@@ -61,7 +61,7 @@ VantComponent({
     timer: null
   },
 
-  attached() {
+  created() {
     if (this.data.mode) {
       this.setData({
         hasRightIcon: true
@@ -69,7 +69,7 @@ VantComponent({
     }
   },
 
-  detached() {
+  destroyed() {
     const { timer } = this.data;
     timer && clearTimeout(timer);
   },

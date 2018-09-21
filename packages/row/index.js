@@ -20,7 +20,7 @@ VantComponent({
     }
   },
 
-  ready() {
+  mounted() {
     if (this.data.gutter) {
       this.setGutter();
     }

@@ -20,7 +20,7 @@ VantComponent({
     }
   },
 
-  attached() {
+  created() {
     this.setData({ value: this.data.checked });
   },
 

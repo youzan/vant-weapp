@@ -67,7 +67,7 @@ VantComponent({
     scrollLeft: 0
   },
 
-  ready() {
+  mounted() {
     this.setLine();
     this.scrollIntoView();
   },

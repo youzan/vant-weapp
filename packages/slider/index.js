@@ -28,7 +28,7 @@ VantComponent({
     }
   },
 
-  attached() {
+  created() {
     this.updateValue(this.data.value);
   },
 

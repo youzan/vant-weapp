@@ -1,5 +1,11 @@
 declare function Component(options: any): void;
 
+interface wx {
+  [key: string]: any
+}
+
+declare const wx: wx;
+
 declare namespace Weapp {
   interface Component {
     getRelationNodes(selector: string): any[];
@@ -14,6 +20,7 @@ declare namespace Weapp {
 
   interface Event {
     type: string;
+    detail: any;
     timeStamp: number;
     target: Target;
     currentTarget: Target;
@@ -30,9 +37,5 @@ declare namespace Weapp {
   interface TouchEvent extends Event {
     touches: Array<Touch>;
     changedTouches: Array<Touch>;
-  }
-
-  interface CustomEvent extends Event {
-    detail: any;
   }
 }

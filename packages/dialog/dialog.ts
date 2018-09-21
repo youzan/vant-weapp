@@ -1,6 +1,35 @@
 let queue = [];
 
-const Dialog = options => {
+type DialogAction = 'confirm' | 'cancel';
+type DialogOptions = {
+  show?: boolean;
+  title?: string;
+  zIndex?: number;
+  message?: string;
+  overlay?: boolean;
+  selector?: string;
+  asyncClose?: boolean;
+  confirmButtonText?: string;
+  cancelButtonText?: string;
+  showConfirmButton?: boolean;
+  showCancelButton?: boolean;
+  closeOnClickOverlay?: boolean;
+  confirmButtonOpenType?: string;
+}
+
+interface Dialog {
+  (options: DialogOptions): Promise<DialogAction>;
+  alert?: (options: DialogOptions) => Promise<DialogAction>;
+  confirm?: (options: DialogOptions) => Promise<DialogAction>;
+  close?: () => void;
+  install?: () => void;
+  setDefaultOptions?: (options: DialogOptions) => void;
+  resetDefaultOptions?: () => void;
+  defaultOptions?: DialogOptions;
+  currentOptions?: DialogOptions;
+}
+
+const Dialog: Dialog = options => {
   return new Promise((resolve, reject) => {
     const pages = getCurrentPages();
     const ctx = pages[pages.length - 1];

@@ -1,7 +1,14 @@
 import { VantComponent } from '../common/component';
 
+type AreaItem = {
+  name: string;
+  code: string;
+};
+
 VantComponent({
   props: {
+    title: String,
+    loading: Boolean,
     value: {
       type: String,
       observer(value) {
@@ -9,8 +16,6 @@ VantComponent({
         this.setValues();
       }
     },
-    title: String,
-    loading: Boolean,
     itemHeight: {
       type: Number,
       value: 44
@@ -46,20 +51,20 @@ VantComponent({
 
   methods: {
     onCancel() {
-      this.triggerEvent('cancel', {
+      this.$emit('cancel', {
         values: this.getValues(),
         indexs: this.getIndexs()
       });
     },
 
     onConfirm() {
-      this.triggerEvent('confirm', {
+      this.$emit('confirm', {
         values: this.getValues(),
         indexs: this.getIndexs()
       });
     },
 
-    onChange(event) {
+    onChange(event: Weapp.Event) {
       const { value } = event.detail;
       const { pickerValue, displayColumns } = this.data;
       const index = pickerValue.findIndex((item, index) => item !== value[index]);
@@ -72,14 +77,14 @@ VantComponent({
 
       this.code = values[value[index]].code;
       this.setValues();
-      this.triggerEvent('change', {
+      this.$emit('change', {
         picker: this,
         values: this.getValues(),
         index
       });
     },
 
-    getList(type, code) {
+    getList(type: string, code?: string): AreaItem[] {
       let result = [];
       if (type !== 'province' && !code) {
         return result;
@@ -98,7 +103,7 @@ VantComponent({
       return result;
     },
 
-    getIndex(type, code) {
+    getIndex(type: string, code: string): number {
       const compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
       const list = this.getList(type, code.slice(0, compareNum - 2));
       code = code.slice(0, compareNum);

@@ -24,7 +24,7 @@ VantComponent({
     currentActive: -1
   },
 
-  attached() {
+  created() {
     this.setData({ currentActive: this.data.active });
   },
 

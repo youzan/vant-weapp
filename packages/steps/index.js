@@ -21,7 +21,7 @@ VantComponent({
     }
   },
 
-  attached() {
+  created() {
     this.formatSteps();
   },
 

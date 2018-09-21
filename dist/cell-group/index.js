@@ -1,10 +1,9 @@
 import { VantComponent } from '../common/component';
-
 VantComponent({
-  props: {
-    border: {
-      type: Boolean,
-      value: true
+    props: {
+        border: {
+            type: Boolean,
+            value: true
+        }
     }
-  }
 });

@@ -14,8 +14,8 @@ type Relations<Instance> = {
   };
 };
 type RecordToAny<T> = { [K in keyof T]: any };
-type Accessors<T> = {
-  [K in keyof T]: (() => T[K])
+type RecordToReturn<T> = {
+  [P in keyof T]: T[P] extends (...args: any[]) => any ? ReturnType<T[P]> : T[P]
 }
 
 export type CombinedComponentInstance<
@@ -27,15 +27,15 @@ export type CombinedComponentInstance<
   LooseObject &
   Weapp.Component &
   ComponentInstance & {
-    data: Data & RecordToAny<Props> & Computed;
+    data: Data & RecordToAny<Props> & RecordToReturn<Computed>;
   };
 
 export type VantComponentOptions<Data, Props, Methods, Computed, Instance> = {
   data?: Data;
-  props?: Props;
+  props?: Props & ThisType<Instance>;
   field?: boolean;
   mixins?: Mixins;
-  computed?: Accessors<Computed> & ThisType<Instance>;
+  computed?: Computed & ThisType<Instance>;
   relations?: Relations<Instance>;
   classes?: ExternalClasses;
   methods?: Methods & ThisType<Instance>;

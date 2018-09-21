@@ -30,7 +30,7 @@ VantComponent({
   },
 
   computed: {
-    cellClass() {
+    cellClass(): string {
       const { data } = this;
       return this.classNames('custom-class', 'van-cell', {
         'van-hairline': data.border,
@@ -40,7 +40,7 @@ VantComponent({
       });
     },
 
-    titleStyle() {
+    titleStyle(): string {
       const { titleWidth } = this.data;
       return titleWidth ? `max-width: ${titleWidth};min-width: ${titleWidth}` : '';
     }

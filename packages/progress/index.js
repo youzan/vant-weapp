@@ -52,7 +52,7 @@ VantComponent({
     progressWidth: 0
   },
 
-  ready() {
+  mounted() {
     this.setText();
     this.setPivotStyle();
     this.getWidth();

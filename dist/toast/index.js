@@ -1,6 +1,6 @@
-import { create } from '../common/create';
+import { VantComponent } from '../common/component';
 
-create({
+VantComponent({
   props: {
     show: Boolean,
     mask: Boolean,
@@ -29,6 +29,9 @@ create({
       this.setData({
         show: false
       });
-    }
+    },
+
+    // for prevent touchmove
+    noop() {}
   }
 });

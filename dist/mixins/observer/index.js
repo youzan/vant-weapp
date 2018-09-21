@@ -1,14 +1,14 @@
 import { behavior } from './behavior';
 import { observeProps } from './props';
 
-export function observe(sfc) {
+export function observe(sfc, options) {
   if (sfc.computed) {
-    sfc.behaviors.push(behavior);
-    sfc.methods = sfc.methods || {};
-    sfc.methods.$options = () => sfc;
+    options.behaviors.push(behavior);
+    options.methods = options.methods || {};
+    options.methods.$options = () => sfc;
 
-    if (sfc.properties) {
-      observeProps(sfc.properties);
+    if (options.properties) {
+      observeProps(options.properties);
     }
   }
 }

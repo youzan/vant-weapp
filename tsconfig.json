@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
+    "target": "es6",
     "noImplicitThis": true,
     "noImplicitUseStrict": true
   },

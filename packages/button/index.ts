@@ -21,7 +21,7 @@ VantComponent({
   },
 
   computed: {
-    classes() {
+    classes(): string {
       const { type, size, plain, disabled, loading, square, block } = this.data;
       return this.classNames(`van-button--${type}`, `van-button--${size}`, {
         'van-button--block': block,

@@ -20,7 +20,7 @@ VantComponent({
       }
     },
 
-    setActive(active) {
+    setActive(active: boolean) {
       this.setData({ active });
     }
   }

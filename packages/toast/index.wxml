@@ -10,7 +10,7 @@
 >
   <view
     class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}"
-    catch:touchmove
+    catch:touchmove="noop"
   >
     <!-- text only -->
     <view wx:if="{{ type === 'text' }}">{{ message }}</view>

@@ -3,5 +3,5 @@
   custom-class="van-overlay"
   custom-style="z-index: {{ zIndex }}; {{ mask ? 'background-color: rgba(0, 0, 0, .7);' : '' }}; {{ customStyle }}"
   bind:tap="onClick"
-  catch:touchmove
+  catch:touchmove="noop"
 />

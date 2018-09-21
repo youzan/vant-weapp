@@ -1,12 +1,15 @@
-declare function Behavior(options: any): void;
-declare function Component(options: any): void;
-declare function getCurrentPages(): Weapp.Page[];
+type BehaviorOptions = {
+  [key: string]: any & ThisType<any>
+};
 
-interface wx {
+type WX = {
   [key: string]: any
 }
 
-declare const wx: wx;
+declare const wx: WX;
+declare function Behavior(options: BehaviorOptions): void;
+declare function Component(options: any): void;
+declare function getCurrentPages(): Weapp.Page[];
 
 declare namespace Weapp {
   interface Component {

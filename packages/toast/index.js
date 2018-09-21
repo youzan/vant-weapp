@@ -29,6 +29,9 @@ VantComponent({
       this.setData({
         show: false
       });
-    }
+    },
+
+    // for prevent touchmove
+    noop() {}
   }
 });

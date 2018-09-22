@@ -6,9 +6,9 @@
   background-color: $white;
 
   &--horizontal {
+    position: relative;
     display: flex;
     overflow: hidden;
-    position: relative;
     padding: 10px 10px 15px;
   }
 
@@ -18,9 +18,9 @@
 }
 
 .van-step {
+  position: relative;
   flex: 1;
   font-size: 14px;
-  position: relative;
   color: $gray-dark;
 
   &--finish {
@@ -35,13 +35,16 @@
   }
 
   &--horizontal {
-    float: left;
-    padding-bottom: 10px;
+    padding-bottom: 14px;
 
     &:first-child {
       .van-step__title {
         transform: none;
-        margin-left: 0;
+      }
+
+      .van-step__circle-container {
+        padding: 0 8px 0 0;
+        transform: translate3d(0, 50%, 0);
       }
     }
 
@@ -52,56 +55,48 @@
 
       .van-step__title {
         transform: none;
-        margin-left: 0;
         text-align: right;
       }
 
       .van-step__circle-container {
-        left: auto;
-        right: -9px;
-      }
-
-      .van-step__line {
-        width: 0;
+        right: 0;
+        padding: 0 0 0 8px;
+        transform: translate3d(0, 50%, 0);
       }
     }
 
     .van-step__circle-container {
       position: absolute;
-      bottom: 0;
-      left: -8px;
+      bottom: 6px;
+      z-index: 1;
       padding: 0 8px;
       background-color: $white;
-      z-index: 1;
+      transform: translate3d(-50%, 50%, 0);
     }
 
     .van-step__title {
+      display: inline-block;
       font-size: 12px;
       transform: translate3d(-50%, 0, 0);
-      display: inline-block;
-      margin-left: 3px;
     }
 
     .van-step__line {
       position: absolute;
       left: 0;
-      bottom: 2px;
-      width: 100%;
+      right: 0;
+      bottom: 6px;
       height: 1px;
       background-color: $border-color;
+      transform: translate3d(0, 50%, 0);
     }
 
     &.van-step--process {
       color: $text-color;
 
-      .van-step__circle-container {
-        bottom: -4px;
-      }
-
       .van-step__active {
+        display: block;
         font-size: 12px;
         color: $green;
-        display: block;
         line-height: 1;
       }
     }
@@ -130,30 +125,26 @@
     }
 
     .van-step__active,
-    .van-step__circle {
-      z-index: 2;
+    .van-step__circle,
+    .van-step__line {
       position: absolute;
+      top: 19px;
+      left: -14px;
+      z-index: 2;
+      transform: translate3d(-50%, -50%, 0);
     }
 
     .van-step__active {
-      top: 12px;
-      left: -20px;
-      line-height: 1;
       font-size: 12px;
-    }
-
-    .van-step__circle {
-      top: 16px;
-      left: -17px;
+      line-height: 1;
     }
 
     .van-step__line {
-      position: absolute;
-      top: 0;
-      left: -15px;
+      z-index: 1;
       width: 1px;
       height: 100%;
       background-color: $border-color;
+      transform: translate3d(-50%, 0, 0);
     }
   }
 }

@@ -76,6 +76,10 @@ export default [
         title: 'Field 输入框'
       },
       {
+        path: '/radio',
+        title: 'Radio 单选框'
+      },
+      {
         path: '/search',
         title: 'Search 搜索'
       },

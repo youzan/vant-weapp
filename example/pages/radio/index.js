@@ -7,22 +7,9 @@ Page({
     radio3: '1'
   },
 
-  onChange1(e) {
-    this.setData({
-      radio1: e.detail
-    });
-  },
-
-  onChange2(e) {
-    this.setData({
-      radio2: e.detail
-    });
-  },
-
-  onChange3(e) {
-    this.setData({
-      radio3: e.detail
-    });
+  onChange(event) {
+    const { key } = event.currentTarget.dataset;
+    this.setData({ [key]: event.detail });
   },
 
   onClick(event) {

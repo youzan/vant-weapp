@@ -1,19 +1,19 @@
 <demo-block title="基本用法">
-  <van-radio-group value="{{ radio1 }}" bind:change="onChange1" custom-class="demo-radio-group">
+  <van-radio-group value="{{ radio1 }}" data-key="radio1" bind:change="onChange" custom-class="demo-radio-group">
     <van-radio name="1" custom-class="demo-radio">单选框 1</van-radio>
     <van-radio name="2" custom-class="demo-radio">单选框 2</van-radio>
   </van-radio-group>
 </demo-block>
 
 <demo-block title="禁用状态">
-  <van-radio-group value="{{ radio2 }}" bind:change="onChange2" disabled custom-class="demo-radio-group">
+  <van-radio-group value="{{ radio2 }}" data-key="radio2" bind:change="onChange" disabled custom-class="demo-radio-group">
     <van-radio name="1" custom-class="demo-radio">单选框 1</van-radio>
     <van-radio name="2" custom-class="demo-radio">单选框 2</van-radio>
   </van-radio-group>
 </demo-block>
 
 <demo-block title="与 Cell 组件一起使用">
-  <van-radio-group value="{{ radio3 }}" bind:change="onChange3">
+  <van-radio-group value="{{ radio3 }}">
     <van-cell-group>
       <van-cell title="单选框 1" clickable data-value="1" bind:click="onClick">
         <van-radio name="1" />

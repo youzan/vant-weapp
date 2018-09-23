@@ -1,0 +1,55 @@
+@import '../common/style/var.pcss';
+
+$van-radio-size: 20px;
+
+.van-radio {
+  overflow: hidden;
+  user-select: none;
+
+  &__input,
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__input {
+    height: 1em;
+    position: relative;
+    font-size: $van-radio-size;
+  }
+
+  &__control {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__label {
+    line-height: $van-radio-size;
+    margin-left: 10px;
+
+    &--left {
+      float: left;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__icon {
+    width: 1em;
+    pointer-events: none;
+    &--disabled {
+      color: $gray-light;
+    }
+    &--checked {
+      color: $green;
+    }
+    &--check {
+      color: $gray-dark;
+    }
+  }
+}

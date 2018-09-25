@@ -10,7 +10,7 @@ VantComponent({
   props: {
     tip: [String, Boolean],
     type: Number,
-    price: Number,
+    price: null,
     label: String,
     loading: Boolean,
     disabled: Boolean,

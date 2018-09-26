@@ -12,9 +12,9 @@ Page({
   },
 
   onSearch(event) {
-    if (event.detail) {
+    if (this.data.value) {
       wx.showToast({
-        title: '搜索：' + event.detail,
+        title: '搜索：' + this.data.value,
         icon: 'none'
       });
     }

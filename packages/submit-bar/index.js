@@ -2,6 +2,7 @@ import { VantComponent } from '../common/component';
 
 VantComponent({
   classes: [
+    'bar-class',
     'price-class',
     'button-class'
   ],
@@ -9,7 +10,7 @@ VantComponent({
   props: {
     tip: [String, Boolean],
     type: Number,
-    price: Number,
+    price: null,
     label: String,
     loading: Boolean,
     disabled: Boolean,

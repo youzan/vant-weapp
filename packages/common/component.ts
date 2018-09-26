@@ -38,9 +38,9 @@ function VantComponent<Data, Props, Watch, Methods, Computed>(
 
   const { relation } = vantOptions;
   if (relation) {
-    options.relations = {
+    options.relations = Object.assign(options.relations || {}, {
       [`../${relation.name}/index`]: relation
-    }
+    });
   }
 
   // add default externalClasses

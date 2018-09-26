@@ -20,13 +20,16 @@ VantComponent({
   props: {
     active: {
       type: Number,
-      value: 0,
-      observer: 'setActive'
+      value: 0
     }
   },
 
   data: {
     badges: []
+  },
+
+  watch: {
+    active: 'setActive'
   },
 
   beforeCreate() {

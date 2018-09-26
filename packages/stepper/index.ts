@@ -31,6 +31,10 @@ VantComponent({
     }
   },
 
+  data: {
+    value: 0
+  },
+
   created() {
     this.setData({
       value: this.range(this.data.value)

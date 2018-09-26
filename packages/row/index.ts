@@ -14,10 +14,11 @@ VantComponent({
   },
 
   props: {
-    gutter: {
-      type: Number,
-      observer: 'setGutter'
-    }
+    gutter: Number
+  },
+
+  watch: {
+    gutter: 'setGutter'
   },
 
   mounted() {

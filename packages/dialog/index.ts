@@ -2,25 +2,13 @@ import { VantComponent } from '../common/component';
 
 VantComponent({
   props: {
+    show: Boolean,
     title: String,
     message: String,
     useSlot: Boolean,
     asyncClose: Boolean,
     showCancelButton: Boolean,
     confirmButtonOpenType: String,
-    show: {
-      type: Boolean,
-      observer(show) {
-        if (!show) {
-          this.setData({
-            loading: {
-              confirm: false,
-              cancel: false
-            }
-          });
-        }
-      }
-    },
     zIndex: {
       type: Number,
       value: 100
@@ -51,6 +39,19 @@ VantComponent({
     loading: {
       confirm: false,
       cancel: false
+    }
+  },
+
+  watch: {
+    show(show) {
+      if (!show) {
+        this.setData({
+          loading: {
+            confirm: false,
+            cancel: false
+          }
+        });
+      }
     }
   },
 

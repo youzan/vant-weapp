@@ -1,5 +1,10 @@
 import { isObj } from '../common/utils';
 
+type NotifyOptions = {
+  selector?: string;
+  duration?: number;
+}
+
 const defaultOptions = {
   selector: '#van-notify',
   duration: 3000
@@ -9,7 +14,7 @@ function parseOptions(text) {
   return isObj(text) ? text : { text };
 }
 
-export default function Notify(options = {}) {
+export default function Notify(options: NotifyOptions = {}) {
   const pages = getCurrentPages();
   const ctx = pages[pages.length - 1];
 

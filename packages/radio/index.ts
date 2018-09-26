@@ -30,14 +30,13 @@ VantComponent({
 
   methods: {
     emitChange(value) {
-      const parent = this.getRelationNodes('../radio-group/index')[0];
-      (parent || this).$emit('input', value);
-      (parent || this).$emit('change', value);
+      const instance = this.getRelationNodes('../radio-group/index')[0] || this;
+      instance.$emit('input', value);
+      instance.$emit('change', value);
     },
 
     onChange(event) {
-      const { value } = event.detail;
-      this.emitChange(value);
+      this.emitChange(event.detail.value);
     },
 
     onClickLabel() {

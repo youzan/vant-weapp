@@ -22,6 +22,10 @@ VantComponent({
     }
   },
 
+  data: {
+    value: ''
+  },
+
   methods: {
     onChange(event) {
       this.setData({ value: event.detail });

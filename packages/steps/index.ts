@@ -3,14 +3,8 @@ import { VantComponent } from '../common/component';
 VantComponent({
   props: {
     icon: String,
-    steps: {
-      type: Array,
-      observer: 'formatSteps'
-    },
-    active: {
-      type: Number,
-      observer: 'formatSteps'
-    },
+    steps: Array,
+    active: Number,
     direction: {
       type: String,
       value: 'horizontal'
@@ -19,6 +13,11 @@ VantComponent({
       type: String,
       value: '#06bf04'
     }
+  },
+
+  watch: {
+    steps: 'formatSteps',
+    active: 'formatSteps'
   },
 
   created() {

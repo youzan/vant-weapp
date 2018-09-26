@@ -6,17 +6,18 @@ VantComponent({
   classes: ['node-class'],
 
   props: {
+    checked: Boolean,
     loading: Boolean,
     disabled: Boolean,
-    checked: {
-      type: Boolean,
-      observer(value) {
-        this.setData({ value });
-      }
-    },
     size: {
       type: String,
       value: '30px'
+    }
+  },
+
+  watch: {
+    checked(value) {
+      this.setData({ value });
     }
   },
 

@@ -47,7 +47,7 @@ VantComponent({
       return Math.max(Math.min(this.data.max, value), this.data.min);
     },
 
-    onInput(event) {
+    onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
       this.triggerInput(value);
     },
@@ -64,7 +64,7 @@ VantComponent({
       this.$emit(type);
     },
 
-    onBlur(event) {
+    onBlur(event: Weapp.Event) {
       const value = this.range(this.data.value);
       this.triggerInput(value);
       this.$emit('blur', event);

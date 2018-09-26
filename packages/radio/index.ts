@@ -17,7 +17,7 @@ VantComponent({
   },
 
   computed: {
-    iconClass() {
+    iconClass(): string {
       const { disabled, name, value } = this.data;
       return this.classNames('van-radio__icon', {
         'van-radio__icon--disabled': disabled,
@@ -34,7 +34,7 @@ VantComponent({
       instance.$emit('change', value);
     },
 
-    onChange(event) {
+    onChange(event: Weapp.Event) {
       this.emitChange(event.detail.value);
     },
 

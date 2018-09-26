@@ -4,7 +4,7 @@ VantComponent({
   relation: {
     name: 'radio',
     type: 'descendant',
-    linked(target) {
+    linked(target: Weapp.Component) {
       const { value, disabled } = this.data;
       target.setData({
         value: value,
@@ -26,7 +26,7 @@ VantComponent({
       });
     },
 
-    disabled(disabled) {
+    disabled(disabled: boolean) {
       const children = this.getRelationNodes('../radio/index');
       children.forEach(child => {
         child.setData({ disabled: disabled || child.data.disabled });

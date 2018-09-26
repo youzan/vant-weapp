@@ -9,14 +9,14 @@ VantComponent({
   relation: {
     name: 'tab',
     type: 'descendant',
-    linked(child) {
+    linked(child: Weapp.Component) {
       this.data.tabs.push({
         instance: child,
         data: child.data
       });
       this.updateTabs();
     },
-    unlinked(child) {
+    unlinked(child: Weapp.Component) {
       const tabs = this.data.tabs.filter(item => item.instance !== child);
       this.setData({
         tabs,
@@ -91,7 +91,7 @@ VantComponent({
       });
     },
 
-    onTap(event) {
+    onTap(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
       if (this.data.tabs[index].data.disabled) {
         this.trigger('disabled', index);

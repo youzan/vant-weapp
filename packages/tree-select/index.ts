@@ -41,12 +41,12 @@ VantComponent({
 
   methods: {
     // 当一个子项被选择时
-    onSelectItem(event) {
+    onSelectItem(event: Weapp.Event) {
       this.$emit('click-item', event.currentTarget.dataset.item);
     },
 
     // 当一个导航被点击时
-    onClickNav(event) {
+    onClickNav(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
       this.$emit('click-nav', { index });
     },

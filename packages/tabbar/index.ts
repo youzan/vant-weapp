@@ -4,13 +4,13 @@ VantComponent({
   relation: {
     name: 'tabbar-item',
     type: 'descendant',
-    linked(target) {
+    linked(target: Weapp.Component) {
       this.data.items.push(target);
       setTimeout(() => {
         this.setActiveItem();
       });
     },
-    unlinked(target) {
+    unlinked(target: Weapp.Component) {
       this.data.items = this.data.items.filter(item => item !== target);
       setTimeout(() => {
         this.setActiveItem();

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Steps 步骤条",
+  "navigationBarTitleText": "SubmitBar 提交订单栏",
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
     "van-submit-bar": "../../dist/submit-bar/index",

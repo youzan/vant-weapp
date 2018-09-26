@@ -1,42 +1,38 @@
 @import '../common/style/var.pcss';
 
 .van-submit-bar {
-  left: 0;
-  bottom: 0;
-  width: 100%;
   z-index: 100;
   position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   user-select: none;
 
   &__tip {
-    color: $orange;
     padding: 10px;
+    background-color: #fff7cc;
+    color: $orange;
     font-size: 12px;
     line-height: 18px;
-    background-color: #fff7cc;
   }
 
   &__bar {
-    height: 50px;
     display: flex;
-    font-size: 14px;
     align-items: center;
+    height: 50px;
     background-color: $white;
+    font-size: 14px;
   }
 
   &__text {
     flex: 1;
+    color: $text-color;
     font-weight: 500;
     text-align: right;
-    color: $text-color;
-    padding-right: 12px;
-
-    span {
-      display: inline-block;
-    }
   }
 
   &__price {
+    padding-right: 12px;
     color: $red;
   }
 

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Search 搜索",
+  "navigationBarTitleText": "Radio 单选框",
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
     "van-radio-group": "../../dist/radio-group/index",

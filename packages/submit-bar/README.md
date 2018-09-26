@@ -96,6 +96,7 @@
 | custom-class | 根节点样式类 |
 | price-class | 价格样式类 |
 | button-class | 按钮样式类 |
+| bar-class | 订单栏样式类 |
 
 ### 更新日志
 

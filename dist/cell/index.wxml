@@ -11,14 +11,15 @@
   <slot wx:else name="icon" />
 
   <view
-    wx:if="{{ title }}"
     style="{{ titleStyle }}"
     class="van-cell__title title-class"
   >
-    {{ title }}
-    <view wx:if="{{ label }}" class="van-cell__label label-class">{{ label }}</view>
+    <block wx:if="{{ title }}">
+      {{ title }}
+      <view wx:if="{{ label }}" class="van-cell__label label-class">{{ label }}</view>
+    </block>
+    <slot wx:else name="title" />
   </view>
-  <slot name="title" />
 
   <view class="van-cell__value value-class">
     <view wx:if="{{ value }}">{{ value }}</view>

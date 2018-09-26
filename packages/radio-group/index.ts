@@ -1,16 +1,15 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relations: {
-    '../radio/index': {
-      type: 'descendant',
-      linked(target) {
-        const { value, disabled } = this.data;
-        target.setData({
-          value: value,
-          disabled: disabled || target.data.disabled
-        });
-      }
+  relation: {
+    name: 'radio',
+    type: 'descendant',
+    linked(target) {
+      const { value, disabled } = this.data;
+      target.setData({
+        value: value,
+        disabled: disabled || target.data.disabled
+      });
     }
   },
 

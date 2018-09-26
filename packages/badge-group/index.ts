@@ -1,19 +1,16 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relations: {
-    '../badge/index': {
-      type: 'descendant',
-
-      linked(target) {
-        this.data.badges.push(target);
-        this.setActive();
-      },
-
-      unlinked(target) {
-        this.data.badges = this.data.badges.filter(item => item !== target);
-        this.setActive();
-      }
+  relation: {
+    name: 'badge',
+    type: 'descendant',
+    linked(target) {
+      this.data.badges.push(target);
+      this.setActive();
+    },
+    unlinked(target) {
+      this.data.badges = this.data.badges.filter(item => item !== target);
+      this.setActive();
     }
   },
 

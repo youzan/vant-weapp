@@ -6,26 +6,23 @@ type TabItemData = {
 };
 
 VantComponent({
-  relations: {
-    '../tab/index': {
-      type: 'descendant',
-
-      linked(child) {
-        this.data.tabs.push({
-          instance: child,
-          data: child.data
-        });
-        this.updateTabs();
-      },
-
-      unlinked(child) {
-        const tabs = this.data.tabs.filter(item => item.instance !== child);
-        this.setData({
-          tabs,
-          scrollable: tabs.length > this.data.swipeThreshold
-        });
-        this.setActiveTab();
-      }
+  relation: {
+    name: 'tab',
+    type: 'descendant',
+    linked(child) {
+      this.data.tabs.push({
+        instance: child,
+        data: child.data
+      });
+      this.updateTabs();
+    },
+    unlinked(child) {
+      const tabs = this.data.tabs.filter(item => item.instance !== child);
+      this.setData({
+        tabs,
+        scrollable: tabs.length > this.data.swipeThreshold
+      });
+      this.setActiveTab();
     }
   },
 

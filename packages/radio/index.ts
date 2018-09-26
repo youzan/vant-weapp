@@ -1,10 +1,9 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relations: {
-    '../radio-group/index': {
-      type: 'ancestor'
-    }
+  relation: {
+    name: 'radio-group',
+    type: 'ancestor'
   },
 
   classes: ['icon-class', 'label-class'],

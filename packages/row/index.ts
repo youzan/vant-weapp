@@ -4,7 +4,7 @@ VantComponent({
   relation: {
     name: 'col',
     type: 'descendant',
-    linked(target) {
+    linked(target: Weapp.Component) {
       if (this.data.gutter) {
         target.setGutter(this.data.gutter);
       }

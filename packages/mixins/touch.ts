@@ -1,6 +1,6 @@
 export const touch = Behavior({
   methods: {
-    touchStart(event) {
+    touchStart(event: Weapp.TouchEvent) {
       this.direction = '';
       this.deltaX = 0;
       this.deltaY = 0;
@@ -10,7 +10,7 @@ export const touch = Behavior({
       this.startY = event.touches[0].clientY;
     },
 
-    touchMove(event) {
+    touchMove(event: Weapp.TouchEvent) {
       const touch = event.touches[0];
       this.deltaX = touch.clientX - this.startX;
       this.deltaY = touch.clientY - this.startY;

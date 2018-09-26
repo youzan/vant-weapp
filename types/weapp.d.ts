@@ -4,7 +4,7 @@ type BehaviorOptions = {
 
 type WX = {
   [key: string]: any
-}
+};
 
 declare const wx: WX;
 declare function Behavior(options: BehaviorOptions): void;

@@ -155,7 +155,7 @@ VantComponent({
       });
     },
 
-    onClick(event) {
+    onClick(event: Weapp.Event) {
       this.$emit('click', event);
     }
   }

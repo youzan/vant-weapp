@@ -41,7 +41,7 @@ VantComponent({
   },
 
   methods: {
-    onSubmit(event) {
+    onSubmit(event: Weapp.Event) {
       this.$emit('submit', event.detail);
     }
   }

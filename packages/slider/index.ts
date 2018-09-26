@@ -33,14 +33,14 @@ VantComponent({
   },
 
   methods: {
-    onTouchStart(event) {
+    onTouchStart(event: Weapp.TouchEvent) {
       if (this.data.disabled) return;
 
       this.touchStart(event);
       this.startValue = this.format(this.data.value);
     },
 
-    onTouchMove(event) {
+    onTouchMove(event: Weapp.TouchEvent) {
       if (this.data.disabled) return;
 
       this.touchMove(event);
@@ -55,7 +55,7 @@ VantComponent({
       this.updateValue(this.data.value, true);
     },
 
-    onClick(event) {
+    onClick(event: Weapp.TouchEvent) {
       if (this.data.disabled) return;
 
       this.getRect(rect => {

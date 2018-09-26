@@ -26,7 +26,7 @@ VantComponent({
   },
 
   methods: {
-    onChange(event) {
+    onChange(event: Weapp.Event) {
       this.$emit('change', event.detail);
     }
   }

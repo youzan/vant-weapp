@@ -24,6 +24,7 @@ VantComponent({
 
   methods: {
     onChange(event) {
+      this.setData({ value: event.detail });
       this.$emit('change', event.detail);
     },
 

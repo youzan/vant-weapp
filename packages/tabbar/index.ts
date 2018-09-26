@@ -2,13 +2,7 @@ import { VantComponent } from '../common/component';
 
 VantComponent({
   props: {
-    active: {
-      type: Number,
-      observer(active) {
-        this.setData({ currentActive: active });
-        this.setActiveItem();
-      }
-    },
+    active: Number,
     fixed: {
       type: Boolean,
       value: true
@@ -22,6 +16,13 @@ VantComponent({
   data: {
     items: [],
     currentActive: -1
+  },
+
+  watch: {
+    active(active) {
+      this.setData({ currentActive: active });
+      this.setActiveItem();
+    }
   },
 
   created() {

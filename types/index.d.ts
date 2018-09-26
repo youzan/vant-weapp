@@ -21,6 +21,7 @@ type RecordToReturn<T> = {
 export type CombinedComponentInstance<
   Data,
   Props,
+  Watch,
   Methods,
   Computed
 > = Methods &
@@ -30,11 +31,12 @@ export type CombinedComponentInstance<
     data: Data & RecordToAny<Props> & RecordToReturn<Computed>;
   };
 
-export type VantComponentOptions<Data, Props, Methods, Computed, Instance> = {
+export type VantComponentOptions<Data, Props, Watch, Methods, Computed, Instance> = {
   data?: Data;
-  props?: Props & ThisType<Instance>;
   field?: boolean;
   mixins?: Mixins;
+  props?: Props & ThisType<Instance>;
+  watch?: Watch & ThisType<Instance>;
   computed?: Computed & ThisType<Instance>;
   relations?: Relations<Instance>;
   classes?: ExternalClasses;
@@ -42,7 +44,7 @@ export type VantComponentOptions<Data, Props, Methods, Computed, Instance> = {
 
   // lifetimes
   beforeCreate?: (this: Instance) => void;
-  created?: () => void;
-  mounted?: () => void;
-  destroyed?: () => void;
+  created?: (this: Instance) => void;
+  mounted?: (this: Instance) => void;
+  destroyed?: (this: Instance) => void;
 };

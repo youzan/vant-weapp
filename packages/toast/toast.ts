@@ -1,5 +1,30 @@
 import { isObj } from '../common/utils';
 
+type ToastMessage = string | number;
+
+export type ToastOptions = {
+  show?: boolean;
+  type?: string;
+  mask?: boolean;
+  zIndex?: number;
+  position?: string;
+  duration?: number;
+  selector?: string;
+  forbidClick?: boolean;
+  loadingType?: string;
+  message?: ToastMessage;
+}
+
+export interface Toast {
+  (message: ToastOptions | ToastMessage, options?: ToastOptions): Weapp.Component;
+  loading?(options?: ToastOptions | ToastMessage): Weapp.Component;
+  success?(options?: ToastOptions | ToastMessage): Weapp.Component;
+  fail?(options?: ToastOptions | ToastMessage): Weapp.Component;
+  clear?(): void;
+  setDefaultOptions?(options: ToastOptions): void;
+  resetDefaultOptions?(): void;
+}
+
 const defaultOptions = {
   type: 'text',
   mask: false,
@@ -14,17 +39,17 @@ const defaultOptions = {
 };
 
 let queue = [];
-let currentOptions = { ...defaultOptions };
+let currentOptions: ToastOptions = { ...defaultOptions };
 
-function parseOptions(message) {
+function parseOptions(message): ToastOptions {
   return isObj(message) ? message : { message };
 }
 
-function Toast(options = {}) {
+const Toast: Toast = (options = {}) => {
   options = {
     ...currentOptions,
     ...parseOptions(options)
-  };
+  } as ToastOptions;
 
   const pages = getCurrentPages();
   const ctx = pages[pages.length - 1];
@@ -54,7 +79,7 @@ const createMethod = type => options => Toast({
   Toast[method] = createMethod(method);
 });
 
-Toast.clear = all => {
+Toast.clear = () => {
   queue.forEach(toast => {
     toast.clear();
   });

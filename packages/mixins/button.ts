@@ -27,23 +27,23 @@ export const button = Behavior({
   },
 
   methods: {
-    bindgetuserinfo(event = {}) {
+    bindgetuserinfo(event: Partial<Weapp.Event>) {
       this.$emit('getuserinfo', event.detail);
     },
 
-    bindcontact(event = {}) {
+    bindcontact(event: Partial<Weapp.Event>) {
       this.$emit('contact', event.detail);
     },
 
-    bindgetphonenumber(event = {}) {
+    bindgetphonenumber(event: Partial<Weapp.Event>) {
       this.$emit('getphonenumber', event.detail);
     },
 
-    bindopensetting(event = {}) {
+    bindopensetting(event: Partial<Weapp.Event>) {
       this.$emit('opensetting', event.detail);
     },
 
-    binderror(event = {}) {
+    binderror(event: Partial<Weapp.Event>) {
       this.$emit('error', event.detail);
     }
   }

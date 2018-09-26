@@ -11,18 +11,19 @@ function mapKeys(source: object, target: object, map: object) {
   });
 }
 
-function VantComponent<Data, Props, Methods, Computed>(
-  sfc: VantComponentOptions<
+function VantComponent<Data, Props, Watch, Methods, Computed>(
+  vantOptions: VantComponentOptions<
     Data,
     Props,
+    Watch,
     Methods,
     Computed,
-    CombinedComponentInstance<Data, Props, Methods, Computed>
+    CombinedComponentInstance<Data, Props, Watch, Methods, Computed>
   >
 ): void {
   const options: any = {};
 
-  mapKeys(sfc, options, {
+  mapKeys(vantOptions, options, {
     data: 'data',
     props: 'properties',
     mixins: 'behaviors',
@@ -44,7 +45,7 @@ function VantComponent<Data, Props, Methods, Computed>(
   options.behaviors.push(basic);
 
   // map field to form-field behavior
-  if (sfc.field) {
+  if (vantOptions.field) {
     options.behaviors.push('wx://form-field');
   }
 
@@ -54,7 +55,7 @@ function VantComponent<Data, Props, Methods, Computed>(
     addGlobalClass: true
   };
 
-  observe(sfc, options);
+  observe(vantOptions, options);
   Component(options);
 }
 

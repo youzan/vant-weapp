@@ -7,10 +7,7 @@ VantComponent({
   props: {
     text: {
       type: String,
-      value: '',
-      observer() {
-        this.setData({}, this.init);
-      }
+      value: ''
     },
     mode: {
       type: String,
@@ -59,6 +56,12 @@ VantComponent({
     animation: null,
     resetAnimation: null,
     timer: null
+  },
+
+  watch: {
+    text() {
+      this.setData({}, this.init);
+    }
   },
 
   created() {

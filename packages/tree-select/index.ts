@@ -4,17 +4,10 @@ const ITEM_HEIGHT = 44;
 
 VantComponent({
   props: {
-    items: {
-      type: Array,
-      observer() {
-        this.updateSubItems();
-        this.updateMainHeight();
-      }
-    },
+    items: Array,
     mainActiveIndex: {
       type: Number,
-      value: 0,
-      observer: 'updateSubItems'
+      value: 0
     },
     activeId: {
       type: Number,
@@ -22,11 +15,7 @@ VantComponent({
     },
     maxHeight: {
       type: Number,
-      value: 300,
-      observer() {
-        this.updateItemHeight();
-        this.updateMainHeight();
-      }
+      value: 300
     }
   },
 
@@ -34,6 +23,20 @@ VantComponent({
     subItems: [],
     mainHeight: 0,
     itemHeight: 0
+  },
+
+  watch: {
+    items() {
+      this.updateSubItems();
+      this.updateMainHeight();
+    },
+
+    maxHeight() {
+      this.updateItemHeight();
+      this.updateMainHeight();
+    },
+
+    mainActiveIndex: 'updateSubItems'
   },
 
   methods: {
@@ -59,14 +62,22 @@ VantComponent({
 
     // 更新组件整体高度，根据最大高度和当前组件需要展示的高度来决定
     updateMainHeight() {
-      const maxHeight = Math.max(this.data.items.length * ITEM_HEIGHT, this.data.subItems.length * ITEM_HEIGHT);
+      const maxHeight = Math.max(
+        this.data.items.length * ITEM_HEIGHT,
+        this.data.subItems.length * ITEM_HEIGHT
+      );
 
       this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
     },
 
     // 更新子项列表高度，根据可展示的最大高度和当前子项列表的高度决定
     updateItemHeight() {
-      this.setData({ itemHeight: Math.min(this.data.subItems.length * ITEM_HEIGHT, this.data.maxHeight) });
+      this.setData({
+        itemHeight: Math.min(
+          this.data.subItems.length * ITEM_HEIGHT,
+          this.data.maxHeight
+        )
+      });
     }
   }
 });

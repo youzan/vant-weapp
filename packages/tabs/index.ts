@@ -1,5 +1,10 @@
 import { VantComponent } from '../common/component';
 
+type TabItemData = {
+  active: boolean;
+  inited?: boolean;
+};
+
 VantComponent({
   relations: {
     '../tab/index': {
@@ -25,18 +30,11 @@ VantComponent({
   },
 
   props: {
-    color: {
-      type: String,
-      observer: 'setLine'
-    },
-    lineWidth: {
-      type: Number,
-      observer: 'setLine'
-    },
+    color: String,
+    lineWidth: Number,
     active: {
       type: null,
-      value: 0,
-      observer: 'setActiveTab'
+      value: 0
     },
     type: {
       type: String,
@@ -52,19 +50,26 @@ VantComponent({
     },
     swipeThreshold: {
       type: Number,
-      value: 4,
-      observer() {
-        this.setData({
-          scrollable: this.data.tabs.length > this.data.swipeThreshold
-        });
-      }
+      value: 4
     }
   },
 
   data: {
     tabs: [],
     lineStyle: '',
-    scrollLeft: 0
+    scrollLeft: 0,
+    scrollable: false
+  },
+
+  watch: {
+    swipeThreshold() {
+      this.setData({
+        scrollable: this.data.tabs.length > this.data.swipeThreshold
+      });
+    },
+    color: 'setLine',
+    lineWidth: 'setLine',
+    active: 'setActiveTab'
   },
 
   mounted() {
@@ -133,7 +138,7 @@ VantComponent({
 
     setActiveTab() {
       this.data.tabs.forEach((item, index) => {
-        const data = {
+        const data: TabItemData = {
           active: index === this.data.active
         };
 

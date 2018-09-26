@@ -13,6 +13,7 @@ declare function getCurrentPages(): Weapp.Page[];
 
 declare namespace Weapp {
   interface Component {
+    [key: string]: any;
     getRelationNodes(selector: string): any[];
     setData(data: any, callback?: Function): void;
   }

@@ -3,17 +3,9 @@ export const transition = function(showDefaultValue) {
     properties: {
       customStyle: String,
       show: {
-        value: showDefaultValue,
         type: Boolean,
-        observer(value) {
-          if (value) {
-            this.show();
-          } else {
-            this.setData({
-              type: 'leave'
-            });
-          }
-        }
+        value: showDefaultValue,
+        observer: 'observeShow'
       },
       duration: {
         type: Number,
@@ -34,6 +26,16 @@ export const transition = function(showDefaultValue) {
     },
 
     methods: {
+      observeShow(value) {
+        if (value) {
+          this.show();
+        } else {
+          this.setData({
+            type: 'leave'
+          });
+        }
+      },
+
       show() {
         this.setData({
           inited: true,

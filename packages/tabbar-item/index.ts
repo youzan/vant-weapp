@@ -7,10 +7,9 @@ VantComponent({
     dot: Boolean
   },
 
-  relations: {
-    '../tabbar/index': {
-      type: 'ancestor'
-    }
+  relation: {
+    name: 'tabbar',
+    type: 'ancestor'
   },
 
   data: {

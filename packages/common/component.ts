@@ -31,10 +31,17 @@ function VantComponent<Data, Props, Watch, Methods, Computed>(
     beforeCreate: 'created',
     created: 'attached',
     mounted: 'ready',
-    destroyed: 'detached',
     relations: 'relations',
+    destroyed: 'detached',
     classes: 'externalClasses'
   });
+
+  const { relation } = vantOptions;
+  if (relation) {
+    options.relations = Object.assign(options.relations || {}, {
+      [`../${relation.name}/index`]: relation
+    });
+  }
 
   // add default externalClasses
   options.externalClasses = options.externalClasses || [];

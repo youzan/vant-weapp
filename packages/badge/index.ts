@@ -1,10 +1,9 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relations: {
-    '../badge-group/index': {
-      type: 'ancestor'
-    }
+  relation: {
+    type: 'ancestor',
+    name: 'badge-group'
   },
 
   props: {

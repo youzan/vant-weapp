@@ -1,10 +1,9 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relations: {
-    '../tabs/index': {
-      type: 'ancestor'
-    }
+  relation: {
+    name: 'tabs',
+    type: 'ancestor'
   },
 
   props: {

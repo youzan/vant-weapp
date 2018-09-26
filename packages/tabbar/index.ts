@@ -1,6 +1,23 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
+  relation: {
+    name: 'tabbar-item',
+    type: 'descendant',
+    linked(target) {
+      this.data.items.push(target);
+      setTimeout(() => {
+        this.setActiveItem();
+      });
+    },
+    unlinked(target) {
+      this.data.items = this.data.items.filter(item => item !== target);
+      setTimeout(() => {
+        this.setActiveItem();
+      });
+    }
+  },
+
   props: {
     active: Number,
     fixed: {
@@ -27,26 +44,6 @@ VantComponent({
 
   created() {
     this.setData({ currentActive: this.data.active });
-  },
-
-  relations: {
-    '../tabbar-item/index': {
-      type: 'descendant',
-
-      linked(target) {
-        this.data.items.push(target);
-        setTimeout(() => {
-          this.setActiveItem();
-        });
-      },
-
-      unlinked(target) {
-        this.data.items = this.data.items.filter(item => item !== target);
-        setTimeout(() => {
-          this.setActiveItem();
-        });
-      }
-    }
   },
 
   methods: {

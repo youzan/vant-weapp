@@ -1,49 +1,42 @@
 import { VantComponent } from '../common/component';
-
 VantComponent({
-  props: {
-    icon: String,
-    steps: {
-      type: Array,
-      observer: 'formatSteps'
+    props: {
+        icon: String,
+        steps: Array,
+        active: Number,
+        direction: {
+            type: String,
+            value: 'horizontal'
+        },
+        activeColor: {
+            type: String,
+            value: '#06bf04'
+        }
     },
-    active: {
-      type: Number,
-      observer: 'formatSteps'
+    watch: {
+        steps: 'formatSteps',
+        active: 'formatSteps'
     },
-    direction: {
-      type: String,
-      value: 'horizontal'
+    created() {
+        this.formatSteps();
     },
-    activeColor: {
-      type: String,
-      value: '#06bf04'
+    methods: {
+        formatSteps() {
+            const { steps } = this.data;
+            steps.forEach((step, index) => {
+                step.status = this.getStatus(index);
+            });
+            this.setData({ steps });
+        },
+        getStatus(index) {
+            const { active } = this.data;
+            if (index < active) {
+                return 'finish';
+            }
+            else if (index === active) {
+                return 'process';
+            }
+            return '';
+        }
     }
-  },
-
-  created() {
-    this.formatSteps();
-  },
-
-  methods: {
-    formatSteps() {
-      const { steps } = this.data;
-      steps.forEach((step, index) => {
-        step.status = this.getStatus(index);
-      });
-      this.setData({ steps });
-    },
-
-    getStatus(index) {
-      const { active } = this.data;
-
-      if (index < active) {
-        return 'finish';
-      } else if (index === active) {
-        return 'process';
-      }
-
-      return '';
-    }
-  }
 });

@@ -1,104 +1,64 @@
 import { VantComponent } from '../common/component';
-
 VantComponent({
-  props: {
-    inactive: {
-      type: Boolean,
-      observer() {
-        this.setPivotStyle();
-        this.setPortionStyle();
-      }
+    props: {
+        inactive: Boolean,
+        percentage: Number,
+        pivotText: String,
+        pivotColor: String,
+        showPivot: {
+            type: Boolean,
+            value: true
+        },
+        color: {
+            type: String,
+            value: '#38f'
+        },
+        textColor: {
+            type: String,
+            value: '#fff'
+        }
     },
-    pivotColor: {
-      type: String,
-      observer: 'setPivotStyle'
+    data: {
+        pivotWidth: 0,
+        progressWidth: 0
     },
-    percentage: {
-      type: Number,
-      observer() {
-        this.setText();
-        this.setPortionStyle();
-      }
+    watch: {
+        pivotText: 'getWidth',
+        showPivot: 'getWidth'
     },
-    showPivot: {
-      type: Boolean,
-      value: true,
-      observer: 'getWidth'
+    computed: {
+        portionStyle() {
+            const width = (this.data.progressWidth - this.data.pivotWidth) * this.data.percentage / 100 + 'px';
+            const background = this.getCurrentColor();
+            return `width: ${width}; background: ${background}; `;
+        },
+        pivotStyle() {
+            const color = this.data.textColor;
+            const background = this.data.pivotColor || this.getCurrentColor();
+            return `color: ${color}; background: ${background}`;
+        },
+        text() {
+            return this.data.pivotText || this.data.percentage + '%';
+        }
     },
-    pivotText: {
-      type: String,
-      observer() {
-        this.setText();
+    mounted() {
         this.getWidth();
-      }
     },
-    color: {
-      type: String,
-      value: '#38f',
-      observer() {
-        this.setPivotStyle();
-        this.setPortionStyle();
-      }
-    },
-    textColor: {
-      type: String,
-      value: '#fff',
-      observer: 'setPivotStyle'
+    methods: {
+        getCurrentColor() {
+            return this.data.inactive ? '#cacaca' : this.data.color;
+        },
+        getWidth() {
+            this.getRect('.van-progress').then(rect => {
+                this.setData({
+                    progressWidth: rect.width
+                });
+            });
+            this.getRect('.van-progress__pivot').then(rect => {
+                this.setData({
+                    pivotWidth: rect.width || 0
+                });
+            });
+        }
     }
-  },
-
-  data: {
-    pivotWidth: 0,
-    progressWidth: 0
-  },
-
-  mounted() {
-    this.setText();
-    this.setPivotStyle();
-    this.getWidth();
-  },
-
-  methods: {
-    getCurrentColor() {
-      return this.data.inactive ? '#cacaca' : this.data.color;
-    },
-
-    setText() {
-      this.setData({
-        text: this.data.pivotText || this.data.percentage + '%'
-      });
-    },
-
-    setPortionStyle() {
-      const width = (this.data.progressWidth - this.data.pivotWidth) * this.data.percentage / 100 + 'px';
-      const background = this.getCurrentColor();
-      this.setData({
-        portionStyle: `width: ${width}; background: ${background}; `
-      });
-    },
-
-    setPivotStyle() {
-      const color = this.data.textColor;
-      const background = this.data.pivotColor || this.getCurrentColor();
-      this.setData({
-        pivotStyle: `color: ${color}; background: ${background}`
-      });
-    },
-
-    getWidth() {
-      this.getRect('.van-progress').then(rect => {
-        this.setData({
-          progressWidth: rect.width
-        });
-        this.setPortionStyle();
-      });
-
-      this.getRect('.van-progress__pivot').then(rect => {
-        this.setData({
-          pivotWidth: rect.width || 0
-        });
-        this.setPortionStyle();
-      });
-    }
-  }
 });

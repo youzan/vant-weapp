@@ -1,27 +1,28 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-    relations: {
-        '../badge/index': {
-            type: 'descendant',
-            linked(target) {
-                this.data.badges.push(target);
-                this.setActive();
-            },
-            unlinked(target) {
-                this.data.badges = this.data.badges.filter(item => item !== target);
-                this.setActive();
-            }
+    relation: {
+        name: 'badge',
+        type: 'descendant',
+        linked(target) {
+            this.data.badges.push(target);
+            this.setActive();
+        },
+        unlinked(target) {
+            this.data.badges = this.data.badges.filter(item => item !== target);
+            this.setActive();
         }
     },
     props: {
         active: {
             type: Number,
-            value: 0,
-            observer: 'setActive'
+            value: 0
         }
     },
     data: {
         badges: []
+    },
+    watch: {
+        active: 'setActive'
     },
     beforeCreate() {
         this.currentActive = -1;

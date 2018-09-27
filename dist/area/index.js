@@ -2,14 +2,8 @@ import { VantComponent } from '../common/component';
 VantComponent({
     props: {
         title: String,
+        value: String,
         loading: Boolean,
-        value: {
-            type: String,
-            observer(value) {
-                this.code = value;
-                this.setValues();
-            }
-        },
         itemHeight: {
             type: Number,
             value: 44
@@ -24,10 +18,7 @@ VantComponent({
         },
         areaList: {
             type: Object,
-            value: {},
-            observer() {
-                this.setValues();
-            }
+            value: {}
         }
     },
     data: {
@@ -39,6 +30,13 @@ VantComponent({
             const { columns = [], columnsNum } = this.data;
             return columns.slice(0, +columnsNum);
         }
+    },
+    watch: {
+        value(value) {
+            this.code = value;
+            this.setValues();
+        },
+        areaList: 'setValues'
     },
     methods: {
         onCancel() {

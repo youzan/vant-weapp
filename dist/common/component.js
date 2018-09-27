@@ -2,12 +2,14 @@ import { basic } from '../mixins/basic';
 import { observe } from '../mixins/observer/index';
 function mapKeys(source, target, map) {
     Object.keys(map).forEach(key => {
-        target[map[key]] = source[key];
+        if (source[key]) {
+            target[map[key]] = source[key];
+        }
     });
 }
-function VantComponent(sfc) {
+function VantComponent(vantOptions) {
     const options = {};
-    mapKeys(sfc, options, {
+    mapKeys(vantOptions, options, {
         data: 'data',
         props: 'properties',
         mixins: 'behaviors',
@@ -15,10 +17,16 @@ function VantComponent(sfc) {
         beforeCreate: 'created',
         created: 'attached',
         mounted: 'ready',
-        destroyed: 'detached',
         relations: 'relations',
+        destroyed: 'detached',
         classes: 'externalClasses'
     });
+    const { relation } = vantOptions;
+    if (relation) {
+        options.relations = Object.assign(options.relations || {}, {
+            [`../${relation.name}/index`]: relation
+        });
+    }
     // add default externalClasses
     options.externalClasses = options.externalClasses || [];
     options.externalClasses.push('custom-class');
@@ -26,7 +34,7 @@ function VantComponent(sfc) {
     options.behaviors = options.behaviors || [];
     options.behaviors.push(basic);
     // map field to form-field behavior
-    if (sfc.field) {
+    if (vantOptions.field) {
         options.behaviors.push('wx://form-field');
     }
     // add default options
@@ -34,7 +42,7 @@ function VantComponent(sfc) {
         multipleSlots: true,
         addGlobalClass: true
     };
-    observe(sfc, options);
+    observe(vantOptions, options);
     Component(options);
 }
 export { VantComponent };

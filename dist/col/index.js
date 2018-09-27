@@ -1,9 +1,8 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-    relations: {
-        '../row/index': {
-            type: 'ancestor'
-        }
+    relation: {
+        name: 'row',
+        type: 'ancestor'
     },
     props: {
         span: Number,

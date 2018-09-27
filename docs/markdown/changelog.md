@@ -6,7 +6,7 @@
 **Improvements**
 
 - 使用 TypeScript 重构组件 [\#604](https://github.com/youzan/vant-weapp/pull/604)
-- 编译工具升级至 babel7 和 precss 3.0 [\#656](https://github.com/youzan/vant-weapp/pull/656) [\#655](https://github.com/youzan/vant-weapp/pull/655)
+- 编译工具升级至 babel 7 和 precss 3.0 [\#656](https://github.com/youzan/vant-weapp/pull/656) [\#655](https://github.com/youzan/vant-weapp/pull/655)
 - 新增 Radio 单选框组件 [\#629](https://github.com/youzan/vant-weapp/pull/629)
 - Button: 新增 id 属性 [\#650](https://github.com/youzan/vant-weapp/pull/650)
 - Dialog: 支持 open-type 回调事件 [\#651](https://github.com/youzan/vant-weapp/pull/651)

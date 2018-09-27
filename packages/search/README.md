@@ -87,3 +87,4 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
 | 0.0.1 | feature | 新增组件 |
 | 0.2.1 | feature | 支持在原生 form 组件内使用 |
 | 0.2.1 | bugfix | 修复 focus 属性不生效的问题 |
+| 0.3.4 | bugfix | 修复无法获取到输入值的问题 |

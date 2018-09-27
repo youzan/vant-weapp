@@ -1,5 +1,26 @@
 ## 更新日志
 
+### [0.3.4](https://github.com/youzan/vant-weapp/tree/v0.3.4)
+`2018-09-27`
+
+**Improvements**
+
+- 使用 TypeScript 重构组件 [\#604](https://github.com/youzan/vant-weapp/pull/604)
+- 编译工具升级至 babel7 和 precss 3.0 [\#656](https://github.com/youzan/vant-weapp/pull/656) [\#655](https://github.com/youzan/vant-weapp/pull/655)
+- 新增 Radio 单选框组件 [\#629](https://github.com/youzan/vant-weapp/pull/629)
+- Button: 新增 id 属性 [\#650](https://github.com/youzan/vant-weapp/pull/650)
+- Dialog: 支持 open-type 回调事件 [\#651](https://github.com/youzan/vant-weapp/pull/651)
+
+**Bug Fixes**
+
+- 修复 ActionSheet 边框缺失的问题 [\#619](https://github.com/youzan/vant-weapp/pull/619)
+- 修复 Cell 使用 title 插槽时长度错误的问题 [\#642](https://github.com/youzan/vant-weapp/pull/642)
+- 修复 Search 无法获取到输入值的问题 [\#641](https://github.com/youzan/vant-weapp/pull/641)
+- 修复 Steps 样式错误的问题 [\#627](https://github.com/youzan/vant-weapp/pull/627)
+- 修复 SubmitBar 金额为空时仍然显示合计的问题 [\#635](https://github.com/youzan/vant-weapp/pull/635)
+- 修复 Toast 触发 touch 事件时报错的问题 [\#618](https://github.com/youzan/vant-weapp/pull/618)
+
+
 ### [0.3.3](https://github.com/youzan/vant-weapp/tree/v0.3.3)
 `2018-09-20`
 

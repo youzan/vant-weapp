@@ -1,5 +1,6 @@
 <button
   class="custom-class van-button {{ classes }}"
+  id="{{ id }}"
   disabled="{{ disabled }}"
   hover-class="button-hover"
   open-type="{{ openType }}"
@@ -14,11 +15,11 @@
   send-message-img="{{ sendMessageImg }}"
   show-message-card="{{ showMessageCard }}"
   bind:tap="onClick"
-  bindcontact="bindcontact"
-  bindgetuserinfo="bindgetuserinfo"
-  bindgetphonenumber="bindgetphonenumber"
-  binderror="binderror"
-  bindopensetting="bindopensetting"
+  bindcontact="bindContact"
+  bindgetuserinfo="bindGetUserInfo"
+  bindgetphonenumber="bindGetPhoneNumber"
+  binderror="bindError"
+  bindopensetting="bindOpenSetting"
 >
   <van-loading
     wx:if="{{ loading }}"

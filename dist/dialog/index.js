@@ -1,25 +1,15 @@
 import { VantComponent } from '../common/component';
+import { openType } from '../mixins/open-type';
 VantComponent({
+    mixins: [openType],
     props: {
+        show: Boolean,
         title: String,
         message: String,
         useSlot: Boolean,
         asyncClose: Boolean,
         showCancelButton: Boolean,
         confirmButtonOpenType: String,
-        show: {
-            type: Boolean,
-            observer(show) {
-                if (!show) {
-                    this.setData({
-                        loading: {
-                            confirm: false,
-                            cancel: false
-                        }
-                    });
-                }
-            }
-        },
         zIndex: {
             type: Number,
             value: 100
@@ -51,6 +41,18 @@ VantComponent({
             cancel: false
         }
     },
+    watch: {
+        show(show) {
+            if (!show) {
+                this.setData({
+                    loading: {
+                        confirm: false,
+                        cancel: false
+                    }
+                });
+            }
+        }
+    },
     methods: {
         onConfirm() {
             this.handleAction('confirm');
@@ -70,7 +72,9 @@ VantComponent({
             this.onClose(action);
         },
         close() {
-            this.setData({ show: false });
+            this.setData({
+                show: false
+            });
         },
         onClose(action) {
             if (!this.data.asyncClose) {

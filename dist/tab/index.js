@@ -1,36 +1,30 @@
 import { VantComponent } from '../common/component';
-
 VantComponent({
-  props: {
-    disabled: {
-      type: Boolean,
-      observer() {
-        const parent = this.getRelationNodes('../tabs/index')[0];
-        if (parent) {
-          parent.updateTabs();
-        }
-      }
+    relation: {
+        name: 'tabs',
+        type: 'ancestor'
     },
-    title: {
-      type: String,
-      observer() {
-        const parent = this.getRelationNodes('../tabs/index')[0];
-        if (parent) {
-          parent.setLine();
-          parent.updateTabs();
+    props: {
+        title: String,
+        disabled: Boolean
+    },
+    data: {
+        inited: false,
+        active: false
+    },
+    watch: {
+        disabled() {
+            const parent = this.getRelationNodes('../tabs/index')[0];
+            if (parent) {
+                parent.updateTabs();
+            }
+        },
+        title() {
+            const parent = this.getRelationNodes('../tabs/index')[0];
+            if (parent) {
+                parent.setLine();
+                parent.updateTabs();
+            }
         }
-      }
     }
-  },
-
-  relations: {
-    '../tabs/index': {
-      type: 'ancestor'
-    }
-  },
-
-  data: {
-    inited: false,
-    active: false
-  }
 });

@@ -37,6 +37,11 @@
         custom-class="van-dialog__confirm"
         open-type="{{ confirmButtonOpenType }}"
         bind:click="onConfirm"
+        bindcontact="bindContact"
+        bindgetuserinfo="bindGetUserInfo"
+        bindgetphonenumber="bindGetPhoneNumber"
+        binderror="bindError"
+        bindopensetting="bindOpenSetting"
       >
         {{ confirmButtonText }}
       </van-button>

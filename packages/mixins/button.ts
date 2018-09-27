@@ -1,5 +1,6 @@
 export const button = Behavior({
   properties: {
+    id: String,
     loading: Boolean,
     openType: String,
     appParameter: String,

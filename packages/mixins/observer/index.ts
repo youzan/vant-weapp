@@ -5,16 +5,19 @@ export function observe(vantOptions, options) {
   const { watch, computed } = vantOptions;
 
   if (watch) {
-    options.properties = options.properties || {};
+    const props = options.properties || {};
     Object.keys(watch).forEach(key => {
-      if (key in options.properties) {
-        let prop = options.properties[key];
+      if (key in props) {
+        let prop = props[key];
         if (prop === null || !prop.type) {
           prop = { type: prop };
         }
         prop.observer = watch[key];
+        props[key] = prop;
       }
     });
+
+    options.properties = props;
   }
 
   if (computed) {

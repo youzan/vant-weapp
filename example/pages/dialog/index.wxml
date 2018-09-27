@@ -7,14 +7,16 @@
   <van-button bind:click="onClickConfirm">Confirm</van-button>
 </demo-block>
 
-<demo-block title="高级用法" padding>
-  <van-button bind:click="showCustomDialog">高级用法</van-button>
+<demo-block title="组件调用" padding>
+  <van-button bind:click="showCustomDialog">组件调用</van-button>
   <van-dialog
     use-slot
     async-close
     show="{{ show }}"
     show-cancel-button
     bind:close="onClose"
+    confirm-button-open-type="getUserInfo"
+    bind:getuserinfo="getUserInfo"
   >
     <van-field
       value="{{ username }}"

@@ -1,6 +1,9 @@
 import { VantComponent } from '../common/component';
+import { openType } from '../mixins/open-type';
 
 VantComponent({
+  mixins: [openType],
+
   props: {
     show: Boolean,
     title: String,
@@ -79,7 +82,9 @@ VantComponent({
     },
 
     close() {
-      this.setData({ show: false });
+      this.setData({
+        show: false
+      });
     },
 
     onClose(action) {

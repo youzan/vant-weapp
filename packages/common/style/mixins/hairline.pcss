@@ -1,6 +1,4 @@
-@import '../var.pcss';
-
-@define-mixin hairline $border-retina-color: $border-color {
+@mixin hairline($border-color: #eee) {
   content: '';
   position: absolute;
   top: -50%;
@@ -11,5 +9,5 @@
   pointer-events: none;
   box-sizing: border-box;
   transform-origin: center; /* cover wechat button:after default transforn-origin */
-  border: 0 solid $border-retina-color;
+  border: 0 solid $border-color;
 }

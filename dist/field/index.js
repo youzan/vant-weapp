@@ -1,109 +1,113 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-    field: true,
-    classes: ['input-class'],
-    props: {
-        icon: String,
-        label: String,
-        error: Boolean,
-        focus: Boolean,
-        center: Boolean,
-        isLink: Boolean,
-        leftIcon: String,
-        disabled: Boolean,
-        autosize: Boolean,
-        readonly: Boolean,
-        required: Boolean,
-        iconClass: String,
-        clearable: Boolean,
-        inputAlign: String,
-        customClass: String,
-        confirmType: String,
-        errorMessage: String,
-        placeholder: String,
-        customStyle: String,
-        useIconSlot: Boolean,
-        useButtonSlot: Boolean,
-        placeholderClass: String,
-        cursorSpacing: {
-            type: Number,
-            value: 50
-        },
-        maxlength: {
-            type: Number,
-            value: -1
-        },
-        type: {
-            type: String,
-            value: 'text'
-        },
-        border: {
-            type: Boolean,
-            value: true
-        },
-        titleWidth: {
-            type: String,
-            value: '90px'
-        }
+  field: true,
+  classes: ['input-class'],
+  props: {
+    icon: String,
+    label: String,
+    error: Boolean,
+    focus: Boolean,
+    center: Boolean,
+    isLink: Boolean,
+    leftIcon: String,
+    disabled: Boolean,
+    autosize: Boolean,
+    readonly: Boolean,
+    required: Boolean,
+    iconClass: String,
+    clearable: Boolean,
+    inputAlign: String,
+    customClass: String,
+    confirmType: String,
+    errorMessage: String,
+    placeholder: String,
+    customStyle: String,
+    useIconSlot: Boolean,
+    useButtonSlot: Boolean,
+    placeholderClass: String,
+    cursorSpacing: {
+      type: Number,
+      value: 50
     },
-    data: {
-        showClear: false
+    maxlength: {
+      type: Number,
+      value: -1
     },
-    computed: {
-        inputClass() {
-            const { data } = this;
-            return this.classNames('input-class', 'van-field__input', {
-                'van-field--error': data.error,
-                'van-field__textarea': data.type === 'textarea',
-                'van-field__input--disabled': data.disabled,
-                [`van-field--${data.inputAlign}`]: data.inputAlign
-            });
-        }
+    type: {
+      type: String,
+      value: 'text'
     },
-    beforeCreate() {
-        this.focused = false;
+    border: {
+      type: Boolean,
+      value: true
     },
-    methods: {
-        onInput(event) {
-            const { value = '' } = event.detail || {};
-            this.$emit('input', value);
-            this.$emit('change', value);
-            this.setData({
-                value,
-                showClear: this.getShowClear(value)
-            });
-        },
-        onFocus() {
-            this.$emit('focus');
-            this.focused = true;
-            this.setData({
-                showClear: this.getShowClear()
-            });
-        },
-        onBlur() {
-            this.focused = false;
-            this.$emit('blur');
-            this.setData({
-                showClear: this.getShowClear()
-            });
-        },
-        onClickIcon() {
-            this.$emit('click-icon');
-        },
-        getShowClear(value) {
-            value = value === undefined ? this.data.value : value;
-            return (this.data.clearable && this.focused && value && !this.data.readonly);
-        },
-        onClear() {
-            this.setData({
-                value: '',
-                showClear: this.getShowClear('')
-            });
-            this.$emit('input', '');
-            this.$emit('change', '');
-        },
-        onConfirm() {
-            this.$emit('confirm', this.data.value);
-        }
+    titleWidth: {
+      type: String,
+      value: '90px'
     }
+  },
+  data: {
+    showClear: false
+  },
+  computed: {
+    inputClass: function inputClass() {
+      var _this$classNames;
+
+      var data = this.data;
+      return this.classNames('input-class', 'van-field__input', (_this$classNames = {
+        'van-field--error': data.error,
+        'van-field__textarea': data.type === 'textarea',
+        'van-field__input--disabled': data.disabled
+      }, _this$classNames["van-field--" + data.inputAlign] = data.inputAlign, _this$classNames));
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    this.focused = false;
+  },
+  methods: {
+    onInput: function onInput(event) {
+      var _ref = event.detail || {},
+          _ref$value = _ref.value,
+          value = _ref$value === void 0 ? '' : _ref$value;
+
+      this.$emit('input', value);
+      this.$emit('change', value);
+      this.setData({
+        value: value,
+        showClear: this.getShowClear(value)
+      });
+    },
+    onFocus: function onFocus() {
+      this.$emit('focus');
+      this.focused = true;
+      this.setData({
+        showClear: this.getShowClear()
+      });
+    },
+    onBlur: function onBlur() {
+      this.focused = false;
+      this.$emit('blur');
+      this.setData({
+        showClear: this.getShowClear()
+      });
+    },
+    onClickIcon: function onClickIcon() {
+      this.$emit('click-icon');
+    },
+    getShowClear: function getShowClear(value) {
+      value = value === undefined ? this.data.value : value;
+      return this.data.clearable && this.focused && value && !this.data.readonly;
+    },
+    onClear: function onClear() {
+      this.setData({
+        value: '',
+        showClear: this.getShowClear('')
+      });
+      this.$emit('input', '');
+      this.$emit('change', '');
+    },
+    onConfirm: function onConfirm() {
+      this.$emit('confirm', this.data.value);
+    }
+  }
 });

@@ -4,11 +4,10 @@ module.exports = {
       '@babel/preset-env',
       {
         loose: true,
-        modules: 'commonjs'
+        modules: false
       }
-    ]
+    ],
+    '@babel/preset-typescript'
   ],
-  plugins: [
-    '@babel/plugin-syntax-dynamic-import'
-  ]
+  plugins: ['@babel/plugin-syntax-dynamic-import']
 };

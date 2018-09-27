@@ -29,6 +29,7 @@ export type CombinedComponentInstance<
 > = Methods &
   LooseObject &
   Weapp.Component &
+  Weapp.FormField &
   ComponentInstance & {
     data: Data & RecordToAny<Props> & RecordToReturn<Computed>;
   };

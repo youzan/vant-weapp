@@ -5,11 +5,11 @@ VantComponent({
     name: 'badge',
     type: 'descendant',
     linked(target: Weapp.Component) {
-      this.data.badges.push(target);
+      this.badges.push(target);
       this.setActive();
     },
     unlinked(target: Weapp.Component) {
-      this.data.badges = this.data.badges.filter(item => item !== target);
+      this.badges = this.badges.filter(item => item !== target);
       this.setActive();
     }
   },
@@ -21,22 +21,19 @@ VantComponent({
     }
   },
 
-  data: {
-    badges: []
-  },
-
   watch: {
     active: 'setActive'
   },
 
   beforeCreate() {
+    this.badges = [];
     this.currentActive = -1;
   },
 
   methods: {
-    setActive(badge) {
+    setActive(badge: Weapp.Component) {
       let { active } = this.data;
-      const { badges } = this.data;
+      const { badges } = this;
 
       if (badge) {
         active = badges.indexOf(badge);

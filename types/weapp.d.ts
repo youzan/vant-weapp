@@ -18,6 +18,13 @@ declare namespace Weapp {
     setData(data: any, callback?: Function): void;
   }
 
+  interface FormField {
+    data: {
+      name: string;
+      value: any;
+    }
+  }
+
   interface Target {
     id: string;
     tagName: string;

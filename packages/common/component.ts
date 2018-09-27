@@ -7,7 +7,9 @@ import {
 
 function mapKeys(source: object, target: object, map: object) {
   Object.keys(map).forEach(key => {
-    target[map[key]] = source[key];
+    if (source[key]) {
+      target[map[key]] = source[key];
+    }
   });
 }
 

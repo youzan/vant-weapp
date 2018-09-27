@@ -19,6 +19,10 @@ Page({
     });
   },
 
+  getUserInfo(event) {
+    console.log(event.detail);
+  },
+
   onClickAlert2() {
     Dialog.alert({
       message: '内容'

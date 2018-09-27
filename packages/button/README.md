@@ -85,6 +85,7 @@
 | bind:contact | 客服消息回调 | - |
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
+| bind:opensetting | 在打开授权设置页后回调 | - |
 
 ### 外部样式类
 

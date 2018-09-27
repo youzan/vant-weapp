@@ -15,7 +15,7 @@ const PREFIX = 'https://img.yzcdn.cn/vant-weapp/';
 const MAP = {
   index: 'index-201808121630.png',
   'action-sheet': 'action-sheet-201809071648.png',
-  area: 'area-20180918.png',
+  area: 'area-201809271357.png',
   badge: 'badge-201808092138.png',
   button: 'button-201808092138.png',
   card: 'card-201808092138.png',
@@ -31,19 +31,20 @@ const MAP = {
   panel: 'panel-201808092138.png',
   popup: 'popup-201808092138.png',
   progress: 'progress-201808232055.png',
+  radio: 'radio_201809271357.png',
   slider: 'slider-201808221024.png',
   stepper: 'stepper-201808092138.png',
   search: 'search-201808092138.png',
   steps: 'steps-201808092138.png',
   switch: 'switch-201808092138.png',
   'switch-cell': 'switch-cell-201808221124.png',
+  'submit-bar': 'submit-bar-a-201809271357.png',
   tab: 'tab-201809051457.png',
   tag: 'tag-201808092138.png',
   tabbar: 'tabbar-201808160922.png',
   toast: 'toast-201808191046.png',
   transition: 'transition-20180821.png',
-  'tree-select': 'tree-select-201808092138.png',
-  'submit-bar': 'submit-bar-20180919.jpeg'
+  'tree-select': 'tree-select-201808092138.png'
 };
 
 export default {

@@ -36,10 +36,6 @@ VantComponent({
       type: Number,
       value: -1
     },
-    value: {
-      type: null,
-      value: ''
-    },
     type: {
       type: String,
       value: 'text'
@@ -55,7 +51,6 @@ VantComponent({
   },
 
   data: {
-    focused: false,
     showClear: false
   },
 
@@ -71,6 +66,10 @@ VantComponent({
     }
   },
 
+  beforeCreate() {
+    this.focused = false;
+  },
+
   methods: {
     onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
@@ -78,15 +77,15 @@ VantComponent({
       this.$emit('change', value);
       this.setData({
         value,
-        showClear: this.getShowClear({ value })
+        showClear: this.getShowClear(value)
       });
     },
 
     onFocus() {
       this.$emit('focus');
+      this.focused = true;
       this.setData({
-        focused: true,
-        showClear: this.getShowClear({ focused: true })
+        showClear: this.getShowClear()
       });
     },
 
@@ -94,8 +93,7 @@ VantComponent({
       this.focused = false;
       this.$emit('blur');
       this.setData({
-        focused: false,
-        showClear: this.getShowClear({ focused: false })
+        showClear: this.getShowClear()
       });
     },
 
@@ -103,18 +101,17 @@ VantComponent({
       this.$emit('click-icon');
     },
 
-    getShowClear(options): boolean {
-      const { focused = this.data.focused, value = this.data.value } = options;
-
+    getShowClear(value?: string): boolean {
+      value = value === undefined ? this.data.value : value;
       return (
-        this.data.clearable && focused && value !== '' && !this.data.readonly
+        this.data.clearable && this.focused && value && !this.data.readonly
       );
     },
 
     onClear() {
       this.setData({
         value: '',
-        showClear: this.getShowClear({ value: '' })
+        showClear: this.getShowClear('')
       });
       this.$emit('input', '');
       this.$emit('change', '');

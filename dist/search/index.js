@@ -18,9 +18,6 @@ VantComponent({
             value: -1
         }
     },
-    data: {
-        value: ''
-    },
     methods: {
         onChange(event) {
             this.setData({ value: event.detail });

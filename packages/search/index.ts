@@ -22,10 +22,6 @@ VantComponent({
     }
   },
 
-  data: {
-    value: ''
-  },
-
   methods: {
     onChange(event: Weapp.Event) {
       this.setData({ value: event.detail });

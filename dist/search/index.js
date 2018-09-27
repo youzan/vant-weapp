@@ -1,41 +1,45 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-    field: true,
-    classes: ['cancel-class'],
-    props: {
-        focus: Boolean,
-        disabled: Boolean,
-        readonly: Boolean,
-        showAction: Boolean,
-        useActionSlot: Boolean,
-        placeholder: String,
-        background: {
-            type: String,
-            value: '#f2f2f2'
-        },
-        maxlength: {
-            type: Number,
-            value: -1
-        }
+  field: true,
+  classes: ['cancel-class'],
+  props: {
+    focus: Boolean,
+    disabled: Boolean,
+    readonly: Boolean,
+    showAction: Boolean,
+    useActionSlot: Boolean,
+    placeholder: String,
+    background: {
+      type: String,
+      value: '#f2f2f2'
     },
-    methods: {
-        onChange(event) {
-            this.setData({ value: event.detail });
-            this.$emit('change', event.detail);
-        },
-        onCancel() {
-            this.setData({ value: '' });
-            this.$emit('cancel');
-            this.$emit('change', '');
-        },
-        onSearch() {
-            this.$emit('search', this.data.value);
-        },
-        onFocus() {
-            this.$emit('focus');
-        },
-        onBlur() {
-            this.$emit('blur');
-        }
+    maxlength: {
+      type: Number,
+      value: -1
     }
+  },
+  methods: {
+    onChange: function onChange(event) {
+      this.setData({
+        value: event.detail
+      });
+      this.$emit('change', event.detail);
+    },
+    onCancel: function onCancel() {
+      this.setData({
+        value: ''
+      });
+      this.$emit('cancel');
+      this.$emit('change', '');
+    },
+    onSearch: function onSearch() {
+      this.$emit('search', this.data.value);
+    },
+    onFocus: function onFocus() {
+      this.$emit('focus');
+    },
+    onBlur: function onBlur() {
+      this.$emit('blur');
+    }
+  }
 });

@@ -1,142 +1,160 @@
 import { VantComponent } from '../common/component';
-const FONT_COLOR = '#f60';
-const BG_COLOR = '#fff7cc';
+var FONT_COLOR = '#f60';
+var BG_COLOR = '#fff7cc';
 VantComponent({
-    props: {
-        text: {
-            type: String,
-            value: ''
-        },
-        mode: {
-            type: String,
-            value: ''
-        },
-        url: {
-            type: String,
-            value: ''
-        },
-        openType: {
-            type: String,
-            value: 'navigate'
-        },
-        delay: {
-            type: Number,
-            value: 0
-        },
-        speed: {
-            type: Number,
-            value: 50
-        },
-        scrollable: {
-            type: Boolean,
-            value: true
-        },
-        leftIcon: {
-            type: String,
-            value: ''
-        },
-        color: {
-            type: String,
-            value: FONT_COLOR
-        },
-        backgroundColor: {
-            type: String,
-            value: BG_COLOR
-        }
+  props: {
+    text: {
+      type: String,
+      value: ''
     },
-    data: {
-        show: true,
-        hasRightIcon: false,
-        width: undefined,
-        wrapWidth: undefined,
-        elapse: undefined,
-        animation: null,
-        resetAnimation: null,
-        timer: null
+    mode: {
+      type: String,
+      value: ''
     },
-    watch: {
-        text() {
-            this.setData({}, this.init);
-        }
+    url: {
+      type: String,
+      value: ''
     },
-    created() {
-        if (this.data.mode) {
-            this.setData({
-                hasRightIcon: true
-            });
-        }
+    openType: {
+      type: String,
+      value: 'navigate'
     },
-    destroyed() {
-        const { timer } = this.data;
-        timer && clearTimeout(timer);
+    delay: {
+      type: Number,
+      value: 0
     },
-    methods: {
-        init() {
-            this.getRect('.van-notice-bar__content').then(rect => {
-                if (!rect || !rect.width) {
-                    return;
-                }
-                this.setData({
-                    width: rect.width
-                });
-                this.getRect('.van-notice-bar__content-wrap').then(rect => {
-                    if (!rect || !rect.width) {
-                        return;
-                    }
-                    const wrapWidth = rect.width;
-                    const { width, speed, scrollable, delay } = this.data;
-                    if (scrollable && wrapWidth < width) {
-                        const elapse = width / speed * 1000;
-                        const animation = wx.createAnimation({
-                            duration: elapse,
-                            timeingFunction: 'linear',
-                            delay
-                        });
-                        const resetAnimation = wx.createAnimation({
-                            duration: 0,
-                            timeingFunction: 'linear'
-                        });
-                        this.setData({
-                            elapse,
-                            wrapWidth,
-                            animation,
-                            resetAnimation
-                        }, () => {
-                            this.scroll();
-                        });
-                    }
-                });
-            });
-        },
-        scroll() {
-            const { animation, resetAnimation, wrapWidth, elapse, speed } = this.data;
-            resetAnimation.translateX(wrapWidth).step();
-            const animationData = animation.translateX(-(elapse * speed) / 1000).step();
-            this.setData({
-                animationData: resetAnimation.export()
-            });
-            setTimeout(() => {
-                this.setData({
-                    animationData: animationData.export()
-                });
-            }, 100);
-            const timer = setTimeout(() => {
-                this.scroll();
-            }, elapse);
-            this.setData({
-                timer
-            });
-        },
-        onClickIcon() {
-            const { timer } = this.data;
-            timer && clearTimeout(timer);
-            this.setData({
-                show: false,
-                timer: null
-            });
-        },
-        onClick(event) {
-            this.$emit('click', event);
-        }
+    speed: {
+      type: Number,
+      value: 50
+    },
+    scrollable: {
+      type: Boolean,
+      value: true
+    },
+    leftIcon: {
+      type: String,
+      value: ''
+    },
+    color: {
+      type: String,
+      value: FONT_COLOR
+    },
+    backgroundColor: {
+      type: String,
+      value: BG_COLOR
     }
+  },
+  data: {
+    show: true,
+    hasRightIcon: false,
+    width: undefined,
+    wrapWidth: undefined,
+    elapse: undefined,
+    animation: null,
+    resetAnimation: null,
+    timer: null
+  },
+  watch: {
+    text: function text() {
+      this.setData({}, this.init);
+    }
+  },
+  created: function created() {
+    if (this.data.mode) {
+      this.setData({
+        hasRightIcon: true
+      });
+    }
+  },
+  destroyed: function destroyed() {
+    var timer = this.data.timer;
+    timer && clearTimeout(timer);
+  },
+  methods: {
+    init: function init() {
+      var _this = this;
+
+      this.getRect('.van-notice-bar__content').then(function (rect) {
+        if (!rect || !rect.width) {
+          return;
+        }
+
+        _this.setData({
+          width: rect.width
+        });
+
+        _this.getRect('.van-notice-bar__content-wrap').then(function (rect) {
+          if (!rect || !rect.width) {
+            return;
+          }
+
+          var wrapWidth = rect.width;
+          var _this$data = _this.data,
+              width = _this$data.width,
+              speed = _this$data.speed,
+              scrollable = _this$data.scrollable,
+              delay = _this$data.delay;
+
+          if (scrollable && wrapWidth < width) {
+            var elapse = width / speed * 1000;
+            var animation = wx.createAnimation({
+              duration: elapse,
+              timeingFunction: 'linear',
+              delay: delay
+            });
+            var resetAnimation = wx.createAnimation({
+              duration: 0,
+              timeingFunction: 'linear'
+            });
+
+            _this.setData({
+              elapse: elapse,
+              wrapWidth: wrapWidth,
+              animation: animation,
+              resetAnimation: resetAnimation
+            }, function () {
+              _this.scroll();
+            });
+          }
+        });
+      });
+    },
+    scroll: function scroll() {
+      var _this2 = this;
+
+      var _this$data2 = this.data,
+          animation = _this$data2.animation,
+          resetAnimation = _this$data2.resetAnimation,
+          wrapWidth = _this$data2.wrapWidth,
+          elapse = _this$data2.elapse,
+          speed = _this$data2.speed;
+      resetAnimation.translateX(wrapWidth).step();
+      var animationData = animation.translateX(-(elapse * speed) / 1000).step();
+      this.setData({
+        animationData: resetAnimation.export()
+      });
+      setTimeout(function () {
+        _this2.setData({
+          animationData: animationData.export()
+        });
+      }, 100);
+      var timer = setTimeout(function () {
+        _this2.scroll();
+      }, elapse);
+      this.setData({
+        timer: timer
+      });
+    },
+    onClickIcon: function onClickIcon() {
+      var timer = this.data.timer;
+      timer && clearTimeout(timer);
+      this.setData({
+        show: false,
+        timer: null
+      });
+    },
+    onClick: function onClick(event) {
+      this.$emit('click', event);
+    }
+  }
 });

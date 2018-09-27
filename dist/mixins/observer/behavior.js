@@ -1,29 +1,41 @@
-export const behavior = Behavior({
-    created() {
-        if (!this.$options) {
-            return;
-        }
-        const cache = {};
-        const { setData } = this;
-        const { computed } = this.$options();
-        const keys = Object.keys(computed);
-        const calcComputed = () => {
-            const needUpdate = {};
-            keys.forEach(key => {
-                const value = computed[key].call(this);
-                if (cache[key] !== value) {
-                    cache[key] = needUpdate[key] = value;
-                }
-            });
-            return needUpdate;
-        };
-        Object.defineProperty(this, 'setData', { writable: true });
-        this.setData = (data, callback) => {
-            data && setData.call(this, data, callback);
-            setData.call(this, calcComputed());
-        };
-    },
-    attached() {
-        this.setData();
+export var behavior = Behavior({
+  created: function created() {
+    var _this = this;
+
+    if (!this.$options) {
+      return;
     }
+
+    var cache = {};
+    var setData = this.setData;
+
+    var _this$$options = this.$options(),
+        computed = _this$$options.computed;
+
+    var keys = Object.keys(computed);
+
+    var calcComputed = function calcComputed() {
+      var needUpdate = {};
+      keys.forEach(function (key) {
+        var value = computed[key].call(_this);
+
+        if (cache[key] !== value) {
+          cache[key] = needUpdate[key] = value;
+        }
+      });
+      return needUpdate;
+    };
+
+    Object.defineProperty(this, 'setData', {
+      writable: true
+    });
+
+    this.setData = function (data, callback) {
+      data && setData.call(_this, data, callback);
+      setData.call(_this, calcComputed());
+    };
+  },
+  attached: function attached() {
+    this.setData();
+  }
 });

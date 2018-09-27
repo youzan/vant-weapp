@@ -123,3 +123,4 @@ Page({
 | 0.3.0 | feature | 支持微信开放能力 |
 | 0.3.0 | bugfix | 修复 subname 属性不生效的问题 |
 | 0.3.3 | feature | 新增 z-index 属性 |
+| 0.3.4 | bugfix | 修复边框缺失的问题 |

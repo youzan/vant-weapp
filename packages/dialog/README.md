@@ -178,3 +178,4 @@ Page({
 | 0.3.2 | improvement | 新增弹出动画 |
 | 0.3.2 | feature | 新增 z-index 属性 |
 | 0.3.3 | bugfix | 修复 Promise 状态错误的问题 |
+| 0.3.4 | feature | 支持 open-type 回调事件 |

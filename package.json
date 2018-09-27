@@ -39,10 +39,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-typescript": "^5.0.0-alpha.3",
     "html-webpack-plugin": "^3.2.0",
-    "postcss-calc": "^6.0.1",
+    "postcss-calc": "^6.0.2",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^3.0.0",
-    "precss": "^2.0.0",
+    "precss": "^3.1.2",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^0.23.0",
     "typescript": "^3.0.3",
@@ -51,8 +51,8 @@
     "vue-loader": "^15.4.2",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "2.5.17",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
     "webpack-serve": "^2.0.2"
   }
 }

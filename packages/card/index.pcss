@@ -54,7 +54,7 @@
   &__title {
     max-height: 40px;
 
-    @mixin multi-ellipsis 2;
+    @include multi-ellipsis(2);
   }
 
   &__desc {
@@ -62,7 +62,7 @@
     font-size: 12px;
     max-height: 20px;
 
-    @mixin ellipsis;
+    @include ellipsis;
   }
 
   &__price,

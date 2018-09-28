@@ -70,7 +70,6 @@ VantComponent({
       const index = pickerValue.findIndex((item, index) => item !== value[index]);
       const values = displayColumns[index];
 
-      // 没有变更 或 选中项序号小于0 不处理
       if (!value[index] || !values[value[index]]) {
         return;
       }

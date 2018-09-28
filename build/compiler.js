@@ -8,15 +8,15 @@ const rename = require('gulp-rename');
 const isProduction = process.env.NODE_ENV === 'production';
 const src = path.join(__dirname, '../packages');
 const dist = path.join(__dirname, isProduction ? '../dist' : '../example/dist');
-const ext = ['js', 'ts', 'pcss', 'json', 'wxml'];
+const ext = ['js', 'ts', 'css', 'json', 'wxml'];
 
 function copy(ext) {
   return gulp.src([src + '/**/*.' + ext]).pipe(gulp.dest(dist));
 }
 
-gulp.task('compile-pcss', () => {
+gulp.task('compile-css', () => {
   return gulp
-    .src([src + '/**/*.pcss'])
+    .src([src + '/**/*.css'])
     .pipe(postcss())
     .pipe(cssmin())
     .pipe(

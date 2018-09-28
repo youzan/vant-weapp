@@ -1,0 +1,13 @@
+@import './mixins/ellipsis.css';
+
+.van-ellipsis {
+  @include ellipsis;
+}
+
+.van-multi-ellipsis--l2 {
+  @include multi-ellipsis(2);
+}
+
+.van-multi-ellipsis--l3 {
+  @include multi-ellipsis(3);
+}

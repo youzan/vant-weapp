@@ -65,9 +65,9 @@ VantComponent({
     },
     handleAction: function handleAction(action) {
       if (this.data.asyncClose) {
-        var _this$setData;
-
-        this.setData((_this$setData = {}, _this$setData["loading." + action] = true, _this$setData));
+        this.setData({
+          ["loading." + action]: true
+        });
       }
 
       this.onClose(action);

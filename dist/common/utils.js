@@ -3,11 +3,8 @@ function isDef(value) {
 }
 
 function isObj(x) {
-  const type = typeof x;
+  var type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
 }
 
-export {
-  isObj,
-  isDef
-};
+export { isObj, isDef };

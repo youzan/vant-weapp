@@ -115,7 +115,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| active | 当前激活标签的索引 | `String` `Number` | `0` |
+| active | 当前激活标签的索引 | `Number` | `0` |
 | color | 标签颜色 | `String` | `#f44` |
 | type | 样式风格，可选值为`card` | `String` | `line` |
 | border | 是否展示外边框，仅在`line`风格下生效 | `Boolean` | `true` |

@@ -10,7 +10,7 @@ export function observe(vantOptions, options) {
       if (key in props) {
         var prop = props[key];
 
-        if (prop === null || !prop.type) {
+        if (prop === null || !('type' in prop)) {
           prop = {
             type: prop
           };

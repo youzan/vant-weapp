@@ -25,7 +25,7 @@ VantComponent({
     color: String,
     lineWidth: Number,
     active: {
-      type: null,
+      type: Number,
       value: 0
     },
     type: {
@@ -139,7 +139,7 @@ VantComponent({
       this.scrollIntoView();
     },
     // scroll active tab into view
-    scrollIntoView: function scrollIntoView(immediate) {
+    scrollIntoView: function scrollIntoView() {
       var _this3 = this;
 
       if (!this.data.scrollable) {

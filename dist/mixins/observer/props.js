@@ -6,7 +6,7 @@ export function observeProps(props) {
   Object.keys(props).forEach(function (key) {
     var prop = props[key];
 
-    if (prop === null || !prop.type) {
+    if (prop === null || !('type' in prop)) {
       prop = {
         type: prop
       };

@@ -30,7 +30,7 @@ VantComponent({
     color: String,
     lineWidth: Number,
     active: {
-      type: null,
+      type: Number,
       value: 0
     },
     type: {
@@ -84,7 +84,7 @@ VantComponent({
       this.setActiveTab();
     },
 
-    trigger(eventName, index) {
+    trigger(eventName: string, index: number) {
       this.$emit(eventName, {
         index,
         title: this.data.tabs[index].data.title
@@ -101,7 +101,7 @@ VantComponent({
       }
     },
 
-    setActive(active) {
+    setActive(active: number) {
       if (active !== this.data.active) {
         this.trigger('change', active);
         this.setData({ active });
@@ -153,7 +153,7 @@ VantComponent({
     },
 
     // scroll active tab into view
-    scrollIntoView(immediate) {
+    scrollIntoView() {
       if (!this.data.scrollable) {
         return;
       }

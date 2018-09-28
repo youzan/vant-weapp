@@ -9,7 +9,7 @@ export function observe(vantOptions, options) {
     Object.keys(watch).forEach(key => {
       if (key in props) {
         let prop = props[key];
-        if (prop === null || !prop.type) {
+        if (prop === null || !('type' in prop)) {
           prop = { type: prop };
         }
         prop.observer = watch[key];

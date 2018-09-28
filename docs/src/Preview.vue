@@ -72,7 +72,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 body {
   margin: 0;
   color: #333;

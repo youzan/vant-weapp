@@ -2,7 +2,7 @@
  * Entry of basic styles	
  */	
 
-@import "./style/var.css";	
-@import "./style/ellipsis.css";	
-@import "./style/clearfix.css";	
-@import "./style/hairline.css";
+@import "./style/var.less";	
+@import "./style/ellipsis.less";	
+@import "./style/clearfix.less";	
+@import "./style/hairline.less";

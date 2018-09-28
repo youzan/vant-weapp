@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const path = require('path');
 const babel = require('gulp-babel');
+const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
@@ -8,15 +9,16 @@ const rename = require('gulp-rename');
 const isProduction = process.env.NODE_ENV === 'production';
 const src = path.join(__dirname, '../packages');
 const dist = path.join(__dirname, isProduction ? '../dist' : '../example/dist');
-const ext = ['js', 'ts', 'css', 'json', 'wxml'];
+const ext = ['js', 'ts', 'less', 'json', 'wxml'];
 
 function copy(ext) {
   return gulp.src([src + '/**/*.' + ext]).pipe(gulp.dest(dist));
 }
 
-gulp.task('compile-css', () => {
+gulp.task('compile-less', () => {
   return gulp
-    .src([src + '/**/*.css'])
+    .src([src + '/**/*.less'])
+    .pipe(less())
     .pipe(postcss())
     .pipe(cssmin())
     .pipe(

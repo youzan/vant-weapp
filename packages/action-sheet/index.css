@@ -1,0 +1,66 @@
+@import '../common/style/var.css';
+@import '../common/style/hairline.css';
+
+.van-action-sheet {
+  color: $text-color;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: $background-color;
+
+  &__item,
+  &__cancel {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: $white;
+
+    &:active {
+      background-color: $active-color;
+    }
+  }
+
+  &__item--disabled {
+    color: $gray;
+
+    &:active {
+      background-color: $white;
+    }
+  }
+
+  &__name,
+  &__subname {
+    display: inline-block;
+  }
+
+  &__subname {
+    font-size: 12px;
+    color: $gray-darker;
+    margin-left: 5px;
+  }
+
+  &__loading {
+    display: inline-block;
+  }
+
+  &__cancel {
+    margin-top: 10px;
+  }
+
+  &__header {
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+  }
+
+  &__close {
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+    font-size: 18px !important;
+    color: $gray-dark;
+    position: absolute !important;
+    line-height: inherit !important;
+  }
+}

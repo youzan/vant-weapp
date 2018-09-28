@@ -61,13 +61,13 @@ VantComponent({
           displayColumns = _this$data2.displayColumns;
       var index = pickerValue.findIndex(function (item, index) {
         return item !== value[index];
-      }); // 没有变更 或 选中项序号小于0 不处理
+      });
+      var values = displayColumns[index];
 
-      if (index < 0 || value[index] < 0) {
+      if (!value[index] || !values[value[index]]) {
         return;
       }
 
-      var values = displayColumns[index];
       this.code = values[value[index]].code;
       this.setValues();
       this.$emit('change', {
@@ -113,7 +113,7 @@ VantComponent({
       return 0;
     },
     setValues: function setValues() {
-      var code = this.code || Object.keys(this.data.areaList.county_list)[0] || '';
+      var code = this.code || Object.keys(this.data.areaList.county_list || {})[0] || '';
       var province = this.getList('province');
       var city = this.getList('city', code.slice(0, 2));
       this.setData({

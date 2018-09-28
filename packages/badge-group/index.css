@@ -1,0 +1,6 @@
+@import '../common/style/var.css';
+@import '../common/style/hairline.css';
+
+.van-badge-group {
+  width: 85px;
+}

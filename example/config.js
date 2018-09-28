@@ -72,6 +72,10 @@ export default [
     groupName: '表单组件',
     list: [
       {
+        path: '/checkbox',
+        title: 'Checkbox 复选框'
+      },
+      {
         path: '/field',
         title: 'Field 输入框'
       },

@@ -1,0 +1,11 @@
+.demo-checkbox-group {
+  margin: 10px 0 0 20px;
+}
+
+.demo-checkbox {
+  margin: 10px 0 0 20px;
+}
+
+.icon {
+  width: 20px;
+}

@@ -68,12 +68,12 @@ VantComponent({
       const { value } = event.detail;
       const { pickerValue, displayColumns } = this.data;
       const index = pickerValue.findIndex((item, index) => item !== value[index]);
+      const values = displayColumns[index];
+
       // 没有变更 或 选中项序号小于0 不处理
-      if (index < 0 || value[index] < 0) {
+      if (!value[index] || !values[value[index]]) {
         return;
       }
-
-      const values = displayColumns[index];
 
       this.code = values[value[index]].code;
       this.setValues();
@@ -118,7 +118,7 @@ VantComponent({
     },
 
     setValues() {
-      let code = this.code || Object.keys(this.data.areaList.county_list)[0] || '';
+      let code = this.code || Object.keys(this.data.areaList.county_list || {})[0] || '';
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
 

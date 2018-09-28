@@ -1,0 +1,11 @@
+.van-col {
+  float: left;
+  box-sizing: border-box;
+}
+
+.generate(24);
+.generate(@n, @i: 1) when (@i =< @n) {
+  .van-col--@{i} { width: @i * 100% / 24; }
+  .van-col--offset-@{i} { margin-left: @i * 100% / 24; }
+  .generate(@n, (@i + 1));
+}

@@ -1,0 +1,41 @@
+@import "./mixins/hairline.less";
+
+.van-hairline,
+.van-hairline--top,
+.van-hairline--left,
+.van-hairline--right,
+.van-hairline--bottom,
+.van-hairline--top-bottom,
+.van-hairline--surround {
+  position: relative;
+
+  &::after {
+    .hairline();
+  }
+}
+
+.van-hairline {
+  &--top::after {
+    border-top-width: 1px;
+  }
+
+  &--left::after {
+    border-left-width: 1px;
+  }
+
+  &--right::after {
+    border-right-width: 1px;
+  }
+
+  &--bottom::after {
+    border-bottom-width: 1px;
+  }
+
+  &--top-bottom::after {
+    border-width: 1px 0;
+  }
+
+  &--surround::after {
+    border-width: 1px;
+  }
+}

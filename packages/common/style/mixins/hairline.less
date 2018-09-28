@@ -1,0 +1,13 @@
+.hairline(@border-color: #eee) {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  transform: scale(0.5);
+  pointer-events: none;
+  box-sizing: border-box;
+  transform-origin: center; /* cover wechat button:after default transforn-origin */
+  border: 0 solid @border-color;
+}

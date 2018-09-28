@@ -51,14 +51,13 @@ VantComponent({
   },
   computed: {
     inputClass: function inputClass() {
-      var _this$classNames;
-
       var data = this.data;
-      return this.classNames('input-class', 'van-field__input', (_this$classNames = {
+      return this.classNames('input-class', 'van-field__input', {
         'van-field--error': data.error,
         'van-field__textarea': data.type === 'textarea',
-        'van-field__input--disabled': data.disabled
-      }, _this$classNames["van-field--" + data.inputAlign] = data.inputAlign, _this$classNames));
+        'van-field__input--disabled': data.disabled,
+        ["van-field--" + data.inputAlign]: data.inputAlign
+      });
     }
   },
   beforeCreate: function beforeCreate() {

@@ -26,9 +26,9 @@ function VantComponent(vantOptions) {
   var relation = vantOptions.relation;
 
   if (relation) {
-    var _Object$assign;
-
-    options.relations = Object.assign(options.relations || {}, (_Object$assign = {}, _Object$assign["../" + relation.name + "/index"] = relation, _Object$assign));
+    options.relations = Object.assign(options.relations || {}, {
+      ["../" + relation.name + "/index"]: relation
+    });
   } // add default externalClasses
 
 

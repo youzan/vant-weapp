@@ -13,12 +13,13 @@ VantComponent({
   },
   computed: {
     classes: function classes() {
-      var _this$classNames;
-
       var _this$data = this.data,
           span = _this$data.span,
           offset = _this$data.offset;
-      return this.classNames('custom-class', 'van-col', (_this$classNames = {}, _this$classNames["van-col--" + span] = span, _this$classNames["van-col--offset-" + offset] = offset, _this$classNames));
+      return this.classNames('custom-class', 'van-col', {
+        ["van-col--" + span]: span,
+        ["van-col--offset-" + offset]: offset
+      });
     }
   },
   methods: {

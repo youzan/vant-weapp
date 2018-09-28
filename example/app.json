@@ -31,7 +31,8 @@
     "pages/tree-select/index",
     "pages/area/index",
     "pages/submit-bar/index",
-    "pages/radio/index"
+    "pages/radio/index",
+    "pages/checkbox/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",

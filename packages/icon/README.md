@@ -27,6 +27,7 @@
 | info | 图标右上角文字提示 | `String | Number` | - |
 | color | 图标颜色 | `String` | `inherit` |
 | size | 图标大小，如 `20px`，`2em` | `String` | `inherit` |
+| custom-style | 自定义样式 | `String` | - |
 | class-prefix | 类名前缀 | `String` | `van-icon` |
 
 ### Event

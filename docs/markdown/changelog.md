@@ -1,5 +1,20 @@
 ## 更新日志
 
+
+### [0.3.5](https://github.com/youzan/vant-weapp/tree/v0.3.5)
+`2018-09-29`
+
+**Improvements**
+
+- 新增 Checkbox 复选框组件 [\#666](https://github.com/youzan/vant-weapp/pull/666)
+- 优化样式代码，减少体积 [\#660](https://github.com/youzan/vant-weapp/pull/660)
+
+**Bug Fixes**
+
+- 修复 Area 数据为空时报错的问题 [\#661](https://github.com/youzan/vant-weapp/pull/661)
+- 修复 Tab active 属性默认值错误的问题 [\#665](https://github.com/youzan/vant-weapp/pull/665)
+
+
 ### [0.3.4](https://github.com/youzan/vant-weapp/tree/v0.3.4)
 `2018-09-27`
 

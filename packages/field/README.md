@@ -149,6 +149,7 @@ Page({
 | title-width | 标题宽度 | `String` | `90px` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
 | placeholder | 输入框为空时占位符 | `String` | - |
+| placeholder-style | 指定 placeholder 的样式 | `String` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
@@ -186,7 +187,6 @@ Page({
 |-----------|-----------|
 | input-class | 输入框样式类 |
 | icon-class | 右侧图标样式类 |
-| placeholder-class | 占位内容样式类 |
 
 ### 更新日志
 

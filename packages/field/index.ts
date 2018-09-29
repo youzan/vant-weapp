@@ -27,7 +27,7 @@ VantComponent({
     customStyle: String,
     useIconSlot: Boolean,
     useButtonSlot: Boolean,
-    placeholderClass: String,
+    placeholderStyle: String,
     cursorSpacing: {
       type: Number,
       value: 50

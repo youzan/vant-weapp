@@ -5,6 +5,7 @@ VantComponent({
     name: String,
     size: String,
     color: String,
+    customStyle: String,
     classPrefix: {
       type: String,
       value: 'van-icon'

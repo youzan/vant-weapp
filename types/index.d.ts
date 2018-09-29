@@ -31,7 +31,7 @@ export type CombinedComponentInstance<
   Weapp.Component &
   Weapp.FormField &
   ComponentInstance & {
-    data: Data & RecordToAny<Props> & RecordToReturn<Computed>;
+    data: Data & LooseObject & RecordToAny<Props> & RecordToReturn<Computed>;
   };
 
 export type VantComponentOptions<

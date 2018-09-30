@@ -201,3 +201,5 @@ Page({
 | 0.3.2 | bugfix | 修复展示清除按钮时导致输入框高度变化的问题 |
 | 0.3.3 | bugfix | 修复边框长度溢出的问题 |
 | 0.3.3 | bugfix | 修复 input-align 属性不生效的问题 |
+| 0.3.6 | bugfix | 修复 readonly 属性不生效的问题 |
+| 0.3.6 | feature | 新增 placeholder-style 属性 |

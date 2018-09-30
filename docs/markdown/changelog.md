@@ -1,6 +1,18 @@
 ## 更新日志
 
 
+### [0.3.6](https://github.com/youzan/vant-weapp/tree/v0.3.6)
+`2018-09-30`
+
+**Improvements**
+
+- Icon: 新增 custom-style 属性 [\#677](https://github.com/youzan/vant-weapp/pull/677)
+- Field: 新增 placeholder-style 属性 [\#678](https://github.com/youzan/vant-weapp/pull/678)
+
+**Bug Fixes**
+
+- 修复 Field readonly 属性不生效的问题 [\#679](https://github.com/youzan/vant-weapp/pull/679)
+
 ### [0.3.5](https://github.com/youzan/vant-weapp/tree/v0.3.5)
 `2018-09-29`
 

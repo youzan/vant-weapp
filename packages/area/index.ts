@@ -89,7 +89,7 @@ VantComponent({
         return result;
       }
 
-      const list = this.data.areaList[`${type}_list`] || {};
+      const list = this.data.areaList && this.data.areaList[`${type}_list`] || {};
       result = Object.keys(list).map(code => ({
         code,
         name: list[code]
@@ -117,7 +117,7 @@ VantComponent({
     },
 
     setValues() {
-      let code = this.code || Object.keys(this.data.areaList.county_list || {})[0] || '';
+      let code = this.code || this.data.areaList && Object.keys(this.data.areaList.county_list || {})[0] || '';
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
 

@@ -51,8 +51,8 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 标识 Radio 名称 | 任意类型 | - |
-| value | 当前选中项的 name | 任意类型 | - |
+| name | 标识 Radio 名称 | `any` | - |
+| value | 当前选中项的 name | `any` | - |
 | disabled | 是否为禁用状态 | `Boolean` | `false` |
 | label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` |
@@ -75,7 +75,8 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| value | 当前选中项的 name | 任意类型 | - |
+| name | 在表单内提交时的标识符 | `String` | - |
+| value | 当前选中项的 name | `any` | - |
 | disabled | 是否禁用所有单选框 | `Boolean` | `false` |
 
 ### RadioGroup Event

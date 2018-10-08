@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 
-const FONT_COLOR = '#f60';
-const BG_COLOR = '#fff7cc';
+const FONT_COLOR = '#ed6a0c';
+const BG_COLOR = '#fffbe8';
 
 VantComponent({
   props: {

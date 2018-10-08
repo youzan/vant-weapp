@@ -57,8 +57,8 @@
 | speed | 滚动速率 (px/s) | `Number` | `50` |
 | scrollable | 是否在长度溢出时滚动播放 | `Boolean` | `true` |
 | left-icon | 左侧图标图片 URL | `String` | - |
-| color | 文本颜色 | `String` | `#f60` |
-| background | 滚动条背景 | `String` | `#fff7cc` |
+| color | 文本颜色 | `String` | `#ed6a0c` |
+| background | 滚动条背景 | `String` | `#fffbe8` |
 | open-type | 微信开放能力 | `String` | `navigate` |
 
 ### Event

@@ -1,5 +1,5 @@
 <view class="van-picker">
-  <view class="van-picker__toolbar">
+  <view class="van-picker__toolbar van-hairline--bottom">
     <view class="van-picker__cancel" bindtap="onCancel">取消</view>
     <view class="van-picker__title">{{ title }}</view>
     <view class="van-picker__confirm" bindtap="onConfirm">确定</view>

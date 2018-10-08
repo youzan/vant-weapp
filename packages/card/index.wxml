@@ -1,5 +1,5 @@
 <view class="custom-class van-card {{ centered ? 'van-card--center' : '' }}">
-  <view class="van-card__thumb">
+  <view class="van-card__thumb" bind:tap="onClickThumb">
     <image wx:if="{{ thumb }}" src="{{ thumb }}" class="van-card__img thumb-class" />
     <slot wx:else name="thumb" />
     <van-tag

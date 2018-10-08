@@ -3,7 +3,7 @@
 .van-card {
   color: @text-color;
   height: 100px;
-  font-size: 16px;
+  font-size: 12px;
   background: #fafafa;
   position: relative;
   box-sizing: border-box;
@@ -55,9 +55,8 @@
   }
 
   &__desc {
-    color: @gray-darker;
-    font-size: 12px;
     max-height: 20px;
+    color: @gray-darker;
   }
 
   &__price,
@@ -68,13 +67,14 @@
     text-align: right;
   }
 
-  &__price {
-    font-size: 14px;
-  }
-
   &__num {
     color: @gray-darker;
-    font-size: 12px;
+  }
+
+  &__tag {
+    position: absolute;
+    top: 2px;
+    left: 0;
   }
 
   &__tag {

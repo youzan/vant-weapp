@@ -85,3 +85,6 @@
 | 0.0.1 | feature | 新增组件 |
 | 0.3.0 | bugfix | 修复 currency 默认值不生效的问题 |
 | 0.3.3 | bugfix | 修复 centered 属性不生效的问题 |
+| 0.3.7 | feature | 新增 tag 属性 |
+| 0.3.7 | feature | 新增 link-type 属性 |
+| 0.3.7 | feature | 新增 thumb-link 属性 |

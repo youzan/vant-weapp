@@ -110,3 +110,4 @@
 | 0.1.1 | feature | 新增 square 属性 |
 | 0.3.0 | bugfix | 修复在加载状态下仍然显示文字的问题 |
 | 0.3.4 | feature | 新增 id 属性 |
+| 0.3.7 | feature | 新增 round 属性 |

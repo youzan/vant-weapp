@@ -161,3 +161,4 @@ Page({
 | 0.3.3 | feature | 新增 border 属性 |
 | 0.3.3 | feature | 支持传入外部样式类 |
 | 0.3.5 | bugfix | 修复 active 属性默认值错误的问题 |
+| 0.3.7 | feature | 新增 z-index 属性 |

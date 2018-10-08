@@ -1,5 +1,5 @@
 <view class="custom-class van-tabs van-tabs--{{ type }}">
-  <view class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+  <view style="z-index: {{ zIndex }}" class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
     <scroll-view
       scroll-x="{{ scrollable }}"
       scroll-with-animation

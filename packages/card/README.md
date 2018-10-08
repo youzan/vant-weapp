@@ -56,6 +56,7 @@
 | currency | 货币符号 |  `String` | `¥` |
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
+| lazy-load | 是否开启图片懒加载 | `String` | `false` |
 
 ### Slot
 

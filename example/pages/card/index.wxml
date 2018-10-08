@@ -1,20 +1,21 @@
 <view class="container">
   <demo-block title="基础用法">
     <van-card
-      title="标题"
-      desc="描述信息"
       num="2"
       price="2.00"
+      desc="描述信息"
+      title="商品标题"
       thumb="{{ imageURL }}"
     />
   </demo-block>
 
   <demo-block title="高级用法">
     <van-card
-      title="标题"
-      desc="描述信息"
       num="2"
+      tag="标签"
       price="2.00"
+      desc="描述信息"
+      title="商品标题"
       thumb="{{ imageURL }}"
     >
       <div slot="footer">

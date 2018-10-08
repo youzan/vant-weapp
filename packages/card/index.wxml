@@ -2,6 +2,14 @@
   <view class="van-card__thumb">
     <image wx:if="{{ thumb }}" src="{{ thumb }}" class="van-card__img thumb-class" />
     <slot wx:else name="thumb" />
+    <van-tag
+      wx:if="{{ tag }}"
+      mark
+      type="danger"
+      custom-class="van-card__tag"
+    >
+      {{ tag }}
+    </van-tag>
   </view>
   <view class="van-card__content">
     <view wx:if="{{ title || price || price === 0 }}" class="van-card__row">

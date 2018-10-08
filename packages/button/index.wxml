@@ -1,8 +1,6 @@
 <button
   class="custom-class van-button {{ classes }}"
   id="{{ id }}"
-  disabled="{{ disabled }}"
-  hover-class="button-hover"
   open-type="{{ openType }}"
   app-parameter="{{ appParameter }}"
   hover-stop-propagation="{{ hoverStopPropagation }}"

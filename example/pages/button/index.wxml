@@ -1,20 +1,31 @@
 <demo-section>
   <demo-block title="按钮类型" padding>
     <view class="row">
-      <van-button custom-class="demo-margin-right">默认按钮</van-button>
-      <van-button type="primary">主要按钮</van-button>
+      <van-button type="primary" custom-class="demo-margin-right">主要按钮</van-button>
+      <van-button type="danger">危险按钮</van-button>
     </view>
-    <van-button type="warning" custom-class="demo-margin-right">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    <van-button custom-class="demo-margin-right">默认按钮</van-button>
+    <van-button type="warning">警告按钮</van-button>
   </demo-block>
 
   <demo-block title="朴素按钮" padding>
-    <view class="row">
-      <van-button plain custom-class="demo-margin-right">默认按钮</van-button>
-      <van-button type="primary" plain>主要按钮</van-button>
-    </view>
-    <van-button type="warning" plain custom-class="demo-margin-right">警告按钮</van-button>
-    <van-button type="danger" plain>危险按钮</van-button>
+    <van-button type="primary" plain custom-class="demo-margin-right">朴素按钮</van-button>
+    <van-button type="danger" plain>朴素按钮</van-button>
+  </demo-block>
+
+  <demo-block title="禁用状态" padding>
+    <van-button type="primary" disabled custom-class="demo-margin-right">禁用状态</van-button>
+    <van-button type="danger" disabled>禁用状态</van-button>
+  </demo-block>
+
+  <demo-block title="加载状态" padding>
+    <van-button loading type="primary" custom-class="demo-margin-right" loading-class="loading" />
+    <van-button loading type="danger" loading-class="loading" />
+  </demo-block>
+
+  <demo-block title="按钮形状" padding>
+    <van-button type="primary" square custom-class="demo-margin-right">方形按钮</van-button>
+    <van-button type="danger" round>圆形按钮</van-button>
   </demo-block>
 
   <demo-block title="按钮尺寸" padding>
@@ -24,12 +35,4 @@
     <van-button size="mini">迷你按钮</van-button>
   </demo-block>
 
-  <demo-block title="禁用状态" padding>
-    <van-button disabled>禁用状态</van-button>
-  </demo-block>
-
-  <demo-block title="加载状态" padding>
-    <van-button loading custom-class="demo-margin-right" loading-class="loading" />
-    <van-button loading type="primary" loading-class="loading" />
-  </demo-block>
 </demo-section>

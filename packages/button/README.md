@@ -23,10 +23,31 @@
 #### 朴素按钮
 
 ```html
-<van-button type="default" plain>默认按钮</van-button>
-<van-button type="primary" plain>主要按钮</van-button>
-<van-button type="warning" plain>警告按钮</van-button>
-<van-button type="danger" plain>危险按钮</van-button>
+<van-button plain type="primary">朴素按钮</van-button>
+<van-button plain type="danger">朴素按钮</van-button>
+```
+
+#### 禁用状态
+
+通过`disabled`属性来禁用按钮，此时按钮不可点击
+
+```html
+<van-button disabled type="primary">禁用状态</van-button>
+<van-button disabled type="danger">禁用状态</van-button>
+```
+
+#### 加载状态
+
+```html 
+<van-button loading type="primary" />
+<van-button loading type="danger" />
+```
+
+#### 按钮形状
+
+```html 
+<van-button square type="primary">方形按钮</van-button>
+<van-button round type="danger">圆形按钮</van-button>
 ```
 
 #### 按钮尺寸
@@ -39,20 +60,6 @@
 <van-button size="mini">迷你按钮</van-button>
 ```
 
-#### 禁用状态
-通过`disabled`属性来禁用按钮，此时按钮不可点击
-
-```html
-<van-button disabled>禁用状态</van-button>
-```
-
-#### 加载状态
-
-```html 
-<van-button loading />
-<van-button loading type="primary" />
-```
-
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -61,9 +68,10 @@
 | type | 按钮类型，可选值为 `primary` `warning` `danger` | `String` | `default` |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` |
 | plain | 是否为朴素按钮 | `Boolean` | `false` |
-| disabled | 是否禁用 | `Boolean` | `false` |
+| disabled | 是否禁用按钮 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
+| round | 是否为圆形按钮 | `Boolean` | `false` |
 | square | 是否为方形按钮 | `Boolean` | `false` |
 | open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - |

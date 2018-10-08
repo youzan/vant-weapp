@@ -117,6 +117,7 @@ Page({
 |-----------|-----------|-----------|-------------|
 | active | 当前激活标签的索引 | `Number` | `0` |
 | color | 标签颜色 | `String` | `#f44` |
+| z-index | z-index 层级 | `Number` | 99 |
 | type | 样式风格，可选值为`card` | `String` | `line` |
 | border | 是否展示外边框，仅在`line`风格下生效 | `Boolean` | `true` |
 | duration | 动画时间 (单位秒)  | `Number` | `0.2` |

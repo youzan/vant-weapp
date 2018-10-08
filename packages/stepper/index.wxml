@@ -1,6 +1,6 @@
 <view class="van-stepper custom-class">
   <view
-    class="minus-class van-stepper__minus {{ disabled || value <= min ? 'van-stepper__minus--disabled' : '' }}"
+    class="minus-class van-stepper__minus {{ minusDisabled ? 'van-stepper__minus--disabled' : '' }}"
     bind:tap="onMinus"
   />
   <input
@@ -12,7 +12,7 @@
     bind:blur="onBlur"
   />
   <view
-    class="plus-class van-stepper__plus {{ disabled || value >= max ? 'van-stepper__plus--disabled' : '' }}"
+    class="plus-class van-stepper__plus {{ plusDisabled ? 'van-stepper__plus--disabled' : '' }}"
     bind:tap="onPlus"
   />
 </view>

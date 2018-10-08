@@ -17,9 +17,23 @@ VantComponent({
     title: String,
     price: String,
     centered: Boolean,
+    thumbLink: String,
+    linkType: {
+      type: String,
+      value: 'navigateTo'
+    },
     currency: {
       type: String,
       value: '¥'
+    }
+  },
+
+  methods: {
+    onClickThumb() {
+      const { thumbLink } = this.data;
+      if (thumbLink) {
+        wx[this.data.linkType]({ url: thumbLink });
+      }
     }
   }
 });

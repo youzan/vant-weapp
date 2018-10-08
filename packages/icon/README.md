@@ -48,3 +48,4 @@
 |-----------|-----------|-----------|
 | 0.0.1 | feature | 新增组件 |
 | 0.2.1 | feature | 新增 class-prefix 属性 |
+| 0.3.6 | feature | 新增 custom-style 属性 |

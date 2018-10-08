@@ -1,6 +1,8 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
+  field: true,
+
   relation: {
     name: 'checkbox-group',
     type: 'ancestor'
@@ -9,7 +11,6 @@ VantComponent({
   classes: ['icon-class', 'label-class'],
 
   props: {
-    name: null,
     value: null,
     disabled: Boolean,
     labelDisabled: Boolean,

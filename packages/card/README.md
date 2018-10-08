@@ -15,10 +15,10 @@
 
 ```html
 <van-card
-  title="标题"
-  desc="描述"
   num="2"
   price="2.00"
+  desc="描述信息"
+  title="商品标题"
   thumb="{{ imageURL }}"
 />
 ```
@@ -28,10 +28,11 @@
 
 ```html
 <van-card
-  title="标题"
-  desc="描述"  
   num="2"
+  tag="标签"
   price="2.00"
+  desc="描述信息"
+  title="商品标题"
   thumb="{{ imageURL }}"
 >
   <view slot="footer">
@@ -48,6 +49,7 @@
 | thumb | 左侧图片 | `String` | - |
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
+| tag | 标签 | `String` | - |
 | num | 商品数量 | `String | Number` | - |
 | price | 商品价格 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |

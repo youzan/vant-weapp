@@ -40,6 +40,10 @@ VantComponent({
       type: Number,
       value: 0.2
     },
+    zIndex: {
+      type: Number,
+      value: 99
+    },
     swipeThreshold: {
       type: Number,
       value: 4

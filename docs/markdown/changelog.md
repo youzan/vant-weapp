@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [0.3.7](https://github.com/youzan/vant-weapp/tree/v0.3.7)
+`2018-10-08`
+
+**Improvements**
+
+- Button: 优化禁用状态样式 [\#702](https://github.com/youzan/vant-weapp/pull/702)
+- Button: 新增 round 属性 [\#704](https://github.com/youzan/vant-weapp/pull/704)
+- Card: 新增 tag 属性 [\#705](https://github.com/youzan/vant-weapp/pull/705)
+- Card: 新增 link-type 属性 [\#706](https://github.com/youzan/vant-weapp/pull/706)
+- Card: 新增 thumb-link 属性 [\#706](https://github.com/youzan/vant-weapp/pull/706)
+- Checkbox: 支持在原生 form 组件内使用 [\#694](https://github.com/youzan/vant-weapp/pull/694)
+- Radio: 支持在原生 form 组件内使用 [\#694](https://github.com/youzan/vant-weapp/pull/694)
+- Tab：新增 z-index 属性 [\#695](https://github.com/youzan/vant-weapp/pull/695)
+- NoticeBar: 优化样式 [\#699](https://github.com/youzan/vant-weapp/pull/699)
+
 
 ### [0.3.6](https://github.com/youzan/vant-weapp/tree/v0.3.6)
 `2018-09-30`

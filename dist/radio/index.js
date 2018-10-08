@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 VantComponent({
+  field: true,
   relation: {
     name: 'radio-group',
     type: 'ancestor'

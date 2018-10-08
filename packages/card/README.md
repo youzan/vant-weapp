@@ -56,6 +56,7 @@
 | currency | 货币符号 |  `String` | `¥` |
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
+| lazy-load | 是否开启图片懒加载 | `String` | `false` |
 
 ### Slot
 
@@ -85,3 +86,6 @@
 | 0.0.1 | feature | 新增组件 |
 | 0.3.0 | bugfix | 修复 currency 默认值不生效的问题 |
 | 0.3.3 | bugfix | 修复 centered 属性不生效的问题 |
+| 0.3.7 | feature | 新增 tag 属性 |
+| 0.3.7 | feature | 新增 link-type 属性 |
+| 0.3.7 | feature | 新增 thumb-link 属性 |

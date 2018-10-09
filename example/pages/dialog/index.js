@@ -1,6 +1,8 @@
 import Page from '../../common/page';
 import Dialog from '../../dist/dialog/dialog';
 
+const message = '有赞是一家零售科技公司，致力于成为商家服务领域里最被信任的引领者';
+
 Page({
   data: {
     show: false,
@@ -15,7 +17,7 @@ Page({
   onClickAlert() {
     Dialog.alert({
       title: '标题',
-      message: '内容'
+      message
     });
   },
 
@@ -25,14 +27,14 @@ Page({
 
   onClickAlert2() {
     Dialog.alert({
-      message: '内容'
+      message
     });
   },
 
   onClickConfirm() {
     Dialog.confirm({
       title: '标题',
-      message: '内容'
+      message
     });
   },
 

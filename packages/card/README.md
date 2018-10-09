@@ -89,3 +89,4 @@
 | 0.3.7 | feature | 新增 tag 属性 |
 | 0.3.7 | feature | 新增 link-type 属性 |
 | 0.3.7 | feature | 新增 thumb-link 属性 |
+| 0.3.8 | feature | 新增 lazyLoad 属性 |

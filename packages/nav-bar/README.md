@@ -1,10 +1,12 @@
 ## NavBar 导航栏
 
 ### 使用指南
-``` javascript
-import { NavBar } from 'vant';
 
-Vue.use(NavBar);
+在 index.json 中引入组件
+```json
+"usingComponents": {
+  "van-nav-bar": "path/to/vant-weapp/dist/nav-bar/index"
+}
 ```
 
 ### 代码演示

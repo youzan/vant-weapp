@@ -1,4 +1,5 @@
 import Page from '../../common/page';
+import AreaList from './area';
 
 Page({
   data: {
@@ -8,15 +9,12 @@ Page({
   },
 
   onShow() {
-    wx.request({
-      url: 'https://cashier.youzan.com/pay/wsctrade/order/buy/getAllRegion.json',
-      success: response => {
-        this.setData({
-          loading: false,
-          areaList: response.data.data
-        });
-      }
-    });
+    setTimeout(() => {
+      this.setData({
+        loading: false,
+        areaList: AreaList
+      });
+    }, 1500);
   },
 
   onChange(event) {

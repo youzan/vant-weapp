@@ -33,9 +33,9 @@ VantComponent({
     cellClass(): string {
       const { data } = this;
       return this.classNames('custom-class', 'van-cell', {
-        'van-hairline': data.border,
         'van-cell--center': data.center,
         'van-cell--required': data.required,
+        'van-cell--borderless': !data.border,
         'van-cell--clickable': data.isLink || data.clickable
       });
     },

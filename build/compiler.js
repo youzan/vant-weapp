@@ -23,7 +23,7 @@ gulp.task('compile-less', () => {
     .pipe(postcss())
     .pipe(cssmin())
     .pipe(insert.transform((contents, file) => {
-      if (!file.path.includes('packages/common')) {
+      if (!file.path.includes('packages'+ path.sep +'common')) {
         contents = `@import '../common/index.wxss';` + contents;
       }
       return contents;

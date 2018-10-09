@@ -53,7 +53,7 @@ Page({
   steps="{{ steps }}"
   active="{{ active }}"
   direction="vertical"
-  active-color="#f60"
+  active-color="#f44"
 />
 ```
 

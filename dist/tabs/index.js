@@ -112,7 +112,7 @@ VantComponent({
 
       this.getRect('.van-tab', true).then(function (rects) {
         var rect = rects[_this.data.active];
-        var width = _this.data.lineWidth || rect.width;
+        var width = _this.data.lineWidth || rect.width / 2;
         var left = rects.slice(0, _this.data.active).reduce(function (prev, curr) {
           return prev + curr.width;
         }, 0);

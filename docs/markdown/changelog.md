@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [0.3.8](https://github.com/youzan/vant-weapp/tree/v0.3.8)
+`2018-10-09`
+
+**Improvements**
+
+- Tab: 样式升级 [\#719](https://github.com/youzan/vant-weapp/pull/719)
+- Badge: 样式升级 [\#718](https://github.com/youzan/vant-weapp/pull/718)
+- Dialog: 样式升级 [\#717](https://github.com/youzan/vant-weapp/pull/717)
+- TreeSelect: 适配 ipad [\#715](https://github.com/youzan/vant-weapp/pull/715)
+- Card: 新增 lazyLoad 属性 [\#707](https://github.com/youzan/vant-weapp/pull/707)
+
+**Bug Fixes**
+
+- 修复 Cell 边框在部分情况下无法展示的问题 [\#714](https://github.com/youzan/vant-weapp/pull/714)
+- 修复 Stepper 在 ipad 下高度错误的问题 [\#716](https://github.com/youzan/vant-weapp/pull/716)
+- 修复 Stepper disabled 状态下仍然可以点击的问题 [\#709](https://github.com/youzan/vant-weapp/pull/709)
+
+
+
 ### [0.3.7](https://github.com/youzan/vant-weapp/tree/v0.3.7)
 `2018-10-08`
 

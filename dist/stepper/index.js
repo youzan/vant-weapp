@@ -22,6 +22,14 @@ VantComponent({
       value: 1
     }
   },
+  computed: {
+    minusDisabled: function minusDisabled() {
+      return this.data.disabled || this.data.value <= this.data.min;
+    },
+    plusDisabled: function plusDisabled() {
+      return this.data.disabled || this.data.value >= this.data.max;
+    }
+  },
   created: function created() {
     this.setData({
       value: this.range(this.data.value)
@@ -40,7 +48,7 @@ VantComponent({
       this.triggerInput(value);
     },
     onChange: function onChange(type) {
-      if (this[type + "Disabled"]) {
+      if (this.data[type + "Disabled"]) {
         this.$emit('overlimit', type);
         return;
       }

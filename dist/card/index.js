@@ -9,6 +9,7 @@ VantComponent({
     title: String,
     price: String,
     centered: Boolean,
+    lazyLoad: Boolean,
     thumbLink: String,
     linkType: {
       type: String,

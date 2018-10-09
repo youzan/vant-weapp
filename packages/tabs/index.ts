@@ -120,7 +120,7 @@ VantComponent({
 
       this.getRect('.van-tab', true).then(rects => {
         const rect = rects[this.data.active];
-        const width = this.data.lineWidth || rect.width;
+        const width = this.data.lineWidth || (rect.width / 2);
         let left = rects
           .slice(0, this.data.active)
           .reduce((prev, curr) => prev + curr.width, 0);

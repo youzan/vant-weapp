@@ -13,7 +13,7 @@
   <view class="van-dialog__content" wx:if="{{ message || useSlot }}">
     <slot wx:if="{{ useSlot }}" />
     <view wx:elif="{{ message }}" class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }}">
-      {{ message }}
+      <text>{{ message }}</text>
     </view>
   </view>
   <view class="van-hairline--top van-dialog__footer {{ showCancelButton && showConfirmButton ? 'van-dialog__footer--buttons' : '' }}">

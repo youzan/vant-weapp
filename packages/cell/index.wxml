@@ -22,7 +22,7 @@
   </view>
 
   <view class="van-cell__value value-class">
-    <view wx:if="{{ value }}">{{ value }}</view>
+    <block wx:if="{{ value }}">{{ value }}</block>
     <slot wx:else />
   </view>
 

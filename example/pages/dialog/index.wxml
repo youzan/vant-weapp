@@ -1,14 +1,39 @@
 <demo-block title="消息提示" padding>
-  <van-button type="primary" plain bind:click="onClickAlert" custom-class="demo-margin-right">消息提示</van-button>
-  <van-button type="primary" plain bind:click="onClickAlert2">无标题提示</van-button>
+  <van-button
+    plain
+    type="primary"
+    custom-class="demo-margin-right"
+    bind:click="onClickAlert"
+  >
+    消息提示
+  </van-button>
+  <van-button
+    plain
+    type="primary"
+    bind:click="onClickAlert2"
+  >
+    无标题提示
+  </van-button>
 </demo-block>
 
 <demo-block title="消息确认" padding>
-  <van-button type="primary" plain bind:click="onClickConfirm">消息确认</van-button>
+  <van-button
+    plain
+    type="primary"
+    bind:click="onClickConfirm"
+  >
+    消息确认
+  </van-button>
 </demo-block>
 
 <demo-block title="组件调用" padding>
-  <van-button type="danger" plain bind:click="showCustomDialog">组件调用</van-button>
+  <van-button
+    plain
+    type="danger"
+    bind:click="showCustomDialog"
+  >
+    组件调用
+  </van-button>
   <van-dialog
     use-slot
     async-close
@@ -27,7 +52,7 @@
       value="{{ password }}"
       type="password"
       label="密码"
-      :border="false"
+      border="{{ false }}"
       placeholder="请输入密码"
     />
   </van-dialog>

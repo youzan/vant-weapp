@@ -6,7 +6,7 @@
       scroll-left="{{ scrollLeft }}"
     >
       <view class="van-tabs__nav van-tabs__nav--{{ type }}" style="{{ color ? 'border-color: ' + color : '' }}">
-        <view wx:if="{{ type === 'line' }}" class="van-tabs__line" style="{{ lineStyle }}" />
+        <view wx:if="{{ type === 'line' && border }}" class="van-tabs__line" style="{{ lineStyle }}" />
         <view
           wx:for="{{ tabs }}"
           wx:key="index"

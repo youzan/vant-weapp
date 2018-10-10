@@ -1,11 +1,12 @@
 export const button = Behavior({
   properties: {
     id: String,
+    sessionFrom: String,
     appParameter: String,
-    sendMessageTitle: String,
-    sendMessagePath: String,
     sendMessageImg: String,
+    sendMessagePath: String,
     showMessageCard: String,
+    sendMessageTitle: String,
     hoverStopPropagation: Boolean,
     hoverStartTime: {
       type: Number,
@@ -19,9 +20,5 @@ export const button = Behavior({
       type: String,
       value: 'en'
     },
-    sessionFrom: {
-      type: String,
-      value: ''
-    }
   }
 });

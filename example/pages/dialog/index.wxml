@@ -1,14 +1,14 @@
 <demo-block title="消息提示" padding>
-  <van-button bind:click="onClickAlert" custom-class="demo-margin-right">Alert</van-button>
-  <van-button bind:click="onClickAlert2">无标题 Alert</van-button>
+  <van-button type="primary" plain bind:click="onClickAlert" custom-class="demo-margin-right">消息提示</van-button>
+  <van-button type="primary" plain bind:click="onClickAlert2">无标题提示</van-button>
 </demo-block>
 
 <demo-block title="消息确认" padding>
-  <van-button bind:click="onClickConfirm">Confirm</van-button>
+  <van-button type="primary" plain bind:click="onClickConfirm">消息确认</van-button>
 </demo-block>
 
 <demo-block title="组件调用" padding>
-  <van-button bind:click="showCustomDialog">组件调用</van-button>
+  <van-button type="danger" plain bind:click="showCustomDialog">组件调用</van-button>
   <van-dialog
     use-slot
     async-close

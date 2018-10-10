@@ -14,6 +14,10 @@ VantComponent({
     num: String,
     desc: String,
     thumb: String,
+    thumbMode: {
+      type: String,
+      value: 'scaleToFill'
+    },
     title: String,
     price: String,
     centered: Boolean,

@@ -14,6 +14,7 @@ VantComponent({
     square: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    formType: String,
     type: {
       type: String,
       value: 'default'
@@ -43,6 +44,11 @@ VantComponent({
     onClick() {
       if (!this.data.disabled && !this.data.loading) {
         this.$emit('click');
+      }
+    },
+    onSubmit(e) {
+      if (!this.data.disabled && !this.data.loading) {
+        this.triggerEvent('submit', e)
       }
     }
   }

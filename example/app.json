@@ -32,7 +32,8 @@
     "pages/area/index",
     "pages/submit-bar/index",
     "pages/radio/index",
-    "pages/checkbox/index"
+    "pages/checkbox/index",
+    "pages/goods-action/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",

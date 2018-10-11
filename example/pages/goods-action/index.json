@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "GoodsAction 商品页行动点",
+  "usingComponents": {
+    "demo-block": "../../components/demo-block/index",
+    "van-goods-action": "../../dist/goods-action/index",
+    "van-goods-action-big-btn": "../../dist/goods-action-big-btn/index",
+    "van-goods-action-mini-btn": "../../dist/goods-action-mini-btn/index",
+    "van-submit-bar": "../../dist/submit-bar/index",
+    "van-toast": "../../dist/toast/index"
+  }
+}

@@ -149,6 +149,10 @@ export default [
       {
         path: '/submit-bar',
         title: 'SubmitBar 提交订单栏'
+      },
+      {
+        path: '/goods-action',
+        title: 'GoodsAction 商品页行动点'
       }
     ]
   }

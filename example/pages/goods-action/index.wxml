@@ -1,0 +1,11 @@
+<demo-block title="基础用法">
+  <van-goods-action icon-class="icon-color" btn-list="{{ btnList }}" bind:click="onClick" />
+</demo-block>
+
+<demo-block title="图标提示">
+  <van-goods-action btn-list="{{ btnListInfo }}" bind:click="onClick" />
+</demo-block>
+
+<van-toast id="van-toast" />
+
+

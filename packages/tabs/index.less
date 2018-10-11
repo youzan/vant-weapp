@@ -29,6 +29,11 @@
     }
   }
 
+  &__scroll--card {
+    border: 1px solid @red;
+    border-radius: 2px;
+  }
+
   &__nav {
     display: flex;
     user-select: none;
@@ -40,10 +45,6 @@
     }
 
     &--card {
-      margin: 0 15px;
-      border-radius: 2px;
-      box-sizing: border-box;
-      border: 1px solid @red;
       height: @van-tabs-card-height;
 
       .van-tab {
@@ -83,6 +84,7 @@
 
   &--card {
     padding-top: @van-tabs-card-height;
+    margin: 0 15px;
 
     .van-tabs__wrap {
       height: @van-tabs-card-height;

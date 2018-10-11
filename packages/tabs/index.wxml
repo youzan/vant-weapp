@@ -4,6 +4,7 @@
       scroll-x="{{ scrollable }}"
       scroll-with-animation
       scroll-left="{{ scrollLeft }}"
+      class="van-tabs__scroll--{{ type }}"
     >
       <view class="van-tabs__nav van-tabs__nav--{{ type }}" style="{{ color ? 'border-color: ' + color : '' }}">
         <view wx:if="{{ type === 'line' }}" class="van-tabs__line" style="{{ lineStyle }}" />

@@ -48,7 +48,7 @@ VantComponent({
     },
     onSubmit(e) {
       if (!this.data.disabled && !this.data.loading) {
-        this.triggerEvent('submit', e)
+        this.triggerEvent('submit', e);
       }
     }
   }

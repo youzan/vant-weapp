@@ -52,6 +52,7 @@
 | tag | 标签 | `String` | - |
 | num | 商品数量 | `String | Number` | - |
 | price | 商品价格 | `String | Number` | - |
+| origin-price | 商品划线原价 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |
 | currency | 货币符号 |  `String` | `¥` |
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
@@ -62,8 +63,8 @@
 
 | 名称 | 说明 |
 |-----------|-----------|
-| title | 自定义标题栏，如果设置了`title`或`price`属性则不生效 |
-| desc | 自定义描述栏，如果设置了`desc`或`num`属性则不生效 |
+| title | 自定义标题栏，如果设置了`title`属性则不生效 |
+| desc | 自定义描述栏，如果设置了`desc`属性则不生效 |
 | thumb | 自定义 thumb，如果设置了`thumb`属性则不生效 |
 | footer | 自定义 footer |
 | tags | 自定义 tags |
@@ -76,6 +77,7 @@
 | thumb-class | 左侧图片样式类 |
 | title-class | 标题样式类 |
 | price-class | 价格样式类 |
+| origin-price-class | 划线原价样式类 |
 | desc-class | 描述样式类 |
 | num-class | 数量样式类 |
 

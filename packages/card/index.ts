@@ -5,6 +5,7 @@ VantComponent({
     'thumb-class',
     'title-class',
     'price-class',
+    'origin-price-class',
     'desc-class',
     'num-class'
   ],
@@ -16,6 +17,7 @@ VantComponent({
     thumb: String,
     title: String,
     price: String,
+    originPrice: String,
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,

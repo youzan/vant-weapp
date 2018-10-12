@@ -3,6 +3,7 @@
     <image
       wx:if="{{ thumb }}"
       src="{{ thumb }}"
+      mode="{{ thumbMode }}"
       lazy-load="{{ lazyLoad }}"
       class="van-card__img thumb-class"
     />

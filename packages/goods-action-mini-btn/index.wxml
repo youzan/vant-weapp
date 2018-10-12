@@ -1,0 +1,18 @@
+<navigator wx:if="{{ url }}" url="{{ url }}" open-type="{{ replace ? 'redirect' : 'navigate' }}">
+  <template is="mini-btn" data="{{ icon, info, text }}"></template>
+</navigator>
+
+<block wx:else>
+  <template is="mini-btn" data="{{ icon, info, text }}"></template>
+</block>
+
+<template name="mini-btn">
+  <view class="van-goods-action-mini-btn icon-class" bindtap="onClick">
+    <van-icon
+      name="{{ icon }}"
+      info="{{ info }}"
+      class="van-goods-action-mini-btn__icon"
+    />
+    {{ text }}
+  </view>
+</template>

@@ -1,0 +1,20 @@
+<navigator wx:if="{{ url }}" url="{{ url }}" open-type="{{ replace ? 'redirect' : 'navigate' }}">
+  <template is="big-btn" data="{{ primary, text }}"></template>
+</navigator>
+
+<block wx:else>
+  <template is="big-btn" data="{{ primary, text }}"></template>
+</block>
+
+<template name="big-btn">
+  <van-button
+    type="{{ primary ? 'danger' : 'warning' }}"
+    square
+    size="large"
+    bind:click="onClick"
+  >
+    {{ text }}
+  </van-button>
+</template>
+
+

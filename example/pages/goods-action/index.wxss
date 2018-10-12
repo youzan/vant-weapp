@@ -1,0 +1,7 @@
+.van-goods-action {
+  position: relative !important;
+}
+
+.icon-color {
+  color: #06bf04!important;
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-goods-action-mini-btn": "../goods-action-mini-btn/index",
+    "van-goods-action-big-btn": "../goods-action-big-btn/index"
+  }
+}

@@ -1,0 +1,27 @@
+<view class="van-goods-action">
+  <block wx:for="{{ btnList }}" wx:key="{{ index }}">
+    <van-goods-action-mini-btn
+      wx:if="{{ item.type === 'mini' }}"
+      bind:click="onClick"
+      class="van-goods-action-mini-btn van-hairline"
+      icon-class="icon-class"
+      icon="{{ item.icon }}"
+      text="{{ item.text }}"
+      info="{{ item.info }}"
+      url="{{ item.url }}"
+      replace="{{ item.replace }}"
+      bind-click-event-name="{{ item.bindClickEventName }}"
+    />
+
+    <van-goods-action-big-btn
+      wx:elif="{{ item.type === 'big' }}"
+      bind:click="onClick"
+      class="van-goods-action-big-btn"
+      primary="{{ item.primary }}"
+      text="{{ item.text }}"
+      url="{{ item.url }}"
+      replace="{{ item.replace }}"
+      bind-click-event-name="{{ item.bindClickEventName }}"
+    />
+  </block>
+</view>

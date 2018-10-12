@@ -14,14 +14,18 @@
       num="2"
       tag="标签"
       price="2.00"
+      origin-price="3.00"
       desc="描述信息"
       title="商品标题"
       thumb="{{ imageURL }}"
     >
-      <div slot="footer">
+      <view slot="tags">
+        <van-tag plain type="danger">满减</van-tag>
+      </view>
+      <view slot="footer">
         <van-button size="mini" custom-class="button">按钮</van-button>
         <van-button size="mini">按钮</van-button>
-      </div>
+      </view>
     </van-card>
   </demo-block>
 </view>

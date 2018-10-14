@@ -47,14 +47,7 @@ VantComponent({
 
   watch: {
     show(show) {
-      if (!show) {
-        this.setData({
-          loading: {
-            confirm: false,
-            cancel: false
-          }
-        });
-      }
+      !show && this.stopLoading();
     }
   },
 
@@ -84,6 +77,15 @@ VantComponent({
     close() {
       this.setData({
         show: false
+      });
+    },
+
+    stopLoading() {
+      this.setData({
+        loading: {
+          confirm: false,
+          cancel: false
+        }
       });
     },
 

@@ -23,7 +23,7 @@
     wx:if="{{ loading }}"
     size="20px"
     custom-class="loading-class"
-    color="{{ type === 'default' ? '#c9c9c9' : '#fff' }}"
+    color="{{ type === 'default' ? '#c9c9c9' : '' }}"
   />
   <slot wx:else />
 </button>

@@ -1,11 +1,35 @@
 <demo-block title="基础用法">
-  <van-goods-action icon-class="icon-color" btn-list="{{ btnList }}" bind:click="onClick" />
+  <van-goods-action custom-class="goods-action">
+    <van-goods-action-icon
+      icon="chat"
+      text="客服"
+      bind:click="onClickIcon"
+    />
+    <van-goods-action-icon
+      icon="cart"
+      text="购物车"
+      bind:click="onClickIcon"
+    />
+    <van-goods-action-button
+      text="加入购物车"
+      type="warning"
+      bind:click="onClickButton"
+    />
+    <van-goods-action-button
+      text="立即购买"
+      bind:click="onClickButton"
+    />
+  </van-goods-action>
 </demo-block>
 
 <demo-block title="图标提示">
-  <van-goods-action btn-list="{{ btnListInfo }}" bind:click="onClick" />
+  <van-goods-action custom-class="goods-action">
+    <van-goods-action-icon icon="chat" text="客服" />
+    <van-goods-action-icon icon="cart" text="购物车" info="5" />
+    <van-goods-action-icon icon="shop" text="店铺" />
+    <van-goods-action-button text="加入购物车" type="warning" />
+    <van-goods-action-button text="立即购买" />
+  </van-goods-action>
 </demo-block>
 
 <van-toast id="van-toast" />
-
-

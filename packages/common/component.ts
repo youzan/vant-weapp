@@ -21,7 +21,7 @@ function VantComponent<Data, Props, Watch, Methods, Computed>(
     Methods,
     Computed,
     CombinedComponentInstance<Data, Props, Watch, Methods, Computed>
-  >
+  > = {}
 ): void {
   const options: any = {};
 

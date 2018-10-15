@@ -1,0 +1,8 @@
+<van-button
+  square
+  size="large"
+  type="{{ type }}"
+  bind:click="onClick"
+>
+  {{ text }}
+</van-button>

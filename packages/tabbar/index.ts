@@ -49,10 +49,7 @@ VantComponent({
   methods: {
     setActiveItem() {
       this.data.items.forEach((item, index) => {
-        item.setActive({
-          active: index === this.data.currentActive,
-          count: this.data.items.length
-        });
+        item.setActive(index === this.data.currentActive);
       });
     },
 

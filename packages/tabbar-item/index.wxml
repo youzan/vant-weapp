@@ -1,6 +1,5 @@
 <view
   class="van-tabbar-item {{ active ? 'van-tabbar-item--active' : '' }}"
-  style="{{ count ? 'width: ' + 100 / count + '%' : '' }}"
   bind:tap="onClick"
 >
   <view class="van-tabbar-item__icon {{ dot ? 'van-tabbar-item__icon--dot' : '' }}">

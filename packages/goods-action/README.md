@@ -64,7 +64,7 @@ Page({
 </van-goods-action>
 ```
 
-#### GoodsActionIcon API
+### GoodsActionIcon API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -74,7 +74,7 @@ Page({
 | url | 跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
 
-#### GoodsActionButton API
+### GoodsActionButton API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|

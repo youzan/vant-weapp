@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [0.4.0](https://github.com/youzan/vant-weapp/tree/v0.4.0)
+`2018-10-15`
+
+**Improvements**
+
+- 新增 GoodsAction 组件 [\#736](https://github.com/youzan/vant-weapp/pull/736) [\#759](https://github.com/youzan/vant-weapp/pull/759)
+- Card: 新增 thumb-mode 属性 [\#733](https://github.com/youzan/vant-weapp/pull/733)
+- Card: 新增 origin-price 属性 [\#745](https://github.com/youzan/vant-weapp/pull/745)
+- Dialog: 支持文本通过换行符进行换行 [\#725](https://github.com/youzan/vant-weapp/pull/725)
+- Tab: z-index 默认值调整为 1 [\#749](https://github.com/youzan/vant-weapp/pull/749)
+
+**Bug Fixes**
+
+- 修复 Area 第一项无法选中的问题 [\#722](https://github.com/youzan/vant-weapp/pull/722)
+- 修复 ActionSheet 由于外部样式类优先级导致的样式问题 [\#748](https://github.com/youzan/vant-weapp/pull/748)
+- 修复 Button 在朴素样式下 loading 样式错误的问题 [\#760](https://github.com/youzan/vant-weapp/pull/760)
+- 修复 Cell 由于外部样式类优先级导致的样式问题 [\#746](https://github.com/youzan/vant-weapp/pull/746)
+- 修复 SubmitBar 文字颜色过浅的问题
+- 修复 Tab 在 card 类型下样式错误的问题 [\#742](https://github.com/youzan/vant-weapp/pull/742)
+
 ### [0.3.8](https://github.com/youzan/vant-weapp/tree/v0.3.8)
 `2018-10-09`
 

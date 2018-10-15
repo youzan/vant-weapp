@@ -1,10 +1,11 @@
+import { link } from '../mixins/link';
 import { VantComponent } from '../common/component';
 VantComponent({
   classes: ['title-class', 'label-class', 'value-class'],
+  mixins: [link],
   props: {
     title: null,
     value: null,
-    url: String,
     icon: String,
     label: String,
     center: Boolean,
@@ -13,10 +14,6 @@ VantComponent({
     clickable: Boolean,
     titleWidth: String,
     customStyle: String,
-    linkType: {
-      type: String,
-      value: 'navigateTo'
-    },
     border: {
       type: Boolean,
       value: true
@@ -38,16 +35,9 @@ VantComponent({
     }
   },
   methods: {
-    onClick: function onClick() {
-      var url = this.data.url;
-
-      if (url) {
-        wx[this.data.linkType]({
-          url: url
-        });
-      }
-
-      this.$emit('click');
+    onClick: function onClick(event) {
+      this.$emit('click', event.detail);
+      this.jumpLink();
     }
   }
 });

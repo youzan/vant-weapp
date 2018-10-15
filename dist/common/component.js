@@ -10,6 +10,10 @@ function mapKeys(source, target, map) {
 }
 
 function VantComponent(vantOptions) {
+  if (vantOptions === void 0) {
+    vantOptions = {};
+  }
+
   var options = {};
   mapKeys(vantOptions, options, {
     data: 'data',
@@ -23,7 +27,8 @@ function VantComponent(vantOptions) {
     destroyed: 'detached',
     classes: 'externalClasses'
   });
-  var relation = vantOptions.relation;
+  var _vantOptions = vantOptions,
+      relation = _vantOptions.relation;
 
   if (relation) {
     options.relations = Object.assign(options.relations || {}, {

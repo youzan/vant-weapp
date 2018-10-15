@@ -1,6 +1,8 @@
+import { link } from '../mixins/link';
 import { VantComponent } from '../common/component';
 VantComponent({
-  classes: ['thumb-class', 'title-class', 'price-class', 'desc-class', 'num-class'],
+  classes: ['num-class', 'desc-class', 'thumb-class', 'title-class', 'price-class', 'origin-price-class'],
+  mixins: [link],
   props: {
     tag: String,
     num: String,
@@ -11,9 +13,10 @@ VantComponent({
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
-    linkType: {
+    originPrice: String,
+    thumbMode: {
       type: String,
-      value: 'navigateTo'
+      value: 'scaleToFill'
     },
     currency: {
       type: String,
@@ -22,13 +25,7 @@ VantComponent({
   },
   methods: {
     onClickThumb: function onClickThumb() {
-      var thumbLink = this.data.thumbLink;
-
-      if (thumbLink) {
-        wx[this.data.linkType]({
-          url: thumbLink
-        });
-      }
+      this.jumpLink('thumbLink');
     }
   }
 });

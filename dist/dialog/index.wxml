@@ -3,48 +3,51 @@
   transition="scale"
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
-  close-on-click-overlay="{{ closeOnClickOverlay }}"
   custom-class="van-dialog"
+  close-on-click-overlay="{{ closeOnClickOverlay }}"
   bind:close="onClickOverlay"
 >
-  <view wx:if="{{ title }}" class="van-dialog__header {{ !message && !useSlot ? 'van-dialog--isolated' : '' }}">
+  <view
+    wx:if="{{ title }}"
+    class="van-dialog__header {{ message || useSlot ? '' : 'van-dialog--isolated' }}"
+  >
     {{ title }}
   </view>
-  <view class="van-dialog__content" wx:if="{{ message || useSlot }}">
-    <slot wx:if="{{ useSlot }}" />
-    <view wx:elif="{{ message }}" class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }}">
-      {{ message }}
-    </view>
+
+  <slot wx:if="{{ useSlot }}" />
+  <view
+    wx:elif="{{ message }}"
+    class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }}"
+  >
+    <text>{{ message }}</text>
   </view>
-  <view class="van-hairline--top van-dialog__footer {{ showCancelButton && showConfirmButton ? 'van-dialog__footer--buttons' : '' }}">
-    <view wx:if="{{ showCancelButton }}" class="van-dialog__button">
-      <van-button
-        loading="{{ loading.cancel }}"
-        size="large"
-        custom-class="van-dialog__cancel"
-        bind:click="onCancel"
-      >
-        {{ cancelButtonText }}
-      </van-button>
-    </view>
-    <view
-      wx:if="{{ showConfirmButton }}"
-      class="van-dialog__button {{ showCancelButton ? 'van-hairline--left' : '' }}"
+
+  <view class="van-hairline--top van-dialog__footer">
+    <van-button
+      wx:if="{{ showCancelButton }}"
+      size="large"
+      loading="{{ loading.cancel }}"
+      class="van-dialog__button van-hairline--right"
+      custom-class="van-dialog__cancel"
+      bind:click="onCancel"
     >
-      <van-button
-        size="large"
-        loading="{{ loading.confirm }}"
-        custom-class="van-dialog__confirm"
-        open-type="{{ confirmButtonOpenType }}"
-        bind:click="onConfirm"
-        bindcontact="bindContact"
-        bindgetuserinfo="bindGetUserInfo"
-        bindgetphonenumber="bindGetPhoneNumber"
-        binderror="bindError"
-        bindopensetting="bindOpenSetting"
-      >
-        {{ confirmButtonText }}
-      </van-button>
-    </view>
+      {{ cancelButtonText }}
+    </van-button>
+    <van-button
+      wx:if="{{ showConfirmButton }}"
+      size="large"
+      class="van-dialog__button"
+      loading="{{ loading.confirm }}"
+      custom-class="van-dialog__confirm"
+      open-type="{{ confirmButtonOpenType }}"
+      bind:click="onConfirm"
+      binderror="bindError"
+      bindcontact="bindContact"
+      bindopensetting="bindOpenSetting"
+      bindgetuserinfo="bindGetUserInfo"
+      bindgetphonenumber="bindGetPhoneNumber"
+    >
+      {{ confirmButtonText }}
+    </van-button>
   </view>
 </van-popup>

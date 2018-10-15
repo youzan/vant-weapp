@@ -1,11 +1,12 @@
 export var button = Behavior({
   properties: {
     id: String,
+    sessionFrom: String,
     appParameter: String,
-    sendMessageTitle: String,
-    sendMessagePath: String,
     sendMessageImg: String,
+    sendMessagePath: String,
     showMessageCard: String,
+    sendMessageTitle: String,
     hoverStopPropagation: Boolean,
     hoverStartTime: {
       type: Number,
@@ -18,10 +19,6 @@ export var button = Behavior({
     lang: {
       type: String,
       value: 'en'
-    },
-    sessionFrom: {
-      type: String,
-      value: ''
     }
   }
 });

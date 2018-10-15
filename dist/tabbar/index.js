@@ -55,10 +55,7 @@ VantComponent({
       var _this3 = this;
 
       this.data.items.forEach(function (item, index) {
-        item.setActive({
-          active: index === _this3.data.currentActive,
-          count: _this3.data.items.length
-        });
+        item.setActive(index === _this3.data.currentActive);
       });
     },
     onChange: function onChange(child) {

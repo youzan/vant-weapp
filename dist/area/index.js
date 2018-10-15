@@ -64,7 +64,7 @@ VantComponent({
       });
       var values = displayColumns[index];
 
-      if (!value[index] || !values[value[index]]) {
+      if (index < 0 || value[index] < 0 || !values[value[index]]) {
         return;
       }
 

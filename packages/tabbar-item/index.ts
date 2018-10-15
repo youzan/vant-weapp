@@ -13,8 +13,7 @@ VantComponent({
   },
 
   data: {
-    active: false,
-    count: 0
+    active: false
   },
 
   methods: {
@@ -26,10 +25,9 @@ VantComponent({
       this.$emit('click');
     },
 
-    setActive(data) {
-      const { active, count } = this.data;
-      if (active !== data.active || count !== data.count) {
-        this.setData(data);
+    setActive(active) {
+      if (this.data.active !== active) {
+        this.setData({ active });
       }
     }
   }

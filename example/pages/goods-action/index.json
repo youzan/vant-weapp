@@ -3,8 +3,8 @@
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
     "van-goods-action": "../../dist/goods-action/index",
-    "van-goods-action-big-btn": "../../dist/goods-action-big-btn/index",
-    "van-goods-action-mini-btn": "../../dist/goods-action-mini-btn/index",
+    "van-goods-action-icon": "../../dist/goods-action-icon/index",
+    "van-goods-action-button": "../../dist/goods-action-button/index",
     "van-submit-bar": "../../dist/submit-bar/index",
     "van-toast": "../../dist/toast/index"
   }

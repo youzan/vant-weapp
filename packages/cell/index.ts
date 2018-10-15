@@ -42,5 +42,12 @@ VantComponent({
       const { titleWidth } = this.data;
       return titleWidth ? `max-width: ${titleWidth};min-width: ${titleWidth}` : '';
     }
+  },
+
+  methods: {
+    onClick(event: Weapp.Event) {
+      this.$emit('click', event.detail);
+      this.jumpLink();
+    }
   }
 });

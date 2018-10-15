@@ -1,0 +1,1 @@
+@import '../common/index.wxss';.van-goods-action-icon{width:50px!important;border:none!important}.van-goods-action-icon__content{height:100%;display:-webkit-flex;display:flex;line-height:1;font-size:10px;color:#666;-webkit-flex-direction:column;flex-direction:column;-webkit-justify-content:center;justify-content:center}.van-goods-action-icon__icon{margin-bottom:5px}

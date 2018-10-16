@@ -22,6 +22,7 @@ interface Dialog {
   alert?: (options: DialogOptions) => Promise<DialogAction>;
   confirm?: (options: DialogOptions) => Promise<DialogAction>;
   close?: () => void;
+  stopLoading?: () => void;
   install?: () => void;
   setDefaultOptions?: (options: DialogOptions) => void;
   resetDefaultOptions?: () => void;
@@ -82,6 +83,12 @@ Dialog.close = () => {
     dialog.close();
   });
   queue = [];
+};
+
+Dialog.stopLoading = () => {
+  queue.forEach(dialog => {
+    dialog.stopLoading();
+  });
 };
 
 Dialog.setDefaultOptions = options => {

@@ -55,6 +55,12 @@ VantComponent({
   },
 
   computed: {
+    cellClass(): string {
+      const { data, platform } = this;
+      return this.classNames({
+        [`van-field--textarea--${platform}`]: data.type === 'textarea'
+      });
+    },
     inputClass(): string {
       const { data } = this;
       return this.classNames('input-class', 'van-field__input', {
@@ -63,11 +69,29 @@ VantComponent({
         'van-field__input--disabled': data.disabled,
         [`van-field--${data.inputAlign}`]: data.inputAlign
       });
+    },
+    bodyClass(): string {
+      const { data, platform } = this;
+      return this.classNames('van-field__body', {
+        'van-field__body--textarea': data.type === 'textarea',
+        [`van-field__body--textarea--${platform}`]: data.type === 'textarea'
+      });
+    },
+    errorClass(): string {
+      const { data, platform } = this;
+      return this.classNames('van-field__error-message', {
+        [`van-field__error-message--${platform}`]: data.type === 'textarea'
+      });
     }
   },
 
   beforeCreate() {
     this.focused = false;
+    wx.getSystemInfo({
+      success: systemInfo => {
+        this.platform = systemInfo.platform;
+      }
+    });
   },
 
   methods: {

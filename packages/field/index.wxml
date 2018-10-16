@@ -7,10 +7,10 @@
   required="{{ required }}"
   custom-style="{{ customStyle }}"
   title-width="{{ titleWidth }}"
-  custom-class="van-field"
+  custom-class="{{ cellClass }}"
 >
   <slot name="label" slot="title" />
-  <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
+  <view class="{{ bodyClass }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
       class="{{ inputClass }}"
@@ -65,7 +65,7 @@
       <slot name="button" />
     </view>
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message">
+  <view wx:if="{{ errorMessage }}" class="{{ errorClass }}">
     {{ errorMessage }}
   </view>
 </van-cell>

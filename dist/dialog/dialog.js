@@ -52,6 +52,12 @@ Dialog.close = function () {
   queue = [];
 };
 
+Dialog.stopLoading = function () {
+  queue.forEach(function (dialog) {
+    dialog.stopLoading();
+  });
+};
+
 Dialog.setDefaultOptions = function (options) {
   Object.assign(Dialog.currentOptions, options);
 };

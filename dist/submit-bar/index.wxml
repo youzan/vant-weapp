@@ -14,14 +14,14 @@
       </block>
     </view>
     <van-button
-      type="{{ buttonType }}"
-      disabled="{{ disabled }}"
-      loading="{{ loading }}"
-      bind:click="onSubmit"
       square
       size="large"
-      class="van-submit-bar__button {{ disabled ? 'van-submit-bar__button--disabled' : '' }}"
+      type="{{ buttonType }}"
+      loading="{{ loading }}"
+      disabled="{{ disabled }}"
+      class="van-submit-bar__button"
       custom-class="button-class"
+      bind:click="onSubmit"
     >
       {{ loading ? '' : buttonText }}
     </van-button>

@@ -80,6 +80,8 @@ Page({
 |-----------|-----------|-----------|-------------|
 | text | 按钮文字 | `String` | - |
 | type | 按钮类型 | `String` | `danger` |
+| disabled | 是否禁用按钮 | `Boolean` | `false` |
+| loading | 是否显示为加载状态 | `Boolean` | `false` |
 | url | 跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
 

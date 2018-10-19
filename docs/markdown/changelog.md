@@ -1,5 +1,19 @@
 ## 更新日志
 
+## [v0.4.1](https://github.com/youzan/vant-weapp/tree/v0.4.1)
+`2018-10-17`
+
+**Improvements**
+
+- SubmitBar: 代码优化 [\#771](https://github.com/youzan/vant-weapp/pull/771)
+- Cell: 优化左右图标未对齐问题 [\#763](https://github.com/youzan/vant-weapp/pull/763)
+- Dialog: 增加 stopLoading 方法 [\#757](https://github.com/youzan/vant-weapp/pull/757)
+
+**Bug Fixes**
+
+- Card: 修复 desc 样式问题 [\#768](https://github.com/youzan/vant-weapp/pull/768)
+- Tabs: 修复在 card 类型下样式错误的问题 [\#767](https://github.com/youzan/vant-weapp/pull/767)
+
 ### [0.4.0](https://github.com/youzan/vant-weapp/tree/v0.4.0)
 `2018-10-15`
 

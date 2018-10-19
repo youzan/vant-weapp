@@ -1,20 +1,41 @@
 ## 更新日志
 
+## [v0.4.2](https://github.com/youzan/vant-weapp/tree/v0.4.2)
+`2018-10-19`
+
+**Improvements**
+
+- Area: 支持海外地区码 [\#782](https://github.com/youzan/vant-weapp/pull/782)
+- Tag: 新增 size 属性 [\#791](https://github.com/youzan/vant-weapp/pull/791)
+- Tag: 新增 round 属性 [\#791](https://github.com/youzan/vant-weapp/pull/791)
+- Tag: 新增 color 属性 [\#791](https://github.com/youzan/vant-weapp/pull/791)
+- Icon: 新增 card-o 图标 [\#777](https://github.com/youzan/vant-weapp/pull/777)
+- GoodsAction: 新增 loading 属性 [\#790](https://github.com/youzan/vant-weapp/pull/790)
+- GoodsAction: 新增 disabled 属性 [\#790](https://github.com/youzan/vant-weapp/pull/790)
+- Search: 新增 placeholder-style 属性 [\#788](https://github.com/youzan/vant-weapp/pull/788)
+
+**Bug Fixes**
+
+- 修复 Field input-align 属性不生效的问题 [\#789](https://github.com/youzan/vant-weapp/pull/789)
+- 修复 Notify color 参数无效问题 [\#783](https://github.com/youzan/vant-weapp/pull/783)
+- 修复 Tabbar 使用插槽时 info 属性不生效的问题 [\#779](https://github.com/youzan/vant-weapp/pull/779)
+
+
 ## [v0.4.1](https://github.com/youzan/vant-weapp/tree/v0.4.1)
 `2018-10-17`
 
 **Improvements**
 
-- SubmitBar: 代码优化 [\#771](https://github.com/youzan/vant-weapp/pull/771)
 - Cell: 优化左右图标未对齐问题 [\#763](https://github.com/youzan/vant-weapp/pull/763)
 - Dialog: 增加 stopLoading 方法 [\#757](https://github.com/youzan/vant-weapp/pull/757)
 
 **Bug Fixes**
 
-- Card: 修复 desc 样式问题 [\#768](https://github.com/youzan/vant-weapp/pull/768)
-- Tabs: 修复在 card 类型下样式错误的问题 [\#767](https://github.com/youzan/vant-weapp/pull/767)
+- 修复 Card 描述过长时文字溢出的问题 [\#768](https://github.com/youzan/vant-weapp/pull/768)
+- 修复 SubmitBar 按钮文字过大时显示不全的问题 [\#771](https://github.com/youzan/vant-weapp/pull/771)
+- 修复 Tab 在 card 类型下 color 属性错误的问题 [\#767](https://github.com/youzan/vant-weapp/pull/767)
 
-### [0.4.0](https://github.com/youzan/vant-weapp/tree/v0.4.0)
+## [v0.4.0](https://github.com/youzan/vant-weapp/tree/v0.4.0)
 `2018-10-15`
 
 **Improvements**
@@ -34,7 +55,7 @@
 - 修复 SubmitBar 文字颜色过浅的问题
 - 修复 Tab 在 card 类型下样式错误的问题 [\#742](https://github.com/youzan/vant-weapp/pull/742)
 
-### [0.3.8](https://github.com/youzan/vant-weapp/tree/v0.3.8)
+## [v0.3.8](https://github.com/youzan/vant-weapp/tree/v0.3.8)
 `2018-10-09`
 
 **Improvements**
@@ -53,7 +74,7 @@
 
 
 
-### [0.3.7](https://github.com/youzan/vant-weapp/tree/v0.3.7)
+## [v0.3.7](https://github.com/youzan/vant-weapp/tree/v0.3.7)
 `2018-10-08`
 
 **Improvements**
@@ -69,7 +90,7 @@
 - NoticeBar: 优化样式 [\#699](https://github.com/youzan/vant-weapp/pull/699)
 
 
-### [0.3.6](https://github.com/youzan/vant-weapp/tree/v0.3.6)
+## [v0.3.6](https://github.com/youzan/vant-weapp/tree/v0.3.6)
 `2018-09-30`
 
 **Improvements**
@@ -81,7 +102,7 @@
 
 - 修复 Field readonly 属性不生效的问题 [\#679](https://github.com/youzan/vant-weapp/pull/679)
 
-### [0.3.5](https://github.com/youzan/vant-weapp/tree/v0.3.5)
+## [v0.3.5](https://github.com/youzan/vant-weapp/tree/v0.3.5)
 `2018-09-29`
 
 **Improvements**
@@ -95,7 +116,7 @@
 - 修复 Tab active 属性默认值错误的问题 [\#665](https://github.com/youzan/vant-weapp/pull/665)
 
 
-### [0.3.4](https://github.com/youzan/vant-weapp/tree/v0.3.4)
+## [v0.3.4](https://github.com/youzan/vant-weapp/tree/v0.3.4)
 `2018-09-27`
 
 **Improvements**
@@ -116,7 +137,7 @@
 - 修复 Toast 触发 touch 事件时报错的问题 [\#618](https://github.com/youzan/vant-weapp/pull/618)
 
 
-### [0.3.3](https://github.com/youzan/vant-weapp/tree/v0.3.3)
+## [v0.3.3](https://github.com/youzan/vant-weapp/tree/v0.3.3)
 `2018-09-20`
 
 **Improvements**
@@ -135,13 +156,12 @@
 - 修复 Cell value 为空时 title 最大宽度错误的问题 [\#609](https://github.com/youzan/vant-weapp/pull/609)
 - 修复 Dialog Promise 状态错误的问题 [\#585](https://github.com/youzan/vant-weapp/pull/585)
 - 修复 Field 边框长度溢出的问题 [\#601](https://github.com/youzan/vant-weapp/pull/601)
-- 修复 Field input-align 属性不生效的问题 [\#607](https://github.com/youzan/vant-weapp/pull/607)
 - 修复 Layout offset 属性不生效的问题 [\#615](https://github.com/youzan/vant-weapp/pull/615)
 - 修复 Tag 边框样式问题 [\#606](https://github.com/youzan/vant-weapp/pull/606)
 - 修复 Toast 滚动穿透问题 [\#586](https://github.com/youzan/vant-weapp/pull/586)
 
 
-### [0.3.2](https://github.com/youzan/vant-weapp/tree/v0.3.2)
+## [v0.3.2](https://github.com/youzan/vant-weapp/tree/v0.3.2)
 `2018-09-13`
 
 **Improvements**
@@ -165,14 +185,14 @@
 - 移除 Cell 目前无法生效的 arrow-direction 属性 [\#559](https://github.com/youzan/vant-weapp/pull/559)
 
 
-### [0.3.1](https://github.com/youzan/vant-weapp/tree/v0.3.1)
+## [v0.3.1](https://github.com/youzan/vant-weapp/tree/v0.3.1)
 `2018-09-08`
 
 **Bug Fixes**
 
 - 修复内置样式无法引入的问题 [\#535](https://github.com/youzan/vant-weapp/pull/535)
 
-### [0.3.0](https://github.com/youzan/vant-weapp/tree/v0.3.0)
+## [v0.3.0](https://github.com/youzan/vant-weapp/tree/v0.3.0)
 `2018-09-07`
 
 **Breaking changes**
@@ -198,7 +218,7 @@
 - 修复 Button 在加载状态下仍然显示文字的问题 [\#503](https://github.com/youzan/vant-weapp/pull/503)
 
 
-### [0.2.1](https://github.com/youzan/vant-weapp/tree/v0.2.1)
+## [v0.2.1](https://github.com/youzan/vant-weapp/tree/v0.2.1)
 `2018-08-31`
 
 **Improvements**
@@ -218,7 +238,7 @@
 - 修复 Tabbar z-index 不生效的问题 [\#474](https://github.com/youzan/vant-weapp/pull/474)
 
 
-### [0.2.0](https://github.com/youzan/vant-weapp/tree/v0.2.0)
+## [v0.2.0](https://github.com/youzan/vant-weapp/tree/v0.2.0)
 `2018-08-22`
 
 **Breaking changes**
@@ -238,7 +258,7 @@
 
 - 修复 share 图标无法加粗的问题 [\#457](https://github.com/youzan/vant-weapp/pull/457)
 
-### [0.1.1](https://github.com/youzan/vant-weapp/tree/v0.1.1)
+## [v0.1.1](https://github.com/youzan/vant-weapp/tree/v0.1.1)
 `2018-08-21`
 
 **Improvements**
@@ -254,7 +274,7 @@
 - 修复 Field icon slot 无法使用的问题 [\#428](https://github.com/youzan/vant-weapp/pull/428)
 - 修复 Switch 组件无法开关的问题 [\#438](https://github.com/youzan/vant-weapp/pull/438)
 
-### [0.1.0](https://github.com/youzan/vant-weapp/tree/v0.1.0)
+## [v0.1.0](https://github.com/youzan/vant-weapp/tree/v0.1.0)
 `2018-08-13`
 
 **Breaking changes**
@@ -271,7 +291,7 @@
 - 修复 Card 金额为 0 时无法展示的问题
 
 
-### [0.0.1](https://github.com/youzan/vant-weapp/tree/v0.0.1)
+## [v0.0.1](https://github.com/youzan/vant-weapp/tree/v0.0.1)
 `2018-08-10`
 
 **Improvements**

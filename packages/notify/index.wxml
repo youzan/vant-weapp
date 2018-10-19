@@ -2,7 +2,7 @@
   name="slide-down"
   show="{{ show }}"
   custom-class="van-notify"
-  custom-style="background-color:{{ backgroundColor }}"
+  custom-style="background-color:{{ backgroundColor }}; color: {{ color }}"
 >
   {{ text }}
 </van-transition>

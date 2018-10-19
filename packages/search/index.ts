@@ -12,6 +12,7 @@ VantComponent({
     showAction: Boolean,
     useActionSlot: Boolean,
     placeholder: String,
+    placeholderStyle: String,
     background: {
       type: String,
       value: '#f2f2f2'

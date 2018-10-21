@@ -4,6 +4,7 @@
   type="{{ type }}"
   loading="{{ loading }}"
   disabled="{{ disabled }}"
+  custom-class="custom-class"
   bind:click="onClick"
 >
   {{ text }}

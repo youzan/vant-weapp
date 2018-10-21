@@ -8,3 +8,4 @@ project.config.json
 docs/dist
 example/dist
 .history
+changelog.generated.md

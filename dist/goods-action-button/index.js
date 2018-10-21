@@ -4,6 +4,8 @@ VantComponent({
   mixins: [link],
   props: {
     text: String,
+    loading: Boolean,
+    disabled: Boolean,
     type: {
       type: String,
       value: 'danger'

@@ -3,7 +3,7 @@
     <van-goods-action-icon
       icon="chat"
       text="客服"
-      bind:click="onClickIcon"
+      open-type="contact"
     />
     <van-goods-action-icon
       icon="cart"

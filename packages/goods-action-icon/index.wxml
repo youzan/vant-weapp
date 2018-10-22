@@ -4,7 +4,6 @@
   disabled="{{ disabled }}"
   loading="{{ loading }}"
   square
-
   id="{{ id }}"
   lang="{{ lang }}"
   open-type="{{ openType }}"

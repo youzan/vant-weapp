@@ -1,7 +1,27 @@
 <van-button
   custom-class="van-goods-action-icon"
   size="large"
+  disabled="{{ disabled }}"
+  loading="{{ loading }}"
+  square
+  id="{{ id }}"
+  lang="{{ lang }}"
+  open-type="{{ openType }}"
+  app-parameter="{{ appParameter }}"
+  hover-stay-time="{{ hoverStayTime }}"
+  hover-start-time="{{ hoverStartTime }}"
+  hover-stop-propagation="{{ hoverStopPropagation }}"
+  session-from="{{ sessionFrom }}"
+  send-message-title="{{ sendMessageTitle }}"
+  send-message-path="{{ sendMessagePath }}"
+  send-message-img="{{ sendMessageImg }}"
+  show-message-card="{{ showMessageCard }}"
   bind:tap="onClick"
+  binderror="bindError"
+  bindcontact="bindContact"
+  bindopensetting="bindOpenSetting"
+  bindgetuserinfo="bindGetUserInfo"
+  bindgetphonenumber="bindGetPhoneNumber"
 >
   <view class="van-goods-action-icon__content van-hairline--right">
     <van-icon

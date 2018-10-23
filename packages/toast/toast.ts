@@ -7,6 +7,7 @@ export type ToastOptions = {
   type?: string;
   mask?: boolean;
   zIndex?: number;
+  context?: any;
   position?: string;
   duration?: number;
   selector?: string;
@@ -45,16 +46,26 @@ function parseOptions(message): ToastOptions {
   return isObj(message) ? message : { message };
 }
 
+function getContext() {
+  const pages = getCurrentPages();
+  return pages[pages.length - 1];
+}
+
 const Toast: Toast = (options = {}) => {
   options = {
     ...currentOptions,
     ...parseOptions(options)
   } as ToastOptions;
 
-  const pages = getCurrentPages();
-  const ctx = pages[pages.length - 1];
+  const context = options.context || getContext();
+  const toast = context.selectComponent(options.selector);
 
-  const toast = ctx.selectComponent(options.selector);
+  if (!toast) {
+    console.warn('未找到 van-toast 节点，请确认 selector 及 context 是否正确');
+    return;
+  }
+
+  delete options.context;
   delete options.selector;
 
   queue.push(toast);

@@ -95,6 +95,7 @@ const timer = setInterval(() => {
 | zIndex | z-index 层级 | `Number` | `1000` |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
 | selector | 自定义选择器 | `String` | `van-toast` |
+| context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
 
 ### 更新日志
 

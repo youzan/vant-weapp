@@ -29,12 +29,14 @@
     </block>
     <van-loading wx:else size="20px" />
   </button>
-  <view
-    wx:if="{{ cancelText }}"
-    class="van-action-sheet__cancel"
-    bind:tap="onCancel"
-  >
-    {{ cancelText }}
-  </view>
+  <block wx:if="{{ cancelText }}">
+    <view class="van-action-sheet__blank" />
+    <view
+      class="van-action-sheet__cancel"
+      bind:tap="onCancel"
+    >
+      {{ cancelText }}
+    </view>
+  </block>
   <slot />
 </van-popup>

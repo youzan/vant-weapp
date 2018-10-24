@@ -41,7 +41,7 @@ const MAP = {
   'switch-cell': 'switch-cell-201808221124.png',
   'submit-bar': 'submit-bar-a-201809271357.png',
   tab: 'tab-20181015.png',
-  tag: 'tag-201808092138.png',
+  tag: 'tag-20181019.jpeg',
   tabbar: 'tabbar-201808160922.png',
   toast: 'toast-201808191046.png',
   transition: 'transition-20180821.png',

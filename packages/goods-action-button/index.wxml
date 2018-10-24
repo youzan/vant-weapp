@@ -1,8 +1,28 @@
 <van-button
   square
+  id="{{ id }}"
   size="large"
+  lang="{{ lang }}"
   type="{{ type }}"
+  loading="{{ loading }}"
+  disabled="{{ disabled }}"
+  open-type="{{ openType }}"
+  custom-class="custom-class"
+  app-parameter="{{ appParameter }}"
+  hover-stay-time="{{ hoverStayTime }}"
+  hover-start-time="{{ hoverStartTime }}"
+  hover-stop-propagation="{{ hoverStopPropagation }}"
+  session-from="{{ sessionFrom }}"
+  send-message-title="{{ sendMessageTitle }}"
+  send-message-path="{{ sendMessagePath }}"
+  send-message-img="{{ sendMessageImg }}"
+  show-message-card="{{ showMessageCard }}"
   bind:click="onClick"
+  binderror="bindError"
+  bindcontact="bindContact"
+  bindopensetting="bindOpenSetting"
+  bindgetuserinfo="bindGetUserInfo"
+  bindgetphonenumber="bindGetPhoneNumber"
 >
   {{ text }}
 </van-button>

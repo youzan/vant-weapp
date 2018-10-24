@@ -45,13 +45,15 @@ VantComponent({
     onCancel: function onCancel() {
       this.$emit('cancel', {
         values: this.getValues(),
-        indexs: this.getIndexs()
+        indexs: this.getIndexs(),
+        detail: this.getDetail()
       });
     },
     onConfirm: function onConfirm() {
       this.$emit('confirm', {
         values: this.getValues(),
-        indexs: this.getIndexs()
+        indexs: this.getIndexs(),
+        detail: this.getDetail()
       });
     },
     onChange: function onChange(event) {
@@ -92,6 +94,11 @@ VantComponent({
       });
 
       if (code) {
+        // oversea code
+        if (code[0] === '9' && type === 'city') {
+          code = '9';
+        }
+
         result = result.filter(function (item) {
           return item.code.indexOf(code) === 0;
         });
@@ -101,7 +108,12 @@ VantComponent({
     },
     getIndex: function getIndex(type, code) {
       var compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
-      var list = this.getList(type, code.slice(0, compareNum - 2));
+      var list = this.getList(type, code.slice(0, compareNum - 2)); // oversea code
+
+      if (code[0] === '9' && type === 'province') {
+        compareNum = 1;
+      }
+
       code = code.slice(0, compareNum);
 
       for (var i = 0; i < list.length; i++) {
@@ -138,6 +150,8 @@ VantComponent({
           pickerValue = _this$data3$pickerVal === void 0 ? [] : _this$data3$pickerVal;
       return displayColumns.map(function (option, index) {
         return option[pickerValue[index]];
+      }).filter(function (value) {
+        return !!value;
       });
     },
     getIndexs: function getIndexs() {
@@ -145,6 +159,36 @@ VantComponent({
           pickerValue = _this$data4.pickerValue,
           columnsNum = _this$data4.columnsNum;
       return pickerValue.slice(0, columnsNum);
+    },
+    getDetail: function getDetail() {
+      var values = this.getValues();
+      var area = {
+        code: '',
+        country: '',
+        province: '',
+        city: '',
+        county: ''
+      };
+
+      if (!values.length) {
+        return area;
+      }
+
+      var names = values.map(function (item) {
+        return item.name;
+      });
+      area.code = values[values.length - 1].code;
+
+      if (area.code[0] === '9') {
+        area.country = names[1] || '';
+        area.province = names[2] || '';
+      } else {
+        area.province = names[0] || '';
+        area.city = names[1] || '';
+        area.county = names[2] || '';
+      }
+
+      return area;
     },
     reset: function reset() {
       this.code = '';

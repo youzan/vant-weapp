@@ -53,21 +53,25 @@ VantComponent({
     onCancel() {
       this.$emit('cancel', {
         values: this.getValues(),
-        indexs: this.getIndexs()
+        indexs: this.getIndexs(),
+        detail: this.getDetail()
       });
     },
 
     onConfirm() {
       this.$emit('confirm', {
         values: this.getValues(),
-        indexs: this.getIndexs()
+        indexs: this.getIndexs(),
+        detail: this.getDetail()
       });
     },
 
     onChange(event: Weapp.Event) {
       const { value } = event.detail;
       const { pickerValue, displayColumns } = this.data;
-      const index = pickerValue.findIndex((item, index) => item !== value[index]);
+      const index = pickerValue.findIndex(
+        (item, index) => item !== value[index]
+      );
       const values = displayColumns[index];
 
       if (index < 0 || value[index] < 0 || !values[value[index]]) {
@@ -96,6 +100,11 @@ VantComponent({
       }));
 
       if (code) {
+        // oversea code
+        if (code[0] === '9' && type === 'city') {
+          code = '9';
+        }
+
         result = result.filter(item => item.code.indexOf(code) === 0);
       }
 
@@ -103,10 +112,15 @@ VantComponent({
     },
 
     getIndex(type: string, code: string): number {
-      const compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
+      let compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
       const list = this.getList(type, code.slice(0, compareNum - 2));
-      code = code.slice(0, compareNum);
 
+      // oversea code
+      if (code[0] === '9' && type === 'province') {
+        compareNum = 1;
+      }
+
+      code = code.slice(0, compareNum);
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
           return i;
@@ -117,7 +131,11 @@ VantComponent({
     },
 
     setValues() {
-      let code = this.code || this.data.areaList && Object.keys(this.data.areaList.county_list || {})[0] || '';
+      let code =
+        this.code ||
+        (this.data.areaList &&
+          Object.keys(this.data.areaList.county_list || {})[0]) ||
+        '';
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
 
@@ -142,12 +160,42 @@ VantComponent({
 
     getValues() {
       const { displayColumns = [], pickerValue = [] } = this.data;
-      return displayColumns.map((option, index) => option[pickerValue[index]]);
+      return displayColumns
+        .map((option, index) => option[pickerValue[index]])
+        .filter(value => !!value);
     },
 
     getIndexs() {
       const { pickerValue, columnsNum } = this.data;
       return pickerValue.slice(0, columnsNum);
+    },
+
+    getDetail() {
+      const values = this.getValues();
+      const area = {
+        code: '',
+        country: '',
+        province: '',
+        city: '',
+        county: ''
+      };
+
+      if (!values.length) {
+        return area;
+      }
+
+      const names = values.map(item => item.name);
+      area.code = values[values.length - 1].code;
+      if (area.code[0] === '9') {
+        area.country = names[1] || '';
+        area.province = names[2] || '';
+      } else {
+        area.province = names[0] || '';
+        area.city = names[1] || '';
+        area.county = names[2] || '';
+      }
+
+      return area;
     },
 
     reset() {

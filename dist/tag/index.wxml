@@ -1,5 +1,3 @@
-<view
-  class="van-tag custom-class {{ mark ? 'van-tag--mark' : '' }} {{ plain ? 'van-tag--plain van-hairline--surround' : '' }} {{ type ? 'van-tag--' + type : '' }}"
->
+<view class="{{ classes }}" style="{{ style }}">
   <slot />
 </view>

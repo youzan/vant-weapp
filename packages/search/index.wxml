@@ -8,6 +8,7 @@
       type="search"
       left-icon="search"
       focus="{{ focus }}"
+      error="{{ error }}"
       border="{{ false }}"
       confirm-type="search"
       value="{{ value }}"

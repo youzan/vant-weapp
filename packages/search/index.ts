@@ -7,6 +7,7 @@ VantComponent({
 
   props: {
     focus: Boolean,
+    error: Boolean,
     disabled: Boolean,
     readonly: Boolean,
     inputAlign: String,

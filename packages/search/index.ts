@@ -9,6 +9,7 @@ VantComponent({
     focus: Boolean,
     disabled: Boolean,
     readonly: Boolean,
+    inputAlign: String,
     showAction: Boolean,
     useActionSlot: Boolean,
     placeholder: String,

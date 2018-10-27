@@ -58,6 +58,7 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
 | use-action-slot | 是否使用 action slot | `Boolean` | `false` |
 | placeholder | 输入框为空时占位符 | `String` | - |
 | placeholder-style | 指定 placeholder 的样式 | `String` | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 
 ### Event
 

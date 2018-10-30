@@ -126,6 +126,10 @@ export default [
     groupName: '高阶组件',
     list: [
       {
+        path: '/swipe-cell',
+        title: 'SwipeCell 滑动单元格'
+      },
+      {
         path: '/switch-cell',
         title: 'SwitchCell 开关单元格'
       },

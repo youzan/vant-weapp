@@ -115,7 +115,7 @@ Page({
       data-name="{{ item }}"
       bind:click="toggle"
     >
-      <van-checkbox class="checkboxes-{{ item }}" name="{{ item }}" />
+      <van-checkbox catch:tap="noop" class="checkboxes-{{ item }}" name="{{ item }}" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -138,7 +138,9 @@ Page({
     const { name } = event.currentTarget.dataset;
     const checkbox = this.selectComponent(`.checkboxes-${name}`);
     checkbox.toggle();
-  }
+  },
+
+  noop() {}
 });
 ```
 

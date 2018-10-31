@@ -97,7 +97,8 @@ Page({
       'new',
       'new-arrival',
       'hot-sale',
-      'cart-o'
+      'cart-o',
+      'question2'
     ]
   }
 });

@@ -5,14 +5,21 @@
   background-color: @white;
 
   &--horizontal {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    padding: 10px 10px 15px;
+    padding: 10px;
+
+    .van-step__wrapper {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
   }
 
   &--vertical {
-    padding: 0 0 0 35px;
+    padding-left: 10px;
+
+    .van-step__wrapper {
+      padding: 0 0 0 20px;
+    }
   }
 }
 
@@ -49,7 +56,7 @@
 
     &:last-child {
       position: absolute;
-      right: 10px;
+      right: 0;
       width: auto;
 
       .van-step__title {

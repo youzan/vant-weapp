@@ -1,5 +1,35 @@
 ## 更新日志
 
+
+## [v0.4.4](https://github.com/youzan/vant-weapp/tree/v0.4.4)
+`2018-10-31`
+
+**Improvements**
+
+- Search: 新增 error 属性 [\#820](https://github.com/youzan/vant-weapp/pull/820)
+- Search: 新增 input-align 属性 [\#819](https://github.com/youzan/vant-weapp/pull/819)
+- SwipeCell: 新增 swipe-cell 组件 [\#815](https://github.com/youzan/vant-weapp/pull/815)
+
+**Bug Fixes**
+
+- Panel: header-class 不生效 [\#831](https://github.com/youzan/vant-weapp/pull/831)
+- Tab: 动态设置tab时底部划线样式问题 [\#816](https://github.com/youzan/vant-weapp/pull/816)
+- ellipsis 样式不生效 [\#810](https://github.com/youzan/vant-weapp/pull/810)
+
+## [v0.4.3](https://github.com/youzan/vant-weapp/tree/v0.4.3)
+`2018-10-24`
+
+**Improvements**
+
+- Icon：优化商品角标icon [\#804](https://github.com/youzan/vant-weapp/pull/804)
+- Toast: 新增 context 属性 [\#800](https://github.com/youzan/vant-weapp/pull/800)
+- GoodsAction: 支持open-type等更多Button API [\#798](https://github.com/youzan/vant-weapp/pull/798)
+- GoodsAction: 支持传入外部样式类 [\#795](https://github.com/youzan/vant-weapp/pull/795)
+
+**Bug Fixes**
+
+- ActionSheet: 修复背景色样式问题 [\#807](https://github.com/youzan/vant-weapp/pull/807)
+
 ## [v0.4.2](https://github.com/youzan/vant-weapp/tree/v0.4.2)
 `2018-10-19`
 
@@ -19,7 +49,6 @@
 - 修复 Field input-align 属性不生效的问题 [\#789](https://github.com/youzan/vant-weapp/pull/789)
 - 修复 Notify color 参数无效问题 [\#783](https://github.com/youzan/vant-weapp/pull/783)
 - 修复 Tabbar 使用插槽时 info 属性不生效的问题 [\#779](https://github.com/youzan/vant-weapp/pull/779)
-
 
 ## [v0.4.1](https://github.com/youzan/vant-weapp/tree/v0.4.1)
 `2018-10-17`

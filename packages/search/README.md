@@ -52,12 +52,14 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
 | background | 搜索框背景色 | `String` | `#f2f2f2` |
 | show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` |
 | focus | 获取焦点 | `Boolean` | `false` |
+| error | 是否将输入内容标红 | `Boolean` | `false` |
 | disabled | 是否禁用输入框 | `Boolean` | `false` |
 | readonly | 是否只读 | `Boolean` | `false` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
 | use-action-slot | 是否使用 action slot | `Boolean` | `false` |
 | placeholder | 输入框为空时占位符 | `String` | - |
 | placeholder-style | 指定 placeholder 的样式 | `String` | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 
 ### Event
 

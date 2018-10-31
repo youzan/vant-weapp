@@ -33,7 +33,8 @@
     "pages/submit-bar/index",
     "pages/radio/index",
     "pages/checkbox/index",
-    "pages/goods-action/index"
+    "pages/goods-action/index",
+    "pages/swipe-cell/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",

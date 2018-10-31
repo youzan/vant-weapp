@@ -152,8 +152,10 @@ VantComponent({
         }
       });
 
-      this.setLine();
-      this.scrollIntoView();
+      this.setData({}, () => {
+        this.setLine();
+        this.scrollIntoView();
+      });
     },
 
     // scroll active tab into view

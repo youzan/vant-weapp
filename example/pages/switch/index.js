@@ -1,4 +1,5 @@
 import Page from '../../common/page';
+import Dialog from '../../dist/dialog/dialog';
 
 Page({
   data: {
@@ -11,14 +12,11 @@ Page({
   },
 
   onChange2({ detail }) {
-    wx.showModal({
+    Dialog.confirm({
       title: '提示',
-      content: '是否切换开关？',
-      success: res => {
-        if (res.confirm) {
-          this.setData({ checked2: detail });
-        }
-      }
+      message: '是否切换开关？'
+    }).then((res) => {
+      this.setData({ checked2: detail });
     });
   }
 });

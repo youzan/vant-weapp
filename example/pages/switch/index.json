@@ -2,6 +2,7 @@
   "navigationBarTitleText": "Switch 开关",
   "usingComponents": {
     "demo-block": "../../components/demo-block/index",
-    "van-switch": "../../dist/switch/index"
+    "van-switch": "../../dist/switch/index",
+    "van-dialog": "../../dist/dialog/index"
   }
 }

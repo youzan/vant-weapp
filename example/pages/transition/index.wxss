@@ -5,5 +5,5 @@
   height: 100px;
   position: fixed;
   margin: -50px 0 0 -50px;
-  background-color: #38f;
+  background-color: #1989fa;
 }

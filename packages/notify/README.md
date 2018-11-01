@@ -31,7 +31,7 @@ Notify({
   text: '通知内容',
   duration: 1000,
   selector: '#custom-selector',
-  backgroundColor: '#38f'
+  backgroundColor: '#1989fa'
 });
 ```
 
@@ -47,7 +47,7 @@ Notify({
 | duration | 持续时间 | `Number` | `3000` |
 | selector | 自定义选择器 | `String` | `van-notify` |
 | color | 字体颜色 | `String` | `#fff` | |
-| backgroundColor | 背景色 | `String` | `#e64340` |
+| backgroundColor | 背景色 | `String` | `#f44` |
 
 ### 更新日志
 

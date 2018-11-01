@@ -1,5 +1,16 @@
 ## 更新日志
 
+## [v0.4.5](https://github.com/youzan/vant-weapp/tree/v0.4.5)
+`2018-10-31`
+
+**Improvements**
+
+- Icon: 添加新图标question2 [\#839](https://github.com/youzan/vant-weapp/pull/839)
+- Steps: 优化样式 [\#835](https://github.com/youzan/vant-weapp/pull/835)
+
+**Bug Fixes**
+
+- Icon：修复商品角标icon兼容性问题 [\#840](https://github.com/youzan/vant-weapp/pull/840)
 
 ## [v0.4.4](https://github.com/youzan/vant-weapp/tree/v0.4.4)
 `2018-10-31`

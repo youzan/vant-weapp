@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { BLUE } from '../common/color';
 
 VantComponent({
   props: {
@@ -12,7 +13,7 @@ VantComponent({
     },
     color: {
       type: String,
-      value: '#38f'
+      value: BLUE
     },
     textColor: {
       type: String,

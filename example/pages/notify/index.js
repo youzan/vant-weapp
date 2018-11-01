@@ -11,7 +11,7 @@ Page({
       duration: 1000,
       text: '通知内容',
       selector: '#custom-selector',
-      backgroundColor: '#38f'
+      backgroundColor: '#1989fa'
     });
   }
 });

@@ -2,8 +2,8 @@
   position: relative !important;
 }
 
-.van-edit-address {
-  color: #38f;
+.edit-address {
+  color: #1989fa;
 }
 
 .van-tag {

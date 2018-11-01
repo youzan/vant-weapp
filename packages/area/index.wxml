@@ -6,7 +6,7 @@
   </view>
 
   <view wx:if="{{ loading }}" class="van-picker__loading">
-    <van-loading color="#38f"/>
+    <van-loading color="#1989fa"/>
   </view>
 
   <picker-view

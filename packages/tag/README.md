@@ -17,8 +17,8 @@
 ```html
 <van-tag>标签</van-tag>
 <van-tag type="danger">标签</van-tag>
-<van-tag type="success">标签</van-tag>
 <van-tag type="primary">标签</van-tag>
+<van-tag type="success">标签</van-tag>
 ```
 
 #### 空心样式

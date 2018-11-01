@@ -1,7 +1,7 @@
 ## Panel 面板
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-panel": "path/to/vant-weapp/dist/panel/index"

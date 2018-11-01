@@ -1,9 +1,3 @@
 {
-  "navigationBarTitleText": "Field 输入框",
-  "usingComponents": {
-    "demo-block": "../../components/demo-block/index",
-    "van-field": "../../dist/field/index",
-    "van-button": "../../dist/button/index",
-    "van-cell-group": "../../dist/cell-group/index"
-  }
+  "navigationBarTitleText": "Field 输入框"
 }

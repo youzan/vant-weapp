@@ -1,7 +1,7 @@
 ## Radio 单选框
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-radio": "path/to/vant-weapp/dist/radio/index",

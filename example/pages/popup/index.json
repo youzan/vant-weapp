@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Popup 弹出层",
-  "usingComponents": {
-    "demo-block": "../../components/demo-block/index",
-    "van-popup": "../../dist/popup/index",
-    "van-button": "../../dist/button/index"
-  }  
+  "navigationBarTitleText": "Popup 弹出层"
 }

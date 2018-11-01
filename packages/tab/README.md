@@ -1,7 +1,7 @@
 ## Tab 标签页
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-tab": "path/to/vant-weapp/dist/tab/index",

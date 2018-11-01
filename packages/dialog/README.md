@@ -4,7 +4,7 @@ Dialog 组件支持函数调用和组件调用两种形式
 
 ### 使用指南
 
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-dialog": "path/to/vant-weapp/dist/dialog/index"

@@ -32,5 +32,7 @@ Page({
     const { name } = event.currentTarget.dataset;
     const checkbox = this.selectComponent(`.checkboxes-${name}`);
     checkbox.toggle();
-  }
+  },
+
+  noop() {}
 });

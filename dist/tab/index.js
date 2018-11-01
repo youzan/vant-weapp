@@ -24,7 +24,6 @@ VantComponent({
       var parent = this.getRelationNodes('../tabs/index')[0];
 
       if (parent) {
-        parent.setLine();
         parent.updateTabs();
       }
     }

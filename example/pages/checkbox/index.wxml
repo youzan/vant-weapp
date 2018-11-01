@@ -51,7 +51,7 @@
         data-name="{{ item }}"
         bind:click="toggle"
       >
-        <van-checkbox class="checkboxes-{{ item }}" name="{{ item }}" />
+        <van-checkbox catch:tap="noop" class="checkboxes-{{ item }}" name="{{ item }}" />
       </van-cell>
     </van-cell-group>
   </van-checkbox-group>

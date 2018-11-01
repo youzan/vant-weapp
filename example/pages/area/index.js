@@ -9,7 +9,7 @@ Page({
 
   onShow() {
     wx.request({
-      url: 'https://cashier.youzan.com/pay/wsctrade/order/buy/getAllRegion.json',
+      url: 'https://cashier.youzan.com/wsctrade/uic/address/getAllRegion.json',
       success: response => {
         this.setData({
           loading: false,

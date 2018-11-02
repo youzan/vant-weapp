@@ -22,6 +22,7 @@
     color: transparent;
     font-size: 12px;
     text-align: center;
+    transition: .2s;
 
     &--round {
       border-radius: 100%;
@@ -29,8 +30,8 @@
 
     &--checked {
       color: @white;
-      border-color: @green;
-      background-color: @green;
+      border-color: @blue;
+      background-color: @blue;
     }
 
     &--disabled {
@@ -51,6 +52,10 @@
     &--left {
       margin: 0 10px 0 0;
       float: left;
+    }
+
+    &:empty {
+      margin: 0;
     }
   }
 }

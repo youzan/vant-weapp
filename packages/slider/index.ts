@@ -28,6 +28,12 @@ VantComponent({
     }
   },
 
+  watch: {
+    value(value) {
+      this.updateValue(value, false);
+    }
+  },
+
   created() {
     this.updateValue(this.data.value);
   },

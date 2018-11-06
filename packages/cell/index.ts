@@ -24,7 +24,8 @@ VantComponent({
     border: {
       type: Boolean,
       value: true
-    }
+    },
+    arrowDirection: String
   },
 
   computed: {
@@ -41,6 +42,11 @@ VantComponent({
     titleStyle(): string {
       const { titleWidth } = this.data;
       return titleWidth ? `max-width: ${titleWidth};min-width: ${titleWidth}` : '';
+    },
+
+    iconWrapClass(): string {
+      const prefix = 'van-cell__right-icon-wrap';
+      return this.classNames(prefix, `${prefix}--${this.data.arrowDirection}`);
     }
   },
 

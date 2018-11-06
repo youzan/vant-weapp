@@ -46,16 +46,35 @@
   }
 
   &__left-icon-wrap,
-  &__right-icon-wrap  {
+  &__right-icon-wrap {
     display: flex;
     align-items: center;
     height: 24px;
   }
 
+  &__left-icon-wrap {
+    margin-right: 5px;
+  }
+
+  &__right-icon-wrap {
+    margin-left: 5px;
+
+    &--left {
+      transform: rotate(180deg);
+    }
+
+    &--up {
+      transform: rotate(-90deg);
+    }
+
+    &--down {
+      transform: rotate(90deg);
+    }
+  }
+
   &__left-icon {
     font-size: 16px !important;
     line-height: 24px;
-    margin-right: 5px;
     vertical-align: middle;
   }
 
@@ -63,7 +82,6 @@
     color: @gray-dark;
     font-size: 12px !important;
     line-height: 24px;
-    margin-left: 5px;
   }
 
   &--clickable {

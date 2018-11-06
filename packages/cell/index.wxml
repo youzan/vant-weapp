@@ -30,7 +30,7 @@
   <van-icon
     wx:if="{{ isLink }}"
     name="arrow"
-    class="van-cell__right-icon-wrap"
+    class="{{ iconWrapClass }}"
     custom-class="van-cell__right-icon"
   />
   <slot wx:else name="right-icon" />

@@ -1,5 +1,6 @@
 <van-overlay
-  show="{{ show && (mask || forbidClick) }}"
+  wx:if="{{ mask || forbidClick }}"
+  show="{{ show }}"
   mask="{{ mask }}"
   z-index="{{ zIndex }}"
 />

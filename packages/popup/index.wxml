@@ -1,6 +1,7 @@
 <van-overlay
+  wx:if="{{ inited && overlay }}"
   mask
-  show="{{ overlay && show }}"
+  show="{{ show }}"
   z-index="{{ zIndex }}"
   custom-style="{{ overlayStyle }}"
   bind:click="onClickOverlay"

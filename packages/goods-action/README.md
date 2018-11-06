@@ -1,4 +1,4 @@
-## goodsAction 商品页行动点
+## GoodsAction 商品导航
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件

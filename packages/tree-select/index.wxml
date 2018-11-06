@@ -2,7 +2,7 @@
   class="van-tree-select"
   style="height: {{ mainHeight }}px"
 >
-  <view class="van-tree-select__nav">
+  <scroll-view scroll-y class="van-tree-select__nav">
     <view
       wx:for="{{ items }}"
       wx:key="index"
@@ -12,8 +12,9 @@
     >
       {{ item.text }}
     </view>
-  </view>
-  <view
+  </scroll-view>
+  <scroll-view
+    scroll-y
     class="van-tree-select__content"
     style="height: {{ itemHeight }}px"
   >
@@ -31,5 +32,5 @@
         class="van-tree-select__selected"
       />
     </view>
-  </view>
+  </scroll-view>
 </view>

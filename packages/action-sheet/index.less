@@ -17,6 +17,17 @@
     }
   }
 
+  &__cancel {
+    height: 60px;
+
+    &::before {
+      display: block;
+      content: ' ';
+      height: 10px;
+      background-color: @background-color;
+    }
+  }
+
   &__item--disabled {
     color: @gray;
 
@@ -29,11 +40,6 @@
     margin-left: 5px;
     font-size: 12px;
     color: @gray-darker;
-  }
-
-  &__blank {
-    height: 10px;
-    background-color: @background-color;
   }
 
   &__header {

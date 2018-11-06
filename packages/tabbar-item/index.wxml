@@ -5,12 +5,8 @@
   <view class="van-tabbar-item__icon {{ dot ? 'van-tabbar-item__icon--dot' : '' }}">
     <van-icon wx:if="{{ icon }}" name="{{ icon }}" info="{{ info }}" />
     <block wx:else>
-      <block wx:if="{{ active }}">
-        <slot name="icon-active" />
-      </block>
-      <block wx:else>
-        <slot name="icon" />
-      </block>
+      <slot wx:if="{{ active }}" name="icon-active" />
+      <slot wx:else name="icon" />
       <view wx:if="{{ info !== null }}" class="van-icon__info">{{ info }}</view>
     </block>
   </view>

@@ -23,12 +23,6 @@
 
 [https://youzan.github.io/vant-weapp](https://youzan.github.io/vant-weapp)
 
-## 迁移指南
-
-Vant Weapp 是基于有赞 Zanui 组件库进行的品牌升级，对于仍在使用 Zanui 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。
-  
-Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
-
 ## 使用之前
 
 使用 Vant Weapp 前，请确保你已经学习过微信官方的 [小程序简易教程](https://mp.weixin.qq.com/debug/wxadoc/dev/) 和 [自定义组件介绍](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)。
@@ -87,6 +81,12 @@ npm run dev
 ## 基础库版本
 
 Vant Weapp 最低支持到小程序基础库 1.9.9 版本
+
+## 迁移指南
+
+Vant Weapp 是基于有赞 Zanui 组件库进行的品牌升级，对于仍在使用 Zanui 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。
+  
+Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
 
 ## 链接
 

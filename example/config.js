@@ -73,6 +73,10 @@ export default [
         title: 'ActionSheet 上拉菜单'
       },
       {
+        path: '/datetime-picker',
+        title: 'DatetimePicker 时间选择'
+      },
+      {
         path: '/dialog',
         title: 'Dialog 弹出框'
       },

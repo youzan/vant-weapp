@@ -34,7 +34,8 @@
     "pages/radio/index",
     "pages/checkbox/index",
     "pages/goods-action/index",
-    "pages/swipe-cell/index"
+    "pages/swipe-cell/index",
+    "pages/datetime-picker/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -87,6 +88,7 @@
     "van-tag": "../../dist/tag/index",
     "van-toast": "../../dist/toast/index",
     "van-transition": "../../dist/transition/index",
-    "van-tree-select": "../../dist/tree-select/index"
+    "van-tree-select": "../../dist/tree-select/index",
+    "van-datetime-picker": "../../dist/datetime-picker/index"
   }
 }

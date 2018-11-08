@@ -7,7 +7,12 @@ function isObj(x: any): boolean {
   return x !== null && (type === 'object' || type === 'function');
 }
 
+function isNumber(value) {
+  return /^\d+$/.test(value);
+}
+
 export {
   isObj,
-  isDef
+  isDef,
+  isNumber
 };

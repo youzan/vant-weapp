@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { isNumber } from '../common/utils';
 
 VantComponent({
   relation: {
@@ -31,11 +32,11 @@ VantComponent({
   },
 
   methods: {
-    setActive(badge: Weapp.Component) {
+    setActive(badge: Weapp.Component | number) {
       let { active } = this.data;
       const { badges } = this;
 
-      if (badge) {
+      if (badge && !isNumber(badge)) {
         active = badges.indexOf(badge);
       }
 

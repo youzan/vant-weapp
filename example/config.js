@@ -36,6 +36,10 @@ export default [
         title: 'Checkbox 复选框'
       },
       {
+        path: '/datetime-picker',
+        title: 'DatetimePicker 时间选择'
+      },
+      {
         path: '/field',
         title: 'Field 输入框'
       },
@@ -73,16 +77,16 @@ export default [
         title: 'ActionSheet 上拉菜单'
       },
       {
-        path: '/datetime-picker',
-        title: 'DatetimePicker 时间选择'
-      },
-      {
         path: '/dialog',
         title: 'Dialog 弹出框'
       },
       {
         path: '/loading',
         title: 'Loading 加载'
+      },
+      {
+        path: '/swipe-cell',
+        title: 'SwipeCell 滑动单元格'
       },
       {
         path: '/toast',
@@ -112,10 +116,6 @@ export default [
       {
         path: '/steps',
         title: 'Steps 步骤条'
-      },
-      {
-        path: '/swipe-cell',
-        title: 'SwipeCell 滑动单元格'
       },
       {
         path: '/tag',

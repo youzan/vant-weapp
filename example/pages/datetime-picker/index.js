@@ -14,7 +14,6 @@ Page({
   },
 
   onChange(event) {
-    const picker = event.detail;
     console.log(event);
   }
 });

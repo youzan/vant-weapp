@@ -22,6 +22,7 @@ const MAP = {
   col: 'layout-201808092138.png',
   cell: 'cell-201808092138.png',
   dialog: 'dialog-201809071648.png',
+  'datetime-picker': 'datetime-picker-201811102.png',
   field: 'field-201808092138.png',
   'goods-action': 'goods-action-20181015.png',
   icon: 'icon-201808092138.png',
@@ -32,13 +33,14 @@ const MAP = {
   panel: 'panel-201808092138.png',
   popup: 'popup-201808092138.png',
   progress: 'progress-201808232055.png',
-  radio: 'radio_201809271357.png',
+  radio: 'radio-20181110.jpeg',
   slider: 'slider-201808221024.png',
   stepper: 'stepper-201808092138.png',
   search: 'search-201808092138.png',
   steps: 'steps-20181015.png',
-  switch: 'switch-201808092138.png',
+  switch: 'switch-20181110.jpeg',
   'switch-cell': 'switch-cell-201808221124.png',
+  'swipe-cell': 'swipe-cell-20181110.jpeg',
   'submit-bar': 'submit-bar-a-201809271357.png',
   tab: 'tab-20181015.png',
   tag: 'tag-20181019.jpeg',
@@ -46,7 +48,7 @@ const MAP = {
   toast: 'toast-201808191046.png',
   transition: 'transition-20180821.png',
   'tree-select': 'tree-select-201808092138.png',
-  checkbox: 'checkbox-20180928-1.png'
+  checkbox: 'checkbox-20181110.jpeg'
 };
 
 export default {

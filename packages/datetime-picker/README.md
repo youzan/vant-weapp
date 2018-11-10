@@ -15,11 +15,11 @@
 
 ```html
 <van-datetime-picker
-  value="{{ currentDate }}"
-  bind:change="onChange"
   type="datetime"
+  value="{{ currentDate }}"
   min-date="{{ minDate }}"
   max-date="{{ maxDate }}"
+  bind:change="onChange"
 />
 ```
 
@@ -44,10 +44,10 @@ Page({
 
 ```html
 <van-datetime-picker
-  value="{{ currentDate }}"
-  bind:change="onChange"
   type="date"
+  value="{{ currentDate }}"
   min-date="{{ minDate }}"
+  bind:change="onChange"
 />
 ```
 
@@ -69,10 +69,10 @@ Page({
 
 ```html
 <van-datetime-picker
-  value="{{ currentDate }}"
-  bind:change="onChange"
   type="year-month"
+  value="{{ currentDate }}"
   min-date="{{ minDate }}"
+  bind:change="onChange"
 />
 ```
 
@@ -94,11 +94,11 @@ Page({
 
 ```html
 <van-datetime-picker
-  value="{{ currentDate }}"
-  bind:change="onChange"
   type="time"
+  value="{{ currentDate }}"
   min-hour="{{ minHour }}"
   max-hour="{{ maxHour }}"
+  bind:change="onChange"
 />
 ```
 

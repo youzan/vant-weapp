@@ -5,6 +5,7 @@
       wx:else
       name="success"
       class="{{ iconClass }}"
+      style="{{ iconStyle }}"
       custom-class="icon-class"
       custom-style="line-height: 20px;"
     />

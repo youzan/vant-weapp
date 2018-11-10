@@ -4,6 +4,7 @@ Page({
   data: {
     checkbox1: true,
     checkbox2: true,
+    checkbox3: true,
     list: ['a', 'b', 'c'],
     result: ['a', 'b'],
     result2: [],

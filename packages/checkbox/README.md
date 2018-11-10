@@ -12,6 +12,7 @@
 ### 代码演示
 
 #### 基础用法
+
 通过`value`绑定 checkbox 的勾选状态
 
 ```html
@@ -21,10 +22,29 @@
 #### 禁用状态
 
 ```html
-<van-checkbox value="{{ checked }}" bind:change="onChange" disabled>复选框</van-checkbox>
+<van-checkbox
+  disabled
+  value="{{ checked }}"
+  bind:change="onChange"
+>
+  复选框
+</van-checkbox>
+```
+
+#### 自定义颜色
+
+ ```html
+<van-checkbox
+  value="{{ checked }}"
+  checked-color="#4b0"
+  bind:change="onChange"
+>
+  复选框
+</van-checkbox>
 ```
 
 #### 自定义图标
+
 通过 icon 插槽自定义图标
 
 ```html
@@ -55,7 +75,7 @@ Page({
 });
 ```
 
-#### Checkbox 组
+#### 复选框组
 
 需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
 
@@ -100,7 +120,7 @@ Page({
 </van-checkbox-group>
 ```
 
-#### 与 Cell 组件一起使用
+#### 搭配单元格组件使用
 
 此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
 
@@ -155,6 +175,7 @@ Page({
 | label-position | 文本位置，可选值为 `left` | `String` | `right` |
 | shape | 形状，可选值为 `round` `square` | `String` | `round` |
 | use-icon-slot | 是否使用 icon slot | `Boolean` | `false` |
+| checked-color | 选中状态颜色 | `String` | `#1989fa` |
 
 ### CheckboxGroup API
 

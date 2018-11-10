@@ -1,31 +1,55 @@
 ## 更新日志
 
+## [v0.4.6](https://github.com/youzan/vant-weapp/tree/v0.4.6)
+`2018-11-10`
+
+**Improvements**
+
+- 新增 DatetimePicker 时间选择组件 [\#881](https://github.com/youzan/vant-weapp/pull/881)
+- Cell: 新增 arrow-direction 属性 [\#866](https://github.com/youzan/vant-weapp/pull/866)
+- Switch: 新增 active-color 属性 [\#845](https://github.com/youzan/vant-weapp/pull/845)
+- Radio: 选中态颜色调整为蓝色 [\#873](https://github.com/youzan/vant-weapp/pull/873)
+- Checkbox: 选中态颜色调整为蓝色 [\#848](https://github.com/youzan/vant-weapp/pull/848)
+- Checkbox: 新增 checked-color 属性 [\#885](https://github.com/youzan/vant-weapp/pull/885)
+
+
+**Bug Fixes**
+
+- 修复 Field 图标对齐问题 [\#871](https://github.com/youzan/vant-weapp/pull/871)
+- 修复 Badge active 属性在 mpvue 中不生效的问题 [\#879](https://github.com/youzan/vant-weapp/pull/879)
+- 修复 Cell value 属性传值 0 时未渲染的问题 [\#844](https://github.com/youzan/vant-weapp/pull/844)
+- 修复 Switch 加载图标未垂直居中的问题 [\#847](https://github.com/youzan/vant-weapp/pull/847)
+- 修复 Slider 传入的 value 变化时未重新渲染的问题 [\#863](https://github.com/youzan/vant-weapp/pull/863)
+- 修复 TreeSelect 类名前缀错误的问题 [\#859](https://github.com/youzan/vant-weapp/pull/859)
+- 修复 TreeSelect 局部滚动与页面下拉刷新冲突的问题 [\#867](https://github.com/youzan/vant-weapp/pull/867)
+
+
 ## [v0.4.5](https://github.com/youzan/vant-weapp/tree/v0.4.5)
 `2018-10-31`
 
 **Improvements**
 
-- Icon: 添加新图标question2 [\#839](https://github.com/youzan/vant-weapp/pull/839)
+- Icon: 添加新图标 question2 [\#839](https://github.com/youzan/vant-weapp/pull/839)
 - Steps: 优化样式 [\#835](https://github.com/youzan/vant-weapp/pull/835)
 
 **Bug Fixes**
 
-- Icon：修复商品角标icon兼容性问题 [\#840](https://github.com/youzan/vant-weapp/pull/840)
+- Icon：修复商品角标 icon 兼容性问题 [\#840](https://github.com/youzan/vant-weapp/pull/840)
 
 ## [v0.4.4](https://github.com/youzan/vant-weapp/tree/v0.4.4)
 `2018-10-31`
 
 **Improvements**
 
+- 新增 SwipeCell 组件 [\#815](https://github.com/youzan/vant-weapp/pull/815)
 - Search: 新增 error 属性 [\#820](https://github.com/youzan/vant-weapp/pull/820)
 - Search: 新增 input-align 属性 [\#819](https://github.com/youzan/vant-weapp/pull/819)
-- SwipeCell: 新增 swipe-cell 组件 [\#815](https://github.com/youzan/vant-weapp/pull/815)
 
 **Bug Fixes**
 
-- Panel: header-class 不生效 [\#831](https://github.com/youzan/vant-weapp/pull/831)
-- Tab: 动态设置tab时底部划线样式问题 [\#816](https://github.com/youzan/vant-weapp/pull/816)
-- ellipsis 样式不生效 [\#810](https://github.com/youzan/vant-weapp/pull/810)
+- 修复 Panel header-class 不生效的问题 [\#831](https://github.com/youzan/vant-weapp/pull/831)
+- 修复 Tab 动态设置时底部划线样式问题 [\#816](https://github.com/youzan/vant-weapp/pull/816)
+- 修复 ellipsis 样式类不生效的问题 [\#810](https://github.com/youzan/vant-weapp/pull/810)
 
 ## [v0.4.3](https://github.com/youzan/vant-weapp/tree/v0.4.3)
 `2018-10-24`

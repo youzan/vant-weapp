@@ -1,0 +1,38 @@
+<demo-block title="选择完整时间">
+  <van-datetime-picker
+    loading="{{ loading }}"
+    show-toolbar="{{ false }}"
+    value="{{ currentDate1 }}"
+    bind:change="onChange"
+    type="datetime"
+    min-date="{{ minDate }}"
+  />
+</demo-block>
+
+<demo-block title="选择日期（年月日）">
+  <van-datetime-picker
+    value="{{ currentDate2 }}"
+    bind:change="onChange"
+    type="date"
+    min-date="{{ minDate }}"
+  />
+</demo-block>
+
+<demo-block title="选择日期（年月）">
+  <van-datetime-picker
+    value="{{ currentDate3 }}"
+    bind:change="onChange"
+    type="year-month"
+    min-date="{{ minDate }}"
+  />
+</demo-block>
+
+<demo-block title="选择时间">
+  <van-datetime-picker
+    value="{{ currentDate4 }}"
+    bind:change="onChange"
+    type="time"
+    min-hour="{{ minHour }}"
+    max-hour="{{ maxHour }}"
+  />
+</demo-block>

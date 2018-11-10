@@ -31,7 +31,7 @@ VantComponent({
           square = _this$data.square,
           loading = _this$data.loading,
           disabled = _this$data.disabled;
-      return this.classNames("van-button--" + type, "van-button--" + size, {
+      return this.classNames('custom-class', 'van-button', "van-button--" + type, "van-button--" + size, {
         'van-button--block': block,
         'van-button--round': round,
         'van-button--plain': plain,

@@ -1,26 +1,27 @@
 <view
-  class="tree-select"
+  class="van-tree-select"
   style="height: {{ mainHeight }}px"
 >
-  <view class="tree-select__nav">
+  <scroll-view scroll-y class="van-tree-select__nav">
     <view
       wx:for="{{ items }}"
       wx:key="index"
-      class="tree-select__nitem van-ellipsis {{ mainActiveIndex === index ? 'tree-select__nitem--active' : '' }}"
+      class="van-tree-select__nitem van-ellipsis {{ mainActiveIndex === index ? 'van-tree-select__nitem--active' : '' }}"
       data-index="{{ index }}"
       bind:tap="onClickNav"
     >
       {{ item.text }}
     </view>
-  </view>
-  <view
-    class="tree-select__content"
+  </scroll-view>
+  <scroll-view
+    scroll-y
+    class="van-tree-select__content"
     style="height: {{ itemHeight }}px"
   >
     <view
       wx:for="{{ subItems }}"
       wx:key="item.id"
-      class="tree-select__item van-ellipsis {{ activeId === item.id ? 'tree-select__item--active' : '' }}"
+      class="van-tree-select__item van-ellipsis {{ activeId === item.id ? 'van-tree-select__item--active' : '' }}"
       data-item="{{ item }}"
       bind:tap="onSelectItem"
     >
@@ -28,8 +29,8 @@
       <van-icon
         wx:if="{{ activeId === item.id }}"
         name="success"
-        class="tree-select__selected"
+        class="van-tree-select__selected"
       />
     </view>
-  </view>
+  </scroll-view>
 </view>

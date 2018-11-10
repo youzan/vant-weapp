@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { isNumber } from '../common/utils';
 VantComponent({
   relation: {
     name: 'badge',
@@ -32,7 +33,7 @@ VantComponent({
       var active = this.data.active;
       var badges = this.badges;
 
-      if (badge) {
+      if (badge && !isNumber(badge)) {
         active = badges.indexOf(badge);
       }
 

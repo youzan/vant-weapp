@@ -48,6 +48,7 @@
     />
     <van-icon
       wx:if="{{ showClear }}"
+      size="16px"
       name="clear"
       class="van-field__clear-root"
       custom-class="van-field__clear"
@@ -56,6 +57,7 @@
     <view class="van-field__icon-container" wx:if="{{ icon || useIconSlot }}" bind:tap="onClickIcon">
       <van-icon
         wx:if="{{ icon }}"
+        size="16px"
         name="{{ icon }}"
         custom-class="van-field__icon {{ iconClass }}"
       />

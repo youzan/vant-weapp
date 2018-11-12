@@ -47,6 +47,10 @@ VantComponent({
 
     onBlur() {
       this.$emit('blur');
-    }
+    },
+
+    onClear() {
+      this.$emit('clear');
+    },
   }
 });

@@ -3,7 +3,11 @@ import Toast from '../../dist/toast/toast';
 
 Page({
   showToast() {
-    Toast('我是提示文案，建议不超过十五字~');
+    Toast('提示内容');
+  },
+
+  showLongToast() {
+    Toast('这是一条长文字提示，超过一定字数就会换行');
   },
 
   showLoadingToast() {

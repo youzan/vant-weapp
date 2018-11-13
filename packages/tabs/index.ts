@@ -24,7 +24,10 @@ VantComponent({
 
   props: {
     color: String,
-    lineWidth: Number,
+    lineWidth: {
+      type: Number,
+      value: -1
+    },
     active: {
       type: Number,
       value: 0
@@ -118,20 +121,29 @@ VantComponent({
         return;
       }
 
+      const {
+        color,
+        active,
+        duration,
+        lineWidth
+      } = this.data;
+
       this.getRect('.van-tab', true).then(rects => {
-        const rect = rects[this.data.active];
-        const width = this.data.lineWidth || (rect.width / 2);
+        const rect = rects[active];
+        const width = (lineWidth !== -1) ? lineWidth : rect.width / 2;
+
         let left = rects
-          .slice(0, this.data.active)
+          .slice(0, active)
           .reduce((prev, curr) => prev + curr.width, 0);
+
         left += (rect.width - width) / 2;
 
         this.setData({
           lineStyle: `
             width: ${width}px;
-            background-color: ${this.data.color};
+            background-color: ${color};
             transform: translateX(${left}px);
-            transition-duration: ${this.data.duration}s;
+            transition-duration: ${duration}s;
           `
         });
       });

@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <van-tabs active="{{ 1 }}" bind:change="onChange">
+  <van-tabs active="{{ 1 }}" line-width="0" bind:change="onChange">
     <van-tab
       wx:for="1234"
       wx:key="index"

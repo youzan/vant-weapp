@@ -25,5 +25,12 @@ Page({
       title: '取消',
       icon: 'none'
     });
+  },
+
+  onClear() {
+    wx.showToast({
+      title: '清空',
+      icon: 'none'
+    });
   }
 });

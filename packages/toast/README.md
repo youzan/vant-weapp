@@ -32,14 +32,12 @@ Toast.loading({
 });
 ```
 
-
 #### 成功/失败提示
 
 ```javascript
 Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
-
 
 #### 高级用法
 

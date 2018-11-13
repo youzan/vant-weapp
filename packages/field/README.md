@@ -172,6 +172,7 @@ Page({
 | bind:click-icon | 点击尾部图标时触发 | - |
 | bind:focus | 输入框聚焦时触发 | - |
 | bind:blur | 输入框失焦时触发 | - |
+| bind:clear | 点击清空控件时触发 | - |
 
 ### Slot
 

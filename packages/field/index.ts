@@ -115,6 +115,7 @@ VantComponent({
       });
       this.$emit('input', '');
       this.$emit('change', '');
+      this.$emit('clear', '');
     },
 
     onConfirm() {

@@ -14,68 +14,102 @@
 
 #### 基础用法
 
-`cell-group`组件是承载`cell`组件的容器，对于容器中的最后一个 cell，需要将 border 属性设置成 `false`
+`Cell`可以单独使用，也可以与`CellGroup`搭配使用。`CellGroup`可以为`Cell`提供上下外边框。
 
 ```html
 <van-cell-group>
-  <van-cell title="单元格" value="内容" />
-  <van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
-</van-cell-group>
-```
-
-#### 只设置value
-只设置`value`时会向左对齐
-
-```html
-<van-cell-group>
-  <van-cell value="内容" border="{{ false }}" />
-</van-cell-group>
-```
-
-#### 展示图标
-通过`icon`属性在标题左侧展示图标
-
-```html
-<van-cell-group>
-  <van-cell title="单元格" icon="location" border="{{ false }}" />
-</van-cell-group>
-```
-
-
-#### 展示箭头
-传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
-
-```html
-<van-cell-group>
-  <van-cell title="单元格" is-link />
-  <van-cell title="单元格" is-link value="内容" />
   <van-cell
     title="单元格"
-    is-link
-    arrow-direction="down"
     value="内容"
+  />
+  <van-cell
+    title="单元格"
+    value="内容"
+    label="描述信息"
     border="{{ false }}"
-    url="/pages/dashboard/index"
   />
 </van-cell-group>
 ```
 
-#### 高级用法
-如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
+#### 单元格大小
+
+通过`size`属性可以控制单元格的大小
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" icon="shop" is-link>
-    <view slot="title">
-      <span class="van-cell-text">单元格</span>
-      <van-tag type="danger">标签</van-tag>
-    </view>
-  </van-cell>
-  <van-cell title="单元格" icon="location" is-link />
-  <van-cell title="单元格" border="{{ false }}">
-    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
-  </van-cell>
-</van-cell-group>
+<van-cell
+  title="单元格"
+  value="内容"
+  size="large"
+/>
+<van-cell
+  title="单元格"
+  value="内容"
+  size="large"
+  label="描述信息"
+/>
+```
+
+#### 展示图标
+
+通过`icon`属性在标题左侧展示图标
+
+```html
+<van-cell
+  title="单元格"
+  icon="location"
+/>
+```
+
+#### 展示箭头
+
+传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
+
+```html
+<van-cell
+  title="单元格"
+  is-link
+/>
+<van-cell
+  title="单元格"
+  value="内容"
+  is-link
+/>
+<van-cell
+  title="单元格"
+  value="内容"
+  is-link
+  arrow-direction="down"
+  url="/pages/dashboard/index"
+/>
+```
+
+#### 高级用法
+
+如以上用法不能满足你的需求，可以使用对应的插槽来自定义显示的内容
+
+```html
+<van-cell
+  value="内容"
+  icon="shop"
+  is-link
+>
+  <view slot="title">
+    <span class="van-cell-text">单元格</span>
+    <van-tag type="danger">标签</van-tag>
+  </view>
+</van-cell>
+<van-cell
+  title="单元格"
+  icon="location"
+  is-link
+/>
+<van-cell title="单元格">
+  <van-icon
+    slot="right-icon"
+    name="search"
+    class="van-cell__right-icon"
+  />
+</van-cell>
 ```
 
 ### CellGroup API
@@ -99,6 +133,7 @@
 | title-width | 标题宽度，须包含单位 | `String` | - |
 | value | 右侧内容 | `String | Number` | - |
 | label | 标题下方的描述信息 | `String` | - |
+| size | 单元格大小，可选值为 `large` | `String` | - |
 | border | 是否显示下边框 | `Boolean` | `true` |
 | center | 是否使内容垂直居中 | `Boolean` | `false` |
 | url | 跳转链接 | `String` | - |
@@ -112,15 +147,15 @@
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:click | 点击 cell 时触发 | - |
+| bind:click | 点击单元格时触发 | - |
 
 ### Cell Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
-| - | 自定义显示内容 |
-| icon | 自定义`icon`，如果设置了`icon`属性则不生效 |
-| title | 自定义`title`，如果设置了`title`属性则不生效 |
+| - | 自定义`value`显示内容，如果设置了`value`属性则不生效 |
+| title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |
+| icon | 自定义`icon`显示内容，如果设置了`icon`属性则不生效 |
 | right-icon | 自定义右侧按钮，默认是`arrow`，如果设置了`is-link`属性则不生效 |
 
 ### Cell 外部样式类

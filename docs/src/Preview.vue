@@ -20,7 +20,7 @@ const MAP = {
   button: 'button-20181015.png',
   card: 'card-201808092138.png',
   col: 'layout-201808092138.png',
-  cell: 'cell-201808092138.png',
+  cell: 'cell-20181114.jpeg',
   dialog: 'dialog-201809071648.png',
   'datetime-picker': 'datetime-picker-201811102.png',
   field: 'field-201808092138.png',

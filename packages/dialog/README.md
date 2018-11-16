@@ -137,6 +137,7 @@ Page({
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
+| context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
 
 ### API
 

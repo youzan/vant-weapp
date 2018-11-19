@@ -42,7 +42,10 @@ VantComponent({
   methods: {
     // 当一个子项被选择时
     onSelectItem(event: Weapp.Event) {
-      this.$emit('click-item', event.currentTarget.dataset.item);
+      const { item } = event.currentTarget.dataset;
+      if (!item.disabled) {
+        this.$emit('click-item', item);
+      }
     },
 
     // 当一个导航被点击时

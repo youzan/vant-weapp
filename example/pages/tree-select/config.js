@@ -2,29 +2,30 @@ export default {
   pro1Name: '浙江',
   pro1: [{
     text: '杭州',
-    id: 1001
+    id: 1
   }, {
     text: '温州',
-    id: 1002
+    id: 2
   }, {
     text: '宁波',
-    id: 1003
+    id: 3,
+    disabled: true
   }, {
     text: '义乌',
-    id: 1004
+    id: 4
   }],
   pro2Name: '江苏',
   pro2: [{
     text: '南京',
-    id: 1011
+    id: 5
   }, {
     text: '无锡',
-    id: 1012
+    id: 6
   }, {
     text: '徐州',
-    id: 1013
+    id: 7
   }, {
     text: '苏州',
-    id: 1014
+    id: 8
   }]
 };

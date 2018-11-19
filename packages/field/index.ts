@@ -9,6 +9,7 @@ VantComponent({
     icon: String,
     label: String,
     error: Boolean,
+    fixed: Boolean,
     focus: Boolean,
     center: Boolean,
     isLink: Boolean,

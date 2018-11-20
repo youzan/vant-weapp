@@ -48,7 +48,8 @@ const MAP = {
   toast: 'toast-201808191046.png',
   transition: 'transition-20180821.png',
   'tree-select': 'tree-select-201808092138.png',
-  checkbox: 'checkbox-20181110.jpeg'
+  checkbox: 'checkbox-20181110.jpeg',
+  rate: 'rate-20181120-1.png'
 };
 
 export default {

@@ -28,9 +28,9 @@ Page({
   data: {
     minHour: 10,
     maxHour: 20,
-    minDate: new Date(),
-    maxDate: new Date(2019, 10, 1),
-    currentDate: new Date()
+    minDate: new Date().getTime(),
+    maxDate: new Date(2019, 10, 1).getTime(),
+    currentDate: new Date().getTime()
   },
   onChange(event) {
     this.setData({
@@ -54,8 +54,8 @@ Page({
 ```js
 Page({
   data: {
-    currentDate: new Date(),
-    minDate: new Date()
+    currentDate: new Date().getTime(),
+    minDate: new Date().getTime()
   },
   onChange(event) {
     this.setData({
@@ -79,8 +79,8 @@ Page({
 ```js
 Page({
   data: {
-    currentDate: new Date(),
-    minDate: new Date()
+    currentDate: new Date().getTime(),
+    minDate: new Date().getTime()
   },
   onChange(event) {
     this.setData({
@@ -122,8 +122,8 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|------|
 | type | 类型，可选值为 `date` <br> `time` `year-month` | `String` | `datetime` |
-| min-date | 可选的最小时间，精确到分钟 | `Date` | 十年前 |
-| max-date | 可选的最大时间，精确到分钟 | `Date` | 十年后 |
+| min-date | 可选的最小时间，精确到分钟 | `Number` | 十年前 |
+| max-date | 可选的最大时间，精确到分钟 | `Number` | 十年后 |
 | min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` |
 | max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` |
 | min-minute | 可选的最小分钟，针对 time 类型 | `Number` | `0` |

@@ -1,0 +1,15 @@
+<view
+  class="van-rate custom-class"
+  bind:touchmove="onTouchMove"
+>
+  <van-icon
+    wx:for="{{ list }}"
+    wx:key="index"
+    class="van-rate__item"
+    size="{{ size }}px"
+    data-index="{{ index }}"
+    name="{{ item ? 'star' : 'star-o' }}"
+    color="{{ disabled ? disabledColor : item ? color : voidColor }}"
+    bind:click="onSelect"
+  />
+</view>

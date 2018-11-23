@@ -48,6 +48,10 @@ export default [
         title: 'Radio 单选框'
       },
       {
+        path: '/rate',
+        title: 'Rate 评分'
+      },
+      {
         path: '/search',
         title: 'Search 搜索'
       },

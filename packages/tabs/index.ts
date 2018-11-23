@@ -142,6 +142,8 @@ VantComponent({
           lineStyle: `
             width: ${width}px;
             background-color: ${color};
+            -webkit-transform: translateX(${left}px);
+            -webkit-transition-duration: ${duration}s;
             transform: translateX(${left}px);
             transition-duration: ${duration}s;
           `

@@ -23,6 +23,17 @@
   </van-radio-group>
 </demo-block>
 
+<demo-block title="自定义颜色" padding>
+  <van-radio
+    name="1"
+    value="1"
+    custom-class="demo-radio"
+    checked-color="#4b0"
+  >
+    单选框
+  </van-radio>
+</demo-block>
+
 <demo-block title="与 Cell 组件一起使用">
   <van-radio-group value="{{ radio3 }}">
     <van-cell-group>

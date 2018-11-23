@@ -8,7 +8,12 @@
         class="van-radio__control"
       />
     </radio-group>
-    <van-icon class="{{ iconClass }}" custom-class="icon-class" name="{{ value === name ? 'checked' : 'check' }}" />
+    <van-icon
+      class="{{ iconClass }}"
+      custom-class="icon-class"
+      color="{{ value === name ? checkedColor : '' }}"
+      name="{{ value === name ? 'checked' : 'check' }}"
+    />
   </view>
   <view class="van-radio__label van-radio__label--{{ labelPosition }} label-class" bindtap="onClickLabel">
     <slot />

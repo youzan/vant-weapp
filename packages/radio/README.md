@@ -1,6 +1,7 @@
 ## Radio 单选框
 
 ### 使用指南
+
 在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
@@ -12,6 +13,7 @@
 ### 代码演示
 
 #### 基础用法
+
 通过`value`绑定值当前选中项的 name
 
 ```html
@@ -22,6 +24,7 @@
 ```
 
 #### 禁用状态
+
 通过`disabled`属性禁止选项切换，在`van-radio`上设置`diabled`可以禁用单个选项
 
 ```html
@@ -31,7 +34,14 @@
 </van-radio-group>
 ```
 
+#### 自定义颜色
+
+ ```html
+<van-radio checked-color="#4b0">复选框</van-radio>
+```
+
 #### 与 Cell 组件一起使用
+
 此时你需要再引入`Cell`和`CellGroup`组件。
 
 ```html
@@ -56,6 +66,7 @@
 | disabled | 是否为禁用状态 | `Boolean` | `false` |
 | label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` |
+| checked-color | 选中状态颜色 | `String` | `#1989fa` |
 
 ### Radio Event
 

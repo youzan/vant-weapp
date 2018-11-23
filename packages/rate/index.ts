@@ -64,25 +64,22 @@ VantComponent({
 
     onTouchMove(event: Weapp.TouchEvent) {
       const { clientX, clientY } = event.touches[0];
-      wx.createSelectorQuery()
-        .in(this)
-        .selectAll(`.van-rate__item`)
-        .boundingClientRect(list => {
-          const target = list.find(
-            item =>
-              clientX >= item.left &&
-              clientX <= item.right &&
-              clientY >= item.top &&
-              clientY <= item.bottom
-          );
-          if (target != null) {
-            this.onSelect({
-              ...event,
-              currentTarget: target
-            });
-          }
-        })
-        .exec();
+
+      this.getRect('.van-rate__item', true).then(list => {
+        const target = list.find(
+          item =>
+            clientX >= item.left &&
+            clientX <= item.right &&
+            clientY >= item.top &&
+            clientY <= item.bottom
+        );
+        if (target != null) {
+          this.onSelect({
+            ...event,
+            currentTarget: target
+          });
+        }
+      });
     }
   }
 });

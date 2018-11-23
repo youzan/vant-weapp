@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 
 const currentYear = new Date().getFullYear();
-const isValidDate = date => !isNaN(new Date(date).getTime());
+const isValidDate = date => date != null && !isNaN(new Date(date).getTime());
 
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
@@ -169,12 +169,8 @@ VantComponent({
       }
 
       // date type
-      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', value);
-      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', value);
-      const minDay = new Date(minYear, minMonth - 1, minDate, minHour, minMinute);
-      const maxDay = new Date(maxYear, maxMonth - 1, maxDate, maxHour, maxMinute);
-      value = Math.max(value, minDay.getTime());
-      value = Math.min(value, maxDay.getTime());
+      value = Math.max(value, data.minDate);
+      value = Math.min(value, data.maxDate);
 
       return value;
     },

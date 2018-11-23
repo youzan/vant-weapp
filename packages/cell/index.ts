@@ -5,7 +5,8 @@ VantComponent({
   classes: [
     'title-class',
     'label-class',
-    'value-class'
+    'value-class',
+    'right-icon-class'
   ],
 
   mixins: [link],
@@ -47,7 +48,7 @@ VantComponent({
     },
 
     iconWrapClass(): string {
-      const prefix = 'van-cell__right-icon-wrap';
+      const prefix = 'van-cell__right-icon-wrap right-icon-class';
       return this.classNames(prefix, `${prefix}--${this.data.arrowDirection}`);
     }
   },

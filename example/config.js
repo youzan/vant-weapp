@@ -110,6 +110,10 @@ export default [
         title: 'NoticeBar 通告栏'
       },
       {
+        path: '/collapse',
+        title: 'Collapse 折叠面板'
+      },
+      {
         path: '/panel',
         title: 'Panel 面板'
       },

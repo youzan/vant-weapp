@@ -36,7 +36,8 @@
     "pages/goods-action/index",
     "pages/swipe-cell/index",
     "pages/datetime-picker/index",
-    "pages/rate/index"
+    "pages/rate/index",
+    "pages/collapse/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -91,6 +92,8 @@
     "van-transition": "../../dist/transition/index",
     "van-tree-select": "../../dist/tree-select/index",
     "van-datetime-picker": "../../dist/datetime-picker/index",
-    "van-rate": "../../dist/rate/index"
+    "van-rate": "../../dist/rate/index",
+    "van-collapse": "../../dist/collapse/index",
+    "van-collapse-item": "../../dist/collapse-item/index"
   }
 }

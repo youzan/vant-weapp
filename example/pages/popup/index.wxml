@@ -10,7 +10,7 @@
 </demo-block>
 
 <demo-block title="弹出位置" padding>
-  <van-button bind:click="toggleBottomPopup" custom-class="demo-margin-right">底部弹出</van-button>
+  <van-button bind:click="toggleBottomPopup" class="demo-margin-right">底部弹出</van-button>
 
   <van-popup
     show="{{ show.bottom }}"
@@ -21,7 +21,7 @@
     内容
   </van-popup>
 
-  <van-button bind:click="toggleTopPopup" custom-class="demo-margin-right">顶部弹出</van-button>
+  <van-button bind:click="toggleTopPopup" class="demo-margin-right">顶部弹出</van-button>
   <van-popup
     show="{{ show.top }}"
     position="top"
@@ -39,7 +39,7 @@
     custom-class="right"
     bind:close="toggleRightPopup"
   >
-    <van-button bind:click="toggleRightPopup" custom-class="demo-margin-right">关闭弹层</van-button>
+    <van-button bind:click="toggleRightPopup" class="demo-margin-right">关闭弹层</van-button>
 
     <van-button bind:click="toggleRightPopup2">右侧弹出</van-button>
     <van-popup

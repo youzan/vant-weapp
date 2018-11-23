@@ -15,6 +15,7 @@
     bind:change="onChange"
     bind:search="onSearch"
     bind:cancel="onCancel"
+    bind:clear="onClear"
   />
 </demo-block>
 

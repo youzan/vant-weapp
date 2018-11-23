@@ -1,7 +1,8 @@
 ## Switch 开关
 
 ### 使用指南
-在 index.json 中引入组件
+
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-switch": "path/to/vant-weapp/dist/switch/index"
@@ -11,6 +12,7 @@
 ### 代码演示
 
 #### 基础用法
+
 ```html
 <van-switch checked="{{ checked }}" bind:change="onChange" />
 ```
@@ -29,20 +31,25 @@ Page({
 ```
 
 #### 禁用状态
+
 ```html
 <van-switch checked="{{ checked }}" disabled />
 ```
 
 #### 加载状态
+
 ```html
-<van-switch checked="{{ checked }}" loading  />
+<van-switch checked="{{ checked }}" loading />
 ```
 
 #### 高级用法
+
 ```html
 <van-switch
   size="36px"
   checked="{{ checked }}"
+  active-color="#4b0"
+  inactive-color="#f44"
   bind:change="onChange"
 />
 ```
@@ -76,6 +83,8 @@ Page({
 | loading | 是否为加载状态 | `Boolean` | `false` |
 | disabled | 是否为禁用状态 | `Boolean` | `false` |
 | size | 开关尺寸 | `String` | `30px` |
+| active-color | 打开时的背景色 | `String` | `#1989fa` |
+| inactive-color | 关闭时的背景色 | `String` | `#fff` |
 
 ### Event
 

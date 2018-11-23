@@ -25,6 +25,11 @@ VantComponent({
       value: '2px'
     }
   },
+  watch: {
+    value: function value(_value) {
+      this.updateValue(_value, false);
+    }
+  },
   created: function created() {
     this.updateValue(this.data.value);
   },

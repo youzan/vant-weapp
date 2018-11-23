@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Steps 步骤条",
-  "usingComponents": {
-    "demo-block": "../../components/demo-block/index",
-    "van-button": "../../dist/button/index",
-    "van-steps": "../../dist/steps/index"
-  }
+  "navigationBarTitleText": "Steps 步骤条"
 }

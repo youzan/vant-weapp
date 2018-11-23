@@ -3,7 +3,7 @@
 
 ### 使用指南
 
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-area": "path/to/vant-weapp/dist/area/index"
@@ -58,7 +58,7 @@
 
 ### 方法
 
-通过 ref 可以获取到 area 实例并调用实例方法
+通过 selectComponent 可以获取到 area 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|

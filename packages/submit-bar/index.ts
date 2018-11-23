@@ -8,7 +8,7 @@ VantComponent({
   ],
 
   props: {
-    tip: [String, Boolean],
+    tip: null,
     type: Number,
     price: null,
     label: String,

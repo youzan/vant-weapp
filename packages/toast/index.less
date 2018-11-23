@@ -3,9 +3,9 @@
 .van-toast {
   display: flex;
   color: @white;
-  font-size: 12px;
-  line-height: 1.2;
-  border-radius: 5px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 4px;
   word-break: break-all;
   align-items: center;
   justify-content: center;
@@ -16,13 +16,16 @@
   &__container {
     top: 50%;
     left: 50%;
+    max-width: 80%;
     position: fixed;
+    // hack for avoid max-width when use left & fixed
+    width: fit-content; 
     transform: translate(-50%, -50%);
   }
 
   &--text {
-    padding: 12px;
-    min-width: 220px;
+    min-width: 120px;
+    padding: 8px 12px;
   }
 
   &--icon {

@@ -5,6 +5,7 @@ type DialogOptions = {
   show?: boolean;
   title?: string;
   zIndex?: number;
+  context?: any;
   message?: string;
   overlay?: boolean;
   selector?: string;
@@ -30,12 +31,15 @@ interface Dialog {
   currentOptions?: DialogOptions;
 }
 
+function getContext() {
+  const pages = getCurrentPages();
+  return pages[pages.length - 1];
+}
+
 const Dialog: Dialog = options => {
   return new Promise((resolve, reject) => {
-    const pages = getCurrentPages();
-    const ctx = pages[pages.length - 1];
-
-    const dialog = ctx.selectComponent(options.selector);
+    const context = options.context || getContext();
+    const dialog = context.selectComponent(options.selector);
     delete options.selector;
 
     if (dialog) {
@@ -45,6 +49,8 @@ const Dialog: Dialog = options => {
         ...options
       });
       queue.push(dialog);
+    } else {
+      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
     }
   });
 };

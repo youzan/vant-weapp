@@ -1,7 +1,7 @@
 ## Progress 进度条
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-progress": "path/to/vant-weapp/dist/progress/index"
@@ -57,7 +57,7 @@
 | inactive | 是否置灰 | `Boolean` | `false` |
 | percentage | 进度百分比 | `Number` | `false` |
 | show-pivot | 是否显示进度文字 | `Boolean` | `true` |
-| color | 进度条颜色 | `String` | `#38f` |
+| color | 进度条颜色 | `String` | `#1989fa` |
 | text-color | 进度条文字颜色 | `String` | `#fff` |
 | pivot-text | 文字显示 | `String` | 百分比文字 |
 | pivot-color | 文字背景色 | `String` | 与进度条颜色一致 |

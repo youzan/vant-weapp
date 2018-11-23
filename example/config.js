@@ -7,10 +7,6 @@ export default [
         title: 'Layout 布局'
       },
       {
-        path: '/badge',
-        title: 'Badge 徽章'
-      },
-      {
         path: '/button',
         title: 'Button 按钮'
       },
@@ -23,44 +19,8 @@ export default [
         title: 'Icon 图标'
       },
       {
-        path: '/loading',
-        title: 'Loading 加载'
-      },
-      {
-        path: '/nav-bar',
-        title: 'NavBar 导航栏'
-      },
-      {
-        path: '/notice-bar',
-        title: 'NoticeBar 通告栏'
-      },
-      {
-        path: '/panel',
-        title: 'Panel 面板'
-      },
-      {
         path: '/popup',
         title: 'Popup 弹出层'
-      },
-      {
-        path: '/progress',
-        title: 'Progress 进度条'
-      },
-      {
-        path: '/steps',
-        title: 'Steps 步骤条'
-      },
-      {
-        path: '/tag',
-        title: 'Tag 标记'
-      },
-      {
-        path: '/tab',
-        title: 'Tab 标签页'
-      },
-      {
-        path: '/tabbar',
-        title: 'Tabbar 标签栏'
       },
       {
         path: '/transition',
@@ -74,6 +34,10 @@ export default [
       {
         path: '/checkbox',
         title: 'Checkbox 复选框'
+      },
+      {
+        path: '/datetime-picker',
+        title: 'DatetimePicker 时间选择'
       },
       {
         path: '/field',
@@ -98,11 +62,15 @@ export default [
       {
         path: '/switch',
         title: 'Switch 开关'
+      },
+      {
+        path: '/switch-cell',
+        title: 'SwitchCell 开关单元格'
       }
     ]
   },
   {
-    groupName: '操作反馈',
+    groupName: '反馈组件',
     list: [
       {
         path: '/action-sheet',
@@ -111,6 +79,14 @@ export default [
       {
         path: '/dialog',
         title: 'Dialog 弹出框'
+      },
+      {
+        path: '/loading',
+        title: 'Loading 加载'
+      },
+      {
+        path: '/swipe-cell',
+        title: 'SwipeCell 滑动单元格'
       },
       {
         path: '/toast',
@@ -123,19 +99,52 @@ export default [
     ]
   },
   {
-    groupName: '高阶组件',
+    groupName: '展示组件',
     list: [
       {
-        path: '/swipe-cell',
-        title: 'SwipeCell 滑动单元格'
+        path: '/notice-bar',
+        title: 'NoticeBar 通告栏'
       },
       {
-        path: '/switch-cell',
-        title: 'SwitchCell 开关单元格'
+        path: '/panel',
+        title: 'Panel 面板'
+      },
+      {
+        path: '/progress',
+        title: 'Progress 进度条'
+      },
+      {
+        path: '/steps',
+        title: 'Steps 步骤条'
+      },
+      {
+        path: '/tag',
+        title: 'Tag 标记'
       },
       {
         path: '/tree-select',
         title: 'TreeSelect 分类选择'
+      }
+    ]
+  },
+  {
+    groupName: '导航组件',
+    list: [
+      {
+        path: '/badge',
+        title: 'Badge 徽章'
+      },
+      {
+        path: '/nav-bar',
+        title: 'NavBar 导航栏'
+      },
+      {
+        path: '/tab',
+        title: 'Tab 标签页'
+      },
+      {
+        path: '/tabbar',
+        title: 'Tabbar 标签栏'
       }
     ]
   },
@@ -148,7 +157,7 @@ export default [
       },
       {
         path: '/card',
-        title: 'Card 卡片'
+        title: 'Card 商品卡片'
       },
       {
         path: '/submit-bar',
@@ -156,7 +165,7 @@ export default [
       },
       {
         path: '/goods-action',
-        title: 'GoodsAction 商品页行动点'
+        title: 'GoodsAction 商品导航'
       }
     ]
   }

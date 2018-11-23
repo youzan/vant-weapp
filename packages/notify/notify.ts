@@ -3,7 +3,8 @@ import { isObj } from '../common/utils';
 type NotifyOptions = {
   selector?: string;
   duration?: number;
-}
+  context?: any;
+};
 
 const defaultOptions = {
   selector: '#van-notify',
@@ -14,17 +15,22 @@ function parseOptions(text) {
   return isObj(text) ? text : { text };
 }
 
-export default function Notify(options: NotifyOptions = {}) {
+function getContext() {
   const pages = getCurrentPages();
-  const ctx = pages[pages.length - 1];
+  return pages[pages.length - 1];
+}
 
+export default function Notify(options: NotifyOptions = {}) {
   options = Object.assign({}, defaultOptions, parseOptions(options));
 
-  const el = ctx.selectComponent(options.selector);
+  const context = options.context || getContext();
+  const notify = context.selectComponent(options.selector);
   delete options.selector;
 
-  if (el) {
-    el.setData(options);
-    el.show();
+  if (notify) {
+    notify.setData(options);
+    notify.show();
+  } else {
+    console.warn('未找到 van-notify 节点，请确认 selector 及 context 是否正确');
   }
 }

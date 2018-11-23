@@ -1,7 +1,3 @@
 {
-  "navigationBarTitleText": "Slider 滑块",
-  "usingComponents": {
-    "demo-block": "../../components/demo-block/index",
-    "van-slider": "../../dist/slider/index"
-  }
+  "navigationBarTitleText": "Slider 滑块"
 }

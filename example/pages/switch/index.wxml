@@ -25,6 +25,10 @@
   <van-switch
     checked="{{ checked2 }}"
     size="36px"
+    active-color="#4b0"
+    inactive-color="#f44"
     bind:change="onChange2"
   />
 </demo-block>
+
+<van-dialog id="van-dialog" />

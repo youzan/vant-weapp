@@ -20,7 +20,7 @@ Page({
       }
     ],
     mainActiveIndex: 0,
-    activeId: 1002
+    activeId: 1
   },
 
   onClickNav({ detail }) {

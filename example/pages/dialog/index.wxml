@@ -2,7 +2,7 @@
   <van-button
     plain
     type="primary"
-    custom-class="demo-margin-right"
+    class="demo-margin-right"
     bind:click="onClickAlert"
   >
     消息提示

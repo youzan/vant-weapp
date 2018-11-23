@@ -2,7 +2,7 @@
 
 ### 使用指南
 
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-steps": "path/to/vant-weapp/dist/steps/index"
@@ -63,7 +63,7 @@ Page({
 |-----------|-----------|-----------|-------------|
 | active | 当前步骤 | `Number` | 0 |
 | direction | 显示方向，可选值为 `horizontal` `vertical` | `String` | `horizontal` |
-| active-color | 激活状态颜色 | `String` | `#06bf04` |
+| active-color | 激活状态颜色 | `String` | `#4b0` |
 
 ### 外部样式类
 

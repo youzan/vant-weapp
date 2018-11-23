@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { GREEN } from '../common/color';
 VantComponent({
   props: {
     icon: String,
@@ -10,7 +11,7 @@ VantComponent({
     },
     activeColor: {
       type: String,
-      value: '#06bf04'
+      value: GREEN
     }
   },
   watch: {

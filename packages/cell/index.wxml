@@ -23,14 +23,14 @@
   </view>
 
   <view class="van-cell__value value-class">
-    <block wx:if="{{ value }}">{{ value }}</block>
+    <block wx:if="{{ value || value === 0 }}">{{ value }}</block>
     <slot wx:else />
   </view>
 
   <van-icon
     wx:if="{{ isLink }}"
     name="arrow"
-    class="van-cell__right-icon-wrap"
+    class="{{ iconWrapClass }}"
     custom-class="van-cell__right-icon"
   />
   <slot wx:else name="right-icon" />

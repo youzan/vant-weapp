@@ -1,7 +1,7 @@
 ## Notify 消息提示
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 {
   "usingComponents": {
@@ -31,7 +31,7 @@ Notify({
   text: '通知内容',
   duration: 1000,
   selector: '#custom-selector',
-  backgroundColor: '#38f'
+  backgroundColor: '#1989fa'
 });
 ```
 
@@ -47,7 +47,8 @@ Notify({
 | duration | 持续时间 | `Number` | `3000` |
 | selector | 自定义选择器 | `String` | `van-notify` |
 | color | 字体颜色 | `String` | `#fff` | |
-| backgroundColor | 背景色 | `String` | `#e64340` |
+| backgroundColor | 背景色 | `String` | `#f44` |
+| context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
 
 ### 更新日志
 

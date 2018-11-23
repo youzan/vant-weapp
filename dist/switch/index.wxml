@@ -1,6 +1,6 @@
 <view
-  class="van-switch custom-class {{ checked ? 'van-switch--on' : '' }} {{ disabled ? 'van-switch--disabled' : '' }}"
-  style="font-size: {{ size }};"
+  style="{{ style }}"
+  class="{{ classes }}"
   bind:tap="onClick"
 >
   <view class="van-switch__node node-class">

@@ -17,14 +17,12 @@ VantComponent({
   },
 
   watch: {
-    disabled() {
-      const parent = this.getRelationNodes('../tabs/index')[0];
-      if (parent) {
-        parent.updateTabs();
-      }
-    },
+    title: 'update',
+    disabled: 'update'
+  },
 
-    title() {
+  methods: {
+    update() {
       const parent = this.getRelationNodes('../tabs/index')[0];
       if (parent) {
         parent.updateTabs();

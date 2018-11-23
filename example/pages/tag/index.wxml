@@ -1,8 +1,8 @@
 <demo-block title="基础用法" padding>
   <van-tag class="demo-margin-right">标签</van-tag>
   <van-tag class="demo-margin-right" type="danger">标签</van-tag>
-  <van-tag class="demo-margin-right" type="success">标签</van-tag>
-  <van-tag type="primary">标签</van-tag>
+  <van-tag class="demo-margin-right" type="primary">标签</van-tag>
+  <van-tag type="success">标签</van-tag>
 </demo-block>
 
 <demo-block title="空心样式" padding>

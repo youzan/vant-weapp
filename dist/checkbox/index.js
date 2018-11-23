@@ -9,13 +9,14 @@ VantComponent({
   props: {
     value: null,
     disabled: Boolean,
-    labelDisabled: Boolean,
+    useIconSlot: Boolean,
+    checkedColor: String,
     labelPosition: String,
+    labelDisabled: Boolean,
     shape: {
       type: String,
       value: 'round'
-    },
-    useIconSlot: Boolean
+    }
   },
   computed: {
     iconClass: function iconClass() {
@@ -27,6 +28,18 @@ VantComponent({
         'van-checkbox__icon--disabled': disabled,
         'van-checkbox__icon--checked': value
       });
+    },
+    iconStyle: function iconStyle() {
+      var _this$data2 = this.data,
+          value = _this$data2.value,
+          disabled = _this$data2.disabled,
+          checkedColor = _this$data2.checkedColor;
+
+      if (checkedColor && value && !disabled) {
+        return "border-color: " + checkedColor + "; background-color: " + checkedColor;
+      }
+
+      return '';
     }
   },
   methods: {
@@ -34,31 +47,7 @@ VantComponent({
       var parent = this.getRelationNodes('../checkbox-group/index')[0];
 
       if (parent) {
-        var parentValue = parent.data.value.slice();
-        var name = this.data.name;
-
-        if (value) {
-          if (parent.data.max && parentValue.length >= parent.data.max) {
-            return;
-          }
-          /* istanbul ignore else */
-
-
-          if (parentValue.indexOf(name) === -1) {
-            parentValue.push(name);
-            parent.$emit('input', parentValue);
-            parent.$emit('change', parentValue);
-          }
-        } else {
-          var index = parentValue.indexOf(name);
-          /* istanbul ignore else */
-
-          if (index !== -1) {
-            parentValue.splice(index, 1);
-            parent.$emit('input', parentValue);
-            parent.$emit('change', parentValue);
-          }
-        }
+        this.setParentValue(parent, value);
       } else {
         this.$emit('input', value);
         this.$emit('change', value);
@@ -72,6 +61,33 @@ VantComponent({
     onClickLabel: function onClickLabel() {
       if (!this.data.disabled && !this.data.labelDisabled) {
         this.emitChange(!this.data.value);
+      }
+    },
+    setParentValue: function setParentValue(parent, value) {
+      var parentValue = parent.data.value.slice();
+      var name = this.data.name;
+
+      if (value) {
+        if (parent.data.max && parentValue.length >= parent.data.max) {
+          return;
+        }
+        /* istanbul ignore else */
+
+
+        if (parentValue.indexOf(name) === -1) {
+          parentValue.push(name);
+          parent.$emit('input', parentValue);
+          parent.$emit('change', parentValue);
+        }
+      } else {
+        var index = parentValue.indexOf(name);
+        /* istanbul ignore else */
+
+        if (index !== -1) {
+          parentValue.splice(index, 1);
+          parent.$emit('input', parentValue);
+          parent.$emit('change', parentValue);
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 ## Search 搜索
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-search": "/packages/search/index"
@@ -70,6 +70,7 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
 | bind:cancel | 取消搜索搜索时触发 | - |
 | bind:focus | 输入框聚焦时触发 | - |
 | bind:blur | 输入框失焦时触发 | - |
+| bind:clear | 点击清空控件时触发 | - |
 
 ### Slot
 

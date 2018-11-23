@@ -7,15 +7,6 @@ export var button = Behavior({
     sendMessagePath: String,
     showMessageCard: String,
     sendMessageTitle: String,
-    hoverStopPropagation: Boolean,
-    hoverStartTime: {
-      type: Number,
-      value: 20
-    },
-    hoverStayTime: {
-      type: Number,
-      value: 70
-    },
     lang: {
       type: String,
       value: 'en'

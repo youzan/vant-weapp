@@ -9,6 +9,7 @@ VantComponent({
     icon: String,
     label: String,
     error: Boolean,
+    fixed: Boolean,
     focus: Boolean,
     center: Boolean,
     isLink: Boolean,
@@ -115,6 +116,7 @@ VantComponent({
       });
       this.$emit('input', '');
       this.$emit('change', '');
+      this.$emit('clear', '');
     },
 
     onConfirm() {

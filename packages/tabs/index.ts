@@ -10,25 +10,24 @@ VantComponent({
     name: 'tab',
     type: 'descendant',
     linked(child: Weapp.Component) {
-      this.data.tabs.push({
-        instance: child,
-        data: child.data
-      });
-      this.updateTabs();
+      this.child.push(child);
+      this.updateTabs(this.data.tabs.concat(child.data));
     },
     unlinked(child: Weapp.Component) {
-      const tabs = this.data.tabs.filter(item => item.instance !== child);
-      this.setData({
-        tabs,
-        scrollable: tabs.length > this.data.swipeThreshold
-      });
-      this.setActiveTab();
+      const index = this.child.indexOf(child);
+      const { tabs } = this.data;
+      tabs.splice(index, 1);
+      this.child.splice(index, 1);
+      this.updateTabs(tabs);
     }
   },
 
   props: {
     color: String,
-    lineWidth: Number,
+    lineWidth: {
+      type: Number,
+      value: -1
+    },
     active: {
       type: Number,
       value: 0
@@ -65,12 +64,16 @@ VantComponent({
   watch: {
     swipeThreshold() {
       this.setData({
-        scrollable: this.data.tabs.length > this.data.swipeThreshold
+        scrollable: this.child.length > this.data.swipeThreshold
       });
     },
     color: 'setLine',
     lineWidth: 'setLine',
     active: 'setActiveTab'
+  },
+
+  beforeCreate() {
+    this.child = [];
   },
 
   mounted() {
@@ -79,8 +82,8 @@ VantComponent({
   },
 
   methods: {
-    updateTabs() {
-      const { tabs } = this.data;
+    updateTabs(tabs) {
+      tabs = tabs || this.data.tabs;
       this.setData({
         tabs,
         scrollable: tabs.length > this.data.swipeThreshold
@@ -91,13 +94,13 @@ VantComponent({
     trigger(eventName: string, index: number) {
       this.$emit(eventName, {
         index,
-        title: this.data.tabs[index].data.title
+        title: this.data.tabs[index].title
       });
     },
 
     onTap(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
-      if (this.data.tabs[index].data.disabled) {
+      if (this.data.tabs[index].disabled) {
         this.trigger('disabled', index);
       } else {
         this.trigger('click', index);
@@ -118,27 +121,36 @@ VantComponent({
         return;
       }
 
+      const {
+        color,
+        active,
+        duration,
+        lineWidth
+      } = this.data;
+
       this.getRect('.van-tab', true).then(rects => {
-        const rect = rects[this.data.active];
-        const width = this.data.lineWidth || (rect.width / 2);
+        const rect = rects[active];
+        const width = (lineWidth !== -1) ? lineWidth : rect.width / 2;
+
         let left = rects
-          .slice(0, this.data.active)
+          .slice(0, active)
           .reduce((prev, curr) => prev + curr.width, 0);
+
         left += (rect.width - width) / 2;
 
         this.setData({
           lineStyle: `
             width: ${width}px;
-            background-color: ${this.data.color};
+            background-color: ${color};
             transform: translateX(${left}px);
-            transition-duration: ${this.data.duration}s;
+            transition-duration: ${duration}s;
           `
         });
       });
     },
 
     setActiveTab() {
-      this.data.tabs.forEach((item, index) => {
+      this.child.forEach((item, index) => {
         const data: TabItemData = {
           active: index === this.data.active
         };
@@ -147,8 +159,8 @@ VantComponent({
           data.inited = true;
         }
 
-        if (data.active !== item.instance.data.active) {
-          item.instance.setData(data);
+        if (data.active !== item.data.active) {
+          item.setData(data);
         }
       });
 

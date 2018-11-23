@@ -1,7 +1,7 @@
 ## Field 输入框
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-field": "path/to/vant-weapp/dist/field/index"
@@ -140,6 +140,7 @@ Page({
 | label | 输入框左侧文本 | `String` | - |
 | value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | `String` | `text` |
+| fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | `Boolean` | `false` |
 | focus | 获取焦点 | `Boolean` | `false` |
 | border | 是否显示内边框 | `Boolean` | `true` |
 | disabled | 是否禁用输入框 | `Boolean` | `false` |
@@ -172,6 +173,7 @@ Page({
 | bind:click-icon | 点击尾部图标时触发 | - |
 | bind:focus | 输入框聚焦时触发 | - |
 | bind:blur | 输入框失焦时触发 | - |
+| bind:clear | 点击清空控件时触发 | - |
 
 ### Slot
 

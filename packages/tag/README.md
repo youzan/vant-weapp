@@ -2,7 +2,7 @@
 
 ### 使用指南
 
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-tag": "path/to/vant-weapp/dist/tag/index"
@@ -17,8 +17,8 @@
 ```html
 <van-tag>标签</van-tag>
 <van-tag type="danger">标签</van-tag>
-<van-tag type="success">标签</van-tag>
 <van-tag type="primary">标签</van-tag>
+<van-tag type="success">标签</van-tag>
 ```
 
 #### 空心样式

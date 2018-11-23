@@ -4,7 +4,7 @@ Dialog 组件支持函数调用和组件调用两种形式
 
 ### 使用指南
 
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-dialog": "path/to/vant-weapp/dist/dialog/index"
@@ -137,6 +137,7 @@ Page({
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
+| context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
 
 ### API
 

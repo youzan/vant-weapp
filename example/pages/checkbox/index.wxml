@@ -1,20 +1,57 @@
 <demo-block title="基本用法">
-  <van-checkbox value="{{ checkbox1 }}" data-key="checkbox1" bind:change="onChange" custom-class="demo-checkbox">复选框</van-checkbox>
-</demo-block>
-
-<demo-block title="禁用状态">
-  <van-checkbox value="{{ false }}" disabled custom-class="demo-checkbox">复选框</van-checkbox>
-  <van-checkbox value="{{ true }}" disabled custom-class="demo-checkbox">复选框</van-checkbox>
-</demo-block>
-
-<demo-block title="自定义图标">
-  <van-checkbox value="{{ checkbox2 }}" data-key="checkbox2" bind:change="onChange" use-icon-slot custom-class="demo-checkbox">
-    自定义图标
-    <image mode="widthFix" slot="icon" src="{{ checkbox2 ? icon.active : icon.normal }}" class="icon" />
+  <van-checkbox
+    value="{{ checkbox1 }}"
+    data-key="checkbox1"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    复选框
   </van-checkbox>
 </demo-block>
 
-<demo-block title="Checkbox 组">
+<demo-block title="禁用状态">
+  <van-checkbox
+    disabled
+    value="{{ false }}"
+    custom-class="demo-checkbox"
+  >
+    复选框
+  </van-checkbox>
+  <van-checkbox
+    disabled
+    value="{{ true }}"
+    custom-class="demo-checkbox"
+  >
+    复选框
+  </van-checkbox>
+</demo-block>
+
+<demo-block title="自定义颜色">
+  <van-checkbox
+    value="{{ checkbox2 }}"
+    data-key="checkbox2"
+    checked-color="#4b0"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    复选框
+  </van-checkbox>
+</demo-block>
+
+<demo-block title="自定义图标">
+  <van-checkbox
+    use-icon-slot
+    value="{{ checkbox3 }}"
+    data-key="checkbox3"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    自定义图标
+    <image mode="widthFix" slot="icon" src="{{ checkbox3 ? icon.active : icon.normal }}" class="icon" />
+  </van-checkbox>
+</demo-block>
+
+<demo-block title="复选框组">
   <van-checkbox-group value="{{ result }}" data-key="result" bind:change="onChange">
     <van-checkbox
       wx:for="{{ list }}"
@@ -40,7 +77,7 @@
   </van-checkbox-group>
 </demo-block>
 
-<demo-block title="与 Cell 组件一起使用">
+<demo-block title="搭配单元格组件使用">
   <van-checkbox-group value="{{ result3 }}" data-key="result3" bind:change="onChange">
     <van-cell-group >
       <van-cell

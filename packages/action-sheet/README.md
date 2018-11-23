@@ -1,7 +1,7 @@
 ## ActionSheet 上拉菜单
 
 ### 使用指南
-在 index.json 中引入组件
+在 app.json 或 index.json 中引入组件
 ```json
 "usingComponents": {
   "van-action-sheet": "path/to/vant-weapp/dist/action-sheet/index"

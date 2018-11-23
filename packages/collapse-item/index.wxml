@@ -1,0 +1,39 @@
+<view class="van-collapse-item van-hairline--top custom-class">
+  <van-cell
+    title="{{ title }}"
+    icon="{{ icon }}"
+    is-link="{{ isLink }}"
+    value="{{ value }}"
+    label="{{ label }}"
+    border="{{ border && expanded }}"
+    class="{{ titleClass }}"
+    right-icon-class="van-cell__right-icon"
+    custom-class="van-cell"
+    arrow-direction="{{ expanded ? 'up' : 'down' }}"
+    bind:click="onClick"
+  >
+    <slot
+      name="title"
+      slot="title"
+    />
+    <slot
+      name="icon"
+      slot="icon"
+    />
+    <slot name="value" />
+    <slot
+      name="right-icon"
+      slot="right-icon"
+    />
+  </van-cell>
+  <view
+    class="van-collapse-item__wrapper"
+    style="max-height: {{ contentHeight }};"
+  >
+    <view
+      class="van-collapse-item__content content-class"
+    >
+      <slot />
+    </view>
+  </view>
+</view>

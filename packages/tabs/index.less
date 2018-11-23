@@ -71,7 +71,7 @@
     height: 2px;
     position: absolute;
     background-color: @red;
-    border-radius: 2px 0 2px 0;
+    border-radius: 2px;
   }
 
   &--line {
@@ -98,7 +98,7 @@
   padding: 0 5px;
   font-size: 14px;
   position: relative;
-  color: @text-color;
+  color: @gray-darker;
   line-height: @van-tabs-line-height;
   text-align: center;
   box-sizing: border-box;
@@ -110,7 +110,8 @@
   }
 
   &--active {
-    color: @red;
+    font-weight: 500;
+    color: @text-color;
   }
 
   &--disabled {

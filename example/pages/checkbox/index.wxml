@@ -84,6 +84,7 @@
         wx:for="{{ list }}"
         wx:key="{{ index }}"
         title="复选框{{ item }}"
+        value-class="value-class"
         clickable
         data-name="{{ item }}"
         bind:click="toggle"

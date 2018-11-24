@@ -23,12 +23,17 @@ VantComponent({
     inputAlign: String,
     customClass: String,
     confirmType: String,
+    confirmHold: Boolean,
     errorMessage: String,
     placeholder: String,
     customStyle: String,
     useIconSlot: Boolean,
     useButtonSlot: Boolean,
     placeholderStyle: String,
+    adjustPosition: {
+      type: Boolean,
+      value: true
+    },
     cursorSpacing: {
       type: Number,
       value: 50
@@ -83,7 +88,8 @@ VantComponent({
     },
 
     onFocus() {
-      this.$emit('focus');
+      const { height = 0 } = event.detail || {};
+      this.$emit('focus', height);
       this.focused = true;
       this.setData({
         showClear: this.getShowClear()

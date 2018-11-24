@@ -17,7 +17,7 @@
 ```js
 import Notify from 'path/to/vant-weapp/dist/notify/notify';
 
-Notify('通知内容')
+Notify('通知内容');
 ```
 
 ```html

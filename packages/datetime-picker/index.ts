@@ -1,7 +1,8 @@
 import { VantComponent } from '../common/component';
+import { isDef } from '../common/utils';
 
 const currentYear = new Date().getFullYear();
-const isValidDate = date => date != null && !isNaN(new Date(date).getTime());
+const isValidDate = date => isDef(date) && !isNaN(new Date(date).getTime());
 
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);

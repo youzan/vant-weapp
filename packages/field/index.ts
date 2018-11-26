@@ -87,17 +87,19 @@ VantComponent({
       });
     },
 
-    onFocus() {
-      this.$emit('focus');
+    onFocus(event: Weapp.Event) {
+      const { value = '', height = 0 } = event.detail || {};
+      this.$emit('focus', { value, height });
       this.focused = true;
       this.setData({
         showClear: this.getShowClear()
       });
     },
 
-    onBlur() {
+    onBlur(event: Weapp.Event) {
+      const { value = '', cursor = 0 } = event.detail || {};
+      this.$emit('blur', { value, cursor });
       this.focused = false;
-      this.$emit('blur');
       this.setData({
         showClear: this.getShowClear()
       });

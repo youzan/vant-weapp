@@ -13,11 +13,11 @@
           wx:for="{{ tabs }}"
           wx:key="index"
           data-index="{{ index }}"
-          class="van-ellipsis van-tab {{ index === active ? 'van-tab--active' : '' }} {{ item.data.disabled ? 'van-tab--disabled' : '' }}"
-          style="{{ color && (index === active) !== (type === 'card') && !item.data.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }}"
+          class="van-ellipsis van-tab {{ index === active ? 'van-tab--active' : '' }} {{ item.disabled ? 'van-tab--disabled' : '' }}"
+          style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
           bind:tap="onTap"
         >
-          {{ item.data.title }}
+          {{ item.title }}
         </view>
       </view>
     </scroll-view>

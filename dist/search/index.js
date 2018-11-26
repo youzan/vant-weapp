@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
-  classes: ['cancel-class'],
+  classes: ['field-class', 'input-class', 'cancel-class'],
   props: {
     focus: Boolean,
     error: Boolean,
@@ -43,6 +43,9 @@ VantComponent({
     },
     onBlur: function onBlur() {
       this.$emit('blur');
+    },
+    onClear: function onClear() {
+      this.$emit('clear');
     }
   }
 });

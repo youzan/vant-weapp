@@ -3,10 +3,6 @@ export default [
     groupName: '基础组件',
     list: [
       {
-        path: '/col',
-        title: 'Layout 布局'
-      },
-      {
         path: '/button',
         title: 'Button 按钮'
       },
@@ -17,6 +13,10 @@ export default [
       {
         path: '/icon',
         title: 'Icon 图标'
+      },
+      {
+        path: '/col',
+        title: 'Layout 布局'
       },
       {
         path: '/popup',
@@ -46,6 +46,10 @@ export default [
       {
         path: '/radio',
         title: 'Radio 单选框'
+      },
+      {
+        path: '/rate',
+        title: 'Rate 评分'
       },
       {
         path: '/search',
@@ -85,22 +89,26 @@ export default [
         title: 'Loading 加载'
       },
       {
+        path: '/notify',
+        title: 'Notify 消息通知'
+      },
+      {
         path: '/swipe-cell',
         title: 'SwipeCell 滑动单元格'
       },
       {
         path: '/toast',
         title: 'Toast 轻提示'
-      },
-      {
-        path: '/notify',
-        title: 'Notify 消息通知'
       }
     ]
   },
   {
     groupName: '展示组件',
     list: [
+      {
+        path: '/collapse',
+        title: 'Collapse 折叠面板'
+      },
       {
         path: '/notice-bar',
         title: 'NoticeBar 通告栏'

@@ -13,14 +13,11 @@ VantComponent({
     active: false
   },
   watch: {
-    disabled: function disabled() {
-      var parent = this.getRelationNodes('../tabs/index')[0];
-
-      if (parent) {
-        parent.updateTabs();
-      }
-    },
-    title: function title() {
+    title: 'update',
+    disabled: 'update'
+  },
+  methods: {
+    update: function update() {
       var parent = this.getRelationNodes('../tabs/index')[0];
 
       if (parent) {

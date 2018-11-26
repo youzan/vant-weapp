@@ -27,9 +27,13 @@ VantComponent({
   computed: {
     wrapperStyle() {
       const { offset, draging } = this.data;
+      const transform = `translate3d(${offset}px, 0, 0)`;
+      const transition = draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)';
       return `
-        transform: translate3d(${offset}px, 0, 0);
-        transition: ${draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'};
+        -webkit-transform: ${transform};
+        -webkit-transition: ${transition};
+        transform: ${transform};
+        transition: ${transition};
       `;
     }
   },

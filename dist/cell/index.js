@@ -1,12 +1,13 @@
 import { link } from '../mixins/link';
 import { VantComponent } from '../common/component';
 VantComponent({
-  classes: ['title-class', 'label-class', 'value-class'],
+  classes: ['title-class', 'label-class', 'value-class', 'right-icon-class'],
   mixins: [link],
   props: {
     title: null,
     value: null,
     icon: String,
+    size: String,
     label: String,
     center: Boolean,
     isLink: Boolean,
@@ -27,7 +28,8 @@ VantComponent({
         'van-cell--center': data.center,
         'van-cell--required': data.required,
         'van-cell--borderless': !data.border,
-        'van-cell--clickable': data.isLink || data.clickable
+        'van-cell--clickable': data.isLink || data.clickable,
+        ["van-cell--" + data.size]: data.size
       });
     },
     titleStyle: function titleStyle() {
@@ -35,7 +37,7 @@ VantComponent({
       return titleWidth ? "max-width: " + titleWidth + ";min-width: " + titleWidth : '';
     },
     iconWrapClass: function iconWrapClass() {
-      var prefix = 'van-cell__right-icon-wrap';
+      var prefix = 'van-cell__right-icon-wrap right-icon-class';
       return this.classNames(prefix, prefix + "--" + this.data.arrowDirection);
     }
   },

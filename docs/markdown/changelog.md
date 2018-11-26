@@ -1,5 +1,40 @@
 ## 更新日志
 
+## [v0.4.7](https://github.com/youzan/vant-weapp/tree/v0.4.7)
+`2018-11-26`
+
+**Improvements**
+
+- 新增 Rate 评分组件 [\#931](https://github.com/youzan/vant-weapp/pull/931)
+- 新增 Collapse 折叠面板组件 [\#936](https://github.com/youzan/vant-weapp/pull/936)
+- Cell: 新增 size 属性 [\#904](https://github.com/youzan/vant-weapp/pull/904)
+- Field: 新增 fixed 属性 [\#925](https://github.com/youzan/vant-weapp/pull/925)
+- Field: 新增 clear 事件 [\#894](https://github.com/youzan/vant-weapp/pull/894)
+- Dialog: 新增 context 属性 [\#912](https://github.com/youzan/vant-weapp/pull/912)
+- Dialog: 内容超过屏幕高度时展示滚动条 [\#921](https://github.com/youzan/vant-weapp/pull/921)
+- Notify: 新增 context 属性 [\#914](https://github.com/youzan/vant-weapp/pull/914)
+- Notify: 优化多行文字时的样式展示 [\#951](https://github.com/youzan/vant-weapp/pull/951)
+- Search: 新增 clear 事件 [\#894](https://github.com/youzan/vant-weapp/pull/894)
+- Search: 新增外部样式类 field-class、input-class [\#946](https://github.com/youzan/vant-weapp/pull/946)
+- Tab: 更新标题栏样式 [\#940](https://github.com/youzan/vant-weapp/pull/940)
+- Radio: 新增 checked-color 属性 [\#939](https://github.com/youzan/vant-weapp/pull/939)
+- TreeSelect: 支持禁用选项 [\#926](https://github.com/youzan/vant-weapp/pull/926)
+- Icon: 新增 star、star-o 图标 [\#923](https://github.com/youzan/vant-weapp/pull/923)
+
+
+**Bug Fixes**
+
+- 修复 Toast 最大宽度错误的问题 [\#896](https://github.com/youzan/vant-weapp/pull/896)
+- 修复 Tab line-width 传入 0 时不生效的问题 [\#900](https://github.com/youzan/vant-weapp/pull/900)
+- 修复 Tab swipe-threshold 属性小于 4 时不生效的问题 [\#941](https://github.com/youzan/vant-weapp/pull/941)
+- 修复 Tab 在 iOS8 下的样式兼容性问题 [\#943](https://github.com/youzan/vant-weapp/pull/943)
+- 修复 SwipeCell 在 iOS8 下的样式兼容性问题 [\#944](https://github.com/youzan/vant-weapp/pull/944)
+- 修复 DatetimePicker 设置了 minDate 时初始 value 错误的问题 [\#942](https://github.com/youzan/vant-weapp/pull/942)
+
+
+
+
+
 ## [v0.4.6](https://github.com/youzan/vant-weapp/tree/v0.4.6)
 `2018-11-10`
 
@@ -11,7 +46,6 @@
 - Radio: 选中态颜色调整为蓝色 [\#873](https://github.com/youzan/vant-weapp/pull/873)
 - Checkbox: 选中态颜色调整为蓝色 [\#848](https://github.com/youzan/vant-weapp/pull/848)
 - Checkbox: 新增 checked-color 属性 [\#885](https://github.com/youzan/vant-weapp/pull/885)
-
 
 **Bug Fixes**
 

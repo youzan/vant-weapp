@@ -4,26 +4,23 @@ VantComponent({
     name: 'tab',
     type: 'descendant',
     linked: function linked(child) {
-      this.data.tabs.push({
-        instance: child,
-        data: child.data
-      });
-      this.updateTabs();
+      this.child.push(child);
+      this.updateTabs(this.data.tabs.concat(child.data));
     },
     unlinked: function unlinked(child) {
-      var tabs = this.data.tabs.filter(function (item) {
-        return item.instance !== child;
-      });
-      this.setData({
-        tabs: tabs,
-        scrollable: tabs.length > this.data.swipeThreshold
-      });
-      this.setActiveTab();
+      var index = this.child.indexOf(child);
+      var tabs = this.data.tabs;
+      tabs.splice(index, 1);
+      this.child.splice(index, 1);
+      this.updateTabs(tabs);
     }
   },
   props: {
     color: String,
-    lineWidth: Number,
+    lineWidth: {
+      type: Number,
+      value: -1
+    },
     active: {
       type: Number,
       value: 0
@@ -58,20 +55,23 @@ VantComponent({
   watch: {
     swipeThreshold: function swipeThreshold() {
       this.setData({
-        scrollable: this.data.tabs.length > this.data.swipeThreshold
+        scrollable: this.child.length > this.data.swipeThreshold
       });
     },
     color: 'setLine',
     lineWidth: 'setLine',
     active: 'setActiveTab'
   },
+  beforeCreate: function beforeCreate() {
+    this.child = [];
+  },
   mounted: function mounted() {
     this.setLine();
     this.scrollIntoView();
   },
   methods: {
-    updateTabs: function updateTabs() {
-      var tabs = this.data.tabs;
+    updateTabs: function updateTabs(tabs) {
+      tabs = tabs || this.data.tabs;
       this.setData({
         tabs: tabs,
         scrollable: tabs.length > this.data.swipeThreshold
@@ -81,13 +81,13 @@ VantComponent({
     trigger: function trigger(eventName, index) {
       this.$emit(eventName, {
         index: index,
-        title: this.data.tabs[index].data.title
+        title: this.data.tabs[index].title
       });
     },
     onTap: function onTap(event) {
       var index = event.currentTarget.dataset.index;
 
-      if (this.data.tabs[index].data.disabled) {
+      if (this.data.tabs[index].disabled) {
         this.trigger('disabled', index);
       } else {
         this.trigger('click', index);
@@ -110,23 +110,28 @@ VantComponent({
         return;
       }
 
+      var _this$data = this.data,
+          color = _this$data.color,
+          active = _this$data.active,
+          duration = _this$data.duration,
+          lineWidth = _this$data.lineWidth;
       this.getRect('.van-tab', true).then(function (rects) {
-        var rect = rects[_this.data.active];
-        var width = _this.data.lineWidth || rect.width / 2;
-        var left = rects.slice(0, _this.data.active).reduce(function (prev, curr) {
+        var rect = rects[active];
+        var width = lineWidth !== -1 ? lineWidth : rect.width / 2;
+        var left = rects.slice(0, active).reduce(function (prev, curr) {
           return prev + curr.width;
         }, 0);
         left += (rect.width - width) / 2;
 
         _this.setData({
-          lineStyle: "\n            width: " + width + "px;\n            background-color: " + _this.data.color + ";\n            transform: translateX(" + left + "px);\n            transition-duration: " + _this.data.duration + "s;\n          "
+          lineStyle: "\n            width: " + width + "px;\n            background-color: " + color + ";\n            -webkit-transform: translateX(" + left + "px);\n            -webkit-transition-duration: " + duration + "s;\n            transform: translateX(" + left + "px);\n            transition-duration: " + duration + "s;\n          "
         });
       });
     },
     setActiveTab: function setActiveTab() {
       var _this2 = this;
 
-      this.data.tabs.forEach(function (item, index) {
+      this.child.forEach(function (item, index) {
         var data = {
           active: index === _this2.data.active
         };
@@ -135,8 +140,8 @@ VantComponent({
           data.inited = true;
         }
 
-        if (data.active !== item.instance.data.active) {
-          item.instance.setData(data);
+        if (data.active !== item.data.active) {
+          item.setData(data);
         }
       });
       this.setData({}, function () {

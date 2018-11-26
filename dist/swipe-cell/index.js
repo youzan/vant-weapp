@@ -24,7 +24,9 @@ VantComponent({
       var _this$data = this.data,
           offset = _this$data.offset,
           draging = _this$data.draging;
-      return "\n        transform: translate3d(" + offset + "px, 0, 0);\n        transition: " + (draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)') + ";\n      ";
+      var transform = "translate3d(" + offset + "px, 0, 0)";
+      var transition = draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)';
+      return "\n        -webkit-transform: " + transform + ";\n        -webkit-transition: " + transition + ";\n        transform: " + transform + ";\n        transition: " + transition + ";\n      ";
     }
   },
   methods: {

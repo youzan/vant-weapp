@@ -2,11 +2,15 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var queue = [];
 
+function getContext() {
+  var pages = getCurrentPages();
+  return pages[pages.length - 1];
+}
+
 var Dialog = function Dialog(options) {
   return new Promise(function (resolve, reject) {
-    var pages = getCurrentPages();
-    var ctx = pages[pages.length - 1];
-    var dialog = ctx.selectComponent(options.selector);
+    var context = options.context || getContext();
+    var dialog = context.selectComponent(options.selector);
     delete options.selector;
 
     if (dialog) {
@@ -15,6 +19,8 @@ var Dialog = function Dialog(options) {
         onConfirm: resolve
       }, options));
       queue.push(dialog);
+    } else {
+      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
     }
   });
 };

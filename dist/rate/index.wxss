@@ -1,0 +1,1 @@
+@import '../common/index.wxss';.van-rate{-webkit-user-select:none;user-select:none}.van-rate__item{width:1em;padding:0 2px;box-sizing:content-box}

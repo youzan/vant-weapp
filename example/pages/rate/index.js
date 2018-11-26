@@ -3,8 +3,9 @@ import Page from '../../common/page';
 Page({
   data: {
     value1: 3,
-    value2: 4,
-    value3: 2
+    value2: 3,
+    value3: 4,
+    value4: 2
   },
 
   onChange(event) {

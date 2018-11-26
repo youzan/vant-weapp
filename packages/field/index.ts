@@ -23,12 +23,17 @@ VantComponent({
     inputAlign: String,
     customClass: String,
     confirmType: String,
+    confirmHold: Boolean,
     errorMessage: String,
     placeholder: String,
     customStyle: String,
     useIconSlot: Boolean,
     useButtonSlot: Boolean,
     placeholderStyle: String,
+    adjustPosition: {
+      type: Boolean,
+      value: true
+    },
     cursorSpacing: {
       type: Number,
       value: 50

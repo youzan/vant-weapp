@@ -6,11 +6,21 @@
   />
 </demo-block>
 
-<demo-block title="自定义颜色">
+<demo-block title="自定义图标">
   <van-rate
     custom-class="van-rate"
+    icon="like"
+    void-icon="like-o"
     data-key="value2"
     value="{{ value2 }}"
+  />
+</demo-block>
+
+<demo-block title="自定义样式">
+  <van-rate
+    custom-class="van-rate"
+    data-key="value3"
+    value="{{ value3 }}"
     size="{{ 25 }}"
     count="{{ 6 }}"
     color="#2ba"
@@ -22,8 +32,8 @@
 <demo-block title="禁用状态">
   <van-rate
     custom-class="van-rate"
-    data-key="value3"
-    value="{{ value3 }}"
+    data-key="value4"
+    value="{{ value4 }}"
     disabled
   />
 </demo-block>

@@ -8,7 +8,7 @@
     class="van-rate__item"
     size="{{ size }}px"
     data-index="{{ index }}"
-    name="{{ item ? 'star' : 'star-o' }}"
+    name="{{ item ? icon : voidIcon }}"
     color="{{ disabled ? disabledColor : item ? color : voidColor }}"
     bind:click="onSelect"
   />

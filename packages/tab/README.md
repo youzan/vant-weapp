@@ -111,6 +111,19 @@ Page({
 });
 ```
 
+#### 切换动画
+
+可以通过`animated`来设置是否启用切换tab时的动画。
+
+```html
+<van-tabs animated>
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -120,9 +133,10 @@ Page({
 | z-index | z-index 层级 | `Number` | `1` |
 | type | 样式风格，可选值为`card` | `String` | `line` |
 | border | 是否展示外边框，仅在`line`风格下生效 | `Boolean` | `true` |
-| duration | 动画时间 (单位秒)  | `Number` | `0.2` |
+| duration | 动画时间 (单位秒)  | `Number` | `0.3` |
 | line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | `Number` | `4` |
+| animated | 是否使用动画切换 Tabs | `Boolean` | - |
 
 ### Tab API
 

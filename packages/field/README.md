@@ -167,12 +167,12 @@ Page({
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| bind:input | 输入内容时触发 | res.value: 当前输入值; res.cursor: 游标位置 |
-| bind:change | 输入内容时触发 | res: 当前输入值 |
-| bind:confirm | 点击完成按钮时触发 | res.value: 当前输入值 |
+| bind:input | 输入内容时触发 | event.detail.value: 当前输入值; event.detail.cursor: 游标位置 |
+| bind:change | 输入内容时触发 | event.detail: 当前输入值 |
+| bind:confirm | 点击完成按钮时触发 | event.detail.value: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
-| bind:focus | 输入框聚焦时触发 | res.value: 当前输入值; res.height: 键盘高度(>1.9.90) |
-| bind:blur | 输入框失焦时触发 | res.value: 当前输入值; res.cursor: 游标位置(仅textarea) |
+| bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; event.detail.height: 键盘高度(>1.9.90) |
+| bind:blur | 输入框失焦时触发 | event.detail.value: 当前输入值; event.detail.cursor: 游标位置(仅textarea) |
 | bind:clear | 点击清空控件时触发 | - |
 
 ### Slot

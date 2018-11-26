@@ -5,10 +5,14 @@ VantComponent({
 
   props: {
     title: String,
+    fixed: Boolean,
     leftText: String,
     rightText: String,
     leftArrow: Boolean,
-    fixed: Boolean,
+    border: {
+      type: Boolean,
+      value: true
+    },
     zIndex: {
       type: Number,
       value: 1

@@ -1,5 +1,5 @@
 <view
-  class="custom-class van-nav-bar van-hairline--bottom {{ fixed ? 'van-nav-bar--fixed' : '' }}"
+  class="custom-class van-nav-bar {{ border ? 'van-hairline--bottom' : '' }} {{ fixed ? 'van-nav-bar--fixed' : '' }}"
   style="z-index: {{ zIndex }}"
 >
   <view class="van-nav-bar__left" bind:tap="onClickLeft">

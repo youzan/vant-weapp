@@ -36,26 +36,24 @@
 ```
 
 ```js
-export default {
-  methods: {
-    onClose(event) {
-      const { position, instance } = event.detail;
-      switch (position) {
-        case 'left':
-        case 'cell':
+Page({
+  onClose(event) {
+    const { position, instance } = event.detail;
+    switch (position) {
+      case 'left':
+      case 'cell':
+        instance.close();
+        break;
+      case 'right':
+        Dialog.confirm({
+          message: '确定删除吗？'
+        }).then(() => {
           instance.close();
-          break;
-        case 'right':
-          Dialog.confirm({
-            message: '确定删除吗？'
-          }).then(() => {
-            instance.close();
-          });
-          break;
-      }
+        });
+        break;
     }
   }
-}
+});
 ```
 
 ### API

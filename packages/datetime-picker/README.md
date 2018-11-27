@@ -32,6 +32,7 @@ Page({
     maxDate: new Date(2019, 10, 1).getTime(),
     currentDate: new Date().getTime()
   },
+
   onChange(event) {
     this.setData({
       currentDate: event.detail.value
@@ -57,6 +58,7 @@ Page({
     currentDate: new Date().getTime(),
     minDate: new Date().getTime()
   },
+
   onChange(event) {
     this.setData({
       currentDate: event.detail.value
@@ -82,6 +84,7 @@ Page({
     currentDate: new Date().getTime(),
     minDate: new Date().getTime()
   },
+
   onChange(event) {
     this.setData({
       currentDate: event.detail.value
@@ -109,6 +112,7 @@ Page({
     minHour: 9,
     maxHour: 23
   },
+
   onChange(event) {
     this.setData({
       currentDate: event.detail.value

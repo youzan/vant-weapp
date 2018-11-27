@@ -25,20 +25,18 @@
 ```
 
 ``` javascript
-export default {
+Page({
   data: {
     active: 0
   },
 
-  methods: {
-    onChange(event) {
-      wx.showToast({
-        icon: 'none',
-        title: `切换至第${event.detail}项`
-      });
-    }
+  onChange(event) {
+    wx.showToast({
+      icon: 'none',
+      title: `切换至第${event.detail}项`
+    });
   }
-};
+});
 ```
 
 ### BadgeGroup API

@@ -1,5 +1,9 @@
 <template>
-  <van-doc :config="config" simulator="./preview.html" active="小程序组件">
+  <van-doc
+    active="小程序组件"
+    :config="config"
+    :simulator="simulator"
+  >
     <router-view />
   </van-doc>
 </template>
@@ -7,10 +11,37 @@
 <script>
 import docConfig from './doc.config';
 
+const UNSHARED = [
+  'common',
+  'quickstart',
+  'changelog',
+  'intro',
+  'transition',
+  'col'
+];
+
+const MAPPER = {
+  'action-sheet': 'actionsheet'
+};
+
 export default {
   computed: {
     config() {
       return docConfig;
+    },
+
+    simulator() {
+      let { path } = this.$route.meta;
+
+      if (!UNSHARED.includes(path)) {
+        if (MAPPER[path]) {
+          path = MAPPER[path];
+        }
+
+        return `https://youzan.github.io/vant/mobile.html?hide_nav=1#/zh-CN/${path}`;
+      }
+
+      return `./preview.html#${path}`;
     }
   }
 };

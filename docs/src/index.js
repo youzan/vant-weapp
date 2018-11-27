@@ -20,7 +20,6 @@ router.beforeEach((route, redirect, next) => {
 router.afterEach(() => {
   progress.done();
   window.scrollTo(0, 0);
-  syncPath(router.history.current.path);
 });
 
 Vue.config.productionTip = false;

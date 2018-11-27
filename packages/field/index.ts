@@ -79,11 +79,13 @@ VantComponent({
   methods: {
     onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
-      this.$emit('input', value);
-      this.$emit('change', value);
+
       this.setData({
         value,
         showClear: this.getShowClear(value)
+      }, () => {
+        this.$emit('input', value);
+        this.$emit('change', value);
       });
     },
 
@@ -120,10 +122,11 @@ VantComponent({
       this.setData({
         value: '',
         showClear: this.getShowClear('')
+      }, () => {
+        this.$emit('input', '');
+        this.$emit('change', '');
+        this.$emit('clear', '');
       });
-      this.$emit('input', '');
-      this.$emit('change', '');
-      this.$emit('clear', '');
     },
 
     onConfirm() {

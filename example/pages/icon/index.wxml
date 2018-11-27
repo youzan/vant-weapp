@@ -1,5 +1,31 @@
+<demo-block title="基础用法">
+  <van-col span="8" custom-class="col">
+    <van-icon size="32px" custom-class="icon" name="close" />
+  </van-col>
+
+  <van-col span="8" custom-class="col">
+    <van-icon size="32px" custom-class="icon" name="//b.yzcdn.cn/vant/icon-demo-1126.png" />
+  </van-col>
+</demo-block>
+
+<demo-block title="显示徽标">
+  <van-col span="8" custom-class="col">
+    <van-icon size="32px" custom-class="icon" name="chat" info="9" />
+  </van-col>
+
+  <van-col span="8" custom-class="col">
+    <van-icon size="32px" custom-class="icon" name="chat" info="99+" />
+  </van-col>
+</demo-block>
+
 <demo-block title="图标列表">
-  <van-col custom-class="col" span="8" wx:for="{{ icons }}" wx:for-item="icon" wx:key="index">
+  <van-col
+    wx:for="{{ icons }}"
+    wx:for-item="icon"
+    wx:key="index"
+    span="8"
+    custom-class="col-with-text"
+  >
     <van-icon custom-class="icon" name="{{ icon }}" size="32px" />
     <view class="text">{{ icon }}</view>
   </van-col>

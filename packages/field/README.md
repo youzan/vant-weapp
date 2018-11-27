@@ -156,8 +156,8 @@ Page({
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 | autosize | 自适应内容高度，只对 textarea 有效 | `Boolean` | `false` |
-| icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |
-| left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
+| icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | `String` | `done` |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | `Boolean` | `false` |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | `Number` | `50` |

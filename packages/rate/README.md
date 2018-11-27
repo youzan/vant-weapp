@@ -74,8 +74,8 @@ Page({
 | size | 图标大小 (px) | `Number` | `20` |
 | color | 选中时的颜色 | `String` | `#ffd21e` |
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
-| icon | 选中时的图标，可选值见 Icon 组件 | `String` | `star` |
-| void-icon | 未选中时的图标，可选值见 Icon 组件 | `String` | `star-o` |
+| icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star` |
+| void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star-o` |
 | readonly | 是否为只读状态 | `Boolean` | `false` |
 | disabled | 是否禁用评分 | `Boolean` | `false` |
 | disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` |

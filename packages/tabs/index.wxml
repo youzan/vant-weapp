@@ -22,5 +22,9 @@
       </view>
     </scroll-view>
   </view>
-  <slot />
+  <view class="van-tabs__content">
+    <view class="van-tabs__track" style="{{ trackStyle }}">
+      <slot />
+    </view>
+  </view>
 </view>

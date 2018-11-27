@@ -3,6 +3,8 @@ import { VantComponent } from '../common/component';
 type TabItemData = {
   active: boolean;
   inited?: boolean;
+  animated?: boolean;
+  width?: Number;
 };
 
 VantComponent({
@@ -42,7 +44,7 @@ VantComponent({
     },
     duration: {
       type: Number,
-      value: 0.2
+      value: 0.3
     },
     zIndex: {
       type: Number,
@@ -51,14 +53,16 @@ VantComponent({
     swipeThreshold: {
       type: Number,
       value: 4
-    }
+    },
+    animated: Boolean
   },
 
   data: {
     tabs: [],
     lineStyle: '',
     scrollLeft: 0,
-    scrollable: false
+    scrollable: false,
+    trackStyle: ''
   },
 
   watch: {
@@ -69,7 +73,8 @@ VantComponent({
     },
     color: 'setLine',
     lineWidth: 'setLine',
-    active: 'setActiveTab'
+    active: 'setActiveTab',
+    animated: 'setTrack'
   },
 
   beforeCreate() {
@@ -78,6 +83,7 @@ VantComponent({
 
   mounted() {
     this.setLine();
+    this.setTrack();
     this.scrollIntoView();
   },
 
@@ -151,6 +157,38 @@ VantComponent({
       });
     },
 
+    setTrack() {
+      const {
+        animated,
+        active,
+        duration
+      } = this.data;
+
+      if (!animated) return '';
+
+      this.getRect('.van-tabs__content').then(rect => {
+        const { width } = rect;
+
+        this.setData({
+          trackStyle: `
+            width: ${width * this.child.length}px;
+            transform: translateX(${-1 * active * width}px);
+            transition-duration: ${duration}s;
+          `
+        });
+        this.setTabsProps({
+          width,
+          animated
+        })
+      })
+    },
+
+    setTabsProps(props) {
+      this.child.forEach(item => {
+        item.setData(props);
+      });
+    },
+
     setActiveTab() {
       this.child.forEach((item, index) => {
         const data: TabItemData = {
@@ -168,6 +206,7 @@ VantComponent({
 
       this.setData({}, () => {
         this.setLine();
+        this.setTrack();
         this.scrollIntoView();
       });
     },

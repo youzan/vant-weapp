@@ -1,7 +1,7 @@
 <view
-  wx:if="{{ inited }}"
-  class="custom-class van-tab__pane"
-  style="{{ active ? '' : 'display: none' }}"
+  wx:if="{{ animated || inited }}"
+  class="custom-class van-tab__pane {{ animated ? 'van-tab__pane--float' : '' }}"
+  style="{{ animated || active ? '' : 'display: none;' }} {{ width ? 'width:' + width + 'px;' : '' }}"
 >
   <slot />
 </view>

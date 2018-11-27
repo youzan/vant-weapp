@@ -9,6 +9,7 @@
   title-width="{{ titleWidth }}"
   custom-class="van-field"
 >
+  <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
   <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
     <textarea

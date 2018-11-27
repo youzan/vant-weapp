@@ -96,7 +96,7 @@ Page({
 |------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | `String | Number` | `index` |
 | title | 标题栏左侧内容 | `String | Number` | - |
-| icon | 标题栏左侧图标，可选值见 Icon 组件 | `String` | - |
+| icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | value | 标题栏右侧内容 | `String | Number` | - |
 | label | 标题栏描述信息 | `String` | - |
 | border | 是否显示内边框 | `Boolean` | `true` |

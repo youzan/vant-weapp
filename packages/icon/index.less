@@ -14,21 +14,40 @@
   font-size: inherit;
   text-rendering: auto;
 
+  &--image {
+    width: 1em;
+    height: 1em;
+
+    image {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+    }
+  }
+
   &__info {
-    color: @white;
-    left: 100%;
-    top: -.5em;
-    font-size: .6em;
-    padding: 0 .25em;
-    text-align: center;
-    min-width: 1.4em;
-    line-height: 1.4;
     position: absolute;
-    border-radius: .6em;
-    box-sizing: border-box;
-    background-color: @red;
-    transform: translateX(-50%);
+    right: 0;
+    top: -8px;
+    color: @white;
+    font-size: 12px;
+    font-weight: 500;
     font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 3px;
+    min-width: 16px;
+    line-height: 14px;
+    border: 1px solid @white;
+    border-radius: 16px;
+    background-color: @red;
+    transform: translateX(50%);
+    transform-origin: 100%;
   }
 
   &::before {

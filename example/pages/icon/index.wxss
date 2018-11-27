@@ -1,9 +1,14 @@
-.col {
+.col,
+.col-with-text {
   text-align: center;
-  height: 100px;
+  height: 60px;
   float: none;
   display: inline-block;
   vertical-align: middle;
+}
+
+.col-with-text {
+  height: 100px;
 }
 
 .icon {

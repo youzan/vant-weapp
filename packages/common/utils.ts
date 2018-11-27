@@ -11,8 +11,13 @@ function isNumber(value) {
   return /^\d+$/.test(value);
 }
 
+function isSrc(url) {
+  return /^(https?:)?\/\/|data:image/.test(url);
+}
+
 export {
   isObj,
   isDef,
+  isSrc,
   isNumber
 };

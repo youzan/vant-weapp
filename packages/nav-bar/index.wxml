@@ -6,7 +6,8 @@
     <block wx:if="{{ leftArrow || leftText }}">
       <van-icon
         wx:if="{{ leftArrow }}"
-        name="arrow"
+        size="16px"
+        name="arrow-left"
         custom-class="van-nav-bar__arrow"
       />
       <view wx:if="{{ leftText }}" class="van-nav-bar__text">{{ leftText }}</view>

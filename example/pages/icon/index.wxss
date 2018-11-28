@@ -1,14 +1,9 @@
-.col,
-.col-with-text {
+.col {
   text-align: center;
-  height: 60px;
+  height: 100px;
   float: none;
   display: inline-block;
   vertical-align: middle;
-}
-
-.col-with-text {
-  height: 100px;
 }
 
 .icon {
@@ -19,4 +14,8 @@
 
 .text {
   font-size: 14px;
+}
+
+.demo-tab-pane {
+  padding-top: 10px;
 }

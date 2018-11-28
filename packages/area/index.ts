@@ -139,23 +139,24 @@ VantComponent({
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
 
-      this.setData({
-        'columns[0]': province,
-        'columns[1]': city
-      });
+      const columns = this.data.columns.slice();
+      columns[0] = province;
+      columns[1] = city;
 
       if (city.length && code.slice(2, 4) === '00') {
         code = city[0].code;
       }
 
-      this.setData({
-        'columns[2]': this.getList('county', code.slice(0, 4)),
-        pickerValue: [
-          this.getIndex('province', code),
-          this.getIndex('city', code),
-          this.getIndex('county', code)
-        ]
-      });
+      columns[2] = this.getList('county', code.slice(0, 4));
+
+      const pickerValue = [
+        this.getIndex('province', code),
+        this.getIndex('city', code),
+        this.getIndex('county', code)
+      ];
+
+      this.setData({ columns });
+      this.setData({ pickerValue });
     },
 
     getValues() {

@@ -13,6 +13,20 @@ function mapKeys(source: object, target: object, map: object) {
   });
 }
 
+function normalizeProps(props) {
+  if (!props) {
+    return;
+  }
+
+  Object.keys(props).forEach(key => {
+    const prop = props[key];
+    if (prop === null || !('type' in prop)) {
+      props[key] = { type: prop };
+    }
+  });
+}
+
+
 function VantComponent<Data, Props, Watch, Methods, Computed>(
   vantOptions: VantComponentOptions<
     Data,
@@ -64,6 +78,7 @@ function VantComponent<Data, Props, Watch, Methods, Computed>(
     addGlobalClass: true
   };
 
+  normalizeProps(options.properties);
   observe(vantOptions, options);
   Component(options);
 }

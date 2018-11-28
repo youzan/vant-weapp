@@ -55,4 +55,9 @@ declare namespace Weapp {
   interface Page {
     selectComponent(selector: string): Component
   }
+
+  interface Data {
+    $target: Function;
+    [key: string]: any;
+  }
 }

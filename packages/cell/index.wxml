@@ -1,5 +1,5 @@
 <view
-  class="{{ cellClass }}"
+  class="custom-class {{ cellClass }}"
   style="{{ customStyle }}"
   bind:tap="onClick"
 >

@@ -21,7 +21,7 @@ VantComponent({
   computed: {
     classes() {
       const { data } = this;
-      return this.classNames('van-tag', 'custom-class', {
+      return this.classNames('van-tag', {
         'van-tag--mark': data.mark,
         'van-tag--plain': data.plain,
         'van-tag--round': data.round,

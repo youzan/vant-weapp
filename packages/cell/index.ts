@@ -33,7 +33,7 @@ VantComponent({
   computed: {
     cellClass(): string {
       const { data } = this;
-      return this.classNames('custom-class', 'van-cell', {
+      return this.classNames('van-cell', {
         'van-cell--center': data.center,
         'van-cell--required': data.required,
         'van-cell--borderless': !data.border,

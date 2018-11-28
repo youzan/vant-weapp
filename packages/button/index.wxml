@@ -1,7 +1,7 @@
 <button
   id="{{ id }}"
   lang="{{ lang }}"
-  class="{{ classes }}"
+  class="custom-class {{ classes }}"
   open-type="{{ openType }}"
   session-from="{{ sessionFrom }}"
   app-parameter="{{ appParameter }}"

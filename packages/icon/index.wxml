@@ -10,7 +10,7 @@
     {{ info }}
   </view>
   <image
-    wx-if="{{ isSrc }}"
+    wx:if="{{ isSrc }}"
     src="{{ name }}"
   />
 </view>

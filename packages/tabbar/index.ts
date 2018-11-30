@@ -27,12 +27,26 @@ VantComponent({
     zIndex: {
       type: Number,
       value: 1
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
     }
   },
 
   data: {
     items: [],
     currentActive: -1
+  },
+
+  computed: {
+    tabbarClass() {
+      const { fixed, isIPhoneX, safeAreaInsetBottom } = this.data;
+      return this.classNames('custom-class', 'van-tabbar', 'van-hairline--top-bottom', {
+        'van-tabbar--fixed': fixed,
+        'van-tabbar--safe': isIPhoneX && safeAreaInsetBottom
+      });
+    }
   },
 
   watch: {

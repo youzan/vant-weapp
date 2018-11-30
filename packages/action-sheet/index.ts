@@ -20,6 +20,10 @@ VantComponent({
     closeOnClickOverlay: {
       type: Boolean,
       value: true
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
     }
   },
 

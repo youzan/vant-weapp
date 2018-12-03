@@ -30,6 +30,10 @@ VantComponent({
     overlay: {
       type: Boolean,
       value: true
+    },
+    transition: {
+      type: String,
+      value: 'scale'
     }
   },
   data: {

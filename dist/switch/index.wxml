@@ -1,6 +1,6 @@
 <view
   style="{{ style }}"
-  class="{{ classes }}"
+  class="custom-class {{ classes }}"
   bind:tap="onClick"
 >
   <view class="van-switch__node node-class">

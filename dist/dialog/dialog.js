@@ -8,6 +8,7 @@ function getContext() {
 }
 
 var Dialog = function Dialog(options) {
+  options = _extends({}, Dialog.currentOptions, options);
   return new Promise(function (resolve, reject) {
     var context = options.context || getContext();
     var dialog = context.selectComponent(options.selector);
@@ -32,6 +33,7 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   asyncClose: false,
+  transition: 'scale',
   selector: '#van-dialog',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
@@ -40,13 +42,10 @@ Dialog.defaultOptions = {
   closeOnClickOverlay: false,
   confirmButtonOpenType: ''
 };
-
-Dialog.alert = function (options) {
-  return Dialog(_extends({}, Dialog.currentOptions, options));
-};
+Dialog.alert = Dialog;
 
 Dialog.confirm = function (options) {
-  return Dialog(_extends({}, Dialog.currentOptions, {
+  return Dialog(_extends({
     showCancelButton: true
   }, options));
 };

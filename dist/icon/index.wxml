@@ -1,7 +1,16 @@
 <view
-  class="custom-class {{ classPrefix }} {{ classPrefix }}-{{ name }}"
+  class="custom-class {{ classPrefix }} {{ isSrc ? 'van-icon--image' : classPrefix + '-' + name }}"
   style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}"
   bind:tap="onClick"
 >
-  <view wx:if="{{ info !== null }}" class="van-icon__info">{{ info }}</view>
+  <view
+    wx:if="{{ info !== null }}"
+    class="van-icon__info"
+  >
+    {{ info }}
+  </view>
+  <image
+    wx:if="{{ isSrc }}"
+    src="{{ name }}"
+  />
 </view>

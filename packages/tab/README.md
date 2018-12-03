@@ -136,7 +136,7 @@ Page({
 | duration | 动画时间 (单位秒)  | `Number` | `0.3` |
 | line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | `Number` | `4` |
-| animated | 是否使用动画切换 Tabs | `Boolean` | - |
+| animated | 是否使用动画切换 Tabs | `Boolean` | `false` |
 
 ### Tab API
 

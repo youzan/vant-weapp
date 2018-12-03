@@ -1,3 +1,5 @@
+@import '../../dist/common/index.wxss';
+
 .demo-block__title {
   margin: 0;
   font-weight: 400;

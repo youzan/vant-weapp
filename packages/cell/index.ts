@@ -33,7 +33,7 @@ VantComponent({
   computed: {
     cellClass(): string {
       const { data } = this;
-      return this.classNames('custom-class', 'van-cell', {
+      return this.classNames('van-cell', {
         'van-cell--center': data.center,
         'van-cell--required': data.required,
         'van-cell--borderless': !data.border,
@@ -45,11 +45,6 @@ VantComponent({
     titleStyle(): string {
       const { titleWidth } = this.data;
       return titleWidth ? `max-width: ${titleWidth};min-width: ${titleWidth}` : '';
-    },
-
-    iconWrapClass(): string {
-      const prefix = 'van-cell__right-icon-wrap right-icon-class';
-      return this.classNames(prefix, `${prefix}--${this.data.arrowDirection}`);
     }
   },
 

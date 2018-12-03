@@ -15,3 +15,7 @@
 .text {
   font-size: 14px;
 }
+
+.demo-tab-pane {
+  padding-top: 10px;
+}

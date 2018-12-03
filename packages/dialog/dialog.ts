@@ -16,6 +16,7 @@ type DialogOptions = {
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
+  transition?: boolean;
 }
 
 interface Dialog {
@@ -68,7 +69,8 @@ Dialog.defaultOptions = {
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
-  confirmButtonOpenType: ''
+  confirmButtonOpenType: '',
+  transition: true
 };
 
 Dialog.alert = options =>

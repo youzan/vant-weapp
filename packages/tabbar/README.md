@@ -54,13 +54,14 @@ Page({
 
 ```javascript
 Page({
-  data() {
+  data: {
     active: 0,
     icon: {
       normal: '//img.yzcdn.cn/icon-normal.png',
       active: '//img.yzcdn.cn/icon-active.png'
     }
   },
+
   onChange(event) {
     console.log(event.detail);
   }
@@ -85,7 +86,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-----------|
-| icon | 图标名称 (可选值见 Icon 组件) | `String` | - |
+| icon | 图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | dot | 是否显示小红点 | `Boolean` | - |
 | info | 图标右上角提示信息 | `String | Number` | - |
 

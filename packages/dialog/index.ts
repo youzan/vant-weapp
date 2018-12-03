@@ -32,6 +32,10 @@ VantComponent({
     overlay: {
       type: Boolean,
       value: true
+    },
+    transition: {
+      type: Boolean,
+      value: true
     }
   },
 

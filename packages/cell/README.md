@@ -128,7 +128,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | title | 左侧标题 | `String | Number` | - |
 | title-width | 标题宽度，须包含单位 | `String` | - |
 | value | 右侧内容 | `String | Number` | - |

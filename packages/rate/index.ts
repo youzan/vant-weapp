@@ -10,6 +10,14 @@ VantComponent({
       type: Number,
       value: 20
     },
+    icon: {
+      type: String,
+      value: 'star'
+    },
+    voidIcon: {
+      type: String,
+      value: 'star-o'
+    },
     color: {
       type: String,
       value: '#ffd21e'

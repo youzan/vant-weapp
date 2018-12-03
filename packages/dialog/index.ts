@@ -34,8 +34,8 @@ VantComponent({
       value: true
     },
     transition: {
-      type: Boolean,
-      value: true
+      type: String,
+      value: 'scale'
     }
   },
 

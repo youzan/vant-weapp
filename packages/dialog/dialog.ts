@@ -9,6 +9,7 @@ type DialogOptions = {
   message?: string;
   overlay?: boolean;
   selector?: string;
+  transition?: string;
   asyncClose?: boolean;
   confirmButtonText?: string;
   cancelButtonText?: string;
@@ -16,7 +17,6 @@ type DialogOptions = {
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
-  transition?: boolean;
 }
 
 interface Dialog {
@@ -68,14 +68,14 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   asyncClose: false,
+  transition: 'scale',
   selector: '#van-dialog',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
-  confirmButtonOpenType: '',
-  transition: true
+  confirmButtonOpenType: ''
 };
 
 Dialog.alert = Dialog;

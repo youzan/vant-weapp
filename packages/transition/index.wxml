@@ -1,7 +1,7 @@
 <view
   wx:if="{{ inited }}"
   class="van-transition custom-class"
-  style="animation-name: van-{{ name }}-{{ type }}; animation-duration: {{ duration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}"
+  style="-webkit-animation: van-{{ name }}-{{ type }} {{ duration }}ms both; animation: van-{{ name }}-{{ type }} {{ duration }}ms both; {{ display ? '' : 'display: none;' }} {{ customStyle }}"
   bind:animationend="onAnimationEnd"
 >
   <slot />

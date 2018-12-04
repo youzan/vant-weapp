@@ -15,4 +15,4 @@
   />
 </view>
 
-<wxs src="./index.wxs" module="utils" />
+<wxs src="../common/utils.wxs" module="utils" />

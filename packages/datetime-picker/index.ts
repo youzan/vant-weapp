@@ -247,7 +247,9 @@ VantComponent({
     onChange(event: Weapp.Event): void {
       const { data } = this;
       const pickerValue = event.detail.value;
-      const values = pickerValue.map((value, index) => data.columns[index][value]);
+      const values = pickerValue
+        .slice(0, data.columns.length)
+        .map((value, index) => data.columns[index][value]);
       let value;
 
       if (data.type === 'time') {
@@ -300,7 +302,7 @@ VantComponent({
 
     getValues() {
       const { pickerValue, columns } = this.data;
-      return pickerValue.map((value, index) => columns[index][value])
+      return pickerValue.map((value, index) => columns[index][value]);
     },
 
     setValues(values) {

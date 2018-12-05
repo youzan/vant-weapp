@@ -54,6 +54,7 @@ Page({
 | custom-style | 自定义弹出层样式 | `String` | `` |
 | overlay-style | 自定义背景蒙层样式 | `String` | `` |
 | close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
 
 ### Event
 

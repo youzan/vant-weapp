@@ -9,7 +9,6 @@
     class="{{ titleClass }}"
     right-icon-class="van-cell__right-icon"
     custom-class="van-cell"
-    arrow-direction="{{ expanded ? 'up' : 'down' }}"
     bind:click="onClick"
   >
     <slot

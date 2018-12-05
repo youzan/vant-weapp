@@ -27,7 +27,7 @@
   <view
     class="van-tabs__content"
     bind:touchstart="onTouchStart"
-    catch:touchmove="onTouchMove"
+    bind:touchmove="onTouchMove"
     bind:touchend="onTouchEnd"
     bind:touchcancel="onTouchEnd"
   >

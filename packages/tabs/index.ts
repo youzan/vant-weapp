@@ -76,7 +76,8 @@ VantComponent({
     scrollLeft: 0,
     scrollable: false,
     trackStyle: '',
-    wrapStyle: ''
+    wrapStyle: '',
+    position: ''
   },
 
   watch: {
@@ -89,7 +90,8 @@ VantComponent({
     lineWidth: 'setLine',
     active: 'setActiveTab',
     animated: 'setTrack',
-    scrollTop: 'onScroll'
+    scrollTop: 'onScroll',
+    offsetTop: 'setWrapStyle'
   },
 
   beforeCreate() {
@@ -278,8 +280,8 @@ VantComponent({
       }
     },
 
-    setWrapStyle(position) {
-      const { offsetTop } = this.data;
+    setWrapStyle() {
+      const { offsetTop, position } = this.data;
       let wrapStyle;
 
       switch (position) {
@@ -318,7 +320,7 @@ VantComponent({
 
         this.getRect('.van-tabs__wrap').then(rect => {
           const { height: wrapHeight } = rect;
-          let position;
+          let position = '';
 
           if (offsetTop > top + height - wrapHeight) {
             position = 'bottom';
@@ -330,7 +332,14 @@ VantComponent({
             scrollTop: scrollTop + offsetTop,
             isFixed: position === 'top'
           });
-          this.setWrapStyle(position);
+
+          if (position !== this.data.position) {
+            this.setData({
+              position
+            }, () => {
+              this.setWrapStyle();
+            });
+          }
         });
       });
     }

@@ -5,7 +5,7 @@ VantComponent({
     name: 'collapse-item',
     type: 'descendant',
     linked(child: Weapp.Component) {
-      this.setData({
+      this.set({
         items: [...this.data.items, child]
       }, () => {
         child.updateExpanded();

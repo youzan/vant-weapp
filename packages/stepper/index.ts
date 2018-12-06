@@ -44,14 +44,14 @@ VantComponent({
 
   watch: {
     value(value) {
-      this.setData({
+      this.set({
         value: this.range(value)
       });
     }
   },
 
   created() {
-    this.setData({
+    this.set({
       value: this.range(this.data.value)
     });
   },
@@ -94,7 +94,7 @@ VantComponent({
     },
 
     triggerInput(value) {
-      this.setData({ value });
+      this.set({ value });
       this.$emit('change', value);
     }
   }

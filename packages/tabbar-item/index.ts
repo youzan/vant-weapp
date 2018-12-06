@@ -27,7 +27,7 @@ VantComponent({
 
     setActive(active) {
       if (this.data.active !== active) {
-        this.setData({ active });
+        this.set({ active });
       }
     }
   }

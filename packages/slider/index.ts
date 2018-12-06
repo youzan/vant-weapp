@@ -73,7 +73,7 @@ VantComponent({
     updateValue(value, end) {
       value = this.format(value);
 
-      this.setData({
+      this.set({
         value,
         barStyle: `width: ${value}%; height: ${this.data.barHeight};`
       });

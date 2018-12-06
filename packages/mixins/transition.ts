@@ -30,14 +30,14 @@ export const transition = function(showDefaultValue) {
         if (value) {
           this.show();
         } else {
-          this.setData({
+          this.set({
             type: 'leave'
           });
         }
       },
 
       show() {
-        this.setData({
+        this.set({
           inited: true,
           display: true,
           type: 'enter'
@@ -46,7 +46,7 @@ export const transition = function(showDefaultValue) {
 
       onAnimationEnd() {
         if (!this.data.show) {
-          this.setData({
+          this.set({
             display: false
           });
         }

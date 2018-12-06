@@ -8,7 +8,7 @@ VantComponent({
     type: 'descendant',
     linked(target: Weapp.Component) {
       const { value, disabled } = this.data;
-      target.setData({
+      target.set({
         value: value.indexOf(target.data.name) !== -1,
         disabled: disabled || target.data.disabled
       });
@@ -25,14 +25,14 @@ VantComponent({
     value(value) {
       const children = this.getRelationNodes('../checkbox/index');
       children.forEach(child => {
-        child.setData({ value: value.indexOf(child.data.name) !== -1 });
+        child.set({ value: value.indexOf(child.data.name) !== -1 });
       });
     },
 
     disabled(disabled: boolean) {
       const children = this.getRelationNodes('../checkbox/index');
       children.forEach(child => {
-        child.setData({ disabled: disabled || child.data.disabled });
+        child.set({ disabled: disabled || child.data.disabled });
       });
     }
   }

@@ -51,13 +51,13 @@ VantComponent({
 
   watch: {
     active(active) {
-      this.setData({ currentActive: active });
+      this.set({ currentActive: active });
       this.setActiveItem();
     }
   },
 
   created() {
-    this.setData({ currentActive: this.data.active });
+    this.set({ currentActive: this.data.active });
   },
 
   methods: {
@@ -71,7 +71,7 @@ VantComponent({
       const active = this.data.items.indexOf(child);
       if (active !== this.data.currentActive && active !== -1) {
         this.$emit('change', active);
-        this.setData({ currentActive: active });
+        this.set({ currentActive: active });
         this.setActiveItem();
       }
     }

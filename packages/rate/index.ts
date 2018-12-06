@@ -47,7 +47,7 @@ VantComponent({
   watch: {
     value(value) {
       if (value !== this.data.innerValue) {
-        this.setData({ innerValue: value });
+        this.set({ innerValue: value });
       }
     }
   },
@@ -64,7 +64,7 @@ VantComponent({
       const { data } = this;
       const { index } = event.currentTarget.dataset;
       if (!data.disabled && !data.readonly) {
-        this.setData({ innerValue: index + 1 });
+        this.set({ innerValue: index + 1 });
         this.$emit('input', index + 1);
         this.$emit('change', index + 1);
       }

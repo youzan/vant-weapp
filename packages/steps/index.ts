@@ -31,7 +31,7 @@ VantComponent({
       steps.forEach((step, index) => {
         step.status = this.getStatus(index);
       });
-      this.setData({ steps });
+      this.set({ steps });
     },
 
     getStatus(index) {

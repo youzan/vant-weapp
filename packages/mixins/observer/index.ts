@@ -4,6 +4,8 @@ import { observeProps } from './props';
 export function observe(vantOptions, options) {
   const { watch, computed } = vantOptions;
 
+  options.behaviors.push(behavior);
+
   if (watch) {
     const props = options.properties || {};
     Object.keys(watch).forEach(key => {
@@ -21,7 +23,6 @@ export function observe(vantOptions, options) {
   }
 
   if (computed) {
-    options.behaviors.push(behavior);
     options.methods = options.methods || {};
     options.methods.$options = () => vantOptions;
 

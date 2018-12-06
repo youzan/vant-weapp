@@ -44,7 +44,7 @@ VantComponent({
 
   watch: {
     value(value) {
-      this.setData({
+      this.set({
         value: this.range(value)
       });
     }

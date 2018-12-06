@@ -8,7 +8,7 @@ export const basic = Behavior({
         const isIphoneNew = /iPhone11/i.test(model) && screenHeight === 812;
 
         if (isIphoneX || isIphoneNew) {
-          this.setData({
+          this.set({
             isIPhoneX: true
           });
         }

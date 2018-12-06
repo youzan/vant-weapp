@@ -3,6 +3,8 @@ import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
 
+  classes: ['icon-class'],
+
   props: {
     readonly: Boolean,
     disabled: Boolean,

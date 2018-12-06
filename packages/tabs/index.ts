@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { touch } from '../mixins/touch';
 
 type TabItemData = {
   active: boolean;
@@ -8,6 +9,8 @@ type TabItemData = {
 };
 
 VantComponent({
+  mixins: [touch],
+
   relation: {
     name: 'tab',
     type: 'descendant',
@@ -54,7 +57,17 @@ VantComponent({
       type: Number,
       value: 4
     },
-    animated: Boolean
+    animated: Boolean,
+    sticky: Boolean,
+    offsetTop: {
+      type: Number,
+      value: 0
+    },
+    swipeable: Boolean,
+    scrollTop: {
+      type: Number,
+      value: 0
+    }
   },
 
   data: {
@@ -62,7 +75,9 @@ VantComponent({
     lineStyle: '',
     scrollLeft: 0,
     scrollable: false,
-    trackStyle: ''
+    trackStyle: '',
+    wrapStyle: '',
+    position: ''
   },
 
   watch: {
@@ -74,7 +89,9 @@ VantComponent({
     color: 'setLine',
     lineWidth: 'setLine',
     active: 'setActiveTab',
-    animated: 'setTrack'
+    animated: 'setTrack',
+    scrollTop: 'onScroll',
+    offsetTop: 'setWrapStyle'
   },
 
   beforeCreate() {
@@ -229,6 +246,100 @@ VantComponent({
           this.setData({
             scrollLeft: offsetLeft - (navWidth - tabWidth) / 2
           });
+        });
+      });
+    },
+
+    onTouchStart(event: Weapp.TouchEvent) {
+      if (!this.data.swipeable) return;
+
+      this.touchStart(event);
+    },
+
+    onTouchMove(event: Weapp.TouchEvent) {
+      if (!this.data.swipeable) return;
+
+      this.touchMove(event);
+    },
+
+    // watch swipe touch end
+    onTouchEnd() {
+      if (!this.data.swipeable) return;
+
+      const { active, tabs } = this.data;
+
+      const { direction, deltaX, offsetX } = this;
+      const minSwipeDistance = 50;
+
+      if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
+        if (deltaX > 0 && active !== 0) {
+          this.setActive(active - 1);
+        } else if (deltaX < 0 && active !== tabs.length - 1) {
+          this.setActive(active + 1);
+        }
+      }
+    },
+
+    setWrapStyle() {
+      const { offsetTop, position } = this.data;
+      let wrapStyle;
+
+      switch (position) {
+        case 'top':
+          wrapStyle = `
+            top: ${offsetTop}px;
+            position: fixed;
+          `;
+          break;
+        case 'bottom':
+          wrapStyle = `
+            top: auto;
+            bottom: 0;
+          `;
+          break;
+        default:
+          wrapStyle = '';
+      }
+
+      // cut down `setData`
+      if (wrapStyle === this.data.wrapStyle) return;
+
+      this.setData({
+        wrapStyle
+      });
+    },
+
+    // adjust tab position
+    onScroll(scrollTop) {
+      if (!this.data.sticky) return;
+
+      const { offsetTop } = this.data;
+
+      this.getRect('.van-tabs').then(rect => {
+        const { top, height } = rect;
+
+        this.getRect('.van-tabs__wrap').then(rect => {
+          const { height: wrapHeight } = rect;
+          let position = '';
+
+          if (offsetTop > top + height - wrapHeight) {
+            position = 'bottom';
+          } else if (offsetTop > top) {
+            position = 'top';
+          }
+
+          this.$emit('scroll', {
+            scrollTop: scrollTop + offsetTop,
+            isFixed: position === 'top'
+          });
+
+          if (position !== this.data.position) {
+            this.setData({
+              position
+            }, () => {
+              this.setWrapStyle();
+            });
+          }
         });
       });
     }

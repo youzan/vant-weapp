@@ -111,12 +111,38 @@ Page({
 });
 ```
 
+#### 粘性布局
+
+通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
+
+```html
+<van-tabs sticky>
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>
+```
+
 #### 切换动画
 
 可以通过`animated`来设置是否启用切换tab时的动画。
 
 ```html
 <van-tabs animated>
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>
+```
+
+#### 滑动切换
+
+通过`swipeable`属性可以开启滑动切换标签页
+
+```html
+<van-tabs swipeable>
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2">内容 2</van-tab>
   <van-tab title="标签 3">内容 3</van-tab>
@@ -137,6 +163,10 @@ Page({
 | line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | `Number` | `4` |
 | animated | 是否使用动画切换 Tabs | `Boolean` | `false` |
+| swipeable | 是否开启手势滑动切换 | `Boolean` | `false` |
+| sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` |
+| scroll-top | 页面的`scrollTop`，粘性布局下必须要传入，单位 px | `Number` | `0` |
 
 ### Tab API
 
@@ -158,6 +188,7 @@ Page({
 | bind:click | 点击标签时触发 | index：标签索引，title：标题 |
 | bind:change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |
 | bind:disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
+| bind:scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### 外部样式类
 

@@ -301,10 +301,10 @@ VantComponent({
           wrapStyle = '';
       }
 
-      // cut down `setData`
+      // cut down `set`
       if (wrapStyle === this.data.wrapStyle) return;
 
-      this.setData({
+      this.set({
         wrapStyle
       });
     },
@@ -334,7 +334,7 @@ VantComponent({
           });
 
           if (position !== this.data.position) {
-            this.setData({
+            this.set({
               position
             }, () => {
               this.setWrapStyle();

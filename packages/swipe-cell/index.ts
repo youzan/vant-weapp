@@ -51,7 +51,7 @@ VantComponent({
     },
 
     close() {
-      this.setData({ offset: 0 });
+      this.set({ offset: 0 });
     },
 
     resetSwipeStatus() {
@@ -60,7 +60,7 @@ VantComponent({
     },
 
     swipeMove(offset = 0) {
-      this.setData({ offset });
+      this.set({ offset });
       offset && (this.swiping = true);
       !offset && (this.opened = false);
     },
@@ -85,7 +85,7 @@ VantComponent({
         return;
       }
 
-      this.setData({ draging: true });
+      this.set({ draging: true });
       this.touchStart(event);
 
       if (this.opened) {
@@ -119,7 +119,7 @@ VantComponent({
         return;
       }
 
-      this.setData({ draging: false });
+      this.set({ draging: false });
       if (this.swiping) {
         this.swipeLeaveTransition(this.data.offset > 0 ? -1 : 1);
       }

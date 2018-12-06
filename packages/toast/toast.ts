@@ -69,7 +69,7 @@ const Toast: Toast = (options = {}) => {
   delete options.selector;
 
   queue.push(toast);
-  toast.setData(options);
+  toast.set(options);
   clearTimeout(toast.timer);
 
   if (options.duration > 0) {

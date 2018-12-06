@@ -5,11 +5,10 @@ export const behavior = Behavior({
     }
 
     const cache = {};
-    const { setData } = this;
     const { computed } = this.$options();
     const keys = Object.keys(computed);
 
-    const calcComputed = () => {
+    this.calcComputed = () => {
       const needUpdate = {};
       keys.forEach(key => {
         const value = computed[key].call(this);
@@ -21,16 +20,22 @@ export const behavior = Behavior({
 
       return needUpdate;
     };
-
-    Object.defineProperty(this, 'setData', { writable: true });
-
-    this.setData = (data, callback) => {
-      data && setData.call(this, data, callback);
-      setData.call(this, calcComputed());
-    };
   },
 
   attached() {
-    this.setData();
+    this.set();
+  },
+
+  methods: {
+    // set data and set computed data
+    set(data, callback) {
+      if (data) {
+        this.setData(data, callback);
+      }
+
+      if (this.calcComputed) {
+        this.setData(this.calcComputed());
+      }
+    }
   }
 });

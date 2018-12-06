@@ -139,7 +139,7 @@ VantComponent({
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
 
-      this.setData({
+      this.set({
         'columns[0]': province,
         'columns[1]': city
       });
@@ -148,7 +148,7 @@ VantComponent({
         code = city[0].code;
       }
 
-      this.setData({
+      this.set({
         'columns[2]': this.getList('county', code.slice(0, 4)),
         pickerValue: [
           this.getIndex('province', code),

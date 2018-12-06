@@ -90,7 +90,7 @@ VantComponent({
       val = this.correctValue(val);
       const isEqual = val === data.innerValue;
       if (!isEqual) {
-        this.setData({ innerValue: val }, () => {
+        this.set({ innerValue: val }, () => {
           this.updateColumnValue(val);
           this.$emit('input', val);
         });
@@ -273,7 +273,7 @@ VantComponent({
       }
       value = this.correctValue(value);
 
-      this.setData({ innerValue: value }, () => {
+      this.set({ innerValue: value }, () => {
         this.updateColumnValue(value);
         this.$emit('input', value);
         this.$emit('change', this);
@@ -287,7 +287,7 @@ VantComponent({
     setColumnValue(index, value) {
       const { pickerValue, columns } = this.data;
       pickerValue[index] = columns[index].indexOf(value);
-      this.setData({ pickerValue });
+      this.set({ pickerValue });
     },
 
     getColumnValues(index) {
@@ -297,7 +297,7 @@ VantComponent({
     setColumnValues(index, values) {
       const { columns } = this.data;
       columns[index] = values;
-      this.setData({ columns });
+      this.set({ columns });
     },
 
     getValues() {
@@ -307,7 +307,7 @@ VantComponent({
 
     setValues(values) {
       const { columns } = this.data;
-      this.setData({
+      this.set({
         pickerValue: values.map((value, index) => columns[index].indexOf(value))
       });
     },
@@ -341,13 +341,13 @@ VantComponent({
         }
       }
 
-      this.setData({ pickerValue: values });
+      this.set({ pickerValue: values });
     }
   },
 
   created() {
     const innerValue = this.correctValue(this.data.value);
-    this.setData({ innerValue }, () => {
+    this.set({ innerValue }, () => {
       this.updateColumnValue(innerValue);
       this.$emit('input', innerValue);
     });

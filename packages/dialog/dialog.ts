@@ -49,7 +49,7 @@ const Dialog: Dialog = options => {
     delete options.selector;
 
     if (dialog) {
-      dialog.setData({
+      dialog.set({
         onCancel: reject,
         onConfirm: resolve,
         ...options

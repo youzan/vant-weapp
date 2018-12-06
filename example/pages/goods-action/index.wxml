@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <van-goods-action custom-class="goods-action">
+  <van-goods-action custom-class="goods-action" safe-area-inset-bottom="{{ false }}">
     <van-goods-action-icon
       icon="chat"
       text="客服"
@@ -23,7 +23,7 @@
 </demo-block>
 
 <demo-block title="图标提示">
-  <van-goods-action custom-class="goods-action">
+  <van-goods-action custom-class="goods-action" safe-area-inset-bottom="{{ false }}">
     <van-goods-action-icon icon="chat" text="客服" />
     <van-goods-action-icon icon="cart" text="购物车" info="5" />
     <van-goods-action-icon icon="shop" text="店铺" />

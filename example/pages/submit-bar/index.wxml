@@ -4,6 +4,7 @@
     button-text="提交订单"
     bind:submit="onClickButton"
     custom-class="van-submit-bar"
+    safe-area-inset-bottom="{{ false }}"
   />
 </demo-block>
 
@@ -15,6 +16,7 @@
     tip="您的收货地址不支持同城送, 我们已为您推荐快递"
     bind:submit="onClickButton"
     custom-class="van-submit-bar"
+    safe-area-inset-bottom="{{ false }}"
   />
 </demo-block>
 
@@ -25,6 +27,7 @@
     button-text="提交订单"
     bind:submit="onClickButton"
     custom-class="van-submit-bar"
+    safe-area-inset-bottom="{{ false }}"
   />
 </demo-block>
 
@@ -35,6 +38,7 @@
     bind:submit="onClickButton"
     custom-class="van-submit-bar"
     tip="{{ true }}"
+    safe-area-inset-bottom="{{ false }}"
   >
     <van-tag type="primary" custom-class="van-tag">标签</van-tag>
     <view slot="tip">

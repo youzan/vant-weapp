@@ -75,6 +75,7 @@ Page({
 | active | 当前选中标签的索引 | `Number` | - |
 | fixed | 是否固定在底部 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
+| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
 
 ### Tabbar Event
 

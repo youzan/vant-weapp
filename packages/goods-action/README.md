@@ -64,6 +64,12 @@ Page({
 </van-goods-action>
 ```
 
+### GoodsAction API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
+
 ### GoodsActionIcon API
 
 | 参数 | 说明 | 类型 | 默认值 |

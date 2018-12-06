@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <van-tabbar active="{{ active }}" custom-class="tabbar" bind:change="onChange">
+  <van-tabbar active="{{ active }}" custom-class="tabbar" bind:change="onChange" safe-area-inset-bottom="{{ false }}">
     <van-tabbar-item icon="shop">标签</van-tabbar-item>
     <van-tabbar-item icon="chat" dot>标签</van-tabbar-item>
     <van-tabbar-item icon="records" info="5">标签</van-tabbar-item>
@@ -8,7 +8,7 @@
 </demo-block>
 
 <demo-block title="自定义图标">
-  <van-tabbar active="{{ active2 }}" custom-class="tabbar" bind:change="onChange">
+  <van-tabbar active="{{ active2 }}" custom-class="tabbar" bind:change="onChange" safe-area-inset-bottom="{{ false }}">
     <van-tabbar-item>
       <span>自定义</span>
       <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />

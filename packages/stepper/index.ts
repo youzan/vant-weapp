@@ -14,6 +14,7 @@ VantComponent({
   ],
 
   props: {
+    value: Number,
     integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
@@ -38,6 +39,14 @@ VantComponent({
 
     plusDisabled() {
       return this.data.disabled || this.data.value >= this.data.max;
+    }
+  },
+
+  watch: {
+    value(value) {
+      this.setData({
+        value: this.range(value)
+      });
     }
   },
 

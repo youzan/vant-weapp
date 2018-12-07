@@ -1,5 +1,5 @@
 <view
-  class="custom-class van-tabbar van-hairline--top-bottom {{ fixed ? 'van-tabbar--fixed' : '' }}"
+  class="{{ tabbarClass }}"
   style="{{ zIndex ? 'z-index: ' + zIndex : '' }}"
 >
   <slot />

@@ -4,7 +4,7 @@ VantComponent({
     name: 'collapse-item',
     type: 'descendant',
     linked: function linked(child) {
-      this.setData({
+      this.set({
         items: this.data.items.concat([child])
       }, function () {
         child.updateExpanded();

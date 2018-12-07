@@ -96,7 +96,7 @@ VantComponent({
       var isEqual = val === data.innerValue;
 
       if (!isEqual) {
-        this.setData({
+        this.set({
           innerValue: val
         }, function () {
           _this2.updateColumnValue(val);
@@ -259,7 +259,7 @@ VantComponent({
 
       var data = this.data;
       var pickerValue = event.detail.value;
-      var values = pickerValue.map(function (value, index) {
+      var values = pickerValue.slice(0, data.columns.length).map(function (value, index) {
         return data.columns[index][value];
       });
       var value;
@@ -289,7 +289,7 @@ VantComponent({
       }
 
       value = this.correctValue(value);
-      this.setData({
+      this.set({
         innerValue: value
       }, function () {
         _this3.updateColumnValue(value);
@@ -307,7 +307,7 @@ VantComponent({
           pickerValue = _this$data.pickerValue,
           columns = _this$data.columns;
       pickerValue[index] = columns[index].indexOf(value);
-      this.setData({
+      this.set({
         pickerValue: pickerValue
       });
     },
@@ -317,7 +317,7 @@ VantComponent({
     setColumnValues: function setColumnValues(index, values) {
       var columns = this.data.columns;
       columns[index] = values;
-      this.setData({
+      this.set({
         columns: columns
       });
     },
@@ -331,7 +331,7 @@ VantComponent({
     },
     setValues: function setValues(values) {
       var columns = this.data.columns;
-      this.setData({
+      this.set({
         pickerValue: values.map(function (value, index) {
           return columns[index].indexOf(value);
         })
@@ -359,7 +359,7 @@ VantComponent({
         }
       }
 
-      this.setData({
+      this.set({
         pickerValue: values
       });
     }
@@ -368,7 +368,7 @@ VantComponent({
     var _this4 = this;
 
     var innerValue = this.correctValue(this.data.value);
-    this.setData({
+    this.set({
       innerValue: innerValue
     }, function () {
       _this4.updateColumnValue(innerValue);

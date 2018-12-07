@@ -1,5 +1,5 @@
 <view class="custom-class van-tabs van-tabs--{{ type }}">
-  <view style="z-index: {{ zIndex }}" class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+  <view style="z-index: {{ zIndex }}; {{ wrapStyle }}" class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
     <scroll-view
       scroll-x="{{ scrollable }}"
       scroll-with-animation
@@ -17,12 +17,20 @@
           style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
           bind:tap="onTap"
         >
-          {{ item.title }}
+          <view class="van-ellipsis van-tab__title">
+            {{ item.title }}
+          </view>
         </view>
       </view>
     </scroll-view>
   </view>
-  <view class="van-tabs__content">
+  <view
+    class="van-tabs__content"
+    bind:touchstart="onTouchStart"
+    bind:touchmove="onTouchMove"
+    bind:touchend="onTouchEnd"
+    bind:touchcancel="onTouchEnd"
+  >
     <view class="van-tabs__track" style="{{ trackStyle }}">
       <slot />
     </view>

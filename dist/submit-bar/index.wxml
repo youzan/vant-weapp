@@ -5,7 +5,7 @@
     {{ tipStr }}<slot name="tip" />
   </view>
 
-  <view class="van-submit-bar__bar bar-class">
+  <view class="{{ barClass }}">
     <slot />
     <view class="van-submit-bar__text">
       <block wx:if="{{ hasPrice }}">

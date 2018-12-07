@@ -15,25 +15,47 @@ export var transition = function transition(showDefaultValue) {
     data: {
       type: '',
       inited: false,
-      display: false
+      display: false,
+      supportAnimation: true
     },
     attached: function attached() {
       if (this.data.show) {
         this.show();
       }
+
+      this.detectSupport();
     },
     methods: {
+      detectSupport: function detectSupport() {
+        var _this = this;
+
+        wx.getSystemInfo({
+          success: function success(info) {
+            if (info && info.system && info.system.indexOf('iOS 8') === 0) {
+              _this.set({
+                supportAnimation: false
+              });
+            }
+          }
+        });
+      },
       observeShow: function observeShow(value) {
         if (value) {
           this.show();
         } else {
-          this.setData({
-            type: 'leave'
-          });
+          if (this.data.supportAnimation) {
+            this.set({
+              type: 'leave'
+            });
+          } else {
+            this.set({
+              display: false
+            });
+          }
         }
       },
       show: function show() {
-        this.setData({
+        this.set({
           inited: true,
           display: true,
           type: 'enter'
@@ -41,7 +63,7 @@ export var transition = function transition(showDefaultValue) {
       },
       onAnimationEnd: function onAnimationEnd() {
         if (!this.data.show) {
-          this.setData({
+          this.set({
             display: false
           });
         }

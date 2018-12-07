@@ -23,13 +23,13 @@ VantComponent({
   },
   methods: {
     onChange: function onChange(event) {
-      this.setData({
+      this.set({
         value: event.detail
       });
       this.$emit('change', event.detail);
     },
     onCancel: function onCancel() {
-      this.setData({
+      this.set({
         value: ''
       });
       this.$emit('cancel');

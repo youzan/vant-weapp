@@ -3,6 +3,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
+  classes: ['icon-class'],
   props: {
     readonly: Boolean,
     disabled: Boolean,
@@ -45,7 +46,7 @@ VantComponent({
   watch: {
     value: function value(_value) {
       if (_value !== this.data.innerValue) {
-        this.setData({
+        this.set({
           innerValue: _value
         });
       }
@@ -69,7 +70,7 @@ VantComponent({
       var index = event.currentTarget.dataset.index;
 
       if (!data.disabled && !data.readonly) {
-        this.setData({
+        this.set({
           innerValue: index + 1
         });
         this.$emit('input', index + 1);

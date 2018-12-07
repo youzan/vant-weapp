@@ -8,7 +8,7 @@ VantComponent({
       var _this$data = this.data,
           value = _this$data.value,
           disabled = _this$data.disabled;
-      target.setData({
+      target.set({
         value: value,
         disabled: disabled || target.data.disabled
       });
@@ -22,7 +22,7 @@ VantComponent({
     value: function value(_value) {
       var children = this.getRelationNodes('../radio/index');
       children.forEach(function (child) {
-        child.setData({
+        child.set({
           value: _value
         });
       });
@@ -30,7 +30,7 @@ VantComponent({
     disabled: function disabled(_disabled) {
       var children = this.getRelationNodes('../radio/index');
       children.forEach(function (child) {
-        child.setData({
+        child.set({
           disabled: _disabled || child.data.disabled
         });
       });

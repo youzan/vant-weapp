@@ -128,7 +128,7 @@ VantComponent({
       var code = this.code || this.data.areaList && Object.keys(this.data.areaList.county_list || {})[0] || '';
       var province = this.getList('province');
       var city = this.getList('city', code.slice(0, 2));
-      this.setData({
+      this.set({
         'columns[0]': province,
         'columns[1]': city
       });
@@ -137,7 +137,7 @@ VantComponent({
         code = city[0].code;
       }
 
-      this.setData({
+      this.set({
         'columns[2]': this.getList('county', code.slice(0, 4)),
         pickerValue: [this.getIndex('province', code), this.getIndex('city', code), this.getIndex('county', code)]
       });

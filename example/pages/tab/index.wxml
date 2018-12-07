@@ -104,7 +104,7 @@
       wx:key="index"
       title="{{ '标签' + item }}"
     >
-      <view class="content" style="height: 1000px;">
+      <view class="content">
         {{ '内容' + item }}
       </view>
     </van-tab>

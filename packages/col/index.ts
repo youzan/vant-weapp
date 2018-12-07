@@ -30,7 +30,7 @@ VantComponent({
       const padding = `${gutter / 2}px`;
       const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
       if (style !== this.data.style) {
-        this.setData({ style });
+        this.set({ style });
       }
     }
   }

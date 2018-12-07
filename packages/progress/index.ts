@@ -60,13 +60,13 @@ VantComponent({
 
     getWidth() {
       this.getRect('.van-progress').then(rect => {
-        this.setData({
+        this.set({
           progressWidth: rect.width
         });
       });
 
       this.getRect('.van-progress__pivot').then(rect => {
-        this.setData({
+        this.set({
           pivotWidth: rect.width || 0
         });
       });

@@ -1,5 +1,5 @@
 <view
-  class="{{ cellClass }}"
+  class="custom-class {{ cellClass }}"
   style="{{ customStyle }}"
   bind:tap="onClick"
 >
@@ -29,8 +29,8 @@
 
   <van-icon
     wx:if="{{ isLink }}"
-    name="arrow"
-    class="{{ iconWrapClass }}"
+    name="{{ arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow' }}"
+    class="van-cell__right-icon-wrap right-icon-class"
     custom-class="van-cell__right-icon"
   />
   <slot wx:else name="right-icon" />

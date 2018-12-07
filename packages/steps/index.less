@@ -113,8 +113,12 @@
     line-height: 18px;
     padding: 10px 10px 10px 0;
 
-    &:not(:last-child)::after {
+    &::after {
       border-bottom-width: 1px;
+    }
+
+    &:last-child::after {
+      border-bottom-width: none;
     }
 
     &:first-child {

@@ -82,7 +82,7 @@ VantComponent({
 
   watch: {
     swipeThreshold() {
-      this.setData({
+      this.set({
         scrollable: this.child.length > this.data.swipeThreshold
       });
     },
@@ -107,7 +107,7 @@ VantComponent({
   methods: {
     updateTabs(tabs) {
       tabs = tabs || this.data.tabs;
-      this.setData({
+      this.set({
         tabs,
         scrollable: tabs.length > this.data.swipeThreshold
       });
@@ -134,7 +134,7 @@ VantComponent({
     setActive(active: number) {
       if (active !== this.data.active) {
         this.trigger('change', active);
-        this.setData({ active });
+        this.set({ active });
         this.setActiveTab();
       }
     },
@@ -161,7 +161,7 @@ VantComponent({
 
         left += (rect.width - width) / 2;
 
-        this.setData({
+        this.set({
           lineStyle: `
             width: ${width}px;
             background-color: ${color};
@@ -186,7 +186,7 @@ VantComponent({
       this.getRect('.van-tabs__content').then(rect => {
         const { width } = rect;
 
-        this.setData({
+        this.set({
           trackStyle: `
             width: ${width * this.child.length}px;
             transform: translateX(${-1 * active * width}px);
@@ -202,7 +202,7 @@ VantComponent({
 
     setTabsProps(props) {
       this.child.forEach(item => {
-        item.setData(props);
+        item.set(props);
       });
     },
 
@@ -217,11 +217,11 @@ VantComponent({
         }
 
         if (data.active !== item.data.active) {
-          item.setData(data);
+          item.set(data);
         }
       });
 
-      this.setData({}, () => {
+      this.set({}, () => {
         this.setLine();
         this.setTrack();
         this.scrollIntoView();
@@ -243,7 +243,7 @@ VantComponent({
 
         this.getRect('.van-tabs__nav').then(navRect => {
           const navWidth = navRect.width;
-          this.setData({
+          this.set({
             scrollLeft: offsetLeft - (navWidth - tabWidth) / 2
           });
         });
@@ -301,10 +301,10 @@ VantComponent({
           wrapStyle = '';
       }
 
-      // cut down `setData`
+      // cut down `set`
       if (wrapStyle === this.data.wrapStyle) return;
 
-      this.setData({
+      this.set({
         wrapStyle
       });
     },
@@ -334,7 +334,7 @@ VantComponent({
           });
 
           if (position !== this.data.position) {
-            this.setData({
+            this.set({
               position
             }, () => {
               this.setWrapStyle();

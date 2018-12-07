@@ -19,7 +19,7 @@ VantComponent({
 
   watch: {
     checked(value) {
-      this.setData({ value });
+      this.set({ value });
     }
   },
 
@@ -38,7 +38,7 @@ VantComponent({
   },
 
   created() {
-    this.setData({ value: this.data.checked });
+    this.set({ value: this.data.checked });
   },
 
   methods: {

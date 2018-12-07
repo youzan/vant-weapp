@@ -1,3 +1,4 @@
+import { isSrc as _isSrc } from '../common/utils';
 import { VantComponent } from '../common/component';
 VantComponent({
   props: {
@@ -9,6 +10,11 @@ VantComponent({
     classPrefix: {
       type: String,
       value: 'van-icon'
+    }
+  },
+  computed: {
+    isSrc: function isSrc() {
+      return _isSrc(this.data.name);
     }
   },
   methods: {

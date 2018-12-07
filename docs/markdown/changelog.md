@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v0.4.8](https://github.com/youzan/vant-weapp/tree/v0.4.8)
+`2018-12-03`
+
+**Improvements**
+
+- Icon: 增加更多基础图标 [\#980](https://github.com/youzan/vant-weapp/pull/980)
+- Icon: 支持传入图片链接作为图标展示 [\#973](https://github.com/youzan/vant-weapp/pull/973)
+- Tab: 新增 animated 属性 [\#957](https://github.com/youzan/vant-weapp/pull/957)
+- Field: 新增 left-icon 插槽 [\#962](https://github.com/youzan/vant-weapp/pull/962)
+- Field: 新增 focus、blur 事件回调参数 [\#956](https://github.com/youzan/vant-weapp/pull/956)
+- Field: 新增 adjust-position、confirm-hold 属性 [\#955](https://github.com/youzan/vant-weapp/pull/955)
+- NavBar: 新增 border 属性 [\#960](https://github.com/youzan/vant-weapp/pull/960)
+- Dialog: 新增 transition 属性 [\#990](https://github.com/youzan/vant-weapp/pull/990)
+- Rate: 新增 icon、void-icon 属性 [\#961](https://github.com/youzan/vant-weapp/pull/961)
+- 文档：支持在线预览组件效果 [\#967](https://github.com/youzan/vant-weapp/pull/967)
+
+**Bug Fixes**
+
+- 修复 Dialog 直接函数调用时报错的问题 [\#999](https://github.com/youzan/vant-weapp/pull/999)
+- 修复 Field 事件触发顺序 [\#970](https://github.com/youzan/vant-weapp/pull/970)
+- 修复 Icon 模板中 wx:if 拼写错误的问题 [\#985](https://github.com/youzan/vant-weapp/pull/985)
+- 修复 Tabbar 图标未垂直居中的问题 [\#1002](https://github.com/youzan/vant-weapp/pull/1002)
+- 修复 Toast 在 iOS 设备上文字错误换行的问题 [\#959](https://github.com/youzan/vant-weapp/pull/959)
+
+
 ## [v0.4.7](https://github.com/youzan/vant-weapp/tree/v0.4.7)
 `2018-11-26`
 
@@ -30,9 +55,6 @@
 - 修复 Tab 在 iOS8 下的样式兼容性问题 [\#943](https://github.com/youzan/vant-weapp/pull/943)
 - 修复 SwipeCell 在 iOS8 下的样式兼容性问题 [\#944](https://github.com/youzan/vant-weapp/pull/944)
 - 修复 DatetimePicker 设置了 minDate 时初始 value 错误的问题 [\#942](https://github.com/youzan/vant-weapp/pull/942)
-
-
-
 
 
 ## [v0.4.6](https://github.com/youzan/vant-weapp/tree/v0.4.6)

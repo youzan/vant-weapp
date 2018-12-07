@@ -3,7 +3,12 @@
   bind:tap="onClick"
 >
   <view class="van-tabbar-item__icon {{ dot ? 'van-tabbar-item__icon--dot' : '' }}">
-    <van-icon wx:if="{{ icon }}" name="{{ icon }}" info="{{ info }}" />
+    <van-icon
+      wx:if="{{ icon }}"
+      name="{{ icon }}"
+      info="{{ info }}"
+      customStyle="display: block"
+    />
     <block wx:else>
       <slot wx:if="{{ active }}" name="icon-active" />
       <slot wx:else name="icon" />

@@ -22,7 +22,7 @@ VantComponent({
   },
   computed: {
     classes: function classes() {
-      return this.classNames('custom-class', 'van-switch', {
+      return this.classNames('van-switch', {
         'van-switch--on': this.data.checked,
         'van-switch--disabled': this.data.disabled
       });

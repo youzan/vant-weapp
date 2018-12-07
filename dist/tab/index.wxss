@@ -1,0 +1,1 @@
+@import '../common/index.wxss';.van-tab__pane{box-sizing:border-box}.van-tab__pane--float{float:left}

@@ -88,6 +88,7 @@ Page({
 | cancel-text | 取消按钮文字 | `String` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
+| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
 
 ### Event
 

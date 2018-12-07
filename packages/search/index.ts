@@ -27,12 +27,12 @@ VantComponent({
 
   methods: {
     onChange(event: Weapp.Event) {
-      this.setData({ value: event.detail });
+      this.set({ value: event.detail });
       this.$emit('change', event.detail);
     },
 
     onCancel() {
-      this.setData({ value: '' });
+      this.set({ value: '' });
       this.$emit('cancel');
       this.$emit('change', '');
     },

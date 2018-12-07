@@ -9,6 +9,7 @@
   title-width="{{ titleWidth }}"
   custom-class="van-field"
 >
+  <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
   <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
     <textarea
@@ -24,6 +25,7 @@
       placeholder-style="{{ placeholderStyle }}"
       placeholder-class="{{ error ? 'van-field--error' : '' }}"
       cursor-spacing="{{ cursorSpacing }}"
+      adjust-position="{{ adjustPosition }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"
@@ -41,7 +43,9 @@
       placeholder-style="{{ placeholderStyle }}"
       placeholder-class="{{ error ? 'van-field--error' : '' }}"
       confirm-type="{{ confirmType }}"
+      confirm-hold="{{ confirmHold }}"
       cursor-spacing="{{ cursorSpacing }}"
+      adjust-position="{{ adjustPosition }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"

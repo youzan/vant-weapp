@@ -35,7 +35,7 @@ VantComponent({
     },
     duration: {
       type: Number,
-      value: 0.2
+      value: 0.3
     },
     zIndex: {
       type: Number,
@@ -44,13 +44,15 @@ VantComponent({
     swipeThreshold: {
       type: Number,
       value: 4
-    }
+    },
+    animated: Boolean
   },
   data: {
     tabs: [],
     lineStyle: '',
     scrollLeft: 0,
-    scrollable: false
+    scrollable: false,
+    trackStyle: ''
   },
   watch: {
     swipeThreshold: function swipeThreshold() {
@@ -60,13 +62,15 @@ VantComponent({
     },
     color: 'setLine',
     lineWidth: 'setLine',
-    active: 'setActiveTab'
+    active: 'setActiveTab',
+    animated: 'setTrack'
   },
   beforeCreate: function beforeCreate() {
     this.child = [];
   },
   mounted: function mounted() {
     this.setLine();
+    this.setTrack();
     this.scrollIntoView();
   },
   methods: {
@@ -128,12 +132,38 @@ VantComponent({
         });
       });
     },
-    setActiveTab: function setActiveTab() {
+    setTrack: function setTrack() {
       var _this2 = this;
+
+      var _this$data2 = this.data,
+          animated = _this$data2.animated,
+          active = _this$data2.active,
+          duration = _this$data2.duration;
+      if (!animated) return '';
+      this.getRect('.van-tabs__content').then(function (rect) {
+        var width = rect.width;
+
+        _this2.setData({
+          trackStyle: "\n            width: " + width * _this2.child.length + "px;\n            transform: translateX(" + -1 * active * width + "px);\n            transition-duration: " + duration + "s;\n          "
+        });
+
+        _this2.setTabsProps({
+          width: width,
+          animated: animated
+        });
+      });
+    },
+    setTabsProps: function setTabsProps(props) {
+      this.child.forEach(function (item) {
+        item.setData(props);
+      });
+    },
+    setActiveTab: function setActiveTab() {
+      var _this3 = this;
 
       this.child.forEach(function (item, index) {
         var data = {
-          active: index === _this2.data.active
+          active: index === _this3.data.active
         };
 
         if (data.active) {
@@ -145,30 +175,32 @@ VantComponent({
         }
       });
       this.setData({}, function () {
-        _this2.setLine();
+        _this3.setLine();
 
-        _this2.scrollIntoView();
+        _this3.setTrack();
+
+        _this3.scrollIntoView();
       });
     },
     // scroll active tab into view
     scrollIntoView: function scrollIntoView() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (!this.data.scrollable) {
         return;
       }
 
       this.getRect('.van-tab', true).then(function (tabRects) {
-        var tabRect = tabRects[_this3.data.active];
-        var offsetLeft = tabRects.slice(0, _this3.data.active).reduce(function (prev, curr) {
+        var tabRect = tabRects[_this4.data.active];
+        var offsetLeft = tabRects.slice(0, _this4.data.active).reduce(function (prev, curr) {
           return prev + curr.width;
         }, 0);
         var tabWidth = tabRect.width;
 
-        _this3.getRect('.van-tabs__nav').then(function (navRect) {
+        _this4.getRect('.van-tabs__nav').then(function (navRect) {
           var navWidth = navRect.width;
 
-          _this3.setData({
+          _this4.setData({
             scrollLeft: offsetLeft - (navWidth - tabWidth) / 2
           });
         });

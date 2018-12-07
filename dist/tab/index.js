@@ -10,7 +10,9 @@ VantComponent({
   },
   data: {
     inited: false,
-    active: false
+    active: false,
+    animated: false,
+    width: null
   },
   watch: {
     title: 'update',

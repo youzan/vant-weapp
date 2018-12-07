@@ -9,6 +9,7 @@ type DialogOptions = {
   message?: string;
   overlay?: boolean;
   selector?: string;
+  transition?: string;
   asyncClose?: boolean;
   confirmButtonText?: string;
   cancelButtonText?: string;
@@ -16,7 +17,6 @@ type DialogOptions = {
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
-  transition?: boolean;
 }
 
 interface Dialog {
@@ -38,13 +38,18 @@ function getContext() {
 }
 
 const Dialog: Dialog = options => {
+  options = {
+    ...Dialog.currentOptions,
+    ...options
+  };
+
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();
     const dialog = context.selectComponent(options.selector);
     delete options.selector;
 
     if (dialog) {
-      dialog.setData({
+      dialog.set({
         onCancel: reject,
         onConfirm: resolve,
         ...options
@@ -63,25 +68,20 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   asyncClose: false,
+  transition: 'scale',
   selector: '#van-dialog',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
-  confirmButtonOpenType: '',
-  transition: true
+  confirmButtonOpenType: ''
 };
 
-Dialog.alert = options =>
-  Dialog({
-    ...Dialog.currentOptions,
-    ...options
-  });
+Dialog.alert = Dialog;
 
 Dialog.confirm = options =>
   Dialog({
-    ...Dialog.currentOptions,
     showCancelButton: true,
     ...options
   });

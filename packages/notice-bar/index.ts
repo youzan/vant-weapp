@@ -60,13 +60,13 @@ VantComponent({
 
   watch: {
     text() {
-      this.setData({}, this.init);
+      this.set({}, this.init);
     }
   },
 
   created() {
     if (this.data.mode) {
-      this.setData({
+      this.set({
         hasRightIcon: true
       });
     }
@@ -83,7 +83,7 @@ VantComponent({
         if (!rect || !rect.width) {
           return;
         }
-        this.setData({
+        this.set({
           width: rect.width
         });
 
@@ -109,7 +109,7 @@ VantComponent({
               timeingFunction: 'linear'
             });
 
-            this.setData({
+            this.set({
               elapse,
               wrapWidth,
               animation,
@@ -128,11 +128,11 @@ VantComponent({
       } = this.data;
       resetAnimation.translateX(wrapWidth).step();
       const animationData = animation.translateX(-(elapse * speed) / 1000).step();
-      this.setData({
+      this.set({
         animationData: resetAnimation.export()
       });
       setTimeout(() => {
-        this.setData({
+        this.set({
           animationData: animationData.export()
         });
       }, 100);
@@ -141,7 +141,7 @@ VantComponent({
         this.scroll();
       }, elapse);
 
-      this.setData({
+      this.set({
         timer
       });
     },
@@ -149,7 +149,7 @@ VantComponent({
     onClickIcon() {
       const { timer } = this.data;
       timer && clearTimeout(timer);
-      this.setData({
+      this.set({
         show: false,
         timer: null
       });

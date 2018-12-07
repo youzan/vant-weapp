@@ -24,7 +24,7 @@ VantComponent({
   computed: {
     cellClass: function cellClass() {
       var data = this.data;
-      return this.classNames('custom-class', 'van-cell', {
+      return this.classNames('van-cell', {
         'van-cell--center': data.center,
         'van-cell--required': data.required,
         'van-cell--borderless': !data.border,
@@ -35,10 +35,6 @@ VantComponent({
     titleStyle: function titleStyle() {
       var titleWidth = this.data.titleWidth;
       return titleWidth ? "max-width: " + titleWidth + ";min-width: " + titleWidth : '';
-    },
-    iconWrapClass: function iconWrapClass() {
-      var prefix = 'van-cell__right-icon-wrap right-icon-class';
-      return this.classNames(prefix, prefix + "--" + this.data.arrowDirection);
     }
   },
   methods: {

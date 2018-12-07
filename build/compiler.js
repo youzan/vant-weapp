@@ -10,7 +10,7 @@ const postcss = require('gulp-postcss');
 const isProduction = process.env.NODE_ENV === 'production';
 const src = path.join(__dirname, '../packages');
 const dist = path.join(__dirname, isProduction ? '../dist' : '../example/dist');
-const ext = ['ts', 'less', 'json', 'wxml'];
+const ext = ['ts', 'less', 'json', 'wxml', 'wxs'];
 
 function copy(ext) {
   return gulp.src([src + '/**/*.' + ext]).pipe(gulp.dest(dist));
@@ -45,6 +45,7 @@ gulp.task('compile-ts', () =>
     })
     .pipe(gulp.dest(dist))
 );
+gulp.task('compile-wxs', () => copy('wxs'));
 gulp.task('compile-json', () => copy('json'));
 gulp.task('compile-wxml', () => copy('wxml'));
 gulp.task('build', ext.map(ext => 'compile-' + ext));

@@ -90,7 +90,7 @@ VantComponent({
       val = this.correctValue(val);
       const isEqual = val === data.innerValue;
       if (!isEqual) {
-        this.setData({ innerValue: val }, () => {
+        this.set({ innerValue: val }, () => {
           this.updateColumnValue(val);
           this.$emit('input', val);
         });
@@ -247,7 +247,9 @@ VantComponent({
     onChange(event: Weapp.Event): void {
       const { data } = this;
       const pickerValue = event.detail.value;
-      const values = pickerValue.map((value, index) => data.columns[index][value]);
+      const values = pickerValue
+        .slice(0, data.columns.length)
+        .map((value, index) => data.columns[index][value]);
       let value;
 
       if (data.type === 'time') {
@@ -271,7 +273,7 @@ VantComponent({
       }
       value = this.correctValue(value);
 
-      this.setData({ innerValue: value }, () => {
+      this.set({ innerValue: value }, () => {
         this.updateColumnValue(value);
         this.$emit('input', value);
         this.$emit('change', this);
@@ -285,7 +287,7 @@ VantComponent({
     setColumnValue(index, value) {
       const { pickerValue, columns } = this.data;
       pickerValue[index] = columns[index].indexOf(value);
-      this.setData({ pickerValue });
+      this.set({ pickerValue });
     },
 
     getColumnValues(index) {
@@ -295,17 +297,17 @@ VantComponent({
     setColumnValues(index, values) {
       const { columns } = this.data;
       columns[index] = values;
-      this.setData({ columns });
+      this.set({ columns });
     },
 
     getValues() {
       const { pickerValue, columns } = this.data;
-      return pickerValue.map((value, index) => columns[index][value])
+      return pickerValue.map((value, index) => columns[index][value]);
     },
 
     setValues(values) {
       const { columns } = this.data;
-      this.setData({
+      this.set({
         pickerValue: values.map((value, index) => columns[index].indexOf(value))
       });
     },
@@ -339,13 +341,13 @@ VantComponent({
         }
       }
 
-      this.setData({ pickerValue: values });
+      this.set({ pickerValue: values });
     }
   },
 
   created() {
     const innerValue = this.correctValue(this.data.value);
-    this.setData({ innerValue }, () => {
+    this.set({ innerValue }, () => {
       this.updateColumnValue(innerValue);
       this.$emit('input', innerValue);
     });

@@ -26,6 +26,7 @@
       placeholder-class="{{ error ? 'van-field--error' : '' }}"
       cursor-spacing="{{ cursorSpacing }}"
       adjust-position="{{ adjustPosition }}"
+      show-confirm-bar="{{ showConfirmBar }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"

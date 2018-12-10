@@ -116,12 +116,25 @@ Page({
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
 
 ```html
-<van-tabs sticky>
+<van-tabs sticky scroll-top="{{ scrollTop }}">
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2">内容 2</van-tab>
   <van-tab title="标签 3">内容 3</van-tab>
   <van-tab title="标签 4">内容 4</van-tab>
 </van-tabs>
+```
+
+```javascript
+Page({
+  data: {
+    scrollTop: 0
+  },
+  onPageScroll(event) {
+    this.setData({
+      scrollTop: event.scrollTop
+    });
+  }
+});
 ```
 
 #### 切换动画

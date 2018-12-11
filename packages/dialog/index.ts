@@ -91,7 +91,9 @@ VantComponent({
         this.close();
       }
       this.$emit('close', action);
-      this.$emit(action);
+      
+      //把dialog实例传递出去，可以通过stopLoading()在外部关闭按钮的loading
+      this.$emit(action, {dialog: this});
 
       const callback = this.data[action === 'confirm' ? 'onConfirm' : 'onCancel'];
       if (callback) {

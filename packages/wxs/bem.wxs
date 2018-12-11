@@ -12,6 +12,10 @@ function join(name, mods) {
 }
 
 function traversing(mods, conf) {
+  if (!conf) {
+    return;
+  }
+
   if (typeof conf === 'string') {
     mods.push(conf);
   } else if (array.isArray(conf)) {

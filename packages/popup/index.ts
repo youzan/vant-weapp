@@ -31,16 +31,6 @@ VantComponent({
     }
   },
 
-  computed: {
-    popupClass() {
-      const { position, safeAreaInsetBottom, isIPhoneX } = this.data;
-      return this.classNames('custom-class', 'van-popup', {
-        [`van-popup--${position}`]: position,
-        [`van-popup--safe`]: isIPhoneX && safeAreaInsetBottom && position === 'bottom'
-      });
-    }
-  },
-
   methods: {
     onClickOverlay() {
       this.$emit('click-overlay');

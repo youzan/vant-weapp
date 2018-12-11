@@ -1,8 +1,9 @@
 import { VantComponent } from '../common/component';
 import { transition } from '../mixins/transition';
+import { iphonex } from '../mixins/iphonex';
 
 VantComponent({
-  mixins: [transition(false)],
+  mixins: [transition(false), iphonex],
 
   props: {
     transition: String,

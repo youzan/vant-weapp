@@ -7,7 +7,7 @@
       wx:else
       name="success"
       class="{{ utils.bem('checkbox__icon', [shape, { disabled, checked: value }]) }}"
-      style="{{ iconStyle }}"
+      style="{{ checkedColor && value && !disabled ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
       custom-class="icon-class"
       custom-style="line-height: 20px;"
     />

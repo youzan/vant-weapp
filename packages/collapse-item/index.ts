@@ -12,11 +12,11 @@ VantComponent({
   },
 
   props: {
-    name: [String, Number],
+    name: null,
+    title: null,
+    value: null,
     icon: String,
     label: String,
-    title: [String, Number],
-    value: [String, Number],
     disabled: Boolean,
     border: {
       type: Boolean,

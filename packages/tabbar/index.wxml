@@ -1,5 +1,7 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
-  class="{{ tabbarClass }}"
+  class="custom-class van-hairline--top-bottom {{ utils.bem('tabbar', { fixed, safe: isIPhoneX && safeAreaInsetBottom }) }}"
   style="{{ zIndex ? 'z-index: ' + zIndex : '' }}"
 >
   <slot />

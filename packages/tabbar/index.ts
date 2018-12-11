@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { iphonex } from '../mixins/iphonex';
 
 VantComponent({
   relation: {
@@ -17,6 +18,8 @@ VantComponent({
       });
     }
   },
+
+  mixins: [iphonex],
 
   props: {
     active: Number,

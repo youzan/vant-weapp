@@ -1,5 +1,5 @@
-function isArray(obj) {
-  return obj && obj.constructor === 'Array';
+function isArray(array) {
+  return array && array.constructor === 'Array';
 }
 
 module.exports.isArray = isArray;

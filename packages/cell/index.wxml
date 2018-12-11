@@ -1,5 +1,7 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
-  class="custom-class {{ cellClass }}"
+  class="custom-class {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}"
   style="{{ customStyle }}"
   bind:tap="onClick"
 >
@@ -12,7 +14,7 @@
   <slot wx:else name="icon" />
 
   <view
-    style="{{ titleStyle }}"
+    style="{{ titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth : '' }}"
     class="van-cell__title title-class"
   >
     <block wx:if="{{ title }}">

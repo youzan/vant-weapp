@@ -33,16 +33,6 @@ VantComponent({
     expanded: false
   },
 
-  computed: {
-    titleClass() {
-      const { disabled, expanded } = this.data;
-      return this.classNames('van-collapse-item__title', {
-        'van-collapse-item__title--disabled': disabled,
-        'van-collapse-item__title--expanded': expanded
-      });
-    }
-  },
-
   methods: {
     updateExpanded() {
       if (!this.parent) {

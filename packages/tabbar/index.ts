@@ -2,6 +2,8 @@ import { VantComponent } from '../common/component';
 import { iphonex } from '../mixins/iphonex';
 
 VantComponent({
+  mixins: [iphonex],
+
   relation: {
     name: 'tabbar-item',
     type: 'descendant',
@@ -19,8 +21,6 @@ VantComponent({
     }
   },
 
-  mixins: [iphonex],
-
   props: {
     active: Number,
     fixed: {
@@ -30,10 +30,6 @@ VantComponent({
     zIndex: {
       type: Number,
       value: 1
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      value: true
     }
   },
 

@@ -24,10 +24,6 @@ VantComponent({
     position: {
       type: String,
       value: 'center'
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      value: true
     }
   },
 

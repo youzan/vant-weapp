@@ -64,18 +64,6 @@ VantComponent({
     showClear: false
   },
 
-  computed: {
-    inputClass(): string {
-      const { data } = this;
-      return this.classNames('input-class', 'van-field__input', {
-        'van-field--error': data.error,
-        'van-field__textarea': data.type === 'textarea',
-        'van-field__input--disabled': data.disabled,
-        [`van-field__input--${data.inputAlign}`]: data.inputAlign
-      });
-    }
-  },
-
   beforeCreate() {
     this.focused = false;
   },

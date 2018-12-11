@@ -19,6 +19,13 @@ function getIsIPhoneX() {
 }
 
 export const iphonex = Behavior({
+  properties: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
+    }
+  },
+
   created() {
     getIsIPhoneX().then(isIPhoneX => {
       this.set({ isIPhoneX });

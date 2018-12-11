@@ -2,13 +2,13 @@ import { VantComponent } from '../common/component';
 import { iphonex } from '../mixins/iphonex';
 
 VantComponent({
+  mixins: [iphonex],
+
   classes: [
     'bar-class',
     'price-class',
     'button-class'
   ],
-
-  mixins: [iphonex],
 
   props: {
     tip: null,
@@ -25,10 +25,6 @@ VantComponent({
     buttonType: {
       type: String,
       value: 'danger'
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      value: true
     }
   },
 

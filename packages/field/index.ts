@@ -29,6 +29,10 @@ VantComponent({
     customStyle: String,
     useIconSlot: Boolean,
     useButtonSlot: Boolean,
+    showConfirmBar: {
+      type: Boolean,
+      value: true
+    },
     placeholderStyle: String,
     adjustPosition: {
       type: Boolean,

@@ -16,7 +16,7 @@ function traversing(mods, conf) {
     return;
   }
 
-  if (typeof conf === 'string') {
+  if (typeof conf === 'string' || typeof conf === 'number') {
     mods.push(conf);
   } else if (array.isArray(conf)) {
     conf.forEach(function(item) {

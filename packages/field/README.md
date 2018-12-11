@@ -164,6 +164,7 @@ Page({
 | adjust-position | 键盘弹起时，是否自动上推页面 | `Boolean` | `true` |
 | use-icon-slot | 是否使用 icon slot  | `Boolean` | `false` |
 | use-button-slot | 是否使用 button slot  | `Boolean` | `false` |
+| show-confirm-bar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | `Boolean` | `true` |
 
 ### Event
 

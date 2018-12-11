@@ -34,5 +34,4 @@
     <van-button size="small" class="demo-margin-right">小型按钮</van-button>
     <van-button size="mini">迷你按钮</van-button>
   </demo-block>
-
 </demo-section>

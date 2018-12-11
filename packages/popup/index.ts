@@ -1,8 +1,9 @@
 import { VantComponent } from '../common/component';
 import { transition } from '../mixins/transition';
+import { iphonex } from '../mixins/iphonex';
 
 VantComponent({
-  mixins: [transition(false)],
+  mixins: [transition(false), iphonex],
 
   props: {
     transition: String,
@@ -23,20 +24,6 @@ VantComponent({
     position: {
       type: String,
       value: 'center'
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      value: true
-    }
-  },
-
-  computed: {
-    popupClass() {
-      const { position, safeAreaInsetBottom, isIPhoneX } = this.data;
-      return this.classNames('custom-class', 'van-popup', {
-        [`van-popup--${position}`]: position,
-        [`van-popup--safe`]: isIPhoneX && safeAreaInsetBottom && position === 'bottom'
-      });
     }
   },
 

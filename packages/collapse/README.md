@@ -32,6 +32,11 @@
 Page({
   data: {
     activeNames: ['1']
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
   }
 });
 ```
@@ -57,6 +62,11 @@ Page({
 Page({
   data: {
     activeName: '1'
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
   }
 });
 ```
@@ -73,6 +83,19 @@ Page({
     网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
   </van-collapse-item>
 </van-collapse>
+```
+
+``` javascript
+Page({
+  data: {
+    activeName: ['1']
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
+  }
+});
 ```
 
 

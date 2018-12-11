@@ -39,6 +39,10 @@ VantComponent({
     value: {
       type: Number,
       value: 0
+    },
+    type: {
+      type: String,
+      value: 'half'
     }
   },
 

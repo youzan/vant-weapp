@@ -1,5 +1,8 @@
+var bem = require('./bem.wxs').bem;
+
 function isSrc(url) {
   return url.indexOf('http') === 0 || url.indexOf('data:image') === 0;
 }
 
+module.exports.bem = bem;
 module.exports.isSrc = isSrc;

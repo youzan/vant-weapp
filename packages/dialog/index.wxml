@@ -17,7 +17,7 @@
   <slot wx:if="{{ useSlot }}" />
   <view
     wx:elif="{{ message }}"
-    class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }}"
+    class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }} {{ messageAlign ? 'van-dialog__message--' + messageAlign : '' }}"
   >
     <text>{{ message }}</text>
   </view>

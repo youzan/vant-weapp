@@ -10,6 +10,7 @@ VantComponent({
     message: String,
     useSlot: Boolean,
     asyncClose: Boolean,
+    messageAlign: String,
     showCancelButton: Boolean,
     closeOnClickOverlay: Boolean,
     confirmButtonOpenType: String,

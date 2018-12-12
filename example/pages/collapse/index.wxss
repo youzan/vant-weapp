@@ -1,9 +1,3 @@
-.van-collapse-item__content {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #666;
-}
-
 .van-icon-question {
   margin-left: 5px;
   font-size: 15px !important;

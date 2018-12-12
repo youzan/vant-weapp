@@ -16,7 +16,7 @@
       bind:click="onClose"
     />
   </view>
-  <view>
+  <view wx:if="{{ actions && actions.length }}">
     <!-- button外包一层view，防止actions动态变化，导致渲染时button被打散 -->
     <button
       wx:for="{{ actions }}"

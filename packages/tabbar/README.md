@@ -42,7 +42,7 @@ Page({
 
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
-  <van-tabbar-item>
+  <van-tabbar-item info="3">
     <span>自定义</span>
     <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />
     <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" />

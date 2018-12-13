@@ -23,13 +23,6 @@ VantComponent({
     }
   },
 
-  computed: {
-    style() {
-      const backgroundColor = this.data.checked ? this.data.activeColor : this.data.inactiveColor;
-      return `font-size: ${this.data.size}; ${ backgroundColor ? `background-color: ${backgroundColor}` : '' }`
-    }
-  },
-
   created() {
     this.set({ value: this.data.checked });
   },

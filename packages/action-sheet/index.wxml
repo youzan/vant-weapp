@@ -16,20 +16,23 @@
       bind:click="onClose"
     />
   </view>
-  <button
-    wx:for="{{ actions }}"
-    wx:key="index"
-    open-type="{{ item.openType }}"
-    class="van-action-sheet__item van-hairline--top {{ item.disabled || item.loading ? 'van-action-sheet__item--disabled' : '' }} {{ item.className || '' }}"
-    data-index="{{ index }}"
-    bind:tap="onSelect"
-  >
-    <block wx:if="{{ !item.loading }}">
-      {{ item.name }}
-      <text wx:if="{{ item.subname }}" class="van-action-sheet__subname" >{{ item.subname }}</text>
-    </block>
-    <van-loading wx:else size="20px" />
-  </button>
+  <view wx:if="{{ actions && actions.length }}">
+    <!-- button外包一层view，防止actions动态变化，导致渲染时button被打散 -->
+    <button
+      wx:for="{{ actions }}"
+      wx:key="index"
+      open-type="{{ item.openType }}"
+      class="van-action-sheet__item van-hairline--top {{ item.disabled || item.loading ? 'van-action-sheet__item--disabled' : '' }} {{ item.className || '' }}"
+      data-index="{{ index }}"
+      bind:tap="onSelect"
+    >
+      <block wx:if="{{ !item.loading }}">
+        {{ item.name }}
+        <text wx:if="{{ item.subname }}" class="van-action-sheet__subname" >{{ item.subname }}</text>
+      </block>
+      <van-loading wx:else size="20px" />
+    </button>
+  </view>
   <view
     wx:if="{{ cancelText }}"
     class="van-action-sheet__cancel"

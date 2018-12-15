@@ -44,6 +44,10 @@ export default [
         title: 'Field 输入框'
       },
       {
+        path: '/picker',
+        title: 'Picker 选择器'
+      },
+      {
         path: '/radio',
         title: 'Radio 单选框'
       },

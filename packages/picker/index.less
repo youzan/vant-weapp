@@ -1,0 +1,67 @@
+@import '../common/style/var';
+
+.van-picker {
+  position: relative;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
+  background-color: @white;
+  user-select: none;
+
+  &__toolbar {
+    display: flex;
+    height: 44px;
+    line-height: 44px;
+    justify-content: space-between;
+  }
+
+  &__cancel,
+  &__confirm {
+    padding: 0 15px;
+    font-size: 14px;
+    color: @blue;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+
+  &__title {
+    max-width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__columns {
+    position: relative;
+    display: flex;
+  }
+
+  &__column {
+    flex: 1;
+  }
+
+  &__loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__loading .van-loading,
+  &__frame {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+}

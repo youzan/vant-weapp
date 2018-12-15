@@ -6,7 +6,7 @@
     <view
       wx:for="{{ items }}"
       wx:key="index"
-      class="van-tree-select__nitem van-ellipsis {{ mainActiveIndex === index ? 'van-tree-select__nitem--active' : '' }}"
+      class="{{ classNames.mainItem(mainActiveIndex === index, item.disabled) }}"
       data-index="{{ index }}"
       bind:tap="onClickNav"
     >
@@ -21,16 +21,44 @@
     <view
       wx:for="{{ subItems }}"
       wx:key="item.id"
-      class="van-tree-select__item van-ellipsis {{ activeId === item.id ? 'van-tree-select__item--active' : '' }} {{ item.disabled ? 'van-tree-select__item--disabled' : '' }}"
+      class="{{ classNames.contentItem(activeId === item.id, item.disabled) }}"
       data-item="{{ item }}"
       bind:tap="onSelectItem"
     >
       {{ item.text }}
       <van-icon
         wx:if="{{ activeId === item.id }}"
-        name="success"
+        name="checked"
+        size="16px"
         class="van-tree-select__selected"
       />
     </view>
   </scroll-view>
 </view>
+
+<wxs module="classNames">
+  function mainItem(active, disabled) {
+    var classes = 'van-tree-select__nitem van-ellipsis main-item-class';
+    if (active) {
+      classes += ' van-tree-select__nitem--active main-active-class';
+    }
+    if (disabled) {
+      classes += ' van-tree-select__nitem--disabled main-disabled-class';
+    }
+    return classes;
+  }
+
+  function contentItem(active, disabled) {
+    var classes = 'van-tree-select__item van-ellipsis van-hairline--bottom content-item-class';
+    if (active) {
+      classes += ' van-tree-select__item--active content-active-class';
+    }
+    if (disabled) {
+      classes += ' van-tree-select__item--disabled content-disabled-class';
+    }
+    return classes;
+  }
+
+  module.exports.mainItem = mainItem;
+  module.exports.contentItem = contentItem;
+</wxs>

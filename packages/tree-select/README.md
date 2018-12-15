@@ -67,6 +67,8 @@ Page({
   {
     // 导航名称
     text: '所有城市',
+    // 禁用选项
+    disabled: false,
     // 该导航下所有的可选项
     children: [
       {
@@ -85,6 +87,17 @@ Page({
   }
 ]
 ```
+
+### 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| main-item-class | 左侧选项样式类 |
+| content-item-class | 右侧选项样式类 |
+| main-active-class | 左侧选项选中样式类 |
+| content-active-class | 右侧选项选中样式类 |
+| main-disabled-class | 左侧选项禁用样式类 |
+| content-disabled-class | 右侧选项禁用样式类 |
 
 ### 更新日志
 

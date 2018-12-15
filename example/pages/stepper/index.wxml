@@ -13,5 +13,8 @@
     min="5"
     max="40"
     step="2"
+    input-class="input-class"
+    plus-class="plus-class"
+    minus-class="minus-class"
   />
 </demo-block>

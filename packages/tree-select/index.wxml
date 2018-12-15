@@ -38,25 +38,38 @@
 
 <wxs module="classNames">
   function mainItem(active, disabled) {
-    var classes = 'van-tree-select__nitem van-ellipsis main-item-class';
+    var classes = [
+      'van-tree-select__nitem',
+      'van-ellipsis',
+      'main-item-class'
+    ];
     if (active) {
-      classes += ' van-tree-select__nitem--active main-active-class';
+      classes.push('van-tree-select__nitem--active');
+      classes.push('main-active-class');
     }
     if (disabled) {
-      classes += ' van-tree-select__nitem--disabled main-disabled-class';
+      classes.push('van-tree-select__nitem--disabled');
+      classes.push('main-disabled-class');
     }
-    return classes;
+    return classes.join(' ');
   }
 
   function contentItem(active, disabled) {
-    var classes = 'van-tree-select__item van-ellipsis van-hairline--bottom content-item-class';
+    var classes = [
+      'van-tree-select__item',
+      'van-ellipsis',
+      'van-hairline--bottom',
+      'content-item-class'
+    ];
     if (active) {
-      classes += ' van-tree-select__item--active content-active-class';
+      classes.push('van-tree-select__item--active');
+      classes.push('content-active-class');
     }
     if (disabled) {
-      classes += ' van-tree-select__item--disabled content-disabled-class';
+      classes.push('van-tree-select__item--disabled');
+      classes.push('content-disabled-class');
     }
-    return classes;
+    return classes.join(' ');
   }
 
   module.exports.mainItem = mainItem;

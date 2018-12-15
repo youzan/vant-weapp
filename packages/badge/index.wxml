@@ -1,4 +1,10 @@
 <view class="van-badge van-hairline custom-class {{ active ? 'van-badge--active' : '' }}" bind:tap="onClick">
-  <view wx:if="{{ info }}" class="van-badge__info">{{ info }}</view>
-  {{ title }}
+  <view class="van-badge__text">
+    <van-info
+      wx:if="{{ info !== null }}"
+      info="{{ info }}"
+      custom-style="right: 4px"
+    />
+    {{ title }}
+  </view>
 </view>

@@ -11,6 +11,7 @@ type DialogOptions = {
   selector?: string;
   transition?: string;
   asyncClose?: boolean;
+  messageAlign?: string;
   confirmButtonText?: string;
   cancelButtonText?: string;
   showConfirmButton?: boolean;
@@ -68,6 +69,7 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   asyncClose: false,
+  messageAlign: '',
   transition: 'scale',
   selector: '#van-dialog',
   confirmButtonText: '确认',

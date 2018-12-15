@@ -39,6 +39,7 @@ Dialog.alert({
 ```
 
 #### 消息确认
+
 用于确认消息，包含取消和确认按钮
 
 ```javascript
@@ -127,6 +128,7 @@ Page({
 |-----------|-----------|-----------|-------------|
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
+| messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | zIndex | z-index 层级 | `Number` | `100` |
 | selector | 自定义选择器 | `String` | `van-dialog` |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` |
@@ -149,6 +151,7 @@ Page({
 | show | 是否显示弹窗 | `Boolean` | - |
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
+| message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | z-index | z-index 层级 | `Number` | `100` |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |

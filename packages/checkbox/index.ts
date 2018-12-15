@@ -23,16 +23,6 @@ VantComponent({
     }
   },
 
-  computed: {
-    iconStyle(): string {
-      const { value, disabled, checkedColor } = this.data;
-      if (checkedColor && value && !disabled) {
-        return `border-color: ${checkedColor}; background-color: ${checkedColor}`;
-      }
-      return '';
-    }
-  },
-
   methods: {
     emitChange(value) {
       const parent = this.getRelationNodes('../checkbox-group/index')[0];

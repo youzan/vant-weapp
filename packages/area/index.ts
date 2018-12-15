@@ -33,13 +33,6 @@ VantComponent({
     columns: []
   },
 
-  computed: {
-    displayColumns() {
-      const { columns = [], columnsNum } = this.data;
-      return columns.slice(0, +columnsNum);
-    }
-  },
-
   watch: {
     value(value) {
       this.code = value;
@@ -68,7 +61,8 @@ VantComponent({
 
     onChange(event: Weapp.Event) {
       const { value } = event.detail;
-      const { pickerValue, displayColumns } = this.data;
+      const { pickerValue } = this.data;
+      const displayColumns = this.getDisplayColumns();
       const index = pickerValue.findIndex(
         (item, index) => item !== value[index]
       );
@@ -159,7 +153,8 @@ VantComponent({
     },
 
     getValues() {
-      const { displayColumns = [], pickerValue = [] } = this.data;
+      const { pickerValue = [] } = this.data;
+      const displayColumns = this.getDisplayColumns();
       return displayColumns
         .map((option, index) => option[pickerValue[index]])
         .filter(value => !!value);
@@ -201,6 +196,11 @@ VantComponent({
     reset() {
       this.code = '';
       this.setValues();
+    },
+
+    getDisplayColumns() {
+      const { columns = [], columnsNum } = this.data;
+      return columns.slice(0, +columnsNum);
     }
   }
 });

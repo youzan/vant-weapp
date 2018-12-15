@@ -7,7 +7,7 @@ VantComponent({
   },
 
   props: {
-    info: Number,
+    info: null,
     title: String
   },
 

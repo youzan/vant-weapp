@@ -9,7 +9,7 @@
 
 <demo-block title="自定义图标">
   <van-tabbar active="{{ active2 }}" custom-class="tabbar" bind:change="onChange" safe-area-inset-bottom="{{ false }}">
-    <van-tabbar-item>
+    <van-tabbar-item info="3">
       <span>自定义</span>
       <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />
       <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" />

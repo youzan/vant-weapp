@@ -7,12 +7,12 @@
       wx:else
       name="success"
       class="{{ utils.bem('checkbox__icon', [shape, { disabled, checked: value }]) }}"
-      style="{{ iconStyle }}"
+      style="{{ checkedColor && value && !disabled ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
       custom-class="icon-class"
       custom-style="line-height: 20px;"
     />
   </view>
-  <view class="van-checkbox__label van-checkbox__label--{{ labelPosition }} label-class" bindtap="onClickLabel">
+  <view class="label-class {{ utils.bem('checkbox__label', [labelPosition, { disabled }]) }}" bindtap="onClickLabel">
     <slot />
   </view>
 </view>

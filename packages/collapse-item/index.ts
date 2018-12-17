@@ -58,11 +58,9 @@ VantComponent({
 
     updateStyle(expanded) {
       if (expanded) {
-        this.getRect('.van-collapse-item__content').then(res => {
-          this.set({
+        this.set({
             contentHeight: res.height ? res.height + 'px' : null
           });
-        });
       } else {
         this.set({
           contentHeight: 0

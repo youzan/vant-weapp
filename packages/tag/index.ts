@@ -8,6 +8,10 @@ const COLOR_MAP = {
   success: GREEN
 };
 
+type Style = {
+  [key: string]: string;
+};
+
 VantComponent({
   props: {
     size: String,
@@ -15,25 +19,21 @@ VantComponent({
     mark: Boolean,
     color: String,
     plain: Boolean,
-    round: Boolean
+    round: Boolean,
+    textColor: String
   },
 
   computed: {
-    classes() {
-      const { data } = this;
-      return this.classNames('van-tag', {
-        'van-tag--mark': data.mark,
-        'van-tag--plain': data.plain,
-        'van-tag--round': data.round,
-        [`van-tag--${data.size}`]: data.size,
-        'van-hairline--surround': data.plain
-      });
-    },
-
     style() {
       const color = this.data.color || COLOR_MAP[this.data.type] || DEFAULT_COLOR;
       const key = this.data.plain ? 'color' : 'background-color';
-      return `${key}: ${color}`;
+      const style = { [key]: color } as Style;
+
+      if (this.data.textColor) {
+        style.color = this.data.textColor;
+      }
+
+      return Object.keys(style).map(key => `${key}: ${style[key]}`).join(';');
     }
   }
 });

@@ -12,11 +12,11 @@ VantComponent({
   },
 
   props: {
-    name: [String, Number],
+    name: null,
+    title: null,
+    value: null,
     icon: String,
     label: String,
-    title: [String, Number],
-    value: [String, Number],
     disabled: Boolean,
     border: {
       type: Boolean,
@@ -31,16 +31,6 @@ VantComponent({
   data: {
     contentHeight: 0,
     expanded: false
-  },
-
-  computed: {
-    titleClass() {
-      const { disabled, expanded } = this.data;
-      return this.classNames('van-collapse-item__title', {
-        'van-collapse-item__title--disabled': disabled,
-        'van-collapse-item__title--expanded': expanded
-      });
-    }
   },
 
   methods: {

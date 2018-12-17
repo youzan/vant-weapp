@@ -60,7 +60,7 @@ VantComponent({
         this.updateStyle(expanded);
       }
 
-      this.setData({
+      this.set({
         expanded: expanded
       });
     },
@@ -69,12 +69,12 @@ VantComponent({
 
       if (expanded) {
         this.getRect('.van-collapse-item__content').then(function (res) {
-          _this.setData({
+          _this.set({
             contentHeight: res.height ? res.height + 'px' : null
           });
         });
       } else {
-        this.setData({
+        this.set({
           contentHeight: 0
         });
       }

@@ -23,28 +23,6 @@ VantComponent({
     }
   },
 
-  computed: {
-    iconClass(): string {
-      const { disabled, value, shape } = this.data;
-      return this.classNames(
-        'van-checkbox__icon',
-        `van-checkbox__icon--${shape}`,
-        {
-          'van-checkbox__icon--disabled': disabled,
-          'van-checkbox__icon--checked': value
-        }
-      );
-    },
-
-    iconStyle(): string {
-      const { value, disabled, checkedColor } = this.data;
-      if (checkedColor && value && !disabled) {
-        return `border-color: ${checkedColor}; background-color: ${checkedColor}`;
-      }
-      return '';
-    }
-  },
-
   methods: {
     emitChange(value) {
       const parent = this.getRelationNodes('../checkbox-group/index')[0];

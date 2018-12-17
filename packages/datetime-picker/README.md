@@ -13,6 +13,8 @@
 
 #### 选择完整时间
 
+`value` 为时间戳
+
 ```html
 <van-datetime-picker
   type="datetime"
@@ -43,6 +45,8 @@ Page({
 
 #### 选择日期（年月日）
 
+`value` 为时间戳
+
 ```html
 <van-datetime-picker
   type="date"
@@ -69,6 +73,8 @@ Page({
 
 #### 选择日期（年月）
 
+`value` 为时间戳
+
 ```html
 <van-datetime-picker
   type="year-month"
@@ -94,6 +100,8 @@ Page({
 ```
 
 #### 选择时间
+
+`value` 为字符串
 
 ```html
 <van-datetime-picker
@@ -125,7 +133,8 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `date` <br> `time` `year-month` | `String` | `datetime` |
+| value | 当前选中值 | `String | Number` | - |
+| type | 类型，可选值为 `date` `time` `year-month` <br> <strong>不建议动态修改</strong> | `String` | `datetime` |
 | min-date | 可选的最小时间，精确到分钟 | `Number` | 十年前 |
 | max-date | 可选的最大时间，精确到分钟 | `Number` | 十年后 |
 | min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` |

@@ -6,6 +6,7 @@ VantComponent({
   field: true,
   classes: ['input-class', 'plus-class', 'minus-class'],
   props: {
+    value: Number,
     integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
@@ -30,8 +31,15 @@ VantComponent({
       return this.data.disabled || this.data.value >= this.data.max;
     }
   },
+  watch: {
+    value: function value(_value) {
+      this.set({
+        value: this.range(_value)
+      });
+    }
+  },
   created: function created() {
-    this.setData({
+    this.set({
       value: this.range(this.data.value)
     });
   },
@@ -70,7 +78,7 @@ VantComponent({
       this.onChange('plus');
     },
     triggerInput: function triggerInput(value) {
-      this.setData({
+      this.set({
         value: value
       });
       this.$emit('change', value);

@@ -32,6 +32,11 @@
 Page({
   data: {
     activeNames: ['1']
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
   }
 });
 ```
@@ -57,6 +62,11 @@ Page({
 Page({
   data: {
     activeName: '1'
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
   }
 });
 ```
@@ -75,7 +85,18 @@ Page({
 </van-collapse>
 ```
 
-
+``` javascript
+Page({
+  data: {
+    activeName: ['1']
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
+  }
+});
+```
 
 ### Collapse API
 

@@ -66,7 +66,9 @@ Page({
 | title | 左侧标题 |  `String` | `''` |
 | loading | 是否为加载状态 |  `Boolean` | `false` |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` |
-| size | 开关尺寸 | `String` | `26px` |
+| size | 开关尺寸 | `String` | `24px` |
+| active-color | 开关打开时的背景色 | `String` | `#1989fa` |
+| inactive-color | 开关关闭时的背景色 | `String` | `#fff` |
 
 ### Event
 

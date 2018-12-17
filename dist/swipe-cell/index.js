@@ -42,7 +42,7 @@ VantComponent({
       this.resetSwipeStatus();
     },
     close: function close() {
-      this.setData({
+      this.set({
         offset: 0
       });
     },
@@ -55,7 +55,7 @@ VantComponent({
         offset = 0;
       }
 
-      this.setData({
+      this.set({
         offset: offset
       });
       offset && (this.swiping = true);
@@ -81,7 +81,7 @@ VantComponent({
         return;
       }
 
-      this.setData({
+      this.set({
         draging: true
       });
       this.touchStart(event);
@@ -114,7 +114,7 @@ VantComponent({
         return;
       }
 
-      this.setData({
+      this.set({
         draging: false
       });
 

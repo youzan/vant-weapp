@@ -77,7 +77,7 @@ VantComponent({
           _ref$value = _ref.value,
           value = _ref$value === void 0 ? '' : _ref$value;
 
-      this.setData({
+      this.set({
         value: value,
         showClear: this.getShowClear(value)
       }, function () {
@@ -98,7 +98,7 @@ VantComponent({
         height: height
       });
       this.focused = true;
-      this.setData({
+      this.set({
         showClear: this.getShowClear()
       });
     },
@@ -114,7 +114,7 @@ VantComponent({
         cursor: cursor
       });
       this.focused = false;
-      this.setData({
+      this.set({
         showClear: this.getShowClear()
       });
     },
@@ -128,7 +128,7 @@ VantComponent({
     onClear: function onClear() {
       var _this2 = this;
 
-      this.setData({
+      this.set({
         value: '',
         showClear: this.getShowClear('')
       }, function () {

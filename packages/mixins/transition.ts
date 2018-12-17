@@ -16,23 +16,38 @@ export const transition = function(showDefaultValue) {
     data: {
       type: '',
       inited: false,
-      display: false
+      display: false,
+      supportAnimation: true
     },
 
     attached() {
       if (this.data.show) {
         this.show();
       }
+
+      this.detectSupport();
     },
 
     methods: {
+      detectSupport() {
+        wx.getSystemInfo({
+          success: info => {
+            if (info && info.system && info.system.indexOf('iOS 8') === 0) {
+              this.set({ supportAnimation: false });
+            }
+          }
+        });
+      },
+
       observeShow(value) {
         if (value) {
           this.show();
         } else {
-          this.set({
-            type: 'leave'
-          });
+          if (this.data.supportAnimation) {
+            this.set({ type: 'leave' });
+          } else {
+            this.set({ display: false });
+          }
         }
       },
 

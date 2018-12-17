@@ -15,7 +15,7 @@ var Dialog = function Dialog(options) {
     delete options.selector;
 
     if (dialog) {
-      dialog.setData(_extends({
+      dialog.set(_extends({
         onCancel: reject,
         onConfirm: resolve
       }, options));

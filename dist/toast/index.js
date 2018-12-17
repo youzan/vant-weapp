@@ -24,7 +24,7 @@ VantComponent({
   },
   methods: {
     clear: function clear() {
-      this.setData({
+      this.set({
         show: false
       });
     },

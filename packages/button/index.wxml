@@ -1,7 +1,9 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <button
   id="{{ id }}"
   lang="{{ lang }}"
-  class="custom-class {{ classes }}"
+  class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, unclickable: disabled || loading }]) }}"
   open-type="{{ openType }}"
   session-from="{{ sessionFrom }}"
   app-parameter="{{ appParameter }}"

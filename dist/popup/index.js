@@ -21,6 +21,22 @@ VantComponent({
     position: {
       type: String,
       value: 'center'
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
+    }
+  },
+  computed: {
+    popupClass: function popupClass() {
+      var _this$data = this.data,
+          position = _this$data.position,
+          safeAreaInsetBottom = _this$data.safeAreaInsetBottom,
+          isIPhoneX = _this$data.isIPhoneX;
+      return this.classNames('custom-class', 'van-popup', {
+        ["van-popup--" + position]: position,
+        ["van-popup--safe"]: isIPhoneX && safeAreaInsetBottom && position === 'bottom'
+      });
     }
   },
   methods: {

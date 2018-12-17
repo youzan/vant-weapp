@@ -42,14 +42,27 @@ Page({
 <van-switch checked="{{ checked }}" loading />
 ```
 
-#### 高级用法
+#### 自定义大小
+
+```html
+<van-switch checked="{{ checked }}" size="24px" />
+```
+
+#### 自定义颜色
 
 ```html
 <van-switch
-  size="36px"
   checked="{{ checked }}"
   active-color="#4b0"
   inactive-color="#f44"
+/>
+```
+
+#### 异步控制
+
+```html
+<van-switch
+  checked="{{ checked }}"
   bind:change="onChange"
 />
 ```

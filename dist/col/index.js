@@ -28,7 +28,7 @@ VantComponent({
       var style = gutter ? "padding-left: " + padding + "; padding-right: " + padding + ";" : '';
 
       if (style !== this.data.style) {
-        this.setData({
+        this.set({
           style: style
         });
       }

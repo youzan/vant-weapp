@@ -7,14 +7,13 @@ export var behavior = Behavior({
     }
 
     var cache = {};
-    var setData = this.setData;
 
     var _this$$options = this.$options(),
         computed = _this$$options.computed;
 
     var keys = Object.keys(computed);
 
-    var calcComputed = function calcComputed() {
+    this.calcComputed = function () {
       var needUpdate = {};
       keys.forEach(function (key) {
         var value = computed[key].call(_this);
@@ -25,17 +24,20 @@ export var behavior = Behavior({
       });
       return needUpdate;
     };
-
-    Object.defineProperty(this, 'setData', {
-      writable: true
-    });
-
-    this.setData = function (data, callback) {
-      data && setData.call(_this, data, callback);
-      setData.call(_this, calcComputed());
-    };
   },
   attached: function attached() {
-    this.setData();
+    this.set();
+  },
+  methods: {
+    // set data and set computed data
+    set: function set(data, callback) {
+      if (data) {
+        this.setData(data, callback);
+      }
+
+      if (this.calcComputed) {
+        this.setData(this.calcComputed());
+      }
+    }
   }
 });

@@ -1,5 +1,5 @@
 <view class="custom-class van-card {{ centered ? 'van-card--center' : '' }}">
-  <view wx:if="{{ thumb || useThumbSlot }}" class="van-card__thumb" bind:tap="onClickThumb">
+  <view class="van-card__thumb" bind:tap="onClickThumb">
     <image
       wx:if="{{ thumb }}"
       src="{{ thumb }}"
@@ -7,7 +7,7 @@
       lazy-load="{{ lazyLoad }}"
       class="van-card__img thumb-class"
     />
-    <slot wx:elif="{{ useThumbSlot }}" name="thumb" />
+    <slot name="thumb" />
     <van-tag
       wx:if="{{ tag }}"
       mark

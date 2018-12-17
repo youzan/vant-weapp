@@ -20,7 +20,6 @@ VantComponent({
     thumb: String,
     title: String,
     price: String,
-    useThumbSlot: Boolean,
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,

@@ -21,6 +21,10 @@
     height: 90px;
     margin-right: 10px;
     flex: none;
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__img {
@@ -60,6 +64,8 @@
 
   &__price {
     display: inline-block;
+    font-weight: bold;
+    color: @red;
   }
 
   &__origin-price {

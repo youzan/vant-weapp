@@ -59,7 +59,7 @@ VantComponent({
     updateStyle(expanded) {
       if (expanded) {
         this.set({
-            contentHeight: res.height ? res.height + 'px' : null
+            contentHeight: 'auto'
           });
       } else {
         this.set({

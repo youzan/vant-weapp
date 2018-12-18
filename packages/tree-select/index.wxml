@@ -1,3 +1,5 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
   class="van-tree-select"
   style="height: {{ mainHeight }}px"
@@ -6,7 +8,7 @@
     <view
       wx:for="{{ items }}"
       wx:key="index"
-      class="{{ classNames.mainItem(mainActiveIndex === index, item.disabled) }}"
+      class="van-ellipsis main-item-class {{ utils.bem('tree-select__nitem', { active: mainActiveIndex === index, disabled: item.disabled }) }} {{ mainActiveIndex === index ? 'main-active-class' : '' }} {{ item.disabled ? 'main-disabled-class' : '' }}"
       data-index="{{ index }}"
       bind:tap="onClickNav"
     >
@@ -21,7 +23,7 @@
     <view
       wx:for="{{ subItems }}"
       wx:key="item.id"
-      class="{{ classNames.contentItem(activeId === item.id, item.disabled) }}"
+      class="van-ellipsis van-hairline--bottom content-item-class {{ utils.bem('tree-select__item', { active: activeId === item.id, disabled: item.disabled }) }} {{ activeId === item.id ? 'content-active-class' : '' }} {{ item.disabled ? 'content-disabled-class' : '' }}"
       data-item="{{ item }}"
       bind:tap="onSelectItem"
     >
@@ -35,43 +37,3 @@
     </view>
   </scroll-view>
 </view>
-
-<wxs module="classNames">
-  function mainItem(active, disabled) {
-    var classes = [
-      'van-tree-select__nitem',
-      'van-ellipsis',
-      'main-item-class'
-    ];
-    if (active) {
-      classes.push('van-tree-select__nitem--active');
-      classes.push('main-active-class');
-    }
-    if (disabled) {
-      classes.push('van-tree-select__nitem--disabled');
-      classes.push('main-disabled-class');
-    }
-    return classes.join(' ');
-  }
-
-  function contentItem(active, disabled) {
-    var classes = [
-      'van-tree-select__item',
-      'van-ellipsis',
-      'van-hairline--bottom',
-      'content-item-class'
-    ];
-    if (active) {
-      classes.push('van-tree-select__item--active');
-      classes.push('content-active-class');
-    }
-    if (disabled) {
-      classes.push('van-tree-select__item--disabled');
-      classes.push('content-disabled-class');
-    }
-    return classes.join(' ');
-  }
-
-  module.exports.mainItem = mainItem;
-  module.exports.contentItem = contentItem;
-</wxs>

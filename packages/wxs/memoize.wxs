@@ -31,8 +31,11 @@ function serializer(args) {
   if (args.length === 1 && isPrimitive(args[0])) {
     return args[0];
   }
-
-  return JSON.stringify(args.length === 1 ? args[0] : args);
+  var obj = {};
+  for (var i = 0; i < args.length; i++) {
+    obj['key' + i] = args[i];
+  }
+  return JSON.stringify(obj);
 }
 
 function memoize(fn) {
@@ -40,7 +43,6 @@ function memoize(fn) {
 
   return function() {
     var key = serializer(arguments);
-
     if (cache[key] === undefined) {
       cache[key] = call(fn, arguments);
     }

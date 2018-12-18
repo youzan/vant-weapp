@@ -17,6 +17,10 @@ Page({
       }, {
         text: config.pro2Name,
         children: config.pro2
+      }, {
+        text: config.pro3Name,
+        disabled: true,
+        children: config.pro3
       }
     ],
     mainActiveIndex: 0,

@@ -5,5 +5,6 @@
     active-id="{{ activeId }}"
     bind:click-item="onClickItem"
     bind:click-nav="onClickNav"
+    content-item-class="content-item-class"
   ></van-tree-select>
 </demo-block>

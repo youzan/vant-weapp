@@ -9,6 +9,15 @@
     />
   </demo-block>
 
+  <demo-block title="没有商品图片">
+    <van-card
+      num="2"
+      price="2.00"
+      desc="描述信息"
+      title="商品标题"
+    />
+  </demo-block>
+
   <demo-block title="高级用法">
     <van-card
       num="2"
@@ -22,9 +31,9 @@
       <view slot="tags">
         <van-tag plain type="danger">满减</van-tag>
       </view>
-      <view slot="footer">
-        <van-button size="mini" custom-class="button">按钮</van-button>
-        <van-button size="mini">按钮</van-button>
+      <view slot="footer" class="van-card__footer">
+        <van-button size="mini" round custom-class="button">按钮</van-button>
+        <van-button size="mini" round>按钮</van-button>
       </view>
     </van-card>
   </demo-block>

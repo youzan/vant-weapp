@@ -5,7 +5,7 @@
 
   &__minus,
   &__plus,
-  &__input {
+  &__input-wrapper {
     display: inline-block;
     vertical-align: middle;
     background-color: @white;
@@ -13,12 +13,12 @@
 
   &__minus,
   &__plus {
+    position: relative;
     width: 40px;
     height: 30px;
-    box-sizing: border-box;
-    border: 1px solid @border-color;
-    position: relative;
     padding: 5px;
+    border: 1px solid @border-color;
+    box-sizing: border-box;
 
     &::before {
       width: 9px;
@@ -32,14 +32,14 @@
 
     &::before,
     &::after {
-      content: '';
       position: absolute;
-      margin: auto;
       top: 0;
-      left: 0;
       right: 0;
       bottom: 0;
+      left: 0;
+      margin: auto;
       background-color: @gray-darker;
+      content: '';
     }
 
     &:active {
@@ -72,23 +72,32 @@
     border-radius: 0 2px 2px 0;
   }
 
-  &__input {
-    width: 33px;
-    height: 26px;
+  &__input-wrapper {
+    position: relative;
+    width: 35px;
+    height: 30px;
     padding: 1px;
-    min-height: 0; // reset wechat default min height
+    font-size: 14px;
+    color: @gray-darker;
+    text-align: center;
     border: 1px solid @border-color;
     border-width: 1px 0;
     border-radius: 0;
-    box-sizing: content-box;
-    color: @gray-darker;
-    font-size: 14px;
-    text-align: center;
-    -webkit-appearance: none;
+    box-sizing: border-box;
 
     &--disabled {
       color: @gray;
       background-color: @background-color;
     }
+  }
+
+  &__input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    min-height: 0; // reset wechat default min height
+    transform: translate3d(-50%, -50%, 0);
+    appearance: none;
   }
 }

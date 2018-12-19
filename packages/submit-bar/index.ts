@@ -1,6 +1,9 @@
 import { VantComponent } from '../common/component';
+import { iphonex } from '../mixins/iphonex';
 
 VantComponent({
+  mixins: [iphonex],
+
   classes: [
     'bar-class',
     'price-class',
@@ -22,10 +25,6 @@ VantComponent({
     buttonType: {
       type: String,
       value: 'danger'
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      value: true
     }
   },
 
@@ -41,13 +40,6 @@ VantComponent({
     tipStr() {
       const { tip } = this.data;
       return typeof tip === 'string' ? tip : '';
-    },
-
-    barClass() {
-      const { isIPhoneX, safeAreaInsetBottom } = this.data;
-      return this.classNames('van-submit-bar__bar', 'bar-class', {
-        'van-submit-bar__bar--safe': safeAreaInsetBottom && isIPhoneX
-      });
     }
   },
 

@@ -1,5 +1,31 @@
 ## 更新日志
 
+## [v0.4.9](https://github.com/youzan/vant-weapp/tree/v0.4.9)
+`2018-12-07`
+
+**Improvements**
+
+- Tab: 新增 sticky 属性 [\#1019](https://github.com/youzan/vant-weapp/pull/1019)
+- Tab: 新增 swipeable 属性 [\#1019](https://github.com/youzan/vant-weapp/pull/1019)
+- Rate: 新增 icon-class 外部样式类 [\#1026](https://github.com/youzan/vant-weapp/pull/1026)
+- Icon: 优化内部 setData 次数 [\#1009](https://github.com/youzan/vant-weapp/pull/1009)
+- Popup: 适配 iPhoneX [\#989](https://github.com/youzan/vant-weapp/pull/989)
+- Tabbar: 适配 iPhoneX [\#989](https://github.com/youzan/vant-weapp/pull/989)
+- SubmitBar: 适配 iPhoneX [\#989](https://github.com/youzan/vant-weapp/pull/989)
+- ActionSheet: 适配 iPhoneX [\#989](https://github.com/youzan/vant-weapp/pull/989)
+- GoodsAction: 适配 iPhoneX [\#989](https://github.com/youzan/vant-weapp/pull/989)
+
+**Bug Fixes**
+
+- 修复 Collapse 箭头方向错误 [\#1014](https://github.com/youzan/vant-weapp/pull/1014)
+- 修复 Steps 在开发者工具体验评分中提示选择器错误的问题 [\#1015](https://github.com/youzan/vant-weapp/pull/1015)
+- 修复 Stepper 动态设置 value 时禁用状态未更新的问题 [\#1022](https://github.com/youzan/vant-weapp/pull/1022)
+- 修复 Popup 在 iOS 8 下动画错误的问题 [\#1008](https://github.com/youzan/vant-weapp/pull/1008) [\#1029](https://github.com/youzan/vant-weapp/pull/1029)
+- 修复 Transition 在 iOS 8 下动画错误的问题 [\#1008](https://github.com/youzan/vant-weapp/pull/1008) [\#1029](https://github.com/youzan/vant-weapp/pull/1029)
+- 修复 DatetimePicker 动态设置 type 后报错的问题 [\#1004](https://github.com/youzan/vant-weapp/pull/1004)
+- 修复劫持 setData 方法导致无法适配支付宝小程序的问题 [\#1023](https://github.com/youzan/vant-weapp/pull/1023)
+
+
 ## [v0.4.8](https://github.com/youzan/vant-weapp/tree/v0.4.8)
 `2018-12-03`
 

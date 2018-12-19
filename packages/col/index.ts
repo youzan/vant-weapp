@@ -15,16 +15,6 @@ VantComponent({
     style: ''
   },
 
-  computed: {
-    classes(): string {
-      const { span, offset } = this.data;
-      return this.classNames('van-col', {
-        [`van-col--${span}`]: span,
-        [`van-col--offset-${offset}`]: offset
-      });
-    }
-  },
-
   methods: {
     setGutter(gutter: number) {
       const padding = `${gutter / 2}px`;

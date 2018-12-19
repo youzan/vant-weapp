@@ -50,6 +50,10 @@ VantComponent({
     }
   },
 
+  data: {
+    focus: false
+  },
+
   created() {
     this.set({
       value: this.range(this.data.value)
@@ -57,6 +61,12 @@ VantComponent({
   },
 
   methods: {
+    onFocus() {
+      this.setData({
+        focus: true
+      });
+    },
+
     // limit value range
     range(value) {
       return Math.max(Math.min(this.data.max, value), this.data.min);

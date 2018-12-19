@@ -1,18 +1,16 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
   class="custom-class {{ classPrefix }} {{ utils.isSrc(name) ? 'van-icon--image' : classPrefix + '-' + name }}"
   style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}"
   bind:tap="onClick"
 >
-  <view
+  <van-info
     wx:if="{{ info !== null }}"
-    class="van-icon__info"
-  >
-    {{ info }}
-  </view>
+    info="{{ info }}"
+  />
   <image
     wx:if="{{ utils.isSrc(name) }}"
     src="{{ name }}"
   />
 </view>
-
-<wxs src="../common/utils.wxs" module="utils" />

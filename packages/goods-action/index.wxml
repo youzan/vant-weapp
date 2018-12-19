@@ -1,3 +1,5 @@
-<view class="{{ rootClass }}">
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class {{ utils.bem('goods-action', { safe: isIPhoneX && safeAreaInsetBottom }) }}">
   <slot />
 </view>

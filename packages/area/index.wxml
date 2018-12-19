@@ -17,7 +17,8 @@
     class="van-picker__columns"
   >
     <picker-view-column
-      wx:for="{{ displayColumns }}"
+      wx:if="{{ rowIndex < columnsNum }}"
+      wx:for="{{ columns }}"
       wx:for-item="row"
       wx:for-index="rowIndex"
       wx:key="rowIndex"

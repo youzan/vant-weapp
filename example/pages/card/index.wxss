@@ -6,3 +6,7 @@
 .button {
   margin-right: 5px;
 }
+
+.van-card__footer {
+  margin-top: 5px;
+}

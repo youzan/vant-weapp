@@ -7,7 +7,7 @@
       lazy-load="{{ lazyLoad }}"
       class="van-card__img thumb-class"
     />
-    <slot wx:else name="thumb" />
+    <slot name="thumb" />
     <van-tag
       wx:if="{{ tag }}"
       mark
@@ -19,16 +19,15 @@
   </view>
 
   <view class="van-card__content">
-    <view class="van-card__left">
-      <view wx:if="{{ title }}" class="van-card__title van-multi-ellipsis--l2 title-class">{{ title }}</view>
-      <slot wx:else name="title" />
+    <view wx:if="{{ title }}" class="van-card__title van-multi-ellipsis--l2 title-class">{{ title }}</view>
+    <slot wx:else name="title" />
 
-      <view wx:if="{{ desc }}" class="van-card__desc van-ellipsis desc-class">{{ desc }}</view>
-      <slot wx:else name="desc" />
+    <view wx:if="{{ desc }}" class="van-card__desc van-ellipsis desc-class">{{ desc }}</view>
+    <slot wx:else name="desc" />
 
-      <slot name="tags" />
-    </view>
-    <view class="van-card__right">
+    <slot name="tags" />
+
+    <view class="van-card__bottom">
       <view wx:if="{{ price || price === 0 }}" class="van-card__price price-class">{{ currency }} {{ price }}</view>
       <view wx:if="{{ originPrice || originPrice === 0 }}" class="van-card__origin-price origin-price-class">{{ currency }} {{ originPrice }}</view>
       <view wx:if="{{ num }}" class="van-card__num num-class">x {{ num }}</view>

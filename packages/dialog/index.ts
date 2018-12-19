@@ -10,6 +10,7 @@ VantComponent({
     message: String,
     useSlot: Boolean,
     asyncClose: Boolean,
+    messageAlign: String,
     showCancelButton: Boolean,
     closeOnClickOverlay: Boolean,
     confirmButtonOpenType: String,
@@ -95,7 +96,9 @@ VantComponent({
         this.close();
       }
       this.$emit('close', action);
-      this.$emit(action);
+      
+      //把 dialog 实例传递出去，可以通过 stopLoading() 在外部关闭按钮的 loading
+      this.$emit(action, { dialog: this });
 
       const callback = this.data[action === 'confirm' ? 'onConfirm' : 'onCancel'];
       if (callback) {

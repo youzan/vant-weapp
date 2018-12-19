@@ -12,11 +12,11 @@ VantComponent({
   },
 
   props: {
-    name: [String, Number],
+    name: null,
+    title: null,
+    value: null,
     icon: String,
     label: String,
-    title: [String, Number],
-    value: [String, Number],
     disabled: Boolean,
     border: {
       type: Boolean,
@@ -31,16 +31,6 @@ VantComponent({
   data: {
     contentHeight: 0,
     expanded: false
-  },
-
-  computed: {
-    titleClass() {
-      const { disabled, expanded } = this.data;
-      return this.classNames('van-collapse-item__title', {
-        'van-collapse-item__title--disabled': disabled,
-        'van-collapse-item__title--expanded': expanded
-      });
-    }
   },
 
   methods: {
@@ -68,11 +58,9 @@ VantComponent({
 
     updateStyle(expanded) {
       if (expanded) {
-        this.getRect('.van-collapse-item__content').then(res => {
-          this.set({
-            contentHeight: res.height ? res.height + 'px' : null
+        this.set({
+            contentHeight: 'auto'
           });
-        });
       } else {
         this.set({
           contentHeight: 0

@@ -24,7 +24,8 @@
 ```
 
 #### 高级用法
-可以通过具名`slot`添加定制内容
+
+可以通过插槽添加定制内容
 
 ```html
 <van-card
@@ -47,7 +48,7 @@
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | thumb | 左侧图片 | `String` | - |
-| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | `String` | `scaleToFill` |
+| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | `String` | `aspectFit` |
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
 | tag | 标签 | `String` | - |
@@ -58,7 +59,7 @@
 | currency | 货币符号 |  `String` | `¥` |
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
-| lazy-load | 是否开启图片懒加载 | `String` | `false` |
+| lazy-load | 是否开启图片懒加载 | `Boolean` | `false` |
 
 ### Slot
 

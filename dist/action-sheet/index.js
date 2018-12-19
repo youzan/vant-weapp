@@ -1,5 +1,7 @@
 import { VantComponent } from '../common/component';
+import { iphonex } from '../mixins/iphonex';
 VantComponent({
+  mixins: [iphonex],
   props: {
     show: Boolean,
     title: String,
@@ -17,10 +19,6 @@ VantComponent({
       value: true
     },
     closeOnClickOverlay: {
-      type: Boolean,
-      value: true
-    },
-    safeAreaInsetBottom: {
       type: Boolean,
       value: true
     }

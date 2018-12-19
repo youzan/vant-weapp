@@ -14,19 +14,6 @@ VantComponent({
     labelPosition: String,
     checkedColor: String
   },
-  computed: {
-    iconClass: function iconClass() {
-      var _this$data = this.data,
-          disabled = _this$data.disabled,
-          name = _this$data.name,
-          value = _this$data.value;
-      return this.classNames('van-radio__icon', {
-        'van-radio__icon--disabled': disabled,
-        'van-radio__icon--checked': !disabled && name === value,
-        'van-radio__icon--check': !disabled && name !== value
-      });
-    }
-  },
   methods: {
     emitChange: function emitChange(value) {
       var instance = this.getRelationNodes('../radio-group/index')[0] || this;

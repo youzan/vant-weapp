@@ -38,12 +38,20 @@ VantComponent({
       });
     }
   },
+  data: {
+    focus: false
+  },
   created: function created() {
     this.set({
       value: this.range(this.data.value)
     });
   },
   methods: {
+    onFocus: function onFocus() {
+      this.setData({
+        focus: true
+      });
+    },
     // limit value range
     range: function range(value) {
       return Math.max(Math.min(this.data.max, value), this.data.min);

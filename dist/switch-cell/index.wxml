@@ -9,6 +9,8 @@
     checked="{{ checked }}"
     loading="{{ loading }}"
     disabled="{{ disabled }}"
+    active-color="{{ activeColor }}"
+    inactive-color="{{ inactiveColor }}"
     custom-class="van-switch-cell__switch"
     bind:change="onChange"
   />

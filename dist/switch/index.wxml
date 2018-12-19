@@ -1,6 +1,8 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
-  style="{{ style }}"
-  class="custom-class {{ classes }}"
+  class="custom-class {{ utils.bem('switch', { on: checked, disabled }) }}"
+  style="font-size: {{ size }}; {{ (checked ? activeColor : inactiveColor) ? 'background-color: ' + (checked ? activeColor : inactiveColor ) : '' }}"
   bind:tap="onClick"
 >
   <view class="van-switch__node node-class">

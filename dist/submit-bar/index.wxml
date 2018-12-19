@@ -1,3 +1,5 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view class="van-submit-bar custom-class">
   <slot name="top" />
 
@@ -5,7 +7,7 @@
     {{ tipStr }}<slot name="tip" />
   </view>
 
-  <view class="{{ barClass }}">
+  <view class="bar-class {{ utils.bem('submit-bar__bar', { safe: safeAreaInsetBottom && isIPhoneX }) }}">
     <slot />
     <view class="van-submit-bar__text">
       <block wx:if="{{ hasPrice }}">

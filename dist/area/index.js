@@ -25,15 +25,6 @@ VantComponent({
     pickerValue: [0, 0, 0],
     columns: []
   },
-  computed: {
-    displayColumns: function displayColumns() {
-      var _this$data = this.data,
-          _this$data$columns = _this$data.columns,
-          columns = _this$data$columns === void 0 ? [] : _this$data$columns,
-          columnsNum = _this$data.columnsNum;
-      return columns.slice(0, +columnsNum);
-    }
-  },
   watch: {
     value: function value(_value) {
       this.code = _value;
@@ -58,9 +49,8 @@ VantComponent({
     },
     onChange: function onChange(event) {
       var value = event.detail.value;
-      var _this$data2 = this.data,
-          pickerValue = _this$data2.pickerValue,
-          displayColumns = _this$data2.displayColumns;
+      var pickerValue = this.data.pickerValue;
+      var displayColumns = this.getDisplayColumns();
       var index = pickerValue.findIndex(function (item, index) {
         return item !== value[index];
       });
@@ -143,11 +133,9 @@ VantComponent({
       });
     },
     getValues: function getValues() {
-      var _this$data3 = this.data,
-          _this$data3$displayCo = _this$data3.displayColumns,
-          displayColumns = _this$data3$displayCo === void 0 ? [] : _this$data3$displayCo,
-          _this$data3$pickerVal = _this$data3.pickerValue,
-          pickerValue = _this$data3$pickerVal === void 0 ? [] : _this$data3$pickerVal;
+      var _this$data$pickerValu = this.data.pickerValue,
+          pickerValue = _this$data$pickerValu === void 0 ? [] : _this$data$pickerValu;
+      var displayColumns = this.getDisplayColumns();
       return displayColumns.map(function (option, index) {
         return option[pickerValue[index]];
       }).filter(function (value) {
@@ -155,9 +143,9 @@ VantComponent({
       });
     },
     getIndexs: function getIndexs() {
-      var _this$data4 = this.data,
-          pickerValue = _this$data4.pickerValue,
-          columnsNum = _this$data4.columnsNum;
+      var _this$data = this.data,
+          pickerValue = _this$data.pickerValue,
+          columnsNum = _this$data.columnsNum;
       return pickerValue.slice(0, columnsNum);
     },
     getDetail: function getDetail() {
@@ -193,6 +181,13 @@ VantComponent({
     reset: function reset() {
       this.code = '';
       this.setValues();
+    },
+    getDisplayColumns: function getDisplayColumns() {
+      var _this$data2 = this.data,
+          _this$data2$columns = _this$data2.columns,
+          columns = _this$data2$columns === void 0 ? [] : _this$data2$columns,
+          columnsNum = _this$data2.columnsNum;
+      return columns.slice(0, +columnsNum);
     }
   }
 });

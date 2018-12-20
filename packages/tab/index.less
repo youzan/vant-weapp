@@ -1,7 +1,13 @@
 .van-tab__pane {
   box-sizing: border-box;
+  overflow-y: auto;
 
-  &--float {
-    float: left;
+  &--active {
+    height: auto;
+  }
+
+  &--inactive {
+    height: 0px;
+    overflow: visible;
   }
 }

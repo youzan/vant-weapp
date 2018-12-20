@@ -189,8 +189,9 @@ VantComponent({
         this.set({
           trackStyle: `
             width: ${width * this.child.length}px;
-            transform: translateX(${-1 * active * width}px);
-            transition-duration: ${duration}s;
+            left: ${-1 * active * width}px;
+            transition: left ${duration}s;
+            display: flex;
           `
         });
         this.setTabsProps({

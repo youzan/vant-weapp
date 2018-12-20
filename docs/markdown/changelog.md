@@ -1,5 +1,39 @@
 ## 更新日志
 
+
+## [v0.4.10](https://github.com/youzan/vant-weapp/tree/v0.4.10)
+`2018-12-19`
+
+**Improvements**
+
+- Card: 更新样式 [\#1085](https://github.com/youzan/vant-weapp/pull/1085)
+- Card: 更新 thumb-mode 默认值为 aspectFit [\#1039](https://github.com/youzan/vant-weapp/pull/1039)
+- Field: 新增 show-confirm-bar 属性 [\#1040](https://github.com/youzan/vant-weapp/pull/1040)
+- TreeSelect: 更新样式 [\#1084](https://github.com/youzan/vant-weapp/pull/1084)
+- TreeSelect: 支持左侧选项禁用 [\#1084](https://github.com/youzan/vant-weapp/pull/1084)
+- TreeSelect: 增加外部样式类 [\#1084](https://github.com/youzan/vant-weapp/pull/1084)
+- Picker: 新增选择器组件 [\#1083](https://github.com/youzan/vant-weapp/pull/1083)
+- Tag: 新增 text-color 属性 [\#1077](https://github.com/youzan/vant-weapp/pull/1077)
+- Collapse: 更新 content 样式 [\#1069](https://github.com/youzan/vant-weapp/pull/1069)
+- Checkbox: 更新禁用态 label 颜色 [\#1068](https://github.com/youzan/vant-weapp/pull/1068)
+- Checkbox: 优化渲染性能 [\#1057](https://github.com/youzan/vant-weapp/pull/1057)
+- Dialog: 新增 message-align 属性 [\#1067](https://github.com/youzan/vant-weapp/pull/1067)
+- Dialog：新增 overlay、confirm、cancel 事件返回值 picker [\#1047](https://github.com/youzan/vant-weapp/pull/1047)
+- Info: 更新样式 [\#1066](https://github.com/youzan/vant-weapp/pull/1066)
+- Toast: 更新 icon 大小 [\#1064](https://github.com/youzan/vant-weapp/pull/1064)
+- SwitchCell: 新增 active-color、inactive-color 属性 [\#1061](https://github.com/youzan/vant-weapp/pull/1061)
+- Switch: 更新样式 [\#1065](https://github.com/youzan/vant-weapp/pull/1065)
+- Switch: 优化渲染性能 [\#1079](https://github.com/youzan/vant-weapp/pull/1079)
+- Area: 优化渲染性能 [\#1055](https://github.com/youzan/vant-weapp/pull/1055)
+- Cell: 优化渲染性能 [\#1050](https://github.com/youzan/vant-weapp/pull/1050)
+- Button: 优化渲染性能 [\#1049](https://github.com/youzan/vant-weapp/pull/1049)
+
+**Bug Fixes**
+
+- 修复 Collapse 动态修改内容时高度异常 [\#1094](https://github.com/youzan/vant-weapp/pull/1094)
+- 修复 Stepper 在iPad中或修改input高度时输入框样式异常 [\#1086](https://github.com/youzan/vant-weapp/pull/1086)
+- 修复 ActionSheet 动态设置actions时，渲染后button被打散 [\#1070](https://github.com/youzan/vant-weapp/pull/1070)
+
 ## [v0.4.9](https://github.com/youzan/vant-weapp/tree/v0.4.9)
 `2018-12-07`
 

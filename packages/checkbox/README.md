@@ -83,7 +83,7 @@ Page({
 <van-checkbox-group value="{{ result }}" bind:change="onChange">
   <van-checkbox
     wx:for="{{ list }}"
-    wx:key="{{ index }}"
+    wx:key="index"
     name="{{ item }}"
   >
     复选框 {{ item }}
@@ -112,7 +112,7 @@ Page({
 <van-checkbox-group value="{{ result }}" bind:change="onChange" max="2">
   <van-checkbox
     wx:for="{{ list }}"
-    wx:key="{{ index }}"
+    wx:key="index"
     name="{{ item }}"
   >
     复选框 {{ item }}
@@ -129,7 +129,7 @@ Page({
   <van-cell-group >
     <van-cell
       wx:for="{{ list }}"
-      wx:key="{{ index }}"
+      wx:key="index"
       title="复选框 {{ item }}"
       clickable
       data-name="{{ item }}"

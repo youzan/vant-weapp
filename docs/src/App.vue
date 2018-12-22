@@ -17,7 +17,8 @@ const UNSHARED = [
   'changelog',
   'intro',
   'transition',
-  'col'
+  'col',
+  'icon'
 ];
 
 const MAPPER = {

@@ -26,6 +26,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-typescript": "^7.1.0",
+    "@vant/icons": "^1.0.2",
     "autoprefixer": "^9.3.1",
     "babel-loader": "8.0.4",
     "cross-env": "^5.1.4",

@@ -33,6 +33,13 @@ VantComponent({
     expanded: false
   },
 
+  beforeCreate() {
+    this.animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease-in-out'
+    });
+  },
+
   methods: {
     updateExpanded() {
       if (!this.parent) {
@@ -56,16 +63,27 @@ VantComponent({
       this.set({ expanded });
     },
 
-    updateStyle(expanded) {
-      if (expanded) {
-        this.set({
-            contentHeight: 'auto'
-          });
-      } else {
-        this.set({
-          contentHeight: 0
-        });
-      }
+    updateStyle(expanded: boolean) {
+      this.getRect('.van-collapse-item__content').then(res => {
+        const animationData = this.animation
+          .height(expanded ? res.height : 0)
+          .step()
+          .export();
+        if (expanded) {
+          this.set({ animationData });
+        } else {
+          this.set(
+            {
+              contentHeight: res.height + 'px'
+            },
+            () => {
+              setTimeout(() => {
+                this.set({ animationData });
+              }, 20);
+            }
+          );
+        }
+      });
     },
 
     onClick() {
@@ -79,6 +97,14 @@ VantComponent({
       const currentName = name == null ? index : name;
 
       this.parent.switch(currentName, !expanded);
+    },
+
+    onTransitionEnd() {
+      if (this.data.expanded) {
+        this.set({
+          contentHeight: 'auto'
+        });
+      }
     }
   }
 });

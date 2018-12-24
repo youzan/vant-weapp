@@ -20,13 +20,14 @@
     display: block;
     text-align: left;
     min-height: 24px;
+    color: @text-color;
     line-height: inherit;
     box-sizing: border-box;
     background-color: transparent;
 
     &--disabled {
       opacity: 1;
-      color: @gray-darker;
+      color: @gray-dark;
       background-color: transparent;
     }
 
@@ -41,6 +42,10 @@
     &--error {
       color: @red;
     }
+  }
+
+  &__placeholder {
+    color: @gray-dark;
   }
 
   &__clear-root {

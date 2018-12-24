@@ -17,15 +17,18 @@
 <demo-block title="自定义标题内容">
   <van-collapse value="{{ active3 }}" data-key="active3" bind:change="onChange">
     <van-collapse-item>
-      <view slot="title">{{ title1 }}<van-icon name="question" custom-class="van-icon-question" /></view>
+      <view slot="title">
+        {{ title1 }}
+        <van-icon name="question-o" custom-class="van-icon-question" />
+      </view>
       {{ content1 }}
     </van-collapse-item>
     <van-collapse-item
       title="{{ title2 }}"
-     
       value="内容"
-      icon="shop"
-    >{{ content2 }}</van-collapse-item>
-    <van-collapse-item title="{{ title3 }}">{{ content3 }}</van-collapse-item>
+      icon="shop-o"
+    >
+      {{ content2 }}
+    </van-collapse-item>
   </van-collapse>
 </demo-block>

@@ -30,7 +30,7 @@
 <demo-block title="展示图标">
   <van-cell
     title="单元格"
-    icon="location"
+    icon="location-o"
     border="{{ false }}"
   />
 </demo-block>
@@ -53,13 +53,13 @@
 </demo-block>
 
 <demo-block title="高级用法">
-  <van-cell value="内容" icon="shop" is-link>
+  <van-cell value="内容" icon="shop-o" is-link>
     <view slot="title">
       <view class="title">单元格</view>
       <van-tag type="danger">标签</van-tag>
     </view>
   </van-cell>
-  <van-cell title="单元格" icon="location" is-link />
+  <van-cell title="单元格" icon="location-o" is-link />
   <van-cell title="单元格" border="{{ false }}">
     <van-icon slot="right-icon" name="search" />
   </van-cell>

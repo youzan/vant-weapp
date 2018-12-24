@@ -14,7 +14,7 @@
       class="{{ utils.bem('radio__icon', { disabled, checked: !disabled && name === value, check: !disabled && name !== value }) }}"
       custom-class="icon-class"
       color="{{ value === name ? checkedColor : '' }}"
-      name="{{ value === name ? 'checked' : 'check' }}"
+      name="{{ value === name ? 'checked' : 'circle' }}"
     />
   </view>
   <view class="van-radio__label van-radio__label--{{ labelPosition }} label-class" bindtap="onClickLabel">

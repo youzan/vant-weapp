@@ -3,10 +3,10 @@
 }
 
 .custom-button {
-  width: 44px;
+  width: 26px;
   color: #fff;
   font-size: 10px;
-  line-height: 20px;
+  line-height: 18px;
   text-align: center;
   border-radius: 100px;
   background-color: #f44;

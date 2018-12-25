@@ -2,7 +2,7 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    currentValue: 30
+    currentValue: 50
   },
 
   onChange(event) {

@@ -1,5 +1,6 @@
 <view
   class="van-tabbar-item {{ active ? 'van-tabbar-item--active' : '' }}"
+  style="{{ active && color ? 'color: ' + color : '' }}"
   bind:tap="onClick"
 >
   <view class="van-tabbar-item__icon {{ dot ? 'van-tabbar-item__icon--dot' : '' }}">

@@ -23,6 +23,7 @@ VantComponent({
 
   props: {
     active: Number,
+    activeColor: String,
     fixed: {
       type: Boolean,
       value: true
@@ -52,7 +53,10 @@ VantComponent({
   methods: {
     setActiveItem() {
       this.data.items.forEach((item, index) => {
-        item.setActive(index === this.data.currentActive);
+        item.setActive({
+          active: index === this.data.currentActive,
+          color: this.data.activeColor
+        });
       });
     },
 

@@ -1,5 +1,9 @@
 <demo-block title="基础用法">
-  <van-slider custom-class="slider" value="50" bind:change="onChange" />
+  <van-slider
+    value="50"
+    custom-class="slider"
+    bind:change="onChange"
+  />
 </demo-block>
 
 <demo-block title="指定选择范围">
@@ -13,7 +17,11 @@
 </demo-block>
 
 <demo-block title="禁用">
-  <van-slider custom-class="slider" value="50" disabled />
+  <van-slider
+    custom-class="slider"
+    value="50"
+    disabled
+  />
 </demo-block>
 
 <demo-block title="指定步长">
@@ -24,4 +32,17 @@
     bar-height="4px"
     bind:change="onChange"
   />
+</demo-block>
+
+<demo-block title="自定义按钮">
+  <van-slider
+    value="{{ currentValue }}"
+    custom-class="slider"
+    use-button-slot
+    bind:drag="onDrag"
+  >
+    <view class="custom-button" slot="button">
+      {{ currentValue }}/100
+    </view>
+  </van-slider>
 </demo-block>

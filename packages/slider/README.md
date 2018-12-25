@@ -42,6 +42,34 @@ Page({
 <van-slider value="50" step="10" bar-height="4px" />
 ```
 
+#### 自定义按钮
+
+```html
+<van-slider
+  value="{{ currentValue }}"
+  use-button-slot
+  bind:drag="onDrag"
+>
+  <view class="custom-button" slot="button">
+    {{ currentValue }}/100
+  </view>
+</van-slider>
+```
+
+```js
+Page({
+  data: {
+    currentValue: 30
+  },
+
+  onDrag(event) {
+    this.setData({
+      currentValue: event.detail.value
+    });
+  }
+});
+```
+
 ### API
 
 | 参数       | 说明      | 类型       | 默认值       |
@@ -57,6 +85,7 @@ Page({
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
+| bind:drag | 拖动进度条时触发 | event.detail.value: 当前进度 |
 | bind:change | 进度值改变后触发 | event.detail: 当前进度 |
 
 ### 外部样式类

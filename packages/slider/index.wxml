@@ -1,11 +1,23 @@
-<view class="custom-class van-slider {{ disabled ? 'van-slider--disabled' : '' }}" bind:tap="onClick">
+<view
+  class="custom-class van-slider {{ disabled ? 'van-slider--disabled' : '' }}"
+  bind:tap="onClick"
+>
   <view class="van-slider__bar" style="{{ barStyle }}">
     <view
-      class="van-slider__button"
+      class="van-slider__button-wrapper"
       bind:touchstart="onTouchStart"
       catch:touchmove="onTouchMove"
       bind:touchend="onTouchEnd"
       bind:touchcancel="onTouchEnd"
-    />
+    >
+      <slot
+        wx:if="{{ useButtonSlot }}"
+        name="button"
+      />
+      <view
+        wx:else
+        class="van-slider__button"
+      />
+    </view>
   </view>
 </view>

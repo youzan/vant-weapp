@@ -13,7 +13,6 @@
 
 #### 基础用法
 
-
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
@@ -35,7 +34,6 @@ Page({
 });
 ```
 
-
 #### 自定义图标
 
 可以通过 slot 自定义图标，其中 icon slot 代表未选中状态下的图标，icon-active slot 代表选中状态下的图标
@@ -43,9 +41,17 @@ Page({
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item info="3">
-    <span>自定义</span>
-    <image slot="icon" src="{{ icon.normal }}" class="icon" mode="aspectFit" />
-    <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" />
+    <image
+      slot="icon"
+      src="{{ icon.normal }}"
+      mode="aspectFit"
+    />
+    <image
+      slot="icon-active"
+      src="{{ icon.active }}"
+      mode="aspectFit"
+    />
+    自定义
   </van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>
   <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
@@ -68,11 +74,39 @@ Page({
 });
 ```
 
+#### 自定义颜色
+
+```html
+<van-tabbar
+  active="{{ active }}"
+  active-color="#4b0"
+  bind:change="onChange"
+>
+  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="search">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>
+```
+
+```javascript
+Page({
+  data: {
+    active: 0
+  },
+  // event.detail 的值为当前选中项的索引
+  onChange(event) {
+    console.log(event.detail);
+  }
+});
+```
+
 ### Tabbar API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | active | 当前选中标签的索引 | `Number` | - |
+| active-color | 选中标签的颜色 | `String` | `#1989fa` |
 | fixed | 是否固定在底部 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
 | safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |

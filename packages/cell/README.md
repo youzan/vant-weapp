@@ -94,7 +94,7 @@
   is-link
 >
   <view slot="title">
-    <span class="van-cell-text">单元格</span>
+    <view class="van-cell-text">单元格</view>
     <van-tag type="danger">标签</van-tag>
   </view>
 </van-cell>

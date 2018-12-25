@@ -25,9 +25,9 @@ VantComponent({
       this.$emit('click');
     },
 
-    setActive(active) {
+    setActive({ active, color }) {
       if (this.data.active !== active) {
-        this.set({ active });
+        this.set({ active, color });
       }
     }
   }

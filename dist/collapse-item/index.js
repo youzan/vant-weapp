@@ -28,6 +28,12 @@ VantComponent({
     contentHeight: 0,
     expanded: false
   },
+  beforeCreate: function beforeCreate() {
+    this.animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease-in-out'
+    });
+  },
   methods: {
     updateExpanded: function updateExpanded() {
       if (!this.parent) {
@@ -54,15 +60,27 @@ VantComponent({
       });
     },
     updateStyle: function updateStyle(expanded) {
-      if (expanded) {
-        this.set({
-          contentHeight: 'auto'
-        });
-      } else {
-        this.set({
-          contentHeight: 0
-        });
-      }
+      var _this = this;
+
+      this.getRect('.van-collapse-item__content').then(function (res) {
+        var animationData = _this.animation.height(expanded ? res.height : 0).step().export();
+
+        if (expanded) {
+          _this.set({
+            animationData: animationData
+          });
+        } else {
+          _this.set({
+            contentHeight: res.height + 'px'
+          }, function () {
+            setTimeout(function () {
+              _this.set({
+                animationData: animationData
+              });
+            }, 20);
+          });
+        }
+      });
     },
     onClick: function onClick() {
       if (this.data.disabled) {
@@ -75,6 +93,13 @@ VantComponent({
       var index = this.parent.data.items.indexOf(this);
       var currentName = name == null ? index : name;
       this.parent.switch(currentName, !expanded);
+    },
+    onTransitionEnd: function onTransitionEnd() {
+      if (this.data.expanded) {
+        this.set({
+          contentHeight: 'auto'
+        });
+      }
     }
   }
 });

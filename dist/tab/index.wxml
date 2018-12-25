@@ -1,6 +1,6 @@
 <view
   wx:if="{{ animated || inited }}"
-  class="custom-class van-tab__pane {{ animated ? 'van-tab__pane--float' : '' }}"
+  class="custom-class van-tab__pane {{ active ? 'van-tab__pane--active' : 'van-tab__pane--inactive' }}"
   style="{{ animated || active ? '' : 'display: none;' }} {{ width ? 'width:' + width + 'px;' : '' }}"
 >
   <slot />

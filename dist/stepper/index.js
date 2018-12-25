@@ -9,6 +9,7 @@ VantComponent({
     value: Number,
     integer: Boolean,
     disabled: Boolean,
+    asyncChange: Boolean,
     disableInput: Boolean,
     min: {
       type: null,
@@ -87,7 +88,7 @@ VantComponent({
     },
     triggerInput: function triggerInput(value) {
       this.set({
-        value: value
+        value: this.data.asyncChange ? this.data.value : value
       });
       this.$emit('change', value);
     }

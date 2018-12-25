@@ -29,7 +29,9 @@
   </van-cell>
   <view
     class="van-collapse-item__wrapper"
-    style="max-height: {{ contentHeight }};"
+    style="height: {{ contentHeight }};"
+    animation="{{ animationData }}"
+    bind:transitionend="onTransitionEnd"
   >
     <view
       class="van-collapse-item__content content-class"

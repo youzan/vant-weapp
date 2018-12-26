@@ -6,7 +6,7 @@
   <van-stepper value="{{ value1 }}" disabled />
 </demo-block>
 
-<demo-block title="异步变更">
+<demo-block title="异步变更" padding>
   <van-stepper
     value="{{ 5 }}"
     integer

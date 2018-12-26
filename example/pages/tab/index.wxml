@@ -12,6 +12,23 @@
   </van-tabs>
 </demo-block>
 
+<demo-block title="自定义标题">
+  <van-tabs active="{{ 1 }}" bind:change="onChange">
+    <van-tab
+      wx:for="1234"
+      wx:key="index"
+      title="{{ '标签' + item }}"
+      title-style="font-size: 16px; font-weight: bold; {{ index === 0 ? 'text-decoration: line-through;' : '' }}"
+      dot="{{ index === 1 }}"
+      info="{{ index === 2 ? 99 : null }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
 <demo-block title="横向滚动">
   <van-tabs>
     <van-tab

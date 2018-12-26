@@ -14,7 +14,7 @@ VantComponent({
   ],
 
   props: {
-    value: [Number, String],
+    value: null,
     integer: Boolean,
     disabled: Boolean,
     asyncChange: Boolean,
@@ -45,10 +45,11 @@ VantComponent({
 
   watch: {
     value(value) {
-      if (value === '') return;
-      this.set({
-        value: this.range(value)
-      });
+      if (value !== '') {
+        this.set({
+          value: this.range(value)
+        });
+      }
     }
   },
 

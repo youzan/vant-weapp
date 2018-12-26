@@ -14,7 +14,10 @@ VantComponent({
   ],
 
   props: {
-    value: Number,
+    // HACK: do not enable type checks for `value`
+    // It stops the user to delete the input to empty string,
+    // which is very common when you trying to modify '1' to '50'
+    // value: Number,
     integer: Boolean,
     disabled: Boolean,
     asyncChange: Boolean,

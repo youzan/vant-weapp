@@ -2,10 +2,39 @@ import { VantComponent } from '../common/component';
 import { isDef } from '../common/utils';
 
 const currentYear = new Date().getFullYear();
-const isValidDate = date => isDef(date) && !isNaN(new Date(date).getTime());
+
+function isValidDate(date) {
+  return isDef(date) && !isNaN(new Date(date).getTime())
+};
 
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
+}
+
+function padZero(val: string | number): string {
+  return `00${val}`.slice(-2);
+}
+
+function times(n: number, iteratee: (number) => string): string[] {
+  let index = -1;
+  const result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+function getTrueValue(formattedValue: string): number {
+  if (!formattedValue) return;
+  while (isNaN(parseInt(formattedValue, 10))) {
+    formattedValue = formattedValue.slice(1);
+  }
+  return parseInt(formattedValue, 10);
+}
+
+function getMonthEndDay(year, month): number {
+  return 32 - new Date(year, month - 1, 32).getDate();
 }
 
 VantComponent({
@@ -71,9 +100,9 @@ VantComponent({
   computed: {
     columns() {
       const results = this.getRanges().map(({ type, range }) => {
-        const values = this.times(range[1] - range[0] + 1, index => {
+        const values = times(range[1] - range[0] + 1, index => {
           let value = range[0] + index;
-          value = type === 'year' ? `${value}` : this.pad(value);
+          value = type === 'year' ? `${value}` : padZero(value);
           return value;
         });
 
@@ -145,26 +174,22 @@ VantComponent({
       return result;
     },
 
-    pad(val: string | number): string {
-      return `00${val}`.slice(-2);
-    },
-
     correctValue(value) {
-      const { data, pad } = this;
+      const { data } = this;
       // validate value
       const isDateType = data.type !== 'time';
       if (isDateType && !isValidDate(value)) {
         value = data.minDate;
       } else if (!isDateType && !value) {
         const { minHour } = data;
-        value = `${pad(minHour)}:00`;
+        value = `${padZero(minHour)}:00`;
       }
 
       // time type
       if (!isDateType) {
         let [hour, minute] = value.split(':');
-        hour = pad(range(hour, data.minHour, data.maxHour));
-        minute = pad(range(minute, data.minMinute, data.maxMinute));
+        hour = padZero(range(hour, data.minHour, data.maxHour));
+        minute = padZero(range(minute, data.minMinute, data.maxMinute));
 
         return `${hour}:${minute}`;
       }
@@ -174,16 +199,6 @@ VantComponent({
       value = Math.min(value, data.maxDate);
 
       return value;
-    },
-
-    times(n: number, iteratee: (number) => string): string[] {
-      let index = -1;
-      const result = Array(n);
-
-      while (++index < n) {
-        result[index] = iteratee(index);
-      }
-      return result;
     },
 
     getBoundary(type: string, innerValue: number): object {
@@ -197,7 +212,7 @@ VantComponent({
 
       if (type === 'max') {
         month = 12;
-        date = this.getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
+        date = getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
         hour = 23;
         minute = 59;
       }
@@ -224,18 +239,6 @@ VantComponent({
       };
     },
 
-    getTrueValue(formattedValue: string): number {
-      if (!formattedValue) return;
-      while (isNaN(parseInt(formattedValue, 10))) {
-        formattedValue = formattedValue.slice(1);
-      }
-      return parseInt(formattedValue, 10);
-    },
-
-    getMonthEndDay(year, month): number {
-      return 32 - new Date(year, month - 1, 32).getDate();
-    },
-
     onCancel() {
       this.$emit('cancel');
     },
@@ -255,10 +258,10 @@ VantComponent({
       if (data.type === 'time') {
         value = values.join(':');
       } else {
-        const year = this.getTrueValue(values[0]);
-        const month = this.getTrueValue(values[1]);
-        const maxDate = this.getMonthEndDay(year, month);
-        let date = this.getTrueValue(values[2]);
+        const year = getTrueValue(values[0]);
+        const month = getTrueValue(values[1]);
+        const maxDate = getMonthEndDay(year, month);
+        let date = getTrueValue(values[2]);
         if (data.type === 'year-month') {
           date = 1;
         }
@@ -266,8 +269,8 @@ VantComponent({
         let hour = 0;
         let minute = 0;
         if (data.type === 'datetime') {
-          hour = this.getTrueValue(values[3]);
-          minute = this.getTrueValue(values[4]);
+          hour = getTrueValue(values[3]);
+          minute = getTrueValue(values[4]);
         }
         value = new Date(year, month - 1, date, hour, minute);
       }
@@ -314,7 +317,7 @@ VantComponent({
 
     updateColumnValue(value): void {
       let values = [];
-      const { pad, data } = this;
+      const { data } = this;
       const { columns } = data;
 
       if (data.type === 'time') {
@@ -327,16 +330,16 @@ VantComponent({
         const date = new Date(value);
         values = [
           columns[0].indexOf(`${date.getFullYear()}`),
-          columns[1].indexOf(pad(date.getMonth() + 1))
+          columns[1].indexOf(padZero(date.getMonth() + 1))
         ];
         if (data.type === 'date') {
-          values.push(columns[2].indexOf(pad(date.getDate())));
+          values.push(columns[2].indexOf(padZero(date.getDate())));
         }
         if (data.type === 'datetime') {
           values.push(
-            columns[2].indexOf(pad(date.getDate())),
-            columns[3].indexOf(pad(date.getHours())),
-            columns[4].indexOf(pad(date.getMinutes()))
+            columns[2].indexOf(padZero(date.getDate())),
+            columns[3].indexOf(padZero(date.getHours())),
+            columns[4].indexOf(padZero(date.getMinutes()))
           );
         }
       }

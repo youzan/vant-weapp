@@ -2,12 +2,43 @@ import { VantComponent } from '../common/component';
 import { isDef } from '../common/utils';
 var currentYear = new Date().getFullYear();
 
-var isValidDate = function isValidDate(date) {
+function isValidDate(date) {
   return isDef(date) && !isNaN(new Date(date).getTime());
-};
+}
+
+;
 
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
+}
+
+function padZero(val) {
+  return ("00" + val).slice(-2);
+}
+
+function times(n, iteratee) {
+  var index = -1;
+  var result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+
+  return result;
+}
+
+function getTrueValue(formattedValue) {
+  if (!formattedValue) return;
+
+  while (isNaN(parseInt(formattedValue, 10))) {
+    formattedValue = formattedValue.slice(1);
+  }
+
+  return parseInt(formattedValue, 10);
+}
+
+function getMonthEndDay(year, month) {
+  return 32 - new Date(year, month - 1, 32).getDate();
 }
 
 VantComponent({
@@ -70,18 +101,14 @@ VantComponent({
   },
   computed: {
     columns: function columns() {
-      var _this = this;
-
       var results = this.getRanges().map(function (_ref) {
         var type = _ref.type,
             range = _ref.range;
-
-        var values = _this.times(range[1] - range[0] + 1, function (index) {
+        var values = times(range[1] - range[0] + 1, function (index) {
           var value = range[0] + index;
-          value = type === 'year' ? "" + value : _this.pad(value);
+          value = type === 'year' ? "" + value : padZero(value);
           return value;
         });
-
         return values;
       });
       return results;
@@ -89,7 +116,7 @@ VantComponent({
   },
   watch: {
     value: function value(val) {
-      var _this2 = this;
+      var _this = this;
 
       var data = this.data;
       val = this.correctValue(val);
@@ -99,9 +126,9 @@ VantComponent({
         this.set({
           innerValue: val
         }, function () {
-          _this2.updateColumnValue(val);
+          _this.updateColumnValue(val);
 
-          _this2.$emit('input', val);
+          _this.$emit('input', val);
         });
       }
     }
@@ -154,12 +181,8 @@ VantComponent({
       if (data.type === 'year-month') result.splice(2, 3);
       return result;
     },
-    pad: function pad(val) {
-      return ("00" + val).slice(-2);
-    },
     correctValue: function correctValue(value) {
-      var data = this.data,
-          pad = this.pad; // validate value
+      var data = this.data; // validate value
 
       var isDateType = data.type !== 'time';
 
@@ -167,7 +190,7 @@ VantComponent({
         value = data.minDate;
       } else if (!isDateType && !value) {
         var minHour = data.minHour;
-        value = pad(minHour) + ":00";
+        value = padZero(minHour) + ":00";
       } // time type
 
 
@@ -176,8 +199,8 @@ VantComponent({
             hour = _value$split[0],
             minute = _value$split[1];
 
-        hour = pad(range(hour, data.minHour, data.maxHour));
-        minute = pad(range(minute, data.minMinute, data.maxMinute));
+        hour = padZero(range(hour, data.minHour, data.maxHour));
+        minute = padZero(range(minute, data.minMinute, data.maxMinute));
         return hour + ":" + minute;
       } // date type
 
@@ -185,16 +208,6 @@ VantComponent({
       value = Math.max(value, data.minDate);
       value = Math.min(value, data.maxDate);
       return value;
-    },
-    times: function times(n, iteratee) {
-      var index = -1;
-      var result = Array(n);
-
-      while (++index < n) {
-        result[index] = iteratee(index);
-      }
-
-      return result;
     },
     getBoundary: function getBoundary(type, innerValue) {
       var value = new Date(innerValue);
@@ -207,7 +220,7 @@ VantComponent({
 
       if (type === 'max') {
         month = 12;
-        date = this.getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
+        date = getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
         hour = 23;
         minute = 59;
       }
@@ -236,18 +249,6 @@ VantComponent({
         [type + "Minute"]: minute
       };
     },
-    getTrueValue: function getTrueValue(formattedValue) {
-      if (!formattedValue) return;
-
-      while (isNaN(parseInt(formattedValue, 10))) {
-        formattedValue = formattedValue.slice(1);
-      }
-
-      return parseInt(formattedValue, 10);
-    },
-    getMonthEndDay: function getMonthEndDay(year, month) {
-      return 32 - new Date(year, month - 1, 32).getDate();
-    },
     onCancel: function onCancel() {
       this.$emit('cancel');
     },
@@ -255,7 +256,7 @@ VantComponent({
       this.$emit('confirm', this.data.innerValue);
     },
     onChange: function onChange(event) {
-      var _this3 = this;
+      var _this2 = this;
 
       var data = this.data;
       var pickerValue = event.detail.value;
@@ -267,10 +268,10 @@ VantComponent({
       if (data.type === 'time') {
         value = values.join(':');
       } else {
-        var year = this.getTrueValue(values[0]);
-        var month = this.getTrueValue(values[1]);
-        var maxDate = this.getMonthEndDay(year, month);
-        var date = this.getTrueValue(values[2]);
+        var year = getTrueValue(values[0]);
+        var month = getTrueValue(values[1]);
+        var maxDate = getMonthEndDay(year, month);
+        var date = getTrueValue(values[2]);
 
         if (data.type === 'year-month') {
           date = 1;
@@ -281,8 +282,8 @@ VantComponent({
         var minute = 0;
 
         if (data.type === 'datetime') {
-          hour = this.getTrueValue(values[3]);
-          minute = this.getTrueValue(values[4]);
+          hour = getTrueValue(values[3]);
+          minute = getTrueValue(values[4]);
         }
 
         value = new Date(year, month - 1, date, hour, minute);
@@ -292,11 +293,11 @@ VantComponent({
       this.set({
         innerValue: value
       }, function () {
-        _this3.updateColumnValue(value);
+        _this2.updateColumnValue(value);
 
-        _this3.$emit('input', value);
+        _this2.$emit('input', value);
 
-        _this3.$emit('change', _this3);
+        _this2.$emit('change', _this2);
       });
     },
     getColumnValue: function getColumnValue(index) {
@@ -339,8 +340,7 @@ VantComponent({
     },
     updateColumnValue: function updateColumnValue(value) {
       var values = [];
-      var pad = this.pad,
-          data = this.data;
+      var data = this.data;
       var columns = data.columns;
 
       if (data.type === 'time') {
@@ -348,14 +348,14 @@ VantComponent({
         values = [columns[0].indexOf(currentValue[0]), columns[1].indexOf(currentValue[1])];
       } else {
         var date = new Date(value);
-        values = [columns[0].indexOf("" + date.getFullYear()), columns[1].indexOf(pad(date.getMonth() + 1))];
+        values = [columns[0].indexOf("" + date.getFullYear()), columns[1].indexOf(padZero(date.getMonth() + 1))];
 
         if (data.type === 'date') {
-          values.push(columns[2].indexOf(pad(date.getDate())));
+          values.push(columns[2].indexOf(padZero(date.getDate())));
         }
 
         if (data.type === 'datetime') {
-          values.push(columns[2].indexOf(pad(date.getDate())), columns[3].indexOf(pad(date.getHours())), columns[4].indexOf(pad(date.getMinutes())));
+          values.push(columns[2].indexOf(padZero(date.getDate())), columns[3].indexOf(padZero(date.getHours())), columns[4].indexOf(padZero(date.getMinutes())));
         }
       }
 
@@ -365,15 +365,15 @@ VantComponent({
     }
   },
   created: function created() {
-    var _this4 = this;
+    var _this3 = this;
 
     var innerValue = this.correctValue(this.data.value);
     this.set({
       innerValue: innerValue
     }, function () {
-      _this4.updateColumnValue(innerValue);
+      _this3.updateColumnValue(innerValue);
 
-      _this4.$emit('input', innerValue);
+      _this3.$emit('input', innerValue);
     });
   }
 });

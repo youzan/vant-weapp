@@ -6,6 +6,8 @@ type AreaItem = {
 };
 
 VantComponent({
+  classes: ['active-class', 'toolbar-class', 'column-class'],
+
   props: {
     title: String,
     value: String,
@@ -51,7 +53,7 @@ VantComponent({
   methods: {
     getPicker() {
       if (this.picker == null) {
-        this.picker = this.selectComponent('.van-picker');
+        this.picker = this.selectComponent('.van-area__picker');
       }
       return this.picker;
     },

@@ -38,6 +38,10 @@ VantComponent({
     }
   },
 
+  beforeCreate() {
+    this.children = [];
+  },
+
   methods: {
     noop() {},
 

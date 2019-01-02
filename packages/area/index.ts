@@ -1,11 +1,13 @@
 import { VantComponent } from '../common/component';
 
 type AreaItem = {
-  name: string;
-  code: string;
+  name: string
+  code: string
 };
 
 VantComponent({
+  classes: ['active-class', 'toolbar-class', 'column-class'],
+
   props: {
     title: String,
     value: String,
@@ -29,8 +31,8 @@ VantComponent({
   },
 
   data: {
-    pickerValue: [0, 0, 0],
-    columns: []
+    columns: [{ values: [] }, { values: [] }, { values: [] }],
+    displayColumns: [{ values: [] }, { values: [] }, { values: [] }]
   },
 
   watch: {
@@ -39,46 +41,51 @@ VantComponent({
       this.setValues();
     },
 
-    areaList: 'setValues'
+    areaList: 'setValues',
+
+    columnsNum(value) {
+      this.set({
+        displayColumns: this.data.columns.slice(0, +value)
+      });
+    }
   },
 
   methods: {
-    onCancel() {
-      this.$emit('cancel', {
-        values: this.getValues(),
-        indexs: this.getIndexs(),
-        detail: this.getDetail()
-      });
+    getPicker() {
+      if (this.picker == null) {
+        this.picker = this.selectComponent('.van-area__picker');
+      }
+      return this.picker;
     },
 
-    onConfirm() {
-      this.$emit('confirm', {
-        values: this.getValues(),
-        indexs: this.getIndexs(),
-        detail: this.getDetail()
-      });
+    onCancel(event) {
+      this.emit('cancel', event.detail);
+    },
+
+    onConfirm(event) {
+      this.emit('confirm', event.detail);
+    },
+
+    emit(type, detail) {
+      detail.values = detail.value;
+      delete detail.value;
+      this.$emit(type, detail);
     },
 
     onChange(event: Weapp.Event) {
-      const { value } = event.detail;
-      const { pickerValue } = this.data;
-      const displayColumns = this.getDisplayColumns();
-      const index = pickerValue.findIndex(
-        (item, index) => item !== value[index]
-      );
-      const values = displayColumns[index];
-
-      if (index < 0 || value[index] < 0 || !values[value[index]]) {
-        return;
-      }
-
-      this.code = values[value[index]].code;
+      const { index, picker, value } = event.detail;
+      this.code = value[index].code;
       this.setValues();
       this.$emit('change', {
-        picker: this,
-        values: this.getValues(),
+        picker,
+        values: picker.getValues(),
         index
       });
+    },
+
+    getConfig(type: string) {
+      const { areaList } = this.data;
+      return (areaList && areaList[`${type}_list`]) || {};
     },
 
     getList(type: string, code?: string): AreaItem[] {
@@ -87,7 +94,7 @@ VantComponent({
         return result;
       }
 
-      const list = this.data.areaList && this.data.areaList[`${type}_list`] || {};
+      const list = this.getConfig(type);
       result = Object.keys(list).map(code => ({
         code,
         name: list[code]
@@ -125,44 +132,35 @@ VantComponent({
     },
 
     setValues() {
-      let code =
-        this.code ||
-        (this.data.areaList &&
-          Object.keys(this.data.areaList.county_list || {})[0]) ||
-        '';
+      const county = this.getConfig('county');
+      let code = this.code || Object.keys(county)[0] || '';
       const province = this.getList('province');
       const city = this.getList('city', code.slice(0, 2));
 
-      this.set({
-        'columns[0]': province,
-        'columns[1]': city
-      });
+      const picker = this.getPicker();
 
-      if (city.length && code.slice(2, 4) === '00') {
-        code = city[0].code;
+      if (!picker) {
+        return;
       }
 
-      this.set({
-        'columns[2]': this.getList('county', code.slice(0, 4)),
-        pickerValue: [
-          this.getIndex('province', code),
-          this.getIndex('city', code),
-          this.getIndex('county', code)
-        ]
-      });
+      picker.setColumnValues(0, province);
+      picker.setColumnValues(1, city);
+
+      if (city.length && code.slice(2, 4) === '00') {
+        ;[{ code }] = city;
+      }
+
+      picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
+      picker.setIndexes([
+        this.getIndex('province', code),
+        this.getIndex('city', code),
+        this.getIndex('county', code)
+      ]);
     },
 
     getValues() {
-      const { pickerValue = [] } = this.data;
-      const displayColumns = this.getDisplayColumns();
-      return displayColumns
-        .map((option, index) => option[pickerValue[index]])
-        .filter(value => !!value);
-    },
-
-    getIndexs() {
-      const { pickerValue, columnsNum } = this.data;
-      return pickerValue.slice(0, columnsNum);
+      const picker = this.getPicker();
+      return picker ? picker.getValues().filter(value => !!value) : [];
     },
 
     getDetail() {
@@ -196,11 +194,6 @@ VantComponent({
     reset() {
       this.code = '';
       this.setValues();
-    },
-
-    getDisplayColumns() {
-      const { columns = [], columnsNum } = this.data;
-      return columns.slice(0, +columnsNum);
     }
   }
 });

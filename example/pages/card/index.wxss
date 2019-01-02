@@ -3,6 +3,7 @@
   background-color: #fff;
 }
 
+.tag,
 .button {
   margin-right: 5px;
 }

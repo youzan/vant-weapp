@@ -35,6 +35,8 @@ VantComponent({
     this.set({
       currentIndex: defaultIndex,
       options: initialOptions
+    }, () => {
+      this.setIndex(defaultIndex);
     });
   },
 

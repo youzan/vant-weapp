@@ -8,10 +8,10 @@
   -webkit-tap-highlight-color: transparent;
 
   &__wrap {
-    top: 0;
-    left: 0;
-    right: 0;
     position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 
     &--page-top {
       position: fixed;
@@ -35,10 +35,10 @@
   }
 
   &__nav {
-    display: flex;
-    user-select: none;
     position: relative;
+    display: flex;
     background-color: @white;
+    user-select: none;
 
     &--line {
       height: 100%;
@@ -48,9 +48,9 @@
       height: @tabs-card-height;
 
       .van-tab {
+        line-height: @tabs-card-height;
         color: @red;
         border-right: 1px solid @red;
-        line-height: @tabs-card-height;
 
         &:last-child {
           border-right: none;
@@ -65,11 +65,11 @@
   }
 
   &__line {
-    z-index: 1;
-    left: 0;
-    bottom: 0;
-    height: 2px;
     position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 2px;
     background-color: @red;
     border-radius: 2px;
   }
@@ -101,17 +101,17 @@
 }
 
 .van-tab {
-  flex: 1;
-  cursor: pointer;
+  position: relative;
+  min-width: 0; /* hack for flex ellipsis */
   padding: 0 5px;
   font-size: 14px;
-  position: relative;
-  color: @gray-darker;
   line-height: @tabs-line-height;
+  color: @gray-darker;
   text-align: center;
-  box-sizing: border-box;
+  cursor: pointer;
   background-color: @white;
-  min-width: 0; /* hack for flex ellipsis */
+  box-sizing: border-box;
+  flex: 1;
 
   &--active {
     font-weight: 500;
@@ -120,5 +120,26 @@
 
   &--disabled {
     color: @gray;
+  }
+
+  &__title {
+    &--dot {
+      &::after {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        vertical-align: middle;
+        background-color: @red;
+        border-radius: 100%;
+        content: '';
+      }
+    }
+
+    &__info {
+      position: relative !important;
+      top: -1px !important;
+      display: inline-block;
+      transform: translateX(0) !important;
+    }
   }
 }

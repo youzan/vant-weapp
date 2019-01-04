@@ -187,6 +187,9 @@ Page({
 |-----------|-----------|-----------|-------------|
 | title | 标题 | `String` | - |
 | disabled | 是否禁用标签 | `Boolean` | `false` |
+| dot | 是否显示小红点 | `Boolean` | - |
+| info | 图标右上角提示信息 | `String | Number` | - |
+| title-style | 自定义标题样式 | `String` | - |
 
 ### Tab Slot
 

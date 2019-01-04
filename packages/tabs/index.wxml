@@ -1,3 +1,5 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view class="custom-class van-tabs van-tabs--{{ type }}">
   <view style="z-index: {{ zIndex }}; {{ wrapStyle }}" class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
     <scroll-view
@@ -13,12 +15,17 @@
           wx:for="{{ tabs }}"
           wx:key="index"
           data-index="{{ index }}"
-          class="van-ellipsis van-tab {{ index === active ? 'van-tab--active' : '' }} {{ item.disabled ? 'van-tab--disabled' : '' }}"
+          class="van-ellipsis {{ utils.bem('tab', { active: index === active, disabled: item.disabled }) }}"
           style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
           bind:tap="onTap"
         >
-          <view class="van-ellipsis van-tab__title">
+          <view class="van-ellipsis {{ utils.bem('tab__title', { dot: item.dot }) }}" style="{{ item.titleStyle }}">
             {{ item.title }}
+            <van-info
+              wx:if="{{ item.info !== null }}"
+              info="{{ item.info }}"
+              custom-class="van-tab__title__info"
+            />
           </view>
         </view>
       </view>

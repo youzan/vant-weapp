@@ -1,5 +1,9 @@
 import { VantComponent } from '../common/component';
 
+function isSimple(columns) {
+  return columns.length && !columns[0].values;
+}
+
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
@@ -25,15 +29,12 @@ VantComponent({
       type: Array,
       value: [],
       observer(columns = []) {
-        this.set({
-          simple: columns.length && !columns[0].values
-        }, () => {
-          const children = this.children = this.selectAllComponents('.van-picker__column');
+        this.simple = isSimple(columns);
+        const children = this.children = this.selectAllComponents('.van-picker__column');
 
-          if (Array.isArray(children) && children.length) {
-            this.setColumns();
-          }
-        });
+        if (Array.isArray(children) && children.length) {
+          this.setColumns();
+        }
       }
     }
   },
@@ -47,7 +48,7 @@ VantComponent({
 
     setColumns() {
       const { data } = this;
-      const columns = data.simple ? [{ values: data.columns }] : data.columns;
+      const columns = this.simple ? [{ values: data.columns }] : data.columns;
       columns.forEach((columns, index: number) => {
         this.setColumnValues(index, columns.values);
       });
@@ -55,7 +56,7 @@ VantComponent({
 
     emit(event: Weapp.Event) {
       const { type } = event.currentTarget.dataset;
-      if (this.data.simple) {
+      if (this.simple) {
         this.$emit(type, {
           value: this.getColumnValue(0),
           index: this.getColumnIndex(0)
@@ -69,7 +70,7 @@ VantComponent({
     },
 
     onChange(event: Weapp.Event) {
-      if (this.data.simple) {
+      if (this.simple) {
         this.$emit('change', {
           picker: this,
           value: this.getColumnValue(0),
@@ -118,7 +119,7 @@ VantComponent({
     },
 
     // set options of column by index
-    setColumnValues(index: number, options: any[]) {
+    setColumnValues(index: number, options: any[], needReset = true) {
       const column = this.children[index];
 
       if (
@@ -126,7 +127,9 @@ VantComponent({
         JSON.stringify(column.data.options) !== JSON.stringify(options)
       ) {
         column.set({ options }, () => {
-          column.setIndex(0);
+          if (needReset) {
+            column.setIndex(0);
+          }
         });
       }
     },

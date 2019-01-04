@@ -4,8 +4,8 @@ import { isDef } from '../common/utils';
 const currentYear = new Date().getFullYear();
 
 function isValidDate(date) {
-  return isDef(date) && !isNaN(new Date(date).getTime())
-};
+  return isDef(date) && !isNaN(new Date(date).getTime());
+}
 
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
@@ -93,24 +93,8 @@ VantComponent({
   },
 
   data: {
-    pickerValue: [],
-    innerValue: Date.now()
-  },
-
-  computed: {
-    columns() {
-      const results = this.getRanges().map(({ type, range }) => {
-        const values = times(range[1] - range[0] + 1, index => {
-          let value = range[0] + index;
-          value = type === 'year' ? `${value}` : padZero(value);
-          return value;
-        });
-
-        return values;
-      });
-
-      return results;
-    }
+    innerValue: Date.now(),
+    columns: []
   },
 
   watch: {
@@ -119,15 +103,51 @@ VantComponent({
       val = this.correctValue(val);
       const isEqual = val === data.innerValue;
       if (!isEqual) {
-        this.set({ innerValue: val }, () => {
-          this.updateColumnValue(val);
+        this.updateColumnValue(val).then(() => {
           this.$emit('input', val);
         });
       }
-    }
+    },
+    type: 'updateColumns',
+    minHour: 'updateColumns',
+    maxHour: 'updateColumns',
+    minMinute: 'updateColumns',
+    maxMinute: 'updateColumns'
   },
 
   methods: {
+    asyncSet(data) {
+      return new Promise(resolve => {
+        this.set(data, resolve);
+      });
+    },
+
+    getPicker() {
+      if (this.picker == null) {
+        const picker = (this.picker = this.selectComponent(
+          '.van-datetime-picker'
+        ));
+        const { setColumnValues } = picker;
+        picker.setColumnValues = (...args) =>
+          setColumnValues.apply(picker, [...args, false]);
+      }
+      return this.picker;
+    },
+
+    updateColumns() {
+      const results = this.getRanges().map(({ type, range }, index) => {
+        const values = times(range[1] - range[0] + 1, index => {
+          let value = range[0] + index;
+          value = type === 'year' ? `${value}` : padZero(value);
+          return value;
+        });
+
+        return { values };
+      });
+
+      return this.asyncSet({ columns: results });
+    },
+
     getRanges(): object[] {
       const { data } = this;
       if (data.type === 'time') {
@@ -143,8 +163,20 @@ VantComponent({
         ];
       }
 
-      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', data.innerValue);
-      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', data.innerValue);
+      const {
+        maxYear,
+        maxDate,
+        maxMonth,
+        maxHour,
+        maxMinute
+      } = this.getBoundary('max', data.innerValue);
+      const {
+        minYear,
+        minDate,
+        minMonth,
+        minHour,
+        minMinute
+      } = this.getBoundary('min', data.innerValue);
 
       const result = [
         {
@@ -247,17 +279,17 @@ VantComponent({
       this.$emit('confirm', this.data.innerValue);
     },
 
-    onChange(event: Weapp.Event): void {
+    onChange(): void {
       const { data } = this;
-      const pickerValue = event.detail.value;
-      const values = pickerValue
-        .slice(0, data.columns.length)
-        .map((value, index) => data.columns[index][value]);
       let value;
 
+      const picker = this.getPicker();
+
       if (data.type === 'time') {
-        value = values.join(':');
+        const indexes = picker.getIndexes();
+        value = `${indexes[0] + data.minHour}:${indexes[1] + data.minMinute}`;
       } else {
+        const values = picker.getValues();
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);
@@ -276,82 +308,46 @@ VantComponent({
       }
       value = this.correctValue(value);
 
-      this.set({ innerValue: value }, () => {
-        this.updateColumnValue(value);
+      this.updateColumnValue(value).then(() => {
         this.$emit('input', value);
-        this.$emit('change', this);
+        this.$emit('change', picker);
       });
     },
 
-    getColumnValue(index) {
-      return this.getValues()[index];
-    },
-
-    setColumnValue(index, value) {
-      const { pickerValue, columns } = this.data;
-      pickerValue[index] = columns[index].indexOf(value);
-      this.set({ pickerValue });
-    },
-
-    getColumnValues(index) {
-      return this.data.columns[index];
-    },
-
-    setColumnValues(index, values) {
-      const { columns } = this.data;
-      columns[index] = values;
-      this.set({ columns });
-    },
-
-    getValues() {
-      const { pickerValue, columns } = this.data;
-      return pickerValue.map((value, index) => columns[index][value]);
-    },
-
-    setValues(values) {
-      const { columns } = this.data;
-      this.set({
-        pickerValue: values.map((value, index) => columns[index].indexOf(value))
-      });
-    },
-
-    updateColumnValue(value): void {
+    updateColumnValue(value) {
       let values = [];
       const { data } = this;
-      const { columns } = data;
+      const picker = this.getPicker();
 
       if (data.type === 'time') {
-        const currentValue = value.split(':');
-        values = [
-          columns[0].indexOf(currentValue[0]),
-          columns[1].indexOf(currentValue[1])
-        ];
+        const pair = value.split(':');
+        values = [pair[0], pair[1]];
       } else {
         const date = new Date(value);
-        values = [
-          columns[0].indexOf(`${date.getFullYear()}`),
-          columns[1].indexOf(padZero(date.getMonth() + 1))
-        ];
+        values = [`${date.getFullYear()}`, padZero(date.getMonth() + 1)];
         if (data.type === 'date') {
-          values.push(columns[2].indexOf(padZero(date.getDate())));
+          values.push(padZero(date.getDate()));
         }
         if (data.type === 'datetime') {
           values.push(
-            columns[2].indexOf(padZero(date.getDate())),
-            columns[3].indexOf(padZero(date.getHours())),
-            columns[4].indexOf(padZero(date.getMinutes()))
+            padZero(date.getDate()),
+            padZero(date.getHours()),
+            padZero(date.getMinutes())
           );
         }
       }
 
-      this.set({ pickerValue: values });
+      return this.asyncSet({ innerValue: value })
+        .then(() => this.updateColumns())
+        .then(() => {
+          picker.setValues(values);
+        });
     }
   },
 
   created() {
     const innerValue = this.correctValue(this.data.value);
-    this.set({ innerValue }, () => {
-      this.updateColumnValue(innerValue);
+    this.updateColumnValue(innerValue).then(() => {
       this.$emit('input', innerValue);
     });
   }

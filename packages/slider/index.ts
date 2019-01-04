@@ -81,9 +81,8 @@ VantComponent({
         barStyle: `width: ${value}%; height: ${this.data.barHeight};`
       });
 
-      this.$emit('drag', { value });
-
       if (end) {
+        this.$emit('drag', { value });
         this.$emit('change', value);
       }
     },

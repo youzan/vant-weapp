@@ -55,7 +55,7 @@ VantComponent({
       this.touchMove(event);
       this.getRect('.van-slider').then(rect => {
         const diff = this.deltaX / rect.width * 100;
-        this.updateValue(this.startValue + diff);
+        this.updateValue(this.startValue + diff, false, true);
       });
     },
 
@@ -73,7 +73,7 @@ VantComponent({
       });
     },
 
-    updateValue(value, end) {
+    updateValue(value, end, drag) {
       value = this.format(value);
 
       this.set({
@@ -81,8 +81,11 @@ VantComponent({
         barStyle: `width: ${value}%; height: ${this.data.barHeight};`
       });
 
-      if (end) {
+      if (drag) {
         this.$emit('drag', { value });
+      }
+      
+      if (end) {
         this.$emit('change', value);
       }
     },

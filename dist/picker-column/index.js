@@ -26,12 +26,16 @@ VantComponent({
     currentIndex: 0
   },
   created: function created() {
+    var _this = this;
+
     var _this$data = this.data,
         defaultIndex = _this$data.defaultIndex,
         initialOptions = _this$data.initialOptions;
     this.set({
       currentIndex: defaultIndex,
       options: initialOptions
+    }, function () {
+      _this.setIndex(defaultIndex);
     });
   },
   computed: {

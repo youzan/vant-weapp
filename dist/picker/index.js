@@ -1,4 +1,9 @@
 import { VantComponent } from '../common/component';
+
+function isSimple(columns) {
+  return columns.length && !columns[0].values;
+}
+
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
   props: {
@@ -23,41 +28,39 @@ VantComponent({
       type: Array,
       value: [],
       observer: function observer(columns) {
-        var _this = this;
-
         if (columns === void 0) {
           columns = [];
         }
 
-        this.set({
-          simple: columns.length && !columns[0].values
-        }, function () {
-          var children = _this.children = _this.selectAllComponents('.van-picker__column');
+        this.simple = isSimple(columns);
+        var children = this.children = this.selectAllComponents('.van-picker__column');
 
-          if (Array.isArray(children) && children.length) {
-            _this.setColumns();
-          }
-        });
+        if (Array.isArray(children) && children.length) {
+          this.setColumns();
+        }
       }
     }
+  },
+  beforeCreate: function beforeCreate() {
+    this.children = [];
   },
   methods: {
     noop: function noop() {},
     setColumns: function setColumns() {
-      var _this2 = this;
+      var _this = this;
 
       var data = this.data;
-      var columns = data.simple ? [{
+      var columns = this.simple ? [{
         values: data.columns
       }] : data.columns;
       columns.forEach(function (columns, index) {
-        _this2.setColumnValues(index, columns.values);
+        _this.setColumnValues(index, columns.values);
       });
     },
     emit: function emit(event) {
       var type = event.currentTarget.dataset.type;
 
-      if (this.data.simple) {
+      if (this.simple) {
         this.$emit(type, {
           value: this.getColumnValue(0),
           index: this.getColumnIndex(0)
@@ -70,7 +73,7 @@ VantComponent({
       }
     },
     onChange: function onChange(event) {
-      if (this.data.simple) {
+      if (this.simple) {
         this.$emit('change', {
           picker: this,
           value: this.getColumnValue(0),
@@ -112,14 +115,20 @@ VantComponent({
       return (this.children[index] || {}).data.options;
     },
     // set options of column by index
-    setColumnValues: function setColumnValues(index, options) {
+    setColumnValues: function setColumnValues(index, options, needReset) {
+      if (needReset === void 0) {
+        needReset = true;
+      }
+
       var column = this.children[index];
 
       if (column && JSON.stringify(column.data.options) !== JSON.stringify(options)) {
         column.set({
           options: options
         }, function () {
-          column.setIndex(0);
+          if (needReset) {
+            column.setIndex(0);
+          }
         });
       }
     },
@@ -131,10 +140,10 @@ VantComponent({
     },
     // set values of all columns
     setValues: function setValues(values) {
-      var _this3 = this;
+      var _this2 = this;
 
       values.forEach(function (value, index) {
-        _this3.setColumnValue(index, value);
+        _this2.setColumnValue(index, value);
       });
     },
     // get indexes of all columns
@@ -145,10 +154,10 @@ VantComponent({
     },
     // set indexes of all columns
     setIndexes: function setIndexes(indexes) {
-      var _this4 = this;
+      var _this3 = this;
 
       indexes.forEach(function (optionIndex, columnIndex) {
-        _this4.setColumnIndex(columnIndex, optionIndex);
+        _this3.setColumnIndex(columnIndex, optionIndex);
       });
     }
   }

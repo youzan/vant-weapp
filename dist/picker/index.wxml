@@ -21,12 +21,12 @@
   >
     <picker-column
       class="van-picker__column"
-      wx:for="{{ simple ? [columns] : columns }}"
-      wx:key="index"
+      wx:for="{{ isSimple(columns) ? [columns] : columns }}"
+      wx:key="{{ index }}"
       data-index="{{ index }}"
       custom-class="column-class"
       value-key="{{ valueKey }}"
-      initial-options="{{ simple ? item : item.values }}"
+      initial-options="{{ isSimple(columns) ? item : item.values }}"
       default-index="{{ item.defaultIndex }}"
       item-height="{{ itemHeight }}"
       visible-item-count="{{ visibleItemCount }}"
@@ -39,3 +39,10 @@
     />
   </view>
 </view>
+
+<wxs module="isSimple">
+  function isSimple(columns) {
+    return columns.length && !columns[0].values;
+  }
+  module.exports = isSimple;
+</wxs>

@@ -6,8 +6,6 @@ function isValidDate(date) {
   return isDef(date) && !isNaN(new Date(date).getTime());
 }
 
-;
-
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
@@ -96,23 +94,8 @@ VantComponent({
     }
   },
   data: {
-    pickerValue: [],
-    innerValue: Date.now()
-  },
-  computed: {
-    columns: function columns() {
-      var results = this.getRanges().map(function (_ref) {
-        var type = _ref.type,
-            range = _ref.range;
-        var values = times(range[1] - range[0] + 1, function (index) {
-          var value = range[0] + index;
-          value = type === 'year' ? "" + value : padZero(value);
-          return value;
-        });
-        return values;
-      });
-      return results;
-    }
+    innerValue: Date.now(),
+    columns: []
   },
   watch: {
     value: function value(val) {
@@ -123,17 +106,58 @@ VantComponent({
       var isEqual = val === data.innerValue;
 
       if (!isEqual) {
-        this.set({
-          innerValue: val
-        }, function () {
-          _this.updateColumnValue(val);
-
+        this.updateColumnValue(val).then(function () {
           _this.$emit('input', val);
         });
       }
-    }
+    },
+    type: 'updateColumns',
+    minHour: 'updateColumns',
+    maxHour: 'updateColumns',
+    minMinute: 'updateColumns',
+    maxMinute: 'updateColumns'
   },
   methods: {
+    asyncSet: function asyncSet(data) {
+      var _this2 = this;
+
+      return new Promise(function (resolve) {
+        _this2.set(data, resolve);
+      });
+    },
+    getPicker: function getPicker() {
+      if (this.picker == null) {
+        var picker = this.picker = this.selectComponent('.van-datetime-picker');
+        var setColumnValues = picker.setColumnValues;
+
+        picker.setColumnValues = function () {
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          return setColumnValues.apply(picker, [].concat(args, [false]));
+        };
+      }
+
+      return this.picker;
+    },
+    updateColumns: function updateColumns() {
+      var results = this.getRanges().map(function (_ref, index) {
+        var type = _ref.type,
+            range = _ref.range;
+        var values = times(range[1] - range[0] + 1, function (index) {
+          var value = range[0] + index;
+          value = type === 'year' ? "" + value : padZero(value);
+          return value;
+        });
+        return {
+          values: values
+        };
+      });
+      return this.asyncSet({
+        columns: results
+      });
+    },
     getRanges: function getRanges() {
       var data = this.data;
 
@@ -255,19 +279,18 @@ VantComponent({
     onConfirm: function onConfirm() {
       this.$emit('confirm', this.data.innerValue);
     },
-    onChange: function onChange(event) {
-      var _this2 = this;
+    onChange: function onChange() {
+      var _this3 = this;
 
       var data = this.data;
-      var pickerValue = event.detail.value;
-      var values = pickerValue.slice(0, data.columns.length).map(function (value, index) {
-        return data.columns[index][value];
-      });
       var value;
+      var picker = this.getPicker();
 
       if (data.type === 'time') {
-        value = values.join(':');
+        var indexes = picker.getIndexes();
+        value = indexes[0] + data.minHour + ":" + (indexes[1] + data.minMinute);
       } else {
+        var values = picker.getValues();
         var year = getTrueValue(values[0]);
         var month = getTrueValue(values[1]);
         var maxDate = getMonthEndDay(year, month);
@@ -290,90 +313,50 @@ VantComponent({
       }
 
       value = this.correctValue(value);
-      this.set({
-        innerValue: value
-      }, function () {
-        _this2.updateColumnValue(value);
+      this.updateColumnValue(value).then(function () {
+        _this3.$emit('input', value);
 
-        _this2.$emit('input', value);
-
-        _this2.$emit('change', _this2);
-      });
-    },
-    getColumnValue: function getColumnValue(index) {
-      return this.getValues()[index];
-    },
-    setColumnValue: function setColumnValue(index, value) {
-      var _this$data = this.data,
-          pickerValue = _this$data.pickerValue,
-          columns = _this$data.columns;
-      pickerValue[index] = columns[index].indexOf(value);
-      this.set({
-        pickerValue: pickerValue
-      });
-    },
-    getColumnValues: function getColumnValues(index) {
-      return this.data.columns[index];
-    },
-    setColumnValues: function setColumnValues(index, values) {
-      var columns = this.data.columns;
-      columns[index] = values;
-      this.set({
-        columns: columns
-      });
-    },
-    getValues: function getValues() {
-      var _this$data2 = this.data,
-          pickerValue = _this$data2.pickerValue,
-          columns = _this$data2.columns;
-      return pickerValue.map(function (value, index) {
-        return columns[index][value];
-      });
-    },
-    setValues: function setValues(values) {
-      var columns = this.data.columns;
-      this.set({
-        pickerValue: values.map(function (value, index) {
-          return columns[index].indexOf(value);
-        })
+        _this3.$emit('change', picker);
       });
     },
     updateColumnValue: function updateColumnValue(value) {
+      var _this4 = this;
+
       var values = [];
       var data = this.data;
-      var columns = data.columns;
+      var picker = this.getPicker();
 
       if (data.type === 'time') {
-        var currentValue = value.split(':');
-        values = [columns[0].indexOf(currentValue[0]), columns[1].indexOf(currentValue[1])];
+        var pair = value.split(':');
+        values = [pair[0], pair[1]];
       } else {
         var date = new Date(value);
-        values = [columns[0].indexOf("" + date.getFullYear()), columns[1].indexOf(padZero(date.getMonth() + 1))];
+        values = ["" + date.getFullYear(), padZero(date.getMonth() + 1)];
 
         if (data.type === 'date') {
-          values.push(columns[2].indexOf(padZero(date.getDate())));
+          values.push(padZero(date.getDate()));
         }
 
         if (data.type === 'datetime') {
-          values.push(columns[2].indexOf(padZero(date.getDate())), columns[3].indexOf(padZero(date.getHours())), columns[4].indexOf(padZero(date.getMinutes())));
+          values.push(padZero(date.getDate()), padZero(date.getHours()), padZero(date.getMinutes()));
         }
       }
 
-      this.set({
-        pickerValue: values
+      return this.asyncSet({
+        innerValue: value
+      }).then(function () {
+        return _this4.updateColumns();
+      }).then(function () {
+        picker.setValues(values);
       });
     }
   },
   created: function created() {
-    var _this3 = this;
+    var _this5 = this;
 
     var innerValue = this.correctValue(this.data.value);
-    this.set({
-      innerValue: innerValue
-    }, function () {
-      _this3.updateColumnValue(innerValue);
-
-      _this3.$emit('input', innerValue);
+    this.updateColumnValue(innerValue).then(function () {
+      _this5.$emit('input', innerValue);
     });
   }
 });

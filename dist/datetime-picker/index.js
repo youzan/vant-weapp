@@ -2,12 +2,41 @@ import { VantComponent } from '../common/component';
 import { isDef } from '../common/utils';
 var currentYear = new Date().getFullYear();
 
-var isValidDate = function isValidDate(date) {
+function isValidDate(date) {
   return isDef(date) && !isNaN(new Date(date).getTime());
-};
+}
 
 function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
+}
+
+function padZero(val) {
+  return ("00" + val).slice(-2);
+}
+
+function times(n, iteratee) {
+  var index = -1;
+  var result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+
+  return result;
+}
+
+function getTrueValue(formattedValue) {
+  if (!formattedValue) return;
+
+  while (isNaN(parseInt(formattedValue, 10))) {
+    formattedValue = formattedValue.slice(1);
+  }
+
+  return parseInt(formattedValue, 10);
+}
+
+function getMonthEndDay(year, month) {
+  return 32 - new Date(year, month - 1, 32).getDate();
 }
 
 VantComponent({
@@ -65,48 +94,70 @@ VantComponent({
     }
   },
   data: {
-    pickerValue: [],
-    innerValue: Date.now()
-  },
-  computed: {
-    columns: function columns() {
-      var _this = this;
-
-      var results = this.getRanges().map(function (_ref) {
-        var type = _ref.type,
-            range = _ref.range;
-
-        var values = _this.times(range[1] - range[0] + 1, function (index) {
-          var value = range[0] + index;
-          value = type === 'year' ? "" + value : _this.pad(value);
-          return value;
-        });
-
-        return values;
-      });
-      return results;
-    }
+    innerValue: Date.now(),
+    columns: []
   },
   watch: {
     value: function value(val) {
-      var _this2 = this;
+      var _this = this;
 
       var data = this.data;
       val = this.correctValue(val);
       var isEqual = val === data.innerValue;
 
       if (!isEqual) {
-        this.set({
-          innerValue: val
-        }, function () {
-          _this2.updateColumnValue(val);
-
-          _this2.$emit('input', val);
+        this.updateColumnValue(val).then(function () {
+          _this.$emit('input', val);
         });
       }
-    }
+    },
+    type: 'updateColumns',
+    minHour: 'updateColumns',
+    maxHour: 'updateColumns',
+    minMinute: 'updateColumns',
+    maxMinute: 'updateColumns'
   },
   methods: {
+    asyncSet: function asyncSet(data) {
+      var _this2 = this;
+
+      return new Promise(function (resolve) {
+        _this2.set(data, resolve);
+      });
+    },
+    getPicker: function getPicker() {
+      if (this.picker == null) {
+        var picker = this.picker = this.selectComponent('.van-datetime-picker');
+        var setColumnValues = picker.setColumnValues;
+
+        picker.setColumnValues = function () {
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          return setColumnValues.apply(picker, [].concat(args, [false]));
+        };
+      }
+
+      return this.picker;
+    },
+    updateColumns: function updateColumns() {
+      var results = this.getRanges().map(function (_ref, index) {
+        var type = _ref.type,
+            range = _ref.range;
+        var values = times(range[1] - range[0] + 1, function (index) {
+          var value = range[0] + index;
+          value = type === 'year' ? "" + value : padZero(value);
+          return value;
+        });
+        return {
+          values: values
+        };
+      });
+      return this.asyncSet({
+        columns: results
+      });
+    },
     getRanges: function getRanges() {
       var data = this.data;
 
@@ -154,12 +205,8 @@ VantComponent({
       if (data.type === 'year-month') result.splice(2, 3);
       return result;
     },
-    pad: function pad(val) {
-      return ("00" + val).slice(-2);
-    },
     correctValue: function correctValue(value) {
-      var data = this.data,
-          pad = this.pad; // validate value
+      var data = this.data; // validate value
 
       var isDateType = data.type !== 'time';
 
@@ -167,7 +214,7 @@ VantComponent({
         value = data.minDate;
       } else if (!isDateType && !value) {
         var minHour = data.minHour;
-        value = pad(minHour) + ":00";
+        value = padZero(minHour) + ":00";
       } // time type
 
 
@@ -176,8 +223,8 @@ VantComponent({
             hour = _value$split[0],
             minute = _value$split[1];
 
-        hour = pad(range(hour, data.minHour, data.maxHour));
-        minute = pad(range(minute, data.minMinute, data.maxMinute));
+        hour = padZero(range(hour, data.minHour, data.maxHour));
+        minute = padZero(range(minute, data.minMinute, data.maxMinute));
         return hour + ":" + minute;
       } // date type
 
@@ -185,16 +232,6 @@ VantComponent({
       value = Math.max(value, data.minDate);
       value = Math.min(value, data.maxDate);
       return value;
-    },
-    times: function times(n, iteratee) {
-      var index = -1;
-      var result = Array(n);
-
-      while (++index < n) {
-        result[index] = iteratee(index);
-      }
-
-      return result;
     },
     getBoundary: function getBoundary(type, innerValue) {
       var value = new Date(innerValue);
@@ -207,7 +244,7 @@ VantComponent({
 
       if (type === 'max') {
         month = 12;
-        date = this.getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
+        date = getMonthEndDay(value.getFullYear(), value.getMonth() + 1);
         hour = 23;
         minute = 59;
       }
@@ -236,41 +273,28 @@ VantComponent({
         [type + "Minute"]: minute
       };
     },
-    getTrueValue: function getTrueValue(formattedValue) {
-      if (!formattedValue) return;
-
-      while (isNaN(parseInt(formattedValue, 10))) {
-        formattedValue = formattedValue.slice(1);
-      }
-
-      return parseInt(formattedValue, 10);
-    },
-    getMonthEndDay: function getMonthEndDay(year, month) {
-      return 32 - new Date(year, month - 1, 32).getDate();
-    },
     onCancel: function onCancel() {
       this.$emit('cancel');
     },
     onConfirm: function onConfirm() {
       this.$emit('confirm', this.data.innerValue);
     },
-    onChange: function onChange(event) {
+    onChange: function onChange() {
       var _this3 = this;
 
       var data = this.data;
-      var pickerValue = event.detail.value;
-      var values = pickerValue.slice(0, data.columns.length).map(function (value, index) {
-        return data.columns[index][value];
-      });
       var value;
+      var picker = this.getPicker();
 
       if (data.type === 'time') {
-        value = values.join(':');
+        var indexes = picker.getIndexes();
+        value = indexes[0] + data.minHour + ":" + (indexes[1] + data.minMinute);
       } else {
-        var year = this.getTrueValue(values[0]);
-        var month = this.getTrueValue(values[1]);
-        var maxDate = this.getMonthEndDay(year, month);
-        var date = this.getTrueValue(values[2]);
+        var values = picker.getValues();
+        var year = getTrueValue(values[0]);
+        var month = getTrueValue(values[1]);
+        var maxDate = getMonthEndDay(year, month);
+        var date = getTrueValue(values[2]);
 
         if (data.type === 'year-month') {
           date = 1;
@@ -281,99 +305,58 @@ VantComponent({
         var minute = 0;
 
         if (data.type === 'datetime') {
-          hour = this.getTrueValue(values[3]);
-          minute = this.getTrueValue(values[4]);
+          hour = getTrueValue(values[3]);
+          minute = getTrueValue(values[4]);
         }
 
         value = new Date(year, month - 1, date, hour, minute);
       }
 
       value = this.correctValue(value);
-      this.set({
-        innerValue: value
-      }, function () {
-        _this3.updateColumnValue(value);
-
+      this.updateColumnValue(value).then(function () {
         _this3.$emit('input', value);
 
-        _this3.$emit('change', _this3);
-      });
-    },
-    getColumnValue: function getColumnValue(index) {
-      return this.getValues()[index];
-    },
-    setColumnValue: function setColumnValue(index, value) {
-      var _this$data = this.data,
-          pickerValue = _this$data.pickerValue,
-          columns = _this$data.columns;
-      pickerValue[index] = columns[index].indexOf(value);
-      this.set({
-        pickerValue: pickerValue
-      });
-    },
-    getColumnValues: function getColumnValues(index) {
-      return this.data.columns[index];
-    },
-    setColumnValues: function setColumnValues(index, values) {
-      var columns = this.data.columns;
-      columns[index] = values;
-      this.set({
-        columns: columns
-      });
-    },
-    getValues: function getValues() {
-      var _this$data2 = this.data,
-          pickerValue = _this$data2.pickerValue,
-          columns = _this$data2.columns;
-      return pickerValue.map(function (value, index) {
-        return columns[index][value];
-      });
-    },
-    setValues: function setValues(values) {
-      var columns = this.data.columns;
-      this.set({
-        pickerValue: values.map(function (value, index) {
-          return columns[index].indexOf(value);
-        })
+        _this3.$emit('change', picker);
       });
     },
     updateColumnValue: function updateColumnValue(value) {
+      var _this4 = this;
+
       var values = [];
-      var pad = this.pad,
-          data = this.data;
-      var columns = data.columns;
+      var data = this.data;
+      var picker = this.getPicker();
 
       if (data.type === 'time') {
-        var currentValue = value.split(':');
-        values = [columns[0].indexOf(currentValue[0]), columns[1].indexOf(currentValue[1])];
+        var pair = value.split(':');
+        values = [pair[0], pair[1]];
       } else {
         var date = new Date(value);
-        values = [columns[0].indexOf("" + date.getFullYear()), columns[1].indexOf(pad(date.getMonth() + 1))];
+        values = ["" + date.getFullYear(), padZero(date.getMonth() + 1)];
 
         if (data.type === 'date') {
-          values.push(columns[2].indexOf(pad(date.getDate())));
+          values.push(padZero(date.getDate()));
         }
 
         if (data.type === 'datetime') {
-          values.push(columns[2].indexOf(pad(date.getDate())), columns[3].indexOf(pad(date.getHours())), columns[4].indexOf(pad(date.getMinutes())));
+          values.push(padZero(date.getDate()), padZero(date.getHours()), padZero(date.getMinutes()));
         }
       }
 
-      this.set({
-        pickerValue: values
+      return this.asyncSet({
+        innerValue: value
+      }).then(function () {
+        return _this4.updateColumns();
+      }).then(function () {
+        picker.setValues(values);
       });
     }
   },
   created: function created() {
-    var _this4 = this;
+    var _this5 = this;
 
     var innerValue = this.correctValue(this.data.value);
-    this.set({
-      innerValue: innerValue
-    }, function () {
-      _this4.updateColumnValue(innerValue);
-
-      _this4.$emit('input', innerValue);
+    this.updateColumnValue(innerValue).then(function () {
+      _this5.$emit('input', innerValue);
     });
   }
 });

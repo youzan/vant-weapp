@@ -16,7 +16,7 @@ VantComponent({
     originPrice: String,
     thumbMode: {
       type: String,
-      value: 'scaleToFill'
+      value: 'aspectFit'
     },
     currency: {
       type: String,

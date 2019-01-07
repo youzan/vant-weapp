@@ -2,7 +2,6 @@
 
 .van-loading {
   z-index: 0;
-  font-size: 0;
   line-height: 0;
   position: relative;
   display: inline-block;
@@ -24,8 +23,8 @@
     &--circular {
       border: 1px solid;
       border-radius: 100%;
-      border-color: currentColor;
-      border-top-color: transparent;
+      border-color: transparent;
+      border-top-color: currentColor
     }
   }
 
@@ -47,7 +46,6 @@
     }
   }
 }
-
 
 .generate(@n, @i: 1) when (@i =< @n) {
   .van-loading__dot:nth-of-type(@{i}) {

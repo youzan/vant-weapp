@@ -1,19 +1,26 @@
 <view
   class="van-tabbar-item {{ active ? 'van-tabbar-item--active' : '' }}"
+  style="{{ active && color ? 'color: ' + color : '' }}"
   bind:tap="onClick"
 >
   <view class="van-tabbar-item__icon {{ dot ? 'van-tabbar-item__icon--dot' : '' }}">
     <van-icon
       wx:if="{{ icon }}"
       name="{{ icon }}"
-      info="{{ info }}"
       customStyle="display: block"
     />
     <block wx:else>
-      <slot wx:if="{{ active }}" name="icon-active" />
+      <slot
+        wx:if="{{ active }}"
+        name="icon-active"
+      />
       <slot wx:else name="icon" />
-      <view wx:if="{{ info !== null }}" class="van-icon__info">{{ info }}</view>
     </block>
+    <van-info
+      wx:if="{{ info !== null }}"
+      info="{{ info }}"
+      custom-style="margin-top: 2px"
+    />
   </view>
   <view class="van-tabbar-item__text">
     <slot />

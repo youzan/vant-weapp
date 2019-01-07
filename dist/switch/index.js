@@ -20,18 +20,6 @@ VantComponent({
       });
     }
   },
-  computed: {
-    classes: function classes() {
-      return this.classNames('van-switch', {
-        'van-switch--on': this.data.checked,
-        'van-switch--disabled': this.data.disabled
-      });
-    },
-    style: function style() {
-      var backgroundColor = this.data.checked ? this.data.activeColor : this.data.inactiveColor;
-      return "font-size: " + this.data.size + "; " + (backgroundColor ? "background-color: " + backgroundColor : '');
-    }
-  },
   created: function created() {
     this.set({
       value: this.data.checked

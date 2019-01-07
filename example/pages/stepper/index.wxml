@@ -6,6 +6,15 @@
   <van-stepper value="{{ value1 }}" disabled />
 </demo-block>
 
+<demo-block title="异步变更" padding>
+  <van-stepper
+    value="{{ 5 }}"
+    integer
+    async-change
+    bind:change="onChange"
+  />
+</demo-block>
+
 <demo-block title="高级用法" padding>
   <van-stepper
     value="{{ value2 }}"
@@ -15,3 +24,5 @@
     step="2"
   />
 </demo-block>
+
+<van-toast id="van-toast" />

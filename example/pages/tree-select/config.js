@@ -27,5 +27,13 @@ export default {
   }, {
     text: '苏州',
     id: 8
+  }],
+  pro3Name: '福建',
+  pro3: [{
+    text: '泉州',
+    id: 9
+  }, {
+    text: '厦门',
+    id: 10
   }]
 };

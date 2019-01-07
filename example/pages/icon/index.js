@@ -1,15 +1,9 @@
+import icons from '../../dist/@vant/icons/src/config';
 import Page from '../../common/page';
-import config from './config';
-
-const basic = config.basic.map(item => item.css);
-const outline = config.outline.map(item => item.css);
-const filled = config.filled.map(item => item.css);
 
 Page({
   data: {
-    basic,
-    outline,
-    filled,
+    icons,
     active: 0
   },
 

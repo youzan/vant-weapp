@@ -9,11 +9,11 @@ VantComponent({
     }
   },
   props: {
-    name: [String, Number],
+    name: null,
+    title: null,
+    value: null,
     icon: String,
     label: String,
-    title: [String, Number],
-    value: [String, Number],
     disabled: Boolean,
     border: {
       type: Boolean,
@@ -28,16 +28,11 @@ VantComponent({
     contentHeight: 0,
     expanded: false
   },
-  computed: {
-    titleClass: function titleClass() {
-      var _this$data = this.data,
-          disabled = _this$data.disabled,
-          expanded = _this$data.expanded;
-      return this.classNames('van-collapse-item__title', {
-        'van-collapse-item__title--disabled': disabled,
-        'van-collapse-item__title--expanded': expanded
-      });
-    }
+  beforeCreate: function beforeCreate() {
+    this.animation = wx.createAnimation({
+      duration: 300,
+      timingFunction: 'ease-in-out'
+    });
   },
   methods: {
     updateExpanded: function updateExpanded() {
@@ -67,29 +62,44 @@ VantComponent({
     updateStyle: function updateStyle(expanded) {
       var _this = this;
 
-      if (expanded) {
-        this.getRect('.van-collapse-item__content').then(function (res) {
+      this.getRect('.van-collapse-item__content').then(function (res) {
+        var animationData = _this.animation.height(expanded ? res.height : 0).step().export();
+
+        if (expanded) {
           _this.set({
-            contentHeight: res.height ? res.height + 'px' : null
+            animationData: animationData
           });
-        });
-      } else {
-        this.set({
-          contentHeight: 0
-        });
-      }
+        } else {
+          _this.set({
+            contentHeight: res.height + 'px'
+          }, function () {
+            setTimeout(function () {
+              _this.set({
+                animationData: animationData
+              });
+            }, 20);
+          });
+        }
+      });
     },
     onClick: function onClick() {
       if (this.data.disabled) {
         return;
       }
 
-      var _this$data2 = this.data,
-          name = _this$data2.name,
-          expanded = _this$data2.expanded;
+      var _this$data = this.data,
+          name = _this$data.name,
+          expanded = _this$data.expanded;
       var index = this.parent.data.items.indexOf(this);
       var currentName = name == null ? index : name;
       this.parent.switch(currentName, !expanded);
+    },
+    onTransitionEnd: function onTransitionEnd() {
+      if (this.data.expanded) {
+        this.set({
+          contentHeight: 'auto'
+        });
+      }
     }
   }
 });

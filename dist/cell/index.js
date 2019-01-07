@@ -21,22 +21,6 @@ VantComponent({
       value: true
     }
   },
-  computed: {
-    cellClass: function cellClass() {
-      var data = this.data;
-      return this.classNames('van-cell', {
-        'van-cell--center': data.center,
-        'van-cell--required': data.required,
-        'van-cell--borderless': !data.border,
-        'van-cell--clickable': data.isLink || data.clickable,
-        ["van-cell--" + data.size]: data.size
-      });
-    },
-    titleStyle: function titleStyle() {
-      var titleWidth = this.data.titleWidth;
-      return titleWidth ? "max-width: " + titleWidth + ";min-width: " + titleWidth : '';
-    }
-  },
   methods: {
     onClick: function onClick(event) {
       this.$emit('click', event.detail);

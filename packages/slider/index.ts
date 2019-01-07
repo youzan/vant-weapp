@@ -6,6 +6,9 @@ VantComponent({
 
   props: {
     disabled: Boolean,
+    useButtonSlot: Boolean,
+    activeColor: String,
+    inactiveColor: String,
     max: {
       type: Number,
       value: 100
@@ -77,6 +80,8 @@ VantComponent({
         value,
         barStyle: `width: ${value}%; height: ${this.data.barHeight};`
       });
+
+      this.$emit('drag', { value });
 
       if (end) {
         this.$emit('change', value);

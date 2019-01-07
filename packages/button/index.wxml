@@ -20,8 +20,8 @@
 >
   <van-loading
     wx:if="{{ loading }}"
-    size="20px"
     custom-class="loading-class"
+    size="{{ size === 'mini' ? '14px' : '20px' }}"
     color="{{ type === 'default' ? '#c9c9c9' : '' }}"
   />
   <slot wx:else />

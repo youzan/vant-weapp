@@ -5,7 +5,7 @@ VantComponent({
     type: 'descendant',
     linked: function linked(child) {
       this.set({
-        items: this.data.items.concat([child])
+        items: [].concat(this.data.items, [child])
       }, function () {
         child.updateExpanded();
       });

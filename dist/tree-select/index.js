@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 var ITEM_HEIGHT = 44;
 VantComponent({
+  classes: ['main-item-class', 'content-item-class', 'main-active-class', 'content-active-class', 'main-disabled-class', 'content-disabled-class'],
   props: {
     items: Array,
     mainActiveIndex: {
@@ -8,8 +9,7 @@ VantComponent({
       value: 0
     },
     activeId: {
-      type: Number,
-      value: 0
+      type: [Number, String]
     },
     maxHeight: {
       type: Number,
@@ -44,9 +44,13 @@ VantComponent({
     // 当一个导航被点击时
     onClickNav: function onClickNav(event) {
       var index = event.currentTarget.dataset.index;
-      this.$emit('click-nav', {
-        index: index
-      });
+      var item = this.data.items[index];
+
+      if (!item.disabled) {
+        this.$emit('click-nav', {
+          index: index
+        });
+      }
     },
     // 更新子项列表
     updateSubItems: function updateSubItems() {

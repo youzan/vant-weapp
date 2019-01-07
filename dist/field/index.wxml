@@ -1,3 +1,5 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <van-cell
   icon="{{ leftIcon }}"
   title="{{ label }}"
@@ -14,7 +16,7 @@
   <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
-      class="{{ inputClass }}"
+      class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
       fixed="{{ fixed }}"
       focus="{{ focus }}"
       value="{{ value }}"
@@ -23,9 +25,10 @@
       auto-height="{{ autosize }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field--error' : '' }}"
+      placeholder-class="{{ error ? 'van-field__input--error' : 'van-field__placeholder' }}"
       cursor-spacing="{{ cursorSpacing }}"
       adjust-position="{{ adjustPosition }}"
+      show-confirm-bar="{{ showConfirmBar }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"
@@ -33,7 +36,7 @@
     />
     <input
       wx:else
-      class="{{ inputClass }}"
+      class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
       type="{{ type }}"
       focus="{{ focus }}"
       value="{{ value }}"
@@ -41,7 +44,7 @@
       maxlength="{{ maxlength }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field--error' : '' }}"
+      placeholder-class="{{ error ? 'van-field__input--error' : 'van-field__placeholder' }}"
       confirm-type="{{ confirmType }}"
       confirm-hold="{{ confirmHold }}"
       cursor-spacing="{{ cursorSpacing }}"

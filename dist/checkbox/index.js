@@ -18,30 +18,6 @@ VantComponent({
       value: 'round'
     }
   },
-  computed: {
-    iconClass: function iconClass() {
-      var _this$data = this.data,
-          disabled = _this$data.disabled,
-          value = _this$data.value,
-          shape = _this$data.shape;
-      return this.classNames('van-checkbox__icon', "van-checkbox__icon--" + shape, {
-        'van-checkbox__icon--disabled': disabled,
-        'van-checkbox__icon--checked': value
-      });
-    },
-    iconStyle: function iconStyle() {
-      var _this$data2 = this.data,
-          value = _this$data2.value,
-          disabled = _this$data2.disabled,
-          checkedColor = _this$data2.checkedColor;
-
-      if (checkedColor && value && !disabled) {
-        return "border-color: " + checkedColor + "; background-color: " + checkedColor;
-      }
-
-      return '';
-    }
-  },
   methods: {
     emitChange: function emitChange(value) {
       var parent = this.getRelationNodes('../checkbox-group/index')[0];

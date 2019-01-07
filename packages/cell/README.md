@@ -56,7 +56,7 @@
 ```html
 <van-cell
   title="单元格"
-  icon="location"
+  icon="location-o"
 />
 ```
 
@@ -90,17 +90,17 @@
 ```html
 <van-cell
   value="内容"
-  icon="shop"
+  icon="shop-o"
   is-link
 >
   <view slot="title">
-    <span class="van-cell-text">单元格</span>
+    <view class="van-cell-text">单元格</view>
     <van-tag type="danger">标签</van-tag>
   </view>
 </van-cell>
 <van-cell
   title="单元格"
-  icon="location"
+  icon="location-o"
   is-link
 />
 <van-cell title="单元格">

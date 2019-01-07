@@ -26,6 +26,10 @@ VantComponent({
     customStyle: String,
     useIconSlot: Boolean,
     useButtonSlot: Boolean,
+    showConfirmBar: {
+      type: Boolean,
+      value: true
+    },
     placeholderStyle: String,
     adjustPosition: {
       type: Boolean,
@@ -54,17 +58,6 @@ VantComponent({
   },
   data: {
     showClear: false
-  },
-  computed: {
-    inputClass: function inputClass() {
-      var data = this.data;
-      return this.classNames('input-class', 'van-field__input', {
-        'van-field--error': data.error,
-        'van-field__textarea': data.type === 'textarea',
-        'van-field__input--disabled': data.disabled,
-        ["van-field__input--" + data.inputAlign]: data.inputAlign
-      });
-    }
   },
   beforeCreate: function beforeCreate() {
     this.focused = false;

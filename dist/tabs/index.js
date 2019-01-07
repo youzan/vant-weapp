@@ -160,7 +160,7 @@ VantComponent({
         var width = rect.width;
 
         _this2.set({
-          trackStyle: "\n            width: " + width * _this2.child.length + "px;\n            transform: translateX(" + -1 * active * width + "px);\n            transition-duration: " + duration + "s;\n          "
+          trackStyle: "\n            width: " + width * _this2.child.length + "px;\n            left: " + -1 * active * width + "px;\n            transition: left " + duration + "s;\n            display: flex;\n          "
         });
 
         _this2.setTabsProps({

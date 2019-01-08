@@ -87,7 +87,7 @@
 </demo-block>
 
 <demo-block title="粘性布局">
-  <van-tabs sticky scroll-top="{{ scrollTop }}">
+  <van-tabs sticky>
     <van-tab
       wx:for="1234"
       wx:key="index"

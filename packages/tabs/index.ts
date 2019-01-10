@@ -63,11 +63,7 @@ VantComponent({
       type: Number,
       value: 0
     },
-    swipeable: Boolean,
-    scrollTop: {
-      type: Number,
-      value: 0
-    }
+    swipeable: Boolean
   },
 
   data: {
@@ -90,7 +86,6 @@ VantComponent({
     lineWidth: 'setLine',
     active: 'setActiveTab',
     animated: 'setTrack',
-    scrollTop: 'onScroll',
     offsetTop: 'setWrapStyle'
   },
 
@@ -102,6 +97,12 @@ VantComponent({
     this.setLine();
     this.setTrack();
     this.scrollIntoView();
+    this.observerTabScroll();
+    this.observerContentScroll();
+  },
+
+  destroyed() {
+    wx.createIntersectionObserver(this).disconnect();
   },
 
   methods: {
@@ -310,39 +311,55 @@ VantComponent({
       });
     },
 
-    // adjust tab position
-    onScroll(scrollTop) {
+    observerTabScroll() {
       if (!this.data.sticky) return;
 
       const { offsetTop } = this.data;
+      wx.createIntersectionObserver(this, {
+        thresholds: [1]
+      }).relativeToViewport().observe('.van-tabs', result => {
+        const { top } = result.boundingClientRect;
+        let position = '';
 
-      this.getRect('.van-tabs').then(rect => {
-        const { top, height } = rect;
+        if (offsetTop > top) {
+          position = 'top';
+        }
 
-        this.getRect('.van-tabs__wrap').then(rect => {
-          const { height: wrapHeight } = rect;
-          let position = '';
-
-          if (offsetTop > top + height - wrapHeight) {
-            position = 'bottom';
-          } else if (offsetTop > top) {
-            position = 'top';
-          }
-
-          this.$emit('scroll', {
-            scrollTop: scrollTop + offsetTop,
-            isFixed: position === 'top'
-          });
-
-          if (position !== this.data.position) {
-            this.set({
-              position
-            }, () => {
-              this.setWrapStyle();
-            });
-          }
+        this.$emit('scroll', {
+          scrollTop: top + offsetTop,
+          isFixed: position === 'top'
         });
+
+        this.setPosition(position);
       });
+    },
+
+    observerContentScroll() {
+      if (!this.data.sticky) return;
+
+      const { offsetTop } = this.data;
+      wx.createIntersectionObserver(this).relativeToViewport().observe('.van-tabs__content', result => {
+        const { top } = result.boundingClientRect;
+        let position = '';
+
+        if (result.intersectionRatio <= 0) {
+          position = 'bottom';
+        } else if (offsetTop > top) {
+          position = 'top';
+        }
+
+        this.setPosition(position);
+      });
+    },
+
+    setPosition(position) {
+      if (position !== this.data.position) {
+        this.set({
+          position
+        }, () => {
+          this.setWrapStyle();
+        });
+      }
     }
   }
 });

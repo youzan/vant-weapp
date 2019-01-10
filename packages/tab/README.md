@@ -179,7 +179,6 @@ Page({
 | swipeable | 是否开启手势滑动切换 | `Boolean` | `false` |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
 | offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` |
-| scroll-top | 页面的`scrollTop`，粘性布局下必须要传入，单位 px | `Number` | `0` |
 
 ### Tab API
 

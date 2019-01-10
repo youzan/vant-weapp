@@ -7,7 +7,7 @@
       wx:for="{{ icons.basic }}"
       wx:key="index"
       custom-class="col"
-      span="8"
+      span="6"
     >
       <van-icon
         name="{{ item }}"
@@ -22,7 +22,7 @@
       wx:for="{{ icons.outline }}"
       wx:key="index"
       custom-class="col"
-      span="8"
+      span="6"
     >
       <van-icon
         name="{{ item }}"
@@ -37,7 +37,7 @@
       wx:for="{{ icons.filled }}"
       wx:key="index"
       custom-class="col"
-      span="8"
+      span="6"
     >
       <van-icon
         name="{{ item }}"

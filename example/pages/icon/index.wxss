@@ -9,11 +9,13 @@
 .icon {
   display: block;
   margin: 15px 0;
-  color: rgba(69, 90, 100, .8);
+  color: #455a64;
 }
 
 .text {
-  font-size: 14px;
+  font-size: 12px;
+  padding: 0 5px;
+  line-height: 14px;
 }
 
 .demo-tab-pane {

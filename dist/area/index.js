@@ -133,6 +133,8 @@ VantComponent({
       return 0;
     },
     setValues: function setValues() {
+      var _this = this;
+
       var county = this.getConfig('county');
       var code = this.code || Object.keys(county)[0] || '';
       var province = this.getList('province');
@@ -143,16 +145,19 @@ VantComponent({
         return;
       }
 
-      picker.setColumnValues(0, province);
-      picker.setColumnValues(1, city);
+      var stack = [];
+      stack.push(picker.setColumnValues(0, province));
+      stack.push(picker.setColumnValues(1, city));
 
       if (city.length && code.slice(2, 4) === '00') {
         ;
         code = city[0].code;
       }
 
-      picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
-      picker.setIndexes([this.getIndex('province', code), this.getIndex('city', code), this.getIndex('county', code)]);
+      stack.push(picker.setColumnValues(2, this.getList('county', code.slice(0, 4))));
+      return Promise.all(stack).then(function () {
+        return picker.setIndexes([_this.getIndex('province', code), _this.getIndex('city', code), _this.getIndex('county', code)]);
+      }).catch(function () {});
     },
     getValues: function getValues() {
       var picker = this.getPicker();
@@ -192,7 +197,7 @@ VantComponent({
     },
     reset: function reset() {
       this.code = '';
-      this.setValues();
+      return this.setValues();
     }
   }
 });

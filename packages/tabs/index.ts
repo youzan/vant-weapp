@@ -2,10 +2,10 @@ import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 
 type TabItemData = {
+  width?: number;
   active: boolean;
   inited?: boolean;
   animated?: boolean;
-  width?: Number;
 };
 
 VantComponent({
@@ -29,7 +29,14 @@ VantComponent({
 
   props: {
     color: String,
+    sticky: Boolean,
+    animated: Boolean,
+    swipeable: Boolean,
     lineWidth: {
+      type: Number,
+      value: -1
+    },
+    lineHeight: {
       type: Number,
       value: -1
     },
@@ -57,13 +64,10 @@ VantComponent({
       type: Number,
       value: 4
     },
-    animated: Boolean,
-    sticky: Boolean,
     offsetTop: {
       type: Number,
       value: 0
-    },
-    swipeable: Boolean
+    }
   },
 
   data: {
@@ -84,6 +88,7 @@ VantComponent({
     },
     color: 'setLine',
     lineWidth: 'setLine',
+    lineHeight: 'setLine',
     active: 'setActiveTab',
     animated: 'setTrack',
     offsetTop: 'setWrapStyle'
@@ -149,12 +154,14 @@ VantComponent({
         color,
         active,
         duration,
-        lineWidth
+        lineWidth,
+        lineHeight
       } = this.data;
 
       this.getRect('.van-tab', true).then(rects => {
         const rect = rects[active];
         const width = (lineWidth !== -1) ? lineWidth : rect.width / 2;
+        const height = lineHeight !== -1 ? `height: ${lineHeight}px;` : '';
 
         let left = rects
           .slice(0, active)
@@ -164,6 +171,7 @@ VantComponent({
 
         this.set({
           lineStyle: `
+            ${height}
             width: ${width}px;
             background-color: ${color};
             -webkit-transform: translateX(${left}px);

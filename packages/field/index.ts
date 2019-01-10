@@ -76,8 +76,7 @@ VantComponent({
         value,
         showClear: this.getShowClear(value)
       }, () => {
-        this.$emit('input', value);
-        this.$emit('change', value);
+        this.emitChange(value);
       });
     },
 
@@ -85,6 +84,7 @@ VantComponent({
       const { value = '', height = 0 } = event.detail || {};
       this.$emit('focus', { value, height });
       this.focused = true;
+      this.blurFromClear = false;
       this.set({
         showClear: this.getShowClear()
       });
@@ -94,9 +94,21 @@ VantComponent({
       const { value = '', cursor = 0 } = event.detail || {};
       this.$emit('blur', { value, cursor });
       this.focused = false;
-      this.set({
-        showClear: this.getShowClear()
-      });
+      const showClear = this.getShowClear();
+
+      if (this.data.value === value) {
+        this.set({
+          showClear
+        });
+      } else if (!this.blurFromClear) {
+        // fix: the handwritten keyboard does not trigger input change
+        this.set({
+          value,
+          showClear
+        }, () => {
+          this.emitChange(value);
+        });
+      }
     },
 
     onClickIcon() {
@@ -111,18 +123,23 @@ VantComponent({
     },
 
     onClear() {
+      this.blurFromClear = true;
       this.set({
         value: '',
         showClear: this.getShowClear('')
       }, () => {
-        this.$emit('input', '');
-        this.$emit('change', '');
+        this.emitChange('');
         this.$emit('clear', '');
       });
     },
 
     onConfirm() {
       this.$emit('confirm', this.data.value);
+    },
+
+    emitChange(value) {
+      this.$emit('input', value);
+      this.$emit('change', value);
     }
   }
 });

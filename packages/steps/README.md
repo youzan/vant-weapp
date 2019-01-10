@@ -63,7 +63,7 @@ Page({
 |-----------|-----------|-----------|-------------|
 | active | 当前步骤 | `Number` | 0 |
 | direction | 显示方向，可选值为 `horizontal` `vertical` | `String` | `horizontal` |
-| active-color | 激活状态颜色 | `String` | `#4b0` |
+| active-color | 激活状态颜色 | `String` | `#07c160` |
 
 ### 外部样式类
 

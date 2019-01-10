@@ -32,12 +32,15 @@ VantComponent({
 
   created() {
     const { defaultIndex, initialOptions } = this.data;
-    this.set({
-      currentIndex: defaultIndex,
-      options: initialOptions
-    }, () => {
-      this.setIndex(defaultIndex);
-    });
+    this.set(
+      {
+        currentIndex: defaultIndex,
+        options: initialOptions
+      },
+      () => {
+        this.setIndex(defaultIndex);
+      }
+    );
   },
 
   computed: {
@@ -132,16 +135,14 @@ VantComponent({
     setIndex(index: number, userAction: boolean) {
       const { data } = this;
       index = this.adjustIndex(index) || 0;
-
-      this.set({
-        offset: -index * data.itemHeight
-      });
+      const offset = -index * data.itemHeight;
 
       if (index !== data.currentIndex) {
-        this.set({
-          currentIndex: index
+        return this.set({ offset, currentIndex: index }).then(() => {
+          userAction && this.$emit('change', index);
         });
-        userAction && this.$emit('change', index);
+      } else {
+        return this.set({ offset });
       }
     },
 
@@ -152,6 +153,7 @@ VantComponent({
           return this.setIndex(i);
         }
       }
+      return Promise.resolve();
     },
 
     getValue() {

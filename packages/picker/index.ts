@@ -30,10 +30,10 @@ VantComponent({
       value: [],
       observer(columns = []) {
         this.simple = isSimple(columns);
-        const children = this.children = this.selectAllComponents('.van-picker__column');
+        this.children = this.selectAllComponents('.van-picker__column');
 
-        if (Array.isArray(children) && children.length) {
-          this.setColumns();
+        if (Array.isArray(this.children) && this.children.length) {
+          this.setColumns().catch(() => {});
         }
       }
     }
@@ -49,9 +49,10 @@ VantComponent({
     setColumns() {
       const { data } = this;
       const columns = this.simple ? [{ values: data.columns }] : data.columns;
-      columns.forEach((columns, index: number) => {
-        this.setColumnValues(index, columns.values);
-      });
+      const stack = columns.map((column, index: number) =>
+        this.setColumnValues(index, column.values)
+      );
+      return Promise.all(stack);
     },
 
     emit(event: Weapp.Event) {
@@ -99,7 +100,10 @@ VantComponent({
     // set column value by index
     setColumnValue(index: number, value: any) {
       const column = this.getColumn(index);
-      column && column.setValue(value);
+      if (column) {
+        return column.setValue(value);
+      }
+      return Promise.reject('setColumnValue: 对应列不存在');
     },
 
     // get column option index by column index
@@ -110,7 +114,10 @@ VantComponent({
     // set column option index by column index
     setColumnIndex(columnIndex: number, optionIndex: number) {
       const column = this.getColumn(columnIndex);
-      column && column.setIndex(optionIndex);
+      if (column) {
+        return column.setIndex(optionIndex);
+      }
+      return Promise.reject('setColumnIndex: 对应列不存在');
     },
 
     // get options of column by index
@@ -126,12 +133,14 @@ VantComponent({
         column &&
         JSON.stringify(column.data.options) !== JSON.stringify(options)
       ) {
-        column.set({ options }, () => {
+        return column.set({ options }).then(() => {
           if (needReset) {
             column.setIndex(0);
           }
         });
       }
+
+      return Promise.reject('setColumnValues: 对应列不存在');
     },
 
     // get values of all columns
@@ -141,21 +150,25 @@ VantComponent({
 
     // set values of all columns
     setValues(values: []) {
-      values.forEach((value, index) => {
-        this.setColumnValue(index, value);
-      });
+      const stack = values.map((value, index) =>
+        this.setColumnValue(index, value)
+      );
+      return Promise.all(stack);
     },
 
     // get indexes of all columns
     getIndexes() {
-      return this.children.map((child: Weapp.Component) => child.data.currentIndex);
+      return this.children.map(
+        (child: Weapp.Component) => child.data.currentIndex
+      );
     },
 
     // set indexes of all columns
     setIndexes(indexes: number[]) {
-      indexes.forEach((optionIndex, columnIndex) => {
-        this.setColumnIndex(columnIndex, optionIndex);
-      });
+      const stack = indexes.map((optionIndex, columnIndex) =>
+        this.setColumnIndex(columnIndex, optionIndex)
+      );
+      return Promise.all(stack);
     }
   }
 });

@@ -36,14 +36,14 @@ VantComponent({
   },
 
   watch: {
-    value(value) {
+    value(value: string) {
       this.code = value;
       this.setValues();
     },
 
     areaList: 'setValues',
 
-    columnsNum(value) {
+    columnsNum(value: number) {
       this.set({
         displayColumns: this.data.columns.slice(0, +value)
       });
@@ -58,15 +58,15 @@ VantComponent({
       return this.picker;
     },
 
-    onCancel(event) {
+    onCancel(event: Weapp.Event) {
       this.emit('cancel', event.detail);
     },
 
-    onConfirm(event) {
+    onConfirm(event: Weapp.Event) {
       this.emit('confirm', event.detail);
     },
 
-    emit(type, detail) {
+    emit(type: string, detail) {
       detail.values = detail.value;
       delete detail.value;
       this.$emit(type, detail);
@@ -143,19 +143,28 @@ VantComponent({
         return;
       }
 
-      picker.setColumnValues(0, province);
-      picker.setColumnValues(1, city);
+      const stack = [];
+
+      stack.push(picker.setColumnValues(0, province));
+      stack.push(picker.setColumnValues(1, city));
 
       if (city.length && code.slice(2, 4) === '00') {
         ;[{ code }] = city;
       }
 
-      picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
-      picker.setIndexes([
-        this.getIndex('province', code),
-        this.getIndex('city', code),
-        this.getIndex('county', code)
-      ]);
+      stack.push(
+        picker.setColumnValues(2, this.getList('county', code.slice(0, 4)))
+      );
+
+      return Promise.all(stack)
+        .then(() =>
+          picker.setIndexes([
+            this.getIndex('province', code),
+            this.getIndex('city', code),
+            this.getIndex('county', code)
+          ])
+        )
+        .catch(() => {});
     },
 
     getValues() {
@@ -177,7 +186,7 @@ VantComponent({
         return area;
       }
 
-      const names = values.map(item => item.name);
+      const names = values.map((item: AreaItem) => item.name);
       area.code = values[values.length - 1].code;
       if (area.code[0] === '9') {
         area.country = names[1] || '';
@@ -193,7 +202,7 @@ VantComponent({
 
     reset() {
       this.code = '';
-      this.setValues();
+      return this.setValues();
     }
   }
 });

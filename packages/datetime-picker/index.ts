@@ -33,7 +33,7 @@ function getTrueValue(formattedValue: string): number {
   return parseInt(formattedValue, 10);
 }
 
-function getMonthEndDay(year, month): number {
+function getMonthEndDay(year: number, month: number): number {
   return 32 - new Date(year, month - 1, 32).getDate();
 }
 
@@ -116,19 +116,11 @@ VantComponent({
   },
 
   methods: {
-    asyncSet(data) {
-      return new Promise(resolve => {
-        this.set(data, resolve);
-      });
-    },
-
     getPicker() {
       if (this.picker == null) {
-        const picker = (this.picker = this.selectComponent(
-          '.van-datetime-picker'
-        ));
+        const picker = this.picker = this.selectComponent('.van-datetime-picker');
         const { setColumnValues } = picker;
-        picker.setColumnValues = (...args) =>
+        picker.setColumnValues = (...args: any) =>
           setColumnValues.apply(picker, [...args, false]);
       }
       return this.picker;
@@ -145,7 +137,7 @@ VantComponent({
         return { values };
       });
 
-      return this.asyncSet({ columns: results });
+      return this.set({ columns: results });
     },
 
     getRanges(): object[] {
@@ -337,11 +329,9 @@ VantComponent({
         }
       }
 
-      return this.asyncSet({ innerValue: value })
+      return this.set({ innerValue: value })
         .then(() => this.updateColumns())
-        .then(() => {
-          picker.setValues(values);
-        });
+        .then(() => picker.setValues(values));
     }
   },
 

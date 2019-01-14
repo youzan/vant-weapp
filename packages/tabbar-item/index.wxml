@@ -1,5 +1,5 @@
 <view
-  class="van-tabbar-item {{ active ? 'van-tabbar-item--active' : '' }}"
+  class="van-tabbar-item custom-class {{ active ? 'van-tabbar-item--active' : '' }}"
   style="{{ active && color ? 'color: ' + color : '' }}"
   bind:tap="onClick"
 >

@@ -1,3 +1,9 @@
+function setAsync(context: Weapp.Component, data: object) {
+  return new Promise(resolve => {
+    context.setData(data, resolve);
+  });
+};
+
 export const behavior = Behavior({
   created() {
     if (!this.$options) {
@@ -28,14 +34,23 @@ export const behavior = Behavior({
 
   methods: {
     // set data and set computed data
-    set(data, callback) {
+    set(data: object, callback: Function) {
+      const stack = [];
+
       if (data) {
-        this.setData(data, callback);
+        stack.push(setAsync(this, data));
       }
 
       if (this.calcComputed) {
-        this.setData(this.calcComputed());
+        stack.push(setAsync(this, this.calcComputed()));
       }
+
+      return Promise.all(stack).then(res => {
+        if (callback && typeof callback === 'function') {
+          callback.call(this);
+        }
+        return res;
+      });
     }
   }
 });

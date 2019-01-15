@@ -50,7 +50,7 @@ VantComponent({
       this.getRect('.van-slider').then(function (rect) {
         var diff = _this.deltaX / rect.width * 100;
 
-        _this.updateValue(_this.startValue + diff);
+        _this.updateValue(_this.startValue + diff, false, true);
       });
     },
     onTouchEnd: function onTouchEnd() {
@@ -67,15 +67,18 @@ VantComponent({
         _this2.updateValue(value, true);
       });
     },
-    updateValue: function updateValue(value, end) {
+    updateValue: function updateValue(value, end, drag) {
       value = this.format(value);
       this.set({
         value: value,
         barStyle: "width: " + value + "%; height: " + this.data.barHeight + ";"
       });
-      this.$emit('drag', {
-        value: value
-      });
+
+      if (drag) {
+        this.$emit('drag', {
+          value: value
+        });
+      }
 
       if (end) {
         this.$emit('change', value);

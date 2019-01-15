@@ -30,7 +30,7 @@
   <van-checkbox
     value="{{ checkbox2 }}"
     data-key="checkbox2"
-    checked-color="#4b0"
+    checked-color="#07c160"
     custom-class="demo-checkbox"
     bind:change="onChange"
   >

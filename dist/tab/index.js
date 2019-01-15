@@ -5,17 +5,17 @@ VantComponent({
     type: 'ancestor'
   },
   props: {
-    title: String,
-    disabled: Boolean,
     dot: Boolean,
     info: null,
+    title: String,
+    disabled: Boolean,
     titleStyle: String
   },
   data: {
+    width: null,
     inited: false,
     active: false,
-    animated: false,
-    width: null
+    animated: false
   },
   watch: {
     title: 'update',

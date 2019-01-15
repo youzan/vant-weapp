@@ -33,10 +33,10 @@ VantComponent({
         }
 
         this.simple = isSimple(columns);
-        var children = this.children = this.selectAllComponents('.van-picker__column');
+        this.children = this.selectAllComponents('.van-picker__column');
 
-        if (Array.isArray(children) && children.length) {
-          this.setColumns();
+        if (Array.isArray(this.children) && this.children.length) {
+          this.setColumns().catch(function () {});
         }
       }
     }
@@ -53,9 +53,10 @@ VantComponent({
       var columns = this.simple ? [{
         values: data.columns
       }] : data.columns;
-      columns.forEach(function (columns, index) {
-        _this.setColumnValues(index, columns.values);
+      var stack = columns.map(function (column, index) {
+        return _this.setColumnValues(index, column.values);
       });
+      return Promise.all(stack);
     },
     emit: function emit(event) {
       var type = event.currentTarget.dataset.type;
@@ -99,7 +100,12 @@ VantComponent({
     // set column value by index
     setColumnValue: function setColumnValue(index, value) {
       var column = this.getColumn(index);
-      column && column.setValue(value);
+
+      if (column) {
+        return column.setValue(value);
+      }
+
+      return Promise.reject('setColumnValue: 对应列不存在');
     },
     // get column option index by column index
     getColumnIndex: function getColumnIndex(columnIndex) {
@@ -108,7 +114,12 @@ VantComponent({
     // set column option index by column index
     setColumnIndex: function setColumnIndex(columnIndex, optionIndex) {
       var column = this.getColumn(columnIndex);
-      column && column.setIndex(optionIndex);
+
+      if (column) {
+        return column.setIndex(optionIndex);
+      }
+
+      return Promise.reject('setColumnIndex: 对应列不存在');
     },
     // get options of column by index
     getColumnValues: function getColumnValues(index) {
@@ -123,14 +134,16 @@ VantComponent({
       var column = this.children[index];
 
       if (column && JSON.stringify(column.data.options) !== JSON.stringify(options)) {
-        column.set({
+        return column.set({
           options: options
-        }, function () {
+        }).then(function () {
           if (needReset) {
             column.setIndex(0);
           }
         });
       }
+
+      return Promise.reject('setColumnValues: 对应列不存在');
     },
     // get values of all columns
     getValues: function getValues() {
@@ -142,9 +155,10 @@ VantComponent({
     setValues: function setValues(values) {
       var _this2 = this;
 
-      values.forEach(function (value, index) {
-        _this2.setColumnValue(index, value);
+      var stack = values.map(function (value, index) {
+        return _this2.setColumnValue(index, value);
       });
+      return Promise.all(stack);
     },
     // get indexes of all columns
     getIndexes: function getIndexes() {
@@ -156,9 +170,10 @@ VantComponent({
     setIndexes: function setIndexes(indexes) {
       var _this3 = this;
 
-      indexes.forEach(function (optionIndex, columnIndex) {
-        _this3.setColumnIndex(columnIndex, optionIndex);
+      var stack = indexes.map(function (optionIndex, columnIndex) {
+        return _this3.setColumnIndex(columnIndex, optionIndex);
       });
+      return Promise.all(stack);
     }
   }
 });

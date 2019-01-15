@@ -79,7 +79,7 @@ Page({
 ```html
 <van-tabbar
   active="{{ active }}"
-  active-color="#4b0"
+  active-color="#07c160"
   bind:change="onChange"
 >
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>

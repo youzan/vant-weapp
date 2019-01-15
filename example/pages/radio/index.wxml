@@ -28,7 +28,7 @@
     name="1"
     value="1"
     custom-class="demo-radio"
-    checked-color="#4b0"
+    checked-color="#07c160"
   >
     单选框
   </van-radio>

@@ -118,13 +118,6 @@ VantComponent({
     maxMinute: 'updateColumns'
   },
   methods: {
-    asyncSet: function asyncSet(data) {
-      var _this2 = this;
-
-      return new Promise(function (resolve) {
-        _this2.set(data, resolve);
-      });
-    },
     getPicker: function getPicker() {
       if (this.picker == null) {
         var picker = this.picker = this.selectComponent('.van-datetime-picker');
@@ -154,7 +147,7 @@ VantComponent({
           values: values
         };
       });
-      return this.asyncSet({
+      return this.set({
         columns: results
       });
     },
@@ -280,7 +273,7 @@ VantComponent({
       this.$emit('confirm', this.data.innerValue);
     },
     onChange: function onChange() {
-      var _this3 = this;
+      var _this2 = this;
 
       var data = this.data;
       var value;
@@ -314,13 +307,13 @@ VantComponent({
 
       value = this.correctValue(value);
       this.updateColumnValue(value).then(function () {
-        _this3.$emit('input', value);
+        _this2.$emit('input', value);
 
-        _this3.$emit('change', picker);
+        _this2.$emit('change', picker);
       });
     },
     updateColumnValue: function updateColumnValue(value) {
-      var _this4 = this;
+      var _this3 = this;
 
       var values = [];
       var data = this.data;
@@ -342,21 +335,21 @@ VantComponent({
         }
       }
 
-      return this.asyncSet({
+      return this.set({
         innerValue: value
       }).then(function () {
-        return _this4.updateColumns();
+        return _this3.updateColumns();
       }).then(function () {
-        picker.setValues(values);
+        return picker.setValues(values);
       });
     }
   },
   created: function created() {
-    var _this5 = this;
+    var _this4 = this;
 
     var innerValue = this.correctValue(this.data.value);
     this.updateColumnValue(innerValue).then(function () {
-      _this5.$emit('input', innerValue);
+      _this4.$emit('input', innerValue);
     });
   }
 });

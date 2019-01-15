@@ -48,7 +48,7 @@ Page({
   value="{{ value }}"
   size="{{ 25 }}"
   count="{{ 6 }}"
-  color="#2ba"
+  color="#07c160"
   void-color="#ceefe8"
   bind:change="onChange"
 />

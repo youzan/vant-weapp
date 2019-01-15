@@ -36,7 +36,7 @@
  ```html
 <van-checkbox
   value="{{ checked }}"
-  checked-color="#4b0"
+  checked-color="#07c160"
   bind:change="onChange"
 >
   复选框

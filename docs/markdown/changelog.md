@@ -1,5 +1,24 @@
 ## 更新日志
 
+
+## [v0.5.1](https://github.com/youzan/vant-weapp/tree/v0.5.1)
+`2019-01-10`
+
+**Improvements**
+
+- Color: 基础绿色调整为微信绿 [\#1202](https://github.com/youzan/vant-weapp/pull/1202)
+- Icon: 新增 cart-circle 图标 [\#1204](https://github.com/youzan/vant-weapp/pull/1204)
+- Tab: 新增 line-height 属性 [\#1205](https://github.com/youzan/vant-weapp/pull/1205)
+- Tab: 优化 sticky 实现，不再需要手动传入 scrollTop 属性 [\#1197](https://github.com/youzan/vant-weapp/pull/1197)
+
+**Bug Fixes**
+
+- 修复 Area 修复初始选中项错误 [\#1196](https://github.com/youzan/vant-weapp/pull/1196)
+- 修复 Icon 部分图标的线条应使用圆角的问题 [\#1204](https://github.com/youzan/vant-weapp/pull/1204)
+- 修复 Field 手写键盘输入时未触发 change 事件的问题 [\#1200](https://github.com/youzan/vant-weapp/pull/1200)
+- 修复 Slider 改变 value 值时错误地触发了 drag 事件的问题 [\#1186](https://github.com/youzan/vant-weapp/pull/1186)
+
+
 ## [v0.5.0](https://github.com/youzan/vant-weapp/tree/v0.5.0)
 `2019-01-05`
 

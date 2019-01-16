@@ -75,11 +75,12 @@ VantComponent({
     onChange(event: Weapp.Event) {
       const { index, picker, value } = event.detail;
       this.code = value[index].code;
-      this.setValues();
-      this.$emit('change', {
-        picker,
-        values: picker.getValues(),
-        index
+      this.setValues().then(() => {
+        this.$emit('change', {
+          picker,
+          values: picker.getValues(),
+          index
+        });
       });
     },
 

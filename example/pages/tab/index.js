@@ -25,5 +25,11 @@ Page({
       title: `点击标签 ${event.detail.index + 1}`,
       icon: 'none'
     });
+  },
+
+  onPageScroll(event) {
+    this.setData({
+      scrollTop: event.scrollTop
+    });
   }
 });

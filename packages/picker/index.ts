@@ -100,10 +100,12 @@ VantComponent({
     // set column value by index
     setColumnValue(index: number, value: any) {
       const column = this.getColumn(index);
-      if (column) {
-        return column.setValue(value);
+
+      if (column == null) {
+        return Promise.reject('setColumnValue: 对应列不存在');
       }
-      return Promise.reject('setColumnValue: 对应列不存在');
+
+      return column.setValue(value);
     },
 
     // get column option index by column index
@@ -114,10 +116,12 @@ VantComponent({
     // set column option index by column index
     setColumnIndex(columnIndex: number, optionIndex: number) {
       const column = this.getColumn(columnIndex);
-      if (column) {
-        return column.setIndex(optionIndex);
+
+      if (column == null) {
+        return Promise.reject('setColumnIndex: 对应列不存在');
       }
-      return Promise.reject('setColumnIndex: 对应列不存在');
+
+      return column.setIndex(optionIndex);
     },
 
     // get options of column by index
@@ -129,18 +133,21 @@ VantComponent({
     setColumnValues(index: number, options: any[], needReset = true) {
       const column = this.children[index];
 
-      if (
-        column &&
-        JSON.stringify(column.data.options) !== JSON.stringify(options)
-      ) {
-        return column.set({ options }).then(() => {
-          if (needReset) {
-            column.setIndex(0);
-          }
-        });
+      if (column == null) {
+        return Promise.reject('setColumnValues: 对应列不存在');
       }
 
-      return Promise.reject('setColumnValues: 对应列不存在');
+      const isSame = JSON.stringify(column.data.options) === JSON.stringify(options);
+
+      if (isSame) {
+        return Promise.resolve();
+      }
+
+      return column.set({ options }).then(() => {
+        if (needReset) {
+          column.setIndex(0);
+        }
+      });
     },
 
     // get values of all columns

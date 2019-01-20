@@ -1,6 +1,22 @@
 ## 更新日志
 
 
+## [v0.5.2](https://github.com/youzan/vant-weapp/tree/v0.5.2)
+`2019-01-20`
+
+**Improvements**
+
+- Card: 更新价格部分样式 [\#1237](https://github.com/youzan/vant-weapp/pull/1237)
+- TreeSelect: 去除点击态样式 [\#1234](https://github.com/youzan/vant-weapp/pull/1234)
+- TabbarItem: 新增 custom-class 外部样式类 [\#1213](https://github.com/youzan/vant-weapp/pull/1213)
+- Toast: 支持在 message 中使用换行符 [\#1210](https://github.com/youzan/vant-weapp/pull/1210)
+
+**Bug Fixes**
+
+- Search: 修复readonly属性无效 [\#1238](https://github.com/youzan/vant-weapp/pull/1238)
+- Area: 修复getIndexes结果不符合预期 [\#1220](https://github.com/youzan/vant-weapp/pull/1220)
+- Tabs：回滚使用IntersectionObserver实现的sticky效果 [\#1217](https://github.com/youzan/vant-weapp/pull/1217)
+
 ## [v0.5.1](https://github.com/youzan/vant-weapp/tree/v0.5.1)
 `2019-01-10`
 

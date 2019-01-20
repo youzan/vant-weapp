@@ -70,16 +70,19 @@ VantComponent({
       this.$emit(type, detail);
     },
     onChange: function onChange(event) {
+      var _this = this;
+
       var _event$detail = event.detail,
           index = _event$detail.index,
           picker = _event$detail.picker,
           value = _event$detail.value;
       this.code = value[index].code;
-      this.setValues();
-      this.$emit('change', {
-        picker: picker,
-        values: picker.getValues(),
-        index: index
+      this.setValues().then(function () {
+        _this.$emit('change', {
+          picker: picker,
+          values: picker.getValues(),
+          index: index
+        });
       });
     },
     getConfig: function getConfig(type) {
@@ -133,7 +136,7 @@ VantComponent({
       return 0;
     },
     setValues: function setValues() {
-      var _this = this;
+      var _this2 = this;
 
       var county = this.getConfig('county');
       var code = this.code || Object.keys(county)[0] || '';
@@ -156,7 +159,7 @@ VantComponent({
 
       stack.push(picker.setColumnValues(2, this.getList('county', code.slice(0, 4))));
       return Promise.all(stack).then(function () {
-        return picker.setIndexes([_this.getIndex('province', code), _this.getIndex('city', code), _this.getIndex('county', code)]);
+        return picker.setIndexes([_this2.getIndex('province', code), _this2.getIndex('city', code), _this2.getIndex('county', code)]);
       }).catch(function () {});
     },
     getValues: function getValues() {

@@ -57,6 +57,10 @@ VantComponent({
     offsetTop: {
       type: Number,
       value: 0
+    },
+    scrollTop: {
+      type: Number,
+      value: 0
     }
   },
   data: {
@@ -79,6 +83,7 @@ VantComponent({
     lineHeight: 'setLine',
     active: 'setActiveTab',
     animated: 'setTrack',
+    scrollTop: 'onScroll',
     offsetTop: 'setWrapStyle'
   },
   beforeCreate: function beforeCreate() {
@@ -88,8 +93,6 @@ VantComponent({
     this.setLine();
     this.setTrack();
     this.scrollIntoView();
-    this.observerTabScroll();
-    this.observerContentScroll();
   },
   destroyed: function destroyed() {
     wx.createIntersectionObserver(this).disconnect();
@@ -281,57 +284,40 @@ VantComponent({
         wrapStyle: wrapStyle
       });
     },
-    observerTabScroll: function observerTabScroll() {
+    // adjust tab position
+    onScroll: function onScroll(scrollTop) {
       var _this5 = this;
 
       if (!this.data.sticky) return;
       var offsetTop = this.data.offsetTop;
-      wx.createIntersectionObserver(this, {
-        thresholds: [1]
-      }).relativeToViewport().observe('.van-tabs', function (result) {
-        var top = result.boundingClientRect.top;
-        var position = '';
+      this.getRect('.van-tabs').then(function (rect) {
+        var top = rect.top,
+            height = rect.height;
 
-        if (offsetTop > top) {
-          position = 'top';
-        }
+        _this5.getRect('.van-tabs__wrap').then(function (rect) {
+          var wrapHeight = rect.height;
+          var position = '';
 
-        _this5.$emit('scroll', {
-          scrollTop: top + offsetTop,
-          isFixed: position === 'top'
+          if (offsetTop > top + height - wrapHeight) {
+            position = 'bottom';
+          } else if (offsetTop > top) {
+            position = 'top';
+          }
+
+          _this5.$emit('scroll', {
+            scrollTop: scrollTop + offsetTop,
+            isFixed: position === 'top'
+          });
+
+          if (position !== _this5.data.position) {
+            _this5.set({
+              position: position
+            }, function () {
+              _this5.setWrapStyle();
+            });
+          }
         });
-
-        _this5.setPosition(position);
       });
-    },
-    observerContentScroll: function observerContentScroll() {
-      var _this6 = this;
-
-      if (!this.data.sticky) return;
-      var offsetTop = this.data.offsetTop;
-      wx.createIntersectionObserver(this).relativeToViewport().observe('.van-tabs__content', function (result) {
-        var top = result.boundingClientRect.top;
-        var position = '';
-
-        if (result.intersectionRatio <= 0) {
-          position = 'bottom';
-        } else if (offsetTop > top) {
-          position = 'top';
-        }
-
-        _this6.setPosition(position);
-      });
-    },
-    setPosition: function setPosition(position) {
-      var _this7 = this;
-
-      if (position !== this.data.position) {
-        this.set({
-          position: position
-        }, function () {
-          _this7.setWrapStyle();
-        });
-      }
     }
   }
 });

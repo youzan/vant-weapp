@@ -13,7 +13,7 @@
     class="van-search__field field-class"
     value="{{ value }}"
     disabled="{{ disabled }}"
-    readonly="{{ readony }}"
+    readonly="{{ readonly }}"
     maxlength="{{ maxlength }}"
     input-align="{{ inputAlign }}"
     input-class="input-class"

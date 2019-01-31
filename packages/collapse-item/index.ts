@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  classes: ['content-class'],
+  classes: ['title-class', 'content-class'],
 
   relation: {
     name: 'collapse',

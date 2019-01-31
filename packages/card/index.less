@@ -8,13 +8,13 @@
   background-color: @background-color-light;
   box-sizing: border-box;
 
-  &--center {
-    align-items: center;
-    justify-content: center;
-  }
-
   &__header {
     display: flex;
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   &__thumb {
@@ -36,7 +36,6 @@
 
   &__content {
     position: relative;
-    height: 90px;
     min-width: 0; /* hack for flex box ellipsis */
     flex: 1;
   }
@@ -47,13 +46,11 @@
   }
 
   &__title {
-    max-height: 32px;
     font-weight: bold;
     line-height: 16px;
   }
 
   &__desc {
-    max-height: 20px;
     line-height: 20px;
     color: @gray-darker;
   }

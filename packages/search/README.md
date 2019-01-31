@@ -76,7 +76,7 @@ Search 支持自定义右侧取消按钮，使用名字为 action 的 slot 即�
 
 | 名称 | 说明 |
 |-----------|-----------|
-| action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
+| action | 自定义搜索框右侧按钮，需要在`use-action-slot`为 true 时才会显示 |
 
 ### 外部样式类
 

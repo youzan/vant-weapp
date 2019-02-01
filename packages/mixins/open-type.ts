@@ -16,12 +16,16 @@ export const openType = Behavior({
       this.$emit('getphonenumber', event.detail);
     },
 
+    bindError(event: Partial<Weapp.Event>) {
+      this.$emit('error', event.detail);
+    },
+
+    bindLaunchApp(event: Partial<Weapp.Event>) {
+      this.$emit('launchapp', event.detail);
+    },
+
     bindOpenSetting(event: Partial<Weapp.Event>) {
       this.$emit('opensetting', event.detail);
     },
-
-    bindError(event: Partial<Weapp.Event>) {
-      this.$emit('error', event.detail);
-    }
   }
 });

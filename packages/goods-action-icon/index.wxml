@@ -26,7 +26,8 @@
       name="{{ icon }}"
       info="{{ info }}"
       class="van-goods-action-icon__icon"
+      custom-class="icon-class"
     />
-    {{ text }}
+    <text class="text-class">{{ text }}</text>
   </view>
 </van-button>

@@ -16,7 +16,7 @@ VantComponent({
     confirmButtonOpenType: String,
     zIndex: {
       type: Number,
-      value: 100
+      value: 2000
     },
     confirmButtonText: {
       type: String,
@@ -96,7 +96,7 @@ VantComponent({
         this.close();
       }
       this.$emit('close', action);
-      
+
       //把 dialog 实例传递出去，可以通过 stopLoading() 在外部关闭按钮的 loading
       this.$emit(action, { dialog: this });
 

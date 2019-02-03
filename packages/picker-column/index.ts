@@ -30,17 +30,15 @@ VantComponent({
     currentIndex: 0
   },
 
-  created() {
+  beforeCreate() {
     const { defaultIndex, initialOptions } = this.data;
-    this.set(
-      {
-        currentIndex: defaultIndex,
-        options: initialOptions
-      },
-      () => {
-        this.setIndex(defaultIndex);
-      }
-    );
+
+    this.set({
+      currentIndex: defaultIndex,
+      options: initialOptions
+    }).then(() => {
+      this.setIndex(defaultIndex);
+    });
   },
 
   computed: {

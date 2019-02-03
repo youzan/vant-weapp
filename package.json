@@ -27,7 +27,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-typescript": "^7.1.0",
     "@vant/doc": "^1.0.21",
-    "@vant/icons": "1.0.7",
+    "@vant/icons": "1.0.8",
     "autoprefixer": "^9.4.4",
     "babel-loader": "8.0.5",
     "cross-env": "^5.1.4",

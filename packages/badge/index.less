@@ -2,18 +2,18 @@
 
 .van-badge {
   display: block;
+  padding: 20px 12px 20px 9px;
   overflow: hidden;
   font-size: 14px;
   line-height: 1.4;
-  user-select: none;
   color: @gray-darker;
   word-break: break-all;
-  box-sizing: border-box;
-  padding: 20px 12px 20px 9px;
   background-color: @background-color;
   border-left: 3px solid transparent;
+  box-sizing: border-box;
+  user-select: none;
 
-  &:active {
+  &--hover {
     background-color: @active-color;
   }
 
@@ -29,11 +29,11 @@
     &::after {
       border-right-width: 1px;
     }
+  }
 
-    &,
-    &:active {
-      background-color: @white;
-    }
+  &--active,
+  &--active&--hover {
+    background-color: @white;
   }
 
   &__text {

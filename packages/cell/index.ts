@@ -6,7 +6,8 @@ VantComponent({
     'title-class',
     'label-class',
     'value-class',
-    'right-icon-class'
+    'right-icon-class',
+    'hover-class'
   ],
 
   mixins: [link],

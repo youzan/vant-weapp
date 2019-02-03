@@ -12,6 +12,7 @@
     class="{{ utils.bem('collapse-item__title', { disabled, expanded }) }}"
     right-icon-class="van-cell__right-icon"
     custom-class="van-cell"
+    hover-class="van-cell--hover"
     bind:click="onClick"
   >
     <slot

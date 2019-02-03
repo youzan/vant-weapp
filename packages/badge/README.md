@@ -16,7 +16,7 @@
 通过在`van-badge-group`上设置`active`属性来控制选中的`badge`
 
 ```html
-<van-badge-group :active="active" bind:change="onChange">
+<van-badge-group active="{{ active }}" bind:change="onChange">
   <van-badge title="标签名称" />
   <van-badge title="标签名称" info="8" />
   <van-badge title="标签名称" info="99" />

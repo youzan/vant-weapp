@@ -4,6 +4,17 @@
   max-height: 90% !important;
   color: @text-color;
 
+  &__cancel {
+    height: 60px;
+
+    &::before {
+      display: block;
+      height: 10px;
+      background-color: @background-color;
+      content: ' ';
+    }
+  }
+
   &__item,
   &__cancel {
     height: 50px;
@@ -12,28 +23,17 @@
     text-align: center;
     background-color: @white;
 
-    &:active {
+    &--hover {
       background-color: @active-color;
-    }
-  }
-
-  &__cancel {
-    height: 60px;
-
-    &::before {
-      display: block;
-      content: ' ';
-      height: 10px;
-      background-color: @background-color;
     }
   }
 
   &__item--disabled {
     color: @gray;
+  }
 
-    &:active {
-      background-color: @white;
-    }
+  &__item--disabled&__item--hover {
+    background-color: @white;
   }
 
   &__subname {

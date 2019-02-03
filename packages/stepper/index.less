@@ -11,6 +11,18 @@
     background-color: @white;
   }
 
+  &__minus {
+    border-radius: 2px 0 0 2px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__plus {
+    border-radius: 0 2px 2px 0;
+  }
+
   &__minus,
   &__plus {
     position: relative;
@@ -42,7 +54,7 @@
       content: '';
     }
 
-    &:active {
+    &--hover {
       background-color: @active-color;
     }
 
@@ -55,21 +67,9 @@
       }
     }
 
-    &--disabled:active {
+    &--disabled&--hover {
       background-color: @background-color;
     }
-  }
-
-  &__minus {
-    border-radius: 2px 0 0 2px;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  &__plus {
-    border-radius: 0 2px 2px 0;
   }
 
   &__input-wrapper {

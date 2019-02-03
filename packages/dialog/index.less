@@ -2,14 +2,14 @@
 
 .van-dialog {
   width: 85%;
-  font-size: 16px;
   overflow: hidden;
-  border-radius: 4px;
+  font-size: 16px;
   background-color: @white;
+  border-radius: 4px;
 
   &__header {
-    font-weight: 500;
     padding-top: 25px;
+    font-weight: 500;
     text-align: center;
 
     &--isolated {
@@ -18,11 +18,11 @@
   }
 
   &__message {
+    max-height: 60vh;
     padding: 25px;
+    overflow-y: auto;
     font-size: 14px;
     line-height: 1.5;
-    max-height: 60vh;
-    overflow-y: auto;
     text-align: center;
     -webkit-overflow-scrolling: touch;
 
@@ -54,10 +54,7 @@
   }
 
   &__confirm {
-    &,
-    &:active {
-      color: @blue !important;
-    }
+    color: @blue !important;
   }
 
   &-bounce-enter {

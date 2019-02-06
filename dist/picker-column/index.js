@@ -25,7 +25,7 @@ VantComponent({
     options: [],
     currentIndex: 0
   },
-  created: function created() {
+  beforeCreate: function beforeCreate() {
     var _this = this;
 
     var _this$data = this.data,
@@ -34,7 +34,7 @@ VantComponent({
     this.set({
       currentIndex: defaultIndex,
       options: initialOptions
-    }, function () {
+    }).then(function () {
       _this.setIndex(defaultIndex);
     });
   },

@@ -12,11 +12,14 @@ export var openType = Behavior({
     bindGetPhoneNumber: function bindGetPhoneNumber(event) {
       this.$emit('getphonenumber', event.detail);
     },
-    bindOpenSetting: function bindOpenSetting(event) {
-      this.$emit('opensetting', event.detail);
-    },
     bindError: function bindError(event) {
       this.$emit('error', event.detail);
+    },
+    bindLaunchApp: function bindLaunchApp(event) {
+      this.$emit('launchapp', event.detail);
+    },
+    bindOpenSetting: function bindOpenSetting(event) {
+      this.$emit('opensetting', event.detail);
     }
   }
 });

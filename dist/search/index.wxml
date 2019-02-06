@@ -26,7 +26,12 @@
     bind:confirm="onSearch"
     bind:clear="onClear"
   />
-  <view wx:if="{{ showAction || useActionSlot }}" class="van-search__action">
+  <view
+    wx:if="{{ showAction || useActionSlot }}"
+    class="van-search__action"
+    hover-class="van-search__action--hover"
+    hover-stay-time="70"
+  >
     <slot wx:if="{{ useActionSlot }}" name="action" />
     <view wx:else bind:tap="onCancel" class="cancel-class">取消</view>
   </view>

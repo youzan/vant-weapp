@@ -14,7 +14,7 @@ VantComponent({
     confirmButtonOpenType: String,
     zIndex: {
       type: Number,
-      value: 100
+      value: 2000
     },
     confirmButtonText: {
       type: String,

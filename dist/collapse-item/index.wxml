@@ -3,6 +3,7 @@
 <view class="van-collapse-item van-hairline--top custom-class">
   <van-cell
     title="{{ title }}"
+    title-class="title-class"
     icon="{{ icon }}"
     is-link="{{ isLink }}"
     value="{{ value }}"
@@ -11,6 +12,7 @@
     class="{{ utils.bem('collapse-item__title', { disabled, expanded }) }}"
     right-icon-class="van-cell__right-icon"
     custom-class="van-cell"
+    hover-class="van-cell--hover"
     bind:click="onClick"
   >
     <slot

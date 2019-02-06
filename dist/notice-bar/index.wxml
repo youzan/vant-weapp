@@ -1,7 +1,7 @@
 <view
   wx:if="{{ show }}"
   class="custom-class van-notice-bar {{ hasRightIcon ? 'van-notice-bar--within-icon' : '' }}"
-  style="color: {{ color }};background-color: {{ backgroundColor }}"
+  style="color: {{ color }}; background-color: {{ backgroundColor }};"
   bind:tap="onClick"
 >
   <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
@@ -13,19 +13,17 @@
     </view>
   </view>
 
-  <block wx:if="{{ mode }}">
-    <van-icon
-      wx:if="{{ mode === 'closeable' }}"
-      class="van-notice-bar__right-icon"
-      name="cross"
-      bind:tap="onClickIcon"
-    />
-    <navigator
-      wx:if="{{ mode === 'link' }}"
-      url="{{ url }}"
-      open-type="{{ openType }}"
-    >
-      <van-icon class="van-notice-bar__right-icon" name="arrow" />
-    </navigator>
-  </block>
+  <van-icon
+    wx:if="{{ mode === 'closeable' }}"
+    class="van-notice-bar__right-icon"
+    name="cross"
+    bind:tap="onClickIcon"
+  />
+  <navigator
+    wx:if="{{ mode === 'link' }}"
+    url="{{ url }}"
+    open-type="{{ openType }}"
+  >
+    <van-icon class="van-notice-bar__right-icon" name="arrow" />
+  </navigator>
 </view>

@@ -22,7 +22,7 @@
   >
     <view
       wx:for="{{ subItems }}"
-      wx:key="item.id"
+      wx:key="id"
       class="van-ellipsis van-hairline--bottom content-item-class {{ utils.bem('tree-select__item', { active: activeId === item.id, disabled: item.disabled }) }} {{ activeId === item.id ? 'content-active-class' : '' }} {{ item.disabled ? 'content-disabled-class' : '' }}"
       data-item="{{ item }}"
       bind:tap="onSelectItem"

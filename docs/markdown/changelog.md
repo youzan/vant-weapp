@@ -1,5 +1,45 @@
 ## 更新日志
 
+## [v0.5.3](https://github.com/youzan/vant-weapp/tree/v0.5.3)
+`2019-02-06`
+
+**Improvements**
+
+- 使用 hover-class 定义点击态样式 [\#1280](https://github.com/youzan/vant-weapp/pull/1280)
+- NoticeBar: 性能优化 [\#1278](https://github.com/youzan/vant-weapp/pull/1278)
+- Dialog: 提高 zIndex 默认值为 2000 [\#1276](https://github.com/youzan/vant-weapp/pull/1276)
+- TreeSelect: 优化性能 [\#1274](https://github.com/youzan/vant-weapp/pull/1274)
+- Button:  增加新属性 ariaLabel [\#1273](https://github.com/youzan/vant-weapp/pull/1273)
+- Button:  增加外部样式类 hover-class [\#1273](https://github.com/youzan/vant-weapp/pull/1273)
+- Button:  增加launchapp事件 [\#1273](https://github.com/youzan/vant-weapp/pull/1273)
+- GoodsActionIcon: 新增外部样式类icon-class、text-class [\#1272](https://github.com/youzan/vant-weapp/pull/1272)
+- Collapse: 新增外部样式类 title-class [\#1271](https://github.com/youzan/vant-weapp/pull/1271)
+- Search: 完善Search文档 [\#1228](https://github.com/youzan/vant-weapp/pull/1228)
+- 新增 live 图标
+- 新增 lock 图标
+- 新增 audio 图标
+- 新增 column 图标
+- 新增 replay 图标
+- 新增 shrink 图标
+- 新增 graphic 图标
+- 新增 invition 图标
+- 新增 ascending 图标
+- 新增 descending 图标
+- 新增 play-circle 图标
+- 新增 stop-circle 图标
+- 新增 pause-circle 图标
+- 新增 play-circle-o 图标
+- 新增 stop-circle-o 图标
+- 新增 pause-circle-o 图标
+- 新增 weapp-nav 图标
+
+
+**Bug Fixes**
+
+- Area: 修复特殊情况下初始化选项错误 [\#1285](https://github.com/youzan/vant-weapp/pull/1285)
+- Card: 修复centered属性无效，去除title、desc长度限制 [\#1270](https://github.com/youzan/vant-weapp/pull/1270)
+- Field: 修复清除图标未居中 [\#1267](https://github.com/youzan/vant-weapp/pull/1267)
+
 
 ## [v0.5.2](https://github.com/youzan/vant-weapp/tree/v0.5.2)
 `2019-01-20`

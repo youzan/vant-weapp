@@ -98,6 +98,8 @@ Page({
 | size | 开关尺寸 | `String` | `30px` |
 | active-color | 打开时的背景色 | `String` | `#1989fa` |
 | inactive-color | 关闭时的背景色 | `String` | `#fff` |
+| active-value | 打开时的值 | `any` | `true` |
+| inactive-value | 关闭时的值 | `any` | `false` |
 
 ### Event
 

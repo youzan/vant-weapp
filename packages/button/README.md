@@ -40,7 +40,7 @@
 
 ```html 
 <van-button loading type="primary" />
-<van-button loading type="danger" />
+<van-button loading type="danger" loading-text="加载中..." />
 ```
 
 #### 按钮形状

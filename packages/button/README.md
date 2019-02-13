@@ -70,6 +70,7 @@
 | plain | 是否为朴素按钮 | `Boolean` | `false` |
 | disabled | 是否禁用按钮 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
+| loading-text | 加载状态提示文字 | `String` | - |
 | block | 是否为块级元素 | `Boolean` | `false` |
 | round | 是否为圆形按钮 | `Boolean` | `false` |
 | square | 是否为方形按钮 | `Boolean` | `false` |

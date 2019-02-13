@@ -92,7 +92,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | name | 在表单内提交时的标识符 | `String` | - |
-| checked | 开关选中状态 | `Boolean` | `false` |
+| checked | 开关选中状态 | `any` | `false` |
 | loading | 是否为加载状态 | `Boolean` | `false` |
 | disabled | 是否为禁用状态 | `Boolean` | `false` |
 | size | 开关尺寸 | `String` | `30px` |

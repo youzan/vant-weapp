@@ -19,8 +19,8 @@
   </demo-block>
 
   <demo-block title="加载状态" padding>
-    <van-button loading type="primary" class="demo-margin-right" loading-class="loading" />
-    <van-button loading type="danger" loading-class="loading" />
+    <van-button loading type="primary" class="demo-margin-right" />
+    <van-button loading type="danger" loading-text="加载中..." />
   </demo-block>
 
   <demo-block title="按钮形状" padding>

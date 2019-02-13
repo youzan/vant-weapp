@@ -12,6 +12,8 @@ VantComponent({
     title: String,
     value: String,
     loading: Boolean,
+    cancelButtonText: String,
+    confirmButtonText: String,
     itemHeight: {
       type: Number,
       value: 44

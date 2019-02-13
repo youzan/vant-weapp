@@ -104,7 +104,7 @@ VantComponent({
   },
 
   mounted() {
-    this.setLine();
+    this.setLine(true);
     this.setTrack();
     this.scrollIntoView();
   },
@@ -148,7 +148,7 @@ VantComponent({
       }
     },
 
-    setLine() {
+    setLine(skipTransition?: boolean) {
       if (this.data.type !== 'line') {
         return;
       }
@@ -172,15 +172,16 @@ VantComponent({
 
         left += (rect.width - width) / 2;
 
+        const transition = skipTransition ? '' : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
+
         this.set({
           lineStyle: `
             ${height}
             width: ${width}px;
             background-color: ${color};
             -webkit-transform: translateX(${left}px);
-            -webkit-transition-duration: ${duration}s;
             transform: translateX(${left}px);
-            transition-duration: ${duration}s;
+            ${transition}
           `
         });
       });

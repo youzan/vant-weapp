@@ -7,6 +7,7 @@ export const button = Behavior({
       type: String,
       value: 'en'
     },
+    businessId: Number,
     sessionFrom: String,
     sendMessageTitle: String,
     sendMessagePath: String,

@@ -4,17 +4,6 @@
   max-height: 90% !important;
   color: @text-color;
 
-  &__cancel {
-    height: 60px;
-
-    &::before {
-      display: block;
-      height: 10px;
-      background-color: @background-color;
-      content: ' ';
-    }
-  }
-
   &__item,
   &__cancel {
     height: 50px;
@@ -25,6 +14,17 @@
 
     &--hover {
       background-color: @active-color;
+    }
+  }
+
+  &__cancel {
+    height: 60px;
+
+    &::before {
+      display: block;
+      height: 10px;
+      background-color: @background-color;
+      content: ' ';
     }
   }
 

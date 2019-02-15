@@ -78,6 +78,7 @@
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - |
 | lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` |
 | session-from | 会话来源 | `String` | - |
+| business-id | 客服消息子商户 id | `Number` | - |
 | send-message-title | 会话内消息卡片标题 | `String` | 当前标题 |
 | send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 |
 | send-message-img | sendMessageImg | `String` | 截图 |

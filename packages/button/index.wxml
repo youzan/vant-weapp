@@ -7,6 +7,7 @@
   open-type="{{ openType }}"
   hover-class="van-button--active hover-class"
   lang="{{ lang }}"
+  business-id="{{ businessId }}"
   session-from="{{ sessionFrom }}"
   send-message-title="{{ sendMessageTitle }}"
   send-message-path="{{ sendMessagePath }}"

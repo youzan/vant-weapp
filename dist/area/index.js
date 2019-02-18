@@ -5,6 +5,8 @@ VantComponent({
     title: String,
     value: String,
     loading: Boolean,
+    cancelButtonText: String,
+    confirmButtonText: String,
     itemHeight: {
       type: Number,
       value: 44
@@ -136,8 +138,6 @@ VantComponent({
       return 0;
     },
     setValues: function setValues() {
-      var _this2 = this;
-
       var county = this.getConfig('county');
       var code = this.code || Object.keys(county)[0] || '';
       var province = this.getList('province');
@@ -149,18 +149,17 @@ VantComponent({
       }
 
       var stack = [];
-      stack.push(picker.setColumnValues(0, province));
-      stack.push(picker.setColumnValues(1, city));
+      stack.push(picker.setColumnValues(0, province, false));
+      stack.push(picker.setColumnValues(1, city, false));
 
       if (city.length && code.slice(2, 4) === '00') {
         ;
         code = city[0].code;
       }
 
-      stack.push(picker.setColumnValues(2, this.getList('county', code.slice(0, 4))));
-      return Promise.all(stack).then(function () {
-        return picker.setIndexes([_this2.getIndex('province', code), _this2.getIndex('city', code), _this2.getIndex('county', code)]);
-      }).catch(function () {});
+      stack.push(picker.setColumnValues(2, this.getList('county', code.slice(0, 4)), false));
+      stack.push(picker.setIndexes([this.getIndex('province', code), this.getIndex('city', code), this.getIndex('county', code)]));
+      return Promise.all(stack).catch(function () {});
     },
     getValues: function getValues() {
       var picker = this.getPicker();

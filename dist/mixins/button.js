@@ -6,11 +6,12 @@ export var button = Behavior({
       type: String,
       value: 'en'
     },
+    businessId: Number,
     sessionFrom: String,
     sendMessageTitle: String,
     sendMessagePath: String,
     sendMessageImg: String,
-    showMessageCard: String,
+    showMessageCard: Boolean,
     appParameter: String,
     ariaLabel: String
   }

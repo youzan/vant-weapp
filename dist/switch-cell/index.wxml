@@ -11,6 +11,8 @@
     disabled="{{ disabled }}"
     active-color="{{ activeColor }}"
     inactive-color="{{ inactiveColor }}"
+    active-value="{{ activeValue }}"
+    inactive-value="{{ inactiveValue }}"
     custom-class="van-switch-cell__switch"
     bind:change="onChange"
   />

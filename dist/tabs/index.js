@@ -90,7 +90,7 @@ VantComponent({
     this.child = [];
   },
   mounted: function mounted() {
-    this.setLine();
+    this.setLine(true);
     this.setTrack();
     this.scrollIntoView();
   },
@@ -131,7 +131,7 @@ VantComponent({
         this.setActiveTab();
       }
     },
-    setLine: function setLine() {
+    setLine: function setLine(skipTransition) {
       var _this = this;
 
       if (this.data.type !== 'line') {
@@ -152,9 +152,10 @@ VantComponent({
           return prev + curr.width;
         }, 0);
         left += (rect.width - width) / 2;
+        var transition = skipTransition ? '' : "transition-duration: " + duration + "s; -webkit-transition-duration: " + duration + "s;";
 
         _this.set({
-          lineStyle: "\n            " + height + "\n            width: " + width + "px;\n            background-color: " + color + ";\n            -webkit-transform: translateX(" + left + "px);\n            -webkit-transition-duration: " + duration + "s;\n            transform: translateX(" + left + "px);\n            transition-duration: " + duration + "s;\n          "
+          lineStyle: "\n            " + height + "\n            width: " + width + "px;\n            background-color: " + color + ";\n            -webkit-transform: translateX(" + left + "px);\n            transform: translateX(" + left + "px);\n            " + transition + "\n          "
         });
       });
     },

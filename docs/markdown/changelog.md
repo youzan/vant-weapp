@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v0.5.4](https://github.com/youzan/vant-weapp/tree/v0.5.4)
+`2019-02-18`
+
+**Improvements**
+
+- Dialog: 支持openType相关参数 [\#1321](https://github.com/youzan/vant-weapp/pull/1321)
+- Button: add business-id prop [\#1308](https://github.com/youzan/vant-weapp/pull/1308)
+- Button: 增加新属性 loading-text [\#1300](https://github.com/youzan/vant-weapp/pull/1300)
+- SwitchCell: 增加新属性 active-value、 inactive-value [\#1298](https://github.com/youzan/vant-weapp/pull/1298)
+- Switch: 增加新属性 active-value、 inactive-value [\#1297](https://github.com/youzan/vant-weapp/pull/1297)
+- Area: 增加新属性 confirm-button-text [\#1296](https://github.com/youzan/vant-weapp/pull/1296)
+
+**Bug Fixes**
+
+- ActionSheet: 取消按钮高度异常 [\#1311](https://github.com/youzan/vant-weapp/pull/1311)
+- Tab: 初始化时底部线条去除动画效果 [\#1295](https://github.com/youzan/vant-weapp/pull/1295)
+- Area: 修复有时初始化选项错误 [\#1317](https://github.com/youzan/vant-weapp/pull/1317)
+
 ## [v0.5.3](https://github.com/youzan/vant-weapp/tree/v0.5.3)
 `2019-02-06`
 

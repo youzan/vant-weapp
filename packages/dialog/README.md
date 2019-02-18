@@ -124,8 +124,8 @@ Page({
 
 通过函数调用 Dialog 时，支持传入以下选项：
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
+| 参数 | 说明 | 类型 | 默认值 | 生效时机 |
+|-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
@@ -141,13 +141,21 @@ Page({
 | asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
 | transition | 动画名称，可选值为`fade` | `String` | `scale` |
+| app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `confirmButtonOpenType="launchApp"` |
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `confirmButtonOpenType="getUserInfo"` |
+| session-from | 会话来源 | `String` | - | `confirmButtonOpenType="contact"` |
+| business-id | 客服消息子商户 id | `Number` | - |
+| send-message-title | 会话内消息卡片标题 | `String` | 当前标题 | `confirmButtonOpenType="contact"` |
+| send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 | `confirmButtonOpenType="contact"` |
+| send-message-img | sendMessageImg | `String` | 截图 | `confirmButtonOpenType="contact"` |
+| show-message-card | 显示会话内消息卡片 | `String` | `false` | `confirmButtonOpenType="contact"` |
 
 ### API
 
 通过组件调用 Dialog 时，支持以下 API：
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
+| 参数 | 说明 | 类型 | 默认值 | 生效时机 |
+|-----------|-----------|-----------|-------------|-------------|
 | show | 是否显示弹窗 | `Boolean` | - |
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
@@ -163,6 +171,14 @@ Page({
 | use-slot | 是否使用自定义内容的插槽 | `Boolean` | `false` |
 | async-close | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
 | transition | 动画名称，可选值为`fade` | `String` | `scale` |
+| app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `confirm-button-open-type="launchApp"` |
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `confirm-button-open-type="getUserInfo"` |
+| session-from | 会话来源 | `String` | - | `confirm-button-open-type="contact"` |
+| business-id | 客服消息子商户 id | `Number` | - |
+| send-message-title | 会话内消息卡片标题 | `String` | 当前标题 | `confirm-button-open-type="contact"` |
+| send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 | `confirm-button-open-type="contact"` |
+| send-message-img | sendMessageImg | `String` | 截图 | `confirm-button-open-type="contact"` |
+| show-message-card | 显示会话内消息卡片 | `String` | `false` | `confirm-button-open-type="contact"` |
 
 ### Event
 

@@ -12,7 +12,7 @@ export const button = Behavior({
     sendMessageTitle: String,
     sendMessagePath: String,
     sendMessageImg: String,
-    showMessageCard: String,
+    showMessageCard: Boolean,
     appParameter: String,
     ariaLabel: String
   }

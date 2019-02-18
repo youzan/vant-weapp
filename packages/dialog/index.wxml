@@ -39,13 +39,24 @@
       class="van-dialog__button"
       loading="{{ loading.confirm }}"
       custom-class="van-dialog__confirm"
+
       open-type="{{ confirmButtonOpenType }}"
+      lang="{{ lang }}"
+      business-id="{{ businessId }}"
+      session-from="{{ sessionFrom }}"
+      send-message-title="{{ sendMessageTitle }}"
+      send-message-path="{{ sendMessagePath }}"
+      send-message-img="{{ sendMessageImg }}"
+      show-message-card="{{ showMessageCard }}"
+      app-parameter="{{ appParameter }}"
+
       bind:click="onConfirm"
-      binderror="bindError"
-      bindcontact="bindContact"
-      bindopensetting="bindOpenSetting"
       bindgetuserinfo="bindGetUserInfo"
+      bindcontact="bindContact"
       bindgetphonenumber="bindGetPhoneNumber"
+      binderror="bindError"
+      bindlaunchapp="bindLaunchApp"
+      bindopensetting="bindOpenSetting"
     >
       {{ confirmButtonText }}
     </van-button>

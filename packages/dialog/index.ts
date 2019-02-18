@@ -1,8 +1,11 @@
 import { VantComponent } from '../common/component';
+import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 
+type Action = 'confirm' | 'cancel' | 'overlay';
+
 VantComponent({
-  mixins: [openType],
+  mixins: [button, openType],
 
   props: {
     show: Boolean,
@@ -48,7 +51,7 @@ VantComponent({
   },
 
   watch: {
-    show(show) {
+    show(show: boolean) {
       !show && this.stopLoading();
     }
   },
@@ -66,7 +69,7 @@ VantComponent({
       this.onClose('overlay');
     },
 
-    handleAction(action) {
+    handleAction(action: Action) {
       if (this.data.asyncClose) {
         this.set({
           [`loading.${action}`]: true
@@ -91,7 +94,7 @@ VantComponent({
       });
     },
 
-    onClose(action) {
+    onClose(action: Action) {
       if (!this.data.asyncClose) {
         this.close();
       }

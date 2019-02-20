@@ -74,19 +74,19 @@ interface AnimationOptions {
   /**
    * 动画持续时间，单位ms
    */
-  duration?: number
+  duration: number
   /**
    * 定义动画的效果
    */
-  timingFunction?: TimingFunction
+  timingFunction: TimingFunction
   /**
    * 动画延迟时间，单位 ms
    */
-  delay?: number
+  delay: number
   /**
    * 设置transform-origin
    */
-  transformOrigin?: string
+  transformOrigin: string
 }
 
 interface Animation {
@@ -98,7 +98,7 @@ interface Animation {
   /**
    * 表示一组动画完成。可以在一组动画中调用任意多个动画方法，一组动画中的所有动画会同时开始，一组动画完成后才会进行下一组动画。
    */
-  step(object: AnimationOptions): void
+  step(object: Partial<AnimationOptions>): void
 
   /**
    * 透明度，参数范围 0~1
@@ -226,27 +226,51 @@ interface FieldsOptions {
   /**
    * 是否返回节点 id
    */
-  id?: boolean
+  id: boolean
   /**
    * 是否返回节点 dataset
    */
-  dataset?: boolean
-  rect?: boolean
-  size?: boolean
-  scrollOffset?: boolean
-  properties?: string[]
-  computedStyle?: string[]
-  context?: boolean
+  dataset: boolean
+  rect: boolean
+  size: boolean
+  scrollOffset: boolean
+  properties: string[]
+  computedStyle: string[]
+  context: boolean
 }
 
 interface BoundingClientRect {
+  /**
+   * 节点的 ID
+   */
   id: string
+  /**
+   * 节点的 dataset
+   */
   dataset: object
+  /**
+   * 	节点的左边界坐标
+   */
   left: number
+  /**
+   * 节点的右边界坐标
+   */
   right: number
+  /**
+   * 	节点的上边界坐标
+   */
   top: number
+  /**
+   * 	节点的下边界坐标
+   */
   bottom: number
+  /**
+   * 	节点的宽度
+   */
   width: number
+  /**
+   * 	节点的高度
+   */
   height: number
 }
 
@@ -292,7 +316,7 @@ interface NodesRef {
   /**
    * 获取节点的相关信息。需要获取的字段在fields中指定。返回值是 nodesRef 对应的 selectorQuery
    */
-  fields(object: FieldsOptions): object
+  fields(object: Partial<FieldsOptions>): object
 
   /**
    * 添加节点的布局位置的查询请求。相对于显示区域，以像素为单位。其功能类似于 DOM 的 getBoundingClientRect。返回 NodesRef 对应的 SelectorQuery。
@@ -342,15 +366,15 @@ interface ObserverOptions {
   /**
    * 一个数值数组，包含所有阈值。
    */
-  thresholds?: number[]
+  thresholds: number[]
   /**
    * 初始的相交比例，如果调用时检测到的相交比例与这个值不相等且达到阈值，则会触发一次监听器的回调函数。
    */
-  initialRatio?: number
+  initialRatio: number
   /**
    * 是否同时观测多个目标节点（而非一个），如果设为 true ，observe 的 targetSelector 将选中多个节点（注意：同时选中过多节点将影响渲染性能）
    */
-  observeAll?: boolean
+  observeAll: boolean
 }
 
 interface Margins {
@@ -381,12 +405,12 @@ interface IntersectionObserver {
   /**
    * 使用选择器指定一个节点，作为参照区域之一。
    */
-  relativeTo(selector: string, object: Margins): IntersectionObserver
+  relativeTo(selector: string, object: Partial<Margins>): IntersectionObserver
 
   /**
    * 指定页面显示区域作为参照区域之一
    */
-  relativeToViewport(object: Margins): IntersectionObserver
+  relativeToViewport(object?: Partial<Margins>): IntersectionObserver
 
   /**
    * 指定目标节点并开始监听相交状态变化情况
@@ -438,7 +462,7 @@ interface Wx {
   /**
    * 创建一个动画实例 animation。调用实例的方法来描述动画。最后通过动画实例的 export 方法导出动画数据传递给组件的 animation 属性。
    */
-  createAnimation(object: AnimationOptions): Animation
+  createAnimation(object: Partial<AnimationOptions>): Animation
 
   /**
    * 返回一个 SelectorQuery 对象实例。在自定义组件或包含自定义组件的页面中，应使用 this.createSelectorQuery() 来代替。
@@ -447,8 +471,46 @@ interface Wx {
 
   createIntersectionObserver(
     component: Weapp.Component,
-    options: ObserverOptions
+    options?: Partial<ObserverOptions>
   ): IntersectionObserver
+
+  /**
+   * 显示消息提示框
+   */
+  showToast(options: {
+  /**
+     * 提示的内容
+     */
+  title: string
+  /**
+     * 	图标
+     */
+  icon?: 'success' | 'loading' | 'none'
+  /**
+     * 自定义图标的本地路径，image 的优先级高于 icon
+     */
+  image?: string
+  /**
+     * 提示的延迟时间
+     */
+  duration?: number
+  /**
+     * 	是否显示透明蒙层，防止触摸穿透
+     */
+  mask?: boolean
+  /**
+     * 接口调用成功的回调函数
+     */
+  success?: () => void
+  /**
+     * 接口调用失败的回调函数
+     */
+  fail?: () => void
+  /**
+     * 接口调用结束的回调函数（调用成功、失败都会执行）
+     */
+  complete?: () => void
+  }): void
 }
 
 declare const wx: Wx;

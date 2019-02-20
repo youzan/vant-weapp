@@ -116,25 +116,12 @@ Page({
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
 
 ```html
-<van-tabs sticky scroll-top="{{ scrollTop }}">
+<van-tabs sticky>
   <van-tab title="标签 1">内容 1</van-tab>
   <van-tab title="标签 2">内容 2</van-tab>
   <van-tab title="标签 3">内容 3</van-tab>
   <van-tab title="标签 4">内容 4</van-tab>
 </van-tabs>
-```
-
-```javascript
-Page({
-  data: {
-    scrollTop: 0
-  },
-  onPageScroll(event) {
-    this.setData({
-      scrollTop: event.scrollTop
-    });
-  }
-});
 ```
 
 #### 切换动画
@@ -178,7 +165,6 @@ Page({
 | animated | 是否使用动画切换 Tabs | `Boolean` | `false` |
 | swipeable | 是否开启手势滑动切换 | `Boolean` | `false` |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
-| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` |
 
 ### Tab API
 
@@ -189,6 +175,13 @@ Page({
 | dot | 是否显示小红点 | `Boolean` | - |
 | info | 图标右上角提示信息 | `String | Number` | - |
 | title-style | 自定义标题样式 | `String` | - |
+
+### Tabs Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| nav-left | 标题左侧内容 |
+| nav-right | 标题右侧内容 |
 
 ### Tab Slot
 
@@ -210,15 +203,3 @@ Page({
 | 类名 | 说明 |
 |-----------|-----------|
 | custom-class | 根节点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.3.0 | feature | 新增组件 |
-| 0.3.2 | bugfix | 修复部分情况下代码报错的问题 |
-| 0.3.2 | bugfix | 修复 color 属性会改变未激活标签的颜色的问题 |
-| 0.3.3 | feature | 新增 border 属性 |
-| 0.3.3 | feature | 支持传入外部样式类 |
-| 0.3.5 | bugfix | 修复 active 属性默认值错误的问题 |
-| 0.3.7 | feature | 新增 z-index 属性 |

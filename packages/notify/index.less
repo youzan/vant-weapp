@@ -1,13 +1,14 @@
 @import '../common/style/var.less';
 
 .van-notify {
-  z-index: 110;
   position: fixed;
   top: 0;
+  z-index: 110;
   width: 100%;
-  text-align: center;
-  box-sizing: border-box;
   padding: @notify-padding;
   font-size: @notify-font-size;
   line-height: @notify-line-height;
+  text-align: center;
+  word-break: break-all;
+  box-sizing: border-box;
 }

@@ -1,10 +1,11 @@
 <demo-section>
   <demo-block title="按钮类型" padding>
     <view class="row">
+      <van-button class="demo-margin-right">默认按钮</van-button>
       <van-button type="primary" class="demo-margin-right">主要按钮</van-button>
-      <van-button type="danger">危险按钮</van-button>
+      <van-button type="info" class="demo-margin-right">信息按钮</van-button>
     </view>
-    <van-button class="demo-margin-right">默认按钮</van-button>
+    <van-button type="danger" class="demo-margin-right">危险按钮</van-button>
     <van-button type="warning">警告按钮</van-button>
   </demo-block>
 

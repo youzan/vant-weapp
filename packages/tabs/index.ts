@@ -198,6 +198,7 @@ VantComponent({
             width: ${width * this.child.length}px;
             left: ${-1 * active * width}px;
             transition: left ${duration}s;
+            display: -webkit-box;
             display: flex;
           `
         });

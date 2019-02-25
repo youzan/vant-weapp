@@ -105,7 +105,7 @@ VantComponent({
     this.setTrack();
     this.scrollIntoView();
 
-    this.getRect('.van-tabs__wrap').then((rect: BoundingClientRect) => {
+    this.getRect('.van-tabs__wrap').then((rect: wx.BoundingClientRectCallbackResult) => {
       this.navHeight = rect.height;
       this.observerContentScroll();
     });
@@ -157,7 +157,7 @@ VantComponent({
 
       const { color, active, duration, lineWidth, lineHeight } = this.data;
 
-      this.getRect('.van-tab', true).then((rects: BoundingClientRect[]) => {
+      this.getRect('.van-tab', true).then((rects: wx.BoundingClientRectCallbackResult[]) => {
         const rect = rects[active];
         const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
         const height = lineHeight !== -1 ? `height: ${lineHeight}px;` : '';
@@ -190,7 +190,7 @@ VantComponent({
 
       if (!animated) return '';
 
-      this.getRect('.van-tabs__content').then((rect: BoundingClientRect) => {
+      this.getRect('.van-tabs__content').then((rect: wx.BoundingClientRectCallbackResult) => {
         const { width } = rect;
 
         this.set({
@@ -245,7 +245,7 @@ VantComponent({
         this.getRect('.van-tab', true),
         this.getRect('.van-tabs__nav')
       ]).then(
-        ([tabRects, navRect]: [BoundingClientRect[], BoundingClientRect]) => {
+        ([tabRects, navRect]: [wx.BoundingClientRectCallbackResult[], wx.BoundingClientRectCallbackResult]) => {
           const tabRect = tabRects[active];
           const offsetLeft = tabRects
             .slice(0, active)

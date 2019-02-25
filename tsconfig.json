@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "target": "es6",
     "noImplicitThis": true,
-    "noImplicitUseStrict": true
+    "noImplicitUseStrict": true,
+    "typeRoots": ["./node_modules/miniprogram-api-typings"]
   },
   "include": [
     "types/**/*",

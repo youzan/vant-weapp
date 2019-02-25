@@ -46,6 +46,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
+    "miniprogram-api-typings": "^2.4.2-2",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^0.23.1",

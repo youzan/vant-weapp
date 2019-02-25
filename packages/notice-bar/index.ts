@@ -80,7 +80,7 @@ VantComponent({
       Promise.all([
         this.getRect('.van-notice-bar__content'),
         this.getRect('.van-notice-bar__content-wrap')
-      ]).then((rects: BoundingClientRect[]) => {
+      ]).then((rects: wx.BoundingClientRectCallbackResult[]) => {
         const [contentRect, wrapRect] = rects;
         if (
           contentRect == null ||

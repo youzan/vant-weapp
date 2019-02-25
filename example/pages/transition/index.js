@@ -3,7 +3,8 @@ import Page from '../../common/page';
 Page({
   data: {
     show: false,
-    name: 'fade'
+    name: 'fade',
+    showCustom: false
   },
 
   onClickFade() {
@@ -46,6 +47,14 @@ Page({
     this.setData({ name, show: true });
     setTimeout(() => {
       this.setData({ show: false });
+    }, 500);
+  },
+
+  onClickCustom() {
+    this.setData({ showCustom: true });
+
+    setTimeout(() => {
+      this.setData({ showCustom: false });
     }, 500);
   }
 });

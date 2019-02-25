@@ -1,4 +1,15 @@
-export const transition = function(showDefaultValue) {
+import { isObj } from '../common/utils';
+
+const getClassNames = (name: string) => ({
+  enter: `van-${name}-enter van-${name}-enter-active enter-class enter-active-class`,
+  'enter-to': `van-${name}-enter-to van-${name}-enter-active enter-to-class enter-active-class`,
+  leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
+  'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
+});
+
+const requestAnimationFrame = (cb: Function) => setTimeout(cb, 1000 / 60);
+
+export const transition = function(showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,
@@ -8,8 +19,14 @@ export const transition = function(showDefaultValue) {
         observer: 'observeShow'
       },
       duration: {
-        type: Number,
-        value: 300
+        type: [Number, Object],
+        value: 300,
+        observer: 'observeDuration'
+      },
+      name: {
+        type: String,
+        value: 'fade',
+        observer: 'updateClasses'
       }
     },
 
@@ -17,53 +34,65 @@ export const transition = function(showDefaultValue) {
       type: '',
       inited: false,
       display: false,
-      supportAnimation: true
+      classNames: getClassNames('fade')
     },
 
     attached() {
       if (this.data.show) {
         this.show();
       }
-
-      this.detectSupport();
     },
 
     methods: {
-      detectSupport() {
-        wx.getSystemInfo({
-          success: info => {
-            if (info && info.system && info.system.indexOf('iOS 8') === 0) {
-              this.set({ supportAnimation: false });
-            }
-          }
-        });
-      },
-
-      observeShow(value) {
+      observeShow(value: boolean) {
         if (value) {
           this.show();
         } else {
-          if (this.data.supportAnimation) {
-            this.set({ type: 'leave' });
-          } else {
-            this.set({ display: false });
-          }
+          this.leave();
         }
       },
 
-      show() {
+      updateClasses(name: string) {
         this.set({
-          inited: true,
-          display: true,
-          type: 'enter'
+          classNames: getClassNames(name)
         });
       },
 
-      onAnimationEnd() {
-        if (!this.data.show) {
-          this.set({
-            display: false
+      show() {
+        const { classNames, duration } = this.data;
+
+        this.set({
+          inited: true,
+          display: true,
+          classes: classNames.enter,
+          currentDuration: isObj(duration) ? duration.enter : duration
+        }).then(() => {
+          requestAnimationFrame(() => {
+            this.set({
+              classes: classNames['enter-to']
+            });
           });
+        });
+      },
+
+      leave() {
+        const { classNames, duration } = this.data;
+
+        this.set({
+          classes: classNames.leave,
+          currentDuration: isObj(duration) ? duration.leave : duration
+        }).then(() => {
+          requestAnimationFrame(() => {
+            this.set({
+              classes: classNames['leave-to']
+            });
+          });
+        });
+      },
+
+      onTransitionEnd() {
+        if (!this.data.show) {
+          this.set({ display: false });
         }
       }
     }

@@ -6,13 +6,14 @@
   show="{{ show }}"
   z-index="{{ zIndex }}"
   custom-style="{{ overlayStyle }}"
+  duration="{{ duration }}"
   bind:click="onClickOverlay"
 />
 <view
   wx:if="{{ inited }}"
-  class="custom-class {{ utils.bem('popup', [position, { safe: isIPhoneX && safeAreaInsetBottom && position === 'bottom' }]) }}"
-  style="z-index: {{ zIndex }}; -webkit-animation: van-{{ transition || position }}-{{ type }} {{ duration }}ms both; animation: van-{{ transition || position }}-{{ type }} {{ duration }}ms both; {{ display ? '' : 'display: none;' }}{{ customStyle }}"
-  bind:animationend="onAnimationEnd"
+  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { safe: isIPhoneX && safeAreaInsetBottom && position === 'bottom' }]) }}"
+  style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}"
+  bind:transitionend="onTransitionEnd"
 >
   <slot />
 </view>

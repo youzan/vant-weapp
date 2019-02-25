@@ -6,3 +6,8 @@
 .content-2 {
   padding: 20px;
 }
+
+.right-nav {
+  padding: 0 10px;
+  line-height: 44px !important;
+}

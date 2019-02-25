@@ -1,7 +1,9 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<view class="custom-class van-tabs van-tabs--{{ type }}">
-  <view style="z-index: {{ zIndex }}; {{ wrapStyle }}" class="van-tabs__wrap {{ scrollable ? 'van-tabs__wrap--scrollable' : '' }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+<view class="custom-class {{ utils.bem('tabs', [type]) }}">
+  <view style="z-index: {{ zIndex }}; {{ wrapStyle }}" class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+    <slot name="nav-left" />
+
     <scroll-view
       scroll-x="{{ scrollable }}"
       scroll-with-animation
@@ -30,6 +32,8 @@
         </view>
       </view>
     </scroll-view>
+
+    <slot name="nav-right" />
   </view>
   <view
     class="van-tabs__content"

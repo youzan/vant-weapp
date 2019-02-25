@@ -2,11 +2,13 @@ import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 
 type TabItemData = {
-  width?: number;
-  active: boolean;
-  inited?: boolean;
-  animated?: boolean;
+  width?: number
+  active: boolean
+  inited?: boolean
+  animated?: boolean
 };
+
+type Position = 'top' | 'bottom' | '';
 
 VantComponent({
   mixins: [touch],
@@ -67,10 +69,6 @@ VantComponent({
     offsetTop: {
       type: Number,
       value: 0
-    },
-    scrollTop: {
-      type: Number,
-      value: 0
     }
   },
 
@@ -95,7 +93,6 @@ VantComponent({
     lineHeight: 'setLine',
     active: 'setActiveTab',
     animated: 'setTrack',
-    scrollTop: 'onScroll',
     offsetTop: 'setWrapStyle'
   },
 
@@ -107,6 +104,11 @@ VantComponent({
     this.setLine(true);
     this.setTrack();
     this.scrollIntoView();
+
+    this.getRect('.van-tabs__wrap').then((rect: BoundingClientRect) => {
+      this.navHeight = rect.height;
+      this.observerContentScroll();
+    });
   },
 
   destroyed() {
@@ -114,7 +116,7 @@ VantComponent({
   },
 
   methods: {
-    updateTabs(tabs) {
+    updateTabs(tabs: TabItemData[]) {
       tabs = tabs || this.data.tabs;
       this.set({
         tabs,
@@ -153,17 +155,11 @@ VantComponent({
         return;
       }
 
-      const {
-        color,
-        active,
-        duration,
-        lineWidth,
-        lineHeight
-      } = this.data;
+      const { color, active, duration, lineWidth, lineHeight } = this.data;
 
-      this.getRect('.van-tab', true).then(rects => {
+      this.getRect('.van-tab', true).then((rects: BoundingClientRect[]) => {
         const rect = rects[active];
-        const width = (lineWidth !== -1) ? lineWidth : rect.width / 2;
+        const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
         const height = lineHeight !== -1 ? `height: ${lineHeight}px;` : '';
 
         let left = rects
@@ -172,7 +168,9 @@ VantComponent({
 
         left += (rect.width - width) / 2;
 
-        const transition = skipTransition ? '' : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
+        const transition = skipTransition
+          ? ''
+          : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
 
         this.set({
           lineStyle: `
@@ -188,15 +186,11 @@ VantComponent({
     },
 
     setTrack() {
-      const {
-        animated,
-        active,
-        duration
-      } = this.data;
+      const { animated, active, duration } = this.data;
 
       if (!animated) return '';
 
-      this.getRect('.van-tabs__content').then(rect => {
+      this.getRect('.van-tabs__content').then((rect: BoundingClientRect) => {
         const { width } = rect;
 
         this.set({
@@ -204,24 +198,21 @@ VantComponent({
             width: ${width * this.child.length}px;
             left: ${-1 * active * width}px;
             transition: left ${duration}s;
+            display: -webkit-box;
             display: flex;
           `
         });
-        this.setTabsProps({
-          width,
-          animated
-        })
-      })
-    },
 
-    setTabsProps(props) {
-      this.child.forEach(item => {
-        item.set(props);
+        const props = { width, animated };
+
+        this.child.forEach((item: Weapp.Component) => {
+          item.set(props);
+        });
       });
     },
 
     setActiveTab() {
-      this.child.forEach((item, index) => {
+      this.child.forEach((item: Weapp.Component, index: number) => {
         const data: TabItemData = {
           active: index === this.data.active
         };
@@ -244,24 +235,27 @@ VantComponent({
 
     // scroll active tab into view
     scrollIntoView() {
-      if (!this.data.scrollable) {
+      const { active, scrollable } = this.data;
+
+      if (!scrollable) {
         return;
       }
 
-      this.getRect('.van-tab', true).then(tabRects => {
-        const tabRect = tabRects[this.data.active];
-        const offsetLeft = tabRects
-          .slice(0, this.data.active)
-          .reduce((prev, curr) => prev + curr.width, 0);
-        const tabWidth = tabRect.width;
+      Promise.all([
+        this.getRect('.van-tab', true),
+        this.getRect('.van-tabs__nav')
+      ]).then(
+        ([tabRects, navRect]: [BoundingClientRect[], BoundingClientRect]) => {
+          const tabRect = tabRects[active];
+          const offsetLeft = tabRects
+            .slice(0, active)
+            .reduce((prev, curr) => prev + curr.width, 0);
 
-        this.getRect('.van-tabs__nav').then(navRect => {
-          const navWidth = navRect.width;
           this.set({
-            scrollLeft: offsetLeft - (navWidth - tabWidth) / 2
+            scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2
           });
-        });
-      });
+        }
+      );
     },
 
     onTouchStart(event: Weapp.TouchEvent) {
@@ -295,8 +289,11 @@ VantComponent({
     },
 
     setWrapStyle() {
-      const { offsetTop, position } = this.data;
-      let wrapStyle;
+      const { offsetTop, position } = this.data as {
+        offsetTop: number
+        position: Position
+      };
+      let wrapStyle: string;
 
       switch (position) {
         case 'top':
@@ -318,44 +315,63 @@ VantComponent({
       // cut down `set`
       if (wrapStyle === this.data.wrapStyle) return;
 
-      this.set({
-        wrapStyle
-      });
+      this.set({ wrapStyle });
     },
 
-    // adjust tab position
-    onScroll(scrollTop) {
-      if (!this.data.sticky) return;
+    observerContentScroll() {
+      if (!this.data.sticky) {
+        return;
+      }
 
       const { offsetTop } = this.data;
+      const { windowHeight } = wx.getSystemInfoSync();
 
-      this.getRect('.van-tabs').then(rect => {
-        const { top, height } = rect;
+      wx.createIntersectionObserver(this)
+        .relativeToViewport({ top: -this.navHeight })
+        .observe('.van-tabs', res => {
+          const { top } = res.boundingClientRect;
 
-        this.getRect('.van-tabs__wrap').then(rect => {
-          const { height: wrapHeight } = rect;
-          let position = '';
-
-          if (offsetTop > top + height - wrapHeight) {
-            position = 'bottom';
-          } else if (offsetTop > top) {
-            position = 'top';
+          if (top > 0) {
+            return;
           }
 
+          const position: Position =
+            res.intersectionRatio > 0 ? 'top' : 'bottom';
+
           this.$emit('scroll', {
-            scrollTop: scrollTop + offsetTop,
+            scrollTop: top + offsetTop,
             isFixed: position === 'top'
           });
 
-          if (position !== this.data.position) {
-            this.set({
-              position
-            }, () => {
-              this.setWrapStyle();
-            });
-          }
+          this.setPosition(position);
         });
-      });
+
+      wx.createIntersectionObserver(this)
+        .relativeToViewport({ bottom: -(windowHeight - 1) })
+        .observe('.van-tabs', res => {
+          const { top, bottom } = res.boundingClientRect;
+
+          if (bottom < this.navHeight) {
+            return;
+          }
+
+          const position: Position = res.intersectionRatio > 0 ? 'top' : '';
+
+          this.$emit('scroll', {
+            scrollTop: top + offsetTop,
+            isFixed: position === 'top'
+          });
+
+          this.setPosition(position);
+        });
+    },
+
+    setPosition(position: Position) {
+      if (position !== this.data.position) {
+        this.set({ position }).then(() => {
+          this.setWrapStyle();
+        });
+      }
     }
   }
 });

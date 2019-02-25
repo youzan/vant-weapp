@@ -14,6 +14,12 @@
 
 <demo-block title="自定义标题">
   <van-tabs active="{{ 1 }}" bind:change="onChange">
+    <van-icon
+      slot="nav-right"
+      name="search"
+      custom-class="right-nav"
+      bind:click="onClickNavRight"
+    />
     <van-tab
       wx:for="1234"
       wx:key="index"
@@ -87,7 +93,7 @@
 </demo-block>
 
 <demo-block title="粘性布局">
-  <van-tabs sticky scroll-top="{{ scrollTop }}">
+  <van-tabs sticky>
     <van-tab
       wx:for="1234"
       wx:key="index"

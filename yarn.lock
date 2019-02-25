@@ -4713,6 +4713,11 @@ minipass@^2.2.1, minipass@^2.3.3:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
 
+miniprogram-api-typings@^2.4.2-2:
+  version "2.4.2-2"
+  resolved "http://registry.npm.qima-inc.com/miniprogram-api-typings/download/miniprogram-api-typings-2.4.2-2.tgz#6963f29664b44628157edfb33babc3bde992fff1"
+  integrity sha1-aWPylmS0RigVft+zO6vDvemS//E=
+
 minizlib@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/minizlib/-/minizlib-1.1.0.tgz#11e13658ce46bc3a70a267aac58359d1e0c29ceb"

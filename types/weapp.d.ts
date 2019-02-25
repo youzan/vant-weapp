@@ -4,7 +4,6 @@ type BehaviorOptions = {
 
 declare function Behavior(options: BehaviorOptions): void
 declare function Component(options: any): void
-declare function getCurrentPages(): Weapp.Page[]
 
 declare namespace Weapp {
   interface Component {

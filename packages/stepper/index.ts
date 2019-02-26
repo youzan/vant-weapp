@@ -64,10 +64,20 @@ VantComponent({
   },
 
   methods: {
-    onFocus() {
-      this.setData({
-        focus: true
-      });
+    onClickWrapper() {
+      if (!this.data.focus) {
+        this.setData({ focus: true });
+      }
+    },
+
+    onFocus(event: Weapp.Event) {
+      this.$emit('focus', event.detail);
+    },
+
+    onBlur(event: Weapp.Event) {
+      const value = this.range(this.data.value);
+      this.triggerInput(value);
+      this.$emit('blur', event.detail);
     },
 
     // limit value range
@@ -90,12 +100,6 @@ VantComponent({
       const value = Math.round((this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.$emit(type);
-    },
-
-    onBlur(event: Weapp.Event) {
-      const value = this.range(this.data.value);
-      this.triggerInput(value);
-      this.$emit('blur', event);
     },
 
     onMinus() {

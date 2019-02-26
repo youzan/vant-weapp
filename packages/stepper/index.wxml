@@ -5,7 +5,7 @@
     hover-stay-time="70"
     bind:tap="onMinus"
   />
-  <view class="input-class van-stepper__input-wrapper {{ disabled || disableInput ? 'van-stepper__input-wrapper--disabled' : '' }}" bindtap="onFocus">
+  <view class="input-class van-stepper__input-wrapper {{ disabled || disableInput ? 'van-stepper__input-wrapper--disabled' : '' }}" bindtap="onClickWrapper">
     <input
       type="{{ integer ? 'number' : 'digit' }}"
       class="van-stepper__input"
@@ -13,6 +13,7 @@
       focus="{{ focus }}"
       disabled="{{ disabled || disableInput }}"
       bindinput="onInput"
+      bind:focus="onFocus"
       bind:blur="onBlur"
     />
   </view>

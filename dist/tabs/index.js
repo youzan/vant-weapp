@@ -57,10 +57,6 @@ VantComponent({
     offsetTop: {
       type: Number,
       value: 0
-    },
-    scrollTop: {
-      type: Number,
-      value: 0
     }
   },
   data: {
@@ -83,16 +79,22 @@ VantComponent({
     lineHeight: 'setLine',
     active: 'setActiveTab',
     animated: 'setTrack',
-    scrollTop: 'onScroll',
     offsetTop: 'setWrapStyle'
   },
   beforeCreate: function beforeCreate() {
     this.child = [];
   },
   mounted: function mounted() {
+    var _this = this;
+
     this.setLine(true);
     this.setTrack();
     this.scrollIntoView();
+    this.getRect('.van-tabs__wrap').then(function (rect) {
+      _this.navHeight = rect.height;
+
+      _this.observerContentScroll();
+    });
   },
   destroyed: function destroyed() {
     wx.createIntersectionObserver(this).disconnect();
@@ -132,7 +134,7 @@ VantComponent({
       }
     },
     setLine: function setLine(skipTransition) {
-      var _this = this;
+      var _this2 = this;
 
       if (this.data.type !== 'line') {
         return;
@@ -154,13 +156,13 @@ VantComponent({
         left += (rect.width - width) / 2;
         var transition = skipTransition ? '' : "transition-duration: " + duration + "s; -webkit-transition-duration: " + duration + "s;";
 
-        _this.set({
+        _this2.set({
           lineStyle: "\n            " + height + "\n            width: " + width + "px;\n            background-color: " + color + ";\n            -webkit-transform: translateX(" + left + "px);\n            transform: translateX(" + left + "px);\n            " + transition + "\n          "
         });
       });
     },
     setTrack: function setTrack() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _this$data2 = this.data,
           animated = _this$data2.animated,
@@ -170,27 +172,26 @@ VantComponent({
       this.getRect('.van-tabs__content').then(function (rect) {
         var width = rect.width;
 
-        _this2.set({
-          trackStyle: "\n            width: " + width * _this2.child.length + "px;\n            left: " + -1 * active * width + "px;\n            transition: left " + duration + "s;\n            display: flex;\n          "
+        _this3.set({
+          trackStyle: "\n            width: " + width * _this3.child.length + "px;\n            left: " + -1 * active * width + "px;\n            transition: left " + duration + "s;\n            display: -webkit-box;\n            display: flex;\n          "
         });
 
-        _this2.setTabsProps({
+        var props = {
           width: width,
           animated: animated
+        };
+
+        _this3.child.forEach(function (item) {
+          item.set(props);
         });
-      });
-    },
-    setTabsProps: function setTabsProps(props) {
-      this.child.forEach(function (item) {
-        item.set(props);
       });
     },
     setActiveTab: function setActiveTab() {
-      var _this3 = this;
+      var _this4 = this;
 
       this.child.forEach(function (item, index) {
         var data = {
-          active: index === _this3.data.active
+          active: index === _this4.data.active
         };
 
         if (data.active) {
@@ -202,34 +203,35 @@ VantComponent({
         }
       });
       this.set({}, function () {
-        _this3.setLine();
+        _this4.setLine();
 
-        _this3.setTrack();
+        _this4.setTrack();
 
-        _this3.scrollIntoView();
+        _this4.scrollIntoView();
       });
     },
     // scroll active tab into view
     scrollIntoView: function scrollIntoView() {
-      var _this4 = this;
+      var _this5 = this;
 
-      if (!this.data.scrollable) {
+      var _this$data3 = this.data,
+          active = _this$data3.active,
+          scrollable = _this$data3.scrollable;
+
+      if (!scrollable) {
         return;
       }
 
-      this.getRect('.van-tab', true).then(function (tabRects) {
-        var tabRect = tabRects[_this4.data.active];
-        var offsetLeft = tabRects.slice(0, _this4.data.active).reduce(function (prev, curr) {
+      Promise.all([this.getRect('.van-tab', true), this.getRect('.van-tabs__nav')]).then(function (_ref) {
+        var tabRects = _ref[0],
+            navRect = _ref[1];
+        var tabRect = tabRects[active];
+        var offsetLeft = tabRects.slice(0, active).reduce(function (prev, curr) {
           return prev + curr.width;
         }, 0);
-        var tabWidth = tabRect.width;
 
-        _this4.getRect('.van-tabs__nav').then(function (navRect) {
-          var navWidth = navRect.width;
-
-          _this4.set({
-            scrollLeft: offsetLeft - (navWidth - tabWidth) / 2
-          });
+        _this5.set({
+          scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2
         });
       });
     },
@@ -244,9 +246,9 @@ VantComponent({
     // watch swipe touch end
     onTouchEnd: function onTouchEnd() {
       if (!this.data.swipeable) return;
-      var _this$data3 = this.data,
-          active = _this$data3.active,
-          tabs = _this$data3.tabs;
+      var _this$data4 = this.data,
+          active = _this$data4.active,
+          tabs = _this$data4.tabs;
       var direction = this.direction,
           deltaX = this.deltaX,
           offsetX = this.offsetX;
@@ -261,9 +263,9 @@ VantComponent({
       }
     },
     setWrapStyle: function setWrapStyle() {
-      var _this$data4 = this.data,
-          offsetTop = _this$data4.offsetTop,
-          position = _this$data4.position;
+      var _ref2 = this.data,
+          offsetTop = _ref2.offsetTop,
+          position = _ref2.position;
       var wrapStyle;
 
       switch (position) {
@@ -285,40 +287,67 @@ VantComponent({
         wrapStyle: wrapStyle
       });
     },
-    // adjust tab position
-    onScroll: function onScroll(scrollTop) {
-      var _this5 = this;
+    observerContentScroll: function observerContentScroll() {
+      var _this6 = this;
 
-      if (!this.data.sticky) return;
+      if (!this.data.sticky) {
+        return;
+      }
+
       var offsetTop = this.data.offsetTop;
-      this.getRect('.van-tabs').then(function (rect) {
-        var top = rect.top,
-            height = rect.height;
 
-        _this5.getRect('.van-tabs__wrap').then(function (rect) {
-          var wrapHeight = rect.height;
-          var position = '';
+      var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
+          windowHeight = _wx$getSystemInfoSync.windowHeight;
 
-          if (offsetTop > top + height - wrapHeight) {
-            position = 'bottom';
-          } else if (offsetTop > top) {
-            position = 'top';
-          }
+      wx.createIntersectionObserver(this).relativeToViewport({
+        top: -this.navHeight
+      }).observe('.van-tabs', function (res) {
+        var top = res.boundingClientRect.top;
 
-          _this5.$emit('scroll', {
-            scrollTop: scrollTop + offsetTop,
-            isFixed: position === 'top'
-          });
+        if (top > 0) {
+          return;
+        }
 
-          if (position !== _this5.data.position) {
-            _this5.set({
-              position: position
-            }, function () {
-              _this5.setWrapStyle();
-            });
-          }
+        var position = res.intersectionRatio > 0 ? 'top' : 'bottom';
+
+        _this6.$emit('scroll', {
+          scrollTop: top + offsetTop,
+          isFixed: position === 'top'
         });
+
+        _this6.setPosition(position);
       });
+      wx.createIntersectionObserver(this).relativeToViewport({
+        bottom: -(windowHeight - 1)
+      }).observe('.van-tabs', function (res) {
+        var _res$boundingClientRe = res.boundingClientRect,
+            top = _res$boundingClientRe.top,
+            bottom = _res$boundingClientRe.bottom;
+
+        if (bottom < _this6.navHeight) {
+          return;
+        }
+
+        var position = res.intersectionRatio > 0 ? 'top' : '';
+
+        _this6.$emit('scroll', {
+          scrollTop: top + offsetTop,
+          isFixed: position === 'top'
+        });
+
+        _this6.setPosition(position);
+      });
+    },
+    setPosition: function setPosition(position) {
+      var _this7 = this;
+
+      if (position !== this.data.position) {
+        this.set({
+          position: position
+        }).then(function () {
+          _this7.setWrapStyle();
+        });
+      }
     }
   }
 });

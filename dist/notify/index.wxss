@@ -1,1 +1,1 @@
-@import '../common/index.wxss';.van-notify{z-index:110;position:fixed;top:0;width:100%;text-align:center;box-sizing:border-box;padding:6px 15px;font-size:14px;line-height:20px}
+@import '../common/index.wxss';.van-notify{position:fixed;top:0;z-index:110;width:100%;padding:6px 15px;font-size:14px;line-height:20px;text-align:center;word-break:break-all;box-sizing:border-box}

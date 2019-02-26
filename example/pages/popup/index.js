@@ -11,6 +11,9 @@ Page({
     }
   },
 
+  onTransitionEnd() {
+    console.log(`You can't see me 🌚`);
+  },
   toggle(type) {
     this.setData({
       [`show.${type}`]: !this.data.show[type]

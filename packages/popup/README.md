@@ -62,6 +62,7 @@ Page({
 |-----------|-----------|-----------|
 | bind:close | 蒙层关闭时触发 | - |
 | bind:click-overlay | 点击蒙层时触发 | - |
+| bind:transitionEnd | 蒙层关闭后触发 | - |
 
 ### 外部样式类
 

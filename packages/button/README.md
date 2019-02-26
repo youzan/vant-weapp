@@ -76,6 +76,7 @@
 | disabled | 是否禁用按钮 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | loading-text | 加载状态提示文字 | `String` | - |
+| loading-size | 加载图标大小 | `String` | `20px` |
 | open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - |
 | lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` |

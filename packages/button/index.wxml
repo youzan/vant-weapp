@@ -27,7 +27,7 @@
   <block wx:if="{{ loading }}">
     <van-loading
       custom-class="loading-class"
-      size="{{ size === 'mini' ? '14px' : '20px' }}"
+      size="{{ loadingSize }}"
       color="{{ type === 'default' ? '#c9c9c9' : '' }}"
     />
     <view

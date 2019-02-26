@@ -22,6 +22,10 @@ VantComponent({
     size: {
       type: String,
       value: 'normal'
+    },
+    loadingSize: {
+      type: String,
+      value: '20px'
     }
   },
 

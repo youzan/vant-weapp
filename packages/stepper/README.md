@@ -62,6 +62,7 @@
 | bind:overlimit | 点击不可用的按钮时触发 | - |
 | bind:plus | 点击增加按钮时触发 | - |
 | bind:minus | 点击减少按钮时触发 | - |
+| bind:focus | 输入框聚焦时触发 | - |
 | bind:blur | 输入框失焦时触发 | - |
 
 ### 外部样式类

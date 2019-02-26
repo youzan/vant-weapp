@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v0.5.5](https://github.com/youzan/vant-weapp/tree/v0.5.5)
+`2019-02-26`
+
+**Improvements**
+
+- Transition: 实现由 animation 重构为 transition [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+- Transition: 支持通过外部样式类自定义过渡效果 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+- Transition: 支持 duration 传入对象来定制进入和移出的持续时间 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+- Popup: 支持 duration 传入对象来定制进入和移出的持续时间 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+- Button: 新增 info 类型 [\#1340](https://github.com/youzan/vant-weapp/pull/1340)
+- Tab: 粘性布局实现重构为 IntersectionObserver，提升了性能，不再需要外部传入 scroll-top [\#1332](https://github.com/youzan/vant-weapp/pull/1332)
+- Tab: 优化标签栏横向滚动时的性能 [\#1332](https://github.com/youzan/vant-weapp/pull/1332)
+- Tab: 新增 nav-left、nav-right 插槽 [\#1332](https://github.com/youzan/vant-weapp/pull/1332)
+- Notify: 文本强制换行 [\#1325](https://github.com/youzan/vant-weapp/pull/1325)
+
+**Bug Fixes**
+
+- Transition: 修复部分机型动画初始化失败导致的位置偏移 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+- Popup: 修复部分机型动画初始化失败导致的位置偏移 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+- ActionSheet: 修复部分机型动画初始化失败导致的位置偏移 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
+
+**Internal**
+
+- 使用 miniprogram-api-typings 进行 wx api 类型定义 [\#1344](https://github.com/youzan/vant-weapp/pull/1344)
+
 ## [v0.5.4](https://github.com/youzan/vant-weapp/tree/v0.5.4)
 `2019-02-18`
 

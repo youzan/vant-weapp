@@ -3,7 +3,6 @@
 <button
   id="{{ id }}"
   class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, unclickable: disabled || loading }]) }}"
-
   open-type="{{ openType }}"
   hover-class="van-button--active hover-class"
   lang="{{ lang }}"
@@ -15,7 +14,6 @@
   show-message-card="{{ showMessageCard }}"
   app-parameter="{{ appParameter }}"
   aria-label="{{ ariaLabel }}"
-
   bindtap="onClick"
   bindgetuserinfo="bindGetUserInfo"
   bindcontact="bindContact"
@@ -27,7 +25,7 @@
   <block wx:if="{{ loading }}">
     <van-loading
       custom-class="loading-class"
-      size="{{ size === 'mini' ? '14px' : '20px' }}"
+      size="{{ loadingSize }}"
       color="{{ type === 'default' ? '#c9c9c9' : '' }}"
     />
     <view

@@ -138,6 +138,8 @@ VantComponent({
       return 0;
     },
     setValues: function setValues() {
+      var _this2 = this;
+
       var county = this.getConfig('county');
       var code = this.code || Object.keys(county)[0] || '';
       var province = this.getList('province');
@@ -158,8 +160,9 @@ VantComponent({
       }
 
       stack.push(picker.setColumnValues(2, this.getList('county', code.slice(0, 4)), false));
-      stack.push(picker.setIndexes([this.getIndex('province', code), this.getIndex('city', code), this.getIndex('county', code)]));
-      return Promise.all(stack).catch(function () {});
+      return Promise.all(stack).then(function () {
+        return picker.setIndexes([_this2.getIndex('province', code), _this2.getIndex('city', code), _this2.getIndex('county', code)]);
+      }).catch(function () {});
     },
     getValues: function getValues() {
       var picker = this.getPicker();

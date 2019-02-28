@@ -50,10 +50,20 @@ VantComponent({
     });
   },
   methods: {
-    onFocus: function onFocus() {
-      this.setData({
-        focus: true
-      });
+    onClickWrapper: function onClickWrapper() {
+      if (!this.data.focus) {
+        this.setData({
+          focus: true
+        });
+      }
+    },
+    onFocus: function onFocus(event) {
+      this.$emit('focus', event.detail);
+    },
+    onBlur: function onBlur(event) {
+      var value = this.range(this.data.value);
+      this.triggerInput(value);
+      this.$emit('blur', event.detail);
     },
     // limit value range
     range: function range(value) {
@@ -76,11 +86,6 @@ VantComponent({
       var value = Math.round((this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.$emit(type);
-    },
-    onBlur: function onBlur(event) {
-      var value = this.range(this.data.value);
-      this.triggerInput(value);
-      this.$emit('blur', event);
     },
     onMinus: function onMinus() {
       this.onChange('minus');

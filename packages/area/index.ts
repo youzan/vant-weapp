@@ -163,15 +163,15 @@ VantComponent({
         )
       );
 
-      stack.push(
-        picker.setIndexes([
-          this.getIndex('province', code),
-          this.getIndex('city', code),
-          this.getIndex('county', code)
-        ])
-      );
-
-      return Promise.all(stack).catch(() => {});
+      return Promise.all(stack)
+        .then(() =>
+          picker.setIndexes([
+            this.getIndex('province', code),
+            this.getIndex('city', code),
+            this.getIndex('county', code)
+          ])
+        )
+        .catch(() => {});
     },
 
     getValues() {

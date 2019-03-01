@@ -35,26 +35,25 @@ VantComponent({
   },
 
   data: {
-    items: [],
-    currentActive: -1
+    items: []
   },
 
   watch: {
     active(active) {
-      this.set({ currentActive: active });
+      this.currentActive = active;
       this.setActiveItem();
     }
   },
 
   created() {
-    this.set({ currentActive: this.data.active });
+    this.currentActive = this.data.active;
   },
 
   methods: {
     setActiveItem() {
       this.data.items.forEach((item, index) => {
         item.setActive({
-          active: index === this.data.currentActive,
+          active: index === this.currentActive,
           color: this.data.activeColor
         });
       });
@@ -62,9 +61,9 @@ VantComponent({
 
     onChange(child) {
       const active = this.data.items.indexOf(child);
-      if (active !== this.data.currentActive && active !== -1) {
+      if (active !== this.currentActive && active !== -1) {
         this.$emit('change', active);
-        this.set({ currentActive: active });
+        this.currentActive = active;
         this.setActiveItem();
       }
     }

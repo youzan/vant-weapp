@@ -138,6 +138,7 @@ Page({
 |-----------|-----------|-----------|-------------|-------------|
 | name | 在表单内提交时的标识符 | `String` | - |
 | label | 输入框左侧文本 | `String` | - |
+| size | 单元格大小，可选值为 `large` | `String` | - |
 | value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | `String` | `text` |
 | fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | `Boolean` | `false` |
@@ -193,19 +194,3 @@ Page({
 |-----------|-----------|
 | input-class | 输入框样式类 |
 | icon-class | 右侧图标样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | bugfix | 修复在 form 组件内无法获取值的问题 |
-| 0.1.1 | bugfix | 修复 icon 插槽无法使用的问题 |
-| 0.2.0 | feature | 新增 name 属性 |
-| 0.2.1 | feature | 新增 title-width 属性 |
-| 0.3.0 | bugfix | 修复 title 宽度错误的问题 |
-| 0.3.2 | bugfix | 修复展示清除按钮时导致输入框高度变化的问题 |
-| 0.3.3 | bugfix | 修复边框长度溢出的问题 |
-| 0.3.3 | bugfix | 修复 input-align 属性不生效的问题 |
-| 0.3.6 | bugfix | 修复 readonly 属性不生效的问题 |
-| 0.3.6 | feature | 新增 placeholder-style 属性 |

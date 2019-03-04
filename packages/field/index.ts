@@ -6,6 +6,7 @@ VantComponent({
   classes: ['input-class'],
 
   props: {
+    size: String,
     icon: String,
     label: String,
     error: Boolean,

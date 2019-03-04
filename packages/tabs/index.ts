@@ -105,14 +105,16 @@ VantComponent({
     this.setTrack();
     this.scrollIntoView();
 
-    this.getRect('.van-tabs__wrap').then((rect: wx.BoundingClientRectCallbackResult) => {
-      this.navHeight = rect.height;
-      this.observerContentScroll();
-    });
+    this.getRect('.van-tabs__wrap').then(
+      (rect: wx.BoundingClientRectCallbackResult) => {
+        this.navHeight = rect.height;
+        this.observerContentScroll();
+      }
+    );
   },
 
   destroyed() {
-    wx.createIntersectionObserver(this).disconnect();
+    this.createIntersectionObserver().disconnect();
   },
 
   methods: {
@@ -157,23 +159,24 @@ VantComponent({
 
       const { color, active, duration, lineWidth, lineHeight } = this.data;
 
-      this.getRect('.van-tab', true).then((rects: wx.BoundingClientRectCallbackResult[]) => {
-        const rect = rects[active];
-        const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
-        const height = lineHeight !== -1 ? `height: ${lineHeight}px;` : '';
+      this.getRect('.van-tab', true).then(
+        (rects: wx.BoundingClientRectCallbackResult[]) => {
+          const rect = rects[active];
+          const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
+          const height = lineHeight !== -1 ? `height: ${lineHeight}px;` : '';
 
-        let left = rects
-          .slice(0, active)
-          .reduce((prev, curr) => prev + curr.width, 0);
+          let left = rects
+            .slice(0, active)
+            .reduce((prev, curr) => prev + curr.width, 0);
 
-        left += (rect.width - width) / 2;
+          left += (rect.width - width) / 2;
 
-        const transition = skipTransition
-          ? ''
-          : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
+          const transition = skipTransition
+            ? ''
+            : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
 
-        this.set({
-          lineStyle: `
+          this.set({
+            lineStyle: `
             ${height}
             width: ${width}px;
             background-color: ${color};
@@ -181,8 +184,9 @@ VantComponent({
             transform: translateX(${left}px);
             ${transition}
           `
-        });
-      });
+          });
+        }
+      );
     },
 
     setTrack() {
@@ -190,25 +194,27 @@ VantComponent({
 
       if (!animated) return '';
 
-      this.getRect('.van-tabs__content').then((rect: wx.BoundingClientRectCallbackResult) => {
-        const { width } = rect;
+      this.getRect('.van-tabs__content').then(
+        (rect: wx.BoundingClientRectCallbackResult) => {
+          const { width } = rect;
 
-        this.set({
-          trackStyle: `
+          this.set({
+            trackStyle: `
             width: ${width * this.child.length}px;
             left: ${-1 * active * width}px;
             transition: left ${duration}s;
             display: -webkit-box;
             display: flex;
           `
-        });
+          });
 
-        const props = { width, animated };
+          const props = { width, animated };
 
-        this.child.forEach((item: Weapp.Component) => {
-          item.set(props);
-        });
-      });
+          this.child.forEach((item: Weapp.Component) => {
+            item.set(props);
+          });
+        }
+      );
     },
 
     setActiveTab() {
@@ -245,7 +251,10 @@ VantComponent({
         this.getRect('.van-tab', true),
         this.getRect('.van-tabs__nav')
       ]).then(
-        ([tabRects, navRect]: [wx.BoundingClientRectCallbackResult[], wx.BoundingClientRectCallbackResult]) => {
+        ([tabRects, navRect]: [
+        wx.BoundingClientRectCallbackResult[],
+        wx.BoundingClientRectCallbackResult
+        ]) => {
           const tabRect = tabRects[active];
           const offsetLeft = tabRects
             .slice(0, active)
@@ -326,12 +335,14 @@ VantComponent({
       const { offsetTop } = this.data;
       const { windowHeight } = wx.getSystemInfoSync();
 
-      wx.createIntersectionObserver(this)
-        .relativeToViewport({ top: -this.navHeight })
-        .observe('.van-tabs', res => {
+      this.createIntersectionObserver().disconnect();
+
+      this.createIntersectionObserver()
+        .relativeToViewport({ top: -(this.navHeight + offsetTop) })
+        .observe('.van-tabs', (res: wx.ObserveCallbackResult) => {
           const { top } = res.boundingClientRect;
 
-          if (top > 0) {
+          if (top > offsetTop) {
             return;
           }
 
@@ -346,9 +357,9 @@ VantComponent({
           this.setPosition(position);
         });
 
-      wx.createIntersectionObserver(this)
-        .relativeToViewport({ bottom: -(windowHeight - 1) })
-        .observe('.van-tabs', res => {
+      this.createIntersectionObserver()
+        .relativeToViewport({ bottom: -(windowHeight - 1 - offsetTop) })
+        .observe('.van-tabs', (res: wx.ObserveCallbackResult) => {
           const { top, bottom } = res.boundingClientRect;
 
           if (bottom < this.navHeight) {

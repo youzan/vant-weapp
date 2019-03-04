@@ -36,8 +36,8 @@
   &__circle {
     width: 5px;
     height: 5px;
-    border-radius: 50%;
     background-color: @gray-dark;
+    border-radius: 50%;
   }
 
   &--horizontal {
@@ -60,8 +60,8 @@
       width: auto;
 
       .van-step__title {
-        transform: none;
         text-align: right;
+        transform: none;
       }
 
       .van-step__circle-container {
@@ -88,9 +88,9 @@
 
     .van-step__line {
       position: absolute;
-      left: 0;
       right: 0;
       bottom: 6px;
+      left: 0;
       height: 1px;
       background-color: @border-color;
       transform: translate3d(0, 50%, 0);
@@ -102,16 +102,15 @@
       .van-step__active {
         display: block;
         font-size: 12px;
-        color: @green;
         line-height: 1;
       }
     }
   }
 
   &--vertical {
+    padding: 10px 10px 10px 0;
     font-size: 14px;
     line-height: 18px;
-    padding: 10px 10px 10px 0;
 
     &::after {
       border-bottom-width: 1px;
@@ -123,14 +122,14 @@
 
     &:first-child {
       &::before {
-        content: '';
         position: absolute;
-        width: 1px;
-        height: 20px;
-        background-color: @white;
         top: 0;
         left: -15px;
         z-index: 1;
+        width: 1px;
+        height: 20px;
+        background-color: @white;
+        content: '';
       }
     }
 

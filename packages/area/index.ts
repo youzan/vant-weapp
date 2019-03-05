@@ -164,6 +164,7 @@ VantComponent({
       );
 
       return Promise.all(stack)
+        .catch(() => {})
         .then(() =>
           picker.setIndexes([
             this.getIndex('province', code),

@@ -1,5 +1,9 @@
 /// <reference path="./weapp.d.ts" />
-import { ComponentInstance } from './instance';
+
+interface ComponentInstance {
+  triggerEvent: never;
+  $emit(name: string, detail?: any): void;
+}
 
 type Mixins = any[];
 type ExternalClasses = string[];
@@ -20,7 +24,7 @@ type RecordToReturn<T> = {
   [P in keyof T]: T[P] extends (...args: any[]) => any ? ReturnType<T[P]> : T[P]
 };
 
-export type CombinedComponentInstance<
+type CombinedComponentInstance<
   Data,
   Props,
   Watch,
@@ -34,7 +38,7 @@ export type CombinedComponentInstance<
     data: Data & LooseObject & RecordToAny<Props> & RecordToReturn<Computed>;
   };
 
-export type VantComponentOptions<
+type VantComponentOptions<
   Data,
   Props,
   Watch,

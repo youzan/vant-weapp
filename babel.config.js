@@ -6,8 +6,7 @@ module.exports = {
         loose: true,
         modules: false
       }
-    ],
-    '@babel/preset-typescript'
+    ]
   ],
   plugins: ['@babel/plugin-syntax-dynamic-import']
 };

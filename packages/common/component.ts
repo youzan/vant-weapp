@@ -1,9 +1,5 @@
 import { basic } from '../mixins/basic';
 import { observe } from '../mixins/observer/index';
-import {
-  VantComponentOptions,
-  CombinedComponentInstance
-} from '../../types/index';
 
 function mapKeys(source: object, target: object, map: object) {
   Object.keys(map).forEach(key => {

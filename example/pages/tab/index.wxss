@@ -11,3 +11,12 @@
   padding: 0 10px;
   line-height: 44px !important;
 }
+
+.tab-class {
+  transition: all 0.25s ease-in-out;
+}
+
+.tab-active-class {
+  font-size: 1.05em !important;
+  color: #1989fa !important;
+}

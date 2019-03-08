@@ -203,3 +203,6 @@ Page({
 | 类名 | 说明 |
 |-----------|-----------|
 | custom-class | 根节点样式类 |
+| nav-class | 标签栏样式类 |
+| tab-class | 标签样式类 |
+| tab-active-class | 标签激活态样式类 |

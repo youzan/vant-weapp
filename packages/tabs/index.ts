@@ -13,6 +13,8 @@ type Position = 'top' | 'bottom' | '';
 VantComponent({
   mixins: [touch],
 
+  classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
+
   relation: {
     name: 'tab',
     type: 'descendant',

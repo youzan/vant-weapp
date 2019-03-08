@@ -13,7 +13,7 @@
 </demo-block>
 
 <demo-block title="自定义标题">
-  <van-tabs active="{{ 1 }}" bind:change="onChange">
+  <van-tabs active="{{ 1 }}" bind:change="onChange" tab-class="tab-class" tab-active-class="tab-active-class">
     <van-icon
       slot="nav-right"
       name="search"
@@ -24,7 +24,6 @@
       wx:for="1234"
       wx:key="index"
       title="{{ '标签' + item }}"
-      title-style="font-size: 16px; font-weight: bold; {{ index === 0 ? 'text-decoration: line-through;' : '' }}"
       dot="{{ index === 1 }}"
       info="{{ index === 2 ? 99 : null }}"
     >

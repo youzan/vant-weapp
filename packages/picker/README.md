@@ -112,7 +112,7 @@ Page({
 
   onChange(event) {
     const { picker, value, index } = event.detail;
-    picker.setColumnValues(1, citys[values[0]]);
+    picker.setColumnValues(1, citys[value[0]]);
   }
 });
 ```

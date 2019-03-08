@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "module": "es6",
+    "esModuleInterop": true,
     "target": "es6",
-    "noImplicitThis": true,
-    "noImplicitUseStrict": true,
-    "typeRoots": ["./node_modules/miniprogram-api-typings"]
+    "noImplicitAny": false,
+    "declaration": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "types": ["miniprogram-api-typings"]
   },
-  "include": [
-    "types/**/*",
-    "packages/**/*"
-  ]
+  "include": ["packages/**/*", "types/**/*"]
 }

@@ -77,8 +77,4 @@ declare namespace Weapp {
     touches: Array<Touch>
     changedTouches: Array<Touch>
   }
-
-  interface Page {
-    selectComponent(selector: string): Component
-  }
 }

@@ -1,5 +1,34 @@
 ## 更新日志
 
+## [v0.5.7](https://github.com/youzan/vant-weapp/tree/v0.5.7)
+`2019-03-09`
+
+**Improvements**
+
+- 使用 gulp-typescript 编译 ts 代码，并输出声明文件 [\#1392](https://github.com/youzan/vant-weapp/pull/1392)
+- Tab: 新增外部样式类 nav-class、tab-class、tab-active-class [\#1391](https://github.com/youzan/vant-weapp/pull/1391)
+- Field: 增加新属性 size [\#1369](https://github.com/youzan/vant-weapp/pull/1369)
+- Icon: 优化部分图标的圆角样式 [\#1363](https://github.com/youzan/vant-weapp/pull/1363)
+- Tabbar: 性能优化 [\#1362](https://github.com/youzan/vant-weapp/pull/1362)
+
+**Bug Fixes**
+
+- Picker: 修复文档多列联动示例错误 [\#1390](https://github.com/youzan/vant-weapp/pull/1390)
+- Area: 修复 columns-num 为 2 时初始选项错误 [\#1376](https://github.com/youzan/vant-weapp/pull/1376)
+- Tab: 修复 offset-set 属性失效 [\#1370](https://github.com/youzan/vant-weapp/pull/1370)
+- Steps: 兼容微信 7.0.3 环境下渲染错误 [\#1367](https://github.com/youzan/vant-weapp/pull/1367)
+
+## [v0.5.6](https://github.com/youzan/vant-weapp/tree/v0.5.6)
+`2019-02-28`
+
+**Improvements**
+
+- Stepper: 增加 focus 事件 [\#1347](https://github.com/youzan/vant-weapp/pull/1347)
+- Button: 增加新属性 loading-size [\#1346](https://github.com/youzan/vant-weapp/pull/1346)
+
+**Bug Fixes**
+- Area: 修复有时初始选项错误 [\#1351](https://github.com/youzan/vant-weapp/pull/1351)
+
 ## [v0.5.5](https://github.com/youzan/vant-weapp/tree/v0.5.5)
 `2019-02-26`
 

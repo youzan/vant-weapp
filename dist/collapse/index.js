@@ -1,51 +1,48 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-  relation: {
-    name: 'collapse-item',
-    type: 'descendant',
-    linked: function linked(child) {
-      this.set({
-        items: [].concat(this.data.items, [child])
-      }, function () {
-        child.updateExpanded();
-      });
-    }
-  },
-  props: {
-    accordion: Boolean,
-    value: null
-  },
-  data: {
-    items: []
-  },
-  watch: {
-    value: function value() {
-      this.data.items.forEach(function (child) {
-        child.updateExpanded();
-      });
+    relation: {
+        name: 'collapse-item',
+        type: 'descendant',
+        linked(child) {
+            this.set({
+                items: [...this.data.items, child]
+            }, () => {
+                child.updateExpanded();
+            });
+        }
     },
-    accordion: function accordion() {
-      this.data.items.forEach(function (child) {
-        child.updateExpanded();
-      });
+    props: {
+        accordion: Boolean,
+        value: null
+    },
+    data: {
+        items: []
+    },
+    watch: {
+        value() {
+            this.data.items.forEach(child => {
+                child.updateExpanded();
+            });
+        },
+        accordion() {
+            this.data.items.forEach(child => {
+                child.updateExpanded();
+            });
+        }
+    },
+    methods: {
+        switch(name, expanded) {
+            const { accordion, value } = this.data;
+            if (!accordion) {
+                name = expanded
+                    ? value.concat(name)
+                    : value.filter(activeName => activeName !== name);
+            }
+            else {
+                name = expanded ? name : '';
+            }
+            this.$emit('change', name);
+            this.$emit('input', name);
+        }
     }
-  },
-  methods: {
-    switch: function _switch(name, expanded) {
-      var _this$data = this.data,
-          accordion = _this$data.accordion,
-          value = _this$data.value;
-
-      if (!accordion) {
-        name = expanded ? value.concat(name) : value.filter(function (activeName) {
-          return activeName !== name;
-        });
-      } else {
-        name = expanded ? name : '';
-      }
-
-      this.$emit('change', name);
-      this.$emit('input', name);
-    }
-  }
 });

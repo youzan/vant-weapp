@@ -4,6 +4,7 @@
     show="{{ show.middle }}"
     custom-class="center"
     bind:close="togglePopup"
+    bind:transitionEnd="onTransitionEnd"
   >
     内容
   </van-popup>
@@ -17,6 +18,7 @@
     position="bottom"
     custom-class="bottom"
     bind:close="toggleBottomPopup"
+    bind:transitionEnd="onTransitionEnd"
   >
     内容
   </van-popup>
@@ -28,6 +30,7 @@
     overlay="{{ false }}"
     custom-class="top"
     bind:close="toggleTopPopup"
+    bind:transitionEnd="onTransitionEnd"
   >
     内容
   </van-popup>
@@ -38,6 +41,7 @@
     position="right"
     custom-class="right"
     bind:close="toggleRightPopup"
+    bind:transitionEnd="onTransitionEnd"
   >
     <van-button bind:click="toggleRightPopup" class="demo-margin-right">关闭弹层</van-button>
 
@@ -47,6 +51,7 @@
       position="right"
       custom-class="right"
       bind:close="toggleRightPopup2"
+      bind:transitionEnd="onTransitionEnd"
     >
       <van-button bind:click="toggleRightPopup2">关闭弹层</van-button>
     </van-popup>

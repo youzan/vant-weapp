@@ -53,10 +53,6 @@ VantComponent({
       }
     },
 
-    onTransitionEnd() {
-      !this.data.show && this.$emit('transitionEnd');
-    },
-
     observeClass() {
       const { transition, position } = this.data;
       this.updateClasses(transition || position);

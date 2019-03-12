@@ -7,7 +7,7 @@ const getClassNames = (name: string) => ({
   'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
 });
 
-const requestAnimationFrame = (cb: Function) => setTimeout(cb, 1000 / 60);
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
 
 export const transition = function(showDefaultValue: boolean) {
   return Behavior({
@@ -61,38 +61,47 @@ export const transition = function(showDefaultValue: boolean) {
       show() {
         const { classNames, duration } = this.data;
 
-        this.set({
-          inited: true,
-          display: true,
-          classes: classNames.enter,
-          currentDuration: isObj(duration) ? duration.enter : duration
-        }).then(() => {
-          requestAnimationFrame(() => {
+        Promise.resolve()
+          .then(nextTick)
+          .then(() =>
+            this.set({
+              inited: true,
+              display: true,
+              classes: classNames.enter,
+              currentDuration: isObj(duration) ? duration.enter : duration
+            })
+          )
+          .then(nextTick)
+          .then(() =>
             this.set({
               classes: classNames['enter-to']
-            });
-          });
-        });
+            })
+          );
       },
 
       leave() {
         const { classNames, duration } = this.data;
 
-        this.set({
-          classes: classNames.leave,
-          currentDuration: isObj(duration) ? duration.leave : duration
-        }).then(() => {
-          requestAnimationFrame(() => {
+        Promise.resolve()
+          .then(nextTick)
+          .then(() =>
+            this.set({
+              classes: classNames.leave,
+              currentDuration: isObj(duration) ? duration.leave : duration
+            })
+          )
+          .then(nextTick)
+          .then(() =>
             this.set({
               classes: classNames['leave-to']
-            });
-          });
-        });
+            })
+          );
       },
 
       onTransitionEnd() {
         if (!this.data.show) {
           this.set({ display: false });
+          this.$emit('transitionEnd');
         }
       }
     }

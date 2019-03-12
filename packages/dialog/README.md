@@ -140,7 +140,7 @@ Page({
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
-| transition | 动画名称，可选值为`fade` | `String` | `scale` |
+| transition | 动画名称，可选值为`fade` `none` | `String` | `scale` |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `confirmButtonOpenType="launchApp"` |
 | lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `confirmButtonOpenType="getUserInfo"` |
 | session-from | 会话来源 | `String` | - | `confirmButtonOpenType="contact"` |
@@ -192,13 +192,3 @@ Page({
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.3.0 | feature | 新增组件 |
-| 0.3.2 | improvement | 新增弹出动画 |
-| 0.3.2 | feature | 新增 z-index 属性 |
-| 0.3.3 | bugfix | 修复 Promise 状态错误的问题 |
-| 0.3.4 | feature | 支持 open-type 回调事件 |

@@ -39,6 +39,7 @@
     async-close
     show="{{ show }}"
     show-cancel-button
+    transition="fade"
     bind:close="onClose"
     confirm-button-open-type="getUserInfo"
     bind:getuserinfo="getUserInfo"

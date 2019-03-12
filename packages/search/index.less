@@ -2,13 +2,30 @@
 
 .van-search {
   display: flex;
-  padding: 7px 15px;
+  padding: 10px 16px;
   align-items: center;
   box-sizing: border-box;
 
+  &__content {
+    display: flex;
+    padding-left: 10px;
+    background-color: @search-background-color;
+    border-radius: 2px;
+    flex: 1;
+
+    &--round {
+      border-radius: 17px;
+    }
+  }
+
+  &__label {
+    padding: 0 5px;
+    font-size: 14px;
+    line-height: 34px;
+    color: @text-color;
+  }
+
   &__field {
-    overflow: hidden;
-    border-radius: 4px;
     flex: 1;
 
     &__left-icon {
@@ -16,7 +33,7 @@
     }
   }
 
-  &--show-action {
+  &--withaction {
     padding-right: 0;
   }
 
@@ -32,8 +49,8 @@
   &__action {
     padding: 0 10px;
     font-size: 14px;
-    line-height: 30px;
-    color: @gray-darker;
+    line-height: 34px;
+    color: @text-color;
 
     &--hover {
       background-color: @active-color;

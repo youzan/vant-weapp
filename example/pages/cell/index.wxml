@@ -52,6 +52,15 @@
   />
 </demo-block>
 
+<demo-block title="分组标题">
+  <van-cell-group title="分组 1">
+    <van-cell title="单元格" value="内容" />
+  </van-cell-group>
+  <van-cell-group title="分组 2">
+    <van-cell title="单元格" value="内容" />
+  </van-cell-group>
+</demo-block>
+
 <demo-block title="高级用法">
   <van-cell value="内容" icon="shop-o" is-link>
     <view slot="title">

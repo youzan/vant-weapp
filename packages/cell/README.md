@@ -83,6 +83,19 @@
 />
 ```
 
+#### 分组标题
+
+通过`CellGroup`的`title`属性可以指定分组标题
+
+```html
+<van-cell-group title="分组1">
+  <van-cell title="单元格" value="内容" />
+</van-cell-group>
+<van-cell-group title="分组2">
+  <van-cell title="单元格" value="内容" />
+</van-cell-group>
+```
+
 #### 高级用法
 
 如以上用法不能满足你的需求，可以使用对应的插槽来自定义显示的内容
@@ -116,6 +129,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
+| title | 分组标题 | `String` | `-` |
 | border | 是否显示外边框 | `Boolean` | `true` |
 
 ### CellGroup 外部样式类

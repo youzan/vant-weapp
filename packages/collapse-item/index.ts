@@ -60,7 +60,7 @@ VantComponent({
         this.updateStyle(expanded);
       }
 
-      this.set({ expanded });
+      this.set({ index, expanded });
     },
 
     updateStyle(expanded: boolean) {

@@ -12,6 +12,7 @@
 ### 代码演示
 
 #### 基础用法
+
 通过`value`控制展开的面板列表，`activeNames`为数组格式
 
 ```html
@@ -42,6 +43,7 @@ Page({
 ```
 
 #### 手风琴
+
 通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
 
 ```html
@@ -104,6 +106,7 @@ Page({
 |------|------|------|------|------|
 | value | 当前展开面板的 name | `Array | String | Number` | - |
 | accordion | 是否开启手风琴模式 | `Boolean` | `false` |
+| border | 是否显示外边框 | `Boolean` | `true` |
 
 ### Collapse Event
 

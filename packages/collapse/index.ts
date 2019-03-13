@@ -14,8 +14,12 @@ VantComponent({
   },
 
   props: {
+    value: null,
     accordion: Boolean,
-    value: null
+    border: {
+      type: Boolean,
+      value: true
+    }
   },
 
   data: {

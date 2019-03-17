@@ -43,7 +43,7 @@ VantComponent({
       this.swipe = false;
     },
 
-    open(position) {
+    open(position: 'left' | 'right') {
       const { leftWidth, rightWidth } = this.data;
       const offset = position === 'left' ? leftWidth : -rightWidth;
       this.swipeMove(offset);
@@ -59,13 +59,13 @@ VantComponent({
       this.opened = true;
     },
 
-    swipeMove(offset = 0) {
+    swipeMove(offset: number = 0) {
       this.set({ offset });
       offset && (this.swiping = true);
       !offset && (this.opened = false);
     },
 
-    swipeLeaveTransition(direction) {
+    swipeLeaveTransition(direction: number) {
       const { offset, leftWidth, rightWidth } = this.data;
       const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
 
@@ -80,7 +80,7 @@ VantComponent({
       }
     },
 
-    startDrag(event) {
+    startDrag(event: Weapp.TouchEvent) {
       if (this.data.disabled) {
         return;
       }
@@ -93,7 +93,7 @@ VantComponent({
       }
     },
 
-    onDrag(event) {
+    onDrag(event: Weapp.TouchEvent) {
       if (this.data.disabled) {
         return;
       }
@@ -125,7 +125,7 @@ VantComponent({
       }
     },
 
-    onClick(event) {
+    onClick(event: Weapp.Event) {
       const { key: position = 'outside' } = event.currentTarget.dataset;
       this.$emit('click', position);
 

@@ -21,7 +21,7 @@
   value="{{ currentDate }}"
   min-date="{{ minDate }}"
   max-date="{{ maxDate }}"
-  bind:change="onChange"
+  bind:input="onInput"
 />
 ```
 
@@ -35,7 +35,7 @@ Page({
     currentDate: new Date().getTime()
   },
 
-  onChange(event) {
+  onInput(event) {
     this.setData({
       currentDate: event.detail.value
     });
@@ -52,7 +52,7 @@ Page({
   type="date"
   value="{{ currentDate }}"
   min-date="{{ minDate }}"
-  bind:change="onChange"
+  bind:input="onInput"
 />
 ```
 
@@ -63,7 +63,7 @@ Page({
     minDate: new Date().getTime()
   },
 
-  onChange(event) {
+  onInput(event) {
     this.setData({
       currentDate: event.detail.value
     });
@@ -80,7 +80,7 @@ Page({
   type="year-month"
   value="{{ currentDate }}"
   min-date="{{ minDate }}"
-  bind:change="onChange"
+  bind:input="onInput"
 />
 ```
 
@@ -91,7 +91,7 @@ Page({
     minDate: new Date().getTime()
   },
 
-  onChange(event) {
+  onInput(event) {
     this.setData({
       currentDate: event.detail.value
     });
@@ -109,7 +109,7 @@ Page({
   value="{{ currentDate }}"
   min-hour="{{ minHour }}"
   max-hour="{{ maxHour }}"
-  bind:change="onChange"
+  bind:input="onInput"
 />
 ```
 
@@ -121,7 +121,7 @@ Page({
     maxHour: 23
   },
 
-  onChange(event) {
+  onInput(event) {
     this.setData({
       currentDate: event.detail.value
     });

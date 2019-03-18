@@ -1,24 +1,24 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view class="van-stepper custom-class">
   <view
-    class="minus-class van-stepper__minus {{ minusDisabled ? 'van-stepper__minus--disabled' : '' }}"
+    class="minus-class {{ utils.bem('stepper__minus', { disabled: minusDisabled }) }}"
     hover-class="van-stepper__minus--hover"
     hover-stay-time="70"
     bind:tap="onMinus"
   />
-  <view class="input-class van-stepper__input-wrapper {{ disabled || disableInput ? 'van-stepper__input-wrapper--disabled' : '' }}" bindtap="onClickWrapper">
-    <input
-      type="{{ integer ? 'number' : 'digit' }}"
-      class="van-stepper__input"
-      value="{{ value }}"
-      focus="{{ focus }}"
-      disabled="{{ disabled || disableInput }}"
-      bindinput="onInput"
-      bind:focus="onFocus"
-      bind:blur="onBlur"
-    />
-  </view>
+  <input
+    type="{{ integer ? 'number' : 'digit' }}"
+    class="input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
+    value="{{ value }}"
+    focus="{{ focus }}"
+    disabled="{{ disabled || disableInput }}"
+    bindinput="onInput"
+    bind:focus="onFocus"
+    bind:blur="onBlur"
+  />
   <view
-    class="plus-class van-stepper__plus {{ plusDisabled ? 'van-stepper__plus--disabled' : '' }}"
+    class="plus-class {{ utils.bem('stepper__plus', { disabled: plusDisabled }) }}"
     hover-class="van-stepper__plus--hover"
     hover-stay-time="70"
     bind:tap="onPlus"

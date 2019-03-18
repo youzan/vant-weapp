@@ -4,32 +4,16 @@
   font-size: 0;
 
   &__minus,
-  &__plus,
-  &__input-wrapper {
-    display: inline-block;
-    vertical-align: middle;
-    background-color: @white;
-  }
-
-  &__minus {
-    border-radius: 2px 0 0 2px;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  &__plus {
-    border-radius: 0 2px 2px 0;
-  }
-
-  &__minus,
   &__plus {
     position: relative;
-    width: 40px;
-    height: 30px;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
     padding: 5px;
-    border: 1px solid @border-color;
+    margin: 1px;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
     box-sizing: border-box;
 
     &::before {
@@ -50,7 +34,7 @@
       bottom: 0;
       left: 0;
       margin: auto;
-      background-color: @gray-darker;
+      background-color: @text-color;
       content: '';
     }
 
@@ -59,7 +43,7 @@
     }
 
     &--disabled {
-      background-color: @background-color;
+      background-color: @stepper-button-disabled-color;
 
       &::before,
       &::after {
@@ -68,36 +52,42 @@
     }
 
     &--disabled&--hover {
-      background-color: @background-color;
+      background-color: @stepper-button-disabled-color;
     }
   }
 
-  &__input-wrapper {
-    position: relative;
-    width: 35px;
-    height: 30px;
-    padding: 1px;
-    font-size: 14px;
-    color: @gray-darker;
-    text-align: center;
-    border: 1px solid @border-color;
-    border-width: 1px 0;
-    border-radius: 0;
-    box-sizing: border-box;
+  &__minus {
+    border-radius: @stepper-border-radius 0 0 @stepper-border-radius;
 
-    &--disabled {
-      color: @gray;
-      background-color: @background-color;
+    &::after {
+      display: none;
     }
+  }
+
+  &__plus {
+    border-radius: 0 @stepper-border-radius @stepper-border-radius 0;
   }
 
   &__input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    min-height: 0; // reset wechat default min height
-    transform: translate3d(-50%, -50%, 0);
-    appearance: none;
+    display: inline-block;
+    width: 30px;
+    height: 26px;
+    padding: 1px;
+    margin: 1px;
+    font-size: 14px;
+    color: @text-color;
+    text-align: center;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 0;
+    box-sizing: content-box;
+    -webkit-appearance: none;
+
+    &--disabled {
+      color: @gray;
+      background-color: @stepper-input-disabled-color;
+    }
   }
 }

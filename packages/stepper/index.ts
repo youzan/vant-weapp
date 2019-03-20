@@ -1,9 +1,5 @@
 import { VantComponent } from '../common/component';
 
-// Note that the bitwise operators and shift operators operate on 32-bit ints
-// so in that case, the max safe integer is 2^31-1, or 2147483647
-const MAX = 2147483647;
-
 VantComponent({
   field: true,
 
@@ -25,7 +21,7 @@ VantComponent({
     },
     max: {
       type: null,
-      value: MAX
+      value: Number.MAX_SAFE_INTEGER
     },
     step: {
       type: null,
@@ -45,10 +41,14 @@ VantComponent({
 
   watch: {
     value(value) {
-      if (value !== '') {
-        this.set({
-          value: this.range(value)
-        });
+      if (value === '') {
+        return;
+      }
+
+      const newValue = this.range(value);
+
+      if (typeof newValue === 'number' && value !== newValue) {
+        this.set({ value: newValue });
       }
     }
   },
@@ -64,12 +64,6 @@ VantComponent({
   },
 
   methods: {
-    onClickWrapper() {
-      if (!this.data.focus) {
-        this.setData({ focus: true });
-      }
-    },
-
     onFocus(event: Weapp.Event) {
       this.$emit('focus', event.detail);
     },

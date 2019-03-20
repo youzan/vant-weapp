@@ -3,6 +3,7 @@
   <van-popup
     show="{{ show.middle }}"
     custom-class="center"
+    transition="none"
     bind:close="togglePopup"
     bind:transitionEnd="onTransitionEnd"
   >

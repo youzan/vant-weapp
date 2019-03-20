@@ -56,6 +56,10 @@ VantComponent({
     observeClass() {
       const { transition, position } = this.data;
       this.updateClasses(transition || position);
+
+      if (transition === 'none') {
+        this.set({ duration: 0 });
+      }
     }
   }
 });

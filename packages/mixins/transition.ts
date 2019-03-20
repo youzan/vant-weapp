@@ -60,6 +60,7 @@ export const transition = function(showDefaultValue: boolean) {
 
       show() {
         const { classNames, duration } = this.data;
+        const currentDuration = isObj(duration) ? duration.leave : duration;
 
         Promise.resolve()
           .then(nextTick)
@@ -68,7 +69,7 @@ export const transition = function(showDefaultValue: boolean) {
               inited: true,
               display: true,
               classes: classNames.enter,
-              currentDuration: isObj(duration) ? duration.enter : duration
+              currentDuration
             })
           )
           .then(nextTick)
@@ -81,13 +82,19 @@ export const transition = function(showDefaultValue: boolean) {
 
       leave() {
         const { classNames, duration } = this.data;
+        const currentDuration = isObj(duration) ? duration.leave : duration;
+
+        if (+currentDuration === 0) {
+          this.onTransitionEnd();
+          return;
+        }
 
         Promise.resolve()
           .then(nextTick)
           .then(() =>
             this.set({
               classes: classNames.leave,
-              currentDuration: isObj(duration) ? duration.leave : duration
+              currentDuration
             })
           )
           .then(nextTick)

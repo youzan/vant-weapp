@@ -6,7 +6,7 @@
   show="{{ show }}"
   z-index="{{ zIndex }}"
   custom-style="{{ overlayStyle }}"
-  duration="{{ transition === 'none' ? 1 : duration }}"
+  duration="{{ duration }}"
   bind:click="onClickOverlay"
 />
 <view

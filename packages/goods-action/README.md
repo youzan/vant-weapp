@@ -80,7 +80,6 @@ Page({
 | url | 跳转链接 | `String` | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
 | id | 标识符 | `String` | - |
-| type | 按钮类型，可选值为 `primary` `warning` `danger` | `String` | `default` |
 | disabled | 是否禁用按钮 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |

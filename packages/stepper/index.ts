@@ -64,12 +64,6 @@ VantComponent({
   },
 
   methods: {
-    onClickWrapper() {
-      if (!this.data.focus) {
-        this.setData({ focus: true });
-      }
-    },
-
     onFocus(event: Weapp.Event) {
       this.$emit('focus', event.detail);
     },

@@ -2,20 +2,21 @@
 
 .van-info {
   position: absolute;
-  right: 0;
   top: -@info-size / 2;
-  color: @info-color;
+  right: 0;
+  min-width: @info-size;
+  padding: @info-padding;
+  font-family: @info-font-family;
   font-size: @info-font-size;
   font-weight: @info-font-weight;
-  font-family: @info-font-family;
-  text-align: center;
-  box-sizing: border-box;
-  padding: @info-padding;
-  min-width: @info-size;
   line-height: @info-size - @info-border-width * 2;
+  color: @info-color;
+  text-align: center;
+  white-space: nowrap;
+  background-color: @info-background-color;
   border: @info-border-width solid @white;
   border-radius: @info-size;
-  background-color: @info-background-color;
   transform: translateX(50%);
+  box-sizing: border-box;
   transform-origin: 100%;
 }

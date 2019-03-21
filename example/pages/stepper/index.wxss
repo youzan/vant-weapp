@@ -1,1 +1,4 @@
 /* pages/stepper/index.wxss */
+page {
+  background-color: #fff;
+}

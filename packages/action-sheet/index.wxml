@@ -36,6 +36,7 @@
       <van-loading wx:else size="20px" />
     </button>
   </view>
+  <slot />
   <view
     wx:if="{{ cancelText }}"
     class="van-action-sheet__cancel"
@@ -45,5 +46,4 @@
   >
     {{ cancelText }}
   </view>
-  <slot />
 </van-popup>

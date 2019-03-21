@@ -24,9 +24,20 @@
 
 #### 朴素按钮
 
+通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
+
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
 <van-button plain type="danger">朴素按钮</van-button>
+```
+
+#### 细边框
+
+设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
+
+```html
+<van-button plain hairline type="primary">细边框按钮</van-button>
+<van-button plain hairline type="danger">细边框按钮</van-button>
 ```
 
 #### 禁用状态
@@ -74,6 +85,7 @@
 | round | 是否为圆形按钮 | `Boolean` | `false` |
 | square | 是否为方形按钮 | `Boolean` | `false` |
 | disabled | 是否禁用按钮 | `Boolean` | `false` |
+| hairline | 是否使用 0.5px 边框 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | loading-text | 加载状态提示文字 | `String` | - |
 | loading-size | 加载图标大小 | `String` | `20px` |

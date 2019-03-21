@@ -2,7 +2,7 @@
 
 <button
   id="{{ id }}"
-  class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, unclickable: disabled || loading }]) }}"
+  class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
   open-type="{{ openType }}"
   hover-class="van-button--active hover-class"
   lang="{{ lang }}"

@@ -2,10 +2,10 @@
   class="van-swipe-cell"
   data-key="cell"
   bindtap="onClick"
-  bindtouchstart="startDrag"
-  bindtouchmove="onDrag"
-  bindtouchend="endDrag"
-  bindtouchcancel="endDrag"
+  catchtouchstart="startDrag"
+  catchtouchmove="onDrag"
+  catchtouchend="endDrag"
+  catchtouchcancel="endDrag"
 >
   <view
     style="{{ wrapperStyle }}"

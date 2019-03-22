@@ -49,7 +49,7 @@ VantComponent({
             if (expanded !== this.data.expanded) {
                 this.updateStyle(expanded);
             }
-            this.set({ expanded });
+            this.set({ index, expanded });
         },
         updateStyle(expanded) {
             this.getRect('.van-collapse-item__content').then(res => {

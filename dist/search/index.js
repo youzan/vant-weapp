@@ -14,12 +14,17 @@ VantComponent({
         placeholderStyle: String,
         background: {
             type: String,
-            value: '#f2f2f2'
+            value: '#ffffff'
         },
         maxlength: {
             type: Number,
             value: -1
-        }
+        },
+        shape: {
+            type: String,
+            value: 'square'
+        },
+        label: String
     },
     methods: {
         onChange(event) {

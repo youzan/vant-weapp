@@ -5,7 +5,7 @@ const getClassNames = (name) => ({
     leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
     'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
 });
-const requestAnimationFrame = (cb) => setTimeout(cb, 1000 / 60);
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
 export const transition = function (showDefaultValue) {
     return Behavior({
         properties: {
@@ -53,35 +53,42 @@ export const transition = function (showDefaultValue) {
             },
             show() {
                 const { classNames, duration } = this.data;
-                this.set({
+                const currentDuration = isObj(duration) ? duration.leave : duration;
+                Promise.resolve()
+                    .then(nextTick)
+                    .then(() => this.set({
                     inited: true,
                     display: true,
                     classes: classNames.enter,
-                    currentDuration: isObj(duration) ? duration.enter : duration
-                }).then(() => {
-                    requestAnimationFrame(() => {
-                        this.set({
-                            classes: classNames['enter-to']
-                        });
-                    });
-                });
+                    currentDuration
+                }))
+                    .then(nextTick)
+                    .then(() => this.set({
+                    classes: classNames['enter-to']
+                }));
             },
             leave() {
                 const { classNames, duration } = this.data;
-                this.set({
+                const currentDuration = isObj(duration) ? duration.leave : duration;
+                if (+currentDuration === 0) {
+                    this.onTransitionEnd();
+                    return;
+                }
+                Promise.resolve()
+                    .then(nextTick)
+                    .then(() => this.set({
                     classes: classNames.leave,
-                    currentDuration: isObj(duration) ? duration.leave : duration
-                }).then(() => {
-                    requestAnimationFrame(() => {
-                        this.set({
-                            classes: classNames['leave-to']
-                        });
-                    });
-                });
+                    currentDuration
+                }))
+                    .then(nextTick)
+                    .then(() => this.set({
+                    classes: classNames['leave-to']
+                }));
             },
             onTransitionEnd() {
                 if (!this.data.show) {
                     this.set({ display: false });
+                    this.$emit('transitionEnd');
                 }
             }
         }

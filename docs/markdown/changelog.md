@@ -1,5 +1,29 @@
 ## 更新日志
 
+## [v0.5.8](https://github.com/youzan/vant-weapp/tree/v0.5.8)
+`2019-03-22`
+
+**Improvements**
+
+- Stepper: 样式更新 [\#1424](https://github.com/youzan/vant-weapp/pull/1424)
+- Collapse: 新增 border 属性 [\#1408](https://github.com/youzan/vant-weapp/pull/1408)
+- CellGroup: 新增 title 属性 [\#1407](https://github.com/youzan/vant-weapp/pull/1407)
+- Search: 样式更新 [\#1396](https://github.com/youzan/vant-weapp/pull/1396)
+- Search: 新增 label、shape 属性 [\#1396](https://github.com/youzan/vant-weapp/pull/1396)
+- Search: 新增 slot label [\#1396](https://github.com/youzan/vant-weapp/pull/1396)
+- Popup: 添加 transitionEnd 事件 [\#1345](https://github.com/youzan/vant-weapp/pull/1345)
+
+**Bug Fixes**
+
+- ActionSheet: 调整 slot 到取消按钮上方 [\#1438](https://github.com/youzan/vant-weapp/pull/1438)
+- GoodsActionIcon: 修复 disabled、loading 属性不生效 [\#1435](https://github.com/youzan/vant-weapp/pull/1435)
+- Transition: 修复 duration 为0时不消失 [\#1434](https://github.com/youzan/vant-weapp/pull/1434)
+- Info: 修复样式异常 [\#1433](https://github.com/youzan/vant-weapp/pull/1433)
+- Picker: 修复 defaultIndex 不生效 [\#1423](https://github.com/youzan/vant-weapp/pull/1423)
+- SwipeCell: 现在会阻止页面滚动 [\#1419](https://github.com/youzan/vant-weapp/pull/1419)
+- Transition: 修复 show 值切换过快时不消失 [\#1404](https://github.com/youzan/vant-weapp/pull/1404)
+- Icon: 修复 info 的层级高于自定义图片 [\#1397](https://github.com/youzan/vant-weapp/pull/1397)
+
 ## [v0.5.7](https://github.com/youzan/vant-weapp/tree/v0.5.7)
 `2019-03-09`
 
@@ -7,7 +31,7 @@
 
 - 使用 gulp-typescript 编译 ts 代码，并输出声明文件 [\#1392](https://github.com/youzan/vant-weapp/pull/1392)
 - Tab: 新增外部样式类 nav-class、tab-class、tab-active-class [\#1391](https://github.com/youzan/vant-weapp/pull/1391)
-- Field: 增加新属性 size [\#1369](https://github.com/youzan/vant-weapp/pull/1369)
+- Field: 新增 size 属性 [\#1369](https://github.com/youzan/vant-weapp/pull/1369)
 - Icon: 优化部分图标的圆角样式 [\#1363](https://github.com/youzan/vant-weapp/pull/1363)
 - Tabbar: 性能优化 [\#1362](https://github.com/youzan/vant-weapp/pull/1362)
 

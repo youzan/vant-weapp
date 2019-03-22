@@ -4,25 +4,22 @@ const less = require('gulp-less');
 const ts = require('gulp-typescript');
 const insert = require('gulp-insert');
 const rename = require('gulp-rename');
-const cssmin = require('gulp-clean-css');
 const postcss = require('gulp-postcss');
 
 const tsProject = ts.createProject(path.resolve(__dirname, '../tsconfig.json'));
 const isProduction = process.env.NODE_ENV === 'production';
 const src = path.join(__dirname, '../packages');
 const dist = path.join(__dirname, isProduction ? '../dist' : '../example/dist');
-const ext = ['ts', 'less', 'json', 'wxml', 'wxs'];
 
 function copy(ext) {
-  return gulp.src([src + '/**/*.' + ext]).pipe(gulp.dest(dist));
+  return gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
 }
 
-gulp.task('compile-less', () => {
-  return gulp
-    .src([src + '/**/*.less'])
+function compileLess() {
+  gulp
+    .src(`${src}/**/*.less`)
     .pipe(less())
     .pipe(postcss())
-    .pipe(cssmin())
     .pipe(
       insert.transform((contents, file) => {
         if (!file.path.includes('packages' + path.sep + 'common')) {
@@ -37,23 +34,26 @@ gulp.task('compile-less', () => {
       })
     )
     .pipe(gulp.dest(dist));
-});
+}
 
-gulp.task('compile-ts', () =>
+function compileTs() {
   tsProject
     .src()
     .pipe(tsProject())
     .on('error', () => {})
-    .pipe(gulp.dest(dist))
-);
-gulp.task('compile-wxs', () => copy('wxs'));
-gulp.task('compile-json', () => copy('json'));
-gulp.task('compile-wxml', () => copy('wxml'));
-gulp.task('build', ext.map(ext => 'compile-' + ext));
-gulp.start('build');
+    .pipe(gulp.dest(dist));
+}
+
+const compileWxml = () => copy('wxml');
+const compileJson = () => copy('json');
+const compileWxs = () => copy('wxs');
 
 if (!isProduction) {
-  ext.forEach(ext => {
-    gulp.watch(src + '/**/*.' + ext, ['compile-' + ext]);
-  });
+  gulp.watch('src/**/*.ts', compileTs);
+  gulp.watch('src/**/*.less', compileLess);
+  gulp.watch('src/**/*.wxml', compileWxml);
+  gulp.watch('src/**/*.wxs', compileWxs);
+  gulp.watch('src/**/*.json', compileJson);
 }
+
+gulp.parallel(compileTs, compileLess, compileWxml, compileJson, compileWxs)();

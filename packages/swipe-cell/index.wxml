@@ -1,8 +1,8 @@
 <view
   class="van-swipe-cell"
   data-key="cell"
-  bindtap="onClick"
-  catchtouchstart="startDrag"
+  catchtap="onClick"
+  bindtouchstart="startDrag"
   catchtouchmove="onDrag"
   catchtouchend="endDrag"
   catchtouchcancel="endDrag"

@@ -49,11 +49,11 @@ const compileJson = () => copy('json');
 const compileWxs = () => copy('wxs');
 
 if (!isProduction) {
-  gulp.watch('src/**/*.ts', compileTs);
-  gulp.watch('src/**/*.less', compileLess);
-  gulp.watch('src/**/*.wxml', compileWxml);
-  gulp.watch('src/**/*.wxs', compileWxs);
-  gulp.watch('src/**/*.json', compileJson);
+  gulp.watch(`${src}/**/*.ts`, compileTs);
+  gulp.watch(`${src}/**/*.less`, compileLess);
+  gulp.watch(`${src}/**/*.wxml`, compileWxml);
+  gulp.watch(`${src}/**/*.wxs`, compileWxs);
+  gulp.watch(`${src}/**/*.json`, compileJson);
 }
 
 gulp.parallel(compileTs, compileLess, compileWxml, compileJson, compileWxs)();

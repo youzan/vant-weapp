@@ -8,16 +8,14 @@ VantComponent({
     name: 'tabbar-item',
     type: 'descendant',
     linked(target: Weapp.Component) {
-      this.data.items.push(target);
-      setTimeout(() => {
-        this.setActiveItem();
-      });
+      this.children = this.children || [];
+      this.children.push(target);
+      this.setActiveItem();
     },
     unlinked(target: Weapp.Component) {
-      this.data.items = this.data.items.filter(item => item !== target);
-      setTimeout(() => {
-        this.setActiveItem();
-      });
+      this.children = this.children || [];
+      this.children = this.children.filter(item => item !== target);
+      this.setActiveItem();
     }
   },
 
@@ -34,12 +32,8 @@ VantComponent({
     }
   },
 
-  data: {
-    items: []
-  },
-
   watch: {
-    active(active) {
+    active(active: number) {
       this.currentActive = active;
       this.setActiveItem();
     }
@@ -50,21 +44,28 @@ VantComponent({
   },
 
   methods: {
-    setActiveItem() {
-      this.data.items.forEach((item, index) => {
-        item.setActive({
-          active: index === this.currentActive,
-          color: this.data.activeColor
-        });
-      });
+    setActiveItem(): Promise<any> {
+      if (!Array.isArray(this.children) || !this.children.length) {
+        return Promise.resolve();
+      }
+      return Promise.all(
+        this.children.map((item: Weapp.Component, index: number) =>
+          item.setActive({
+            active: index === this.currentActive,
+            color: this.data.activeColor
+          })
+        )
+      );
     },
 
-    onChange(child) {
-      const active = this.data.items.indexOf(child);
+    onChange(child: Weapp.Component) {
+      const active = (this.children || []).indexOf(child);
+
       if (active !== this.currentActive && active !== -1) {
-        this.$emit('change', active);
         this.currentActive = active;
-        this.setActiveItem();
+        this.setActiveItem().then(() => {
+          this.$emit('change', active);
+        });
       }
     }
   }

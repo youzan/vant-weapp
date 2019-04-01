@@ -1,8 +1,8 @@
 import { VantComponent } from '../common/component';
-import { iphonex } from '../mixins/iphonex';
+import { safeArea } from '../mixins/safe-area';
 
 VantComponent({
-  mixins: [iphonex],
+  mixins: [safeArea()],
 
   classes: [
     'bar-class',

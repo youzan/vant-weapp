@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { transition } from '../mixins/transition';
-import { iphonex } from '../mixins/iphonex';
+import { safeArea } from '../mixins/safe-area';
 
 VantComponent({
   classes: [
@@ -12,7 +12,7 @@ VantComponent({
     'leave-to-class'
   ],
 
-  mixins: [transition(false), iphonex],
+  mixins: [transition(false), safeArea()],
 
   props: {
     transition: {

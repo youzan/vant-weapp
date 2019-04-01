@@ -50,8 +50,19 @@
     transform: translate3d(0, -50%, 0);
   }
 
-  &--safe {
+  &--bottom&--safe {
     padding-bottom: @safe-area-inset-bottom;
+  }
+
+  &--left &__safe-top,
+  &--right &__safe-top,
+  &--top &__safe-top {
+    height: @nav-bar-height;
+  }
+
+  &--center &__safe-top,
+  &--bottom &__safe-top {
+    padding-top: 0 !important;
   }
 }
 

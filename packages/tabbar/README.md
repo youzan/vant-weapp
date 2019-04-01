@@ -109,7 +109,7 @@ Page({
 | active-color | 选中标签的颜色 | `String` | `#1989fa` |
 | fixed | 是否固定在底部 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
-| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
 
 ### Tabbar Event
 

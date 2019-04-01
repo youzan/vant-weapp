@@ -41,5 +41,9 @@ Page({
     setTimeout(() => {
       this.toggle('top');
     }, 2000);
+  },
+
+  onClickLeft() {
+    wx.navigateBack();
   }
 });

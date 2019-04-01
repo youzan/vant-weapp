@@ -1,6 +1,8 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
-  class="custom-class van-nav-bar {{ border ? 'van-hairline--bottom' : '' }} {{ fixed ? 'van-nav-bar--fixed' : '' }}"
-  style="z-index: {{ zIndex }}"
+  class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'van-hairline--bottom' : '' }}"
+  style="z-index: {{ zIndex }}; {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }}"
 >
   <view class="van-nav-bar__left" bind:tap="onClickLeft">
     <block wx:if="{{ leftArrow || leftText }}">

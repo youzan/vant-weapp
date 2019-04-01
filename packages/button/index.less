@@ -149,6 +149,7 @@
 
   &--hairline {
     border-width: 0;
+    padding-top: 1px; // add 1px padding for text vertical align middle
 
     &::after {
       border-width: 1px;
@@ -158,6 +159,10 @@
 
     &.van-button--round::after {
       border-radius: @button-round-border-radius;
+    }
+
+    &.van-button--square::after {
+      border-radius: 0;
     }
   }
 }

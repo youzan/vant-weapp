@@ -56,6 +56,7 @@ Page({
 | fixed | 是否固定在顶部 | `Boolean` | `false` |
 | border | 是否显示下边框 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | `Boolean` | `true` |
 
 ### Slot
 
@@ -78,9 +79,3 @@ Page({
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | title-class | 标题样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |

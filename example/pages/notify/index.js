@@ -11,7 +11,12 @@ Page({
       duration: 1000,
       text: '通知内容',
       selector: '#custom-selector',
-      backgroundColor: '#1989fa'
+      backgroundColor: '#1989fa',
+      safeAreaInsetTop: true
     });
+  },
+
+  onClickLeft() {
+    wx.navigateBack();
   }
 });

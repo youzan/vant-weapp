@@ -1,9 +1,13 @@
 import { isObj } from '../common/utils';
 
 type NotifyOptions = {
-  selector?: string;
+  text: string;
+  color?: string;
+  backgroundColor?: string;
   duration?: number;
+  selector?: string;
   context?: any;
+  safeAreaInsetTop?: boolean;
 };
 
 const defaultOptions = {
@@ -11,8 +15,8 @@ const defaultOptions = {
   duration: 3000
 };
 
-function parseOptions(text) {
-  return isObj(text) ? text : { text };
+function parseOptions(text: NotifyOptions | string): NotifyOptions {
+  return isObj(text) ? text as NotifyOptions : { text } as NotifyOptions;
 }
 
 function getContext() {
@@ -20,7 +24,7 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-export default function Notify(options: NotifyOptions = {}) {
+export default function Notify(options: NotifyOptions | string) {
   options = Object.assign({}, defaultOptions, parseOptions(options));
 
   const context = options.context || getContext();

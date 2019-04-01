@@ -1,3 +1,10 @@
+<van-nav-bar
+  title="Notify 消息通知"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+
 <demo-block padding title="基础用法">
   <van-button bind:click="showNotify">显示消息通知</van-button>
 </demo-block>
@@ -6,6 +13,5 @@
   <van-button bind:click="showNotify2">显示自定义消息通知</van-button>
 </demo-block>
 
-<van-notify id="van-notify" />
+<van-notify id="van-notify" safe-area-inset-top />
 <van-notify id="custom-selector" />
- 

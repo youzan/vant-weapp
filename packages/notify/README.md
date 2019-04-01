@@ -49,9 +49,4 @@ Notify({
 | color | 字体颜色 | `String` | `#fff` | |
 | backgroundColor | 背景色 | `String` | `#f44` |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度 + 导航栏高度） | `Boolean` | `false` |

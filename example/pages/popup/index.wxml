@@ -1,3 +1,10 @@
+<van-nav-bar
+  title="Popup 弹出层"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+
 <demo-block title="基础用法" padding>
   <van-button bind:click="togglePopup">弹出 Popup</van-button>
   <van-popup
@@ -28,6 +35,7 @@
   <van-popup
     show="{{ show.top }}"
     position="top"
+    safe-area-inset-top
     overlay="{{ false }}"
     custom-class="top"
     bind:close="toggleTopPopup"
@@ -40,6 +48,7 @@
   <van-popup
     show="{{ show.right }}"
     position="right"
+    safe-area-inset-top
     custom-class="right"
     bind:close="toggleRightPopup"
     bind:transitionEnd="onTransitionEnd"
@@ -50,6 +59,7 @@
     <van-popup
       show="{{ show.right2 }}"
       position="right"
+      safe-area-inset-top
       custom-class="right"
       bind:close="toggleRightPopup2"
       bind:transitionEnd="onTransitionEnd"

@@ -68,7 +68,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
 
 ### GoodsActionIcon API
 

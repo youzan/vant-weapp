@@ -10,6 +10,7 @@
   <input
     type="{{ integer ? 'number' : 'digit' }}"
     class="input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
+    style="{{ inputWidth ? 'width: ' + inputWidth : '' }}"
     value="{{ value }}"
     focus="{{ focus }}"
     disabled="{{ disabled || disableInput }}"

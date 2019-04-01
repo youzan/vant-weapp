@@ -51,8 +51,9 @@
 | step | 步数 | `String | Number` | `1` |
 | integer | 是否只允许输入整数 | `Boolean` | `false` |
 | disabled | 是否禁用 | `Boolean` | `false` |
-| disable-input | 是否禁用input框 | `Boolean` | `false` |
+| disable-input | 是否禁用输入框 | `Boolean` | `false` |
 | async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | `Boolean` | `false` |
+| input-width | 输入框宽度，须指定单位 | `String` | `30px` |
 
 ### Event
 

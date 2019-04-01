@@ -1,5 +1,5 @@
 <van-nav-bar
-  title="标题"
+  title="Notify 消息通知"
   left-text="返回"
   left-arrow
   bind:click-left="onClickLeft"

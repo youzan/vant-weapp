@@ -1,5 +1,5 @@
 <van-nav-bar
-  title="标题"
+  title="Popup 弹出层"
   left-text="返回"
   left-arrow
   bind:click-left="onClickLeft"

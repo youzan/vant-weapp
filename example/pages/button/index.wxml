@@ -14,6 +14,11 @@
     <van-button type="danger" plain>朴素按钮</van-button>
   </demo-block>
 
+  <demo-block title="细边框" padding>
+    <van-button type="primary" plain hairline class="demo-margin-right">细边框按钮</van-button>
+    <van-button type="danger" plain hairline>细边框按钮</van-button>
+  </demo-block>
+
   <demo-block title="禁用状态" padding>
     <van-button type="primary" disabled class="demo-margin-right">禁用状态</van-button>
     <van-button type="danger" disabled>禁用状态</van-button>

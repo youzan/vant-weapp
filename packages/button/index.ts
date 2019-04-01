@@ -13,6 +13,7 @@ VantComponent({
     round: Boolean,
     square: Boolean,
     loading: Boolean,
+    hairline: Boolean,
     disabled: Boolean,
     loadingText: String,
     type: {

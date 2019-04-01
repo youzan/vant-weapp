@@ -8,13 +8,13 @@
   font-size: 16px;
   line-height: 42px;
   text-align: center;
-  -webkit-text-size-adjust: 100%;
   vertical-align: middle;
-  border-radius: 2px;
   box-sizing: border-box;
+  border-radius: @button-border-radius;
   -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
 
-  &::after {
+  &::before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -29,7 +29,12 @@
     transform: translate(-50%, -50%);
   }
 
-  &--active::after {
+  // reset weapp default border
+  &::after {
+    border-width: 0;
+  }
+
+  &--active::before {
     opacity: 0.15;
   }
 
@@ -125,7 +130,7 @@
   }
 
   &--round {
-    border-radius: 10em;
+    border-radius: @button-round-border-radius;
   }
 
   &--square {
@@ -140,5 +145,24 @@
     margin-left: 5px;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  &--hairline {
+    border-width: 0;
+    padding-top: 1px; // add 1px padding for text vertical align middle
+
+    &::after {
+      border-width: 1px;
+      border-color: inherit;
+      border-radius: @button-border-radius * 2;
+    }
+
+    &.van-button--round::after {
+      border-radius: @button-round-border-radius;
+    }
+
+    &.van-button--square::after {
+      border-radius: 0;
+    }
   }
 }

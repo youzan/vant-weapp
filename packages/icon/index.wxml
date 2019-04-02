@@ -13,5 +13,6 @@
   <image
     wx:if="{{ utils.isSrc(name) }}"
     src="{{ name }}"
+    class="van-icon__image"
   />
 </view>

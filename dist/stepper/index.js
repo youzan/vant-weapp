@@ -10,6 +10,7 @@ VantComponent({
         value: null,
         integer: Boolean,
         disabled: Boolean,
+        inputWidth: String,
         asyncChange: Boolean,
         disableInput: Boolean,
         min: {

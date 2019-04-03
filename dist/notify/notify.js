@@ -10,7 +10,7 @@ function getContext() {
     const pages = getCurrentPages();
     return pages[pages.length - 1];
 }
-export default function Notify(options = {}) {
+export default function Notify(options) {
     options = Object.assign({}, defaultOptions, parseOptions(options));
     const context = options.context || getContext();
     const notify = context.selectComponent(options.selector);

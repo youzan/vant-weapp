@@ -1,6 +1,8 @@
 import { VantComponent } from '../common/component';
 import { RED } from '../common/color';
+import { safeArea } from '../mixins/safe-area';
 VantComponent({
+    mixins: [safeArea()],
     props: {
         text: String,
         color: {

@@ -1,0 +1,27 @@
+<van-button
+  square
+  id="{{ id }}"
+  size="large"
+  lang="{{ lang }}"
+  type="{{ type }}"
+  loading="{{ loading }}"
+  disabled="{{ disabled }}"
+  open-type="{{ openType }}"
+  custom-class="custom-class"
+  business-id="{{ businessId }}"
+  session-from="{{ sessionFrom }}"
+  app-parameter="{{ appParameter }}"
+  send-message-img="{{ sendMessageImg }}"
+  send-message-path="{{ sendMessagePath }}"
+  show-message-card="{{ showMessageCard }}"
+  send-message-title="{{ sendMessageTitle }}"
+  bind:click="onClick"
+  binderror="bindError"
+  bindcontact="bindContact"
+  bindopensetting="bindOpenSetting"
+  bindgetuserinfo="bindGetUserInfo"
+  bindgetphonenumber="bindGetPhoneNumber"
+  bindlaunchapp="bindLaunchApp"
+>
+  {{ text }}
+</van-button>

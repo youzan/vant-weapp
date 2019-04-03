@@ -1,0 +1,29 @@
+<view
+  wx:if="{{ show }}"
+  class="custom-class van-notice-bar {{ hasRightIcon ? 'van-notice-bar--within-icon' : '' }}"
+  style="color: {{ color }}; background-color: {{ backgroundColor }};"
+  bind:tap="onClick"
+>
+  <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
+    <image src="{{ leftIcon }}" />
+  </view>
+  <view class="van-notice-bar__content-wrap">
+    <view class="van-notice-bar__content {{ scrollable ? '' : 'van-ellipsis' }}" animation="{{ animationData }}">
+      {{ text }}
+    </view>
+  </view>
+
+  <van-icon
+    wx:if="{{ mode === 'closeable' }}"
+    class="van-notice-bar__right-icon"
+    name="cross"
+    bind:tap="onClickIcon"
+  />
+  <navigator
+    wx:if="{{ mode === 'link' }}"
+    url="{{ url }}"
+    open-type="{{ openType }}"
+  >
+    <van-icon class="van-notice-bar__right-icon" name="arrow" />
+  </navigator>
+</view>

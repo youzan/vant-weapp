@@ -7,23 +7,26 @@ VantComponent({
     },
     relation: {
         name: 'tabbar',
-        type: 'ancestor'
+        type: 'ancestor',
+        linked(target) {
+            this.parent = target;
+        }
     },
     data: {
         active: false
     },
     methods: {
         onClick() {
-            const parent = this.getRelationNodes('../tabbar/index')[0];
-            if (parent) {
-                parent.onChange(this);
+            if (this.parent) {
+                this.parent.onChange(this);
             }
             this.$emit('click');
         },
         setActive({ active, color }) {
             if (this.data.active !== active) {
-                this.set({ active, color });
+                return this.set({ active, color });
             }
+            return Promise.resolve();
         }
     }
 });

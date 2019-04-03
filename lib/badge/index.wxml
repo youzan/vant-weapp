@@ -1,0 +1,17 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  class="{{ utils.bem('badge', { active }) }} van-hairline custom-class"
+  hover-class="van-badge--hover"
+  hover-stay-time="70"
+  bind:tap="onClick"
+>
+  <view class="van-badge__text">
+    <van-info
+      wx:if="{{ info !== null }}"
+      info="{{ info }}"
+      custom-style="right: 4px"
+    />
+    {{ title }}
+  </view>
+</view>

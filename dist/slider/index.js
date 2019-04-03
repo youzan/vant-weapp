@@ -47,7 +47,7 @@ VantComponent({
             if (this.data.disabled)
                 return;
             this.touchMove(event);
-            this.getRect('.van-slider').then(rect => {
+            this.getRect('.van-slider').then((rect) => {
                 const diff = this.deltaX / rect.width * 100;
                 this.updateValue(this.startValue + diff, false, true);
             });
@@ -60,7 +60,7 @@ VantComponent({
         onClick(event) {
             if (this.data.disabled)
                 return;
-            this.getRect(rect => {
+            this.getRect('.van-slider').then((rect) => {
                 const value = (event.detail.x - rect.left) / rect.width * 100;
                 this.updateValue(value, true);
             });

@@ -1,21 +1,19 @@
 import { VantComponent } from '../common/component';
-import { iphonex } from '../mixins/iphonex';
+import { safeArea } from '../mixins/safe-area';
 VantComponent({
-    mixins: [iphonex],
+    mixins: [safeArea()],
     relation: {
         name: 'tabbar-item',
         type: 'descendant',
         linked(target) {
-            this.data.items.push(target);
-            setTimeout(() => {
-                this.setActiveItem();
-            });
+            this.children = this.children || [];
+            this.children.push(target);
+            this.setActiveItem();
         },
         unlinked(target) {
-            this.data.items = this.data.items.filter(item => item !== target);
-            setTimeout(() => {
-                this.setActiveItem();
-            });
+            this.children = this.children || [];
+            this.children = this.children.filter(item => item !== target);
+            this.setActiveItem();
         }
     },
     props: {
@@ -30,9 +28,6 @@ VantComponent({
             value: 1
         }
     },
-    data: {
-        items: []
-    },
     watch: {
         active(active) {
             this.currentActive = active;
@@ -44,19 +39,21 @@ VantComponent({
     },
     methods: {
         setActiveItem() {
-            this.data.items.forEach((item, index) => {
-                item.setActive({
-                    active: index === this.currentActive,
-                    color: this.data.activeColor
-                });
-            });
+            if (!Array.isArray(this.children) || !this.children.length) {
+                return Promise.resolve();
+            }
+            return Promise.all(this.children.map((item, index) => item.setActive({
+                active: index === this.currentActive,
+                color: this.data.activeColor
+            })));
         },
         onChange(child) {
-            const active = this.data.items.indexOf(child);
+            const active = (this.children || []).indexOf(child);
             if (active !== this.currentActive && active !== -1) {
-                this.$emit('change', active);
                 this.currentActive = active;
-                this.setActiveItem();
+                this.setActiveItem().then(() => {
+                    this.$emit('change', active);
+                });
             }
         }
     }

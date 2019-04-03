@@ -1,0 +1,49 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class {{ utils.bem('tabs', [type]) }}">
+  <view style="z-index: {{ zIndex }}; {{ wrapStyle }}" class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+    <slot name="nav-left" />
+
+    <scroll-view
+      scroll-x="{{ scrollable }}"
+      scroll-with-animation
+      scroll-left="{{ scrollLeft }}"
+      class="van-tabs__scroll--{{ type }}"
+      style="{{ color ? 'border-color: ' + color : '' }}"
+    >
+      <view class="{{ utils.bem('tabs__nav', [type]) }} nav-class">
+        <view wx:if="{{ type === 'line' }}" class="van-tabs__line" style="{{ lineStyle }}" />
+        <view
+          wx:for="{{ tabs }}"
+          wx:key="index"
+          data-index="{{ index }}"
+          class="van-ellipsis tab-class {{ index === active ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === active, disabled: item.disabled }) }}"
+          style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
+          bind:tap="onTap"
+        >
+          <view class="van-ellipsis {{ utils.bem('tab__title', { dot: item.dot }) }}" style="{{ item.titleStyle }}">
+            {{ item.title }}
+            <van-info
+              wx:if="{{ item.info !== null }}"
+              info="{{ item.info }}"
+              custom-class="van-tab__title__info"
+            />
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <slot name="nav-right" />
+  </view>
+  <view
+    class="van-tabs__content"
+    bind:touchstart="onTouchStart"
+    bind:touchmove="onTouchMove"
+    bind:touchend="onTouchEnd"
+    bind:touchcancel="onTouchEnd"
+  >
+    <view class="van-tabs__track" style="{{ trackStyle }}">
+      <slot />
+    </view>
+  </view>
+</view>

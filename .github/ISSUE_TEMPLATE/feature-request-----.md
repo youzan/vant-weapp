@@ -11,3 +11,12 @@ about: Suggest an idea for this project
 
 **你期望 API 是什么样的？**
 描述一下你期望的 API 形式
+
+**示例代码**
+请展示一下新功能的大致用法
+
+```js
+```
+
+```wxml
+```

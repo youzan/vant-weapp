@@ -2,11 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
-{
-  "usingComponents": {
-    "van-notify": "path/to/vant-weapp/dist/notify/index"
-  }
+"usingComponents": {
+  "van-notify": "path/to/vant-weapp/dist/notify/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-notify": "path/to/vant-weapp/lib/notify/index"
 }
 ```
 
@@ -16,6 +23,8 @@
 
 ```js
 import Notify from 'path/to/vant-weapp/dist/notify/notify';
+// es5
+var Notify = require('path/to/vant-weapp/lib/notify/notify');
 
 Notify('通知内容');
 ```

@@ -2,10 +2,20 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-checkbox": "path/to/vant-weapp/dist/checkbox/index",
   "van-checkbox-group": "path/to/vant-weapp/dist/checkbox-group/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-checkbox": "path/to/vant-weapp/lib/checkbox/index",
+  "van-checkbox-group": "path/to/vant-weapp/lib/checkbox-group/index"
 }
 ```
 

@@ -2,11 +2,22 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-goods-action": "path/to/vant-weapp/dist/goods-action/index",
   "van-goods-action-icon": "path/to/vant-weapp/dist/goods-action-icon/index",
   "van-goods-action-button": "path/to/vant-weapp/dist/goods-action-button/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-goods-action": "path/to/vant-weapp/lib/goods-action/index",
+  "van-goods-action-icon": "path/to/vant-weapp/lib/goods-action-icon/index",
+  "van-goods-action-button": "path/to/vant-weapp/lib/goods-action-button/index"
 }
 ```
 

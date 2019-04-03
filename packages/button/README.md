@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 json 文件中配置button组件
+
+es6
 ```json
 "usingComponents": {
   "van-button": "path/to/vant-weapp/dist/button/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-button": "path/to/vant-weapp/lib/button/index"
 }
 ```
 
@@ -51,14 +60,14 @@
 
 #### 加载状态
 
-```html 
+```html
 <van-button loading type="primary" />
 <van-button loading type="danger" loading-text="加载中..." />
 ```
 
 #### 按钮形状
 
-```html 
+```html
 <van-button square type="primary">方形按钮</van-button>
 <van-button round type="danger">圆形按钮</van-button>
 ```
@@ -66,7 +75,7 @@
 #### 按钮尺寸
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
-```html 
+```html
 <van-button size="large">大号按钮</van-button>
 <van-button size="normal">普通按钮</van-button>
 <van-button size="small">小型按钮</van-button>

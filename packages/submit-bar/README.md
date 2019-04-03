@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-submit-bar": "path/to/vant-weapp/dist/submit-bar/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-submit-bar": "path/to/vant-weapp/lib/submit-bar/index"
 }
 ```
 

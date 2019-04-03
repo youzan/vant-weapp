@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-search": "path/to/vant-weapp/dist/search/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-search": "path/to/vant-weapp/lib/search/index"
 }
 ```
 
@@ -91,12 +100,3 @@
 | field-class | 搜索框样式类 |
 | input-class | 输入框样式类 |
 | cancel-class | 取消按钮样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.2.1 | feature | 支持在原生 form 组件内使用 |
-| 0.2.1 | bugfix | 修复 focus 属性不生效的问题 |
-| 0.3.4 | bugfix | 修复无法获取到输入值的问题 |

@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-switch": "path/to/vant-weapp/dist/switch/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-switch": "path/to/vant-weapp/lib/switch/index"
 }
 ```
 
@@ -113,11 +122,3 @@ Page({
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | node-class | 圆点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | bugfix | 修复组件无法开关的问题 |
-| 0.2.1 | feature | 支持在原生 form 组件内使用 |

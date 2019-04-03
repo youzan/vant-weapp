@@ -2,10 +2,20 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-tab": "path/to/vant-weapp/dist/tab/index",
   "van-tabs": "path/to/vant-weapp/dist/tabs/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-tab": "path/to/vant-weapp/lib/tab/index",
+  "van-tabs": "path/to/vant-weapp/lib/tabs/index"
 }
 ```
 

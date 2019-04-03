@@ -5,9 +5,18 @@ Dialog 组件支持函数调用和组件调用两种形式
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-dialog": "path/to/vant-weapp/dist/dialog/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-dialog": "path/to/vant-weapp/lib/dialog/index"
 }
 ```
 
@@ -23,6 +32,8 @@ Dialog 组件支持函数调用和组件调用两种形式
 
 ```javascript
 import Dialog from 'path/to/vant-weapp/dist/dialog/dialog';
+// es5
+// var Dialog = require('path/to/vant-weapp/lib/dialog/dialog');
 
 Dialog.alert({
   title: '标题',

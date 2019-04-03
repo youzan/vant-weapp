@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-steps": "path/to/vant-weapp/dist/steps/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-steps": "path/to/vant-weapp/lib/steps/index"
 }
 ```
 

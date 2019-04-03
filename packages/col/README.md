@@ -3,6 +3,8 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-row": "path/to/vant-weapp/dist/row/index",
@@ -10,11 +12,19 @@
 }
 ```
 
+es5
+```json
+"usingComponents": {
+  "van-row": "path/to/vant-weapp/lib/row/index",
+  "van-col": "path/to/vant-weapp/lib/col/index"
+}
+```
+
 ### 代码演示
 
 #### 基本用法
 
-Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置列所占的宽度百分比    
+Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置列所占的宽度百分比
 此外，添加`offset`属性可以设置列的偏移宽度，计算方式与 span 相同
 
 ```html

@@ -2,11 +2,21 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-popup": "path/to/vant-weapp/dist/popup/index"
 }
 ```
+
+es5
+```json
+"usingComponents": {
+  "van-popup": "path/to/vant-weapp/lib/popup/index"
+}
+```
+
 ### 代码演示
 
 #### 基础用法

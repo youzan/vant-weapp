@@ -2,10 +2,20 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-collapse": "path/to/vant-weapp/dist/collapse/index",
   "van-collapse-item": "path/to/vant-weapp/dist/collapse-item/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-collapse": "path/to/vant-weapp/lib/collapse/index",
+  "van-collapse-item": "path/to/vant-weapp/lib/collapse-item/index"
 }
 ```
 

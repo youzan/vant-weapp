@@ -2,10 +2,20 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-badge": "path/to/vant-weapp/dist/badge/index",
   "van-badge-group": "path/to/vant-weapp/dist/badge-group/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-badge": "path/to/vant-weapp/lib/badge/index",
+  "van-badge-group": "path/to/vant-weapp/lib/badge-group/index"
 }
 ```
 

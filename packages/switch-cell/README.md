@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-switch-cell": "path/to/vant-weapp/dist/switch-cell/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-switch-cell": "path/to/vant-weapp/lib/switch-cell/index"
 }
 ```
 
@@ -77,10 +86,3 @@ Page({
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | bind:change | 开关状态切换回调 | event.detail: 是否选中开关 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.2.0 | feature | 新增组件 |
-| 0.2.1 | feature | 支持在原生 form 组件内使用 |

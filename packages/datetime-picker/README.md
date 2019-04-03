@@ -3,9 +3,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-datetime-picker": "path/to/vant-weapp/dist/datetime-picker/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-datetime-picker": "path/to/vant-weapp/lib/datetime-picker/index"
 }
 ```
 

@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-tree-select": "path/to/vant-weapp/dist/tree-select/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-tree-select": "path/to/vant-weapp/lib/tree-select/index"
 }
 ```
 
@@ -98,9 +107,3 @@ Page({
 | content-active-class | 右侧选项选中样式类 |
 | main-disabled-class | 左侧选项禁用样式类 |
 | content-disabled-class | 右侧选项禁用样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |

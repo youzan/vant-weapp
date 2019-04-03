@@ -1,5 +1,25 @@
 ## 更新日志
 
+## [v0.5.9](https://github.com/youzan/vant-weapp/tree/v0.5.9)
+`2019-04-03`
+
+**Improvements**
+
+- 输出es5构建 [\#1485](https://github.com/youzan/vant-weapp/pull/1485)
+- Stepper: 新增 input-width 属性 [\#1480](https://github.com/youzan/vant-weapp/pull/1480)
+- Checkbox: 修复文档示例错误 [\#1479](https://github.com/youzan/vant-weapp/pull/1479)
+- Notify: 新增 safe-area-inset-top 属性 [\#1478](https://github.com/youzan/vant-weapp/pull/1478)
+- Popup: 新增 safe-area-inset-top 属性 [\#1478](https://github.com/youzan/vant-weapp/pull/1478)
+- Navbar: 新增 safe-area-inset-top 属性 [\#1478](https://github.com/youzan/vant-weapp/pull/1478)
+- Tabbar: 性能优化 [\#1460](https://github.com/youzan/vant-weapp/pull/1460)
+- Button: 新增 hairline 属性 [\#1439](https://github.com/youzan/vant-weapp/pull/1439)
+
+**Bug Fixes**
+
+- Slider: 修复点击不生效的问题 [\#1484](https://github.com/youzan/vant-weapp/pull/1484)
+- Icon: 避免使用标签选择器 [\#1482](https://github.com/youzan/vant-weapp/pull/1482)
+- SwipeCell: 修复点击不生效的问题 [\#1459](https://github.com/youzan/vant-weapp/pull/1459)
+
 ## [v0.5.8](https://github.com/youzan/vant-weapp/tree/v0.5.8)
 `2019-03-22`
 

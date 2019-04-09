@@ -90,7 +90,7 @@ Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan
 
 ## 链接
 
-* [更新日志](#/changelog)
+* [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
 * [意见反馈](https://github.com/youzan/vant-weapp/issues)
 * [加入我们](https://job.youzan.com)
 * [Vant: 移动端 Vue UI](https://github.com/youzan/vant)

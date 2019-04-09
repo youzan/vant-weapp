@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 
-const THRESHOLD = 0.15;
+const THRESHOLD = 0.3;
 
 VantComponent({
   props: {
@@ -20,63 +20,52 @@ VantComponent({
   mixins: [touch],
 
   data: {
-    offset: 0,
-    draging: false
+    catchMove: true
   },
 
-  computed: {
-    wrapperStyle() {
-      const { offset, draging } = this.data;
-      const transform = `translate3d(${offset}px, 0, 0)`;
-      const transition = draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)';
-      return `
-        -webkit-transform: ${transform};
-        -webkit-transition: ${transition};
-        transform: ${transform};
-        transition: ${transition};
-      `;
-    }
+  created() {
+    this.offset = 0;
   },
 
   methods: {
-    onTransitionend() {
-      this.swipe = false;
-    },
-
     open(position: 'left' | 'right') {
       const { leftWidth, rightWidth } = this.data;
       const offset = position === 'left' ? leftWidth : -rightWidth;
       this.swipeMove(offset);
-      this.resetSwipeStatus();
     },
 
     close() {
-      this.set({ offset: 0 });
-    },
-
-    resetSwipeStatus() {
-      this.swiping = false;
-      this.opened = true;
+      this.swipeMove(0);
     },
 
     swipeMove(offset: number = 0) {
-      this.set({ offset });
-      offset && (this.swiping = true);
-      !offset && (this.opened = false);
+      this.offset = offset;
+
+      const transform = `translate3d(${offset}px, 0, 0)`;
+      const transition = this.draging
+        ? 'none'
+        : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)';
+
+      this.set({
+        wrapperStyle: `
+        -webkit-transform: ${transform};
+        -webkit-transition: ${transition};
+        transform: ${transform};
+        transition: ${transition};
+      `
+      });
     },
 
-    swipeLeaveTransition(direction: number) {
-      const { offset, leftWidth, rightWidth } = this.data;
-      const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
+    swipeLeaveTransition() {
+      const { leftWidth, rightWidth } = this.data;
+      const { offset } = this;
 
-      // right
-      if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
+      if (rightWidth > 0 && -offset > rightWidth * THRESHOLD) {
         this.open('right');
-        // left
-      } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
+      } else if (leftWidth > 0 && offset > leftWidth * THRESHOLD) {
         this.open('left');
       } else {
-        this.swipeMove();
+        this.swipeMove(0);
       }
     },
 
@@ -85,13 +74,13 @@ VantComponent({
         return;
       }
 
-      this.set({ draging: true });
+      this.draging = true;
+      this.startOffset = this.offset;
+      this.firstDirection = '';
       this.touchStart(event);
-
-      if (this.opened) {
-        this.startX -= this.data.offset;
-      }
     },
+
+    noop() {},
 
     onDrag(event: Weapp.TouchEvent) {
       if (this.data.disabled) {
@@ -99,19 +88,28 @@ VantComponent({
       }
 
       this.touchMove(event);
-      const { deltaX } = this;
+
+      if (!this.firstDirection) {
+        this.firstDirection = this.direction;
+        this.set({ catchMove: this.firstDirection === 'horizontal' });
+      }
+
+      if (this.firstDirection === 'vertical') {
+        return;
+      }
+
       const { leftWidth, rightWidth } = this.data;
 
+      const offset = this.startOffset + this.deltaX;
+
       if (
-        (deltaX < 0 && (-deltaX > rightWidth || !rightWidth)) ||
-        (deltaX > 0 && (deltaX > leftWidth || (deltaX > 0 && !leftWidth)))
+        (rightWidth > 0 && -offset > rightWidth) ||
+        (leftWidth > 0 && offset > leftWidth)
       ) {
         return;
       }
 
-      if (this.direction === 'horizontal') {
-        this.swipeMove(deltaX);
-      }
+      this.swipeMove(offset);
     },
 
     endDrag() {
@@ -119,17 +117,15 @@ VantComponent({
         return;
       }
 
-      this.set({ draging: false });
-      if (this.swiping) {
-        this.swipeLeaveTransition(this.data.offset > 0 ? -1 : 1);
-      }
+      this.draging = false;
+      this.swipeLeaveTransition();
     },
 
     onClick(event: Weapp.Event) {
       const { key: position = 'outside' } = event.currentTarget.dataset;
       this.$emit('click', position);
 
-      if (!this.data.offset) {
+      if (!this.offset) {
         return;
       }
 

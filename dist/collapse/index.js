@@ -4,43 +4,38 @@ VantComponent({
         name: 'collapse-item',
         type: 'descendant',
         linked(child) {
-            this.set({
-                items: [...this.data.items, child]
-            }, () => {
-                child.updateExpanded();
-            });
+            this.children.push(child);
         }
     },
     props: {
-        value: null,
-        accordion: Boolean,
+        value: {
+            type: null,
+            observer: 'updateExpanded'
+        },
+        accordion: {
+            type: Boolean,
+            observer: 'updateExpanded'
+        },
         border: {
             type: Boolean,
             value: true
         }
     },
-    data: {
-        items: []
+    beforeCreate() {
+        this.children = [];
     },
-    watch: {
-        value() {
-            this.data.items.forEach(child => {
+    methods: {
+        updateExpanded() {
+            this.children.forEach((child) => {
                 child.updateExpanded();
             });
         },
-        accordion() {
-            this.data.items.forEach(child => {
-                child.updateExpanded();
-            });
-        }
-    },
-    methods: {
         switch(name, expanded) {
             const { accordion, value } = this.data;
             if (!accordion) {
                 name = expanded
-                    ? value.concat(name)
-                    : value.filter(activeName => activeName !== name);
+                    ? (value || []).concat(name)
+                    : (value || []).filter((activeName) => activeName !== name);
             }
             else {
                 name = expanded ? name : '';

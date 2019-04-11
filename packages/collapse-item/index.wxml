@@ -30,9 +30,8 @@
     />
   </van-cell>
   <view
-    class="van-collapse-item__wrapper"
+    class="{{ utils.bem('collapse-item__wrapper', { transition }) }}"
     style="height: {{ contentHeight }};"
-    animation="{{ animationData }}"
     bind:transitionend="onTransitionEnd"
   >
     <view

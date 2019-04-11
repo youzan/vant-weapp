@@ -1,5 +1,7 @@
 import { VantComponent } from '../common/component';
 
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));
+
 VantComponent({
   classes: ['title-class', 'content-class'],
 
@@ -30,60 +32,60 @@ VantComponent({
 
   data: {
     contentHeight: 0,
-    expanded: false
+    expanded: false,
+    transition: false
   },
 
-  beforeCreate() {
-    this.animation = wx.createAnimation({
-      duration: 300,
-      timingFunction: 'ease-in-out'
-    });
+  mounted() {
+    this.updateExpanded()
+      .then(nextTick)
+      .then(() => {
+        this.set({ transition: true });
+      });
   },
 
   methods: {
     updateExpanded() {
       if (!this.parent) {
-        return null;
+        return Promise.resolve();
       }
 
-      const { value, accordion, items } = this.parent.data;
+      const { value, accordion } = this.parent.data;
+      const { children = [] } = this.parent;
       const { name } = this.data;
 
-      const index = items.indexOf(this);
+      const index = children.indexOf(this);
       const currentName = name == null ? index : name;
 
       const expanded = accordion
         ? value === currentName
-        : value.some(name => name === currentName);
+        : (value || []).some((name: string | number) => name === currentName);
+
+      const stack = [];
 
       if (expanded !== this.data.expanded) {
-        this.updateStyle(expanded);
+        stack.push(this.updateStyle(expanded));
       }
 
-      this.set({ index, expanded });
+      stack.push(this.set({ index, expanded }));
+
+      return Promise.all(stack);
     },
 
     updateStyle(expanded: boolean) {
-      this.getRect('.van-collapse-item__content').then(res => {
-        const animationData = this.animation
-          .height(expanded ? res.height : 0)
-          .step()
-          .export();
-        if (expanded) {
-          this.set({ animationData });
-        } else {
-          this.set(
-            {
-              contentHeight: res.height + 'px'
-            },
-            () => {
-              setTimeout(() => {
-                this.set({ animationData });
-              }, 20);
-            }
-          );
-        }
-      });
+      return this.getRect('.van-collapse-item__content')
+        .then((rect: wx.BoundingClientRectCallbackResult) => rect.height)
+        .then((height: number) => {
+          if (expanded) {
+            return this.set({
+              contentHeight: height ? `${height}px` : 'auto'
+            });
+          } else {
+            return this.set({ contentHeight: `${height}px` })
+              .then(nextTick)
+              .then(() => this.set({ contentHeight: 0 }));
+          }
+        });
     },
 
     onClick() {
@@ -92,8 +94,7 @@ VantComponent({
       }
 
       const { name, expanded } = this.data;
-
-      const index = this.parent.data.items.indexOf(this);
+      const index = this.parent.children.indexOf(this);
       const currentName = name == null ? index : name;
 
       this.parent.switch(currentName, !expanded);

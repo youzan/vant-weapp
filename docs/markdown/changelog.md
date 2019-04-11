@@ -1,5 +1,20 @@
 ## 更新日志
 
+## [v0.5.10](https://github.com/youzan/vant-weapp/tree/v0.5.10)
+`2019-04-11`
+
+**Bug Fixes**
+
+- Collapse: 优化性能、修复初始化未渲染时展开状态错误 [\#1506](https://github.com/youzan/vant-weapp/pull/1506)
+
+**Improvements**
+
+- SwipeCell: 优化性能、优化纵向滑动阻止页面滚动 [\#1501](https://github.com/youzan/vant-weapp/pull/1501)
+- 修复文档中 changelog 链接错误 [\#1491](https://github.com/youzan/vant-weapp/pull/1491)
+- 添加 es5 版本指引文档 [\#1489](https://github.com/youzan/vant-weapp/pull/1489)
+
+
+
 ## [v0.5.9](https://github.com/youzan/vant-weapp/tree/v0.5.9)
 `2019-04-03`
 

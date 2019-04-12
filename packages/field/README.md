@@ -144,7 +144,7 @@ Page({
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|-------------|
+|-----------|-----------|-----------|-------------|
 | name | 在表单内提交时的标识符 | `String` | - |
 | label | 输入框左侧文本 | `String` | - |
 | size | 单元格大小，可选值为 `large` | `String` | - |
@@ -164,6 +164,7 @@ Page({
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
+| error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | `String` | `''` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 | autosize | 自适应内容高度，只对 textarea 有效 | `Boolean` | `false` |
 | icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - |

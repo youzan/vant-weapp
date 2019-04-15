@@ -6,6 +6,11 @@ VantComponent({
     type: 'descendant',
     linked(child: Weapp.Component) {
       this.children.push(child);
+    },
+    unlinked(child: Weapp.Component) {
+      this.children = this.children.filter(
+        (item: Weapp.Component) => item !== child
+      );
     }
   },
 
@@ -40,7 +45,9 @@ VantComponent({
       if (!accordion) {
         name = expanded
           ? (value || []).concat(name)
-          : (value || []).filter((activeName: string | number) => activeName !== name);
+          : (value || []).filter(
+            (activeName: string | number) => activeName !== name
+          );
       } else {
         name = expanded ? name : '';
       }

@@ -19,6 +19,7 @@ VantComponent({
         iconClass: String,
         clearable: Boolean,
         inputAlign: String,
+        errorMessageAlign: String,
         customClass: String,
         confirmType: String,
         confirmHold: Boolean,

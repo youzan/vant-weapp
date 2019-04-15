@@ -32,17 +32,17 @@
     catch:touchmove="noop"
   >
     <picker-column
-      class="van-picker__column"
       wx:for="{{ isSimple(columns) ? [columns] : columns }}"
       wx:key="{{ index }}"
-      data-index="{{ index }}"
-      custom-class="column-class"
+      class="van-picker__column"
       value-key="{{ valueKey }}"
       initial-options="{{ isSimple(columns) ? item : item.values }}"
       default-index="{{ item.defaultIndex }}"
       item-height="{{ itemHeight }}"
       visible-item-count="{{ visibleItemCount }}"
+      custom-class="column-class"
       active-class="active-class"
+      data-index="{{ index }}"
       bind:change="onChange"
     />
     <view

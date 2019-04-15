@@ -1,7 +1,13 @@
 import { VantComponent } from '../common/component';
 import { isObj, range } from '../common/utils';
 
-const DEFAULT_DURATION = 200;
+function isDisabled(option: any) {
+  return isObj(option) && option.disabled;
+}
+
+function getOptionText(option: any, valueKey: string) {
+  return isObj(option) && valueKey in option ? option[valueKey] : option;
+}
 
 VantComponent({
   classes: ['active-class'],
@@ -17,17 +23,18 @@ VantComponent({
     },
     defaultIndex: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(value) {
+        this.setIndex(value);
+      }
     }
   },
 
   data: {
-    startY: 0,
     offset: 0,
-    duration: 0,
-    startOffset: 0,
     options: [],
-    currentIndex: 0
+    currentIndex: 0,
+    animation: false
   },
 
   created() {
@@ -36,71 +43,38 @@ VantComponent({
     this.set({
       currentIndex: defaultIndex,
       options: initialOptions
-    }).then(() => {
-      this.setIndex(defaultIndex);
-    });
-  },
-
-  computed: {
-    count() {
-      return this.data.options.length;
-    },
-
-    baseOffset() {
-      const { data } = this;
-      return (data.itemHeight * (data.visibleItemCount - 1)) / 2;
-    },
-
-    wrapperStyle() {
-      const { data } = this;
-      return [
-        `transition: ${data.duration}ms`,
-        `transform: translate3d(0, ${data.offset + data.baseOffset}px, 0)`,
-        `line-height: ${data.itemHeight}px`
-      ].join('; ');
-    }
-  },
-
-  watch: {
-    defaultIndex(value: number) {
-      this.setIndex(value);
-    }
+    }).then(() => this.setIndex(defaultIndex));
   },
 
   methods: {
-    onTouchStart(event: Weapp.TouchEvent) {
-      this.set({
-        startY: event.touches[0].clientY,
-        startOffset: this.data.offset,
-        duration: 0
-      });
+    onChange(event) {
+      if (!event.detail.source) {
+        return;
+      }
+
+      this.offset = event.detail.y;
     },
 
-    onTouchMove(event: Weapp.TouchEvent) {
-      const { data } = this;
-      const deltaY = event.touches[0].clientY - data.startY;
-      this.set({
-        offset: range(
-          data.startOffset + deltaY,
-          -(data.count * data.itemHeight),
-          data.itemHeight
-        )
-      });
+    onTouchStart() {
+      // open animate at first touch
+      if (!this.data.animation) {
+        this.set({ animation: true });
+      }
     },
 
     onTouchEnd() {
-      const { data } = this;
-      if (data.offset !== data.startOffset) {
-        this.set({
-          duration: DEFAULT_DURATION
-        });
-        const index = range(
-          Math.round(-data.offset / data.itemHeight),
-          0,
-          data.count - 1
-        );
-        this.setIndex(index, true);
+      const { options = [], itemHeight, offset } = this.data;
+
+      if (this.offset === offset) {
+        return;
       }
+
+      const index = range(
+        Math.round(-this.offset / itemHeight),
+        0,
+        options.length - 1
+      );
+      this.setIndex(index, true);
     },
 
     onClickItem(event: Weapp.Event) {
@@ -109,33 +83,27 @@ VantComponent({
     },
 
     adjustIndex(index: number) {
-      const { data } = this;
-      index = range(index, 0, data.count);
-      for (let i = index; i < data.count; i++) {
-        if (!this.isDisabled(data.options[i])) return i;
+      const { options = [] } = this.data;
+      const count = options.length;
+      index = range(index, 0, count);
+
+      for (let i = index; i < count; i++) {
+        if (!isDisabled(options[i])) return i;
       }
       for (let i = index - 1; i >= 0; i--) {
-        if (!this.isDisabled(data.options[i])) return i;
+        if (!isDisabled(options[i])) return i;
       }
-    },
-
-    isDisabled(option: any) {
-      return isObj(option) && option.disabled;
-    },
-
-    getOptionText(option: any) {
-      const { data } = this;
-      return isObj(option) && data.valueKey in option
-        ? option[data.valueKey]
-        : option;
+      return 0;
     },
 
     setIndex(index: number, userAction: boolean) {
-      const { data } = this;
-      index = this.adjustIndex(index) || 0;
-      const offset = -index * data.itemHeight;
+      const { itemHeight, currentIndex } = this.data;
+      index = this.adjustIndex(index);
+      const offset = -index * itemHeight;
 
-      if (index !== data.currentIndex) {
+      this.offset = offset;
+
+      if (index !== currentIndex) {
         return this.set({ offset, currentIndex: index }).then(() => {
           userAction && this.$emit('change', index);
         });
@@ -145,18 +113,17 @@ VantComponent({
     },
 
     setValue(value: string) {
-      const { options } = this.data;
-      for (let i = 0; i < options.length; i++) {
-        if (this.getOptionText(options[i]) === value) {
-          return this.setIndex(i);
-        }
-      }
-      return Promise.resolve();
+      const { options = [], valueKey } = this.data;
+
+      const index = options.findIndex(
+        item => getOptionText(item, valueKey) === value
+      );
+      return index !== -1 ? this.setIndex(index) : Promise.resolve();
     },
 
     getValue() {
-      const { data } = this;
-      return data.options[data.currentIndex];
+      const { options = [], currentIndex } = this.data;
+      return options[currentIndex];
     }
   }
 });

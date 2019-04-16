@@ -12,8 +12,8 @@
       placeholder="请输入用户名"
       clearable
       size="large"
-      icon="question-o"
-      icon-class="icon"
+      right-icon="question-o"
+      right-icon-class="custom-icon"
       required
       bind:click-icon="onClickIcon"
     />

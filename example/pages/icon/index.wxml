@@ -1,5 +1,6 @@
 <van-tabs
   active="{{ active }}"
+  color="#1989fa"
   bind:change="onSwitch"
 >
   <van-tab title="基础图标" custom-class="demo-tab-pane">

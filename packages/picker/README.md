@@ -29,6 +29,8 @@ es5
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
+// es5
+const Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Page({
   data: {
@@ -42,23 +44,16 @@ Page({
 });
 ```
 
-#### 禁用选项
-选项可以为对象结构，通过设置 disabled 来禁用该选项
+#### 默认选中项
+
+单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
 
 ```html
-<van-picker columns="{{ columns }}" />
-```
-
-```javascript
-Page({
-  data: {
-    columns: [
-      { text: '杭州', disabled: true },
-      { text: '宁波' },
-      { text: '温州' }
-    ]
-  }
-});
+<van-picker
+  columns="{{ columns }}"
+  default-index="{{ 2 }}"
+  bind:change="onChange"
+/>
 ```
 
 #### 展示顶部栏
@@ -75,6 +70,8 @@ Page({
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
+// es5
+const Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Page({
   data: {
@@ -88,6 +85,26 @@ Page({
 
   onCancel() {
     Toast('取消');
+  }
+});
+```
+
+#### 禁用选项
+
+选项可以为对象结构，通过设置 disabled 来禁用该选项
+
+```html
+<van-picker columns="{{ columns }}" />
+```
+
+```javascript
+Page({
+  data: {
+    columns: [
+      { text: '杭州', disabled: true },
+      { text: '宁波' },
+      { text: '温州' }
+    ]
   }
 });
 ```
@@ -135,17 +152,18 @@ Page({
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
-| title | 顶部栏标题 | `String` | `''` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` |
+| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` |
+| title | 顶部栏标题 | `String` | `''` |
+| loading | 是否显示加载状态 | `Boolean` | `false` |
+| value-key | 选项对象中，文字对应的 key | `String` | `text` |
+| item-height | 选项高度 | `Number` | `44` |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` |
+| visible-item-count | 可见的选项个数 | `Number` | `5` |
+| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` |
 
 ### Event
 

@@ -1,34 +1,24 @@
 import { VantComponent } from '../common/component';
+import { pickerProps } from '../picker/shared';
 
 type AreaItem = {
-  name: string
-  code: string
+  name: string;
+  code: string;
 };
 
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
   props: {
-    title: String,
+    ...pickerProps,
     value: String,
-    loading: Boolean,
-    cancelButtonText: String,
-    confirmButtonText: String,
-    itemHeight: {
-      type: Number,
-      value: 44
-    },
-    visibleItemCount: {
-      type: Number,
-      value: 5
+    areaList: {
+      type: Object,
+      value: {}
     },
     columnsNum: {
       type: [String, Number],
       value: 3
-    },
-    areaList: {
-      type: Object,
-      value: {}
     }
   },
 
@@ -152,7 +142,7 @@ VantComponent({
       stack.push(picker.setColumnValues(1, city, false));
 
       if (city.length && code.slice(2, 4) === '00') {
-        ;[{ code }] = city;
+        [{ code }] = city;
       }
 
       stack.push(

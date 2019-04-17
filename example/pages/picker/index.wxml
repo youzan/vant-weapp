@@ -5,9 +5,11 @@
   />
 </demo-block>
 
-<demo-block title="禁用选项">
+<demo-block title="默认选中项">
   <van-picker
-    columns="{{ column2 }}"
+    columns="{{ column1 }}"
+    default-index="{{ 2 }}"
+    bind:change="onChange1"
   />
 </demo-block>
 
@@ -20,6 +22,10 @@
     bind:confirm="onConfirm"
     bind:cancel="onCancel"
   />
+</demo-block>
+
+<demo-block title="禁用选项">
+  <van-picker columns="{{ column2 }}" />
 </demo-block>
 
 <demo-block title="多列联动">

@@ -47,7 +47,7 @@ VantComponent({
   },
 
   methods: {
-    onChange(event) {
+    onChange(event: Weapp.Event) {
       if (!event.detail.source) {
         return;
       }
@@ -116,7 +116,7 @@ VantComponent({
       const { options = [], valueKey } = this.data;
 
       const index = options.findIndex(
-        item => getOptionText(item, valueKey) === value
+        (item: any) => getOptionText(item, valueKey) === value
       );
       return index !== -1 ? this.setIndex(index) : Promise.resolve();
     },

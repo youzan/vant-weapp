@@ -1,6 +1,6 @@
 import { isObj } from '../common/utils';
 
-type NotifyOptions = {
+interface NotifyOptions {
   text: string;
   color?: string;
   backgroundColor?: string;
@@ -8,7 +8,8 @@ type NotifyOptions = {
   selector?: string;
   context?: any;
   safeAreaInsetTop?: boolean;
-};
+  zIndex?: number;
+}
 
 const defaultOptions = {
   selector: '#van-notify',
@@ -16,10 +17,10 @@ const defaultOptions = {
 };
 
 function parseOptions(text: NotifyOptions | string): NotifyOptions {
-  return isObj(text) ? text as NotifyOptions : { text } as NotifyOptions;
+  return isObj(text) ? (text as NotifyOptions) : ({ text } as NotifyOptions);
 }
 
-function getContext() {
+function getContext(): Page.PageInstance {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }

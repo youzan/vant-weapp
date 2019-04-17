@@ -1,3 +1,7 @@
+page {
+  padding-bottom: 0;
+}
+
 .col {
   text-align: center;
   height: 100px;

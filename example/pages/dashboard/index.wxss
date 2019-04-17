@@ -1,11 +1,14 @@
+page {
+  padding-bottom: 0;
+}
+
 .container {
-  padding: 45px 15px 0;
+  padding: 45px 20px 20px;
 }
 
 .title {
-  margin: 0 0 15px;
-  text-align: center;
-  user-select: none;
+  padding-left: 15px;
+  margin-bottom: 10px;
 }
 
 .logo,
@@ -16,9 +19,8 @@
 
 .title-text {
   font-size: 32px;
+  font-weight: 500;
   margin-left: 15px;
-  font-weight: 400;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 .logo {
@@ -28,17 +30,32 @@
 
 .desc {
   font-size: 14px;
-  color: #455a64;
-  margin: 0 0 60px;
-  text-align: center;
+  color: #7d7e80;
+  margin: 0 0 45px;
+  padding-left: 15px;
 }
 
 .mobile-nav {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .mobile-nav__title {
   font-size: 16px;
-  background-color: #fff;
-  padding: 17px 15px;
+  font-weight: 500;
+  line-height: 40px;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.mobile-nav__content {
+  padding: 0 !important;
+}
+
+.mobile-nav__icon {
+  font-size: 24px !important;
+  margin-top: 8px;
+}
+
+.mobile-nav__icon image {
+  width: 100%;
 }

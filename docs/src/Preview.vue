@@ -13,7 +13,7 @@
 <script>
 const PREFIX = 'https://img.yzcdn.cn/vant-weapp/';
 const MAP = {
-  index: 'index-201808121630.png',
+  index: 'index-201904170551.png',
   col: 'layout-201808092138.png',
   transition: 'transition-20180821.png'
 };
@@ -33,7 +33,7 @@ body {
   margin: 0;
   color: #333;
   line-height: 1;
-  background-color: #f8f8f8;
+  background-color: #f2f3f5;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei',
     Tohoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

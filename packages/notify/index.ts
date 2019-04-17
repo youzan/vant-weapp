@@ -18,6 +18,10 @@ VantComponent({
     duration: {
       type: Number,
       value: 3000
+    },
+    zIndex: {
+      type: Number,
+      value: 110
     }
   },
 

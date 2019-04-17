@@ -3,7 +3,7 @@ import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
 
-  classes: ['input-class'],
+  classes: ['input-class', 'right-icon-class'],
 
   props: {
     size: String,
@@ -15,6 +15,7 @@ VantComponent({
     center: Boolean,
     isLink: Boolean,
     leftIcon: String,
+    rightIcon: String,
     disabled: Boolean,
     autosize: Boolean,
     readonly: Boolean,
@@ -29,8 +30,6 @@ VantComponent({
     errorMessage: String,
     placeholder: String,
     customStyle: String,
-    useIconSlot: Boolean,
-    useButtonSlot: Boolean,
     showConfirmBar: {
       type: Boolean,
       value: true

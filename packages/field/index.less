@@ -11,6 +11,7 @@
   }
 
   &__input {
+    position: relative;
     display: block;
     width: 100%;
     height: 24px;
@@ -38,29 +39,27 @@
     &--right {
       text-align: right;
     }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: @gray-dark;
+    pointer-events: none;
 
     &--error {
       color: @red;
     }
   }
 
-  &__placeholder {
-    color: @gray-dark;
-  }
-
-  &__clear-root {
+  &__icon-root {
     display: flex;
-    height: 24px;
+    min-height: 24px;
     align-items: center;
   }
 
-  &__clear,
-  &__icon-container,
-  &__button {
-    flex-shrink: 0;
-  }
-
-  &__clear,
+  &__clear-root,
   &__icon-container {
     padding: 0 10px;
     margin-right: -10px;
@@ -68,20 +67,30 @@
     vertical-align: middle;
   }
 
-  &__clear {
+  &__clear-root,
+  &__icon-container,
+  &__button {
+    flex-shrink: 0;
+  }
+
+  &__clear-root {
     color: @gray;
   }
 
   &__icon-container {
     color: @gray-dark;
-  }
 
-  &__icon {
-    display: block !important;
+    &:empty {
+      display: none;
+    }
   }
 
   &__button {
     padding-left: 10px;
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__error-message {

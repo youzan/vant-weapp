@@ -27,5 +27,7 @@
       <van-icon wx:else class="van-toast__icon" name="{{ type }}" />
       <text wx:if="{{ message }}" class="van-toast__text">{{ message }}</text>
     </block>
+
+    <slot />
   </view>
 </van-transition>

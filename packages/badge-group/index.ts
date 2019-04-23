@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { isNumber } from '../common/utils';
 
 VantComponent({
   relation: {
@@ -7,23 +6,20 @@ VantComponent({
     type: 'descendant',
     linked(target: Weapp.Component) {
       this.badges.push(target);
-      this.setActive();
+      this.setActive(this.data.active);
     },
     unlinked(target: Weapp.Component) {
       this.badges = this.badges.filter(item => item !== target);
-      this.setActive();
+      this.setActive(this.data.active);
     }
   },
 
   props: {
     active: {
       type: Number,
-      value: 0
+      value: 0,
+      observer: 'setActive'
     }
-  },
-
-  watch: {
-    active: 'setActive'
   },
 
   beforeCreate() {
@@ -32,27 +28,26 @@ VantComponent({
   },
 
   methods: {
-    setActive(badge: Weapp.Component | number) {
-      let { active } = this.data;
-      const { badges } = this;
+    setActive(active: number) {
+      const { badges, currentActive } = this;
 
-      if (badge && !isNumber(badge)) {
-        active = badges.indexOf(badge);
+      if (!badges.length) {
+        return Promise.resolve();
       }
 
-      if (active === this.currentActive) {
-        return;
-      }
+      this.currentActive = active;
 
-      if (this.currentActive !== -1 && badges[this.currentActive]) {
-        this.$emit('change', active);
-        badges[this.currentActive].setActive(false);
+      const stack = [];
+
+      if (currentActive !== active && badges[currentActive]) {
+        stack.push(badges[currentActive].setActive(false));
       }
 
       if (badges[active]) {
-        badges[active].setActive(true);
-        this.currentActive = active;
+        stack.push(badges[active].setActive(true));
       }
+
+      return Promise.all(stack);
     }
   }
 });

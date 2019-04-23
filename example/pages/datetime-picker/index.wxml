@@ -16,6 +16,7 @@
     value="{{ currentDate2 }}"
     min-date="{{ minDate }}"
     bind:input="onInput"
+    formatter="{{ formatter }}"
   />
 </demo-block>
 

@@ -8,9 +8,11 @@
   <van-info
     wx:if="{{ info !== null }}"
     info="{{ info }}"
+    custom-class="van-icon__info"
   />
   <image
     wx:if="{{ utils.isSrc(name) }}"
     src="{{ name }}"
+    class="van-icon__image"
   />
 </view>

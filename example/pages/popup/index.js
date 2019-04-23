@@ -11,6 +11,9 @@ Page({
     }
   },
 
+  onTransitionEnd() {
+    console.log(`You can't see me 🌚`);
+  },
   toggle(type) {
     this.setData({
       [`show.${type}`]: !this.data.show[type]
@@ -38,5 +41,9 @@ Page({
     setTimeout(() => {
       this.toggle('top');
     }, 2000);
+  },
+
+  onClickLeft() {
+    wx.navigateBack();
   }
 });

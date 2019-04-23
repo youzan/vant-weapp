@@ -1,35 +1,29 @@
 import { VantComponent } from '../common/component';
+import { pickerProps } from './shared';
 
-function isSimple(columns) {
-  return columns.length && !columns[0].values;
+interface Column {
+  values: object[];
+  defaultIndex?: number;
 }
 
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
   props: {
-    title: String,
-    loading: Boolean,
-    showToolbar: Boolean,
-    confirmButtonText: String,
-    cancelButtonText: String,
-    visibleItemCount: {
-      type: Number,
-      value: 5
-    },
+    ...pickerProps,
     valueKey: {
       type: String,
       value: 'text'
     },
-    itemHeight: {
+    defaultIndex: {
       type: Number,
-      value: 44
+      value: 0
     },
     columns: {
       type: Array,
       value: [],
       observer(columns = []) {
-        this.simple = isSimple(columns);
+        this.simple = columns.length && !columns[0].values;
         this.children = this.selectAllComponents('.van-picker__column');
 
         if (Array.isArray(this.children) && this.children.length) {
@@ -49,7 +43,7 @@ VantComponent({
     setColumns() {
       const { data } = this;
       const columns = this.simple ? [{ values: data.columns }] : data.columns;
-      const stack = columns.map((column, index: number) =>
+      const stack = columns.map((column: Column, index: number) =>
         this.setColumnValues(index, column.values)
       );
       return Promise.all(stack);
@@ -100,10 +94,12 @@ VantComponent({
     // set column value by index
     setColumnValue(index: number, value: any) {
       const column = this.getColumn(index);
-      if (column) {
-        return column.setValue(value);
+
+      if (column == null) {
+        return Promise.reject('setColumnValue: 对应列不存在');
       }
-      return Promise.reject('setColumnValue: 对应列不存在');
+
+      return column.setValue(value);
     },
 
     // get column option index by column index
@@ -114,10 +110,12 @@ VantComponent({
     // set column option index by column index
     setColumnIndex(columnIndex: number, optionIndex: number) {
       const column = this.getColumn(columnIndex);
-      if (column) {
-        return column.setIndex(optionIndex);
+
+      if (column == null) {
+        return Promise.reject('setColumnIndex: 对应列不存在');
       }
-      return Promise.reject('setColumnIndex: 对应列不存在');
+
+      return column.setIndex(optionIndex);
     },
 
     // get options of column by index
@@ -129,18 +127,22 @@ VantComponent({
     setColumnValues(index: number, options: any[], needReset = true) {
       const column = this.children[index];
 
-      if (
-        column &&
-        JSON.stringify(column.data.options) !== JSON.stringify(options)
-      ) {
-        return column.set({ options }).then(() => {
-          if (needReset) {
-            column.setIndex(0);
-          }
-        });
+      if (column == null) {
+        return Promise.reject('setColumnValues: 对应列不存在');
       }
 
-      return Promise.reject('setColumnValues: 对应列不存在');
+      const isSame =
+        JSON.stringify(column.data.options) === JSON.stringify(options);
+
+      if (isSame) {
+        return Promise.resolve();
+      }
+
+      return column.set({ options }).then(() => {
+        if (needReset) {
+          column.setIndex(0);
+        }
+      });
     },
 
     // get values of all columns

@@ -3,9 +3,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-picker": "path/to/vant-weapp/dist/picker/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-picker": "path/to/vant-weapp/lib/picker/index"
 }
 ```
 
@@ -20,6 +29,8 @@
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
+// es5
+const Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Page({
   data: {
@@ -33,7 +44,53 @@ Page({
 });
 ```
 
+#### 默认选中项
+
+单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
+
+```html
+<van-picker
+  columns="{{ columns }}"
+  default-index="{{ 2 }}"
+  bind:change="onChange"
+/>
+```
+
+#### 展示顶部栏
+
+```html
+<van-picker
+  show-toolbar
+  title="标题"
+  columns="{{ columns }}"
+  bind:cancel="onCancel"
+  bind:confirm="onConfirm"
+/>
+```
+
+```javascript
+import Toast from 'path/to/vant-weapp/dist/toast/toast';
+// es5
+const Toast = require('path/to/vant-weapp/lib/toast/toast');
+
+Page({
+  data: {
+    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+  },
+
+  onConfirm(event) {
+    const { picker, value, index } = event.detail;
+    Toast(`当前值：${value}, 当前索引：${index}`);
+  },
+
+  onCancel() {
+    Toast('取消');
+  }
+});
+```
+
 #### 禁用选项
+
 选项可以为对象结构，通过设置 disabled 来禁用该选项
 
 ```html
@@ -52,37 +109,6 @@ Page({
 });
 ```
 
-#### 展示顶部栏
-
-```html
-<van-picker
-  show-toolbar
-  title="标题"
-  columns="{{ columns }}"
-  bind:cancel="onCancel"
-  bind:confirm="onConfirm"
-/>
-```
-
-```javascript
-import Toast from 'path/to/vant-weapp/dist/toast/toast';
-
-Page({
-  data: {
-    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
-  },
-
-  onConfirm(event) {
-    const { picker, value, index } = event.detail;
-    Toast(`当前值：${value}, 当前索引：${index}`);
-  },
-
-  onCancel() {
-    Toast('取消');
-  }
-});
-```
-
 #### 多列联动
 
 ```html
@@ -91,7 +117,7 @@ Page({
 
 ```javascript
 const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+  '浙江': ['杭州', { text: '宁波', disabled: true }, '温州', '嘉兴', '湖州'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州']
 };
 
@@ -112,7 +138,7 @@ Page({
 
   onChange(event) {
     const { picker, value, index } = event.detail;
-    picker.setColumnValues(1, citys[values[0]]);
+    picker.setColumnValues(1, citys[value[0]]);
   }
 });
 ```
@@ -126,17 +152,18 @@ Page({
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
-| title | 顶部栏标题 | `String` | `''` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|------|------|------|------|
+| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` |
+| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` |
+| title | 顶部栏标题 | `String` | `''` |
+| loading | 是否显示加载状态 | `Boolean` | `false` |
+| value-key | 选项对象中，文字对应的 key | `String` | `text` |
+| item-height | 选项高度 | `Number` | `44` |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` |
+| visible-item-count | 可见的选项个数 | `Number` | `5` |
+| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` |
 
 ### Event
 

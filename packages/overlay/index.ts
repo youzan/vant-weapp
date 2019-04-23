@@ -6,6 +6,10 @@ VantComponent({
     show: Boolean,
     mask: Boolean,
     customStyle: String,
+    duration: {
+      type: [Number, Object],
+      value: 300
+    },
     zIndex: {
       type: Number,
       value: 1

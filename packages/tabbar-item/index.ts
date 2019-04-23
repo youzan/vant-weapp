@@ -9,7 +9,10 @@ VantComponent({
 
   relation: {
     name: 'tabbar',
-    type: 'ancestor'
+    type: 'ancestor',
+    linked(target: Weapp.Component) {
+      this.parent = target;
+    }
   },
 
   data: {
@@ -18,17 +21,17 @@ VantComponent({
 
   methods: {
     onClick() {
-      const parent = this.getRelationNodes('../tabbar/index')[0];
-      if (parent) {
-        parent.onChange(this);
+      if (this.parent) {
+        this.parent.onChange(this);
       }
       this.$emit('click');
     },
 
-    setActive({ active, color }) {
+    setActive({ active, color }): Promise<void> {
       if (this.data.active !== active) {
-        this.set({ active, color });
+        return this.set({ active, color });
       }
+      return Promise.resolve();
     }
   }
 });

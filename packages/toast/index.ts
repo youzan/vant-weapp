@@ -25,12 +25,6 @@ VantComponent({
   },
 
   methods: {
-    clear() {
-      this.set({
-        show: false
-      });
-    },
-
     // for prevent touchmove
     noop() {}
   }

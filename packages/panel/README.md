@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-panel": "path/to/vant-weapp/dist/panel/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-panel": "path/to/vant-weapp/lib/panel/index"
 }
 ```
 
@@ -56,9 +65,3 @@
 | custom-class | 根节点样式类 |
 | header-class | 头部样式类 |
 | footer-class | 底部样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |

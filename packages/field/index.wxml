@@ -10,6 +10,7 @@
   custom-style="{{ customStyle }}"
   title-width="{{ titleWidth }}"
   custom-class="van-field"
+  size="{{ size }}"
 >
   <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
@@ -23,9 +24,6 @@
       disabled="{{ disabled || readonly }}"
       maxlength="{{ maxlength }}"
       auto-height="{{ autosize }}"
-      placeholder="{{ placeholder }}"
-      placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field__input--error' : 'van-field__placeholder' }}"
       cursor-spacing="{{ cursorSpacing }}"
       adjust-position="{{ adjustPosition }}"
       show-confirm-bar="{{ showConfirmBar }}"
@@ -33,7 +31,11 @@
       bind:blur="onBlur"
       bind:focus="onFocus"
       bind:confirm="onConfirm"
-    />
+    >
+      <view wx:if="{{ value == null || value.length === 0 }}" style="{{ placeholderStyle }}" class="{{ utils.bem('field__placeholder', { error }) }}">
+        {{ placeholder }}
+      </view>
+    </textarea>
     <input
       wx:else
       class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
@@ -44,7 +46,7 @@
       maxlength="{{ maxlength }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field__input--error' : 'van-field__placeholder' }}"
+      placeholder-class="{{ error ? 'van-field__placeholder--error' : 'van-field__placeholder' }}"
       confirm-type="{{ confirmType }}"
       confirm-hold="{{ confirmHold }}"
       cursor-spacing="{{ cursorSpacing }}"
@@ -58,24 +60,25 @@
       wx:if="{{ showClear }}"
       size="16px"
       name="clear"
-      class="van-field__clear-root"
-      custom-class="van-field__clear"
-      bind:touchstart="onClear"
+      class="van-field__clear-root van-field__icon-root"
+      bindtouchstart="onClear"
     />
-    <view class="van-field__icon-container" wx:if="{{ icon || useIconSlot }}" bind:tap="onClickIcon">
+    <view class="van-field__icon-container" bind:tap="onClickIcon">
       <van-icon
-        wx:if="{{ icon }}"
+        wx:if="{{ rightIcon || icon }}"
         size="16px"
-        name="{{ icon }}"
-        custom-class="van-field__icon {{ iconClass }}"
+        name="{{ rightIcon || icon }}"
+        class="van-field__icon-root {{ iconClass }}"
+        custom-class="right-icon-class"
       />
-      <slot wx:else name="icon" />
+      <slot name="right-icon" />
+      <slot name="icon" />
     </view>
-    <view wx:if="{{ useButtonSlot }}" class="van-field__button">
+    <view class="van-field__button">
       <slot name="button" />
     </view>
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message">
+  <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
     {{ errorMessage }}
   </view>
 </van-cell>

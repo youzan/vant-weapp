@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-nav-bar": "path/to/vant-weapp/dist/nav-bar/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-nav-bar": "path/to/vant-weapp/lib/nav-bar/index"
 }
 ```
 
@@ -56,6 +65,7 @@ Page({
 | fixed | 是否固定在顶部 | `Boolean` | `false` |
 | border | 是否显示下边框 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | `Boolean` | `true` |
 
 ### Slot
 
@@ -78,9 +88,3 @@ Page({
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | title-class | 标题样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |

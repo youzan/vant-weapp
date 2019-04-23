@@ -1,32 +1,24 @@
 import { VantComponent } from '../common/component';
+import { pickerProps } from '../picker/shared';
 
 type AreaItem = {
-  name: string
-  code: string
+  name: string;
+  code: string;
 };
 
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
 
   props: {
-    title: String,
+    ...pickerProps,
     value: String,
-    loading: Boolean,
-    itemHeight: {
-      type: Number,
-      value: 44
-    },
-    visibleItemCount: {
-      type: Number,
-      value: 5
+    areaList: {
+      type: Object,
+      value: {}
     },
     columnsNum: {
       type: [String, Number],
       value: 3
-    },
-    areaList: {
-      type: Object,
-      value: {}
     }
   },
 
@@ -75,11 +67,12 @@ VantComponent({
     onChange(event: Weapp.Event) {
       const { index, picker, value } = event.detail;
       this.code = value[index].code;
-      this.setValues();
-      this.$emit('change', {
-        picker,
-        values: picker.getValues(),
-        index
+      this.setValues().then(() => {
+        this.$emit('change', {
+          picker,
+          values: picker.getValues(),
+          index
+        });
       });
     },
 
@@ -145,18 +138,23 @@ VantComponent({
 
       const stack = [];
 
-      stack.push(picker.setColumnValues(0, province));
-      stack.push(picker.setColumnValues(1, city));
+      stack.push(picker.setColumnValues(0, province, false));
+      stack.push(picker.setColumnValues(1, city, false));
 
       if (city.length && code.slice(2, 4) === '00') {
-        ;[{ code }] = city;
+        [{ code }] = city;
       }
 
       stack.push(
-        picker.setColumnValues(2, this.getList('county', code.slice(0, 4)))
+        picker.setColumnValues(
+          2,
+          this.getList('county', code.slice(0, 4)),
+          false
+        )
       );
 
       return Promise.all(stack)
+        .catch(() => {})
         .then(() =>
           picker.setIndexes([
             this.getIndex('province', code),

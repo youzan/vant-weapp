@@ -1,16 +1,19 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<view class="van-collapse-item van-hairline--top custom-class">
+<view class="van-collapse-item custom-class {{ index !== 0 ? 'van-hairline--top' : '' }}">
   <van-cell
     title="{{ title }}"
+    title-class="title-class"
     icon="{{ icon }}"
-    is-link="{{ isLink }}"
     value="{{ value }}"
     label="{{ label }}"
+    is-link="{{ isLink }}"
+    clickable="{{ clickable }}"
     border="{{ border && expanded }}"
     class="{{ utils.bem('collapse-item__title', { disabled, expanded }) }}"
     right-icon-class="van-cell__right-icon"
     custom-class="van-cell"
+    hover-class="van-cell--hover"
     bind:click="onClick"
   >
     <slot
@@ -28,9 +31,8 @@
     />
   </van-cell>
   <view
-    class="van-collapse-item__wrapper"
+    class="{{ utils.bem('collapse-item__wrapper', { transition }) }}"
     style="height: {{ contentHeight }};"
-    animation="{{ animationData }}"
     bind:transitionend="onTransitionEnd"
   >
     <view

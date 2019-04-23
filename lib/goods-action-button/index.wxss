@@ -1,0 +1,1 @@
+@import '../common/index.wxss';:host{-webkit-flex:1;flex:1}

@@ -62,7 +62,7 @@ git clone https://github.com/youzan/vant-weapp.git
 
 接着就可以在 wxml 中直接使用组件
 
-```xml
+```html
 <van-button type="primary">按钮</van-button>
 ```
 
@@ -85,12 +85,12 @@ Vant Weapp 最低支持到小程序基础库 1.9.9 版本
 ## 迁移指南
 
 Vant Weapp 是基于有赞 Zanui 组件库进行的品牌升级，对于仍在使用 Zanui 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。
-  
+
 Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
 
 ## 链接
 
-* [更新日志](#/changelog)
+* [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
 * [意见反馈](https://github.com/youzan/vant-weapp/issues)
 * [加入我们](https://job.youzan.com)
 * [Vant: 移动端 Vue UI](https://github.com/youzan/vant)

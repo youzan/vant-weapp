@@ -1,73 +1,96 @@
-export var transition = function transition(showDefaultValue) {
-  return Behavior({
-    properties: {
-      customStyle: String,
-      show: {
-        type: Boolean,
-        value: showDefaultValue,
-        observer: 'observeShow'
-      },
-      duration: {
-        type: Number,
-        value: 300
-      }
-    },
-    data: {
-      type: '',
-      inited: false,
-      display: false,
-      supportAnimation: true
-    },
-    attached: function attached() {
-      if (this.data.show) {
-        this.show();
-      }
-
-      this.detectSupport();
-    },
-    methods: {
-      detectSupport: function detectSupport() {
-        var _this = this;
-
-        wx.getSystemInfo({
-          success: function success(info) {
-            if (info && info.system && info.system.indexOf('iOS 8') === 0) {
-              _this.set({
-                supportAnimation: false
-              });
+import { isObj } from '../common/utils';
+const getClassNames = (name) => ({
+    enter: `van-${name}-enter van-${name}-enter-active enter-class enter-active-class`,
+    'enter-to': `van-${name}-enter-to van-${name}-enter-active enter-to-class enter-active-class`,
+    leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
+    'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
+});
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
+export const transition = function (showDefaultValue) {
+    return Behavior({
+        properties: {
+            customStyle: String,
+            show: {
+                type: Boolean,
+                value: showDefaultValue,
+                observer: 'observeShow'
+            },
+            duration: {
+                type: [Number, Object],
+                value: 300,
+                observer: 'observeDuration'
+            },
+            name: {
+                type: String,
+                value: 'fade',
+                observer: 'updateClasses'
             }
-          }
-        });
-      },
-      observeShow: function observeShow(value) {
-        if (value) {
-          this.show();
-        } else {
-          if (this.data.supportAnimation) {
-            this.set({
-              type: 'leave'
-            });
-          } else {
-            this.set({
-              display: false
-            });
-          }
+        },
+        data: {
+            type: '',
+            inited: false,
+            display: false,
+            classNames: getClassNames('fade')
+        },
+        attached() {
+            if (this.data.show) {
+                this.show();
+            }
+        },
+        methods: {
+            observeShow(value) {
+                if (value) {
+                    this.show();
+                }
+                else {
+                    this.leave();
+                }
+            },
+            updateClasses(name) {
+                this.set({
+                    classNames: getClassNames(name)
+                });
+            },
+            show() {
+                const { classNames, duration } = this.data;
+                const currentDuration = isObj(duration) ? duration.leave : duration;
+                Promise.resolve()
+                    .then(nextTick)
+                    .then(() => this.set({
+                    inited: true,
+                    display: true,
+                    classes: classNames.enter,
+                    currentDuration
+                }))
+                    .then(nextTick)
+                    .then(() => this.set({
+                    classes: classNames['enter-to']
+                }));
+            },
+            leave() {
+                const { classNames, duration } = this.data;
+                const currentDuration = isObj(duration) ? duration.leave : duration;
+                if (+currentDuration === 0) {
+                    this.onTransitionEnd();
+                    return;
+                }
+                Promise.resolve()
+                    .then(nextTick)
+                    .then(() => this.set({
+                    classes: classNames.leave,
+                    currentDuration
+                }))
+                    .then(nextTick)
+                    .then(() => this.set({
+                    classes: classNames['leave-to']
+                }));
+            },
+            onTransitionEnd() {
+                if (!this.data.show) {
+                    this.set({ display: false });
+                    this.$emit('transitionEnd');
+                }
+            }
         }
-      },
-      show: function show() {
-        this.set({
-          inited: true,
-          display: true,
-          type: 'enter'
-        });
-      },
-      onAnimationEnd: function onAnimationEnd() {
-        if (!this.data.show) {
-          this.set({
-            display: false
-          });
-        }
-      }
-    }
-  });
+    });
 };

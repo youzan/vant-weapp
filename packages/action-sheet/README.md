@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-action-sheet": "path/to/vant-weapp/dist/action-sheet/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-action-sheet": "path/to/vant-weapp/lib/action-sheet/index"
 }
 ```
 
@@ -88,7 +97,7 @@ Page({
 | cancel-text | 取消按钮文字 | `String` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
-| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
 
 ### Event
 
@@ -110,14 +119,3 @@ Page({
 | disabled | 是否为禁用状态 |
 | className | 为对应列添加额外的 class 类名 |
 | openType | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.3.0 | breaking change | 由 Actionsheet 重命名为 ActionSheet |
-| 0.3.0 | feature | 支持微信开放能力 |
-| 0.3.0 | bugfix | 修复 subname 属性不生效的问题 |
-| 0.3.3 | feature | 新增 z-index 属性 |
-| 0.3.4 | bugfix | 修复边框缺失的问题 |

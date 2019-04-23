@@ -2,10 +2,20 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-checkbox": "path/to/vant-weapp/dist/checkbox/index",
   "van-checkbox-group": "path/to/vant-weapp/dist/checkbox-group/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-checkbox": "path/to/vant-weapp/lib/checkbox/index",
+  "van-checkbox-group": "path/to/vant-weapp/lib/checkbox-group/index"
 }
 ```
 
@@ -53,7 +63,7 @@
   <image
     slot="icon"
     src="{{ checked ? icon.active : icon.normal }}"
-  >
+  />
 </van-checkbox>
 ```
 
@@ -212,9 +222,3 @@ Page({
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
 | toggle | - | - | 切换选中状态 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.3.5 | feature | 新增组件 |

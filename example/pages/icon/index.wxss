@@ -1,3 +1,7 @@
+page {
+  padding-bottom: 0;
+}
+
 .col {
   text-align: center;
   height: 100px;
@@ -8,16 +12,18 @@
 
 .icon {
   display: block;
-  margin: 15px 0;
-  color: #455a64;
+  color: #323233;
+  margin: 20px 0 10px;
 }
 
 .text {
   font-size: 12px;
   padding: 0 5px;
   line-height: 14px;
+  color: #7d7e80;
 }
 
 .demo-tab-pane {
-  padding-top: 10px;
+  margin: 20px;
+  background-color: #fff;
 }

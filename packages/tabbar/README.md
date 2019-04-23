@@ -2,10 +2,20 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
-  "van-tabbar": "/packages/tabbar/index",
-  "van-tabbar-item": "/packages/tabbar-item/index"
+  "van-tabbar": "path/to/vant-weapp/dist/tabbar/index",
+  "van-tabbar-item": "path/to/vant-weapp/dist/tabbar-item/index"
+}
+```
+
+es6
+```json
+"usingComponents": {
+  "van-tabbar": "path/to/vant-weapp/lib/tabbar/index",
+  "van-tabbar-item": "path/to/vant-weapp/lib/tabbar-item/index"
 }
 ```
 
@@ -109,7 +119,7 @@ Page({
 | active-color | 选中标签的颜色 | `String` | `#1989fa` |
 | fixed | 是否固定在底部 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
-| safe-area-inset-bottom | 是否适配iPhoneX | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
 
 ### Tabbar Event
 
@@ -131,10 +141,3 @@ Page({
 |-----------|-----------|
 | icon | 未选中时的图标 |
 | icon-active | 选中时的图标 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.1.1 | feature | 新增组件 |
-| 0.2.1 | bugfix | 修复 z-index 不生效的问题 |

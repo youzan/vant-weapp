@@ -2,7 +2,7 @@ import { isObj } from '../common/utils';
 
 type ToastMessage = string | number;
 
-export type ToastOptions = {
+interface ToastOptions {
   show?: boolean;
   type?: string;
   mask?: boolean;
@@ -14,16 +14,7 @@ export type ToastOptions = {
   forbidClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;
-}
-
-export interface Toast {
-  (message: ToastOptions | ToastMessage, options?: ToastOptions): Weapp.Component;
-  loading?(options?: ToastOptions | ToastMessage): Weapp.Component;
-  success?(options?: ToastOptions | ToastMessage): Weapp.Component;
-  fail?(options?: ToastOptions | ToastMessage): Weapp.Component;
-  clear?(): void;
-  setDefaultOptions?(options: ToastOptions): void;
-  resetDefaultOptions?(): void;
+  onClose?: () => void;
 }
 
 const defaultOptions = {
@@ -51,10 +42,10 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Toast: Toast = (options = {}) => {
-  options = {
+function Toast(toastOptions: ToastOptions | ToastMessage): Weapp.Component {
+  const options = {
     ...currentOptions,
-    ...parseOptions(options)
+    ...parseOptions(toastOptions)
   } as ToastOptions;
 
   const context = options.context || getContext();
@@ -68,6 +59,14 @@ const Toast: Toast = (options = {}) => {
   delete options.context;
   delete options.selector;
 
+  toast.clear = () => {
+    toast.set({ show: false });
+
+    if (options.onClose) {
+      options.onClose();
+    }
+  };
+
   queue.push(toast);
   toast.set(options);
   clearTimeout(toast.timer);
@@ -80,15 +79,17 @@ const Toast: Toast = (options = {}) => {
   }
 
   return toast;
-};
+}
 
-const createMethod = type => options => Toast({
-  type, ...parseOptions(options)
-});
+const createMethod = type => (options: ToastOptions | ToastMessage) =>
+  Toast({
+    type,
+    ...parseOptions(options)
+  });
 
-['loading', 'success', 'fail'].forEach(method => {
-  Toast[method] = createMethod(method);
-});
+Toast.loading = createMethod('loading');
+Toast.success = createMethod('success');
+Toast.fail = createMethod('fail');
 
 Toast.clear = () => {
   queue.forEach(toast => {
@@ -97,7 +98,7 @@ Toast.clear = () => {
   queue = [];
 };
 
-Toast.setDefaultOptions = options => {
+Toast.setDefaultOptions = (options: ToastOptions) => {
   Object.assign(currentOptions, options);
 };
 

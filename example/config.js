@@ -1,6 +1,7 @@
 export default [
   {
     groupName: '基础组件',
+    icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
     list: [
       {
         path: '/button',
@@ -30,6 +31,7 @@ export default [
   },
   {
     groupName: '表单组件',
+    icon: 'https://img.yzcdn.cn/vant/form-0401.svg',
     list: [
       {
         path: '/checkbox',
@@ -79,6 +81,7 @@ export default [
   },
   {
     groupName: '反馈组件',
+    icon: 'passed',
     list: [
       {
         path: '/action-sheet',
@@ -108,6 +111,7 @@ export default [
   },
   {
     groupName: '展示组件',
+    icon: 'photo-o',
     list: [
       {
         path: '/collapse',
@@ -141,6 +145,7 @@ export default [
   },
   {
     groupName: '导航组件',
+    icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
     list: [
       {
         path: '/badge',
@@ -162,6 +167,7 @@ export default [
   },
   {
     groupName: '业务组件',
+    icon: 'ellipsis',
     list: [
       {
         path: '/area',

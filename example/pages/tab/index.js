@@ -20,6 +20,13 @@ Page({
     });
   },
 
+  onClickNavRight() {
+    wx.showToast({
+      title: '点击right nav',
+      icon: 'none'
+    });
+  },
+
   onClick(event) {
     wx.showToast({
       title: `点击标签 ${event.detail.index + 1}`,

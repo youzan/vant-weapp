@@ -20,7 +20,6 @@
     padding: 0 9px 0 15px;
     line-height: 44px;
 
-    &:active::after,
     &--active::after {
       position: absolute;
       top: 0;
@@ -39,10 +38,6 @@
     &--disabled {
       color: @gray-dark;
     }
-
-    &--disabled:active::after {
-      display: none;
-    }
   }
 
   &__content {
@@ -58,13 +53,11 @@
     font-weight: bold;
     line-height: 44px;
 
-    &:active,
     &--active {
       color: @red;
     }
 
-    &--disabled,
-    &--disabled:active {
+    &--disabled {
       color: @gray-dark;
     }
   }

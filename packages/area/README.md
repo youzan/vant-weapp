@@ -4,9 +4,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-area": "path/to/vant-weapp/dist/area/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-area": "path/to/vant-weapp/lib/area/index"
 }
 ```
 
@@ -47,6 +56,8 @@
 | loading | 是否显示加载状态 | `Boolean` | `false` |
 | item-height | 选项高度 | `Number` | `44` |
 | visible-item-count | 可见的选项个数 | `Number` | `5` |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` |
 
 ### Event
 

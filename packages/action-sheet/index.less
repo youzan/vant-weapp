@@ -12,7 +12,7 @@
     text-align: center;
     background-color: @white;
 
-    &:active {
+    &--hover {
       background-color: @active-color;
     }
   }
@@ -22,18 +22,18 @@
 
     &::before {
       display: block;
-      content: ' ';
       height: 10px;
       background-color: @background-color;
+      content: ' ';
     }
   }
 
   &__item--disabled {
     color: @gray;
+  }
 
-    &:active {
-      background-color: @white;
-    }
+  &__item--disabled&__item--hover {
+    background-color: @white;
   }
 
   &__subname {

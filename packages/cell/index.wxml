@@ -2,6 +2,8 @@
 
 <view
   class="custom-class {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}"
+  hover-class="van-cell--hover hover-class"
+  hover-stay-time="70"
   style="{{ customStyle }}"
   bind:tap="onClick"
 >
@@ -17,11 +19,13 @@
     style="{{ titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth : '' }}"
     class="van-cell__title title-class"
   >
-    <block wx:if="{{ title }}">
-      {{ title }}
-      <view wx:if="{{ label }}" class="van-cell__label label-class">{{ label }}</view>
-    </block>
+    <block wx:if="{{ title }}">{{ title }}</block>
     <slot wx:else name="title" />
+
+    <view wx:if="{{ label || useLabelSlot }}" class="van-cell__label label-class">
+      <slot wx:if="{{ useLabelSlot }}" name="label" />
+      <block wx:elif="{{ label }}">{{ label }}</block>
+    </view>
   </view>
 
   <view class="van-cell__value value-class">

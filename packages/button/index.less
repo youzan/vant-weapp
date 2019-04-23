@@ -2,35 +2,40 @@
 
 .van-button {
   position: relative;
-  padding: 0;
   display: inline-block;
   height: 44px;
-  line-height: 42px;
-  border-radius: 2px;
-  box-sizing: border-box;
+  padding: 0;
   font-size: 16px;
+  line-height: 42px;
   text-align: center;
   vertical-align: middle;
+  box-sizing: border-box;
+  border-radius: @button-border-radius;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
-  &::after {
-    content: " ";
+  &::before {
     position: absolute;
     top: 50%;
     left: 50%;
-    opacity: 0;
     width: 100%;
     height: 100%;
+    background-color: @black;
     border: inherit;
     border-color: @black;
-    background-color: @black;
     border-radius: inherit; /* inherit parent's border radius */
+    content: ' ';
+    opacity: 0;
     transform: translate(-50%, -50%);
   }
 
-  &:active::after {
-    opacity: .15;
+  // reset weapp default border
+  &::after {
+    border-width: 0;
+  }
+
+  &--active::before {
+    opacity: 0.15;
   }
 
   &--unclickable::after {
@@ -47,6 +52,12 @@
     color: @button-primary-color;
     background-color: @button-primary-background-color;
     border: 1px solid @button-primary-border-color;
+  }
+
+  &--info {
+    color: @button-info-color;
+    background-color: @button-info-background-color;
+    border: 1px solid @button-info-border-color;
   }
 
   &--danger {
@@ -66,6 +77,10 @@
 
     &.van-button--primary {
       color: @button-primary-background-color;
+    }
+
+    &.van-button--info {
+      color: @button-info-background-color;
     }
 
     &.van-button--danger {
@@ -90,8 +105,8 @@
 
   &--small {
     height: 30px;
-    padding: 0 8px;
     min-width: 60px;
+    padding: 0 8px;
     font-size: 12px;
     line-height: 28px;
   }
@@ -101,8 +116,8 @@
     display: inline-block;
     width: 50px;
     height: 22px;
-    line-height: 20px;
     font-size: 10px;
+    line-height: 20px;
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -110,12 +125,12 @@
   }
 
   &--block {
-    width: 100%;
     display: block;
+    width: 100%;
   }
 
   &--round {
-    border-radius: 10em;
+    border-radius: @button-round-border-radius;
   }
 
   &--square {
@@ -123,6 +138,31 @@
   }
 
   &--disabled {
-    opacity: .5;
+    opacity: 0.5;
+  }
+
+  &__loading-text {
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--hairline {
+    border-width: 0;
+    padding-top: 1px; // add 1px padding for text vertical align middle
+
+    &::after {
+      border-width: 1px;
+      border-color: inherit;
+      border-radius: @button-border-radius * 2;
+    }
+
+    &.van-button--round::after {
+      border-radius: @button-round-border-radius;
+    }
+
+    &.van-button--square::after {
+      border-radius: 0;
+    }
   }
 }

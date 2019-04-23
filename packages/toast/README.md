@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-toast": "path/to/vant-weapp/dist/toast/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-toast": "path/to/vant-weapp/lib/toast/index"
 }
 ```
 
@@ -15,6 +24,8 @@
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
+// es5
+// vat Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Toast('我是提示文案，建议不超过十五字~');
 ```
@@ -94,12 +105,10 @@ const timer = setInterval(() => {
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
 | selector | 自定义选择器 | `String` | `van-toast` |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
+| onClose | 关闭时的回调函数 | `Function` | - |
 
-### 更新日志
+### Slot
 
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.1.1 | feature | 新增组件 |
-| 0.3.0 | breaking change | 修改组件引入路径，避免编辑器报错的问题 |
-| 0.3.2 | feature | 新增 z-index 属性 |
-| 0.3.3 | bugfix | 修复滚动穿透问题 |
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 自定义内容 |

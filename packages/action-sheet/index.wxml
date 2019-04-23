@@ -1,3 +1,5 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <van-popup
   show="{{ show }}"
   position="bottom"
@@ -22,7 +24,8 @@
       wx:for="{{ actions }}"
       wx:key="index"
       open-type="{{ item.openType }}"
-      class="van-action-sheet__item van-hairline--top {{ item.disabled || item.loading ? 'van-action-sheet__item--disabled' : '' }} {{ item.className || '' }}"
+      class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} van-hairline--top {{ item.className || '' }}"
+      hover-class="van-action-sheet__item--hover"
       data-index="{{ index }}"
       bind:tap="onSelect"
     >
@@ -33,12 +36,14 @@
       <van-loading wx:else size="20px" />
     </button>
   </view>
+  <slot />
   <view
     wx:if="{{ cancelText }}"
     class="van-action-sheet__cancel"
+    hover-class="van-action-sheet__cancel--hover"
+    hover-stay-time="70"
     bind:tap="onCancel"
   >
     {{ cancelText }}
   </view>
-  <slot />
 </van-popup>

@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-rate": "path/to/vant-weapp/dist/rate/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-rate": "path/to/vant-weapp/lib/rate/index"
 }
 ```
 
@@ -92,10 +101,3 @@ Page({
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | icon-class | 图标样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.4.7 | feature | 新增组件 |
-| 0.4.9 | feature | 增加 icon-class 外部样式类 |

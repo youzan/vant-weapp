@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-switch": "path/to/vant-weapp/dist/switch/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-switch": "path/to/vant-weapp/lib/switch/index"
 }
 ```
 
@@ -92,12 +101,14 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | name | 在表单内提交时的标识符 | `String` | - |
-| checked | 开关选中状态 | `Boolean` | `false` |
+| checked | 开关选中状态 | `any` | `false` |
 | loading | 是否为加载状态 | `Boolean` | `false` |
 | disabled | 是否为禁用状态 | `Boolean` | `false` |
 | size | 开关尺寸 | `String` | `30px` |
 | active-color | 打开时的背景色 | `String` | `#1989fa` |
 | inactive-color | 关闭时的背景色 | `String` | `#fff` |
+| active-value | 打开时的值 | `any` | `true` |
+| inactive-value | 关闭时的值 | `any` | `false` |
 
 ### Event
 
@@ -111,11 +122,3 @@ Page({
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | node-class | 圆点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | bugfix | 修复组件无法开关的问题 |
-| 0.2.1 | feature | 支持在原生 form 组件内使用 |

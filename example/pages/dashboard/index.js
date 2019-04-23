@@ -3,6 +3,13 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    list
+    list,
+    activeName: []
+  },
+
+  onChangeCollapse(event) {
+    this.setData({
+      activeNames: event.detail
+    });
   }
 });

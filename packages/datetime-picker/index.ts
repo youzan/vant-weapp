@@ -1,13 +1,14 @@
 import { VantComponent } from '../common/component';
 import { isDef } from '../common/utils';
+import { pickerProps } from '../picker/shared';
 
 const currentYear = new Date().getFullYear();
 
-function isValidDate(date) {
+function isValidDate(date: number) {
   return isDef(date) && !isNaN(new Date(date).getTime());
 }
 
-function range(num, min, max) {
+function range(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
 }
 
@@ -15,7 +16,7 @@ function padZero(val: string | number): string {
   return `00${val}`.slice(-2);
 }
 
-function times(n: number, iteratee: (number) => string): string[] {
+function times(n: number, iteratee: (index: number) => string): string[] {
   let index = -1;
   const result = Array(n);
 
@@ -39,25 +40,8 @@ function getMonthEndDay(year: number, month: number): number {
 
 VantComponent({
   props: {
+    ...pickerProps,
     value: null,
-    title: String,
-    loading: Boolean,
-    itemHeight: {
-      type: Number,
-      value: 44
-    },
-    visibleItemCount: {
-      type: Number,
-      value: 5
-    },
-    confirmButtonText: {
-      type: String,
-      value: '确认'
-    },
-    cancelButtonText: {
-      type: String,
-      value: '取消'
-    },
     type: {
       type: String,
       value: 'datetime'
@@ -98,7 +82,7 @@ VantComponent({
   },
 
   watch: {
-    value(val) {
+    value(val: any) {
       const { data } = this;
       val = this.correctValue(val);
       const isEqual = val === data.innerValue;

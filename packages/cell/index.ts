@@ -6,7 +6,8 @@ VantComponent({
     'title-class',
     'label-class',
     'value-class',
-    'right-icon-class'
+    'right-icon-class',
+    'hover-class'
   ],
 
   mixins: [link],
@@ -24,6 +25,7 @@ VantComponent({
     titleWidth: String,
     customStyle: String,
     arrowDirection: String,
+    useLabelSlot: Boolean,
     border: {
       type: Boolean,
       value: true

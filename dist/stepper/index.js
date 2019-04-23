@@ -1,98 +1,96 @@
-import { VantComponent } from '../common/component'; // Note that the bitwise operators and shift operators operate on 32-bit ints
-// so in that case, the max safe integer is 2^31-1, or 2147483647
-
-var MAX = 2147483647;
+import { VantComponent } from '../common/component';
 VantComponent({
-  field: true,
-  classes: ['input-class', 'plus-class', 'minus-class'],
-  props: {
-    value: null,
-    integer: Boolean,
-    disabled: Boolean,
-    asyncChange: Boolean,
-    disableInput: Boolean,
-    min: {
-      type: null,
-      value: 1
+    field: true,
+    classes: [
+        'input-class',
+        'plus-class',
+        'minus-class'
+    ],
+    props: {
+        value: null,
+        integer: Boolean,
+        disabled: Boolean,
+        inputWidth: String,
+        asyncChange: Boolean,
+        disableInput: Boolean,
+        min: {
+            type: null,
+            value: 1
+        },
+        max: {
+            type: null,
+            value: Number.MAX_SAFE_INTEGER
+        },
+        step: {
+            type: null,
+            value: 1
+        }
     },
-    max: {
-      type: null,
-      value: MAX
+    computed: {
+        minusDisabled() {
+            return this.data.disabled || this.data.value <= this.data.min;
+        },
+        plusDisabled() {
+            return this.data.disabled || this.data.value >= this.data.max;
+        }
     },
-    step: {
-      type: null,
-      value: 1
-    }
-  },
-  computed: {
-    minusDisabled: function minusDisabled() {
-      return this.data.disabled || this.data.value <= this.data.min;
+    watch: {
+        value(value) {
+            if (value === '') {
+                return;
+            }
+            const newValue = this.range(value);
+            if (typeof newValue === 'number' && value !== newValue) {
+                this.set({ value: newValue });
+            }
+        }
     },
-    plusDisabled: function plusDisabled() {
-      return this.data.disabled || this.data.value >= this.data.max;
-    }
-  },
-  watch: {
-    value: function value(_value) {
-      if (_value !== '') {
+    data: {
+        focus: false
+    },
+    created() {
         this.set({
-          value: this.range(_value)
+            value: this.range(this.data.value)
         });
-      }
+    },
+    methods: {
+        onFocus(event) {
+            this.$emit('focus', event.detail);
+        },
+        onBlur(event) {
+            const value = this.range(this.data.value);
+            this.triggerInput(value);
+            this.$emit('blur', event.detail);
+        },
+        // limit value range
+        range(value) {
+            return Math.max(Math.min(this.data.max, value), this.data.min);
+        },
+        onInput(event) {
+            const { value = '' } = event.detail || {};
+            this.triggerInput(value);
+        },
+        onChange(type) {
+            if (this.data[`${type}Disabled`]) {
+                this.$emit('overlimit', type);
+                return;
+            }
+            const diff = type === 'minus' ? -this.data.step : +this.data.step;
+            const value = Math.round((this.data.value + diff) * 100) / 100;
+            this.triggerInput(this.range(value));
+            this.$emit(type);
+        },
+        onMinus() {
+            this.onChange('minus');
+        },
+        onPlus() {
+            this.onChange('plus');
+        },
+        triggerInput(value) {
+            this.set({
+                value: this.data.asyncChange ? this.data.value : value
+            });
+            this.$emit('change', value);
+        }
     }
-  },
-  data: {
-    focus: false
-  },
-  created: function created() {
-    this.set({
-      value: this.range(this.data.value)
-    });
-  },
-  methods: {
-    onFocus: function onFocus() {
-      this.setData({
-        focus: true
-      });
-    },
-    // limit value range
-    range: function range(value) {
-      return Math.max(Math.min(this.data.max, value), this.data.min);
-    },
-    onInput: function onInput(event) {
-      var _ref = event.detail || {},
-          _ref$value = _ref.value,
-          value = _ref$value === void 0 ? '' : _ref$value;
-
-      this.triggerInput(value);
-    },
-    onChange: function onChange(type) {
-      if (this.data[type + "Disabled"]) {
-        this.$emit('overlimit', type);
-        return;
-      }
-
-      var diff = type === 'minus' ? -this.data.step : +this.data.step;
-      var value = Math.round((this.data.value + diff) * 100) / 100;
-      this.triggerInput(this.range(value));
-      this.$emit(type);
-    },
-    onBlur: function onBlur(event) {
-      var value = this.range(this.data.value);
-      this.triggerInput(value);
-      this.$emit('blur', event);
-    },
-    onMinus: function onMinus() {
-      this.onChange('minus');
-    },
-    onPlus: function onPlus() {
-      this.onChange('plus');
-    },
-    triggerInput: function triggerInput(value) {
-      this.set({
-        value: this.data.asyncChange ? this.data.value : value
-      });
-      this.$emit('change', value);
-    }
-  }
 });

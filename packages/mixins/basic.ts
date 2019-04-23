@@ -4,7 +4,7 @@ export const basic = Behavior({
       this.triggerEvent.apply(this, arguments);
     },
 
-    getRect(selector, all) {
+    getRect(selector: string, all: boolean) {
       return new Promise(resolve => {
         wx.createSelectorQuery()
           .in(this)[all ? 'selectAll' : 'select'](selector)

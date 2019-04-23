@@ -1,0 +1,33 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="van-submit-bar custom-class">
+  <slot name="top" />
+
+  <view wx:if="{{ tip }}" class="van-submit-bar__tip">
+    {{ tipStr }}<slot name="tip" />
+  </view>
+
+  <view class="bar-class {{ utils.bem('submit-bar__bar', { safe: safeAreaInsetBottom && isIPhoneX }) }}">
+    <slot />
+    <view class="van-submit-bar__text">
+      <block wx:if="{{ hasPrice }}">
+        <text>{{ label || '合计：' }}</text>
+        <text class="van-submit-bar__price price-class">
+          <text class="van-submit-bar__currency">{{ currency }}</text> {{ priceStr }}
+        </text>
+      </block>
+    </view>
+    <van-button
+      square
+      size="large"
+      type="{{ buttonType }}"
+      loading="{{ loading }}"
+      disabled="{{ disabled }}"
+      class="van-submit-bar__button"
+      custom-class="button-class"
+      bind:click="onSubmit"
+    >
+      {{ loading ? '' : buttonText }}
+    </van-button>
+  </view>
+</view>

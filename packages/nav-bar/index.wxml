@@ -1,6 +1,8 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
-  class="custom-class van-nav-bar {{ border ? 'van-hairline--bottom' : '' }} {{ fixed ? 'van-nav-bar--fixed' : '' }}"
-  style="z-index: {{ zIndex }}"
+  class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'van-hairline--bottom' : '' }}"
+  style="z-index: {{ zIndex }}; {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }}"
 >
   <view class="van-nav-bar__left" bind:tap="onClickLeft">
     <block wx:if="{{ leftArrow || leftText }}">
@@ -10,7 +12,12 @@
         name="arrow-left"
         custom-class="van-nav-bar__arrow"
       />
-      <view wx:if="{{ leftText }}" class="van-nav-bar__text">{{ leftText }}</view>
+      <view
+        wx:if="{{ leftText }}"
+        class="van-nav-bar__text"
+        hover-class="van-nav-bar__text--hover"
+        hover-stay-time="70"
+      >{{ leftText }}</view>
     </block>
     <slot wx:else name="left" />
   </view>
@@ -19,7 +26,12 @@
     <slot wx:else name="title" />
   </view>
   <view class="van-nav-bar__right" bind:tap="onClickRight">
-    <view wx:if="{{ rightText }}" class="van-nav-bar__text">{{ rightText }}</view>
+    <view
+      wx:if="{{ rightText }}"
+      class="van-nav-bar__text"
+      hover-class="van-nav-bar__text--hover"
+      hover-stay-time="70"
+    >{{ rightText }}</view>
     <slot wx:else name="right" />
   </view>
 </view>

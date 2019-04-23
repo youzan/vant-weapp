@@ -2,6 +2,7 @@ let queue = [];
 
 type DialogAction = 'confirm' | 'cancel';
 type DialogOptions = {
+  lang?: string;
   show?: boolean;
   title?: string;
   zIndex?: number;
@@ -9,9 +10,17 @@ type DialogOptions = {
   message?: string;
   overlay?: boolean;
   selector?: string;
+  ariaLabel?: string;
   transition?: string;
   asyncClose?: boolean;
+  businessId?: number;
+  sessionFrom?: string;
+  appParameter?: string;
   messageAlign?: string;
+  sendMessageImg?: string;
+  showMessageCard?: boolean;
+  sendMessagePath?: string;
+  sendMessageTitle?: string;
   confirmButtonText?: string;
   cancelButtonText?: string;
   showConfirmButton?: boolean;

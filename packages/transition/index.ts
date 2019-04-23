@@ -2,12 +2,14 @@ import { VantComponent } from '../common/component';
 import { transition } from '../mixins/transition';
 
 VantComponent({
-  mixins: [transition(true)],
+  classes: [
+    'enter-class',
+    'enter-active-class',
+    'enter-to-class',
+    'leave-class',
+    'leave-active-class',
+    'leave-to-class'
+  ],
 
-  props: {
-    name: {
-      type: String,
-      value: 'fade'
-    }
-  }
+  mixins: [transition(true)]
 });

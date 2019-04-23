@@ -2,9 +2,18 @@
 
 ### 使用指南
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-field": "path/to/vant-weapp/dist/field/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-field": "path/to/vant-weapp/lib/field/index"
 }
 ```
 
@@ -135,9 +144,10 @@ Page({
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|-------------|
+|-----------|-----------|-----------|-------------|
 | name | 在表单内提交时的标识符 | `String` | - |
 | label | 输入框左侧文本 | `String` | - |
+| size | 单元格大小，可选值为 `large` | `String` | - |
 | value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | `String` | `text` |
 | fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | `Boolean` | `false` |
@@ -154,16 +164,15 @@ Page({
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
+| error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | `String` | `''` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 | autosize | 自适应内容高度，只对 textarea 有效 | `Boolean` | `false` |
-| icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
+| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | `String` | `done` |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | `Boolean` | `false` |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | `Number` | `50` |
 | adjust-position | 键盘弹起时，是否自动上推页面 | `Boolean` | `true` |
-| use-icon-slot | 是否使用 icon slot  | `Boolean` | `false` |
-| use-button-slot | 是否使用 button slot  | `Boolean` | `false` |
 | show-confirm-bar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | `Boolean` | `true` |
 
 ### Event
@@ -183,29 +192,13 @@ Page({
 | 名称 | 说明 |
 |-----------|-----------|
 | label | 自定义输入框标签，如果设置了`label`属性则不生效 |
-| left-icon | 自定义输入框头部图标，如果设置了`left-icon`属性则不生效 |
-| icon | 自定义输入框尾部图标，需要设置`use-icon-slot`属性，如果设置了`icon`属性则不生效 |
-| button | 自定义输入框尾部按钮，需要设置`use-button-slot`属性 |
+| left-icon | 自定义输入框头部图标 |
+| right-icon | 自定义输入框尾部图标 |
+| button | 自定义输入框尾部按钮 |
 
 ### 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
 | input-class | 输入框样式类 |
-| icon-class | 右侧图标样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | bugfix | 修复在 form 组件内无法获取值的问题 |
-| 0.1.1 | bugfix | 修复 icon 插槽无法使用的问题 |
-| 0.2.0 | feature | 新增 name 属性 |
-| 0.2.1 | feature | 新增 title-width 属性 |
-| 0.3.0 | bugfix | 修复 title 宽度错误的问题 |
-| 0.3.2 | bugfix | 修复展示清除按钮时导致输入框高度变化的问题 |
-| 0.3.3 | bugfix | 修复边框长度溢出的问题 |
-| 0.3.3 | bugfix | 修复 input-align 属性不生效的问题 |
-| 0.3.6 | bugfix | 修复 readonly 属性不生效的问题 |
-| 0.3.6 | feature | 新增 placeholder-style 属性 |
+| right-icon-class | 右侧图标样式类 |

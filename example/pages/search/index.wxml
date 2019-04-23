@@ -19,13 +19,15 @@
   />
 </demo-block>
 
-<demo-block title="自定义行动按钮">
+<demo-block title="高级用法">
   <van-search
     value="{{ value }}"
     placeholder="请输入搜索关键词"
     use-action-slot
     bind:change="onChange"
     bind:search="onSearch"
+    label="地址"
+    shape="round"
   >
     <view slot="action" bind:tap="onSearch">搜索</view>
   </van-search>

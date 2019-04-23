@@ -20,7 +20,7 @@ yarn add vant-weapp --production
 
 #### 方式二. 下载代码
 
-直接通过 git 下载 Vant Weapp 源代码，并将`dist`目录拷贝到自己的项目中
+直接通过 git 下载 Vant Weapp 源代码，并将`dist`或`lib`目录拷贝到自己的项目中
 ```bash
 git clone https://github.com/youzan/vant-weapp.git
 ```
@@ -29,11 +29,19 @@ git clone https://github.com/youzan/vant-weapp.git
 
 以按钮组件为例，只需要在 json 文件中引入按钮对应的自定义组件即可
 
+某些小程序框架会要求关闭`ES6转ES5`选项，可以引入`lib`目录内es5版本的组件
+
+es6
 ```json
-{
-  "usingComponents": {
-    "van-button": "/path/to/vant-weapp/dist/button/index"
-  }
+"usingComponents": {
+  "van-button": "/path/to/vant-weapp/dist/button/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-button": "/path/to/vant-weapp/lib/button/index"
 }
 ```
 
@@ -43,7 +51,7 @@ git clone https://github.com/youzan/vant-weapp.git
 <van-button type="primary">按钮</van-button>
 ```
 
-### 在开发者工具中预览
+### 在开发者工具中预览示例小程序
 
 ```bash
 # 安装项目依赖
@@ -53,4 +61,4 @@ npm install
 npm run dev
 ```
 
-打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
+打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，导入`example`目录的项目就可以预览示例了。

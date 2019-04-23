@@ -1,9 +1,5 @@
 import { VantComponent } from '../common/component';
 
-// Note that the bitwise operators and shift operators operate on 32-bit ints
-// so in that case, the max safe integer is 2^31-1, or 2147483647
-const MAX = 2147483647;
-
 VantComponent({
   field: true,
 
@@ -17,6 +13,7 @@ VantComponent({
     value: null,
     integer: Boolean,
     disabled: Boolean,
+    inputWidth: String,
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
@@ -25,7 +22,7 @@ VantComponent({
     },
     max: {
       type: null,
-      value: MAX
+      value: Number.MAX_SAFE_INTEGER
     },
     step: {
       type: null,
@@ -45,10 +42,14 @@ VantComponent({
 
   watch: {
     value(value) {
-      if (value !== '') {
-        this.set({
-          value: this.range(value)
-        });
+      if (value === '') {
+        return;
+      }
+
+      const newValue = this.range(value);
+
+      if (typeof newValue === 'number' && value !== newValue) {
+        this.set({ value: newValue });
       }
     }
   },
@@ -64,10 +65,14 @@ VantComponent({
   },
 
   methods: {
-    onFocus() {
-      this.setData({
-        focus: true
-      });
+    onFocus(event: Weapp.Event) {
+      this.$emit('focus', event.detail);
+    },
+
+    onBlur(event: Weapp.Event) {
+      const value = this.range(this.data.value);
+      this.triggerInput(value);
+      this.$emit('blur', event.detail);
     },
 
     // limit value range
@@ -90,12 +95,6 @@ VantComponent({
       const value = Math.round((this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.$emit(type);
-    },
-
-    onBlur(event: Weapp.Event) {
-      const value = this.range(this.data.value);
-      this.triggerInput(value);
-      this.$emit('blur', event);
     },
 
     onMinus() {

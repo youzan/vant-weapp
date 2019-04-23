@@ -1,79 +1,60 @@
 import { VantComponent } from '../common/component';
-import { iphonex } from '../mixins/iphonex';
+import { safeArea } from '../mixins/safe-area';
 VantComponent({
-  mixins: [iphonex],
-  relation: {
-    name: 'tabbar-item',
-    type: 'descendant',
-    linked: function linked(target) {
-      var _this = this;
-
-      this.data.items.push(target);
-      setTimeout(function () {
-        _this.setActiveItem();
-      });
+    mixins: [safeArea()],
+    relation: {
+        name: 'tabbar-item',
+        type: 'descendant',
+        linked(target) {
+            this.children = this.children || [];
+            this.children.push(target);
+            this.setActiveItem();
+        },
+        unlinked(target) {
+            this.children = this.children || [];
+            this.children = this.children.filter(item => item !== target);
+            this.setActiveItem();
+        }
     },
-    unlinked: function unlinked(target) {
-      var _this2 = this;
-
-      this.data.items = this.data.items.filter(function (item) {
-        return item !== target;
-      });
-      setTimeout(function () {
-        _this2.setActiveItem();
-      });
-    }
-  },
-  props: {
-    active: Number,
-    activeColor: String,
-    fixed: {
-      type: Boolean,
-      value: true
+    props: {
+        active: Number,
+        activeColor: String,
+        fixed: {
+            type: Boolean,
+            value: true
+        },
+        zIndex: {
+            type: Number,
+            value: 1
+        }
     },
-    zIndex: {
-      type: Number,
-      value: 1
-    }
-  },
-  data: {
-    items: [],
-    currentActive: -1
-  },
-  watch: {
-    active: function active(_active) {
-      this.set({
-        currentActive: _active
-      });
-      this.setActiveItem();
-    }
-  },
-  created: function created() {
-    this.set({
-      currentActive: this.data.active
-    });
-  },
-  methods: {
-    setActiveItem: function setActiveItem() {
-      var _this3 = this;
-
-      this.data.items.forEach(function (item, index) {
-        item.setActive({
-          active: index === _this3.data.currentActive,
-          color: _this3.data.activeColor
-        });
-      });
+    watch: {
+        active(active) {
+            this.currentActive = active;
+            this.setActiveItem();
+        }
     },
-    onChange: function onChange(child) {
-      var active = this.data.items.indexOf(child);
-
-      if (active !== this.data.currentActive && active !== -1) {
-        this.$emit('change', active);
-        this.set({
-          currentActive: active
-        });
-        this.setActiveItem();
-      }
+    created() {
+        this.currentActive = this.data.active;
+    },
+    methods: {
+        setActiveItem() {
+            if (!Array.isArray(this.children) || !this.children.length) {
+                return Promise.resolve();
+            }
+            return Promise.all(this.children.map((item, index) => item.setActive({
+                active: index === this.currentActive,
+                color: this.data.activeColor
+            })));
+        },
+        onChange(child) {
+            const active = (this.children || []).indexOf(child);
+            if (active !== this.currentActive && active !== -1) {
+                this.currentActive = active;
+                this.setActiveItem().then(() => {
+                    this.$emit('change', active);
+                });
+            }
+        }
     }
-  }
 });

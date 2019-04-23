@@ -3,9 +3,18 @@
 ### 使用指南
 
 在 app.json 或 index.json 中引入组件
+
+es6
 ```json
 "usingComponents": {
   "van-icon": "path/to/vant-weapp/dist/icon/index"
+}
+```
+
+es5
+```json
+"usingComponents": {
+  "van-icon": "path/to/vant-weapp/lib/icon/index"
 }
 ```
 
@@ -49,11 +58,3 @@
 | 类名 | 说明 |
 |-----------|-----------|
 | custom-class | 根节点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.2.1 | feature | 新增 class-prefix 属性 |
-| 0.3.6 | feature | 新增 custom-style 属性 |

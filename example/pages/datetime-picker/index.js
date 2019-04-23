@@ -11,7 +11,15 @@ Page({
     currentDate2: null,
     currentDate3: new Date(2018, 0, 1),
     currentDate4: '12:00',
-    loading: false
+    loading: false,
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      } else if (type === 'month') {
+        return `${value}月`;
+      }
+      return value;
+    }
   },
 
   onInput(event) {

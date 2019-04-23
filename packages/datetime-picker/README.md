@@ -54,14 +54,15 @@ Page({
 
 #### 选择日期（年月日）
 
-`value` 为时间戳
+`value` 为时间戳，通过传入 `formatter` 函数对选项文字进行处理
 
 ```html
 <van-datetime-picker
   type="date"
   value="{{ currentDate }}"
-  min-date="{{ minDate }}"
   bind:input="onInput"
+  min-date="{{ minDate }}"
+  formatter="{{ formatter }}"
 />
 ```
 
@@ -69,7 +70,15 @@ Page({
 Page({
   data: {
     currentDate: new Date().getTime(),
-    minDate: new Date().getTime()
+    minDate: new Date().getTime(),
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      } else if (type === 'month') {
+        return `${value}月`;
+      }
+      return value;
+    }
   },
 
   onInput(event) {
@@ -150,6 +159,7 @@ Page({
 | max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` |
 | min-minute | 可选的最小分钟，针对 time 类型 | `Number` | `0` |
 | max-minute | 可选的最大分钟，针对 time 类型 | `Number` | `59` |
+| formatter | 选项格式化函数 | `(type, value) => value` | - |
 | title | 顶部栏标题 | `String` | `''` |
 | show-toolbar | 是否显示顶部栏 | `Boolean` | `false` |
 | loading | 是否显示加载状态 | `Boolean` | `false` |
@@ -179,3 +189,11 @@ Page({
 | setColumnValues(index, values) | 设置对应列中所有的备选值 |
 | getValues() | 获取所有列中被选中的值，返回一个数组 |
 | setValues(values) | `values`为一个数组，设置所有列中被选中的值 |
+
+### 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| active-class | 选中项样式类 |
+| toolbar-class | 顶部栏样式类 |
+| column-class | 列样式类 |

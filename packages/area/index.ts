@@ -42,6 +42,10 @@ VantComponent({
     }
   },
 
+  mounted() {
+    this.setValues();
+  },
+
   methods: {
     getPicker() {
       if (this.picker == null) {

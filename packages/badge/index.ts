@@ -3,7 +3,10 @@ import { VantComponent } from '../common/component';
 VantComponent({
   relation: {
     type: 'ancestor',
-    name: 'badge-group'
+    name: 'badge-group',
+    linked(target: Weapp.Component) {
+      this.parent = target;
+    }
   },
 
   props: {
@@ -13,14 +16,22 @@ VantComponent({
 
   methods: {
     onClick() {
-      const group = this.getRelationNodes('../badge-group/index')[0];
-      if (group) {
-        group.setActive(this);
+      const { parent } = this;
+
+      if (!parent) {
+        return;
       }
+
+      const index = parent.badges.indexOf(this);
+
+      parent.setActive(index).then(() => {
+        this.$emit('click', index);
+        parent.$emit('change', index);
+      });
     },
 
     setActive(active: boolean) {
-      this.set({ active });
+      return this.set({ active });
     }
   }
 });

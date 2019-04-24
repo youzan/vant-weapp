@@ -726,10 +726,10 @@
     nprogress "^0.2.0"
     shelljs "^0.8.2"
 
-"@vant/icons@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.4.tgz#9bb662520d426e5f6a5058b854745b9d3e0bc4d0"
-  integrity sha512-SwSUcMZCNmDkJQ+i9Z/IIhO1OOJIiswT31OnCnzTn6vNuuP6onTrQSRxf5EnhkruFRQicIXJ1keiwuJqk1qvCg==
+"@vant/icons@1.1.6":
+  version "1.1.6"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.1.6.tgz#6714656ca69d303936020a6b483e1ebaf5f0b1e8"
+  integrity sha512-gpdk+rPsbwjI23QmEnNumYVxwNgvgKKh1dBmkkcXPTlRDtsfrCE02FQn3CVijOdwTovUo4zGUCDKKMLyxl+hPA==
 
 "@vue/component-compiler-utils@^2.5.1":
   version "2.6.0"

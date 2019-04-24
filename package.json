@@ -27,7 +27,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@vant/doc": "^1.0.24",
-    "@vant/icons": "1.1.4",
+    "@vant/icons": "1.1.6",
     "autoprefixer": "^9.4.4",
     "babel-loader": "8.0.5",
     "cross-env": "^5.1.4",

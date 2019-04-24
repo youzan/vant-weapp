@@ -1,5 +1,5 @@
 declare type ToastMessage = string | number;
-export declare type ToastOptions = {
+interface ToastOptions {
     show?: boolean;
     type?: string;
     mask?: boolean;
@@ -11,15 +11,15 @@ export declare type ToastOptions = {
     forbidClick?: boolean;
     loadingType?: string;
     message?: ToastMessage;
-};
-export interface Toast {
-    (message: ToastOptions | ToastMessage, options?: ToastOptions): Weapp.Component;
-    loading?(options?: ToastOptions | ToastMessage): Weapp.Component;
-    success?(options?: ToastOptions | ToastMessage): Weapp.Component;
-    fail?(options?: ToastOptions | ToastMessage): Weapp.Component;
-    clear?(): void;
-    setDefaultOptions?(options: ToastOptions): void;
-    resetDefaultOptions?(): void;
+    onClose?: () => void;
 }
-declare const Toast: Toast;
+declare function Toast(toastOptions: ToastOptions | ToastMessage): Weapp.Component;
+declare namespace Toast {
+    var loading: (options: string | number | ToastOptions) => Weapp.Component;
+    var success: (options: string | number | ToastOptions) => Weapp.Component;
+    var fail: (options: string | number | ToastOptions) => Weapp.Component;
+    var clear: () => void;
+    var setDefaultOptions: (options: ToastOptions) => void;
+    var resetDefaultOptions: () => void;
+}
 export default Toast;

@@ -16,6 +16,7 @@ VantComponent({
         icon: String,
         label: String,
         disabled: Boolean,
+        clickable: Boolean,
         border: {
             type: Boolean,
             value: true

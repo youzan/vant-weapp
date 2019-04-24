@@ -2,7 +2,10 @@ import { VantComponent } from '../common/component';
 VantComponent({
     relation: {
         type: 'ancestor',
-        name: 'badge-group'
+        name: 'badge-group',
+        linked(target) {
+            this.parent = target;
+        }
     },
     props: {
         info: null,
@@ -10,13 +13,18 @@ VantComponent({
     },
     methods: {
         onClick() {
-            const group = this.getRelationNodes('../badge-group/index')[0];
-            if (group) {
-                group.setActive(this);
+            const { parent } = this;
+            if (!parent) {
+                return;
             }
+            const index = parent.badges.indexOf(this);
+            parent.setActive(index).then(() => {
+                this.$emit('click', index);
+                parent.$emit('change', index);
+            });
         },
         setActive(active) {
-            this.set({ active });
+            return this.set({ active });
         }
     }
 });

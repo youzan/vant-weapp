@@ -1,49 +1,43 @@
 import { VantComponent } from '../common/component';
-import { isNumber } from '../common/utils';
 VantComponent({
     relation: {
         name: 'badge',
         type: 'descendant',
         linked(target) {
             this.badges.push(target);
-            this.setActive();
+            this.setActive(this.data.active);
         },
         unlinked(target) {
             this.badges = this.badges.filter(item => item !== target);
-            this.setActive();
+            this.setActive(this.data.active);
         }
     },
     props: {
         active: {
             type: Number,
-            value: 0
+            value: 0,
+            observer: 'setActive'
         }
-    },
-    watch: {
-        active: 'setActive'
     },
     beforeCreate() {
         this.badges = [];
         this.currentActive = -1;
     },
     methods: {
-        setActive(badge) {
-            let { active } = this.data;
-            const { badges } = this;
-            if (badge && !isNumber(badge)) {
-                active = badges.indexOf(badge);
+        setActive(active) {
+            const { badges, currentActive } = this;
+            if (!badges.length) {
+                return Promise.resolve();
             }
-            if (active === this.currentActive) {
-                return;
-            }
-            if (this.currentActive !== -1 && badges[this.currentActive]) {
-                this.$emit('change', active);
-                badges[this.currentActive].setActive(false);
+            this.currentActive = active;
+            const stack = [];
+            if (currentActive !== active && badges[currentActive]) {
+                stack.push(badges[currentActive].setActive(false));
             }
             if (badges[active]) {
-                badges[active].setActive(true);
-                this.currentActive = active;
+                stack.push(badges[active].setActive(true));
             }
+            return Promise.all(stack);
         }
     }
 });

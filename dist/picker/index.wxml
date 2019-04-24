@@ -10,7 +10,7 @@
       data-type="cancel"
       bindtap="emit"
     >
-      {{ cancelButtonText || '取消' }}
+      {{ cancelButtonText }}
     </view>
     <view wx:if="{{ title }}" class="van-picker__title van-ellipsis">{{ title }}</view>
     <view
@@ -20,7 +20,7 @@
       data-type="confirm"
       bindtap="emit"
     >
-      {{ confirmButtonText || '确认' }}
+      {{ confirmButtonText }}
     </view>
   </view>
   <view wx:if="{{ loading }}" class="van-picker__loading">
@@ -39,7 +39,7 @@
       custom-class="column-class"
       value-key="{{ valueKey }}"
       initial-options="{{ isSimple(columns) ? item : item.values }}"
-      default-index="{{ item.defaultIndex }}"
+      default-index="{{ item.defaultIndex || defaultIndex }}"
       item-height="{{ itemHeight }}"
       visible-item-count="{{ visibleItemCount }}"
       active-class="active-class"

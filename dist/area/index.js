@@ -1,29 +1,14 @@
 import { VantComponent } from '../common/component';
+import { pickerProps } from '../picker/shared';
 VantComponent({
     classes: ['active-class', 'toolbar-class', 'column-class'],
-    props: {
-        title: String,
-        value: String,
-        loading: Boolean,
-        cancelButtonText: String,
-        confirmButtonText: String,
-        itemHeight: {
-            type: Number,
-            value: 44
-        },
-        visibleItemCount: {
-            type: Number,
-            value: 5
-        },
-        columnsNum: {
-            type: [String, Number],
-            value: 3
-        },
-        areaList: {
+    props: Object.assign({}, pickerProps, { value: String, areaList: {
             type: Object,
             value: {}
-        }
-    },
+        }, columnsNum: {
+            type: [String, Number],
+            value: 3
+        } }),
     data: {
         columns: [{ values: [] }, { values: [] }, { values: [] }],
         displayColumns: [{ values: [] }, { values: [] }, { values: [] }]
@@ -39,6 +24,9 @@ VantComponent({
                 displayColumns: this.data.columns.slice(0, +value)
             });
         }
+    },
+    mounted() {
+        this.setValues();
     },
     methods: {
         getPicker() {
@@ -120,7 +108,6 @@ VantComponent({
             stack.push(picker.setColumnValues(0, province, false));
             stack.push(picker.setColumnValues(1, city, false));
             if (city.length && code.slice(2, 4) === '00') {
-                ;
                 [{ code }] = city;
             }
             stack.push(picker.setColumnValues(2, this.getList('county', code.slice(0, 4)), false));

@@ -8,6 +8,7 @@ VantComponent({
   classes: ['hover-class', 'loading-class'],
 
   props: {
+    openType: String,
     plain: Boolean,
     block: Boolean,
     round: Boolean,

@@ -1,6 +1,5 @@
 export const openType = Behavior({
-  properties: {
-    openType: String
+  properties: { 
   },
 
   methods: {

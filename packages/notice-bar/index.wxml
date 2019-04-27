@@ -5,7 +5,7 @@
   bind:tap="onClick"
 >
   <view wx:if="{{ leftIcon }}" class="van-notice-bar__left-icon">
-    <image src="{{ leftIcon }}" />
+    <image class="van-notice-bar__left-icon-image" src="{{ leftIcon }}" />
   </view>
   <view class="van-notice-bar__content-wrap">
     <view class="van-notice-bar__content {{ scrollable ? '' : 'van-ellipsis' }}" animation="{{ animationData }}">

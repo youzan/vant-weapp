@@ -64,56 +64,55 @@ Dialog.confirm({
 });
 ```
 
+#### 异步关闭
+
+设置`asyncClose`属性开启异步关闭，开启后可以手动调用`Dialog.close`方法关闭弹窗
+
+```javascript
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容'
+  asyncClose: true
+})
+  .then(() => {
+    setTimeout(() => {
+      Dialog.close();
+    }, 1000);
+  })
+  .catch(() => {
+    Dialog.close();
+  });
+```
+
 #### 组件调用
 
-通过组件调用 Dialog 时，可以实现自定义弹窗内容、异步关闭、监听微信开放能力回调事件，具体可以参考下面的示例
+通过组件调用 Dialog 时，可以实现自定义弹窗内容、监听微信开放能力回调事件等功能，具体参考下例
 
 ```html
 <van-dialog
   use-slot
-  async-close
   show="{{ show }}"
   show-cancel-button
   confirm-button-open-type="getUserInfo"
   bind:close="onClose"
   bind:getuserinfo="getUserInfo"
 >
-<van-field
-  value="{{ username }}"
-  label="用户名"
-  placeholder="请输入用户名"
-/>
-<van-field
-  value="{{ password }}"
-  type="password"
-  label="密码"
-  :border="false"
-  placeholder="请输入密码"
-/>
+  <image src="https://img.yzcdn.cn/1.jpg" />
 </van-dialog>
 ```
 
 ```js
 Page({
   data: {
-    show: true,
-    username: '',
-    password: ''
+    show: true
   },
 
-  onClose(event) {
-    if (event.detail === 'confirm') {
-      // 异步关闭弹窗
-      setTimeout(() => {
-        this.setData({
-          show: false
-        });
-      }, 1000);
-    } else {
-      this.setData({
-        show: false
-      });
-    }
+  getUserInfo(event) {
+    console.log(event.detail);
+  },
+
+  onClose() {
+    this.setData({ close: false });
   }
 });
 ```

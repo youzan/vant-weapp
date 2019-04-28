@@ -22,9 +22,19 @@
     data-key="value3"
     value="{{ value3 }}"
     size="{{ 25 }}"
+    color="#f44"
+    void-color="#eee"
+    void-icon="star"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="自定义数量">
+  <van-rate
+    custom-class="van-rate"
+    data-key="value4"
+    value="{{ value4 }}"
     count="{{ 6 }}"
-    color="#07c160"
-    void-color="#ceefe8"
     bind:change="onChange"
   />
 </demo-block>
@@ -32,8 +42,17 @@
 <demo-block title="禁用状态">
   <van-rate
     custom-class="van-rate"
-    data-key="value4"
-    value="{{ value4 }}"
+    data-key="value5"
+    value="{{ value5 }}"
     disabled
+  />
+</demo-block>
+
+<demo-block title="只读状态">
+  <van-rate
+    custom-class="van-rate"
+    data-key="value5"
+    value="{{ value5 }}"
+    readonly
   />
 </demo-block>

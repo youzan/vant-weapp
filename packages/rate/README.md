@@ -56,9 +56,19 @@ Page({
 <van-rate
   value="{{ value }}"
   size="{{ 25 }}"
+  color="#f44"
+  void-color="#eee"
+  void-icon="star"
+  bind:change="onChange"
+/>
+```
+
+#### 自定义数量
+
+```html
+<van-rate
+  value="{{ value }}"
   count="{{ 6 }}"
-  color="#07c160"
-  void-color="#ceefe8"
   bind:change="onChange"
 />
 ```
@@ -68,6 +78,16 @@ Page({
 ```html
 <van-rate
   disabled
+  value="{{ value }}"
+  bind:change="onChange"
+/>
+```
+
+#### 只读状态
+
+```html
+<van-rate
+  readonly
   value="{{ value }}"
   bind:change="onChange"
 />

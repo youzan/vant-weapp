@@ -4,8 +4,9 @@ Page({
   data: {
     value1: 3,
     value2: 3,
-    value3: 4,
-    value4: 2
+    value3: 3,
+    value4: 4,
+    value5: 3
   },
 
   onChange(event) {

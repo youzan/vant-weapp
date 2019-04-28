@@ -16,8 +16,7 @@ const UNSHARED = [
   'quickstart',
   'changelog',
   'intro',
-  'transition',
-  'col'
+  'transition'
 ];
 
 const MAPPER = {

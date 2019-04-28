@@ -97,5 +97,6 @@
     "van-collapse": "../../dist/collapse/index",
     "van-collapse-item": "../../dist/collapse-item/index",
     "van-picker": "../../dist/picker/index"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

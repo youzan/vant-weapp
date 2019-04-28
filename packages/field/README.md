@@ -157,6 +157,7 @@ Page({
 | readonly | 是否只读 | `Boolean` | `false` |
 | clearable | 是否启用清除控件 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
+| password | 是否是密码类型 | `Boolean` | `false` |
 | title-width | 标题宽度 | `String` | `90px` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
 | placeholder | 输入框为空时占位符 | `String` | - |

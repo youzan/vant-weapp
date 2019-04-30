@@ -14,7 +14,6 @@
 const PREFIX = 'https://img.yzcdn.cn/vant-weapp/';
 const MAP = {
   index: 'index-201904170551.png',
-  col: 'layout-201808092138.png',
   transition: 'transition-20180821.png'
 };
 

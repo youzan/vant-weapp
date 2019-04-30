@@ -11,7 +11,14 @@ const router = new VueRouter({
   routes: routes()
 });
 
+const ua = navigator.userAgent.toLowerCase();
+const isMobile = /ios|iphone|ipod|ipad|android/.test(ua);
+
 router.beforeEach((route, redirect, next) => {
+  if (isMobile) {
+    location.replace('https://youzan.github.io/vant/mobile.html?weapp=1');
+  }
+
   progress.start();
   next();
 });

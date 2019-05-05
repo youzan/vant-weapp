@@ -17,21 +17,22 @@ VantComponent({
         autosize: Boolean,
         readonly: Boolean,
         required: Boolean,
+        password: Boolean,
         iconClass: String,
         clearable: Boolean,
         inputAlign: String,
-        errorMessageAlign: String,
         customClass: String,
+        customStyle: String,
         confirmType: String,
         confirmHold: Boolean,
         errorMessage: String,
         placeholder: String,
-        customStyle: String,
+        placeholderStyle: String,
+        errorMessageAlign: String,
         showConfirmBar: {
             type: Boolean,
             value: true
         },
-        placeholderStyle: String,
         adjustPosition: {
             type: Boolean,
             value: true

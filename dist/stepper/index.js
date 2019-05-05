@@ -40,7 +40,7 @@ VantComponent({
                 return;
             }
             const newValue = this.range(value);
-            if (typeof newValue === 'number' && value !== newValue) {
+            if (typeof newValue === 'number' && +this.data.value !== newValue) {
                 this.set({ value: newValue });
             }
         }
@@ -64,6 +64,7 @@ VantComponent({
         },
         // limit value range
         range(value) {
+            value = String(value).replace(/[^0-9.-]/g, '');
             return Math.max(Math.min(this.data.max, value), this.data.min);
         },
         onInput(event) {

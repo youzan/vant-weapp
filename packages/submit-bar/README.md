@@ -38,6 +38,7 @@ es5
   price="{{ 3050 }}"
   button-text="提交订单"
   tip="您的收货地址不支持同城送, 我们已为您推荐快递"
+  tip-icon="https://img.yzcdn.cn/1.png"
   bind:submit="onSubmit"
 />
 ```
@@ -80,6 +81,7 @@ es5
 | button-text | 按钮文字 | `String` | - |
 | button-type | 按钮类型 |  `String` | `danger` |
 | tip | 提示文案 |  `String` / `Boolean` | - |
+| tip-icon | 图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | disabled | 是否禁用按钮 |  `Boolean` | `false` |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` |
 | currency | 货币符号 |  `String` | `¥` |

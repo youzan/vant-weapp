@@ -134,61 +134,73 @@ Page({
 
 通过函数调用 Dialog 时，支持传入以下选项：
 
-| 参数 | 说明 | 类型 | 默认值 | 生效时机 |
-|-----------|-----------|-----------|-------------|-------------|
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | zIndex | z-index 层级 | `Number` | `100` |
+| className | 自定义类名 | `String` | '' |
 | selector | 自定义选择器 | `String` | `van-dialog` |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` |
 | confirmButtonText | 确认按钮的文案 | `String` | `确认` |
 | cancelButtonText | 取消按钮的文案 | `String` | `取消` |
-| confirmButtonOpenType | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | `Object` | 当前页面 |
 | transition | 动画名称，可选值为`fade` `none` | `String` | `scale` |
-| app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `confirmButtonOpenType="launchApp"` |
-| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `confirmButtonOpenType="getUserInfo"` |
-| session-from | 会话来源 | `String` | - | `confirmButtonOpenType="contact"` |
-| business-id | 客服消息子商户 id | `Number` | - |
-| send-message-title | 会话内消息卡片标题 | `String` | 当前标题 | `confirmButtonOpenType="contact"` |
-| send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 | `confirmButtonOpenType="contact"` |
-| send-message-img | sendMessageImg | `String` | 截图 | `confirmButtonOpenType="contact"` |
-| show-message-card | 显示会话内消息卡片 | `String` | `false` | `confirmButtonOpenType="contact"` |
+| confirmButtonOpenType | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
+
+使用`confirmButtonOpenType`后，支持以下选项：
+
+| 参数 | 说明 | 类型 | 默认值 | open-type |
+|-----------|-----------|-----------|-------------|-------------|
+| appParameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `launchApp` |
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `getUserInfo` |
+| sessionFrom | 会话来源 | `String` | - | `contact` |
+| businessId | 客服消息子商户 id | `Number` | - | `contact` |
+| sendMessageTitle | 会话内消息卡片标题 | `String` | 当前标题 | `contact` |
+| sendMessagePath | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 | `contact` |
+| sendMessageImg | sendMessageImg | `String` | 截图 | `contact` |
+| showMessageCard | 显示会话内消息卡片 | `String` | `false` | `contact` |
 
 ### API
 
 通过组件调用 Dialog 时，支持以下 API：
 
-| 参数 | 说明 | 类型 | 默认值 | 生效时机 |
-|-----------|-----------|-----------|-------------|-------------|
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
 | show | 是否显示弹窗 | `Boolean` | - |
 | title | 标题 | `String` | - |
 | message | 内容 | `String` | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | z-index | z-index 层级 | `Number` | `100` |
+| class-name | 自定义类名 | `String` | '' |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` |
 | cancel-button-text | 取消按钮的文案 | `String` | `取消` |
-| confirm-button-open-type | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | close-on-click-overlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | use-slot | 是否使用自定义内容的插槽 | `Boolean` | `false` |
 | async-close | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | `Boolean` | `false` |
 | transition | 动画名称，可选值为`fade` | `String` | `scale` |
-| app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `confirm-button-open-type="launchApp"` |
-| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `confirm-button-open-type="getUserInfo"` |
-| session-from | 会话来源 | `String` | - | `confirm-button-open-type="contact"` |
-| business-id | 客服消息子商户 id | `Number` | - |
-| send-message-title | 会话内消息卡片标题 | `String` | 当前标题 | `confirm-button-open-type="contact"` |
-| send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 | `confirm-button-open-type="contact"` |
-| send-message-img | sendMessageImg | `String` | 截图 | `confirm-button-open-type="contact"` |
-| show-message-card | 显示会话内消息卡片 | `String` | `false` | `confirm-button-open-type="contact"` |
+| confirm-button-open-type | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | `String` | - |
+
+使用`confirm-button-open-type`后，支持以下 API：
+
+| 参数 | 说明 | 类型 | 默认值 | open-type |
+|-----------|-----------|-----------|-------------|-------------|
+| app-parameter | 打开 APP 时，向 APP 传递的参数 | `String` | - | `launchApp` |
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | `String` | `en` | `getUserInfo` |
+| session-from | 会话来源 | `String` | - | `contact` |
+| business-id | 客服消息子商户 id | `Number` | - | `contact` |
+| send-message-title | 会话内消息卡片标题 | `String` | 当前标题 | `contact` |
+| send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 | `contact` |
+| send-message-img | sendMessageImg | `String` | 截图 | `contact` |
+| show-message-card | 显示会话内消息卡片 | `String` | `false` | `contact` |
 
 ### Event
 

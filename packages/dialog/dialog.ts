@@ -11,6 +11,7 @@ type DialogOptions = {
   overlay?: boolean;
   selector?: string;
   ariaLabel?: string;
+  className?: string;
   transition?: string;
   asyncClose?: boolean;
   businessId?: number;
@@ -77,6 +78,7 @@ Dialog.defaultOptions = {
   message: '',
   zIndex: 100,
   overlay: true,
+  className: '',
   asyncClose: false,
   messageAlign: '',
   transition: 'scale',

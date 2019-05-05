@@ -4,7 +4,16 @@
   <slot name="top" />
 
   <view wx:if="{{ tip }}" class="van-submit-bar__tip">
-    {{ tipStr }}<slot name="tip" />
+    <van-icon
+      wx:if="{{ tipIcon }}"
+      size="12px"
+      name="{{ tipIcon }}"
+      custom-class="van-submit-bar__tip-icon"
+    />
+    <view wx:if="{{ tipStr }}" class="van-submit-bar__tip-text">
+      {{ tipStr }}
+    </view>
+    <slot name="tip" />
   </view>
 
   <view class="bar-class {{ utils.bem('submit-bar__bar', { safe: safeAreaInsetBottom && isIPhoneX }) }}">

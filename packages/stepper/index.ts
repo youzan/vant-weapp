@@ -48,7 +48,7 @@ VantComponent({
 
       const newValue = this.range(value);
 
-      if (typeof newValue === 'number' && value !== newValue) {
+      if (typeof newValue === 'number' && +this.data.value !== newValue) {
         this.set({ value: newValue });
       }
     }

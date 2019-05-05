@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v0.5.12](https://github.com/youzan/vant-weapp/tree/v0.5.12)
+`2019-05-05`
+
+**Improvements**
+
+- Field: 新增 password 属性 [\#1583](https://github.com/youzan/vant-weapp/pull/1583)
+- Dialog: 新增 class-name 属性 [\#1601](https://github.com/youzan/vant-weapp/pull/1601)
+- SubmitBar: 新增 tip-icon 属性 [\#1593](https://github.com/youzan/vant-weapp/pull/1593)
+
+**Bug Fixes**
+
+- 修复 Stepper 不能输入小数的问题 [\#1600](https://github.com/youzan/vant-weapp/pull/1600)
+- 修复 Stepper 粘贴中文字符时报错的问题 [\#1599](https://github.com/youzan/vant-weapp/pull/1599)
+- 修复 Icon new、question 图标展示不全的问题 [\#1595](https://github.com/youzan/vant-weapp/pull/1595)
+- 修复 SubmitBar 使用标签选择器导致框架报错的问题 [\#1577](https://github.com/youzan/vant-weapp/pull/1577)
+- 修复 NoticeBar 使用标签选择器导致框架报错的问题 [\#1574](https://github.com/youzan/vant-weapp/pull/1574)
+
+
 ## [v0.5.11](https://github.com/youzan/vant-weapp/tree/v0.5.11)
 `2019-04-24`
 

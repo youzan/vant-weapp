@@ -4,10 +4,11 @@
   <slot name="top" />
 
   <view wx:if="{{ tip }}" class="van-submit-bar__tip">
-    <image
+    <van-icon
       wx:if="{{ tipIcon }}"
-      src="{{ tipIcon }}"
-      class="van-submit-bar__tip-icon"
+      size="12px"
+      name="{{ tipIcon }}"
+      custom-class="van-submit-bar__tip-icon"
     />
     <view wx:if="{{ tipStr }}" class="van-submit-bar__tip-text">
       {{ tipStr }}

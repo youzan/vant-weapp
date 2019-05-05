@@ -22,7 +22,7 @@ Page({
 
   onClickNavRight() {
     wx.showToast({
-      title: '点击right nav',
+      title: '点击 right nav',
       icon: 'none'
     });
   },

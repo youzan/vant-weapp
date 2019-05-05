@@ -81,7 +81,7 @@ es5
 | button-text | 按钮文字 | `String` | - |
 | button-type | 按钮类型 |  `String` | `danger` |
 | tip | 提示文案 |  `String` / `Boolean` | - |
-| tip-icon | 图标名称或图片链接，详情查看icon组件 | `String` | - |
+| tip-icon | 图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | disabled | 是否禁用按钮 |  `Boolean` | `false` |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` |
 | currency | 货币符号 |  `String` | `¥` |

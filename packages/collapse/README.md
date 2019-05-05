@@ -77,7 +77,7 @@ Page({
   },
   onChange(event) {
     this.setData({
-      activeNames: event.detail
+      activeName: event.detail
     });
   }
 });
@@ -100,7 +100,7 @@ Page({
 ``` javascript
 Page({
   data: {
-    activeName: ['1']
+    activeNames: ['1']
   },
   onChange(event) {
     this.setData({

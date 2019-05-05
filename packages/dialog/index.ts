@@ -12,6 +12,7 @@ VantComponent({
     title: String,
     message: String,
     useSlot: Boolean,
+    className: String,
     asyncClose: Boolean,
     messageAlign: String,
     showCancelButton: Boolean,

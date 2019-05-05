@@ -77,6 +77,7 @@ VantComponent({
 
     // limit value range
     range(value) {
+      value = String(value).replace(/[^0-9.-]/g, '');
       return Math.max(Math.min(this.data.max, value), this.data.min);
     },
 

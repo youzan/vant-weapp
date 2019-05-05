@@ -33,9 +33,8 @@
       value="输入框已禁用"
       label="用户名"
       left-icon="contact"
-      readonly
+      disabled
       border="{{ false }}"
-      bind:tap="onSendSms"
     />
   </van-cell-group>
 </demo-block>

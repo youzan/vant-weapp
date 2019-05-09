@@ -6,15 +6,31 @@
   line-height: 24px;
   align-items: center;
 
-  &--within-icon {
+  &--withicon {
     position: relative;
     padding-right: 40px;
   }
 
+  &--wrapable {
+    height: auto;
+    padding: 8px 15px;
+
+    .van-notice-bar {
+      &__wrap {
+        height: auto;
+      }
+
+      &__content {
+        position: relative;
+        white-space: normal;
+      }
+    }
+  }
+
   &__left-icon {
+    display: flex;
     margin-right: 4px;
     vertical-align: middle;
-    display: flex;
     align-items: center;
   }
 
@@ -25,7 +41,7 @@
     font-size: 16px;
   }
 
-  &__content-wrap {
+  &__wrap {
     position: relative;
     height: 24px;
     overflow: hidden;

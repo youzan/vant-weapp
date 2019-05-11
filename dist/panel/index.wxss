@@ -1,1 +1,1 @@
-@import '../common/index.wxss';.van-panel{background:#fff}.van-panel__header-value{color:#f44}.van-panel__footer{padding:10px 15px}
+@import '../common/index.wxss';.van-panel{background:#fff}.van-panel__header-value{color:#f44}.van-panel__header-value-success{color:#07c160}.van-panel__header-value-info{color:#1989fa}.van-panel__header-value-warning{color:#ff976a}.van-panel__footer{padding:10px 15px}

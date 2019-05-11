@@ -5,6 +5,7 @@ VantComponent({
         desc: String,
         title: String,
         status: String,
-        useFooterSlot: Boolean
+        useFooterSlot: Boolean,
+        statusType: String
     }
 });

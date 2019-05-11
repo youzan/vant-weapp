@@ -48,6 +48,7 @@ es5
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
 | status | 状态 | `String` | - |
+| status-type | 状态类型，可选值为 `success` `info` `warning` `danger` | `String` | `danger` |
 | use-footer-slot | 是否使用 footer slot | `Boolean` | `false` |
 
 ### Slot

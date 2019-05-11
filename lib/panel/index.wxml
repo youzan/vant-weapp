@@ -5,7 +5,7 @@
     label="{{ desc }}"
     value="{{ status }}"
     custom-class="header-class"
-    value-class="{{statusType === 'success' ? 'van-panel__header-value-success' : (statusType === 'info' ? 'van-panel__header-value-info' : (statusType === 'warning' ? 'van-panel__header-value-warning' : 'van-panel__header-value'))}}"
+    value-class="van-panel__header-value"
   />
   <slot wx:else name="header" />
 

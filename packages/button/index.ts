@@ -16,6 +16,7 @@ VantComponent({
     hairline: Boolean,
     disabled: Boolean,
     loadingText: String,
+    vanBtnStyle: Object,
     type: {
       type: String,
       value: 'default'
@@ -27,6 +28,25 @@ VantComponent({
     loadingSize: {
       type: String,
       value: '20px'
+    }
+  },
+
+  data: {
+    btnStyle: ''
+  },
+
+  watch: {
+    vanBtnStyle(value) {
+      if (!value) {
+        return ''
+      }
+      let btnStyle = ''
+      for (let i in value) {
+        btnStyle += i.replace(/([A-Z])/g, "-$1").toLowerCase() + ':' + value[i] + ';'
+      }
+      this.set({
+        btnStyle
+      })
     }
   },
 

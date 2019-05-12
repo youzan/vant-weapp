@@ -21,6 +21,7 @@
   binderror="bindError"
   bindlaunchapp="bindLaunchApp"
   bindopensetting="bindOpenSetting"
+  style='{{ btnStyle }}'
 >
   <block wx:if="{{ loading }}">
     <van-loading

@@ -107,6 +107,7 @@ es5
 | send-message-path | 会话内消息卡片点击跳转小程序路径 | `String` | 当前分享路径 |
 | send-message-img | sendMessageImg | `String` | 截图 |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` |
+| van-btn-style | 自定义按钮样式 | `Object` | - |
 
 ### Event
 

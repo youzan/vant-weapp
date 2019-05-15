@@ -1,16 +1,32 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <view
   class="van-rate custom-class"
   bind:touchmove="onTouchMove"
 >
-  <van-icon
-    wx:for="{{ list }}"
-    wx:key="index"
+  <view
     class="van-rate__item"
-    custom-class="icon-class"
-    size="{{ size }}px"
-    data-index="{{ index }}"
-    name="{{ item ? icon : voidIcon }}"
-    color="{{ disabled ? disabledColor : item ? color : voidColor }}"
-    bind:click="onSelect"
-  />
+    wx:for="{{ count }}"
+    wx:key="index"
+    style="font-size: {{ size}}px;"
+  >
+    <van-icon
+      name="{{ index + 1 <= innerValue ? icon : voidIcon }}"
+      class="van-rate__icon"
+      custom-class="icon-class"
+      data-score="{{ index }}"
+      color="{{ disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor }}"
+      bind:click="onSelect"
+    />
+
+    <van-icon
+      wx:if="{{ allowHalf }}"
+      name="{{ index + 0.5 <= innerValue ? icon : voidIcon }}"
+      class="{{ utils.bem('rate__icon', ['half']) }}"
+      custom-class="icon-class"
+      data-score="{{ index - 0.5 }}"
+      color="{{ disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor }}"
+      bind:click="onSelect"
+    />
+  </view>
 </view>

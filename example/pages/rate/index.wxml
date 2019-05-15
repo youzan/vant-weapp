@@ -29,11 +29,25 @@
   />
 </demo-block>
 
-<demo-block title="自定义数量">
+<demo-block title="半星">
   <van-rate
     custom-class="van-rate"
     data-key="value4"
     value="{{ value4 }}"
+    size="{{ 25 }}"
+    allow-half
+    color="#f44"
+    void-color="#eee"
+    void-icon="star"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="自定义数量">
+  <van-rate
+    custom-class="van-rate"
+    data-key="value5"
+    value="{{ value5 }}"
     count="{{ 6 }}"
     bind:change="onChange"
   />
@@ -42,8 +56,8 @@
 <demo-block title="禁用状态">
   <van-rate
     custom-class="van-rate"
-    data-key="value5"
-    value="{{ value5 }}"
+    data-key="value6"
+    value="{{ value6 }}"
     disabled
   />
 </demo-block>
@@ -51,8 +65,8 @@
 <demo-block title="只读状态">
   <van-rate
     custom-class="van-rate"
-    data-key="value5"
-    value="{{ value5 }}"
+    data-key="value6"
+    value="{{ value6 }}"
     readonly
   />
 </demo-block>

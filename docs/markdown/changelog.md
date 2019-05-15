@@ -1,5 +1,19 @@
 ## 更新日志
 
+## [v0.5.13](https://github.com/youzan/vant-weapp/tree/v0.5.13)
+`2019-05-15`
+
+**Improvements**
+
+- Rate: 新增 allow-half 属性 [\#1623](https://github.com/youzan/vant-weapp/pull/1623)
+- NoticeBar: 新增 wrapable 属性 [\#1617](https://github.com/youzan/vant-weapp/pull/1617)
+- NoticeBar: left-icon 支持 van-icon [\#1604](https://github.com/youzan/vant-weapp/pull/1604)
+
+**Bug Fixes**
+
+- Checkbox: 修复文本过长时样式异常 [\#1616](https://github.com/youzan/vant-weapp/pull/1616)
+- Transition: 修复leave阶段时节点不消失 [\#1621](https://github.com/youzan/vant-weapp/pull/1621)
+
 ## [v0.5.12](https://github.com/youzan/vant-weapp/tree/v0.5.12)
 `2019-05-05`
 

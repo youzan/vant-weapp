@@ -1,1 +1,1 @@
-@import '../common/index.wxss';.van-rate{-webkit-user-select:none;user-select:none}.van-rate__item{width:1em;padding:0 2px;box-sizing:initial}
+@import '../common/index.wxss';.van-rate{-webkit-user-select:none;user-select:none}.van-rate__item{position:relative;display:inline-block;padding:0 2px}.van-rate__icon{display:block;height:1em}.van-rate__icon--half{position:absolute;top:0;left:2px;width:.5em;overflow:hidden}

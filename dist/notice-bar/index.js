@@ -21,7 +21,7 @@ VantComponent({
         },
         delay: {
             type: Number,
-            value: 0
+            value: 1
         },
         speed: {
             type: Number,
@@ -42,11 +42,11 @@ VantComponent({
         backgroundColor: {
             type: String,
             value: BG_COLOR
-        }
+        },
+        wrapable: Boolean
     },
     data: {
-        show: true,
-        hasRightIcon: false
+        show: true
     },
     watch: {
         text() {
@@ -54,11 +54,6 @@ VantComponent({
         }
     },
     created() {
-        if (this.data.mode) {
-            this.set({
-                hasRightIcon: true
-            });
-        }
         this.resetAnimation = wx.createAnimation({
             duration: 0,
             timingFunction: 'linear'
@@ -71,7 +66,7 @@ VantComponent({
         init() {
             Promise.all([
                 this.getRect('.van-notice-bar__content'),
-                this.getRect('.van-notice-bar__content-wrap')
+                this.getRect('.van-notice-bar__wrap')
             ]).then((rects) => {
                 const [contentRect, wrapRect] = rects;
                 if (contentRect == null ||

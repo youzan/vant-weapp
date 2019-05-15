@@ -5,7 +5,7 @@ const getClassNames = (name) => ({
     leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
     'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
 });
-const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 20));
 export const transition = function (showDefaultValue) {
     return Behavior({
         properties: {
@@ -70,16 +70,13 @@ export const transition = function (showDefaultValue) {
             leave() {
                 const { classNames, duration } = this.data;
                 const currentDuration = isObj(duration) ? duration.leave : duration;
-                if (+currentDuration === 0) {
-                    this.onTransitionEnd();
-                    return;
-                }
                 Promise.resolve()
                     .then(nextTick)
                     .then(() => this.set({
                     classes: classNames.leave,
                     currentDuration
                 }))
+                    .then(() => setTimeout(() => this.onTransitionEnd(), currentDuration))
                     .then(nextTick)
                     .then(() => this.set({
                     classes: classNames['leave-to']

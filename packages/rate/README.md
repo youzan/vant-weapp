@@ -63,6 +63,19 @@ Page({
 />
 ```
 
+#### 半星
+```html
+<van-rate
+  value="{{ value }}"
+  size="{{ 25 }}"
+  allow-half
+  color="#f44"
+  void-color="#eee"
+  void-icon="star"
+  bind:change="onChange"
+/>
+```
+
 #### 自定义数量
 
 ```html
@@ -105,6 +118,7 @@ Page({
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
 | icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star` |
 | void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star-o` |
+| allow-half | 是否允许半选 | `Boolean` | `false` |
 | readonly | 是否为只读状态 | `Boolean` | `false` |
 | disabled | 是否禁用评分 | `Boolean` | `false` |
 | disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` |

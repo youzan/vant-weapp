@@ -11,7 +11,7 @@ es6
 }
 ```
 
-es6
+es5
 ```json
 "usingComponents": {
   "van-tabbar": "path/to/vant-weapp/lib/tabbar/index",

@@ -118,6 +118,7 @@ Page({
 | active | 当前选中标签的索引 | `Number` | - |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` |
 | fixed | 是否固定在底部 | `Boolean` | `true` |
+| border | 是否展示外边框 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
 | safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
 

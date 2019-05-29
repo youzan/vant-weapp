@@ -18,7 +18,7 @@ function padZero(val: string | number): string {
 
 function times(n: number, iteratee: (index: number) => string): string[] {
   let index = -1;
-  const result = Array(n);
+  const result = Array(n < 0 ? 0 : n);
 
   while (++index < n) {
     result[index] = iteratee(index);
@@ -135,7 +135,7 @@ VantComponent({
       return this.set({ columns: results });
     },
 
-    getRanges(): object[] {
+    getRanges() {
       const { data } = this;
       if (data.type === 'time') {
         return [
@@ -220,7 +220,7 @@ VantComponent({
       return value;
     },
 
-    getBoundary(type: string, innerValue: number): object {
+    getBoundary(type: string, innerValue: number) {
       const value = new Date(innerValue);
       const boundary = new Date(this.data[`${type}Date`]);
       const year = boundary.getFullYear();
@@ -262,11 +262,11 @@ VantComponent({
       this.$emit('cancel');
     },
 
-    onConfirm(): void {
+    onConfirm() {
       this.$emit('confirm', this.data.innerValue);
     },
 
-    onChange(): void {
+    onChange() {
       const { data } = this;
       let value;
 

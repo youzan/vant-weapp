@@ -29,18 +29,31 @@
     value="1"
     custom-class="demo-radio"
     checked-color="#07c160"
+    bind:change="onFun"
   >
     单选框
   </van-radio>
 </demo-block>
 
+<demo-block title="自定义图标" padding>
+  <van-checkbox use-icon-slot value="{{ radio3 }}" name="1" bind:change="onChange">
+    自定义图标
+    <image
+      slot="icon"
+      src="{{ radio3 === '1' ? icon.active : icon.normal }}"
+      class="icon"
+      mode="widthFix"
+    />
+  </van-checkbox>
+</demo-block>
+
 <demo-block title="与 Cell 组件一起使用">
   <van-radio-group value="{{ radio3 }}">
     <van-cell-group>
-      <van-cell title="单选框 1" clickable data-value="1" bind:click="onClick">
+      <van-cell title="单选框 1" value-class="value-class" clickable data-name="1" bind:click="onClick">
         <van-radio name="1" />
       </van-cell>
-      <van-cell title="单选框 2" clickable data-value="2" bind:click="onClick">
+      <van-cell title="单选框 2" value-class="value-class" clickable data-name="2" bind:click="onClick">
         <van-radio name="2" />
       </van-cell>
     </van-cell-group>

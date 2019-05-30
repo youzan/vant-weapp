@@ -29,6 +29,20 @@ es5
 <van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
 ```
 
+```js
+Page({
+  data: {
+    checked: true
+  },
+
+  onChange(event) {
+    this.setData({
+      checked: event.detail
+    });
+  }
+});
+```
+
 #### 禁用状态
 
 ```html
@@ -119,7 +133,7 @@ Page({
 #### 设置最大可选数
 
 ```html
-<van-checkbox-group value="{{ result }}" bind:change="onChange" max="2">
+<van-checkbox-group value="{{ result }}" bind:change="onChange" max="{{ 2 }}">
   <van-checkbox
     wx:for="{{ list }}"
     wx:key="index"
@@ -141,11 +155,12 @@ Page({
       wx:for="{{ list }}"
       wx:key="index"
       title="复选框 {{ item }}"
+      value-class="value-class"
       clickable
-      data-name="{{ item }}"
+      data-index="{{ index }}"
       bind:click="toggle"
     >
-      <van-checkbox catch:tap="noop" class="checkboxes-{{ item }}" name="{{ item }}" />
+      <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item }}" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -165,8 +180,8 @@ Page({
   }
 
   toggle(event) {
-    const { name } = event.currentTarget.dataset;
-    const checkbox = this.selectComponent(`.checkboxes-${name}`);
+    const { index } = event.currentTarget.dataset;
+    const checkbox = this.selectComponent(`.checkboxes-${index}`);
     checkbox.toggle();
   },
 
@@ -174,16 +189,23 @@ Page({
 });
 ```
 
+
+```css
+.value-class {
+  flex: none !important;
+}
+```
+
 ### Checkbox API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 标识 Checkbox 名称 | `any` | - |
+| name | 标识 Checkbox 名称 | `String` | - |
+| shape | 形状，可选值为 `round` `square` | `String` | `round` |
 | value | 是否为选中状态 | `Boolean` | `false` |
 | disabled | 是否禁用单选框 | `Boolean` | `false` |
 | label-disabled | 是否禁用单选框内容点击 | `Boolean` | `false` |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` |
-| shape | 形状，可选值为 `round` `square` | `String` | `round` |
 | use-icon-slot | 是否使用 icon slot | `Boolean` | `false` |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` |
 
@@ -202,6 +224,14 @@ Page({
 |-----------|-----------|-----------|
 | bind:change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
+### Checkbox 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| icon-class | 图标样式类 |
+| label-class | 描述信息样式类 |
+
 ### CheckboxGroup Event
 
 | 事件名 | 说明 | 回调参数 |
@@ -210,10 +240,10 @@ Page({
 
 ### Checkbox Slot
 
-| 名称 | 说明 | slot-scope |
-|-----------|-----------|-----------|
-| - | 自定义文本 | - |
-| icon | 自定义图标 | checked: 是否为选中状态 |
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 自定义文本 |
+| icon | 自定义图标 |
 
 ### Checkbox 方法
 

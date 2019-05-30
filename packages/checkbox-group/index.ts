@@ -7,32 +7,41 @@ VantComponent({
     name: 'checkbox',
     type: 'descendant',
     linked(target: Weapp.Component) {
-      const { value, disabled } = this.data;
-      target.set({
-        value: value.indexOf(target.data.name) !== -1,
-        disabled: disabled || target.data.disabled
-      });
+      this.children = this.children || [];
+      this.children.push(target);
+      this.updateChild(target);
+    },
+    unlinked(target: Weapp.Component) {
+      this.children = this.children.filter(
+        (child: Weapp.Component) => child !== target
+      );
     }
   },
 
   props: {
     max: Number,
-    value: Array,
-    disabled: Boolean
+    value: {
+      type: Array,
+      observer: 'updateChildren'
+    },
+    disabled: {
+      type: Boolean,
+      observer: 'updateChildren'
+    }
   },
 
-  watch: {
-    value(value) {
-      const children = this.getRelationNodes('../checkbox/index');
-      children.forEach(child => {
-        child.set({ value: value.indexOf(child.data.name) !== -1 });
-      });
+  methods: {
+    updateChildren() {
+      (this.children || []).forEach((child: Weapp.Component) =>
+        this.updateChild(child)
+      );
     },
 
-    disabled(disabled: boolean) {
-      const children = this.getRelationNodes('../checkbox/index');
-      children.forEach(child => {
-        child.set({ disabled: disabled || child.data.disabled });
+    updateChild(child: Weapp.Component) {
+      const { value, disabled } = this.data;
+      child.set({
+        value: value.indexOf(child.data.name) !== -1,
+        disabled: disabled || child.data.disabled
       });
     }
   }

@@ -18,6 +18,7 @@ Page({
   },
 
   onChange(event) {
+    console.log(event.detail);
     const { key } = event.currentTarget.dataset;
     this.setData({ [key]: event.detail });
   },
@@ -30,8 +31,8 @@ Page({
   },
 
   toggle(event) {
-    const { name } = event.currentTarget.dataset;
-    const checkbox = this.selectComponent(`.checkboxes-${name}`);
+    const { index } = event.currentTarget.dataset;
+    const checkbox = this.selectComponent(`.checkboxes-${index}`);
     checkbox.toggle();
   },
 

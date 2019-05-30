@@ -18,7 +18,6 @@ Page({
   },
 
   onChange(event) {
-    console.log(event.detail);
     const { key } = event.currentTarget.dataset;
     this.setData({ [key]: event.detail });
   },

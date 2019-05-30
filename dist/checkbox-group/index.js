@@ -5,29 +5,34 @@ VantComponent({
         name: 'checkbox',
         type: 'descendant',
         linked(target) {
-            const { value, disabled } = this.data;
-            target.set({
-                value: value.indexOf(target.data.name) !== -1,
-                disabled: disabled || target.data.disabled
-            });
+            this.children = this.children || [];
+            this.children.push(target);
+            this.updateChild(target);
+        },
+        unlinked(target) {
+            this.children = this.children.filter((child) => child !== target);
         }
     },
     props: {
         max: Number,
-        value: Array,
-        disabled: Boolean
-    },
-    watch: {
-        value(value) {
-            const children = this.getRelationNodes('../checkbox/index');
-            children.forEach(child => {
-                child.set({ value: value.indexOf(child.data.name) !== -1 });
-            });
+        value: {
+            type: Array,
+            observer: 'updateChildren'
         },
-        disabled(disabled) {
-            const children = this.getRelationNodes('../checkbox/index');
-            children.forEach(child => {
-                child.set({ disabled: disabled || child.data.disabled });
+        disabled: {
+            type: Boolean,
+            observer: 'updateChildren'
+        }
+    },
+    methods: {
+        updateChildren() {
+            (this.children || []).forEach((child) => this.updateChild(child));
+        },
+        updateChild(child) {
+            const { value, disabled } = this.data;
+            child.set({
+                value: value.indexOf(child.data.name) !== -1,
+                disabled: disabled || child.data.disabled
             });
         }
     }

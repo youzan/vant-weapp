@@ -23,6 +23,10 @@ VantComponent({
             type: Boolean,
             value: true
         },
+        border: {
+            type: Boolean,
+            value: true
+        },
         zIndex: {
             type: Number,
             value: 1

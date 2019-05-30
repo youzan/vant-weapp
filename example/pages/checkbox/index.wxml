@@ -86,10 +86,10 @@
         title="复选框{{ item }}"
         value-class="value-class"
         clickable
-        data-name="{{ item }}"
+        data-index="{{ index }}"
         bind:click="toggle"
       >
-        <van-checkbox catch:tap="noop" class="checkboxes-{{ item }}" name="{{ item }}" />
+        <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item }}" />
       </van-cell>
     </van-cell-group>
   </van-checkbox-group>

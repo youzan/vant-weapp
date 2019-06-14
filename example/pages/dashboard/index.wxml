@@ -1,6 +1,6 @@
 <view class="container">
   <view class="title">
-    <image class="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" />
+    <image class="logo" src="https://img.yzcdn.cn/vant/logo.png" />
     <view class="title-text">Vant Weapp</view>
   </view>
   <view class="desc">轻量、可靠的小程序 UI 组件库</view>

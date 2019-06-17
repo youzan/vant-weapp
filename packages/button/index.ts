@@ -24,6 +24,10 @@ VantComponent({
       type: String,
       value: 'normal'
     },
+    formType: {
+      type: String,
+      value: '',
+    },
     loadingSize: {
       type: String,
       value: '20px'

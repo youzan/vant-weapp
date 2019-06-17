@@ -4,6 +4,7 @@
   id="{{ id }}"
   class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
   open-type="{{ openType }}"
+  form-type="{{ formType }}"
   hover-class="van-button--active hover-class"
   lang="{{ lang }}"
   business-id="{{ businessId }}"

@@ -7,7 +7,7 @@ const getClassNames = (name: string) => ({
   'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
 });
 
-const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 20));
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
 
 export const transition = function(showDefaultValue: boolean) {
   return Behavior({
@@ -39,14 +39,14 @@ export const transition = function(showDefaultValue: boolean) {
 
     attached() {
       if (this.data.show) {
-        this.show();
+        this.enter();
       }
     },
 
     methods: {
       observeShow(value: boolean) {
         if (value) {
-          this.show();
+          this.enter();
         } else {
           this.leave();
         }
@@ -58,47 +58,67 @@ export const transition = function(showDefaultValue: boolean) {
         });
       },
 
-      show() {
+      enter() {
         const { classNames, duration } = this.data;
         const currentDuration = isObj(duration) ? duration.leave : duration;
 
+        this.status = 'enter';
+
         Promise.resolve()
           .then(nextTick)
-          .then(() =>
+          .then(() => {
+            this.checkStatus('enter');
+
             this.set({
               inited: true,
               display: true,
               classes: classNames.enter,
               currentDuration
-            })
-          )
+            });
+          })
           .then(nextTick)
-          .then(() =>
+          .then(() => {
+            this.checkStatus('enter');
+
             this.set({
               classes: classNames['enter-to']
-            })
-          );
+            });
+          })
+          .catch(() => {});
       },
 
       leave() {
         const { classNames, duration } = this.data;
         const currentDuration = isObj(duration) ? duration.leave : duration;
 
+        this.status = 'leave';
+
         Promise.resolve()
           .then(nextTick)
-          .then(() =>
+          .then(() => {
+            this.checkStatus('leave');
+
             this.set({
               classes: classNames.leave,
               currentDuration
-            })
-          )
+            });
+          })
           .then(() => setTimeout(() => this.onTransitionEnd(), currentDuration))
           .then(nextTick)
-          .then(() =>
+          .then(() => {
+            this.checkStatus('leave');
+
             this.set({
               classes: classNames['leave-to']
-            })
-          );
+            });
+          })
+          .catch(() => {});
+      },
+
+      checkStatus(status: 'enter' | 'leave') {
+        if (status !== this.status) {
+          throw new Error(`incongruent status: ${status}`);
+        }
       },
 
       onTransitionEnd() {

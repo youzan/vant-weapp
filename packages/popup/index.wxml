@@ -1,7 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <van-overlay
-  wx:if="{{ inited && overlay }}"
+  wx:if="{{ overlay }}"
   mask
   show="{{ show }}"
   z-index="{{ zIndex }}"

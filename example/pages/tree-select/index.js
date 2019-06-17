@@ -24,7 +24,7 @@ Page({
       }
     ],
     mainActiveIndex: 0,
-    activeId: 1
+    activeId: []
   },
 
   onClickNav({ detail }) {
@@ -34,8 +34,14 @@ Page({
   },
 
   onClickItem({ detail }) {
+    const idx = this.data.activeId.indexOf(detail.id);
+    if (idx > -1) {
+      this.data.activeId.splice(idx, 1);
+    } else {
+      this.data.activeId.push(detail.id);
+    }
     this.setData({
-      activeId: detail.id
+      activeId: this.data.activeId
     });
   }
 });

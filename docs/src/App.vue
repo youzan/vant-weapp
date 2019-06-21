@@ -20,10 +20,6 @@ const UNSHARED = [
   'transition'
 ];
 
-const MAPPER = {
-  'action-sheet': 'actionsheet'
-};
-
 export default {
   data() {
     return {
@@ -37,13 +33,9 @@ export default {
     },
 
     simulator() {
-      let { path } = this.$route.meta;
+      const { path } = this.$route.meta;
 
       if (!UNSHARED.includes(path)) {
-        if (MAPPER[path]) {
-          path = MAPPER[path];
-        }
-
         return `https://youzan.github.io/vant/mobile.html?hide_nav=1&weapp=1#/zh-CN/${path}`;
       }
 

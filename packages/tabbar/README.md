@@ -111,7 +111,7 @@ Page({
 | fixed | 是否固定在底部 | `Boolean` | `true` |
 | border | 是否展示外边框 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
-| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | `Boolean` | `true` |
 
 ### Tabbar Event
 

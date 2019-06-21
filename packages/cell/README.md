@@ -57,7 +57,12 @@
 可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型
 
 ```html
-<van-cell title="单元格" is-link url="/pages/dashboard/index" link-type="navigateTo" />
+<van-cell
+  is-link
+  title="单元格"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+/>
 ```
 
 ### 分组标题
@@ -84,7 +89,6 @@
     <van-tag type="danger">标签</van-tag>
   </view>
 </van-cell>
-<van-cell title="单元格" icon="location-o" is-link />
 <van-cell title="单元格">
   <van-icon slot="right-icon" name="search" class="custom-icon" />
 </van-cell>

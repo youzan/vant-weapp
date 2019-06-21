@@ -1,25 +1,18 @@
-## Field 输入框
+# Field 输入框
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-field": "path/to/vant-weapp/dist/field/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-field": "path/to/vant-weapp/lib/field/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-cell-group>
@@ -45,7 +38,7 @@ Page({
 });
 ```
 
-#### 自定义类型
+### 自定义类型
 根据`type`属性定义不同类型的输入框
 
 ```html
@@ -71,7 +64,7 @@ Page({
 </van-cell-group>
 ```
 
-#### 禁用输入框
+### 禁用输入框
 
 ```html
 <van-cell-group>
@@ -85,7 +78,7 @@ Page({
 </van-cell-group>
 ```
 
-#### 错误提示
+### 错误提示
 通过`error`或者`error-message`属性增加对应的错误提示
 
 ```html
@@ -106,7 +99,7 @@ Page({
 </van-cell-group>
 ```
 
-#### 高度自适应
+### 高度自适应
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
 ```html
@@ -122,7 +115,7 @@ Page({
 </van-cell-group>
 ```
 
-#### 插入按钮
+### 插入按钮
 通过 button slot 可以在输入框尾部插入按钮
 
 ```html

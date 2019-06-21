@@ -1,26 +1,23 @@
-## DatetimePicker 时间选择
+# DatetimePicker 时间选择
+
+### 介绍
+
 时间选择组件通常与 [弹出层](#/popup) 组件配合使用
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
 
-es6
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+
 ```json
 "usingComponents": {
   "van-datetime-picker": "path/to/vant-weapp/dist/datetime-picker/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-datetime-picker": "path/to/vant-weapp/lib/datetime-picker/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 选择完整时间
+### 选择完整时间
 
 `value` 为时间戳
 
@@ -52,7 +49,7 @@ Page({
 });
 ```
 
-#### 选择日期（年月日）
+### 选择日期（年月日）
 
 `value` 为时间戳，通过传入 `formatter` 函数对选项文字进行处理
 
@@ -89,7 +86,7 @@ Page({
 });
 ```
 
-#### 选择日期（年月）
+### 选择日期（年月）
 
 `value` 为时间戳
 
@@ -117,7 +114,7 @@ Page({
 });
 ```
 
-#### 选择时间
+### 选择时间
 
 `value` 为字符串
 

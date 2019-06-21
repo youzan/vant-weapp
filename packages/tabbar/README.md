@@ -1,9 +1,8 @@
-## Tabbar 标签栏
+# Tabbar 标签栏
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-tabbar": "path/to/vant-weapp/dist/tabbar/index",
@@ -11,17 +10,9 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-tabbar": "path/to/vant-weapp/lib/tabbar/index",
-  "van-tabbar-item": "path/to/vant-weapp/lib/tabbar-item/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
@@ -44,7 +35,7 @@ Page({
 });
 ```
 
-#### 自定义图标
+### 自定义图标
 
 可以通过 slot 自定义图标，其中 icon slot 代表未选中状态下的图标，icon-active slot 代表选中状态下的图标
 
@@ -84,7 +75,7 @@ Page({
 });
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
 ```html
 <van-tabbar

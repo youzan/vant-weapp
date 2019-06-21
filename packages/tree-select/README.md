@@ -1,25 +1,21 @@
-## TreeSelect 分类选择
+# TreeSelect 分类选择
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-tree-select": "path/to/vant-weapp/dist/tree-select/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-tree-select": "path/to/vant-weapp/lib/tree-select/index"
-}
-```
+## 代码演示
 
-### 代码演示
+### 基础用法
+
 可以在任意位置上使用 van-tree-select 标签。传入对应的数据即可。
+
 ```html
 <van-tree-select
   items="{{ items }}"
@@ -65,8 +61,7 @@ Page({
 | bind:click-nav | 左侧导航点击时，触发的事件 | event.detail.index：被点击的导航的索引 |
 | bind:click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据 |
 
-### 数据格式
-#### items 分类显示所需数据的数据结构
+### items 数据结构
 `items` 整体为一个数组，数组内包含一系列描述分类的对象
 
 每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项

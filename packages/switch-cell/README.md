@@ -1,25 +1,17 @@
-## SwitchCell 开关单元格
+# SwitchCell 开关单元格
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-switch-cell": "path/to/vant-weapp/dist/switch-cell/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-switch-cell": "path/to/vant-weapp/lib/switch-cell/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-switch-cell
@@ -42,7 +34,7 @@ Page({
 });
 ```
 
-#### 禁用状态
+### 禁用状态
 通过`disabled`属性可以将组件设置为禁用状态
 
 ```html
@@ -54,7 +46,7 @@ Page({
 />
 ```
 
-#### 加载状态
+### 加载状态
 通过`loading`属性可以将组件设置为加载状态
 
 ```html

@@ -1,31 +1,21 @@
-## Toast 轻提示
+# Toast 轻提示
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-toast": "path/to/vant-weapp/dist/toast/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-toast": "path/to/vant-weapp/lib/toast/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 文字提示
+### 文字提示
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
-// es5
-// vat Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Toast('我是提示文案，建议不超过十五字~');
 ```
@@ -34,7 +24,7 @@ Toast('我是提示文案，建议不超过十五字~');
 <van-toast id="van-toast" />
 ```
 
-#### 加载提示
+### 加载提示
 
 ```javascript
 Toast.loading({
@@ -43,14 +33,14 @@ Toast.loading({
 });
 ```
 
-#### 成功/失败提示
+### 成功/失败提示
 
 ```javascript
 Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
 
-#### 高级用法
+### 高级用法
 
 ```javascript
 const toast = Toast.loading({

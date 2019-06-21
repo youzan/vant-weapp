@@ -1,9 +1,8 @@
-## Collapse 折叠面板
+# Collapse 折叠面板
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-collapse": "path/to/vant-weapp/dist/collapse/index",
@@ -11,17 +10,9 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-collapse": "path/to/vant-weapp/lib/collapse/index",
-  "van-collapse-item": "path/to/vant-weapp/lib/collapse-item/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 通过`value`控制展开的面板列表，`activeNames`为数组格式
 
@@ -52,7 +43,7 @@ Page({
 });
 ```
 
-#### 手风琴
+### 手风琴
 
 通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
 
@@ -83,7 +74,7 @@ Page({
 });
 ```
 
-#### 自定义标题内容
+### 自定义标题内容
 
 ```html
 <van-collapse value="{{ activeNames }}" bind:change="onChange">

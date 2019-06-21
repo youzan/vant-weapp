@@ -65,7 +65,7 @@ module.exports = {
         test: /\.md$/,
         use: [
           'vue-loader',
-          'fast-vue-md-loader'
+          '@vant/markdown-loader'
         ]
       }
     ]

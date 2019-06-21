@@ -3,6 +3,8 @@ import packageJson from '../../package.json';
 import components from '../../example/config';
 const { version } = packageJson;
 
+export const github = 'https://github.com/youzan/vant-weapp';
+
 export default {
   header: {
     logo: {
@@ -11,11 +13,7 @@ export default {
       title: 'Vant Weapp',
       href: '#/'
     },
-    nav: {
-      'Vue 组件': 'https://youzan.github.io/vant/',
-      '小程序组件': 'https://youzan.github.io/vant-weapp/',
-      github: 'https://github.com/youzan/vant-weapp'
-    }
+    nav: {}
   },
   nav: [
     {

@@ -1,27 +1,23 @@
-## Area 省市区选择
+# Area 省市区选择
+
+### 介绍
+
 省市区选择组件通常与 [弹出层](#/popup) 组件配合使用
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-area": "path/to/vant-weapp/dist/area/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-area": "path/to/vant-weapp/lib/area/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 要初始化一个`Area`组件，你需要传入一个`area-list`属性，数据格式具体可看下面数据格式章节
 
@@ -29,7 +25,7 @@ es5
 <van-area area-list="{{ areaList }}" />
 ```
 
-#### 选中省市区
+### 选中省市区
 
 如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
 
@@ -37,7 +33,7 @@ es5
 <van-area area-list="{{ areaList }}" value="110101" />
 ```
 
-#### 配置显示列
+### 配置显示列
 
 可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
 
@@ -75,9 +71,7 @@ es5
 |-----------|-----------|-----------|-------------|
 | reset | - | - | 重置所有选项到第一项 |
 
-### 数据格式
-
-#### 省市区列表数据格式
+### 省市区列表数据格式
 
 整体是一个 Object，包含 `province_list`, `city_list`, `county_list` 三个 key。
 
@@ -114,7 +108,7 @@ es5
 
 完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/packages/area/demo/area.js)
 
-#### 点击完成时返回的数据格式
+### 点击完成时返回的数据格式
 
 返回的数据整体为一个 Object，包含 `values`, `indexs` 两个 key
 
@@ -140,10 +134,3 @@ es5
 ```
 
 `indexs` 为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中项的序号。
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.3.3 | feature | 新增组件 |
-| 0.3.5 | bugfix | 修复数据为空时报错的问题 |

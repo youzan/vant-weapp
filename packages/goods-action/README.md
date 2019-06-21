@@ -1,9 +1,8 @@
-## GoodsAction 商品导航
+# GoodsAction 商品导航
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-goods-action": "path/to/vant-weapp/dist/goods-action/index",
@@ -12,18 +11,10 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-goods-action": "path/to/vant-weapp/lib/goods-action/index",
-  "van-goods-action-icon": "path/to/vant-weapp/lib/goods-action-icon/index",
-  "van-goods-action-button": "path/to/vant-weapp/lib/goods-action-button/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-goods-action>
@@ -61,7 +52,7 @@ Page({
 });
 ```
 
-#### 图标提示
+### 图标提示
 
 通过`info`属性在图标右上角增加相应的提示
 
@@ -141,9 +132,3 @@ Page({
 | 类名 | 说明 |
 |-----------|-----------|
 | custom-class | 根节点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.4.0 | feature | 新增组件 |

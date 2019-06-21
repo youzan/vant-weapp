@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App';
 import routes from './router';
-import VantDoc, { progress } from '@vant/doc';
+import VantDoc from '@vant/doc';
 
 Vue.use(VueRouter).use(VantDoc);
 
@@ -19,12 +19,10 @@ router.beforeEach((route, redirect, next) => {
     location.replace('https://youzan.github.io/vant/mobile.html?weapp=1');
   }
 
-  progress.start();
   next();
 });
 
 router.afterEach(() => {
-  progress.done();
   window.scrollTo(0, 0);
 });
 

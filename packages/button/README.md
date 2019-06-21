@@ -1,25 +1,19 @@
-## Button 按钮
+# Button 按钮
 
-### 使用指南
-在 json 文件中配置button组件
+### 引入
 
-es6
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+
 ```json
 "usingComponents": {
   "van-button": "path/to/vant-weapp/dist/button/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-button": "path/to/vant-weapp/lib/button/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 按钮类型
+### 按钮类型
 
 支持`default`、`primary`、`info`、`warning`、`danger`五种类型，默认为`default`
 
@@ -31,7 +25,7 @@ es5
 <van-button type="danger">危险按钮</van-button>
 ```
 
-#### 朴素按钮
+### 朴素按钮
 
 通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
 
@@ -40,7 +34,7 @@ es5
 <van-button plain type="danger">朴素按钮</van-button>
 ```
 
-#### 细边框
+### 细边框
 
 设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
 
@@ -49,7 +43,7 @@ es5
 <van-button plain hairline type="danger">细边框按钮</van-button>
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过`disabled`属性来禁用按钮，此时按钮不可点击
 
@@ -58,21 +52,21 @@ es5
 <van-button disabled type="danger">禁用状态</van-button>
 ```
 
-#### 加载状态
+### 加载状态
 
 ```html
 <van-button loading type="primary" />
 <van-button loading type="danger" loading-text="加载中..." />
 ```
 
-#### 按钮形状
+### 按钮形状
 
 ```html
 <van-button square type="primary">方形按钮</van-button>
 <van-button round type="danger">圆形按钮</van-button>
 ```
 
-#### 按钮尺寸
+### 按钮尺寸
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
 ```html
@@ -125,13 +119,3 @@ es5
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | loading-class | 加载图标样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | feature | 新增 square 属性 |
-| 0.3.0 | bugfix | 修复在加载状态下仍然显示文字的问题 |
-| 0.3.4 | feature | 新增 id 属性 |
-| 0.3.7 | feature | 新增 round 属性 |

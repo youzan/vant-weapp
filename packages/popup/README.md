@@ -1,25 +1,17 @@
-## Popup 弹出层
+# Popup 弹出层
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-popup": "path/to/vant-weapp/dist/popup/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-popup": "path/to/vant-weapp/lib/popup/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 `popup`默认从中间弹出
 
 ```html
@@ -38,7 +30,7 @@ Page({
 });
 ```
 
-#### 弹出位置
+### 弹出位置
 通过`position`属性设置 Popup 弹出位置
 
 ```html

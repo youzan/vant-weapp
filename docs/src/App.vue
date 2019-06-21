@@ -2,6 +2,7 @@
   <van-doc
     active="小程序组件"
     :config="config"
+    :github="github"
     :simulator="simulator"
   >
     <router-view />
@@ -9,7 +10,7 @@
 </template>
 
 <script>
-import docConfig from './doc.config';
+import docConfig, { github } from './doc.config';
 
 const UNSHARED = [
   'common',
@@ -24,6 +25,12 @@ const MAPPER = {
 };
 
 export default {
+  data() {
+    return {
+      github
+    };
+  },
+
   computed: {
     config() {
       return docConfig;
@@ -49,14 +56,8 @@ export default {
 <style lang="less">
 .van-doc-intro {
   text-align: center;
+  padding-top: 20px;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-
-  &__youzan {
-    width: 32px;
-    height: 32px;
-    display: block;
-    margin: 25px 0 0;
-  }
 
   &__logo {
     width: 120px;
@@ -72,6 +73,7 @@ export default {
   p {
     font-size: 15px;
     color: #455a64;
+    margin-bottom: 20px;
   }
 }
 </style>

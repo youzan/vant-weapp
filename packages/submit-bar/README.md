@@ -1,25 +1,17 @@
-## SubmitBar 提交订单栏
+# SubmitBar 提交订单栏
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-submit-bar": "path/to/vant-weapp/dist/submit-bar/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-submit-bar": "path/to/vant-weapp/lib/submit-bar/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-submit-bar
@@ -29,7 +21,7 @@ es5
 />
 ```
 
-#### 禁用状态
+### 禁用状态
 禁用状态下不会触发`submit`事件
 
 ```html
@@ -43,7 +35,7 @@ es5
 />
 ```
 
-#### 加载状态
+### 加载状态
 加载状态下不会触发`submit`事件
 
 ```html
@@ -55,7 +47,7 @@ es5
 />
 ```
 
-#### 高级用法
+### 高级用法
 通过插槽插入自定义内容
 
 ```html

@@ -1,9 +1,8 @@
-## Tab 标签页
+# Tab 标签页
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-tab": "path/to/vant-weapp/dist/tab/index",
@@ -11,17 +10,9 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-tab": "path/to/vant-weapp/lib/tab/index",
-  "van-tabs": "path/to/vant-weapp/lib/tabs/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 默认情况下启用第一个标签，可以通过`active`设定当前激活的标签索引，在回调参数的`event.detail`中可以取得被点击标签的标题和索引
 
@@ -49,7 +40,7 @@ Page({
 });
 ```
 
-#### 横向滚动
+### 横向滚动
 
 多于 4 个标签时，Tab 可以横向滚动
 
@@ -64,7 +55,7 @@ Page({
 </van-tabs>
 ```
 
-#### 禁用标签
+### 禁用标签
 
 设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`van-tabs`上监听`disabled`事件
 
@@ -87,7 +78,7 @@ Page({
 });
 ```
 
-#### 样式风格
+### 样式风格
 
 `Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格
 
@@ -99,7 +90,7 @@ Page({
 </van-tabs>
 ```
 
-#### 点击事件
+### 点击事件
 
 可以在`van-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和索引
 
@@ -121,7 +112,7 @@ Page({
 });
 ```
 
-#### 粘性布局
+### 粘性布局
 
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
 
@@ -134,7 +125,7 @@ Page({
 </van-tabs>
 ```
 
-#### 切换动画
+### 切换动画
 
 可以通过`animated`来设置是否启用切换tab时的动画。
 
@@ -147,7 +138,7 @@ Page({
 </van-tabs>
 ```
 
-#### 滑动切换
+### 滑动切换
 
 通过`swipeable`属性可以开启滑动切换标签页
 

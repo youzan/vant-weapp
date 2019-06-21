@@ -2,7 +2,7 @@
 
 ### 认真写 PR 的标题，会用于生成 change log。
 
-#### 标题规则
+### 标题规则
 [bugfix / breaking change / new feature / improvement] 组件名字：修改内容描述
 
 说明：

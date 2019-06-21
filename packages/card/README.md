@@ -1,26 +1,19 @@
-## Card 商品卡片
+# Card 商品卡片
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-card": "path/to/vant-weapp/dist/card/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-card": "path/to/vant-weapp/lib/card/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-card
@@ -32,7 +25,7 @@ es5
 />
 ```
 
-#### 高级用法
+### 高级用法
 
 可以通过插槽添加定制内容
 
@@ -92,17 +85,3 @@ es5
 | origin-price-class | 划线原价样式类 |
 | desc-class | 描述样式类 |
 | num-class | 数量样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.3.0 | bugfix | 修复 currency 默认值不生效的问题 |
-| 0.3.3 | bugfix | 修复 centered 属性不生效的问题 |
-| 0.3.7 | feature | 新增 tag 属性 |
-| 0.3.7 | feature | 新增 link-type 属性 |
-| 0.3.7 | feature | 新增 thumb-link 属性 |
-| 0.3.8 | feature | 新增 lazyLoad 属性 |
-| 0.4.0 | feature | 新增 thumb-mode 属性 |
-| 0.4.0 | feature | 新增 origin-price 属性 |

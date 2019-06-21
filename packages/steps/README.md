@@ -1,26 +1,18 @@
-## Steps 步骤条
+# Steps 步骤条
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-steps": "path/to/vant-weapp/dist/steps/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-steps": "path/to/vant-weapp/lib/steps/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-steps
@@ -54,7 +46,7 @@ Page({
 });
 ```
 
-#### 竖向步骤条
+### 竖向步骤条
 可以通过设置`direction`属性来改变步骤条的显示方式
 
 ```html

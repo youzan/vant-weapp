@@ -1,9 +1,8 @@
-## Badge 徽章
+# Badge 徽章
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-badge": "path/to/vant-weapp/dist/badge/index",
@@ -11,17 +10,10 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-badge": "path/to/vant-weapp/lib/badge/index",
-  "van-badge-group": "path/to/vant-weapp/lib/badge-group/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过在`van-badge-group`上设置`active`属性来控制选中的`badge`
 

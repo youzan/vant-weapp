@@ -1,32 +1,24 @@
-## Search 搜索
+# Search 搜索
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-search": "path/to/vant-weapp/dist/search/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-search": "path/to/vant-weapp/lib/search/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 `van-search` 中，value 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 ```html
 <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
 ```
 
-#### 监听对应事件
+### 监听对应事件
 `van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的搜索按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
 
 ```html
@@ -39,7 +31,7 @@ es5
 />
 ```
 
-#### 自定义行动按钮
+### 自定义行动按钮
 
 `van-search` 支持自定义右侧取消按钮，使用名字为 action 的 slot，并设置 use-action-slot 为 true 即可。
 

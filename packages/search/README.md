@@ -46,7 +46,7 @@
 </van-search>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -66,7 +66,7 @@
 | placeholder-style | 指定 placeholder 的样式 | `String` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

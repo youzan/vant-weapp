@@ -140,7 +140,7 @@ Page({
 <van-picker columns="{{ columns }}" loading />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
@@ -155,7 +155,7 @@ Page({
 | visible-item-count | 可见的选项个数 | `Number` | `5` |
 | default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` |
 
-### Event
+### Events
 
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 

@@ -81,7 +81,7 @@ Page({
 </van-action-sheet>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -93,7 +93,7 @@ Page({
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
 | safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

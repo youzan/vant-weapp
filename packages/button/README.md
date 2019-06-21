@@ -76,7 +76,7 @@
 <van-button size="mini">迷你按钮</van-button>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -102,7 +102,7 @@
 | send-message-img | sendMessageImg | `String` | 截图 |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

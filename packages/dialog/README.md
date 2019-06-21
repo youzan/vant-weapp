@@ -159,7 +159,7 @@ Page({
 | sendMessageImg | sendMessageImg | `String` | 截图 | `contact` |
 | showMessageCard | 显示会话内消息卡片 | `String` | `false` | `contact` |
 
-### API
+### Props
 
 通过组件调用 Dialog 时，支持以下 API：
 
@@ -195,7 +195,7 @@ Page({
 | send-message-img | sendMessageImg | `String` | 截图 | `contact` |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` | `contact` |
 
-### Event
+### Events
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|

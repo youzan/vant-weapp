@@ -41,7 +41,7 @@
 <van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" title="标题" />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -55,7 +55,7 @@
 | confirm-button-text | 确认按钮文字 | `String` | `确认` |
 | cancel-button-text | 取消按钮文字 | `String` | `取消` |
 
-### Event
+### Events
 
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |

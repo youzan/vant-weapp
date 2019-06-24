@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v0.5.15](https://github.com/youzan/vant-weapp/tree/v0.5.15)
+`2019-06-24`
+
+**Improvements**
+
+- TabBar: 重构组件优化性能 [\#1722](https://github.com/youzan/vant-weapp/pull/1722)
+- TabBar: 新增 inactive-color、name 属性 [\#1722](https://github.com/youzan/vant-weapp/pull/1722)
+- TabBar: 补充小程序自定义 tab-bar 相关文档示例 [\#1722](https://github.com/youzan/vant-weapp/pull/1722)
+- SubmitBar: price、tip 属性支持动态更新 [\#1689](https://github.com/youzan/vant-weapp/pull/1689)
+
+**Bug Fixes**
+
+- DatetimePicker: 修复动态更新 min-date 属性时未更新数据 [\#1723](https://github.com/youzan/vant-weapp/pull/1723)
+- Progress: 重构组件以解决动态渲染时样式错误 [\#1719](https://github.com/youzan/vant-weapp/pull/1719)
+- Transition: 修复某些机型上执行时序错误导致渲染异常 [\#1703](https://github.com/youzan/vant-weapp/pull/1703)
+- Radio: 修复未选中状态下 checked-color 属性生效 [\#1702](https://github.com/youzan/vant-weapp/pull/1702)
+
 ### [v0.5.14](https://github.com/youzan/vant-weapp/tree/v0.5.14)
 `2019-05-30`
 

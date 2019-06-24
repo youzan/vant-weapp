@@ -1,0 +1,43 @@
+
+<demo-block title="自定义图标">
+  <van-tabbar
+    active="{{ active2 }}"
+    data-key="active2"
+    custom-class="tabbar"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <van-tabbar-item info="3">
+      <image
+        slot="icon"
+        src="{{ icon.normal }}"
+        mode="aspectFit"
+      />
+      <image
+        slot="icon-active"
+        src="{{ icon.active }}"
+        mode="aspectFit"
+      />
+      自定义
+    </van-tabbar-item>
+    <van-tabbar-item icon="search">标签</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  </van-tabbar>
+</demo-block>
+
+<demo-block title="自定义颜色">
+  <van-tabbar
+    active="{{ active }}"
+    data-key="active"
+    custom-class="tabbar"
+    safe-area-inset-bottom="{{ false }}"
+    active-color="#07c160"
+    inactive-color="#000"
+    bind:change="onChange"
+  >
+    <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="search">标签</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  </van-tabbar>
+</demo-block>

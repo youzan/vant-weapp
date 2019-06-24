@@ -1,6 +1,37 @@
 <demo-block title="基础用法">
   <van-tabbar
     active="{{ active }}"
+    data-key="active"
+    custom-class="tabbar"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="search">标签</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  </van-tabbar>
+</demo-block>
+
+<demo-block title="通过名称匹配">
+  <van-tabbar
+    active="{{ active2 }}"
+    data-key="active2"
+    custom-class="tabbar"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="onChange"
+  >
+    <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
+    <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
+    <van-tabbar-item name="friends" icon="friends-o">标签</van-tabbar-item>
+    <van-tabbar-item name="setting" icon="setting-o">标签</van-tabbar-item>
+  </van-tabbar>
+</demo-block>
+
+<demo-block title="显示徽标">
+  <van-tabbar
+    active="{{ active3 }}"
+    data-key="active3"
     custom-class="tabbar"
     safe-area-inset-bottom="{{ false }}"
     bind:change="onChange"
@@ -9,45 +40,5 @@
     <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
     <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
     <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
-  </van-tabbar>
-</demo-block>
-
-<demo-block title="自定义图标">
-  <van-tabbar
-    active="{{ active2 }}"
-    custom-class="tabbar"
-    safe-area-inset-bottom="{{ false }}"
-    bind:change="onChange"
-  >
-    <van-tabbar-item info="3">
-      <image
-        slot="icon"
-        src="{{ icon.normal }}"
-        mode="aspectFit"
-      />
-      <image
-        slot="icon-active"
-        src="{{ icon.active }}"
-        mode="aspectFit"
-      />
-      自定义
-    </van-tabbar-item>
-    <van-tabbar-item icon="search">标签</van-tabbar-item>
-    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-  </van-tabbar>
-</demo-block>
-
-<demo-block title="自定义颜色">
-  <van-tabbar
-    active="{{ active }}"
-    custom-class="tabbar"
-    safe-area-inset-bottom="{{ false }}"
-    active-color="#07c160"
-    bind:change="onChange"
-  >
-    <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-    <van-tabbar-item icon="search">标签</van-tabbar-item>
-    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
   </van-tabbar>
 </demo-block>

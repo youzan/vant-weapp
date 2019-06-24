@@ -11,5 +11,12 @@ Page({
     this.setData({
       activeNames: event.detail
     });
+  },
+
+  onClick(event) {
+    const { switchTab, url } = event.currentTarget.dataset;
+    if (switchTab) {
+      wx.switchTab({ url });
+    }
   }
 });

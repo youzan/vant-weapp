@@ -17,9 +17,9 @@
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
+  <van-tabbar-item icon="search">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -33,6 +33,41 @@ Page({
     console.log(event.detail);
   }
 });
+```
+
+### 通过名称匹配
+
+在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
+
+```html
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
+  <van-tabbar-item name="friends" icon="friends-o">标签</van-tabbar-item>
+  <van-tabbar-item name="setting" icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>
+```
+
+```javascript
+Page({
+  data: {
+    active: 'home'
+  },
+  onChange(event) {
+    console.log(event.detail);
+  }
+});
+```
+
+### 显示徽标
+
+```html
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
+</van-tabbar>
 ```
 
 ### 自定义图标
@@ -81,6 +116,7 @@ Page({
 <van-tabbar
   active="{{ active }}"
   active-color="#07c160"
+  inactive-color="#000"
   bind:change="onChange"
 >
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
@@ -102,27 +138,33 @@ Page({
 });
 ```
 
+### 结合自定义 tabBar
+
+请参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) 与 [代码片段](https://developers.weixin.qq.com/s/FjLU4mmp7r9s)
+
 ### Tabbar API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | active | 当前选中标签的索引 | `Number` | - |
-| active-color | 选中标签的颜色 | `String` | `#1989fa` |
 | fixed | 是否固定在底部 | `Boolean` | `true` |
 | border | 是否展示外边框 | `Boolean` | `true` |
 | z-index | 元素 z-index | `Number` | `1` |
+| active-color | 选中标签的颜色 | `String` | `#1989fa` |
+| inactive-color | 未选中标签的颜色 | `String` | `#7d7e80` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | `Boolean` | `true` |
 
 ### Tabbar Event
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:change | 切换标签时触发 | event.detail: 当前选中标签的索引 |
+| bind:change | 切换标签时触发 | event.detail: 当前选中标签的名称或索引值 |
 
 ### TabbarItem API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-----------|
+| name | 标签名称，作为匹配的标识符 | `String | Number` | 当前标签的索引值 |
 | icon | 图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | dot | 是否显示小红点 | `Boolean` | - |
 | info | 图标右上角提示信息 | `String | Number` | - |

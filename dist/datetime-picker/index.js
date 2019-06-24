@@ -66,23 +66,29 @@ VantComponent({
         columns: []
     },
     watch: {
-        value(val) {
+        value: 'updateValue',
+        type: 'updateValue',
+        minDate: 'updateValue',
+        maxDate: 'updateValue',
+        minHour: 'updateValue',
+        maxHour: 'updateValue',
+        minMinute: 'updateValue',
+        maxMinute: 'updateValue'
+    },
+    methods: {
+        updateValue() {
             const { data } = this;
-            val = this.correctValue(val);
+            const val = this.correctValue(this.data.value);
             const isEqual = val === data.innerValue;
             if (!isEqual) {
                 this.updateColumnValue(val).then(() => {
                     this.$emit('input', val);
                 });
             }
+            else {
+                this.updateColumns();
+            }
         },
-        type: 'updateColumns',
-        minHour: 'updateColumns',
-        maxHour: 'updateColumns',
-        minMinute: 'updateColumns',
-        maxMinute: 'updateColumns'
-    },
-    methods: {
         getPicker() {
             if (this.picker == null) {
                 const picker = (this.picker = this.selectComponent('.van-datetime-picker'));

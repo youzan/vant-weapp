@@ -7,7 +7,7 @@
       wx:else
       name="success"
       class="{{ utils.bem('radio__icon', [shape, { disabled, checked: value === name }]) }}"
-      style="{{ checkedColor && value && !disabled ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
+      style="{{ checkedColor && !disabled && value === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
       custom-class="icon-class"
       custom-style="line-height: 20px;"
     />

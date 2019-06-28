@@ -106,7 +106,7 @@
 }
 ```
 
-完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/packages/area/demo/area.js)
+完整数据见 [area.js](https://github.com/youzan/vant/blob/dev/src/area/demo/area.js)
 
 ### 点击完成时返回的数据格式
 

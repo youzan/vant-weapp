@@ -6,9 +6,9 @@
   </div>
 </div>
 
-### 概述
+### 介绍
 
-[Vant Weapp](https://youzan.github.io/vant-weapp) 是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
+[Vant Weapp](https://youzan.github.io/vant-weapp) 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
 ### 预览
 

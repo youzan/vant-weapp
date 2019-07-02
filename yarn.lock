@@ -823,10 +823,10 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@vant/doc@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.2.tgz#20f38c3f47f13f0c4dcbc2fdfe7dddeb9943f4b1"
-  integrity sha512-y4g7DzjyKBiEIghkyWNpCPDPND1nrQFb3tX+iMhi484ic7hlCCVnpVmXf74Cp+7FhSeNjCB/6vSDdJFGAXpw5A==
+"@vant/doc@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.3.tgz#2e1f7c8cbfcffee6ad3890400df86ed93f578db7"
+  integrity sha512-2g/dxdkgQxYg1VfpbxIzRAc00s5gb9YUJ3eoYDGMeCpZUVoB6EONPhDr3pOzdqKe/VWGAAZQDnzVaeX6Gab/fg==
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"
@@ -835,10 +835,10 @@
     fs-extra "^4.0.2"
     shelljs "^0.8.2"
 
-"@vant/icons@1.1.8":
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.8.tgz#2acd9b1c608fab7cfd25cf82dc0c9960d0f0495a"
-  integrity sha512-w8DVBQ7Hrr3Ut1KAawPy4pkxhEMDCuCTdVfFgbydLrv1k/unp/Ml0REZVEO2NN4W3Do5r1fypbsNOw1Sm33eLg==
+"@vant/icons@1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.9.tgz#37eafdaff5fcfbb594a27a1470ff3adeb2fa0301"
+  integrity sha512-nGw0EE5jWe5doIJ6aHll2ia5Z/X5jxK9y5xK/r6swhGU3/Z12nrYVkN3T+EH+sRrMB4+Q/w054e10Gq4cV4T7g==
 
 "@vant/markdown-loader@^2.0.0":
   version "2.0.0"

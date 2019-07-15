@@ -1,5 +1,19 @@
 # 更新日志
 
+## [v0.5.16](https://github.com/youzan/vant-weapp/tree/v0.5.16)
+`2019-07-15`
+
+**Improvements**
+
+- Transition: classNames 从data中移除，优化性能 [\#1766](https://github.com/youzan/vant-weapp/pull/1766)
+- SwitchCell: 新增slot title、label、icon [\#1765](https://github.com/youzan/vant-weapp/pull/1765)
+- Swipe-cell: 优化iOS设备中纵向滑动卡顿的问题 [\#1728](https://github.com/youzan/vant-weapp/pull/1728)
+
+**Bug Fixes**
+
+- Radio: 修复 label-position 属性不生效 [\#1767](https://github.com/youzan/vant-weapp/pull/1767)
+- field: 统一 type=textarea 的 placeholder 的样式 [\#1764](https://github.com/youzan/vant-weapp/pull/1764)
+
 ### [v0.5.15](https://github.com/youzan/vant-weapp/tree/v0.5.15)
 `2019-06-24`
 

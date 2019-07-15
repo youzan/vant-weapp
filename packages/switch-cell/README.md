@@ -64,7 +64,9 @@ Page({
 |-----------|-----------|-----------|-------------|
 | name | 在表单内提交时的标识符 | `String` | - |
 | checked | 开关状态 | `any` | `false` |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | title | 左侧标题 |  `String` | `''` |
+| label | 标题下方的描述信息 | `String` | - |
 | loading | 是否为加载状态 |  `Boolean` | `false` |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` |
 | size | 开关尺寸 | `String` | `24px` |
@@ -72,9 +74,18 @@ Page({
 | inactive-color | 开关关闭时的背景色 | `String` | `#fff` |
 | active-value | 打开时的值 | `any` | `true` |
 | inactive-value | 关闭时的值 | `any` | `false` |
+| use-label-slot | 是否使用 label slot | `Boolean` | `false` |
 
 ### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | bind:change | 开关状态切换回调 | event.detail: 是否选中开关 |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |
+| label | 自定义`label`显示内容，需要设置 `use-label-slot`属性 |
+| icon | 自定义`icon`显示内容，如果设置了`icon`属性则不生效 |

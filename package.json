@@ -1,6 +1,6 @@
 {
   "name": "vant-weapp",
-  "version": "0.5.15",
+  "version": "0.5.16",
   "author": "youzan",
   "license": "MIT",
   "miniprogram": "dist",

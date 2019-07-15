@@ -1,6 +1,6 @@
 # 更新日志
 
-## [v0.5.16](https://github.com/youzan/vant-weapp/tree/v0.5.16)
+### [v0.5.16](https://github.com/youzan/vant-weapp/tree/v0.5.16)
 `2019-07-15`
 
 **Improvements**

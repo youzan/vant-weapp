@@ -43,7 +43,7 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
@@ -80,7 +80,7 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
@@ -108,7 +108,7 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
@@ -138,7 +138,7 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });

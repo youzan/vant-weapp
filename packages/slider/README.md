@@ -82,34 +82,6 @@ Page({
 });
 ```
 
-### 自定义按钮
-
-```html
-<van-slider
-  value="{{ currentValue }}"
-  use-button-slot
-  bind:drag="onDrag"
->
-  <view class="custom-button" slot="button">
-    {{ currentValue }}/100
-  </view>
-</van-slider>
-```
-
-```js
-Page({
-  data: {
-    currentValue: 30
-  },
-
-  onDrag(event) {
-    this.setData({
-      currentValue: event.detail.value
-    });
-  }
-});
-```
-
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |

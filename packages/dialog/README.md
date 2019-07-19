@@ -84,6 +84,7 @@ Dialog.confirm({
 ```html
 <van-dialog
   use-slot
+  title="标题"
   show="{{ show }}"
   show-cancel-button
   confirm-button-open-type="getUserInfo"

@@ -46,6 +46,7 @@
   </van-button>
   <van-dialog
     use-slot
+    title="标题"
     show="{{ show }}"
     show-cancel-button
     bind:close="onClose"

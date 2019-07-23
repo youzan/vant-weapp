@@ -82,29 +82,11 @@ npm run dev
 
 Vant Weapp 最低支持到小程序基础库 1.9.9 版本
 
-## 迁移指南
-
-Vant Weapp 是基于有赞 Zanui 组件库进行的品牌升级，对于仍在使用 Zanui 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。
-
-Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
-
-## 链接
-
-* [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
-* [意见反馈](https://github.com/youzan/vant-weapp/issues)
-* [加入我们](https://job.youzan.com)
-* [Vant: 移动端 Vue UI](https://github.com/youzan/vant)
-* [React: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
-
 ## 微信讨论群
 
 欢迎大家在微信上联系我们，添加下方微信并注明『交流 vant-weapp』即可
 
 <img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
-
-## 开源协议
-
-本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
 ## 加入我们
 
@@ -120,9 +102,17 @@ Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan
 - <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
 - <a target="_blank" href="https://github.com/youzan">开源项目</a>
 
-## 贡献
+## 链接
 
-如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为优化 [vant-weapp] 贡献力量
+* [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
+* [意见反馈](https://github.com/youzan/vant-weapp/issues)
+* [加入我们](https://job.youzan.com)
+* [Vant: 移动端 Vue UI](https://github.com/youzan/vant)
+* [React: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
+
+## 开源协议
+
+本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
 [vant-weapp]: https://github.com/youzan/vant-weapp
 [issue]: https://github.com/youzan/vant-weapp/issues/new

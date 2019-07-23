@@ -106,6 +106,20 @@ Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
 
+## 加入我们
+
+**有赞前端团队**是由一群年轻、皮实、对技术饱含热情的小伙伴组成的，目前共有 100 多名前端工程师，分布在业务中台、电商、零售、美业、资产、赋能等业务线。
+
+我们热爱分享和开源，崇尚用工程师的方式解决问题，因此造了很多工具来解决我们遇到的问题，目前我们维护的开源产品有：
+
+<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" style="width: 320px; height: 303px; box-shadow: none;">
+
+我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
+
+- <a target="_blank" href="https://job.youzan.com/apply/youzan/3750#/job/c1c4f154-be88-4ebf-95bd-76d4ce2d4faf?_k=tqcvo9">职位详情</a>（Base: 杭州/深圳）
+- <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
+- <a target="_blank" href="https://github.com/youzan">开源项目</a>
+
 ## 贡献
 
 如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为优化 [vant-weapp] 贡献力量

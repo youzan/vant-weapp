@@ -81,11 +81,11 @@ VantComponent({
             return this.set({
               contentHeight: height ? `${height}px` : 'auto'
             });
-          } else {
-            return this.set({ contentHeight: `${height}px` })
-              .then(nextTick)
-              .then(() => this.set({ contentHeight: 0 }));
           }
+
+          return this.set({ contentHeight: `${height}px` })
+            .then(nextTick)
+            .then(() => this.set({ contentHeight: 0 }));
         });
     },
 

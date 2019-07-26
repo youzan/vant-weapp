@@ -96,7 +96,7 @@ VantComponent({
       const column = this.getColumn(index);
 
       if (column == null) {
-        return Promise.reject('setColumnValue: 对应列不存在');
+        return Promise.reject(new Error('setColumnValue: 对应列不存在'));
       }
 
       return column.setValue(value);
@@ -112,7 +112,7 @@ VantComponent({
       const column = this.getColumn(columnIndex);
 
       if (column == null) {
-        return Promise.reject('setColumnIndex: 对应列不存在');
+        return Promise.reject(new Error('setColumnIndex: 对应列不存在'));
       }
 
       return column.setIndex(optionIndex);
@@ -128,7 +128,7 @@ VantComponent({
       const column = this.children[index];
 
       if (column == null) {
-        return Promise.reject('setColumnValues: 对应列不存在');
+        return Promise.reject(new Error('setColumnValues: 对应列不存在'));
       }
 
       const isSame =

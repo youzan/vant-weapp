@@ -116,19 +116,20 @@ VantComponent({
 
     getPicker() {
       if (this.picker == null) {
-        const picker = (this.picker = this.selectComponent(
-          '.van-datetime-picker'
-        ));
+        this.picker = this.selectComponent('.van-datetime-picker');
+
+        const { picker } = this;
         const { setColumnValues } = picker;
         picker.setColumnValues = (...args: any) =>
           setColumnValues.apply(picker, [...args, false]);
       }
+
       return this.picker;
     },
 
     updateColumns() {
       const { formatter = defaultFormatter } = this.data;
-      const results = this.getRanges().map(({ type, range }, index) => {
+      const results = this.getRanges().map(({ type, range }) => {
         const values = times(range[1] - range[0] + 1, index => {
           let value = range[0] + index;
           value = type === 'year' ? `${value}` : padZero(value);

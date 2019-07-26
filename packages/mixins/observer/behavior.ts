@@ -2,7 +2,7 @@ function setAsync(context: Weapp.Component, data: object) {
   return new Promise(resolve => {
     context.setData(data, resolve);
   });
-};
+}
 
 export const behavior = Behavior({
   created() {
@@ -20,7 +20,8 @@ export const behavior = Behavior({
         const value = computed[key].call(this);
 
         if (cache[key] !== value) {
-          cache[key] = needUpdate[key] = value;
+          cache[key] = value;
+          needUpdate[key] = value;
         }
       });
 

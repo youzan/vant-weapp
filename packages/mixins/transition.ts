@@ -9,7 +9,7 @@ const getClassNames = (name: string) => ({
 
 const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
 
-export const transition = function(showDefaultValue: boolean) {
+export const transition = function (showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,

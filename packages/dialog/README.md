@@ -134,7 +134,8 @@ Page({
 | message | 内容 | `String` | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | zIndex | z-index 层级 | `Number` | `100` |
-| className | 自定义类名 | `String` | '' |
+| className | 自定义类名，dialog在自定义组件内时无效 | `String` | '' |
+| customStyle | 自定义样式 | `String` | '' |
 | selector | 自定义选择器 | `String` | `van-dialog` |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` |
@@ -171,7 +172,8 @@ Page({
 | message | 内容 | `String` | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | z-index | z-index 层级 | `Number` | `100` |
-| class-name | 自定义类名 | `String` | '' |
+| class-name | 自定义类名，dialog在自定义组件内时无效 | `String` | '' |
+| customStyle | 自定义样式 | `String` | '' |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` |

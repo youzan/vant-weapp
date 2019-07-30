@@ -12,6 +12,7 @@ type DialogOptions = {
   selector?: string;
   ariaLabel?: string;
   className?: string;
+  customStyle?: string;
   transition?: string;
   asyncClose?: boolean;
   businessId?: number;
@@ -79,6 +80,7 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   className: '',
+  customStyle: '',
   asyncClose: false,
   messageAlign: '',
   transition: 'scale',

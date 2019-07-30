@@ -1,3 +1,5 @@
+<wxs src="./index.wxs" module="getOptionText" />
+
 <view
   class="van-picker-column custom-class"
   style="height: {{ itemHeight * visibleItemCount }}px"
@@ -18,14 +20,3 @@
     >{{ getOptionText(option, valueKey) }}</view>
   </view>
 </view>
-
-<wxs module="getOptionText">
-function isObj(x) {
-  var type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
-}
-
-module.exports = function (option, valueKey) {
-  return isObj(option) && option[valueKey] ? option[valueKey] : option;
-}
-</wxs>

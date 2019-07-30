@@ -10,6 +10,7 @@ declare type DialogOptions = {
     selector?: string;
     ariaLabel?: string;
     className?: string;
+    customStyle?: string;
     transition?: string;
     asyncClose?: boolean;
     businessId?: number;

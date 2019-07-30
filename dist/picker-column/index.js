@@ -115,9 +115,7 @@ VantComponent({
                     userAction && this.$emit('change', index);
                 });
             }
-            else {
-                return this.set({ offset });
-            }
+            return this.set({ offset });
         },
         setValue(value) {
             const { options } = this.data;

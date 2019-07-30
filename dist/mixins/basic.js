@@ -1,7 +1,7 @@
 export const basic = Behavior({
     methods: {
-        $emit() {
-            this.triggerEvent.apply(this, arguments);
+        $emit(...args) {
+            this.triggerEvent(...args);
         },
         getRect(selector, all) {
             return new Promise(resolve => {

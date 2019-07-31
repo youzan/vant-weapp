@@ -1,5 +1,21 @@
 # 更新日志
 
+
+## [v0.5.17](https://github.com/youzan/vant-weapp/tree/v0.5.17)
+`2019-07-30`
+
+**Improvements**
+
+- Dialog: 新增属性 custom-style [\#1808](https://github.com/youzan/vant-weapp/pull/1808)
+- Dialog: 默认位置稍微上移，与微信mdoal保持一致 [\#1782](https://github.com/youzan/vant-weapp/pull/1782)
+- readme增加团队介绍 [\#1792](https://github.com/youzan/vant-weapp/pull/1792)
+
+**Bug Fixes**
+
+- Picker: 修复text为0时显示异常 [\#1809](https://github.com/youzan/vant-weapp/pull/1809)
+- Field: Modified value invalid [\#1769](https://github.com/youzan/vant-weapp/pull/1769)
+- DatetimePicker: 修复文档错误 [\#1784](https://github.com/youzan/vant-weapp/pull/1784)
+
 ### [v0.5.16](https://github.com/youzan/vant-weapp/tree/v0.5.16)
 `2019-07-15`
 

@@ -13,7 +13,18 @@ export default {
       title: 'Vant Weapp',
       href: '#/'
     },
-    nav: {}
+    nav: {
+      logoLink: [
+        {
+          image: 'https://img.yzcdn.cn/vant/vant-o.svg',
+          url: 'https://youzan.github.io/vant'
+        },
+        {
+          image: 'https://img.yzcdn.cn/vant/logo/github.svg',
+          url: github
+        }
+      ]
+    }
   },
   nav: [
     {

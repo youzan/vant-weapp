@@ -14,6 +14,7 @@
   show-message-card="{{ showMessageCard }}"
   app-parameter="{{ appParameter }}"
   aria-label="{{ ariaLabel }}"
+  disabled="{{ disabled }}"
   bindtap="onClick"
   bindgetuserinfo="bindGetUserInfo"
   bindcontact="bindContact"

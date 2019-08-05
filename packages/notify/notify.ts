@@ -30,6 +30,8 @@ export default function Notify(options: NotifyOptions | string) {
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);
+
+  delete options.context;
   delete options.selector;
 
   if (notify) {

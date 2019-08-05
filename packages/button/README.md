@@ -106,12 +106,14 @@
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:click | 点击按钮且按钮状态不为加载或禁用时触发 | - |
+| bind:click | 点击按钮，且按钮状态不为加载或禁用时触发 | - |
 | bind:getuserinfo | 用户点击该按钮时，会返回获取到的用户信息，<br>从返回参数的 detail 中获取到的值同 wx.getUserInfo | - |
 | bind:contact | 客服消息回调 | - |
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
+
+> Button 提供的是 click 事件而不是原生 tap 事件，按钮禁用时，click 事件不会触发，tap 事件依然会触发。
 
 ### 外部样式类
 

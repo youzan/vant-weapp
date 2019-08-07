@@ -43,8 +43,8 @@
       class="van-button__icon"
       custom-style="line-height: inherit;"
     />
-    <span class="van-button__text">
+    <view class="van-button__text">
       <slot />
-    </span>
+    </view>
   </block>
 </button>

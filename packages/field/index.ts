@@ -24,7 +24,6 @@ VantComponent({
     iconClass: String,
     clearable: Boolean,
     inputAlign: String,
-    customClass: String,
     customStyle: String,
     confirmType: String,
     confirmHold: Boolean,

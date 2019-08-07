@@ -147,6 +147,18 @@
     vertical-align: middle;
   }
 
+  &__icon {
+    min-width: 1em;
+    line-height: inherit !important;
+    vertical-align: top;
+  }
+
+  &__icon + &__text:not(:empty) {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
+  }
+
   &--hairline {
     border-width: 0;
     padding-top: 1px; // add 1px padding for text vertical align middle

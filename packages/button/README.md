@@ -59,6 +59,16 @@
 <van-button loading type="danger" loading-text="加载中..." />
 ```
 
+### 图标按钮
+
+通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL
+
+```html 
+<van-button icon="star-o" type="primary" />
+<van-button icon="star-o" type="primary">按钮</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
+```
+
 ### 按钮形状
 
 ```html
@@ -83,6 +93,7 @@
 | id | 标识符 | `String` | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | plain | 是否为朴素按钮 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
 | round | 是否为圆形按钮 | `Boolean` | `false` |

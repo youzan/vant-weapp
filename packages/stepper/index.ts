@@ -27,6 +27,14 @@ VantComponent({
     step: {
       type: null,
       value: 1
+    },
+    showPlus: {
+      type: Boolean,
+      value: true
+    },
+    showMinus: {
+      type: Boolean,
+      value: true
     }
   },
 

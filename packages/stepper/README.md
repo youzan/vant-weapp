@@ -55,6 +55,8 @@
 | disable-input | 是否禁用输入框 | `Boolean` | `false` |
 | async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | `Boolean` | `false` |
 | input-width | 输入框宽度，须指定单位 | `String` | `30px` |
+| show-plus | 是否显示增加按钮 | `Boolean` | `true` |
+| show-minus | 是否显示减少按钮 | `Boolean` | `true` |
 
 ### Events
 

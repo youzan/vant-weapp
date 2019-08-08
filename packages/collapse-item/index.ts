@@ -42,6 +42,9 @@ VantComponent({
       .then(nextTick)
       .then(() => {
         this.set({ transition: true });
+      })
+      .then(() => {
+        this.onTransitionEnd();
       });
   },
 

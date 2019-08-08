@@ -35,7 +35,11 @@ VantComponent({
         this.updateExpanded()
             .then(nextTick)
             .then(() => {
-            this.set({ transition: true });
+            const data = { transition: true };
+            if (this.data.expanded) {
+                data.contentHeight = 'auto';
+            }
+            this.set(data);
         });
     },
     methods: {

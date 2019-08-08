@@ -14,6 +14,7 @@ export default function Notify(options) {
     options = Object.assign({}, defaultOptions, parseOptions(options));
     const context = options.context || getContext();
     const notify = context.selectComponent(options.selector);
+    delete options.context;
     delete options.selector;
     if (notify) {
         notify.set(options);

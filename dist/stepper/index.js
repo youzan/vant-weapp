@@ -24,6 +24,14 @@ VantComponent({
         step: {
             type: null,
             value: 1
+        },
+        showPlus: {
+            type: Boolean,
+            value: true
+        },
+        showMinus: {
+            type: Boolean,
+            value: true
         }
     },
     computed: {
@@ -77,7 +85,7 @@ VantComponent({
                 return;
             }
             const diff = type === 'minus' ? -this.data.step : +this.data.step;
-            const value = Math.round((this.data.value + diff) * 100) / 100;
+            const value = Math.round((+this.data.value + diff) * 100) / 100;
             this.triggerInput(this.range(value));
             this.$emit(type);
         },

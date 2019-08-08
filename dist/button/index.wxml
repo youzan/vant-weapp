@@ -35,5 +35,16 @@
       {{ loadingText }}
     </view>
   </block>
-  <slot wx:else />
+  <block wx:else>
+    <van-icon
+      wx:if="{{ icon }}"
+      size="1.2em"
+      name="{{ icon }}"
+      class="van-button__icon"
+      custom-style="line-height: inherit;"
+    />
+    <view class="van-button__text">
+      <slot />
+    </view>
+  </block>
 </button>

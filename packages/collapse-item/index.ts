@@ -41,10 +41,13 @@ VantComponent({
     this.updateExpanded()
       .then(nextTick)
       .then(() => {
-        this.set({ transition: true });
-      })
-      .then(() => {
-        this.onTransitionEnd();
+        const data: Record<string, boolean | string> = { transition: true };
+
+        if (this.data.expanded) {
+          data.contentHeight = 'auto';
+        }
+
+        this.set(data);
       });
   },
 

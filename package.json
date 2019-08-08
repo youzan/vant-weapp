@@ -11,7 +11,7 @@
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && rm -rf dist && rm -rf lib && NODE_ENV=production node build/compiler.js",
-    "build:changelog": "vant-doc changelog --tag v0.5.0 changelog.generated.md"
+    "build:changelog": "vant-doc changelog --tag v0.5.0 ./docs/markdown/changelog.generated.md"
   },
   "files": [
     "dist",

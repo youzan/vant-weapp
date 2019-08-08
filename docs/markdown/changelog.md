@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v0.5.18](https://github.com/youzan/vant-weapp/tree/v0.5.18)
+`2019-08-08`
+
+**Improvements**
+
+- Button: 新增 icon 属性 [\#1841](https://github.com/youzan/vant-weapp/pull/1841)
+- Field: 新增 custom-style 属性 [\#1842](https://github.com/youzan/vant-weapp/pull/1842)
+- Stepper: 新增 show-plus、show-minus 属性 [\#1839](https://github.com/youzan/vant-weapp/pull/1839)
+- Icon: 新增 warning、good-job、good-job-o 图标 [\#1816](https://github.com/youzan/vant-weapp/pull/1816)
+- Icon: 新增 smile、music、thumb-circle、phone-circle 图标 [\#1825](https://github.com/youzan/vant-weapp/pull/1825)
+
+**Bug Fixes**
+
+- 修复 Field error 属性不生效的问题 [\#1827](https://github.com/youzan/vant-weapp/pull/1827)
+- 修复 Collapse 默认展开情况下高度无法自适应的问题 [\#1846](https://github.com/youzan/vant-weapp/pull/1846)
+- 修复 Stepper 传入字符串类型时计算错误的问题 [\#1838](https://github.com/youzan/vant-weapp/pull/1838)
+
 
 ### [v0.5.17](https://github.com/youzan/vant-weapp/tree/v0.5.17)
 `2019-07-30`
@@ -7,14 +24,13 @@
 **Improvements**
 
 - Dialog: 新增属性 custom-style [\#1808](https://github.com/youzan/vant-weapp/pull/1808)
-- Dialog: 默认位置稍微上移，与微信mdoal保持一致 [\#1782](https://github.com/youzan/vant-weapp/pull/1782)
-- readme增加团队介绍 [\#1792](https://github.com/youzan/vant-weapp/pull/1792)
+- Dialog: 优化垂直居中位置 [\#1782](https://github.com/youzan/vant-weapp/pull/1782)
 
 **Bug Fixes**
 
-- Picker: 修复text为0时显示异常 [\#1809](https://github.com/youzan/vant-weapp/pull/1809)
-- Field: Modified value invalid [\#1769](https://github.com/youzan/vant-weapp/pull/1769)
-- DatetimePicker: 修复文档错误 [\#1784](https://github.com/youzan/vant-weapp/pull/1784)
+- Picker: 修复 text 为 0 时显示异常 [\#1809](https://github.com/youzan/vant-weapp/pull/1809)
+- Field: 修复赋值和失焦同时触发时改值无效的问题 [\#1769](https://github.com/youzan/vant-weapp/pull/1769)
+
 
 ### [v0.5.16](https://github.com/youzan/vant-weapp/tree/v0.5.16)
 `2019-07-15`
@@ -29,6 +45,7 @@
 
 - Radio: 修复 label-position 属性不生效 [\#1767](https://github.com/youzan/vant-weapp/pull/1767)
 - field: 统一 type=textarea 的 placeholder 的样式 [\#1764](https://github.com/youzan/vant-weapp/pull/1764)
+
 
 ### [v0.5.15](https://github.com/youzan/vant-weapp/tree/v0.5.15)
 `2019-06-24`
@@ -47,6 +64,7 @@
 - Transition: 修复某些机型上执行时序错误导致渲染异常 [\#1703](https://github.com/youzan/vant-weapp/pull/1703)
 - Radio: 修复未选中状态下 checked-color 属性生效 [\#1702](https://github.com/youzan/vant-weapp/pull/1702)
 
+
 ### [v0.5.14](https://github.com/youzan/vant-weapp/tree/v0.5.14)
 `2019-05-30`
 
@@ -60,7 +78,8 @@
 **Bug Fixes**
 
 - SubmitBar: 修复 tip-icon 属性无效 [\#1671](https://github.com/youzan/vant-weapp/pull/1671)
-- DatetimePicker: 修复wepy中组件初始化报错 [\#1659](https://github.com/youzan/vant-weapp/pull/1659)
+- DatetimePicker: 修复 wepy 中组件初始化报错 [\#1659](https://github.com/youzan/vant-weapp/pull/1659)
+
 
 ### [v0.5.13](https://github.com/youzan/vant-weapp/tree/v0.5.13)
 `2019-05-15`
@@ -74,7 +93,8 @@
 **Bug Fixes**
 
 - Checkbox: 修复文本过长时样式异常 [\#1616](https://github.com/youzan/vant-weapp/pull/1616)
-- Transition: 修复leave阶段时节点不消失 [\#1621](https://github.com/youzan/vant-weapp/pull/1621)
+- Transition: 修复 leave 阶段时节点不消失 [\#1621](https://github.com/youzan/vant-weapp/pull/1621)
+
 
 ### [v0.5.12](https://github.com/youzan/vant-weapp/tree/v0.5.12)
 `2019-05-05`
@@ -117,6 +137,7 @@
 - Cell: 新增 useLabelSlot 属性、 新增 label 插槽 [\#1510](https://github.com/youzan/vant-weapp/pull/1510)
 - Feild: 新增 error-message-align 属性 [\#1509](https://github.com/youzan/vant-weapp/pull/1509)
 
+
 ### [v0.5.10](https://github.com/youzan/vant-weapp/tree/v0.5.10)
 `2019-04-11`
 
@@ -129,7 +150,6 @@
 - SwipeCell: 优化性能、优化纵向滑动阻止页面滚动 [\#1501](https://github.com/youzan/vant-weapp/pull/1501)
 - 修复文档中 changelog 链接错误 [\#1491](https://github.com/youzan/vant-weapp/pull/1491)
 - 添加 es5 版本指引文档 [\#1489](https://github.com/youzan/vant-weapp/pull/1489)
-
 
 
 ### [v0.5.9](https://github.com/youzan/vant-weapp/tree/v0.5.9)
@@ -151,6 +171,7 @@
 - Slider: 修复点击不生效的问题 [\#1484](https://github.com/youzan/vant-weapp/pull/1484)
 - Icon: 避免使用标签选择器 [\#1482](https://github.com/youzan/vant-weapp/pull/1482)
 - SwipeCell: 修复点击不生效的问题 [\#1459](https://github.com/youzan/vant-weapp/pull/1459)
+
 
 ### [v0.5.8](https://github.com/youzan/vant-weapp/tree/v0.5.8)
 `2019-03-22`
@@ -176,6 +197,7 @@
 - Transition: 修复 show 值切换过快时不消失 [\#1404](https://github.com/youzan/vant-weapp/pull/1404)
 - Icon: 修复 info 的层级高于自定义图片 [\#1397](https://github.com/youzan/vant-weapp/pull/1397)
 
+
 ### [v0.5.7](https://github.com/youzan/vant-weapp/tree/v0.5.7)
 `2019-03-09`
 
@@ -194,6 +216,7 @@
 - Tab: 修复 offset-set 属性失效 [\#1370](https://github.com/youzan/vant-weapp/pull/1370)
 - Steps: 兼容微信 7.0.3 环境下渲染错误 [\#1367](https://github.com/youzan/vant-weapp/pull/1367)
 
+
 ### [v0.5.6](https://github.com/youzan/vant-weapp/tree/v0.5.6)
 `2019-02-28`
 
@@ -203,7 +226,9 @@
 - Button: 增加新属性 loading-size [\#1346](https://github.com/youzan/vant-weapp/pull/1346)
 
 **Bug Fixes**
+
 - Area: 修复有时初始选项错误 [\#1351](https://github.com/youzan/vant-weapp/pull/1351)
+
 
 ### [v0.5.5](https://github.com/youzan/vant-weapp/tree/v0.5.5)
 `2019-02-26`
@@ -226,9 +251,6 @@
 - Popup: 修复部分机型动画初始化失败导致的位置偏移 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
 - ActionSheet: 修复部分机型动画初始化失败导致的位置偏移 [\#1341](https://github.com/youzan/vant-weapp/pull/1341)
 
-**Internal**
-
-- 使用 miniprogram-api-typings 进行 wx api 类型定义 [\#1344](https://github.com/youzan/vant-weapp/pull/1344)
 
 ### [v0.5.4](https://github.com/youzan/vant-weapp/tree/v0.5.4)
 `2019-02-18`
@@ -247,6 +269,7 @@
 - ActionSheet: 取消按钮高度异常 [\#1311](https://github.com/youzan/vant-weapp/pull/1311)
 - Tab: 初始化时底部线条去除动画效果 [\#1295](https://github.com/youzan/vant-weapp/pull/1295)
 - Area: 修复有时初始化选项错误 [\#1317](https://github.com/youzan/vant-weapp/pull/1317)
+
 
 ### [v0.5.3](https://github.com/youzan/vant-weapp/tree/v0.5.3)
 `2019-02-06`
@@ -281,7 +304,6 @@
 - 新增 pause-circle-o 图标
 - 新增 weapp-nav 图标
 
-
 **Bug Fixes**
 
 - Area: 修复特殊情况下初始化选项错误 [\#1285](https://github.com/youzan/vant-weapp/pull/1285)
@@ -304,6 +326,7 @@
 - Search: 修复readonly属性无效 [\#1238](https://github.com/youzan/vant-weapp/pull/1238)
 - Area: 修复getIndexes结果不符合预期 [\#1220](https://github.com/youzan/vant-weapp/pull/1220)
 - Tabs：回滚使用IntersectionObserver实现的sticky效果 [\#1217](https://github.com/youzan/vant-weapp/pull/1217)
+
 
 ### [v0.5.1](https://github.com/youzan/vant-weapp/tree/v0.5.1)
 `2019-01-10`

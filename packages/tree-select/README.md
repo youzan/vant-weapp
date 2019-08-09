@@ -20,6 +20,7 @@ es5
 
 ### 代码演示
 可以在任意位置上使用 van-tree-select 标签。传入对应的数据即可。
+此组件支持单选或多选，具体行为完全基于事件 click-item 的实现逻辑如何为属性 active-id 赋值，当 active-id 为数组时即为多选状态。
 ```html
 <van-tree-select
   items="{{ items }}"
@@ -43,8 +44,23 @@ Page({
   },
 
   onClickItem({ detail = {} }) {
+    // 多选
+    if (!this.data.activeId) this.data.activeId = [];
+
+    const idx = this.data.activeId.indexOf(detail.id);
+    if (idx > -1) {
+      this.data.activeId.splice(idx, 1);
+    } else {
+      this.data.activeId.push(detail.id);
+    }
+
+/*
+    // 单选
+    this.data.activeId = this.data.activeId === detail.id ? null : detail.id;
+*/
+
     this.setData({
-      activeId: detail.id
+      activeId: this.data.activeId
     });
   }
 });

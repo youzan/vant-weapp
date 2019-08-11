@@ -28,7 +28,7 @@
     "@babel/preset-env": "^7.5.5",
     "@vant/doc": "^2.4.0",
     "@vant/eslint-config": "^1.2.4",
-    "@vant/icons": "1.1.12",
+    "@vant/icons": "1.1.13",
     "@vant/markdown-loader": "^2.2.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",

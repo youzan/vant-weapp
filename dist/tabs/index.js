@@ -95,6 +95,7 @@ VantComponent({
         });
     },
     destroyed() {
+        // @ts-ignore
         this.createIntersectionObserver().disconnect();
     },
     methods: {
@@ -271,7 +272,9 @@ VantComponent({
             }
             const { offsetTop } = this.data;
             const { windowHeight } = wx.getSystemInfoSync();
+            // @ts-ignore
             this.createIntersectionObserver().disconnect();
+            // @ts-ignore
             this.createIntersectionObserver()
                 .relativeToViewport({ top: -(this.navHeight + offsetTop) })
                 .observe('.van-tabs', (res) => {
@@ -286,6 +289,7 @@ VantComponent({
                 });
                 this.setPosition(position);
             });
+            // @ts-ignore
             this.createIntersectionObserver()
                 .relativeToViewport({ bottom: -(windowHeight - 1 - offsetTop) })
                 .observe('.van-tabs', (res) => {

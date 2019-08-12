@@ -1,3 +1,5 @@
+import { Weapp } from "definitions/weapp";
+
 export const openType = Behavior({
   properties: {
     openType: String

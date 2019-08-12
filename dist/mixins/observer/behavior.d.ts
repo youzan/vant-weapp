@@ -1,1 +1,1 @@
-export declare const behavior: void;
+export declare const behavior: string;

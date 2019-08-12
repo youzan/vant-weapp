@@ -6,14 +6,14 @@ VantComponent({
   relation: {
     name: 'radio',
     type: 'descendant',
-    linked(target: Weapp.Component) {
+    linked(target) {
       this.children = this.children || [];
       this.children.push(target);
       this.updateChild(target);
     },
-    unlinked(target: Weapp.Component) {
+    unlinked(target) {
       this.children = this.children.filter(
-        (child: Weapp.Component) => child !== target
+        (child: WechatMiniprogram.Component.TrivialInstance) => child !== target
       );
     }
   },
@@ -31,12 +31,12 @@ VantComponent({
 
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child: Weapp.Component) =>
+      (this.children || []).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
         this.updateChild(child)
       );
     },
 
-    updateChild(child: Weapp.Component) {
+    updateChild(child: WechatMiniprogram.Component.TrivialInstance) {
       const { value, disabled } = this.data;
       child.set({
         value,

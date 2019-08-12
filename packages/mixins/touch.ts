@@ -1,3 +1,5 @@
+import { Weapp } from "definitions/weapp";
+
 export const touch = Behavior({
   methods: {
     touchStart(event: Weapp.TouchEvent) {

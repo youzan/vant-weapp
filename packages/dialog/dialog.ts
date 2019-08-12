@@ -6,7 +6,7 @@ type DialogOptions = {
   show?: boolean;
   title?: string;
   zIndex?: number;
-  context?: any;
+  context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
   overlay?: boolean;
   selector?: string;

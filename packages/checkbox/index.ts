@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 
-function emit(target: Weapp.Component, value: boolean | any[]) {
+function emit(target: WechatMiniprogram.Component.TrivialInstance, value: boolean | any[]) {
   target.$emit('input', value);
   target.$emit('change', value);
 }
@@ -57,7 +57,7 @@ VantComponent({
       }
     },
 
-    setParentValue(parent: Weapp.Component, value: boolean) {
+    setParentValue(parent: WechatMiniprogram.Component.TrivialInstance, value: boolean) {
       const parentValue = parent.data.value.slice();
       const { name } = this.data;
       const { max } = parent.data;

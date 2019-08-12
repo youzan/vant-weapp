@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { isObj, range } from '../common/utils';
+import { Weapp } from 'definitions/weapp';
 
 const DEFAULT_DURATION = 200;
 

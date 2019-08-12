@@ -3,11 +3,14 @@
     "module": "es6",
     "esModuleInterop": true,
     "target": "es6",
-    "noImplicitAny": false,
     "declaration": true,
+    "noImplicitAny": false,
     "outDir": "dist",
     "baseUrl": ".",
-    "types": ["miniprogram-api-typings"]
+    "types": ["miniprogram-api-typings"],
+    "paths": {
+      "definitions/*": ["./packages/definitions/*"]
+    }
   },
-  "include": ["packages/**/*", "types/**/*"]
+  "include": ["packages/**/*"]
 }

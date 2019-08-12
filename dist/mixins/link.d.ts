@@ -1,1 +1,1 @@
-export declare const link: void;
+export declare const link: string;

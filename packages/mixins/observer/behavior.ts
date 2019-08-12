@@ -1,4 +1,4 @@
-function setAsync(context: Weapp.Component, data: object) {
+function setAsync(context: WechatMiniprogram.Component.TrivialInstance, data: object) {
   return new Promise(resolve => {
     context.setData(data, resolve);
   });

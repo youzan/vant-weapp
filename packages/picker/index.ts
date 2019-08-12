@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { pickerProps } from './shared';
+import { Weapp } from 'definitions/weapp';
 
 interface Column {
   values: object[];
@@ -147,7 +148,7 @@ VantComponent({
 
     // get values of all columns
     getValues() {
-      return this.children.map((child: Weapp.Component) => child.getValue());
+      return this.children.map((child: WechatMiniprogram.Component.TrivialInstance) => child.getValue());
     },
 
     // set values of all columns
@@ -161,7 +162,7 @@ VantComponent({
     // get indexes of all columns
     getIndexes() {
       return this.children.map(
-        (child: Weapp.Component) => child.data.currentIndex
+        (child: WechatMiniprogram.Component.TrivialInstance) => child.data.currentIndex
       );
     },
 

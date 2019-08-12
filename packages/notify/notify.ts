@@ -20,7 +20,7 @@ function parseOptions(text: NotifyOptions | string): NotifyOptions {
   return isObj(text) ? (text as NotifyOptions) : ({ text } as NotifyOptions);
 }
 
-function getContext(): Page.PageInstance {
+function getContext() {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }

@@ -1,1 +1,1 @@
-export declare const button: void;
+export declare const button: string;

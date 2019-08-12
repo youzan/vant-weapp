@@ -7,7 +7,8 @@ const postcss = require('gulp-postcss');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
-const src = path.join(__dirname, '../packages');
+const src = path.resolve(__dirname, '../packages');
+const icons = path.resolve(__dirname, '../node_modules/@vant/icons');
 
 const libConfig = path.resolve(__dirname, '../tsconfig.lib.json');
 const esConfig = path.resolve(__dirname, '../tsconfig.json');
@@ -73,6 +74,7 @@ module.exports = {
       compileTs(exampleConfig, exampleDir),
       compileLess(exampleDir),
       copyStatic(exampleDir),
+      () => gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
       () => {
         gulp.watch(`${src}/**/*.ts`, compileTs(exampleConfig, exampleDir));
         gulp.watch(`${src}/**/*.less`, compileLess(exampleDir));

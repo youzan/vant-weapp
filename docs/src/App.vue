@@ -36,7 +36,7 @@ export default {
       const { path } = this.$route.meta;
 
       if (!UNSHARED.includes(path)) {
-        return `https://youzan.github.io/vant/mobile.html?hide_nav=1&weapp=1#/zh-CN/${path}`;
+        return `/vant/mobile.html?hide_nav=1&weapp=1#/zh-CN/${path}`;
       }
 
       return `./preview.html#${path}`;

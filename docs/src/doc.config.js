@@ -17,7 +17,7 @@ export default {
       logoLink: [
         {
           image: 'https://img.yzcdn.cn/vant/vant-o.svg',
-          url: 'https://youzan.github.io/vant'
+          url: '/vant'
         },
         {
           image: 'https://img.yzcdn.cn/vant/logo/github.svg',

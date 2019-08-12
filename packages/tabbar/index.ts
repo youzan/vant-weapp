@@ -7,14 +7,14 @@ VantComponent({
   relation: {
     name: 'tabbar-item',
     type: 'descendant',
-    linked(target: Weapp.Component) {
+    linked(target) {
       this.children.push(target);
       target.parent = this;
       target.updateFromParent();
     },
-    unlinked(target: Weapp.Component) {
+    unlinked(target) {
       this.children = this.children.filter(
-        (item: Weapp.Component) => item !== target
+        (item: WechatMiniprogram.Component.TrivialInstance) => item !== target
       );
       this.updateChildren();
     }
@@ -59,11 +59,11 @@ VantComponent({
       }
 
       return Promise.all(
-        children.map((child: Weapp.Component) => child.updateFromParent())
+        children.map((child: WechatMiniprogram.Component.TrivialInstance) => child.updateFromParent())
       );
     },
 
-    onChange(child: Weapp.Component) {
+    onChange(child: WechatMiniprogram.Component.TrivialInstance) {
       const index = this.children.indexOf(child);
       const active = child.data.name || index;
 

@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { Weapp } from 'definitions/weapp';
 
 type TabItemData = {
   width?: number
@@ -18,11 +19,11 @@ VantComponent({
   relation: {
     name: 'tab',
     type: 'descendant',
-    linked(child: Weapp.Component) {
+    linked(child) {
       this.child.push(child);
       this.updateTabs(this.data.tabs.concat(child.data));
     },
-    unlinked(child: Weapp.Component) {
+    unlinked(child) {
       const index = this.child.indexOf(child);
       const { tabs } = this.data;
       tabs.splice(index, 1);
@@ -108,7 +109,7 @@ VantComponent({
     this.scrollIntoView();
 
     this.getRect('.van-tabs__wrap').then(
-      (rect: wx.BoundingClientRectCallbackResult) => {
+      (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
         this.navHeight = rect.height;
         this.observerContentScroll();
       }
@@ -116,6 +117,7 @@ VantComponent({
   },
 
   destroyed() {
+    // @ts-ignore
     this.createIntersectionObserver().disconnect();
   },
 
@@ -162,7 +164,7 @@ VantComponent({
       const { color, active, duration, lineWidth, lineHeight } = this.data;
 
       this.getRect('.van-tab', true).then(
-        (rects: wx.BoundingClientRectCallbackResult[]) => {
+        (rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const rect = rects[active];
           const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
           const height = lineHeight !== -1 ? `height: ${lineHeight}px;` : '';
@@ -197,7 +199,7 @@ VantComponent({
       if (!animated) return '';
 
       this.getRect('.van-tabs__content').then(
-        (rect: wx.BoundingClientRectCallbackResult) => {
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           const { width } = rect;
 
           this.set({
@@ -212,7 +214,7 @@ VantComponent({
 
           const props = { width, animated };
 
-          this.child.forEach((item: Weapp.Component) => {
+          this.child.forEach((item: WechatMiniprogram.Component.TrivialInstance) => {
             item.set(props);
           });
         }
@@ -220,7 +222,7 @@ VantComponent({
     },
 
     setActiveTab() {
-      this.child.forEach((item: Weapp.Component, index: number) => {
+      this.child.forEach((item: WechatMiniprogram.Component.TrivialInstance, index: number) => {
         const data: TabItemData = {
           active: index === this.data.active
         };
@@ -254,8 +256,8 @@ VantComponent({
         this.getRect('.van-tabs__nav')
       ]).then(
         ([tabRects, navRect]: [
-        wx.BoundingClientRectCallbackResult[],
-        wx.BoundingClientRectCallbackResult
+        WechatMiniprogram.BoundingClientRectCallbackResult[],
+        WechatMiniprogram.BoundingClientRectCallbackResult
         ]) => {
           const tabRect = tabRects[active];
           const offsetLeft = tabRects
@@ -337,11 +339,13 @@ VantComponent({
       const { offsetTop } = this.data;
       const { windowHeight } = wx.getSystemInfoSync();
 
+      // @ts-ignore
       this.createIntersectionObserver().disconnect();
 
+      // @ts-ignore
       this.createIntersectionObserver()
         .relativeToViewport({ top: -(this.navHeight + offsetTop) })
-        .observe('.van-tabs', (res: wx.ObserveCallbackResult) => {
+        .observe('.van-tabs', (res: WechatMiniprogram.ObserveCallbackResult) => {
           const { top } = res.boundingClientRect;
 
           if (top > offsetTop) {
@@ -359,9 +363,10 @@ VantComponent({
           this.setPosition(position);
         });
 
+      // @ts-ignore
       this.createIntersectionObserver()
         .relativeToViewport({ bottom: -(windowHeight - 1 - offsetTop) })
-        .observe('.van-tabs', (res: wx.ObserveCallbackResult) => {
+        .observe('.van-tabs', (res: WechatMiniprogram.ObserveCallbackResult) => {
           const { top, bottom } = res.boundingClientRect;
 
           if (bottom < this.navHeight) {

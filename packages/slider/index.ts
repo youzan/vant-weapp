@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   mixins: [touch],
@@ -53,7 +54,7 @@ VantComponent({
       if (this.data.disabled) return;
 
       this.touchMove(event);
-      this.getRect('.van-slider').then((rect: wx.BoundingClientRectCallbackResult) => {
+      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
         const diff = this.deltaX / rect.width * 100;
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
@@ -68,7 +69,7 @@ VantComponent({
     onClick(event: Weapp.TouchEvent) {
       if (this.data.disabled) return;
 
-      this.getRect('.van-slider').then((rect: wx.BoundingClientRectCallbackResult) => {
+      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
         const value = (event.detail.x - rect.left) / rect.width * 100;
         this.updateValue(value, true);
       });

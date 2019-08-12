@@ -7,7 +7,7 @@ interface ToastOptions {
   type?: string;
   mask?: boolean;
   zIndex?: number;
-  context?: any;
+  context?: WechatMiniprogram.Component.TrivialInstance | WechatMiniprogram.Page.TrivialInstance;
   position?: string;
   duration?: number;
   selector?: string;
@@ -42,7 +42,7 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-function Toast(toastOptions: ToastOptions | ToastMessage): Weapp.Component {
+function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Component.TrivialInstance {
   const options = {
     ...currentOptions,
     ...parseOptions(toastOptions)
@@ -81,7 +81,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage): Weapp.Component {
   return toast;
 }
 
-const createMethod = type => (options: ToastOptions | ToastMessage) =>
+const createMethod = (type: string) => (options: ToastOptions | ToastMessage) =>
   Toast({
     type,
     ...parseOptions(options)

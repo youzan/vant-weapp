@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { safeArea } from '../mixins/safe-area';
+import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   mixins: [safeArea()],

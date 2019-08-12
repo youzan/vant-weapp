@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { Weapp } from 'definitions/weapp';
 
 const THRESHOLD = 0.3;
 

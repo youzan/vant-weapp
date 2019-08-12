@@ -4,7 +4,7 @@ VantComponent({
   relation: {
     type: 'ancestor',
     name: 'badge-group',
-    linked(target: Weapp.Component) {
+    linked(target) {
       this.parent = target;
     }
   },

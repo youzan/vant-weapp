@@ -1,30 +1,20 @@
-## Notify 消息提示
+# Notify 消息提示
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-notify": "path/to/vant-weapp/dist/notify/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-notify": "path/to/vant-weapp/lib/notify/index"
-}
-```
-
-### 代码演示
+## 代码演示
 
 ### 基础用法
 
 ```js
 import Notify from 'path/to/vant-weapp/dist/notify/notify';
-// es5
-var Notify = require('path/to/vant-weapp/lib/notify/notify');
 
 Notify('通知内容');
 ```
@@ -48,7 +38,7 @@ Notify({
 <van-notify id="custom-selector" />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|

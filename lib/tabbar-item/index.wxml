@@ -2,7 +2,7 @@
 
 <view
   class="{{ utils.bem('tabbar-item', { active }) }} custom-class"
-  style="{{ active && color ? 'color: ' + color : '' }}"
+  style="color: {{ active ? activeColor : inactiveColor }}"
   bind:tap="onClick"
 >
   <view class="{{ utils.bem('tabbar-item__icon', { dot }) }}">

@@ -4,11 +4,11 @@ VantComponent({
   relation: {
     name: 'badge',
     type: 'descendant',
-    linked(target: Weapp.Component) {
+    linked(target) {
       this.badges.push(target);
       this.setActive(this.data.active);
     },
-    unlinked(target: Weapp.Component) {
+    unlinked(target) {
       this.badges = this.badges.filter(item => item !== target);
       this.setActive(this.data.active);
     }

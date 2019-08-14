@@ -1,26 +1,18 @@
-## Icon 图标
+# Icon 图标
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-icon": "path/to/vant-weapp/dist/icon/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-icon": "path/to/vant-weapp/lib/icon/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 `Icon`的`name`属性支持传入图标名称或图片链接
 
@@ -29,14 +21,14 @@ es5
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
-#### 显示徽标
+### 显示徽标
 
  ```html
 <van-icon name="chat" info="9" />
 <van-icon name="chat" info="99+" />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -47,7 +39,7 @@ es5
 | custom-style | 自定义样式 | `String` | - |
 | class-prefix | 类名前缀 | `String` | `van-icon` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

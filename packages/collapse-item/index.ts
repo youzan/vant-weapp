@@ -8,7 +8,7 @@ VantComponent({
   relation: {
     name: 'collapse',
     type: 'ancestor',
-    linked(parent: Weapp.Component) {
+    linked(parent) {
       this.parent = parent;
     }
   },
@@ -41,7 +41,13 @@ VantComponent({
     this.updateExpanded()
       .then(nextTick)
       .then(() => {
-        this.set({ transition: true });
+        const data: Record<string, boolean | string> = { transition: true };
+
+        if (this.data.expanded) {
+          data.contentHeight = 'auto';
+        }
+
+        this.set(data);
       });
   },
 
@@ -75,17 +81,17 @@ VantComponent({
 
     updateStyle(expanded: boolean) {
       return this.getRect('.van-collapse-item__content')
-        .then((rect: wx.BoundingClientRectCallbackResult) => rect.height)
+        .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => rect.height)
         .then((height: number) => {
           if (expanded) {
             return this.set({
               contentHeight: height ? `${height}px` : 'auto'
             });
-          } else {
-            return this.set({ contentHeight: `${height}px` })
-              .then(nextTick)
-              .then(() => this.set({ contentHeight: 0 }));
           }
+
+          return this.set({ contentHeight: `${height}px` })
+            .then(nextTick)
+            .then(() => this.set({ contentHeight: 0 }));
         });
     },
 

@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   field: true,
@@ -27,6 +28,14 @@ VantComponent({
     step: {
       type: null,
       value: 1
+    },
+    showPlus: {
+      type: Boolean,
+      value: true
+    },
+    showMinus: {
+      type: Boolean,
+      value: true
     }
   },
 
@@ -86,14 +95,14 @@ VantComponent({
       this.triggerInput(value);
     },
 
-    onChange(type) {
+    onChange(type: string) {
       if (this.data[`${type}Disabled`]) {
         this.$emit('overlimit', type);
         return;
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
-      const value = Math.round((this.data.value + diff) * 100) / 100;
+      const value = Math.round((+this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.$emit(type);
     },

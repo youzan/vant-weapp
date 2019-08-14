@@ -35,7 +35,11 @@ VantComponent({
         this.updateExpanded()
             .then(nextTick)
             .then(() => {
-            this.set({ transition: true });
+            const data = { transition: true };
+            if (this.data.expanded) {
+                data.contentHeight = 'auto';
+            }
+            this.set(data);
         });
     },
     methods: {
@@ -67,11 +71,9 @@ VantComponent({
                         contentHeight: height ? `${height}px` : 'auto'
                     });
                 }
-                else {
-                    return this.set({ contentHeight: `${height}px` })
-                        .then(nextTick)
-                        .then(() => this.set({ contentHeight: 0 }));
-                }
+                return this.set({ contentHeight: `${height}px` })
+                    .then(nextTick)
+                    .then(() => this.set({ contentHeight: 0 }));
             });
         },
         onClick() {

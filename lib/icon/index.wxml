@@ -13,6 +13,7 @@
   <image
     wx:if="{{ utils.isSrc(name) }}"
     src="{{ name }}"
+    mode="aspectFit"
     class="van-icon__image"
   />
 </view>

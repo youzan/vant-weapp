@@ -1,10 +1,9 @@
-## Radio 单选框
+# Radio 单选框
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-radio": "path/to/vant-weapp/dist/radio/index",
@@ -12,17 +11,9 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-radio": "path/to/vant-weapp/lib/radio/index",
-  "van-radio-group": "path/to/vant-weapp/lib/radio-group/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 通过`value`绑定值当前选中项的 name
 
@@ -47,7 +38,7 @@ Page({
 });
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过`disabled`属性禁止选项切换，在`van-radio`上设置`diabled`可以禁用单个选项
 
@@ -58,13 +49,13 @@ Page({
 </van-radio-group>
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
  ```html
 <van-radio checked-color="#07c160">复选框</van-radio>
 ```
 
-#### 自定义图标
+### 自定义图标
 
 通过 icon 插槽自定义图标
 
@@ -96,7 +87,7 @@ Page({
 });
 ```
 
-#### 与 Cell 组件一起使用
+### 与 Cell 组件一起使用
 
 此时你需要再引入`Cell`和`CellGroup`组件。
 

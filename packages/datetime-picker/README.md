@@ -1,26 +1,23 @@
-## DatetimePicker 时间选择
+# DatetimePicker 时间选择
+
+### 介绍
+
 时间选择组件通常与 [弹出层](#/popup) 组件配合使用
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
 
-es6
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+
 ```json
 "usingComponents": {
   "van-datetime-picker": "path/to/vant-weapp/dist/datetime-picker/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-datetime-picker": "path/to/vant-weapp/lib/datetime-picker/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 选择完整时间
+### 选择完整时间
 
 `value` 为时间戳
 
@@ -46,13 +43,13 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
 ```
 
-#### 选择日期（年月日）
+### 选择日期（年月日）
 
 `value` 为时间戳，通过传入 `formatter` 函数对选项文字进行处理
 
@@ -83,13 +80,13 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
 ```
 
-#### 选择日期（年月）
+### 选择日期（年月）
 
 `value` 为时间戳
 
@@ -111,13 +108,13 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
 ```
 
-#### 选择时间
+### 选择时间
 
 `value` 为字符串
 
@@ -141,13 +138,13 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail.value
+      currentDate: event.detail
     });
   }
 });
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|------|
@@ -168,7 +165,7 @@ Page({
 | cancel-button-text | 取消按钮文字 | `String` | `取消` |
 | visible-item-count | 可见的选项个数 | `Number` | `5` |
 
-### Event
+### Events
 
 | 事件名称 | 说明 | 回调参数 |
 |------|------|------|

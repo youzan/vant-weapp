@@ -1,27 +1,18 @@
-## NoticeBar 通告栏
+# NoticeBar 通告栏
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-notice-bar": "path/to/vant-weapp/dist/notice-bar/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-notice-bar": "path/to/vant-weapp/lib/notice-bar/index"
-}
-```
+## 代码演示
 
-
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-notice-bar
@@ -30,7 +21,7 @@ es5
 />
 ```
 
-#### 禁用滚动
+### 禁用滚动
 文字内容多于一行时，可通过`scrollable`参数控制是否开启滚动
 
 ```html
@@ -40,7 +31,7 @@ es5
 />
 ```
 
-#### 通告栏模式
+### 通告栏模式
 默认模式为空，支持`closeable`和`link`。
 
 ```html
@@ -57,7 +48,7 @@ es5
 />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -70,7 +61,7 @@ es5
 | backgroundColor | 滚动条背景 | `String` | `#fffbe8` |
 | open-type | 微信开放能力 | `String` | `navigate` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

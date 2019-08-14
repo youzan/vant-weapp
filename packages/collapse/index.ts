@@ -4,12 +4,12 @@ VantComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',
-    linked(child: Weapp.Component) {
+    linked(child) {
       this.children.push(child);
     },
-    unlinked(child: Weapp.Component) {
+    unlinked(child) {
       this.children = this.children.filter(
-        (item: Weapp.Component) => item !== child
+        (item: WechatMiniprogram.Component.TrivialInstance) => item !== child
       );
     }
   },
@@ -35,7 +35,7 @@ VantComponent({
 
   methods: {
     updateExpanded() {
-      this.children.forEach((child: Weapp.Component) => {
+      this.children.forEach((child: WechatMiniprogram.Component.TrivialInstance) => {
         child.updateExpanded();
       });
     },

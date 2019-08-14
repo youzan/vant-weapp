@@ -1,26 +1,19 @@
-## NavBar 导航栏
+# NavBar 导航栏
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-nav-bar": "path/to/vant-weapp/dist/nav-bar/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-nav-bar": "path/to/vant-weapp/lib/nav-bar/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-nav-bar
@@ -44,7 +37,7 @@ Page({
 });
 ```
 
-#### 高级用法
+### 高级用法
 通过 slot 定制内容
 
 ```html
@@ -54,7 +47,7 @@ Page({
 ```
 
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -75,7 +68,7 @@ Page({
 | left | 自定义左侧区域内容 |
 | right | 自定义右侧区域内容 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

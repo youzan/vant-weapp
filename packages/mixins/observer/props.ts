@@ -10,12 +10,12 @@ export function observeProps(props) {
     }
 
     let { observer } = prop;
-    prop.observer = function() {
+    prop.observer = function (...args) {
       if (observer) {
         if (typeof observer === 'string') {
           observer = this[observer];
         }
-        observer.apply(this, arguments);
+        observer.apply(this, args);
       }
       this.set();
     };

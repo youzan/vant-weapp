@@ -1,32 +1,24 @@
-## Stepper 步进器
+# Stepper 步进器
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-stepper": "path/to/vant-weapp/dist/stepper/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-stepper": "path/to/vant-weapp/lib/stepper/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-stepper value="{{ 1 }}" bind:change="onChange" />
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过设置`disabled`属性来禁用 stepper
 
@@ -34,7 +26,7 @@ es5
 <van-stepper value="{{ 1 }}" disabled bind:change="onChange" />
 ```
 
-#### 高级用法
+### 高级用法
 
 默认是每次加减为1，可以对组件设置`step`、`min`、`max`属性
 
@@ -49,7 +41,7 @@ es5
 />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -63,8 +55,10 @@ es5
 | disable-input | 是否禁用输入框 | `Boolean` | `false` |
 | async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | `Boolean` | `false` |
 | input-width | 输入框宽度，须指定单位 | `String` | `30px` |
+| show-plus | 是否显示增加按钮 | `Boolean` | `true` |
+| show-minus | 是否显示减少按钮 | `Boolean` | `true` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
@@ -83,11 +77,3 @@ es5
 | input-class | 输入框样式类 |
 | plus-class | 加号按钮样式类 |
 | minus-class | 减号按钮样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.2.1 | feature | 支持在原生 form 组件内使用 |
-| 0.3.8 | bugfix | 修复 disabled 状态下仍然可以点击的问题 |

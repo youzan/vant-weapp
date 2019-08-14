@@ -1,25 +1,17 @@
-## Panel 面板
+# Panel 面板
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-panel": "path/to/vant-weapp/dist/panel/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-panel": "path/to/vant-weapp/lib/panel/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 面板只是一个容器，里面可以放入自定义的内容
 
 ```html
@@ -28,7 +20,7 @@ es5
 </van-panel>
 ```
 
-#### 高级用法
+### 高级用法
 使用`slot`自定义内容
 
 ```html
@@ -41,7 +33,7 @@ es5
 </van-panel>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|

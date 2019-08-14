@@ -9,9 +9,5 @@
     "wx": false,
     "Behavior": false
   },
-  "extends": ["plugin:vue-libs/recommended"],
-  "rules": {
-    "semi": ["error", "always"],
-    "space-before-function-paren": ["error", "never"]
-  }
+  "extends": ["@vant"]
 }

@@ -3,14 +3,14 @@ VantComponent({
     props: {
         info: null,
         icon: String,
-        dot: Boolean
+        dot: Boolean,
+        name: {
+            type: [String, Number]
+        }
     },
     relation: {
         name: 'tabbar',
-        type: 'ancestor',
-        linked(target) {
-            this.parent = target;
-        }
+        type: 'ancestor'
     },
     data: {
         active: false
@@ -22,11 +22,28 @@ VantComponent({
             }
             this.$emit('click');
         },
-        setActive({ active, color }) {
-            if (this.data.active !== active) {
-                return this.set({ active, color });
+        updateFromParent() {
+            const { parent } = this;
+            if (!parent) {
+                return;
             }
-            return Promise.resolve();
+            const index = parent.children.indexOf(this);
+            const parentData = parent.data;
+            const { data } = this;
+            const active = (data.name || index) === parentData.active;
+            const patch = {};
+            if (active !== data.active) {
+                patch.active = active;
+            }
+            if (parentData.activeColor !== data.activeColor) {
+                patch.activeColor = parentData.activeColor;
+            }
+            if (parentData.inactiveColor !== data.inactiveColor) {
+                patch.inactiveColor = parentData.inactiveColor;
+            }
+            return Object.keys(patch).length > 0
+                ? this.set(patch)
+                : Promise.resolve();
         }
     }
 });

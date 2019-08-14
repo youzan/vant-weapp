@@ -1,40 +1,33 @@
-## Loading 加载
+# Loading 加载
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-loading": "path/to/vant-weapp/dist/loading/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-loading": "path/to/vant-weapp/lib/loading/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### Circular
+### Circular
 
 ```html
 <van-loading />
 <van-loading color="#fff" />
 ```
 
-#### Spinner
+### Spinner
 
 ```html
 <van-loading type="spinner" />
 <van-loading type="spinner" color="#fff" />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|

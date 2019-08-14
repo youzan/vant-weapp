@@ -1,26 +1,18 @@
-## Transition 动画
+# Transition 动画
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-transition": "path/to/vant-weapp/dist/transition/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-transition": "path/to/vant-weapp/lib/transition/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 将元素包裹在 transition 组件内，在元素展示/隐藏时，会有相应的过渡动画
 
 ```html
@@ -29,14 +21,14 @@ es5
 </van-transition>
 ```
 
-#### 动画类型
+### 动画类型
 transition 组件内置了多种动画，可以通过`name`字段指定动画类型
 
 ```html
 <van-transition name="fade-up" />
 ```
 
-#### 高级用法
+### 高级用法
 
 可以通过外部样式类自定义过渡效果，还可以定制进入和移出的持续时间：
 
@@ -65,7 +57,7 @@ transition 组件内置了多种动画，可以通过`name`字段指定动画类
 }
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|

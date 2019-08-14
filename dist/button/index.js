@@ -5,6 +5,7 @@ VantComponent({
     mixins: [button, openType],
     classes: ['hover-class', 'loading-class'],
     props: {
+        icon: String,
         plain: Boolean,
         block: Boolean,
         round: Boolean,

@@ -1,27 +1,21 @@
-## Picker 选择器
+# Picker 选择器
+
+### 介绍
+
 选择器组件通常与 [弹出层](#/popup) 组件配合使用
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-picker": "path/to/vant-weapp/dist/picker/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-picker": "path/to/vant-weapp/lib/picker/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-picker columns="{{ columns }}" bind:change="onChange" />
@@ -29,8 +23,6 @@ es5
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
-// es5
-const Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Page({
   data: {
@@ -44,7 +36,7 @@ Page({
 });
 ```
 
-#### 默认选中项
+### 默认选中项
 
 单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
 
@@ -56,7 +48,7 @@ Page({
 />
 ```
 
-#### 展示顶部栏
+### 展示顶部栏
 
 ```html
 <van-picker
@@ -70,8 +62,6 @@ Page({
 
 ```javascript
 import Toast from 'path/to/vant-weapp/dist/toast/toast';
-// es5
-const Toast = require('path/to/vant-weapp/lib/toast/toast');
 
 Page({
   data: {
@@ -89,7 +79,7 @@ Page({
 });
 ```
 
-#### 禁用选项
+### 禁用选项
 
 选项可以为对象结构，通过设置 disabled 来禁用该选项
 
@@ -109,7 +99,7 @@ Page({
 });
 ```
 
-#### 多列联动
+### 多列联动
 
 ```html
 <van-picker columns="{{ columns }}" bind:change="onChange" />
@@ -143,14 +133,14 @@ Page({
 });
 ```
 
-#### 加载状态
+### 加载状态
 当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示
 
 ```html
 <van-picker columns="{{ columns }}" loading />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
@@ -165,7 +155,7 @@ Page({
 | visible-item-count | 可见的选项个数 | `Number` | `5` |
 | default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` |
 
-### Event
+### Events
 
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 

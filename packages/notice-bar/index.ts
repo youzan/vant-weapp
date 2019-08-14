@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { Weapp } from 'definitions/weapp';
 
 const FONT_COLOR = '#ed6a0c';
 const BG_COLOR = '#fffbe8';
@@ -74,7 +75,7 @@ VantComponent({
       Promise.all([
         this.getRect('.van-notice-bar__content'),
         this.getRect('.van-notice-bar__wrap')
-      ]).then((rects: wx.BoundingClientRectCallbackResult[]) => {
+      ]).then((rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
         const [contentRect, wrapRect] = rects;
         if (
           contentRect == null ||

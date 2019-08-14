@@ -16,7 +16,7 @@ VantComponent({
     },
     mixins: [touch],
     data: {
-        catchMove: true
+        catchMove: false
     },
     created() {
         this.offset = 0;
@@ -57,6 +57,7 @@ VantComponent({
             else {
                 this.swipeMove(0);
             }
+            this.set({ catchMove: false });
         },
         startDrag(event) {
             if (this.data.disabled) {

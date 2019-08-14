@@ -1,24 +1,22 @@
 const gulp = require('gulp');
 const path = require('path');
 const less = require('gulp-less');
-const ts = require('gulp-typescript');
 const insert = require('gulp-insert');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 
-const tsConfig = path.resolve(__dirname, '../tsconfig.json');
-const isProduction = process.env.NODE_ENV === 'production';
-const src = path.join(__dirname, '../packages');
+const src = path.resolve(__dirname, '../packages');
+const icons = path.resolve(__dirname, '../node_modules/@vant/icons');
+
+const libConfig = path.resolve(__dirname, '../tsconfig.lib.json');
+const esConfig = path.resolve(__dirname, '../tsconfig.json');
+const exampleConfig = path.resolve(__dirname, '../tsconfig.example.json');
+
 const libDir = path.resolve(__dirname, '../lib');
 const esDir = path.resolve(__dirname, '../dist');
 const exampleDir = path.resolve(__dirname, '../example/dist');
-
-const libConfig = {
-  target: 'es5',
-  lib: ['es2015', 'es2017', 'dom'],
-  module: 'commonjs',
-  declaration: false
-};
 
 const compileLess = dist => () =>
   gulp
@@ -28,7 +26,7 @@ const compileLess = dist => () =>
     .pipe(
       insert.transform((contents, file) => {
         if (!file.path.includes('packages' + path.sep + 'common')) {
-          contents = `@import '../common/index.wxss';` + contents;
+          contents = `@import '../common/index.wxss';${contents}`;
         }
         return contents;
       })
@@ -40,35 +38,50 @@ const compileLess = dist => () =>
     )
     .pipe(gulp.dest(dist));
 
-const compileTs = (dist, config) => () => {
-  const tsProject = ts.createProject(tsConfig, config);
-  return tsProject
-    .src()
-    .pipe(tsProject())
-    .on('error', () => {})
-    .pipe(gulp.dest(dist));
+const compileTs = (config, dest) => async () => {
+  await exec(`npx tsc -p ${config}`);
+  await exec(`npx tscpaths -p ${config} -s ../packages -o ../${dest}`);
 };
 
 const copy = (dist, ext) => () =>
   gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
 
-const compile = (dist, config) =>
-  gulp.parallel(
-    compileTs(dist, config),
-    compileLess(dist),
-    copy(dist, 'wxml'),
-    copy(dist, 'wxs'),
-    copy(dist, 'json')
-  );
+const copyStatic = dist =>
+  gulp.parallel(copy(dist, 'wxml'), copy(dist, 'wxs'), copy(dist, 'json'));
 
-if (isProduction) {
-  gulp.series(compile(esDir), compile(libDir, libConfig))();
-} else {
-  compile(exampleDir)();
+const clean = path => () => exec(`npx rimraf ${path}`);
 
-  gulp.watch(`${src}/**/*.ts`, compileTs(exampleDir));
-  gulp.watch(`${src}/**/*.less`, compileLess(exampleDir));
-  gulp.watch(`${src}/**/*.wxml`, copy(exampleDir, 'wxml'));
-  gulp.watch(`${src}/**/*.wxs`, copy(exampleDir, 'wxs'));
-  gulp.watch(`${src}/**/*.json`, copy(exampleDir, 'json'));
-}
+module.exports = {
+  buildEs: gulp.series(
+    clean(esDir),
+    gulp.parallel(
+      compileTs(esConfig, esDir),
+      compileLess(esDir),
+      copyStatic(esDir)
+    )
+  ),
+  buildLib: gulp.series(
+    clean(libDir),
+    gulp.parallel(
+      compileTs(libConfig, libDir),
+      compileLess(libDir),
+      copyStatic(libDir)
+    )
+  ),
+  buildExample: gulp.series(
+    clean(exampleDir),
+    gulp.parallel(
+      compileTs(exampleConfig, exampleDir),
+      compileLess(exampleDir),
+      copyStatic(exampleDir),
+      () => gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
+      () => {
+        gulp.watch(`${src}/**/*.ts`, compileTs(exampleConfig, exampleDir));
+        gulp.watch(`${src}/**/*.less`, compileLess(exampleDir));
+        gulp.watch(`${src}/**/*.wxml`, copy(exampleDir, 'wxml'));
+        gulp.watch(`${src}/**/*.wxs`, copy(exampleDir, 'wxs'));
+        gulp.watch(`${src}/**/*.json`, copy(exampleDir, 'json'));
+      }
+    )
+  )
+};

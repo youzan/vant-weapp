@@ -9,15 +9,17 @@ const getClassNames = (name: string) => ({
 
 const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
 
-export const transition = function(showDefaultValue: boolean) {
+export const transition = function (showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,
+      // @ts-ignore
       show: {
         type: Boolean,
         value: showDefaultValue,
         observer: 'observeShow'
       },
+      // @ts-ignore
       duration: {
         type: [Number, Object],
         value: 300,
@@ -25,16 +27,14 @@ export const transition = function(showDefaultValue: boolean) {
       },
       name: {
         type: String,
-        value: 'fade',
-        observer: 'updateClasses'
+        value: 'fade'
       }
     },
 
     data: {
       type: '',
       inited: false,
-      display: false,
-      classNames: getClassNames('fade')
+      display: false
     },
 
     attached() {
@@ -52,14 +52,9 @@ export const transition = function(showDefaultValue: boolean) {
         }
       },
 
-      updateClasses(name: string) {
-        this.set({
-          classNames: getClassNames(name)
-        });
-      },
-
       enter() {
-        const { classNames, duration } = this.data;
+        const { duration, name } = this.data;
+        const classNames = getClassNames(name);
         const currentDuration = isObj(duration) ? duration.leave : duration;
 
         this.status = 'enter';
@@ -88,7 +83,8 @@ export const transition = function(showDefaultValue: boolean) {
       },
 
       leave() {
-        const { classNames, duration } = this.data;
+        const { duration, name } = this.data;
+        const classNames = getClassNames(name);
         const currentDuration = isObj(duration) ? duration.leave : duration;
 
         this.status = 'leave';

@@ -6,12 +6,13 @@ type DialogOptions = {
   show?: boolean;
   title?: string;
   zIndex?: number;
-  context?: any;
+  context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
   overlay?: boolean;
   selector?: string;
   ariaLabel?: string;
   className?: string;
+  customStyle?: string;
   transition?: string;
   asyncClose?: boolean;
   businessId?: number;
@@ -57,6 +58,8 @@ const Dialog: Dialog = options => {
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();
     const dialog = context.selectComponent(options.selector);
+
+    delete options.context;
     delete options.selector;
 
     if (dialog) {
@@ -79,6 +82,7 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   className: '',
+  customStyle: '',
   asyncClose: false,
   messageAlign: '',
   transition: 'scale',

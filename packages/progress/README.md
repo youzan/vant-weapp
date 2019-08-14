@@ -1,25 +1,17 @@
-## Progress 进度条
+# Progress 进度条
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-progress": "path/to/vant-weapp/dist/progress/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-progress": "path/to/vant-weapp/lib/progress/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 进度条默认为蓝色，使用`percentage`属性来设置当前进度
 
@@ -28,13 +20,13 @@ es5
 ```
 
 
-#### 置灰
+### 置灰
 
 ```html
 <van-progress inactive percentage="50" />
 ```
 
-#### 样式定制
+### 样式定制
 
 可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色
 
@@ -59,7 +51,7 @@ es5
 />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|

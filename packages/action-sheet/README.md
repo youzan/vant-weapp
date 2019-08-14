@@ -1,25 +1,19 @@
-## ActionSheet 上拉菜单
+# ActionSheet 上拉菜单
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
 
-es6
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+
 ```json
 "usingComponents": {
   "van-action-sheet": "path/to/vant-weapp/dist/action-sheet/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-action-sheet": "path/to/vant-weapp/lib/action-sheet/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
@@ -64,7 +58,7 @@ Page({
 });
 ```
 
-#### 带取消按钮的 ActionSheet
+### 带取消按钮的 ActionSheet
 
 如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`ActionSheet`关闭。
 
@@ -77,7 +71,7 @@ Page({
 />
 ```
 
-#### 带标题的 ActionSheet
+### 带标题的 ActionSheet
 
 如果传入了`title`属性，且不为空，则另外一种样式的`ActionSheet`，里面内容需要自定义。
 
@@ -87,7 +81,7 @@ Page({
 </van-action-sheet>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -97,9 +91,9 @@ Page({
 | cancel-text | 取消按钮文字 | `String` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
-| safe-area-inset-bottom | 是否为iPhoneX留出底部安全距离 | `Boolean` | `true` |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | `Boolean` | `true` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

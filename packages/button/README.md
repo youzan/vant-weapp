@@ -1,25 +1,19 @@
-## Button 按钮
+# Button 按钮
 
-### 使用指南
-在 json 文件中配置button组件
+### 引入
 
-es6
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+
 ```json
 "usingComponents": {
   "van-button": "path/to/vant-weapp/dist/button/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-button": "path/to/vant-weapp/lib/button/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 按钮类型
+### 按钮类型
 
 支持`default`、`primary`、`info`、`warning`、`danger`五种类型，默认为`default`
 
@@ -31,7 +25,7 @@ es5
 <van-button type="danger">危险按钮</van-button>
 ```
 
-#### 朴素按钮
+### 朴素按钮
 
 通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
 
@@ -40,7 +34,7 @@ es5
 <van-button plain type="danger">朴素按钮</van-button>
 ```
 
-#### 细边框
+### 细边框
 
 设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
 
@@ -49,7 +43,7 @@ es5
 <van-button plain hairline type="danger">细边框按钮</van-button>
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过`disabled`属性来禁用按钮，此时按钮不可点击
 
@@ -58,21 +52,31 @@ es5
 <van-button disabled type="danger">禁用状态</van-button>
 ```
 
-#### 加载状态
+### 加载状态
 
 ```html
 <van-button loading type="primary" />
 <van-button loading type="danger" loading-text="加载中..." />
 ```
 
-#### 按钮形状
+### 图标按钮
+
+通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL
+
+```html 
+<van-button icon="star-o" type="primary" />
+<van-button icon="star-o" type="primary">按钮</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
+```
+
+### 按钮形状
 
 ```html
 <van-button square type="primary">方形按钮</van-button>
 <van-button round type="danger">圆形按钮</van-button>
 ```
 
-#### 按钮尺寸
+### 按钮尺寸
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
 ```html
@@ -82,13 +86,14 @@ es5
 <van-button size="mini">迷你按钮</van-button>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | id | 标识符 | `String` | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
 | plain | 是否为朴素按钮 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
 | round | 是否为圆形按钮 | `Boolean` | `false` |
@@ -108,16 +113,18 @@ es5
 | send-message-img | sendMessageImg | `String` | 截图 |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:click | 点击按钮且按钮状态不为加载或禁用时触发 | - |
+| bind:click | 点击按钮，且按钮状态不为加载或禁用时触发 | - |
 | bind:getuserinfo | 用户点击该按钮时，会返回获取到的用户信息，<br>从返回参数的 detail 中获取到的值同 wx.getUserInfo | - |
 | bind:contact | 客服消息回调 | - |
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
+
+> Button 提供的是 click 事件而不是原生 tap 事件，按钮禁用时，click 事件不会触发，tap 事件依然会触发。
 
 ### 外部样式类
 
@@ -125,13 +132,3 @@ es5
 |-----------|-----------|
 | custom-class | 根节点样式类 |
 | loading-class | 加载图标样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | feature | 新增 square 属性 |
-| 0.3.0 | bugfix | 修复在加载状态下仍然显示文字的问题 |
-| 0.3.4 | feature | 新增 id 属性 |
-| 0.3.7 | feature | 新增 round 属性 |

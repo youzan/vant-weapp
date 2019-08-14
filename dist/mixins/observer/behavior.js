@@ -3,7 +3,6 @@ function setAsync(context, data) {
         context.setData(data, resolve);
     });
 }
-;
 export const behavior = Behavior({
     created() {
         if (!this.$options) {
@@ -17,7 +16,8 @@ export const behavior = Behavior({
             keys.forEach(key => {
                 const value = computed[key].call(this);
                 if (cache[key] !== value) {
-                    cache[key] = needUpdate[key] = value;
+                    cache[key] = value;
+                    needUpdate[key] = value;
                 }
             });
             return needUpdate;

@@ -1,4 +1,18 @@
 {
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index"
+      },
+      {
+        "pagePath": "pages/tabbar1/index"
+      }
+    ]
+  },
   "pages": [
     "pages/dashboard/index",
     "pages/action-sheet/index",
@@ -25,6 +39,7 @@
     "pages/slider/index",
     "pages/tab/index",
     "pages/tabbar/index",
+    "pages/tabbar1/index",
     "pages/tag/index",
     "pages/toast/index",
     "pages/transition/index",

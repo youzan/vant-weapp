@@ -1,18 +1,29 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view class="van-radio custom-class">
+  <view
+    wx:if="{{ labelPosition === 'left' }}"
+    class="label-class {{ utils.bem('radio__label', [labelPosition, { disabled }]) }}"
+    bindtap="onClickLabel"
+  >
+    <slot />
+  </view>
   <view class="van-radio__icon-wrap" bindtap="onChange">
     <slot wx:if="{{ useIconSlot }}" name="icon" />
     <van-icon
       wx:else
       name="success"
       class="{{ utils.bem('radio__icon', [shape, { disabled, checked: value === name }]) }}"
-      style="{{ checkedColor && value && !disabled ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
+      style="{{ checkedColor && !disabled && value === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
       custom-class="icon-class"
       custom-style="line-height: 20px;"
     />
   </view>
-  <view class="label-class {{ utils.bem('radio__label', [labelPosition, { disabled }]) }}" bindtap="onClickLabel">
+  <view
+    wx:if="{{ labelPosition === 'right' }}"
+    class="label-class {{ utils.bem('radio__label', [labelPosition, { disabled }]) }}"
+    bindtap="onClickLabel"
+  >
     <slot />
   </view>
 </view>

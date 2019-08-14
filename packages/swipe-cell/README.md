@@ -1,26 +1,18 @@
-## SwipeCell 滑动单元格
+# SwipeCell 滑动单元格
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-swipe-cell": "path/to/vant-weapp/dist/swipe-cell/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-swipe-cell": "path/to/vant-weapp/lib/swipe-cell/index"
-}
-```
+## 代码演示
 
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
@@ -32,7 +24,7 @@ es5
 </van-swipe-cell>
 ```
 
-#### 异步关闭
+### 异步关闭
 
 ```html
 <van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">
@@ -65,7 +57,7 @@ Page({
 });
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -82,7 +74,7 @@ Page({
 | left | 左侧滑动内容 |
 | right | 右侧滑动内容 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|

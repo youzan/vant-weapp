@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { isObj, range } from '../common/utils';
+import { Weapp } from 'definitions/weapp';
 
 const DEFAULT_DURATION = 200;
 
@@ -139,9 +140,9 @@ VantComponent({
         return this.set({ offset, currentIndex: index }).then(() => {
           userAction && this.$emit('change', index);
         });
-      } else {
-        return this.set({ offset });
       }
+
+      return this.set({ offset });
     },
 
     setValue(value: string) {

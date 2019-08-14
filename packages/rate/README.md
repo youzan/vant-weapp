@@ -1,25 +1,16 @@
-## Rate 评分
+# Rate 评分
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-rate": "path/to/vant-weapp/dist/rate/index"
 }
 ```
+## 代码演示
 
-es5
-```json
-"usingComponents": {
-  "van-rate": "path/to/vant-weapp/lib/rate/index"
-}
-```
-
-### 代码演示
-
-#### 基础用法
+### 基础用法
 
 ```html
 <van-rate value="{{ value }}" bind:change="onChange" />
@@ -39,7 +30,7 @@ Page({
 });
 ```
 
-#### 自定义图标
+### 自定义图标
 
  ```html
 <van-rate
@@ -50,7 +41,7 @@ Page({
 />
 ```
 
-#### 自定义样式
+### 自定义样式
 
 ```html
 <van-rate
@@ -63,7 +54,7 @@ Page({
 />
 ```
 
-#### 半星
+### 半星
 ```html
 <van-rate
   value="{{ value }}"
@@ -76,7 +67,7 @@ Page({
 />
 ```
 
-#### 自定义数量
+### 自定义数量
 
 ```html
 <van-rate
@@ -86,7 +77,7 @@ Page({
 />
 ```
 
-#### 禁用状态
+### 禁用状态
 
 ```html
 <van-rate
@@ -96,7 +87,7 @@ Page({
 />
 ```
 
-#### 只读状态
+### 只读状态
 
 ```html
 <van-rate
@@ -106,7 +97,7 @@ Page({
 />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
@@ -123,7 +114,7 @@ Page({
 | disabled | 是否禁用评分 | `Boolean` | `false` |
 | disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` |
 
-### Event
+### Events
 
 | 事件名称 | 说明 | 回调参数 |
 |------|------|------|

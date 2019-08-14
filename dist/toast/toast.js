@@ -47,7 +47,7 @@ function Toast(toastOptions) {
     }
     return toast;
 }
-const createMethod = type => (options) => Toast(Object.assign({ type }, parseOptions(options)));
+const createMethod = (type) => (options) => Toast(Object.assign({ type }, parseOptions(options)));
 Toast.loading = createMethod('loading');
 Toast.success = createMethod('success');
 Toast.fail = createMethod('fail');

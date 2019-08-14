@@ -9,9 +9,9 @@
 
 ---
 
-## 概述
+## 介绍
 
-[Vant Weapp](https://youzan.github.io/vant-weapp) 是有赞移动端组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
+Vant Weapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
 ## 预览
 
@@ -82,11 +82,25 @@ npm run dev
 
 Vant Weapp 最低支持到小程序基础库 1.9.9 版本
 
-## 迁移指南
+## 微信讨论群
 
-Vant Weapp 是基于有赞 Zanui 组件库进行的品牌升级，对于仍在使用 Zanui 的用户，建议逐渐使用 Vant Weapp 替换原有的组件。
+欢迎大家在微信上联系我们，添加下方微信并注明『交流 vant-weapp』即可
 
-Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan/zanui-weapp](https://github.com/youzan/zanui-weapp)
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
+
+## 加入我们
+
+**有赞前端团队**是由一群年轻、皮实、对技术饱含热情的小伙伴组成的，目前共有 100 多名前端工程师，分布在业务中台、电商、零售、美业、资产、赋能等业务线。
+
+我们热爱分享和开源，崇尚用工程师的方式解决问题，因此造了很多工具来解决我们遇到的问题，目前我们维护的开源产品有：
+
+<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" width="320" height="303">
+
+我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
+
+- <a target="_blank" href="https://app.mokahr.com/apply/youzan/6252#/job/96f5d2c7-e657-4d31-9244-195edc443a7f?_k=jf2141">职位详情</a>（Base: 杭州/深圳）
+- <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
+- <a target="_blank" href="https://github.com/youzan">开源项目</a>
 
 ## 链接
 
@@ -96,19 +110,9 @@ Zanui 后续会进入维护状态，仓库地址为：[https://github.com/youzan
 * [Vant: 移动端 Vue UI](https://github.com/youzan/vant)
 * [React: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
 
-## 微信讨论群
-
-欢迎大家在微信上联系我们，添加下方微信并注明『交流 vant-weapp』即可
-
-<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
-
 ## 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
-
-## 贡献
-
-如果你有好的意见或建议，欢迎给我们提 [issue] 或 [PR]，为优化 [vant-weapp] 贡献力量
 
 [vant-weapp]: https://github.com/youzan/vant-weapp
 [issue]: https://github.com/youzan/vant-weapp/issues/new

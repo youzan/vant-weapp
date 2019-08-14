@@ -20,7 +20,7 @@ function parseOptions(text: NotifyOptions | string): NotifyOptions {
   return isObj(text) ? (text as NotifyOptions) : ({ text } as NotifyOptions);
 }
 
-function getContext(): Page.PageInstance {
+function getContext() {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
@@ -30,6 +30,8 @@ export default function Notify(options: NotifyOptions | string) {
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);
+
+  delete options.context;
   delete options.selector;
 
   if (notify) {

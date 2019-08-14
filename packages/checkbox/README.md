@@ -1,9 +1,8 @@
-## Checkbox 复选框
+# Checkbox 复选框
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-checkbox": "path/to/vant-weapp/dist/checkbox/index",
@@ -11,17 +10,10 @@ es6
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-checkbox": "path/to/vant-weapp/lib/checkbox/index",
-  "van-checkbox-group": "path/to/vant-weapp/lib/checkbox-group/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过`value`绑定 checkbox 的勾选状态
 
@@ -43,7 +35,7 @@ Page({
 });
 ```
 
-#### 禁用状态
+### 禁用状态
 
 ```html
 <van-checkbox
@@ -55,7 +47,7 @@ Page({
 </van-checkbox>
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
  ```html
 <van-checkbox
@@ -67,7 +59,7 @@ Page({
 </van-checkbox>
 ```
 
-#### 自定义图标
+### 自定义图标
 
 通过 icon 插槽自定义图标
 
@@ -99,7 +91,7 @@ Page({
 });
 ```
 
-#### 复选框组
+### 复选框组
 
 需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
 
@@ -130,7 +122,7 @@ Page({
 });
 ```
 
-#### 设置最大可选数
+### 设置最大可选数
 
 ```html
 <van-checkbox-group value="{{ result }}" bind:change="onChange" max="{{ 2 }}">
@@ -144,7 +136,7 @@ Page({
 </van-checkbox-group>
 ```
 
-#### 搭配单元格组件使用
+### 搭配单元格组件使用
 
 此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
 

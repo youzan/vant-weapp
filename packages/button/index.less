@@ -141,10 +141,26 @@
     opacity: 0.5;
   }
 
+  &__text {
+    display: inline;
+  }
+
   &__loading-text {
     margin-left: 5px;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  &__icon {
+    min-width: 1em;
+    line-height: inherit !important;
+    vertical-align: top;
+  }
+
+  &__icon + &__text:not(:empty) {
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: top;
   }
 
   &--hairline {

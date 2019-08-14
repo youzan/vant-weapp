@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { Weapp } from 'definitions/weapp';
 
 const THRESHOLD = 0.3;
 
@@ -20,7 +21,7 @@ VantComponent({
   mixins: [touch],
 
   data: {
-    catchMove: true
+    catchMove: false
   },
 
   created() {
@@ -67,6 +68,7 @@ VantComponent({
       } else {
         this.swipeMove(0);
       }
+      this.set({ catchMove: false });
     },
 
     startDrag(event: Weapp.TouchEvent) {

@@ -1,28 +1,23 @@
-## Dialog 弹出框
+# Dialog 弹出框
+
+### 介绍
 
 Dialog 组件支持函数调用和组件调用两种形式
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-dialog": "path/to/vant-weapp/dist/dialog/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-dialog": "path/to/vant-weapp/lib/dialog/index"
-}
-```
 
-### 代码演示
+## 代码演示
 
-#### 消息提示
+### 消息提示
 
 用于提示一些消息，只包含一个确认按钮
 
@@ -32,8 +27,6 @@ es5
 
 ```javascript
 import Dialog from 'path/to/vant-weapp/dist/dialog/dialog';
-// es5
-// var Dialog = require('path/to/vant-weapp/lib/dialog/dialog');
 
 Dialog.alert({
   title: '标题',
@@ -49,7 +42,7 @@ Dialog.alert({
 });
 ```
 
-#### 消息确认
+### 消息确认
 
 用于确认消息，包含取消和确认按钮
 
@@ -64,7 +57,7 @@ Dialog.confirm({
 });
 ```
 
-#### 异步关闭
+### 异步关闭
 
 设置`asyncClose`属性开启异步关闭，开启后可以手动调用`Dialog.close`方法关闭弹窗
 
@@ -84,13 +77,14 @@ Dialog.confirm({
   });
 ```
 
-#### 组件调用
+### 组件调用
 
 通过组件调用 Dialog 时，可以实现自定义弹窗内容、监听微信开放能力回调事件等功能，具体参考下例
 
 ```html
 <van-dialog
   use-slot
+  title="标题"
   show="{{ show }}"
   show-cancel-button
   confirm-button-open-type="getUserInfo"
@@ -140,7 +134,8 @@ Page({
 | message | 内容 | `String` | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | zIndex | z-index 层级 | `Number` | `100` |
-| className | 自定义类名 | `String` | '' |
+| className | 自定义类名，dialog在自定义组件内时无效 | `String` | '' |
+| customStyle | 自定义样式 | `String` | '' |
 | selector | 自定义选择器 | `String` | `van-dialog` |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` |
@@ -166,7 +161,7 @@ Page({
 | sendMessageImg | sendMessageImg | `String` | 截图 | `contact` |
 | showMessageCard | 显示会话内消息卡片 | `String` | `false` | `contact` |
 
-### API
+### Props
 
 通过组件调用 Dialog 时，支持以下 API：
 
@@ -177,7 +172,8 @@ Page({
 | message | 内容 | `String` | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` |
 | z-index | z-index 层级 | `Number` | `100` |
-| class-name | 自定义类名 | `String` | '' |
+| class-name | 自定义类名，dialog在自定义组件内时无效 | `String` | '' |
+| customStyle | 自定义样式 | `String` | '' |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` |
@@ -202,7 +198,7 @@ Page({
 | send-message-img | sendMessageImg | `String` | 截图 | `contact` |
 | show-message-card | 显示会话内消息卡片 | `String` | `false` | `contact` |
 
-### Event
+### Events
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|

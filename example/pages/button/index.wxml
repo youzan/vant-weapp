@@ -34,6 +34,12 @@
     <van-button type="danger" round>圆形按钮</van-button>
   </demo-block>
 
+  <demo-block title="图标按钮" padding>
+    <van-button type="primary" icon="star-o" class="demo-margin-right" />
+    <van-button type="primary" icon="star-o" class="demo-margin-right">按钮</van-button>
+    <van-button plain type="primary" icon="https://img.yzcdn.cn/vant/logo.png">按钮</van-button>
+  </demo-block>
+
   <demo-block title="按钮尺寸" padding>
     <van-button size="large" block custom-class="demo-margin-bottom">大号按钮</van-button>
     <van-button class="demo-margin-right">普通按钮</van-button>

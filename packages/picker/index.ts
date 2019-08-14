@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { pickerProps } from './shared';
+import { Weapp } from 'definitions/weapp';
 
 interface Column {
   values: object[];
@@ -96,7 +97,7 @@ VantComponent({
       const column = this.getColumn(index);
 
       if (column == null) {
-        return Promise.reject('setColumnValue: 对应列不存在');
+        return Promise.reject(new Error('setColumnValue: 对应列不存在'));
       }
 
       return column.setValue(value);
@@ -112,7 +113,7 @@ VantComponent({
       const column = this.getColumn(columnIndex);
 
       if (column == null) {
-        return Promise.reject('setColumnIndex: 对应列不存在');
+        return Promise.reject(new Error('setColumnIndex: 对应列不存在'));
       }
 
       return column.setIndex(optionIndex);
@@ -128,7 +129,7 @@ VantComponent({
       const column = this.children[index];
 
       if (column == null) {
-        return Promise.reject('setColumnValues: 对应列不存在');
+        return Promise.reject(new Error('setColumnValues: 对应列不存在'));
       }
 
       const isSame =
@@ -147,7 +148,7 @@ VantComponent({
 
     // get values of all columns
     getValues() {
-      return this.children.map((child: Weapp.Component) => child.getValue());
+      return this.children.map((child: WechatMiniprogram.Component.TrivialInstance) => child.getValue());
     },
 
     // set values of all columns
@@ -161,7 +162,7 @@ VantComponent({
     // get indexes of all columns
     getIndexes() {
       return this.children.map(
-        (child: Weapp.Component) => child.data.currentIndex
+        (child: WechatMiniprogram.Component.TrivialInstance) => child.data.currentIndex
       );
     },
 

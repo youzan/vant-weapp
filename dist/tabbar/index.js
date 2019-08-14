@@ -6,19 +6,28 @@ VantComponent({
         name: 'tabbar-item',
         type: 'descendant',
         linked(target) {
-            this.children = this.children || [];
             this.children.push(target);
-            this.setActiveItem();
+            target.parent = this;
+            target.updateFromParent();
         },
         unlinked(target) {
-            this.children = this.children || [];
-            this.children = this.children.filter(item => item !== target);
-            this.setActiveItem();
+            this.children = this.children.filter((item) => item !== target);
+            this.updateChildren();
         }
     },
     props: {
-        active: Number,
-        activeColor: String,
+        active: {
+            type: [Number, String],
+            observer: 'updateChildren'
+        },
+        activeColor: {
+            type: String,
+            observer: 'updateChildren'
+        },
+        inactiveColor: {
+            type: String,
+            observer: 'updateChildren'
+        },
         fixed: {
             type: Boolean,
             value: true
@@ -32,32 +41,22 @@ VantComponent({
             value: 1
         }
     },
-    watch: {
-        active(active) {
-            this.currentActive = active;
-            this.setActiveItem();
-        }
-    },
-    created() {
-        this.currentActive = this.data.active;
+    beforeCreate() {
+        this.children = [];
     },
     methods: {
-        setActiveItem() {
-            if (!Array.isArray(this.children) || !this.children.length) {
+        updateChildren() {
+            const { children } = this;
+            if (!Array.isArray(children) || !children.length) {
                 return Promise.resolve();
             }
-            return Promise.all(this.children.map((item, index) => item.setActive({
-                active: index === this.currentActive,
-                color: this.data.activeColor
-            })));
+            return Promise.all(children.map((child) => child.updateFromParent()));
         },
         onChange(child) {
-            const active = (this.children || []).indexOf(child);
-            if (active !== this.currentActive && active !== -1) {
-                this.currentActive = active;
-                this.setActiveItem().then(() => {
-                    this.$emit('change', active);
-                });
+            const index = this.children.indexOf(child);
+            const active = child.data.name || index;
+            if (active !== this.data.active) {
+                this.$emit('change', active);
             }
         }
     }

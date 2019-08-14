@@ -1,23 +1,15 @@
-## Slider 滑块
+# Slider 滑块
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-es6
 ```json
 "usingComponents": {
   "van-slider": "path/to/vant-weapp/dist/slider/index"
 }
 ```
 
-es5
-```json
-"usingComponents": {
-  "van-slider": "path/to/vant-weapp/lib/slider/index"
-}
-```
-
-#### 基本用法
+### 基本用法
 
 ```html
 <van-slider value="50" bind:change="onChange" />
@@ -34,25 +26,25 @@ Page({
 });
 ```
 
-#### 指定选择范围
+### 指定选择范围
 
 ```html
 <van-slider value="50" min="10" max="90" />
 ```
 
-#### 禁用
+### 禁用
 
 ```html
 <van-slider value="50" disabled />
 ```
 
-#### 指定步长
+### 指定步长
 
 ```html
 <van-slider value="50" step="10" />
 ```
 
-#### 自定义样式
+### 自定义样式
 
 ```html
 <van-slider
@@ -62,7 +54,7 @@ Page({
 />
 ```
 
-#### 自定义按钮
+### 自定义按钮
 
 ```html
 <van-slider
@@ -90,35 +82,7 @@ Page({
 });
 ```
 
-#### 自定义按钮
-
-```html
-<van-slider
-  value="{{ currentValue }}"
-  use-button-slot
-  bind:drag="onDrag"
->
-  <view class="custom-button" slot="button">
-    {{ currentValue }}/100
-  </view>
-</van-slider>
-```
-
-```js
-Page({
-  data: {
-    currentValue: 30
-  },
-
-  onDrag(event) {
-    this.setData({
-      currentValue: event.detail.value
-    });
-  }
-});
-```
-
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -131,7 +95,7 @@ Page({
 | active-color | 进度条激活态颜色 | `String` | `#1989fa` |
 | inactive-color | 进度条默认颜色 | `String` | `#e5e5e5` |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|

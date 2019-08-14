@@ -23,8 +23,7 @@ Page({
         children: config.pro3
       }
     ],
-    mainActiveIndex: 0,
-    activeId: 1
+    mainActiveIndex: 0
   },
 
   onClickNav({ detail }) {
@@ -34,8 +33,23 @@ Page({
   },
 
   onClickItem({ detail }) {
+    // 多选
+    if (!this.data.activeId) this.data.activeId = [];
+
+    const idx = this.data.activeId.indexOf(detail.id);
+    if (idx > -1) {
+      this.data.activeId.splice(idx, 1);
+    } else {
+      this.data.activeId.push(detail.id);
+    }
+
+/*
+    // 单选
+    this.data.activeId = this.data.activeId === detail.id ? null : detail.id;
+*/
+
     this.setData({
-      activeId: detail.id
+      activeId: this.data.activeId
     });
   }
 });

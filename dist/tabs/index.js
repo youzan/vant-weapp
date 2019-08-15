@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { nextTick } from '../common/utils';
 VantComponent({
     mixins: [touch],
     classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
@@ -191,7 +192,7 @@ VantComponent({
                     item.set(data);
                 }
             });
-            this.set({}, () => {
+            nextTick(() => {
                 this.setLine();
                 this.setTrack();
                 this.scrollIntoView();

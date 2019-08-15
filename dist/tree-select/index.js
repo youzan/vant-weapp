@@ -16,7 +16,7 @@ VantComponent({
             value: 0
         },
         activeId: {
-            type: [Number, String]
+            type: [Number, String, Array]
         },
         maxHeight: {
             type: Number,

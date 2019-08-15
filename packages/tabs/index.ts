@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
+import { nextTick } from '../common/utils';
 
 type TabItemData = {
   width?: number
@@ -236,7 +237,7 @@ VantComponent({
         }
       });
 
-      this.set({}, () => {
+      nextTick(() => {
         this.setLine();
         this.setTrack();
         this.scrollIntoView();

@@ -1,11 +1,25 @@
 <p>
-    <a href="https://github.com/youzan/"><img alt="logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-    </a>
+  <a href="https://github.com/youzan/">
+    <img alt="logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
+  </a>
 </p>
 <p align="center">
-    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
+  <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 <h3 align="center">轻量、可靠的小程序 UI 组件库</h3>
+
+<p align="center">
+  <img src="https://img.shields.io/npm/v/vant-weapp.svg?style=flat-square" alt="npm version" />
+  <img src="https://img.shields.io/npm/dt/vant-weapp.svg?style=flat-square" alt="downloads" />
+  <img src="https://img.shields.io/npm/dm/vant-weapp.svg?style=flat-square" alt="downloads" />
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg">
+</p>
+
+<p align="center">
+  🔥 <a href="https://youzan.github.io/vant-weapp">文档网站</a>
+  &nbsp;
+  🚀 <a href="https://github.com/youzan/vant" target="_blank">Vue 版</a>
+</p>
 
 ---
 

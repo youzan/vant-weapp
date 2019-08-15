@@ -9,6 +9,7 @@ VantComponent({
 
   props: {
     icon: String,
+    color: String,
     plain: Boolean,
     block: Boolean,
     round: Boolean,

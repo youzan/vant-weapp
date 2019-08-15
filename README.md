@@ -1,8 +1,3 @@
-<p>
-  <a href="https://github.com/youzan/">
-    <img alt="logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-  </a>
-</p>
 <p align="center">
   <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
@@ -32,10 +27,6 @@ Vant Weapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) 的
 扫描下方小程序二维码，体验组件库示例：
 
 <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg" width="200" height="200" style="margin-top: 10px;" >
-
-## 文档
-
-[https://youzan.github.io/vant-weapp](https://youzan.github.io/vant-weapp)
 
 ## 使用之前
 

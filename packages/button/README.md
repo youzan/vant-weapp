@@ -77,13 +77,23 @@
 ```
 
 ### 按钮尺寸
+
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
 ```html
-<van-button size="large">大号按钮</van-button>
-<van-button size="normal">普通按钮</van-button>
-<van-button size="small">小型按钮</van-button>
-<van-button size="mini">迷你按钮</van-button>
+<van-button type="primary" size="large">大号按钮</van-button>
+<van-button type="primary" size="normal">普通按钮</van-button>
+<van-button type="primary" size="small">小型按钮</van-button>
+<van-button type="primary" size="mini">迷你按钮</van-button>
+```
+
+### 自定义颜色
+
+通过`color`属性可以自定义按钮的颜色
+
+```html
+<van-button color="#7232dd">自定义颜色</van-button>
+<van-button color="#7232dd" plain>自定义颜色</van-button>
 ```
 
 ### Props

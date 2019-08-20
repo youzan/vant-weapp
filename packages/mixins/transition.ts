@@ -55,7 +55,7 @@ export const transition = function (showDefaultValue: boolean) {
       enter() {
         const { duration, name } = this.data;
         const classNames = getClassNames(name);
-        const currentDuration = isObj(duration) ? duration.leave : duration;
+        const currentDuration = isObj(duration) ? duration.enter : duration;
 
         this.status = 'enter';
 

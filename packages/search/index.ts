@@ -7,6 +7,7 @@ VantComponent({
   classes: ['field-class', 'input-class', 'cancel-class'],
 
   props: {
+    label: String,
     focus: Boolean,
     error: Boolean,
     disabled: Boolean,
@@ -28,7 +29,10 @@ VantComponent({
       type: String,
       value: 'square'
     },
-    label: String
+    clearable: {
+      type: Boolean,
+      value: true
+    }
   },
 
   methods: {

@@ -1,6 +1,7 @@
 # Search 搜索
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -12,6 +13,7 @@
 ## 代码演示
 
 ### 基础用法
+
 `van-search` 中，value 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 ```html
@@ -19,6 +21,7 @@
 ```
 
 ### 监听对应事件
+
 `van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的搜索按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
 
 ```html
@@ -60,10 +63,11 @@
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | disabled | 是否禁用输入框 | `Boolean` | `false` |
 | readonly | 是否只读 | `Boolean` | `false` |
+| clearable | 是否启用清除控件 | `Boolean` | `true` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
 | use-action-slot | 是否使用 action slot | `Boolean` | `false` |
 | placeholder | 输入框为空时占位符 | `String` | - |
-| placeholder-style | 指定 placeholder 的样式 | `String` | - |
+| placeholder-style | 指定占位符的样式 | `String` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 
 ### Events

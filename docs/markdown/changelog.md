@@ -1,5 +1,19 @@
 # 更新日志
 
+## [v0.5.19](https://github.com/youzan/vant-weapp/tree/v0.5.19)
+`2019-08-15`
+
+**Improvements**
+
+- 优化代码构建与TS类型提示 [\#1859](https://github.com/youzan/vant-weapp/pull/1859)
+- 文档链接vant使用相对路径 [\#1856](https://github.com/youzan/vant-weapp/pull/1856)
+- TreeSelect: 增加多选功能 [\#1709](https://github.com/youzan/vant-weapp/pull/1709)
+
+**Bug Fixes**
+- Tab: 修复极端情况激活态异常 [\#1868](https://github.com/youzan/vant-weapp/pull/1868)
+- Icon: 修复 gift-o、refund-o 图标展示不全 [\#1854](https://github.com/youzan/vant-weapp/pull/1854)
+- Icon: 修复 service-o 图标展示不全 [\#1853](https://github.com/youzan/vant-weapp/pull/1853)
+
 ### [v0.5.18](https://github.com/youzan/vant-weapp/tree/v0.5.18)
 `2019-08-08`
 

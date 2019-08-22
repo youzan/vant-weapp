@@ -11,7 +11,7 @@
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
-    "build:changelog": "vant-doc changelog --tag v0.5.0 ./docs/markdown/changelog.generated.md"
+    "build:changelog": "vant changelog --tag v0.5.0 ./docs/markdown/changelog.generated.md"
   },
   "files": [
     "dist",
@@ -21,11 +21,17 @@
     "type": "git",
     "url": "git+ssh://git@github.com/youzan/vant-weapp.git"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "vant commit-lint"
+    }
+  },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.5.5",
+    "@vant/cli": "^1.0.2",
     "@vant/doc": "^2.4.0",
     "@vant/eslint-config": "^1.2.4",
     "@vant/icons": "1.1.13",

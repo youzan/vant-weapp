@@ -63,7 +63,7 @@
     "backgroundColor": "#f8f8f8"
   },
   "usingComponents": {
-    "demo-block": "../../components/demo-block/index",
+    "demo-block": "./components/demo-block/index",
     "van-action-sheet": "./dist/action-sheet/index",
     "van-area": "./dist/area/index",
     "van-badge": "./dist/badge/index",

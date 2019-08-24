@@ -28,6 +28,14 @@ VantComponent({
         placeholder: String,
         placeholderStyle: String,
         errorMessageAlign: String,
+        selectionEnd: {
+            type: Number,
+            value: -1
+        },
+        selectionStart: {
+            type: Number,
+            value: -1
+        },
         showConfirmBar: {
             type: Boolean,
             value: true

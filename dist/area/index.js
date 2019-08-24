@@ -27,8 +27,8 @@ VantComponent({
     },
     mounted() {
         setTimeout(() => {
-            this.setValues()
-        }, 0)
+            this.setValues();
+        }, 0);
     },
     methods: {
         getPicker() {

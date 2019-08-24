@@ -6,6 +6,7 @@ VantComponent({
     classes: ['hover-class', 'loading-class'],
     props: {
         icon: String,
+        color: String,
         plain: Boolean,
         block: Boolean,
         round: Boolean,

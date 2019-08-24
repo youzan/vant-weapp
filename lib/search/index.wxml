@@ -9,7 +9,6 @@
     <slot wx:else name="label" />
 
     <van-field
-      clearable
       type="search"
       left-icon="search"
       focus="{{ focus }}"
@@ -20,6 +19,7 @@
       value="{{ value }}"
       disabled="{{ disabled }}"
       readonly="{{ readonly }}"
+      clearable="{{ clearable }}"
       maxlength="{{ maxlength }}"
       input-align="{{ inputAlign }}"
       input-class="input-class"

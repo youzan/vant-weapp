@@ -1,5 +1,23 @@
 # 更新日志
 
+### [v0.5.20](https://github.com/youzan/vant-weapp/tree/v0.5.20)
+`2019-08-24`
+
+**Improvements**
+
+- Button: 新增 color 属性 [\#1869](https://github.com/youzan/vant-weapp/pull/1869)
+- Search: 新增 clearable 属性 [\#1887](https://github.com/youzan/vant-weapp/pull/1887)
+- Field: 新增 selection-start、selection-end 属性 [\#1898](https://github.com/youzan/vant-weapp/pull/1898)
+- Icon：icon name 属性支持识别本地图片路径 [\#1884](https://github.com/youzan/vant-weapp/pull/1884)
+
+**Bug Fixes**
+
+- 修复打开 example 目录报错的问题 [\#1897](https://github.com/youzan/vant-weapp/pull/1897)
+- 修复 Icon info 属性传入空字符串时渲染空节点的问题 [\#1888](https://github.com/youzan/vant-weapp/pull/1888)
+- 修复 Transition 动画进入时 duration 错误的问题 [\#1879](https://github.com/youzan/vant-weapp/pull/1879)
+- 修复 Area columns-num 等于 2 时，设置 value 后第一项显示错误的问题 [\#1881](https://github.com/youzan/vant-weapp/pull/1881)
+
+
 ### [v0.5.19](https://github.com/youzan/vant-weapp/tree/v0.5.19)
 `2019-08-15`
 

@@ -18,9 +18,10 @@
 
 ```html
 <van-tag>标签</van-tag>
-<van-tag type="danger">标签</van-tag>
 <van-tag type="primary">标签</van-tag>
 <van-tag type="success">标签</van-tag>
+<van-tag type="danger">标签</van-tag>
+<van-tag type="warning">标签</van-tag>
 ```
 
 ### 空心样式
@@ -29,9 +30,10 @@
 
 ```html
 <van-tag plain>标签</van-tag>
-<van-tag plain type="danger">标签</van-tag>
 <van-tag plain type="primary">标签</van-tag>
 <van-tag plain type="success">标签</van-tag>
+<van-tag plain type="danger">标签</van-tag>
+<van-tag plain type="warning">标签</van-tag>
 ```
 
 ### 圆角样式
@@ -40,9 +42,10 @@
 
 ```html
 <van-tag round>标签</van-tag>
-<van-tag round type="danger">标签</van-tag>
 <van-tag round type="primary">标签</van-tag>
 <van-tag round type="success">标签</van-tag>
+<van-tag round type="danger">标签</van-tag>
+<van-tag round type="warning">标签</van-tag>
 ```
 
 ### 标记样式
@@ -51,9 +54,10 @@
 
 ```html
 <van-tag mark>标签</van-tag>
-<van-tag mark type="danger">标签</van-tag>
 <van-tag mark type="primary">标签</van-tag>
 <van-tag mark type="success">标签</van-tag>
+<van-tag mark type="danger">标签</van-tag>
+<van-tag mark type="warning">标签</van-tag>
 ```
 
 ### 自定义颜色
@@ -69,16 +73,16 @@
 ### 标签大小
 
 ```html
-<van-tag>标签</van-tag>
-<van-tag size="medium">标签</van-tag>
-<van-tag size="large">标签</van-tag>
+<van-tag type="danger">标签</van-tag>
+<van-tag type="danger" size="medium">标签</van-tag>
+<van-tag type="danger" size="large">标签</van-tag>
 ```
 
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| type | 类型，可选值为`primary` `success` `danger` | `String` | - |
+| type | 类型，可选值为`primary` `success` `danger` `warning` | `String` | - |
 | size | 大小, 可选值为`large` `medium` | `String` | - |
 | color | 标签颜色 | `String` | - |
 | plain | 是否为空心样式 | `Boolean` | `false` |

@@ -8,3 +8,14 @@
     content-item-class="content-item-class"
   ></van-tree-select>
 </demo-block>
+
+<demo-block title="多选">
+  <van-tree-select
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndexMulti }}"
+    active-id="{{ activeIdMulti }}"
+    bind:click-item="onClickItemMulti"
+    bind:click-nav="onClickNavMulti"
+    content-item-class="content-item-class"
+  ></van-tree-select>
+</demo-block>

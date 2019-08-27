@@ -29,7 +29,8 @@
 ```javascript
 Page({
   data: {
-    // ...
+    mainActiveIndex: 0,
+    activeId: null
   },
 
   onClickNav({ detail = {} }) {
@@ -39,35 +40,60 @@ Page({
   },
 
   onClickItem({ detail = {} }) {
-    // 多选
-    if (!this.data.activeId) this.data.activeId = [];
+    const activeId = this.data.activeId === detail.id ? null : detail.id;
 
-    const idx = this.data.activeId.indexOf(detail.id);
-    if (idx > -1) {
-      this.data.activeId.splice(idx, 1);
+    this.setData({ activeId });
+  }
+});
+```
+
+### 多选
+
+```html
+<van-tree-select
+  items="{{ items }}"
+  main-active-index="{{ mainActiveIndex }}"
+  active-id="{{ activeId }}"
+  bind:click-nav="onClickNav"
+  bind:click-item="onClickItem"
+/>
+```
+
+```javascript
+Page({
+  data: {
+    mainActiveIndex: 0,
+    activeId: []
+  },
+
+  onClickNav({ detail = {} }) {
+    this.setData({
+      mainActiveIndex: detail.index || 0
+    });
+  },
+
+  onClickItem({ detail = {} }) {
+    const { activeId } = this.data;
+
+    const index = activeId.indexOf(detail.id);
+    if (index > -1) {
+      activeId.splice(index, 1);
     } else {
-      this.data.activeId.push(detail.id);
+      activeId.push(detail.id);
     }
 
-/*
-    // 单选
-    this.data.activeId = this.data.activeId === detail.id ? null : detail.id;
-*/
-
-    this.setData({
-      activeId: this.data.activeId
-    });
+    this.setData({ activeId });
   }
 });
 ```
 
 ### Props
 
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
-|-----------|-----------|-----------|-------------|-------------|
-| items | 分类显示所需的数据，具体数据结构可看 数据结构	 | Array | [] | |
-| main-active-index | 左侧导航高亮的索引	 | Number | 0 | |
-| active-id	 | 右侧选择项，高亮的数据id	 | String / Number / Array	 | 0 | |
+| 参数       | 说明      | 类型       | 默认值       |
+|-----------|-----------|-----------|-------------|
+| items | 分类显示所需的数据，具体数据结构可看 数据结构	 | `Array` | [] |
+| main-active-index | 左侧导航高亮的索引	 | `Number` | 0 | |
+| active-id	 | 右侧选择项，高亮的数据id	 | `String | Number | Array` | 0 |
 
 ### Events
 

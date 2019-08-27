@@ -756,20 +756,20 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@vant/cli@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-1.0.3.tgz#4df8e2263fb453929ee9f1cb2f2c00e163c67131"
-  integrity sha512-aVAqtlQ1Nnnm54DjVdf9lEhFyxfyDSS346xx10dfgvR+XZMNNq/GBkQKCPNCtBJd+89z2O8Z+3u/yr2kfjwQxw==
+"@vant/cli@^1.0.3":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-1.0.4.tgz#3f06f667e8d742dd28f6c501150c8437d7ced227"
+  integrity sha512-mFsYro5qi3c2kU3ld1kcE1mgZkEejsVfD+p9qKasL7Wl2fWcOV7S2+TIv2Ilje+T/LeJI63YANIY62eN/wAeYg==
   dependencies:
     commander "^2.17.1"
     husky "^3.0.4"
     shelljs "^0.8.2"
     signale "^1.4.0"
 
-"@vant/doc@^2.4.0":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.5.1.tgz#7c17e2dd20533f6359b526c20c75eb27a031cfb7"
-  integrity sha512-Ff5ach0ZR0tCcfGq0pnjsa2OPhg1zZ3zGE5OKMU3uFrld9sRXFqiB1TL4WpqtGmIA7UqmBVS+4MNt0Lo62knMg==
+"@vant/doc@^2.5.1":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.5.2.tgz#fbc51239eab5fcbeb31aac67fe285378238c1ba7"
+  integrity sha512-Pz+bNXBv09Sr7T8G2gNejp6XRsDsHqdMMr/O/cq9ylrNfQToPS+cPkerjf296b2b8/aLDGO9nVNuA9Gu84A2Qw==
 
 "@vant/eslint-config@^1.2.4":
   version "1.2.4"
@@ -3029,16 +3029,16 @@ eslint-scope@^5.0.0:
     estraverse "^4.1.1"
 
 eslint-utils@^1.3.1:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/eslint-utils/-/eslint-utils-1.4.0.tgz#e2c3c8dba768425f897cf0f9e51fe2e241485d4c"
-  integrity sha512-7ehnzPaP5IIEh1r1tkjuIrxqhNkzUJa9z3R92tLJdZIVdWaczEhr3EbhGtsMrVxi1KeR8qA7Off6SWc5WNQqyQ==
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/eslint-utils/-/eslint-utils-1.4.2.tgz#166a5180ef6ab7eb462f162fd0e6f2463d7309ab"
+  integrity sha512-eAZS2sEUMlIeCjBeubdj45dmBHQwPHWyBcT1VSYB7o9x9WRRqKxyUoiXlRjyAwzN7YEzHJlYg0NmzDRWx6GP4Q==
   dependencies:
     eslint-visitor-keys "^1.0.0"
 
 eslint-visitor-keys@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
-  integrity sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
+  integrity sha512-8y9YjtM1JBJU/A9Kc+SbaOV4y29sSWckBwMHa+FGtVj5gN/sbnKDf6xJUl+8g7FAij9LVaP8C24DUiH/f/2Z9A==
 
 eslint@^6.1.0:
   version "6.1.0"

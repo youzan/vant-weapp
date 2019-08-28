@@ -1,14 +1,12 @@
-import { isObj } from '../common/utils';
-
 interface NotifyOptions {
-  text: string;
   color?: string;
-  backgroundColor?: string;
+  zIndex?: number;
+  message: string;
+  context?: any;
   duration?: number;
   selector?: string;
-  context?: any;
+  background?: string;
   safeAreaInsetTop?: boolean;
-  zIndex?: number;
 }
 
 const defaultOptions = {
@@ -16,8 +14,8 @@ const defaultOptions = {
   duration: 3000
 };
 
-function parseOptions(text: NotifyOptions | string): NotifyOptions {
-  return isObj(text) ? (text as NotifyOptions) : ({ text } as NotifyOptions);
+function parseOptions(message: NotifyOptions | string): NotifyOptions {
+  return typeof message === 'string' ? { message } : message;
 }
 
 function getContext() {

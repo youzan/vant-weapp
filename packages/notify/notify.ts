@@ -1,3 +1,5 @@
+import { RED, WHITE } from '../common/color';
+
 interface NotifyOptions {
   color?: string;
   zIndex?: number;
@@ -11,7 +13,11 @@ interface NotifyOptions {
 
 const defaultOptions = {
   selector: '#van-notify',
-  duration: 3000
+  message: '',
+  duration: 3000,
+  zIndex: 110,
+  color: WHITE,
+  background: RED
 };
 
 function parseOptions(message: NotifyOptions | string): NotifyOptions {

@@ -1,10 +1,7 @@
-.container {
-  width: auto;
-  margin: 0 15px;
-  padding: 20px 0;
+page {
   background-color: #fff;
 }
 
-.group {
-  margin: 0 auto;
+.custom-sidebar {
+  margin-left: 15px;
 }

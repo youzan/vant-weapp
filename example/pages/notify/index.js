@@ -6,12 +6,20 @@ Page({
     Notify('通知内容');
   },
 
-  showNotify2() {
+  showCustomColor() {
+    Notify({
+      message: '通知内容',
+      selector: '#custom-selector',
+      background: '#1989fa',
+      safeAreaInsetTop: true
+    });
+  },
+
+  showCustomDuration() {
     Notify({
       duration: 1000,
       message: '通知内容',
       selector: '#custom-selector',
-      background: '#1989fa',
       safeAreaInsetTop: true
     });
   },

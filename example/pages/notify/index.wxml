@@ -10,9 +10,8 @@
 </demo-block>
 
 <demo-block padding title="自定义通知">
-  <van-button type="primary" bind:click="showCustomColor">自定义颜色</van-button>
+  <van-button type="primary" class="demo-margin-right" bind:click="showCustomColor">自定义颜色</van-button>
   <van-button type="primary" bind:click="showCustomDuration">自定义时长</van-button>
 </demo-block>
 
 <van-notify id="van-notify" safe-area-inset-top />
-<van-notify id="custom-selector" />

@@ -8,19 +8,16 @@ Page({
 
   showCustomColor() {
     Notify({
-      message: '通知内容',
-      selector: '#custom-selector',
-      background: '#1989fa',
-      safeAreaInsetTop: true
+      message: '自定义颜色',
+      color: '#ad0000',
+      background: '#ffe1e1'
     });
   },
 
   showCustomDuration() {
     Notify({
       duration: 1000,
-      message: '通知内容',
-      selector: '#custom-selector',
-      safeAreaInsetTop: true
+      message: '自定义时长'
     });
   },
 

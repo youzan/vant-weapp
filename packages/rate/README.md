@@ -101,18 +101,18 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|
-| name | 在表单内提交时的标识符 | `String` | - |
-| value | 当前分值 | `Number` | - |
-| count | 图标总数 | `Number` | `5` |
-| size | 图标大小 (px) | `Number` | `20` |
-| color | 选中时的颜色 | `String` | `#ffd21e` |
-| void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
-| icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star` |
-| void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star-o` |
-| allow-half | 是否允许半选 | `Boolean` | `false` |
-| readonly | 是否为只读状态 | `Boolean` | `false` |
-| disabled | 是否禁用评分 | `Boolean` | `false` |
-| disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` |
+| name | 在表单内提交时的标识符 | *string* | - |
+| value | 当前分值 | *number* | - |
+| count | 图标总数 | *number* | `5` |
+| size | 图标大小 (px) | *number* | `20` |
+| color | 选中时的颜色 | *string* | `#ffd21e` |
+| void-color | 未选中时的颜色 | *string* | `#c7c7c7` |
+| icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | *string* | `star` |
+| void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | *string* | `star-o` |
+| allow-half | 是否允许半选 | *boolean* | `false` |
+| readonly | 是否为只读状态 | *boolean* | `false` |
+| disabled | 是否禁用评分 | *boolean* | `false` |
+| disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` |
 
 ### Events
 

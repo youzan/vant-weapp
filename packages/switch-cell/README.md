@@ -62,19 +62,19 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 在表单内提交时的标识符 | `String` | - |
-| checked | 开关状态 | `any` | `false` |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
-| title | 左侧标题 |  `String` | `''` |
-| label | 标题下方的描述信息 | `String` | - |
-| loading | 是否为加载状态 |  `Boolean` | `false` |
-| disabled | 是否为禁用状态 |  `Boolean` | `false` |
-| size | 开关尺寸 | `String` | `24px` |
-| active-color | 开关打开时的背景色 | `String` | `#1989fa` |
-| inactive-color | 开关关闭时的背景色 | `String` | `#fff` |
-| active-value | 打开时的值 | `any` | `true` |
-| inactive-value | 关闭时的值 | `any` | `false` |
-| use-label-slot | 是否使用 label slot | `Boolean` | `false` |
+| name | 在表单内提交时的标识符 | *string* | - |
+| checked | 开关状态 | *any* | `false` |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
+| title | 左侧标题 |  *string* | `''` |
+| label | 标题下方的描述信息 | *string* | - |
+| loading | 是否为加载状态 |  *boolean* | `false` |
+| disabled | 是否为禁用状态 |  *boolean* | `false` |
+| size | 开关尺寸 | *string* | `24px` |
+| active-color | 开关打开时的背景色 | *string* | `#1989fa` |
+| inactive-color | 开关关闭时的背景色 | *string* | `#fff` |
+| active-value | 打开时的值 | *any* | `true` |
+| inactive-value | 关闭时的值 | *any* | `false` |
+| use-label-slot | 是否使用 label slot | *boolean* | `false` |
 
 ### Events
 

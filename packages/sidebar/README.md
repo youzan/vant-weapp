@@ -56,7 +56,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| active | 选中项的索引 | `String | Number` | `0` |
+| active | 选中项的索引 | *string \| number* | `0` |
 
 ### Sidebar Event
 
@@ -74,8 +74,8 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| title | 内容 | `String` | `''` |
-| info | 提示消息 | `String | Number` | `''` |
+| title | 内容 | *string* | `''` |
+| info | 提示消息 | *string \| number* | `''` |
 
 ### SidebarItem Event
 

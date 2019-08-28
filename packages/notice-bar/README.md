@@ -52,14 +52,14 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| mode | 通告栏模式，可选值为 `closeable` `link` | `String` | `''` |
-| delay | 动画延迟时间 (s) | `Number` | `1` |
-| speed | 滚动速率 (px/s) | `Number` | `50` |
-| scrollable | 是否在长度溢出时滚动播放 | `Boolean` | `true` |
-| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
-| color | 文本颜色 | `String` | `#ed6a0c` |
-| backgroundColor | 滚动条背景 | `String` | `#fffbe8` |
-| open-type | 微信开放能力 | `String` | `navigate` |
+| mode | 通告栏模式，可选值为 `closeable` `link` | *string* | `''` |
+| delay | 动画延迟时间 (s) | *number* | `1` |
+| speed | 滚动速率 (px/s) | *number* | `50` |
+| scrollable | 是否在长度溢出时滚动播放 | *boolean* | `true` |
+| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
+| color | 文本颜色 | *string* | `#ed6a0c` |
+| backgroundColor | 滚动条背景 | *string* | `#fffbe8` |
+| open-type | 微信开放能力 | *string* | `navigate` |
 
 ### Events
 

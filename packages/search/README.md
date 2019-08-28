@@ -53,22 +53,22 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 在表单内提交时的标识符 | `String` | - |
-| label | 搜索框左侧文本 | `String` | - |
-| shape | 形状，可选值为 `round` | `String` | `square` |
-| value | 当前输入的值 | `String | Number` | - |
-| background | 搜索框背景色 | `String` | `#f2f2f2` |
-| show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` |
-| focus | 获取焦点 | `Boolean` | `false` |
-| error | 是否将输入内容标红 | `Boolean` | `false` |
-| disabled | 是否禁用输入框 | `Boolean` | `false` |
-| readonly | 是否只读 | `Boolean` | `false` |
-| clearable | 是否启用清除控件 | `Boolean` | `true` |
-| maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
-| use-action-slot | 是否使用 action slot | `Boolean` | `false` |
-| placeholder | 输入框为空时占位符 | `String` | - |
-| placeholder-style | 指定占位符的样式 | `String` | - |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
+| name | 在表单内提交时的标识符 | *string* | - |
+| label | 搜索框左侧文本 | *string* | - |
+| shape | 形状，可选值为 `round` | *string* | `square` |
+| value | 当前输入的值 | *string \| number* | - |
+| background | 搜索框背景色 | *string* | `#f2f2f2` |
+| show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` |
+| focus | 获取焦点 | *boolean* | `false` |
+| error | 是否将输入内容标红 | *boolean* | `false` |
+| disabled | 是否禁用输入框 | *boolean* | `false` |
+| readonly | 是否只读 | *boolean* | `false` |
+| clearable | 是否启用清除控件 | *boolean* | `true` |
+| maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | *number* | `-1` |
+| use-action-slot | 是否使用 action slot | *boolean* | `false` |
+| placeholder | 输入框为空时占位符 | *string* | - |
+| placeholder-style | 指定占位符的样式 | *string* | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 
 ### Events
 

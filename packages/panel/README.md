@@ -37,10 +37,10 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| title | 标题 | `String` | - |
-| desc | 描述 | `String` | - |
-| status | 状态 | `String` | - |
-| use-footer-slot | 是否使用 footer slot | `Boolean` | `false` |
+| title | 标题 | *string* | - |
+| desc | 描述 | *string* | - |
+| status | 状态 | *string* | - |
+| use-footer-slot | 是否使用 footer slot | *boolean* | `false` |
 
 ### Slot
 

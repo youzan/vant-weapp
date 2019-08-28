@@ -61,10 +61,10 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| left-width | 左侧滑动区域宽度 | `Number` | `0` | - |
-| right-width | 右侧滑动区域宽度 | `Number` | `0` | - |
-| async-close | 是否异步关闭 | `Boolean` | `false` | - |
-| disabled | 是否禁用滑动 | `Boolean` | `false` | 1.3.4 |
+| left-width | 左侧滑动区域宽度 | *number* | `0` | - |
+| right-width | 右侧滑动区域宽度 | *number* | `0` | - |
+| async-close | 是否异步关闭 | *boolean* | `false` | - |
+| disabled | 是否禁用滑动 | *boolean* | `false` | 1.3.4 |
 
 ### Slot
 
@@ -85,8 +85,8 @@ Page({
 
 | 参数 | 类型 | 说明 |
 |------|------|------|
-| position | `String` | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| instance | `Object` | SwipeCell 实例 |
+| position | *string* | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
+| instance | *object* | SwipeCell 实例 |
 
 ### 方法
 

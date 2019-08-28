@@ -766,10 +766,10 @@
     shelljs "^0.8.2"
     signale "^1.4.0"
 
-"@vant/doc@^2.5.1":
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.5.2.tgz#fbc51239eab5fcbeb31aac67fe285378238c1ba7"
-  integrity sha512-Pz+bNXBv09Sr7T8G2gNejp6XRsDsHqdMMr/O/cq9ylrNfQToPS+cPkerjf296b2b8/aLDGO9nVNuA9Gu84A2Qw==
+"@vant/doc@^2.5.5":
+  version "2.5.5"
+  resolved "http://registry.npm.qima-inc.com/@vant/doc/download/@vant/doc-2.5.5.tgz#66592d745536c1414c0ccf31b928e158787b5fec"
+  integrity sha1-ZlktdFU2wUFMDM8xuSjhWHh7X+w=
 
 "@vant/eslint-config@^1.2.4":
   version "1.2.4"

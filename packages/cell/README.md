@@ -98,8 +98,8 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| title | 分组标题 | `String` | `-` |
-| border | 是否显示外边框 | `Boolean` | `true` |
+| title | 分组标题 | *string* | `-` |
+| border | 是否显示外边框 | *boolean* | `true` |
 
 ### CellGroup 外部样式类
 
@@ -111,21 +111,21 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
-| title | 左侧标题 | `String | Number` | - |
-| title-width | 标题宽度，须包含单位 | `String` | - |
-| value | 右侧内容 | `String | Number` | - |
-| label | 标题下方的描述信息 | `String` | - |
-| size | 单元格大小，可选值为 `large` | `String` | - |
-| border | 是否显示下边框 | `Boolean` | `true` |
-| center | 是否使内容垂直居中 | `Boolean` | `false` |
-| url | 跳转链接 | `String` | - |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
-| clickable | 是否开启点击反馈 | `Boolean` | `false` |
-| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
-| required | 是否显示表单必填星号 | `Boolean` | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
-| use-label-slot | 是否使用 label slot | `Boolean` | `false` |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
+| title | 左侧标题 | *string \| number* | - |
+| title-width | 标题宽度，须包含单位 | *string* | - |
+| value | 右侧内容 | *string \| number* | - |
+| label | 标题下方的描述信息 | *string* | - |
+| size | 单元格大小，可选值为 `large` | *string* | - |
+| border | 是否显示下边框 | *boolean* | `true` |
+| center | 是否使内容垂直居中 | *boolean* | `false` |
+| url | 跳转链接 | *string* | - |
+| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` |
+| clickable | 是否开启点击反馈 | *boolean* | `false` |
+| is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` |
+| required | 是否显示表单必填星号 | *boolean* | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
+| use-label-slot | 是否使用 label slot | *boolean* | `false` |
 
 ### Cell Event
 

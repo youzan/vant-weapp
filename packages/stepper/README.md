@@ -45,18 +45,18 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 在表单内提交时的标识符 | `String` | - |
-| value | 输入值 | `String | Number` | 最小值 |
-| min | 最小值 | `String | Number` | `1` |
-| max | 最大值 | `String | Number` | - |
-| step | 步数 | `String | Number` | `1` |
-| integer | 是否只允许输入整数 | `Boolean` | `false` |
-| disabled | 是否禁用 | `Boolean` | `false` |
-| disable-input | 是否禁用输入框 | `Boolean` | `false` |
-| async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | `Boolean` | `false` |
-| input-width | 输入框宽度，须指定单位 | `String` | `30px` |
-| show-plus | 是否显示增加按钮 | `Boolean` | `true` |
-| show-minus | 是否显示减少按钮 | `Boolean` | `true` |
+| name | 在表单内提交时的标识符 | *string* | - |
+| value | 输入值 | *string \| number* | 最小值 |
+| min | 最小值 | *string \| number* | `1` |
+| max | 最大值 | *string \| number* | - |
+| step | 步数 | *string \| number* | `1` |
+| integer | 是否只允许输入整数 | *boolean* | `false` |
+| disabled | 是否禁用 | *boolean* | `false` |
+| disable-input | 是否禁用输入框 | *boolean* | `false` |
+| async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | *boolean* | `false` |
+| input-width | 输入框宽度，须指定单位 | *string* | `30px` |
+| show-plus | 是否显示增加按钮 | *boolean* | `true` |
+| show-minus | 是否显示减少按钮 | *boolean* | `true` |
 
 ### Events
 

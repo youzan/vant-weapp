@@ -2,14 +2,14 @@ import { VantComponent } from '../common/component';
 
 VantComponent({
   relation: {
-    name: 'badge',
+    name: 'sidebar-item',
     type: 'descendant',
     linked(target) {
-      this.badges.push(target);
+      this.items.push(target);
       this.setActive(this.data.active);
     },
     unlinked(target) {
-      this.badges = this.badges.filter(item => item !== target);
+      this.items = this.items.filter(item => item !== target);
       this.setActive(this.data.active);
     }
   },
@@ -23,15 +23,15 @@ VantComponent({
   },
 
   beforeCreate() {
-    this.badges = [];
+    this.items = [];
     this.currentActive = -1;
   },
 
   methods: {
     setActive(active: number) {
-      const { badges, currentActive } = this;
+      const { items, currentActive } = this;
 
-      if (!badges.length) {
+      if (!items.length) {
         return Promise.resolve();
       }
 
@@ -39,12 +39,12 @@ VantComponent({
 
       const stack = [];
 
-      if (currentActive !== active && badges[currentActive]) {
-        stack.push(badges[currentActive].setActive(false));
+      if (currentActive !== active && items[currentActive]) {
+        stack.push(items[currentActive].setActive(false));
       }
 
-      if (badges[active]) {
-        stack.push(badges[active].setActive(true));
+      if (items[active]) {
+        stack.push(items[active].setActive(true));
       }
 
       return Promise.all(stack);

@@ -148,8 +148,8 @@ export default [
     icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
     list: [
       {
-        path: '/badge',
-        title: 'Badge 徽章'
+        path: '/sidebar',
+        title: 'Sidebar 侧边导航'
       },
       {
         path: '/nav-bar',

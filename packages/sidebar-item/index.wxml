@@ -1,12 +1,12 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view
-  class="{{ utils.bem('badge', { active }) }} van-hairline custom-class"
-  hover-class="van-badge--hover"
+  class="{{ utils.bem('sidebar-item', { active }) }} van-hairline custom-class"
+  hover-class="van-sidebar-item--hover"
   hover-stay-time="70"
   bind:tap="onClick"
 >
-  <view class="van-badge__text">
+  <view class="van-sidebar-item__text">
     <van-info
       wx:if="{{ info !== null }}"
       info="{{ info }}"

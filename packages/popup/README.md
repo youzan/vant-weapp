@@ -48,16 +48,16 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| show | 是否显示弹出层 | `Boolean` | `false` |
-| z-index | z-index 层级 | `Number` | `100` |
-| overlay | 是否显示背景蒙层 | `Boolean` | `true` |
-| position | 可选值为 `top` `bottom` `right` `left` | `String` | - |
-| duration | 动画时长，单位为毫秒 | `Number | Object` | `300` |
-| custom-style | 自定义弹出层样式 | `String` | `` |
-| overlay-style | 自定义背景蒙层样式 | `String` | `` |
-| close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | `Boolean` | `true` |
-| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度 + 导航栏高度） | `Boolean` | `false` |
+| show | 是否显示弹出层 | *boolean* | `false` |
+| z-index | z-index 层级 | *number* | `100` |
+| overlay | 是否显示背景蒙层 | *boolean* | `true` |
+| position | 可选值为 `top` `bottom` `right` `left` | *string* | - |
+| duration | 动画时长，单位为毫秒 | *number \| object* | `300` |
+| custom-style | 自定义弹出层样式 | *string* | `` |
+| overlay-style | 自定义背景蒙层样式 | *string* | `` |
+| close-on-click-overlay | 点击蒙层是否关闭 Popup | *boolean* | `true` |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度 + 导航栏高度） | *boolean* | `false` |
 
 ### Events
 

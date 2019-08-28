@@ -105,29 +105,29 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| value | 当前展开面板的 name | `Array | String | Number` | - |
-| accordion | 是否开启手风琴模式 | `Boolean` | `false` |
-| border | 是否显示外边框 | `Boolean` | `true` |
+| value | 当前展开面板的 name | 非手风琴模式：*(string \| number)[]*<br>手风琴模式：*string \| number* | - |
+| accordion | 是否开启手风琴模式 | *boolean* | `false` |
+| border | 是否显示外边框 | *boolean* | `true` |
 
 ### Collapse Event
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|
-| change | 切换面板时触发 | activeNames: `String | Array` |
+| change | 切换面板时触发 | activeNames: *string \| Array* |
 
 ### CollapseItem API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |------|------|------|------|------|
-| name | 唯一标识符，默认为索引值 | `String | Number` | `index` |
-| title | 标题栏左侧内容 | `String | Number` | - |
-| icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - |
-| value | 标题栏右侧内容 | `String | Number` | - |
-| label | 标题栏描述信息 | `String` | - |
-| border | 是否显示内边框 | `Boolean` | `true` |
-| is-link | 是否展示标题栏右侧箭头并开启点击反馈 | `Boolean` | `true` |
-| clickable | 是否开启点击反馈 | `Boolean` | `false` |
-| disabled | 是否禁用面板 | `Boolean` | `false` |
+| name | 唯一标识符，默认为索引值 | *string \| number* | `index` |
+| title | 标题栏左侧内容 | *string \| number* | - |
+| icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
+| value | 标题栏右侧内容 | *string \| number* | - |
+| label | 标题栏描述信息 | *string* | - |
+| border | 是否显示内边框 | *boolean* | `true` |
+| is-link | 是否展示标题栏右侧箭头并开启点击反馈 | *boolean* | `true` |
+| clickable | 是否开启点击反馈 | *boolean* | `false` |
+| disabled | 是否禁用面板 | *boolean* | `false` |
 
 ### CollapseItem Slot
 

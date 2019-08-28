@@ -49,19 +49,19 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| thumb | 左侧图片 | `String` | - |
-| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | `String` | `aspectFit` |
-| title | 标题 | `String` | - |
-| desc | 描述 | `String` | - |
-| tag | 标签 | `String` | - |
-| num | 商品数量 | `String | Number` | - |
-| price | 商品价格 | `String | Number` | - |
-| origin-price | 商品划线原价 | `String | Number` | - |
-| centered | 内容是否垂直居中 | `String` | `false` |
-| currency | 货币符号 |  `String` | `¥` |
-| thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | `String` | `navigateTo` |
-| lazy-load | 是否开启图片懒加载 | `Boolean` | `false` |
+| thumb | 左侧图片 | *string* | - |
+| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | *string* | `aspectFit` |
+| title | 标题 | *string* | - |
+| desc | 描述 | *string* | - |
+| tag | 标签 | *string* | - |
+| num | 商品数量 | *string \| number* | - |
+| price | 商品价格 | *string \| number* | - |
+| origin-price | 商品划线原价 | *string \| number* | - |
+| centered | 内容是否垂直居中 | *string* | `false` |
+| currency | 货币符号 |  *string* | `¥` |
+| thumb-link | 点击左侧图片后的跳转链接 | *string* | - |
+| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` |
+| lazy-load | 是否开启图片懒加载 | *boolean* | `false` |
 
 ### Slot
 

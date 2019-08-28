@@ -61,10 +61,10 @@ transition 组件内置了多种动画，可以通过`name`字段指定动画类
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 动画类型 | `String` | `fade`|
-| show | 是否展示组件 | `Boolean` | `true` |
-| duration | 动画时长，单位为毫秒 | `Number | Object` | `300` |
-| custom-style | 自定义样式 | `String` | - |
+| name | 动画类型 | *string* | `fade`|
+| show | 是否展示组件 | *boolean* | `true` |
+| duration | 动画时长，单位为毫秒 | *number \| object* | `300` |
+| custom-style | 自定义样式 | *string* | - |
 
 ### 外部样式类
 

@@ -31,9 +31,9 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| color | 颜色 | `String` | `#c9c9c9` |
-| type | 类型，可选值为 `spinner` | `String` | `circular` |
-| size | 大小 | `String` | `30px` |
+| color | 颜色 | *string* | `#c9c9c9` |
+| type | 类型，可选值为 `spinner` | *string* | `circular` |
+| size | 大小 | *string* | `30px` |
 
 ### 外部样式类
 

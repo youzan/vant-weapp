@@ -3,6 +3,7 @@
     active="小程序组件"
     :config="config"
     :github="github"
+    :versions="versions"
     :simulator="simulator"
   >
     <router-view />
@@ -10,7 +11,7 @@
 </template>
 
 <script>
-import docConfig, { github } from './doc.config';
+import docConfig, { github, versions } from './doc.config';
 
 const UNSHARED = [
   'common',
@@ -23,7 +24,8 @@ const UNSHARED = [
 export default {
   data() {
     return {
-      github
+      github,
+      versions
     };
   },
 

@@ -1,6 +1,3 @@
-git checkout master
-git merge dev
-
 #!/usr/bin/env sh
 set -e
 echo "Enter release version: "
@@ -22,12 +19,7 @@ then
   npm version $VERSION --message "build: release $VERSION"
 
   # publish
-  git push origin master
+  git push origin dev
   git push origin refs/tags/v$VERSION
   npm publish
-
-  # sync dev
-  git checkout dev
-  git rebase master
-  git push origin dev
 fi

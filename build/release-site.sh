@@ -7,4 +7,4 @@ superman-cdn /vant-weapp ./docs/dist/*.js
 
 rm -rf docs/dist/*.js
 
-gh-pages -d docs/dist --add
+gh-pages -d docs/dist --add --dest 0.x

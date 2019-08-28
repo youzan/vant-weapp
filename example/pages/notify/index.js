@@ -9,9 +9,9 @@ Page({
   showNotify2() {
     Notify({
       duration: 1000,
-      text: '通知内容',
+      message: '通知内容',
       selector: '#custom-selector',
-      backgroundColor: '#1989fa',
+      background: '#1989fa',
       safeAreaInsetTop: true
     });
   },

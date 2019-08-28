@@ -6,12 +6,12 @@ VantComponent({
   mixins: [safeArea()],
 
   props: {
-    text: String,
+    message: String,
     color: {
       type: String,
       value: '#fff'
     },
-    backgroundColor: {
+    background: {
       type: String,
       value: RED
     },

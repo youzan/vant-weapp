@@ -8,3 +8,8 @@
 
 - `BadgeGroup`重命名为`Sidebar`
 - `Badge`重命名为`SlidebarItem`
+
+##### Notify
+
+- `text`选项重命名为`message`
+- `backgroundColor`选项重命名为`background`

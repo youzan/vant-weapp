@@ -3,7 +3,7 @@ import { VantComponent } from '../common/component';
 VantComponent({
   relation: {
     type: 'ancestor',
-    name: 'badge-group',
+    name: 'sidebar',
     linked(target) {
       this.parent = target;
     }
@@ -22,7 +22,7 @@ VantComponent({
         return;
       }
 
-      const index = parent.badges.indexOf(this);
+      const index = parent.items.indexOf(this);
 
       parent.setActive(index).then(() => {
         this.$emit('click', index);

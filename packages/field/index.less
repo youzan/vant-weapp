@@ -7,6 +7,11 @@
 
     &--textarea {
       min-height: 24px;
+      line-height: 1.2em;
+    }
+
+    &--textarea&--ios {
+      margin-top: -4.5px;
     }
   }
 
@@ -25,6 +30,11 @@
     border: 0;
     box-sizing: border-box;
     resize: none;
+
+    &--textarea {
+      height: 18px;
+      min-height: 18px;
+    }
 
     &--error {
       color: @red;

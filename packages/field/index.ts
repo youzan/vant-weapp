@@ -72,11 +72,8 @@ VantComponent({
   },
 
   data: {
-    focused: false
-  },
-
-  created() {
-    this.set({ system: getSystemInfoSync().system.split(' ').shift().toLowerCase() });
+    focused: false,
+    system: getSystemInfoSync().system.split(' ').shift().toLowerCase()
   },
 
   methods: {

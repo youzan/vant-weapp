@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { getSystemInfoSync } from '../common/utils';
 
 VantComponent({
   field: true,
@@ -71,73 +72,35 @@ VantComponent({
   },
 
   data: {
-    showClear: false
-  },
-
-  beforeCreate() {
-    this.focused = false;
+    focused: false,
+    system: getSystemInfoSync().system.split(' ').shift().toLowerCase()
   },
 
   methods: {
     onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
 
-      this.set({
-        value,
-        showClear: this.getShowClear(value)
-      }, () => {
+      this.set({ value }, () => {
         this.emitChange(value);
       });
     },
 
     onFocus(event: Weapp.Event) {
-      const { value = '', height = 0 } = event.detail || {};
-      this.$emit('focus', { value, height });
-      this.focused = true;
-      this.blurFromClear = false;
-      this.set({
-        showClear: this.getShowClear()
-      });
+      this.set({ focused: true });
+      this.$emit('focus', event.detail);
     },
 
     onBlur(event: Weapp.Event) {
-      const { value = '', cursor = 0 } = event.detail || {};
-      this.$emit('blur', { value, cursor });
-      this.focused = false;
-      const showClear = this.getShowClear();
-
-      if (this.data.value === value) {
-        this.set({
-          showClear
-        });
-      } else if (!this.blurFromClear) {
-        // fix: the handwritten keyboard does not trigger input change
-        this.set({
-          value,
-          showClear
-        }, () => {
-          this.emitChange(value);
-        });
-      }
+      this.set({ focused: false });
+      this.$emit('blur', event.detail);
     },
 
     onClickIcon() {
       this.$emit('click-icon');
     },
 
-    getShowClear(value?: string): boolean {
-      value = value === undefined ? this.data.value : value;
-      return (
-        this.data.clearable && this.focused && value && !this.data.readonly
-      );
-    },
-
     onClear() {
-      this.blurFromClear = true;
-      this.set({
-        value: '',
-        showClear: this.getShowClear('')
-      }, () => {
+      this.set({ value: '' }, () => {
         this.emitChange('');
         this.$emit('clear', '');
       });

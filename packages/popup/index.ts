@@ -15,12 +15,13 @@ VantComponent({
   mixins: [transition(false), safeArea()],
 
   props: {
+    round: Boolean,
+    customStyle: String,
+    overlayStyle: String,
     transition: {
       type: String,
       observer: 'observeClass'
     },
-    customStyle: String,
-    overlayStyle: String,
     zIndex: {
       type: Number,
       value: 100

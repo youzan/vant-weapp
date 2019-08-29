@@ -7,7 +7,8 @@ Page({
       top: false,
       bottom: false,
       left: false,
-      right: false
+      right: false,
+      round: false
     }
   },
 
@@ -57,7 +58,11 @@ Page({
     this.toggle('bottom', false);
   },
 
-  onClickLeft() {
-    wx.navigateBack();
+  showRound() {
+    this.toggle('round', true);
+  },
+
+  hideRound() {
+    this.toggle('round', false);
   }
 });

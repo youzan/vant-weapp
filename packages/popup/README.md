@@ -47,7 +47,21 @@ Page({
 <van-popup
   show="{{ show }}"
   position="top"
-  style="height: '20%'"
+  style="height: 20%"
+  bind:close="onClose"
+/>
+```
+
+### 圆角弹窗
+
+设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式
+
+```html
+<van-popup
+  show="{{ show }}"
+  round
+  position="bottom"
+  :style="{ height: '20%' }"
   bind:close="onClose"
 />
 ```
@@ -61,19 +75,20 @@ Page({
 | overlay | 是否显示遮罩层 | *boolean* | `true` |
 | position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` |
 | duration | 动画时长，单位为毫秒 | *number \| object* | `300` |
+| round | 是否显示圆角 | *boolean* | `false` |
 | custom-style | 自定义弹出层样式 | *string* | `` |
 | overlay-style | 自定义背景蒙层样式 | *string* | `` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
-| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度 + 导航栏高度） | *boolean* | `false` |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `false` |
 
 ### Events
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:close | 蒙层关闭时触发 | - |
-| bind:click-overlay | 点击蒙层时触发 | - |
-| bind:transitionEnd | 蒙层关闭后触发 | - |
+| bind:close | 关闭弹出层时触发 | - |
+| bind:click-overlay | 点击遮罩层时触发 | - |
+| bind:transitionEnd | 弹出层动画结束后触发 | - |
 
 ### 外部样式类
 

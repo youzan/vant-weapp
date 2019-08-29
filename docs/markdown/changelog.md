@@ -13,3 +13,9 @@
 
 - `text`选项重命名为`message`
 - `backgroundColor`选项重命名为`background`
+
+#### 新特性
+
+##### Popup
+
+- 新增`round`属性

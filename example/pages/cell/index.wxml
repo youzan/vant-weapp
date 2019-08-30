@@ -68,14 +68,13 @@
   </van-cell-group>
 </demo-block>
 
-<demo-block title="高级用法">
+<demo-block title="使用插槽">
   <van-cell value="内容" icon="shop-o" is-link>
     <view slot="title">
       <view class="title">单元格</view>
       <van-tag type="danger">标签</van-tag>
     </view>
   </van-cell>
-  <van-cell title="单元格" icon="location-o" is-link />
   <van-cell title="单元格" border="{{ false }}">
     <van-icon slot="right-icon" name="search" />
   </van-cell>

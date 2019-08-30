@@ -44,7 +44,7 @@
 
 ### 展示箭头
 
-传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
+设置`is-link`属性后会在单元格右侧显示箭头，并且可以通过`arrow-direction`属性控制箭头方向
 
 ```html
 <van-cell title="单元格" is-link />
@@ -78,9 +78,9 @@
 </van-cell-group>
 ```
 
-### 高级用法
+### 使用插槽
 
-如以上用法不能满足你的需求，可以使用对应的插槽来自定义显示的内容
+如以上用法不能满足你的需求，可以使用插槽来自定义内容
 
 ```html
 <van-cell value="内容" icon="shop-o" is-link>
@@ -137,7 +137,7 @@
 
 | 名称 | 说明 |
 |-----------|-----------|
-| - | 自定义`value`显示内容，如果设置了`value`属性则不生效 |
+| default | 自定义`value`显示内容，如果设置了`value`属性则不生效 |
 | title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |
 | label | 自定义`label`显示内容，需要设置 `use-label-slot`属性 |
 | icon | 自定义`icon`显示内容，如果设置了`icon`属性则不生效 |

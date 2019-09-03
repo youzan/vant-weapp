@@ -120,7 +120,7 @@ export const transition = function (showDefaultValue: boolean) {
       onTransitionEnd() {
         if (!this.data.show) {
           this.set({ display: false });
-          this.$emit('transitionEnd');
+          this.$emit('transitionend');
         }
       }
     }

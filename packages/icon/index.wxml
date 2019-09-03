@@ -1,7 +1,5 @@
-<wxs src="../wxs/utils.wxs" module="utils" />
-
 <view
-  class="custom-class {{ classPrefix }} {{ utils.isSrc(name) ? 'van-icon--image' : classPrefix + '-' + name }}"
+  class="custom-class {{ classPrefix }} {{ isImageName ? 'van-icon--image' : classPrefix + '-' + name }}"
   style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}"
   bind:tap="onClick"
 >
@@ -11,7 +9,7 @@
     custom-class="van-icon__info"
   />
   <image
-    wx:if="{{ utils.isSrc(name) }}"
+    wx:if="{{ isImageName }}"
     src="{{ name }}"
     mode="aspectFit"
     class="van-icon__image"

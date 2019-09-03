@@ -1,28 +1,33 @@
-<demo-block title="基础用法" padding>
-  <van-stepper value="{{ value1 }}" />
-</demo-block>
+<van-cell center title="基础用法">
+  <van-stepper value="{{ 1 }}" />
+</van-cell>
 
-<demo-block title="禁用状态" padding>
-  <van-stepper value="{{ value1 }}" disabled />
-</demo-block>
+<van-cell center title="步长设置">
+  <van-stepper value="{{ 1 }}" step="2" />
+</van-cell>
 
-<demo-block title="异步变更" padding>
+<van-cell center title="限制输入范围">
+  <van-stepper value="{{ 1 }}" min="5" max="8" />
+</van-cell>
+
+<van-cell center title="限制输入整数">
+  <van-stepper value="{{ 1 }}" integer />
+</van-cell>
+
+<van-cell center title="禁用状态">
+  <van-stepper value="{{ 1 }}" disabled />
+</van-cell>
+
+<van-cell center title="异步变更">
   <van-stepper
-    value="{{ 5 }}"
-    integer
+    value="{{ value }}"
     async-change
     bind:change="onChange"
   />
-</demo-block>
+</van-cell>
 
-<demo-block title="高级用法" padding>
-  <van-stepper
-    value="{{ value2 }}"
-    integer
-    min="5"
-    max="40"
-    step="2"
-  />
-</demo-block>
+<van-cell center title="自定义大小">
+  <van-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
+</van-cell>
 
 <van-toast id="van-toast" />

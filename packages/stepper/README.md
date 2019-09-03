@@ -1,5 +1,9 @@
 # Stepper 步进器
 
+### 介绍
+
+步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
@@ -14,30 +18,90 @@
 
 ### 基础用法
 
+通过`value`设置输入值，可以通过`change`事件监听到输入值的变化
+
 ```html
 <van-stepper value="{{ 1 }}" bind:change="onChange" />
 ```
 
-### 禁用状态
-
-通过设置`disabled`属性来禁用 stepper
-
-```html
-<van-stepper value="{{ 1 }}" disabled bind:change="onChange" />
+```js
+Page({
+  onChange(event) {
+    console.log(event.detail);
+  }
+})
 ```
 
-### 高级用法
+### 步长设置
 
-默认是每次加减为1，可以对组件设置`step`、`min`、`max`属性
+通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为`1`
+
+```html
+<van-stepper value="{{ 1 }}" step="2" />
+```
+
+### 限制输入范围
+
+通过`min`和`max`属性限制输入值的范围
+
+```html
+<van-stepper value="{{ 5 }}" min="5" max="8" />
+```
+
+### 限制输入整数
+
+设置`integer`属性后，输入框将限制只能输入整数
+
+```html
+<van-stepper value="{{ 1 }}" integer />
+```
+
+### 禁用状态
+
+通过设置`disabled`属性来禁用步进器，禁用状态下无法点击按钮或修改输入框
+
+```html
+<van-stepper value="{{ 1 }}" disabled />
+```
+
+### 异步变更
+
+如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
 
 ```html
 <van-stepper
   value="{{ value }}"
-  integer
-  min="5"
-  max="40"
-  step="2"
+  async-change
   bind:change="onChange"
+/>
+```
+
+```js
+Page({
+  data: {
+    value: 1
+  },
+
+  onChange(value) {
+    Toast.loading({ forbidClick: true });
+
+    setTimeout(() => {
+      Toast.clear();
+      this.setData({ value });
+    }, 500);
+  }
+});
+```
+
+### 自定义大小
+
+通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
+
+```html
+<van-stepper
+  value="{{ 1 }}"
+  input-width="40px"
+  button-size="32px"
 />
 ```
 
@@ -49,11 +113,11 @@
 | value | 输入值 | *string \| number* | 最小值 |
 | min | 最小值 | *string \| number* | `1` |
 | max | 最大值 | *string \| number* | - |
-| step | 步数 | *string \| number* | `1` |
+| step | 步长 | *string \| number* | `1` |
 | integer | 是否只允许输入整数 | *boolean* | `false` |
 | disabled | 是否禁用 | *boolean* | `false` |
 | disable-input | 是否禁用输入框 | *boolean* | `false` |
-| async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | *boolean* | `false` |
+| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` |
 | input-width | 输入框宽度，须指定单位 | *string* | `30px` |
 | show-plus | 是否显示增加按钮 | *boolean* | `true` |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` |

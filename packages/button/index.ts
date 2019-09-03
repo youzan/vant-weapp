@@ -8,7 +8,7 @@ VantComponent({
   classes: ['hover-class', 'loading-class'],
 
   data: {
-    colorStyle: ''
+    style: ''
   },
 
   props: {
@@ -54,7 +54,7 @@ VantComponent({
           }
         }
 
-        if (style !== this.data.colorStyle) {
+        if (style !== this.data.style) {
           this.setData({ style });
         }
       }

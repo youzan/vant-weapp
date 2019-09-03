@@ -35,7 +35,7 @@ VantComponent({
     },
     color: {
       type: String,
-      observer(color) {
+      observer(color: string) {
         let style = '';
 
         if (color) {

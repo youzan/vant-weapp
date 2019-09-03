@@ -88,7 +88,7 @@ Page({
 |-----------|-----------|-----------|
 | bind:close | 关闭弹出层时触发 | - |
 | bind:click-overlay | 点击遮罩层时触发 | - |
-| bind:transitionEnd | 弹出层动画结束后触发 | - |
+| bind:transitionend | 弹出层动画结束后触发 | - |
 
 ### 外部样式类
 

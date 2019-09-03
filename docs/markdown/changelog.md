@@ -14,6 +14,10 @@
 - `text`选项重命名为`message`
 - `backgroundColor`选项重命名为`background`
 
+##### Popup
+
+- `transitionEnd`事件重命名为`transitionend`
+
 #### 新特性
 
 ##### Popup

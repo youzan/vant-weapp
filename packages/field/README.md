@@ -176,6 +176,7 @@ Page({
 | disabled | 是否禁用输入框 | *boolean* | `false` |
 | readonly | 是否只读 | *boolean* | `false` |
 | clearable | 是否启用清除控件 | *boolean* | `false` |
+| clickable | 是否开启点击反馈 | *boolean* | `false` |
 | required | 是否显示表单必填星号 | *boolean* | `false` |
 | password | 是否是密码类型 | *boolean* | `false` |
 | title-width | 标题宽度 | *string* | `90px` |

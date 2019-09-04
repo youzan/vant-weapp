@@ -24,6 +24,10 @@
 
 - `color`属性支持渐变色
 
+##### Field
+
+- 新增`clickable`属性
+
 ##### Popup
 
 - 新增`round`属性

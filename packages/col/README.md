@@ -1,5 +1,9 @@
 # Layout 布局
 
+### 介绍
+
+Layout 提供了`van-row`和`van-col`两个组件来进行行列布局
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)

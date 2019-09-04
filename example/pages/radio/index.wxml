@@ -35,7 +35,7 @@
 </demo-block>
 
 <demo-block title="自定义图标" padding>
-  <van-checkbox use-icon-slot value="1" name="1">
+  <van-radio use-icon-slot value="1" name="1">
     自定义图标
     <image
       slot="icon"
@@ -43,7 +43,7 @@
       class="icon"
       mode="widthFix"
     />
-  </van-checkbox>
+  </van-radio>
 </demo-block>
 
 <demo-block title="与 Cell 组件一起使用">

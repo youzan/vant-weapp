@@ -134,6 +134,10 @@ export default [
         title: 'Steps 步骤条'
       },
       {
+        path: '/sticky',
+        title: 'Sticky 粘性布局'
+      },
+      {
         path: '/tag',
         title: 'Tag 标记'
       },

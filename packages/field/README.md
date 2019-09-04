@@ -185,6 +185,7 @@ Page({
 | placeholder-style | 指定 placeholder 的样式 | *string* | - |
 | custom-style | 自定义样式 | *string* | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
 | error | 是否将输入内容标红 | *boolean* | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
 | error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | *string* | `''` |

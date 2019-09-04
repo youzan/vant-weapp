@@ -27,6 +27,7 @@
 ##### Field
 
 - 新增`clickable`属性
+- 新增`arrow-direction`属性
 
 ##### Popup
 

@@ -81,10 +81,8 @@
       placeholder="请输入短信验证码"
       use-button-slot
       border="{{ false }}"
-      bind:change="onFieldChange"
-      bind:blur="onFieldBlur"
     >
-      <van-button slot="button" size="small" type="primary" custom-class="button" bind:tap="onSendSms">发送验证码</van-button>
+      <van-button slot="button" size="small" type="primary" custom-class="button">发送验证码</van-button>
     </van-field>
   </van-cell-group>
 </demo-block>

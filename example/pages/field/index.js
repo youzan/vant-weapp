@@ -16,20 +16,5 @@ Page({
       icon: 'none',
       title: '点击图标'
     });
-  },
-
-  onFieldChange({ detail }) {
-    console.log('change', detail);
-    this.setData({
-      sms: detail
-    });
-  },
-
-  onFieldBlur({ detail }) {
-    console.log('blur', detail);
-  },
-
-  onSendSms() {
-    console.log('onSendSms', this.data.sms);
   }
 });

@@ -4,8 +4,10 @@ VantComponent({
   props: {
     size: {
       type: String,
-      value: '30px'
+      value: '30px',
+      optionalTypes: [Number]
     },
+
     type: {
       type: String,
       value: 'circular'

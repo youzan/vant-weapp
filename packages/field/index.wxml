@@ -7,6 +7,7 @@
   border="{{ border }}"
   is-link="{{ isLink }}"
   required="{{ required }}"
+  clickable="{{ clickable }}"
   custom-style="{{ customStyle }}"
   title-width="{{ titleWidth }}"
   custom-class="van-field"

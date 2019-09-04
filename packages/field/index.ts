@@ -25,6 +25,7 @@ VantComponent({
     password: Boolean,
     iconClass: String,
     clearable: Boolean,
+    clickable: Boolean,
     inputAlign: String,
     customStyle: String,
     confirmType: String,

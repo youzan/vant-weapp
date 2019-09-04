@@ -60,13 +60,13 @@ Page({
 通过 icon 插槽自定义图标
 
 ```html
-<van-checkbox use-icon-slot value="{{ radio }}" name="1" bind:change="onChange">
+<van-radio use-icon-slot value="{{ radio }}" name="1" bind:change="onChange">
   自定义图标
   <image
     slot="icon"
     src="{{ radio === '1' ? icon.active : icon.normal }}"
   />
-</van-checkbox>
+</van-radio>
 ```
 
 ```js

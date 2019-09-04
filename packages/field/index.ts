@@ -27,11 +27,12 @@ VantComponent({
     clearable: Boolean,
     clickable: Boolean,
     inputAlign: String,
+    placeholder: String,
     customStyle: String,
     confirmType: String,
     confirmHold: Boolean,
     errorMessage: String,
-    placeholder: String,
+    arrowDirection: String,
     placeholderStyle: String,
     errorMessageAlign: String,
     selectionEnd: {

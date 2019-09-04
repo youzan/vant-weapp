@@ -205,8 +205,8 @@ VantComponent({
       return area;
     },
 
-    reset() {
-      this.code = '';
+    reset(code) {
+      this.code = code || '';
       return this.setValues();
     }
   }

@@ -1,6 +1,11 @@
 # Field 输入框
 
+### 介绍
+
+表单中的输入框组件
+
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -191,8 +196,8 @@ Page({
 | error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | *string* | `''` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
 | autosize | 自适应内容高度，只对 textarea 有效 | *boolean* | `false` |
-| right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
-| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
+| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | *string* | `done` |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | *boolean* | `false` |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | *number* | `50` |

@@ -8,6 +8,15 @@
   <van-button custom-class="demo-margin-left" bind:click="nextStep">下一步</van-button>
 </demo-block>
 
+<demo-block title="自定义样式">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    active-icon="success"
+    active-color="#38f"
+  />
+</demo-block>
+
 <demo-block title="竖向步骤条">
   <van-steps
     steps="{{ steps }}"

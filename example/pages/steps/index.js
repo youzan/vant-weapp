@@ -2,7 +2,7 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    active: 0,
+    active: 1,
     steps: [
       {
         text: '步骤一',

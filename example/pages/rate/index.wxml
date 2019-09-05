@@ -3,6 +3,7 @@
     custom-class="van-rate"
     data-key="value1"
     value="{{ value1 }}"
+    gutter="20px"
   />
 </demo-block>
 

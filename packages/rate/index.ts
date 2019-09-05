@@ -41,8 +41,7 @@ VantComponent({
       value: 5
     },
     gutter: {
-      type: Number,
-      optionalTypes: [String],
+      type: null,
       observer: 'setGutterWithUnit'
     },
   },
@@ -62,6 +61,7 @@ VantComponent({
 
   methods: {
     setGutterWithUnit(val) {
+      console.log('val', val);
       this.set({
         gutterWithUnit: addUnit(val)
       });

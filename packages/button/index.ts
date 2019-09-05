@@ -21,6 +21,10 @@ VantComponent({
     hairline: Boolean,
     disabled: Boolean,
     loadingText: String,
+    loadingType: {
+      type: String,
+      value: 'circular'
+    },
     type: {
       type: String,
       value: 'default'

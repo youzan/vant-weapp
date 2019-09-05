@@ -26,6 +26,7 @@
 
   <demo-block title="加载状态" padding>
     <van-button loading type="primary" class="demo-margin-right" />
+    <van-button loading type="primary" loading-type="spinner" class="demo-margin-right" />
     <van-button loading type="danger" loading-text="加载中..." />
   </demo-block>
 

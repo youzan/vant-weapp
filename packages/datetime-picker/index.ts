@@ -49,9 +49,7 @@ VantComponent({
       type: Function,
       value: defaultFormatter
     },
-    filter: {
-      type: Function,
-    },
+    filter: Function,
     value: null,
     type: {
       type: String,

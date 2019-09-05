@@ -84,6 +84,7 @@ Page({
 | custom-style | 自定义弹出层样式 | *string* | `` |
 | overlay-style | 自定义背景蒙层样式 | *string* | `` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
+| closeable | 是否显示关闭图标 | *boolean* | `false` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `false` |
 

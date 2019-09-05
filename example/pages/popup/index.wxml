@@ -44,11 +44,24 @@
   />
 </demo-block>
 
+<demo-block title="关闭图标" padding>
+  <van-button type="primary" bind:click="showCloseIcon">关闭图标</van-button>
+
+  <van-popup
+    show="{{ show.closeIcon }}"
+    closeable
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideCloseIcon"
+  />
+</demo-block>
+
 <demo-block title="圆角弹窗" padding>
   <van-button type="primary" bind:click="showRound">圆角弹窗</van-button>
 
   <van-popup
     show="{{ show.round }}"
+    round
     position="bottom"
     custom-style="height: 20%"
     bind:close="hideRound"

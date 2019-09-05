@@ -8,7 +8,8 @@ Page({
       bottom: false,
       left: false,
       right: false,
-      round: false
+      round: false,
+      closeIcon: false
     }
   },
 
@@ -64,5 +65,13 @@ Page({
 
   hideRound() {
     this.toggle('round', false);
+  },
+
+  showCloseIcon() {
+    this.toggle('closeIcon', true);
+  },
+
+  hideCloseIcon() {
+    this.toggle('closeIcon', false);
   }
 });

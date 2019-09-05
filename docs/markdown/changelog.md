@@ -18,6 +18,11 @@
 
 - `transitionEnd`事件重命名为`transitionend`
 
+##### SwitchCell
+
+- 移除了`SwitchCell`组件，请使用`Cell`和`Switch`组件代替
+
+
 #### 新特性
 
 ##### Area
@@ -47,3 +52,7 @@
 - 新增`round`属性
 - 新增`closeable`属性
 - 新增`close-icon`属性
+
+##### Steps
+
+- 新增`active-icon`属性

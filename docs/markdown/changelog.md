@@ -18,6 +18,11 @@
 
 - `transitionEnd`事件重命名为`transitionend`
 
+##### SwitchCell
+
+- 移除了`SwitchCell`组件，请使用`Cell`和`Switch`组件代替
+
+
 #### 新特性
 
 ##### Area

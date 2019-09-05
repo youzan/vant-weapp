@@ -72,10 +72,6 @@ export default [
       {
         path: '/switch',
         title: 'Switch 开关'
-      },
-      {
-        path: '/switch-cell',
-        title: 'SwitchCell 开关单元格'
       }
     ]
   },

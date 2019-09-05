@@ -8,7 +8,7 @@
 
 <demo-block title="样式定制">
   <van-progress custom-class="progress" pivot-text="橙色" color="#f2826a" percentage="25" />
-  <van-progress custom-class="progress" pivot-text="红色" color="#f44" percentage="50" />
+  <van-progress custom-class="progress" pivot-text="红色" color="#ee0a24" percentage="50" />
   <van-progress
     custom-class="progress"
     percentage="75"

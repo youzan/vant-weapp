@@ -38,7 +38,7 @@
     value="50"
     custom-class="slider"
     bar-height="4px"
-    active-color="#f44"
+    active-color="#ee0a24"
   />
 </demo-block>
 
@@ -47,7 +47,7 @@
     value="{{ currentValue }}"
     custom-class="slider"
     use-button-slot
-    active-color="#f44"
+    active-color="#ee0a24"
     bind:drag="onDrag"
   >
     <view class="custom-button" slot="button">

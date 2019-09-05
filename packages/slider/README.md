@@ -50,7 +50,7 @@ Page({
 <van-slider
   value="50"
   bar-height="4px"
-  active-color="#f44"
+  active-color="#ee0a24"
 />
 ```
 

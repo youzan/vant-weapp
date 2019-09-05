@@ -55,7 +55,7 @@ Page({
 <van-switch
   checked="{{ checked }}"
   active-color="#07c160"
-  inactive-color="#f44"
+  inactive-color="#ee0a24"
 />
 ```
 

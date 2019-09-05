@@ -156,7 +156,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | active | 当前激活标签的索引 | *number* | `0` |
-| color | 标签颜色 | *string* | `#f44` |
+| color | 标签颜色 | *string* | `#ee0a24` |
 | z-index | z-index 层级 | *number* | `1` |
 | type | 样式风格，可选值为`card` | *string* | `line` |
 | border | 是否展示外边框，仅在`line`风格下生效 | *boolean* | `true` |

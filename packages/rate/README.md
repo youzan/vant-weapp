@@ -47,7 +47,7 @@ Page({
 <van-rate
   value="{{ value }}"
   size="{{ 25 }}"
-  color="#f44"
+  color="#ee0a24"
   void-color="#eee"
   void-icon="star"
   bind:change="onChange"
@@ -60,7 +60,7 @@ Page({
   value="{{ value }}"
   size="{{ 25 }}"
   allow-half
-  color="#f44"
+  color="#ee0a24"
   void-color="#eee"
   void-icon="star"
   bind:change="onChange"

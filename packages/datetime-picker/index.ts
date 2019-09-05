@@ -45,12 +45,8 @@ VantComponent({
 
   props: {
     ...pickerProps,
-    formatter: {
-      type: Function,
-      value: defaultFormatter
-    },
-    filter: Function,
     value: null,
+    filter: null,
     type: {
       type: String,
       value: 'datetime'
@@ -58,6 +54,10 @@ VantComponent({
     showToolbar: {
       type: Boolean,
       value: true
+    },
+    formatter: {
+      type: null,
+      value: defaultFormatter
     },
     minDate: {
       type: Number,

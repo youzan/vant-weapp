@@ -132,14 +132,14 @@ VantComponent({
 
     updateColumns() {
       const { formatter = defaultFormatter } = this.data;
-      const results = this.originColumns().map(column => ({
+      const results = this.getOriginColumns().map(column => ({
         values: column.values.map(value => formatter(column.type, value))
       }));
 
       return this.set({ columns: results });
     },
 
-    originColumns() {
+    getOriginColumns() {
       const { filter } = this.data;
       const results = this.getRanges().map(({ type, range }) => {
         let values = times(range[1] - range[0] + 1, index => {

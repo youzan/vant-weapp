@@ -52,3 +52,7 @@
 - 新增`round`属性
 - 新增`closeable`属性
 - 新增`close-icon`属性
+
+##### Steps
+
+- 新增`active-icon`属性

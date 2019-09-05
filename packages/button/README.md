@@ -56,6 +56,7 @@
 
 ```html
 <van-button loading type="primary" />
+<van-button loading type="primary" loading-type="spinner" />
 <van-button loading type="danger" loading-text="加载中..." />
 ```
 
@@ -113,7 +114,7 @@
 | hairline | 是否使用 0.5px 边框 | *boolean* | `false` |
 | loading | 是否显示为加载状态 | *boolean* | `false` |
 | loading-text | 加载状态提示文字 | *string* | - |
-| loading-type | 加载状态类型，可选值为 `spinner` | *string* | `circular` |
+| loading-type | 加载状态图标类型，可选值为 `spinner` | *string* | `circular` |
 | loading-size | 加载图标大小 | *string* | `20px` |
 | open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | *string* | - |

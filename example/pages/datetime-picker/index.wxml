@@ -41,4 +41,12 @@
   />
 </demo-block>
 
+<demo-block title="选项过滤器">
+  <van-datetime-picker
+    type="time"
+    value="{{ currentDate4 }}"
+    filter="{{ filter }}"
+  />
+</demo-block>
+
 <van-toast id="van-toast" />

@@ -49,6 +49,7 @@ VantComponent({
       type: Function,
       value: defaultFormatter
     },
+    filter: Function,
     value: null,
     type: {
       type: String,
@@ -129,17 +130,30 @@ VantComponent({
 
     updateColumns() {
       const { formatter = defaultFormatter } = this.data;
-      const results = this.getRanges().map(({ type, range }) => {
-        const values = times(range[1] - range[0] + 1, index => {
-          let value = range[0] + index;
-          value = type === 'year' ? `${value}` : padZero(value);
-          return formatter(type, value);
-        });
-
-        return { values };
-      });
+      const results = this.getOriginColumns().map(column => ({
+        values: column.values.map(value => formatter(column.type, value))
+      }));
 
       return this.set({ columns: results });
+    },
+
+    getOriginColumns() {
+      const { filter } = this.data;
+      const results = this.getRanges().map(({ type, range }) => {
+        let values = times(range[1] - range[0] + 1, index => {
+          let value = range[0] + index;
+          value = type === 'year' ? `${value}` : padZero(value);
+          return value;
+        });
+
+        if (filter) {
+          values = filter(type, values);
+        }
+
+        return { type, values };
+      });
+
+      return results;
     },
 
     getRanges() {

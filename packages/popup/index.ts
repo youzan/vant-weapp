@@ -31,6 +31,10 @@ VantComponent({
       type: Boolean,
       value: true
     },
+    closeIcon: {
+      type: String,
+      value: 'cross'
+    },
     closeOnClickOverlay: {
       type: Boolean,
       value: true

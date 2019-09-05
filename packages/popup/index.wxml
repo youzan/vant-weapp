@@ -18,7 +18,7 @@
   <slot />
   <van-icon
     wx:if="{{ closeable }}"
-    name="cross"
+    name="{{ closeIcon }}"
     class="van-popup__close-icon"
     bind:tap="onClickCloseIcon"
   />

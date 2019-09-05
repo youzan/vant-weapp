@@ -33,6 +33,10 @@
 
 - 基础红色更新为`#ee0a24`
 
+##### DatetimePicker
+
+- 新增`filter`属性
+
 ##### Field
 
 - 新增`clickable`属性
@@ -41,3 +45,5 @@
 ##### Popup
 
 - 新增`round`属性
+- 新增`closeable`属性
+- 新增`close-icon`属性

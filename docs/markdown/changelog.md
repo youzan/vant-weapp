@@ -26,7 +26,12 @@
 
 ##### Button
 
+- 新增`loading-type`属性
 - `color`属性支持渐变色
+
+##### Color
+
+- 基础红色更新为`#ee0a24`
 
 ##### Field
 

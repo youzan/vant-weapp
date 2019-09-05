@@ -27,6 +27,7 @@
     <van-loading
       custom-class="loading-class"
       size="{{ loadingSize }}"
+      type="{{ loadingType }}"
       color="{{ type === 'default' ? '#c9c9c9' : '' }}"
     />
     <view

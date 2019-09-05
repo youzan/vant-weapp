@@ -144,6 +144,33 @@ Page({
 });
 ```
 
+### 选项过滤器
+
+通过传入 `filter` 函数，可以对选项数组进行过滤，实现自定义时间间隔
+
+```html
+<van-datetime-picker
+  type="time"
+  value="{{ currentDate }}"
+  filter="{{ filter }}"
+/>
+```
+
+```js
+Page({
+  data: {
+    currentDate: '12:00',
+    filter(type, options) {
+      if (type === 'minute') {
+        return options.filter(option => option % 5 === 0)
+      }
+
+      return options;
+    }
+  }
+});
+```
+
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -156,6 +183,7 @@ Page({
 | max-hour | 可选的最大小时，针对 time 类型 | *number* | `23` |
 | min-minute | 可选的最小分钟，针对 time 类型 | *number* | `0` |
 | max-minute | 可选的最大分钟，针对 time 类型 | *number* | `59` |
+| filter | 选项过滤函数 | *(type, values) => values* | - |
 | formatter | 选项格式化函数 | *(type, value) => value* | - |
 | title | 顶部栏标题 | *string* | `''` |
 | show-toolbar | 是否显示顶部栏 | *boolean* | `false` |

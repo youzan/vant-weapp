@@ -39,7 +39,7 @@
 
 <van-progress
   pivot-text="红色"
-  color="#f44"
+  color="#ee0a24"
   percentage="50"
 />
 

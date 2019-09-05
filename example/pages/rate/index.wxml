@@ -22,7 +22,7 @@
     data-key="value3"
     value="{{ value3 }}"
     size="{{ 25 }}"
-    color="#f44"
+    color="#ee0a24"
     void-color="#eee"
     void-icon="star"
     bind:change="onChange"
@@ -36,7 +36,7 @@
     value="{{ value4 }}"
     size="{{ 25 }}"
     allow-half
-    color="#f44"
+    color="#ee0a24"
     void-color="#eee"
     void-icon="star"
     bind:change="onChange"

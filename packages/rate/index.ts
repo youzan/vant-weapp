@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { addUnit } from '../common/utils';
 
 VantComponent({
   field: true,
@@ -38,11 +39,17 @@ VantComponent({
     count: {
       type: Number,
       value: 5
-    }
+    },
+    gutter: {
+      type: Number,
+      optionalTypes: [String],
+      observer: 'setGutterWithUnit'
+    },
   },
 
   data: {
-    innerValue: 0
+    innerValue: 0,
+    gutterWithUnit: undefined
   },
 
   watch: {
@@ -54,6 +61,12 @@ VantComponent({
   },
 
   methods: {
+    setGutterWithUnit(val) {
+      this.set({
+        gutterWithUnit: addUnit(val)
+      });
+    },
+
     onSelect(event: Weapp.Event) {
       const { data } = this;
       const { score } = event.currentTarget.dataset;

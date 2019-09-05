@@ -45,7 +45,7 @@
 </demo-block>
 
 <demo-block title="关闭图标" padding>
-  <van-button type="primary" bind:click="showCloseIcon">关闭图标</van-button>
+  <van-button type="primary" class="demo-margin-right" bind:click="showCloseIcon">关闭图标</van-button>
 
   <van-popup
     show="{{ show.closeIcon }}"
@@ -53,6 +53,17 @@
     position="bottom"
     custom-style="height: 20%"
     bind:close="hideCloseIcon"
+  />
+
+  <van-button type="primary" bind:click="showCustomCloseIcon">自定义图标</van-button>
+
+  <van-popup
+    show="{{ show.customCloseIcon }}"
+    closeable
+    close-icon="close"
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideCustomCloseIcon"
   />
 </demo-block>
 

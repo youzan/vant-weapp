@@ -57,6 +57,30 @@ Page({
 />
 ```
 
+### 关闭图标
+
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标
+
+```html
+<van-popup
+  show="{{ show }}"
+  closeable
+  position="bottom"
+  :style="{ height: '20%' }"
+  bind:close="onClose"
+/>
+
+<!-- 自定义图标 -->
+<van-popup
+  show="{{ show }}"
+  closeable
+  close-icon="close"
+  position="bottom"
+  :style="{ height: '20%' }"
+  bind:close="onClose"
+/>
+```
+
 ### 圆角弹窗
 
 设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式
@@ -85,6 +109,7 @@ Page({
 | overlay-style | 自定义背景蒙层样式 | *string* | `` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
 | closeable | 是否显示关闭图标 | *boolean* | `false` |
+| close-icon | 关闭图标名称或图片链接 | *string* | `cross` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `false` |
 

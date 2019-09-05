@@ -73,6 +73,19 @@
   &--bottom&--safe {
     padding-bottom: @safe-area-inset-bottom;
   }
+
+  &__close-icon {
+    position: absolute;
+    top: @popup-close-icon-margin;
+    right: @popup-close-icon-margin;
+    z-index: @popup-close-icon-z-index;
+    color: @popup-close-icon-color;
+    font-size: @popup-close-icon-size;
+
+    &:active {
+      opacity: .6;
+    }
+  }
 }
 
 .van-scale-enter-active,

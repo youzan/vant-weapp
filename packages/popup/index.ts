@@ -16,6 +16,7 @@ VantComponent({
 
   props: {
     round: Boolean,
+    closeable: Boolean,
     customStyle: String,
     overlayStyle: String,
     transition: {
@@ -46,6 +47,10 @@ VantComponent({
   },
 
   methods: {
+    onClickCloseIcon() {
+      this.$emit('close');
+    },
+
     onClickOverlay() {
       this.$emit('click-overlay');
 

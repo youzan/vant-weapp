@@ -16,4 +16,10 @@
   bind:transitionend="onTransitionEnd"
 >
   <slot />
+  <van-icon
+    wx:if="{{ closeable }}"
+    name="cross"
+    class="van-popup__close-icon"
+    bind:tap="onClickCloseIcon"
+  />
 </view>

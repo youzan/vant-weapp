@@ -7,7 +7,7 @@
 </demo-block>
 
 <demo-block title="吸顶距离">
-  <van-sticky offset-top="{{30}}">
+  <van-sticky offset-top="{{ 50 }}">
     <van-button type="info" style="margin-left: 115px">
       吸顶距离
     </van-button>

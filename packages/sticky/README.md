@@ -1,6 +1,11 @@
 # Sticky 粘性布局
 
+### 介绍
+
+Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部。
+
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -27,7 +32,7 @@
 通过`offset-top`属性可以设置组件在吸顶时与顶部的距离
 
 ```html
-<van-sticky offset-top="{{ 30 }}">
+<van-sticky offset-top="{{ 50 }}">
   <van-button type="info">吸顶距离</van-button>
 </van-sticky>
 ```

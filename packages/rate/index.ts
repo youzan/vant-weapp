@@ -14,7 +14,6 @@ VantComponent({
     allowHalf: Boolean,
     size: {
       type: null,
-      value: 20,
       observer: 'setSizeWithUnit'
     },
     icon: {
@@ -50,7 +49,7 @@ VantComponent({
   data: {
     innerValue: 0,
     gutterWithUnit: undefined,
-    sizeWithUnit: undefined
+    sizeWithUnit: '20px'
   },
 
   watch: {

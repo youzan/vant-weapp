@@ -29,7 +29,7 @@ Page({
 ### 指定选择范围
 
 ```html
-<van-slider value="50" min="10" max="90" />
+<van-slider min="-50" max="50" />
 ```
 
 ### 禁用

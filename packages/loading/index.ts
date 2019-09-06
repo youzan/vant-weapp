@@ -36,7 +36,7 @@ VantComponent({
 
     setTextSizeWithUnit(size: string | number): void {
       this.set({
-        textSizeWithUnit: size
+        textSizeWithUnit: addUnit(size)
       });
     }
   }

@@ -27,7 +27,7 @@
 通过`offset-top`属性可以设置组件在吸顶时与顶部的距离
 
 ```html
-<van-sticky offset-top="{{30}}">
+<van-sticky offset-top="{{ 30 }}">
   <van-button type="info">吸顶距离</van-button>
 </van-sticky>
 ```
@@ -36,8 +36,8 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| offset-top | 吸顶时与顶部的距离，单位px | *number* | `0` |
-| z-index | 吸顶时的 z-index | *number* | `1` |
+| offset-top | 吸顶时与顶部的距离，单位`px` | *number* | `0` |
+| z-index | 吸顶时的 z-index | *number* | `99` |
 
 ### Events
 

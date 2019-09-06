@@ -5414,10 +5414,10 @@ minipass@^2.2.1, minipass@^2.3.5:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
 
-miniprogram-api-typings@2.8.1:
-  version "2.8.1"
-  resolved "https://registry.npm.taobao.org/miniprogram-api-typings/download/miniprogram-api-typings-2.8.1.tgz#a56eec32eb03fc1517d27d04f7371745598798cc"
-  integrity sha1-pW7sMusD/BUX0n0E9zcXRVmHmMw=
+miniprogram-api-typings@2.7.7-2:
+  version "2.7.7-2"
+  resolved "https://registry.npm.taobao.org/miniprogram-api-typings/download/miniprogram-api-typings-2.7.7-2.tgz#7c0bd69fdf88b77ccdcaebac6392a0cc24a4e74c"
+  integrity sha1-fAvWn9+It3zNyuusY5KgzCSk50w=
 
 minizlib@^1.2.1:
   version "1.2.1"

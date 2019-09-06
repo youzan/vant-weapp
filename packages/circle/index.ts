@@ -22,7 +22,7 @@ VantComponent({
     },
     speed: {
       type: Number,
-      value: 0
+      value: 50
     },
     size: {
       type: Number,
@@ -30,7 +30,7 @@ VantComponent({
     },
     fill: {
       type: String,
-      value: 'none'
+      value: ''
     },
     layerColor: {
       type: String,
@@ -48,12 +48,6 @@ VantComponent({
       type: Boolean,
       value: true
     }
-  },
-  data: {
-    progress: 0,
-    startAngle: 0,
-    endAngle: 0,
-    currentValue: 0
   },
   computed: {
     context() {
@@ -97,16 +91,20 @@ VantComponent({
         clockwise,
         layerColor,
         strokeWidth,
+        fill,
         context
       } = this.data;
-      context.setLineWidth(strokeWidth); // 设置圆环的宽度
-      context.setStrokeStyle(layerColor); // 设置圆环的颜色
-      context.beginPath(); //开始一个新的路径
+      context.setLineWidth(strokeWidth);
+      context.setStrokeStyle(layerColor);
+      context.beginPath();
       context.arc(position, position, radius, 0, PERIMETER, !clockwise);
-      //设置一个原点(100,100)，半径为90的圆的路径到当前路径
-      context.stroke(); //对当前路径进行描边
+      context.stroke();
+      if (fill) {
+        context.setFillStyle(fill);
+        context.fill();
+      }
     },
-    renderHoverCircle() {
+    renderHoverCircle(formatValue) {
       const {
         radius,
         position,
@@ -114,20 +112,16 @@ VantComponent({
         clockwise,
         lineCap,
         context,
-        hoverColor,
-        value
+        hoverColor
       } = this.data;
-      console.log(this.data);
-      // 绘制轨道
+
       context.setStrokeStyle(hoverColor);
       context.setLineWidth(strokeWidth);
       context.setLineCap(lineCap);
       context.beginPath();
-      // 初始角度
-      const progress = PERIMETER * (format(value) / 100);
-      // const progress =
 
       // 结束角度
+      const progress = PERIMETER * (formatValue / 100);
       const endAngle = clockwise
         ? BEGIN_ANGLE + progress
         : 3 * Math.PI - (BEGIN_ANGLE + progress);
@@ -142,22 +136,44 @@ VantComponent({
       );
       context.stroke();
     },
-    drawCircle(line = true) {
-      const { context } = this.data;
+    drawCircle(currentValue) {
+      const { context, size } = this.data;
+      context.clearRect(0, 0, size, size);
       this.renderLayerCircle();
-      if (line) {
-        this.renderHoverCircle();
+      const formatValue = format(currentValue);
+      if (formatValue !== 0) {
+        this.renderHoverCircle(formatValue);
       }
       context.draw();
     },
     reRender() {
-      // todo handle animate here
-      let { value } = this.data;
-      this.drawCircle(format(value) !== 0);
+      // tofector 动画暂时没有想到好的解决方案
+      const { value, speed } = this.data;
+      if (speed <= 0 || speed > 1000) {
+        this.drawCircle(value);
+        return;
+      }
+      this.currentValue = this.currentValue || 0;
+      clearInterval(this.interval);
+      this.interval = setInterval(() => {
+        if (this.currentValue !== value) {
+          if (this.currentValue < value) {
+            this.currentValue += 1;
+          } else {
+            this.currentValue -= 1;
+          }
+          this.drawCircle(this.currentValue);
+        } else {
+          clearInterval(this.interval);
+        }
+      }, 1000 / speed);
     }
   },
   created() {
-    this.reRender();
+    this.currentValue = this.data.value;
+    this.drawCircle(this.currentValue);
   },
-  destroyed() {}
+  destroyed() {
+    clearInterval(this.interval);
+  }
 });

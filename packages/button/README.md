@@ -99,32 +99,32 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| id | 标识符 | *string* | - |
-| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` |
-| size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | *string* | `normal` |
-| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
-| plain | 是否为朴素按钮 | *boolean* | `false` |
-| block | 是否为块级元素 | *boolean* | `false` |
-| round | 是否为圆形按钮 | *boolean* | `false` |
-| square | 是否为方形按钮 | *boolean* | `false` |
-| disabled | 是否禁用按钮 | *boolean* | `false` |
-| hairline | 是否使用 0.5px 边框 | *boolean* | `false` |
-| loading | 是否显示为加载状态 | *boolean* | `false` |
-| loading-text | 加载状态提示文字 | *string* | - |
-| loading-type | 加载状态图标类型，可选值为 `spinner` | *string* | `circular` |
-| loading-size | 加载图标大小 | *string* | `20px` |
-| open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - |
-| app-parameter | 打开 APP 时，向 APP 传递的参数 | *string* | - |
-| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | *string* | `en` |
-| session-from | 会话来源 | *string* | - |
-| business-id | 客服消息子商户 id | *number* | - |
-| send-message-title | 会话内消息卡片标题 | *string* | 当前标题 |
-| send-message-path | 会话内消息卡片点击跳转小程序路径 | *string* | 当前分享路径 |
-| send-message-img | sendMessageImg | *string* | 截图 |
-| show-message-card | 显示会话内消息卡片 | *string* | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| id | 标识符 | *string* | - | - |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` | - |
+| size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | *string* | `normal` | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | - |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| plain | 是否为朴素按钮 | *boolean* | `false` | - |
+| block | 是否为块级元素 | *boolean* | `false` | - |
+| round | 是否为圆形按钮 | *boolean* | `false` | - |
+| square | 是否为方形按钮 | *boolean* | `false` | - |
+| disabled | 是否禁用按钮 | *boolean* | `false` | - |
+| hairline | 是否使用 0.5px 边框 | *boolean* | `false` | - |
+| loading | 是否显示为加载状态 | *boolean* | `false` | - |
+| loading-text | 加载状态提示文字 | *string* | - | - |
+| loading-type | 加载状态图标类型，可选值为 `spinner` | *string* | `circular` | - |
+| loading-size | 加载图标大小 | *string* | `20px` | - |
+| open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - | - |
+| app-parameter | 打开 APP 时，向 APP 传递的参数 | *string* | - | - |
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | *string* | `en` | - | - |
+| session-from | 会话来源 | *string* | - | - |
+| business-id | 客服消息子商户 id | *number* | - | - |
+| send-message-title | 会话内消息卡片标题 | *string* | 当前标题 | - |
+| send-message-path | 会话内消息卡片点击跳转小程序路径 | *string* | 当前分享路径 | - |
+| send-message-img | sendMessageImg | *string* | 截图 | - |
+| show-message-card | 显示会话内消息卡片 | *string* | `false` | - |
 
 ### Events
 

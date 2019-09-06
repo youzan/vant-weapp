@@ -168,43 +168,43 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - |
-| label | 输入框左侧文本 | *string* | - |
-| size | 单元格大小，可选值为 `large` | *string* | - |
-| value | 当前输入的值 | *string \| number* | - |
-| type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | *string* | `text` |
-| fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | *boolean* | `false` |
-| focus | 获取焦点 | *boolean* | `false` |
-| border | 是否显示内边框 | *boolean* | `true` |
-| disabled | 是否禁用输入框 | *boolean* | `false` |
-| readonly | 是否只读 | *boolean* | `false` |
-| clearable | 是否启用清除控件 | *boolean* | `false` |
-| clickable | 是否开启点击反馈 | *boolean* | `false` |
-| required | 是否显示表单必填星号 | *boolean* | `false` |
-| password | 是否是密码类型 | *boolean* | `false` |
-| title-width | 标题宽度 | *string* | `90px` |
-| maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | *number* | `-1` |
-| placeholder | 输入框为空时占位符 | *string* | - |
-| placeholder-style | 指定 placeholder 的样式 | *string* | - |
-| custom-style | 自定义样式 | *string* | - |
-| is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - |
-| error | 是否将输入内容标红 | *boolean* | `false` |
-| error-message | 底部错误提示文案，为空时不展示 | *string* | `''` |
-| error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | *string* | `''` |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` |
-| autosize | 自适应内容高度，只对 textarea 有效 | *boolean* | `false` |
-| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
-| right-icon | 右侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
-| confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | *string* | `done` |
-| confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | *boolean* | `false` |
-| cursor-spacing | 输入框聚焦时底部与键盘的距离 | *number* | `50` |
-| adjust-position | 键盘弹起时，是否自动上推页面 | *boolean* | `true` |
-| show-confirm-bar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | *boolean* | `true` |
-| selection-start | 光标起始位置，自动聚集时有效，需与 selection-end 搭配使用 | *number* | `-1` |
-| selection-end | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用 | *number* | `-1` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| name | 在表单内提交时的标识符 | *string* | - | - |
+| label | 输入框左侧文本 | *string* | - | - |
+| size | 单元格大小，可选值为 `large` | *string* | - | - |
+| value | 当前输入的值 | *string \| number* | - | - |
+| type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | *string* | `text` | - |
+| fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | *boolean* | `false` | - |
+| focus | 获取焦点 | *boolean* | `false` | - |
+| border | 是否显示内边框 | *boolean* | `true` | - |
+| disabled | 是否禁用输入框 | *boolean* | `false` | - |
+| readonly | 是否只读 | *boolean* | `false` | - |
+| clearable | 是否启用清除控件 | *boolean* | `false` | - |
+| clickable | 是否开启点击反馈 | *boolean* | `false` | - |
+| required | 是否显示表单必填星号 | *boolean* | `false` | - |
+| password | 是否是密码类型 | *boolean* | `false` | - |
+| title-width | 标题宽度 | *string* | `90px` | - |
+| maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | *number* | `-1` | - |
+| placeholder | 输入框为空时占位符 | *string* | - | - |
+| placeholder-style | 指定 placeholder 的样式 | *string* | - | - |
+| custom-style | 自定义样式 | *string* | - | - |
+| is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - | - |
+| error | 是否将输入内容标红 | *boolean* | `false` | - |
+| error-message | 底部错误提示文案，为空时不展示 | *string* | `''` | - |
+| error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | *string* | `''` | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
+| autosize | 自适应内容高度，只对 textarea 有效 | *boolean* | `false` | - |
+| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | *string* | `done` | - |
+| confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | *boolean* | `false` | - |
+| cursor-spacing | 输入框聚焦时底部与键盘的距离 | *number* | `50` | - |
+| adjust-position | 键盘弹起时，是否自动上推页面 | *boolean* | `true` | - |
+| show-confirm-bar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | *boolean* | `true` | - |
+| selection-start | 光标起始位置，自动聚集时有效，需与 selection-end 搭配使用 | *number* | `-1` | - |
+| selection-end | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用 | *number* | `-1` | - |
 
 ### Events
 

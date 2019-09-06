@@ -153,29 +153,29 @@ Page({
 
 ### Tabs API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| active | 当前激活标签的索引 | *number* | `0` |
-| color | 标签颜色 | *string* | `#ee0a24` |
-| z-index | z-index 层级 | *number* | `1` |
-| type | 样式风格，可选值为`card` | *string* | `line` |
-| border | 是否展示外边框，仅在`line`风格下生效 | *boolean* | `true` |
-| duration | 动画时间 (单位秒)  | *number* | `0.3` |
-| line-width | 底部条宽度 (px) | *number* | 与当前标签等宽 |
-| swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | *number* | `4` |
-| animated | 是否使用动画切换 Tabs | *boolean* | `false` |
-| swipeable | 是否开启手势滑动切换 | *boolean* | `false` |
-| sticky | 是否使用粘性定位布局 | *boolean* | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| active | 当前激活标签的索引 | *number* | `0` | - |
+| color | 标签颜色 | *string* | `#ee0a24` | - |
+| z-index | z-index 层级 | *number* | `1` | - |
+| type | 样式风格，可选值为`card` | *string* | `line` | - |
+| border | 是否展示外边框，仅在`line`风格下生效 | *boolean* | `true` | - |
+| duration | 动画时间 (单位秒)  | *number* | `0.3` | - |
+| line-width | 底部条宽度 (px) | *number* | 与当前标签等宽 | - |
+| swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | *number* | `4` | - |
+| animated | 是否使用动画切换 Tabs | *boolean* | `false` | - |
+| swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
+| sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 
 ### Tab API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| title | 标题 | *string* | - |
-| disabled | 是否禁用标签 | *boolean* | `false` |
-| dot | 是否显示小红点 | *boolean* | - |
-| info | 图标右上角提示信息 | *string \| number* | - |
-| title-style | 自定义标题样式 | *string* | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | *string* | - | - |
+| disabled | 是否禁用标签 | *boolean* | `false` | - |
+| dot | 是否显示小红点 | *boolean* | - | - |
+| info | 图标右上角提示信息 | *string \| number* | - | - |
+| title-style | 自定义标题样式 | *string* | - | - |
 
 ### Tabs Slot
 

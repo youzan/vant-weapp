@@ -83,15 +83,15 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| actions | 菜单选项 | *Array* | `[]` |
-| title | 标题 | *string* | - |
-| z-index | z-index 层级 | *number* | `100` |
-| cancel-text | 取消按钮文字 | *string* | - |
-| overlay | 是否显示遮罩层 | *boolean* | - |
-| close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| actions | 菜单选项 | *Array* | `[]` | - |
+| title | 标题 | *string* | - | - |
+| z-index | z-index 层级 | *number* | `100` | - |
+| cancel-text | 取消按钮文字 | *string* | - | - |
+| overlay | 是否显示遮罩层 | *boolean* | - | - |
+| close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - | - |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
 
 ### Events
 

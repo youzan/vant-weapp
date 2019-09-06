@@ -97,21 +97,21 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| show | 是否显示弹出层 | *boolean* | `false` |
-| z-index | z-index 层级 | *number* | `100` |
-| overlay | 是否显示遮罩层 | *boolean* | `true` |
-| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` |
-| duration | 动画时长，单位为毫秒 | *number \| object* | `300` |
-| round | 是否显示圆角 | *boolean* | `false` |
-| custom-style | 自定义弹出层样式 | *string* | `` |
-| overlay-style | 自定义背景蒙层样式 | *string* | `` |
-| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` |
-| closeable | 是否显示关闭图标 | *boolean* | `false` |
-| close-icon | 关闭图标名称或图片链接 | *string* | `cross` |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
-| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| show | 是否显示弹出层 | *boolean* | `false` | - |
+| z-index | z-index 层级 | *number* | `100` | - |
+| overlay | 是否显示遮罩层 | *boolean* | `true` | - |
+| position | 弹出位置，可选值为 `top` `bottom` `right` `left` | *string* | `center` | - |
+| duration | 动画时长，单位为毫秒 | *number \| object* | `300` | - |
+| round | 是否显示圆角 | *boolean* | `false` | - |
+| custom-style | 自定义弹出层样式 | *string* | `` | - |
+| overlay-style | 自定义背景蒙层样式 | *string* | `` | - |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
+| closeable | 是否显示关闭图标 | *boolean* | `false` | - |
+| close-icon | 关闭图标名称或图片链接 | *string* | `cross` | - |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `false` | - |
 
 ### Events
 

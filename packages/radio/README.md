@@ -145,16 +145,16 @@ Page({
 
 ### Radio API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 标识 Radio 名称 | *string* | - |
-| value | 当前选中项的 name | *any* | - |
-| shape | 形状，可选值为 `round` `square` | *string* | `round` |
-| disabled | 是否为禁用状态 | *boolean* | `false` |
-| label-disabled | 是否禁用文本内容点击 | *boolean* | `false` |
-| label-position | 文本位置，可选值为 `left` | *string* | `right` |
-| use-icon-slot | 是否使用 icon slot | *boolean* | `false` |
-| checked-color | 选中状态颜色 | *string* | `#1989fa` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| name | 标识 Radio 名称 | *string* | - | - |
+| value | 当前选中项的 name | *any* | - | - |
+| shape | 形状，可选值为 `round` `square` | *string* | `round` | - |
+| disabled | 是否为禁用状态 | *boolean* | `false` | - |
+| label-disabled | 是否禁用文本内容点击 | *boolean* | `false` | - |
+| label-position | 文本位置，可选值为 `left` | *string* | `right` | - |
+| use-icon-slot | 是否使用 icon slot | *boolean* | `false` | - |
+| checked-color | 选中状态颜色 | *string* | `#1989fa` | - |
 
 ### Radio Event
 
@@ -172,11 +172,11 @@ Page({
 
 ### RadioGroup API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - |
-| value | 当前选中项的 name | *any* | - |
-| disabled | 是否禁用所有单选框 | *boolean* | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| name | 在表单内提交时的标识符 | *string* | - | - |
+| value | 当前选中项的 name | *any* | - | - |
+| disabled | 是否禁用所有单选框 | *boolean* | `false` | - |
 
 ### RadioGroup Event
 

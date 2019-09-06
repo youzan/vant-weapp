@@ -1,0 +1,19 @@
+function isNumber(value) {
+  /* eslint-disable */
+  var reg = getRegExp('^\d+(\.\d+)?$');
+  return reg.test(value);
+}
+
+function isDef(value) {
+  return value !== undefined && value !== null;
+}
+
+function suffixPx(value) {
+  if (!isDef(value)) {
+    return undefined;
+  }
+
+  return isNumber(value) ? value + 'px' : value;
+}
+
+module.exports.suffixPx = suffixPx;

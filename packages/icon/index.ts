@@ -3,7 +3,7 @@ import { VantComponent } from '../common/component';
 VantComponent({
   props: {
     info: null,
-    size: String,
+    size: String || Number,
     color: String,
     customStyle: String,
     classPrefix: {

@@ -28,6 +28,7 @@ VantComponent({
     checkedColor: String,
     labelPosition: String,
     labelDisabled: Boolean,
+    iconSize: String || Number,
     shape: {
       type: String,
       value: 'round'

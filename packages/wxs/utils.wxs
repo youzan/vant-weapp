@@ -1,7 +1,9 @@
 var bem = require('./bem.wxs').bem;
 var memoize = require('./memoize.wxs').memoize;
+var suffixPx = require('./suffixPx.wxs').suffixPx;
 
 module.exports = {
   bem: memoize(bem),
-  memoize: memoize
+  memoize: memoize,
+  suffixPx: suffixPx,
 };

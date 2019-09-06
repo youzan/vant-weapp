@@ -1,0 +1,14 @@
+page {
+  height: 200vh;
+}
+
+.van-button {
+  margin-left: 16px;
+}
+
+.sticky-container {
+  position: relative;
+  z-index: -1;
+  height: 150px;
+  background-color: #fff;
+}

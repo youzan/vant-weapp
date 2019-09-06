@@ -5,7 +5,7 @@ VantComponent({
   props: {
     info: null,
     size: {
-      type: [String, Number],
+      type: null,
       observer: 'setSizeWithUnit'
     },
     color: String,

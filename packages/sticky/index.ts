@@ -87,7 +87,7 @@ VantComponent({
 
           this.$emit('scroll', {
             scrollTop: top + offsetTop,
-            isFixed: position === 'top'
+            isFixed: true
           });
 
           this.setPosition(position);

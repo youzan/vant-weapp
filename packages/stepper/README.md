@@ -107,20 +107,20 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - |
-| value | 输入值 | *string \| number* | 最小值 |
-| min | 最小值 | *string \| number* | `1` |
-| max | 最大值 | *string \| number* | - |
-| step | 步长 | *string \| number* | `1` |
-| integer | 是否只允许输入整数 | *boolean* | `false` |
-| disabled | 是否禁用 | *boolean* | `false` |
-| disable-input | 是否禁用输入框 | *boolean* | `false` |
-| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` |
-| input-width | 输入框宽度，须指定单位 | *string* | `30px` |
-| show-plus | 是否显示增加按钮 | *boolean* | `true` |
-| show-minus | 是否显示减少按钮 | *boolean* | `true` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| name | 在表单内提交时的标识符 | *string* | - | - |
+| value | 输入值 | *string \| number* | 最小值 | - |
+| min | 最小值 | *string \| number* | `1` | - |
+| max | 最大值 | *string \| number* | - | - |
+| step | 步长 | *string \| number* | `1` | - |
+| integer | 是否只允许输入整数 | *boolean* | `false` | - |
+| disabled | 是否禁用 | *boolean* | `false` | - |
+| disable-input | 是否禁用输入框 | *boolean* | `false` | - |
+| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
+| input-width | 输入框宽度，须指定单位 | *string* | `30px` | - |
+| show-plus | 是否显示增加按钮 | *boolean* | `true` | - |
+| show-minus | 是否显示减少按钮 | *boolean* | `true` | - |
 
 ### Events
 

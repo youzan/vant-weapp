@@ -66,20 +66,20 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| price | 价格（单位分） | *number* | - |
-| label | 价格文案 | *string* | `合计：` |
-| suffix-label | 价格右侧文案 | *string* | - |
-| button-text | 按钮文字 | *string* | - |
-| button-type | 按钮类型 |  *string* | `danger` |
-| tip | 提示文案 | *string \| boolean* | - |
-| tip-icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
-| disabled | 是否禁用按钮 | *boolean* | `false` |
-| loading | 是否显示加载中的按钮 | *boolean* | `false` |
-| currency | 货币符号 | *string* | `¥` |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
-| decimal-length | 价格小数点后位数 | *number* | `2` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| price | 价格（单位分） | *number* | - | - |
+| label | 价格文案 | *string* | `合计：` | - |
+| suffix-label | 价格右侧文案 | *string* | - | - |
+| button-text | 按钮文字 | *string* | - | - |
+| button-type | 按钮类型 |  *string* | `danger` | - |
+| tip | 提示文案 | *string \| boolean* | - | - |
+| tip-icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| disabled | 是否禁用按钮 | *boolean* | `false` | - |
+| loading | 是否显示加载中的按钮 | *boolean* | `false` | - |
+| currency | 货币符号 | *string* | `¥` | - |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
+| decimal-length | 价格小数点后位数 | *number* | `2` | - |
 
 ### Events
 

@@ -53,15 +53,15 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| inactive | 是否置灰 | *boolean* | `false` |
-| percentage | 进度百分比 | *number* | `false` |
-| show-pivot | 是否显示进度文字 | *boolean* | `true` |
-| color | 进度条颜色 | *string* | `#1989fa` |
-| text-color | 进度条文字颜色 | *string* | `#fff` |
-| pivot-text | 文字显示 | *string* | 百分比文字 |
-| pivot-color | 文字背景色 | *string* | 与进度条颜色一致 |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| inactive | 是否置灰 | *boolean* | `false` | - |
+| percentage | 进度百分比 | *number* | `false` | - |
+| show-pivot | 是否显示进度文字 | *boolean* | `true` | - |
+| color | 进度条颜色 | *string* | `#1989fa` | - |
+| text-color | 进度条文字颜色 | *string* | `#fff` | - |
+| pivot-text | 文字显示 | *string* | 百分比文字 | - |
+| pivot-color | 文字背景色 | *string* | 与进度条颜色一致 | - |
 
 ### 外部样式类
 

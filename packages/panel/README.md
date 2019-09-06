@@ -35,12 +35,12 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| title | 标题 | *string* | - |
-| desc | 描述 | *string* | - |
-| status | 状态 | *string* | - |
-| use-footer-slot | 是否使用 footer slot | *boolean* | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| title | 标题 | *string* | - | - |
+| desc | 描述 | *string* | - | - |
+| status | 状态 | *string* | - | - |
+| use-footer-slot | 是否使用 footer slot | *boolean* | `false` | - |
 
 ### Slot
 

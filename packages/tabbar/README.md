@@ -144,15 +144,15 @@ Page({
 
 ### Tabbar API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| active | 当前选中标签的索引 | *number* | - |
-| fixed | 是否固定在底部 | *boolean* | `true` |
-| border | 是否展示外边框 | *boolean* | `true` |
-| z-index | 元素 z-index | *number* | `1` |
-| active-color | 选中标签的颜色 | *string* | `#1989fa` |
-| inactive-color | 未选中标签的颜色 | *string* | `#7d7e80` |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-----------|
+| active | 当前选中标签的索引 | *number* | - | - |
+| fixed | 是否固定在底部 | *boolean* | `true` | - |
+| border | 是否展示外边框 | *boolean* | `true` | - |
+| z-index | 元素 z-index | *number* | `1` | - |
+| active-color | 选中标签的颜色 | *string* | `#1989fa` | - |
+| inactive-color | 未选中标签的颜色 | *string* | `#7d7e80` | - |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
 
 ### Tabbar Event
 
@@ -162,12 +162,12 @@ Page({
 
 ### TabbarItem API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-----------|
-| name | 标签名称，作为匹配的标识符 | *string \| number* | 当前标签的索引值 |
-| icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - |
-| dot | 是否显示小红点 | *boolean* | - |
-| info | 图标右上角提示信息 | *string \| number* | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-----------|-----------|
+| name | 标签名称，作为匹配的标识符 | *string \| number* | 当前标签的索引值 | - |
+| icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| dot | 是否显示小红点 | *boolean* | - | - |
+| info | 图标右上角提示信息 | *string \| number* | - | - |
 
 ### TabbarItem Slot
 

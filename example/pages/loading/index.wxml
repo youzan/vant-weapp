@@ -7,3 +7,22 @@
   <van-loading custom-class="loading" type="spinner" />
   <van-loading custom-class="loading shadow" type="spinner" color="#fff" />
 </demo-block>
+
+<demo-block title="加载文案" padding>
+  <van-loading custom-class="loading">
+    加载中……
+  </van-loading>
+</demo-block>
+
+<demo-block title="加载文案大小调整" padding>
+  <van-loading custom-class="loading" text-size="12" vertical>
+    加载中……
+  </van-loading>
+</demo-block>
+
+
+<demo-block title="加载文案竖直排列" padding>
+  <van-loading custom-class="loading" vertical>
+    加载中……
+  </van-loading>
+</demo-block>

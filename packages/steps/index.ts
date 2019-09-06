@@ -17,6 +17,7 @@ VantComponent({
     activeIcon: {
       type: String,
       value: 'checked'
-    }
+    },
+    inactiveIcon: String
   }
 });

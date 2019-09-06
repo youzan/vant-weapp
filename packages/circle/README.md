@@ -1,11 +1,12 @@
-# Progress 进度条
+# Circle 环形进度条
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
 "usingComponents": {
-  "van-progress": "path/to/vant-weapp/dist/progress/index"
+  "van-button": "path/to/vant-weapp/dist/circle/index"
 }
 ```
 
@@ -13,58 +14,92 @@
 
 ### 基础用法
 
-进度条默认为蓝色，使用`percentage`属性来设置当前进度
+`value`属性表示进度条的目标进度。
 
 ```html
-<van-progress percentage="50" />
+<van-circle :value="{{30}}" :text="text" />
 ```
 
+### 宽度定制
 
-### 置灰
+通过`stroke-width`属性来控制进度条宽度
 
 ```html
-<van-progress inactive percentage="50" />
+<van-circle :value="{{value}}" :stroke-width="6" text="宽度定制" />
 ```
 
-### 样式定制
+### 颜色定制
 
-可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色
+通过`color`属性来控制进度条颜色，`layer-color`属性来控制轨道颜色
 
 ```html
-<van-progress
-  pivot-text="橙色"
-  color="#f2826a"
-  percentage="25"
-/>
-
-<van-progress
-  pivot-text="红色"
+<van-circle
+  value="{{value}}"
+  layer-color="#eeeeee"
   color="#ee0a24"
-  percentage="50"
-/>
-
-<van-progress
-  percentage="75"
-  pivot-text="紫色"
-  pivot-color="#7232dd"
-  color="linear-gradient(to right, #be99ff, #7232dd)"
+  text="颜色定制"
 />
 ```
+
+### 渐变色
+
+`color`属性支持传入对象格式来定义渐变色
+
+```html
+<van-circle value="{{value}}" color="{{gradientColor}}" text="渐变色" />
+```
+
+```javascript
+Page({
+  data: {
+    value: 25,
+    gradientColor: {
+      '0%': '#ffd01e',
+      '100%': '#ee0a24'
+    }
+  }
+});
+```
+
+### 逆时针方向
+
+将`clockwise`设置为`false`，进度会从逆时针方向开始
+
+```html
+<van-circle
+  value="{{value}}"
+  color="#07c160"
+  clockwise="{{false}}"
+  text="逆时针"
+/>
+```
+
+### 大小定制
+
+通过`size`属性设置圆环直径
+
+```html
+<van-circle value="{{value}}" size="120" text="大小定制" />
+```
+
+## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| inactive | 是否置灰 | *boolean* | `false` |
-| percentage | 进度百分比 | *number* | `false` |
-| show-pivot | 是否显示进度文字 | *boolean* | `true` |
-| color | 进度条颜色 | *string* | `#1989fa` |
-| text-color | 进度条文字颜色 | *string* | `#fff` |
-| pivot-text | 文字显示 | *string* | 百分比文字 |
-| pivot-color | 文字背景色 | *string* | 与进度条颜色一致 |
+| 参数         | 说明                                   | 类型               | 默认值    | 版本 |
+| ------------ | -------------------------------------- | ------------------ | --------- | ---- |
+| value        | 目标进度                               | _number_           | `100`     | -    |
+| size         | 圆环直径，默认单位为 `px`              | _string \| number_ | `100`     | -    |
+| color        | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` | -    |
+| layer-color  | 轨道颜色                               | _string_           | `#fff`    | -    |
+| fill         | 填充颜色                               | _string_           | `none`    | -    |
+| speed        | 动画速度（单位为 value/s）             | _number_           | `50`      | -    |
+| text         | 文字                                   | _string_           | -         | -    |
+| stroke-width | 进度条宽度                             | _number_           | `40`      | -    |
+| clockwise    | 是否顺时针增加                         | _boolean_          | `true`    | -    |
 
-### 外部样式类
+### Slots
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
+| 名称    | 说明           |
+| ------- | -------------- |
+| default | 自定义文字内容。(注意：如果填充了`fill`，插槽内容会被原生组件覆盖) |

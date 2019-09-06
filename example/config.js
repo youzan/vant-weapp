@@ -110,6 +110,10 @@ export default [
     icon: 'photo-o',
     list: [
       {
+        path: '/circle',
+        title: 'Circle 进度条'
+      },
+      {
         path: '/collapse',
         title: 'Collapse 折叠面板'
       },

@@ -1,0 +1,4 @@
+<view class="van-circle">
+  <canvas class="van-circle__canvas" id="vanCircle" style="{{style}}" canvas-id="vanCircle"></canvas>
+  <view class="van-circle__text">{{text}}</view>
+</view>

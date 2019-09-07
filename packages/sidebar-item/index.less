@@ -2,15 +2,15 @@
 
 .van-sidebar-item {
   display: block;
+  box-sizing: border-box;
   padding: 20px 12px 20px 9px;
   overflow: hidden;
+  color: @gray-darker;
   font-size: 14px;
   line-height: 1.4;
-  color: @gray-darker;
   word-break: break-all;
   background-color: @background-color;
   border-left: 3px solid transparent;
-  box-sizing: border-box;
   user-select: none;
 
   &--hover {
@@ -22,8 +22,8 @@
   }
 
   &--active {
-    font-weight: bold;
     color: @text-color;
+    font-weight: bold;
     border-color: @red;
 
     &::after {

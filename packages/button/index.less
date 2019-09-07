@@ -3,13 +3,13 @@
 .van-button {
   position: relative;
   display: inline-block;
+  box-sizing: border-box;
   height: 44px;
   padding: 0;
   font-size: 16px;
   line-height: 42px;
   text-align: center;
   vertical-align: middle;
-  box-sizing: border-box;
   border-radius: @button-border-radius;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
@@ -24,9 +24,9 @@
     border: inherit;
     border-color: @black;
     border-radius: inherit; /* inherit parent's border radius */
-    content: ' ';
-    opacity: 0;
     transform: translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
   }
 
   // reset weapp default border
@@ -104,8 +104,8 @@
   }
 
   &--small {
-    height: 30px;
     min-width: 60px;
+    height: 30px;
     padding: 0 8px;
     font-size: 12px;
     line-height: 28px;
@@ -146,8 +146,8 @@
   }
 
   &__loading-text {
-    margin-left: 5px;
     display: inline-block;
+    margin-left: 5px;
     vertical-align: middle;
   }
 
@@ -164,12 +164,12 @@
   }
 
   &--hairline {
-    border-width: 0;
     padding-top: 1px; // add 1px padding for text vertical align middle
+    border-width: 0;
 
     &::after {
-      border-width: 1px;
       border-color: inherit;
+      border-width: 1px;
       border-radius: @button-border-radius * 2;
     }
 

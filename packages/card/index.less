@@ -2,11 +2,11 @@
 
 .van-card {
   position: relative;
-  padding: 5px 15px;
-  font-size: 12px;
-  color: @text-color;
-  background-color: @background-color-light;
   box-sizing: border-box;
+  padding: 5px 15px;
+  color: @text-color;
+  font-size: 12px;
+  background-color: @background-color-light;
 
   &__header {
     display: flex;
@@ -19,10 +19,10 @@
 
   &__thumb {
     position: relative;
+    flex: none;
     width: 90px;
     height: 90px;
     margin-right: 10px;
-    flex: none;
 
     &:empty {
       display: none;
@@ -36,8 +36,8 @@
 
   &__content {
     position: relative;
-    min-width: 0; /* hack for flex box ellipsis */
     flex: 1;
+    min-width: 0; /* hack for flex box ellipsis */
   }
 
   &__title,
@@ -51,8 +51,8 @@
   }
 
   &__desc {
-    line-height: 20px;
     color: @gray-darker;
+    line-height: 20px;
   }
 
   &__bottom {
@@ -61,15 +61,15 @@
 
   &__price {
     display: inline-block;
-    font-weight: bold;
     color: @red;
+    font-weight: bold;
   }
 
   &__origin-price {
     display: inline-block;
     margin-left: 5px;
-    font-size: 10px;
     color: @gray-darker;
+    font-size: 10px;
     text-decoration: line-through;
   }
 
@@ -84,8 +84,8 @@
   }
 
   &__footer {
+    flex: none;
     width: 100%;
     text-align: right;
-    flex: none;
   }
 }

@@ -2,39 +2,39 @@
 
 .van-toast {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
   color: @toast-text-color;
   font-size: @toast-font-size;
   line-height: @toast-line-height;
-  border-radius: @toast-border-radius;
-  word-break: break-all;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: content-box;
-  background-color: @toast-background-color;
 
   // allow newline charactor
   white-space: pre-wrap;
+  word-break: break-all;
+  background-color: @toast-background-color;
+  border-radius: @toast-border-radius;
 
   &__container {
     position: fixed;
     top: 50%;
     left: 50%;
-    max-width: @toast-max-width;
     // hack for avoid max-width when use left & fixed
-    width: fit-content; 
+    width: fit-content;
+    max-width: @toast-max-width;
     transform: translate(-50%, -50%);
   }
 
   &--text {
-    padding: @toast-text-padding;
     min-width: @toast-text-min-width;
+    padding: @toast-text-padding;
   }
 
   &--icon {
     width: @toast-default-width;
-    padding: @toast-default-padding;
     min-height: @toast-default-min-height;
+    padding: @toast-default-padding;
 
     .van-toast__icon {
       font-size: @toast-icon-size;

@@ -1,27 +1,29 @@
 .hairline-common() {
-  content: ' ';
   position: absolute;
-  pointer-events: none;
   box-sizing: border-box;
   transform-origin: center; /* cover wechat button:after default transforn-origin */
+  content: ' ';
+  pointer-events: none;
 }
 
 .hairline(@border-color: #eee) {
   .hairline-common();
+
   top: -50%;
-  left: -50%;
   right: -50%;
   bottom: -50%;
-  transform: scale(0.5);
+  left: -50%;
   border: 0 solid @border-color;
+  transform: scale(0.5);
 }
 
 .hairline-bottom(@border-color: #eee, @left: 0) {
   .hairline-common();
+
   top: auto;
-  left: @left;
   right: 0;
   bottom: 0;
-  transform: scaleY(0.5);
+  left: @left;
   border-bottom: 1px solid @border-color;
+  transform: scaleY(0.5);
 }

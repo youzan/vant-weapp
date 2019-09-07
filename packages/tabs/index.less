@@ -49,8 +49,8 @@
       height: @tabs-card-height;
 
       .van-tab {
-        line-height: @tabs-card-height;
         color: @red;
+        line-height: @tabs-card-height;
         border-right: 1px solid @red;
 
         &:last-child {
@@ -84,8 +84,8 @@
   }
 
   &--card {
-    padding-top: @tabs-card-height;
     margin: 0 15px;
+    padding-top: @tabs-card-height;
 
     .van-tabs__wrap {
       height: @tabs-card-height;
@@ -103,19 +103,19 @@
 
 .van-tab {
   position: relative;
+  flex: 1;
+  box-sizing: border-box;
   min-width: 0; /* hack for flex ellipsis */
   padding: 0 5px;
+  color: @gray-darker;
   font-size: 14px;
   line-height: @tabs-line-height;
-  color: @gray-darker;
   text-align: center;
   cursor: pointer;
-  box-sizing: border-box;
-  flex: 1;
 
   &--active {
-    font-weight: 500;
     color: @text-color;
+    font-weight: 500;
   }
 
   &--disabled {

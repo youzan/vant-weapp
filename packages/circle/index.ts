@@ -71,12 +71,12 @@ VantComponent({
     },
     // 半径
     radius() {
-      return this.data.position - this.data.strokeWidth / 2;
+      const { position, strokeWidth } = this.data;
+      return position - strokeWidth / 2;
     },
     // 圆心位置
     position() {
-      const { size } = this.data;
-      return size / 2;
+      return this.data.size / 2;
     },
     style() {
       const { size } = this.data;

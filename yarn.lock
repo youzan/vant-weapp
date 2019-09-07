@@ -5416,8 +5416,8 @@ minipass@^2.2.1, minipass@^2.3.5:
 
 miniprogram-api-typings@2.7.7-2:
   version "2.7.7-2"
-  resolved "https://registry.npm.taobao.org/miniprogram-api-typings/download/miniprogram-api-typings-2.7.7-2.tgz#7c0bd69fdf88b77ccdcaebac6392a0cc24a4e74c"
-  integrity sha1-fAvWn9+It3zNyuusY5KgzCSk50w=
+  resolved "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-2.7.7-2.tgz#7c0bd69fdf88b77ccdcaebac6392a0cc24a4e74c"
+  integrity sha512-9KkpAQn6XXz93xnOIYl33ePZpuoEPpAQ6mTrz3+tUUD9lTuLEAVVNgQSXUmnRi8dHDRwgOay6UauYs91M22YJQ==
 
 minizlib@^1.2.1:
   version "1.2.1"

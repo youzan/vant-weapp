@@ -55,7 +55,7 @@ VantComponent({
     wrapperStyle() {
       const { data } = this;
       return [
-        `transition: ${data.duration}ms`,
+        `transition: transform ${data.duration}ms`,
         `transform: translate3d(0, ${data.offset + data.baseOffset}px, 0)`,
         `line-height: ${data.itemHeight}px`
       ].join('; ');

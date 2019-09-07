@@ -137,8 +137,8 @@ VantComponent({
       const { context, size } = this.data;
       context.clearRect(0, 0, size, size);
       this.renderLayerCircle();
+      
       const formatValue = format(currentValue);
-
       if (formatValue !== 0) {
         this.renderHoverCircle(formatValue);
       }

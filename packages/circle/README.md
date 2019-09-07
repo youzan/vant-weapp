@@ -92,14 +92,14 @@ Page({
 | size         | 圆环直径，默认单位为 `px`              | _string \| number_ | `100`     | -    |
 | color        | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` | -    |
 | layer-color  | 轨道颜色                               | _string_           | `#fff`    | -    |
-| fill         | 填充颜色                               | _string_           | `none`    | -    |
+| fill         | 填充颜色                               | _string_           | -    | -    |
 | speed        | 动画速度（单位为 value/s）             | _number_           | `50`      | -    |
 | text         | 文字                                   | _string_           | -         | -    |
-| stroke-width | 进度条宽度                             | _number_           | `40`      | -    |
+| stroke-width | 进度条宽度                             | _number_           | `4`      | -    |
 | clockwise    | 是否顺时针增加                         | _boolean_          | `true`    | -    |
 
 ### Slots
 
 | 名称    | 说明           |
 | ------- | -------------- |
-| default | 自定义文字内容。(注意：如果填充了`fill`，插槽内容会被原生组件覆盖) |
+| default | 自定义文字内容，如果设置了`fill`，插槽内容会被原生组件覆盖|

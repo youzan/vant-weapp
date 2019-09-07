@@ -9,16 +9,16 @@
 
   &__toolbar {
     display: flex;
+    justify-content: space-between;
     height: 44px;
     line-height: 44px;
-    justify-content: space-between;
   }
 
   &__cancel,
   &__confirm {
     padding: 0 15px;
-    font-size: 14px;
     color: @blue;
+    font-size: 14px;
 
     &--hover {
       background-color: @active-color;
@@ -27,8 +27,8 @@
 
   &__title {
     max-width: 50%;
-    font-size: 16px;
     font-weight: 500;
+    font-size: 16px;
     text-align: center;
   }
 
@@ -50,9 +50,9 @@
     left: 0;
     z-index: 4;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.9);
     align-items: center;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   &__loading .van-loading,
@@ -62,7 +62,7 @@
     left: 0;
     z-index: 1;
     width: 100%;
-    pointer-events: none;
     transform: translateY(-50%);
+    pointer-events: none;
   }
 }

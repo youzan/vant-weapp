@@ -31,6 +31,10 @@
     "*.{ts,js}": [
       "eslint",
       "git add"
+    ],
+    "*.{css,less}": [
+      "stylelint",
+      "git add"
     ]
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
@@ -63,6 +67,10 @@
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^1.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
     "typescript": "^3.5.3",
     "vue": "2.6.10",
     "vue-loader": "^15.7.1",

@@ -93,44 +93,36 @@ VantComponent({
   },
 
   methods: {
-    renderLayerCircle() {
+    presetCavans(strokeStyle, beginAngle, endAngle, fill) {
       const {
+        context,
         radius,
         position,
-        clockwise,
-        layerColor,
         strokeWidth,
-        fill,
-        context
+        lineCap,
+        clockwise
       } = this.data;
 
+      context.setStrokeStyle(strokeStyle);
       context.setLineWidth(strokeWidth);
-      context.setStrokeStyle(layerColor);
+      context.setLineCap(lineCap);
       context.beginPath();
-      context.arc(position, position, radius, 0, PERIMETER, !clockwise);
+      context.arc(position, position, radius, beginAngle, endAngle, !clockwise);
       context.stroke();
-
+      
       if (fill) {
         context.setFillStyle(fill);
         context.fill();
       }
     },
 
-    renderHoverCircle(formatValue) {
-      const {
-        radius,
-        position,
-        strokeWidth,
-        clockwise,
-        lineCap,
-        context,
-        hoverColor
-      } = this.data;
+    renderLayerCircle() {
+      const { layerColor, fill } = this.data;
+      this.presetCavans(layerColor, 0, PERIMETER, fill);
+    },
 
-      context.setStrokeStyle(hoverColor);
-      context.setLineWidth(strokeWidth);
-      context.setLineCap(lineCap);
-      context.beginPath();
+    renderHoverCircle(formatValue) {
+      const { clockwise, hoverColor } = this.data;
 
       // 结束角度
       const progress = PERIMETER * (formatValue / 100);
@@ -138,15 +130,7 @@ VantComponent({
         ? BEGIN_ANGLE + progress
         : 3 * Math.PI - (BEGIN_ANGLE + progress);
 
-      context.arc(
-        position,
-        position,
-        radius,
-        BEGIN_ANGLE,
-        endAngle,
-        !clockwise
-      );
-      context.stroke();
+      this.presetCavans(hoverColor, BEGIN_ANGLE, endAngle);
     },
 
     drawCircle(currentValue) {

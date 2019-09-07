@@ -29,8 +29,7 @@ VantComponent({
       value: 100
     },
     fill: {
-      type: String,
-      value: ''
+      type: String
     },
     layerColor: {
       type: String,
@@ -109,7 +108,7 @@ VantComponent({
       context.beginPath();
       context.arc(position, position, radius, beginAngle, endAngle, !clockwise);
       context.stroke();
-      
+
       if (fill) {
         context.setFillStyle(fill);
         context.fill();
@@ -137,7 +136,7 @@ VantComponent({
       const { context, size } = this.data;
       context.clearRect(0, 0, size, size);
       this.renderLayerCircle();
-      
+
       const formatValue = format(currentValue);
       if (formatValue !== 0) {
         this.renderHoverCircle(formatValue);

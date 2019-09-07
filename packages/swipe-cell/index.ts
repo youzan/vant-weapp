@@ -45,7 +45,7 @@ VantComponent({
       const transform = `translate3d(${offset}px, 0, 0)`;
       const transition = this.draging
         ? 'none'
-        : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)';
+        : 'transform .6s cubic-bezier(0.18, 0.89, 0.32, 1)';
 
       this.set({
         wrapperStyle: `

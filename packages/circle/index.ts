@@ -49,15 +49,19 @@ VantComponent({
       value: true
     }
   },
+
   computed: {
     context() {
       return this.ctx || (this.ctx = wx.createCanvasContext('vanCircle', this));
     },
+
     gradient() {
       return isObj(this.data.color);
     },
+
     hoverColor() {
       const { color, gradient, context, size } = this.data;
+
       if (gradient) {
         const LinearColor = context.createLinearGradient(size, 0, 0, 0);
         Object.keys(color)
@@ -67,22 +71,27 @@ VantComponent({
           });
         return LinearColor;
       }
+
       return color;
     },
+
     // 半径
     radius() {
       const { position, strokeWidth } = this.data;
       return position - strokeWidth / 2;
     },
+
     // 圆心位置
     position() {
       return this.data.size / 2;
     },
+
     style() {
       const { size } = this.data;
       return [`width: ${size}px`, `height: ${size}px`].join('; ');
     }
   },
+
   methods: {
     renderLayerCircle() {
       const {
@@ -94,16 +103,19 @@ VantComponent({
         fill,
         context
       } = this.data;
+
       context.setLineWidth(strokeWidth);
       context.setStrokeStyle(layerColor);
       context.beginPath();
       context.arc(position, position, radius, 0, PERIMETER, !clockwise);
       context.stroke();
+
       if (fill) {
         context.setFillStyle(fill);
         context.fill();
       }
     },
+
     renderHoverCircle(formatValue) {
       const {
         radius,
@@ -136,25 +148,31 @@ VantComponent({
       );
       context.stroke();
     },
+
     drawCircle(currentValue) {
       const { context, size } = this.data;
       context.clearRect(0, 0, size, size);
       this.renderLayerCircle();
       const formatValue = format(currentValue);
+
       if (formatValue !== 0) {
         this.renderHoverCircle(formatValue);
       }
+
       context.draw();
     },
+
     reRender() {
       // tofector 动画暂时没有想到好的解决方案
       const { value, speed } = this.data;
+
       if (speed <= 0 || speed > 1000) {
         this.drawCircle(value);
         return;
       }
-      this.currentValue = this.currentValue || 0;
+
       clearInterval(this.interval);
+      this.currentValue = this.currentValue || 0;
       this.interval = setInterval(() => {
         if (this.currentValue !== value) {
           if (this.currentValue < value) {
@@ -169,10 +187,12 @@ VantComponent({
       }, 1000 / speed);
     }
   },
+
   created() {
     this.currentValue = this.data.value;
     this.drawCircle(this.currentValue);
   },
+
   destroyed() {
     clearInterval(this.interval);
   }

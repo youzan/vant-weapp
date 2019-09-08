@@ -7,7 +7,7 @@
   "description": "轻量、可靠的小程序 UI 组件库",
   "scripts": {
     "dev": "node build/dev.js",
-    "lint": "eslint ./packages --ext .js,.ts",
+    "lint": "eslint ./packages --ext .js,.ts && stylelint \"packages/**/*.less\" --fix",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",

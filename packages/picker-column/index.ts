@@ -42,26 +42,6 @@ VantComponent({
     });
   },
 
-  computed: {
-    count() {
-      return this.data.options.length;
-    },
-
-    baseOffset() {
-      const { data } = this;
-      return (data.itemHeight * (data.visibleItemCount - 1)) / 2;
-    },
-
-    wrapperStyle() {
-      const { data } = this;
-      return [
-        `transition: transform ${data.duration}ms`,
-        `transform: translate3d(0, ${data.offset + data.baseOffset}px, 0)`,
-        `line-height: ${data.itemHeight}px`
-      ].join('; ');
-    }
-  },
-
   watch: {
     defaultIndex(value: number) {
       this.setIndex(value);
@@ -69,6 +49,10 @@ VantComponent({
   },
 
   methods: {
+    getCount() {
+      return this.data.options.length;
+    },
+
     onTouchStart(event: Weapp.TouchEvent) {
       this.set({
         startY: event.touches[0].clientY,
@@ -83,7 +67,7 @@ VantComponent({
       this.set({
         offset: range(
           data.startOffset + deltaY,
-          -(data.count * data.itemHeight),
+          -(this.getCount() * data.itemHeight),
           data.itemHeight
         )
       });
@@ -98,7 +82,7 @@ VantComponent({
         const index = range(
           Math.round(-data.offset / data.itemHeight),
           0,
-          data.count - 1
+          this.getCount() - 1
         );
         this.setIndex(index, true);
       }
@@ -111,8 +95,10 @@ VantComponent({
 
     adjustIndex(index: number) {
       const { data } = this;
-      index = range(index, 0, data.count);
-      for (let i = index; i < data.count; i++) {
+      const count = this.getCount();
+
+      index = range(index, 0, count);
+      for (let i = index; i < count; i++) {
         if (!this.isDisabled(data.options[i])) return i;
       }
       for (let i = index - 1; i >= 0; i--) {

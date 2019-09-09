@@ -118,7 +118,8 @@ Page({
 | disabled | 是否禁用 | *boolean* | `false` | - |
 | disable-input | 是否禁用输入框 | *boolean* | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
-| input-width | 输入框宽度，须指定单位 | *string* | `30px` | - |
+| input-width | 输入框宽度，默认单位为px | *string \| number* | `32px` | - |
+| button-size | 按钮大小，默认单位为px，输入框高度会和按钮大小保持一致 | *string \| number* | `28px` | - |
 | show-plus | 是否显示增加按钮 | *boolean* | `true` | - |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` | - |
 

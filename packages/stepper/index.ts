@@ -1,20 +1,18 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { addUnit } from '../common/utils';
 
 VantComponent({
   field: true,
 
-  classes: [
-    'input-class',
-    'plus-class',
-    'minus-class'
-  ],
+  classes: ['input-class', 'plus-class', 'minus-class'],
 
   props: {
     value: null,
     integer: Boolean,
     disabled: Boolean,
-    inputWidth: String,
+    inputWidth: null,
+    buttonSize: null,
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
@@ -60,11 +58,26 @@ VantComponent({
       if (typeof newValue === 'number' && +this.data.value !== newValue) {
         this.set({ value: newValue });
       }
+    },
+
+    inputWidth() {
+      this.set({
+        inputStyle: this.computeInputStyle()
+      });
+    },
+
+    buttonSize() {
+      this.set({
+        inputStyle: this.computeInputStyle(),
+        buttonStyle: this.computeButtonStyle()
+      });
     }
   },
 
   data: {
-    focus: false
+    focus: false,
+    inputStyle: '',
+    buttonStyle: ''
   },
 
   created() {
@@ -120,6 +133,31 @@ VantComponent({
         value: this.data.asyncChange ? this.data.value : value
       });
       this.$emit('change', value);
+    },
+
+    computeInputStyle() {
+      let style = '';
+
+      if (this.data.inputWidth) {
+        style = `width: ${addUnit(this.data.inputWidth)};`;
+      }
+
+      if (this.data.buttonSize) {
+        style = style + `height: ${addUnit(this.data.buttonSize)};`;
+      }
+
+      return style;
+    },
+
+    computeButtonStyle() {
+      let style = '';
+
+      if (this.data.buttonSize) {
+        style = `width: ${addUnit(this.data.buttonSize)};
+        height: ${addUnit(this.data.buttonSize)};`;
+      }
+
+      return style;
     }
   }
 });

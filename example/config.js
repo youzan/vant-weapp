@@ -96,6 +96,10 @@ export default [
         title: 'Notify 消息通知'
       },
       {
+        path: '/overlay',
+        title: 'Overlay 遮罩层'
+      },
+      {
         path: '/swipe-cell',
         title: 'SwipeCell 滑动单元格'
       },
@@ -109,6 +113,10 @@ export default [
     groupName: '展示组件',
     icon: 'photo-o',
     list: [
+      {
+        path: '/circle',
+        title: 'Circle 进度条'
+      },
       {
         path: '/collapse',
         title: 'Collapse 折叠面板'

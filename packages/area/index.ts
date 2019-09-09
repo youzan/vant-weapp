@@ -18,7 +18,7 @@ VantComponent({
       value: {}
     },
     columnsNum: {
-      type: [String, Number],
+      type: null,
       value: 3
     }
   },

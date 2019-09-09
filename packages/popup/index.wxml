@@ -2,7 +2,6 @@
 
 <van-overlay
   wx:if="{{ overlay }}"
-  mask
   show="{{ show }}"
   z-index="{{ zIndex }}"
   custom-style="{{ overlayStyle }}"

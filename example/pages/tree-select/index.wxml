@@ -1,4 +1,4 @@
-<demo-block title="基础用法">
+<demo-block title="单选模式">
   <van-tree-select
     items="{{ items }}"
     main-active-index="{{ mainActiveIndex }}"
@@ -9,7 +9,7 @@
   ></van-tree-select>
 </demo-block>
 
-<demo-block title="多选">
+<demo-block title="多选模式">
   <van-tree-select
     items="{{ items }}"
     main-active-index="{{ mainActiveIndexMulti }}"
@@ -18,4 +18,17 @@
     bind:click-nav="onClickNavMulti"
     content-item-class="content-item-class"
   ></van-tree-select>
+</demo-block>
+
+<demo-block title="自定义内容">
+  <van-tree-select
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndexMulti }}"
+    active-id="{{ activeIdMulti }}"
+    bind:click-item="onClickItemMulti"
+    bind:click-nav="onClickNavMulti"
+    content-item-class="content-item-class"
+  >
+    <image src="https://img.yzcdn.cn/vant/apple-1.jpg" slot="content" />
+  </van-tree-select>
 </demo-block>

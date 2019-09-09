@@ -102,6 +102,10 @@ export default [
       {
         path: '/toast',
         title: 'Toast 轻提示'
+      },
+      {
+        path: '/overlay',
+        title: 'Overlay 遮罩层'
       }
     ]
   },

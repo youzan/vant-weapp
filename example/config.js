@@ -102,6 +102,10 @@ export default [
       {
         path: '/toast',
         title: 'Toast 轻提示'
+      },
+      {
+        path: '/overlay',
+        title: 'Overlay 遮罩层'
       }
     ]
   },
@@ -109,6 +113,10 @@ export default [
     groupName: '展示组件',
     icon: 'photo-o',
     list: [
+      {
+        path: '/circle',
+        title: 'Circle 进度条'
+      },
       {
         path: '/collapse',
         title: 'Collapse 折叠面板'

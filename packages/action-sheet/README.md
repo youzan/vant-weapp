@@ -35,16 +35,12 @@ Page({
         name: '选项'
       },
       {
-        name: '分享',
+        name: '选项'
+      },
+      {
+        name: '选项',
         subname: '描述信息',
         openType: 'share'
-      },
-      {
-        loading: true
-      },
-      {
-        name: '禁用选项',
-        disabled: true
       }
     ]
   },

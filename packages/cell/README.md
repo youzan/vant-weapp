@@ -11,7 +11,6 @@
 }
 ```
 
-
 ## 代码演示
 
 ### 基础用法
@@ -93,6 +92,8 @@
   <van-icon slot="right-icon" name="search" class="custom-icon" />
 </van-cell>
 ```
+
+## API
 
 ### CellGroup API
 

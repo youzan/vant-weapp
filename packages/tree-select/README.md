@@ -16,6 +16,7 @@
 
 可以在任意位置上使用 van-tree-select 标签。传入对应的数据即可。
 此组件支持单选或多选，具体行为完全基于事件 click-item 的实现逻辑如何为属性 active-id 赋值，当 active-id 为数组时即为多选状态。
+
 ```html
 <van-tree-select
   items="{{ items }}"
@@ -87,13 +88,15 @@ Page({
 });
 ```
 
+## API
+
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-----------|-----------|
-| items | 分类显示所需的数据，具体数据结构可看 数据结构	 | *Array* | [] |  - |
-| main-active-index | 左侧导航高亮的索引	 | *number* | 0 | - |
-| active-id	 | 右侧选择项，高亮的数据id	 | *string \| number \| Array* | 0 | - |
+| items | 分类显示所需的数据 | *Array* | `[]` |  - |
+| main-active-index | 左侧选中项的索引 | *number* | `0` | - |
+| active-id | 右侧选中项的 id，支持传入数组 | *string \| number \| Array* | `0` | - |
 
 ### Events
 
@@ -103,6 +106,7 @@ Page({
 | bind:click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据 |
 
 ### items 数据结构
+
 `items` 整体为一个数组，数组内包含一系列描述分类的对象
 
 每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项

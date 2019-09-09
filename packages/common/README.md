@@ -29,6 +29,7 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 ```
 
 ### 1px 边框
+
 为元素添加 Retina 屏幕下的 1px 边框（即 hairline），基于伪类 transform 实现。
 
 ```html

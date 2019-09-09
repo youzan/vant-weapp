@@ -1,6 +1,7 @@
 # GoodsAction 商品导航
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -10,7 +11,6 @@
   "van-goods-action-button": "path/to/vant-weapp/dist/goods-action-button/index"
 }
 ```
-
 
 ## 代码演示
 
@@ -65,6 +65,8 @@ Page({
   <van-goods-action-button text="立即购买" />
 </van-goods-action>
 ```
+
+## API
 
 ### GoodsAction API
 

@@ -32,6 +32,8 @@
 <van-icon name="chat" info="99+" />
 ```
 
+## API
+
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |

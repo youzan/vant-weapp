@@ -94,6 +94,7 @@ Page({
 | cancel-text | 取消按钮文字 | *string* | - | - |
 | overlay | 是否显示遮罩层 | *boolean* | - | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - | - |
+| close-on-click-action | 是否在点击选项后关闭 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
 
 ### Events

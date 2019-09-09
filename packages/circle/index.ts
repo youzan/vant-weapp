@@ -57,9 +57,10 @@ VantComponent({
 
   methods: {
     getContext() {
-      return (
-        this.ctx || (this.ctx = wx.createCanvasContext('van-circle', this))
-      );
+      if (this.ctx) {
+        return this.ctx;
+      }
+      this.ctx = wx.createCanvasContext('van-circle', this);
     },
 
     setHoverColor() {
@@ -71,9 +72,7 @@ VantComponent({
         const LinearColor = context.createLinearGradient(size, 0, 0, 0);
         Object.keys(color)
           .sort((a, b) => parseFloat(a) - parseFloat(b))
-          .map(key => {
-            LinearColor.addColorStop(parseFloat(key) / 100, color[key]);
-          });
+          .map(key => LinearColor.addColorStop(parseFloat(key) / 100, color[key]));
         hoverColor = LinearColor;
       }
 

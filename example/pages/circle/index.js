@@ -1,4 +1,5 @@
 import Page from '../../common/page';
+
 const format = rate => Math.min(Math.max(rate, 0), 100);
 
 Page({

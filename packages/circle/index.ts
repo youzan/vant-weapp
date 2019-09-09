@@ -7,6 +7,7 @@ function format(rate) {
 }
 const PERIMETER = 2 * Math.PI;
 const BEGIN_ANGLE = -Math.PI / 2;
+const STEP = 1;
 
 VantComponent({
   props: {
@@ -26,18 +27,18 @@ VantComponent({
     },
     size: {
       type: Number,
-      value: 100
+      value: 100,
+      observer: 'setStyle'
     },
-    fill: {
-      type: String
-    },
+    fill: String,
     layerColor: {
       type: String,
       value: WHITE
     },
     color: {
       type: [String, Object],
-      value: BLUE
+      value: BLUE,
+      observer: 'setHoverColor'
     },
     strokeWidth: {
       type: Number,
@@ -49,58 +50,51 @@ VantComponent({
     }
   },
 
-  computed: {
-    context() {
-      return this.ctx || (this.ctx = wx.createCanvasContext('vanCircle', this));
+  data: {
+    style: 'width: 100px; height: 100px;',
+    hoverColor: BLUE
+  },
+
+  methods: {
+    getContext() {
+      return (
+        this.ctx || (this.ctx = wx.createCanvasContext('van-circle', this))
+      );
     },
 
-    gradient() {
-      return isObj(this.data.color);
-    },
+    setHoverColor() {
+      const context = this.getContext();
+      const { color, size } = this.data;
+      let hoverColor = color;
 
-    hoverColor() {
-      const { color, gradient, context, size } = this.data;
-
-      if (gradient) {
+      if (isObj(color)) {
         const LinearColor = context.createLinearGradient(size, 0, 0, 0);
         Object.keys(color)
           .sort((a, b) => parseFloat(a) - parseFloat(b))
           .map(key => {
             LinearColor.addColorStop(parseFloat(key) / 100, color[key]);
           });
-        return LinearColor;
+        hoverColor = LinearColor;
       }
 
-      return color;
+      this.set({
+        hoverColor
+      });
     },
 
-    // 半径
-    radius() {
-      const { position, strokeWidth } = this.data;
-      return position - strokeWidth / 2;
-    },
-
-    // 圆心位置
-    position() {
-      return this.data.size / 2;
-    },
-
-    style() {
+    setStyle() {
       const { size } = this.data;
-      return [`width: ${size}px`, `height: ${size}px`].join('; ');
-    }
-  },
+      const style = `width: ${size}px; height: ${size}px;`;
 
-  methods: {
-    presetCavans(strokeStyle, beginAngle, endAngle, fill) {
-      const {
-        context,
-        radius,
-        position,
-        strokeWidth,
-        lineCap,
-        clockwise
-      } = this.data;
+      this.set({
+        style
+      });
+    },
+
+    presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {
+      const { strokeWidth, lineCap, clockwise, size } = this.data;
+      const position = size / 2;
+      const radius = position - strokeWidth / 2;
 
       context.setStrokeStyle(strokeStyle);
       context.setLineWidth(strokeWidth);
@@ -115,31 +109,31 @@ VantComponent({
       }
     },
 
-    renderLayerCircle() {
+    renderLayerCircle(context) {
       const { layerColor, fill } = this.data;
-      this.presetCavans(layerColor, 0, PERIMETER, fill);
+      this.presetCanvas(context, layerColor, 0, PERIMETER, fill);
     },
 
-    renderHoverCircle(formatValue) {
+    renderHoverCircle(context, formatValue) {
       const { clockwise, hoverColor } = this.data;
-
       // 结束角度
       const progress = PERIMETER * (formatValue / 100);
       const endAngle = clockwise
         ? BEGIN_ANGLE + progress
         : 3 * Math.PI - (BEGIN_ANGLE + progress);
 
-      this.presetCavans(hoverColor, BEGIN_ANGLE, endAngle);
+      this.presetCanvas(context, hoverColor, BEGIN_ANGLE, endAngle);
     },
 
     drawCircle(currentValue) {
-      const { context, size } = this.data;
+      const context = this.getContext();
+      const { size } = this.data;
       context.clearRect(0, 0, size, size);
-      this.renderLayerCircle();
+      this.renderLayerCircle(context);
 
       const formatValue = format(currentValue);
       if (formatValue !== 0) {
-        this.renderHoverCircle(formatValue);
+        this.renderHoverCircle(context, formatValue);
       }
 
       context.draw();
@@ -154,29 +148,38 @@ VantComponent({
         return;
       }
 
-      clearInterval(this.interval);
+      this.clearInterval();
       this.currentValue = this.currentValue || 0;
       this.interval = setInterval(() => {
         if (this.currentValue !== value) {
           if (this.currentValue < value) {
-            this.currentValue += 1;
+            this.currentValue += STEP;
           } else {
-            this.currentValue -= 1;
+            this.currentValue -= STEP;
           }
           this.drawCircle(this.currentValue);
         } else {
-          clearInterval(this.interval);
+          this.clearInterval();
         }
       }, 1000 / speed);
+    },
+
+    clearInterval() {
+      if (this.interval) {
+        clearInterval(this.interval);
+        this.interval = null;
+      }
     }
   },
 
   created() {
-    this.currentValue = this.data.value;
-    this.drawCircle(this.currentValue);
+    const { value } = this.data;
+    this.currentValue = value;
+    this.drawCircle(value);
   },
 
   destroyed() {
-    clearInterval(this.interval);
+    this.ctx = null;
+    this.clearInterval();
   }
 });

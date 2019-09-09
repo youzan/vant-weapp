@@ -94,9 +94,9 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-----------|-----------|
-| items | 分类显示所需的数据，具体数据结构可看 数据结构	 | *Array* | `[]` |  - |
-| main-active-index | 左侧导航高亮的索引 | *number* | `0` | - |
-| active-id | 右侧选择项，高亮的数据id | *string \| number \| Array* | `0` | - |
+| items | 分类显示所需的数据 | *Array* | `[]` |  - |
+| main-active-index | 左侧选中项的索引 | *number* | `0` | - |
+| active-id | 右侧选中项的 id，支持传入数组 | *string \| number \| Array* | `0` | - |
 
 ### Events
 

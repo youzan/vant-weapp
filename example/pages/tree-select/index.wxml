@@ -16,6 +16,7 @@
     active-id="{{ activeIdMulti }}"
     bind:click-item="onClickItemMulti"
     bind:click-nav="onClickNavMulti"
+    max="2"
     content-item-class="content-item-class"
   ></van-tree-select>
 </demo-block>

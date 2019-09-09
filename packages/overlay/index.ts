@@ -4,10 +4,6 @@ import { VantComponent } from '../common/component';
 VantComponent({
   props: {
     show: Boolean,
-    mask: {
-      type: Boolean,
-      value: true
-    },
     customStyle: String,
     duration: {
       type: null,

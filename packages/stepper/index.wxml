@@ -2,12 +2,15 @@
 
 <view class="van-stepper custom-class">
   <view
+    data-type="minus"
     wx:if="{{ showMinus }}"
     class="minus-class {{ utils.bem('stepper__minus', { disabled: minusDisabled }) }}"
     style="{{ buttonStyle }}"
     hover-class="van-stepper__minus--hover"
     hover-stay-time="70"
-    bind:tap="onMinus"
+    bind:tap="onTap"
+    bind:touchstart="onTouchStart"
+    bind:touchend="onTouchEnd"
   />
   <input
     type="{{ integer ? 'number' : 'digit' }}"
@@ -21,11 +24,14 @@
     bind:blur="onBlur"
   />
   <view
+    data-type="plus"
     wx:if="{{ showPlus }}"
     class="plus-class {{ utils.bem('stepper__plus', { disabled: plusDisabled }) }}"
     style="{{ buttonStyle }}"
     hover-class="van-stepper__plus--hover"
     hover-stay-time="70"
-    bind:tap="onPlus"
+    bind:tap="onTap"
+    bind:touchstart="onTouchStart"
+    bind:touchend="onTouchEnd"
   />
 </view>

@@ -2,6 +2,14 @@ import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { addUnit } from '../common/utils';
 
+enum TypeEnum {
+  'minus' = 'minus',
+  'plus' = 'plus'
+}
+
+const LONG_PRESS_START_TIME = 600;
+const LONG_PRESS_INTERVAL = 200;
+
 VantComponent({
   field: true,
 
@@ -108,24 +116,48 @@ VantComponent({
       this.triggerInput(value);
     },
 
-    onChange(type: string) {
+    onChange() {
+      const { type } = this;
       if (this.data[`${type}Disabled`]) {
         this.$emit('overlimit', type);
         return;
       }
 
-      const diff = type === 'minus' ? -this.data.step : +this.data.step;
+      const diff = type === TypeEnum.minus ? -this.data.step : +this.data.step;
       const value = Math.round((+this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.$emit(type);
     },
 
-    onMinus() {
-      this.onChange('minus');
+    longPressStep() {
+      this.longPressTimer = setTimeout(() => {
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_INTERVAL);
     },
 
-    onPlus() {
-      this.onChange('plus');
+    onTap(event: Weapp.Event) {
+      const { type } = event.currentTarget.dataset;
+      this.type = type;
+      this.onChange();
+    },
+
+    onTouchStart(event: Weapp.Event) {
+      clearTimeout(this.longPressTimer);
+
+      const { type } = event.currentTarget.dataset;
+      this.type = type;
+      this.isLongPress = false;
+
+      this.longPressTimer = setTimeout(() => {
+        this.isLongPress = true;
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_START_TIME);
+    },
+
+    onTouchEnd() {
+      clearTimeout(this.longPressTimer);
     },
 
     triggerInput(value: string) {

@@ -2,6 +2,12 @@
 
 ### [v1.0.0-beta.0](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.0)
 
+#### 新组件
+
+- 新增`Circle`环形进度条组件
+- 新增`Overlay`遮罩层组件
+- 新增`Sticky`粘性布局组件
+
 #### 不兼容更新
 
 ##### Badge
@@ -25,6 +31,11 @@
 
 #### 新特性
 
+##### ActionSheet
+
+- 新增`click-overlay`事件
+- 新增`close-on-click-action`属性
+
 ##### Area
 
 - `reset`方法支持传入`code`参数
@@ -47,12 +58,31 @@
 - 新增`clickable`属性
 - 新增`arrow-direction`属性
 
+##### Icon
+
+- 支持`number`类型的`size`属性
+
+##### Loading
+
+- 支持`number`类型的`size`属性
+
+##### Rate
+
+- 新增`gutter`属性
+- 支持`string`类型的`size`属性
+
 ##### Popup
 
 - 新增`round`属性
 - 新增`closeable`属性
 - 新增`close-icon`属性
 
+##### Slider
+
+- 支持传入任意范围的`max`和`min`属性
+- 支持`number`类型的`bar-height`属性
+
 ##### Steps
 
 - 新增`active-icon`属性
+- 新增`inactive-icon`属性

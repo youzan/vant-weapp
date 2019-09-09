@@ -4,8 +4,8 @@
   <view
     data-type="minus"
     wx:if="{{ showMinus }}"
-    class="minus-class {{ utils.bem('stepper__minus', { disabled: minusDisabled }) }}"
     style="{{ buttonStyle }}"
+    class="minus-class {{ utils.bem('stepper__minus', { disabled: disabled || value <= min }) }}"
     hover-class="van-stepper__minus--hover"
     hover-stay-time="70"
     bind:tap="onTap"
@@ -26,8 +26,8 @@
   <view
     data-type="plus"
     wx:if="{{ showPlus }}"
-    class="plus-class {{ utils.bem('stepper__plus', { disabled: plusDisabled }) }}"
     style="{{ buttonStyle }}"
+    class="plus-class {{ utils.bem('stepper__plus', { disabled: disabled || value >= max }) }}"
     hover-class="van-stepper__plus--hover"
     hover-stay-time="70"
     bind:tap="onTap"

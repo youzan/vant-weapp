@@ -45,16 +45,6 @@ VantComponent({
     }
   },
 
-  computed: {
-    minusDisabled() {
-      return this.data.disabled || this.data.value <= this.data.min;
-    },
-
-    plusDisabled() {
-      return this.data.disabled || this.data.value >= this.data.max;
-    }
-  },
-
   watch: {
     value(value) {
       if (value === '') {
@@ -95,6 +85,14 @@ VantComponent({
   },
 
   methods: {
+    isDisabled(type: string) {
+      if (type === 'plus') {
+        return this.data.disabled || this.data.value >= this.data.max;
+      }
+
+      return this.data.disabled || this.data.value <= this.data.min;
+    },
+
     onFocus(event: Weapp.Event) {
       this.$emit('focus', event.detail);
     },
@@ -118,7 +116,7 @@ VantComponent({
 
     onChange() {
       const { type } = this;
-      if (this.data[`${type}Disabled`]) {
+      if (this.isDisabled(type)) {
         this.$emit('overlimit', type);
         return;
       }

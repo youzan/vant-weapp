@@ -54,7 +54,8 @@
     "pages/rate/index",
     "pages/collapse/index",
     "pages/picker/index",
-    "pages/overlay/index"
+    "pages/overlay/index",
+    "pages/circle/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -113,7 +114,8 @@
     "van-collapse": "./dist/collapse/index",
     "van-collapse-item": "./dist/collapse-item/index",
     "van-picker": "./dist/picker/index",
-    "van-overlay": "./dist/overlay/index"
+    "van-overlay": "./dist/overlay/index",
+    "van-circle": "./dist/circle/index"
   },
   "sitemapLocation": "sitemap.json"
 }

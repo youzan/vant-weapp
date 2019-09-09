@@ -38,7 +38,7 @@ VantComponent({
 
     updateChild(child: WechatMiniprogram.Component.TrivialInstance) {
       const { value, disabled } = this.data;
-      child.set({
+      child.setData({
         value,
         disabled: disabled || child.data.disabled
       });

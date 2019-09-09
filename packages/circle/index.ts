@@ -57,10 +57,10 @@ VantComponent({
 
   methods: {
     getContext() {
-      if (this.ctx) {
-        return this.ctx;
+      if (!this.ctx) {
+        this.ctx = wx.createCanvasContext('van-circle', this);
       }
-      this.ctx = wx.createCanvasContext('van-circle', this);
+      return this.ctx;
     },
 
     setHoverColor() {
@@ -76,18 +76,14 @@ VantComponent({
         hoverColor = LinearColor;
       }
 
-      this.set({
-        hoverColor
-      });
+      this.setData({ hoverColor });
     },
 
     setStyle() {
       const { size } = this.data;
       const style = `width: ${size}px; height: ${size}px;`;
 
-      this.set({
-        style
-      });
+      this.setData({ style });
     },
 
     presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {

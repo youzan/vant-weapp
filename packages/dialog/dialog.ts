@@ -63,7 +63,7 @@ const Dialog: Dialog = options => {
     delete options.selector;
 
     if (dialog) {
-      dialog.set({
+      dialog.setData({
         onCancel: reject,
         onConfirm: resolve,
         ...options

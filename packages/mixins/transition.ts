@@ -64,7 +64,7 @@ export const transition = function (showDefaultValue: boolean) {
           .then(() => {
             this.checkStatus('enter');
 
-            this.set({
+            this.setData({
               inited: true,
               display: true,
               classes: classNames.enter,
@@ -75,7 +75,7 @@ export const transition = function (showDefaultValue: boolean) {
           .then(() => {
             this.checkStatus('enter');
 
-            this.set({
+            this.setData({
               classes: classNames['enter-to']
             });
           })
@@ -94,7 +94,7 @@ export const transition = function (showDefaultValue: boolean) {
           .then(() => {
             this.checkStatus('leave');
 
-            this.set({
+            this.setData({
               classes: classNames.leave,
               currentDuration
             });
@@ -103,8 +103,7 @@ export const transition = function (showDefaultValue: boolean) {
           .then(nextTick)
           .then(() => {
             this.checkStatus('leave');
-
-            this.set({
+            this.setData({
               classes: classNames['leave-to']
             });
           })

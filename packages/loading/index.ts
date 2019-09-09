@@ -23,7 +23,7 @@ VantComponent({
 
   methods: {
     setSizeWithUnit(size: string | number): void {
-      this.set({
+      this.setData({
         sizeWithUnit: addUnit(size)
       });
     }

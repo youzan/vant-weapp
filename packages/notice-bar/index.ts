@@ -55,7 +55,7 @@ VantComponent({
 
   watch: {
     text() {
-      this.set({}, this.init);
+      this.setData({}, this.init);
     }
   },
 
@@ -109,7 +109,7 @@ VantComponent({
       this.timer && clearTimeout(this.timer);
       this.timer = null;
 
-      this.set({
+      this.setData({
         animationData: this.resetAnimation
           .translateX(this.wrapWidth)
           .step()
@@ -117,7 +117,7 @@ VantComponent({
       });
 
       setTimeout(() => {
-        this.set({
+        this.setData({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
@@ -134,7 +134,7 @@ VantComponent({
       this.timer && clearTimeout(this.timer);
       this.timer = null;
 
-      this.set({ show: false });
+      this.setData({ show: false });
     },
 
     onClick(event: Weapp.Event) {

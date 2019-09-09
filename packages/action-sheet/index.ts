@@ -27,7 +27,7 @@ VantComponent({
     },
     closeOnClickAction: {
       type: Boolean,
-      value: false
+      value: true
     }
   },
 
@@ -37,8 +37,9 @@ VantComponent({
       const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {
         this.$emit('select', item);
+
         if (this.data.closeOnClickAction) {
-          this.onCancel();
+          this.onClose();
         }
       }
     },

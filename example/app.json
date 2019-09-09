@@ -53,7 +53,8 @@
     "pages/datetime-picker/index",
     "pages/rate/index",
     "pages/collapse/index",
-    "pages/picker/index"
+    "pages/picker/index",
+    "pages/circle/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -111,7 +112,8 @@
     "van-rate": "./dist/rate/index",
     "van-collapse": "./dist/collapse/index",
     "van-collapse-item": "./dist/collapse-item/index",
-    "van-picker": "./dist/picker/index"
+    "van-picker": "./dist/picker/index",
+    "van-circle": "./dist/circle/index"
   },
   "sitemapLocation": "sitemap.json"
 }

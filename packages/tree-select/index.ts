@@ -15,12 +15,10 @@ VantComponent({
 
   props: {
     items: Array,
+    activeId: null,
     mainActiveIndex: {
       type: Number,
       value: 0
-    },
-    activeId: {
-      type: [Number, String, Array]
     },
     maxHeight: {
       type: Number,

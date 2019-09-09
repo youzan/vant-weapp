@@ -7,7 +7,7 @@ VantComponent({
     mask: Boolean,
     customStyle: String,
     duration: {
-      type: [Number, Object],
+      type: null,
       value: 300
     },
     zIndex: {

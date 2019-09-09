@@ -10,7 +10,6 @@
 }
 ```
 
-
 ## 代码演示
 
 ### 按钮类型
@@ -96,6 +95,8 @@
 <van-button color="#7232dd">自定义颜色</van-button>
 <van-button color="#7232dd" plain>自定义颜色</van-button>
 ```
+
+## API
 
 ### Props
 

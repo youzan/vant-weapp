@@ -10,7 +10,6 @@
 }
 ```
 
-
 ## 代码演示
 
 ### 基础用法
@@ -187,6 +186,8 @@ Page({
   flex: none !important;
 }
 ```
+
+## API
 
 ### Checkbox API
 

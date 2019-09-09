@@ -19,7 +19,6 @@
 <van-progress percentage="50" />
 ```
 
-
 ### 置灰
 
 ```html
@@ -50,6 +49,8 @@
   color="linear-gradient(to right, #be99ff, #7232dd)"
 />
 ```
+
+## API
 
 ### Props
 

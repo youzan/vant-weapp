@@ -14,7 +14,7 @@
 
 ### 基础用法
 
-通过 type 属性控制 Tag 颜色，默认为灰色
+通过`type`属性控制标签颜色，默认为灰色
 
 ```html
 <van-tag>标签</van-tag>
@@ -77,6 +77,8 @@
 <van-tag type="danger" size="medium">标签</van-tag>
 <van-tag type="danger" size="large">标签</van-tag>
 ```
+
+## API
 
 ### Props
 

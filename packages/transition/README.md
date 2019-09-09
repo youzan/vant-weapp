@@ -13,6 +13,7 @@
 ## 代码演示
 
 ### 基础用法
+
 将元素包裹在 transition 组件内，在元素展示/隐藏时，会有相应的过渡动画
 
 ```html
@@ -22,6 +23,7 @@
 ```
 
 ### 动画类型
+
 transition 组件内置了多种动画，可以通过`name`字段指定动画类型
 
 ```html
@@ -56,6 +58,8 @@ transition 组件内置了多种动画，可以通过`name`字段指定动画类
   transform: rotate(-360deg) translate3d(-100%, -100%, 0);
 }
 ```
+
+## API
 
 ### Props
 

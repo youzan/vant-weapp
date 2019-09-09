@@ -69,6 +69,8 @@ const timer = setInterval(() => {
 <van-toast id="custom-selector" />
 ```
 
+## API
+
 ### 方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |

@@ -71,7 +71,7 @@ VantComponent({
       const { children = [] } = items[mainActiveIndex] || {};
 
       this.updateItemHeight(children);
-      return this.set({ subItems: children });
+      return this.setData({ subItems: children });
     },
 
     // 更新组件整体高度，根据最大高度和当前组件需要展示的高度来决定
@@ -82,14 +82,14 @@ VantComponent({
         subItems.length * ITEM_HEIGHT
       );
 
-      this.set({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
+      this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
     },
 
     // 更新子项列表高度，根据可展示的最大高度和当前子项列表的高度决定
     updateItemHeight(subItems) {
       const itemHeight = Math.min(subItems.length * ITEM_HEIGHT, this.data.maxHeight);
 
-      return this.set({ itemHeight });
+      return this.setData({ itemHeight });
     }
   }
 });

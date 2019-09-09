@@ -103,6 +103,7 @@ Page({
 | bind:select | 选中选项时触发，禁用或加载状态下不会触发 | event.detail: 选项对应的对象 |
 | bind:close | 关闭时触发 | - |
 | bind:cancel | 取消按钮点击时触发 | - |
+| bind:click-overlay | 点击遮罩层时触发 | - |
 
 ### actions
 

@@ -42,6 +42,11 @@ VantComponent({
 
     onClose() {
       this.$emit('close');
+    },
+
+    onClickOverlay() {
+      this.$emit('click-overlay');
+      this.onClose();
     }
   }
 });

@@ -173,7 +173,7 @@ VantComponent({
       }
 
       if (this.data.buttonSize) {
-        style = style + `height: ${addUnit(this.data.buttonSize)};`;
+        style = `${style} height: ${addUnit(this.data.buttonSize)};`;
       }
 
       return style;

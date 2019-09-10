@@ -4,6 +4,7 @@
   size="large"
   lang="{{ lang }}"
   type="{{ type }}"
+  color="{{ color }}"
   loading="{{ loading }}"
   disabled="{{ disabled }}"
   open-type="{{ openType }}"

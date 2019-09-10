@@ -24,12 +24,14 @@
 >
   <view class="van-goods-action-icon__content van-hairline--right">
     <van-icon
+      wx:if="{{ icon }}"
       size="20px"
       name="{{ icon }}"
       info="{{ info }}"
       class="van-goods-action-icon__icon"
       custom-class="icon-class"
     />
+    <slot name="icon" />
     <text class="text-class">{{ text }}</text>
   </view>
 </van-button>

@@ -7,4 +7,6 @@ const gulpConfig = path.resolve(__dirname, './compiler.js');
 
 serve({}, { config });
 
-exec(`npx gulp -f ${gulpConfig} buildExample`);
+const p = exec(`npx gulp -f ${gulpConfig} buildExample --color`);
+p.stdout.on('data', stdout => console.info(stdout));
+p.stderr.on('data', stderr => console.info(stderr));

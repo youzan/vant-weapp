@@ -18,70 +18,78 @@ const libDir = path.resolve(__dirname, '../lib');
 const esDir = path.resolve(__dirname, '../dist');
 const exampleDir = path.resolve(__dirname, '../example/dist');
 
-const compileLess = dist => () =>
-  gulp
-    .src(`${src}/**/*.less`)
-    .pipe(less())
-    .pipe(postcss())
-    .pipe(
-      insert.transform((contents, file) => {
-        if (!file.path.includes('packages' + path.sep + 'common')) {
-          contents = `@import '../common/index.wxss';${contents}`;
-        }
-        return contents;
-      })
-    )
-    .pipe(
-      rename(path => {
-        path.extname = '.wxss';
-      })
-    )
-    .pipe(gulp.dest(dist));
+const lessCompiler = dist =>
+  function compileLess() {
+    return gulp
+      .src(`${src}/**/*.less`)
+      .pipe(less())
+      .pipe(postcss())
+      .pipe(
+        insert.transform((contents, file) => {
+          if (!file.path.includes('packages' + path.sep + 'common')) {
+            contents = `@import '../common/index.wxss';${contents}`;
+          }
+          return contents;
+        })
+      )
+      .pipe(rename({ extname: '.wxss' }))
+      .pipe(gulp.dest(dist));
+  };
 
-const compileTs = (config, dest) => async () => {
-  await exec(`npx tsc -p ${config}`);
-  await exec(`npx tscpaths -p ${config} -s ../packages -o ../${dest}`);
-};
+const tsCompiler = (dist, config) =>
+  async function compileTs() {
+    await exec(`npx tsc -p ${config}`);
+    await exec(`npx tscpaths -p ${config} -s ../packages -o ${dist}`);
+  };
 
-const copy = (dist, ext) => () =>
-  gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
+const copier = (dist, ext) =>
+  function copy() {
+    return gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
+  };
 
-const copyStatic = dist =>
-  gulp.parallel(copy(dist, 'wxml'), copy(dist, 'wxs'), copy(dist, 'json'));
+const staticCopier = dist =>
+  gulp.parallel(
+    copier(dist, 'wxml'),
+    copier(dist, 'wxs'),
+    copier(dist, 'json')
+  );
 
-const clean = path => () => exec(`npx rimraf ${path}`);
+const cleaner = path =>
+  function clean() {
+    return exec(`npx rimraf ${path}`);
+  };
 
-module.exports = {
-  buildEs: gulp.series(
-    clean(esDir),
+const tasks = [
+  ['buildEs', esDir, esConfig],
+  ['buildLib', libDir, libConfig]
+].reduce((prev, [name, ...args]) => {
+  prev[name] = gulp.series(
+    cleaner(...args),
     gulp.parallel(
-      compileTs(esConfig, esDir),
-      compileLess(esDir),
-      copyStatic(esDir)
+      tsCompiler(...args),
+      lessCompiler(...args),
+      staticCopier(...args)
     )
-  ),
-  buildLib: gulp.series(
-    clean(libDir),
-    gulp.parallel(
-      compileTs(libConfig, libDir),
-      compileLess(libDir),
-      copyStatic(libDir)
-    )
-  ),
-  buildExample: gulp.series(
-    clean(exampleDir),
-    gulp.parallel(
-      compileTs(exampleConfig, exampleDir),
-      compileLess(exampleDir),
-      copyStatic(exampleDir),
-      () => gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
-      () => {
-        gulp.watch(`${src}/**/*.ts`, compileTs(exampleConfig, exampleDir));
-        gulp.watch(`${src}/**/*.less`, compileLess(exampleDir));
-        gulp.watch(`${src}/**/*.wxml`, copy(exampleDir, 'wxml'));
-        gulp.watch(`${src}/**/*.wxs`, copy(exampleDir, 'wxs'));
-        gulp.watch(`${src}/**/*.json`, copy(exampleDir, 'json'));
-      }
-    )
+  );
+  return prev;
+}, {});
+
+tasks.buildExample = gulp.series(
+  cleaner(exampleDir),
+  gulp.parallel(
+    tsCompiler(exampleDir, exampleConfig),
+    lessCompiler(exampleDir),
+    staticCopier(exampleDir),
+    () =>
+      gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
+    () => {
+      gulp.watch(`${src}/**/*.ts`, tsCompiler(exampleDir, exampleConfig));
+      gulp.watch(`${src}/**/*.less`, lessCompiler(exampleDir));
+      gulp.watch(`${src}/**/*.wxml`, copier(exampleDir, 'wxml'));
+      gulp.watch(`${src}/**/*.wxs`, copier(exampleDir, 'wxs'));
+      gulp.watch(`${src}/**/*.json`, copier(exampleDir, 'json'));
+    }
   )
-};
+);
+
+module.exports = tasks;

@@ -97,6 +97,7 @@ Page({
 | items | 分类显示所需的数据 | *Array* | `[]` |  - |
 | main-active-index | 左侧选中项的索引 | *number* | `0` | - |
 | active-id | 右侧选中项的 id，支持传入数组 | *string \| number \| Array* | `0` | - |
+| max | 右侧项最大选中个数 | *number* | *Infinity* | - |
 
 ### Events
 

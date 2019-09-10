@@ -23,6 +23,10 @@ VantComponent({
     maxHeight: {
       type: Number,
       value: 300
+    },
+    max: {
+      type: Number,
+      value: Infinity
     }
   },
 
@@ -51,7 +55,13 @@ VantComponent({
     // 当一个子项被选择时
     onSelectItem(event: Weapp.Event) {
       const { item } = event.currentTarget.dataset;
-      if (!item.disabled) {
+      const isArray = Array.isArray(this.data.activeId);
+      // 判断有没有超出右侧选择的最大数
+      const isOverMax = isArray && (this.data.activeId.length >= this.data.max);
+      // 判断该项有没有被选中, 如果有被选中，则忽视是否超出的条件
+      const isSelected = isArray ? this.data.activeId.indexOf(item.id) > -1 : this.data.activeId === item.id;
+
+      if (!item.disabled && (!isOverMax || isSelected)) {
         this.$emit('click-item', item);
       }
     },

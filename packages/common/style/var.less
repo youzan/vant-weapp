@@ -19,6 +19,20 @@
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
 
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
+
+// Font Size
+@font-size-xs: 10px;
+@font-size-sm: 12px;
+@font-size-md: 14px;
+@font-size-lg: 16px;
+
 // Button
 @button-default-color: @text-color;
 @button-default-background-color: @white;
@@ -171,3 +185,11 @@
 
 // iPhoneX
 @safe-area-inset-bottom: 34px;
+
+// GridItem
+@grid-item-content-padding: @padding-md @padding-xs;
+@grid-item-content-background-color: @white;
+@grid-item-content-active-color: @active-color;
+@grid-item-icon-size: 26px;
+@grid-item-text-color: @gray-darker;
+@grid-item-text-font-size: @font-size-sm;

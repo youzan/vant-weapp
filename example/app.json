@@ -55,7 +55,8 @@
     "pages/collapse/index",
     "pages/picker/index",
     "pages/overlay/index",
-    "pages/circle/index"
+    "pages/circle/index",
+    "pages/grid/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -115,7 +116,9 @@
     "van-collapse-item": "./dist/collapse-item/index",
     "van-picker": "./dist/picker/index",
     "van-overlay": "./dist/overlay/index",
-    "van-circle": "./dist/circle/index"
+    "van-circle": "./dist/circle/index",
+    "van-grid": "./dist/grid/index",
+    "van-grid-item": "./dist/grid-item/index"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -2,11 +2,6 @@ import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { addUnit } from '../common/utils';
 
-enum TypeEnum {
-  'minus' = 'minus',
-  'plus' = 'plus'
-}
-
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
 
@@ -121,7 +116,7 @@ VantComponent({
         return;
       }
 
-      const diff = type === TypeEnum.minus ? -this.data.step : +this.data.step;
+      const diff = type === 'minus' ? -this.data.step : +this.data.step;
       const value = Math.round((+this.data.value + diff) * 100) / 100;
       this.triggerInput(this.range(value));
       this.$emit(type);
@@ -173,7 +168,7 @@ VantComponent({
       }
 
       if (this.data.buttonSize) {
-        style = `${style} height: ${addUnit(this.data.buttonSize)};`;
+        style += `height: ${addUnit(this.data.buttonSize)};`;
       }
 
       return style;
@@ -181,10 +176,10 @@ VantComponent({
 
     computeButtonStyle() {
       let style = '';
+      const size = addUnit(this.data.buttonSize);
 
       if (this.data.buttonSize) {
-        style = `width: ${addUnit(this.data.buttonSize)};
-        height: ${addUnit(this.data.buttonSize)};`;
+        style = `width: ${size};height: ${size};`;
       }
 
       return style;

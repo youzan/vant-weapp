@@ -27,12 +27,12 @@ VantComponent({
 
   watch: {
     checked(value) {
-      this.set({ value });
+      this.setData({ value });
     }
   },
 
   created() {
-    this.set({ value: this.data.checked });
+    this.setData({ value: this.data.checked });
   },
 
   methods: {

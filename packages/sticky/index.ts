@@ -59,13 +59,13 @@ VantComponent({
       }
 
       if (JSON.stringify(data) !== '{}') {
-        this.set(data);
+        this.setData(data);
       }
     },
 
     setPosition(position: Position) {
       if (position !== this.data.position) {
-        this.set({ position });
+        this.setData({ position });
         nextTick(() => {
           this.setWrapStyle();
         });

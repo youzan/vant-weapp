@@ -41,7 +41,7 @@ export const safeArea = ({
 
     created() {
       getSafeArea().then(({ isIPhoneX, statusBarHeight }) => {
-        this.set({ isIPhoneX, statusBarHeight });
+        this.setData({ isIPhoneX, statusBarHeight });
       });
     }
   });

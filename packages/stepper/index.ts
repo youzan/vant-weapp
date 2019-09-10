@@ -48,7 +48,7 @@ VantComponent({
       const newValue = this.range(value);
 
       if (typeof newValue === 'number' && +this.data.value !== newValue) {
-        this.set({ value: newValue });
+        this.setData({ value: newValue });
       }
     }
   },
@@ -58,7 +58,7 @@ VantComponent({
   },
 
   created() {
-    this.set({
+    this.setData({
       value: this.range(this.data.value)
     });
   },
@@ -114,7 +114,7 @@ VantComponent({
     },
 
     triggerInput(value: string) {
-      this.set({
+      this.setData({
         value: this.data.asyncChange ? this.data.value : value
       });
       this.$emit('change', value);

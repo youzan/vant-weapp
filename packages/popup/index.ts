@@ -74,7 +74,7 @@ VantComponent({
         updateData.duration = 0;
       }
 
-      this.set(updateData);
+      this.setData(updateData);
     }
   }
 });

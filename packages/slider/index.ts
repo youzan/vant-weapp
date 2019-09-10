@@ -83,7 +83,7 @@ VantComponent({
       const { barHeight, min } = this.data;
       const width = `${((value - min) * 100) / this.getRange()}%`;
 
-      this.set({
+      this.setData({
         value,
         barStyle: `width: ${width}; height: ${addUnit(barHeight)};`
       });

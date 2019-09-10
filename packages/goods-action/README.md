@@ -100,6 +100,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | text | 按钮文字 | *string* | - | - |
+| color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | *string* | - | - |
 | url | 跳转链接 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | id | 标识符 | *string* | - | - |

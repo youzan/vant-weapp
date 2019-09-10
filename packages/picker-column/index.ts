@@ -54,7 +54,7 @@ VantComponent({
     },
 
     onTouchStart(event: Weapp.TouchEvent) {
-      this.set({
+      this.setData({
         startY: event.touches[0].clientY,
         startOffset: this.data.offset,
         duration: 0
@@ -64,7 +64,7 @@ VantComponent({
     onTouchMove(event: Weapp.TouchEvent) {
       const { data } = this;
       const deltaY = event.touches[0].clientY - data.startY;
-      this.set({
+      this.setData({
         offset: range(
           data.startOffset + deltaY,
           -(this.getCount() * data.itemHeight),
@@ -76,9 +76,8 @@ VantComponent({
     onTouchEnd() {
       const { data } = this;
       if (data.offset !== data.startOffset) {
-        this.set({
-          duration: DEFAULT_DURATION
-        });
+        this.setData({ duration: DEFAULT_DURATION });
+
         const index = range(
           Math.round(-data.offset / data.itemHeight),
           0,

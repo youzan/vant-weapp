@@ -1,20 +1,21 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { addUnit } from '../common/utils';
+
+const LONG_PRESS_START_TIME = 600;
+const LONG_PRESS_INTERVAL = 200;
 
 VantComponent({
   field: true,
 
-  classes: [
-    'input-class',
-    'plus-class',
-    'minus-class'
-  ],
+  classes: ['input-class', 'plus-class', 'minus-class'],
 
   props: {
     value: null,
     integer: Boolean,
     disabled: Boolean,
-    inputWidth: String,
+    inputWidth: null,
+    buttonSize: null,
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
@@ -48,17 +49,32 @@ VantComponent({
       const newValue = this.range(value);
 
       if (typeof newValue === 'number' && +this.data.value !== newValue) {
-        this.set({ value: newValue });
+        this.setData({ value: newValue });
       }
+    },
+
+    inputWidth() {
+      this.set({
+        inputStyle: this.computeInputStyle()
+      });
+    },
+
+    buttonSize() {
+      this.set({
+        inputStyle: this.computeInputStyle(),
+        buttonStyle: this.computeButtonStyle()
+      });
     }
   },
 
   data: {
-    focus: false
+    focus: false,
+    inputStyle: '',
+    buttonStyle: ''
   },
 
   created() {
-    this.set({
+    this.setData({
       value: this.range(this.data.value)
     });
   },
@@ -93,7 +109,8 @@ VantComponent({
       this.triggerInput(value);
     },
 
-    onChange(type: string) {
+    onChange() {
+      const { type } = this;
       if (this.isDisabled(type)) {
         this.$emit('overlimit', type);
         return;
@@ -105,19 +122,67 @@ VantComponent({
       this.$emit(type);
     },
 
-    onMinus() {
-      this.onChange('minus');
+    longPressStep() {
+      this.longPressTimer = setTimeout(() => {
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_INTERVAL);
     },
 
-    onPlus() {
-      this.onChange('plus');
+    onTap(event: Weapp.Event) {
+      const { type } = event.currentTarget.dataset;
+      this.type = type;
+      this.onChange();
+    },
+
+    onTouchStart(event: Weapp.Event) {
+      clearTimeout(this.longPressTimer);
+
+      const { type } = event.currentTarget.dataset;
+      this.type = type;
+      this.isLongPress = false;
+
+      this.longPressTimer = setTimeout(() => {
+        this.isLongPress = true;
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_START_TIME);
+    },
+
+    onTouchEnd() {
+      clearTimeout(this.longPressTimer);
     },
 
     triggerInput(value: string) {
-      this.set({
+      this.setData({
         value: this.data.asyncChange ? this.data.value : value
       });
       this.$emit('change', value);
+    },
+
+    computeInputStyle() {
+      let style = '';
+
+      if (this.data.inputWidth) {
+        style = `width: ${addUnit(this.data.inputWidth)};`;
+      }
+
+      if (this.data.buttonSize) {
+        style += `height: ${addUnit(this.data.buttonSize)};`;
+      }
+
+      return style;
+    },
+
+    computeButtonStyle() {
+      let style = '';
+      const size = addUnit(this.data.buttonSize);
+
+      if (this.data.buttonSize) {
+        style = `width: ${size};height: ${size};`;
+      }
+
+      return style;
     }
   }
 });

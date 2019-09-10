@@ -70,9 +70,12 @@
 
   &__input {
     display: inline-block;
-    box-sizing: content-box;
-    width: 30px;
-    height: 26px;
+    box-sizing: border-box;
+    // 覆盖 common style 中 input 的 min-height: 1.4rem;
+    // 避免 button-size 对 input 设置的 height 不生效
+    min-height: 0;
+    width: 32px;
+    height: 28px;
     margin: 1px;
     padding: 1px;
     color: @text-color;

@@ -12,6 +12,7 @@
 <demo-block title="多选模式">
   <van-tree-select
     content-item-class="content-item-class"
+    max="2"
     items="{{ items }}"
     main-active-index="{{ mainActiveIndexMulti }}"
     active-id="{{ activeIdMulti }}"

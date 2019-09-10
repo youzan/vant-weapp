@@ -122,9 +122,10 @@ Page({
 | bind:click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据 |
 
 ### Slots
+
 | 名称 | 说明 |
 |-----------|-----------|
-| content | 自定义右侧区域内容，如果存在items，则插入在顶部 |
+| content | 自定义右侧区域内容，如果存在 items，则插入在顶部 |
 
 ### items 数据结构
 

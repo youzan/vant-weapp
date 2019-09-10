@@ -29,7 +29,7 @@ Page({
   onChange(event) {
     console.log(event.detail);
   }
-})
+});
 ```
 
 ### 步长设置
@@ -69,11 +69,7 @@ Page({
 如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
 
 ```html
-<van-stepper
-  value="{{ value }}"
-  async-change
-  bind:change="onChange"
-/>
+<van-stepper value="{{ value }}" async-change bind:change="onChange" />
 ```
 
 ```js
@@ -98,11 +94,7 @@ Page({
 通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
 
 ```html
-<van-stepper
-  value="{{ 1 }}"
-  input-width="40px"
-  button-size="32px"
-/>
+<van-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
 ```
 
 ## API
@@ -127,20 +119,20 @@ Page({
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
-| bind:change | 当绑定值变化时触发的事件 | event.detail: 当前输入的值 |
-| bind:overlimit | 点击不可用的按钮时触发 | - |
-| bind:plus | 点击增加按钮时触发 | - |
-| bind:minus | 点击减少按钮时触发 | - |
-| bind:focus | 输入框聚焦时触发 | - |
-| bind:blur | 输入框失焦时触发 | - |
+| 事件名         | 说明                     | 回调参数                   |
+| -------------- | ------------------------ | -------------------------- |
+| bind:change    | 当绑定值变化时触发的事件 | event.detail: 当前输入的值 |
+| bind:overlimit | 点击不可用的按钮时触发   | -                          |
+| bind:plus      | 点击增加按钮时触发       | -                          |
+| bind:minus     | 点击减少按钮时触发       | -                          |
+| bind:focus     | 输入框聚焦时触发         | -                          |
+| bind:blur      | 输入框失焦时触发         | -                          |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
-| input-class | 输入框样式类 |
-| plus-class | 加号按钮样式类 |
-| minus-class | 减号按钮样式类 |
+| 类名         | 说明           |
+| ------------ | -------------- |
+| custom-class | 根节点样式类   |
+| input-class  | 输入框样式类   |
+| plus-class   | 加号按钮样式类 |
+| minus-class  | 减号按钮样式类 |

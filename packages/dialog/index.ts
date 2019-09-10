@@ -73,7 +73,7 @@ VantComponent({
 
     handleAction(action: Action) {
       if (this.data.asyncClose) {
-        this.set({
+        this.setData({
           [`loading.${action}`]: true
         });
       }
@@ -82,13 +82,13 @@ VantComponent({
     },
 
     close() {
-      this.set({
+      this.setData({
         show: false
       });
     },
 
     stopLoading() {
-      this.set({
+      this.setData({
         loading: {
           confirm: false,
           cancel: false

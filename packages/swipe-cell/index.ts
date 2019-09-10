@@ -47,7 +47,7 @@ VantComponent({
         ? 'none'
         : 'transform .6s cubic-bezier(0.18, 0.89, 0.32, 1)';
 
-      this.set({
+      this.setData({
         wrapperStyle: `
         -webkit-transform: ${transform};
         -webkit-transition: ${transition};
@@ -68,7 +68,7 @@ VantComponent({
       } else {
         this.swipeMove(0);
       }
-      this.set({ catchMove: false });
+      this.setData({ catchMove: false });
     },
 
     startDrag(event: Weapp.TouchEvent) {
@@ -93,7 +93,7 @@ VantComponent({
 
       if (!this.firstDirection) {
         this.firstDirection = this.direction;
-        this.set({ catchMove: this.firstDirection === 'horizontal' });
+        this.setData({ catchMove: this.firstDirection === 'horizontal' });
       }
 
       if (this.firstDirection === 'vertical') {

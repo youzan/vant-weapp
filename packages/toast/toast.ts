@@ -60,7 +60,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Com
   delete options.selector;
 
   toast.clear = () => {
-    toast.set({ show: false });
+    toast.setData({ show: false });
 
     if (options.onClose) {
       options.onClose();
@@ -68,7 +68,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Com
   };
 
   queue.push(toast);
-  toast.set(options);
+  toast.setData(options);
   clearTimeout(toast.timer);
 
   if (options.duration > 0) {

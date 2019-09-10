@@ -66,6 +66,20 @@ Page({
 </van-goods-action>
 ```
 
+### 自定义按钮颜色
+
+通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+
+```html
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-button text="加入购物车" type="warning" />
+  <van-goods-action-button text="立即购买" />
+</van-goods-action>
+```
+
 ## API
 
 ### GoodsAction API

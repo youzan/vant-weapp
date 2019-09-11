@@ -19,6 +19,14 @@
 <van-progress percentage="50" />
 ```
 
+### 线条粗细
+
+通过`stroke-width`可以设置进度条的粗细
+
+```html
+<van-progress :percentage="50" stroke-width="8" />
+```
+
 ### 置灰
 
 ```html

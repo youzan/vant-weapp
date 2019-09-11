@@ -13,7 +13,7 @@
 <demo-block title="自定义内容">
   <van-grid column-num="3" border="{{ false }}">
     <van-grid-item useSlot="{{ true }}" wx:for="{{ 3 }}" wx:for-item="index">
-      <image class="van-image__img" src="https://img.yzcdn.cn/vant/apple-{{ index+1 }}.jpg" />
+      <image class="van-image" src="https://img.yzcdn.cn/vant/apple-{{ index+1 }}.jpg" />
     </van-grid-item>
   </van-grid>
 </demo-block>

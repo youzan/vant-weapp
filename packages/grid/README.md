@@ -45,7 +45,7 @@
 <van-grid column-num="3" border="{{ false }}">
   <van-grid-item useSlot="{{ true }}" wx:for="{{ 3 }}" wx:for-item="index">
     <image
-      class="van-image__img"
+      class="van-image"
       src="https://img.yzcdn.cn/vant/apple-{{ index+1 }}.jpg"
     />
   </van-grid-item>
@@ -127,5 +127,5 @@
 | 名称    | 说明                                                 |
 | ------- | ---------------------------------------------------- |
 | default | 自定义宫格的所有内容，需要设置`use-slot`属性         |
-| icon    | 自定义图标，如果设置了`use-slot`和`icon`属性则不生效 |
-| text    | 自定义文字，如果设置了`use-slot`和`text`属性则不生效 |
+| icon    | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
+| text    | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |

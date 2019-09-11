@@ -1,5 +1,4 @@
-.van-image__img {
-  display: block;
+.van-image {
   width: 100%;
   height: 90px;
 }

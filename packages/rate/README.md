@@ -118,6 +118,7 @@ Page({
 | readonly | 是否为只读状态 | *boolean* | `false` | - |
 | disabled | 是否禁用评分 | *boolean* | `false` | - |
 | disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` | - |
+| touchable | 是否可以通过滑动手势选择评分 | *boolean* | `true` | - |
 
 ### Events
 

@@ -19,6 +19,14 @@
 <van-progress percentage="50" />
 ```
 
+### 线条粗细
+
+通过`stroke-width`可以设置进度条的粗细
+
+```html
+<van-progress :percentage="50" stroke-width="8" />
+```
+
 ### 置灰
 
 ```html
@@ -58,6 +66,7 @@
 |-----------|-----------|-----------|-------------|-------------|
 | inactive | 是否置灰 | *boolean* | `false` | - |
 | percentage | 进度百分比 | *number* | `false` | - |
+| stroke-width | 进度条粗细，默认单位为`px` | *string \| number* | `4px` | - |
 | show-pivot | 是否显示进度文字 | *boolean* | `true` | - |
 | color | 进度条颜色 | *string* | `#1989fa` | - |
 | text-color | 进度条文字颜色 | *string* | `#fff` | - |

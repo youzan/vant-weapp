@@ -44,6 +44,10 @@ VantComponent({
       type: null,
       observer: 'setGutterWithUnit'
     },
+    touchable: {
+      type: Boolean,
+      value: true
+    }
   },
 
   data: {
@@ -84,6 +88,9 @@ VantComponent({
     },
 
     onTouchMove(event: Weapp.TouchEvent) {
+      const { touchable } = this.data;
+      if (!touchable) return;
+
       const { clientX, clientY } = event.touches[0];
 
       this.getRect('.van-rate__icon', true).then(

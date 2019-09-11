@@ -17,6 +17,7 @@ interface NotifyOptions {
 
 const defaultOptions = {
   selector: '#van-notify',
+  type: 'danger',
   message: '',
   background: '',
   duration: 3000,

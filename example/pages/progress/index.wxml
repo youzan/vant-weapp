@@ -2,6 +2,10 @@
   <van-progress custom-class="progress" percentage="50" />
 </demo-block>
 
+<demo-block title="线条粗细">
+  <van-progress custom-class="progress" stroke-width="8" percentage="50" />
+</demo-block>
+
 <demo-block title="置灰">
   <van-progress custom-class="progress" inactive percentage="50" />
 </demo-block>

@@ -43,7 +43,7 @@
 
 ```html
 <van-grid column-num="3" border="{{ false }}">
-  <van-grid-item useSlot="{{ true }}" wx:for="{{ 3 }}" wx:for-item="index">
+  <van-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
     <image
       class="van-image"
       src="https://img.yzcdn.cn/vant/apple-{{ index+1 }}.jpg"
@@ -57,7 +57,7 @@
 设置`square`属性后，格子的高度会和宽度保持一致
 
 ```html
-<van-grid square="{{ true }}">
+<van-grid square>
   <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}"></van-grid-item>
 </van-grid>
 ```
@@ -77,7 +77,7 @@
 可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型
 
 ```html
-<van-grid clickable="{{ true }}" column-num="2">
+<van-grid clickable column-num="2">
   <van-grid-item
     icon="home-o"
     link-type="navigateTo"

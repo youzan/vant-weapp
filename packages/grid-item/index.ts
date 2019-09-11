@@ -15,10 +15,7 @@ VantComponent({
   props: {
     icon: String,
     text: String,
-    useSlot: {
-      type: Boolean,
-      value: false
-    }
+    useSlot: Boolean
   },
 
   mounted() {
@@ -35,24 +32,24 @@ VantComponent({
       const { columnNum, border, square, gutter, clickable, center } = data;
       const width = `${100 / columnNum}%`;
 
-      const wrappStyle: Array<string> = [];
-      wrappStyle.push(`width: ${width}`);
+      const styleWrapper: Array<string> = [];
+      styleWrapper.push(`width: ${width}`);
 
       if (square) {
-        wrappStyle.push(`padding-top: ${width}`);
+        styleWrapper.push(`padding-top: ${width}`);
       }
 
       if (gutter) {
-        wrappStyle.push(`padding-right: ${gutter}px`);
+        styleWrapper.push(`padding-right: ${gutter}px`);
       }
 
       const index = children.indexOf(this);
       if (index >= columnNum) {
-        wrappStyle.push(`margin-top: ${gutter}px`);
+        styleWrapper.push(`margin-top: ${gutter}px`);
       }
 
       this.setData({
-        style: wrappStyle.join('; '),
+        style: styleWrapper.join('; '),
         center,
         border,
         square,

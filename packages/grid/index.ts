@@ -17,7 +17,6 @@ VantComponent({
   props: {
     square: {
       type: Boolean,
-      value: false,
       observer: 'updateChildren'
     },
     gutter: {
@@ -27,7 +26,6 @@ VantComponent({
     },
     clickable: {
       type: Boolean,
-      value: false,
       observer: 'updateChildren'
     },
     columnNum: {

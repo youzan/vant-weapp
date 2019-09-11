@@ -156,6 +156,10 @@ export default [
     icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
     list: [
       {
+        path: '/grid',
+        title: 'Grid 宫格'
+      },
+      {
         path: '/sidebar',
         title: 'Sidebar 侧边导航'
       },

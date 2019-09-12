@@ -34,7 +34,6 @@ VantComponent({
     },
     iconSize: {
       type: null,
-      value: 20,
       observer: 'setIconSizeUnit'
     }
   },

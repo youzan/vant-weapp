@@ -26,10 +26,8 @@ VantComponent({
     }
   },
 
-  data() {
-    return {
-      strokeWidthUnit: '4px'
-    };
+  data: {
+    strokeWidthUnit: '4px'
   },
 
   methods: {

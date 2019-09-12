@@ -2,13 +2,9 @@
 
 .van-radio {
   display: flex;
+  align-items: center;
   overflow: hidden;
   user-select: none;
-
-  &__icon-wrap,
-  &__label {
-    line-height: @radio-size;
-  }
 
   &__icon-wrap {
     flex: none;
@@ -17,10 +13,9 @@
   &__icon {
     display: block;
     box-sizing: border-box;
-    width: @radio-size;
-    height: @radio-size;
+    width: 1em;
+    height: 1em;
     color: transparent;
-    font-size: 14px;
     text-align: center;
     border: 1px solid @radio-border-color;
     transition-duration: @radio-transition-duration;

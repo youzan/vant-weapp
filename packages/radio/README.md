@@ -153,6 +153,7 @@ Page({
 | value | 当前选中项的 name | *any* | - | - |
 | shape | 形状，可选值为 `round` `square` | *string* | `round` | - |
 | disabled | 是否为禁用状态 | *boolean* | `false` | - |
+| icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` | - |
 | label-disabled | 是否禁用文本内容点击 | *boolean* | `false` | - |
 | label-position | 文本位置，可选值为 `left` | *string* | `right` | - |
 | use-icon-slot | 是否使用 icon slot | *boolean* | `false` | - |

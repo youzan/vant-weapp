@@ -14,6 +14,13 @@
   <van-notice-bar scrollable="{{ false }}" text="{{ text }}" />
 </demo-block>
 
-<demo-block title="文本换行">
+<demo-block title="多行展示">
   <van-notice-bar wrapable scrollable="{{ false }}" text="{{ text }}" />
+</demo-block>
+
+<demo-block title="使用左右插槽">
+  <van-notice-bar text="{{ text }}">
+    <text slot="left-icon">[公告]</text>
+    <text slot="right-icon">[结束]</text>
+  </van-notice-bar>
 </demo-block>

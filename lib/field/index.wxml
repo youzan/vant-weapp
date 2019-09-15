@@ -14,15 +14,18 @@
 >
   <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
-  <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
+  <view class="{{ utils.bem('field__body', [type, system]) }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
-      class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
+      class="input-class {{ utils.bem('field__input', [inputAlign, type, { disabled, error }]) }}"
       fixed="{{ fixed }}"
       focus="{{ focus }}"
       value="{{ value }}"
       disabled="{{ disabled || readonly }}"
       maxlength="{{ maxlength }}"
+      placeholder="{{ placeholder }}"
+      placeholder-style="{{ placeholderStyle }}"
+      placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
       auto-height="{{ autosize }}"
       cursor-spacing="{{ cursorSpacing }}"
       adjust-position="{{ adjustPosition }}"
@@ -34,9 +37,6 @@
       bind:focus="onFocus"
       bind:confirm="onConfirm"
     >
-      <view wx:if="{{ value == null || value.length === 0 }}" style="{{ placeholderStyle }}" class="{{ utils.bem('field__placeholder', { error }) }}">
-        {{ placeholder }}
-      </view>
     </textarea>
     <input
       wx:else
@@ -48,7 +48,7 @@
       maxlength="{{ maxlength }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field__placeholder--error' : 'van-field__placeholder' }}"
+      placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
       confirm-type="{{ confirmType }}"
       confirm-hold="{{ confirmHold }}"
       cursor-spacing="{{ cursorSpacing }}"
@@ -62,7 +62,7 @@
       bind:confirm="onConfirm"
     />
     <van-icon
-      wx:if="{{ showClear }}"
+      wx:if="{{ clearable && focused && value && !readonly }}"
       size="16px"
       name="clear"
       class="van-field__clear-root van-field__icon-root"

@@ -16,3 +16,10 @@ export function nextTick(fn) {
         fn();
     }, 1000 / 30);
 }
+let systemInfo = null;
+export function getSystemInfoSync() {
+    if (systemInfo == null) {
+        systemInfo = wx.getSystemInfoSync();
+    }
+    return systemInfo;
+}

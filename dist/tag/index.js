@@ -1,10 +1,11 @@
 import { VantComponent } from '../common/component';
-import { RED, BLUE, GREEN } from '../common/color';
+import { RED, BLUE, GREEN, ORANGE } from '../common/color';
 const DEFAULT_COLOR = '#999';
 const COLOR_MAP = {
     danger: RED,
     primary: BLUE,
-    success: GREEN
+    success: GREEN,
+    warning: ORANGE
 };
 VantComponent({
     props: {

@@ -81,7 +81,7 @@ VantComponent({
       const { children = [] } = items[mainActiveIndex] || {};
 
       this.updateItemHeight(children);
-      return this.setData({ subItems: children });
+      return this.set({ subItems: children });
     },
 
     // 更新组件整体高度，根据最大高度和当前组件需要展示的高度来决定

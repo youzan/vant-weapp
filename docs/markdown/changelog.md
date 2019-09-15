@@ -1,5 +1,19 @@
 # 更新日志
 
+### [v0.5.21](https://github.com/youzan/vant-weapp/tree/v0.5.21)
+`2019-09-15`
+
+**Improvements**
+
+- Tag: 新增 warning 类型
+
+**Bug Fixes**
+
+- 修复 TreeSelect 在单选情况下报错的问题
+- 修复 Field 在 blur 时会修改 value 的问题
+- 修复 Field type="textarea" placeholder 错位的问题
+
+
 ### [v0.5.20](https://github.com/youzan/vant-weapp/tree/v0.5.20)
 `2019-08-24`
 

@@ -5,11 +5,16 @@ const message = '代码是写出来给人看的，附带能在机器上运行';
 
 Page({
   data: {
-    show: false
+    show: false,
+    show2: false,
   },
 
   showCustomDialog() {
     this.setData({ show: true });
+  },
+
+  showCustomDialog2() {
+    this.setData({ show2: true });
   },
 
   onClickAlert() {
@@ -55,6 +60,12 @@ Page({
   onClose(event) {
     this.setData({
       show: false
+    });
+  },
+
+  onClose2(event) {
+    this.setData({
+      show2: false
     });
   }
 });

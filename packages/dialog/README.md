@@ -83,31 +83,78 @@ Dialog.confirm({
 通过组件调用 Dialog 时，可以实现自定义弹窗内容、监听微信开放能力回调事件等功能，具体参考下例
 
 ```html
+<van-button
+  plain
+  type="danger"
+  class="demo-margin-right"
+  bind:click="showCustomDialog"
+>
+  组件调用
+</van-button>
 <van-dialog
   use-slot
   title="标题"
   show="{{ show }}"
   show-cancel-button
-  confirm-button-open-type="getUserInfo"
   bind:close="onClose"
+  confirm-button-open-type="getUserInfo"
   bind:getuserinfo="getUserInfo"
 >
-  <image src="https://img.yzcdn.cn/1.jpg" />
+  <image
+    class="demo-image"
+    src="https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg"
+  />
+</van-dialog>
+
+<van-button
+  plain
+  type="danger"
+  bind:click="showCustomDialog2"
+>
+  自定义 标题&按钮字体颜色
+</van-button>
+<van-dialog
+  use-title-slot
+  show="{{ show2 }}"
+  show-cancel-button
+  cancel-button-color="green"
+  confirm-button-color="red"
+  bind:close="onClose"
+  message="代码是写出来给人看的，附带能在机器上运行"
+>
+  <view slot="title">自定义标题</view>
 </van-dialog>
 ```
 
 ```js
 Page({
   data: {
-    show: true
+    show: true,
+    show2: true
   },
 
   getUserInfo(event) {
     console.log(event.detail);
   },
 
+  showCustomDialog() {
+    this.setData({ show: true });
+  },
+
+  showCustomDialog2() {
+    this.setData({ show2: true });
+  },
+
   onClose() {
-    this.setData({ close: false });
+    this.setData({
+      show: false
+    });
+  },
+
+  onClose2() {
+    this.setData({
+      show2: false
+    });
   }
 });
 ```
@@ -182,9 +229,12 @@ Page({
 | show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` |
 | confirm-button-text | 确认按钮的文案 | *string* |  `确认` |
 | cancel-button-text | 取消按钮的文案 | *string* | `取消` |
+| confirm-button-color | 确认按钮的字体颜色 | *string* |  `#1989fa` |
+| cancel-button-color | 取消按钮的字体颜色 | *string* | `#333` |
 | overlay | 是否展示蒙层 | *boolean* | `true` |
 | close-on-click-overlay | 点击蒙层时是否关闭弹窗 | *boolean* | `false` |
 | use-slot | 是否使用自定义内容的插槽 | *boolean* | `false` |
+| use-title-slot | 是否使用自定义标题的插槽 | *boolean* | `false` |
 | async-close | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | *boolean* | `false` |
 | transition | 动画名称，可选值为`fade` | *string* | `scale` |
 | confirm-button-open-type | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - |

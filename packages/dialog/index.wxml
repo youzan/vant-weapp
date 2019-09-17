@@ -9,10 +9,11 @@
   bind:close="onClickOverlay"
 >
   <view
-    wx:if="{{ title }}"
+    wx:if="{{ title || useTitleSlot  }}"
     class="van-dialog__header {{ message || useSlot ? '' : 'van-dialog--isolated' }}"
   >
-    {{ title }}
+    <slot wx:if="{{ useTitleSlot }}" name="title" />
+    <block wx:elif="{{ title }}"> {{ title }}</block>
   </view>
 
   <slot wx:if="{{ useSlot }}" />
@@ -30,6 +31,7 @@
       loading="{{ loading.cancel }}"
       class="van-dialog__button van-hairline--right"
       custom-class="van-dialog__cancel"
+      custom-style="color: {{ cancelButtonColor }}"
       bind:click="onCancel"
     >
       {{ cancelButtonText }}
@@ -40,6 +42,7 @@
       class="van-dialog__button"
       loading="{{ loading.confirm }}"
       custom-class="van-dialog__confirm"
+      custom-style="color: {{ confirmButtonColor }}"
 
       open-type="{{ confirmButtonOpenType }}"
       lang="{{ lang }}"

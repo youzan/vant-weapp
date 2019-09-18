@@ -30,7 +30,7 @@
 
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
-<van-button plain type="danger">朴素按钮</van-button>
+<van-button plain type="info">朴素按钮</van-button>
 ```
 
 ### 细边框
@@ -39,7 +39,7 @@
 
 ```html
 <van-button plain hairline type="primary">细边框按钮</van-button>
-<van-button plain hairline type="danger">细边框按钮</van-button>
+<van-button plain hairline type="info">细边框按钮</van-button>
 ```
 
 ### 禁用状态
@@ -48,7 +48,7 @@
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>
-<van-button disabled type="danger">禁用状态</van-button>
+<van-button disabled type="info">禁用状态</van-button>
 ```
 
 ### 加载状态
@@ -56,7 +56,7 @@
 ```html
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="danger" loading-text="加载中..." />
+<van-button loading type="info" loading-text="加载中..." />
 ```
 
 ### 图标按钮
@@ -66,14 +66,14 @@
 ```html
 <van-button icon="star-o" type="primary" />
 <van-button icon="star-o" type="primary">按钮</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info">按钮</van-button>
 ```
 
 ### 按钮形状
 
 ```html
 <van-button square type="primary">方形按钮</van-button>
-<van-button round type="danger">圆形按钮</van-button>
+<van-button round type="info">圆形按钮</van-button>
 ```
 
 ### 按钮尺寸
@@ -92,8 +92,9 @@
 通过`color`属性可以自定义按钮的颜色
 
 ```html
-<van-button color="#7232dd">自定义颜色</van-button>
-<van-button color="#7232dd" plain>自定义颜色</van-button>
+<van-button color="#7232dd">单色按钮</van-button>
+<van-button color="#7232dd" plain>单色按钮</van-button>
+<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
 
 ## API
@@ -105,7 +106,7 @@
 | id | 标识符 | *string* | - | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` | - |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | *string* | `normal` | - |
-| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 1.0.0 |
 | icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
 | plain | 是否为朴素按钮 | *boolean* | `false` | - |
 | block | 是否为块级元素 | *boolean* | `false` | - |

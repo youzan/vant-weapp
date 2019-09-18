@@ -1,17 +1,18 @@
 @import '../common/style/var';
+@import '../common/style/theme';
 
 .van-picker-column {
   overflow: hidden;
-  color: @gray-dark;
   font-size: 16px;
   text-align: center;
+  .theme(color, '@gray-dark');
 
   &__item {
     padding: 0 5px;
 
     &--selected {
-      color: @text-color;
       font-weight: 500;
+      .theme(color, '@text-color');
     }
 
     &--disabled {

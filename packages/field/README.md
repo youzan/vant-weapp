@@ -215,7 +215,7 @@ Page({
 | bind:change | 输入内容时触发 | value: 当前输入值 |
 | bind:confirm | 点击完成按钮时触发 | value: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
-| bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度(在基础库 1.9.90 起支持) |
+| bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |
 | bind:blur | 输入框失焦时触发 | event.detail.value: 当前输入值; <br>event.detail.cursor: 游标位置(如果 `type` 不为 `textarea`，值为 `0`) |
 | bind:clear | 点击清空控件时触发 | - |
 

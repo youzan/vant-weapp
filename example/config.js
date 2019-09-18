@@ -148,6 +148,10 @@ export default [
       {
         path: '/tree-select',
         title: 'TreeSelect 分类选择'
+      },
+      {
+        path: '/divider',
+        title: 'Divider 分割线'
       }
     ]
   },

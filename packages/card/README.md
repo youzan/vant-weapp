@@ -60,7 +60,7 @@
 | origin-price | 商品划线原价 | *string \| number* | - | - |
 | centered | 内容是否垂直居中 | *string* | `false` | - |
 | currency | 货币符号 |  *string* | `¥` | - |
-| thumb-link | 点击左侧图片后的跳转链接 | *string* | - | - |
+| thumb-link | 点击左侧图片后跳转的链接地址 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | lazy-load | 是否开启图片懒加载 | *boolean* | `false` | - |
 

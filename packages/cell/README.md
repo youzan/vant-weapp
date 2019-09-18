@@ -120,7 +120,7 @@
 | size | 单元格大小，可选值为 `large` | *string* | - | - |
 | border | 是否显示下边框 | *boolean* | `true` | - |
 | center | 是否使内容垂直居中 | *boolean* | `false` | - |
-| url | 跳转链接 | *string* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | clickable | 是否开启点击反馈 | *boolean* | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |

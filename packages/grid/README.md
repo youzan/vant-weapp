@@ -116,7 +116,7 @@
 |-----------|-----------|-----------|-------------|-------------|
 | text | 文字 | *string* | - | - |
 | icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
-| url | 跳转链接 | *string* | - | -    |
+| url | 点击后跳转的链接地址 | *string* | - | -    |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 
 ### GridItem Events

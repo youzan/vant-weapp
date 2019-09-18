@@ -8,7 +8,14 @@ Vue.use(VueRouter).use(VantDoc);
 
 const router = new VueRouter({
   mode: 'hash',
-  routes: routes()
+  routes: routes(),
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { selector: to.hash };
+    }
+
+    return { x: 0, y: 0 };
+  }
 });
 
 const ua = navigator.userAgent.toLowerCase();
@@ -28,8 +35,21 @@ router.afterEach(() => {
 
 Vue.config.productionTip = false;
 
-new Vue({ // eslint-disable-line
+new Vue({
+  el: '#app',
+  mounted() {
+    setTimeout(() => {
+      // wait page init
+      if (this.$route.hash) {
+        const el = document.querySelector(this.$route.hash);
+        if (el) {
+          el.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    }, 1000);
+  },
   render: h => h(App),
-  router,
-  el: '#app'
+  router
 });

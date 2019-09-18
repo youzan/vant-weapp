@@ -31,6 +31,27 @@
 />
 ```
 
+### 多行展示
+禁用滚动时，可以设置`wrapable`来开启多行展示
+
+```html
+<van-notice-bar
+  wrapable
+  scrollable="false"
+  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+/>
+```
+
+### 使用左右插槽
+使用`left-icon`插槽和`right-icon`插槽自定义左右固定内容
+
+```html
+<van-notice-bar text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。">
+  <text slot="left-icon">[公告]</text>
+  <text slot="right-icon">[结束]</text>
+</van-notice-bar>
+```
+
 ### 通告栏模式
 默认模式为空，支持`closeable`和`link`。
 
@@ -68,6 +89,13 @@
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | bind:click | 点击事件回调 | - |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| left-icon | 自定义左侧固定内容 |
+| right-icon | 自定义右侧固定内容 |
 
 ### 外部样式类
 

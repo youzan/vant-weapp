@@ -16,6 +16,10 @@ VantComponent({
       type: String,
       value: 'text'
     },
+    toolbarPosition: {
+      type: String,
+      value: 'top'
+    },
     defaultIndex: {
       type: Number,
       value: 0

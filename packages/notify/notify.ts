@@ -1,6 +1,7 @@
-import { RED, WHITE } from '../common/color';
+import { WHITE } from '../common/color';
 
 interface NotifyOptions {
+  type?: 'primary' | 'success' | 'danger' | 'warning';
   color?: string;
   zIndex?: number;
   message: string;
@@ -9,15 +10,22 @@ interface NotifyOptions {
   selector?: string;
   background?: string;
   safeAreaInsetTop?: boolean;
+  onClick?: () => void;
+  onOpened?: () => void;
+  onClose?: () => void;
 }
 
 const defaultOptions = {
   selector: '#van-notify',
+  type: 'danger',
   message: '',
+  background: '',
   duration: 3000,
   zIndex: 110,
   color: WHITE,
-  background: RED
+  onClick: () => {},
+  onOpened: () => {},
+  onClose: () => {}
 };
 
 function parseOptions(message: NotifyOptions | string): NotifyOptions {

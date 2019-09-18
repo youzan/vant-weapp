@@ -21,6 +21,14 @@ Page({
     });
   },
 
+  showNotifyByType(event) {
+    const { type } = event.currentTarget.dataset;
+    Notify({
+      type,
+      message: '通知内容'
+    });
+  },
+
   onClickLeft() {
     wx.navigateBack();
   }

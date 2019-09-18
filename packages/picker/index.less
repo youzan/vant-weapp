@@ -1,11 +1,12 @@
 @import '../common/style/var';
+@import '../common/style/theme.less';
 
 .van-picker {
   position: relative;
   overflow: hidden;
   -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
-  background-color: @white;
   user-select: none;
+  .theme(background-color, '@white');
 
   &__toolbar {
     display: flex;
@@ -17,11 +18,11 @@
   &__cancel,
   &__confirm {
     padding: 0 15px;
-    color: @blue;
     font-size: 14px;
+    .theme(color, '@blue');
 
     &--hover {
-      background-color: @active-color;
+      .theme(background-color, '@active-color');
     }
   }
 

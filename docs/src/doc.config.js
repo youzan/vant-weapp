@@ -51,6 +51,11 @@ export default {
             {
               path: '/common',
               title: '内置样式'
+            },
+            {
+              path: '/theme',
+              title: '定制主题',
+              md: true
             }
           ]
         }

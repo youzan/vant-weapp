@@ -1,4 +1,5 @@
 @import '../common/style/var.less';
+@import '../common/style/theme.less';
 
 .van-button {
   position: relative;
@@ -10,7 +11,8 @@
   line-height: 42px;
   text-align: center;
   vertical-align: middle;
-  border-radius: @button-border-radius;
+  .theme(border-radius, '@button-border-radius');
+
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
@@ -20,13 +22,14 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background-color: @black;
     border: inherit;
-    border-color: @black;
     border-radius: inherit; /* inherit parent's border radius */
     transform: translate(-50%, -50%);
     opacity: 0;
     content: ' ';
+
+    .theme(background-color, '@black');
+    .theme(border-color, '@black');
   }
 
   // reset weapp default border
@@ -43,52 +46,52 @@
   }
 
   &--default {
-    color: @button-default-color;
-    background-color: @button-default-background-color;
-    border: 1px solid @button-default-border-color;
+    .theme(color, '@button-default-color');
+    .theme(background-color, '@button-default-background-color');
+    .theme(border, '1px solid @button-default-border-color');
   }
 
   &--primary {
-    color: @button-primary-color;
-    background-color: @button-primary-background-color;
-    border: 1px solid @button-primary-border-color;
+    .theme(color, '@button-primary-color');
+    .theme(background-color, '@button-primary-background-color');
+    .theme(border, '1px solid @button-primary-border-color');
   }
 
   &--info {
-    color: @button-info-color;
-    background-color: @button-info-background-color;
-    border: 1px solid @button-info-border-color;
+    .theme(color, '@button-info-color');
+    .theme(background-color, '@button-info-background-color');
+    .theme(border, '1px solid @button-info-border-color');
   }
 
   &--danger {
-    color: @button-danger-color;
-    background-color: @button-danger-background-color;
-    border: 1px solid @button-danger-border-color;
+    .theme(color, '@button-danger-color');
+    .theme(background-color, '@button-danger-background-color');
+    .theme(border, '1px solid @button-danger-border-color');
   }
 
   &--warning {
-    color: @button-warning-color;
-    background-color: @button-warning-background-color;
-    border: 1px solid @button-warning-border-color;
+    .theme(color, '@button-warning-color');
+    .theme(background-color, '@button-warning-background-color');
+    .theme(border, '1px solid @button-warning-border-color');
   }
 
   &--plain {
-    background-color: @white;
+    .theme(background-color, '@white');
 
     &.van-button--primary {
-      color: @button-primary-background-color;
+      .theme(color, '@button-primary-background-color');
     }
 
     &.van-button--info {
-      color: @button-info-background-color;
+      .theme(color, '@button-info-background-color');
     }
 
     &.van-button--danger {
-      color: @button-danger-background-color;
+      .theme(color, '@button-danger-background-color');
     }
 
     &.van-button--warning {
-      color: @button-warning-background-color;
+      .theme(color, '@button-warning-background-color');
     }
   }
 
@@ -130,7 +133,7 @@
   }
 
   &--round {
-    border-radius: @button-round-border-radius;
+    .theme(border-radius, '@button-round-border-radius');
   }
 
   &--square {
@@ -170,11 +173,11 @@
     &::after {
       border-color: inherit;
       border-width: 1px;
-      border-radius: @button-border-radius * 2;
+      .theme(border-radius, 'calc(@button-border-radius * 2)');
     }
 
     &.van-button--round::after {
-      border-radius: @button-round-border-radius;
+      .theme(border-radius, '@button-round-border-radius');
     }
 
     &.van-button--square::after {

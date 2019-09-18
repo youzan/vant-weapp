@@ -5,7 +5,7 @@
   custom-style="background:{{ background }}; color: {{ color }}; z-index: {{ zIndex }};"
 >
   <view bind:tap="onTap">
-    <view wx:if="{{ safeAreaInsetTop }}" class="van-notify__safe-top" style="padding-top: {{ statusBarHeight }}px"></view>
+    <view wx:if="{{ safeAreaInsetTop }}" style="padding-top: {{ statusBarHeight }}px"></view>
     {{ message }}
   </view>
 </van-transition>

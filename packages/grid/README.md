@@ -23,7 +23,10 @@
 
 ```html
 <van-grid>
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 4 }}"></van-grid-item>
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
 </van-grid>
 ```
 
@@ -33,7 +36,7 @@
 
 ```html
 <van-grid column-num="3">
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 6 }}"></van-grid-item>
+  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 6 }}" />
 </van-grid>
 ```
 
@@ -45,8 +48,8 @@
 <van-grid column-num="3" border="{{ false }}">
   <van-grid-item use-slot wx:for="{{ 3 }}" wx:for-item="index">
     <image
-      class="van-image"
-      src="https://img.yzcdn.cn/vant/apple-{{ index+1 }}.jpg"
+      style="width: 100%; height: 90px;"
+      src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg"
     />
   </van-grid-item>
 </van-grid>
@@ -58,7 +61,7 @@
 
 ```html
 <van-grid square>
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}"></van-grid-item>
+  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
 </van-grid>
 ```
 
@@ -68,7 +71,7 @@
 
 ```html
 <van-grid gutter="{{ 10 }}">
-  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}"></van-grid-item>
+  <van-grid-item icon="photo-o" text="文字" wx:for="{{ 8 }}" />
 </van-grid>
 ```
 
@@ -82,14 +85,14 @@
     icon="home-o"
     link-type="navigateTo"
     url="/pages/dashboard/index"
-    text="Navigate跳转"
-  ></van-grid-item>
+    text="Navigate 跳转"
+  />
   <van-grid-item
     icon="search"
     link-type="reLaunch"
     url="/pages/dashboard/index"
-    text="ReLaunch跳转"
-  ></van-grid-item>
+    text="ReLaunch 跳转"
+  />
 </van-grid>
 ```
 
@@ -97,35 +100,35 @@
 
 ### Grid Props
 
-| 参数       | 说明                           | 类型               | 默认值  | 版本 |
-| ---------- | ------------------------------ | ------------------ | ------- | ---- |
-| column-num | 列数                           | *number*           | `4`     | -    |
-| gutter     | 格子之间的间距，默认单位为`px` | *string \| number* | `0`     | -    |
-| border     | 是否显示边框                   | *boolean*          | `true`  | -    |
-| center     | 是否将格子内容居中显示         | *boolean*          | `true`  | -    |
-| square     | 是否将格子固定为正方形         | *boolean*          | `false` | -    |
-| clickable  | 是否开启格子点击反馈           | *boolean*          | `false` | -    |
-| use-slot | 是否使用自定义内容的插槽         | *boolean*          | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| column-num | 列数 | *number* | `4` | - |
+| gutter | 格子之间的间距，默认单位为`px` | *string \| number* | `0` | - |
+| border | 是否显示边框 | *boolean* | `true` | - |
+| center | 是否将格子内容居中显示 | *boolean* | `true`  | - |
+| square | 是否将格子固定为正方形 | *boolean* | `false` | - |
+| clickable  | 是否开启格子点击反馈 | *boolean* | `false` | - |
+| use-slot | 是否使用自定义内容的插槽 | *boolean* | `false` |
 
 ### GridItem Props
 
-| 参数      | 说明                                                       | 类型     | 默认值       | 版本 |
-| --------- | ---------------------------------------------------------- | -------- | ------------ | ---- |
-| text      | 文字                                                       | *string* | -            | -    |
-| icon      | 图标名称或图片链接，可选值见 [Icon 组件](/#/icon)                     | *string* | -            | -    |
-| url       | 跳转链接                                                   | *string* | -            | -    |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | -    |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| text | 文字 | *string* | - | - |
+| icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | -    |
+| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 
 ### GridItem Events
 
-| 事件名     | 说明           | 回调参数 |
-| ---------- | -------------- | -------- |
-| bind:click | 点击格子时触发 | -        |
+| 事件名 | 说明 | 回调参数 |
+|-----------|-----------|-----------|
+| bind:click | 点击格子时触发 | - |
 
 ### GridItem Slots
 
-| 名称    | 说明                                                 |
-| ------- | ---------------------------------------------------- |
-| default | 自定义宫格的所有内容，需要设置`use-slot`属性         |
-| icon    | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
-| text    | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |
+| 名称 | 说明 |
+|-----------|-----------|
+| default | 自定义宫格的所有内容，需要设置`use-slot`属性 |
+| icon | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
+| text | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |

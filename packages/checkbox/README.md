@@ -1,7 +1,7 @@
 # Checkbox 复选框
 
 ### 引入
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {

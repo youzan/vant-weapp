@@ -81,7 +81,7 @@ Notify({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | type | 类型，可选值为 `primary` `info` `warning` | *string* | `danger` | 1.0.0 |
-| message | 展示文案，支持通过`\n`换行 | *string* | - | - |
+| message | 展示文案，支持通过`\n`换行 | *string* | 1.0.0 | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | *number* | `3000` | - |
 | selector | 自定义节点选择器 | *string* | `van-notify` | - |
 | color | 字体颜色 | *string* | `#fff` | - |

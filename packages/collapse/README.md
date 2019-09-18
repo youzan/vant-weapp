@@ -123,7 +123,7 @@ Page({
 |------|------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | *string \| number* | `index` | - |
 | title | 标题栏左侧内容 | *string \| number* | - | - |
-| icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | value | 标题栏右侧内容 | *string \| number* | - | - |
 | label | 标题栏描述信息 | *string* | - | - |
 | border | 是否显示内边框 | *boolean* | `true` | - |

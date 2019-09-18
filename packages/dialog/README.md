@@ -83,78 +83,31 @@ Dialog.confirm({
 通过组件调用 Dialog 时，可以实现自定义弹窗内容、监听微信开放能力回调事件等功能，具体参考下例
 
 ```html
-<van-button
-  plain
-  type="danger"
-  class="demo-margin-right"
-  bind:click="showCustomDialog"
->
-  组件调用
-</van-button>
 <van-dialog
   use-slot
   title="标题"
   show="{{ show }}"
   show-cancel-button
-  bind:close="onClose"
   confirm-button-open-type="getUserInfo"
+  bind:close="onClose"
   bind:getuserinfo="getUserInfo"
 >
-  <image
-    class="demo-image"
-    src="https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg"
-  />
-</van-dialog>
-
-<van-button
-  plain
-  type="danger"
-  bind:click="showCustomDialog2"
->
-  自定义 标题&按钮字体颜色
-</van-button>
-<van-dialog
-  use-title-slot
-  show="{{ show2 }}"
-  show-cancel-button
-  cancel-button-color="green"
-  confirm-button-color="red"
-  bind:close="onClose"
-  message="代码是写出来给人看的，附带能在机器上运行"
->
-  <view slot="title">自定义标题</view>
+  <image src="https://img.yzcdn.cn/1.jpg" />
 </van-dialog>
 ```
 
 ```js
 Page({
   data: {
-    show: true,
-    show2: true
+    show: true
   },
 
   getUserInfo(event) {
     console.log(event.detail);
   },
 
-  showCustomDialog() {
-    this.setData({ show: true });
-  },
-
-  showCustomDialog2() {
-    this.setData({ show2: true });
-  },
-
   onClose() {
-    this.setData({
-      show: false
-    });
-  },
-
-  onClose2() {
-    this.setData({
-      show2: false
-    });
+    this.setData({ close: false });
   }
 });
 ```
@@ -266,3 +219,9 @@ Page({
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |

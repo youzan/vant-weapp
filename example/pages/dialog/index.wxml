@@ -59,25 +59,6 @@
       src="https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg"
     />
   </van-dialog>
-
-  <van-button
-    plain
-    type="danger"
-    bind:click="showCustomDialog2"
-  >
-    自定义 标题&按钮字体颜色
-  </van-button>
-  <van-dialog
-    use-title-slot
-    show="{{ show2 }}"
-    show-cancel-button
-    cancel-button-color="green"
-    confirm-button-color="red"
-    bind:close="onClose"
-    message="代码是写出来给人看的，附带能在机器上运行"
-  >
-   <view slot="title">自定义标题</view>
-  </van-dialog>
 </demo-block>
 
 <van-dialog id="van-dialog" />

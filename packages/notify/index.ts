@@ -8,16 +8,16 @@ VantComponent({
   mixins: [safeArea()],
 
   props: {
+    message: String,
+    background: String,
     type: {
       type: String,
       value: 'danger'
     },
-    message: String,
     color: {
       type: String,
       value: WHITE
     },
-    background: String,
     duration: {
       type: Number,
       value: 3000

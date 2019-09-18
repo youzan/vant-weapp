@@ -27,9 +27,5 @@ Page({
       type,
       message: '通知内容'
     });
-  },
-
-  onClickLeft() {
-    wx.navigateBack();
   }
 });

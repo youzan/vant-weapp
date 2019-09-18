@@ -1,10 +1,3 @@
-<van-nav-bar
-  title="Notify 消息通知"
-  left-text="返回"
-  left-arrow
-  bind:click-left="onClickLeft"
-/>
-
 <demo-block padding title="基础用法">
   <van-button type="danger" bind:click="showNotify">基础用法</van-button>
 </demo-block>

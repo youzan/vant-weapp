@@ -118,6 +118,7 @@
 | loading-text | 加载状态提示文字 | *string* | - | - |
 | loading-type | 加载状态图标类型，可选值为 `spinner` | *string* | `circular` | - |
 | loading-size | 加载图标大小 | *string* | `20px` | - |
+| custom-style | 自定义样式 | *string* | - | - |
 | open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | *string* | - | - |
 | lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | *string* | `en` | - | - |

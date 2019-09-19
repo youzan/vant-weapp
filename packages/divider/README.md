@@ -64,11 +64,8 @@
 |-----------|-----------|-----------|-------------|-------------|
 | dashed | 虚线 | *boolean* | false | - |
 | hairline | 细线 | *boolean* | false | - |
-| contentPosition | 文本位置，`left` `center` `right` | *string* | - | - |
-| fontSize | 字体大小 | *number* | - | - |
-| borderColor | 线颜色 | *string* | `#eee` | - |
-| textColor | 字体颜色 | *string* | `#7d7e80` | - |
-| customStyle | 自定义样式 | *string* | - | - |
+| content-position | 文本位置，`left` `center` `right` | *string* | - | - |
+| custom-style | 自定义样式 | *string* | - | - |
 
 ### Slot
 

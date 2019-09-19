@@ -3,8 +3,6 @@ import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
 
-  classes: [],
-
   props: {
     dashed: {
       type: Boolean,
@@ -34,9 +32,5 @@ VantComponent({
       type: String,
       value: ''
     }
-  },
-
-  data: {},
-
-  methods: {}
+  }
 });

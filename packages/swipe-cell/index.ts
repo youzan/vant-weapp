@@ -15,7 +15,11 @@ VantComponent({
       type: Number,
       value: 0
     },
-    asyncClose: Boolean
+    asyncClose: Boolean,
+    name: {
+      type: [Number, String],
+      value: ''
+    }
   },
 
   mixins: [touch],
@@ -132,7 +136,7 @@ VantComponent({
       }
 
       if (this.data.asyncClose) {
-        this.$emit('close', { position, instance: this });
+        this.$emit('close', { position, instance: this, name: this.data.name });
       } else {
         this.swipeMove(0);
       }

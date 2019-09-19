@@ -63,6 +63,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| name | 标识符，可以在 close 事件的参数中获取到 | *string \| number* | - | - |
 | left-width | 左侧滑动区域宽度 | *number* | `0` | - |
 | right-width | 右侧滑动区域宽度 | *number* | `0` | - |
 | async-close | 是否异步关闭 | *boolean* | `false` | - |

@@ -89,11 +89,29 @@
 
   &__close-icon {
     position: absolute;
-    .theme(top, '@popup-close-icon-margin');
-    .theme(right, '@popup-close-icon-margin');
     .theme(z-index, '@popup-close-icon-z-index');
     .theme(color, '@popup-close-icon-color');
     .theme(font-size, '@popup-close-icon-size');
+
+    &--top-left {
+      .theme(top, '@popup-close-icon-margin');
+      .theme(left, '@popup-close-icon-margin');
+    }
+
+    &--top-right {
+      .theme(top, '@popup-close-icon-margin');
+      .theme(right, '@popup-close-icon-margin');
+    }
+
+    &--bottom-left {
+      .theme(bottom, '@popup-close-icon-margin');
+      .theme(left, '@popup-close-icon-margin');
+    }
+
+    &--bottom-right {
+      .theme(right, '@popup-close-icon-margin');
+      .theme(bottom, '@popup-close-icon-margin');
+    }
 
     &:active {
       opacity: 0.6;

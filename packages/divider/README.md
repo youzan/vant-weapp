@@ -13,3 +13,65 @@
   "van-divider": "path/to/vant-weapp/dist/divider/index"
 }
 ```
+
+## 代码演示
+
+### 基础用法
+
+```html
+<van-divider />
+```
+
+### 使用hairline
+
+```html
+<van-divider hairline />
+```
+
+### 虚线
+
+```html
+<van-divider dashed />
+```
+
+### 文本位置
+
+```html
+<van-divider contentPosition="center">文本</van-divider>
+  <van-divider contentPosition="left">文本</van-divider>
+  <van-divider contentPosition="right">文本</van-divider>
+```
+
+### 自定义属性
+
+```html
+<van-divider contentPosition="center" textColor="#1989fa">文本颜色</van-divider>
+<van-divider contentPosition="center" borderColor="#1989fa">border颜色</van-divider>
+<van-divider contentPosition="center" fontSize="18">字体大小</van-divider>
+```
+
+### 自定义样式
+
+```html
+<van-divider contentPosition="center" customStyle="color: #1989fa;border-color: #1989fa;font-size: 18px;">文本</van-divider>
+```
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|-----------|-----------|-----------|-------------|-------------|
+| dashed | 虚线 | *boolean* | false | - |
+| hairline | 细线 | *boolean* | false | - |
+| contentPosition | 文本位置，`left` `center` `right` | *string* | - | - |
+| fontSize | 字体大小 | *number* | - | - |
+| borderColor | 线颜色 | *string* | `#eee` | - |
+| textColor | 字体颜色 | *string* | `#7d7e80` | - |
+| customStyle | 自定义样式 | *string* | - | - |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| 默认 | 自定义文本内容 |

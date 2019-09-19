@@ -1,5 +1,5 @@
-<demo-block title="基础用法" padding>
-  <van-button type="primary" bind:click="showBasic">展示弹出层</van-button>
+<demo-block title="基础用法">
+  <van-cell title="展示弹出层" is-link bind:click="showBasic" />
   <van-popup
     show="{{ show.basic }}"
     custom-style="padding: 30px 50px"
@@ -9,14 +9,11 @@
   </van-popup>
 </demo-block>
 
-<demo-block title="弹出位置" padding>
-  <view style="margin-bottom: 15px">
-    <van-button type="primary" bind:click="showTop" class="demo-margin-right">顶部弹出</van-button>
-    <van-button type="primary" bind:click="showBottom">底部弹出</van-button>
-  </view>
-
-  <van-button type="primary" bind:click="showLeft" class="demo-margin-right">左侧弹出</van-button>
-  <van-button type="primary" bind:click="showRight">右侧弹出</van-button>
+<demo-block title="弹出位置">
+  <van-cell title="顶部弹出" is-link bind:click="showTop" />
+  <van-cell title="底部弹出" is-link bind:click="showBottom" />
+  <van-cell title="左侧弹出" is-link bind:click="showLeft" />
+  <van-cell title="右侧弹出" is-link bind:click="showRight" />
 
   <van-popup
     show="{{ show.top }}"
@@ -44,8 +41,10 @@
   />
 </demo-block>
 
-<demo-block title="关闭图标" padding>
-  <van-button type="primary" class="demo-margin-right" bind:click="showCloseIcon">关闭图标</van-button>
+<demo-block title="关闭图标">
+  <van-cell title="关闭图标" is-link bind:click="showCloseIcon" />
+  <van-cell title="自定义图标" is-link bind:click="showCustomCloseIcon" />
+  <van-cell title="图标位置" is-link bind:click="showCustomIconPosition" />
 
   <van-popup
     show="{{ show.closeIcon }}"
@@ -55,8 +54,6 @@
     bind:close="hideCloseIcon"
   />
 
-  <van-button type="primary" bind:click="showCustomCloseIcon">自定义图标</van-button>
-
   <van-popup
     show="{{ show.customCloseIcon }}"
     closeable
@@ -65,10 +62,19 @@
     custom-style="height: 20%"
     bind:close="hideCustomCloseIcon"
   />
+
+  <van-popup
+    show="{{ show.customIconPosition }}"
+    closeable
+    close-icon-position="top-left"
+    position="bottom"
+    custom-style="height: 20%"
+    bind:close="hideCustomIconPosition"
+  />
 </demo-block>
 
-<demo-block title="圆角弹窗" padding>
-  <van-button type="primary" bind:click="showRound">圆角弹窗</van-button>
+<demo-block title="圆角弹窗">
+  <van-cell title="圆角弹窗" is-link bind:click="showRound" />
 
   <van-popup
     show="{{ show.round }}"

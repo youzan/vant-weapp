@@ -104,6 +104,8 @@ Page({
 |-----------|-----------|-----------|
 | bind:drag | 拖动进度条时触发 | event.detail.value: 当前进度 |
 | bind:change | 进度值改变后触发 | event.detail: 当前进度 |
+| bind:drag-start | 开始拖动时触发 | - |
+| bind:drag-end | 结束拖动时触发 | - |
 
 ### 外部样式类
 

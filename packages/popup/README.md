@@ -21,9 +21,7 @@
 通过`show`属性控制弹出层是否展示
 
 ```html
-<van-button type="primary" bind:click="showPopup">
-  展示弹出层
-</van-button>
+<van-cell title="展示弹出层" is-link bind:click="showPopup" />
 
 <van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
 ```

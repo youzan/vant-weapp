@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -95,7 +95,7 @@ Page({
 | text | 按钮文字 | *string* | - | - |
 | icon | 图标类型，可选值见`icon`组件 | *string* | - | - |
 | info | 图标右上角提示信息 | *string \| number* | - | - |
-| url | 跳转链接 | *string* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | id | 标识符 | *string* | - | - |
 | disabled | 是否禁用按钮 | *boolean* | `false` | - |
@@ -115,7 +115,7 @@ Page({
 |-----------|-----------|-----------|-------------|-------------|
 | text | 按钮文字 | *string* | - | - |
 | color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | *string* | - | - |
-| url | 跳转链接 | *string* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | id | 标识符 | *string* | - | - |
 | type | 按钮类型，可选值为 `primary` `warning` `danger` | *string* | `default` | - |

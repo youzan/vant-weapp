@@ -1,12 +1,16 @@
-<van-nav-bar
-  title="Notify 消息通知"
-  left-text="返回"
-  left-arrow
-  bind:click-left="onClickLeft"
-/>
-
 <demo-block padding title="基础用法">
   <van-button type="danger" bind:click="showNotify">基础用法</van-button>
+</demo-block>
+
+<demo-block padding title="通知类型">
+  <view class="demo-margin-bottom">
+    <van-button class="demo-margin-right" type="info" data-type="primary" bind:click="showNotifyByType">主要通知</van-button>
+    <van-button type="primary" data-type="success" bind:click="showNotifyByType">成功通知</van-button>
+  </view>
+  <view class="demo-margin-bottom">
+    <van-button class="demo-margin-right" type="danger" data-type="danger" bind:click="showNotifyByType">危险通知</van-button>
+    <van-button type="warning" data-type="warning" bind:click="showNotifyByType">警告通知</van-button>
+  </view>
 </demo-block>
 
 <demo-block padding title="自定义通知">

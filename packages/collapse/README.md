@@ -1,7 +1,7 @@
 # Collapse 折叠面板
 
 ### 引入
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -123,7 +123,7 @@ Page({
 |------|------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | *string \| number* | `index` | - |
 | title | 标题栏左侧内容 | *string \| number* | - | - |
-| icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | value | 标题栏右侧内容 | *string \| number* | - | - |
 | label | 标题栏描述信息 | *string* | - | - |
 | border | 是否显示内边框 | *boolean* | `true` | - |

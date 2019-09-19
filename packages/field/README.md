@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -197,8 +197,8 @@ Page({
 | error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | *string* | `''` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | autosize | 自适应内容高度，只对 textarea 有效 | *boolean* | `false` | - |
-| left-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
-| right-icon | 右侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | *string* | `done` | - |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | *boolean* | `false` | - |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | *number* | `50` | - |
@@ -215,7 +215,7 @@ Page({
 | bind:change | 输入内容时触发 | value: 当前输入值 |
 | bind:confirm | 点击完成按钮时触发 | value: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
-| bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度(在基础库 1.9.90 起支持) |
+| bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |
 | bind:blur | 输入框失焦时触发 | event.detail.value: 当前输入值; <br>event.detail.cursor: 游标位置(如果 `type` 不为 `textarea`，值为 `0`) |
 | bind:clear | 点击清空控件时触发 | - |
 

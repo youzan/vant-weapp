@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -79,8 +79,8 @@ Page({
 | active | 当前步骤 | *number* | 0 | - |
 | direction | 显示方向，可选值为 `horizontal` `vertical` | *string* | `horizontal` | - |
 | active-color | 激活状态颜色 | *string* | `#07c160` | - |
-| active-icon | 激活状态底部图标，可选值见 Icon 组件 | *string* | `checked` | - |
-| inactive-icon | 未激活状态底部图标，可选值见 Icon 组件 | *string* | - | - |
+| active-icon | 激活状态底部图标，可选值见 [Icon 组件](/#/icon) | *string* | `checked` | - |
+| inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 
 ### 外部样式类
 

@@ -6,7 +6,7 @@
 
 ## 安装
 
-### 步骤一. 通过 npm 安装
+### 步骤一 通过 npm 安装
 
 ```bash
 # 通过 npm 安装
@@ -16,7 +16,7 @@ npm i vant-weapp -S --production
 yarn add vant-weapp --production
 ```
 
-### 步骤二. 构建 npm 包
+### 步骤二 构建 npm 包
 
 打开微信开发者工具，点击 **工具 -> 构建 npm**，并勾选 **使用 npm 模块** 选项，构建完成后，即可引入组件
 

@@ -5,7 +5,7 @@
 选择器组件通常与 [弹出层](#/popup) 组件配合使用
 
 ### 引入
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -149,6 +149,7 @@ Page({
 |------|------|------|------|------|
 | columns | 对象数组，配置每一列显示的数据 | *Array* | `[]` | - |
 | show-toolbar | 是否显示顶部栏 | *boolean* | `false` | - |
+| toolbar-position | 顶部栏位置，可选值为`bottom` | *string* | `top` | - |
 | title | 顶部栏标题 | *string* | `''` | - |
 | loading | 是否显示加载状态 | *boolean* | `false` | - |
 | value-key | 选项对象中，文字对应的 key | *string* | `text` | - |

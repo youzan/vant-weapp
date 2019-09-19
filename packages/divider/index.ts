@@ -1,8 +1,6 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  field: true,
-
   props: {
     dashed: {
       type: Boolean,

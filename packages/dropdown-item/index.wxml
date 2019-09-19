@@ -1,0 +1,39 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view
+  wx:if="{{ showWrapper }}"
+  class="{{ utils.bem('van-dropdown-item', direction) }}"
+  style="{{ wrapperStyle }}"
+>
+  <van-popup
+    wx:if="{{ showPopup }}"
+    class="van-dropdown-item__content"
+    overlay="{{ overlay }}"
+    position="{{ direction === 'down' ? 'top' : 'bottom' }}"
+    duration="{{ transition ? duration : 0 }}"
+    overlayStyle="{{ position: 'absolute' }}"
+    closeOnClickOverlay="{{ closeOnClickOverlay }}"
+    bind:close="onClose"
+  >
+    <van-cell
+      wx:for="{{ options }}"
+      wx:key="{{ item.value }}"
+      data-item="{{ item }}"
+      class="{{ utils.bem('van-dropdown-item__option', { active } ) }}"
+      style="{{ active ? `color: ${ activeColor }` : '' }}"
+      clickable="true"
+      icon="{{ item.icon }}"
+      title="{{ item.text }}"
+      bind:tap="onOptionTap"
+    >
+      <van-icon
+        wx:if="{{ item.value === value }}"
+        name="success"
+        class="van-dropdown-item__icon"
+        color="{{ activeColor }}"
+      />
+    </van-cell>
+
+    <slot />
+  </van-popup>
+</view>

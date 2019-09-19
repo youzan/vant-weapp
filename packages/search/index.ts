@@ -17,6 +17,10 @@ VantComponent({
     useActionSlot: Boolean,
     placeholder: String,
     placeholderStyle: String,
+    actionText: {
+      type: String,
+      value: '取消'
+    },
     background: {
       type: String,
       value: '#ffffff'

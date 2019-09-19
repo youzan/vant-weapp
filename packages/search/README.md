@@ -61,6 +61,7 @@
 | value | 当前输入的值 | *string \| number* | - | - |
 | background | 搜索框背景色 | *string* | `#f2f2f2` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` | - |
+| action-text | 取消按钮文字 | *boolean* | `取消` | 1.0.0 |
 | focus | 获取焦点 | *boolean* | `false` | - |
 | error | 是否将输入内容标红 | *boolean* | `false` | - |
 | disabled | 是否禁用输入框 | *boolean* | `false` | - |

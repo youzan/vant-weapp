@@ -3,6 +3,7 @@ import { addUnit } from '../common/utils';
 
 VantComponent({
   props: {
+    dot: Boolean,
     info: null,
     size: {
       type: null,

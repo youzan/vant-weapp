@@ -8,7 +8,8 @@
 >
   <view class="van-sidebar-item__text">
     <van-info
-      wx:if="{{ info !== null }}"
+      wx:if="{{ info !== null || dot }}"
+      dot="{{ dot }}"
       info="{{ info }}"
       custom-style="right: 4px"
     />

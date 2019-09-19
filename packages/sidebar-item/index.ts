@@ -10,6 +10,7 @@ VantComponent({
   },
 
   props: {
+    dot: Boolean,
     info: null,
     title: String
   },

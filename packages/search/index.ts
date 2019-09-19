@@ -15,6 +15,13 @@ VantComponent({
     inputAlign: String,
     showAction: Boolean,
     useActionSlot: Boolean,
+    useLeftIconSlot: Boolean,
+    useRightIconSlot: Boolean,
+    leftIcon: {
+      type: String,
+      value: 'search'
+    },
+    rightIcon: String,
     placeholder: String,
     placeholderStyle: String,
     actionText: {

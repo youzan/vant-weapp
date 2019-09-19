@@ -52,7 +52,7 @@ Page({
 <van-popup
   show="{{ show }}"
   position="top"
-  style="height: 20%"
+  style="height: 20%;"
   bind:close="onClose"
 />
 ```

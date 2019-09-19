@@ -133,7 +133,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 | 
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | *string* | - | - |
-| message | 内容 | *string* | - | - |
+| message | 文本内容，支持通过`\n`换行 | *string* | - | 1.0.0 |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | zIndex | z-index 层级 | *number* | `100` | - |
 | className | 自定义类名，dialog在自定义组件内时无效 | *string* | '' | - |

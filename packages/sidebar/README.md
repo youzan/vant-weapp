@@ -40,14 +40,14 @@ Page({
 });
 ```
 
-### 显示徽标
+### 提示信息
 
-通过`info`属性设置徽标内容
+设置`dot`属性后，会在右上角展示一个小红点。设置`info`属性后，会在右上角展示相应的徽标
 
 ```html
 <van-sidebar active="{{ active }}">
-  <van-sidebar-item title="标签名称" info="8" />
-  <van-sidebar-item title="标签名称" info="99" />
+  <van-sidebar-item title="标签名称" dot />
+  <van-sidebar-item title="标签名称" info="5" />
   <van-sidebar-item title="标签名称" info="99+" />
 </van-sidebar>
 ```
@@ -77,6 +77,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 内容 | *string* | `''` | - |
+| dot | 是否显示右上角小红点 | *boolean* | `false` | - |
 | info | 提示消息 | *string \| number* | `''` | - |
 
 ### SidebarItem Event

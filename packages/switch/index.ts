@@ -28,19 +28,21 @@ VantComponent({
 
   watch: {
     checked(value) {
-      const loadingColor = this.getLoadingColor();
+      const loadingColor = this.getLoadingColor(value);
       this.setData({ value, loadingColor });
     }
   },
 
   created() {
-    const loadingColor = this.getLoadingColor();
-    this.setData({ value: this.data.checked, loadingColor });
+    const { checked: value } = this.data;
+    const loadingColor = this.getLoadingColor(value);
+
+    this.setData({ value, loadingColor });
   },
 
   methods: {
-    getLoadingColor() {
-      const { checked, activeColor, inactiveColor } = this.data;
+    getLoadingColor(checked) {
+      const { activeColor, inactiveColor } = this.data;
       return checked ? activeColor || BLUE : inactiveColor || GRAY_DARK;
     },
 

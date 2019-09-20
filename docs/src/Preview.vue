@@ -33,17 +33,16 @@ export default {
 body {
   margin: 0;
   color: #333;
+  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   line-height: 1;
   background-color: #f2f3f5;
-  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei',
-    Tohoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 .preview {
   &-image {
-    width: 100%;
     display: block;
+    width: 100%;
 
     &--transition {
       margin-top: -62px;
@@ -51,16 +50,16 @@ body {
   }
 
   &-popup {
-    opacity: 0;
-    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, .95);
-    transition: .3s;
     text-align: center;
+    background-color: rgba(255, 255, 255, .95);
+    opacity: 0;
+    transition: .3s;
 
     &:hover {
       opacity: 1;
@@ -68,27 +67,27 @@ body {
   }
 
   &-content {
-    left: 0;
+    position: absolute;
     top: 50%;
+    left: 0;
     width: 100%;
     height: 200px;
-    position: absolute;
     text-align: center;
     transform: translateY(-60%);
     user-select: none;
 
     img {
+      display: inline-block;
       width: 180px;
       height: 180px;
       margin-bottom: 15px;
-      display: inline-block;
     }
 
     p {
       margin: 0;
       color: #34495e;
-      line-height: 1.5;
       font-size: 16px;
+      line-height: 1.5;
     }
   }
 }

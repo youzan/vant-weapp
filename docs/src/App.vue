@@ -5,12 +5,14 @@
     :github="github"
     :versions="versions"
     :simulator="simulator"
+    @switch-version="onSwitchVersion"
   >
     <router-view />
   </van-doc>
 </template>
 
 <script>
+import pkgJson from '../../package.json';
 import docConfig, { github, versions } from './doc.config';
 
 const UNSHARED = [
@@ -48,15 +50,23 @@ export default {
 
       return `./preview.html#${path}`;
     }
+  },
+
+  methods: {
+    onSwitchVersion(version) {
+      if (version !== pkgJson.version) {
+        location.href = `https://youzan.github.io/vant-weapp/${version}`;
+      }
+    }
   }
 };
 </script>
 
 <style lang="less">
 .van-doc-intro {
-  text-align: center;
   padding-top: 20px;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
 
   &__logo {
     width: 120px;
@@ -64,15 +74,15 @@ export default {
   }
 
   h2 {
+    font-weight: normal;
     font-size: 32px;
     line-height: 60px;
-    font-weight: normal;
   }
 
   p {
-    font-size: 15px;
-    color: #455a64;
     margin-bottom: 20px;
+    color: #455a64;
+    font-size: 15px;
   }
 }
 </style>

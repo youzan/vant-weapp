@@ -52,13 +52,13 @@ Page({
 });
 ```
 
-### 图标提示
+### 提示信息
 
-通过`info`属性在图标右上角增加相应的提示
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="chat-o" text="客服" dot />
   <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
   <van-goods-action-icon icon="shop-o" text="店铺" />
   <van-goods-action-button text="加入购物车" type="warning" />

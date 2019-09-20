@@ -8,7 +8,7 @@
     class="van-rate__item"
     wx:for="{{ count }}"
     wx:key="index"
-    style="font-size: {{ size}}px;"
+    style="font-size: {{ sizeWithUnit }};padding-right: {{ index !== count - 1 ? gutterWithUnit : '' }}"
   >
     <van-icon
       name="{{ index + 1 <= innerValue ? icon : voidIcon }}"

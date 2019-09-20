@@ -11,16 +11,18 @@ VantComponent({
     ],
     props: {
         items: Array,
+        activeId: null,
         mainActiveIndex: {
             type: Number,
             value: 0
         },
-        activeId: {
-            type: [Number, String, Array]
-        },
         maxHeight: {
             type: Number,
             value: 300
+        },
+        max: {
+            type: Number,
+            value: Infinity
         }
     },
     data: {
@@ -44,7 +46,12 @@ VantComponent({
         // 当一个子项被选择时
         onSelectItem(event) {
             const { item } = event.currentTarget.dataset;
-            if (!item.disabled) {
+            const isArray = Array.isArray(this.data.activeId);
+            // 判断有没有超出右侧选择的最大数
+            const isOverMax = isArray && (this.data.activeId.length >= this.data.max);
+            // 判断该项有没有被选中, 如果有被选中，则忽视是否超出的条件
+            const isSelected = isArray ? this.data.activeId.indexOf(item.id) > -1 : this.data.activeId === item.id;
+            if (!item.disabled && (!isOverMax || isSelected)) {
                 this.$emit('click-item', item);
             }
         },
@@ -67,12 +74,12 @@ VantComponent({
         updateMainHeight() {
             const { items = [], subItems = [] } = this.data;
             const maxHeight = Math.max(items.length * ITEM_HEIGHT, subItems.length * ITEM_HEIGHT);
-            this.set({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
+            this.setData({ mainHeight: Math.min(maxHeight, this.data.maxHeight) });
         },
         // 更新子项列表高度，根据可展示的最大高度和当前子项列表的高度决定
         updateItemHeight(subItems) {
             const itemHeight = Math.min(subItems.length * ITEM_HEIGHT, this.data.maxHeight);
-            return this.set({ itemHeight });
+            return this.setData({ itemHeight });
         }
     }
 });

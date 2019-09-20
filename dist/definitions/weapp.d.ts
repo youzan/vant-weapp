@@ -1,6 +1,6 @@
 /// <reference types="miniprogram-api-typings" />
 export declare namespace Weapp {
-    interface FormField {
+    export interface FormField {
         data: {
             name: string;
             value: any;
@@ -13,7 +13,7 @@ export declare namespace Weapp {
             [key: string]: any;
         };
     }
-    interface Event {
+    export interface Event {
         /**
          * 代表事件的类型。
          */
@@ -57,14 +57,14 @@ export declare namespace Weapp {
          */
         clientY: number;
     }
-    interface TouchEvent extends Event {
+    export interface TouchEvent extends Event {
         touches: Array<Touch>;
         changedTouches: Array<Touch>;
     }
     /**
      * relation定义，miniprogram-api-typings缺少this定义
      */
-    interface RelationOption<Instance> {
+    export interface RelationOption<Instance> {
         /** 目标组件的相对关系 */
         type: 'parent' | 'child' | 'ancestor' | 'descendant';
         /** 关系生命周期函数，当关系被建立在页面节点树中时触发，触发时机在组件attached生命周期之后 */
@@ -83,20 +83,20 @@ export declare namespace Weapp {
     /**
      * watch定义
      */
-    interface WatchOption<Instance> {
+    export interface WatchOption<Instance> {
         [name: string]: string | Observer<Instance, any>;
     }
     /**
      * methods定义，miniprogram-api-typings缺少this定义
      */
-    interface MethodOption<Instance> {
+    export interface MethodOption<Instance> {
         [name: string]: (this: Instance, ...args: any[]) => any;
     }
-    interface ComputedOption<Instance> {
+    export interface ComputedOption<Instance> {
         [name: string]: (this: Instance) => any;
     }
     type PropertyType = StringConstructor | NumberConstructor | BooleanConstructor | ArrayConstructor | ObjectConstructor | FunctionConstructor | null;
-    interface PropertyOption {
+    export interface PropertyOption {
         [name: string]: PropertyType | PropertyType[] | {
             /** 属性类型 */
             type: PropertyType | PropertyType[];
@@ -108,4 +108,5 @@ export declare namespace Weapp {
             optionalTypes?: PropertyType[];
         };
     }
+    export {};
 }

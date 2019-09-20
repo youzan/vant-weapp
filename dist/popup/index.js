@@ -12,12 +12,14 @@ VantComponent({
     ],
     mixins: [transition(false), safeArea()],
     props: {
+        round: Boolean,
+        closeable: Boolean,
+        customStyle: String,
+        overlayStyle: String,
         transition: {
             type: String,
             observer: 'observeClass'
         },
-        customStyle: String,
-        overlayStyle: String,
         zIndex: {
             type: Number,
             value: 100
@@ -25,6 +27,14 @@ VantComponent({
         overlay: {
             type: Boolean,
             value: true
+        },
+        closeIcon: {
+            type: String,
+            value: 'cross'
+        },
+        closeIconPosition: {
+            type: String,
+            value: 'top-right'
         },
         closeOnClickOverlay: {
             type: Boolean,
@@ -40,6 +50,9 @@ VantComponent({
         this.observeClass();
     },
     methods: {
+        onClickCloseIcon() {
+            this.$emit('close');
+        },
         onClickOverlay() {
             this.$emit('click-overlay');
             if (this.data.closeOnClickOverlay) {
@@ -54,7 +67,7 @@ VantComponent({
             if (transition === 'none') {
                 updateData.duration = 0;
             }
-            this.set(updateData);
+            this.setData(updateData);
         }
     }
 });

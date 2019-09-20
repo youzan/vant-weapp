@@ -1,1 +1,1 @@
-@import '../common/index.wxss';.van-tabbar{display:-webkit-flex;display:flex;width:100%;height:50px;background-color:#fff}.van-tabbar--fixed{position:fixed;bottom:0;left:0}.van-tabbar--safe{padding-bottom:34px}
+@import '../common/index.wxss';.van-tabbar{display:-webkit-flex;display:flex;width:100%;height:50px;background-color:#fff;background-color:var(--white,#fff)}.van-tabbar--fixed{position:fixed;bottom:0;left:0}.van-tabbar--safe{padding-bottom:34px;padding-bottom:var(--safe-area-inset-bottom,34px)}

@@ -6,6 +6,7 @@ VantComponent({
     mixins: [link, button, openType],
     props: {
         text: String,
+        color: String,
         loading: Boolean,
         disabled: Boolean,
         type: {

@@ -8,7 +8,7 @@
   bind:touchend="onTouchEnd"
   bind:touchcancel="onTouchEnd"
 >
-  <view style="{{ wrapperStyle }}">
+  <view style="transition: transform {{ duration }}ms; line-height: {{ itemHeight }}px; transform: translate3d(0, {{ offset + (itemHeight * (visibleItemCount - 1)) / 2 }}px, 0)">
     <view
       wx:for="{{ options }}"
       wx:for-item="option"

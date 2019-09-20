@@ -40,13 +40,13 @@ VantComponent({
     methods: {
         updatePrice() {
             const { price, decimalLength } = this.data;
-            this.set({
+            this.setData({
                 hasPrice: typeof price === 'number',
                 priceStr: (price / 100).toFixed(decimalLength)
             });
         },
         updateTip() {
-            this.set({ hasTip: typeof this.data.tip === 'string' });
+            this.setData({ hasTip: typeof this.data.tip === 'string' });
         },
         onSubmit(event) {
             this.$emit('submit', event.detail);

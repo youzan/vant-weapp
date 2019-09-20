@@ -2,11 +2,9 @@ import { VantComponent } from '../common/component';
 VantComponent({
     props: {
         info: null,
+        name: null,
         icon: String,
-        dot: Boolean,
-        name: {
-            type: [String, Number]
-        }
+        dot: Boolean
     },
     relation: {
         name: 'tabbar',

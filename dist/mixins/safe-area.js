@@ -33,7 +33,7 @@ export const safeArea = ({ safeAreaInsetBottom = true, safeAreaInsetTop = false 
     },
     created() {
         getSafeArea().then(({ isIPhoneX, statusBarHeight }) => {
-            this.set({ isIPhoneX, statusBarHeight });
+            this.setData({ isIPhoneX, statusBarHeight });
         });
     }
 });

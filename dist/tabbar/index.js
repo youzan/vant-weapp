@@ -17,7 +17,7 @@ VantComponent({
     },
     props: {
         active: {
-            type: [Number, String],
+            type: null,
             observer: 'updateChildren'
         },
         activeColor: {

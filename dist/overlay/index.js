@@ -2,10 +2,9 @@ import { VantComponent } from '../common/component';
 VantComponent({
     props: {
         show: Boolean,
-        mask: Boolean,
         customStyle: String,
         duration: {
-            type: [Number, Object],
+            type: null,
             value: 300
         },
         zIndex: {

@@ -1,1 +1,1 @@
-@import '../common/index.wxss';.van-goods-action{position:fixed;right:0;bottom:0;left:0;display:-webkit-flex;display:flex;background-color:#fff}.van-goods-action--safe{padding-bottom:34px}
+@import '../common/index.wxss';.van-goods-action{position:fixed;right:0;bottom:0;left:0;display:-webkit-flex;display:flex;background-color:#fff;background-color:var(--white,#fff)}.van-goods-action--safe{padding-bottom:34px;padding-bottom:var(--safe-area-inset-bottom,34px)}

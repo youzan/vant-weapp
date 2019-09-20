@@ -12,6 +12,7 @@
     name="{{ leftIcon }}"
     class="van-notice-bar__left-icon"
   />
+  <slot wx:else name="left-icon" />
 
   <view class="van-notice-bar__wrap">
     <view class="van-notice-bar__content {{ !scrollable && !wrapable ? 'van-ellipsis' : '' }}" animation="{{ animationData }}">
@@ -26,10 +27,11 @@
     bind:tap="onClickIcon"
   />
   <navigator
-    wx:if="{{ mode === 'link' }}"
+    wx:elif="{{ mode === 'link' }}"
     url="{{ url }}"
     open-type="{{ openType }}"
   >
     <van-icon class="van-notice-bar__right-icon" name="arrow" />
   </navigator>
+  <slot wx:else name="right-icon" />
 </view>

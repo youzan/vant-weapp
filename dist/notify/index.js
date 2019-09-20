@@ -1,17 +1,18 @@
 import { VantComponent } from '../common/component';
-import { RED } from '../common/color';
+import { WHITE } from '../common/color';
 import { safeArea } from '../mixins/safe-area';
 VantComponent({
     mixins: [safeArea()],
     props: {
-        text: String,
+        message: String,
+        background: String,
+        type: {
+            type: String,
+            value: 'danger'
+        },
         color: {
             type: String,
-            value: '#fff'
-        },
-        backgroundColor: {
-            type: String,
-            value: RED
+            value: WHITE
         },
         duration: {
             type: Number,
@@ -24,11 +25,11 @@ VantComponent({
     },
     methods: {
         show() {
-            const { duration } = this.data;
+            const { duration, onOpened } = this.data;
             clearTimeout(this.timer);
-            this.set({
+            this.setData({
                 show: true
-            });
+            }, onOpened);
             if (duration > 0 && duration !== Infinity) {
                 this.timer = setTimeout(() => {
                     this.hide();
@@ -36,10 +37,17 @@ VantComponent({
             }
         },
         hide() {
+            const { onClose } = this.data;
             clearTimeout(this.timer);
-            this.set({
+            this.setData({
                 show: false
-            });
+            }, onClose);
+        },
+        onTap(event) {
+            const { onClick } = this.data;
+            if (onClick) {
+                onClick(event.detail);
+            }
         }
     }
 });

@@ -2,7 +2,6 @@
 
 <van-overlay
   wx:if="{{ overlay }}"
-  mask
   show="{{ show }}"
   z-index="{{ zIndex }}"
   custom-style="{{ overlayStyle }}"
@@ -11,10 +10,15 @@
 />
 <view
   wx:if="{{ inited }}"
-  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { safe: isIPhoneX && safeAreaInsetBottom }]) }}"
-  style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}"
+  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safe: isIPhoneX && safeAreaInsetBottom }]) }}"
+  style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }} {{ customStyle }}"
   bind:transitionend="onTransitionEnd"
 >
-  <view wx:if="{{ safeAreaInsetTop }}" class="van-popup__safe-top" style="padding-top: {{ statusBarHeight }}px;"></view>
   <slot />
+  <van-icon
+    wx:if="{{ closeable }}"
+    name="{{ closeIcon }}"
+    class="van-popup__close-icon van-popup__close-icon--{{ closeIconPosition }}"
+    bind:tap="onClickCloseIcon"
+  />
 </view>

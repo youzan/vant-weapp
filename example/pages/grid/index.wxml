@@ -36,3 +36,10 @@
     <van-grid-item icon="search" link-type="reLaunch" url="/pages/dashboard/index" text="ReLaunch 跳转" />
   </van-grid>
 </demo-block>
+
+<demo-block title="提示信息">
+  <van-grid column-num="2">
+    <van-grid-item icon="home-o" text="文字" dot />
+    <van-grid-item icon="search" text="文字" info="99+" />
+  </van-grid>
+</demo-block>

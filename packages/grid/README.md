@@ -96,6 +96,17 @@
 </van-grid>
 ```
 
+### 提示信息
+
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+
+```html
+<van-grid column-num="2">
+  <van-grid-item icon="home-o" text="文字" dot />
+  <van-grid-item icon="search" text="文字" info="99+" />
+</van-grid>
+```
+
 ## API
 
 ### Grid Props
@@ -116,6 +127,8 @@
 |-----------|-----------|-----------|-------------|-------------|
 | text | 文字 | *string* | - | - |
 | icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
+| dot | 是否显示图标右上角小红点 | *boolean* | `false` | - |
+| info | 图标右上角徽标的内容 | *string \| number* | - | - |
 | url | 点击后跳转的链接地址 | *string* | - | -    |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 

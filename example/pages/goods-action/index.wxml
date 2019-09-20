@@ -22,7 +22,7 @@
   </van-goods-action>
 </demo-block>
 
-<demo-block title="图标提示">
+<demo-block title="提示信息">
   <van-goods-action custom-class="goods-action" safe-area-inset-bottom="{{ false }}">
     <van-goods-action-icon icon="chat-o" text="客服" dot />
     <van-goods-action-icon icon="cart-o" text="购物车" info="5" />

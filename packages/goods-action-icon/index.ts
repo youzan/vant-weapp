@@ -11,6 +11,7 @@ VantComponent({
 
   props: {
     text: String,
+    dot: Boolean,
     info: String,
     icon: String,
     disabled: Boolean,

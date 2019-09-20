@@ -101,7 +101,7 @@
 设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
 ```html
-<van-grid :column-num="2">
+<van-grid column-num="2">
   <van-grid-item icon="home-o" text="文字" dot />
   <van-grid-item icon="search" text="文字" info="99+" />
 </van-grid>

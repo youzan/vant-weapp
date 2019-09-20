@@ -19,6 +19,20 @@
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
 
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
+
+// Font Size
+@font-size-xs: 10px;
+@font-size-sm: 12px;
+@font-size-md: 14px;
+@font-size-lg: 16px;
+
 // Button
 @button-default-color: @text-color;
 @button-default-background-color: @white;
@@ -53,16 +67,8 @@
 @checkbox-disabled-label-color: @gray;
 @checkbox-disabled-background-color: @border-color;
 
-// Radio
-@radio-size: 20px;
-@radio-border-color: @gray-light;
-@radio-transition-duration: .2s;
-@radio-label-margin: 10px;
-@radio-label-color: @text-color;
-@radio-checked-icon-color: @blue;
-@radio-disabled-icon-color: @gray;
-@radio-disabled-label-color: @gray;
-@radio-disabled-background-color: @border-color;
+// Circle
+@circle-text-color: @text-color;
 
 // Collapse
 @collapse-item-transition-duration: .3s;
@@ -83,10 +89,16 @@
 @info-background-color: @red;
 @info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 
+// NavBar
+@nav-bar-height: 44px;
+
 // Notify
 @notify-padding: 6px 15px;
 @notify-font-size: 14px;
 @notify-line-height: 20px;
+
+// Overlay
+@overlay-background-color: rgba(0, 0, 0, 0.7);
 
 // Popup
 @popup-round-border-radius: 12px;
@@ -94,6 +106,20 @@
 @popup-close-icon-color: @gray-dark;
 @popup-close-icon-margin: 16px;
 @popup-close-icon-z-index: 1;
+
+// Radio
+@radio-size: 20px;
+@radio-border-color: @gray-light;
+@radio-transition-duration: .2s;
+@radio-label-margin: 10px;
+@radio-label-color: @text-color;
+@radio-checked-icon-color: @blue;
+@radio-disabled-icon-color: @gray;
+@radio-disabled-label-color: @gray;
+@radio-disabled-background-color: @border-color;
+
+// Rate
+@rate-horizontal-padding: 2px;
 
 // Switch
 @switch-width: 2em;
@@ -107,23 +133,6 @@
 @switch-transition-duration: .3s;
 @switch-disabled-opacity: .4;
 @switch-border: 1px solid rgba(0, 0, 0, .1);
-
-// Toast
-@toast-max-width: 70%;
-@toast-font-size: 14px;
-@toast-text-color: @white;
-@toast-line-height: 20px;
-@toast-border-radius: 4px;
-@toast-background-color: rgba(@text-color, .88);
-@toast-icon-size: 48px;
-@toast-text-min-width: 96px;
-@toast-text-padding: 8px 12px;
-@toast-default-padding: 15px;
-@toast-default-width: 90px;
-@toast-default-min-height: 90px;
-
-// iPhoneX
-@safe-area-inset-bottom: 34px;
 
 // Search
 @search-background-color: #f7f8fA;
@@ -152,8 +161,35 @@
 @submit-bar-tip-background-color: #fff7cc;
 @submit-bar-tip-icon-size: 12px;
 
-// NavBar
-@nav-bar-height: 44px;
+// Tag
+@tag-dander-color: @red;
+@tag-primary-color: @blue;
+@tag-success-color: @green;
+@tag-warning-color: @orange;
+@tag-default-color: @gray-dark;
+@tag-plain-background-color: @white;
 
-// Rate
-@rate-horizontal-padding: 2px;
+// Toast
+@toast-max-width: 70%;
+@toast-font-size: 14px;
+@toast-text-color: @white;
+@toast-line-height: 20px;
+@toast-border-radius: 4px;
+@toast-background-color: rgba(@text-color, .88);
+@toast-icon-size: 48px;
+@toast-text-min-width: 96px;
+@toast-text-padding: 8px 12px;
+@toast-default-padding: 15px;
+@toast-default-width: 90px;
+@toast-default-min-height: 90px;
+
+// iPhoneX
+@safe-area-inset-bottom: 34px;
+
+// GridItem
+@grid-item-content-padding: @padding-md @padding-xs;
+@grid-item-content-background-color: @white;
+@grid-item-content-active-color: @active-color;
+@grid-item-icon-size: 26px;
+@grid-item-text-color: @gray-darker;
+@grid-item-text-font-size: @font-size-sm;

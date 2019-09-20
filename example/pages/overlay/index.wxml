@@ -1,0 +1,6 @@
+<demo-block title="基础用法" padding>
+  <van-button type="primary" bind:click="onClickShow">
+    显示遮罩层
+  </van-button>
+  <van-overlay show="{{ show }}" bind:click="onClickHide"/>
+</demo-block>

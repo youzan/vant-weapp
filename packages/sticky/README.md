@@ -14,7 +14,6 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 }
 ```
 
-
 ## 代码演示
 
 ### 基础用法
@@ -36,6 +35,8 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
   <van-button type="info">吸顶距离</van-button>
 </van-sticky>
 ```
+
+## API
 
 ### Props
 

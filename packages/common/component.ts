@@ -10,13 +10,12 @@ function mapKeys(source: object, target: object, map: object) {
   });
 }
 
-function VantComponent<Data, Props, Methods, Computed>(
+function VantComponent<Data, Props, Methods>(
   vantOptions: VantComponentOptions<
     Data,
     Props,
     Methods,
-    Computed,
-    CombinedComponentInstance<Data, Props, Methods, Computed>
+    CombinedComponentInstance<Data, Props, Methods>
   > = {}
 ): void {
   const options: any = {};

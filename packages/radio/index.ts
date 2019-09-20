@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { addUnit } from '../common/utils';
 
 VantComponent({
   field: true,
@@ -30,10 +31,24 @@ VantComponent({
     shape: {
       type: String,
       value: 'round'
+    },
+    iconSize: {
+      type: null,
+      observer: 'setIconSizeUnit'
     }
   },
 
+  data: {
+    iconSizeWithUnit: '20px'
+  },
+
   methods: {
+    setIconSizeUnit(val) {
+      this.setData({
+        iconSizeWithUnit: addUnit(val)
+      });
+    },
+
     emitChange(value: boolean) {
       const instance = this.parent || this;
       instance.$emit('input', value);

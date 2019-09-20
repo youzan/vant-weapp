@@ -4,13 +4,13 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  box-sizing: border-box;
   max-height: 100%;
   overflow-y: auto;
   background-color: @white;
-  box-sizing: border-box;
+  transition-timing-function: ease;
   animation: ease both;
   -webkit-overflow-scrolling: touch;
-  transition-timing-function: ease;
 
   &--center {
     transform: translate3d(-50%, -50%, 0);
@@ -95,8 +95,8 @@
 
 .van-scale-enter,
 .van-scale-leave-to {
-  opacity: 0;
   transform: translate3d(-50%, -50%, 0) scale(0.7);
+  opacity: 0;
 }
 
 .van-fade-enter-active,

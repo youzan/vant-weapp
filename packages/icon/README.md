@@ -32,6 +32,8 @@
 <van-icon name="chat" info="99+" />
 ```
 
+## API
+
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -39,7 +41,7 @@
 | name | 图标名称或图片链接 | *string* | - | - |
 | info | 图标右上角文字提示 | *string \| number* | - | - |
 | color | 图标颜色 | *string* | `inherit` | - |
-| size | 图标大小，如 `20px`，`2em` | *string* | `inherit` | - |
+| size | 图标大小，如 `20px`，`2em`，默认单位为`px` | *string \| number* | `inherit` | - |
 | custom-style | 自定义样式 | *string* | - | - |
 | class-prefix | 类名前缀 | *string* | `van-icon` | - |
 

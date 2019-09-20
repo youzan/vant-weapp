@@ -18,7 +18,7 @@ VantComponent({
       value: {}
     },
     columnsNum: {
-      type: [String, Number],
+      type: null,
       value: 3
     }
   },
@@ -37,7 +37,7 @@ VantComponent({
     areaList: 'setValues',
 
     columnsNum(value: number) {
-      this.set({
+      this.setData({
         displayColumns: this.data.columns.slice(0, +value)
       });
     }

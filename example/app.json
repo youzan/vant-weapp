@@ -53,7 +53,10 @@
     "pages/datetime-picker/index",
     "pages/rate/index",
     "pages/collapse/index",
-    "pages/picker/index"
+    "pages/picker/index",
+    "pages/overlay/index",
+    "pages/circle/index",
+    "pages/grid/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -111,7 +114,11 @@
     "van-rate": "./dist/rate/index",
     "van-collapse": "./dist/collapse/index",
     "van-collapse-item": "./dist/collapse-item/index",
-    "van-picker": "./dist/picker/index"
+    "van-picker": "./dist/picker/index",
+    "van-overlay": "./dist/overlay/index",
+    "van-circle": "./dist/circle/index",
+    "van-grid": "./dist/grid/index",
+    "van-grid-item": "./dist/grid-item/index"
   },
   "sitemapLocation": "sitemap.json"
 }

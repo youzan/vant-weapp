@@ -9,6 +9,7 @@ VantComponent({
 
   props: {
     text: String,
+    color: String,
     loading: Boolean,
     disabled: Boolean,
     type: {

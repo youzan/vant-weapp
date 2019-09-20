@@ -4,13 +4,13 @@
 .van-cell {
   position: relative;
   display: flex;
+  box-sizing: border-box;
   width: 100%;
   padding: 10px 15px;
+  color: @text-color;
   font-size: 14px;
   line-height: 24px;
-  color: @text-color;
   background-color: @white;
-  box-sizing: border-box;
 
   &::after {
     .hairline-bottom(@border-color, 15px);
@@ -26,9 +26,9 @@
 
   &__label {
     margin-top: 3px;
+    color: @gray-dark;
     font-size: 12px;
     line-height: 18px;
-    color: @gray-dark;
   }
 
   &__value {
@@ -50,9 +50,9 @@
   &__left-icon-wrap,
   &__right-icon-wrap {
     display: flex;
+    align-items: center;
     height: 24px;
     font-size: 16px;
-    align-items: center;
   }
 
   &__left-icon-wrap {
@@ -83,8 +83,8 @@
     &::before {
       position: absolute;
       left: 7px;
-      font-size: 14px;
       color: @red;
+      font-size: 14px;
       content: '*';
     }
   }

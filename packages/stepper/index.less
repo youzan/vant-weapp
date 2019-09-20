@@ -7,14 +7,14 @@
   &__plus {
     position: relative;
     display: inline-block;
+    box-sizing: border-box;
     width: 28px;
     height: 28px;
-    padding: 5px;
     margin: 1px;
+    padding: 5px;
     vertical-align: middle;
     background-color: @stepper-background-color;
     border: 0;
-    box-sizing: border-box;
 
     &::before {
       width: 9px;
@@ -70,19 +70,22 @@
 
   &__input {
     display: inline-block;
-    width: 30px;
-    height: 26px;
-    padding: 1px;
+    box-sizing: border-box;
+    // 覆盖 common style 中 input 的 min-height: 1.4rem;
+    // 避免 button-size 对 input 设置的 height 不生效
+    width: 32px;
+    height: 28px;
+    min-height: 0;
     margin: 1px;
-    font-size: 14px;
+    padding: 1px;
     color: @text-color;
+    font-size: 14px;
     text-align: center;
     vertical-align: middle;
     background-color: @stepper-background-color;
     border: 0;
     border-width: 1px 0;
     border-radius: 0;
-    box-sizing: content-box;
     -webkit-appearance: none;
 
     &--disabled {

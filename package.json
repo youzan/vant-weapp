@@ -7,7 +7,7 @@
   "description": "轻量、可靠的小程序 UI 组件库",
   "scripts": {
     "dev": "node build/dev.js",
-    "lint": "eslint ./packages --ext .js,.ts",
+    "lint": "eslint ./packages --ext .js,.ts && stylelint \"packages/**/*.less\" --fix",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
@@ -23,8 +23,19 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "vant commit-lint"
     }
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint",
+      "git add"
+    ],
+    "*.{css,less}": [
+      "stylelint",
+      "git add"
+    ]
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
@@ -34,7 +45,7 @@
     "@vant/cli": "^1.0.3",
     "@vant/doc": "^2.5.5",
     "@vant/eslint-config": "^1.2.4",
-    "@vant/icons": "1.1.13",
+    "@vant/icons": "1.1.14",
     "@vant/markdown-loader": "^2.2.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",
@@ -51,10 +62,15 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "lint-staged": "^9.2.5",
     "miniprogram-api-typings": "2.7.7-2",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^1.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
     "typescript": "^3.5.3",
     "vue": "2.6.10",
     "vue-loader": "^15.7.1",

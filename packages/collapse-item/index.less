@@ -4,7 +4,7 @@
   &__title {
     .van-cell__right-icon {
       transform: rotate(90deg);
-      transition: @collapse-item-transition-duration;
+      transition: transform @collapse-item-transition-duration;
     }
 
     &--expanded {
@@ -35,9 +35,9 @@
 
   &__content {
     padding: @collapse-item-content-padding;
+    color: @collapse-item-content-text-color;
     font-size: @collapse-item-content-font-size;
     line-height: @collapse-item-content-line-height;
-    color: @collapse-item-content-text-color;
     background-color: @collapse-item-content-background-color;
   }
 }

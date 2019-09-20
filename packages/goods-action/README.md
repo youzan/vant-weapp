@@ -1,6 +1,7 @@
 # GoodsAction 商品导航
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -10,7 +11,6 @@
   "van-goods-action-button": "path/to/vant-weapp/dist/goods-action-button/index"
 }
 ```
-
 
 ## 代码演示
 
@@ -66,6 +66,22 @@ Page({
 </van-goods-action>
 ```
 
+### 自定义按钮颜色
+
+通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+
+```html
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-button text="加入购物车" type="warning" />
+  <van-goods-action-button text="立即购买" />
+</van-goods-action>
+```
+
+## API
+
 ### GoodsAction API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -98,6 +114,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | text | 按钮文字 | *string* | - | - |
+| color | 按钮颜色，支持传入 `linear-gradient` 渐变色 | *string* | - | - |
 | url | 跳转链接 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | id | 标识符 | *string* | - | - |
@@ -119,6 +136,12 @@ Page({
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click | 按钮点击事件回调 | - |
+
+### GoodsActionIcon Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| icon | 自定义图标 |
 
 ### GoodsActionIcon 外部样式类
 

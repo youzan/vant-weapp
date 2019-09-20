@@ -24,6 +24,10 @@ VantComponent({
     closeOnClickOverlay: {
       type: Boolean,
       value: true
+    },
+    closeOnClickAction: {
+      type: Boolean,
+      value: true
     }
   },
 
@@ -33,6 +37,10 @@ VantComponent({
       const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {
         this.$emit('select', item);
+
+        if (this.data.closeOnClickAction) {
+          this.onClose();
+        }
       }
     },
 
@@ -42,6 +50,11 @@ VantComponent({
 
     onClose() {
       this.$emit('close');
+    },
+
+    onClickOverlay() {
+      this.$emit('click-overlay');
+      this.onClose();
     }
   }
 });

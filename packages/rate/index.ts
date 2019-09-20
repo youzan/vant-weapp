@@ -44,6 +44,10 @@ VantComponent({
       type: null,
       observer: 'setGutterWithUnit'
     },
+    touchable: {
+      type: Boolean,
+      value: true
+    }
   },
 
   data: {
@@ -55,20 +59,20 @@ VantComponent({
   watch: {
     value(value: number) {
       if (value !== this.data.innerValue) {
-        this.set({ innerValue: value });
+        this.setData({ innerValue: value });
       }
     }
   },
 
   methods: {
     setSizeWithUnit(val) {
-      this.set({
+      this.setData({
         sizeWithUnit: addUnit(val)
       });
     },
 
     setGutterWithUnit(val) {
-      this.set({
+      this.setData({
         gutterWithUnit: addUnit(val)
       });
     },
@@ -77,13 +81,16 @@ VantComponent({
       const { data } = this;
       const { score } = event.currentTarget.dataset;
       if (!data.disabled && !data.readonly) {
-        this.set({ innerValue: score + 1 });
+        this.setData({ innerValue: score + 1 });
         this.$emit('input', score + 1);
         this.$emit('change', score + 1);
       }
     },
 
     onTouchMove(event: Weapp.TouchEvent) {
+      const { touchable } = this.data;
+      if (!touchable) return;
+
       const { clientX, clientY } = event.touches[0];
 
       this.getRect('.van-rate__icon', true).then(

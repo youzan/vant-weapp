@@ -4,19 +4,19 @@
   position: absolute;
   top: -@info-size / 2;
   right: 0;
+  box-sizing: border-box;
   min-width: @info-size;
   padding: @info-padding;
-  font-family: @info-font-family;
-  font-size: @info-font-size;
-  font-weight: @info-font-weight;
-  line-height: @info-size - @info-border-width * 2;
   color: @info-color;
-  text-align: center;
+  font-weight: @info-font-weight;
+  font-size: @info-font-size;
+  font-family: @info-font-family;
+  line-height: @info-size - @info-border-width * 2;
   white-space: nowrap;
+  text-align: center;
   background-color: @info-background-color;
   border: @info-border-width solid @white;
   border-radius: @info-size;
   transform: translateX(50%);
-  box-sizing: border-box;
   transform-origin: 100%;
 }

@@ -33,7 +33,7 @@ VantComponent({
         ? `margin-right: ${margin}; margin-left: ${margin};`
         : '';
 
-      this.set({ style });
+      this.setData({ style });
       this.getRelationNodes('../col/index').forEach(col => {
         col.setGutter(this.data.gutter);
       });

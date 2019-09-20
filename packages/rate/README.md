@@ -1,6 +1,7 @@
 # Rate 评分
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -55,6 +56,7 @@ Page({
 ```
 
 ### 半星
+
 ```html
 <van-rate
   value="{{ value }}"
@@ -97,6 +99,8 @@ Page({
 />
 ```
 
+## API
+
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -114,6 +118,7 @@ Page({
 | readonly | 是否为只读状态 | *boolean* | `false` | - |
 | disabled | 是否禁用评分 | *boolean* | `false` | - |
 | disabled-color | 禁用时的颜色 | *string* | `#bdbdbd` | - |
+| touchable | 是否可以通过滑动手势选择评分 | *boolean* | `true` | - |
 
 ### Events
 

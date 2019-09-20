@@ -10,9 +10,9 @@
 
   &__tip {
     padding: @submit-bar-tip-padding;
+    color: @submit-bar-tip-color;
     font-size: @submit-bar-tip-font-size;
     line-height: @submit-bar-tip-line-height;
-    color: @submit-bar-tip-color;
     background-color: @submit-bar-tip-background-color;
 
     &:empty {
@@ -34,11 +34,11 @@
 
   &__bar {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
     height: @submit-bar-height;
     font-size: @submit-bar-text-font-size;
     background-color: @submit-bar-background-color;
-    align-items: center;
-    justify-content: flex-end;
 
     &--safe {
       padding-bottom: @safe-area-inset-bottom;
@@ -46,16 +46,16 @@
   }
 
   &__text {
-    padding-right: 12px;
-    font-weight: 500;
-    color: @submit-bar-text-color;
     flex: 1;
+    padding-right: 12px;
+    color: @submit-bar-text-color;
+    font-weight: 500;
     text-align: right;
   }
 
   &__price {
-    font-size: @submit-bar-price-font-size;
     color: @submit-bar-price-color;
+    font-size: @submit-bar-price-font-size;
   }
 
   &__currency {

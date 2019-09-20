@@ -1,6 +1,7 @@
 # Tabbar 标签栏
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
@@ -141,6 +142,8 @@ Page({
 ### 结合自定义 tabBar
 
 请参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) 与 [代码片段](https://developers.weixin.qq.com/s/FjLU4mmp7r9s)
+
+## API
 
 ### Tabbar API
 

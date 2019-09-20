@@ -10,7 +10,6 @@
 }
 ```
 
-
 ## 代码演示
 
 ### Circular
@@ -26,6 +25,8 @@
 <van-loading type="spinner" />
 <van-loading type="spinner" color="#fff" />
 ```
+
+## API
 
 ### Props
 

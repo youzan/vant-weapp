@@ -8,15 +8,15 @@
   >
     <slot />
   </view>
-  <view class="van-radio__icon-wrap" bindtap="onChange">
+  <view class="van-radio__icon-wrap" style="font-size: {{ iconSizeWithUnit }};" bindtap="onChange">
     <slot wx:if="{{ useIconSlot }}" name="icon" />
     <van-icon
       wx:else
       name="success"
       class="{{ utils.bem('radio__icon', [shape, { disabled, checked: value === name }]) }}"
-      style="{{ checkedColor && !disabled && value === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}"
+      style="{{ checkedColor && !disabled && value === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor + ';' : '' }}"
       custom-class="icon-class"
-      custom-style="line-height: 20px;"
+      custom-style="line-height: {{ iconSizeWithUnit }};font-size: .8em;display: block;"
     />
   </view>
   <view

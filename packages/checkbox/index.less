@@ -16,14 +16,15 @@
 
   &__icon {
     display: block;
-    width: @checkbox-size;
-    height: @checkbox-size;
-    font-size: 14px;
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
     color: transparent;
+    font-size: @checkbox-size;
     text-align: center;
     border: 1px solid @checkbox-border-color;
-    box-sizing: border-box;
-    transition: @checkbox-transition-duration;
+    transition-duration: @checkbox-transition-duration;
+    transition-property: color, border-color, background-color;
 
     &--round {
       border-radius: 100%;

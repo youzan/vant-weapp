@@ -2,20 +2,20 @@
 
 .van-slider {
   position: relative;
-  border-radius: 999px;
   background-color: @gray-light;
+  border-radius: 999px;
 
   &__bar {
     position: relative;
-    border-radius: inherit;
     background-color: @blue;
+    border-radius: inherit;
   }
 
   &__button {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
     background-color: @white;
+    border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
 
     &-wrapper {
@@ -23,15 +23,15 @@
       top: 50%;
       right: 0;
       transform: translate3d(50%, -50%, 0);
-  
+
       /* use pseudo element to expand touch area */
       &::after {
-        content: '';
         position: absolute;
-        width: 200%;
-        height: 200%;
         top: -50%;
         left: -50%;
+        width: 200%;
+        height: 200%;
+        content: '';
       }
     }
   }

@@ -14,6 +14,7 @@
 ## 代码演示
 
 ### 基础用法
+
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
@@ -34,16 +35,12 @@ Page({
         name: '选项'
       },
       {
-        name: '分享',
+        name: '选项'
+      },
+      {
+        name: '选项',
         subname: '描述信息',
         openType: 'share'
-      },
-      {
-        loading: true
-      },
-      {
-        name: '禁用选项',
-        disabled: true
       }
     ]
   },
@@ -58,28 +55,52 @@ Page({
 });
 ```
 
-### 带取消按钮的 ActionSheet
+### 选项状态
 
-如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`ActionSheet`关闭。
+选项可以设置为加载状态或禁用状态。
 
 ```html
 <van-action-sheet
   show="{{ show }}"
   actions="{{ actions }}"
   cancel-text="取消"
-  bind:close="onClose"
+/>
+```
+```javascript
+Page({
+  data: {
+    actions: [
+      { name: '选项'},
+      { loading: true },
+      { name: '禁用选项', disabled: true }
+    ]
+  }
+})
+```
+
+### 展示取消按钮
+
+设置cancelText属性后，会在底部展示取消按钮，点击后关闭当前菜单
+
+```html
+<van-action-sheet 
+  show="{{ show }}" 
+  actions="{{ actions }}"
+  cancel-text="取消"
 />
 ```
 
-### 带标题的 ActionSheet
+### 展示标题栏
 
-如果传入了`title`属性，且不为空，则另外一种样式的`ActionSheet`，里面内容需要自定义。
+设置cancelText属性后，会在底部展示取消按钮，点击后关闭当前菜单
 
 ```html
-<van-action-sheet show="{{ show }}" title="支持以下配送方式">
-  <view>一些内容</view>
-</van-action-sheet>
+<van-action-sheet show="{{ show }}" title="标题">
+  <view>内容</view>
+<van-action-sheet/>
 ```
+
+## API
 
 ### Props
 
@@ -91,6 +112,7 @@ Page({
 | cancel-text | 取消按钮文字 | *string* | - | - |
 | overlay | 是否显示遮罩层 | *boolean* | - | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - | - |
+| close-on-click-action | 是否在点击选项后关闭 | *boolean* | `true` | - |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
 
 ### Events
@@ -100,6 +122,7 @@ Page({
 | bind:select | 选中选项时触发，禁用或加载状态下不会触发 | event.detail: 选项对应的对象 |
 | bind:close | 关闭时触发 | - |
 | bind:cancel | 取消按钮点击时触发 | - |
+| bind:click-overlay | 点击遮罩层时触发 | - |
 
 ### actions
 

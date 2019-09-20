@@ -42,26 +42,6 @@ VantComponent({
     });
   },
 
-  computed: {
-    count() {
-      return this.data.options.length;
-    },
-
-    baseOffset() {
-      const { data } = this;
-      return (data.itemHeight * (data.visibleItemCount - 1)) / 2;
-    },
-
-    wrapperStyle() {
-      const { data } = this;
-      return [
-        `transition: ${data.duration}ms`,
-        `transform: translate3d(0, ${data.offset + data.baseOffset}px, 0)`,
-        `line-height: ${data.itemHeight}px`
-      ].join('; ');
-    }
-  },
-
   watch: {
     defaultIndex(value: number) {
       this.setIndex(value);
@@ -69,8 +49,12 @@ VantComponent({
   },
 
   methods: {
+    getCount() {
+      return this.data.options.length;
+    },
+
     onTouchStart(event: Weapp.TouchEvent) {
-      this.set({
+      this.setData({
         startY: event.touches[0].clientY,
         startOffset: this.data.offset,
         duration: 0
@@ -80,10 +64,10 @@ VantComponent({
     onTouchMove(event: Weapp.TouchEvent) {
       const { data } = this;
       const deltaY = event.touches[0].clientY - data.startY;
-      this.set({
+      this.setData({
         offset: range(
           data.startOffset + deltaY,
-          -(data.count * data.itemHeight),
+          -(this.getCount() * data.itemHeight),
           data.itemHeight
         )
       });
@@ -92,13 +76,12 @@ VantComponent({
     onTouchEnd() {
       const { data } = this;
       if (data.offset !== data.startOffset) {
-        this.set({
-          duration: DEFAULT_DURATION
-        });
+        this.setData({ duration: DEFAULT_DURATION });
+
         const index = range(
           Math.round(-data.offset / data.itemHeight),
           0,
-          data.count - 1
+          this.getCount() - 1
         );
         this.setIndex(index, true);
       }
@@ -111,8 +94,10 @@ VantComponent({
 
     adjustIndex(index: number) {
       const { data } = this;
-      index = range(index, 0, data.count);
-      for (let i = index; i < data.count; i++) {
+      const count = this.getCount();
+
+      index = range(index, 0, count);
+      for (let i = index; i < count; i++) {
         if (!this.isDisabled(data.options[i])) return i;
       }
       for (let i = index - 1; i >= 0; i--) {

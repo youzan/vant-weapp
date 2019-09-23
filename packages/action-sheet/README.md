@@ -110,6 +110,7 @@ Page({
 | title | 标题 | *string* | - | - |
 | z-index | z-index 层级 | *number* | `100` | - |
 | cancel-text | 取消按钮文字 | *string* | - | - |
+| round | 是否显示圆角 | *boolean* | `true` | 1.0.0 |
 | overlay | 是否显示遮罩层 | *boolean* | - | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - | - |
 | close-on-click-action | 是否在点击选项后关闭 | *boolean* | `true` | - |

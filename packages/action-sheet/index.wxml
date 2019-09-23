@@ -3,6 +3,7 @@
 <van-popup
   show="{{ show }}"
   position="bottom"
+  round="{{ round }}"
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   custom-class="van-action-sheet"

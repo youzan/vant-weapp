@@ -9,6 +9,10 @@ VantComponent({
     show: Boolean,
     title: String,
     cancelText: String,
+    round: {
+      type: Boolean,
+      value: true
+    },
     zIndex: {
       type: Number,
       value: 100

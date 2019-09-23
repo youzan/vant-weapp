@@ -25,6 +25,7 @@
       wx:for="{{ actions }}"
       wx:key="index"
       open-type="{{ item.openType }}"
+      style="{{ item.color ? 'color: ' + item.color : '' }}"
       class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} van-hairline--top {{ item.className || '' }}"
       hover-class="van-action-sheet__item--hover"
       data-index="{{ index }}"

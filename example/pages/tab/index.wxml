@@ -3,10 +3,25 @@
     <van-tab
       wx:for="1234"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
+<demo-block title="通过名称匹配">
+  <van-tabs active="a">
+    <van-tab
+      wx:for="{{ tabsWithName }}"
+      wx:key="index"
+      name="{{ item.name }}"
+      title="{{ '标签 ' + item.index }}"
+    >
+      <view class="content">
+        {{ '内容' + item.index}}
       </view>
     </van-tab>
   </van-tabs>
@@ -17,7 +32,7 @@
     <van-tab
       wx:for="123456"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
@@ -32,7 +47,7 @@
       wx:for="123"
       wx:key="index"
       disabled="{{ index === 1 }}"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
@@ -46,7 +61,7 @@
     <van-tab
       wx:for="123"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content-2">
         {{ '内容' + item }}
@@ -60,7 +75,7 @@
     <van-tab
       wx:for="12"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
@@ -74,7 +89,7 @@
     <van-tab
       wx:for="1234"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
@@ -88,7 +103,7 @@
     <van-tab
       wx:for="1234"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
@@ -102,7 +117,7 @@
     <van-tab
       wx:for="1234"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
     >
       <view class="content">
         {{ '内容' + item }}
@@ -122,7 +137,7 @@
     <van-tab
       wx:for="1234"
       wx:key="index"
-      title="{{ '标签' + item }}"
+      title="{{ '标签 ' + item }}"
       dot="{{ index === 1 }}"
       info="{{ index === 2 ? 99 : null }}"
     >

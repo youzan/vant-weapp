@@ -11,7 +11,11 @@ VantComponent({
     info: null,
     title: String,
     disabled: Boolean,
-    titleStyle: String
+    titleStyle: String,
+    name: {
+      type: [Number, String],
+      value: ''
+    }
   },
 
   data: {
@@ -30,6 +34,10 @@ VantComponent({
   },
 
   methods: {
+    setComputedName() {
+      this.computedName = this.data.name || this.index;
+    },
+
     update() {
       const parent = this.getRelationNodes('../tabs/index')[0];
       if (parent) {

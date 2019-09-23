@@ -3,19 +3,24 @@ import Page from '../../common/page';
 Page({
   data: {
     tabs: [1, 2, 3, 4],
-    tabsMore: [1, 2, 3, 4, 5, 6, 7, 8]
+    tabsMore: [1, 2, 3, 4, 5, 6, 7, 8],
+    tabsWithName: [
+      { name: 'a', index: 1 },
+      { name: 'b', index: 2 },
+      { name: 'c', index: 3 }
+    ]
   },
 
   onClickDisabled(event) {
     wx.showToast({
-      title: `标签 ${event.detail.index + 1} 已被禁用`,
+      title: `标签 ${event.detail.name} 已被禁用`,
       icon: 'none'
     });
   },
 
   onChange(event) {
     wx.showToast({
-      title: `切换到标签 ${event.detail.index + 1}`,
+      title: `切换到标签 ${event.detail.name}`,
       icon: 'none'
     });
   },
@@ -29,7 +34,7 @@ Page({
 
   onClick(event) {
     wx.showToast({
-      title: `点击标签 ${event.detail.index + 1}`,
+      title: `点击标签 ${event.detail.name}`,
       icon: 'none'
     });
   }

@@ -51,11 +51,11 @@ VantComponent({
     animated: Boolean,
     swipeable: Boolean,
     lineWidth: {
-      type: Number,
+      type: [String, Number],
       value: -1
     },
     lineHeight: {
-      type: Number,
+      type: [String, Number],
       value: -1
     },
     active: {

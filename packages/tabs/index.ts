@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
-import { nextTick, isDef } from '../common/utils';
+import { nextTick, isDef, addUnit } from '../common/utils';
 
 type TabItemData = {
   width?: number
@@ -183,7 +183,7 @@ VantComponent({
         (rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const rect = rects[currentIndex];
           const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
-          const height = lineHeight !== -1 ? `height: ${lineHeight}px; border-radius: ${lineHeight}px;` : '';
+          const height = lineHeight !== -1 ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};` : '';
 
           let left = rects
             .slice(0, currentIndex)
@@ -198,7 +198,7 @@ VantComponent({
           this.setData({
             lineStyle: `
             ${height}
-            width: ${width}px;
+            width: ${addUnit(width)};
             background-color: ${color};
             -webkit-transform: translateX(${left}px);
             transform: translateX(${left}px);

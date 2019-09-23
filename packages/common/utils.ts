@@ -8,7 +8,7 @@ export function isObj(x: any): boolean {
 }
 
 export function isNumber(value) {
-  return /^\d+$/.test(value);
+  return /^\d+(\.\d+)?$/.test(value);
 }
 
 export function range(num: number, min: number, max: number) {

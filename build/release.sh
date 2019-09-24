@@ -24,7 +24,13 @@ then
   # publish
   git push origin master
   git push origin refs/tags/v$VERSION
-  npm publish
+
+  if [[ $VERSION =~ [beta] ]]
+  then
+    npm publish --tag beta
+  else 
+    npm publish
+  fi
 
   # sync dev
   git checkout dev

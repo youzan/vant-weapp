@@ -91,7 +91,7 @@ VantComponent({
       const { touchable } = this.data;
       if (!touchable) return;
 
-      const { clientX, clientY } = event.touches[0];
+      const { clientX } = event.touches[0];
 
       this.getRect('.van-rate__icon', true).then(
         (list: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
@@ -100,9 +100,7 @@ VantComponent({
             .find(
               item =>
                 clientX >= item.left &&
-                clientX <= item.right &&
-                clientY >= item.top &&
-                clientY <= item.bottom
+                clientX <= item.right
             );
           if (target != null) {
             this.onSelect({

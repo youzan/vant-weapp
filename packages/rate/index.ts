@@ -97,11 +97,7 @@ VantComponent({
         (list: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const target = list
             .sort(item => item.right - item.left)
-            .find(
-              item =>
-                clientX >= item.left &&
-                clientX <= item.right
-            );
+            .find(item => clientX >= item.left && clientX <= item.right);
           if (target != null) {
             this.onSelect({
               ...event,

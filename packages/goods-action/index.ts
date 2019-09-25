@@ -1,8 +1,6 @@
 import { VantComponent } from '../common/component';
-import { safeArea } from '../mixins/safe-area';
 
 VantComponent({
-  mixins: [safeArea()],
   relation: {
     type: 'descendant',
     name: 'goods-action-button',
@@ -15,5 +13,11 @@ VantComponent({
   },
   beforeCreate() {
     this.children = [];
+  },
+  props: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
+    }
   }
 });

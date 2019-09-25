@@ -64,6 +64,14 @@ Page({
 <van-stepper value="{{ 1 }}" disabled />
 ```
 
+### 固定小数位数
+
+通过设置`decimal-length`属性可以保留固定的小数位数
+
+```html
+<van-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
+```
+
 ### 异步变更
 
 如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
@@ -116,6 +124,7 @@ Page({
 | button-size | 按钮大小，默认单位为 `px`，输入框高度会和按钮大小保持一致 | *string \| number* | `28px` | - |
 | show-plus | 是否显示增加按钮 | *boolean* | `true` | - |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` | - |
+| decimal-length | 固定显示的小数位数 | *number* | - | - |
 
 ### Events
 

@@ -7,10 +7,6 @@ Page({
     active3: 0
   },
 
-  onShow() {
-    this.getTabBar().init();
-  },
-
   onChange(event) {
     const { key } = event.currentTarget.dataset;
     this.setData({ [key]: event.detail });

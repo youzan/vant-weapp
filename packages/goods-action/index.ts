@@ -1,6 +1,10 @@
 import { VantComponent } from '../common/component';
-import { safeArea } from '../mixins/safe-area';
 
 VantComponent({
-  mixins: [safeArea()]
+  props: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
+    }
+  }
 });

@@ -10,8 +10,8 @@
 />
 <view
   wx:if="{{ inited }}"
-  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safe: isIPhoneX && safeAreaInsetBottom }]) }}"
-  style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }} {{ customStyle }}"
+  class="custom-class {{ classes }} {{ utils.bem('popup', [position, { round, safe: safeAreaInsetBottom, safeTop: safeAreaInsetTop }]) }}"
+  style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }};{{ customStyle }}"
   bind:transitionend="onTransitionEnd"
 >
   <slot />

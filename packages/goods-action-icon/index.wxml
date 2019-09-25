@@ -22,7 +22,7 @@
   bindgetphonenumber="bindGetPhoneNumber"
   bindlaunchapp="bindLaunchApp"
 >
-  <view class="van-goods-action-icon__content van-hairline--right">
+  <view class="van-goods-action-icon__content">
     <van-icon
       wx:if="{{ icon }}"
       size="20px"

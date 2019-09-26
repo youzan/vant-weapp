@@ -60,7 +60,7 @@ VantComponent({
     },
     active: {
       type: [String, Number],
-      value: -1,
+      value: 0,
     },
     type: {
       type: String,
@@ -239,7 +239,7 @@ VantComponent({
 
     setActiveTab() {
       if (!isDef(this.currentName)) {
-        this.currentName = this.data.active === -1 ? this.children[0].computedName : this.data.active;
+        this.currentName = this.data.active || this.children[0].computedName;
       }
 
       this.children.forEach((item: WechatMiniprogram.Component.TrivialInstance, index: number) => {

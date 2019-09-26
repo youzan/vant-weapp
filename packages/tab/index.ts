@@ -14,7 +14,8 @@ VantComponent({
     titleStyle: String,
     name: {
       type: [Number, String],
-      value: ''
+      value: '',
+      observer: 'setComputedName'
     }
   },
 

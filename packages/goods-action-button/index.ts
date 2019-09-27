@@ -38,14 +38,17 @@ VantComponent({
       const { children = [] }= parent;
       const index = children.indexOf(this);
       const length = children.length;
-      let customClass = '';
-      if( index === 0 ) {
-        customClass += 'first';
+      let isFirst = false, isLast = false;
+      if ( index === 0 ) {
+        isFirst = true;
       }
       if (index === length - 1) {
-        customClass += ' last';
+        isLast = true;
       }
-      this.setData({  customClass });
+      this.setData({
+        isFirst,
+        isLast
+      });
     }
   }
 });

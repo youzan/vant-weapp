@@ -38,8 +38,8 @@ VantComponent({
       const { children = [] } = parent;
       const index = children.indexOf(this);
       const { length } = children;
-      let isFirst = false; let
-        isLast = false;
+      let isFirst = false;
+      let isLast = false;
       if (index === 0) {
         isFirst = true;
       }

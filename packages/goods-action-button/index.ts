@@ -24,7 +24,7 @@ VantComponent({
     }
   },
 
-  mounted: function() {
+  mounted() {
     this.updateStyle();
   },
 
@@ -34,12 +34,13 @@ VantComponent({
       this.jumpLink();
     },
     updateStyle() {
-      const parent = this.parent;
+      const { parent } = this;
       const { children = [] } = parent;
       const index = children.indexOf(this);
-      const length = children.length;
-      let isFirst = false, isLast = false;
-      if ( index === 0 ) {
+      const { length } = children;
+      let isFirst = false;
+      let isLast = false;
+      if (index === 0) {
         isFirst = true;
       }
       if (index === length - 1) {

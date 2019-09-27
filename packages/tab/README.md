@@ -15,7 +15,7 @@
 
 ### 基础用法
 
-默认情况下启用第一个标签，可以通过`active`设定当前激活的标签索引，在回调参数的`event.detail`中可以取得被点击标签的标题和索引
+通过`active`设定当前激活标签对应的索引值，默认情况下启用第一个标签
 
 ```html
 <van-tabs active="{{ active }}" bind:change="onChange">
@@ -34,11 +34,23 @@ Page({
 
   onChange(event) {
     wx.showToast({
-      title: `切换到标签 ${event.detail.index + 1}`,
+      title: `切换到标签 ${event.detail.name}`,
       icon: 'none'
     });
   }
 });
+```
+
+### 通过名称匹配
+
+在标签指定`name`属性的情况下，`active`的值为当前标签的`name`，默认启用第一个标签
+
+```html
+<van-tabs active="a">
+  <van-tab title="标签 1" name="a">内容 1</van-tab>
+  <van-tab title="标签 2" name="b">内容 2</van-tab>
+  <van-tab title="标签 3" name="c">内容 3</van-tab>
+</van-tabs>
 ```
 
 ### 横向滚动
@@ -72,7 +84,7 @@ Page({
 Page({
   onClickDisabled(event) {
     wx.showToast({
-      title: `标签 ${event.detail.index + 1} 已被禁用`,
+      title: `标签 ${event.detail.name} 已被禁用`,
       icon: 'none'
     });
   }
@@ -93,7 +105,7 @@ Page({
 
 ### 点击事件
 
-可以在`van-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和索引
+可以在`van-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和标识符
 
 ```html
 <van-tabs bind:click="onClick">
@@ -106,7 +118,7 @@ Page({
 Page({
   onClick(event) {
     wx.showToast({
-      title: `点击标签 ${event.detail.index + 1}`,
+      title: `点击标签 ${event.detail.name}`,
       icon: 'none'
     });
   }
@@ -158,13 +170,14 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
-| active | 当前激活标签的索引 | *number* | `0` | - |
+| active | 当前选中标签的标识符 | *string \| number* | `0` | - |
 | color | 标签颜色 | *string* | `#ee0a24` | - |
 | z-index | z-index 层级 | *number* | `1` | - |
 | type | 样式风格，可选值为`card` | *string* | `line` | - |
 | border | 是否展示外边框，仅在`line`风格下生效 | *boolean* | `true` | - |
 | duration | 动画时间 (单位秒)  | *number* | `0.3` | - |
-| line-width | 底部条宽度 (px) | *number* | 与当前标签等宽 | - |
+| line-width | 底部条宽度 (px) | *string \| number* | 与当前标签等宽 | - |
+| line-height | 底部条高度 (px) | *string \| number* | `3px` | - |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | *number* | `4` | - |
 | animated | 是否使用动画切换 Tabs | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
@@ -174,6 +187,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
+| name | 标签名称，作为匹配的标识符 | *string \| number* | 标签的索引值 | - |
 | title | 标题 | *string* | - | - |
 | disabled | 是否禁用标签 | *boolean* | `false` | - |
 | dot | 是否显示小红点 | *boolean* | - | - |
@@ -197,9 +211,9 @@ Page({
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:click | 点击标签时触发 | index：标签索引，title：标题 |
-| bind:change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |
-| bind:disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
+| bind:click | 点击标签时触发 | name：标签标识符，title：标题 |
+| bind:change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
+| bind:disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
 | bind:scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### 外部样式类

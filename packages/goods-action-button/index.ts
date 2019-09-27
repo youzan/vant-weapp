@@ -35,7 +35,7 @@ VantComponent({
     },
     updateStyle() {
       const parent = this.parent;
-      const { children = [] }= parent;
+      const { children = [] } = parent;
       const index = children.indexOf(this);
       const length = children.length;
       let isFirst = false, isLast = false;

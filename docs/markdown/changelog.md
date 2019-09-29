@@ -1,5 +1,58 @@
 # 更新日志
 
+### [v1.0.0-beta.1](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.1)
+
+#### 主要变动
+
+- 使用`env()`重构iOS安全区域适配
+- 增加多个 API
+
+#### 新特性
+
+##### Tab
+
+- 新增`name`属性
+- 新增`line-height`属性
+- `line-width`属性支持`String`类型
+
+##### Popup
+
+- 调整圆角为`20px`
+
+##### Stepper
+
+- 新增`decimalLength`属性
+
+##### SwipeCell
+
+- 支持打开状态互斥
+
+##### Button
+
+- 切换`disabled`时增加过渡效果
+
+##### GoodsActionButton
+
+- 样式升级为圆角风格
+
+##### GoodsActionIcon
+
+- 新增`dot`属性
+
+##### ActionSheet
+
+- 新增`color`属性
+- 新增`round`属性
+
+##### GridItem
+
+- 新增`info`属性
+- 新增`dot`属性
+
+##### Rate
+
+- 优化手势判断
+
 ### [v1.0.0-beta.0](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.0)
 
 #### 主要变动

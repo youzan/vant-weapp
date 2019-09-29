@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 const THRESHOLD = 0.3;
+let ARRAY = [];
 VantComponent({
     props: {
         disabled: Boolean,
@@ -24,6 +25,10 @@ VantComponent({
     },
     created() {
         this.offset = 0;
+        ARRAY.push(this);
+    },
+    destroyed() {
+        ARRAY = ARRAY.filter(item => item !== this);
     },
     methods: {
         open(position) {
@@ -67,6 +72,11 @@ VantComponent({
             if (this.data.disabled) {
                 return;
             }
+            ARRAY.forEach(item => {
+                if (item !== this) {
+                    item.close();
+                }
+            });
             this.draging = true;
             this.startOffset = this.offset;
             this.firstDirection = '';

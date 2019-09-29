@@ -1,8 +1,6 @@
 import { VantComponent } from '../common/component';
 import { WHITE } from '../common/color';
-import { safeArea } from '../mixins/safe-area';
 VantComponent({
-    mixins: [safeArea()],
     props: {
         message: String,
         background: String,
@@ -21,6 +19,10 @@ VantComponent({
         zIndex: {
             type: Number,
             value: 110
+        },
+        safeAreaInsetTop: {
+            type: Boolean,
+            value: false
         }
     },
     methods: {

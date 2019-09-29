@@ -1,7 +1,5 @@
 import { VantComponent } from '../common/component';
-import { safeArea } from '../mixins/safe-area';
 VantComponent({
-    mixins: [safeArea()],
     classes: [
         'bar-class',
         'price-class',
@@ -35,7 +33,11 @@ VantComponent({
             value: 2,
             observer: 'updatePrice'
         },
-        suffixLabel: String
+        suffixLabel: String,
+        safeAreaInsetBottom: {
+            type: Boolean,
+            value: true
+        }
     },
     methods: {
         updatePrice() {

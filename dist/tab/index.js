@@ -9,7 +9,12 @@ VantComponent({
         info: null,
         title: String,
         disabled: Boolean,
-        titleStyle: String
+        titleStyle: String,
+        name: {
+            type: [Number, String],
+            value: '',
+            observer: 'setComputedName'
+        }
     },
     data: {
         width: null,
@@ -25,6 +30,9 @@ VantComponent({
         titleStyle: 'update'
     },
     methods: {
+        setComputedName() {
+            this.computedName = this.data.name || this.index;
+        },
         update() {
             const parent = this.getRelationNodes('../tabs/index')[0];
             if (parent) {

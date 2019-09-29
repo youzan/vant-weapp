@@ -81,14 +81,11 @@ VantComponent({
             const { touchable } = this.data;
             if (!touchable)
                 return;
-            const { clientX, clientY } = event.touches[0];
+            const { clientX } = event.touches[0];
             this.getRect('.van-rate__icon', true).then((list) => {
                 const target = list
                     .sort(item => item.right - item.left)
-                    .find(item => clientX >= item.left &&
-                    clientX <= item.right &&
-                    clientY >= item.top &&
-                    clientY <= item.bottom);
+                    .find(item => clientX >= item.left && clientX <= item.right);
                 if (target != null) {
                     this.onSelect(Object.assign(Object.assign({}, event), { currentTarget: target }));
                 }

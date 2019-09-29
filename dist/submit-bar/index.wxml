@@ -16,7 +16,7 @@
     <slot name="tip" />
   </view>
 
-  <view class="bar-class {{ utils.bem('submit-bar__bar', { safe: safeAreaInsetBottom && isIPhoneX }) }}">
+  <view class="bar-class {{ utils.bem('submit-bar__bar', { safe: safeAreaInsetBottom }) }}">
     <slot />
     <view wx:if="{{ hasPrice }}" class="van-submit-bar__text">
       <text>{{ label || '合计：' }}</text>

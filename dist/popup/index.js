@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { transition } from '../mixins/transition';
-import { safeArea } from '../mixins/safe-area';
 VantComponent({
     classes: [
         'enter-class',
@@ -10,7 +9,7 @@ VantComponent({
         'leave-active-class',
         'leave-to-class'
     ],
-    mixins: [transition(false), safeArea()],
+    mixins: [transition(false)],
     props: {
         round: Boolean,
         closeable: Boolean,
@@ -44,6 +43,14 @@ VantComponent({
             type: String,
             value: 'center',
             observer: 'observeClass'
+        },
+        safeAreaInsetBottom: {
+            type: Boolean,
+            value: true
+        },
+        safeAreaInsetTop: {
+            type: Boolean,
+            value: false
         }
     },
     created() {

@@ -6,7 +6,7 @@ export function isObj(x) {
     return x !== null && (type === 'object' || type === 'function');
 }
 export function isNumber(value) {
-    return /^\d+$/.test(value);
+    return /^\d+(\.\d+)?$/.test(value);
 }
 export function range(num, min, max) {
     return Math.min(Math.max(num, min), max);

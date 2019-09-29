@@ -1,7 +1,5 @@
 import { VantComponent } from '../common/component';
-import { safeArea } from '../mixins/safe-area';
 VantComponent({
-    mixins: [safeArea({ safeAreaInsetTop: true })],
     classes: ['title-class'],
     props: {
         title: String,
@@ -15,8 +13,12 @@ VantComponent({
         },
         zIndex: {
             type: Number,
-            value: 120
-        }
+            value: 1
+        },
+        safeAreaInsetTop: {
+            type: Boolean,
+            value: true
+        },
     },
     methods: {
         onClickLeft() {

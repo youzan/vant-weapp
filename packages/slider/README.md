@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -104,6 +104,8 @@ Page({
 |-----------|-----------|-----------|
 | bind:drag | 拖动进度条时触发 | event.detail.value: 当前进度 |
 | bind:change | 进度值改变后触发 | event.detail: 当前进度 |
+| bind:drag-start | 开始拖动时触发 | - |
+| bind:drag-end | 结束拖动时触发 | - |
 
 ### 外部样式类
 

@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
+import { addUnit, isDef } from '../common/utils';
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
@@ -18,6 +18,7 @@ VantComponent({
     buttonSize: null,
     asyncChange: Boolean,
     disableInput: Boolean,
+    decimalLength: Number,
     min: {
       type: null,
       value: 1
@@ -101,7 +102,17 @@ VantComponent({
     // limit value range
     range(value) {
       value = String(value).replace(/[^0-9.-]/g, '');
-      return Math.max(Math.min(this.data.max, value), this.data.min);
+
+      // format range
+      value = value === '' ? 0 : +value;
+      value = Math.max(Math.min(this.data.max, value), this.data.min);
+
+      // format decimal
+      if (isDef(this.data.decimalLength)) {
+        value = value.toFixed(this.data.decimalLength);
+      }
+
+      return value;
     },
 
     onInput(event: Weapp.Event) {
@@ -117,7 +128,13 @@ VantComponent({
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
-      const value = Math.round((+this.data.value + diff) * 100) / 100;
+
+      let value = +this.data.value + diff;
+
+      if (!isDef(this.data.decimalLength)) {
+        value = Math.round(value * 100) / 100;
+      }
+
       this.triggerInput(this.range(value));
       this.$emit(type);
     },

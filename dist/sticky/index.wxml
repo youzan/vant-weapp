@@ -1,0 +1,5 @@
+<view class="custom-class van-sticky" style="z-index: {{ zIndex }}; {{ containerStyle }}">
+  <view class="van-sticky-wrap" style="{{ wrapStyle }}">
+    <slot />
+  </view>
+</view>

@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -61,6 +61,7 @@
 | value | 当前输入的值 | *string \| number* | - | - |
 | background | 搜索框背景色 | *string* | `#f2f2f2` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | *boolean* | `false` | - |
+| action-text | 取消按钮文字 | *boolean* | `取消` | 1.0.0 |
 | focus | 获取焦点 | *boolean* | `false` | - |
 | error | 是否将输入内容标红 | *boolean* | `false` | - |
 | disabled | 是否禁用输入框 | *boolean* | `false` | - |
@@ -71,6 +72,10 @@
 | placeholder | 输入框为空时占位符 | *string* | - | - |
 | placeholder-style | 指定占位符的样式 | *string* | - | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
+| use-left-icon-slot | 是否使用输入框左侧图标 slot | *boolean* | `false` | - |
+| use-right-icon-slot | 是否使用输入框右侧图标 slot | *boolean* | `false` | - |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件（如果设置了use-left-icon-slot，则该属性无效） | *string* | `search` | - |
+| right-icon | 输入框右侧图标名称或图片链接，可选值见 Icon 组件（如果设置了use-right-icon-slot，则该属性无效） | *string* | - | - |
 
 ### Events
 
@@ -89,6 +94,8 @@
 |-----------|-----------|
 | action | 自定义搜索框右侧按钮，需要在`use-action-slot`为 true 时才会显示 |
 | label | 自定义搜索框左侧文本 |
+| left-icon | 自定义输入框左侧图标，需要在`use-left-icon-slot`为 true 时才会显示  |
+| right-icon | 自定义输入框右侧图标，需要在`use-right-icon-slot`为 true 时才会显示  |
 
 ### 外部样式类
 

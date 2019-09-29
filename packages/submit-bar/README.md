@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -80,7 +80,7 @@
 | button-text | 按钮文字 | *string* | - | - |
 | button-type | 按钮类型 |  *string* | `danger` | - |
 | tip | 提示文案 | *string \| boolean* | - | - |
-| tip-icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| tip-icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | disabled | 是否禁用按钮 | *boolean* | `false` | - |
 | loading | 是否显示加载中的按钮 | *boolean* | `false` | - |
 | currency | 货币符号 | *string* | `¥` | - |

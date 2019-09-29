@@ -40,6 +40,7 @@
   <van-button
     plain
     type="danger"
+    class="demo-margin-right"
     bind:click="showCustomDialog"
   >
     组件调用

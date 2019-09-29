@@ -7,24 +7,13 @@ Page({
     show3: false,
     show4: false,
     action1: [
-      {
-        name: '选项'
-      },
-      {
-        name: '选项'
-      },
-      {
-        name: '选项',
-        subname: '描述信息'
-      }
+      { name: '选项' },
+      { name: '选项' },
+      { name: '选项', subname: '描述信息' }
     ],
     action2: [
-      {
-        name: '选项'
-      },
-      {
-        loading: true
-      },
+      { name: '选项', color: '#07c160' },
+      { loading: true },
       { name: '禁用选项', disabled: true }
     ]
   },
@@ -49,5 +38,5 @@ Page({
 
   toggleActionSheet4() {
     this.toggle('show4');
-  },
+  }
 });

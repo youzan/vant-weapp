@@ -55,7 +55,7 @@
   <van-checkbox-group value="{{ result }}" data-key="result" bind:change="onChange">
     <van-checkbox
       wx:for="{{ list }}"
-      wx:key="{{ index }}"
+      wx:key="*this"
       name="{{ item }}"
       custom-class="demo-checkbox"
     >
@@ -68,7 +68,7 @@
   <van-checkbox-group value="{{ result2 }}" data-key="result2" max="2" bind:change="onChange">
     <van-checkbox
       wx:for="{{ list }}"
-      wx:key="{{ index }}"
+      wx:key="*this"
       name="{{ item }}"
       custom-class="demo-checkbox"
     >
@@ -82,7 +82,7 @@
     <van-cell-group >
       <van-cell
         wx:for="{{ list }}"
-        wx:key="{{ index }}"
+        wx:key="*this"
         title="复选框{{ item }}"
         value-class="value-class"
         clickable

@@ -33,15 +33,15 @@ function getMonthEndDay(year, month) {
 const defaultFormatter = (_, value) => value;
 VantComponent({
     classes: ['active-class', 'toolbar-class', 'column-class'],
-    props: Object.assign({}, pickerProps, { formatter: {
-            type: Function,
-            value: defaultFormatter
-        }, value: null, type: {
+    props: Object.assign(Object.assign({}, pickerProps), { value: null, filter: null, type: {
             type: String,
             value: 'datetime'
         }, showToolbar: {
             type: Boolean,
             value: true
+        }, formatter: {
+            type: null,
+            value: defaultFormatter
         }, minDate: {
             type: Number,
             value: new Date(currentYear - 10, 0, 1).getTime()
@@ -100,15 +100,25 @@ VantComponent({
         },
         updateColumns() {
             const { formatter = defaultFormatter } = this.data;
+            const results = this.getOriginColumns().map(column => ({
+                values: column.values.map(value => formatter(column.type, value))
+            }));
+            return this.set({ columns: results });
+        },
+        getOriginColumns() {
+            const { filter } = this.data;
             const results = this.getRanges().map(({ type, range }) => {
-                const values = times(range[1] - range[0] + 1, index => {
+                let values = times(range[1] - range[0] + 1, index => {
                     let value = range[0] + index;
                     value = type === 'year' ? `${value}` : padZero(value);
-                    return formatter(type, value);
+                    return value;
                 });
-                return { values };
+                if (filter) {
+                    values = filter(type, values);
+                }
+                return { type, values };
             });
-            return this.set({ columns: results });
+            return results;
         },
         getRanges() {
             const { data } = this;

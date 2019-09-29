@@ -1,13 +1,15 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
 <van-button
   square
   id="{{ id }}"
   size="large"
   lang="{{ lang }}"
   type="{{ type }}"
+  color="{{ color }}"
   loading="{{ loading }}"
   disabled="{{ disabled }}"
   open-type="{{ openType }}"
-  custom-class="custom-class"
+  custom-class="{{ utils.bem('goods-action-button', [type, { first: isFirst, last: isLast }]) }}"
   business-id="{{ businessId }}"
   session-from="{{ sessionFrom }}"
   app-parameter="{{ appParameter }}"

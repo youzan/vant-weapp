@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -112,7 +112,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | title | 左侧标题 | *string \| number* | - |
 | title-width | 标题宽度，须包含单位 | *string* | - | - |
 | value | 右侧内容 | *string \| number* | - | - |
@@ -120,7 +120,7 @@
 | size | 单元格大小，可选值为 `large` | *string* | - | - |
 | border | 是否显示下边框 | *boolean* | `true` | - |
 | center | 是否使内容垂直居中 | *boolean* | `false` | - |
-| url | 跳转链接 | *string* | - | - |
+| url | 点击后跳转的链接地址 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | clickable | 是否开启点击反馈 | *boolean* | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |

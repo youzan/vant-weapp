@@ -14,6 +14,8 @@ VantComponent({
 
   props: {
     icon: String,
+    dot: Boolean,
+    info: null,
     text: String,
     useSlot: Boolean
   },
@@ -41,11 +43,11 @@ VantComponent({
 
       if (gutter) {
         styleWrapper.push(`padding-right: ${gutter}px`);
-      }
 
-      const index = children.indexOf(this);
-      if (index >= columnNum) {
-        styleWrapper.push(`margin-top: ${gutter}px`);
+        const index = children.indexOf(this);
+        if (index >= columnNum) {
+          styleWrapper.push(`margin-top: ${gutter}px`);
+        }
       }
 
       this.setData({

@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -168,7 +168,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-----------|-----------|
 | name | 标签名称，作为匹配的标识符 | *string \| number* | 当前标签的索引值 | - |
-| icon | 图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| icon | 图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | dot | 是否显示小红点 | *boolean* | - | - |
 | info | 图标右上角提示信息 | *string \| number* | - | - |
 

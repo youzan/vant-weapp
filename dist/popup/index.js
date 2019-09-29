@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { transition } from '../mixins/transition';
-import { safeArea } from '../mixins/safe-area';
 VantComponent({
     classes: [
         'enter-class',
@@ -10,14 +9,16 @@ VantComponent({
         'leave-active-class',
         'leave-to-class'
     ],
-    mixins: [transition(false), safeArea()],
+    mixins: [transition(false)],
     props: {
+        round: Boolean,
+        closeable: Boolean,
+        customStyle: String,
+        overlayStyle: String,
         transition: {
             type: String,
             observer: 'observeClass'
         },
-        customStyle: String,
-        overlayStyle: String,
         zIndex: {
             type: Number,
             value: 100
@@ -25,6 +26,14 @@ VantComponent({
         overlay: {
             type: Boolean,
             value: true
+        },
+        closeIcon: {
+            type: String,
+            value: 'cross'
+        },
+        closeIconPosition: {
+            type: String,
+            value: 'top-right'
         },
         closeOnClickOverlay: {
             type: Boolean,
@@ -34,12 +43,23 @@ VantComponent({
             type: String,
             value: 'center',
             observer: 'observeClass'
+        },
+        safeAreaInsetBottom: {
+            type: Boolean,
+            value: true
+        },
+        safeAreaInsetTop: {
+            type: Boolean,
+            value: false
         }
     },
     created() {
         this.observeClass();
     },
     methods: {
+        onClickCloseIcon() {
+            this.$emit('close');
+        },
         onClickOverlay() {
             this.$emit('click-overlay');
             if (this.data.closeOnClickOverlay) {
@@ -54,7 +74,7 @@ VantComponent({
             if (transition === 'none') {
                 updateData.duration = 0;
             }
-            this.set(updateData);
+            this.setData(updateData);
         }
     }
 });

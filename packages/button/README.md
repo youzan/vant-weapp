@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -30,7 +30,7 @@
 
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
-<van-button plain type="danger">朴素按钮</van-button>
+<van-button plain type="info">朴素按钮</van-button>
 ```
 
 ### 细边框
@@ -39,7 +39,7 @@
 
 ```html
 <van-button plain hairline type="primary">细边框按钮</van-button>
-<van-button plain hairline type="danger">细边框按钮</van-button>
+<van-button plain hairline type="info">细边框按钮</van-button>
 ```
 
 ### 禁用状态
@@ -48,7 +48,7 @@
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>
-<van-button disabled type="danger">禁用状态</van-button>
+<van-button disabled type="info">禁用状态</van-button>
 ```
 
 ### 加载状态
@@ -56,7 +56,7 @@
 ```html
 <van-button loading type="primary" />
 <van-button loading type="primary" loading-type="spinner" />
-<van-button loading type="danger" loading-text="加载中..." />
+<van-button loading type="info" loading-text="加载中..." />
 ```
 
 ### 图标按钮
@@ -66,14 +66,14 @@
 ```html
 <van-button icon="star-o" type="primary" />
 <van-button icon="star-o" type="primary">按钮</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info">按钮</van-button>
 ```
 
 ### 按钮形状
 
 ```html
 <van-button square type="primary">方形按钮</van-button>
-<van-button round type="danger">圆形按钮</van-button>
+<van-button round type="info">圆形按钮</van-button>
 ```
 
 ### 按钮尺寸
@@ -92,8 +92,9 @@
 通过`color`属性可以自定义按钮的颜色
 
 ```html
-<van-button color="#7232dd">自定义颜色</van-button>
-<van-button color="#7232dd" plain>自定义颜色</van-button>
+<van-button color="#7232dd">单色按钮</van-button>
+<van-button color="#7232dd" plain>单色按钮</van-button>
+<van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
 ```
 
 ## API
@@ -105,8 +106,8 @@
 | id | 标识符 | *string* | - | - |
 | type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | *string* | `default` | - |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | *string* | `normal` | - |
-| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | - |
-| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string* | - | - |
+| color | 按钮颜色，支持传入`linear-gradient`渐变色 | *string* | - | 1.0.0 |
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
 | plain | 是否为朴素按钮 | *boolean* | `false` | - |
 | block | 是否为块级元素 | *boolean* | `false` | - |
 | round | 是否为圆形按钮 | *boolean* | `false` | - |
@@ -117,6 +118,7 @@
 | loading-text | 加载状态提示文字 | *string* | - | - |
 | loading-type | 加载状态图标类型，可选值为 `spinner` | *string* | `circular` | - |
 | loading-size | 加载图标大小 | *string* | `20px` | - |
+| custom-style | 自定义样式 | *string* | - | - |
 | open-type | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - | - |
 | app-parameter | 打开 APP 时，向 APP 传递的参数 | *string* | - | - |
 | lang | 指定返回用户信息的语言，zh_CN 简体中文，<br>zh_TW 繁体中文，en 英文 | *string* | `en` | - | - |

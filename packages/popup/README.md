@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -21,9 +21,7 @@
 通过`show`属性控制弹出层是否展示
 
 ```html
-<van-button type="primary" bind:click="showPopup">
-  展示弹出层
-</van-button>
+<van-cell title="展示弹出层" is-link bind:click="showPopup" />
 
 <van-popup show="{{ show }}" bind:close="onClose">内容</van-popup>
 ```
@@ -52,21 +50,21 @@ Page({
 <van-popup
   show="{{ show }}"
   position="top"
-  style="height: 20%"
+  custom-style="height: 20%;"
   bind:close="onClose"
 />
 ```
 
 ### 关闭图标
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置
 
 ```html
 <van-popup
   show="{{ show }}"
   closeable
   position="bottom"
-  :style="{ height: '20%' }"
+  custom-style="height: 20%"
   bind:close="onClose"
 />
 
@@ -76,7 +74,17 @@ Page({
   closeable
   close-icon="close"
   position="bottom"
-  :style="{ height: '20%' }"
+  custom-style="height: 20%"
+  bind:close="onClose"
+/>
+
+<!-- 图标位置 -->
+<van-popup
+  show="{{ show }}"
+  closeable
+  close-icon-position="top-left"
+  position="bottom"
+  custom-style="height: 20%"
   bind:close="onClose"
 />
 ```
@@ -90,7 +98,7 @@ Page({
   show="{{ show }}"
   round
   position="bottom"
-  :style="{ height: '20%' }"
+  custom-style="height: 20%"
   bind:close="onClose"
 />
 ```

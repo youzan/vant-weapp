@@ -1,19 +1,19 @@
+
+import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
-import { RED } from '../common/color';
-import { safeArea } from '../mixins/safe-area';
+import { WHITE } from '../common/color';
 
 VantComponent({
-  mixins: [safeArea()],
-
   props: {
     message: String,
+    background: String,
+    type: {
+      type: String,
+      value: 'danger'
+    },
     color: {
       type: String,
-      value: '#fff'
-    },
-    background: {
-      type: String,
-      value: RED
+      value: WHITE
     },
     duration: {
       type: Number,
@@ -22,17 +22,21 @@ VantComponent({
     zIndex: {
       type: Number,
       value: 110
+    },
+    safeAreaInsetTop: {
+      type: Boolean,
+      value: false
     }
   },
 
   methods: {
     show() {
-      const { duration } = this.data;
+      const { duration, onOpened } = this.data;
 
       clearTimeout(this.timer);
       this.setData({
         show: true
-      });
+      }, onOpened);
 
       if (duration > 0 && duration !== Infinity) {
         this.timer = setTimeout(() => {
@@ -42,10 +46,19 @@ VantComponent({
     },
 
     hide() {
+      const { onClose } = this.data;
+
       clearTimeout(this.timer);
       this.setData({
         show: false
-      });
+      }, onClose);
+    },
+
+    onTap(event: Weapp.Event) {
+      const { onClick } = this.data;
+      if (onClick) {
+        onClick(event.detail);
+      }
     }
   }
 });

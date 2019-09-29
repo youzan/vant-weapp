@@ -4,7 +4,8 @@
   bind:tap="onClick"
 >
   <van-info
-    wx:if="{{ info !== null }}"
+    wx:if="{{ info !== null || dot }}"
+    dot="{{ dot }}"
     info="{{ info }}"
     custom-class="van-icon__info"
   />

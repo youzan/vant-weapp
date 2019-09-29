@@ -4,14 +4,14 @@ function getContext() {
     return pages[pages.length - 1];
 }
 const Dialog = options => {
-    options = Object.assign({}, Dialog.currentOptions, options);
+    options = Object.assign(Object.assign({}, Dialog.currentOptions), options);
     return new Promise((resolve, reject) => {
         const context = options.context || getContext();
         const dialog = context.selectComponent(options.selector);
         delete options.context;
         delete options.selector;
         if (dialog) {
-            dialog.set(Object.assign({ onCancel: reject, onConfirm: resolve }, options));
+            dialog.setData(Object.assign({ onCancel: reject, onConfirm: resolve }, options));
             queue.push(dialog);
         }
         else {

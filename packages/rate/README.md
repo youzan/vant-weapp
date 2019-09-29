@@ -2,7 +2,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -112,8 +112,8 @@ Page({
 | gutter | 图标间距，默认单位为 `px` | *string \| number* | `4px` |
 | color | 选中时的颜色 | *string* | `#ffd21e` | - |
 | void-color | 未选中时的颜色 | *string* | `#c7c7c7` | - |
-| icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | *string* | `star` | - |
-| void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | *string* | `star-o` | - |
+| icon | 选中时的图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | `star` | - |
+| void-icon | 未选中时的图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | `star-o` | - |
 | allow-half | 是否允许半选 | *boolean* | `false` | - |
 | readonly | 是否为只读状态 | *boolean* | `false` | - |
 | disabled | 是否禁用评分 | *boolean* | `false` | - |

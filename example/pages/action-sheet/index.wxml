@@ -1,5 +1,5 @@
 <demo-block title="基础用法" padding>
-  <van-button bind:click="toggleActionSheet1">弹出菜单</van-button>
+  <van-button type="primary" bind:click="toggleActionSheet1">弹出菜单</van-button>
   <van-action-sheet
     show="{{ show1 }}"
     actions="{{ action1 }}"
@@ -9,11 +9,10 @@
 </demo-block>
 
 <demo-block title="选项状态" padding>
-  <van-button bind:click="toggleActionSheet2">弹出菜单</van-button>
+  <van-button type="primary" bind:click="toggleActionSheet2">弹出菜单</van-button>
   <van-action-sheet
     show="{{ show2 }}"
     actions="{{ action2 }}"
-    cancel-text="取消"
     bind:close="toggleActionSheet2"
     bind:cancel="toggleActionSheet2"
     bind:select="toggleActionSheet2"
@@ -21,7 +20,7 @@
 </demo-block>
 
 <demo-block title="展示取消按钮" padding>
-  <van-button bind:click="toggleActionSheet3">弹出菜单</van-button>
+  <van-button type="primary" bind:click="toggleActionSheet3">弹出菜单</van-button>
   <van-action-sheet
     show="{{ show3 }}"
     actions="{{ action1 }}"
@@ -32,7 +31,7 @@
 </demo-block>
 
 <demo-block title="展示标题栏" padding>
-  <van-button bind:click="toggleActionSheet4">弹出菜单</van-button>
+  <van-button type="primary" bind:click="toggleActionSheet4">弹出菜单</van-button>
   <van-action-sheet
     show="{{ show4 }}"
     title="标题"

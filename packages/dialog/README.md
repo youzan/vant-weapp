@@ -8,7 +8,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
 "usingComponents": {
@@ -133,7 +133,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 | 
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | *string* | - | - |
-| message | 内容 | *string* | - | - |
+| message | 文本内容，支持通过`\n`换行 | *string* | - | 1.0.0 |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | zIndex | z-index 层级 | *number* | `100` | - |
 | className | 自定义类名，dialog在自定义组件内时无效 | *string* | '' | - |
@@ -182,9 +182,12 @@ Page({
 | show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` |
 | confirm-button-text | 确认按钮的文案 | *string* |  `确认` |
 | cancel-button-text | 取消按钮的文案 | *string* | `取消` |
+| confirm-button-color | 确认按钮的字体颜色 | *string* |  `#1989fa` |
+| cancel-button-color | 取消按钮的字体颜色 | *string* | `#333` |
 | overlay | 是否展示蒙层 | *boolean* | `true` |
 | close-on-click-overlay | 点击蒙层时是否关闭弹窗 | *boolean* | `false` |
 | use-slot | 是否使用自定义内容的插槽 | *boolean* | `false` |
+| use-title-slot | 是否使用自定义标题的插槽 | *boolean* | `false` |
 | async-close | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | *boolean* | `false` |
 | transition | 动画名称，可选值为`fade` | *string* | `scale` |
 | confirm-button-open-type | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - |
@@ -216,3 +219,9 @@ Page({
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |

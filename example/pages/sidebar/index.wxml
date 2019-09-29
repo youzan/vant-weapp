@@ -8,8 +8,8 @@
 
 <demo-block title="显示徽标">
   <van-sidebar custom-class="custom-sidebar" bind:change="onChange">
-    <van-sidebar-item title="标签名称" info="8" />
-    <van-sidebar-item title="标签名称" info="99" />
+    <van-sidebar-item title="标签名称" dot />
+    <van-sidebar-item title="标签名称" info="5" />
     <van-sidebar-item title="标签名称" info="99+" />
   </van-sidebar>
 </demo-block>

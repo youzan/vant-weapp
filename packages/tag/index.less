@@ -1,65 +1,66 @@
 @import '../common/style/var.less';
+@import '../common/style/theme.less';
 
 .van-tag {
   display: inline-block;
-  padding: .2em .5em;
-  color: @white;
+  padding: 0.2em 0.5em;
   font-size: 10px;
   line-height: normal;
-  border-radius: .2em;
+  border-radius: 0.2em;
+  .theme(color, '@white');
 
   &::after {
     border-color: currentColor;
-    border-radius: .4em;
+    border-radius: 0.4em;
   }
 
   &--default {
-    background-color: @tag-default-color;
+    .theme(background-color, '@tag-default-color');
 
     &.van-tag--plain {
-      color: @tag-default-color;
+      .theme(color, '@tag-default-color');
     }
   }
 
   &--danger {
-    background-color: @tag-dander-color;
+    .theme(background-color, '@tag-dander-color');
 
     &.van-tag--plain {
-      color: @tag-dander-color;
+      .theme(color, '@tag-dander-color');
     }
   }
 
   &--primary {
-    background-color: @tag-primary-color;
+    .theme(background-color, '@tag-primary-color');
 
     &.van-tag--plain {
-      color: @tag-primary-color;
+      .theme(color, '@tag-primary-color');
     }
   }
 
   &--success {
-    background-color: @tag-success-color;
+    .theme(background-color, '@tag-success-color');
 
     &.van-tag--plain {
-      color: @tag-success-color;
+      .theme(color, '@tag-success-color');
     }
   }
 
   &--warning {
-    background-color: @tag-warning-color;
+    .theme(background-color, '@tag-warning-color');
 
     &.van-tag--plain {
-      color: @tag-warning-color;
+      .theme(color, '@tag-warning-color');
     }
   }
 
   &--plain {
-    background-color: @tag-plain-background-color;
+    .theme(background-color, '@tag-plain-background-color');
   }
 
   &--mark {
-    padding-right: .6em;
-    border-radius: 0 .8em .8em 0;
+    padding-right: 0.6em;
+    border-radius: 0 0.8em 0.8em 0;
 
     &::after {
       border-radius: 0 1.6em 1.6em 0;
@@ -67,7 +68,7 @@
   }
 
   &--round {
-    border-radius: .8em;
+    border-radius: 0.8em;
 
     &::after {
       border-radius: 1.6em;

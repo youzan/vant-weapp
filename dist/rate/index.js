@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { addUnit } from '../common/utils';
 VantComponent({
     field: true,
     classes: ['icon-class'],
@@ -8,8 +9,8 @@ VantComponent({
         disabled: Boolean,
         allowHalf: Boolean,
         size: {
-            type: Number,
-            value: 20
+            type: null,
+            observer: 'setSizeWithUnit'
         },
         icon: {
             type: String,
@@ -34,39 +35,59 @@ VantComponent({
         count: {
             type: Number,
             value: 5
+        },
+        gutter: {
+            type: null,
+            observer: 'setGutterWithUnit'
+        },
+        touchable: {
+            type: Boolean,
+            value: true
         }
     },
     data: {
-        innerValue: 0
+        innerValue: 0,
+        gutterWithUnit: undefined,
+        sizeWithUnit: '20px'
     },
     watch: {
         value(value) {
             if (value !== this.data.innerValue) {
-                this.set({ innerValue: value });
+                this.setData({ innerValue: value });
             }
         }
     },
     methods: {
+        setSizeWithUnit(val) {
+            this.setData({
+                sizeWithUnit: addUnit(val)
+            });
+        },
+        setGutterWithUnit(val) {
+            this.setData({
+                gutterWithUnit: addUnit(val)
+            });
+        },
         onSelect(event) {
             const { data } = this;
             const { score } = event.currentTarget.dataset;
             if (!data.disabled && !data.readonly) {
-                this.set({ innerValue: score + 1 });
+                this.setData({ innerValue: score + 1 });
                 this.$emit('input', score + 1);
                 this.$emit('change', score + 1);
             }
         },
         onTouchMove(event) {
-            const { clientX, clientY } = event.touches[0];
+            const { touchable } = this.data;
+            if (!touchable)
+                return;
+            const { clientX } = event.touches[0];
             this.getRect('.van-rate__icon', true).then((list) => {
                 const target = list
                     .sort(item => item.right - item.left)
-                    .find(item => clientX >= item.left &&
-                    clientX <= item.right &&
-                    clientY >= item.top &&
-                    clientY <= item.bottom);
+                    .find(item => clientX >= item.left && clientX <= item.right);
                 if (target != null) {
-                    this.onSelect(Object.assign({}, event, { currentTarget: target }));
+                    this.onSelect(Object.assign(Object.assign({}, event), { currentTarget: target }));
                 }
             });
         }

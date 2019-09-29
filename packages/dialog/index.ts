@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
+import { GRAY, BLUE } from '../common/color';
 
 type Action = 'confirm' | 'cancel' | 'overlay';
 
@@ -16,6 +17,7 @@ VantComponent({
     customStyle: String,
     asyncClose: Boolean,
     messageAlign: String,
+    useTitleSlot: Boolean,
     showCancelButton: Boolean,
     closeOnClickOverlay: Boolean,
     confirmButtonOpenType: String,
@@ -30,6 +32,14 @@ VantComponent({
     cancelButtonText: {
       type: String,
       value: '取消'
+    },
+    confirmButtonColor: {
+      type: String,
+      value: BLUE
+    },
+    cancelButtonColor: {
+      type: String,
+      value: GRAY
     },
     showConfirmButton: {
       type: Boolean,

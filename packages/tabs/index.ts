@@ -96,7 +96,7 @@ VantComponent({
     trackStyle: '',
     wrapStyle: '',
     position: '',
-    currentIndex: null,
+    currentIndex: 0,
   },
 
   watch: {
@@ -239,7 +239,7 @@ VantComponent({
 
     setActiveTab() {
       if (!isDef(this.currentName)) {
-        this.currentName = this.data.active || this.children[0].computedName;
+        this.currentName = this.data.active || (this.children[0] || {}).computedName;
       }
 
       this.children.forEach((item: WechatMiniprogram.Component.TrivialInstance, index: number) => {

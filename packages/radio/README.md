@@ -32,7 +32,7 @@ Page({
 
   onChange(event) {
     this.setData({
-      checked: event.detail
+      radio: event.detail
     });
   }
 });

@@ -99,7 +99,7 @@ Page({
 ```html
 <van-action-sheet show="{{ show }}" title="标题">
   <view>内容</view>
-<van-action-sheet/>
+</van-action-sheet>
 ```
 
 ## API

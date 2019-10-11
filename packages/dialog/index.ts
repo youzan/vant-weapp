@@ -17,6 +17,7 @@ VantComponent({
     customStyle: String,
     asyncClose: Boolean,
     messageAlign: String,
+    overlayStyle: String,
     useTitleSlot: Boolean,
     showCancelButton: Boolean,
     closeOnClickOverlay: Boolean,

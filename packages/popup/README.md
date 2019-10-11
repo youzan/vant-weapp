@@ -116,7 +116,7 @@ Page({
 | duration | 动画时长，单位为毫秒 | *number \| object* | `300` | - |
 | round | 是否显示圆角 | *boolean* | `false` | - |
 | custom-style | 自定义弹出层样式 | *string* | `` | - |
-| overlay-style | 自定义背景蒙层样式 | *string* | `` | - |
+| overlay-style | 自定义遮罩层样式 | *string* | `` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | *boolean* | `true` | - |
 | closeable | 是否显示关闭图标 | *boolean* | `false` | - |
 | close-icon | 关闭图标名称或图片链接 | *string* | `cross` | - |

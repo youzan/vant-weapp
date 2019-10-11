@@ -3,11 +3,15 @@
 
 .van-dialog {
   top: 45% !important;
-  width: 85%;
+  width: 320px;
   overflow: hidden;
   font-size: 16px;
   border-radius: 4px;
   .theme(background-color, '@white');
+
+  @media (max-width: 321px) {
+    width: 90%;
+  }
 
   &__header {
     padding-top: 25px;

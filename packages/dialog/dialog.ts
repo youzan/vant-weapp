@@ -5,6 +5,7 @@ type DialogOptions = {
   lang?: string;
   show?: boolean;
   title?: string;
+  width?: string | number;
   zIndex?: number;
   context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
@@ -79,6 +80,7 @@ const Dialog: Dialog = options => {
 Dialog.defaultOptions = {
   show: true,
   title: '',
+  width: null,
   message: '',
   zIndex: 100,
   overlay: true,

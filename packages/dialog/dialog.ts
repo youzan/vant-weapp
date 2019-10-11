@@ -80,7 +80,7 @@ const Dialog: Dialog = options => {
 Dialog.defaultOptions = {
   show: true,
   title: '',
-  width: '',
+  width: null,
   message: '',
   zIndex: 100,
   overlay: true,

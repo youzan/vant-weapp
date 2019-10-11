@@ -53,11 +53,11 @@ Page({
 
 ### 自定义样式
 
-通过`bind:change`事件获取`timeData`对象，格式见下方表格
+设置`use-slot`属性后可以自定义倒计时样式，需要通过`bind:change`事件获取`timeData`对象并自行渲染，格式见下方表格
 
 ```html
 <van-count-down
-  useCustom
+  use-slot
   time="{{ time }}"
   bind:change="onChange"
 >
@@ -150,14 +150,14 @@ Page({
 | format | 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒 | *string* | `HH:mm:ss` | - |
 | auto-start | 是否自动开始倒计时 | *boolean* | `true` | - |
 | millisecond | 是否开启毫秒级渲染 | *boolean* | `false` | - |
-| useCustom | 是否自定义样式 | *boolean* | `false` | - |
+| use-slot | 是否使用自定义样式插槽 | *boolean* | `false` | - |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 时间变化时触发 | timeData |
 | finish | 倒计时结束时触发 | - |
+| change | 时间变化时触发，仅在开启`use-slot`后才会触发 | timeData |
 
 ### timeData 格式
 

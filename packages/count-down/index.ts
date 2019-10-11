@@ -1,28 +1,26 @@
 import { VantComponent } from '../common/component';
 import { isSameSecond, parseFormat, parseTimeData } from './utils';
 
+function simpleTick(fn: Function) {
+  return setTimeout(fn, 30);
+}
+
 VantComponent({
   props: {
+    useSlot: Boolean,
+    millisecond: Boolean,
     time: {
       type: Number,
-      observer: 'reset',
+      observer: 'reset'
     },
     format: {
       type: String,
       value: 'HH:mm:ss'
     },
-    useCustom: {
-      type: Boolean,
-      value: false,
-    },
     autoStart: {
       type: Boolean,
-      value: true,
-    },
-    millisecond: {
-      type: Boolean,
-      value: false,
-    },
+      value: true
+    }
   },
 
   data: {
@@ -68,17 +66,17 @@ VantComponent({
     },
 
     microTick() {
-      this.tid = setTimeout(() => {
+      this.tid = simpleTick(() => {
         this.setRemain(this.getRemain());
 
         if (this.remain !== 0) {
           this.microTick();
         }
-      }, 100);
+      });
     },
 
     macroTick() {
-      this.tid = setTimeout(() => {
+      this.tid = simpleTick(() => {
         const remain = this.getRemain();
 
         if (!isSameSecond(remain, this.remain) || remain === 0) {
@@ -88,7 +86,7 @@ VantComponent({
         if (this.remain !== 0) {
           this.macroTick();
         }
-      }, 1000);
+      });
     },
 
     getRemain() {
@@ -98,7 +96,11 @@ VantComponent({
     setRemain(remain) {
       this.remain = remain;
       const timeData = parseTimeData(remain);
-      this.$emit('change', timeData);
+
+      if (this.data.useSlot) {
+        this.$emit('change', timeData);
+      }
+
       this.setData({
         formattedTime: parseFormat(this.data.format, timeData)
       });

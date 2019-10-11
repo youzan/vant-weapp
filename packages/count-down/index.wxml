@@ -2,7 +2,7 @@
   wx:if="{{ useCustom }}"
   class="van-count-down"
 >
-  <count-down-content time-data="{{ timeData }}"/>
+  <slot/>
 </view>
 
 <view

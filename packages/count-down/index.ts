@@ -98,8 +98,8 @@ VantComponent({
     setRemain(remain) {
       this.remain = remain;
       const timeData = parseTimeData(remain);
+      this.$emit('change', timeData);
       this.setData({
-        timeData,
         formattedTime: parseFormat(this.data.format, timeData)
       });
 

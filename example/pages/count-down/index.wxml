@@ -21,8 +21,12 @@
   <van-count-down
     useCustom
     time="{{ time }}"
-    generic:count-down-content="count-down-content"
-  />
+    bind:change="onChange"
+  >
+    <text class="item">{{ timeData.hours }}</text>
+    <text class="item">{{ timeData.minutes }}</text>
+    <text class="item">{{ timeData.seconds }}</text>
+  </van-count-down>
 </demo-block>
 
 <demo-block title="手动控制">
@@ -38,7 +42,7 @@
   <van-grid clickable column-num="3">
     <van-grid-item text="开始" icon="play-circle-o" bindclick="start" />
     <van-grid-item text="暂停" icon="pause-circle-o" bindclick="pause" />
-    <van-grid-item text="重置" icon="replay" bindclick="reset" />
+    <van-grid-item text="重置" icon="replay" bind:click="reset" />
   </van-grid>
 </demo-block>
 

@@ -1,6 +1,3 @@
 {
-  "component": true,
-  "componentGenerics": {
-    "count-down-content": true
-  }
+  "component": true
 }

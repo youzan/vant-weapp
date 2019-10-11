@@ -3,7 +3,14 @@ import Toast from '../../dist/toast/toast';
 
 Page({
   data: {
-    time: 30 * 60 * 60 * 1000
+    time: 30 * 60 * 60 * 1000,
+    timeData: {}
+  },
+
+  onChange(e) {
+    this.setData({
+      timeData: e.detail
+    });
   },
 
   start() {

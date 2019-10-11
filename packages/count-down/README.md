@@ -53,28 +53,33 @@ Page({
 
 ### 自定义样式
 
-通过抽象组件实现自定义倒计时的样式，`timeData`对象格式见下方表格
+通过`bind:change`事件获取`timeData`对象，格式见下方表格
 
 ```html
 <van-count-down
   useCustom
   time="{{ time }}"
-  generic:count-down-content="count-down-content"
-/>
-```
-
-```html
-<!-- 抽象组件 count-down-content -->
-<text class="item">{{ timeData.hours }}</text>
-<text class="item">{{ timeData.minutes }}</text>
-<text class="item">{{ timeData.seconds }}</text>
+  bind:change="onChange"
+>
+  <text class="item">{{ timeData.hours }}</text>
+  <text class="item">{{ timeData.minutes }}</text>
+  <text class="item">{{ timeData.seconds }}</text>
+</van-count-down>
 ```
 
 ```js
-Component({
-  properties: {
-    timeData: Object,
+
+Page({
+  data: {
+    time: 30 * 60 * 60 * 1000,
+    timeData: {}
   },
+
+  onChange(e) {
+    this.setData({
+      timeData: e.detail
+    });
+  }
 });
 ```
 
@@ -87,6 +92,7 @@ Component({
   font-size: 12px;
   text-align: center;
   background-color: #1989fa;
+  border-radius: 2px;
 }
 ```
 
@@ -150,13 +156,8 @@ Page({
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
+| change | 时间变化时触发 | timeData |
 | finish | 倒计时结束时触发 | - |
-
-### 抽象节点
-
-| 名称 | 说明 | Props |
-|------|------|------|
-| count-down-content | 自定义内容节点 | timeData |
 
 ### timeData 格式
 

@@ -1,0 +1,3 @@
+<text class="item">{{ timeData.hours }}</text>
+<text class="item">{{ timeData.minutes }}</text>
+<text class="item">{{ timeData.seconds }}</text>

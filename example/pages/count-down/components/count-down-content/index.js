@@ -1,0 +1,5 @@
+Component({
+  properties: {
+    timeData: Object,
+  },
+});

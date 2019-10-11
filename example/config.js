@@ -122,6 +122,10 @@ export default [
         title: 'Collapse 折叠面板'
       },
       {
+        path: '/count-down',
+        title: 'CountDown 倒计时'
+      },
+      {
         path: '/notice-bar',
         title: 'NoticeBar 通告栏'
       },

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "CountDown 倒计时",
+  "usingComponents": {
+    "count-down-content": "./components/count-down-content/index"
+  }
+}

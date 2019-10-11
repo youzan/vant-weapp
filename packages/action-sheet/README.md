@@ -39,7 +39,7 @@ Page({
       },
       {
         name: '选项',
-        subname: '描述信息',
+        subname: '副文本',
         openType: 'share'
       }
     ]
@@ -92,6 +92,18 @@ Page({
 />
 ```
 
+### 展示描述信息
+
+设置`description`属性后，会在选项上方显示描述信息
+
+```html
+<van-action-sheet
+  show="{{ show }}" 
+  :actions="actions"
+  description="这是一段描述信息"
+/>
+```
+
 ### 展示标题栏
 
 通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容
@@ -110,12 +122,13 @@ Page({
 |-----------|-----------|-----------|-------------|-------------|
 | actions | 菜单选项 | *Array* | `[]` | - |
 | title | 标题 | *string* | - | - |
+| description | 选项上方的描述信息 | *string* | - | 1.0.0 |
 | z-index | z-index 层级 | *number* | `100` | - |
 | cancel-text | 取消按钮文字 | *string* | - | - |
-| round | 是否显示圆角 | *boolean* | `true` | 1.0.0 |
 | overlay | 是否显示遮罩层 | *boolean* | - | - |
-| close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - | - |
+| round | 是否显示圆角 | *boolean* | `true` | 1.0.0 |
 | close-on-click-action | 是否在点击选项后关闭 | *boolean* | `true` | - |
+| close-on-click-overlay | 点击遮罩是否关闭菜单 | *boolean* | - | - |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
 
 ### Events

@@ -19,7 +19,7 @@
 
 <demo-block title="自定义样式">
   <van-count-down
-    useCustom
+    use-slot
     time="{{ time }}"
     bind:change="onChange"
   >

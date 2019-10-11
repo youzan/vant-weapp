@@ -58,6 +58,7 @@ VantComponent({
         this.start();
       }
     },
+
     tick() {
       if (this.data.millisecond) {
         this.microTick();

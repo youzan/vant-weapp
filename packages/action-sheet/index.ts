@@ -6,6 +6,7 @@ VantComponent({
     show: Boolean,
     title: String,
     cancelText: String,
+    description: String,
     round: {
       type: Boolean,
       value: true

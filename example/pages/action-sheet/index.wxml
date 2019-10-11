@@ -30,10 +30,21 @@
   </van-action-sheet>
 </demo-block>
 
-<demo-block title="展示标题栏" padding>
+<demo-block title="展示描述信息" padding>
   <van-button type="primary" bind:click="toggleActionSheet4">弹出菜单</van-button>
   <van-action-sheet
     show="{{ show4 }}"
+    actions="{{ action1 }}"
+    description="这是一段描述信息"
+    bind:close="toggleActionSheet4"
+  >
+  </van-action-sheet>
+</demo-block>
+
+<demo-block title="展示标题栏" padding>
+  <van-button type="primary" bind:click="toggleActionSheet5">弹出菜单</van-button>
+  <van-action-sheet
+    show="{{ show5 }}"
     title="标题"
     bind:close="toggleActionSheet4"
   >

@@ -6,10 +6,11 @@ Page({
     show2: false,
     show3: false,
     show4: false,
+    show5: false,
     action1: [
       { name: '选项' },
       { name: '选项' },
-      { name: '选项', subname: '描述信息' }
+      { name: '选项', subname: '副文本' }
     ],
     action2: [
       { name: '选项', color: '#07c160' },
@@ -38,5 +39,9 @@ Page({
 
   toggleActionSheet4() {
     this.toggle('show4');
+  },
+
+  toggleActionSheet5() {
+    this.toggle('show5');
   }
 });

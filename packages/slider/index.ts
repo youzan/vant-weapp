@@ -96,7 +96,11 @@ VantComponent({
 
       this.setData({
         value,
-        barStyle: `width: ${width}; height: ${addUnit(barHeight)};`
+        barStyle: `
+          width: ${width};
+          height: ${addUnit(barHeight)};
+          ${drag ? 'transition: none;' : ''}
+        `,
       });
 
       if (drag) {

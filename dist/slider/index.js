@@ -82,7 +82,11 @@ VantComponent({
             const width = `${((value - min) * 100) / this.getRange()}%`;
             this.setData({
                 value,
-                barStyle: `width: ${width}; height: ${addUnit(barHeight)};`
+                barStyle: `
+          width: ${width};
+          height: ${addUnit(barHeight)};
+          ${drag ? 'transition: none;' : ''}
+        `,
             });
             if (drag) {
                 this.$emit('drag', { value });

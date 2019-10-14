@@ -39,22 +39,19 @@ export const transition = function (showDefaultValue) {
         },
         methods: {
             observeShow(value) {
-                if (value) {
-                    this.enter();
-                }
-                else {
-                    this.leave();
-                }
+                value ? this.enter() : this.leave();
             },
             enter() {
                 const { duration, name } = this.data;
                 const classNames = getClassNames(name);
                 const currentDuration = isObj(duration) ? duration.enter : duration;
                 this.status = 'enter';
+                this.$emit('before-enter');
                 Promise.resolve()
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('enter');
+                    this.$emit('enter');
                     this.setData({
                         inited: true,
                         display: true,
@@ -65,6 +62,7 @@ export const transition = function (showDefaultValue) {
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('enter');
+                    this.transitionEnded = false;
                     this.setData({
                         classes: classNames['enter-to']
                     });
@@ -72,23 +70,29 @@ export const transition = function (showDefaultValue) {
                     .catch(() => { });
             },
             leave() {
+                if (!this.data.display) {
+                    return;
+                }
                 const { duration, name } = this.data;
                 const classNames = getClassNames(name);
                 const currentDuration = isObj(duration) ? duration.leave : duration;
                 this.status = 'leave';
+                this.$emit('before-leave');
                 Promise.resolve()
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('leave');
+                    this.$emit('leave');
                     this.setData({
                         classes: classNames.leave,
                         currentDuration
                     });
                 })
-                    .then(() => setTimeout(() => this.onTransitionEnd(), currentDuration))
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('leave');
+                    this.transitionEnded = false;
+                    setTimeout(() => this.onTransitionEnd(), currentDuration);
                     this.setData({
                         classes: classNames['leave-to']
                     });
@@ -101,9 +105,14 @@ export const transition = function (showDefaultValue) {
                 }
             },
             onTransitionEnd() {
-                if (!this.data.show) {
-                    this.set({ display: false });
-                    this.$emit('transitionend');
+                if (this.transitionEnded) {
+                    return;
+                }
+                this.transitionEnded = true;
+                this.$emit(`after-${this.status}`);
+                const { show, display } = this.data;
+                if (!show && display) {
+                    this.setData({ display: false });
                 }
             }
         }

@@ -20,6 +20,13 @@ VantComponent({
             value: true
         },
     },
+    data: {
+        statusBarHeight: 0
+    },
+    created() {
+        const { statusBarHeight } = wx.getSystemInfoSync();
+        this.setData({ statusBarHeight });
+    },
     methods: {
         onClickLeft() {
             this.$emit('click-left');

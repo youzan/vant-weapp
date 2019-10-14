@@ -36,7 +36,7 @@
     columns-num="{{ 2 }}"
     loading="{{ loading }}"
     area-list="{{ areaList }}"
-    columnsPlaceholder="{{ ['请选择', '请选择', '请选择'] }}"
+    columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}"
     bind:change="onChange"
     bind:confirm="onConfirm"
   />

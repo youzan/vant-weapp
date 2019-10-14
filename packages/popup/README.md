@@ -129,7 +129,12 @@ Page({
 |-----------|-----------|-----------|
 | bind:close | 关闭弹出层时触发 | - |
 | bind:click-overlay | 点击遮罩层时触发 | - |
-| bind:transitionend | 弹出层动画结束后触发 | - |
+| bind:before-enter | 进入前触发 | - |
+| bind:enter | 进入中触发 | - |
+| bind:after-enter | 进入后触发 | - |
+| bind:before-leave | 离开前触发 | - |
+| bind:leave | 离开中触发 | - |
+| bind:after-leave | 离开后触发 | - |
 
 ### 外部样式类
 

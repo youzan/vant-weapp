@@ -70,6 +70,17 @@ transition 组件内置了多种动画，可以通过`name`字段指定动画类
 | duration | 动画时长，单位为毫秒 | *number \| object* | `300` | - |
 | custom-style | 自定义样式 | *string* | - | - |
 
+### Events
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| bind:before-enter | 进入前触发 | - |
+| bind:enter | 进入中触发 | - |
+| bind:after-enter | 进入后触发 | - |
+| bind:before-leave | 离开前触发 | - |
+| bind:leave | 离开中触发 | - |
+| bind:after-leave | 离开后触发 | - |
+
 ### 外部样式类
 
 | 类名 | 说明 |

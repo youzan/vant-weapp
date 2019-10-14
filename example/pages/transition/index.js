@@ -55,6 +55,30 @@ Page({
 
     setTimeout(() => {
       this.setData({ showCustom: false });
-    }, 500);
-  }
+    }, 1000);
+  },
+
+  onBeforeEnter() {
+    console.log('before enter');
+  },
+
+  onEnter() {
+    console.log('enter');
+  },
+
+  onAfterEnter() {
+    console.log('after enter');
+  },
+
+  onBeforeLeave() {
+    console.log('before leave');
+  },
+
+  onLeave() {
+    console.log('leave');
+  },
+
+  onAfterLeave() {
+    console.log('after leave');
+  },
 });

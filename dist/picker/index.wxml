@@ -1,4 +1,4 @@
-<view class="van-picker custom-class">
+<template name="toolbar">
   <view
     wx:if="{{ showToolbar }}"
     class="van-picker__toolbar van-hairline--top-bottom toolbar-class"
@@ -23,6 +23,10 @@
       {{ confirmButtonText }}
     </view>
   </view>
+</template>
+
+<view class="van-picker custom-class">
+  <template is="toolbar" wx:if="{{ toolbarPosition === 'top' }}" data="{{ showToolbar, cancelButtonText, title, confirmButtonText }}"></template>
   <view wx:if="{{ loading }}" class="van-picker__loading">
     <loading color="#1989fa"/>
   </view>
@@ -50,6 +54,7 @@
       style="height: {{ itemHeight }}px"
     />
   </view>
+  <template is="toolbar" wx:if="{{ toolbarPosition === 'bottom' }}" data="{{ showToolbar, cancelButtonText, title, confirmButtonText }}"></template>
 </view>
 
 <wxs module="isSimple">

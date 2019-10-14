@@ -39,7 +39,7 @@ VantComponent({
             if (this.data.expanded) {
                 data.contentHeight = 'auto';
             }
-            this.set(data);
+            this.setData(data);
         });
     },
     methods: {
@@ -87,7 +87,7 @@ VantComponent({
         },
         onTransitionEnd() {
             if (this.data.expanded) {
-                this.set({
+                this.setData({
                     contentHeight: 'auto'
                 });
             }

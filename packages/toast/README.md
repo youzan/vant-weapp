@@ -90,7 +90,7 @@ const timer = setInterval(() => {
 | type | 提示类型，可选值为 `loading` `success` `fail` `html` | *string* | `text` | - |
 | position | 位置，可选值为 `top` `middle` `bottom` | *string* | `middle` | - |
 | message | 内容 | *string* | `''` | - | - |
-| mask | 是否显示背景蒙层 | *boolean* | `false` | - |
+| mask | 是否显示遮罩层 | *boolean* | `false` | - |
 | forbidClick | 是否禁止背景点击 | *boolean* | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | *string* | `circular` | - |
 | zIndex | z-index 层级 | *number* | `1000` | - |

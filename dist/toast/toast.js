@@ -21,7 +21,7 @@ function getContext() {
     return pages[pages.length - 1];
 }
 function Toast(toastOptions) {
-    const options = Object.assign({}, currentOptions, parseOptions(toastOptions));
+    const options = Object.assign(Object.assign({}, currentOptions), parseOptions(toastOptions));
     const context = options.context || getContext();
     const toast = context.selectComponent(options.selector);
     if (!toast) {
@@ -31,13 +31,13 @@ function Toast(toastOptions) {
     delete options.context;
     delete options.selector;
     toast.clear = () => {
-        toast.set({ show: false });
+        toast.setData({ show: false });
         if (options.onClose) {
             options.onClose();
         }
     };
     queue.push(toast);
-    toast.set(options);
+    toast.setData(options);
     clearTimeout(toast.timer);
     if (options.duration > 0) {
         toast.timer = setTimeout(() => {

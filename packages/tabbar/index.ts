@@ -1,9 +1,6 @@
 import { VantComponent } from '../common/component';
-import { safeArea } from '../mixins/safe-area';
 
 VantComponent({
-  mixins: [safeArea()],
-
   relation: {
     name: 'tabbar-item',
     type: 'descendant',
@@ -44,6 +41,10 @@ VantComponent({
     zIndex: {
       type: Number,
       value: 1
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
     }
   },
 

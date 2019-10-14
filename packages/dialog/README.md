@@ -133,7 +133,8 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 | 
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | *string* | - | - |
-| message | 内容 | *string* | - | - |
+| width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 1.0.0 |
+| message | 文本内容，支持通过`\n`换行 | *string* | - | 1.0.0 |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | *string* | `center` | - |
 | zIndex | z-index 层级 | *number* | `100` | - |
 | className | 自定义类名，dialog在自定义组件内时无效 | *string* | '' | - |
@@ -143,8 +144,9 @@ Page({
 | showCancelButton | 是否展示取消按钮 | *boolean* | `false` | - |
 | confirmButtonText | 确认按钮的文案 | *string* | `确认` | - |
 | cancelButtonText | 取消按钮的文案 | *string* | `取消` | - |
-| overlay | 是否展示蒙层 | *boolean* | `true` | - |
-| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | *boolean* | `false` | - |
+| overlay | 是否展示遮罩层 | *boolean* | `true` | - |
+| overlayStyle | 自定义遮罩层样式 | *object* | - | 1.0.0 |
+| closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | *boolean* | `false` | - |
 | asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | *boolean* | `false` | - |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | *object* | 当前页面 | - |
 | transition | 动画名称，可选值为`fade` `none` | *string* | `scale` | - |
@@ -173,19 +175,21 @@ Page({
 |-----------|-----------|-----------|-------------|
 | show | 是否显示弹窗 | *boolean* | - |
 | title | 标题 | *string* | - |
-| message | 内容 | *string* | - |
+| width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 1.0.0 |
+| message | 文本内容，支持通过`\n`换行 | *string* | - |
 | message-align | 内容对齐方式，可选值为`left` `right` | *string* | `center` |
 | z-index | z-index 层级 | *number* | `100` |
 | class-name | 自定义类名，dialog在自定义组件内时无效 | *string* | '' |
-| customStyle | 自定义样式 | *string* | '' |
+| custom-style | 自定义样式 | *string* | '' |
 | show-confirm-button | 是否展示确认按钮 | *boolean* |  `true` |
 | show-cancel-button | 是否展示取消按钮 | *boolean* |  `false` |
 | confirm-button-text | 确认按钮的文案 | *string* |  `确认` |
 | cancel-button-text | 取消按钮的文案 | *string* | `取消` |
 | confirm-button-color | 确认按钮的字体颜色 | *string* |  `#1989fa` |
 | cancel-button-color | 取消按钮的字体颜色 | *string* | `#333` |
-| overlay | 是否展示蒙层 | *boolean* | `true` |
-| close-on-click-overlay | 点击蒙层时是否关闭弹窗 | *boolean* | `false` |
+| overlay | 是否展示遮罩层 | *boolean* | `true` |
+| overlay-style | 自定义遮罩层样式 | *object* | - | 1.0.0 |
+| close-on-click-overlay | 点击遮罩层时是否关闭弹窗 | *boolean* | `false` |
 | use-slot | 是否使用自定义内容的插槽 | *boolean* | `false` |
 | use-title-slot | 是否使用自定义标题的插槽 | *boolean* | `false` |
 | async-close | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | *boolean* | `false` |

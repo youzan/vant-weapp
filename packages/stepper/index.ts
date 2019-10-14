@@ -1,9 +1,15 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
+import { addUnit, isDef } from '../common/utils';
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
+
+// add num and avoid float number
+function add(num1: number, num2: number): number {
+  const cardinal = 10 ** 10;
+  return Math.round((num1 + num2) * cardinal) / cardinal;
+}
 
 VantComponent({
   field: true,
@@ -18,6 +24,10 @@ VantComponent({
     buttonSize: null,
     asyncChange: Boolean,
     disableInput: Boolean,
+    decimalLength: {
+      type: Number,
+      value: null
+    },
     min: {
       type: null,
       value: 1
@@ -101,7 +111,17 @@ VantComponent({
     // limit value range
     range(value) {
       value = String(value).replace(/[^0-9.-]/g, '');
-      return Math.max(Math.min(this.data.max, value), this.data.min);
+
+      // format range
+      value = value === '' ? 0 : +value;
+      value = Math.max(Math.min(this.data.max, value), this.data.min);
+
+      // format decimal
+      if (isDef(this.data.decimalLength)) {
+        value = value.toFixed(this.data.decimalLength);
+      }
+
+      return value;
     },
 
     onInput(event: Weapp.Event) {
@@ -117,7 +137,8 @@ VantComponent({
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
-      const value = Math.round((+this.data.value + diff) * 100) / 100;
+      const value = add(+this.data.value, diff);
+
       this.triggerInput(this.range(value));
       this.$emit(type);
     },

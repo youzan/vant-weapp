@@ -12,8 +12,12 @@
         <view>{{ item.desc }}</view>
       </view>
       <view class="van-step__circle-container">
-        <view class="van-step__circle" wx:if="{{ index !== active }}" style="{{ index < active ? 'background-color: ' + activeColor : '' }}" />
-        <van-icon wx:else name="checked" color="{{ activeColor }}" custom-class="van-step__active" />
+        <block wx:if="{{ index !== active }}">
+          <van-icon wx:if="{{ inactiveIcon }}" name="{{ inactiveIcon }}" color="#969799" size="12px" />
+          <view wx:else class="van-step__circle" style="{{ index < active ? 'background-color: ' + activeColor : '' }}" />
+        </block>
+
+        <van-icon wx:else name="{{ activeIcon }}" color="{{ activeColor }}" custom-class="van-step__active" />
       </view>
       <view wx:if="{{ index !== steps.length - 1 }}" class="van-step__line" style="{{ index < active ? 'background-color: ' + activeColor : '' }}" />
     </view>

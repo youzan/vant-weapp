@@ -1,6 +1,6 @@
 <wxs src="./index.wxs" module="getters" />
 
-<view class="van-progress custom-class">
+<view class="van-progress custom-class" style="height: {{ strokeWidthUnit }};">
   <view
     class="van-progress__portion"
     style="width: {{ percentage }}%; background: {{ inactive ? '#cacaca' : color }}"

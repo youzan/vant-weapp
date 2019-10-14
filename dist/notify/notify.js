@@ -1,10 +1,19 @@
-import { isObj } from '../common/utils';
+import { WHITE } from '../common/color';
 const defaultOptions = {
     selector: '#van-notify',
-    duration: 3000
+    type: 'danger',
+    message: '',
+    background: '',
+    duration: 3000,
+    zIndex: 110,
+    color: WHITE,
+    safeAreaInsetTop: false,
+    onClick: () => { },
+    onOpened: () => { },
+    onClose: () => { }
 };
-function parseOptions(text) {
-    return isObj(text) ? text : { text };
+function parseOptions(message) {
+    return typeof message === 'string' ? { message } : message;
 }
 function getContext() {
     const pages = getCurrentPages();

@@ -18,7 +18,7 @@ export const transition = function (showDefaultValue) {
             },
             // @ts-ignore
             duration: {
-                type: [Number, Object],
+                type: null,
                 value: 300,
                 observer: 'observeDuration'
             },
@@ -55,7 +55,7 @@ export const transition = function (showDefaultValue) {
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('enter');
-                    this.set({
+                    this.setData({
                         inited: true,
                         display: true,
                         classes: classNames.enter,
@@ -65,7 +65,7 @@ export const transition = function (showDefaultValue) {
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('enter');
-                    this.set({
+                    this.setData({
                         classes: classNames['enter-to']
                     });
                 })
@@ -80,7 +80,7 @@ export const transition = function (showDefaultValue) {
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('leave');
-                    this.set({
+                    this.setData({
                         classes: classNames.leave,
                         currentDuration
                     });
@@ -89,7 +89,7 @@ export const transition = function (showDefaultValue) {
                     .then(nextTick)
                     .then(() => {
                     this.checkStatus('leave');
-                    this.set({
+                    this.setData({
                         classes: classNames['leave-to']
                     });
                 })
@@ -103,7 +103,7 @@ export const transition = function (showDefaultValue) {
             onTransitionEnd() {
                 if (!this.data.show) {
                     this.set({ display: false });
-                    this.$emit('transitionEnd');
+                    this.$emit('transitionend');
                 }
             }
         }

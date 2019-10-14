@@ -25,5 +25,11 @@
     enter-active-class="van-enter-active-class"
     leave-active-class="van-leave-active-class"
     leave-to-class="van-leave-to-class"
+    bind:before-enter="onBeforeEnter"
+    bind:enter="onEnter"
+    bind:after-enter="onAfterEnter"
+    bind:before-leave="onBeforeLeave"
+    bind:leave="onLeave"
+    bind:after-leave="onAfterLeave"
   />
 </demo-block>

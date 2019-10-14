@@ -21,4 +21,12 @@
   .theme(background-color, '@info-background-color');
   .theme(border, '@info-border-width solid @white');
   .theme(border-radius, '@info-size');
+
+  &--dot {
+    min-width: 0;
+    border-radius: 100%;
+    .theme(width, '@info-dot-size');
+    .theme(height, '@info-dot-size');
+    .theme(background-color, '@info-dot-color');
+  }
 }

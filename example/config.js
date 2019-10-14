@@ -122,6 +122,10 @@ export default [
         title: 'Collapse 折叠面板'
       },
       {
+        path: '/count-down',
+        title: 'CountDown 倒计时'
+      },
+      {
         path: '/notice-bar',
         title: 'NoticeBar 通告栏'
       },
@@ -148,6 +152,10 @@ export default [
       {
         path: '/tree-select',
         title: 'TreeSelect 分类选择'
+      },
+      {
+        path: '/divider',
+        title: 'Divider 分割线'
       }
     ]
   },

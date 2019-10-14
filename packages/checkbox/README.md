@@ -14,7 +14,7 @@
 
 ### 基础用法
 
-通过`value`绑定 checkbox 的勾选状态
+通过`value`绑定复选框的勾选状态
 
 ```html
 <van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
@@ -36,24 +36,30 @@ Page({
 
 ### 禁用状态
 
+通过设置`disabled`属性可以禁用复选框
+
 ```html
-<van-checkbox
-  disabled
-  value="{{ checked }}"
-  bind:change="onChange"
->
+<van-checkbox disabled value="{{ checked }}" bind:change="onChange">
+  复选框
+</van-checkbox>
+```
+
+### 自定义形状
+
+将`shape`属性设置为`square`，复选框的形状会变成方形
+
+ ```html
+<van-checkbox value="{{ checked }}" shape="square" bind:change="onChange">
   复选框
 </van-checkbox>
 ```
 
 ### 自定义颜色
 
+通过`checked-color`属性可以自定义选中状态下的图标颜色
+
  ```html
-<van-checkbox
-  value="{{ checked }}"
-  checked-color="#07c160"
-  bind:change="onChange"
->
+<van-checkbox value="{{ checked }}" checked-color="#07c160" bind:change="onChange">
   复选框
 </van-checkbox>
 ```
@@ -65,10 +71,7 @@ Page({
 ```html
 <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange">
   自定义图标
-  <image
-    slot="icon"
-    src="{{ checked ? icon.active : icon.normal }}"
-  />
+  <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" />
 </van-checkbox>
 ```
 
@@ -76,10 +79,8 @@ Page({
 Page({
   data: {
     checked: true,
-    icon: {
-      normal: '//img.yzcdn.cn/icon-normal.png',
-      active: '//img.yzcdn.cn/icon-active.png'
-    }
+    activeIcon: '//img.yzcdn.cn/icon-active.png',
+    inactiveIcon: '//img.yzcdn.cn/icon-normal.png'
   },
 
   onChange(event) {
@@ -96,20 +97,15 @@ Page({
 
 ```html
 <van-checkbox-group value="{{ result }}" bind:change="onChange">
-  <van-checkbox
-    wx:for="{{ list }}"
-    wx:key="index"
-    name="{{ item }}"
-  >
-    复选框 {{ item }}
-  </van-checkbox>
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+  <van-checkbox name="c">复选框 c</van-checkbox>
 </van-checkbox-group>
 ```
 
 ```javascript
 Page({
   data: {
-    list: ['a', 'b', 'c'],
     result: ['a', 'b']
   },
 
@@ -125,13 +121,9 @@ Page({
 
 ```html
 <van-checkbox-group value="{{ result }}" bind:change="onChange" max="{{ 2 }}">
-  <van-checkbox
-    wx:for="{{ list }}"
-    wx:key="index"
-    name="{{ item }}"
-  >
-    复选框 {{ item }}
-  </van-checkbox>
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+  <van-checkbox name="c">复选框 c</van-checkbox>
 </van-checkbox-group>
 ```
 

@@ -3,12 +3,13 @@
 <van-popup
   show="{{ show }}"
   position="bottom"
+  round="{{ round }}"
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   custom-class="van-action-sheet"
   safe-area-inset-bottom="{{ safeAreaInsetBottom }}"
   close-on-click-overlay="{{ closeOnClickOverlay }}"
-  bind:close="onClose"
+  bind:close="onClickOverlay"
 >
   <view wx:if="{{ title }}" class="van-hairline--bottom van-action-sheet__header">
     {{ title }}
@@ -24,6 +25,7 @@
       wx:for="{{ actions }}"
       wx:key="index"
       open-type="{{ item.openType }}"
+      style="{{ item.color ? 'color: ' + item.color : '' }}"
       class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} van-hairline--top {{ item.className || '' }}"
       hover-class="van-action-sheet__item--hover"
       data-index="{{ index }}"

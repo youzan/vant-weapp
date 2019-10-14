@@ -5,6 +5,7 @@ type DialogOptions = {
   lang?: string;
   show?: boolean;
   title?: string;
+  width?: string | number;
   zIndex?: number;
   context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
@@ -17,6 +18,7 @@ type DialogOptions = {
   asyncClose?: boolean;
   businessId?: number;
   sessionFrom?: string;
+  overlayStyle?: string;
   appParameter?: string;
   messageAlign?: string;
   sendMessageImg?: string;
@@ -78,15 +80,17 @@ const Dialog: Dialog = options => {
 Dialog.defaultOptions = {
   show: true,
   title: '',
+  width: null,
   message: '',
   zIndex: 100,
   overlay: true,
-  className: '',
-  customStyle: '',
-  asyncClose: false,
-  messageAlign: '',
-  transition: 'scale',
   selector: '#van-dialog',
+  className: '',
+  asyncClose: false,
+  transition: 'scale',
+  customStyle: '',
+  messageAlign: '',
+  overlayStyle: '',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
   showConfirmButton: true,

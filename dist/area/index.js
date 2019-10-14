@@ -2,11 +2,11 @@ import { VantComponent } from '../common/component';
 import { pickerProps } from '../picker/shared';
 VantComponent({
     classes: ['active-class', 'toolbar-class', 'column-class'],
-    props: Object.assign({}, pickerProps, { value: String, areaList: {
+    props: Object.assign(Object.assign({}, pickerProps), { value: String, areaList: {
             type: Object,
             value: {}
         }, columnsNum: {
-            type: [String, Number],
+            type: null,
             value: 3
         } }),
     data: {
@@ -20,7 +20,7 @@ VantComponent({
         },
         areaList: 'setValues',
         columnsNum(value) {
-            this.set({
+            this.setData({
                 displayColumns: this.data.columns.slice(0, +value)
             });
         }
@@ -151,8 +151,8 @@ VantComponent({
             }
             return area;
         },
-        reset() {
-            this.code = '';
+        reset(code) {
+            this.code = code || '';
             return this.setValues();
         }
     }

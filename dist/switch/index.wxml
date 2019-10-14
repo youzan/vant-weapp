@@ -6,6 +6,6 @@
   bind:tap="onClick"
 >
   <view class="van-switch__node node-class">
-    <van-loading wx:if="{{ loading }}" size="50%" custom-class="van-switch__loading" />
+    <van-loading wx:if="{{ loading }}" color="{{ loadingColor }}" size="50%" custom-class="van-switch__loading" />
   </view>
 </view>

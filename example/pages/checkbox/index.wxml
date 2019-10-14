@@ -26,6 +26,18 @@
   </van-checkbox>
 </demo-block>
 
+<demo-block title="自定义形状">
+  <van-checkbox
+    value="{{ checkboxShape }}"
+    data-key="checkboxShape"
+    shape="square"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    复选框
+  </van-checkbox>
+</demo-block>
+
 <demo-block title="自定义颜色">
   <van-checkbox
     value="{{ checkbox2 }}"
@@ -47,7 +59,12 @@
     bind:change="onChange"
   >
     自定义图标
-    <image mode="widthFix" slot="icon" src="{{ checkbox3 ? icon.active : icon.normal }}" class="icon" />
+    <image
+      slot="icon"
+      class="icon"
+      mode="widthFix"
+      src="{{ checkbox3 ? activeIcon : inactiveIcon }}"
+    />
   </van-checkbox>
 </demo-block>
 
@@ -83,7 +100,7 @@
       <van-cell
         wx:for="{{ list }}"
         wx:key="*this"
-        title="复选框{{ item }}"
+        title="复选框 {{ item }}"
         value-class="value-class"
         clickable
         data-index="{{ index }}"

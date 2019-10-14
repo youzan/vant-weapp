@@ -25,9 +25,12 @@
 <van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
-### 显示徽标
+### 提示信息
 
- ```html
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+
+```html
+<van-icon name="chat" dot />
 <van-icon name="chat" info="9" />
 <van-icon name="chat" info="99+" />
 ```
@@ -39,6 +42,7 @@
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | name | 图标名称或图片链接 | *string* | - | - |
+| dot | 是否显示图标右上角小红点 | *boolean* | `false` | - |
 | info | 图标右上角文字提示 | *string \| number* | - | - |
 | color | 图标颜色 | *string* | `inherit` | - |
 | size | 图标大小，如 `20px`，`2em`，默认单位为`px` | *string \| number* | `inherit` | - |

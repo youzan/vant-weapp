@@ -16,7 +16,9 @@
   }
 
   &__icon {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     width: 1em;
     height: 1em;
@@ -49,7 +51,7 @@
   }
 
   &__label {
-    word-break: break-all;
+    word-wrap: break-word;
 
     .theme(margin-left, '@checkbox-label-margin');
     .theme(color, '@checkbox-label-color');

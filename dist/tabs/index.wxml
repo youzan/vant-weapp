@@ -17,15 +17,16 @@
           wx:for="{{ tabs }}"
           wx:key="index"
           data-index="{{ index }}"
-          class="van-ellipsis tab-class {{ index === active ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === active, disabled: item.disabled }) }}"
-          style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
+          class="van-ellipsis tab-class {{ index === currentIndex ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled }) }}"
+          style="{{ color && index !== currentIndex && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === currentIndex && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
           bind:tap="onTap"
         >
-          <view class="van-ellipsis {{ utils.bem('tab__title', { dot: item.dot }) }}" style="{{ item.titleStyle }}">
+          <view class="van-ellipsis" style="{{ item.titleStyle }}">
             {{ item.title }}
             <van-info
-              wx:if="{{ item.info !== null }}"
+              wx:if="{{ item.info !== null || item.dot }}"
               info="{{ item.info }}"
+              dot="{{ item.dot }}"
               custom-class="van-tab__title__info"
             />
           </view>

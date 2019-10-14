@@ -10,7 +10,8 @@ Page({
       right: false,
       round: false,
       closeIcon: false,
-      customCloseIcon: false
+      customCloseIcon: false,
+      customIconPosition: false
     }
   },
 
@@ -82,5 +83,13 @@ Page({
 
   hideCustomCloseIcon() {
     this.toggle('customCloseIcon', false);
+  },
+
+  showCustomIconPosition() {
+    this.toggle('customIconPosition', true);
+  },
+
+  hideCustomIconPosition() {
+    this.toggle('customIconPosition', false);
   }
 });

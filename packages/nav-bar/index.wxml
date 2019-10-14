@@ -2,7 +2,7 @@
 
 <view
   class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'van-hairline--bottom' : '' }}"
-  style="z-index: {{ zIndex }}; {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }}"
+  style="z-index: {{ zIndex }}; padding-top: {{ safeAreaInsetTop ? statusBarHeight : 0 }}px;"
 >
   <view class="van-nav-bar__left" bind:tap="onClickLeft">
     <block wx:if="{{ leftArrow || leftText }}">

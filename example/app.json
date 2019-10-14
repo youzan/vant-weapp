@@ -1,18 +1,4 @@
 {
-  "tabBar": {
-    "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
-    "list": [
-      {
-        "pagePath": "pages/tabbar/index"
-      },
-      {
-        "pagePath": "pages/tabbar1/index"
-      }
-    ]
-  },
   "pages": [
     "pages/dashboard/index",
     "pages/action-sheet/index",
@@ -20,6 +6,7 @@
     "pages/card/index",
     "pages/cell/index",
     "pages/col/index",
+    "pages/count-down/index",
     "pages/dialog/index",
     "pages/field/index",
     "pages/icon/index",
@@ -39,7 +26,6 @@
     "pages/sidebar/index",
     "pages/tab/index",
     "pages/tabbar/index",
-    "pages/tabbar1/index",
     "pages/tag/index",
     "pages/toast/index",
     "pages/transition/index",
@@ -76,7 +62,9 @@
     "van-checkbox": "./dist/checkbox/index",
     "van-checkbox-group": "./dist/checkbox-group/index",
     "van-col": "./dist/col/index",
+    "van-count-down": "./dist/count-down/index",
     "van-dialog": "./dist/dialog/index",
+    "van-divider": "./dist/divider/index",
     "van-field": "./dist/field/index",
     "van-goods-action": "./dist/goods-action/index",
     "van-goods-action-icon": "./dist/goods-action-icon/index",

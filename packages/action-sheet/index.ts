@@ -1,14 +1,16 @@
 import { VantComponent } from '../common/component';
-import { safeArea } from '../mixins/safe-area';
 import { Weapp } from 'definitions/weapp';
 
 VantComponent({
-  mixins: [safeArea()],
-
   props: {
     show: Boolean,
     title: String,
     cancelText: String,
+    description: String,
+    round: {
+      type: Boolean,
+      value: true
+    },
     zIndex: {
       type: Number,
       value: 100
@@ -26,6 +28,10 @@ VantComponent({
       value: true
     },
     closeOnClickAction: {
+      type: Boolean,
+      value: true
+    },
+    safeAreaInsetBottom: {
       type: Boolean,
       value: true
     }

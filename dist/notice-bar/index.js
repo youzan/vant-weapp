@@ -50,7 +50,7 @@ VantComponent({
     },
     watch: {
         text() {
-            this.set({}, this.init);
+            this.setData({}, this.init);
         }
     },
     created() {
@@ -93,14 +93,14 @@ VantComponent({
         scroll() {
             this.timer && clearTimeout(this.timer);
             this.timer = null;
-            this.set({
+            this.setData({
                 animationData: this.resetAnimation
                     .translateX(this.wrapWidth)
                     .step()
                     .export()
             });
             setTimeout(() => {
-                this.set({
+                this.setData({
                     animationData: this.animation
                         .translateX(-this.contentWidth)
                         .step()
@@ -114,7 +114,7 @@ VantComponent({
         onClickIcon() {
             this.timer && clearTimeout(this.timer);
             this.timer = null;
-            this.set({ show: false });
+            this.setData({ show: false });
         },
         onClick(event) {
             this.$emit('click', event);

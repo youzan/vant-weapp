@@ -33,6 +33,15 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 
+// Animation
+@animation-duration-base: .3s;
+@animation-duration-fast: .2s;
+
+// ActionSheet
+@action-sheet-description-color: @gray-darker;
+@action-sheet-description-font-size: @font-size-md;
+@action-sheet-description-line-height: 20px;
+
 // Button
 @button-default-color: @text-color;
 @button-default-background-color: @white;
@@ -79,6 +88,11 @@
 @collapse-item-content-background-color: @white;
 @collapse-item-title-disabled-color: @gray;
 
+// CountDown
+@count-down-text-color: @text-color;
+@count-down-font-size: @font-size-md;
+@count-down-line-height: 20px;
+
 // Info
 @info-size: 16px;
 @info-color: @white;
@@ -87,6 +101,8 @@
 @info-font-weight: 500;
 @info-border-width: 1px;
 @info-background-color: @red;
+@info-dot-color: @red;
+@info-dot-size: 8px;
 @info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 // NavBar
@@ -105,7 +121,7 @@
 @overlay-background-color: rgba(0, 0, 0, 0.7);
 
 // Popup
-@popup-round-border-radius: 12px;
+@popup-round-border-radius: 20px;
 @popup-close-icon-size: 18px;
 @popup-close-icon-color: @gray-dark;
 @popup-close-icon-margin: 16px;
@@ -187,9 +203,6 @@
 @toast-default-width: 90px;
 @toast-default-min-height: 90px;
 
-// iPhoneX
-@safe-area-inset-bottom: 34px;
-
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
 @grid-item-content-background-color: @white;
@@ -197,3 +210,13 @@
 @grid-item-icon-size: 26px;
 @grid-item-text-color: @gray-darker;
 @grid-item-text-font-size: @font-size-sm;
+
+// Divider
+@divider-margin: @padding-md 0;
+@divider-text-color: @gray-dark;
+@divider-font-size: @font-size-md;
+@divider-line-height: 24px;
+@divider-border-color: @border-color;
+@divider-content-padding: @padding-md;
+@divider-content-left-width: 10%;
+@divider-content-right-width: 10%;

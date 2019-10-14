@@ -1,5 +1,55 @@
 # 更新日志
 
+### [v1.0.0-beta.2](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.2)
+
+#### 主要变动
+
+- Transition去除`transitionend`事件，新增若干事件
+- 增加一个新组件
+- 增加多个 API
+
+#### 新组件
+
+- 新增`CountDown`倒计时组件
+
+#### 新特性
+
+##### NavBar
+
+- 修复`safeAreaInsetTop`在安卓设备上不生效
+
+##### Area
+
+- 新增`columns-placeholder`属性
+
+##### Dialog
+
+- 新增`width`属性
+- 新增`overlay-style`属性
+- 优化样式
+
+##### Slider
+
+- 增加滑动动画
+- 增大点击区域
+- 修复在某些设备中造成页面横向溢出
+
+##### ActionSheet
+
+- 新增`description`属性
+
+##### Rate
+
+- 修复某些情况下高度异常
+
+##### Stepper
+
+- 修复当`step`为小数时加减失效
+
+##### Tabs
+
+- 修复组件初始化报错
+
 ### [v1.0.0-beta.1](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.1)
 
 #### 主要变动

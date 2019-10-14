@@ -11,7 +11,7 @@
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
-    "build:changelog": "vant changelog --tag v1.0.0-beta.0 ./docs/markdown/changelog.generated.md"
+    "build:changelog": "vant changelog --tag v0.5.10 ./docs/markdown/changelog.generated.md"
   },
   "files": [
     "dist",

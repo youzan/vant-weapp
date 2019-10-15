@@ -19,6 +19,9 @@
       bind:click="onClose"
     />
   </view>
+  <view wx:if="{{ description }}" class="van-action-sheet__description">
+    {{ description }}
+  </view>
   <view wx:if="{{ actions && actions.length }}">
     <!-- button外包一层view，防止actions动态变化，导致渲染时button被打散 -->
     <button

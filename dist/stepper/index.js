@@ -2,6 +2,11 @@ import { VantComponent } from '../common/component';
 import { addUnit, isDef } from '../common/utils';
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
+// add num and avoid float number
+function add(num1, num2) {
+    const cardinal = Math.pow(10, 10);
+    return Math.round((num1 + num2) * cardinal) / cardinal;
+}
 VantComponent({
     field: true,
     classes: ['input-class', 'plus-class', 'minus-class'],
@@ -13,7 +18,10 @@ VantComponent({
         buttonSize: null,
         asyncChange: Boolean,
         disableInput: Boolean,
-        decimalLength: Number,
+        decimalLength: {
+            type: Number,
+            value: null
+        },
         min: {
             type: null,
             value: 1
@@ -105,10 +113,7 @@ VantComponent({
                 return;
             }
             const diff = type === 'minus' ? -this.data.step : +this.data.step;
-            let value = +this.data.value + diff;
-            if (!isDef(this.data.decimalLength)) {
-                value = Math.round(value * 100) / 100;
-            }
+            const value = add(+this.data.value, diff);
             this.triggerInput(this.range(value));
             this.$emit(type);
         },

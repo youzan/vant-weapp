@@ -42,7 +42,9 @@
     "pages/picker/index",
     "pages/overlay/index",
     "pages/circle/index",
-    "pages/grid/index"
+    "pages/grid/index",
+    "pages/dropdown-item/index",
+    "pages/dropdown-menu/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",

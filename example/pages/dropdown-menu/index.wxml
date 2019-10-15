@@ -1,0 +1,5 @@
+<demo-block custom-class="white" title="基础用法" padding>
+  <van-dropdown-menu>
+    <van-dropdown-menu-item options="{{ option1 }}" />
+  </van-dropdown-menu>
+</demo-block>

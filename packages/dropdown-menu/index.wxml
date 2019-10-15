@@ -6,8 +6,9 @@
     wx:key="index"
     tabIndex="{{ item.disabled ? -1 : 0 }}"
     data-item="{{ item }}"
+    data-index="{{ index }}"
     class="{{ utils.bem('van-dropdown-item', { disabled: item.disabled }) }}"
-    bind:tap="onTap"
+    bind:tap="onTitleTap"
   >
     <view
       class="{{ item.titleClass }} {{ utils.bem('van-dropdown-title', { active: item.showPopup, down: item.showPopup === (direction === 'down') }) }}"

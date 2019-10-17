@@ -2,14 +2,14 @@
 @import '../common/style/theme.less';
 
 .van-action-sheet {
-  max-height: 90% !important;
+  max-height: @action-sheet-max-height !important;
   .theme(color, '@text-color');
 
   &__item,
   &__cancel {
-    height: 50px;
-    font-size: 16px;
-    line-height: 50px;
+    height: @action-sheet-item-height;
+    font-size: @action-sheet-item-font-size;
+    line-height: @action-sheet-item-line-height;
     text-align: center;
     .theme(background-color, '@white');
 
@@ -19,11 +19,11 @@
   }
 
   &__cancel {
-    height: 60px;
+    height: @action-sheet-cancel-height;
 
     &::before {
       display: block;
-      height: 10px;
+      height: @action-sheet-cancel-before-content-height;
       content: ' ';
       .theme(background-color, '@background-color');
     }
@@ -38,15 +38,15 @@
   }
 
   &__subname {
-    margin-left: 5px;
-    font-size: 12px;
+    margin-left: @action-sheet-subname-margin-left;
+    font-size: @action-sheet-subname-font-size;
     .theme(color, '@gray-darker');
   }
 
   &__header {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 44px;
+    font-weight: @font-weight-bold;
+    font-size: @action-sheet-header-font-size;
+    line-height: @action-sheet-header-line-height;
     text-align: center;
   }
 
@@ -62,8 +62,8 @@
     position: absolute !important;
     top: 0;
     right: 0;
-    padding: 0 15px;
-    font-size: 18px !important;
+    padding: 0 @action-sheet-close-icon-padding;
+    font-size: @action-sheet-close-icon-font-size !important;
     line-height: inherit !important;
     .theme(color, '@gray-dark');
   }

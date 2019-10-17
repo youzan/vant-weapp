@@ -79,8 +79,8 @@ Page({
 | active | 当前步骤 | *number* | 0 | - |
 | direction | 显示方向，可选值为 `horizontal` `vertical` | *string* | `horizontal` | - |
 | active-color | 激活状态颜色 | *string* | `#07c160` | - |
-| active-icon | 激活状态底部图标，可选值见 [Icon 组件](/#/icon) | *string* | `checked` | - |
-| inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
+| active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/icon) | *string* | `checked` | - |
+| inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/icon) | *string* | - | - |
 
 ### 外部样式类
 

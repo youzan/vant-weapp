@@ -3,14 +3,14 @@
 
 .van-action-sheet {
   max-height: @action-sheet-max-height !important;
-  .theme(color, '@text-color');
+  .theme(color, '@action-sheet-item-text-color');
 
   &__item,
   &__cancel {
     font-size: @action-sheet-item-font-size;
     line-height: @action-sheet-item-height;
     text-align: center;
-    .theme(background-color, '@white');
+    .theme(background-color, '@action-sheet-item-background');
 
     &--hover {
       .theme(background-color, '@active-color');
@@ -24,22 +24,22 @@
       display: block;
       height: @action-sheet-cancel-padding-top;
       content: ' ';
-      .theme(background-color, '@background-color');
+      .theme(background-color, '@action-sheet-cancel-padding-color');
     }
   }
 
   &__item--disabled {
-    .theme(color, '@gray');
+    .theme(color, '@action-sheet-item-disabled-text-color');
   }
 
   &__item--disabled&__item--hover {
-    .theme(background-color, '@white');
+    .theme(background-color, '@action-sheet-item-background');
   }
 
   &__subname {
     margin-left: @padding-base;
     font-size: @action-sheet-subname-font-size;
-    .theme(color, '@gray-darker');
+    .theme(color, '@action-sheet-subname-color');
   }
 
   &__header {
@@ -64,6 +64,6 @@
     padding: @action-sheet-close-icon-padding;
     font-size: @action-sheet-close-icon-size !important;
     line-height: inherit !important;
-    .theme(color, '@gray-dark');
+    .theme(color, '@action-sheet-close-icon-color');
   }
 }

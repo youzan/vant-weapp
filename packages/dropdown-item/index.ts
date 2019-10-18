@@ -1,10 +1,5 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 import { Weapp } from 'definitions/weapp';
-
-interface ToggleOptions {
-  immediate?: Boolean;
-}
 
 VantComponent({
   field: true,
@@ -34,60 +29,48 @@ VantComponent({
   data: {
     transition: true,
     showPopup: false,
-    showWrapper: false
+    showWrapper: false,
+    displayTitle: ''
   },
 
-  mounted() {
-    this.initDataFromParent();
+  created() {
+    this.setData({ displayTitle: this.computedDisplayTitle(this.data.value) });
   },
 
   methods: {
-    initDataFromParent() {
-      if (!this.parent) {
-        return;
-      }
-
-      const { data } = this.parent;
-      const { zIndex, offset, direction, overlay, duration, activeCxolor, closeOnClickOverlay } = data;
-
-      let wrapperStyle = `z-index: ${zIndex};`;
-
-      if (direction === 'down') {
-        wrapperStyle += `top: ${addUnit(offset)};`;
-      } else {
-        wrapperStyle += `bottom: ${addUnit(offset)};`;
-      }
-
-      this.setData({ wrapperStyle, overlay, duration, activeCxolor, closeOnClickOverlay });
+    computedDisplayTitle(curValue) {
+      const { title, options } = this.data;
+      let displayTitle = title || '';
+      const match = options.filter(option => option.value === curValue);
+      displayTitle = match.length ? match[0].text : '';
+      return displayTitle;
     },
 
-    onClose() {
+    onClickOverlay() {
+      this.toggle();
       this.$emit('close');
     },
 
     onOptionTap(event: Weapp.Event) {
-      this.setData({ showPopup: false });
+      let { value, displayTitle } = this.data;
       const { option } = event.currentTarget.dataset;
+      const { value: optionValue } = option;
 
-      if (option.value !== this.value) {
-        this.$emit('input', option.value);
-        this.$emit('change', option.value);
+      if (optionValue !== value) {
+        value = optionValue;
+        displayTitle = this.computedDisplayTitle(optionValue);
+        this.$emit('change', optionValue);
       }
+
+      this.setData({ showPopup: false, value, displayTitle });
+      // parent 中的 itemListData 是 chidlren 上的数据的集合
+      // 数据的更新由 children 各自维护，但是模板的更新需要额外触发 parent 的 setData
+      this.parent.setData({ itemListData: this.parent.data.itemListData });
     },
 
-    toggle(show: Boolean = !this.showPopup, options: ToggleOptions = {}) {
-      if (show === this.showPopup) {
-        return;
-      }
-
-      let showWrapper = this.showWrapper;
-
-      if (show) {
-        // this.parent.updateOffset();
-        showWrapper = true;
-      }
-
-      this.setData({ transition: !options.immediate, showPopup: show, showWrapper });
+    toggle() {
+      const { childIndex } = this.data;
+      this.parent.toggleItem(childIndex);
     }
   }
 });

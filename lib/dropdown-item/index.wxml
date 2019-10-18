@@ -2,29 +2,30 @@
 
 <view
   wx:if="{{ showWrapper }}"
-  class="{{ utils.bem('dropdown-item', direction) }}"
+  class="{{ utils.bem('van-dropdown-item', direction) }}"
   style="{{ wrapperStyle }}"
 >
+  bbb
   <van-popup
-    show="{{ showPopup }}"
-    custom-style="position: absolute;"
-    overlay-style="position: absolute;"
+    wx:if="{{ showPopup }}"
+    class="van-dropdown-item__content"
     overlay="{{ overlay }}"
     position="{{ direction === 'down' ? 'top' : 'bottom' }}"
     duration="{{ transition ? duration : 0 }}"
-    close-on-click-overlay="{{ true }}"
-    bind:close="onClickOverlay"
+    overlayStyle="position: absolute;"
+    closeOnClickOverlay="{{ closeOnClickOverlay }}"
+    bind:close="onClose"
   >
     <van-cell
       wx:for="{{ options }}"
       wx:key="{{ item.value }}"
       data-option="{{ item }}"
+      class="{{ utils.bem('van-dropdown-item__option', { active } ) }}"
+      style="{{ active ? 'color:' + activeColor : '' }}"
       clickable="true"
       icon="{{ item.icon }}"
       title="{{ item.text }}"
       bind:tap="onOptionTap"
-      class="{{ utils.bem('dropdown-item__option', { active: item.value === value } ) }}"
-      style="{{ item.value === value  ? 'color:' + activeColor : '' }}"
     >
       <van-icon
         wx:if="{{ item.value === value }}"

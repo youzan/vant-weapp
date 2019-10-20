@@ -1,3 +1,4 @@
+import { addUnit, isDef } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
@@ -5,7 +6,31 @@ import { openType } from '../mixins/open-type';
 VantComponent({
   mixins: [button, openType],
 
-  classes: ['hover-class', 'loading-class'],
+  classes: ['custom-class', 'loading-class', 'error-class', 'image-class'],
+
+  props: {
+    src: String,
+    width: String,
+    height: String,
+    fit: {
+      type: String,
+      value: 'fill'
+    },
+    round: Boolean,
+    lazyLoad: Boolean,
+    showError: {
+      type: Boolean,
+      value: true
+    },
+    showLoading: {
+      type: Boolean,
+      value: true
+    },
+
+    // 受小程序slot限制所需要的属性
+    useLoadingSlot: Boolean,
+    useErrorSlot: Boolean,
+  },
 
   data: {
     fitWeapp: 'aspectFit',
@@ -14,25 +39,21 @@ VantComponent({
       cover: 'aspectFill',
       fill: 'scaleToFill',
       none: 'center',
-      // 有点问题
-      // 'scale-down':
+
+      // TODO: 这个没有原生的属性，需要后面实现，暂时先用contain;
+      'scale-down': 'aspectFit'
     },
     loading: true,
     error: false
   },
 
-  props: {
-    src: String,
-    width: String,
-    height: String,
-    fit: {
-      type: String,
-      value: 'aspectFit'
-    },
-    round: Boolean,
-    lazyLoad: Boolean,
-    useLoadingSlot: Boolean,
-    useErrorSlot: Boolean,
+  watch: {
+    src() {
+      this.setData({
+        loading: true,
+        error: false
+      });
+    }
   },
 
   mounted() {
@@ -44,14 +65,31 @@ VantComponent({
       const { FIT_MODE_MAP, fit } = this.data;
 
       this.setData({
-        mode: FIT_MODE_MAP[fit]
+        mode: FIT_MODE_MAP[fit],
+        style: this.getStyle(),
       });
+    },
+
+    getStyle() {
+      const { width, height } = this.data;
+      let style = '';
+
+      if (isDef(width)) {
+        style += `width: ${addUnit(width)};`;
+      }
+
+      if (isDef(height)) {
+        style += `height: ${addUnit(height)};`;
+      }
+
+      return style;
     },
 
     onLoad(event) {
       this.setData({
         loading: false
       });
+
       this.triggerEvent('load', event);
     },
 
@@ -60,6 +98,7 @@ VantComponent({
         loading: false,
         error: true,
       });
+
       this.triggerEvent('error', event);
     },
 

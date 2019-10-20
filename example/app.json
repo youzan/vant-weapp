@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/image/index",
     "pages/dashboard/index",
+    "pages/image/index",
     "pages/action-sheet/index",
     "pages/button/index",
     "pages/card/index",

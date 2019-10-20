@@ -15,6 +15,10 @@ VantComponent({
             type: String,
             value: BLUE
         },
+        trackColor: {
+            type: String,
+            value: "#e5e5e5",
+        },
         textColor: {
             type: String,
             value: '#fff'

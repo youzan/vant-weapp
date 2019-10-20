@@ -26,6 +26,10 @@ export default [
       {
         path: '/transition',
         title: 'Transition 动画'
+      },
+      {
+        path: '/image',
+        title: 'Image 图片'
       }
     ]
   },

@@ -91,7 +91,7 @@ VantComponent({
         loading: false
       });
 
-      this.triggerEvent('load', event);
+      this.$emit('load', event.detail);
     },
 
     onError(event) {
@@ -100,11 +100,11 @@ VantComponent({
         error: true,
       });
 
-      this.triggerEvent('error', event);
+      this.$emit('error', event.detail);
     },
 
     onClick(event) {
-      this.triggerEvent('click', event);
+      this.$emit('click', event.detail);
     },
   }
 });

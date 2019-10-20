@@ -52,7 +52,7 @@
 
 ### 图片懒加载
 
-设置`lazy-load`属性来开启图片懒加载，需要搭配 [Lazyload](#/zh-CN/lazyload) 组件使用
+图片懒加载，在即将进入一定范围（上下三屏）时才开始加载
 
 ```html
 <van-image
@@ -122,8 +122,8 @@
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击图片时触发 | event: Event |
-| load | 图片加载完毕时触发 | - |
-| error | 图片加载失败时触发 | - |
+| load | 图片加载完毕时触发 | event: Event |
+| error | 图片加载失败时触发 | event: Event |
 
 ### Slots
 

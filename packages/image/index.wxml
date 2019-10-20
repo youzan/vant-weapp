@@ -11,6 +11,7 @@
     mode="{{ mode }}"
     src="{{ src }}"
     lazy-load="{{ lazyLoad }}"
+    show-menu-by-longpress="{{ showMenuByLongpress }}"
     bind:load="onLoad"
     bind:error="onError"
   />

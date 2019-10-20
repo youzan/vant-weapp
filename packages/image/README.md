@@ -103,6 +103,7 @@
 | lazy-load | 是否懒加载 | `boolean` | `false` | - |
 | show-error | 是否展示图片加载失败提示 | `boolean` | `true` | - |
 | show-loading | 是否展示图片加载中提示 | `boolean` | `true` | - |
+| show-menu-by-longpress | 开启长按图片显示识别小程序码菜单 | `boolean` | `false` | - |
 | use-loading-slot | 是否使用了loading slot | `boolean` | `false` | - |
 | use-error-slot | 是否使用了error slot | `boolean` | `false` | - |
 

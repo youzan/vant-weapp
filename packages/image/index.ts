@@ -26,6 +26,7 @@ VantComponent({
       type: Boolean,
       value: true
     },
+    showMenuByLongpress: Boolean,
 
     // 受小程序slot限制所需要的属性
     useLoadingSlot: Boolean,

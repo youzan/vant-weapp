@@ -1,48 +1,26 @@
 <demo-block title="提示弹窗" padding>
-  <van-button
-    plain
-    type="primary"
-    class="demo-margin-right"
-    bind:click="onClickAlert"
-  >
+  <van-button type="primary" class="demo-margin-right" bind:click="onClickAlert">
     提示弹窗
   </van-button>
-  <van-button
-    plain
-    type="primary"
-    bind:click="onClickAlert2"
-  >
+  <van-button type="primary" bind:click="onClickAlert2">
     提示弹窗（无标题）
   </van-button>
 </demo-block>
 
 <demo-block title="确认弹窗" padding>
-  <van-button
-    plain
-    type="primary"
-    bind:click="onClickConfirm"
-  >
+  <van-button type="primary" bind:click="onClickConfirm">
     确认弹窗
   </van-button>
 </demo-block>
 
 <demo-block title="异步关闭" padding>
-  <van-button
-    plain
-    type="primary"
-    bind:click="onClickAsyncClose"
-  >
+  <van-button type="primary" bind:click="onClickAsyncClose">
     异步关闭
   </van-button>
 </demo-block>
 
 <demo-block title="组件调用" padding>
-  <van-button
-    plain
-    type="danger"
-    class="demo-margin-right"
-    bind:click="showCustomDialog"
-  >
+  <van-button type="primary" class="demo-margin-right" bind:click="showCustomDialog">
     组件调用
   </van-button>
   <van-dialog

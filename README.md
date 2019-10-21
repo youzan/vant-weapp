@@ -113,7 +113,6 @@ Vant Weapp 最低支持到小程序基础库 1.9.9 版本
 * [意见反馈](https://github.com/youzan/vant-weapp/issues)
 * [加入我们](https://job.youzan.com)
 * [Vant: 移动端 Vue UI](https://github.com/youzan/vant)
-* [React: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
 
 ## 开源协议
 

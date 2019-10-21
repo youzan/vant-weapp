@@ -2,16 +2,15 @@
 @import '../common/style/theme.less';
 
 .van-action-sheet {
-  max-height: 90% !important;
-  .theme(color, '@text-color');
+  max-height: @action-sheet-max-height !important;
+  .theme(color, '@action-sheet-item-text-color');
 
   &__item,
   &__cancel {
-    height: 50px;
-    font-size: 16px;
-    line-height: 50px;
+    font-size: @action-sheet-item-font-size;
+    line-height: @action-sheet-item-height;
     text-align: center;
-    .theme(background-color, '@white');
+    .theme(background-color, '@action-sheet-item-background');
 
     &--hover {
       .theme(background-color, '@active-color');
@@ -19,34 +18,34 @@
   }
 
   &__cancel {
-    height: 60px;
+    height: @action-sheet-item-height;
 
     &::before {
       display: block;
-      height: 10px;
+      height: @action-sheet-cancel-padding-top;
       content: ' ';
-      .theme(background-color, '@background-color');
+      .theme(background-color, '@action-sheet-cancel-padding-color');
     }
   }
 
   &__item--disabled {
-    .theme(color, '@gray');
+    .theme(color, '@action-sheet-item-disabled-text-color');
   }
 
   &__item--disabled&__item--hover {
-    .theme(background-color, '@white');
+    .theme(background-color, '@action-sheet-item-background');
   }
 
   &__subname {
-    margin-left: 5px;
-    font-size: 12px;
-    .theme(color, '@gray-darker');
+    margin-left: @padding-base;
+    font-size: @action-sheet-subname-font-size;
+    .theme(color, '@action-sheet-subname-color');
   }
 
   &__header {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 44px;
+    font-weight: @font-weight-bold;
+    font-size: @action-sheet-header-font-size;
+    line-height: @action-sheet-header-height;
     text-align: center;
   }
 
@@ -62,9 +61,9 @@
     position: absolute !important;
     top: 0;
     right: 0;
-    padding: 0 15px;
-    font-size: 18px !important;
+    padding: @action-sheet-close-icon-padding;
+    font-size: @action-sheet-close-icon-size !important;
     line-height: inherit !important;
-    .theme(color, '@gray-dark');
+    .theme(color, '@action-sheet-close-icon-color');
   }
 }

@@ -40,9 +40,13 @@ VantComponent({
   methods: {
     computedDisplayTitle(curValue) {
       const { title, options } = this.data;
-      let displayTitle = title || '';
+
+      if (title) {
+        return title;
+      }
+
       const match = options.filter(option => option.value === curValue);
-      displayTitle = match.length ? match[0].text : '';
+      const displayTitle = match.length ? match[0].text : '';
       return displayTitle;
     },
 

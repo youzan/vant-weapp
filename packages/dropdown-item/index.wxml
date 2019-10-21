@@ -5,6 +5,7 @@
   class="{{ utils.bem('dropdown-item', direction) }}"
   style="{{ wrapperStyle }}"
 >
+  {{ showWrapper }}
   <van-popup
     show="{{ showPopup }}"
     custom-style="position: absolute;"

@@ -6,6 +6,8 @@ interface ToggleOptions {
   immediate?: Boolean;
 }
 
+let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
+
 VantComponent({
   field: true,
 
@@ -48,12 +50,24 @@ VantComponent({
     closeOnClickOverlay: {
       type: Boolean,
       value: true
+    },
+    closeOnClickOutside: {
+      type: Boolean,
+      value: true
     }
   },
 
   data: {
     itemListData: [],
     toggleSourceIndex: -1
+  },
+
+  created() {
+    ARRAY.push(this);
+  },
+
+  destroyed() {
+    ARRAY = ARRAY.filter(item => item !== this);
   },
 
   mounted() {
@@ -63,9 +77,6 @@ VantComponent({
   },
 
   methods: {
-    test() {
-      console.log('---test----');
-    },
     updateChildData(childItem: WechatMiniprogram.Component.TrivialInstance, newData, needRefreshList: Boolean = false) {
       childItem.setData(newData);
 
@@ -77,9 +88,10 @@ VantComponent({
 
     toggleItem(active: Number) {
       this.children.forEach((item: WechatMiniprogram.Component.TrivialInstance, index: Number) => {
+        const { showPopup } = item.data;
         if (index === active) {
           this.toggleChildItem(item);
-        } else if (item.showPopup) {
+        } else if (showPopup) {
           this.toggleChildItem(item, false, { immediate: true });
         }
       });
@@ -94,7 +106,7 @@ VantComponent({
         return;
       }
 
-      const newChildData = { transition: !options.immediate, showPopup: show };
+      const newChildData = { transition: !options.immediate, showPopup: show, showWrapper: show };
 
       if (!show) {
         this.updateChildData(childItem, newChildData, true);
@@ -106,11 +118,16 @@ VantComponent({
           childItem,
           {
             ...newChildData,
-            showWrapper: true,
             wrapperStyle
           },
           true
         );
+      });
+    },
+
+    close() {
+      this.children.forEach((item: WechatMiniprogram.Component.TrivialInstance) => {
+        this.toggleChildItem(item, false, { immediate: true });
       });
     },
 
@@ -140,8 +157,17 @@ VantComponent({
     },
 
     onTitleTap(event: Weapp.Event) {
+      // item ---> dropdown-item
       const { item, index } = event.currentTarget.dataset;
+
       if (!item.disabled) {
+        // menuItem ---> dropdown-menu
+        ARRAY.forEach(menuItem => {
+          if (menuItem && menuItem.data.closeOnClickOutside && menuItem !== this) {
+            menuItem.close();
+          }
+        });
+
         this.toggleItem(index);
       }
     }

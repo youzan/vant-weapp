@@ -4,7 +4,6 @@
   <view
     wx:for="{{ itemListData }}"
     wx:key="index"
-    tabIndex="{{ item.disabled ? -1 : 0 }}"
     data-item="{{ item }}"
     data-index="{{ index }}"
     class="{{ utils.bem('dropdown-menu__item', { disabled: item.disabled }) }}"

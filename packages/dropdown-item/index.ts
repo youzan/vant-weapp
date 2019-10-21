@@ -65,8 +65,13 @@ VantComponent({
         displayTitle = this.computedDisplayTitle(optionValue);
         this.$emit('change', optionValue);
       }
-
       this.setData({ showPopup: false, value, displayTitle });
+
+      const time = this.data.duration || 0;
+      setTimeout(() => {
+        this.setData({ showWrapper: false });
+      }, time);
+
       // parent 中的 itemListData 是 chidlren 上的数据的集合
       // 数据的更新由 children 各自维护，但是模板的更新需要额外触发 parent 的 setData
       this.parent.setData({ itemListData: this.parent.data.itemListData });

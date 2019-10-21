@@ -18,11 +18,21 @@ VantComponent({
       this.children = this.children || [];
       // 透传 props 给 dropdown-item
       const { overlay, duration, activeColor, closeOnClickOverlay, direction } = this.data;
-      this.updateChildData(target, { overlay, duration, activeColor, closeOnClickOverlay, direction, childIndex: this.children.length });
+      this.updateChildData(target, {
+        overlay,
+        duration,
+        activeColor,
+        closeOnClickOverlay,
+        direction,
+        childIndex: this.children.length
+      });
 
       this.children.push(target);
       // 收集 dorpdown-item 的 data 挂在 data 上
-      target && this.setData({ itemListData: this.data.itemListData.concat([target.data]) });
+      target &&
+        this.setData({
+          itemListData: this.data.itemListData.concat([target.data])
+        });
     },
     unlinked(target) {
       this.children = this.children.filter((child: WechatMiniprogram.Component.TrivialInstance) => child !== target);
@@ -58,8 +68,7 @@ VantComponent({
   },
 
   data: {
-    itemListData: [],
-    toggleSourceIndex: -1
+    itemListData: []
   },
 
   created() {
@@ -68,12 +77,6 @@ VantComponent({
 
   destroyed() {
     ARRAY = ARRAY.filter(item => item !== this);
-  },
-
-  mounted() {
-    setTimeout(() => {
-      this.setData({ toggleSourceIndex: 1 });
-    });
   },
 
   methods: {
@@ -111,6 +114,7 @@ VantComponent({
       if (!show) {
         const time = options.immediate ? 0 : duration;
         this.updateChildData(childItem, { ...newChildData }, true);
+
         setTimeout(() => {
           this.updateChildData(childItem, { showWrapper: false }, true);
         }, time);

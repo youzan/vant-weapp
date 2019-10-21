@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 VantComponent({
     field: true,
     relation: {
@@ -7,7 +6,6 @@ VantComponent({
         type: 'ancestor',
         linked(target) {
             this.parent = target;
-            console.log('---parent---', this.parent);
         },
         unlinked() {
             this.parent = null;
@@ -25,61 +23,48 @@ VantComponent({
     },
     data: {
         transition: true,
-        showPopup: true,
-        showWrapper: true,
+        showPopup: false,
+        showWrapper: false,
         displayTitle: ''
     },
     created() {
-        this.computedInitData();
-    },
-    mounted() {
-        this.initDataFromParent();
+        this.setData({ displayTitle: this.computedDisplayTitle(this.data.value) });
     },
     methods: {
-        computedInitData() {
-            const { title, options, value } = this.data;
-            let displayTitle = title || '';
-            const match = options.filter(option => option.value === value);
-            displayTitle = match.length ? match[0].text : '';
-            console.log('==>', options, title, displayTitle);
-            this.setData({ displayTitle });
+        computedDisplayTitle(curValue) {
+            const { title, options } = this.data;
+            if (title) {
+                return title;
+            }
+            const match = options.filter(option => option.value === curValue);
+            const displayTitle = match.length ? match[0].text : '';
+            return displayTitle;
         },
-        initDataFromParent() {
-            if (!this.parent) {
-                return;
-            }
-            const { data } = this.parent;
-            const { zIndex, offset, direction, overlay, duration, activeColor, closeOnClickOverlay } = data;
-            let wrapperStyle = `z-index: ${zIndex};`;
-            if (direction === 'down') {
-                wrapperStyle += `top: ${addUnit(offset)};`;
-            }
-            else {
-                wrapperStyle += `bottom: ${addUnit(offset)};`;
-            }
-            this.setData({ wrapperStyle, overlay, duration, activeColor, closeOnClickOverlay });
-        },
-        onClose() {
+        onClickOverlay() {
+            this.toggle();
             this.$emit('close');
         },
         onOptionTap(event) {
-            this.setData({ showPopup: false });
+            let { value, displayTitle } = this.data;
             const { option } = event.currentTarget.dataset;
-            if (option.value !== this.data.value) {
-                this.$emit('input', option.value);
-                this.$emit('change', option.value);
+            const { value: optionValue } = option;
+            if (optionValue !== value) {
+                value = optionValue;
+                displayTitle = this.computedDisplayTitle(optionValue);
+                this.$emit('change', optionValue);
             }
+            this.setData({ showPopup: false, value, displayTitle });
+            const time = this.data.duration || 0;
+            setTimeout(() => {
+                this.setData({ showWrapper: false });
+            }, time);
+            // parent 中的 itemListData 是 chidlren 上的数据的集合
+            // 数据的更新由 children 各自维护，但是模板的更新需要额外触发 parent 的 setData
+            this.parent.setData({ itemListData: this.parent.data.itemListData });
         },
-        toggle(show = !this.data.showPopup, options = {}) {
-            let { showPopup, showWrapper } = this.data;
-            if (show === showPopup) {
-                return;
-            }
-            if (show) {
-                // this.parent.updateOffset();
-                showWrapper = true;
-            }
-            this.setData({ transition: !options.immediate, showPopup: show, showWrapper });
+        toggle() {
+            const { childIndex } = this.data;
+            this.parent.toggleItem(childIndex);
         }
     }
 });

@@ -1,21 +1,18 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view class="van-dropdown-menu van-dropdown-menu--top-bottom">
-  <view>{{ itemListData.length }}</view>
   <view
     wx:for="{{ itemListData }}"
     wx:key="index"
-    tabIndex="{{ item.disabled ? -1 : 0 }}"
     data-item="{{ item }}"
     data-index="{{ index }}"
-    class="{{ utils.bem('van-dropdown-item', { disabled: item.disabled }) }}"
+    class="{{ utils.bem('dropdown-menu__item', { disabled: item.disabled }) }}"
     bind:tap="onTitleTap"
   >
     <view
-      class="{{ item.titleClass }} {{ utils.bem('van-dropdown-title', { active: item.showPopup, down: item.showPopup === (direction === 'down') }) }}"
+      class="{{ item.titleClass }} {{ utils.bem('dropdown-menu__title', { active: item.showPopup, down: item.showPopup === (direction === 'down') }) }}"
       style="{{ item.showPopup ? 'color:' + activeColor : '' }}"
     >
-      <view>ccc</view>
       <view class="van-ellipsis">
         {{item.displayTitle}}
       </view>

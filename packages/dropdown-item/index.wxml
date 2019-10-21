@@ -5,7 +5,6 @@
   class="{{ utils.bem('dropdown-item', direction) }}"
   style="{{ wrapperStyle }}"
 >
-  {{ showWrapper }}
   <van-popup
     show="{{ showPopup }}"
     custom-style="position: absolute;"
@@ -22,11 +21,16 @@
       data-option="{{ item }}"
       clickable="true"
       icon="{{ item.icon }}"
-      title="{{ item.text }}"
-      bind:tap="onOptionTap"
       class="{{ utils.bem('dropdown-item__option', { active: item.value === value } ) }}"
-      style="{{ item.value === value  ? 'color:' + activeColor : '' }}"
+      bind:tap="onOptionTap"
     >
+      <view
+        slot="title"
+        class="van-dropdown-item__title"
+        style="{{ item.value === value  ? 'color:' + activeColor : '' }}"
+      >
+        {{ item.text }}
+      </view>
       <van-icon
         wx:if="{{ item.value === value }}"
         name="success"

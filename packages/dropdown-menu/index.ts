@@ -98,7 +98,7 @@ VantComponent({
     },
 
     toggleChildItem(childItem: WechatMiniprogram.Component.TrivialInstance, show: boolean, options: ToggleOptions = {}) {
-      const { showPopup } = childItem.data;
+      const { showPopup, duration } = childItem.data;
 
       if (show === undefined) show = !showPopup;
 
@@ -106,10 +106,14 @@ VantComponent({
         return;
       }
 
-      const newChildData = { transition: !options.immediate, showPopup: show, showWrapper: show };
+      const newChildData = { transition: !options.immediate, showPopup: show };
 
       if (!show) {
-        this.updateChildData(childItem, newChildData, true);
+        const time = options.immediate ? 0 : duration;
+        this.updateChildData(childItem, { ...newChildData }, true);
+        setTimeout(() => {
+          this.updateChildData(childItem, { showWrapper: false }, true);
+        }, time);
         return;
       }
 
@@ -118,7 +122,8 @@ VantComponent({
           childItem,
           {
             ...newChildData,
-            wrapperStyle
+            wrapperStyle,
+            showWrapper: true
           },
           true
         );

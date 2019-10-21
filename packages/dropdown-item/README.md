@@ -1,138 +1,156 @@
-# Stepper 步进器
+# DropdownMenu
 
-### 介绍
+### Install
 
-步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字
+``` javascript
+import Vue from 'vue';
+import { DropdownMenu, DropdownItem } from 'vant';
 
-### 引入
-
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
-
-```json
-"usingComponents": {
-  "van-stepper": "path/to/vant-weapp/dist/stepper/index"
-}
+Vue.use(DropdownMenu).use(DropdownItem);
 ```
 
-## 代码演示
+## Usage
 
-### 基础用法
-
-通过`value`设置输入值，可以通过`change`事件监听到输入值的变化
+### Basic Usage
 
 ```html
-<van-stepper value="{{ 1 }}" bind:change="onChange" />
+<van-dropdown-menu>
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
 ```
 
 ```js
-Page({
-  onChange(event) {
-    console.log(event.detail);
+export default {
+  data() {
+    return {
+      value1: 0,
+      value2: 'a',
+      option1: [
+        { text: 'Option1', value: 0 },
+        { text: 'Option2', value: 1 },
+        { text: 'Option3', value: 2 }
+      ],
+      option2: [
+        { text: 'Option A', value: 'a' },
+        { text: 'Option B', value: 'b' },
+        { text: 'Option C', value: 'c' },
+      ]
+    }
   }
-});
+};
 ```
 
-### 步长设置
-
-通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为`1`
+### Custom Content
 
 ```html
-<van-stepper value="{{ 1 }}" step="2" />
-```
-
-### 限制输入范围
-
-通过`min`和`max`属性限制输入值的范围
-
-```html
-<van-stepper value="{{ 5 }}" min="5" max="8" />
-```
-
-### 限制输入整数
-
-设置`integer`属性后，输入框将限制只能输入整数
-
-```html
-<van-stepper value="{{ 1 }}" integer />
-```
-
-### 禁用状态
-
-通过设置`disabled`属性来禁用步进器，禁用状态下无法点击按钮或修改输入框
-
-```html
-<van-stepper value="{{ 1 }}" disabled />
-```
-
-### 异步变更
-
-如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
-
-```html
-<van-stepper value="{{ value }}" async-change bind:change="onChange" />
+<van-dropdown-menu>
+  <van-dropdown-item v-model="value" :options="option" />
+  <van-dropdown-item title="Title" ref="item">
+    <van-switch-cell v-model="switch1" title="Title" />
+    <van-switch-cell v-model="switch2" title="Title" />
+    <van-button block type="info" @click="onConfirm">Confirm</van-button>
+  </van-dropdown-item>
+</van-dropdown-menu>
 ```
 
 ```js
-Page({
-  data: {
-    value: 1
+export default {
+  data() {
+    return {
+      value: 0,
+      switch1: false,
+      switch2: false,
+      option: [
+        { text: 'Option1', value: 0 },
+        { text: 'Option2', value: 1 },
+        { text: 'Option3', value: 2 }
+      ]
+    }
   },
 
-  onChange(value) {
-    Toast.loading({ forbidClick: true });
-
-    setTimeout(() => {
-      Toast.clear();
-      this.setData({ value });
-    }, 500);
+  methods: {
+    onConfirm() {
+      this.$refs.item.toggle();
+    }
   }
-});
+};
 ```
 
-### 自定义大小
+### Custom Active Color
 
-通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
+Use `active-color` prop to custom active color of the title and options
 
 ```html
-<van-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
+<van-dropdown-menu active-color="#ee0a24">
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+```
+
+### Expand Direction
+
+```html
+<van-dropdown-menu direction="up">
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+```
+
+### Disabled
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item v-model="value1" disabled :options="option1" />
+  <van-dropdown-item v-model="value2" disabled :options="option2" />
+</van-dropdown-menu>
 ```
 
 ## API
 
-### Props
+### DropdownMenu Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - | - |
-| value | 输入值 | *string \| number* | 最小值 | - |
-| min | 最小值 | *string \| number* | `1` | - |
-| max | 最大值 | *string \| number* | - | - |
-| step | 步长 | *string \| number* | `1` | - |
-| integer | 是否只允许输入整数 | *boolean* | `false` | - |
-| disabled | 是否禁用 | *boolean* | `false` | - |
-| disable-input | 是否禁用输入框 | *boolean* | `false` | - |
-| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
-| input-width | 输入框宽度，默认单位为 `px` | *string \| number* | `32px` | - |
-| button-size | 按钮大小，默认单位为 `px`，输入框高度会和按钮大小保持一致 | *string \| number* | `28px` | - |
-| show-plus | 是否显示增加按钮 | *boolean* | `true` | - |
-| show-minus | 是否显示减少按钮 | *boolean* | `true` | - |
+| Attribute              | Description                          | Type      | Default   | Version |
+| ---------------------- | ------------------------------------ | --------- | --------- | ------- |
+| active-color           | Active color of title and option     | *string*  | `#1989fa` | -       |
+| z-index                | z-index of menu item                 | *number*  | `10`      | -       |
+| duration               | Transition duration, unit second     | *number*  | `0.2`     | -       |
+| direction              | Expand direction, can be set to `up` | *string*  | `down`    | 2.0.1   |
+| overlay                | Whether to show overlay              | *boolean* | `true`    | -       |
+| close-on-click-overlay | Whether to close when click overlay  | *boolean* | `true`    | -       |
+| close-on-click-outside | Whether to close when click outside  | *boolean* | `true`    | 2.0.7   |
 
-### Events
+### DropdownItem Props
 
-| 事件名         | 说明                     | 回调参数                   |
-| -------------- | ------------------------ | -------------------------- |
-| bind:change    | 当绑定值变化时触发的事件 | event.detail: 当前输入的值 |
-| bind:overlimit | 点击不可用的按钮时触发   | -                          |
-| bind:plus      | 点击增加按钮时触发       | -                          |
-| bind:minus     | 点击减少按钮时触发       | -                          |
-| bind:focus     | 输入框聚焦时触发         | -                          |
-| bind:blur      | 输入框失焦时触发         | -                          |
+| Attribute   | Description                                | Type               | Default                 | Version |
+| ----------- | ------------------------------------------ | ------------------ | ----------------------- | ------- |
+| value       | Value of current option，can use `v-model` | *string \| number* | -                       | -       |
+| title       | Item title                                 | *string*           | Text of selected option | -       |
+| options     | Options                                    | *Option[]*         | `[]`                    | -       |
+| disabled    | Whether to disable dropdown item           | *boolean*          | `false`                 | -       |
+| title-class | Title class                                | *string*           | -                       | -       |
 
-### 外部样式类
+### DropdownItem Events
 
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| input-class  | 输入框样式类   |
-| plus-class   | 加号按钮样式类 |
-| minus-class  | 减号按钮样式类 |
+| Event  | Description                               | Arguments |
+| ------ | ----------------------------------------- | --------- |
+| change | Triggered select option and value changed | value     |
+| open   | Triggered when open menu                  | -         |
+| opened | Triggered when opened menu                | -         |
+| close  | Triggered when close menu                 | -         |
+
+### DropdownItem Methods
+
+Use ref to get DropdownItem instance and call instance methods
+
+| Name   | Attribute     | Return value | Description    |
+| ------ | ------------- | ------------ | -------------- |
+| toggle | show: boolean | -            | Toggle display |
+
+### Data Structure of Option
+
+| Key   | Description | Type               |
+| ----- | ----------- | ------------------ |
+| text  | Text        | *string*           |
+| value | Value       | *string \| number* |
+| icon  | Left icon   | *string*           |

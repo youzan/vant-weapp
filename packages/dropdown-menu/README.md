@@ -1,16 +1,17 @@
-# Stepper 步进器
+# DropdownMenu 下拉菜单
 
 ### 介绍
 
-步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字
+下拉菜单
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
 ```json
 "usingComponents": {
-  "van-stepper": "path/to/vant-weapp/dist/stepper/index"
+  "van-dropdown-menu": "path/to/vant-weapp/dist/dropdown-menu/index",
+  "van-dropdown-item": "path/to/vant-weapp/dist/dropdown-item/index"
 }
 ```
 
@@ -18,121 +19,161 @@
 
 ### 基础用法
 
-通过`value`设置输入值，可以通过`change`事件监听到输入值的变化
-
 ```html
-<van-stepper value="{{ 1 }}" bind:change="onChange" />
-```
-
-```js
-Page({
-  onChange(event) {
-    console.log(event.detail);
-  }
-});
-```
-
-### 步长设置
-
-通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为`1`
-
-```html
-<van-stepper value="{{ 1 }}" step="2" />
-```
-
-### 限制输入范围
-
-通过`min`和`max`属性限制输入值的范围
-
-```html
-<van-stepper value="{{ 5 }}" min="5" max="8" />
-```
-
-### 限制输入整数
-
-设置`integer`属性后，输入框将限制只能输入整数
-
-```html
-<van-stepper value="{{ 1 }}" integer />
-```
-
-### 禁用状态
-
-通过设置`disabled`属性来禁用步进器，禁用状态下无法点击按钮或修改输入框
-
-```html
-<van-stepper value="{{ 1 }}" disabled />
-```
-
-### 异步变更
-
-如果需要异步地修改输入框的值，可以设置`async-change`属性，并在`change`事件中手动修改`value`
-
-```html
-<van-stepper value="{{ value }}" async-change bind:change="onChange" />
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</van-dropdown-menu>
 ```
 
 ```js
 Page({
   data: {
-    value: 1
-  },
-
-  onChange(value) {
-    Toast.loading({ forbidClick: true });
-
-    setTimeout(() => {
-      Toast.clear();
-      this.setData({ value });
-    }, 500);
+    option1: [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 }
+    ],
+    option2: [
+      { text: '默认排序', value: 'a' },
+      { text: '好评排序', value: 'b' },
+      { text: '销量排序', value: 'c' }
+    ],
+    value1: 0,
+    value2: 'a'
   }
 });
 ```
 
-### 自定义大小
-
-通过`input-width`属性设置输入框宽度，通过`button-size`属性设置按钮大小和输入框高度
+### 自定义菜单内容
 
 ```html
-<van-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item id="item" title="{{ itemTitle }}">
+    <van-cell title="{{ switchTitle1 }}">
+      <van-switch
+        slot="right-icon"
+        size="24px"
+        style="height: 26px"
+        checked="{{ switch1 }}"
+        bind:change="onSwitch1Change"
+      />
+    </van-cell>
+    <van-cell title="{{ switchTitle2 }}">
+      <van-switch
+        slot="right-icon"
+        size="24px"
+        style="height: 26px"
+        checked="{{ switch2 }}"
+        bind:change="onSwitch2Change"
+      />
+    </van-cell>
+    <van-button type="info" block bind:click="onConfirm">
+      确定
+    </van-button>
+  </van-dropdown-item>
+</van-dropdown-menu>
+```
+
+```js
+Page({
+  data: {
+    switchTitle1: '包邮',
+    switchTitle2: '团购',
+    itemTitle: '筛选',
+    option1: [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 }
+    ],
+    value1: 0,
+  },
+
+  onConfirm () {
+    this.selectComponent('#item').toggle();
+  },
+
+  onSwitch1Change ({ detail }) {
+    this.setData({ switch1: detail });
+  },
+
+  onSwitch2Change ({ detail }) {
+    this.setData({ switch2: detail });
+  }
+});
+```
+
+### 自定义选中状态颜色
+
+```html
+<van-dropdown-menu active-color="#ee0a24">
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</van-dropdown-menu>
+```
+
+### 向上展开
+
+```html
+<van-dropdown-menu direction="up">
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</van-dropdown-menu>
+```
+
+### 禁用菜单
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" disabled options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" disabled options="{{ option2 }}" />
+</van-dropdown-menu>
 ```
 
 ## API
 
-### Props
+### DropdownMenu Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - | - |
-| value | 输入值 | *string \| number* | 最小值 | - |
-| min | 最小值 | *string \| number* | `1` | - |
-| max | 最大值 | *string \| number* | - | - |
-| step | 步长 | *string \| number* | `1` | - |
-| integer | 是否只允许输入整数 | *boolean* | `false` | - |
-| disabled | 是否禁用 | *boolean* | `false` | - |
-| disable-input | 是否禁用输入框 | *boolean* | `false` | - |
-| async-change | 是否开启异步变更，开启后需要手动控制输入值 | *boolean* | `false` | - |
-| input-width | 输入框宽度，默认单位为 `px` | *string \| number* | `32px` | - |
-| button-size | 按钮大小，默认单位为 `px`，输入框高度会和按钮大小保持一致 | *string \| number* | `28px` | - |
-| show-plus | 是否显示增加按钮 | *boolean* | `true` | - |
-| show-minus | 是否显示减少按钮 | *boolean* | `true` | - |
+| Attribute              | Description                    | Type      | Default   | Version |
+| ---------------------- | ------------------------------ | --------- | --------- | ------- |
+| active-color           | 菜单标题和选项的选中态颜色     | *string*  | `#1989fa` | -       |
+| z-index                | 菜单栏 z-index 层级            | *number*  | `10`      | -       |
+| duration               | 动画时长，单位毫秒             | *number*  | `200`     | -       |
+| direction              | 菜单展开方向，可选值为up       | *string*  | `down`    | -       |
+| overlay                | 是否显示遮罩层                 | *boolean* | `true`    | -       |
+| close-on-click-overlay | 是否在点击遮罩层后关闭菜单     | *boolean* | `true`    | -       |
+| close-on-click-outside | 是否在点击外部 menu 后关闭菜单 | *boolean* | `true`    | -       |
 
-### Events
+### DropdownItem Props
 
-| 事件名         | 说明                     | 回调参数                   |
-| -------------- | ------------------------ | -------------------------- |
-| bind:change    | 当绑定值变化时触发的事件 | event.detail: 当前输入的值 |
-| bind:overlimit | 点击不可用的按钮时触发   | -                          |
-| bind:plus      | 点击增加按钮时触发       | -                          |
-| bind:minus     | 点击减少按钮时触发       | -                          |
-| bind:focus     | 输入框聚焦时触发         | -                          |
-| bind:blur      | 输入框失焦时触发         | -                          |
+| Attribute   | Description            | Type               | Default                 | Version |
+| ----------- | ---------------------- | ------------------ | ----------------------- | ------- |
+| value       | 当前选中项对应的 value | *string \| number* | -                       | -       |
+| title       | 菜单项标题             | *string*           | Text of selected option | -       |
+| options     | 选项数组               | *Option[]*         | `[]`                    | -       |
+| disabled    | 是否禁用菜单           | *boolean*          | `false`                 | -       |
+| title-class | 标题额外类名           | *string*           | -                       | -       |
 
-### 外部样式类
+### DropdownItem Events
 
-| 类名         | 说明           |
-| ------------ | -------------- |
-| custom-class | 根节点样式类   |
-| input-class  | 输入框样式类   |
-| plus-class   | 加号按钮样式类 |
-| minus-class  | 减号按钮样式类 |
+| Event  | Description                   | Arguments |
+| ------ | ----------------------------- | --------- |
+| change | 点击选项导致 value 变化时触发 | value     |
+| close  | 关闭菜单栏时触发              | -         |
+
+### DropdownItem Methods
+
+通过 selectComponent(id) 可访问
+
+| Name   | Attribute     | Return value | Description      |
+| ------ | ------------- | ------------ | ---------------- |
+| toggle | show: boolean | -            | 切换菜单是否展示 |
+
+### Data Structure of Option
+
+| Key   | Description                                | Type               |
+| ----- | ------------------------------------------ | ------------------ |
+| text  | 文字                                       | *string*           |
+| value | 标识符                                     | *string \| number* |
+| icon  | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string*           |

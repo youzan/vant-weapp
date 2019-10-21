@@ -16,6 +16,10 @@ export default [
         title: 'Icon 图标'
       },
       {
+        path: '/image',
+        title: 'Image 图片'
+      },
+      {
         path: '/col',
         title: 'Layout 布局'
       },

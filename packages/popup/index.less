@@ -3,8 +3,6 @@
 
 .van-popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
   box-sizing: border-box;
   max-height: 100%;
   overflow-y: auto;
@@ -14,6 +12,8 @@
   .theme(background-color, '@white');
 
   &--center {
+    top: 50%;
+    left: 50%;
     transform: translate3d(-50%, -50%, 0);
 
     &.van-popup--round {
@@ -23,11 +23,8 @@
 
   &--top {
     top: 0;
-    right: auto;
-    bottom: auto;
-    left: 50%;
+    left: 0;
     width: 100%;
-    transform: translate3d(-50%, 0, 0);
 
     &.van-popup--round {
       .theme(
@@ -40,8 +37,6 @@
   &--right {
     top: 50%;
     right: 0;
-    bottom: auto;
-    left: auto;
     transform: translate3d(0, -50%, 0);
 
     &.van-popup--round {
@@ -53,12 +48,9 @@
   }
 
   &--bottom {
-    top: auto;
-    right: auto;
     bottom: 0;
-    left: 50%;
+    left: 0;
     width: 100%;
-    transform: translate3d(-50%, 0, 0);
 
     &.van-popup--round {
       .theme(
@@ -70,8 +62,6 @@
 
   &--left {
     top: 50%;
-    right: auto;
-    bottom: auto;
     left: 0;
     transform: translate3d(0, -50%, 0);
 
@@ -169,12 +159,12 @@
 
 .van-bottom-enter,
 .van-bottom-leave-to {
-  transform: translate3d(-50%, 100%, 0);
+  transform: translate3d(0, 100%, 0);
 }
 
 .van-top-enter,
 .van-top-leave-to {
-  transform: translate3d(-50%, -100%, 0);
+  transform: translate3d(0, -100%, 0);
 }
 
 .van-left-enter,

@@ -9,17 +9,17 @@
   // use pseudo element to expand click area
   &::before {
     position: absolute;
-    top: -@padding-xs;
     right: 0;
-    bottom: -@padding-xs;
     left: 0;
     content: '';
+    .theme(top, '-@padding-xs');
+    .theme(bottom, '-@padding-xs');
   }
 
   &__bar {
     position: relative;
     border-radius: inherit;
-    transition: width @animation-duration-fast;
+    .theme(transition, 'width @animation-duration-fast');
     .theme(background-color, '@blue');
   }
 

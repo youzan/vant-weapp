@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { isImageFile } from './utils';
 import { addUnit } from '../common/utils';
+
 interface File {
   path: string; // 上传临时地址
   url: string; // 上传临时地址

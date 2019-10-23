@@ -5,17 +5,17 @@
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  height: @button-default-height;
   padding: 0;
-  font-size: @button-default-font-size;
-  line-height: @button-default-line-height;
   text-align: center;
   vertical-align: middle;
-  transition: opacity @animation-duration-fast;
-  .theme(border-radius, '@button-border-radius');
-
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
+
+  .theme(height, '@button-default-height');
+  .theme(font-size, '@button-default-font-size');
+  .theme(line-height, '@button-default-line-height');
+  .theme(transition, 'opacity @animation-duration-fast');
+  .theme(border-radius, '@button-border-radius');
 
   &::before {
     position: absolute;
@@ -98,30 +98,30 @@
 
   &--large {
     width: 100%;
-    height: @button-large-height;
-    line-height: @button-large-line-height;
+    .theme(height, '@button-large-height');
+    .theme(line-height, '@button-large-line-height');
   }
 
   &--normal {
     padding: 0 15px;
-    font-size: @button-normal-font-size;
+    .theme(font-size, '@button-normal-font-size');
   }
 
   &--small {
-    min-width: @button-small-min-width;
-    height: @button-small-height;
-    padding: 0 @padding-xs;
-    font-size: @button-small-font-size;
-    line-height: @button-small-line-height;
+    .theme(min-width, '@button-small-min-width');
+    .theme(height, '@button-small-height');
+    .theme(padding, '0 @padding-xs');
+    .theme(font-size, '@button-small-font-size');
+    .theme(line-height, '@button-small-line-height');
   }
 
   // mini图标默认宽度50px，文字不能超过4个
   &--mini {
     display: inline-block;
-    min-width: @button-mini-min-width;
-    height: @button-mini-height;
-    font-size: @button-mini-font-size;
-    line-height: @button-mini-line-height;
+    .theme(min-width, '@button-mini-min-width');
+    .theme(height, '@button-mini-height');
+    .theme(font-size, '@button-mini-font-size');
+    .theme(line-height, '@button-mini-line-height');
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -142,7 +142,7 @@
   }
 
   &--disabled {
-    opacity: @button-disabled-opacity;
+    .theme(opacity, '@button-disabled-opacity');
   }
 
   &__text {

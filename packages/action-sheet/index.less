@@ -2,14 +2,14 @@
 @import '../common/style/theme.less';
 
 .van-action-sheet {
-  max-height: @action-sheet-max-height !important;
+  .theme(max-height, '@action-sheet-max-height') !important;
   .theme(color, '@action-sheet-item-text-color');
 
   &__item,
   &__cancel {
-    font-size: @action-sheet-item-font-size;
-    line-height: @action-sheet-item-height;
     text-align: center;
+    .theme(font-size, '@action-sheet-item-font-size');
+    .theme(line-height, '@action-sheet-item-height');
     .theme(background-color, '@action-sheet-item-background');
 
     &--hover {
@@ -18,12 +18,12 @@
   }
 
   &__cancel {
-    height: @action-sheet-item-height;
+    .theme(height, '@action-sheet-item-height');
 
     &::before {
       display: block;
-      height: @action-sheet-cancel-padding-top;
       content: ' ';
+      .theme(height, '@action-sheet-cancel-padding-top');
       .theme(background-color, '@action-sheet-cancel-padding-color');
     }
   }
@@ -37,33 +37,33 @@
   }
 
   &__subname {
-    margin-left: @padding-base;
-    font-size: @action-sheet-subname-font-size;
+    .theme(margin-left, '@padding-base');
+    .theme(font-size, '@action-sheet-subname-font-size');
     .theme(color, '@action-sheet-subname-color');
   }
 
   &__header {
-    font-weight: @font-weight-bold;
-    font-size: @action-sheet-header-font-size;
-    line-height: @action-sheet-header-height;
     text-align: center;
+    .theme(font-weight, '@font-weight-bold');
+    .theme(font-size, '@action-sheet-header-font-size');
+    .theme(line-height, '@action-sheet-header-height');
   }
 
   &__description {
-    padding: @padding-md;
-    color: @action-sheet-description-color;
-    font-size: @action-sheet-description-font-size;
-    line-height: @action-sheet-description-line-height;
     text-align: center;
+    .theme(padding, '@padding-md');
+    .theme(color, '@action-sheet-description-color');
+    .theme(font-size, '@action-sheet-description-font-size');
+    .theme(line-height, '@action-sheet-description-line-height');
   }
 
   &__close {
     position: absolute !important;
     top: 0;
     right: 0;
-    padding: @action-sheet-close-icon-padding;
-    font-size: @action-sheet-close-icon-size !important;
     line-height: inherit !important;
+    .theme(padding, '@action-sheet-close-icon-padding');
+    .theme(font-size, '@action-sheet-close-icon-size') !important;
     .theme(color, '@action-sheet-close-icon-color');
   }
 }

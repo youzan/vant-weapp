@@ -43,6 +43,7 @@
     "pages/picker/index",
     "pages/overlay/index",
     "pages/circle/index",
+    "pages/grid/index",
     "pages/dropdown-menu/index"
   ],
   "window": {

@@ -5,17 +5,17 @@
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  height: 44px;
   padding: 0;
-  font-size: 16px;
-  line-height: 42px;
   text-align: center;
   vertical-align: middle;
-  transition: opacity @animation-duration-fast;
-  .theme(border-radius, '@button-border-radius');
-
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
+
+  .theme(height, '@button-default-height');
+  .theme(font-size, '@button-default-font-size');
+  .theme(line-height, '@button-default-line-height');
+  .theme(transition, 'opacity @animation-duration-fast');
+  .theme(border-radius, '@button-border-radius');
 
   &::before {
     position: absolute;
@@ -77,7 +77,7 @@
   }
 
   &--plain {
-    .theme(background-color, '@white');
+    .theme(background-color, '@button-plain-background-color');
 
     &.van-button--primary {
       .theme(color, '@button-primary-background-color');
@@ -98,30 +98,30 @@
 
   &--large {
     width: 100%;
-    height: 50px;
-    line-height: 48px;
+    .theme(height, '@button-large-height');
+    .theme(line-height, '@button-large-line-height');
   }
 
   &--normal {
     padding: 0 15px;
-    font-size: 14px;
+    .theme(font-size, '@button-normal-font-size');
   }
 
   &--small {
-    min-width: 60px;
-    height: 30px;
-    padding: 0 8px;
-    font-size: 12px;
-    line-height: 28px;
+    .theme(min-width, '@button-small-min-width');
+    .theme(height, '@button-small-height');
+    .theme(padding, '0 @padding-xs');
+    .theme(font-size, '@button-small-font-size');
+    .theme(line-height, '@button-small-line-height');
   }
 
-  /* mini图标默认宽度50px，文字不能超过4个 */
+  // mini图标默认宽度50px，文字不能超过4个
   &--mini {
     display: inline-block;
-    width: 50px;
-    height: 22px;
-    font-size: 10px;
-    line-height: 20px;
+    .theme(min-width, '@button-mini-min-width');
+    .theme(height, '@button-mini-height');
+    .theme(font-size, '@button-mini-font-size');
+    .theme(line-height, '@button-mini-line-height');
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -142,7 +142,7 @@
   }
 
   &--disabled {
-    opacity: 0.5;
+    .theme(opacity, '@button-disabled-opacity');
   }
 
   &__text {

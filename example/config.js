@@ -16,6 +16,10 @@ export default [
         title: 'Icon 图标'
       },
       {
+        path: '/image',
+        title: 'Image 图片'
+      },
+      {
         path: '/col',
         title: 'Layout 布局'
       },
@@ -90,6 +94,10 @@ export default [
       {
         path: '/dialog',
         title: 'Dialog 弹出框'
+      },
+      {
+        path: '/dropdown-menu',
+        title: 'DropdownMenu 下拉菜单'
       },
       {
         path: '/loading',

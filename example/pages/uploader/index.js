@@ -14,7 +14,6 @@ Page({
 
   beforeRead(event) {
     const { file, callback = () => {} } = event.detail;
-    console.log('before上传', file);
     if (file.path.indexOf('jpeg') < 0) {
       wx.showToast({ title: '请选择jpg图片上传', icon: 'none' });
       callback(false);
@@ -25,7 +24,6 @@ Page({
 
   afterRead(event) {
     const { file, name } = event.detail;
-    console.log('after上传', file);
     const fileList = this.data[`fileList${name}`];
 
     this.setData({ [`fileList${name}`]: fileList.concat(file) });
@@ -37,14 +35,10 @@ Page({
 
   delete(event) {
     const { index, name } = event.detail;
-    console.log('删除文件，序号' + index);
     const fileList = this.data[`fileList${name}`];
     fileList.splice(index, 1);
     this.setData({ [`fileList${name}`]: fileList });
   },
 
-  clickPreview(event) {
-    const { url } = event.detail;
-    console.log('点击预览, 地址' + url);
-  }
+  clickPreview() {}
 });

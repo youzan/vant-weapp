@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { isImageFile } from './utils';
+import { addUnit } from '../common/utils';
 import File from './define';
 
 VantComponent({
@@ -7,7 +8,7 @@ VantComponent({
     disabled: Boolean,
     uploadText: String,
     previewSize: {
-      type: [Number, String],
+      type: null,
       value: 90,
       observer: 'setComputedPreviewSize'
     },
@@ -44,14 +45,8 @@ VantComponent({
       type: String,
       value: 'scaleToFill'
     },
-    useSlot: {
-      type: Boolean,
-      value: false
-    },
-    useBeforeRead: {
-      type: Boolean,
-      value: false
-    }
+    useSlot: Boolean,
+    useBeforeRead: Boolean
   },
 
   data: {
@@ -73,11 +68,9 @@ VantComponent({
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
 
-    setComputedPreviewSize() {
-      const value = String(this.data.previewSize);
-      const reg = /^\d+(\.\d+)?$/;
+    setComputedPreviewSize(val) {
       this.setData({
-        computedPreviewSize: reg.test(value) ? `${value}px` : value
+        computedPreviewSize: addUnit(val)
       });
     },
 
@@ -91,12 +84,12 @@ VantComponent({
         maxSize,
         accept,
         lists,
-        useBeforeRead = false // 是否定义了beforeRead
+        useBeforeRead = false // 是否定义了 beforeRead
       } = this.data;
 
       let chooseFile = null;
       const newMaxCount = maxCount - lists.length;
-      // 设置为只选择图片的时候使用chooseImage来实现
+      // 设置为只选择图片的时候使用 chooseImage 来实现
       if (accept === 'image') {
         chooseFile = new Promise((resolve, reject) => {
           wx.chooseImage({

@@ -6,4 +6,4 @@ export default interface File {
   type: string; // 上传类型，accept="image"不存在
   time: number; // 上传时间，accept="image"不存在
   image: boolean; // 是否为图片
-}
+};

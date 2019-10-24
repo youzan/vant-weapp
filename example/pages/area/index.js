@@ -23,7 +23,7 @@ Page({
   onChange(event) {
     const { values } = event.detail;
 
-    Toast(values.map(item => item.name).join('-'));
+    Toast(values.map(item => (item ? item.name : '')).join('-'));
   },
 
   onConfirm(event) {

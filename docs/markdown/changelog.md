@@ -1,5 +1,13 @@
 # 更新日志
 
+### [v0.5.22](https://github.com/youzan/vant-weapp/tree/v0.5.21)
+`2019-10-24`
+
+**Improvements**
+
+- Area: 新增 columns-placeholder 属性
+
+
 ### [v0.5.21](https://github.com/youzan/vant-weapp/tree/v0.5.21)
 `2019-09-15`
 

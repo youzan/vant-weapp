@@ -118,7 +118,7 @@ Page({
 | url | 点击后跳转的链接地址 | *string* | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | id | 标识符 | *string* | - | - |
-| type | 按钮类型，可选值为 `primary` `warning` `danger` | *string* | `default` | - |
+| type | 按钮类型，可选值为 `primary` `warning` `danger` | *string* | `danger` | - |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | *string* | `normal` | - |
 | disabled | 是否禁用按钮 | *boolean* | `false` | - |
 | loading | 是否显示为加载状态 | *boolean* | `false` | - |

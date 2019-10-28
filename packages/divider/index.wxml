@@ -2,7 +2,7 @@
 
 <view
   class="custom-class {{ utils.bem('divider', [{dashed, hairline}, contentPosition]) }}"
-  style="{{ borderColor  ? 'border-color: ' + borderColor + ';' : '' }}{{ textColor ? 'color: ' + textColor : '' }} {{ fontSize ? 'font-size: ' + fontSize + 'px' : '' }} {{ customStyle }}"
+  style="{{ borderColor  ? 'border-color: ' + borderColor + ';' : '' }}{{ textColor ? 'color: ' + textColor + ';' : '' }} {{ fontSize ? 'font-size: ' + fontSize + 'px;' : '' }} {{ customStyle }}"
 >
   <slot />
 </view>

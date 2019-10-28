@@ -10,6 +10,7 @@
     "pages/dialog/index",
     "pages/field/index",
     "pages/icon/index",
+    "pages/image/index",
     "pages/loading/index",
     "pages/nav-bar/index",
     "pages/notice-bar/index",
@@ -36,13 +37,15 @@
     "pages/checkbox/index",
     "pages/goods-action/index",
     "pages/swipe-cell/index",
+    "pages/uploader/index",
     "pages/datetime-picker/index",
     "pages/rate/index",
     "pages/collapse/index",
     "pages/picker/index",
     "pages/overlay/index",
     "pages/circle/index",
-    "pages/grid/index"
+    "pages/grid/index",
+    "pages/dropdown-menu/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -70,6 +73,7 @@
     "van-goods-action-icon": "./dist/goods-action-icon/index",
     "van-goods-action-button": "./dist/goods-action-button/index",
     "van-icon": "./dist/icon/index",
+    "van-image": "./dist/image/index",
     "van-loading": "./dist/loading/index",
     "van-nav-bar": "./dist/nav-bar/index",
     "van-notice-bar": "./dist/notice-bar/index",
@@ -89,6 +93,7 @@
     "van-sticky": "./dist/sticky/index",
     "van-submit-bar": "./dist/submit-bar/index",
     "van-swipe-cell": "./dist/swipe-cell/index",
+    "van-uploader": "./dist/uploader/index",
     "van-switch": "./dist/switch/index",
     "van-tab": "./dist/tab/index",
     "van-tabs": "./dist/tabs/index",
@@ -106,7 +111,9 @@
     "van-overlay": "./dist/overlay/index",
     "van-circle": "./dist/circle/index",
     "van-grid": "./dist/grid/index",
-    "van-grid-item": "./dist/grid-item/index"
+    "van-grid-item": "./dist/grid-item/index",
+    "van-dropdown-menu": "./dist/dropdown-menu/index",
+    "van-dropdown-item": "./dist/dropdown-item/index"
   },
   "sitemapLocation": "sitemap.json"
 }

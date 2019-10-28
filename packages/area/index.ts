@@ -92,7 +92,10 @@ VantComponent({
     // parse output columns data
     parseOutputValues(values) {
       const { columnsPlaceholder } = this.data;
-      return values.map((value = {}, index) => {
+      return values.map((value, index) => {
+        // save undefined value
+        if (!value) return value;
+
         value = JSON.parse(JSON.stringify(value));
         if (!value.code || value.name === columnsPlaceholder[index]) {
           value.code = '';

@@ -131,8 +131,8 @@ Page({
 Page({
   data: {
     currentDate: '12:00',
-    minHour: 9,
-    maxHour: 23
+    minHour: 10,
+    maxHour: 20
   },
 
   onInput(event) {

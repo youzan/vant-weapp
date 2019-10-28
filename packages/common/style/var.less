@@ -1,4 +1,4 @@
-// Color variables
+// Basic Colors
 @black: #000;
 @white: #fff;
 @red: #ee0a24;
@@ -7,15 +7,20 @@
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
 @green: #07c160;
-@gray: #c9c9c9;
+@gray: #c8c9cc;
 @gray-light: #e5e5e5;
 @gray-darker: #7d7e80;
-@gray-dark: #999;
+@gray-dark: #969799;
 
-// Default colors
-@text-color: #333;
-@border-color: #eee;
+// Gradient Colors
+@gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+@gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+@text-color: #323233;
 @active-color: #f2f3f5;
+@active-opacity: .7;
+@disabled-opacity: .5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
 
@@ -27,23 +32,60 @@
 @padding-lg: @padding-base * 6;
 @padding-xl: @padding-base * 8;
 
-// Font Size
+// Font
 @font-size-xs: 10px;
 @font-size-sm: 12px;
 @font-size-md: 14px;
 @font-size-lg: 16px;
+@font-weight-bold: 500;
 
 // Animation
 @animation-duration-base: .3s;
 @animation-duration-fast: .2s;
 
-// ActionSheet
+// Border
+@border-color: #ebedf0;
+@border-width-base: 1px;
+@border-radius-sm: 2px;
+@border-radius-md: 4px;
+@border-radius-max: 999px;
+
+//ActionSheet
+@action-sheet-max-height: 90%;
+@action-sheet-header-height: 44px;
+@action-sheet-header-font-size: @font-size-lg;
 @action-sheet-description-color: @gray-darker;
 @action-sheet-description-font-size: @font-size-md;
 @action-sheet-description-line-height: 20px;
+@action-sheet-item-height: 50px;
+@action-sheet-item-background: @white;
+@action-sheet-item-font-size: @font-size-lg;
+@action-sheet-item-text-color: @text-color;
+@action-sheet-item-disabled-text-color: @gray;
+@action-sheet-subname-color: @gray-darker;
+@action-sheet-subname-font-size: @font-size-sm;
+@action-sheet-close-icon-size: 18px;
+@action-sheet-close-icon-color: @gray-dark;
+@action-sheet-close-icon-padding: 0 @padding-sm;
+@action-sheet-cancel-padding-top: @padding-xs;
+@action-sheet-cancel-padding-color: @background-color;
 
 // Button
+@button-mini-height: 22px;
+@button-mini-min-width: 50px;
+@button-mini-font-size: @font-size-xs;
+@button-mini-line-height: 20px;
+@button-small-height: 30px;
+@button-small-font-size: @font-size-sm;
+@button-small-min-width: 60px;
+@button-small-line-height: 28px;
+@button-normal-font-size: @font-size-md;
+@button-large-height: 50px;
+@button-large-line-height: 48px;
 @button-default-color: @text-color;
+@button-default-height: 44px;
+@button-default-line-height: 42px;
+@button-default-font-size: @font-size-lg;
 @button-default-background-color: @white;
 @button-default-border-color: @border-color;
 @button-primary-color: @white;
@@ -58,12 +100,44 @@
 @button-warning-color: @white;
 @button-warning-background-color: @orange;
 @button-warning-border-color: @orange;
-@button-bottom-action-default-color: @white;
-@button-bottom-action-default-background-color: @orange;
-@button-bottom-action-primary-color: @white;
-@button-bottom-action-primary-background-color: @red;
-@button-border-radius: 2px;
-@button-round-border-radius: 10em;
+@button-border-radius: @border-radius-sm;
+@button-round-border-radius: @border-radius-max;
+@button-plain-background-color: @white;
+@button-disabled-opacity: @disabled-opacity;
+
+// Card
+@card-padding: @padding-xs @padding-md;
+@card-font-size: @font-size-sm;
+@card-text-color: @text-color;
+@card-background-color: @background-color-light;
+@card-thumb-size: 90px;
+@card-title-line-height: 16px;
+@card-desc-color: @gray-darker;
+@card-desc-line-height: 20px;
+@card-price-color: @red;
+@card-origin-price-color: @gray-darker;
+@card-origin-price-font-size: @font-size-xs;
+
+// Cell
+@cell-font-size: @font-size-md;
+@cell-line-height: 24px;
+@cell-vertical-padding: 10px;
+@cell-horizontal-padding: @padding-md;
+@cell-text-color: @text-color;
+@cell-background-color: @white;
+@cell-border-color: @border-color;
+@cell-active-color: @active-color;
+@cell-required-color: @red;
+@cell-label-color: @gray-dark;
+@cell-label-font-size: @font-size-sm;
+@cell-label-line-height: 18px;
+@cell-label-margin-top: 3px;
+@cell-value-color: @gray-dark;
+@cell-icon-size: 16px;
+@cell-right-icon-color: @gray-dark;
+@cell-large-vertical-padding: @padding-sm;
+@cell-large-title-font-size: @font-size-lg;
+@cell-large-label-font-size: @font-size-md;
 
 // Card
 @card-padding: @padding-xs @padding-md;
@@ -126,6 +200,22 @@
 @count-down-text-color: @text-color;
 @count-down-font-size: @font-size-md;
 @count-down-line-height: 20px;
+
+// Field
+@field-input-text-color: @text-color;
+@field-input-error-text-color: @red;
+@field-input-disabled-text-color: @gray-dark;
+@field-placeholder-text-color: @gray-dark;
+@field-clear-icon-color: @gray;
+@field-icon-container-color: @gray-dark;
+@field-error-message-color: @red;
+@field-error-message-text-font-size: @font-size-sm;
+@field-text-area-min-height: 18px;
+
+// Image
+@image-placeholder-text-color: @gray-dark;
+@image-placeholder-font-size: @font-size-md;
+@image-placeholder-background-color: @background-color;
 
 // Info
 @info-size: 16px;
@@ -254,3 +344,30 @@
 @divider-content-padding: @padding-md;
 @divider-content-left-width: 10%;
 @divider-content-right-width: 10%;
+
+// Uploader
+@uploader-size: 80px;
+@uploader-icon-size: 24px;
+@uploader-icon-color: @gray-dark;
+@uploader-text-color: @gray-dark;
+@uploader-text-font-size: @font-size-sm;
+@uploader-upload-border-color: @gray-light;
+@uploader-upload-background-color: @white;
+@uploader-delete-color: @white;
+@uploader-delete-background-color: rgba(0, 0, 0, .45);
+@uploader-file-background-color: @background-color;
+@uploader-file-icon-size: 20px;
+@uploader-file-icon-color: @gray-darker;
+@uploader-file-name-font-size: @font-size-sm;
+@uploader-file-name-text-color: @gray-darker;
+
+// DropdownMenu
+@dropdown-menu-height: 50px;
+@dropdown-menu-background-color: @white;
+@dropdown-menu-title-font-size: 15px;
+@dropdown-menu-title-text-color: @text-color;
+@dropdown-menu-title-active-text-color: @blue;
+@dropdown-menu-title-disabled-text-color: @gray-dark;
+@dropdown-menu-title-padding: 0 @padding-xs;
+@dropdown-menu-title-line-height: 18px;
+@dropdown-menu-option-active-color: @blue;

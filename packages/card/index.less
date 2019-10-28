@@ -4,8 +4,8 @@
 .van-card {
   position: relative;
   box-sizing: border-box;
-  padding: @card-padding;
-  font-size: @card-font-size;
+  .theme(padding, '@card-padding');
+  .theme(font-size, '@card-font-size');
   .theme(color, '@card-text-color');
   .theme(background-color, '@card-background-color');
 
@@ -21,9 +21,9 @@
   &__thumb {
     position: relative;
     flex: none;
-    width: @card-thumb-size;
-    height: @card-thumb-size;
-    margin-right: @padding-xs;
+    .theme(width, '@card-thumb-size');
+    .theme(height, '@card-thumb-size');
+    .theme(margin-right, '@padding-xs');
 
     &:empty {
       display: none;
@@ -48,11 +48,11 @@
 
   &__title {
     font-weight: bold;
-    line-height: @card-title-line-height;
+    .theme(line-height, '@card-title-line-height');
   }
 
   &__desc {
-    line-height: @card-desc-line-height;
+    .theme(line-height, '@card-desc-line-height');
     .theme(color, '@card-desc-color');
   }
 
@@ -69,8 +69,8 @@
   &__origin-price {
     display: inline-block;
     margin-left: 5px;
-    font-size: @card-origin-price-font-size;
     text-decoration: line-through;
+    .theme(font-size, '@card-origin-price-font-size');
     .theme(color, '@card-origin-price-color');
   }
 

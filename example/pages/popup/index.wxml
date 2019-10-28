@@ -2,7 +2,7 @@
   <van-cell title="展示弹出层" is-link bind:click="showBasic" />
   <van-popup
     show="{{ show.basic }}"
-    custom-style="padding: 16px 16px 160px"
+    custom-style="padding: 30px 50px"
     bind:close="hideBasic"
   >
     内容

@@ -7,8 +7,8 @@
     align-items: center;
 
     &--textarea {
-      min-height: 24px;
       line-height: 1.2em;
+      .theme(min-height, '@cell-line-height');
     }
 
     &--textarea&--ios {
@@ -21,8 +21,6 @@
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: 24px;
-    min-height: 24px;
     margin: 0;
     padding: 0;
     line-height: inherit;
@@ -30,21 +28,23 @@
     background-color: transparent;
     border: 0;
     resize: none;
-    .theme(color, '@text-color');
+    .theme(color, '@field-input-text-color');
+    .theme(height, '@cell-line-height');
+    .theme(min-height, '@cell-line-height');
 
     &--textarea {
-      height: 18px;
-      min-height: 18px;
+      .theme(height, '@field-text-area-min-height');
+      .theme(min-height, '@field-text-area-min-height');
     }
 
     &--error {
-      .theme(color, '@red');
+      .theme(color, '@field-input-error-text-color');
     }
 
     &--disabled {
       background-color: transparent;
       opacity: 1;
-      .theme(color, '@gray-dark');
+      .theme(color, '@field-input-disabled-text-color');
     }
 
     &--center {
@@ -62,25 +62,25 @@
     right: 0;
     left: 0;
     pointer-events: none;
-    .theme(color, '@gray-dark');
+    .theme(color, '@field-placeholder-text-color');
 
     &--error {
-      .theme(color, '@red');
+      .theme(color, '@field-error-message-color');
     }
   }
 
   &__icon-root {
     display: flex;
     align-items: center;
-    min-height: 24px;
+    .theme(min-height, '@cell-line-height');
   }
 
   &__clear-root,
   &__icon-container {
-    margin-right: -10px;
-    padding: 0 10px;
     line-height: inherit;
     vertical-align: middle;
+    .theme(padding, '0 @padding-xs');
+    .theme(margin-right, '-@padding-xs');
   }
 
   &__clear-root,
@@ -90,11 +90,11 @@
   }
 
   &__clear-root {
-    .theme(color, '@gray');
+    .theme(color, '@field-clear-icon-color');
   }
 
   &__icon-container {
-    .theme(color, '@gray-dark');
+    .theme(color, '@field-icon-container-color');
 
     &:empty {
       display: none;
@@ -102,7 +102,7 @@
   }
 
   &__button {
-    padding-left: 10px;
+    .theme(padding-left, '@padding-xs');
 
     &:empty {
       display: none;
@@ -110,9 +110,9 @@
   }
 
   &__error-message {
-    font-size: 12px;
     text-align: left;
-    .theme(color, '@red');
+    .theme(font-size, '@field-error-message-text-font-size');
+    .theme(color, '@field-error-message-color');
 
     &--center {
       text-align: center;

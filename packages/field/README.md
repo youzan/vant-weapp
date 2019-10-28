@@ -197,8 +197,8 @@ Page({
 | error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | *string* | `''` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | *string* | `left` | - |
 | autosize | 自适应内容高度，只对 textarea 有效 | *boolean* | `false` | - |
-| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
-| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](/#/icon) | *string* | - | - |
+| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | *string* | - | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | *string* | - | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | *string* | `done` | - |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | *boolean* | `false` | - |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | *number* | `50` | - |

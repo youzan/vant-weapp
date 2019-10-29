@@ -29,9 +29,9 @@ Page({
   data: {
     active: 0
   },
-  // event.detail 的值为当前选中项的索引
   onChange(event) {
-    console.log(event.detail);
+    // event.detail 的值为当前选中项的索引
+    this.setData({ active: event.detail });
   }
 });
 ```
@@ -55,7 +55,7 @@ Page({
     active: 'home'
   },
   onChange(event) {
-    console.log(event.detail);
+    this.setData({ active: event.detail });
   }
 });
 ```
@@ -82,11 +82,13 @@ Page({
       slot="icon"
       src="{{ icon.normal }}"
       mode="aspectFit"
+      style="width: 30px; height: 18px;"
     />
     <image
       slot="icon-active"
       src="{{ icon.active }}"
       mode="aspectFit"
+      style="width: 30px; height: 18px;"
     />
     自定义
   </van-tabbar-item>
@@ -100,13 +102,12 @@ Page({
   data: {
     active: 0,
     icon: {
-      normal: '//img.yzcdn.cn/icon-normal.png',
-      active: '//img.yzcdn.cn/icon-active.png'
+      normal: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      active: 'https://img.yzcdn.cn/vant/user-active.png'
     }
   },
-
   onChange(event) {
-    console.log(event.detail);
+    this.setData({ active: event.detail });
   }
 });
 ```
@@ -132,9 +133,8 @@ Page({
   data: {
     active: 0
   },
-  // event.detail 的值为当前选中项的索引
   onChange(event) {
-    console.log(event.detail);
+    this.setData({ active: event.detail });
   }
 });
 ```

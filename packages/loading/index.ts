@@ -3,6 +3,7 @@ import { addUnit } from '../common/utils';
 
 VantComponent({
   props: {
+    vertical: Boolean,
     size: {
       type: String,
       observer: 'setSizeWithUnit'
@@ -18,8 +19,7 @@ VantComponent({
     textSize: {
       type: String,
       observer: 'setTextSizeWithUnit'
-    },
-    vertical: Boolean
+    }
   },
 
   data: {

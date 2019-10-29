@@ -3,9 +3,12 @@
 
 .van-button {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   padding: 0;
+  line-height: @button-line-height;
   text-align: center;
   vertical-align: middle;
   -webkit-appearance: none;
@@ -13,7 +16,6 @@
 
   .theme(height, '@button-default-height');
   .theme(font-size, '@button-default-font-size');
-  .theme(line-height, '@button-default-line-height');
   .theme(transition, 'opacity @animation-duration-fast');
   .theme(border-radius, '@button-border-radius');
 
@@ -99,7 +101,6 @@
   &--large {
     width: 100%;
     .theme(height, '@button-large-height');
-    .theme(line-height, '@button-large-line-height');
   }
 
   &--normal {
@@ -112,7 +113,6 @@
     .theme(height, '@button-small-height');
     .theme(padding, '0 @padding-xs');
     .theme(font-size, '@button-small-font-size');
-    .theme(line-height, '@button-small-line-height');
   }
 
   // mini图标默认宽度50px，文字不能超过4个
@@ -121,7 +121,6 @@
     .theme(min-width, '@button-mini-min-width');
     .theme(height, '@button-mini-height');
     .theme(font-size, '@button-mini-font-size');
-    .theme(line-height, '@button-mini-line-height');
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -129,7 +128,7 @@
   }
 
   &--block {
-    display: block;
+    display: flex;
     width: 100%;
   }
 
@@ -149,21 +148,14 @@
     display: inline;
   }
 
-  &__loading-text {
-    display: inline-block;
-    margin-left: 5px;
-    vertical-align: middle;
+  &__loading-text,
+  &__icon + &__text:not(:empty) {
+    margin-left: @padding-base;
   }
 
   &__icon {
     min-width: 1em;
     line-height: inherit !important;
-    vertical-align: top;
-  }
-
-  &__icon + &__text:not(:empty) {
-    display: inline-block;
-    margin-left: 5px;
     vertical-align: top;
   }
 

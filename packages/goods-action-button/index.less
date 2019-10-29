@@ -6,31 +6,31 @@
 }
 
 .van-goods-action-button {
-  height: 40px !important;
-  font-weight: 500 !important;
-  line-height: 40px !important;
   border: none !important;
+  .theme(height, '@goods-action-button-height') !important;
+  .theme(font-weight, '@font-weight-bold') !important;
+  .theme(line-height, '@goods-action-button-height') !important;
 
   &--first {
     display: block !important;
     margin-left: 5px;
-    border-top-left-radius: 20px !important;
-    border-bottom-left-radius: 20px !important;
+    .theme(border-top-left-radius, '@goods-action-button-height / 2') !important;
+    .theme(border-bottom-left-radius, '@goods-action-button-height / 2') !important;
   }
 
   &--last {
     display: block !important;
     margin-right: 5px;
-    border-top-right-radius: 20px !important;
-    border-bottom-right-radius: 20px !important;
+    .theme(border-top-right-radius, '@goods-action-button-height / 2') !important;
+    .theme(border-bottom-right-radius, '@goods-action-button-height / 2') !important;
   }
 
   &--warning {
-    background: linear-gradient(to right, #ffd01e, #ff8917);
+    .theme(background, '@goods-action-button-warning-color');
   }
 
   &--danger {
-    background: linear-gradient(to right, #ff6034, #ee0a24);
+    .theme(background, '@goods-action-button-danger-color');
   }
 
   @media (max-width: 321px) {

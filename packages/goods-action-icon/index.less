@@ -2,7 +2,7 @@
 @import '../common/style/theme.less';
 
 .van-goods-action-icon {
-  width: 50px !important;
+  width: @goods-action-icon-height !important;
   border: none !important;
 
   &__content {
@@ -10,9 +10,9 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    font-size: 10px;
+    font-size: @goods-action-icon-font-size;
     line-height: 1;
-    .theme(color, '@gray-darker');
+    .theme(color, '@goods-action-icon-text-color');
   }
 
   &__icon {

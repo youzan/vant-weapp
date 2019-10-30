@@ -38,7 +38,7 @@
         {{ item.name }}
         <text wx:if="{{ item.subname }}" class="van-action-sheet__subname" >{{ item.subname }}</text>
       </block>
-      <van-loading wx:else size="20px" />
+      <van-loading wx:else custom-class="van-action-sheet__loading" size="20px" />
     </button>
   </view>
   <slot />

@@ -94,7 +94,7 @@ const timer = setInterval(() => {
 | forbidClick | 是否禁止背景点击 | *boolean* | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | *string* | `circular` | - |
 | zIndex | z-index 层级 | *number* | `1000` | - |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `3000` | - |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | *number* | `2000` | - |
 | selector | 自定义选择器 | *string* | `van-toast` | - |
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | *object* | 当前页面 | - |
 | onClose | 关闭时的回调函数 | *Function* | - | - |

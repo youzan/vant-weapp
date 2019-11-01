@@ -20,12 +20,12 @@
 
     &::after {
       z-index: 1;
-      border-width: 0 1px 1px 0;
+      .theme(border-width,'0 @border-width-base @border-width-base 0');
     }
 
     &--surround {
       &::after {
-        border-width: 1px;
+        .theme(border-width,'@border-width-base');
       }
     }
 

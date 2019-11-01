@@ -16,7 +16,7 @@
     bind:error="onError"
   />
 
-  <div
+  <view
     wx:if="{{ loading && showLoading }}"
     class="loading-class van-image__loading"
   >
@@ -29,8 +29,8 @@
       name="photo-o"
       size="22"
     />
-  </div>
-  <div
+  </view>
+  <view
     wx:if="{{ error && showError }}"
     class="error-class van-image__error"
   >
@@ -43,5 +43,5 @@
       name="warning-o"
       size="22"
     />
-  </div>
+  </view>
 </view>

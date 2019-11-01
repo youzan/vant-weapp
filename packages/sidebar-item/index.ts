@@ -1,6 +1,11 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
+  classes: [
+    'active-class',
+    'disabled-class',
+  ],
+
   relation: {
     type: 'ancestor',
     name: 'sidebar',
@@ -12,18 +17,19 @@ VantComponent({
   props: {
     dot: Boolean,
     info: null,
-    title: String
+    title: String,
+    disabled: Boolean
   },
 
   methods: {
     onClick() {
       const { parent } = this;
 
-      if (!parent) {
+      if (!parent || this.data.disabled) {
         return;
       }
 
-      const index = parent.items.indexOf(this);
+      const index = parent.children.indexOf(this);
 
       parent.setActive(index).then(() => {
         this.$emit('click', index);
@@ -31,8 +37,8 @@ VantComponent({
       });
     },
 
-    setActive(active: boolean) {
-      return this.setData({ active });
+    setActive(selected: boolean) {
+      return this.setData({ selected });
     }
   }
 });

@@ -2,16 +2,17 @@
 @import '../common/style/theme.less';
 
 .van-tag {
-  display: inline-block;
-  padding: 0.2em 0.5em;
-  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
   line-height: normal;
-  border-radius: 0.2em;
-  .theme(color, '@white');
+  .theme(padding, '@tag-padding');
+  .theme(color, '@tag-text-color');
+  .theme(font-size, '@tag-font-size');
+  .theme(border-radius, '@tag-border-radius');
 
   &::after {
     border-color: currentColor;
-    border-radius: 0.4em;
+    .theme(border-radius, '@tag-border-radius * 2');
   }
 
   &--default {
@@ -59,27 +60,33 @@
   }
 
   &--mark {
-    padding-right: 0.6em;
-    border-radius: 0 0.8em 0.8em 0;
+    padding-right: 0.7em;
 
+    &,
     &::after {
-      border-radius: 0 1.6em 1.6em 0;
+      .theme(
+        border-radius,
+        '0 @tag-round-border-radius @tag-round-border-radius 0'
+      );
     }
   }
 
   &--round {
-    border-radius: 0.8em;
-
+    &,
     &::after {
-      border-radius: 1.6em;
+      .theme(border-radius, '@tag-round-border-radius');
     }
   }
 
   &--medium {
-    font-size: 12px;
+    .theme(font-size, '@tag-medium-font-size');
   }
 
   &--large {
-    font-size: 14px;
+    .theme(font-size, '@tag-large-font-size');
+  }
+
+  &__close {
+    margin-left: 2px;
   }
 }

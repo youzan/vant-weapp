@@ -11,30 +11,26 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-size: 12px;
-  line-height: 1;
-  .theme(color, '@gray-darker');
+  .theme(color, '@tabbar-item-text-color');
+  .theme(font-size, '@tabbar-item-font-size');
+  .theme(line-height, '@tabbar-item-line-height');
 
   &__icon {
     position: relative;
-    margin-bottom: 5px;
-    font-size: 18px;
+    .theme(margin-bottom, '@tabbar-item-margin-bottom');
+    .theme(font-size, '@tabbar-item-icon-size');
 
-    &--dot {
-      &::after {
-        position: absolute;
-        top: 0;
-        right: -8px;
-        width: 8px;
-        height: 8px;
-        border-radius: 100%;
-        content: ' ';
-        .theme(background-color, '@red');
-      }
+    &__inner {
+      display: block;
+      min-width: 1em;
     }
   }
 
   &--active {
-    .theme(color, '@blue');
+    .theme(color, '@tabbar-item-active-color');
+  }
+
+  &__info {
+    margin-top: 2px;
   }
 }

@@ -66,10 +66,10 @@ Page({
 
 ### 自定义图标
 
-通过 icon 插槽自定义图标
+通过 icon 插槽自定义图标，需要添加`useIconSlot`属性
 
 ```html
-<van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange">
+<van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange" useIconSlot>
   自定义图标
   <image slot="icon" src="{{ checked ? activeIcon : inactiveIcon }}" />
 </van-checkbox>

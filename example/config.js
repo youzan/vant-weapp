@@ -168,6 +168,10 @@ export default [
       {
         path: '/divider',
         title: 'Divider 分割线'
+      },
+      {
+        path: '/skeleton',
+        title: 'Skeleton 骨架屏'
       }
     ]
   },

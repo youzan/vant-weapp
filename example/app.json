@@ -113,7 +113,8 @@
     "van-grid": "./dist/grid/index",
     "van-grid-item": "./dist/grid-item/index",
     "van-dropdown-menu": "./dist/dropdown-menu/index",
-    "van-dropdown-item": "./dist/dropdown-item/index"
+    "van-dropdown-item": "./dist/dropdown-item/index",
+    "van-skeleton": "./dist/skeleton/index"
   },
   "sitemapLocation": "sitemap.json"
 }

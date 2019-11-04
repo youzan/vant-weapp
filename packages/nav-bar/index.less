@@ -7,14 +7,14 @@
   user-select: none;
   .theme(height, '@nav-bar-height');
   .theme(line-height, '@nav-bar-height');
-  .theme(background-color, '@white');
+  .theme(background-color, '@nav-bar-background-color');
 
   &__text {
     display: inline-block;
-    margin: 0 -15px;
-    padding: 0 15px;
     vertical-align: middle;
-    .theme(color, '@blue');
+    .theme(margin, '0 -@padding-md');
+    .theme(padding, '0 -@padding-md');
+    .theme(color, '@nav-bar-text-color');
 
     &--hover {
       .theme(background-color, '@active-color');
@@ -23,7 +23,8 @@
 
   &__arrow {
     vertical-align: middle;
-    .theme(color, '@blue');
+    .theme(font-size, '@nav-bar-arrow-size');
+    .theme(color, '@nav-bar-text-color');
 
     + .van-nav-bar__text {
       margin-left: -20px;
@@ -41,22 +42,23 @@
   &__title {
     max-width: 60%;
     margin: 0 auto;
-    font-weight: 500;
-    font-size: 16px;
+    .theme(color, '@nav-bar-title-text-color');
+    .theme(font-weight, '@font-weight-bold');
+    .theme(font-size, '@nav-bar-title-font-size');
   }
 
   &__left,
   &__right {
     position: absolute;
     bottom: 0;
-    font-size: 14px;
+    .theme(font-size, '@font-size-md');
   }
 
   &__left {
-    left: 15px;
+    .theme(left, '@padding-md');
   }
 
   &__right {
-    right: 15px;
+    .theme(right, '@padding-md');
   }
 }

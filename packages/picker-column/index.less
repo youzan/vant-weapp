@@ -3,20 +3,20 @@
 
 .van-picker-column {
   overflow: hidden;
-  font-size: 16px;
   text-align: center;
-  .theme(color, '@gray-dark');
+  .theme(color, '@picker-option-text-color');
+  .theme(font-size, '@picker-option-font-size');
 
   &__item {
     padding: 0 5px;
 
     &--selected {
-      font-weight: 500;
-      .theme(color, '@text-color');
+      .theme(font-weight, '@font-weight-bold');
+      .theme(color, '@picker-option-selected-text-color');
     }
 
     &--disabled {
-      opacity: 0.3;
+      .theme(opacity, '@picker-option-disabled-opacity');
     }
   }
 }

@@ -5,11 +5,11 @@
   style="color: {{ active ? activeColor : inactiveColor }}"
   bind:tap="onClick"
 >
-  <view class="{{ utils.bem('tabbar-item__icon', { dot }) }}">
+  <view class="van-tabbar-item__icon">
     <van-icon
       wx:if="{{ icon }}"
       name="{{ icon }}"
-      customStyle="display: block"
+      custom-class="van-tabbar-item__icon__inner"
     />
     <block wx:else>
       <slot
@@ -19,9 +19,9 @@
       <slot wx:else name="icon" />
     </block>
     <van-info
-      wx:if="{{ info !== null }}"
+      dot="{{ dot }}"
       info="{{ info }}"
-      custom-style="margin-top: 2px"
+      custom-class="van-tabbar-item__info"
     />
   </view>
   <view class="van-tabbar-item__text">

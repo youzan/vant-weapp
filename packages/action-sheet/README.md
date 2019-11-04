@@ -90,6 +90,8 @@ Page({
 | z-index | z-index 层级 | `Number` | `100` |
 | cancel-text | 取消按钮文字 | `String` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | - |
+| custom-style | 自定义弹出层样式 | `String` | `` |
+| overlay-style | 自定义背景蒙层样式 | `String` | `` |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | `Boolean` | `true` |
 

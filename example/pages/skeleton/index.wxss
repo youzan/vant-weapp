@@ -1,0 +1,35 @@
+page {
+  background-color: white;
+}
+
+.van-switch {
+  margin: 0 16px 8px;
+}
+
+.demo-preview {
+  display: flex;
+  padding: 0 16px;
+}
+
+.demo-content {
+  padding-top: 6px;
+}
+
+.demo-content-h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.demo-content-p {
+  margin: 13px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.demo-preview-img {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+}

@@ -5,6 +5,8 @@
   position="bottom"
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
+  custom-style="{{ customStyle }}"
+  overlay-style="{{ overlayStyle }}"
   custom-class="van-action-sheet"
   safe-area-inset-bottom="{{ safeAreaInsetBottom }}"
   close-on-click-overlay="{{ closeOnClickOverlay }}"

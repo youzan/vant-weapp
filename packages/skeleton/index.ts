@@ -6,14 +6,8 @@ VantComponent({
       type: Number,
       value: 0
     },
-    title: {
-      type: Boolean,
-      value: false
-    },
-    avatar: {
-      type: Boolean,
-      value: false
-    },
+    title: Boolean,
+    avatar: Boolean,
     loading: {
       type: Boolean,
       value: true
@@ -35,7 +29,7 @@ VantComponent({
       value: '40%'
     },
     rowWidth: {
-      type: Array || String,
+      type: null,
       value: '100%',
       observer(val) {
         this.setData({ isArray: val instanceof Array });

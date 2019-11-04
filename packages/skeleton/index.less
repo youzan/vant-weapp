@@ -5,12 +5,12 @@
   display: flex;
   box-sizing: border-box;
   width: 100%;
-  padding: 0 @padding-md;
+  .theme(padding, '@skeleton-padding');
 
   &__avatar {
     flex-shrink: 0;
-    margin-right: @padding-md;
-    background-color: @skeleton-avatar-background-color;
+    .theme(margin-right, '@padding-md');
+    .theme(background-color, '@skeleton-avatar-background-color');
 
     &--round {
       border-radius: 100%;
@@ -22,13 +22,13 @@
   }
 
   &__avatar + &__content {
-    padding-top: @padding-xs;
+    .theme(padding-top, '@padding-xs');
   }
 
   &__row,
   &__title {
-    height: @skeleton-row-height;
-    background-color: @skeleton-row-background-color;
+    .theme(height, '@skeleton-row-height');
+    .theme(background-color, '@skeleton-row-background-color');
   }
 
   &__title {
@@ -37,7 +37,7 @@
 
   &__row {
     &:not(:first-child) {
-      margin-top: @skeleton-row-margin-top;
+      .theme(margin-top, '@skeleton-row-margin-top');
     }
   }
 

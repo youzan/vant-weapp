@@ -9,13 +9,14 @@
     position: relative;
     display: inline-block;
     box-sizing: border-box;
-    width: 28px;
-    height: 28px;
     margin: 1px;
-    padding: 5px;
     vertical-align: middle;
     border: 0;
     .theme(background-color, '@stepper-background-color');
+    .theme(color, '@stepper-button-icon-color');
+    .theme(width, '@stepper-input-height');
+    .theme(height, '@stepper-input-height');
+    .theme(padding, '@padding-base');
 
     &::before {
       width: 9px;
@@ -44,11 +45,12 @@
     }
 
     &--disabled {
+      .theme(color, '@stepper-button-disabled-icon-color');
       .theme(background-color, '@stepper-button-disabled-color');
 
       &::before,
       &::after {
-        .theme(background-color, '@gray');
+        .theme(background-color, '@stepper-button-disabled-color');
       }
     }
 
@@ -72,8 +74,6 @@
   &__input {
     display: inline-block;
     box-sizing: border-box;
-    width: 32px;
-    height: 28px;
     // 覆盖 common style 中 input 的 min-height: 1.4rem;
     // 避免 button-size 对 input 设置的 height 不生效
     min-height: 0;
@@ -86,12 +86,15 @@
     border-width: 1px 0;
     border-radius: 0;
     -webkit-appearance: none;
-    .theme(color, '@text-color');
+    .theme(font-size, '@stepper-input-font-size');
+    .theme(color, '@stepper-input-text-color');
     .theme(background-color, '@stepper-background-color');
+    .theme(width, '@stepper-input-width');
+    .theme(height, '@stepper-input-height');
 
     &--disabled {
-      .theme(color, '@gray');
-      .theme(background-color, '@stepper-input-disabled-color');
+      .theme(color, '@stepper-input-disabled-text-color');
+      .theme(background-color, '@stepper-input-disabled-background-color');
     }
   }
 }

@@ -3,8 +3,8 @@
 
 .van-slider {
   position: relative;
-  border-radius: 999px;
-  .theme(background-color, '@gray-light');
+  .theme(border-radius, '@border-radius-max');
+  .theme(background-color, '@slider-inactive-background-color');
 
   // use pseudo element to expand click area
   &::before {
@@ -20,15 +20,15 @@
     position: relative;
     border-radius: inherit;
     .theme(transition, 'width @animation-duration-fast');
-    .theme(background-color, '@blue');
+    .theme(background-color, '@slider-active-background-color');
   }
 
   &__button {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    .theme(background-color, '@white');
+    width: @slider-button-width;
+    height: @slider-button-height;
+    border-radius: @slider-button-border-radius;
+    box-shadow: @slider-button-box-shadow;
+    .theme(background-color, '@slider-button-background-color');
 
     &-wrapper {
       position: absolute;
@@ -39,6 +39,6 @@
   }
 
   &--disabled {
-    opacity: 0.3;
+    opacity: @slider-disabled-opacity;
   }
 }

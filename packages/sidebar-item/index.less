@@ -4,18 +4,18 @@
 .van-sidebar-item {
   display: block;
   box-sizing: border-box;
-  padding: 20px 12px 20px 9px;
   overflow: hidden;
-  font-size: 14px;
-  line-height: 1.4;
   word-wrap: break-word;
   border-left: 3px solid transparent;
   user-select: none;
-  .theme(color, '@gray-darker');
-  .theme(background-color, '@background-color');
+  .theme(color, '@sidebar-text-color');
+  .theme(font-size, '@sidebar-font-size');
+  .theme(line-height, '@sidebar-line-height');
+  .theme(padding, '@sidebar-padding');
+  .theme(background-color, '@sidebar-background-color');
 
   &--hover {
-    .theme(background-color, '@active-color');
+    .theme(background-color, '@sidebar-active-color');
   }
 
   &::after {
@@ -23,9 +23,9 @@
   }
 
   &--active {
-    font-weight: bold;
-    .theme(color, '@text-color');
-    .theme(border-color, '@red');
+    .theme(font-weight, '@sidebar-selected-font-weight');
+    .theme(color, '@sidebar-selected-text-color');
+    .theme(border-color, '@sidebar-selected-border-color');
 
     &::after {
       border-right-width: 1px;
@@ -34,7 +34,7 @@
 
   &--active,
   &--active&--hover {
-    .theme(background-color, '@white');
+    .theme(background-color, '@sidebar-selected-background-color');
   }
 
   &__text {

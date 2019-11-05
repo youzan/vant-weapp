@@ -8,6 +8,7 @@
   width: 100%;
   user-select: none;
   .theme(z-index, '@submit-bar-z-index');
+  .theme(background-color, '@submit-bar-background-color');
 
   &__tip {
     .theme(padding, '@submit-bar-tip-padding');
@@ -26,6 +27,8 @@
     height: 12px;
     margin-right: 4px;
     vertical-align: middle;
+    .theme(font-size, '@submit-bar-tip-icon-size');
+    .theme(min-width, 'calc(@submit-bar-tip-icon-size * 1.5)');
   }
 
   &__tip-text {
@@ -49,10 +52,10 @@
 
   &__text {
     flex: 1;
-    padding-right: 12px;
-    font-weight: 500;
     text-align: right;
     .theme(color, '@submit-bar-text-color');
+    .theme(padding-right, '@padding-sm');
+    .theme(font-weight, '@font-weight-bold');
   }
 
   &__price {

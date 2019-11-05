@@ -31,6 +31,7 @@ VantComponent({
     customStyle: String,
     confirmType: String,
     confirmHold: Boolean,
+    holdKeyboard: Boolean,
     errorMessage: String,
     arrowDirection: String,
     placeholderStyle: String,

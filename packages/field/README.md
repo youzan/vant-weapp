@@ -201,6 +201,7 @@ Page({
 | right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | *string* | - | - |
 | confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | *string* | `done` | - |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | *boolean* | `false` | - |
+| hold-keyboard | focus 时，点击页面的时候不收起键盘 | *boolean* | `false` | 2.8.2 |
 | cursor-spacing | 输入框聚焦时底部与键盘的距离 | *number* | `50` | - |
 | adjust-position | 键盘弹起时，是否自动上推页面 | *boolean* | `true` | - |
 | show-confirm-bar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | *boolean* | `true` | - |

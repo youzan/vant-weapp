@@ -11,6 +11,13 @@ VantComponent({
     type: {
       type: String,
       value: 'default'
+    },
+    closeable: Boolean
+  },
+
+  methods: {
+    onClose() {
+      this.$emit('close');
     }
   }
 });

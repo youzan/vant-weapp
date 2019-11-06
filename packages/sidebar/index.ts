@@ -5,17 +5,19 @@ VantComponent({
     name: 'sidebar-item',
     type: 'descendant',
     linked(target) {
-      this.items.push(target);
-      this.setActive(this.data.active);
+      this.children.push(target);
+      this.setActive(this.data.activeKey);
     },
     unlinked(target) {
-      this.items = this.items.filter(item => item !== target);
-      this.setActive(this.data.active);
+      this.items = this.children.filter(
+        (item: WechatMiniprogram.Component.TrivialInstance) => item !== target
+      );
+      this.setActive(this.data.activeKey);
     }
   },
 
   props: {
-    active: {
+    activeKey: {
       type: Number,
       value: 0,
       observer: 'setActive'
@@ -23,28 +25,28 @@ VantComponent({
   },
 
   beforeCreate() {
-    this.items = [];
+    this.children = [];
     this.currentActive = -1;
   },
 
   methods: {
-    setActive(active: number) {
-      const { items, currentActive } = this;
+    setActive(activeKey: number) {
+      const { children, currentActive } = this;
 
-      if (!items.length) {
+      if (!children.length) {
         return Promise.resolve();
       }
 
-      this.currentActive = active;
+      this.currentActive = activeKey;
 
       const stack = [];
 
-      if (currentActive !== active && items[currentActive]) {
-        stack.push(items[currentActive].setActive(false));
+      if (currentActive !== activeKey && children[currentActive]) {
+        stack.push(children[currentActive].setActive(false));
       }
 
-      if (items[active]) {
-        stack.push(items[active].setActive(true));
+      if (children[activeKey]) {
+        stack.push(children[activeKey].setActive(true));
       }
 
       return Promise.all(stack);

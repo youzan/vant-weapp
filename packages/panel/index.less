@@ -2,13 +2,13 @@
 @import '../common/style/theme.less';
 
 .van-panel {
-  .theme(background, '@white');
+  .theme(background, '@panel-background-color');
 
   &__header-value {
-    .theme(color, '@red');
+    .theme(color, '@panel-header-value-color');
   }
 
   &__footer {
-    padding: 10px 15px;
+    .theme(padding,'@panel-footer-padding');
   }
 }

@@ -76,10 +76,8 @@
     transform: rotate(@i * 30deg);
     opacity: 1 - (0.75 / 12) * (@i - 1);
   }
-
   .generate(@n, (@i + 1));
 }
-
 .generate(12);
 
 @keyframes van-rotate {

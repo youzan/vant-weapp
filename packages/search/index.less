@@ -5,32 +5,32 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 10px 16px;
+  .theme(padding, '@search-padding');
 
   &__content {
     display: flex;
     flex: 1;
-    padding-left: 10px;
-    border-radius: 2px;
+    .theme(padding-left, '@padding-xs');
+    .theme(border-radius, '@border-radius-sm');
     .theme(background-color, '@search-background-color');
 
     &--round {
-      border-radius: 17px;
+      .theme(border-radius, 'calc(@search-input-height / 2)');
     }
   }
 
   &__label {
-    padding: 0 5px;
-    font-size: 14px;
-    line-height: 34px;
-    .theme(color, '@text-color');
+    .theme(padding, '@search-label-padding');
+    .theme(font-size, '@search-label-font-size');
+    .theme(line-height, '@search-input-height');
+    .theme(color, '@search-label-color');
   }
 
   &__field {
     flex: 1;
 
     &__left-icon {
-      .theme(color, '@gray-dark');
+      .theme(color, '@search-left-icon-color');
     }
   }
 
@@ -39,10 +39,10 @@
   }
 
   &__action {
-    padding: 0 10px;
-    font-size: 14px;
-    line-height: 34px;
-    .theme(color, '@text-color');
+    .theme(padding, '@search-action-padding');
+    .theme(font-size, '@search-action-font-size');
+    .theme(line-height, '@search-input-height');
+    .theme(color, '@search-action-text-color');
 
     &--hover {
       .theme(background-color, '@active-color');

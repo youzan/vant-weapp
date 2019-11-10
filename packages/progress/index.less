@@ -3,15 +3,16 @@
 
 .van-progress {
   position: relative;
-  height: 4px;
-  border-radius: 4px;
-  .theme(background, '@gray-light');
+  .theme(height, '@progress-height');
+  .theme(border-radius, '@progress-height');
+  .theme(background, '@progress-background-color');
 
   &__portion {
     position: absolute;
     left: 0;
     height: 100%;
     border-radius: inherit;
+    .theme(background, '@progress-color');
   }
 
   &__pivot {
@@ -20,13 +21,14 @@
     right: 0;
     box-sizing: border-box;
     min-width: 2em;
-    padding: 0 5px;
-    font-size: 10px;
-    line-height: 1.6;
     text-align: center;
     word-break: keep-all;
     border-radius: 1em;
     transform: translateY(-50%);
-    .theme(background-color, '@gray-light');
+    .theme(color, '@progress-pivot-text-color');
+    .theme(padding, '@progress-pivot-padding');
+    .theme(font-size, '@progress-pivot-font-size');
+    .theme(line-height, '@progress-pivot-line-height');
+    .theme(background-color, '@progress-pivot-background-color');
   }
 }

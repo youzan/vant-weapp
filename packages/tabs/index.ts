@@ -374,6 +374,8 @@ VantComponent({
             return;
           }
 
+          console.log(1, top, offsetTop);
+
           const position: Position =
             res.intersectionRatio > 0 ? 'top' : 'bottom';
 
@@ -394,6 +396,8 @@ VantComponent({
           if (bottom < this.navHeight) {
             return;
           }
+
+          console.log(2, bottom, this.navHeight);
 
           const position: Position = res.intersectionRatio > 0 ? 'top' : '';
 

@@ -78,13 +78,17 @@ VantComponent({
 
       this.createIntersectionObserver({}).disconnect();
 
+      console.log(this.itemHeight, offsetTop);
+
       // @ts-ignore
       this.createIntersectionObserver()
-        .relativeToViewport({ top: -(this.itemHeight + offsetTop) })
+        .relativeToViewport({ top: -(this.itemHeight - 1 + offsetTop) })
         .observe(
           '.van-sticky',
           (res: WechatMiniprogram.ObserveCallbackResult) => {
+            console.log(res);
             const { top } = res.boundingClientRect;
+            console.log('do');
 
             if (top > offsetTop) {
               return;

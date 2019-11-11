@@ -295,7 +295,7 @@ VantComponent({
 
       if (data.type === 'time') {
         const indexes = picker.getIndexes();
-        value = `${indexes[0] + data.minHour}:${indexes[1] + data.minMinute}`;
+        value = `${+data.columns[0].values[indexes[0]]}:${+data.columns[1].values[indexes[1]]}`;
       } else {
         const values = picker.getValues();
         const year = getTrueValue(values[0]);

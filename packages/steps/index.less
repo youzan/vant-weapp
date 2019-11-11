@@ -3,7 +3,7 @@
 
 .van-steps {
   overflow: hidden;
-  .theme(background-color, '@white');
+  .theme(background-color, '@steps-background-color');
 
   &--horizontal {
     padding: 10px;
@@ -27,18 +27,18 @@
 .van-step {
   position: relative;
   flex: 1;
-  font-size: 14px;
-  .theme(color, '@gray-dark');
+  .theme(font-size, '@step-font-size');
+  .theme(color, '@step-text-color');
 
   &--finish {
-    .theme(color, '@text-color');
+    .theme(color, '@step-finish-text-color');
   }
 
   &__circle {
-    width: 5px;
-    height: 5px;
     border-radius: 50%;
-    .theme(background-color, '@gray-dark');
+    .theme(width, '@step-circle-size');
+    .theme(height, '@step-circle-size');
+    .theme(background-color, '@step-circle-color');
   }
 
   &--horizontal {
@@ -76,15 +76,15 @@
       position: absolute;
       bottom: 6px;
       z-index: 1;
-      padding: 0 8px;
       transform: translate3d(-50%, 50%, 0);
       .theme(background-color, '@white');
+      .theme(padding, '0 @padding-xs');
     }
 
     .van-step__title {
       display: inline-block;
-      font-size: 12px;
       transform: translate3d(-50%, 0, 0);
+      .theme(font-size, '@step-horizontal-title-font-size');
     }
 
     .van-step__line {
@@ -94,23 +94,22 @@
       left: 0;
       height: 1px;
       transform: translate3d(0, 50%, 0);
-      .theme(background-color, '@border-color');
+      .theme(background-color, '@step-line-color');
     }
 
     &.van-step--process {
-      .theme(color, '@text-color');
+      .theme(color, '@step-process-text-color');
 
       .van-step__icon {
         display: block;
-        font-size: 12px;
         line-height: 1;
+        .theme(font-size, '@step-icon-size');
       }
     }
   }
 
   &--vertical {
     padding: 10px 10px 10px 0;
-    font-size: 14px;
     line-height: 18px;
 
     &::after {
@@ -145,8 +144,8 @@
     }
 
     .van-step__icon {
-      font-size: 12px;
       line-height: 1;
+      .theme(font-size, '@step-icon-size');
     }
 
     .van-step__line {
@@ -154,7 +153,7 @@
       width: 1px;
       height: 100%;
       transform: translate3d(-50%, 0, 0);
-      .theme(background-color, '@border-color');
+      .theme(background-color, '@step-line-color');
     }
   }
 }

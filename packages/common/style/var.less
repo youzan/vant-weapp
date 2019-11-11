@@ -74,17 +74,13 @@
 @button-mini-height: 22px;
 @button-mini-min-width: 50px;
 @button-mini-font-size: @font-size-xs;
-@button-mini-line-height: 20px;
 @button-small-height: 30px;
 @button-small-font-size: @font-size-sm;
 @button-small-min-width: 60px;
-@button-small-line-height: 28px;
 @button-normal-font-size: @font-size-md;
 @button-large-height: 50px;
-@button-large-line-height: 48px;
 @button-default-color: @text-color;
 @button-default-height: 44px;
-@button-default-line-height: 42px;
 @button-default-font-size: @font-size-lg;
 @button-default-background-color: @white;
 @button-default-border-color: @border-color;
@@ -100,6 +96,7 @@
 @button-warning-color: @white;
 @button-warning-background-color: @orange;
 @button-warning-border-color: @orange;
+@button-line-height: 20px;
 @button-border-radius: @border-radius-sm;
 @button-round-border-radius: @border-radius-max;
 @button-plain-background-color: @white;
@@ -117,6 +114,34 @@
 @card-price-color: @red;
 @card-origin-price-color: @gray-darker;
 @card-origin-price-font-size: @font-size-xs;
+
+// Cell
+@cell-font-size: @font-size-md;
+@cell-line-height: 24px;
+@cell-vertical-padding: 10px;
+@cell-horizontal-padding: @padding-md;
+@cell-text-color: @text-color;
+@cell-background-color: @white;
+@cell-border-color: @border-color;
+@cell-active-color: @active-color;
+@cell-required-color: @red;
+@cell-label-color: @gray-dark;
+@cell-label-font-size: @font-size-sm;
+@cell-label-line-height: 18px;
+@cell-label-margin-top: 3px;
+@cell-value-color: @gray-dark;
+@cell-icon-size: 16px;
+@cell-right-icon-color: @gray-dark;
+@cell-large-vertical-padding: @padding-sm;
+@cell-large-title-font-size: @font-size-lg;
+@cell-large-label-font-size: @font-size-md;
+
+// CellGroup
+@cell-group-background-color: @white;
+@cell-group-title-color: @gray-dark;
+@cell-group-title-padding: @padding-md @padding-md @padding-xs;
+@cell-group-title-font-size: @font-size-md;
+@cell-group-title-line-height: 16px;
 
 // Checkbox
 @checkbox-size: 20px;
@@ -146,6 +171,43 @@
 @count-down-font-size: @font-size-md;
 @count-down-line-height: 20px;
 
+// Dialog
+@dialog-width: 320px;
+@dialog-small-screen-width: 90%;
+@dialog-font-size: @font-size-lg;
+@dialog-border-radius: 16px;
+@dialog-background-color: @white;
+@dialog-header-font-weight: @font-weight-bold;
+@dialog-header-line-height: 24px;
+@dialog-header-padding-top: @padding-lg;
+@dialog-header-isolated-padding: @padding-lg 0;
+@dialog-message-padding: @padding-lg;
+@dialog-message-font-size: @font-size-md;
+@dialog-message-line-height: 20px;
+@dialog-message-max-height: 60vh;
+@dialog-has-title-message-text-color: @gray-darker;
+@dialog-has-title-message-padding-top: @padding-sm;
+
+// Field
+@field-input-text-color: @text-color;
+@field-input-error-text-color: @red;
+@field-input-disabled-text-color: @gray-dark;
+@field-placeholder-text-color: @gray-dark;
+@field-clear-icon-color: @gray;
+@field-icon-container-color: @gray-dark;
+@field-error-message-color: @red;
+@field-error-message-text-font-size: @font-size-sm;
+@field-text-area-min-height: 18px;
+
+// GoodsAction
+@goods-action-background-color: @white;
+@goods-action-icon-height: 50px;
+@goods-action-icon-font-size: @font-size-xs;
+@goods-action-icon-text-color: @gray-darker;
+@goods-action-button-height: 40px;
+@goods-action-button-warning-color: @gradient-orange;
+@goods-action-button-danger-color: @gradient-red;
+
 // Image
 @image-placeholder-text-color: @gray-dark;
 @image-placeholder-font-size: @font-size-md;
@@ -163,8 +225,32 @@
 @info-dot-size: 8px;
 @info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 
+// Loading
+@loading-text-color: @gray-dark;
+@loading-text-font-size: @font-size-md;
+@loading-text-line-height: 20px;
+@loading-spinner-color: @gray;
+@loading-spinner-size: 30px;
+@loading-spinner-animation-duration: .8s;
+
 // NavBar
 @nav-bar-height: 44px;
+@nav-bar-background-color: @white;
+@nav-bar-text-color: @blue;
+@nav-bar-arrow-size: 16px;
+@nav-bar-title-font-size: @font-size-lg;
+@nav-bar-title-text-color: @text-color;
+
+// NoticeBar
+@notice-bar-height: 40px;
+@notice-bar-padding: 0 @padding-md;
+@notice-bar-wrapable-padding: @padding-xs @padding-md;
+@notice-bar-font-size: @font-size-md;
+@notice-bar-text-color: @orange-dark;
+@notice-bar-line-height: 24px;
+@notice-bar-background-color: @orange-light;
+@notice-bar-icon-size: 16px;
+@notice-bar-icon-min-width: 22px;
 
 // Notify
 @notify-padding: 6px 15px;
@@ -178,12 +264,43 @@
 // Overlay
 @overlay-background-color: rgba(0, 0, 0, 0.7);
 
+// Panel
+@panel-background-color: @white;
+@panel-header-value-color: @red;
+@panel-footer-padding: @padding-xs @padding-md;
+
+// Picker
+@picker-background-color: @white;
+@picker-toolbar-height: 44px;
+@picker-title-font-size: @font-size-lg;
+@picker-action-padding: 0 @padding-md;
+@picker-action-font-size: @font-size-md;
+@picker-action-text-color: @blue;
+@picker-action-active-color: @active-color;
+@picker-option-font-size: @font-size-lg;
+@picker-option-text-color: @black;
+@picker-loading-icon-color: @blue;
+@picker-loading-mask-color: rgba(255, 255, 255, .9);
+@picker-option-disabled-opacity: .3;
+@picker-option-selected-text-color: @text-color;
+
 // Popup
+@popup-background-color: @white;
 @popup-round-border-radius: 20px;
 @popup-close-icon-size: 18px;
 @popup-close-icon-color: @gray-dark;
 @popup-close-icon-margin: 16px;
 @popup-close-icon-z-index: 1;
+
+// Progress
+@progress-height: 4px;
+@progress-background-color: @gray-light;
+@progress-pivot-padding: 0 5px;
+@progress-color: @blue;
+@progress-pivot-font-size: @font-size-xs;
+@progress-pivot-line-height: 1.6;
+@progress-pivot-background-color: @blue;
+@progress-pivot-text-color: @white;
 
 // Radio
 @radio-size: 20px;
@@ -198,6 +315,7 @@
 
 // Rate
 @rate-horizontal-padding: 2px;
+@rate-icon-size: 20px;
 
 // Switch
 @switch-width: 2em;
@@ -214,13 +332,86 @@
 
 // Search
 @search-background-color: #f7f8fA;
+@search-padding: 10px @padding-sm;
+@search-input-height: 34px;
+@search-label-padding: 0 5px;
+@search-label-color: @text-color;
+@search-label-font-size: @font-size-md;
+@search-left-icon-color: @gray-dark;
+@search-action-padding: 0 @padding-xs;
+@search-action-text-color: @text-color;
+@search-action-font-size: @font-size-md;
+
+// Sidebar
+@sidebar-width: 85px;
+
+// SidebarItem
+@sidebar-font-size: @font-size-md;
+@sidebar-line-height: 20px;
+@sidebar-text-color: @text-color;
+@sidebar-disabled-text-color: @gray;
+@sidebar-padding: 20px @padding-sm 20px @padding-xs;
+@sidebar-active-color: @active-color;
+@sidebar-background-color: @background-color-light;
+@sidebar-selected-font-weight: @font-weight-bold;
+@sidebar-selected-text-color: @text-color;
+@sidebar-selected-border-color: @red;
+@sidebar-selected-background-color: @white;
+
+// Slider
+@slider-active-background-color: @blue;
+@slider-inactive-background-color: @gray-light;
+@slider-disabled-opacity: @disabled-opacity;
+@slider-button-width: 24px;
+@slider-button-height: 24px;
+@slider-button-border-radius: 50%;
+@slider-button-background-color: @white;
+@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+
+// Step
+@step-text-color: @gray-dark;
+@step-process-text-color: @text-color;
+@step-font-size: @font-size-md;
+@step-line-color: @border-color;
+@step-finish-line-color: @green;
+@step-finish-text-color: @text-color;
+@step-icon-size: 12px;
+@step-circle-size: 5px;
+@step-circle-color: @gray-dark;
+@step-horizontal-title-font-size: @font-size-sm;
+
+// Steps
+@steps-background-color: @white;
+
+// Sidebar
+@sidebar-width: 85px;
+
+// SidebarItem
+@sidebar-font-size: @font-size-md;
+@sidebar-line-height: 20px;
+@sidebar-text-color: @text-color;
+@sidebar-disabled-text-color: @gray;
+@sidebar-padding: 20px @padding-sm 20px @padding-xs;
+@sidebar-active-color: @active-color;
+@sidebar-background-color: @background-color-light;
+@sidebar-selected-font-weight: @font-weight-bold;
+@sidebar-selected-text-color: @text-color;
+@sidebar-selected-border-color: @red;
+@sidebar-selected-background-color: @white;
 
 // Stepper
 @stepper-active-color: #e8e8e8;
 @stepper-background-color: @active-color;
+@stepper-button-icon-color: @text-color;
 @stepper-button-disabled-color: #f7f8fa;
-@stepper-input-disabled-color: @active-color;
-@stepper-border-radius: 4px;
+@stepper-button-disabled-icon-color: @gray;
+@stepper-input-width: 32px;
+@stepper-input-height: 28px;
+@stepper-input-font-size: @font-size-md;
+@stepper-input-text-color: @text-color;
+@stepper-input-disabled-text-color: @gray;
+@stepper-input-disabled-background-color: @active-color;
+@stepper-border-radius: @border-radius-md;
 
 // SubmitBar
 @submit-bar-height: 50px;
@@ -239,7 +430,26 @@
 @submit-bar-tip-background-color: #fff7cc;
 @submit-bar-tip-icon-size: 12px;
 
+// Tabbar
+@tabbar-height: 50px;
+@tabbar-background-color: @white;
+
+// TabbarItem
+@tabbar-item-font-size: @font-size-sm;
+@tabbar-item-text-color: @gray-darker;
+@tabbar-item-active-color: @blue;
+@tabbar-item-line-height: 1;
+@tabbar-item-icon-size: 18px;
+@tabbar-item-margin-bottom: 5px;
+
 // Tag
+@tag-padding: .2em .5em;
+@tag-font-size: @font-size-xs;
+@tag-medium-font-size: @font-size-sm;
+@tag-large-font-size: @font-size-md;
+@tag-text-color: @white;
+@tag-border-radius: .2em;
+@tag-round-border-radius: @border-radius-max;
 @tag-dander-color: @red;
 @tag-primary-color: @blue;
 @tag-success-color: @green;
@@ -252,12 +462,12 @@
 @toast-font-size: 14px;
 @toast-text-color: @white;
 @toast-line-height: 20px;
-@toast-border-radius: 4px;
+@toast-border-radius: @border-radius-md;
 @toast-background-color: rgba(@text-color, .88);
 @toast-icon-size: 48px;
 @toast-text-min-width: 96px;
-@toast-text-padding: 8px 12px;
-@toast-default-padding: 15px;
+@toast-text-padding: @padding-xs @padding-sm;
+@toast-default-padding: @padding-md;
 @toast-default-width: 90px;
 @toast-default-min-height: 90px;
 
@@ -278,6 +488,15 @@
 @divider-content-padding: @padding-md;
 @divider-content-left-width: 10%;
 @divider-content-right-width: 10%;
+
+// TreeSelect
+@tree-select-font-size: @font-size-md;
+@tree-select-nav-background-color: @background-color-light;
+@tree-select-content-background-color: @white;
+@tree-select-nav-item-padding: @padding-sm @padding-xs @padding-sm @padding-sm;
+@tree-select-item-height: 44px;
+@tree-select-item-active-color: @red;
+@tree-select-item-disabled-color: @gray;
 
 // Uploader
 @uploader-size: 80px;
@@ -319,3 +538,11 @@
 // IndexBar
 @index-bar-index-font-size: @font-size-xs;
 @index-bar-index-line-height: 14px;
+
+// skeleton
+@skeleton-padding: 0 @padding-md;
+@skeleton-row-height: 16px;
+@skeleton-row-background-color: @active-color;
+@skeleton-row-margin-top: @padding-sm;
+@skeleton-avatar-background-color: @active-color;
+@skeleton-animation-duration: 1.2s;

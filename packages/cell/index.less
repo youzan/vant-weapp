@@ -7,14 +7,14 @@
   display: flex;
   box-sizing: border-box;
   width: 100%;
-  padding: 10px 15px;
-  font-size: 14px;
-  line-height: 24px;
-  .theme(color, '@text-color');
-  .theme(background-color, '@white');
+  .theme(padding, '@cell-vertical-padding @cell-horizontal-padding');
+  .theme(font-size, '@cell-font-size');
+  .theme(line-height, '@cell-line-height');
+  .theme(color, '@cell-text-color');
+  .theme(background-color, '@cell-background-color');
 
   &::after {
-    .hairline-bottom(@border-color, 15px);
+    .hairline-bottom(@border-color, @padding-md);
   }
 
   &--borderless::after {
@@ -22,21 +22,21 @@
   }
 
   &-group {
-    .theme(background-color, '@white');
+    .theme(background-color, '@cell-background-color');
   }
 
   &__label {
-    margin-top: 3px;
-    font-size: 12px;
-    line-height: 18px;
-    .theme(color, '@gray-dark');
+    .theme(margin-top, '@cell-label-margin-top');
+    .theme(font-size, '@cell-label-font-size');
+    .theme(line-height, '@cell-label-line-height');
+    .theme(color, '@cell-label-color');
   }
 
   &__value {
     overflow: hidden;
     text-align: right;
     vertical-align: middle;
-    .theme(color, '@gray-dark');
+    .theme(color, '@cell-value-color');
   }
 
   &__title,
@@ -52,8 +52,8 @@
   &__right-icon-wrap {
     display: flex;
     align-items: center;
-    height: 24px;
-    font-size: 16px;
+    .theme(height, '@cell-line-height');
+    .theme(font-size, '@cell-icon-size');
   }
 
   &__left-icon-wrap {
@@ -62,20 +62,20 @@
 
   &__right-icon-wrap {
     margin-left: 5px;
-    .theme(color, '@gray-dark');
+    .theme(color, '@cell-right-icon-color');
   }
 
   &__left-icon {
-    line-height: 24px;
     vertical-align: middle;
+    .theme(line-height, '@cell-line-height');
   }
 
   &__right-icon {
-    line-height: 24px;
+    .theme(line-height, '@cell-line-height');
   }
 
   &--clickable&--hover {
-    .theme(background-color, '@active-color');
+    .theme(background-color, '@cell-active-color');
   }
 
   &--required {
@@ -83,10 +83,10 @@
 
     &::before {
       position: absolute;
-      left: 7px;
-      font-size: 14px;
       content: '*';
-      .theme(color, '@red');
+      .theme(left, '@padding-xs');
+      .theme(font-size, '@cell-font-size');
+      .theme(color, '@cell-required-color');
     }
   }
 
@@ -95,15 +95,15 @@
   }
 
   &--large {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    .theme(padding-top, '@cell-large-vertical-padding');
+    .theme(padding-bottom, '@cell-large-vertical-padding');
 
     .van-cell__title {
-      font-size: 16px;
+      .theme(font-size, '@cell-large-title-font-size');
     }
 
     .van-cell__label {
-      font-size: 14px;
+      .theme(font-size, '@cell-large-label-font-size');
     }
   }
 }

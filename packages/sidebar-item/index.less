@@ -4,40 +4,45 @@
 .van-sidebar-item {
   display: block;
   box-sizing: border-box;
-  padding: 20px 12px 20px 9px;
   overflow: hidden;
-  font-size: 14px;
-  line-height: 1.4;
   word-wrap: break-word;
   border-left: 3px solid transparent;
   user-select: none;
-  .theme(color, '@gray-darker');
-  .theme(background-color, '@background-color');
+  .theme(padding, '@sidebar-padding');
+  .theme(font-size, '@sidebar-font-size');
+  .theme(line-height, '@sidebar-line-height');
+  .theme(color, '@sidebar-text-color');
+  .theme(background-color, '@sidebar-background-color');
 
-  &--hover {
-    .theme(background-color, '@active-color');
+  &__text {
+    position: relative;
+    display: inline-block;
+  }
+
+  &--hover:not(&--disabled) {
+    .theme(background-color, '@sidebar-active-color');
   }
 
   &::after {
     border-bottom-width: 1px;
   }
 
-  &--active {
-    font-weight: bold;
-    .theme(color, '@text-color');
-    .theme(border-color, '@red');
+  &--selected {
+    .theme(color, '@sidebar-selected-text-color');
+    .theme(font-weight, '@sidebar-selected-font-weight');
+    .theme(border-color, '@sidebar-selected-border-color');
 
     &::after {
       border-right-width: 1px;
     }
   }
 
-  &--active,
-  &--active&--hover {
-    .theme(background-color, '@white');
+  &--selected,
+  &--selected&--hover {
+    .theme(background-color, '@sidebar-selected-background-color');
   }
 
-  &__text {
-    position: relative;
+  &--disabled {
+    .theme(color, '@sidebar-disabled-text-color');
   }
 }

@@ -18,8 +18,6 @@
   }
 
   &__cancel {
-    .theme(height, '@action-sheet-item-height');
-
     &::before {
       display: block;
       content: ' ';
@@ -65,5 +63,10 @@
     .theme(padding, '@action-sheet-close-icon-padding');
     .theme(font-size, '@action-sheet-close-icon-size') !important;
     .theme(color, '@action-sheet-close-icon-color');
+  }
+
+  &__loading {
+    display: flex !important;
+    .theme(height, '@action-sheet-item-height');
   }
 }

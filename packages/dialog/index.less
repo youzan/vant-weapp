@@ -3,43 +3,43 @@
 
 .van-dialog {
   top: 45% !important;
-  width: 320px;
   overflow: hidden;
-  font-size: 16px;
-  border-radius: 16px;
-  .theme(background-color, '@white');
+  .theme(width, '@dialog-width');
+  .theme(font-size, '@dialog-font-size');
+  .theme(border-radius, '@dialog-border-radius');
+  .theme(background-color, '@dialog-background-color');
 
   @media (max-width: 321px) {
-    width: 90%;
+    .theme(width, '@dialog-small-screen-width');
   }
 
   &__header {
-    padding-top: 25px;
-    font-weight: 500;
-    line-height: 24px;
     text-align: center;
+    .theme(padding-top, '@dialog-header-padding-top');
+    .theme(font-weight, '@dialog-header-font-weight');
+    .theme(line-height, '@dialog-header-line-height');
 
     &--isolated {
-      padding: 25px 0;
+      .theme(padding, '@dialog-header-isolated-padding');
     }
   }
 
   &__message {
-    max-height: 60vh;
-    padding: 25px;
     overflow-y: auto;
-    font-size: 14px;
-    line-height: 20px;
     text-align: center;
     -webkit-overflow-scrolling: touch;
+    .theme(font-size, '@dialog-message-font-size');
+    .theme(line-height, '@dialog-message-line-height');
+    .theme(max-height, '@dialog-message-max-height');
+    .theme(padding, '@dialog-message-padding');
 
     &-text {
       word-wrap: break-word;
     }
 
     &--has-title {
-      padding-top: 12px;
-      .theme(color, '@gray-darker');
+      .theme(padding-top, '@dialog-has-title-message-padding-top');
+      .theme(color, '@dialog-has-title-message-text-color');
     }
 
     &--left {

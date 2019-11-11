@@ -138,6 +138,10 @@ export default [
         title: 'CountDown 倒计时'
       },
       {
+        path: '/divider',
+        title: 'Divider 分割线'
+      },
+      {
         path: '/notice-bar',
         title: 'NoticeBar 通告栏'
       },
@@ -148,6 +152,10 @@ export default [
       {
         path: '/progress',
         title: 'Progress 进度条'
+      },
+      {
+        path: '/skeleton',
+        title: 'Skeleton 骨架屏'
       },
       {
         path: '/steps',
@@ -164,10 +172,6 @@ export default [
       {
         path: '/tree-select',
         title: 'TreeSelect 分类选择'
-      },
-      {
-        path: '/divider',
-        title: 'Divider 分割线'
       }
     ]
   },

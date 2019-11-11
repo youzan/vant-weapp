@@ -28,6 +28,11 @@ VantComponent({
     formattedTime: '0'
   },
 
+  destroyed() {
+    clearTimeout(this.tid);
+    this.tid = null;
+  },
+
   methods: {
     // 开始
     start() {

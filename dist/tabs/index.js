@@ -9,7 +9,6 @@ VantComponent({
         type: 'descendant',
         linked(child) {
             child.index = this.children.length;
-            child.setComputedName();
             this.children.push(child);
             this.updateTabs(this.data.tabs.concat(child.data));
         },
@@ -22,28 +21,39 @@ VantComponent({
             while (i >= 0 && i < this.children.length) {
                 const currentChild = this.children[i];
                 currentChild.index--;
-                currentChild.setComputedName();
                 i++;
             }
             this.updateTabs(tabs);
         }
     },
     props: {
-        color: String,
+        color: {
+            type: String,
+            observer: 'setLine'
+        },
         sticky: Boolean,
-        animated: Boolean,
+        animated: {
+            type: Boolean,
+            observer: 'setTrack'
+        },
         swipeable: Boolean,
         lineWidth: {
             type: [String, Number],
-            value: -1
+            value: -1,
+            observer: 'setLine'
         },
         lineHeight: {
             type: [String, Number],
-            value: -1
+            value: -1,
+            observer: 'setLine'
         },
         active: {
             type: [String, Number],
             value: 0,
+            observer(value) {
+                this.currentName = value;
+                this.setActiveTab();
+            }
         },
         type: {
             type: String,
@@ -63,7 +73,12 @@ VantComponent({
         },
         swipeThreshold: {
             type: Number,
-            value: 4
+            value: 4,
+            observer() {
+                this.setData({
+                    scrollable: this.children.length > this.data.swipeThreshold
+                });
+            }
         },
         offsetTop: {
             type: Number,
@@ -78,20 +93,7 @@ VantComponent({
         trackStyle: '',
         wrapStyle: '',
         position: '',
-        currentIndex: 0,
-    },
-    watch: {
-        swipeThreshold() {
-            this.setData({
-                scrollable: this.children.length > this.data.swipeThreshold
-            });
-        },
-        color: 'setLine',
-        lineWidth: 'setLine',
-        lineHeight: 'setLine',
-        active: 'setActiveTab',
-        animated: 'setTrack',
-        offsetTop: 'setWrapStyle'
+        currentIndex: 0
     },
     beforeCreate() {
         this.children = [];
@@ -100,14 +102,6 @@ VantComponent({
         this.setLine(true);
         this.setTrack();
         this.scrollIntoView();
-        this.getRect('.van-tabs__wrap').then((rect) => {
-            this.navHeight = rect.height;
-            this.observerContentScroll();
-        });
-    },
-    destroyed() {
-        // @ts-ignore
-        this.createIntersectionObserver().disconnect();
     },
     methods: {
         updateTabs(tabs) {
@@ -128,18 +122,19 @@ VantComponent({
         onTap(event) {
             const { index } = event.currentTarget.dataset;
             const child = this.children[index];
+            const computedName = child.getComputedName();
             if (this.data.tabs[index].disabled) {
-                this.trigger('disabled', child.computedName);
+                this.trigger('disabled', computedName);
             }
             else {
-                this.trigger('click', child.computedName);
-                this.setActive(child.computedName);
+                this.trigger('click', computedName);
+                this.setActive(computedName);
             }
         },
-        setActive(computedName) {
-            if (computedName !== this.currentName) {
-                this.currentName = computedName;
-                this.trigger('change', computedName);
+        setActive(name) {
+            if (name !== this.currentName) {
+                this.currentName = name;
+                this.trigger('change', name);
                 this.setActiveTab();
             }
         },
@@ -151,7 +146,9 @@ VantComponent({
             this.getRect('.van-tab', true).then((rects) => {
                 const rect = rects[currentIndex];
                 const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
-                const height = lineHeight !== -1 ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};` : '';
+                const height = lineHeight !== -1
+                    ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};`
+                    : '';
                 let left = rects
                     .slice(0, currentIndex)
                     .reduce((prev, curr) => prev + curr.width, 0);
@@ -194,16 +191,19 @@ VantComponent({
         },
         setActiveTab() {
             if (!isDef(this.currentName)) {
-                this.currentName = this.data.active || (this.children[0] || {}).computedName;
+                const { active } = this.data;
+                const { children = [] } = this;
+                this.currentName =
+                    active === '' && children.length
+                        ? children[0].getComputedName()
+                        : active;
             }
             this.children.forEach((item, index) => {
                 const data = {
-                    active: item.computedName === this.currentName
+                    active: item.getComputedName() === this.currentName
                 };
                 if (data.active) {
-                    this.setData({
-                        currentIndex: index
-                    });
+                    this.setData({ currentIndex: index });
                     data.inited = true;
                 }
                 if (data.active !== item.data.active) {
@@ -254,80 +254,13 @@ VantComponent({
             const minSwipeDistance = 50;
             if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
                 if (deltaX > 0 && currentIndex !== 0) {
-                    this.setActive(this.children[currentIndex - 1].computedName);
+                    const child = this.children[currentIndex - 1];
+                    this.setActive(child.getComputedName());
                 }
                 else if (deltaX < 0 && currentIndex !== tabs.length - 1) {
-                    this.setActive(this.children[currentIndex + 1].computedName);
+                    const child = this.children[currentIndex - 1];
+                    this.setActive(child.getComputedName());
                 }
-            }
-        },
-        setWrapStyle() {
-            const { offsetTop, position } = this.data;
-            let wrapStyle;
-            switch (position) {
-                case 'top':
-                    wrapStyle = `
-            top: ${offsetTop}px;
-            position: fixed;
-          `;
-                    break;
-                case 'bottom':
-                    wrapStyle = `
-            top: auto;
-            bottom: 0;
-          `;
-                    break;
-                default:
-                    wrapStyle = '';
-            }
-            if (wrapStyle !== this.data.wrapStyle) {
-                this.setData({ wrapStyle });
-            }
-        },
-        observerContentScroll() {
-            if (!this.data.sticky) {
-                return;
-            }
-            const { offsetTop } = this.data;
-            const { windowHeight } = wx.getSystemInfoSync();
-            // @ts-ignore
-            this.createIntersectionObserver().disconnect();
-            // @ts-ignore
-            this.createIntersectionObserver()
-                .relativeToViewport({ top: -(this.navHeight + offsetTop) })
-                .observe('.van-tabs', (res) => {
-                const { top } = res.boundingClientRect;
-                if (top > offsetTop) {
-                    return;
-                }
-                const position = res.intersectionRatio > 0 ? 'top' : 'bottom';
-                this.$emit('scroll', {
-                    scrollTop: top + offsetTop,
-                    isFixed: position === 'top'
-                });
-                this.setPosition(position);
-            });
-            // @ts-ignore
-            this.createIntersectionObserver()
-                .relativeToViewport({ bottom: -(windowHeight - 1 - offsetTop) })
-                .observe('.van-tabs', (res) => {
-                const { top, bottom } = res.boundingClientRect;
-                if (bottom < this.navHeight) {
-                    return;
-                }
-                const position = res.intersectionRatio > 0 ? 'top' : '';
-                this.$emit('scroll', {
-                    scrollTop: top + offsetTop,
-                    isFixed: position === 'top'
-                });
-                this.setPosition(position);
-            });
-        },
-        setPosition(position) {
-            if (position !== this.data.position) {
-                this.set({ position }).then(() => {
-                    this.setWrapStyle();
-                });
             }
         }
     }

@@ -1,5 +1,7 @@
-<view class="custom-class van-sticky" style="z-index: {{ zIndex }}; {{ containerStyle }}">
-  <view class="van-sticky-wrap" style="{{ wrapStyle }}">
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class van-sticky }}" style="{{ containerStyle }}">
+  <view class="{{ utils.bem('sticky-wrap', { fixed }) }}" style="{{ wrapStyle }}">
     <slot />
   </view>
 </view>

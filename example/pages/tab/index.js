@@ -8,17 +8,7 @@ Page({
       { name: 'a', index: 1 },
       { name: 'b', index: 2 },
       { name: 'c', index: 3 }
-    ],
-    active: 1
-  },
-
-  onLoad() {
-    setTimeout(() => {
-      console.log(123);
-      this.setData({
-        active: 3
-      });
-    }, 2000);
+    ]
   },
 
   onClickDisabled(event) {

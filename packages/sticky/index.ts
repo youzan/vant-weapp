@@ -1,7 +1,4 @@
 import { VantComponent } from '../common/component';
-import { nextTick } from '../common/utils';
-
-type Position = 'top' | 'bottom' | '';
 
 VantComponent({
   props: {
@@ -12,131 +9,69 @@ VantComponent({
     offsetTop: {
       type: Number,
       value: 0
-    }
+    },
+    disabled: Boolean
   },
 
   data: {
-    position: '', // 当前定位
-    height: 0,
     wrapStyle: '',
     containerStyle: ''
   },
 
   methods: {
-    setWrapStyle() {
-      const { offsetTop, position } = this.data;
-      let wrapStyle: string;
-      let containerStyle: string;
+    setStyle() {
+      const { offsetTop, height, fixed, zIndex } = this.data;
 
-      switch (position) {
-        case 'top':
-          wrapStyle = `
-            top: ${offsetTop}px;
-            position: fixed;
-          `;
-          containerStyle = `height: ${this.itemHeight}px;`;
-          break;
-        case 'bottom':
-          wrapStyle = `
-            top: auto;
-            bottom: 0;
-          `;
-          containerStyle = '';
-          break;
-        default:
-          wrapStyle = '';
-          containerStyle = '';
-      }
-
-      const data: Record<string, string> = {};
-
-      if (wrapStyle !== this.data.wrapStyle) {
-        data.wrapStyle = wrapStyle;
-      }
-
-      if (containerStyle !== this.data.containerStyle) {
-        data.containerStyle = containerStyle;
-      }
-
-      if (JSON.stringify(data) !== '{}') {
-        this.setData(data);
-      }
-    },
-
-    setPosition(position: Position) {
-      if (position !== this.data.position) {
-        this.setData({ position });
-        nextTick(() => {
-          this.setWrapStyle();
+      if (fixed) {
+        this.setData({
+          wrapStyle: `top: ${offsetTop}px;`,
+          containerStyle: `height: ${height}px; z-index: ${zIndex};`
+        });
+      } else {
+        this.setData({
+          wrapStyle: '',
+          containerStyle: ''
         });
       }
     },
 
     observerContentScroll() {
-      const { offsetTop = 0 } = this.data;
-      const { windowHeight } = wx.getSystemInfoSync();
-
-      this.createIntersectionObserver({}).disconnect();
-
-      // @ts-ignore
-      this.createIntersectionObserver()
-        .relativeToViewport({ top: -(this.itemHeight + offsetTop) })
-        .observe(
-          '.van-sticky',
-          (res: WechatMiniprogram.ObserveCallbackResult) => {
-            const { top } = res.boundingClientRect;
-
-            if (top > offsetTop) {
-              return;
-            }
-
-            const position: Position = 'top';
-
-            this.$emit('scroll', {
-              scrollTop: top + offsetTop,
-              isFixed: true
-            });
-
-            this.setPosition(position);
+      const { offsetTop } = this.data;
+      const intersectionObserver = this.createIntersectionObserver({
+        thresholds: [0, 1]
+      });
+      this.intersectionObserver = intersectionObserver;
+      intersectionObserver.relativeToViewport({ top: -offsetTop });
+      intersectionObserver.observe(
+        '.van-sticky',
+        (res) => {
+          if (this.data.disabled) {
+            return;
           }
-        );
+          // @ts-ignore
+          const { top, height } = res.boundingClientRect;
+          const fixed = top <= offsetTop;
 
-      // @ts-ignore
-      this.createIntersectionObserver()
-        .relativeToViewport({ bottom: -(windowHeight - 1 - offsetTop) })
-        .observe(
-          '.van-sticky',
-          (res: WechatMiniprogram.ObserveCallbackResult) => {
-            const { top, bottom } = res.boundingClientRect;
+          this.$emit('scroll', {
+            scrollTop: top,
+            isFixed: fixed
+          });
 
-            if (bottom <= this.itemHeight - 1) {
-              return;
-            }
+          this.setData({ fixed, height });
 
-            const position: Position = res.intersectionRatio > 0 ? 'top' : '';
-
-            this.$emit('scroll', {
-              scrollTop: top + offsetTop,
-              isFixed: position === 'top'
-            });
-
-            this.setPosition(position);
-          }
-        );
+          wx.nextTick(() => {
+            this.setStyle();
+          });
+        }
+      );
     }
   },
 
   mounted() {
-    this.getRect('.van-sticky').then(
-      (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        this.itemHeight = rect.height;
-        this.itemTop = rect.top;
-        this.observerContentScroll();
-      }
-    );
+    this.observerContentScroll();
   },
 
   destroyed() {
-    this.createIntersectionObserver({}).disconnect();
+    this.intersectionObserver.disconnect();
   }
 });

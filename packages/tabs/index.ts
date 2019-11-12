@@ -4,14 +4,12 @@ import { Weapp } from 'definitions/weapp';
 import { nextTick, isDef, addUnit } from '../common/utils';
 
 type TabItemData = {
-  width?: number
-  active: boolean
-  inited?: boolean
-  animated?: boolean
-  name?: string | number
+  width?: number;
+  active: boolean;
+  inited?: boolean;
+  animated?: boolean;
+  name?: string | number;
 };
-
-type Position = 'top' | 'bottom' | '';
 
 VantComponent({
   mixins: [touch],
@@ -23,7 +21,6 @@ VantComponent({
     type: 'descendant',
     linked(child) {
       child.index = this.children.length;
-      child.setComputedName();
       this.children.push(child);
       this.updateTabs(this.data.tabs.concat(child.data));
     },
@@ -37,7 +34,6 @@ VantComponent({
       while (i >= 0 && i < this.children.length) {
         const currentChild = this.children[i];
         currentChild.index--;
-        currentChild.setComputedName();
         i++;
       }
 
@@ -46,21 +42,33 @@ VantComponent({
   },
 
   props: {
-    color: String,
+    color: {
+      type: String,
+      observer: 'setLine'
+    },
     sticky: Boolean,
-    animated: Boolean,
+    animated: {
+      type: Boolean,
+      observer: 'setTrack'
+    },
     swipeable: Boolean,
     lineWidth: {
       type: [String, Number],
-      value: -1
+      value: -1,
+      observer: 'setLine'
     },
     lineHeight: {
       type: [String, Number],
-      value: -1
+      value: -1,
+      observer: 'setLine'
     },
     active: {
       type: [String, Number],
       value: 0,
+      observer(value) {
+        this.currentName = value;
+        this.setActiveTab();
+      }
     },
     type: {
       type: String,
@@ -80,7 +88,12 @@ VantComponent({
     },
     swipeThreshold: {
       type: Number,
-      value: 4
+      value: 4,
+      observer() {
+        this.setData({
+          scrollable: this.children.length > this.data.swipeThreshold
+        });
+      }
     },
     offsetTop: {
       type: Number,
@@ -96,21 +109,7 @@ VantComponent({
     trackStyle: '',
     wrapStyle: '',
     position: '',
-    currentIndex: 0,
-  },
-
-  watch: {
-    swipeThreshold() {
-      this.setData({
-        scrollable: this.children.length > this.data.swipeThreshold
-      });
-    },
-    color: 'setLine',
-    lineWidth: 'setLine',
-    lineHeight: 'setLine',
-    active: 'setActiveTab',
-    animated: 'setTrack',
-    offsetTop: 'setWrapStyle'
+    currentIndex: 0
   },
 
   beforeCreate() {
@@ -121,17 +120,6 @@ VantComponent({
     this.setLine(true);
     this.setTrack();
     this.scrollIntoView();
-    this.getRect('.van-tabs__wrap').then(
-      (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        this.navHeight = rect.height;
-        this.observerContentScroll();
-      }
-    );
-  },
-
-  destroyed() {
-    // @ts-ignore
-    this.createIntersectionObserver().disconnect();
   },
 
   methods: {
@@ -156,18 +144,20 @@ VantComponent({
     onTap(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
       const child = this.children[index];
+      const computedName = child.getComputedName();
+
       if (this.data.tabs[index].disabled) {
-        this.trigger('disabled', child.computedName);
+        this.trigger('disabled', computedName);
       } else {
-        this.trigger('click', child.computedName);
-        this.setActive(child.computedName);
+        this.trigger('click', computedName);
+        this.setActive(computedName);
       }
     },
 
-    setActive(computedName) {
-      if (computedName !== this.currentName) {
-        this.currentName = computedName;
-        this.trigger('change', computedName);
+    setActive(name) {
+      if (name !== this.currentName) {
+        this.currentName = name;
+        this.trigger('change', name);
         this.setActiveTab();
       }
     },
@@ -177,13 +167,22 @@ VantComponent({
         return;
       }
 
-      const { color, duration, currentIndex, lineWidth, lineHeight } = this.data;
+      const {
+        color,
+        duration,
+        currentIndex,
+        lineWidth,
+        lineHeight
+      } = this.data;
 
       this.getRect('.van-tab', true).then(
         (rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const rect = rects[currentIndex];
           const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
-          const height = lineHeight !== -1 ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};` : '';
+          const height =
+            lineHeight !== -1
+              ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};`
+              : '';
 
           let left = rects
             .slice(0, currentIndex)
@@ -230,34 +229,42 @@ VantComponent({
 
           const data = { width, animated };
 
-          this.children.forEach((item: WechatMiniprogram.Component.TrivialInstance) => {
-            item.setData(data);
-          });
+          this.children.forEach(
+            (item: WechatMiniprogram.Component.TrivialInstance) => {
+              item.setData(data);
+            }
+          );
         }
       );
     },
 
     setActiveTab() {
       if (!isDef(this.currentName)) {
-        this.currentName = this.data.active || (this.children[0] || {}).computedName;
+        const { active } = this.data;
+        const { children = [] } = this;
+
+        this.currentName =
+          active === '' && children.length
+            ? children[0].getComputedName()
+            : active;
       }
 
-      this.children.forEach((item: WechatMiniprogram.Component.TrivialInstance, index: number) => {
-        const data: TabItemData = {
-          active: item.computedName === this.currentName
-        };
+      this.children.forEach(
+        (item: WechatMiniprogram.Component.TrivialInstance, index: number) => {
+          const data: TabItemData = {
+            active: item.getComputedName() === this.currentName
+          };
 
-        if (data.active) {
-          this.setData({
-            currentIndex: index
-          });
-          data.inited = true;
-        }
+          if (data.active) {
+            this.setData({ currentIndex: index });
+            data.inited = true;
+          }
 
-        if (data.active !== item.data.active) {
-          item.setData(data);
+          if (data.active !== item.data.active) {
+            item.setData(data);
+          }
         }
-      });
+      );
 
       nextTick(() => {
         this.setLine();
@@ -279,8 +286,8 @@ VantComponent({
         this.getRect('.van-tabs__nav')
       ]).then(
         ([tabRects, navRect]: [
-        WechatMiniprogram.BoundingClientRectCallbackResult[],
-        WechatMiniprogram.BoundingClientRectCallbackResult
+          WechatMiniprogram.BoundingClientRectCallbackResult[],
+          WechatMiniprogram.BoundingClientRectCallbackResult
         ]) => {
           const tabRect = tabRects[currentIndex];
           const offsetLeft = tabRects
@@ -317,100 +324,12 @@ VantComponent({
 
       if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
         if (deltaX > 0 && currentIndex !== 0) {
-          this.setActive(this.children[currentIndex - 1].computedName);
+          const child = this.children[currentIndex - 1];
+          this.setActive(child.getComputedName());
         } else if (deltaX < 0 && currentIndex !== tabs.length - 1) {
-          this.setActive(this.children[currentIndex + 1].computedName);
+          const child = this.children[currentIndex - 1];
+          this.setActive(child.getComputedName());
         }
-      }
-    },
-
-    setWrapStyle() {
-      const { offsetTop, position } = this.data as {
-        offsetTop: number
-        position: Position
-      };
-      let wrapStyle: string;
-
-      switch (position) {
-        case 'top':
-          wrapStyle = `
-            top: ${offsetTop}px;
-            position: fixed;
-          `;
-          break;
-        case 'bottom':
-          wrapStyle = `
-            top: auto;
-            bottom: 0;
-          `;
-          break;
-        default:
-          wrapStyle = '';
-      }
-
-      if (wrapStyle !== this.data.wrapStyle) {
-        this.setData({ wrapStyle });
-      }
-    },
-
-    observerContentScroll() {
-      if (!this.data.sticky) {
-        return;
-      }
-
-      const { offsetTop } = this.data;
-      const { windowHeight } = wx.getSystemInfoSync();
-
-      // @ts-ignore
-      this.createIntersectionObserver().disconnect();
-
-      // @ts-ignore
-      this.createIntersectionObserver()
-        .relativeToViewport({ top: -(this.navHeight + offsetTop) })
-        .observe('.van-tabs', (res: WechatMiniprogram.ObserveCallbackResult) => {
-          const { top } = res.boundingClientRect;
-
-          if (top > offsetTop) {
-            return;
-          }
-
-          const position: Position =
-            res.intersectionRatio > 0 ? 'top' : 'bottom';
-
-          this.$emit('scroll', {
-            scrollTop: top + offsetTop,
-            isFixed: position === 'top'
-          });
-
-          this.setPosition(position);
-        });
-
-      // @ts-ignore
-      this.createIntersectionObserver()
-        .relativeToViewport({ bottom: -(windowHeight - 1 - offsetTop) })
-        .observe('.van-tabs', (res: WechatMiniprogram.ObserveCallbackResult) => {
-          const { top, bottom } = res.boundingClientRect;
-
-          if (bottom < this.navHeight) {
-            return;
-          }
-
-          const position: Position = res.intersectionRatio > 0 ? 'top' : '';
-
-          this.$emit('scroll', {
-            scrollTop: top + offsetTop,
-            isFixed: position === 'top'
-          });
-
-          this.setPosition(position);
-        });
-    },
-
-    setPosition(position: Position) {
-      if (position !== this.data.position) {
-        this.set({ position }).then(() => {
-          this.setWrapStyle();
-        });
       }
     }
   }

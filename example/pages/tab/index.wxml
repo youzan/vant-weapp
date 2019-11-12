@@ -57,7 +57,7 @@
 </demo-block>
 
 <demo-block title="样式风格">
-  <van-tabs type="card" tab-class="tab-class" tab-active-class="tab-active-class">
+  <van-tabs type="card" tab-class="tab-class">
     <van-tab
       wx:for="123"
       wx:key="index"

@@ -14,6 +14,7 @@ page {
 .right-nav {
   padding: 0 10px;
   line-height: 44px !important;
+  background-color: #fff;
 }
 
 .tab-class {

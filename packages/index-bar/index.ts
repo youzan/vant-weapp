@@ -51,28 +51,27 @@ VantComponent({
   },
 
   data: {
-
+    activeAnchorIndex: null
   },
 
   methods: {
-    setAnchorData({ anchor, data }) {
+    setDiffData({ target, data }) {
       const diffData = {};
 
       Object.keys(data).forEach(key => {
-        if (anchor.data[key] !== data[key]) {
+        if (target.data[key] !== data[key]) {
           diffData[key] = data[key];
         }
       });
 
       if (Object.keys(diffData).length) {
-        anchor.setData(diffData);
+        target.setData(diffData);
       }
     },
 
     getScrollerRect() {
       return this.getRect('.van-index-bar').then(
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          console.log(rect);
           return {
             height: rect.height,
             top: rect.top
@@ -110,7 +109,7 @@ VantComponent({
       return -1;
     },
 
-    onScroll(scrollTop) {
+    onScroll() {
       Promise.all([
         this.getScrollerRect(),
         this.getAnchorsRectList()
@@ -121,6 +120,13 @@ VantComponent({
         ] = res;
 
         const active = this.getActiveAnchorIndex(anchorRects);
+
+        this.setDiffData({
+          target: this,
+          data: {
+            activeAnchorIndex: active
+          }
+        });
 
         if (this.data.sticky) {
           let isActiveAnchorSticky = false;
@@ -145,8 +151,8 @@ VantComponent({
                 `;
               }
 
-              this.setAnchorData({
-                anchor: item,
+              this.setDiffData({
+                target: item,
                 data: {
                   active: true,
                   anchorStyle,
@@ -169,16 +175,16 @@ VantComponent({
                 transform: translate3d(0, ${translateY}px, 0);
               `;
 
-              this.setAnchorData({
-                anchor: item,
+              this.setDiffData({
+                target: item,
                 data: {
                   active: true,
                   anchorStyle
                 }
               });
             } else {
-              this.setAnchorData({
-                anchor: item,
+              this.setDiffData({
+                target: item,
                 data: {
                   active: false,
                   anchorStyle: '',
@@ -192,36 +198,26 @@ VantComponent({
     },
 
     onClick(event) {
-      this.scrollToAnchor(event.target);
+      const index = event.target.dataset.index;
+
+      this.scrollToAnchor(index);
     },
 
     onTouchMove(event) {
+      // TODO
     },
 
-    scrollToAnchor(element) {
-      const { index } = element.dataset;
-      
+    scrollToAnchor(index) {      
       if (!index) {
         return;
       }
 
-      // @ts-ignore
-      wx.pageScrollTo({
-        duration: 0,
-        selector: '.van-index-bar'
-      });
-
       const anchor = this.children.filter(item => item.data.index === index)[0];
       this.getAnchorRect(anchor).then(res => {
-        const { top } = res;
-
-        // if (top) {
-        //   wx.vibrateShort();
-        //   wx.pageScrollTo({
-        //     duration: 0,
-        //     scrollTop: top
-        //   });
-        // }
+        wx.pageScrollTo({
+          duration: 0,
+          scrollTop: res.top + this.data.scrollTop
+        });
       });
     }
   }

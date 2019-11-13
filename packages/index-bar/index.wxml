@@ -2,6 +2,7 @@
   <slot />
 
   <view
+    wx:if="{{ showSidebar }}"
     class="van-index-bar__sidebar"
     catch:tap="onClick"
     catch:touchmove="onTouchMove"
@@ -11,7 +12,7 @@
       wx:key="index"
       class="van-index-bar__index"
       style="color: {{ activeAnchorIndex === index ? highlightColor : '' }}"
-      data-index="{{ item }}"
+      data-index="{{ index }}"
     >
       {{ item }}
     </view>

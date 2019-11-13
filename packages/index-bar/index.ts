@@ -16,9 +16,14 @@ VantComponent({
   relation: {
     name: 'index-anchor',
     type: 'descendant',
-    linked(target) {
-      this.children = this.children || [];
-      this.children.push(target);
+    linked() {
+      this.updateData();
+    },
+    linkChanged() {
+      this.updateData();
+    },
+    unlinked() {
+      this.updateData();
     }
   },
 
@@ -51,10 +56,30 @@ VantComponent({
   },
 
   data: {
-    activeAnchorIndex: null
+    activeAnchorIndex: null,
+    showSidebar: false
   },
 
   methods: {
+    updateData() {
+      this.timer && clearTimeout(this.timer)
+
+      this.timer = setTimeout(() => {
+        this.children = this.getRelationNodes('../index-anchor/index');
+
+        this.setData({
+          showSidebar: !!this.children.length
+        });
+
+        this.getRect('.van-index-bar__sidebar').then(res => {
+          this.sidebar = {
+            height: res.height,
+            top: res.top
+          };
+        });
+      }, 0);
+    },
+
     setDiffData({ target, data }) {
       const diffData = {};
 
@@ -110,6 +135,10 @@ VantComponent({
     },
 
     onScroll() {
+      if (!this.children.length) {
+        return;
+      }
+
       Promise.all([
         this.getScrollerRect(),
         this.getAnchorsRectList()
@@ -204,16 +233,28 @@ VantComponent({
     },
 
     onTouchMove(event) {
-      // TODO
+      const sidebarLength = this.children.length;
+      const touch = event.touches[0];
+      const itemHeight = this.sidebar.height / sidebarLength;
+      let index = Math.floor((touch.pageY - this.data.scrollTop - this.sidebar.top) / itemHeight);
+
+      if (index < 0) {
+        index = 0;
+      } else if (index > sidebarLength -1) {
+        index = sidebarLength -1;
+      }
+
+      this.scrollToAnchor(index);
     },
 
-    scrollToAnchor(index) {      
-      if (!index) {
+    scrollToAnchor(index) {
+      if (typeof index !== 'number') {
         return;
       }
 
-      const anchor = this.children.filter(item => item.data.index === index)[0];
-      this.getAnchorRect(anchor).then(res => {
+      const anchor = this.children.filter(item => item.data.index === this.data.indexList[index])[0];
+
+      anchor && this.getAnchorRect(anchor).then(res => {
         wx.pageScrollTo({
           duration: 0,
           scrollTop: res.top + this.data.scrollTop

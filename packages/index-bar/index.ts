@@ -65,11 +65,33 @@ VantComponent({
       this.timer && clearTimeout(this.timer)
 
       this.timer = setTimeout(() => {
+        const scrollTop = this.data.scrollTop;
+
         this.children = this.getRelationNodes('../index-anchor/index');
 
         this.setData({
           showSidebar: !!this.children.length
         });
+
+        this.children.forEach(anchor => {
+          anchor.getRect('.van-index-anchor-wrapper').then(
+            (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+              Object.assign(anchor, {
+                height: rect.height,
+                top: rect.top + scrollTop
+              });
+            }
+          ); 
+        });
+
+        this.getRect('.van-index-bar').then(
+          (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+            Object.assign(this, {
+              height: rect.height,
+              top: rect.top + scrollTop
+            });
+          }
+        );
 
         this.getRect('.van-index-bar__sidebar').then(res => {
           this.sidebar = {
@@ -94,17 +116,6 @@ VantComponent({
       }
     },
 
-    getScrollerRect() {
-      return this.getRect('.van-index-bar').then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          return {
-            height: rect.height,
-            top: rect.top
-          };
-        }
-      );
-    },
-
     getAnchorRect(anchor) {
       return anchor.getRect('.van-index-anchor-wrapper').then(
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
@@ -115,18 +126,15 @@ VantComponent({
         }
       ); 
     },
-    
-    getAnchorsRectList() {
-      return Promise.all(this.children.map(item => {
-        return this.getAnchorRect(item);
-      }))
-    },
 
-    getActiveAnchorIndex(anchorRects) {
+    getActiveAnchorIndex() {
+      const children = this.children;
+      const scrollTop = this.data.scrollTop;
+
       for (let i = this.children.length - 1; i >= 0; i--) {
-        const preAnchorHeight = i > 0 ? anchorRects[i - 1].height : 0;
+        const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
 
-        if (preAnchorHeight + this.data.stickyOffsetTop >= anchorRects[i].top) {
+        if (preAnchorHeight + this.data.stickyOffsetTop + scrollTop >= children[i].top) {
           return i;
         }
       }
@@ -139,91 +147,91 @@ VantComponent({
         return;
       }
 
-      Promise.all([
-        this.getScrollerRect(),
-        this.getAnchorsRectList()
-      ]).then(res => {
-        const [
-          scrollerRect,
-          anchorRects
-        ] = res;
+      const {
+        children
+      } = this;
 
-        const active = this.getActiveAnchorIndex(anchorRects);
+      const {
+        sticky,
+        stickyOffsetTop,
+        scrollTop
+      } = this.data;
 
-        this.setDiffData({
-          target: this,
-          data: {
-            activeAnchorIndex: active
-          }
-        });
+      const active = this.getActiveAnchorIndex();
 
-        if (this.data.sticky) {
-          let isActiveAnchorSticky = false;
-
-          if (active !== -1) {
-            isActiveAnchorSticky = anchorRects[active].top <= this.data.stickyOffsetTop
-          }
-
-          this.children.forEach((item, index) => {
-            if (index === active) {
-              let anchorStyle = '';
-              let wrapperStyle = '';
-
-              if (isActiveAnchorSticky) {
-                anchorStyle = `
-                  position: fixed;
-                  top: ${this.data.stickyOffsetTop};
-                `;
-                
-                wrapperStyle = `
-                  height: ${anchorRects[index].height}px;
-                `;
-              }
-
-              this.setDiffData({
-                target: item,
-                data: {
-                  active: true,
-                  anchorStyle,
-                  wrapperStyle
-                }
-              });
-            } else if (index === active - 1) {
-              const currentAnchor = anchorRects[index];
-
-              const currentOffsetTop = currentAnchor.top;
-              const targetOffsetTop = index === this.children.length - 1
-                ? scrollerRect.top
-                : anchorRects[index + 1].top;
-              
-              const parentOffsetHeight = targetOffsetTop - currentOffsetTop;
-              const translateY = parentOffsetHeight - currentAnchor.height;
-
-              const anchorStyle = `
-                position: relative;
-                transform: translate3d(0, ${translateY}px, 0);
-              `;
-
-              this.setDiffData({
-                target: item,
-                data: {
-                  active: true,
-                  anchorStyle
-                }
-              });
-            } else {
-              this.setDiffData({
-                target: item,
-                data: {
-                  active: false,
-                  anchorStyle: '',
-                  wrapperStyle: '',
-                }
-              });
-            }
-          });
+      this.setDiffData({
+        target: this,
+        data: {
+          activeAnchorIndex: active
         }
       });
+
+      if (sticky) {
+        let isActiveAnchorSticky = false;
+
+        if (active !== -1) {
+          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop
+        }
+
+        this.children.forEach((item, index) => {
+          if (index === active) {
+            let anchorStyle = '';
+            let wrapperStyle = '';
+
+            if (isActiveAnchorSticky) {
+              anchorStyle = `
+                position: fixed;
+                top: ${stickyOffsetTop};
+              `;
+              
+              wrapperStyle = `
+                height: ${children[index].height}px;
+              `;
+            }
+
+            this.setDiffData({
+              target: item,
+              data: {
+                active: true,
+                anchorStyle,
+                wrapperStyle
+              }
+            });
+          } else if (index === active - 1) {
+            const currentAnchor = children[index];
+
+            const currentOffsetTop = currentAnchor.top;
+            const targetOffsetTop = index === this.children.length - 1
+              ? this.top
+              : children[index + 1].top;
+            
+            const parentOffsetHeight = targetOffsetTop - currentOffsetTop;
+            const translateY = parentOffsetHeight - currentAnchor.height;
+
+            const anchorStyle = `
+              position: relative;
+              transform: translate3d(0, ${translateY}px, 0);
+            `;
+
+            this.setDiffData({
+              target: item,
+              data: {
+                active: true,
+                anchorStyle
+              }
+            });
+          } else {
+            this.setDiffData({
+              target: item,
+              data: {
+                active: false,
+                anchorStyle: '',
+                wrapperStyle: '',
+              }
+            });
+          }
+        });
+      }
     },
 
     onClick(event) {
@@ -236,7 +244,7 @@ VantComponent({
       const sidebarLength = this.children.length;
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
-      let index = Math.floor((touch.pageY - this.data.scrollTop - this.sidebar.top) / itemHeight);
+      let index = Math.floor((touch.clientY- this.sidebar.top) / itemHeight);
 
       if (index < 0) {
         index = 0;
@@ -247,18 +255,26 @@ VantComponent({
       this.scrollToAnchor(index);
     },
 
+    onTouchEnd() {
+      this.scrollToAnchorIndex = null;
+    },
+
+    onTouchCancel() {
+      this.scrollToAnchorIndex = null;
+    },
+
     scrollToAnchor(index) {
-      if (typeof index !== 'number') {
+      if (typeof index !== 'number' || this.scrollToAnchorIndex === index) {
         return;
       }
 
+      this.scrollToAnchorIndex = index;
+
       const anchor = this.children.filter(item => item.data.index === this.data.indexList[index])[0];
 
-      anchor && this.getAnchorRect(anchor).then(res => {
-        wx.pageScrollTo({
-          duration: 0,
-          scrollTop: res.top + this.data.scrollTop
-        });
+      anchor && wx.pageScrollTo({
+        duration: 0,
+        scrollTop: anchor.top
       });
     }
   }

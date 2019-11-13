@@ -19,7 +19,7 @@ Page({
       this.setData({
         indexList
       });
-    }, 0);
+    }, 2000);
   },
 
   onPageScroll(event) {

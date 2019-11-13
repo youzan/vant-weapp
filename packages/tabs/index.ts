@@ -327,7 +327,7 @@ VantComponent({
           const child = this.children[currentIndex - 1];
           this.setActive(child.getComputedName());
         } else if (deltaX < 0 && currentIndex !== tabs.length - 1) {
-          const child = this.children[currentIndex - 1];
+          const child = this.children[currentIndex + 1];
           this.setActive(child.getComputedName());
         }
       }

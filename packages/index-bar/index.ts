@@ -301,6 +301,8 @@ VantComponent({
 
       const anchor = this.children.filter(item => item.data.index === this.data.indexList[index])[0];
 
+      this.$emit('select', anchor.data.index);
+
       anchor && wx.pageScrollTo({
         duration: 0,
         scrollTop: anchor.top

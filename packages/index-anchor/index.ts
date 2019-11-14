@@ -21,13 +21,7 @@ VantComponent({
 
   data: {
     active: false,
-    zIndex: 2,
     wrapperStyle: '',
     anchorStyle: ''
-  },
-
-  mounted() {
-  },
-
-  methods: {}
+  }
 });

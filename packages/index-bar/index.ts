@@ -177,6 +177,8 @@ VantComponent({
       const {
         sticky,
         stickyOffsetTop,
+        zIndex,
+        highlightColor,
         scrollTop
       } = this.data;
 
@@ -198,17 +200,21 @@ VantComponent({
 
         children.forEach((item, index) => {
           if (index === active) {
-            let anchorStyle = '';
             let wrapperStyle = '';
+            let anchorStyle = `
+              color: ${highlightColor};
+            `;
 
             if (isActiveAnchorSticky) {
+              wrapperStyle = `
+                height: ${children[index].height}px;
+              `;
+
               anchorStyle = `
                 position: fixed;
                 top: ${stickyOffsetTop}px;
-              `;
-
-              wrapperStyle = `
-                height: ${children[index].height}px;
+                z-index: ${zIndex};
+                color: ${highlightColor};
               `;
             }
 
@@ -234,6 +240,8 @@ VantComponent({
             const anchorStyle = `
               position: relative;
               transform: translate3d(0, ${translateY}px, 0);
+              z-index: ${zIndex};
+              color: ${highlightColor};
             `;
 
             this.setDiffData({

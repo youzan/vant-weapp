@@ -13,7 +13,7 @@
       wx:for="{{ indexList }}"
       wx:key="index"
       class="van-index-bar__index"
-      style="color: {{ activeAnchorIndex === index ? highlightColor : '' }}"
+      style="z-index: {{ zIndex + 1 }}; color: {{ activeAnchorIndex === index ? highlightColor : '' }}"
       data-index="{{ index }}"
     >
       {{ item }}

@@ -4,7 +4,7 @@
 >
   <view
     class="van-index-anchor {{ active ? 'van-index-anchor--active van-hairline--bottom' : '' }}"
-    style="z-index: {{ zIndex }}; {{ anchorStyle }}"
+    style="{{ anchorStyle }}"
   >
     <slot wx:if="{{ useSlot }}"/>
     <block wx:else>

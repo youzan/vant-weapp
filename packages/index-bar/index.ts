@@ -147,12 +147,17 @@ VantComponent({
 
     getActiveAnchorIndex() {
       const { children } = this;
-      const { scrollTop } = this.data;
+      const {
+        sticky,
+        scrollTop,
+        stickyOffsetTop
+      } = this.data;
 
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
+        const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
 
-        if (preAnchorHeight + this.data.stickyOffsetTop + scrollTop >= children[i].top) {
+        if (reachTop + scrollTop >= children[i].top) {
           return i;
         }
       }

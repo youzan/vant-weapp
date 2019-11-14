@@ -6,6 +6,8 @@
     <van-index-bar
       wx:if="{{ activeTab === 0 }}"
       scroll-top="{{ scrollTop }}"
+      sticky="{{ false }}"
+      sticky-offset-top="{{ 20 }}"
     >
       <view
         wx:for="{{ indexList }}"

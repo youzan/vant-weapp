@@ -301,9 +301,8 @@ VantComponent({
       );
     },
 
-    onTouchScroll(event) {
-      const { detail } = event;
-      this.$emit('scroll', detail);
+    onTouchScroll(event: Weapp.TouchEvent) {
+      this.$emit('scroll', event.detail);
     },
     
     onTouchStart(event: Weapp.TouchEvent) {

@@ -301,6 +301,11 @@ VantComponent({
       );
     },
 
+    onTouchScroll(event) {
+      const { detail } = event;
+      this.$emit('scroll', detail);
+    },
+    
     onTouchStart(event: Weapp.TouchEvent) {
       if (!this.data.swipeable) return;
 

@@ -10,7 +10,7 @@ const indexList = () => {
   }
 
   return indexList;
-}
+};
 
 VantComponent({
   relation: {
@@ -62,44 +62,62 @@ VantComponent({
 
   methods: {
     updateData() {
-      this.timer && clearTimeout(this.timer)
+      this.timer && clearTimeout(this.timer);
 
       this.timer = setTimeout(() => {
-        const scrollTop = this.data.scrollTop;
-
         this.children = this.getRelationNodes('../index-anchor/index');
 
         this.setData({
           showSidebar: !!this.children.length
         });
 
-        this.children.forEach(anchor => {
+        this.setRect().then(() => {
+          this.onScroll();
+        });
+      }, 0);
+    },
+
+    setRect() {
+      return Promise.all([
+        this.setAnchorsRect(),
+        this.setListRect(),
+        this.setSiderbarRect()
+      ]);
+    },
+
+    setAnchorsRect() {
+      return Promise.all(
+        this.children.map(anchor => (
           anchor.getRect('.van-index-anchor-wrapper').then(
             (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
               Object.assign(anchor, {
                 height: rect.height,
-                top: rect.top + scrollTop
+                top: rect.top + this.data.scrollTop
               });
             }
-          ); 
-        });
+          )
+        ))
+      );
+    },
 
-        this.getRect('.van-index-bar').then(
-          (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-            Object.assign(this, {
-              height: rect.height,
-              top: rect.top + scrollTop
-            });
-          }
-        );
+    setListRect() {
+      return this.getRect('.van-index-bar').then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          Object.assign(this, {
+            height: rect.height,
+            top: rect.top + this.data.scrollTop
+          });
+        }
+      );
+    },
 
-        this.getRect('.van-index-bar__sidebar').then(res => {
-          this.sidebar = {
-            height: res.height,
-            top: res.top
-          };
-        });
-      }, 0);
+    setSiderbarRect() {
+      return this.getRect('.van-index-bar__sidebar').then(res => {
+        this.sidebar = {
+          height: res.height,
+          top: res.top
+        };
+      });
     },
 
     setDiffData({ target, data }) {
@@ -118,18 +136,18 @@ VantComponent({
 
     getAnchorRect(anchor) {
       return anchor.getRect('.van-index-anchor-wrapper').then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          return {
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => (
+          {
             height: rect.height,
             top: rect.top
-          };
-        }
-      ); 
+          }
+        )
+      );
     },
 
     getActiveAnchorIndex() {
-      const children = this.children;
-      const scrollTop = this.data.scrollTop;
+      const { children } = this;
+      const { scrollTop } = this.data;
 
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
@@ -143,13 +161,13 @@ VantComponent({
     },
 
     onScroll() {
-      if (!this.children.length) {
+      const {
+        children = []
+      } = this;
+
+      if (!children.length) {
         return;
       }
-
-      const {
-        children
-      } = this;
 
       const {
         sticky,
@@ -170,10 +188,10 @@ VantComponent({
         let isActiveAnchorSticky = false;
 
         if (active !== -1) {
-          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop
+          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
         }
 
-        this.children.forEach((item, index) => {
+        children.forEach((item, index) => {
           if (index === active) {
             let anchorStyle = '';
             let wrapperStyle = '';
@@ -181,9 +199,9 @@ VantComponent({
             if (isActiveAnchorSticky) {
               anchorStyle = `
                 position: fixed;
-                top: ${stickyOffsetTop};
+                top: ${stickyOffsetTop}px;
               `;
-              
+
               wrapperStyle = `
                 height: ${children[index].height}px;
               `;
@@ -201,10 +219,10 @@ VantComponent({
             const currentAnchor = children[index];
 
             const currentOffsetTop = currentAnchor.top;
-            const targetOffsetTop = index === this.children.length - 1
+            const targetOffsetTop = index === children.length - 1
               ? this.top
               : children[index + 1].top;
-            
+
             const parentOffsetHeight = targetOffsetTop - currentOffsetTop;
             const translateY = parentOffsetHeight - currentAnchor.height;
 
@@ -235,21 +253,19 @@ VantComponent({
     },
 
     onClick(event) {
-      const index = event.target.dataset.index;
-
-      this.scrollToAnchor(index);
+      this.scrollToAnchor(event.target.dataset.index);
     },
 
     onTouchMove(event) {
       const sidebarLength = this.children.length;
       const touch = event.touches[0];
       const itemHeight = this.sidebar.height / sidebarLength;
-      let index = Math.floor((touch.clientY- this.sidebar.top) / itemHeight);
+      let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
 
       if (index < 0) {
         index = 0;
-      } else if (index > sidebarLength -1) {
-        index = sidebarLength -1;
+      } else if (index > sidebarLength - 1) {
+        index = sidebarLength - 1;
       }
 
       this.scrollToAnchor(index);

@@ -9,17 +9,15 @@ for (let i = 0; i < 26; i++) {
 Page({
   data: {
     activeTab: 0,
-    indexList: [],
+    indexList,
     customIndexList: [1, 2, 3, 4, 5, 6, 8, 9, 10],
     scrollTop: 0,
   },
 
-  onLoad() { // FYTODO
-    setTimeout(() => {
-      this.setData({
-        indexList
-      });
-    }, 2000);
+  onChange(event) {
+    this.setData({
+      activeTab: event.detail.name
+    });
   },
 
   onPageScroll(event) {

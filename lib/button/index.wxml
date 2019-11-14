@@ -28,7 +28,7 @@
       custom-class="loading-class"
       size="{{ loadingSize }}"
       type="{{ loadingType }}"
-      color="{{ type === 'default' ? '#c9c9c9' : '' }}"
+      color="{{ type === 'default' ? '#c9c9c9' : 'white' }}"
     />
     <view
       wx:if="{{ loadingText }}"

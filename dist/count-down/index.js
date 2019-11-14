@@ -24,6 +24,10 @@ VantComponent({
         timeData: parseTimeData(0),
         formattedTime: '0'
     },
+    destroyed() {
+        clearTimeout(this.tid);
+        this.tid = null;
+    },
     methods: {
         // 开始
         start() {

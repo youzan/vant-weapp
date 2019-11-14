@@ -2,7 +2,13 @@ import { VantComponent } from '../common/component';
 VantComponent({
     relation: {
         name: 'tabs',
-        type: 'ancestor'
+        type: 'ancestor',
+        linked(target) {
+            this.parent = target;
+        },
+        unlinked() {
+            this.parent = null;
+        }
     },
     props: {
         dot: Boolean,
@@ -13,7 +19,6 @@ VantComponent({
         name: {
             type: [Number, String],
             value: '',
-            observer: 'setComputedName'
         }
     },
     data: {
@@ -33,10 +38,15 @@ VantComponent({
         setComputedName() {
             this.computedName = this.data.name || this.index;
         },
+        getComputedName() {
+            if (this.data.name !== '') {
+                return this.data.name;
+            }
+            return this.index;
+        },
         update() {
-            const parent = this.getRelationNodes('../tabs/index')[0];
-            if (parent) {
-                parent.updateTabs();
+            if (this.parent) {
+                this.parent.updateTabs();
             }
         }
     }

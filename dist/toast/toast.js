@@ -5,7 +5,7 @@ const defaultOptions = {
     message: '',
     show: true,
     zIndex: 1000,
-    duration: 3000,
+    duration: 2000,
     position: 'middle',
     forbidClick: false,
     loadingType: 'circular',

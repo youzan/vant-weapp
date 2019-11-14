@@ -1,5 +1,33 @@
 # 更新日志
 
+### [v1.0.0-beta.3](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.3)
+
+#### 主要变动
+
+- 增加两个新组件
+- 增加多个 API
+- 十六个组件样式支持主题定制，目前所有组件已支持主题定制
+
+#### 新组件
+
+- 新增`Image`图片组件
+- 新增`Skeleton`组件
+
+#### 新特性
+
+##### Field
+
+- 新增`hold-keyboard`属性
+
+##### Tab
+
+- 使用 Sticky 组件重构吸顶实现
+- 修复动态设置active属性无效
+
+##### NoticeBar
+
+- 阻止关闭图标点击事件冒泡
+
 ### [v1.0.0-beta.2](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.2)
 
 #### 主要变动

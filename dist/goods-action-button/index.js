@@ -30,21 +30,11 @@ VantComponent({
             this.jumpLink();
         },
         updateStyle() {
-            const { parent } = this;
-            const { children = [] } = parent;
+            const { children = [] } = this.parent;
             const index = children.indexOf(this);
-            const { length } = children;
-            let isFirst = false;
-            let isLast = false;
-            if (index === 0) {
-                isFirst = true;
-            }
-            if (index === length - 1) {
-                isLast = true;
-            }
             this.setData({
-                isFirst,
-                isLast
+                isFirst: index === 0,
+                isLast: index === children.length - 1
             });
         }
     }

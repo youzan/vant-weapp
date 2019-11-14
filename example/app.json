@@ -44,8 +44,9 @@
     "pages/picker/index",
     "pages/overlay/index",
     "pages/circle/index",
-    "pages/index-bar/index",
-    "pages/grid/index"
+    "pages/grid/index",
+    "pages/dropdown-menu/index",
+    "pages/index-bar/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",

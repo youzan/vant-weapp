@@ -181,7 +181,7 @@ Page({
 
 ## API
 
-### Checkbox API
+### Checkbox Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
@@ -195,7 +195,7 @@ Page({
 | checked-color | 选中状态颜色 | *string* | `#1989fa` | - |
 | icon-size | icon 大小 | *string \| number* | `20px` |
 
-### CheckboxGroup API
+### CheckboxGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|

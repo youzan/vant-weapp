@@ -103,7 +103,7 @@ Page({
 
 ## API
 
-### Collapse API
+### Collapse Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -117,7 +117,7 @@ Page({
 |------|------|------|
 | change | 切换面板时触发 | activeNames: *string \| Array* |
 
-### CollapseItem API
+### CollapseItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|------|

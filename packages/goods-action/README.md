@@ -82,13 +82,13 @@ Page({
 
 ## API
 
-### GoodsAction API
+### GoodsAction Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | *boolean* | `true` | - |
 
-### GoodsActionIcon API
+### GoodsActionIcon Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
@@ -109,7 +109,7 @@ Page({
 | send-message-img | sendMessageImg | *string* | 截图 | - |
 | show-message-card | 显示会话内消息卡片 | *string* | `false` | - |
 
-### GoodsActionButton API
+### GoodsActionButton Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|

@@ -14,9 +14,7 @@ VantComponent({
 
   props: {
     useSlot: Boolean,
-    index: {
-      type: [String, Number]
-    }
+    index: null
   },
 
   data: {

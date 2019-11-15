@@ -284,11 +284,7 @@ VantComponent({
       this.scrollToAnchor(index);
     },
 
-    onTouchEnd() {
-      this.scrollToAnchorIndex = null;
-    },
-
-    onTouchCancel() {
+    onTouchStop() {
       this.scrollToAnchorIndex = null;
     },
 

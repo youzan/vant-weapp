@@ -6,10 +6,6 @@
   margin-bottom: 10px;
 }
 
-.value-class {
-  flex: none !important;
-}
-
 .icon {
   width: 20px;
 }

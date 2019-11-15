@@ -2,11 +2,10 @@
   <van-radio-group
     value="{{ radio1 }}"
     data-key="radio1"
-    custom-class="demo-radio-group"
     bind:change="onChange"
   >
     <van-radio name="1" custom-class="demo-radio">单选框 1</van-radio>
-    <van-radio name="2" custom-class="demo-radio">单选框 2</van-radio>
+    <van-radio name="2">单选框 2</van-radio>
   </van-radio-group>
 </demo-block>
 
@@ -15,11 +14,10 @@
     disabled
     value="{{ radio2 }}"
     data-key="radio2"
-    custom-class="demo-radio-group"
     bind:change="onChange"
   >
     <van-radio name="1" custom-class="demo-radio">单选框 1</van-radio>
-    <van-radio name="2" custom-class="demo-radio">单选框 2</van-radio>
+    <van-radio name="2">单选框 2</van-radio>
   </van-radio-group>
 </demo-block>
 
@@ -27,11 +25,10 @@
   <van-radio-group
     value="{{ radio3 }}"
     data-key="radio3"
-    custom-class="demo-radio-group"
     bind:change="onChange"
   >
     <van-radio name="1" custom-class="demo-radio" checked-color="#07c160">单选框</van-radio>
-    <van-radio name="2" custom-class="demo-radio" checked-color="#07c160">单选框</van-radio>
+    <van-radio name="2" checked-color="#07c160">单选框</van-radio>
   </van-radio-group>
 </demo-block>
 
@@ -39,7 +36,6 @@
   <van-radio-group
     value="{{ radio4 }}"
     data-key="radio4"
-    custom-class="demo-radio-group"
     bind:change="onChange"
   >
     <van-radio use-icon-slot name="1">

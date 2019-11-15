@@ -184,6 +184,10 @@ export default [
         title: 'Grid 宫格'
       },
       {
+        path: '/index-bar',
+        title: 'IndexBar 索引栏'
+      },
+      {
         path: '/sidebar',
         title: 'Sidebar 侧边导航'
       },

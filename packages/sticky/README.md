@@ -36,6 +36,34 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 </van-sticky>
 ```
 
+### 指定容器
+
+通过`container`属性可以指定组件的容器，页面滚动时，组件会始终保持在容器范围内，当组件即将超出容器底部时，会返回原位置
+
+```html
+<view id="container" style="height: 150px;">
+  <van-sticky container="{{ container }}">
+    <van-button type="warning">
+      指定容器
+    </van-button>
+  </van-sticky>
+</view>
+```
+
+```js
+Page({
+  data: {
+    container: null
+  },
+
+  onReady() {
+    this.setData({
+      container: () => wx.createSelectorQuery().select('#container')
+    });
+  }
+});
+```
+
 ## API
 
 ### Props
@@ -44,6 +72,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 |-----------|-----------|-----------|-------------|
 | offset-top | 吸顶时与顶部的距离，单位`px` | *number* | `0` |
 | z-index | 吸顶时的 z-index | *number* | `99` |
+| container | 一个函数，返回容器对应的 NodesRef 节点 | *function* | - |
 
 ### Events
 

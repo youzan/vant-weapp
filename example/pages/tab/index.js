@@ -13,14 +13,14 @@ Page({
 
   onClickDisabled(event) {
     wx.showToast({
-      title: `标签 ${event.detail.name} 已被禁用`,
+      title: `标签 ${event.detail.index + 1} 已被禁用`,
       icon: 'none'
     });
   },
 
   onChange(event) {
     wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
+      title: `切换到标签 ${event.detail.index + 1}`,
       icon: 'none'
     });
   },
@@ -34,7 +34,7 @@ Page({
 
   onClick(event) {
     wx.showToast({
-      title: `点击标签 ${event.detail.name}`,
+      title: `点击标签 ${event.detail.index + 1}`,
       icon: 'none'
     });
   }

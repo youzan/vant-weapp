@@ -1,7 +1,13 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view class="custom-class {{ utils.bem('tabs', [type]) }}">
-  <van-sticky disabled="{{ !sticky }}" z-index="{{ zIndex }}" offset-top="{{ offsetTop }}" bind:scroll="onTouchScroll">
+  <van-sticky
+    disabled="{{ !sticky }}"
+    z-index="{{ zIndex }}"
+    offset-top="{{ offsetTop }}"
+    container="{{ container }}"
+    bind:scroll="onTouchScroll"
+  >
     <view class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
       <slot name="nav-left" />
 

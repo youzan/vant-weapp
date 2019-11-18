@@ -1,5 +1,7 @@
 import { VantComponent } from '../common/component';
 
+const ROOT_ELEMENT = '.van-sticky';
+
 VantComponent({
   props: {
     zIndex: {
@@ -8,9 +10,28 @@ VantComponent({
     },
     offsetTop: {
       type: Number,
-      value: 0
+      value: 0,
+      observer: 'observeContent'
     },
-    disabled: Boolean
+    disabled: {
+      type: Boolean,
+      observer(value) {
+        if (!this.mounted) {
+          return;
+        }
+        value ? this.disconnectObserver() : this.initObserver();
+      }
+    },
+    container: {
+      type: null,
+      observer(target: () => WechatMiniprogram.NodesRef) {
+        if (typeof target !== 'function' || !this.data.height) {
+          return;
+        }
+
+        this.observeContainer();
+      }
+    }
   },
 
   data: {
@@ -35,43 +56,120 @@ VantComponent({
       }
     },
 
-    observerContentScroll() {
-      const { offsetTop } = this.data;
-      const intersectionObserver = this.createIntersectionObserver({
-        thresholds: [0, 1]
-      });
-      this.intersectionObserver = intersectionObserver;
-      intersectionObserver.relativeToViewport({ top: -offsetTop });
-      intersectionObserver.observe(
-        '.van-sticky',
-        (res) => {
-          if (this.data.disabled) {
-            return;
-          }
-          // @ts-ignore
-          const { top, height } = res.boundingClientRect;
-          const fixed = top <= offsetTop;
+    getContainerRect() {
+      const nodesRef: WechatMiniprogram.NodesRef = this.data.container();
 
-          this.$emit('scroll', {
-            scrollTop: top,
-            isFixed: fixed
-          });
+      return new Promise(resolve =>
+        nodesRef.boundingClientRect(resolve).exec()
+      );
+    },
 
-          this.setData({ fixed, height });
+    initObserver() {
+      this.disconnectObserver();
+
+      this.getRect(ROOT_ELEMENT).then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          this.setData({ height: rect.height });
 
           wx.nextTick(() => {
-            this.setStyle();
+            this.observeContent();
+            this.observeContainer();
           });
         }
       );
+    },
+
+    disconnectObserver(observerName?: string) {
+      if (observerName) {
+        const observer: WechatMiniprogram.IntersectionObserver = this[
+          observerName
+        ];
+        observer && observer.disconnect();
+      } else {
+        this.contentObserver && this.contentObserver.disconnect();
+        this.containerObserver && this.containerObserver.disconnect();
+      }
+    },
+
+    observeContent() {
+      const { offsetTop } = this.data;
+
+      this.disconnectObserver('contentObserver');
+      const contentObserver = this.createIntersectionObserver({
+        thresholds: [0, 1]
+      });
+      this.contentObserver = contentObserver;
+      contentObserver.relativeToViewport({ top: -offsetTop });
+      contentObserver.observe(ROOT_ELEMENT, res => {
+        if (this.data.disabled) {
+          return;
+        }
+
+        this.setFixed(res.boundingClientRect.top);
+      });
+    },
+
+    observeContainer() {
+      if (typeof this.data.container !== 'function') {
+        return;
+      }
+
+      const { height } = this.data;
+
+      this.getContainerRect().then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          this.containerHeight = rect.height;
+
+          this.disconnectObserver('containerObserver');
+          const containerObserver = this.createIntersectionObserver({
+            thresholds: [0, 1]
+          });
+          this.containerObserver = containerObserver;
+          containerObserver.relativeToViewport({
+            top: this.containerHeight - height
+          });
+          containerObserver.observe(ROOT_ELEMENT, res => {
+            if (this.data.disabled) {
+              return;
+            }
+
+            this.setFixed(res.boundingClientRect.top);
+          });
+        }
+      );
+    },
+
+    setFixed(top) {
+      const { offsetTop, height } = this.data;
+      const { containerHeight } = this;
+
+      const fixed =
+        containerHeight && height
+          ? top > height - containerHeight && top < offsetTop
+          : top < offsetTop;
+
+      this.$emit('scroll', {
+        scrollTop: top,
+        isFixed: fixed
+      });
+
+      this.setData({ fixed });
+
+      wx.nextTick(() => {
+        this.setStyle();
+      });
     }
   },
 
   mounted() {
-    this.observerContentScroll();
+    this.mounted = true;
+
+    if (!this.data.disabled) {
+      this.initObserver();
+    }
   },
 
   destroyed() {
-    this.intersectionObserver.disconnect();
+    this.disconnectObserver();
   }
 });

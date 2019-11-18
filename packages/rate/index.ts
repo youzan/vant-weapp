@@ -12,10 +12,7 @@ VantComponent({
     readonly: Boolean,
     disabled: Boolean,
     allowHalf: Boolean,
-    size: {
-      type: null,
-      observer: 'setSizeWithUnit'
-    },
+    size: null,
     icon: {
       type: String,
       value: 'star'
@@ -52,8 +49,7 @@ VantComponent({
 
   data: {
     innerValue: 0,
-    gutterWithUnit: undefined,
-    sizeWithUnit: '20px'
+    gutterWithUnit: undefined
   },
 
   watch: {
@@ -65,12 +61,6 @@ VantComponent({
   },
 
   methods: {
-    setSizeWithUnit(val) {
-      this.setData({
-        sizeWithUnit: addUnit(val)
-      });
-    },
-
     setGutterWithUnit(val) {
       this.setData({
         gutterWithUnit: addUnit(val)

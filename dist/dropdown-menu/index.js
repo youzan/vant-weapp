@@ -19,7 +19,7 @@ VantComponent({
                 childIndex: this.children.length
             });
             this.children.push(target);
-            // 收集 dorpdown-item 的 data 挂在 data 上
+            // 收集 dropdown-item 的 data 挂在 data 上
             target &&
                 this.setData({
                     itemListData: this.data.itemListData.concat([target.data])

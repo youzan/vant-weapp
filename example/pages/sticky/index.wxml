@@ -1,6 +1,6 @@
 <demo-block title="基础用法">
   <van-sticky>
-    <van-button type="primary" style="margin-left: 15px">
+    <van-button type="primary" custom-style="margin-left: 15px">
       基础用法
     </van-button>
   </van-sticky>
@@ -8,8 +8,18 @@
 
 <demo-block title="吸顶距离">
   <van-sticky offset-top="{{ 50 }}">
-    <van-button type="info" style="margin-left: 115px">
+    <van-button type="info" custom-style="margin-left: 115px">
       吸顶距离
     </van-button>
   </van-sticky>
+</demo-block>
+
+<demo-block title="指定容器">
+  <view id="container" style="height: 150px; background-color: #fff;">
+    <van-sticky container="{{ container }}">
+      <van-button type="warning" custom-style="margin-left: 215px;">
+        指定容器
+      </van-button>
+    </van-sticky>
+  </view>
 </demo-block>

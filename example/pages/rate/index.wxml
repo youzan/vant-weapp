@@ -21,7 +21,7 @@
     custom-class="van-rate"
     data-key="value3"
     value="{{ value3 }}"
-    size="{{ 250 }}"
+    size="{{ 25 }}"
     color="#ee0a24"
     void-color="#eee"
     void-icon="star"

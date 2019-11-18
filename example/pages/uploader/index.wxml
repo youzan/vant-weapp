@@ -12,6 +12,7 @@
   <van-uploader
     name="2"
     file-list="{{ fileList2 }}"
+    multiple
     bind:after-read="afterRead"
     bind:delete="delete"
     bind:click-preview="clickPreview"
@@ -22,6 +23,7 @@
   <van-uploader
     name="3"
     file-list="{{ fileList3 }}"
+    multiple
     max-count="{{ 2 }}"
     bind:after-read="afterRead"
     bind:delete="delete"

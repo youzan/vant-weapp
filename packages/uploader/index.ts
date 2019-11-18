@@ -2,19 +2,10 @@ import { VantComponent } from '../common/component';
 import { isImageFile } from './utils';
 import { addUnit } from '../common/utils';
 
-interface File {
-  path: string; // 上传临时地址
-  url: string; // 上传临时地址
-  size: number; // 上传大小
-  name: string; // 上传文件名称，accept="image" 不存在
-  type: string; // 上传类型，accept="image" 不存在
-  time: number; // 上传时间，accept="image" 不存在
-  image: boolean; // 是否为图片
-}
-
 VantComponent({
   props: {
     disabled: Boolean,
+    multiple: Boolean,
     uploadText: String,
     previewSize: {
       type: null,
@@ -104,12 +95,8 @@ VantComponent({
           wx.chooseImage({
             count: multiple ? (newMaxCount > 9 ? 9 : newMaxCount) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
             sourceType: capture, // 选择图片的来源，相册还是相机
-            success: res => {
-              resolve(res);
-            },
-            fail: err => {
-              reject(err);
-            }
+            success: resolve,
+            fail: reject
           });
         });
       } else {
@@ -117,18 +104,17 @@ VantComponent({
           wx.chooseMessageFile({
             count: multiple ? newMaxCount : 1, // 最多可以选择的数量，如果不支持多选则数量为1
             type: 'file',
-            success(res) {
-              resolve(res);
-            },
-            fail: err => {
-              reject(err);
-            }
+            success: resolve,
+            fail: reject
           });
         });
       }
 
-      chooseFile.then(res => {
-        const file: File | File[] = multiple ? res.tempFiles : res.tempFiles[0];
+      chooseFile.then((res:
+        WechatMiniprogram.ChooseImageSuccessCallbackResult |
+        WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
+      ) => {
+        const file = multiple ? res.tempFiles : res.tempFiles[0];
 
         // 检查文件大小
         if (file instanceof Array) {
@@ -147,7 +133,7 @@ VantComponent({
           this.$emit('before-read', {
             file,
             name,
-            callback: result => {
+            callback: (result: boolean) => {
               if (result) {
                 // 开始上传
                 this.$emit('after-read', { file, name });

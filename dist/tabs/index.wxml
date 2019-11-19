@@ -1,7 +1,14 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="getters" />
 
 <view class="custom-class {{ utils.bem('tabs', [type]) }}">
-  <van-sticky disabled="{{ !sticky }}" z-index="{{ zIndex }}" offset-top="{{ offsetTop }}">
+  <van-sticky
+    disabled="{{ !sticky }}"
+    z-index="{{ zIndex }}"
+    offset-top="{{ offsetTop }}"
+    container="{{ container }}"
+    bind:scroll="onTouchScroll"
+  >
     <view class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
       <slot name="nav-left" />
 
@@ -18,11 +25,11 @@
             wx:for="{{ tabs }}"
             wx:key="index"
             data-index="{{ index }}"
-            class="van-ellipsis tab-class {{ index === currentIndex ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled }) }}"
-            style="{{ color && index !== currentIndex && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === currentIndex && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
+            class="{{ getters.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }) }}"
+            style="{{ getters.tabStyle(index === currentIndex, ellipsis, color, type, item.disabled, titleActiveColor, titleInactiveColor, swipeThreshold, scrollable) }}"
             bind:tap="onTap"
           >
-            <view class="van-ellipsis" style="{{ item.titleStyle }}">
+            <view class="{{ ellipsis ? 'van-ellipsis' : '' }}" style="{{ item.titleStyle }}">
               {{ item.title }}
               <van-info
                 wx:if="{{ item.info !== null || item.dot }}"

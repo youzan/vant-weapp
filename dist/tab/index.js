@@ -22,10 +22,7 @@ VantComponent({
         }
     },
     data: {
-        width: null,
-        inited: false,
-        active: false,
-        animated: false
+        active: false
     },
     watch: {
         title: 'update',
@@ -35,14 +32,19 @@ VantComponent({
         titleStyle: 'update'
     },
     methods: {
-        setComputedName() {
-            this.computedName = this.data.name || this.index;
-        },
         getComputedName() {
             if (this.data.name !== '') {
                 return this.data.name;
             }
             return this.index;
+        },
+        updateRender(active, parent) {
+            const { data: parentData } = parent;
+            this.inited = this.inited || active;
+            this.setData({
+                active,
+                shouldRender: this.inited || !parentData.lazyRender
+            });
         },
         update() {
             if (this.parent) {

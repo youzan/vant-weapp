@@ -82,12 +82,10 @@ VantComponent({
         onChange(event) {
             const { index, picker, value } = event.detail;
             this.code = value[index].code;
-            let getValues = picker.getValues();
-            getValues = this.parseOutputValues(getValues);
             this.setValues().then(() => {
                 this.$emit('change', {
                     picker,
-                    values: getValues,
+                    values: this.parseOutputValues(picker.getValues()),
                     index
                 });
             });

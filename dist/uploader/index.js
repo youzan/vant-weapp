@@ -4,6 +4,7 @@ import { addUnit } from '../common/utils';
 VantComponent({
     props: {
         disabled: Boolean,
+        multiple: Boolean,
         uploadText: String,
         previewSize: {
             type: null,
@@ -77,12 +78,8 @@ VantComponent({
                     wx.chooseImage({
                         count: multiple ? (newMaxCount > 9 ? 9 : newMaxCount) : 1,
                         sourceType: capture,
-                        success: res => {
-                            resolve(res);
-                        },
-                        fail: err => {
-                            reject(err);
-                        }
+                        success: resolve,
+                        fail: reject
                     });
                 });
             }
@@ -91,16 +88,12 @@ VantComponent({
                     wx.chooseMessageFile({
                         count: multiple ? newMaxCount : 1,
                         type: 'file',
-                        success(res) {
-                            resolve(res);
-                        },
-                        fail: err => {
-                            reject(err);
-                        }
+                        success: resolve,
+                        fail: reject
                     });
                 });
             }
-            chooseFile.then(res => {
+            chooseFile.then((res) => {
                 const file = multiple ? res.tempFiles : res.tempFiles[0];
                 // 检查文件大小
                 if (file instanceof Array) {
@@ -119,7 +112,7 @@ VantComponent({
                     this.$emit('before-read', {
                         file,
                         name,
-                        callback: result => {
+                        callback: (result) => {
                             if (result) {
                                 // 开始上传
                                 this.$emit('after-read', { file, name });

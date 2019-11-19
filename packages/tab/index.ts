@@ -50,8 +50,7 @@ VantComponent({
       this.inited = this.inited || active;
       this.setData({
         active,
-        shouldRender: this.inited || !parentData.lazyRender,
-        shouldShow: active || parentData.animated
+        shouldRender: this.inited || !parentData.lazyRender
       });
     },
 

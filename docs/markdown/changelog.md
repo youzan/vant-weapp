@@ -1,5 +1,43 @@
 # 更新日志
 
+### [v1.0.0-beta.4](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.4)
+
+#### 主要变动
+
+- 增加一个新组件
+- 增加两个 API
+- 修复多个问题
+
+#### 新组件
+
+- 新增`IndexBar`索引栏组件
+
+#### 新特性与优化
+
+##### Tab
+
+- 新增`ellipsis`属性
+- 新增`lazy-render`属性
+- 优化闪屏问题
+- 修复滑动切换模式下激活选项错误
+- 修复选项卡竖向滚动时不触发scroll事件
+
+##### Area
+
+- 修复change事件返回values错误
+
+##### Uploader
+
+- 修复`multiple`属性不生效
+
+##### NavBar
+
+- 修复样式错误
+
+##### rate
+
+- 修复`size`属性不生效
+
 ### [v1.0.0-beta.3](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.3)
 
 #### 主要变动

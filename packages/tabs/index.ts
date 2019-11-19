@@ -50,6 +50,8 @@ VantComponent({
       value: -1,
       observer: 'setLine'
     },
+    titleActiveColor: String,
+    titleInactiveColor: String,
     active: {
       type: [String, Number],
       value: 0,
@@ -84,7 +86,7 @@ VantComponent({
       value: 4,
       observer(value) {
         this.setData({
-          scrollable: this.children.length > value
+          scrollable: this.children.length > value || !this.data.ellipsis
         });
       }
     },
@@ -126,7 +128,7 @@ VantComponent({
       const { children = [], data } = this;
       this.setData({
         tabs: children.map((child: TrivialInstance) => child.data),
-        scrollable: children.length > data.swipeThreshold
+        scrollable: this.children.length > data.swipeThreshold || !data.ellipsis
       });
 
       this.setCurrentIndexByName(this.getCurrentName() || data.active);
@@ -173,7 +175,6 @@ VantComponent({
 
       if (
         !isDef(currentIndex) ||
-        currentIndex === data.currentIndex ||
         currentIndex >= children.length ||
         currentIndex < 0
       ) {
@@ -185,7 +186,7 @@ VantComponent({
 
       children.forEach((item: TrivialInstance, index: number) => {
         const active = index === currentIndex;
-        if (active !== item.data.active) {
+        if (active !== item.data.active || !item.inited) {
           item.updateRender(active, this);
         }
       });
@@ -224,8 +225,11 @@ VantComponent({
       } = this.data;
 
       this.getRect('.van-tab', true).then(
-        (rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
+        (rects: WechatMiniprogram.BoundingClientRectCallbackResult[] = []) => {
           const rect = rects[currentIndex];
+          if (rect == null) {
+            return;
+          }
           const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
           const height =
             lineHeight !== -1

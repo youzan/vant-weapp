@@ -180,6 +180,7 @@ Page({
 | line-height | 底部条高度 (px) | *string \| number* | `3px` | - |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | *number* | `4` | - |
 | animated | 是否使用动画切换 Tabs | *boolean* | `false` | - |
+| ellipsis | 是否省略过长的标题文字 | *boolean* | `true` | - |
 | sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
 | lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |

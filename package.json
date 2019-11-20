@@ -50,6 +50,7 @@
     "@vant/eslint-config": "^1.2.4",
     "@vant/icons": "1.1.15",
     "@vant/markdown-loader": "^2.2.0",
+    "@vant/stylelint-config": "^1.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",
     "cross-env": "^5.1.4",
@@ -70,10 +71,7 @@
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^1.0.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-order": "^3.0.1",
+    "stylelint": "^11.1.1",
     "typescript": "^3.5.3",
     "vue": "2.6.10",
     "vue-loader": "^15.7.1",
@@ -82,5 +80,18 @@
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-serve": "^2.0.3"
-  }
+  },
+  "stylelint": {
+    "extends": [
+      "@vant/stylelint-config"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "browserslist": [
+    "Chrome >= 53",
+    "ChromeAndroid >= 53",
+    "iOS >= 8"
+  ]
 }

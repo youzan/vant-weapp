@@ -14,6 +14,9 @@ npm i vant-weapp -S --production
 
 # 通过 yarn 安装
 yarn add vant-weapp --production
+
+# 安装 1.0-beta 版本
+npm i @vant/weapp  -S --production
 ```
 
 ### 步骤二 构建 npm 包

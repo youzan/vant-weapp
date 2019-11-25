@@ -37,7 +37,10 @@ VantComponent({
     sticky: Boolean,
     animated: {
       type: Boolean,
-      observer: 'setTrack'
+      observer() {
+        this.setTrack();
+        this.children.forEach((child: TrivialInstance) => child.updateRender());
+      }
     },
     swipeable: Boolean,
     lineWidth: {
@@ -139,6 +142,10 @@ VantComponent({
 
       const child = this.children[currentIndex];
 
+      if (!isDef(child)) {
+        return;
+      }
+
       this.$emit(eventName, {
         index: currentIndex,
         name: child.getComputedName(),
@@ -181,15 +188,19 @@ VantComponent({
         return;
       }
 
-      const shouldEmitChange = data.currentIndex !== null;
-      this.setData({ currentIndex });
-
       children.forEach((item: TrivialInstance, index: number) => {
         const active = index === currentIndex;
         if (active !== item.data.active || !item.inited) {
           item.updateRender(active, this);
         }
       });
+
+      if (currentIndex === data.currentIndex) {
+        return;
+      }
+
+      const shouldEmitChange = data.currentIndex !== null;
+      this.setData({ currentIndex });
 
       wx.nextTick(() => {
         this.setLine();
@@ -263,11 +274,15 @@ VantComponent({
     setTrack() {
       const { animated, duration, currentIndex } = this.data;
 
+      if (!animated) {
+        return;
+      }
+
       this.setData({
         trackStyle: `
           transform: translate3d(${-100 * currentIndex}%, 0, 0);
-          -webkit-transition-duration: ${animated ? duration : 0}s;
-          transition-duration: ${animated ? duration : 0}s;
+          -webkit-transition-duration: ${duration}s;
+          transition-duration: ${duration}s;
         `
       });
     },

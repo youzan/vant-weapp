@@ -13,7 +13,7 @@
 </demo-block>
 
 <demo-block title="通过名称匹配">
-  <van-tabs active="a">
+  <van-tabs active="b">
     <van-tab
       wx:for="{{ tabsWithName }}"
       wx:key="index"

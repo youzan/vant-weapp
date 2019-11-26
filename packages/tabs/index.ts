@@ -173,8 +173,10 @@ VantComponent({
       const matched = children.filter(
         (child: TrivialInstance) => child.getComputedName() === name
       );
-      const defaultIndex = (children[0] || {}).index || 0;
-      this.setCurrentIndex(matched.length ? matched[0].index : defaultIndex);
+
+      if (matched.length) {
+        this.setCurrentIndex(matched[0].index);
+      }
     },
 
     setCurrentIndex(currentIndex) {

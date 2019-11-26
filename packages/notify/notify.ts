@@ -23,7 +23,6 @@ const defaultOptions = {
   duration: 3000,
   zIndex: 110,
   color: WHITE,
-  safeAreaInsetTop: false,
   onClick: () => {},
   onOpened: () => {},
   onClose: () => {}

@@ -1,5 +1,6 @@
 import { link } from '../mixins/link';
 import { VantComponent } from '../common/component';
+import { addUnit } from '../common/utils';
 
 VantComponent({
   relation: {
@@ -34,7 +35,7 @@ VantComponent({
       const { columnNum, border, square, gutter, clickable, center } = data;
       const width = `${100 / columnNum}%`;
 
-      const styleWrapper: Array<string> = [];
+      const styleWrapper = [];
       styleWrapper.push(`width: ${width}`);
 
       if (square) {
@@ -42,16 +43,30 @@ VantComponent({
       }
 
       if (gutter) {
-        styleWrapper.push(`padding-right: ${gutter}px`);
+        const gutterValue = addUnit(gutter);
+        styleWrapper.push(`padding-right: ${gutterValue}`);
 
         const index = children.indexOf(this);
         if (index >= columnNum) {
-          styleWrapper.push(`margin-top: ${gutter}px`);
+          styleWrapper.push(`margin-top: ${gutterValue}`);
         }
+      }
+
+      let contentStyle = '';
+
+      if (square && gutter) {
+        const gutterValue = addUnit(gutter);
+
+        contentStyle = `
+          right: ${gutterValue};
+          bottom: ${gutterValue};
+          height: auto;
+        `;
       }
 
       this.setData({
         style: styleWrapper.join('; '),
+        contentStyle,
         center,
         border,
         square,

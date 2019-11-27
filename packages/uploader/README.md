@@ -1,4 +1,4 @@
-# Upload 上传文件
+# Uploader 文件上传
 
 ### 引入
 
@@ -9,6 +9,8 @@
   "van-uploader": "path/to/vant-weapp/dist/uploader/index"
 }
 ```
+
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 

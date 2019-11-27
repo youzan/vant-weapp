@@ -4,8 +4,6 @@
 
 增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。
 
-使用此组件需要升级至 1.0 以上版本。
-
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
@@ -15,6 +13,8 @@
   "van-image": "path/to/vant-weapp/dist/image/index"
 }
 ```
+
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 

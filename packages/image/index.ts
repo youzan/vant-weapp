@@ -18,8 +18,9 @@ VantComponent({
   props: {
     src: String,
     round: Boolean,
-    width: String,
-    height: String,
+    width: null,
+    height: null,
+    radius: null,
     lazyLoad: Boolean,
     useErrorSlot: Boolean,
     useLoadingSlot: Boolean,
@@ -65,7 +66,7 @@ VantComponent({
     },
 
     getStyle() {
-      const { width, height } = this.data;
+      const { width, height, radius } = this.data;
       let style = '';
 
       if (isDef(width)) {
@@ -74,6 +75,11 @@ VantComponent({
 
       if (isDef(height)) {
         style += `height: ${addUnit(height)};`;
+      }
+
+      if (isDef(radius)) {
+        style += 'overflow: hidden;';
+        style += `border-radius: ${addUnit(radius)};`;
       }
 
       return style;

@@ -329,6 +329,12 @@
 					"pathName": "pages/skeleton/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "uploader",
+					"pathName": "pages/uploader/index",
+					"scene": null
 				}
 			]
 		}

@@ -7,6 +7,8 @@ VantComponent({
     disabled: Boolean,
     multiple: Boolean,
     uploadText: String,
+    useSlot: Boolean,
+    useBeforeRead: Boolean,
     previewSize: {
       type: null,
       value: 90,
@@ -33,6 +35,10 @@ VantComponent({
       type: Number,
       value: 100
     },
+    deletable: {
+      type: Boolean,
+      value: true
+    },
     previewImage: {
       type: Boolean,
       value: true
@@ -44,9 +50,7 @@ VantComponent({
     imageFit: {
       type: String,
       value: 'scaleToFill'
-    },
-    useSlot: Boolean,
-    useBeforeRead: Boolean
+    }
   },
 
   data: {
@@ -61,9 +65,7 @@ VantComponent({
       const lists = fileList.map(item => ({
         ...item,
         isImage:
-          typeof item.isImage === 'undefined'
-            ? isImageFile(item)
-            : item.isImage
+          typeof item.isImage === 'undefined' ? isImageFile(item) : item.isImage
       }));
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
@@ -110,40 +112,43 @@ VantComponent({
         });
       }
 
-      chooseFile.then((res:
-        WechatMiniprogram.ChooseImageSuccessCallbackResult |
-        WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
-      ) => {
-        const file = multiple ? res.tempFiles : res.tempFiles[0];
+      chooseFile.then(
+        (
+          res:
+            | WechatMiniprogram.ChooseImageSuccessCallbackResult
+            | WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
+        ) => {
+          const file = multiple ? res.tempFiles : res.tempFiles[0];
 
-        // 检查文件大小
-        if (file instanceof Array) {
-          const sizeEnable = file.every(item => item.size <= maxSize);
-          if (!sizeEnable) {
+          // 检查文件大小
+          if (file instanceof Array) {
+            const sizeEnable = file.every(item => item.size <= maxSize);
+            if (!sizeEnable) {
+              this.$emit('oversize', { name });
+              return;
+            }
+          } else if (file.size > maxSize) {
             this.$emit('oversize', { name });
             return;
           }
-        } else if (file.size > maxSize) {
-          this.$emit('oversize', { name });
-          return;
-        }
 
-        // 触发上传之前的钩子函数
-        if (useBeforeRead) {
-          this.$emit('before-read', {
-            file,
-            name,
-            callback: (result: boolean) => {
-              if (result) {
-                // 开始上传
-                this.$emit('after-read', { file, name });
+          // 触发上传之前的钩子函数
+          if (useBeforeRead) {
+            this.$emit('before-read', {
+              file,
+              name,
+              callback: (result: boolean) => {
+                if (result) {
+                  // 开始上传
+                  this.$emit('after-read', { file, name });
+                }
               }
-            }
-          });
-        } else {
-          this.$emit('after-read', { file, name });
+            });
+          } else {
+            this.$emit('after-read', { file, name });
+          }
         }
-      });
+      );
     },
 
     deleteItem(event) {

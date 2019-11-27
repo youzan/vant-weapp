@@ -127,19 +127,20 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-----------|-----------|
-| name | 标识符，可以在回调函数的第二项参数中获取 | *string \| number* | - |
-| accept | 接受的文件类型, 可选值为`all` `image` `file` | *string* | `image` |
-| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *string \| number* | `80px` |
-| preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` |
-| preview-full-image | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` |
-| multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` |
-| disabled | 是否禁用文件上传 | *boolean* | `false` |
-| capture | 图片选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | *string \| string[]* | `['album', 'camera']` |
-| disabled | 是否禁用文件上传 | *boolean* | `false` |
-| max-size | 文件大小限制，单位为`byte` | *number* | - |
-| max-count | 文件上传数量限制 | *number* | - |
-| upload-text | 上传区域文字提示 | *string* | - |
-| image-fit | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性 | *string* | `scaleToFill` |
+| name | 标识符，可以在回调函数的第二项参数中获取 | *string \| number* | - | - |
+| accept | 接受的文件类型, 可选值为`all` `image` `file` | *string* | `image` | - |
+| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *string \| number* | `80px` | - |
+| preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` | - |
+| preview-full-image | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` | - |
+| multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` | - |
+| disabled | 是否禁用文件上传 | *boolean* | `false` | - |
+| deletable | 是否展示删除按钮 | *boolean* | `true` | - |
+| capture | 图片选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | *string \| string[]* | `['album', 'camera']` | - |
+| disabled | 是否禁用文件上传 | *boolean* | `false` | - |
+| max-size | 文件大小限制，单位为`byte` | *number* | - | - |
+| max-count | 文件上传数量限制 | *number* | - | - |
+| upload-text | 上传区域文字提示 | *string* | - | - |
+| image-fit | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性 | *string* | `scaleToFill` | - |
 
 ### Slot
 

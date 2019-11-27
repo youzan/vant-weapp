@@ -3,6 +3,13 @@ import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 
+const FIT_MODE_MAP = {
+  none: 'center',
+  fill: 'scaleToFill',
+  cover: 'aspectFill',
+  contain: 'aspectFit'
+};
+
 VantComponent({
   mixins: [button, openType],
 
@@ -10,14 +17,17 @@ VantComponent({
 
   props: {
     src: String,
+    round: Boolean,
     width: String,
     height: String,
+    lazyLoad: Boolean,
+    useErrorSlot: Boolean,
+    useLoadingSlot: Boolean,
+    showMenuByLongpress: Boolean,
     fit: {
       type: String,
       value: 'fill'
     },
-    round: Boolean,
-    lazyLoad: Boolean,
     showError: {
       type: Boolean,
       value: true
@@ -25,34 +35,19 @@ VantComponent({
     showLoading: {
       type: Boolean,
       value: true
-    },
-    showMenuByLongpress: Boolean,
-
-    // 受小程序slot限制所需要的属性
-    useLoadingSlot: Boolean,
-    useErrorSlot: Boolean,
+    }
   },
 
   data: {
-    fitWeapp: 'aspectFit',
-    FIT_MODE_MAP: {
-      contain: 'aspectFit',
-      cover: 'aspectFill',
-      fill: 'scaleToFill',
-      none: 'center',
-
-      // TODO: 这个没有原生的属性，需要后面实现，暂时先用contain;
-      'scale-down': 'aspectFit'
-    },
-    loading: true,
-    error: false
+    error: false,
+    loading: true
   },
 
   watch: {
     src() {
       this.setData({
-        loading: true,
-        error: false
+        error: false,
+        loading: true
       });
     }
   },
@@ -63,11 +58,9 @@ VantComponent({
 
   methods: {
     init() {
-      const { FIT_MODE_MAP, fit } = this.data;
-
       this.setData({
-        mode: FIT_MODE_MAP[fit],
-        style: this.getStyle(),
+        mode: FIT_MODE_MAP[this.data.fit],
+        style: this.getStyle()
       });
     },
 
@@ -97,7 +90,7 @@ VantComponent({
     onError(event) {
       this.setData({
         loading: false,
-        error: true,
+        error: true
       });
 
       this.$emit('error', event.detail);
@@ -105,6 +98,6 @@ VantComponent({
 
     onClick(event) {
       this.$emit('click', event.detail);
-    },
+    }
   }
 });

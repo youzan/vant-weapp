@@ -14,7 +14,7 @@
 
 ### 基础用法
 
-基础用法与[原生](https://developers.weixin.qq.com/miniprogram/dev/component/image.html)image一致，可以设置`src`、`width`、`height`等原生属性
+基础用法与原生 [image]((https://developers.weixin.qq.com/miniprogram/dev/component/image.html)) 标签一致，可以设置`src`、`width`、`height`等原生属性
 
 ```html
 <van-image
@@ -103,9 +103,9 @@
 | lazy-load | 是否懒加载 | `boolean` | `false` | - |
 | show-error | 是否展示图片加载失败提示 | `boolean` | `true` | - |
 | show-loading | 是否展示图片加载中提示 | `boolean` | `true` | - |
-| show-menu-by-longpress | 开启长按图片显示识别小程序码菜单 | `boolean` | `false` | - |
-| use-loading-slot | 是否使用了loading slot | `boolean` | `false` | - |
-| use-error-slot | 是否使用了error slot | `boolean` | `false` | - |
+| use-error-slot | 是否使用 error 插槽 | `boolean` | `false` | - |
+| use-loading-slot | 是否使用 loading 插槽 | `boolean` | `false` | - |
+| show-menu-by-longpress | 是否开启长按图片显示识别小程序码菜单 | `boolean` | `false` | - |
 
 ### 图片填充模式
 
@@ -115,7 +115,6 @@
 | cover | 保持宽高缩放图片，使图片的短边能完全显示出来，裁剪长边 |
 | fill | 拉伸图片，使图片填满元素 |
 | none | 保持图片原有尺寸 |
-| scale-down | 由于小程序原生不支持这个属性，所以暂时和contain保持一致 |
 
 ### Events
 

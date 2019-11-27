@@ -32,10 +32,10 @@ export default {
 <style lang="less">
 body {
   margin: 0;
-  color: #333;
+  color: #323233;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   line-height: 1;
-  background-color: #f2f3f5;
+  background-color: #f7f8fa;
   -webkit-font-smoothing: antialiased;
 }
 

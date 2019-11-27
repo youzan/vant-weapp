@@ -2,12 +2,12 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    fileList1: [],
+    fileList: [],
     fileList2: [
-      { url: 'https://img.yzcdn.cn/vant/cat.jpeg', name: '图片1' },
-      { url: 'http://iph.href.lu/60x60?text=default', name: '图片2', isImage: true }
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      { url: 'https://img.yzcdn.cn/vant/tree.jpg' }
     ],
-    fileList3: [],
+    fileList3: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
     fileList4: [],
     fileList5: []
   },

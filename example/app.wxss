@@ -1,12 +1,12 @@
 page {
-  color: #333;
-  font-size: 16px;
-  background: #f2f3f5;
-  min-height: 100vh;
   box-sizing: border-box;
+  min-height: 100vh;
   padding: 0 0 100rpx;
+  color: #323233;
+  font-size: 16px;
+  font-family: 'PingFang SC', Helvetica, Arial, sans-serif;
+  background: #f7f8fa;
   -webkit-font-smoothing: antialiased;
-  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
 }
 
 .demo-margin-left {

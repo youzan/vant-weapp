@@ -81,11 +81,6 @@
     "webpack-cli": "^3.3.6",
     "webpack-serve": "^2.0.3"
   },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
-    ]
-  },
   "prettier": {
     "singleQuote": true
   },

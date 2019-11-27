@@ -1,27 +1,31 @@
-// Basic Colors
+// Color Palette
 @black: #000;
 @white: #fff;
+@gray-1: #f7f8fa;
+@gray-2: #f2f3f5;
+@gray-3: #ebedf0;
+@gray-4: #dcdee0;
+@gray-5: #c8c9cc;
+@gray-6: #969799;
+@gray-7: #646566;
+@gray-8: #323233;
 @red: #ee0a24;
 @blue: #1989fa;
 @orange: #ff976a;
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
 @green: #07c160;
-@gray: #c8c9cc;
-@gray-light: #e5e5e5;
-@gray-darker: #7d7e80;
-@gray-dark: #969799;
 
 // Gradient Colors
 @gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
 @gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // Component Colors
-@text-color: #323233;
-@active-color: #f2f3f5;
+@text-color: @gray-8;
+@active-color: @gray-2;
 @active-opacity: .7;
 @disabled-opacity: .5;
-@background-color: #f8f8f8;
+@background-color: @gray-1;
 @background-color-light: #fafafa;
 
 // Padding
@@ -44,7 +48,7 @@
 @animation-duration-fast: .2s;
 
 // Border
-@border-color: #ebedf0;
+@border-color: @gray-3;
 @border-width-base: 1px;
 @border-radius-sm: 2px;
 @border-radius-md: 4px;
@@ -54,18 +58,18 @@
 @action-sheet-max-height: 90%;
 @action-sheet-header-height: 44px;
 @action-sheet-header-font-size: @font-size-lg;
-@action-sheet-description-color: @gray-darker;
+@action-sheet-description-color: @gray-7;
 @action-sheet-description-font-size: @font-size-md;
 @action-sheet-description-line-height: 20px;
 @action-sheet-item-height: 50px;
 @action-sheet-item-background: @white;
 @action-sheet-item-font-size: @font-size-lg;
 @action-sheet-item-text-color: @text-color;
-@action-sheet-item-disabled-text-color: @gray;
-@action-sheet-subname-color: @gray-darker;
+@action-sheet-item-disabled-text-color: @gray-5;
+@action-sheet-subname-color: @gray-7;
 @action-sheet-subname-font-size: @font-size-sm;
 @action-sheet-close-icon-size: 18px;
-@action-sheet-close-icon-color: @gray-dark;
+@action-sheet-close-icon-color: @gray-6;
 @action-sheet-close-icon-padding: 0 @padding-sm;
 @action-sheet-cancel-padding-top: @padding-xs;
 @action-sheet-cancel-padding-color: @background-color;
@@ -109,10 +113,10 @@
 @card-background-color: @background-color-light;
 @card-thumb-size: 90px;
 @card-title-line-height: 16px;
-@card-desc-color: @gray-darker;
+@card-desc-color: @gray-7;
 @card-desc-line-height: 20px;
 @card-price-color: @red;
-@card-origin-price-color: @gray-darker;
+@card-origin-price-color: @gray-7;
 @card-origin-price-font-size: @font-size-xs;
 
 // Cell
@@ -125,33 +129,33 @@
 @cell-border-color: @border-color;
 @cell-active-color: @active-color;
 @cell-required-color: @red;
-@cell-label-color: @gray-dark;
+@cell-label-color: @gray-6;
 @cell-label-font-size: @font-size-sm;
 @cell-label-line-height: 18px;
 @cell-label-margin-top: 3px;
-@cell-value-color: @gray-dark;
+@cell-value-color: @gray-6;
 @cell-icon-size: 16px;
-@cell-right-icon-color: @gray-dark;
+@cell-right-icon-color: @gray-6;
 @cell-large-vertical-padding: @padding-sm;
 @cell-large-title-font-size: @font-size-lg;
 @cell-large-label-font-size: @font-size-md;
 
 // CellGroup
 @cell-group-background-color: @white;
-@cell-group-title-color: @gray-dark;
+@cell-group-title-color: @gray-6;
 @cell-group-title-padding: @padding-md @padding-md @padding-xs;
 @cell-group-title-font-size: @font-size-md;
 @cell-group-title-line-height: 16px;
 
 // Checkbox
 @checkbox-size: 20px;
-@checkbox-border-color: @gray-light;
+@checkbox-border-color: @gray-5;
 @checkbox-transition-duration: .2s;
 @checkbox-label-margin: 10px;
 @checkbox-label-color: @text-color;
 @checkbox-checked-icon-color: @blue;
-@checkbox-disabled-icon-color: @gray;
-@checkbox-disabled-label-color: @gray;
+@checkbox-disabled-icon-color: @gray-5;
+@checkbox-disabled-label-color: @gray-5;
 @checkbox-disabled-background-color: @border-color;
 
 // Circle
@@ -162,9 +166,9 @@
 @collapse-item-content-padding: 15px;
 @collapse-item-content-font-size: 13px;
 @collapse-item-content-line-height: 1.5;
-@collapse-item-content-text-color: @gray-dark;
+@collapse-item-content-text-color: @gray-6;
 @collapse-item-content-background-color: @white;
-@collapse-item-title-disabled-color: @gray;
+@collapse-item-title-disabled-color: @gray-5;
 
 // CountDown
 @count-down-text-color: @text-color;
@@ -185,16 +189,16 @@
 @dialog-message-font-size: @font-size-md;
 @dialog-message-line-height: 20px;
 @dialog-message-max-height: 60vh;
-@dialog-has-title-message-text-color: @gray-darker;
+@dialog-has-title-message-text-color: @gray-7;
 @dialog-has-title-message-padding-top: @padding-sm;
 
 // Field
 @field-input-text-color: @text-color;
 @field-input-error-text-color: @red;
-@field-input-disabled-text-color: @gray-dark;
-@field-placeholder-text-color: @gray-dark;
-@field-clear-icon-color: @gray;
-@field-icon-container-color: @gray-dark;
+@field-input-disabled-text-color: @gray-6;
+@field-placeholder-text-color: @gray-6;
+@field-clear-icon-color: @gray-5;
+@field-icon-container-color: @gray-6;
 @field-error-message-color: @red;
 @field-error-message-text-font-size: @font-size-sm;
 @field-text-area-min-height: 18px;
@@ -203,14 +207,14 @@
 @goods-action-background-color: @white;
 @goods-action-icon-height: 50px;
 @goods-action-icon-font-size: @font-size-xs;
-@goods-action-icon-text-color: @gray-darker;
+@goods-action-icon-text-color: @gray-7;
 @goods-action-button-height: 40px;
 @goods-action-button-border-radius: @goods-action-button-height / 2;
 @goods-action-button-warning-color: @gradient-orange;
 @goods-action-button-danger-color: @gradient-red;
 
 // Image
-@image-placeholder-text-color: @gray-dark;
+@image-placeholder-text-color: @gray-6;
 @image-placeholder-font-size: @font-size-md;
 @image-placeholder-background-color: @background-color;
 
@@ -227,10 +231,10 @@
 @info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 // Loading
-@loading-text-color: @gray-dark;
+@loading-text-color: @gray-6;
 @loading-text-font-size: @font-size-md;
 @loading-text-line-height: 20px;
-@loading-spinner-color: @gray;
+@loading-spinner-color: @gray-5;
 @loading-spinner-size: 30px;
 @loading-spinner-animation-duration: .8s;
 
@@ -289,13 +293,13 @@
 @popup-background-color: @white;
 @popup-round-border-radius: 20px;
 @popup-close-icon-size: 18px;
-@popup-close-icon-color: @gray-dark;
+@popup-close-icon-color: @gray-6;
 @popup-close-icon-margin: 16px;
 @popup-close-icon-z-index: 1;
 
 // Progress
 @progress-height: 4px;
-@progress-background-color: @gray-light;
+@progress-background-color: @gray-3;
 @progress-pivot-padding: 0 5px;
 @progress-color: @blue;
 @progress-pivot-font-size: @font-size-xs;
@@ -305,13 +309,13 @@
 
 // Radio
 @radio-size: 20px;
-@radio-border-color: @gray-light;
+@radio-border-color: @gray-5;
 @radio-transition-duration: .2s;
 @radio-label-margin: 10px;
 @radio-label-color: @text-color;
 @radio-checked-icon-color: @blue;
-@radio-disabled-icon-color: @gray;
-@radio-disabled-label-color: @gray;
+@radio-disabled-icon-color: @gray-5;
+@radio-disabled-label-color: @gray-5;
 @radio-disabled-background-color: @border-color;
 
 // Rate
@@ -332,13 +336,13 @@
 @switch-border: 1px solid rgba(0, 0, 0, .1);
 
 // Search
-@search-background-color: #f7f8fA;
+@search-background-color: @gray-1;
 @search-padding: 10px @padding-sm;
 @search-input-height: 34px;
 @search-label-padding: 0 5px;
 @search-label-color: @text-color;
 @search-label-font-size: @font-size-md;
-@search-left-icon-color: @gray-dark;
+@search-left-icon-color: @gray-6;
 @search-action-padding: 0 @padding-xs;
 @search-action-text-color: @text-color;
 @search-action-font-size: @font-size-md;
@@ -350,7 +354,7 @@
 @sidebar-font-size: @font-size-md;
 @sidebar-line-height: 20px;
 @sidebar-text-color: @text-color;
-@sidebar-disabled-text-color: @gray;
+@sidebar-disabled-text-color: @gray-5;
 @sidebar-padding: 20px @padding-sm 20px @padding-xs;
 @sidebar-active-color: @active-color;
 @sidebar-background-color: @background-color-light;
@@ -361,7 +365,7 @@
 
 // Slider
 @slider-active-background-color: @blue;
-@slider-inactive-background-color: @gray-light;
+@slider-inactive-background-color: @gray-3;
 @slider-disabled-opacity: @disabled-opacity;
 @slider-button-width: 24px;
 @slider-button-height: 24px;
@@ -370,7 +374,7 @@
 @slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
 
 // Step
-@step-text-color: @gray-dark;
+@step-text-color: @gray-6;
 @step-process-text-color: @text-color;
 @step-font-size: @font-size-md;
 @step-line-color: @border-color;
@@ -378,40 +382,24 @@
 @step-finish-text-color: @text-color;
 @step-icon-size: 12px;
 @step-circle-size: 5px;
-@step-circle-color: @gray-dark;
+@step-circle-color: @gray-6;
 @step-horizontal-title-font-size: @font-size-sm;
 
 // Steps
 @steps-background-color: @white;
 
-// Sidebar
-@sidebar-width: 85px;
-
-// SidebarItem
-@sidebar-font-size: @font-size-md;
-@sidebar-line-height: 20px;
-@sidebar-text-color: @text-color;
-@sidebar-disabled-text-color: @gray;
-@sidebar-padding: 20px @padding-sm 20px @padding-xs;
-@sidebar-active-color: @active-color;
-@sidebar-background-color: @background-color-light;
-@sidebar-selected-font-weight: @font-weight-bold;
-@sidebar-selected-text-color: @text-color;
-@sidebar-selected-border-color: @red;
-@sidebar-selected-background-color: @white;
-
 // Stepper
 @stepper-active-color: #e8e8e8;
-@stepper-background-color: @active-color;
+@stepper-background-color: @gray-2;
 @stepper-button-icon-color: @text-color;
-@stepper-button-disabled-color: #f7f8fa;
-@stepper-button-disabled-icon-color: @gray;
+@stepper-button-disabled-color: @gray-1;
+@stepper-button-disabled-icon-color: @gray-5;
 @stepper-input-width: 32px;
 @stepper-input-height: 28px;
 @stepper-input-font-size: @font-size-md;
 @stepper-input-text-color: @text-color;
-@stepper-input-disabled-text-color: @gray;
-@stepper-input-disabled-background-color: @active-color;
+@stepper-input-disabled-text-color: @gray-5;
+@stepper-input-disabled-background-color: @gray-2;
 @stepper-border-radius: @border-radius-md;
 
 // SubmitBar
@@ -437,16 +425,16 @@
 
 // TabbarItem
 @tabbar-item-font-size: @font-size-sm;
-@tabbar-item-text-color: @gray-darker;
+@tabbar-item-text-color: @gray-7;
 @tabbar-item-active-color: @blue;
 @tabbar-item-line-height: 1;
 @tabbar-item-icon-size: 18px;
 @tabbar-item-margin-bottom: 5px;
 
 // Tab
-@tab-text-color: @gray-darker;
+@tab-text-color: @gray-7;
 @tab-active-text-color: @text-color;
-@tab-disabled-text-color: @gray;
+@tab-disabled-text-color: @gray-5;
 @tab-font-size: @font-size-md;
 
 // Tabs
@@ -469,7 +457,7 @@
 @tag-primary-color: @blue;
 @tag-success-color: @green;
 @tag-warning-color: @orange;
-@tag-default-color: @gray-dark;
+@tag-default-color: @gray-6;
 @tag-plain-background-color: @white;
 
 // Toast
@@ -491,12 +479,12 @@
 @grid-item-content-background-color: @white;
 @grid-item-content-active-color: @active-color;
 @grid-item-icon-size: 26px;
-@grid-item-text-color: @gray-darker;
+@grid-item-text-color: @gray-7;
 @grid-item-text-font-size: @font-size-sm;
 
 // Divider
 @divider-margin: @padding-md 0;
-@divider-text-color: @gray-dark;
+@divider-text-color: @gray-6;
 @divider-font-size: @font-size-md;
 @divider-line-height: 24px;
 @divider-border-color: @border-color;
@@ -511,23 +499,23 @@
 @tree-select-nav-item-padding: @padding-sm @padding-xs @padding-sm @padding-sm;
 @tree-select-item-height: 44px;
 @tree-select-item-active-color: @red;
-@tree-select-item-disabled-color: @gray;
+@tree-select-item-disabled-color: @gray-5;
 
 // Uploader
 @uploader-size: 80px;
 @uploader-icon-size: 24px;
-@uploader-icon-color: @gray-dark;
-@uploader-text-color: @gray-dark;
+@uploader-icon-color: @gray-6;
+@uploader-text-color: @gray-6;
 @uploader-text-font-size: @font-size-sm;
-@uploader-upload-border-color: @gray-light;
+@uploader-upload-border-color: @gray-3;
 @uploader-upload-background-color: @white;
 @uploader-delete-color: @white;
 @uploader-delete-background-color: rgba(0, 0, 0, .45);
 @uploader-file-background-color: @background-color;
 @uploader-file-icon-size: 20px;
-@uploader-file-icon-color: @gray-darker;
+@uploader-file-icon-color: @gray-7;
 @uploader-file-name-font-size: @font-size-sm;
-@uploader-file-name-text-color: @gray-darker;
+@uploader-file-name-text-color: @gray-7;
 
 // DropdownMenu
 @dropdown-menu-height: 50px;
@@ -535,7 +523,7 @@
 @dropdown-menu-title-font-size: 15px;
 @dropdown-menu-title-text-color: @text-color;
 @dropdown-menu-title-active-text-color: @blue;
-@dropdown-menu-title-disabled-text-color: @gray-dark;
+@dropdown-menu-title-disabled-text-color: @gray-6;
 @dropdown-menu-title-padding: 0 @padding-xs;
 @dropdown-menu-title-line-height: 18px;
 @dropdown-menu-option-active-color: @blue;
@@ -557,7 +545,7 @@
 // skeleton
 @skeleton-padding: 0 @padding-md;
 @skeleton-row-height: 16px;
-@skeleton-row-background-color: @active-color;
+@skeleton-row-background-color: @gray-2;
 @skeleton-row-margin-top: @padding-sm;
-@skeleton-avatar-background-color: @active-color;
+@skeleton-avatar-background-color: @gray-2;
 @skeleton-animation-duration: 1.2s;

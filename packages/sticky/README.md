@@ -14,6 +14,8 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 }
 ```
 
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+
 ## 代码演示
 
 ### 基础用法

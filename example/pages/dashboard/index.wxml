@@ -8,7 +8,7 @@
   <van-collapse
     wx:for="{{ list }}"
     wx:for-item="group"
-    wx:key="group.title"
+    wx:key="title"
     value="{{ activeNames }}"
     border="{{ false }}"
     bind:change="onChangeCollapse"
@@ -29,7 +29,7 @@
       />
       <van-cell
         wx:for="{{ group.list }}"
-        wx:key="item.title"
+        wx:key="title"
         is-link
         url="/pages{{ item.path }}/index"
         data-url="/pages{{ item.path }}/index"

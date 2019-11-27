@@ -8,7 +8,7 @@
     <block wx:if="{{ previewImage }}">
       <view
         wx:for="{{ lists  }}"
-        wx:key="{{ index }}"
+        wx:key="index"
         class="van-uploader__preview"
       >
         <image

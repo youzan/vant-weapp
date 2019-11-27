@@ -36,8 +36,8 @@
       bottom: 0;
       left: 0;
       margin: auto;
+      background-color: currentColor;
       content: '';
-      .theme(background-color, '@text-color');
     }
 
     &--hover {
@@ -47,11 +47,6 @@
     &--disabled {
       .theme(color, '@stepper-button-disabled-icon-color');
       .theme(background-color, '@stepper-button-disabled-color');
-
-      &::before,
-      &::after {
-        .theme(background-color, '@stepper-button-disabled-color');
-      }
     }
 
     &--disabled&--hover {

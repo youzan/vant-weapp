@@ -18,8 +18,14 @@ VantComponent({
   props: {
     src: String,
     round: Boolean,
-    width: null,
-    height: null,
+    width: {
+      type: null,
+      observer: 'setStyle'
+    },
+    height: {
+      type: null,
+      observer: 'setStyle'
+    },
     radius: null,
     lazyLoad: Boolean,
     useErrorSlot: Boolean,
@@ -27,7 +33,8 @@ VantComponent({
     showMenuByLongpress: Boolean,
     fit: {
       type: String,
-      value: 'fill'
+      value: 'fill',
+      observer: 'setMode'
     },
     showError: {
       type: Boolean,
@@ -54,18 +61,18 @@ VantComponent({
   },
 
   mounted() {
-    this.init();
+    this.setMode();
+    this.setStyle();
   },
 
   methods: {
-    init() {
+    setMode() {
       this.setData({
         mode: FIT_MODE_MAP[this.data.fit],
-        style: this.getStyle()
       });
     },
 
-    getStyle() {
+    setStyle() {
       const { width, height, radius } = this.data;
       let style = '';
 
@@ -82,7 +89,7 @@ VantComponent({
         style += `border-radius: ${addUnit(radius)};`;
       }
 
-      return style;
+      this.setData({ style });
     },
 
     onLoad(event) {

@@ -9,7 +9,8 @@ Page({
     ],
     fileList3: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
     fileList4: [],
-    fileList5: []
+    fileList5: [],
+    fileList6: []
   },
 
   beforeRead(event) {
@@ -40,5 +41,48 @@ Page({
     this.setData({ [`fileList${name}`]: fileList });
   },
 
-  clickPreview() {}
+  clickPreview() {},
+
+  uploadToCloud() {
+    wx.cloud.init();
+    const fileList = this.data.fileList6;
+    const uploadArray = [];
+    fileList.map((file, index) => {
+      uploadArray.push(this.uploadFilePromise(`my-photo${index}.png`, file));
+      return null;
+    });
+    let cloudPath;
+    Promise.all(uploadArray).then((data) => {
+      cloudPath = data;
+      wx.showToast({ title: '上传成功', icon: 'none' });
+      console.log(cloudPath);
+    }).catch((e) => {
+      console.log(e);
+    });
+  },
+
+  uploadFilePromise(fileName, chooseResult) {
+    return wx.cloud.uploadFile({
+      cloudPath: fileName,
+      filePath: chooseResult.path,
+    });
+  },
+
+  uploadFile(fileName, chooseResult) {
+    wx.cloud.init();
+    return wx.cloud.uploadFile({
+      // 指定上传到的云路径
+      cloudPath: fileName,
+      // 指定要上传的文件的小程序临时文件路径
+      filePath: chooseResult.path,
+      success: res => {
+        wx.showToast({ title: '上传成功', icon: 'none' });
+        return res;
+      },
+      fail: res => {
+        res.fileName = fileName;
+        return res;
+      }
+    });
+  },
 });

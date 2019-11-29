@@ -5,8 +5,8 @@
 
 ```json
 "usingComponents": {
-  "van-checkbox": "path/to/vant-weapp/dist/checkbox/index",
-  "van-checkbox-group": "path/to/vant-weapp/dist/checkbox-group/index"
+  "van-checkbox": "path/to/@vant/weapp/dist/checkbox/index",
+  "van-checkbox-group": "path/to/@vant/weapp/dist/checkbox-group/index"
 }
 ```
 

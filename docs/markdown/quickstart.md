@@ -10,13 +10,13 @@
 
 ```bash
 # 通过 npm 安装
-npm i vant-weapp -S --production
+npm i @vant/weapp -S --production
 
 # 通过 yarn 安装
-yarn add vant-weapp --production
+yarn add @vant/weapp --production
 
-# 安装 1.0-beta 版本
-npm i @vant/weapp  -S --production
+# 安装 0.x 版本
+npm i vant-weapp -S --production
 ```
 
 ### 步骤二 构建 npm 包
@@ -29,12 +29,12 @@ npm i @vant/weapp  -S --production
 
 ### 引入组件
 
-以 Button 组件为例，只需要在`app.json`或`index.json`中配置 Button 对应的路径即可。如果你是通过下载源代码的方式使用 vant-weapp，请将路径修改为项目中 vant-weapp 所在的目录。
+以 Button 组件为例，只需要在`app.json`或`index.json`中配置 Button 对应的路径即可。如果你是通过下载源代码的方式使用 @vant/weapp，请将路径修改为项目中 @vant/weapp 所在的目录。
 
 ```json
 // app.json
 "usingComponents": {
-  "van-button": "vant-weapp/button"
+  "van-button": "@vant/weapp/button"
 }
 ```
 
@@ -56,7 +56,7 @@ npm install
 
 # 执行组件编译
 npm run dev
-  
+
 ```
 
 接着打开微信开发者工具，导入`example`目录的项目就可以预览示例了。

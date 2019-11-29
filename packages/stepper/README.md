@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-stepper": "path/to/vant-weapp/dist/stepper/index"
+  "van-stepper": "path/to/@vant/weapp/dist/stepper/index"
 }
 ```
 

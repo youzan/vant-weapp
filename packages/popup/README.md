@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-popup": "path/to/vant-weapp/dist/popup/index"
+  "van-popup": "path/to/@vant/weapp/dist/popup/index"
 }
 ```
 

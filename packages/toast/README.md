@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-toast": "path/to/vant-weapp/dist/toast/index"
+  "van-toast": "path/to/@vant/weapp/dist/toast/index"
 }
 ```
 
@@ -15,7 +15,7 @@
 ### 文字提示
 
 ```javascript
-import Toast from 'path/to/vant-weapp/dist/toast/toast';
+import Toast from 'path/to/@vant/weapp/dist/toast/toast';
 
 Toast('我是提示文案，建议不超过十五字~');
 ```

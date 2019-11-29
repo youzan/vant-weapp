@@ -9,7 +9,7 @@
 
 ```json
 "usingComponents": {
-  "van-picker": "path/to/vant-weapp/dist/picker/index"
+  "van-picker": "path/to/@vant/weapp/dist/picker/index"
 }
 ```
 
@@ -22,7 +22,7 @@
 ```
 
 ```javascript
-import Toast from 'path/to/vant-weapp/dist/toast/toast';
+import Toast from 'path/to/@vant/weapp/dist/toast/toast';
 
 Page({
   data: {
@@ -61,7 +61,7 @@ Page({
 ```
 
 ```javascript
-import Toast from 'path/to/vant-weapp/dist/toast/toast';
+import Toast from 'path/to/@vant/weapp/dist/toast/toast';
 
 Page({
   data: {

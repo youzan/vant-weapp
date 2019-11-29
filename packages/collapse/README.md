@@ -5,8 +5,8 @@
 
 ```json
 "usingComponents": {
-  "van-collapse": "path/to/vant-weapp/dist/collapse/index",
-  "van-collapse-item": "path/to/vant-weapp/dist/collapse-item/index"
+  "van-collapse": "path/to/@vant/weapp/dist/collapse/index",
+  "van-collapse-item": "path/to/@vant/weapp/dist/collapse-item/index"
 }
 ```
 

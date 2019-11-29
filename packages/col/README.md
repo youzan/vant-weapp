@@ -10,8 +10,8 @@ Layout 提供了`van-row`和`van-col`两个组件来进行行列布局
 
 ```json
 "usingComponents": {
-  "van-row": "path/to/vant-weapp/dist/row/index",
-  "van-col": "path/to/vant-weapp/dist/col/index"
+  "van-row": "path/to/@vant/weapp/dist/row/index",
+  "van-col": "path/to/@vant/weapp/dist/col/index"
 }
 ```
 

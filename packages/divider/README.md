@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-divider": "path/to/vant-weapp/dist/divider/index"
+  "van-divider": "path/to/@vant/weapp/dist/divider/index"
 }
 ```
 

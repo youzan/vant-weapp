@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-loading": "path/to/vant-weapp/dist/loading/index"
+  "van-loading": "path/to/@vant/weapp/dist/loading/index"
 }
 ```
 
@@ -50,7 +50,7 @@
 | text-size | 文字大小，默认单位为为 `px` | *string \| number* | `14px` | 1.0.0 |
 | vertical | 是否垂直排列图标和文字内容 | *boolean* | `false` | 1.0.0 |
 
-### Slots 
+### Slots
 
 | 名称 | 说明 |
 | --- | --- |

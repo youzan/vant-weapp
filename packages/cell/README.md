@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-cell": "path/to/vant-weapp/dist/cell/index",
-  "van-cell-group": "path/to/vant-weapp/dist/cell-group/index"
+  "van-cell": "path/to/@vant/weapp/dist/cell/index",
+  "van-cell-group": "path/to/@vant/weapp/dist/cell-group/index"
 }
 ```
 

@@ -5,7 +5,7 @@
 
 ```json
 "usingComponents": {
-  "van-notify": "path/to/vant-weapp/dist/notify/index"
+  "van-notify": "path/to/@vant/weapp/dist/notify/index"
 }
 ```
 
@@ -14,7 +14,7 @@
 ### 基础用法
 
 ```js
-import Notify from 'path/to/vant-weapp/dist/notify/notify';
+import Notify from 'path/to/@vant/weapp/dist/notify/notify';
 
 Notify('通知内容');
 ```

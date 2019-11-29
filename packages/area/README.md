@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-area": "path/to/vant-weapp/dist/area/index"
+  "van-area": "path/to/@vant/weapp/dist/area/index"
 }
 ```
 

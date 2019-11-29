@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-skeleton": "path/to/vant-weapp/dist/skeleton/index"
+  "van-skeleton": "path/to/@vant/weapp/dist/skeleton/index"
 }
 ```
 

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-notice-bar": "path/to/vant-weapp/dist/notice-bar/index"
+  "van-notice-bar": "path/to/@vant/weapp/dist/notice-bar/index"
 }
 ```
 

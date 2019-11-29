@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-datetime-picker": "path/to/vant-weapp/dist/datetime-picker/index"
+  "van-datetime-picker": "path/to/@vant/weapp/dist/datetime-picker/index"
 }
 ```
 

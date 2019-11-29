@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-rate": "path/to/vant-weapp/dist/rate/index"
+  "van-rate": "path/to/@vant/weapp/dist/rate/index"
 }
 ```
 ## 代码演示

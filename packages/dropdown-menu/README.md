@@ -10,8 +10,8 @@
 
 ```json
 "usingComponents": {
-  "van-dropdown-menu": "path/to/vant-weapp/dist/dropdown-menu/index",
-  "van-dropdown-item": "path/to/vant-weapp/dist/dropdown-item/index"
+  "van-dropdown-menu": "path/to/@vant/weapp/dist/dropdown-menu/index",
+  "van-dropdown-item": "path/to/@vant/weapp/dist/dropdown-item/index"
 }
 ```
 

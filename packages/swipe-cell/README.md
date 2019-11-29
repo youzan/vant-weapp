@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-swipe-cell": "path/to/vant-weapp/dist/swipe-cell/index"
+  "van-swipe-cell": "path/to/@vant/weapp/dist/swipe-cell/index"
 }
 ```
 

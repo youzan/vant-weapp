@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-action-sheet": "path/to/vant-weapp/dist/action-sheet/index"
+  "van-action-sheet": "path/to/@vant/weapp/dist/action-sheet/index"
 }
 ```
 
@@ -85,8 +85,8 @@ Page({
 设置`cancel-text`属`性后，会在底部展示取消按钮，点击后关闭当前菜单
 
 ```html
-<van-action-sheet 
-  show="{{ show }}" 
+<van-action-sheet
+  show="{{ show }}"
   actions="{{ actions }}"
   cancel-text="取消"
 />
@@ -98,7 +98,7 @@ Page({
 
 ```html
 <van-action-sheet
-  show="{{ show }}" 
+  show="{{ show }}"
   :actions="actions"
   description="这是一段描述信息"
 />

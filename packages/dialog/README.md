@@ -12,7 +12,7 @@
 
 ```json
 "usingComponents": {
-  "van-dialog": "path/to/vant-weapp/dist/dialog/index"
+  "van-dialog": "path/to/@vant/weapp/dist/dialog/index"
 }
 ```
 
@@ -27,7 +27,7 @@
 ```
 
 ```javascript
-import Dialog from 'path/to/vant-weapp/dist/dialog/dialog';
+import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
 
 Dialog.alert({
   title: '标题',
@@ -130,7 +130,7 @@ Page({
 
 通过函数调用 Dialog 时，支持传入以下选项：
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 | 
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | *string* | - | - |
 | width | 弹窗宽度，默认单位为`px` | *string \| number* | `320px` | 1.0.0 |

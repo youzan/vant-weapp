@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-field": "path/to/vant-weapp/dist/field/index"
+  "van-field": "path/to/@vant/weapp/dist/field/index"
 }
 ```
 
@@ -155,7 +155,7 @@ Page({
 
 同时 `placeholder-style` 对 `vertical-align`、`line-height` 等大量css属性都不生效。
 
-这一系列的问题导致了 placeholder 在真机上可能会出现偏移。vant-weapp 已经尽量抹平 textarea 在不同环境下的差异。
+这一系列的问题导致了 placeholder 在真机上可能会出现偏移。@vant/weapp 已经尽量抹平 textarea 在不同环境下的差异。
 
 微信已经将 `padding` 的问题列为修复中的问题，可以查看[微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)
 

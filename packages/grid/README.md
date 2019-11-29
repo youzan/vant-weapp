@@ -10,8 +10,8 @@
 
 ```json
 "usingComponents": {
-  "van-grid": "path/to/vant-weapp/dist/grid/index",
-  "van-grid-item": "path/to/vant-weapp/dist/grid-item/index"
+  "van-grid": "path/to/@vant/weapp/dist/grid/index",
+  "van-grid-item": "path/to/@vant/weapp/dist/grid-item/index"
 }
 ```
 

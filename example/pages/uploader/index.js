@@ -10,7 +10,8 @@ Page({
     fileList3: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
     fileList4: [],
     fileList5: [],
-    fileList6: []
+    fileList6: [],
+    cloudPath: []
   },
 
   beforeRead(event) {
@@ -46,19 +47,31 @@ Page({
   uploadToCloud() {
     wx.cloud.init();
     const fileList = this.data.fileList6;
+    this.setData({ fileList6: [] });
     const uploadArray = [];
-    fileList.map((file, index) => {
-      uploadArray.push(this.uploadFilePromise(`my-photo${index}.png`, file));
-      return null;
-    });
-    let cloudPath;
-    Promise.all(uploadArray).then((data) => {
-      cloudPath = data;
-      wx.showToast({ title: '上传成功', icon: 'none' });
-      console.log(cloudPath);
-    }).catch((e) => {
-      console.log(e);
-    });
+    if (!fileList.length) {
+      wx.showToast({ title: '请选择图片', icon: 'none' });
+    } else {
+      fileList.map((file, index) => {
+        uploadArray.push(this.uploadFilePromise(`my-photo${index}.png`, file));
+        return null;
+      });
+      Promise.all(uploadArray).then((data) => {
+        wx.showToast({ title: '上传成功', icon: 'none' });
+        this.setData({ cloudPath: data, fileList6: [] });
+      }).catch((e) => {
+        console.log(e);
+      });
+    }
+  },
+
+  downloadFromCloud() {
+    const { cloudPath } = this.data;
+    if (!cloudPath.length) {
+      wx.showToast({ title: '请先上传图片', icon: 'none' });
+    } else {
+      this.downloadFile(cloudPath[0].fileID);
+    }
   },
 
   uploadFilePromise(fileName, chooseResult) {
@@ -68,8 +81,24 @@ Page({
     });
   },
 
+  downloadFile(fileID) {
+    wx.cloud.downloadFile({
+      fileID,
+      success: res => {
+        this.setData({
+          fileList6: [{ url: res.tempFilePath }]
+        });
+        setTimeout(() => {
+          this.setData({
+            fileList6: []
+          });
+        }, 2000);
+      },
+      fail: console.error
+    });
+  },
+
   uploadFile(fileName, chooseResult) {
-    wx.cloud.init();
     return wx.cloud.uploadFile({
       // 指定上传到的云路径
       cloudPath: fileName,
@@ -77,11 +106,10 @@ Page({
       filePath: chooseResult.path,
       success: res => {
         wx.showToast({ title: '上传成功', icon: 'none' });
-        return res;
+        console.log(res);
       },
       fail: res => {
-        res.fileName = fileName;
-        return res;
+        console.log(res);
       }
     });
   },

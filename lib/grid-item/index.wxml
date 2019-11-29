@@ -1,7 +1,10 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view class="{{ utils.bem('grid-item', { square }) }}" style="{{ style }}" bindtap="onClick">
-  <view class="{{ utils.bem('grid-item__content', { center, square, clickable, surround: border && gutter }) }} {{ border ? 'van-hairline--surround' : '' }}">
+  <view
+    class="{{ utils.bem('grid-item__content', { center, square, clickable, surround: border && gutter }) }} {{ border ? 'van-hairline--surround' : '' }}"
+    style="{{ contentStyle }}"
+  >
     <block wx:if="{{ useSlot }}">
       <slot />
     </block>

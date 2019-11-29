@@ -25,6 +25,10 @@ VantComponent({
             value: false
         }
     },
+    created() {
+        const { statusBarHeight } = wx.getSystemInfoSync();
+        this.setData({ statusBarHeight });
+    },
     methods: {
         show() {
             const { duration, onOpened } = this.data;

@@ -1,8 +1,8 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view
-  wx:if="{{ shouldRender }}"
   class="custom-class {{ utils.bem('tab__pane', { active, inactive: !active }) }}"
+  style="{{ shouldShow ? '' : 'display: none;' }}"
 >
-  <slot />
+  <slot wx:if="{{ shouldRender }}" />
 </view>

@@ -30,7 +30,10 @@ VantComponent({
         sticky: Boolean,
         animated: {
             type: Boolean,
-            observer: 'setTrack'
+            observer() {
+                this.setTrack();
+                this.children.forEach((child) => child.updateRender());
+            }
         },
         swipeable: Boolean,
         lineWidth: {
@@ -124,6 +127,9 @@ VantComponent({
         trigger(eventName) {
             const { currentIndex } = this.data;
             const child = this.children[currentIndex];
+            if (!isDef(child)) {
+                return;
+            }
             this.$emit(eventName, {
                 index: currentIndex,
                 name: child.getComputedName(),
@@ -147,8 +153,9 @@ VantComponent({
         setCurrentIndexByName(name) {
             const { children = [] } = this;
             const matched = children.filter((child) => child.getComputedName() === name);
-            const defaultIndex = (children[0] || {}).index || 0;
-            this.setCurrentIndex(matched.length ? matched[0].index : defaultIndex);
+            if (matched.length) {
+                this.setCurrentIndex(matched[0].index);
+            }
         },
         setCurrentIndex(currentIndex) {
             const { data, children = [] } = this;
@@ -157,14 +164,17 @@ VantComponent({
                 currentIndex < 0) {
                 return;
             }
-            const shouldEmitChange = data.currentIndex !== null;
-            this.setData({ currentIndex });
             children.forEach((item, index) => {
                 const active = index === currentIndex;
                 if (active !== item.data.active || !item.inited) {
                     item.updateRender(active, this);
                 }
             });
+            if (currentIndex === data.currentIndex) {
+                return;
+            }
+            const shouldEmitChange = data.currentIndex !== null;
+            this.setData({ currentIndex });
             wx.nextTick(() => {
                 this.setLine();
                 this.setTrack();
@@ -216,11 +226,14 @@ VantComponent({
         },
         setTrack() {
             const { animated, duration, currentIndex } = this.data;
+            if (!animated) {
+                return;
+            }
             this.setData({
                 trackStyle: `
           transform: translate3d(${-100 * currentIndex}%, 0, 0);
-          -webkit-transition-duration: ${animated ? duration : 0}s;
-          transition-duration: ${animated ? duration : 0}s;
+          -webkit-transition-duration: ${duration}s;
+          transition-duration: ${duration}s;
         `
             });
         },

@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { range } from '../common/utils';
 const THRESHOLD = 0.3;
 let ARRAY = [];
 VantComponent({
@@ -35,14 +36,18 @@ VantComponent({
             const { leftWidth, rightWidth } = this.data;
             const offset = position === 'left' ? leftWidth : -rightWidth;
             this.swipeMove(offset);
+            this.$emit('open', {
+                position,
+                name: this.data.name
+            });
         },
         close() {
             this.swipeMove(0);
         },
         swipeMove(offset = 0) {
-            this.offset = offset;
-            const transform = `translate3d(${offset}px, 0, 0)`;
-            const transition = this.draging
+            this.offset = range(offset, -this.data.rightWidth, this.data.leftWidth);
+            const transform = `translate3d(${this.offset}px, 0, 0)`;
+            const transition = this.dragging
                 ? 'none'
                 : 'transform .6s cubic-bezier(0.18, 0.89, 0.32, 1)';
             this.setData({
@@ -72,14 +77,7 @@ VantComponent({
             if (this.data.disabled) {
                 return;
             }
-            ARRAY.forEach(item => {
-                if (item !== this) {
-                    item.close();
-                }
-            });
-            this.draging = true;
             this.startOffset = this.offset;
-            this.firstDirection = '';
             this.touchStart(event);
         },
         noop() { },
@@ -88,26 +86,19 @@ VantComponent({
                 return;
             }
             this.touchMove(event);
-            if (!this.firstDirection) {
-                this.firstDirection = this.direction;
-                this.setData({ catchMove: this.firstDirection === 'horizontal' });
-            }
-            if (this.firstDirection === 'vertical') {
+            if (this.direction !== 'horizontal') {
                 return;
             }
-            const { leftWidth, rightWidth } = this.data;
-            const offset = this.startOffset + this.deltaX;
-            if ((rightWidth > 0 && -offset > rightWidth) ||
-                (leftWidth > 0 && offset > leftWidth)) {
-                return;
-            }
-            this.swipeMove(offset);
+            this.dragging = true;
+            ARRAY.filter(item => item !== this).forEach(item => item.close());
+            this.setData({ catchMove: true });
+            this.swipeMove(this.startOffset + this.deltaX);
         },
         endDrag() {
             if (this.data.disabled) {
                 return;
             }
-            this.draging = false;
+            this.dragging = false;
             this.swipeLeaveTransition();
         },
         onClick(event) {
@@ -117,7 +108,11 @@ VantComponent({
                 return;
             }
             if (this.data.asyncClose) {
-                this.$emit('close', { position, instance: this, name: this.data.name });
+                this.$emit('close', {
+                    position,
+                    instance: this,
+                    name: this.data.name
+                });
             }
             else {
                 this.swipeMove(0);

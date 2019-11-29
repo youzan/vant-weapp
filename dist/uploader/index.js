@@ -6,6 +6,8 @@ VantComponent({
         disabled: Boolean,
         multiple: Boolean,
         uploadText: String,
+        useSlot: Boolean,
+        useBeforeRead: Boolean,
         previewSize: {
             type: null,
             value: 90,
@@ -32,6 +34,10 @@ VantComponent({
             type: Number,
             value: 100
         },
+        deletable: {
+            type: Boolean,
+            value: true
+        },
         previewImage: {
             type: Boolean,
             value: true
@@ -43,9 +49,7 @@ VantComponent({
         imageFit: {
             type: String,
             value: 'scaleToFill'
-        },
-        useSlot: Boolean,
-        useBeforeRead: Boolean
+        }
     },
     data: {
         lists: [],
@@ -55,9 +59,7 @@ VantComponent({
     methods: {
         formatFileList() {
             const { fileList = [], maxCount } = this.data;
-            const lists = fileList.map(item => (Object.assign(Object.assign({}, item), { isImage: typeof item.isImage === 'undefined'
-                    ? isImageFile(item)
-                    : item.isImage })));
+            const lists = fileList.map(item => (Object.assign(Object.assign({}, item), { isImage: typeof item.isImage === 'undefined' ? isImageFile(item) : item.isImage })));
             this.setData({ lists, isInCount: lists.length < maxCount });
         },
         setComputedPreviewSize(val) {

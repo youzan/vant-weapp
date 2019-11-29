@@ -162,19 +162,27 @@ downloadFromCloud() {
   if (!cloudPath.length) {
     wx.showToast({ title: '请先上传图片', icon: 'none' });
   } else {
-    this.downloadFile(cloudPath[0].fileID);
+    const uploadArray = [];
+    cloudPath.map((item) => {
+      uploadArray.push(this.downloadFile(item.fileID));
+      return null;
+    });
+    Promise.all(uploadArray).then((data) => {
+      wx.showToast({ title: '下载成功', icon: 'none' });
+      const fileList = data.map((item) => {
+        const res = { url: item.tempFilePath };
+        return res;
+      });
+      this.setData({ fileList: fileList, cloudPath: [] });
+    }).catch((e) => {
+      console.log(e);
+    });
   }
 }
 
 downloadFile(fileID) {
-  wx.cloud.downloadFile({
+  return wx.cloud.downloadFile({
     fileID,
-    success: res => {
-      this.setData({
-        fileList: [{ url: res.tempFilePath }]
-      });
-    },
-    fail: console.error
   });
 }
 

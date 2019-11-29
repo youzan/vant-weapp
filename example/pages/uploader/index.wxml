@@ -69,6 +69,5 @@
   />
   <view class="demo-margin-bottom">
     <van-button type="primary" bind:click="uploadToCloud">上传至云存储</van-button>
-    <van-button class="demo-margin-left" type="primary" bind:click="downloadFromCloud">下载云存储图片</van-button>
   </view>
 </demo-block>

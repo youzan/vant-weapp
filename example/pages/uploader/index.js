@@ -46,74 +46,30 @@ Page({
 
   uploadToCloud() {
     wx.cloud.init();
-    const fileList = this.data.fileList6;
-    this.setData({ fileList6: [] });
-    const uploadArray = [];
+    const { fileList6: fileList = [] } = this.data;
     if (!fileList.length) {
       wx.showToast({ title: '请选择图片', icon: 'none' });
     } else {
-      fileList.map((file, index) => {
-        uploadArray.push(this.uploadFilePromise(`my-photo${index}.png`, file));
-        return null;
-      });
-      Promise.all(uploadArray).then((data) => {
-        wx.showToast({ title: '上传成功', icon: 'none' });
-        this.setData({ cloudPath: data, fileList6: [] });
-      }).catch((e) => {
-        console.log(e);
-      });
-    }
-  },
-
-  downloadFromCloud() {
-    const { cloudPath } = this.data;
-    if (!cloudPath.length) {
-      wx.showToast({ title: '请先上传图片', icon: 'none' });
-    } else {
-      const uploadArray = [];
-      cloudPath.map((item) => {
-        uploadArray.push(this.downloadFile(item.fileID));
-        return null;
-      });
-      Promise.all(uploadArray).then((data) => {
-        wx.showToast({ title: '下载成功', icon: 'none' });
-        const fileList = data.map((item) => {
-          const res = { url: item.tempFilePath };
-          return res;
+      const uploadTasks = fileList.map((file, index) =>
+        this.uploadFilePromise(`my-photo${index}.png`, file)
+      );
+      Promise.all(uploadTasks)
+        .then(data => {
+          wx.showToast({ title: '上传成功', icon: 'none' });
+          const fileList = data.map(item => ({ url: item.fileID }));
+          this.setData({ cloudPath: data, fileList6: fileList });
+        })
+        .catch(e => {
+          wx.showToast({ title: '上传失败', icon: 'none' });
+          console.log(e);
         });
-        this.setData({ fileList6: fileList, cloudPath: [] });
-      }).catch((e) => {
-        console.log(e);
-      });
     }
   },
 
   uploadFilePromise(fileName, chooseResult) {
     return wx.cloud.uploadFile({
       cloudPath: fileName,
-      filePath: chooseResult.path,
+      filePath: chooseResult.path
     });
-  },
-
-  downloadFile(fileID) {
-    return wx.cloud.downloadFile({
-      fileID,
-    });
-  },
-
-  uploadFile(fileName, chooseResult) {
-    return wx.cloud.uploadFile({
-      // 指定上传到的云路径
-      cloudPath: fileName,
-      // 指定要上传的文件的小程序临时文件路径
-      filePath: chooseResult.path,
-      success: res => {
-        wx.showToast({ title: '上传成功', icon: 'none' });
-        console.log(res);
-      },
-      fail: res => {
-        console.log(res);
-      }
-    });
-  },
+  }
 });

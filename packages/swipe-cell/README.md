@@ -82,7 +82,8 @@ Page({
 | 事件名 | 说明 | 参数 |
 |------|------|------|
 | click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| close | 点击时触发 | 整体是一个 Object，包含 `position`, `instance` 两个 key。 |
+| close | 关闭时触发 | 	{ position: 'left' \| 'right' , instance , name: string } |
+| open | 打开时触发 | 	{ position: 'left' \| 'right' , name: string } |
 
 ### close 参数
 
@@ -90,6 +91,7 @@ Page({
 |------|------|------|
 | position | *string* | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
 | instance | *object* | SwipeCell 实例 |
+| name | 标识符 | *string* |
 
 ### 方法
 

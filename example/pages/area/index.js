@@ -1,6 +1,8 @@
 import Page from '../../common/page';
 import Toast from '../../dist/toast/toast';
 
+const db = wx.cloud.database();
+
 Page({
   data: {
     areaList: {},
@@ -9,15 +11,20 @@ Page({
   },
 
   onShow() {
-    wx.request({
-      url: 'https://cashier.youzan.com/wsctrade/uic/address/getAllRegion.json',
-      success: response => {
+    db.collection('region').limit(1).get().then(res => {
+      if (res.data && res.data.length > 0) {
         this.setData({
           loading: false,
-          areaList: response.data.data
+          areaList: res.data[0]
         });
       }
-    });
+    })
+      .catch(err => {
+        console.log(err);
+        this.setData({
+          loading: false,
+        });
+      });
   },
 
   onChange(event) {

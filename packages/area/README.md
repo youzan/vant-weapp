@@ -86,6 +86,29 @@
 |-----------|-----------|-----------|-------------|
 | reset | code: string | - | 根据 code 重置所有选项，若不传 code，则重置到第一项 |
 
+
+### 使用云开发获取省市区数据
+
+实际项目中，可以通过小程序云开发的能力，将省市区数据保存在云开发的数据库中，并在小程序中使用云开发的接口异步获取数据。
+
+在小程序中使用云能力之前需要先调用`wx.could.init`方法完成云能力的初始化。
+
+``` js
+const db = wx.cloud.database();
+
+db.collection('region').limit(1).get()
+.then(res => {
+  if (res.data && res.data.length > 0) {
+    this.setData({
+      areaList: res.data[0]
+    });
+  }
+})
+.catch(err => {
+    console.log(err);
+  });
+```
+
 ### 省市区列表数据格式
 
 整体是一个 Object，包含 `province_list`, `city_list`, `county_list` 三个 key。

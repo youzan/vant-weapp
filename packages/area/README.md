@@ -86,6 +86,28 @@
 |-----------|-----------|-----------|-------------|
 | reset | code: string | - | 根据 code 重置所有选项，若不传 code，则重置到第一项 |
 
+
+### 使用云开发数据库存储省市区数据
+
+获取省市区数据
+
+``` js
+db.collection('region').limit(1).get().then(res => {
+  if (res.data && res.data.length > 0) {
+    this.setData({
+      loading: false,
+      areaList: res.data[0]
+    });
+  }
+})
+  .catch(err => {
+    console.log(err);
+    this.setData({
+      loading: false,
+    });
+  });
+```
+
 ### 省市区列表数据格式
 
 整体是一个 Object，包含 `province_list`, `city_list`, `county_list` 三个 key。

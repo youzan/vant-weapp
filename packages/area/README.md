@@ -47,8 +47,8 @@
 
 ```html
 <van-area
-  :area-list="{{ areaList }}"
-  :columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}"
+  area-list="{{ areaList }}"
+  columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}"
   title="标题"
 />
 ```

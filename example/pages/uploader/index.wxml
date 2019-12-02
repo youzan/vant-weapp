@@ -56,3 +56,18 @@
     use-before-read="{{ true }}"
   />
 </demo-block>
+
+<demo-block title="云存储上传" padding>
+  <van-uploader
+    name="6"
+    file-list="{{ fileList6 }}"
+    bind:before-read="beforeRead"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+    use-before-read="{{ true }}"
+  />
+  <view class="demo-margin-bottom">
+    <van-button type="primary" bind:click="uploadToCloud">上传至云存储</van-button>
+  </view>
+</demo-block>

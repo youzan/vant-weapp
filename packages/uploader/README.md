@@ -143,8 +143,8 @@ uploadToCloud() {
     Promise.all(uploadTasks)
       .then(data => {
         wx.showToast({ title: '上传成功', icon: 'none' });
-        const fileList = data.map(item => { url: item.fileID });
-        this.setData({ cloudPath: data, fileList: fileList });
+        const newFileList = data.map(item => { url: item.fileID });
+        this.setData({ cloudPath: data, fileList: newFileList });
       })
       .catch(e => {
         wx.showToast({ title: '上传失败', icon: 'none' });

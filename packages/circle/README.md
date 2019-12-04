@@ -17,7 +17,7 @@
 `value`属性表示进度条的目标进度。
 
 ```html
-<van-circle :value="{{ 30 }}" :text="text" />
+<van-circle value="{{ 30 }}" text="text" />
 ```
 
 ### 宽度定制
@@ -25,7 +25,7 @@
 通过`stroke-width`属性来控制进度条宽度
 
 ```html
-<van-circle :value="{{ value }}" :stroke-width="6" text="宽度定制" />
+<van-circle value="{{ value }}" stroke-width="6" text="宽度定制" />
 ```
 
 ### 颜色定制

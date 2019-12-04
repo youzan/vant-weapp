@@ -104,7 +104,7 @@ Page({
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| bind:search | 输入内容结束时触发 | event.detail: 当前输入值 |
+| bind:search | 确定搜索时触发 | event.detail: 当前输入值 |
 | bind:change | 输入内容变化时触发 | event.detail: 当前输入值 |
 | bind:cancel | 取消搜索搜索时触发 | - |
 | bind:focus | 输入框聚焦时触发 | - |

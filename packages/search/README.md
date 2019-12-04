@@ -43,10 +43,33 @@
   value="{{ value }}"
   placeholder="请输入搜索关键词"
   use-action-slot
+  bind:change="onChange"
   bind:search="onSearch"
 >
-  <view slot="action" bind:tap="onSearch">搜索</view>
+  <view slot="action" bind:tap="onClick">搜索</view>
 </van-search>
+```
+
+```javascript
+Page({
+  data: {
+    value: ''
+  },
+
+  onChange(e) {
+    this.setData({
+      value: e.detail
+    });
+  },
+
+  onSearch() {
+    Toast('搜索' + this.data.value);
+  },
+
+  onClick() {
+    Toast('搜索' + this.data.value);
+  },
+});
 ```
 
 ## API

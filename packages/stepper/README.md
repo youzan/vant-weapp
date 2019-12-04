@@ -125,6 +125,8 @@ Page({
 | show-plus | 是否显示增加按钮 | *boolean* | `true` | - |
 | show-minus | 是否显示减少按钮 | *boolean* | `true` | - |
 | decimal-length | 固定显示的小数位数 | *number* | - | - |
+| disable-plus | 是否禁用增加按钮 | *boolean* | - | - |
+| disable-minus | 是否禁用减少按钮 | *boolean* | - | - |
 
 ### Events
 

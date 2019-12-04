@@ -8,7 +8,6 @@
   <image
     wx:if="{{ !error }}"
     src="{{ src }}"
-    webp
     mode="{{ mode }}"
     lazy-load="{{ lazyLoad }}"
     class="image-class van-image__img"

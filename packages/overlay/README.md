@@ -28,13 +28,61 @@ Page({
   data: {
     show: false
   },
+
   onClickShow() {
     this.setData({ show: true });
   },
+
   onClickHide() {
     this.setData({ show: false });
   }
 });
+```
+
+### 嵌入内容
+
+通过默认插槽可以在遮罩层上嵌入任意内容
+
+```html
+<van-button type="primary" bind:click="onClickShow">嵌入内容</van-button>
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block" catch:tap="noop" />
+  </view>
+</van-overlay>
+```
+
+```js
+Page({
+  data: {
+    show: false
+  },
+
+  onClickShow() {
+    this.setData({ show: true });
+  },
+
+  onClickHide() {
+    this.setData({ show: false });
+  },
+
+  noop() {}
+});
+```
+
+```css
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+}
 ```
 
 ### Props
@@ -52,3 +100,10 @@ Page({
 | 事件名 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | bind:click | 点击时触发 | - |
+
+### Slots
+
+| 名称 | 说明 |
+|------|------|
+| - | 默认插槽，用于在遮罩层上方嵌入内容 |
+

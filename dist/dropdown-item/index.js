@@ -6,19 +6,30 @@ VantComponent({
         type: 'ancestor',
         linked(target) {
             this.parent = target;
+            this.updateDataFromParent();
         },
         unlinked() {
             this.parent = null;
         }
     },
     props: {
-        value: null,
-        title: String,
+        value: {
+            type: null,
+            observer: 'rerender'
+        },
+        title: {
+            type: String,
+            observer: 'rerender'
+        },
         disabled: Boolean,
-        titleClass: String,
+        titleClass: {
+            type: String,
+            observer: 'rerender'
+        },
         options: {
             type: Array,
-            value: []
+            value: [],
+            observer: 'rerender'
         }
     },
     data: {
@@ -27,44 +38,67 @@ VantComponent({
         showWrapper: false,
         displayTitle: ''
     },
-    created() {
-        this.setData({ displayTitle: this.computedDisplayTitle(this.data.value) });
-    },
     methods: {
-        computedDisplayTitle(curValue) {
-            const { title, options } = this.data;
-            if (title) {
-                return title;
+        rerender() {
+            wx.nextTick(() => {
+                this.parent && this.parent.updateItemListData();
+            });
+        },
+        updateDataFromParent() {
+            if (this.parent) {
+                const { overlay, duration, activeColor, closeOnClickOverlay, direction } = this.parent.data;
+                this.setData({
+                    overlay,
+                    duration,
+                    activeColor,
+                    closeOnClickOverlay,
+                    direction
+                });
             }
-            const match = options.filter(option => option.value === curValue);
-            const displayTitle = match.length ? match[0].text : '';
-            return displayTitle;
         },
         onClickOverlay() {
             this.toggle();
             this.$emit('close');
         },
         onOptionTap(event) {
-            let { value, displayTitle } = this.data;
             const { option } = event.currentTarget.dataset;
-            const { value: optionValue } = option;
-            if (optionValue !== value) {
-                value = optionValue;
-                displayTitle = this.computedDisplayTitle(optionValue);
-                this.$emit('change', optionValue);
-            }
-            this.setData({ showPopup: false, value, displayTitle });
-            const time = this.data.duration || 0;
+            const { value } = option;
+            const shouldEmitChange = this.data.value !== value;
+            this.setData({ showPopup: false, value });
             setTimeout(() => {
                 this.setData({ showWrapper: false });
-            }, time);
-            // parent 中的 itemListData 是 children 上的数据的集合
-            // 数据的更新由 children 各自维护，但是模板的更新需要额外触发 parent 的 setData
-            this.parent.setData({ itemListData: this.parent.data.itemListData });
+            }, this.data.duration || 0);
+            this.rerender();
+            if (shouldEmitChange) {
+                this.$emit('change', value);
+            }
         },
-        toggle() {
-            const { childIndex } = this.data;
-            this.parent.toggleItem(childIndex);
+        toggle(show, options = {}) {
+            const { showPopup, duration } = this.data;
+            if (show == null) {
+                show = !showPopup;
+            }
+            if (show === showPopup) {
+                return;
+            }
+            if (!show) {
+                const time = options.immediate ? 0 : duration;
+                this.setData({ transition: !options.immediate, showPopup: show });
+                setTimeout(() => {
+                    this.setData({ showWrapper: false });
+                }, time);
+                this.rerender();
+                return;
+            }
+            this.parent.getChildWrapperStyle().then((wrapperStyle = '') => {
+                this.setData({
+                    transition: !options.immediate,
+                    showPopup: show,
+                    wrapperStyle,
+                    showWrapper: true
+                });
+                this.rerender();
+            });
         }
     }
 });

@@ -7,33 +7,23 @@ VantComponent({
         name: 'dropdown-item',
         type: 'descendant',
         linked(target) {
-            this.children = this.children || [];
-            // 透传 props 给 dropdown-item
-            const { overlay, duration, activeColor, closeOnClickOverlay, direction } = this.data;
-            this.updateChildData(target, {
-                overlay,
-                duration,
-                activeColor,
-                closeOnClickOverlay,
-                direction,
-                childIndex: this.children.length
-            });
             this.children.push(target);
-            // 收集 dorpdown-item 的 data 挂在 data 上
-            target &&
-                this.setData({
-                    itemListData: this.data.itemListData.concat([target.data])
-                });
+            this.updateItemListData();
         },
         unlinked(target) {
             this.children = this.children.filter((child) => child !== target);
+            this.updateItemListData();
         }
     },
     props: {
-        activeColor: String,
+        activeColor: {
+            type: String,
+            observer: 'updateChildrenData'
+        },
         overlay: {
             type: Boolean,
-            value: true
+            value: true,
+            observer: 'updateChildrenData'
         },
         zIndex: {
             type: Number,
@@ -41,15 +31,18 @@ VantComponent({
         },
         duration: {
             type: Number,
-            value: 200
+            value: 200,
+            observer: 'updateChildrenData'
         },
         direction: {
             type: String,
-            value: 'down'
+            value: 'down',
+            observer: 'updateChildrenData'
         },
         closeOnClickOverlay: {
             type: Boolean,
-            value: true
+            value: true,
+            observer: 'updateChildrenData'
         },
         closeOnClickOutside: {
             type: Boolean,
@@ -59,68 +52,47 @@ VantComponent({
     data: {
         itemListData: []
     },
-    created() {
+    beforeCreate() {
+        const { windowHeight } = wx.getSystemInfoSync();
+        this.windowHeight = windowHeight;
+        this.children = [];
         ARRAY.push(this);
     },
     destroyed() {
         ARRAY = ARRAY.filter(item => item !== this);
     },
     methods: {
-        updateChildData(childItem, newData, needRefreshList = false) {
-            childItem.setData(newData);
-            if (needRefreshList) {
-                // dropdown-item data 更新，涉及到 title 的展示，触发模板更新
-                this.setData({ itemListData: this.data.itemListData });
-            }
+        updateItemListData() {
+            this.setData({
+                itemListData: this.children.map((child) => child.data)
+            });
+        },
+        updateChildrenData() {
+            this.children.forEach((child) => {
+                child.updateDataFromParent();
+            });
         },
         toggleItem(active) {
             this.children.forEach((item, index) => {
                 const { showPopup } = item.data;
                 if (index === active) {
-                    this.toggleChildItem(item);
+                    item.toggle();
                 }
                 else if (showPopup) {
-                    this.toggleChildItem(item, false, { immediate: true });
+                    item.toggle(false, { immediate: true });
                 }
-            });
-        },
-        toggleChildItem(childItem, show, options = {}) {
-            const { showPopup, duration } = childItem.data;
-            if (show === undefined)
-                show = !showPopup;
-            if (show === showPopup) {
-                return;
-            }
-            const newChildData = { transition: !options.immediate, showPopup: show };
-            if (!show) {
-                const time = options.immediate ? 0 : duration;
-                this.updateChildData(childItem, Object.assign({}, newChildData), true);
-                setTimeout(() => {
-                    this.updateChildData(childItem, { showWrapper: false }, true);
-                }, time);
-                return;
-            }
-            this.getChildWrapperStyle().then((wrapperStyle = '') => {
-                this.updateChildData(childItem, Object.assign(Object.assign({}, newChildData), { wrapperStyle, showWrapper: true }), true);
             });
         },
         close() {
-            this.children.forEach((item) => {
-                this.toggleChildItem(item, false, { immediate: true });
+            this.children.forEach((child) => {
+                child.toggle(false, { immediate: true });
             });
         },
         getChildWrapperStyle() {
-            const { windowHeight } = wx.getSystemInfoSync();
             const { zIndex, direction } = this.data;
-            let offset = 0;
-            return this.getRect('.van-dropdown-menu').then(rect => {
+            return this.getRect('.van-dropdown-menu').then((rect) => {
                 const { top = 0, bottom = 0 } = rect;
-                if (direction === 'down') {
-                    offset = bottom;
-                }
-                else {
-                    offset = windowHeight - top;
-                }
+                const offset = direction === 'down' ? bottom : this.windowHeight - top;
                 let wrapperStyle = `z-index: ${zIndex};`;
                 if (direction === 'down') {
                     wrapperStyle += `top: ${addUnit(offset)};`;
@@ -128,16 +100,17 @@ VantComponent({
                 else {
                     wrapperStyle += `bottom: ${addUnit(offset)};`;
                 }
-                return Promise.resolve(wrapperStyle);
+                return wrapperStyle;
             });
         },
         onTitleTap(event) {
-            // item ---> dropdown-item
-            const { item, index } = event.currentTarget.dataset;
-            if (!item.disabled) {
-                // menuItem ---> dropdown-menu
+            const { index } = event.currentTarget.dataset;
+            const child = this.children[index];
+            if (!child.data.disabled) {
                 ARRAY.forEach(menuItem => {
-                    if (menuItem && menuItem.data.closeOnClickOutside && menuItem !== this) {
+                    if (menuItem &&
+                        menuItem.data.closeOnClickOutside &&
+                        menuItem !== this) {
                         menuItem.close();
                     }
                 });

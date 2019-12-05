@@ -12,8 +12,8 @@
   >
     <van-icon
       name="{{ index + 1 <= innerValue ? icon : voidIcon }}"
-      size="{{ size }}"
       class="van-rate__icon"
+      style="font-size :{{ size? sizeWithUnit : ''}}"
       custom-class="icon-class"
       data-score="{{ index }}"
       color="{{ disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor }}"
@@ -22,9 +22,9 @@
 
     <van-icon
       wx:if="{{ allowHalf }}"
-      size="{{ size }}"
       name="{{ index + 0.5 <= innerValue ? icon : voidIcon }}"
       class="{{ utils.bem('rate__icon', ['half']) }}"
+      style="font-size :{{ size? sizeWithUnit : ''}}"
       custom-class="icon-class"
       data-score="{{ index - 0.5 }}"
       color="{{ disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor }}"

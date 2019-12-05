@@ -8,7 +8,7 @@ VantComponent({
             this.setActive(this.data.activeKey);
         },
         unlinked(target) {
-            this.items = this.children.filter((item) => item !== target);
+            this.children = this.children.filter((item) => item !== target);
             this.setActive(this.data.activeKey);
         }
     },

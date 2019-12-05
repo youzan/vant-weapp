@@ -9,7 +9,7 @@ VantComponent({
       this.setActive(this.data.activeKey);
     },
     unlinked(target) {
-      this.items = this.children.filter(
+      this.children = this.children.filter(
         (item: WechatMiniprogram.Component.TrivialInstance) => item !== target
       );
       this.setActive(this.data.activeKey);

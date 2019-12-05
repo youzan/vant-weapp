@@ -875,17 +875,17 @@
   resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.15.tgz#53c51ace21e9992bfeeb2e1ad9094fbf6506d116"
   integrity sha512-96tbJotfofrKpOrUGWKkiGLJsCFc0OX5pikWLW5yarD+EMhi0zCrQSDb95xGrp/HETAFm+nSTQu2e1zGsWN/7A==
 
-"@vant/markdown-loader@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@vant/markdown-loader/-/markdown-loader-2.2.0.tgz#f685d7f9fb7582919230329c9263cf0c4798281b"
-  integrity sha512-8fetkXUHVbZpc8tDZcKC4k5zIR1AK8EaS9mJNuAcmKoKGMhqfdo7aYRYb9FttDlxGcFCLEfail8u9qRWd/KNFA==
+"@vant/markdown-loader@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/@vant/markdown-loader/download/@vant/markdown-loader-2.3.0.tgz#ea8ab4d8d41609839b40b817bc3a598cf13f9920"
+  integrity sha1-6oq02NQWCYObQLgXvDpZjPE/mSA=
   dependencies:
     front-matter "^3.0.2"
-    highlight.js "^9.15.6"
+    highlight.js "^9.16.2"
     loader-utils "^1.2.3"
-    markdown-it "^8.4.2"
-    markdown-it-anchor "^5.2.4"
-    transliteration "^2.1.4"
+    markdown-it "^10.0.0"
+    markdown-it-anchor "^5.2.5"
+    transliteration "^2.1.7"
 
 "@vant/stylelint-config@^1.0.0":
   version "1.0.0"
@@ -3093,15 +3093,15 @@ enhanced-resolve@4.1.0, enhanced-resolve@^4.1.0:
     memory-fs "^0.4.0"
     tapable "^1.0.0"
 
-entities@^1.1.1, entities@~1.1.1:
+entities@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
 
-entities@^2.0.0:
+entities@^2.0.0, entities@~2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/entities/-/entities-2.0.0.tgz#68d6084cab1b079767540d80e56a39b423e4abf4"
-  integrity sha512-D9f7V0JSRwIxlRI2mjMqufDrRDnx8p+eEOz7aUM9SuvF8gsBzra0/6tbjl1m8eQHrZlYj6PxqE00hZ1SAIKPLw==
+  resolved "https://registry.npm.taobao.org/entities/download/entities-2.0.0.tgz#68d6084cab1b079767540d80e56a39b423e4abf4"
+  integrity sha1-aNYITKsbB5dnVA2A5Wo5tCPkq/Q=
 
 errno@^0.1.1, errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
@@ -4316,10 +4316,10 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-highlight.js@^9.15.6:
-  version "9.15.10"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.10.tgz#7b18ed75c90348c045eef9ed08ca1319a2219ad2"
-  integrity sha512-RoV7OkQm0T3os3Dd2VHLNMoaoDVx77Wygln3n9l5YV172XonWG6rgQD3XnF/BuFFZw9A0TJgmMSO8FEWQgvcXw==
+highlight.js@^9.16.2:
+  version "9.16.2"
+  resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-9.16.2.tgz#68368d039ffe1c6211bcc07e483daf95de3e403e"
+  integrity sha1-aDaNA5/+HGIRvMB+SD2vld4+QD4=
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -5787,18 +5787,18 @@ markdown-escapes@^1.0.0:
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.3.tgz#6155e10416efaafab665d466ce598216375195f5"
   integrity sha512-XUi5HJhhV5R74k8/0H2oCbCiYf/u4cO/rX8tnGkRvrqhsr5BRNU6Mg0yt/8UIx1iIS8220BNJsDb7XnILhLepw==
 
-markdown-it-anchor@^5.2.4:
-  version "5.2.4"
-  resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.2.4.tgz#d39306fe4c199705b4479d3036842cf34dcba24f"
-  integrity sha512-n8zCGjxA3T+Mx1pG8HEgbJbkB8JFUuRkeTZQuIM8iPY6oQ8sWOPRZJDFC9a/pNg2QkHEjjGkhBEl/RSyzaDZ3A==
+markdown-it-anchor@^5.2.5:
+  version "5.2.5"
+  resolved "https://registry.npm.taobao.org/markdown-it-anchor/download/markdown-it-anchor-5.2.5.tgz#dbf13cfcdbffd16a510984f1263e1d479a47d27a"
+  integrity sha1-2/E8/Nv/0WpRCYTxJj4dR5pH0no=
 
-markdown-it@^8.4.2:
-  version "8.4.2"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
-  integrity sha512-GcRz3AWTqSUphY3vsUqQSFMbgR38a4Lh3GWlHRh/7MRwz8mcu9n2IO7HOh+bXHrR9kOPDl5RNCaEsrneb+xhHQ==
+markdown-it@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.npm.taobao.org/markdown-it/download/markdown-it-10.0.0.tgz#abfc64f141b1722d663402044e43927f1f50a8dc"
+  integrity sha1-q/xk8UGxci1mNAIETkOSfx9QqNw=
   dependencies:
     argparse "^1.0.7"
-    entities "~1.1.1"
+    entities "~2.0.0"
     linkify-it "^2.0.0"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
@@ -9188,10 +9188,10 @@ tough-cookie@~2.4.3:
     psl "^1.1.24"
     punycode "^1.4.1"
 
-transliteration@^2.1.4:
+transliteration@^2.1.7:
   version "2.1.7"
-  resolved "https://registry.yarnpkg.com/transliteration/-/transliteration-2.1.7.tgz#43fbd2e259777516a667a76e1d11aa9f85264413"
-  integrity sha512-o3678GPmKKGqOBB+trAKzhBUjHddU18He2V8AKB1XuegaGJekO0xmfkkvbc9LCBat62nb7IH8z5/OJY+mNugkg==
+  resolved "https://registry.npm.taobao.org/transliteration/download/transliteration-2.1.7.tgz#43fbd2e259777516a667a76e1d11aa9f85264413"
+  integrity sha1-Q/vS4ll3dRamZ6duHRGqn4UmRBM=
   dependencies:
     yargs "^14.0.0"
 

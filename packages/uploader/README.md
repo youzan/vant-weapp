@@ -18,13 +18,9 @@
 
 文件上传完毕后会触发`after-read`回调函数，获取到对应的文件的临时地址，然后再使用`wx.uploadFile`将图片上传到远程服务器上
 
-#### wxml 示例
-
 ```html
 <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
 ```
-
-#### js 示例
 
 ```js
 Page({
@@ -127,9 +123,11 @@ Page({
 });
 ```
 
+## 云开发示例
+
 ### 上传图片至云存储
 
-在开发中，可以利用小程序的云存储能力，将图片上传至云存储内。然后根据返回的 f`ileiId`来下载图片、删除图片和替换临时链接。
+在开发中，可以利用[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)的云存储能力，将图片上传至云存储内。然后根据返回的`fileiId`来下载图片、删除图片和替换临时链接。
 
 ```js
 // 上传图片
@@ -159,8 +157,9 @@ uploadFilePromise(fileName, chooseResult) {
     filePath: chooseResult.path
   });
 }
-
 ```
+
+## API
 
 ### Props
 

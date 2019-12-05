@@ -49,7 +49,7 @@
     "@vant/doc": "^2.5.5",
     "@vant/eslint-config": "^1.2.4",
     "@vant/icons": "1.1.15",
-    "@vant/markdown-loader": "^2.2.0",
+    "@vant/markdown-loader": "^2.3.0",
     "@vant/stylelint-config": "^1.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",

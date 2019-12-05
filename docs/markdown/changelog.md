@@ -1,5 +1,42 @@
 # 更新日志
 
+### [v1.0.0-beta.6](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.6)
+
+#### 新特性与优化
+
+##### Sidebar
+
+- 修复 SidebarItem 重渲染后 change 事件返回索引值错误
+- 修复文档错误，重命名 active 属性为 activeKey
+
+##### Stepper
+
+- 新增 disablePlus、disableMinus属性
+
+##### TreeSelect
+
+- 修复动态设置 mainActiveIndex 无效
+
+##### Overlay
+
+- 支持嵌入内容
+
+##### Image
+
+- 修复部分图片在iOS设备中无法显示
+
+##### DropdownMenu
+
+- 修复动态设置 value 无效
+
+##### Uploader
+
+- 文档增加上传云存储示例
+
+##### Rate
+
+- 修复开启 allow-half 时显示异常
+
 ### [v1.0.0-beta.5](https://github.com/youzan/vant-weapp/tree/v1.0.0-beta.5)
 
 #### 主要变动

@@ -57,6 +57,8 @@
 | input-width | 输入框宽度，须指定单位 | `String` | `30px` |
 | show-plus | 是否显示增加按钮 | `Boolean` | `true` |
 | show-minus | 是否显示减少按钮 | `Boolean` | `true` |
+| disable-plus | 是否禁用增加按钮 | `Boolean` | - |
+| disable-minus | 是否禁用减少按钮 | `Boolean` | - |
 
 ### Events
 

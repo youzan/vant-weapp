@@ -36,16 +36,18 @@ VantComponent({
     showMinus: {
       type: Boolean,
       value: true
-    }
+    },
+    disablePlus: Boolean,
+    disableMinus: Boolean
   },
 
   computed: {
     minusDisabled() {
-      return this.data.disabled || this.data.value <= this.data.min;
+      return this.data.disabled || this.data.disableMinus || this.data.value <= this.data.min;
     },
 
     plusDisabled() {
-      return this.data.disabled || this.data.value >= this.data.max;
+      return this.data.disabled || this.data.disablePlus || this.data.value >= this.data.max;
     }
   },
 

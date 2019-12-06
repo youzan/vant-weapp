@@ -27,7 +27,7 @@
       <text class="van-submit-bar__suffix-label">{{ suffixLabel }}</text>
     </view>
     <van-button
-      square
+      round
       size="large"
       type="{{ buttonType }}"
       loading="{{ loading }}"

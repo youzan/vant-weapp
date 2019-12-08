@@ -30,7 +30,7 @@
 
   <view class="van-cell__value value-class">
     <block wx:if="{{ value || value === 0 }}">{{ value }}</block>
-    <slot wx:else />
+    <slot wx:else name="default" />
   </view>
 
   <van-icon

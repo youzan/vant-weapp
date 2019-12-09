@@ -5,7 +5,7 @@ Page({
   data: {
     icons,
     active: 0,
-    demoIcon: 'success'
+    demoIcon: 'location-o'
   },
 
   onSwitch(event) {

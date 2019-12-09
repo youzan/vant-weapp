@@ -87,3 +87,19 @@
     <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
   </van-tabbar>
 </demo-block>
+
+
+<demo-block title="切换标签事件">
+  <van-tabbar
+    active="{{ active6 }}"
+    data-key="active6"
+    custom-class="tabbar"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="handleChange"
+  >
+    <van-tabbar-item icon="home-o">标签1</van-tabbar-item>
+    <van-tabbar-item icon="search">标签2</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
+  </van-tabbar>
+</demo-block>

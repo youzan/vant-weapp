@@ -35,6 +35,22 @@
 <van-icon name="chat" info="99+" />
 ```
 
+### 图标颜色
+
+设置`color`属性来控制图标颜色
+
+```html
+<van-icon name="chat" color="red" />
+```
+
+### 图标大小
+
+设置`size`属性来控制图标大小
+
+```html
+<van-icon name="chat" size="50px" />
+```
+
 ## API
 
 ### Props

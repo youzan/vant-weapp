@@ -94,8 +94,6 @@
     active="{{ active6 }}"
     data-key="active6"
     custom-class="tabbar"
-    active-color="#07c160"
-    inactive-color="#000"
     safe-area-inset-bottom="{{ false }}"
     bind:change="handleChange"
   >

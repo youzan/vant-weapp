@@ -102,6 +102,19 @@ Page({
   />
 </van-cell-group>
 ```
+### 内容对齐方式
+可以通过`input-align`属性设置内容的对齐方式
+
+```html
+ <van-cell-group>
+    <van-field
+      value="{{ username3 }}"
+      label="用户名"
+      placeholder="请输入用户名"
+      input-align="right"
+    />
+  </van-cell-group>
+```
 
 ### 高度自适应
 对于 textarea，可以通过`autosize`属性设置高度自适应

@@ -57,6 +57,42 @@ Page({
 });
 ```
 
+### 主动打开
+
+```html
+<van-swipe-cell id="swipe-cell2" right-width="{{ 65 }}" left-width="{{ 65 }}" name="示例" bind:open="onOpen" >
+    <view slot="left" class="van-swipe-cell__left">选择</view>
+    <van-cell-group>
+      <van-cell title="单元格" value="内容" />
+    </van-cell-group>
+    <view slot="right" class="van-swipe-cell__right">删除</view>
+  </van-swipe-cell>
+```
+
+```js
+Page({
+  onOpen(event) {
+    const { position, name } = event.detail;
+    switch (position) {
+      case 'left':
+        Notify({
+          type: 'primary',
+          message: `${name}${position}部分展示open事件被触发`
+        });
+        break;
+      case 'right':
+        Notify({
+          type: 'primary',
+          message: `${name}${position}部分展示open事件被触发`
+        });
+        break;
+    }
+  }
+});
+```
+
+
+
 ## API
 
 ### Props

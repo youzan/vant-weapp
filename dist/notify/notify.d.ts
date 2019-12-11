@@ -12,5 +12,8 @@ interface NotifyOptions {
     onOpened?: () => void;
     onClose?: () => void;
 }
-export default function Notify(options: NotifyOptions | string): void;
-export {};
+declare function Notify(options: NotifyOptions | string): any;
+declare namespace Notify {
+    var clear: (options?: NotifyOptions) => void;
+}
+export default Notify;

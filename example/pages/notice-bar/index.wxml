@@ -24,3 +24,17 @@
     <text slot="right-icon">[结束]</text>
   </van-notice-bar>
 </demo-block>
+
+<demo-block title="自定义滚动速率">
+  <van-notice-bar
+    text="{{ text }}"
+    speed="{{speedValue}}"
+    left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+  />
+  当前速度{{speedValue}}px/s
+  <van-slider
+    value="{{speedValue}}"
+    custom-class="slider"
+    bind:change="onChange"
+  />
+</demo-block>

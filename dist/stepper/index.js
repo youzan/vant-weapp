@@ -53,7 +53,9 @@ VantComponent({
             if (typeof newValue === 'number' && +this.data.value !== newValue) {
                 this.set({ value: newValue });
             }
-        }
+        },
+        max: 'check',
+        min: 'check',
     },
     data: {
         focus: false
@@ -64,6 +66,12 @@ VantComponent({
         });
     },
     methods: {
+        check() {
+            const newValue = this.range(this.data.value);
+            if (typeof newValue === 'number' && +this.data.value !== newValue) {
+                this.set({ value: newValue });
+            }
+        },
         onFocus(event) {
             this.$emit('focus', event.detail);
         },

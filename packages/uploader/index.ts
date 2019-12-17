@@ -6,7 +6,6 @@ VantComponent({
     disabled: Boolean,
     multiple: Boolean,
     uploadText: String,
-    useSlot: Boolean,
     useBeforeRead: Boolean,
     previewSize: {
       type: null,
@@ -19,6 +18,10 @@ VantComponent({
     accept: {
       type: String,
       value: 'image'
+    },
+    capture: {
+      type: Array,
+      value: ['album', 'camera']
     },
     fileList: {
       type: Array,
@@ -72,9 +75,9 @@ VantComponent({
       if (this.data.disabled) return;
       const {
         name = '',
-        capture = ['album', 'camera'],
-        maxCount = 100,
-        multiple = false,
+        capture,
+        maxCount,
+        multiple,
         maxSize,
         accept,
         lists,
@@ -104,43 +107,47 @@ VantComponent({
         });
       }
 
-      chooseFile.then(
-        (
-          res:
-            | WechatMiniprogram.ChooseImageSuccessCallbackResult
-            | WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
-        ) => {
-          const file = multiple ? res.tempFiles : res.tempFiles[0];
+      chooseFile
+        .then(
+          (
+            res:
+              | WechatMiniprogram.ChooseImageSuccessCallbackResult
+              | WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
+          ) => {
+            const file = multiple ? res.tempFiles : res.tempFiles[0];
 
-          // 检查文件大小
-          if (file instanceof Array) {
-            const sizeEnable = file.every(item => item.size <= maxSize);
-            if (!sizeEnable) {
+            // 检查文件大小
+            if (file instanceof Array) {
+              const sizeEnable = file.every(item => item.size <= maxSize);
+              if (!sizeEnable) {
+                this.$emit('oversize', { name });
+                return;
+              }
+            } else if (file.size > maxSize) {
               this.$emit('oversize', { name });
               return;
             }
-          } else if (file.size > maxSize) {
-            this.$emit('oversize', { name });
-            return;
-          }
 
-          // 触发上传之前的钩子函数
-          if (useBeforeRead) {
-            this.$emit('before-read', {
-              file,
-              name,
-              callback: (result: boolean) => {
-                if (result) {
-                  // 开始上传
-                  this.$emit('after-read', { file, name });
+            // 触发上传之前的钩子函数
+            if (useBeforeRead) {
+              this.$emit('before-read', {
+                file,
+                name,
+                callback: (result: boolean) => {
+                  if (result) {
+                    // 开始上传
+                    this.$emit('after-read', { file, name });
+                  }
                 }
-              }
-            });
-          } else {
-            this.$emit('after-read', { file, name });
+              });
+            } else {
+              this.$emit('after-read', { file, name });
+            }
           }
-        }
-      );
+        )
+        .catch(error => {
+          this.$emit('error', error);
+        });
     },
 
     deleteItem(event) {

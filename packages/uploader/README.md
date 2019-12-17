@@ -87,10 +87,10 @@ Page({
 
 ### 自定义上传样式
 
-将`use-slot`属性设置为`true`，通过插槽可以自定义上传区域的样式
+通过插槽可以自定义上传区域的样式
 
 ```html
-<van-uploader use-slot>
+<van-uploader>
   <van-button icon="photo" type="primary">上传图片</van-button>
 </van-uploader>
 ```
@@ -179,18 +179,20 @@ uploadFilePromise(fileName, chooseResult) {
 | max-count | 文件上传数量限制 | *number* | - | - |
 | upload-text | 上传区域文字提示 | *string* | - | - |
 | image-fit | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性 | *string* | `scaleToFill` | - |
+| use-before-read | 是否开启文件读取前事件 | *boolean* | - | - |
+
 ### Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
-| - | 自定义上传样式 |
+| - | 自定义上传区域 |
 
 ### Event
 
 | 事件名 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| bind:before-read | 文件读取前的回调函数，返回 `false` 可终止文件读取，绑定事件的同时需要将`use-before-read`属性设置为`true` | `event.detail.file`: 当前读取的文件，`event.detail.callback`: 回调函数，调用`callback(false)`终止文件读取 |
-| bind:after-read | 文件读取完成后的回调函数 | `event.detail.file`: 当前读取的文件 |
-| bind:oversize | 文件超出大小限制的回调函数 | - |
-| bind:click-preview | 点击预览图片的回调函数 | `event.detail.index`: 点击图片的序号值 |
-| bind:delete | 删除图片的回调函数 | `event.detail.index`: 删除图片的序号值 |
+| bind:before-read | 文件读取前，在回调函数中返回 `false` 可终止文件读取，绑定事件的同时需要将`use-before-read`属性设置为`true` | `event.detail.file`: 当前读取的文件，`event.detail.callback`: 回调函数，调用`callback(false)`终止文件读取 |
+| bind:after-read | 文件读取完成后 | `event.detail.file`: 当前读取的文件 |
+| bind:oversize | 文件超出大小限制 | - |
+| bind:click-preview | 点击预览图片 | `event.detail.index`: 点击图片的序号值 |
+| bind:delete | 删除图片 | `event.detail.index`: 删除图片的序号值 |

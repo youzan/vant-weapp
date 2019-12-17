@@ -38,13 +38,12 @@
 
     <!-- 上传样式 -->
     <block wx:if="{{ isInCount }}">
-      <view wx:if="{{ useSlot }}" class="van-uploader__slot" bind:tap="startUpload">
+      <view class="van-uploader__slot" bind:tap="startUpload">
         <slot />
       </view>
 
       <!-- 默认上传样式 -->
       <view
-        wx:else
         class="van-uploader__upload"
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
         bind:tap="startUpload"

@@ -9,6 +9,14 @@
     flex-wrap: wrap;
   }
 
+  &__slot:empty {
+    display: none;
+  }
+
+  &__slot:not(:empty) + &__upload {
+    display: none !important;
+  }
+
   &__upload {
     position: relative;
     display: flex;

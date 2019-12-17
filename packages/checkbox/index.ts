@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 
 function emit(target: WechatMiniprogram.Component.TrivialInstance, value: boolean | any[]) {
   target.$emit('input', value);
@@ -35,12 +34,8 @@ VantComponent({
     },
     iconSize: {
       type: null,
-      observer: 'setSizeWithUnit'
+      value: 20
     }
-  },
-
-  data: {
-    sizeWithUnit: '20px'
   },
 
   methods: {
@@ -87,12 +82,6 @@ VantComponent({
           emit(parent, parentValue);
         }
       }
-    },
-
-    setSizeWithUnit(size: string | number): void {
-      this.set({
-        sizeWithUnit: addUnit(size)
-      });
-    },
+    }
   }
 });

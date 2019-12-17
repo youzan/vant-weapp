@@ -8,12 +8,12 @@
     class="van-rate__item"
     wx:for="{{ count }}"
     wx:key="index"
-    style="padding-right: {{ index !== count - 1 ? gutterWithUnit : '' }}"
+    style="padding-right: {{ index !== count - 1 ? utils.addUnit(gutter) : '' }}"
   >
     <van-icon
       name="{{ index + 1 <= innerValue ? icon : voidIcon }}"
       class="van-rate__icon"
-      style="font-size :{{ size? sizeWithUnit : ''}}"
+      style="font-size: {{ utils.addUnit(size) }}"
       custom-class="icon-class"
       data-score="{{ index }}"
       color="{{ disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor }}"
@@ -24,7 +24,7 @@
       wx:if="{{ allowHalf }}"
       name="{{ index + 0.5 <= innerValue ? icon : voidIcon }}"
       class="{{ utils.bem('rate__icon', ['half']) }}"
-      style="font-size :{{ size? sizeWithUnit : ''}}"
+      style="font-size: {{ utils.addUnit(size) }}"
       custom-class="icon-class"
       data-score="{{ index - 0.5 }}"
       color="{{ disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor }}"

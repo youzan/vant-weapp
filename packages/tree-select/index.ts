@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   classes: [
@@ -25,8 +24,7 @@ VantComponent({
     },
     height: {
       type: [Number, String],
-      value: 300,
-      observer: 'updateHeight'
+      value: 300
     },
     max: {
       type: Number,
@@ -36,10 +34,6 @@ VantComponent({
 
   data: {
     subItems: []
-  },
-
-  created() {
-    this.updateHeight();
   },
 
   methods: {
@@ -74,12 +68,6 @@ VantComponent({
       const { children = [] } = items[mainActiveIndex] || {};
 
       return this.set({ subItems: children });
-    },
-
-    updateHeight() {
-      this.setData({
-        innerHeight: addUnit(this.data.height)
-      });
     }
   }
 });

@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { isImageFile } from './utils';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   props: {
@@ -11,8 +10,7 @@ VantComponent({
     useBeforeRead: Boolean,
     previewSize: {
       type: null,
-      value: 90,
-      observer: 'setComputedPreviewSize'
+      value: 90
     },
     name: {
       type: [Number, String],
@@ -68,12 +66,6 @@ VantComponent({
           typeof item.isImage === 'undefined' ? isImageFile(item) : item.isImage
       }));
       this.setData({ lists, isInCount: lists.length < maxCount });
-    },
-
-    setComputedPreviewSize(val) {
-      this.setData({
-        computedPreviewSize: addUnit(val)
-      });
     },
 
     startUpload() {

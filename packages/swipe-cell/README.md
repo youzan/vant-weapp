@@ -26,7 +26,7 @@
 
 ### 异步关闭
 
-当开启`async-close`时， 通过绑定`close`事件，可以自定义两侧滑动内容关闭时的行为
+当开启`async-close`时， 通过绑定`close`事件，可以自定义两侧滑动内容点击时的关闭行为
 
 ```html
 <van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose">

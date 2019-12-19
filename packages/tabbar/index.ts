@@ -1,5 +1,7 @@
 import { VantComponent } from '../common/component';
 
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
 VantComponent({
   relation: {
     name: 'tabbar-item',
@@ -11,7 +13,7 @@ VantComponent({
     },
     unlinked(target) {
       this.children = this.children.filter(
-        (item: WechatMiniprogram.Component.TrivialInstance) => item !== target
+        (item: TrivialInstance) => item !== target
       );
       this.updateChildren();
     }
@@ -60,11 +62,11 @@ VantComponent({
       }
 
       return Promise.all(
-        children.map((child: WechatMiniprogram.Component.TrivialInstance) => child.updateFromParent())
+        children.map((child: TrivialInstance) => child.updateFromParent())
       );
     },
 
-    onChange(child: WechatMiniprogram.Component.TrivialInstance) {
+    onChange(child: TrivialInstance) {
       const index = this.children.indexOf(child);
       const active = child.data.name || index;
 

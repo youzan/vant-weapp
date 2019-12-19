@@ -1,5 +1,7 @@
 import { VantComponent } from '../common/component';
 
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
 VantComponent({
   relation: {
     name: 'collapse-item',
@@ -9,7 +11,7 @@ VantComponent({
     },
     unlinked(child) {
       this.children = this.children.filter(
-        (item: WechatMiniprogram.Component.TrivialInstance) => item !== child
+        (item: TrivialInstance) => item !== child
       );
     }
   },
@@ -35,7 +37,7 @@ VantComponent({
 
   methods: {
     updateExpanded() {
-      this.children.forEach((child: WechatMiniprogram.Component.TrivialInstance) => {
+      this.children.forEach((child: TrivialInstance) => {
         child.updateExpanded();
       });
     },

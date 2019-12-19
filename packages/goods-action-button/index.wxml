@@ -5,7 +5,7 @@
   lang="{{ lang }}"
   type="{{ type }}"
   color="{{ color }}"
-  plain="{{ plain  }}"
+  plain="{{ plain }}"
   loading="{{ loading }}"
   disabled="{{ disabled }}"
   open-type="{{ openType }}"

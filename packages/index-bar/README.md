@@ -21,15 +21,19 @@
 
 ```html
 <van-index-bar scroll-top="{{ scrollTop }}">
-  <van-index-anchor index="A" />
-  <van-cell title="文本" />
-  <van-cell title="文本" />
-  <van-cell title="文本" />
+  <view>
+    <van-index-anchor index="A" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+  </view>
 
-  <van-index-anchor index="B" />
-  <van-cell title="文本" />
-  <van-cell title="文本" />
-  <van-cell title="文本" />
+  <view>
+    <van-index-anchor index="B" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+  </view>
 
   ...
 </van-index-bar>
@@ -50,16 +54,23 @@ Page({
 可以通过`index-list`属性自定义展示的索引字符列表，
 
 ```html
-<van-index-bar index-list="{{ indexList }}">
-  <van-index-anchor index="1">标题1</van-index-anchor>
-  <van-cell title="文本" />
-  <van-cell title="文本" />
-  <van-cell title="文本" />
+<van-index-bar
+  scroll-top="{{ scrollTop }}"m
+  index-list="{{ indexList }}"
+>
+  <view>
+    <van-index-anchor index="1">标题1</van-index-anchor>
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+  </view>
 
-  <van-index-anchor index="2">标题2</van-index-anchor>
-  <van-cell title="文本" />
-  <van-cell title="文本" />
-  <van-cell title="文本" />
+  <view>
+    <van-index-anchor index="2">标题2</van-index-anchor>
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+    <van-cell title="文本" />
+  </view>
 
   ...
 </van-index-bar>

@@ -18,6 +18,7 @@ VantComponent({
     color: String,
     loading: Boolean,
     disabled: Boolean,
+    plain: Boolean,
     type: {
       type: String,
       value: 'danger'
@@ -36,10 +37,19 @@ VantComponent({
 
     updateStyle() {
       const { children = [] } = this.parent;
+      const { length } = children;
       const index = children.indexOf(this);
-
+      let middle = false;
+      if (length === 1) {
+        middle = false;
+      } else if (length === 2) {
+        middle = index === 0;
+      } else {
+        middle = index === 0 || (index > 0 && index !== children.length - 1);
+      }
       this.setData({
         isFirst: index === 0,
+        isMiddle: middle,
         isLast: index === children.length - 1
       });
     }

@@ -39,17 +39,13 @@ VantComponent({
       const { children = [] } = this.parent;
       const { length } = children;
       const index = children.indexOf(this);
-      let middle = false;
-      if (length === 1) {
-        middle = false;
-      } else if (length === 2) {
-        middle = index === 0;
-      } else {
-        middle = index === 0 || (index > 0 && index !== children.length - 1);
+      let rightBorderLess = false;
+      if (length > 1) {
+        rightBorderLess = index !== children.length - 1;
       }
       this.setData({
         isFirst: index === 0,
-        isMiddle: middle,
+        rightBorderLess,
         isLast: index === children.length - 1
       });
     }

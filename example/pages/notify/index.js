@@ -27,5 +27,12 @@ Page({
       type,
       message: '通知内容'
     });
+  },
+
+  showSafe() {
+    Notify({
+      message: '通知内容',
+      safeAreaInsetTop: true
+    });
   }
 });

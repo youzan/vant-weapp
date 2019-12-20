@@ -53,6 +53,11 @@ export default {
               title: '内置样式'
             },
             {
+              path: '/custom-style',
+              title: '样式覆盖',
+              md: true
+            },
+            {
               path: '/theme',
               title: '定制主题',
               md: true

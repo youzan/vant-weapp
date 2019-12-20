@@ -20,8 +20,8 @@ VantComponent({
       value: 'image'
     },
     sizeType: {
-      type: String,
-      value: ['original', 'compressed']
+      type: Array,
+      value: ['original']
     },
     capture: {
       type: Array,

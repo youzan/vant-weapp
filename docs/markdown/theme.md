@@ -2,7 +2,7 @@
 
 ### 背景知识
 
-由于小程序基于 [Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom?hl=zh-cn) 来实现自定义组件，所以 Vant Weapp 使用 [Css 变量](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties) 来实现定制主题。链接中的内容可以帮助你对这两个概念有基本的认识，避免许多不必要的困扰。
+小程序基于 [Shadow DOM](https://developers.google.com/web/fundamentals/web-components/shadowdom?hl=zh-cn) 来实现自定义组件，所以 Vant Weapp 使用与之配套的 [Css 变量](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_custom_properties) 来实现定制主题。链接中的内容可以帮助你对这两个概念有基本的认识，避免许多不必要的困扰。
 
 Css变量 的兼容性要求可以在 [这里](https://caniuse.com/#feat=css-variables) 查看。对于不支持 Css变量 的设备，定制主题将不会生效，不过不必担心，默认样式仍会生效。
 

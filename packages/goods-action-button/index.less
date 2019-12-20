@@ -6,7 +6,6 @@
 }
 
 .van-goods-action-button {
-  border: none !important;
   .theme(height, '@goods-action-button-height') !important;
   .theme(font-weight, '@font-weight-bold') !important;
   .theme(line-height, '@goods-action-button-height') !important;
@@ -31,6 +30,18 @@
 
   &--danger {
     .theme(background, '@goods-action-button-danger-color');
+  }
+
+  &--ordinary {
+    border: none !important;
+  }
+
+  &--plain {
+    .theme(background, '@goods-action-button-plain-color');
+  }
+
+  &--no-right-border {
+    border-right-width: 0px !important;
   }
 
   @media (max-width: 321px) {

@@ -81,6 +81,19 @@ Page({
   <van-goods-action-button color="#7232dd" text="立即购买" />
 </van-goods-action>
 ```
+### 朴素按钮
+
+通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
+
+```html
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-button color="#7232dd"  text="加入购物" type="warning" />
+  <van-goods-action-button plain color="#7232dd" text="立即购买" />
+</van-goods-action>
+```
 
 ## API
 
@@ -121,6 +134,7 @@ Page({
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
 | id | 标识符 | *string* | - | - |
 | type | 按钮类型，可选值为 `primary` `warning` `danger` | *string* | `danger` | - |
+| plain | 是否为朴素按钮 | *boolean* | `false` | - |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | *string* | `normal` | - |
 | disabled | 是否禁用按钮 | *boolean* | `false` | - |
 | loading | 是否显示为加载状态 | *boolean* | `false` | - |

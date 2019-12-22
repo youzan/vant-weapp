@@ -7,6 +7,9 @@ Page({
     radio3: '1',
     radio4: '1',
     radio5: '1',
+    radioSize: '1',
+    radioLabel: '1',
+    radioShape: '1',
     icon: {
       normal:
         'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',

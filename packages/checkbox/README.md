@@ -44,6 +44,14 @@ Page({
 </van-checkbox>
 ```
 
+### 禁用文本点击
+
+通过设置`label-disabled`属性可以禁用复选框文本点击
+
+```html
+<van-checkbox value="{{ checked }}" icon-disabled>复选框</van-checkbox>
+```
+
 ### 自定义形状
 
 将`shape`属性设置为`square`，复选框的形状会变成方形
@@ -62,6 +70,14 @@ Page({
 <van-checkbox value="{{ checked }}" checked-color="#07c160" bind:change="onChange">
   复选框
 </van-checkbox>
+```
+
+### 自定义大小
+
+通过`icon-size`属性可以自定义图标的大小
+
+```html
+<van-checkbox value="{{ checked }}" icon-size="25px">复选框</van-checkbox>
 ```
 
 ### 自定义图标

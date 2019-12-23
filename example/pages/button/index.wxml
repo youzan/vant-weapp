@@ -53,4 +53,9 @@
     <van-button color="#7232dd" class="demo-margin-right" plain>单色按钮</van-button>
     <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)">渐变色按钮</van-button>
   </demo-block>
+
+  <demo-block title="块级元素按钮" padding>
+    <van-button type="primary" custom-class="demo-margin-bottom">普通按钮</van-button>
+    <van-button type="primary" block>块级元素按钮</van-button>
+  </demo-block>
 </demo-section>

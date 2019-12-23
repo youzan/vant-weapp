@@ -26,6 +26,18 @@
   </van-checkbox>
 </demo-block>
 
+<demo-block title="禁用复选框文本点击">
+  <van-checkbox
+    label-disabled
+    value="{{ checkboxLabel }}"
+    data-key="checkboxLabel"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    复选框
+  </van-checkbox>
+</demo-block>
+
 <demo-block title="自定义形状">
   <van-checkbox
     value="{{ checkboxShape }}"
@@ -43,6 +55,18 @@
     value="{{ checkbox2 }}"
     data-key="checkbox2"
     checked-color="#07c160"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    复选框
+  </van-checkbox>
+</demo-block>
+
+<demo-block title="自定义大小">
+  <van-checkbox
+    icon-size="25px"
+    value="{{ checkboxSize }}"
+    data-key="checkboxSize"
     custom-class="demo-checkbox"
     bind:change="onChange"
   >

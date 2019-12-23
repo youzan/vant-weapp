@@ -5,6 +5,8 @@ Page({
     checkbox1: true,
     checkbox2: true,
     checkbox3: true,
+    checkboxLabel: true,
+    checkboxSize: true,
     checkboxShape: true,
     list: ['a', 'b', 'c'],
     result: ['a', 'b'],

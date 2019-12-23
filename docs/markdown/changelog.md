@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v1.0.1](https://github.com/youzan/vant-weapp/tree/v1.0.1)
+`2019-12-23`
+
+**Features**
+
+- Uploader: 新增 sizeType 属性 [\#2563](https://github.com/youzan/vant-weapp/pull/2563)
+- GoodsActionButton: 新增 plain 属性 [\#2559](https://github.com/youzan/vant-weapp/pull/2559)
+- Uploader: 去除 use-slot 属性 [\#2551](https://github.com/youzan/vant-weapp/pull/2551)
+- 新增样式覆盖说明文档 [\#2566](https://github.com/youzan/vant-weapp/pull/2566)
+
+**Improvements**
+
+- 使用 nextTick 优化部分异步逻辑 [\#2561](https://github.com/youzan/vant-weapp/pull/2561)
+- wxs 新增 addUnit 方法以减少 setData 调用次数 [\#2550](https://github.com/youzan/vant-weapp/pull/2550)
+
+**Bug Fixes**
+
+- Tag: 修复未依赖 van-icon 组件 [\#2579](https://github.com/youzan/vant-weapp/pull/2579)
+- Notify: 修复 safeAreaInsetTop 不生效 [\#2558](https://github.com/youzan/vant-weapp/pull/2558)
+- Uploader: 修复 capture 属性不生效 [\#2551](https://github.com/youzan/vant-weapp/pull/2551)
+
 ### [v1.0.0](https://github.com/youzan/vant-weapp/tree/v1.0.0)
 `2019-12-11`
 

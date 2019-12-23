@@ -11,7 +11,8 @@ Page({
     fileList4: [],
     fileList5: [],
     fileList6: [],
-    cloudPath: []
+    cloudPath: [],
+    fileList7: []
   },
 
   beforeRead(event) {

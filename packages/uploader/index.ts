@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { isImageFile } from './utils';
+import { isImageFile, isVideo } from './utils';
 
 VantComponent({
   props: {
@@ -55,6 +55,18 @@ VantComponent({
     imageFit: {
       type: String,
       value: 'scaleToFill'
+    },
+    camera: {
+      type: String,
+      value: 'back'
+    },
+    compressed: {
+      type: Boolean,
+      value: true
+    },
+    maxDuration: {
+      type: Number,
+      value: 60
     }
   },
 
@@ -86,6 +98,9 @@ VantComponent({
         accept,
         sizeType,
         lists,
+        camera,
+        compressed,
+        maxDuration,
         useBeforeRead = false // 是否定义了 beforeRead
       } = this.data;
 
@@ -98,6 +113,17 @@ VantComponent({
             count: multiple ? (newMaxCount > 9 ? 9 : newMaxCount) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
             sourceType: capture, // 选择图片的来源，相册还是相机
             sizeType,
+            success: resolve,
+            fail: reject
+          });
+        });
+      } else if (accept === 'video') {
+        chooseFile = new Promise((resolve, reject) => {
+          wx.chooseVideo({
+            sourceType: capture,
+            compressed,
+            maxDuration,
+            camera,
             success: resolve,
             fail: reject
           });
@@ -119,8 +145,18 @@ VantComponent({
             res:
               | WechatMiniprogram.ChooseImageSuccessCallbackResult
               | WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
+              | WechatMiniprogram.ChooseVideoSuccessCallbackResult
           ) => {
-            const file = multiple ? res.tempFiles : res.tempFiles[0];
+            let file = null;
+
+            if (isVideo(res, accept)) {
+              file = {
+                path: res.tempFilePath,
+                ...res
+              };
+            } else {
+              file = multiple ? res.tempFiles : res.tempFiles[0];
+            }
 
             // 检查文件大小
             if (file instanceof Array) {

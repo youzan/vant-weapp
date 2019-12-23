@@ -21,7 +21,7 @@ VantComponent({
     },
     sizeType: {
       type: Array,
-      value: ['original']
+      value: ['original', 'compressed']
     },
     capture: {
       type: Array,

@@ -19,6 +19,10 @@ VantComponent({
       type: String,
       value: 'image'
     },
+    sizeType: {
+      type: Array,
+      value: ['original', 'compressed']
+    },
     capture: {
       type: Array,
       value: ['album', 'camera']
@@ -80,6 +84,7 @@ VantComponent({
         multiple,
         maxSize,
         accept,
+        sizeType,
         lists,
         useBeforeRead = false // 是否定义了 beforeRead
       } = this.data;
@@ -92,6 +97,7 @@ VantComponent({
           wx.chooseImage({
             count: multiple ? (newMaxCount > 9 ? 9 : newMaxCount) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
             sourceType: capture, // 选择图片的来源，相册还是相机
+            sizeType,
             success: resolve,
             fail: reject
           });

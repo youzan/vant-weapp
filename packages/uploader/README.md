@@ -167,6 +167,7 @@ uploadFilePromise(fileName, chooseResult) {
 |-----------|-----------|-----------|-----------|-----------|
 | name | 标识符，可以在回调函数的第二项参数中获取 | *string \| number* | - | - |
 | accept | 接受的文件类型, 可选值为`all` `image` `file` | *string* | `image` | - |
+| sizeType | 所选的图片的尺寸, 当`accept`为`image`类型时设置所选图片的尺寸可选值为`original` `compressed`| *string[]* | `['original','compressed']` | - |
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *string \| number* | `80px` | - |
 | preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` | - |
 | preview-full-image | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` | - |

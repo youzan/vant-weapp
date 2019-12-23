@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { GREEN } from '../common/color';
+import { GREEN, GRAY_DARK } from '../common/color';
 VantComponent({
     props: {
         icon: String,
@@ -12,6 +12,10 @@ VantComponent({
         activeColor: {
             type: String,
             value: GREEN
+        },
+        inactiveColor: {
+            type: String,
+            value: GRAY_DARK
         },
         activeIcon: {
             type: String,

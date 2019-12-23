@@ -1,7 +1,6 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
-import { addUnit } from '../common/utils';
 import { GRAY, BLUE } from '../common/color';
 VantComponent({
     mixins: [button, openType],
@@ -19,10 +18,7 @@ VantComponent({
         showCancelButton: Boolean,
         closeOnClickOverlay: Boolean,
         confirmButtonOpenType: String,
-        width: {
-            type: null,
-            observer: 'setWidthWithUnit'
-        },
+        width: null,
         zIndex: {
             type: Number,
             value: 2000
@@ -109,11 +105,6 @@ VantComponent({
             if (callback) {
                 callback(this);
             }
-        },
-        setWidthWithUnit(val) {
-            this.setData({
-                widthWithUnit: addUnit(val)
-            });
         }
     }
 });

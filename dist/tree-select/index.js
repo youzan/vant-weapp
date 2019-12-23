@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 VantComponent({
     classes: [
         'main-item-class',
@@ -22,8 +21,7 @@ VantComponent({
         },
         height: {
             type: [Number, String],
-            value: 300,
-            observer: 'updateHeight'
+            value: 300
         },
         max: {
             type: Number,
@@ -32,9 +30,6 @@ VantComponent({
     },
     data: {
         subItems: []
-    },
-    created() {
-        this.updateHeight();
     },
     methods: {
         // 当一个子项被选择时
@@ -64,11 +59,6 @@ VantComponent({
             const { items, mainActiveIndex } = this.data;
             const { children = [] } = items[mainActiveIndex] || {};
             return this.set({ subItems: children });
-        },
-        updateHeight() {
-            this.setData({
-                innerHeight: addUnit(this.data.height)
-            });
         }
     }
 });

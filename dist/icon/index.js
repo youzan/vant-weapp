@@ -1,13 +1,9 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 VantComponent({
     props: {
         dot: Boolean,
         info: null,
-        size: {
-            type: null,
-            observer: 'setSizeWithUnit'
-        },
+        size: null,
         color: String,
         customStyle: String,
         classPrefix: {
@@ -23,17 +19,9 @@ VantComponent({
             }
         }
     },
-    data: {
-        sizeWithUnit: null,
-    },
     methods: {
         onClick() {
             this.$emit('click');
-        },
-        setSizeWithUnit(size) {
-            this.setData({
-                sizeWithUnit: addUnit(size)
-            });
         }
     }
 });

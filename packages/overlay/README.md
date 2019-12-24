@@ -20,7 +20,7 @@
 
 ```html
 <van-button type="primary" bind:click="onClickShow">显示遮罩层</van-button>
-<van-overlay show="{{ show }}" bind:click="onClickHide"/>
+<van-overlay show="{{ show }}" mask="{{ mask }}" bind:click="onClickHide"/>
 ```
 
 ```js
@@ -45,7 +45,7 @@ Page({
 
 ```html
 <van-button type="primary" bind:click="onClickShow">嵌入内容</van-button>
-<van-overlay show="{{ show }}" bind:click="onClickHide">
+<van-overlay show="{{ show }}" mask="{{ mask }}" bind:click="onClickHide">
   <view class="wrapper">
     <view class="block" catch:tap="noop" />
   </view>
@@ -90,6 +90,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | show | 是否展示遮罩层 | *boolean* | `false` | - |
+| mask | 是否展示带有透明度的背景 | *boolean* | `false` | - |
 | z-index | z-index 层级 | *string \| number* | `1` | - |
 | duration | 动画时长，单位秒 | *string \| number* | `0.3` | - |
 | class-name | 自定义类名 | *string* | - | - |

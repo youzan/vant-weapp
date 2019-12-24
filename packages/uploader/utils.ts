@@ -29,3 +29,10 @@ export function isImageFile(item: File): boolean {
 
   return false;
 }
+
+export function isVideo(
+  res,
+  accept
+): res is WechatMiniprogram.ChooseVideoSuccessCallbackResult {
+  return accept === 'video';
+}

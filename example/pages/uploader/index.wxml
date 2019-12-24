@@ -8,6 +8,16 @@
   />
 </demo-block>
 
+<demo-block title="上传视频" padding>
+  <van-uploader
+    name="7"
+    accept="video"
+    file-list="{{ fileList7 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+  />
+</demo-block>
+
 <demo-block title="文件预览" padding>
   <van-uploader
     name="2"

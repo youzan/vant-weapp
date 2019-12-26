@@ -25,6 +25,13 @@ npm i vant-weapp -S --production
 
 <img style="width: 500px;" src="https://img.yzcdn.cn/public_files/2019/08/15/fa0549210055976cb63798503611ce3d.png" />
 
+### 示例工程
+
+我们提供了一个[示例工程](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+
+- 基于 Vant Weapp 搭建小程序应用
+- 样式覆盖方案
+
 ## 使用
 
 ### 引入组件

@@ -14,6 +14,16 @@
   />
 </demo-block>
 
+<demo-block title="显示矩形头像">
+  <van-skeleton
+    title
+    avatar
+    avatar-shape="rectangle"
+    avatar-size="100px"
+    row="3"
+  />
+</demo-block>
+
 <demo-block title="展示子组件">
   <van-switch
     checked="{{ show }}"

@@ -7,7 +7,7 @@
   <view
     wx:if="{{ avatar }}"
     class="{{ utils.bem('skeleton__avatar', [avatarShape])}}"
-    style="{{ 'width:' + avatarSize + ';height:' + avatarSize }}"
+    style="{{ 'width:' + avatarSize + ';height:' + (avatarShape === 'rectangle' ? '': avatarSize) }}"
   />
   <view class="{{ utils.bem('skeleton__content')}}">
     <view

@@ -30,6 +30,20 @@
 <van-skeleton title avatar row="3" />
 ```
 
+### 显示矩形头像
+
+通过`avatar`属性显示头像占位图，通过`avatar-shape`属性配置头像形状，通过`avatar-size`配置矩形宽度
+
+```html
+<van-skeleton
+  title
+  avatar
+  avatar-shape="rectangle"
+  avatar-size="100px"
+  row="3"
+/>
+```
+
 ### 展示子组件
 
 将`loading`属性设置成`false`表示内容加载完成，此时会隐藏占位图，并显示`Skeleton`的子组件
@@ -62,8 +76,6 @@ Page({
 
 ### Props
 
-### Props
-
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | row | 段落占位图行数 | *number* | `0` | - |
@@ -72,6 +84,6 @@ Page({
 | title-width | 标题占位图宽度 | *string \| number* | `40%` | - |
 | avatar | 是否显示头像占位图 | *boolean* | `false` | - |
 | avatar-size | 头像占位图大小 | *string \| number* | `32px` | - |
-| avatar-shape | 头像占位图形状，可选值为`square` | *string* | `round` | - |
+| avatar-shape | 头像占位图形状，可选值为`square`，`rectangle` | *string* | `round` | - |
 | loading | 是否显示占位图，传`false`时会展示子组件内容 | *boolean* | `true` | - |
 | animate | 是否开启动画 | *boolean* | `true` | - |

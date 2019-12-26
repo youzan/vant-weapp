@@ -87,16 +87,18 @@ VantComponent({
 
     setAnchorsRect() {
       return Promise.all(
-        this.children.map(anchor => (
-          anchor.getRect('.van-index-anchor-wrapper').then(
-            (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-              Object.assign(anchor, {
-                height: rect.height,
-                top: rect.top + this.data.scrollTop
-              });
-            }
-          )
-        ))
+        this.children.map(anchor =>
+          anchor
+            .getRect('.van-index-anchor-wrapper')
+            .then(
+              (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+                Object.assign(anchor, {
+                  height: rect.height,
+                  top: rect.top + this.data.scrollTop
+                });
+              }
+            )
+        )
       );
     },
 
@@ -135,23 +137,17 @@ VantComponent({
     },
 
     getAnchorRect(anchor) {
-      return anchor.getRect('.van-index-anchor-wrapper').then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => (
-          {
-            height: rect.height,
-            top: rect.top
-          }
-        )
-      );
+      return anchor
+        .getRect('.van-index-anchor-wrapper')
+        .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => ({
+          height: rect.height,
+          top: rect.top
+        }));
     },
 
     getActiveAnchorIndex() {
       const { children } = this;
-      const {
-        sticky,
-        scrollTop,
-        stickyOffsetTop
-      } = this.data;
+      const { sticky, scrollTop, stickyOffsetTop } = this.data;
 
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
@@ -166,9 +162,7 @@ VantComponent({
     },
 
     onScroll() {
-      const {
-        children = []
-      } = this;
+      const { children = [] } = this;
 
       if (!children.length) {
         return;
@@ -195,7 +189,8 @@ VantComponent({
         let isActiveAnchorSticky = false;
 
         if (active !== -1) {
-          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
+          isActiveAnchorSticky =
+            children[active].top <= stickyOffsetTop + scrollTop;
         }
 
         children.forEach((item, index) => {
@@ -230,9 +225,10 @@ VantComponent({
             const currentAnchor = children[index];
 
             const currentOffsetTop = currentAnchor.top;
-            const targetOffsetTop = index === children.length - 1
-              ? this.top
-              : children[index + 1].top;
+            const targetOffsetTop =
+              index === children.length - 1
+                ? this.top
+                : children[index + 1].top;
 
             const parentOffsetHeight = targetOffsetTop - currentOffsetTop;
             const translateY = parentOffsetHeight - currentAnchor.height;
@@ -257,7 +253,7 @@ VantComponent({
               data: {
                 active: false,
                 anchorStyle: '',
-                wrapperStyle: '',
+                wrapperStyle: ''
               }
             });
           }
@@ -295,14 +291,18 @@ VantComponent({
 
       this.scrollToAnchorIndex = index;
 
-      const anchor = this.children.filter(item => item.data.index === this.data.indexList[index])[0];
+      const anchor = this.children.find(
+        (item: WechatMiniprogram.Component.TrivialInstance) =>
+          item.data.index === this.data.indexList[index]
+      );
 
-      this.$emit('select', anchor.data.index);
-
-      anchor && wx.pageScrollTo({
-        duration: 0,
-        scrollTop: anchor.top
-      });
+      if (anchor) {
+        this.$emit('select', anchor.data.index);
+        wx.pageScrollTo({
+          duration: 0,
+          scrollTop: anchor.top
+        });
+      }
     }
   }
 });

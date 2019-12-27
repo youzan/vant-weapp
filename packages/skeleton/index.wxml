@@ -6,20 +6,20 @@
 >
   <view
     wx:if="{{ avatar }}"
-    class="{{ utils.bem('skeleton__avatar', [avatarShape])}}"
+    class="avatar-class {{ utils.bem('skeleton__avatar', [avatarShape])}}"
     style="{{ 'width:' + avatarSize + ';height:' + avatarSize }}"
   />
   <view class="{{ utils.bem('skeleton__content')}}">
     <view
       wx:if="{{ title }}"
-      class="{{ utils.bem('skeleton__title') }}"
+      class="title-class {{ utils.bem('skeleton__title') }}"
       style="{{ 'width:' + titleWidth }}"
     />
     <view
       wx:for="{{ row }}"
       wx:key="index"
       wx:for-index="index"
-      class="{{ utils.bem('skeleton__row') }}"
+      class="row-class {{ utils.bem('skeleton__row') }}"
       style="{{ 'width:' + (isArray ? rowWidth[index] : rowWidth) }}"
     />
   </view>

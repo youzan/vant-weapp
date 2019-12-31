@@ -76,7 +76,8 @@ VantComponent({
     methods: {
         onInput(event) {
             const { value = '' } = event.detail || {};
-            this.setData({ value }, () => {
+            this.setData({ value });
+            wx.nextTick(() => {
                 this.emitChange(value);
             });
         },
@@ -92,7 +93,8 @@ VantComponent({
             this.$emit('click-icon');
         },
         onClear() {
-            this.setData({ value: '' }, () => {
+            this.setData({ value: '' });
+            wx.nextTick(() => {
                 this.emitChange('');
                 this.$emit('clear', '');
             });
@@ -103,6 +105,7 @@ VantComponent({
         emitChange(value) {
             this.$emit('input', value);
             this.$emit('change', value);
-        }
+        },
+        noop() { }
     }
 });

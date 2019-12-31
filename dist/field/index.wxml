@@ -70,7 +70,7 @@
       size="16px"
       name="clear"
       class="van-field__clear-root van-field__icon-root"
-      bindtouchstart="onClear"
+      catch:touchstart="onClear"
     />
     <view class="van-field__icon-container" bind:tap="onClickIcon">
       <van-icon

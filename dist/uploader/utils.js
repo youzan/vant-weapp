@@ -14,3 +14,6 @@ export function isImageFile(item) {
     }
     return false;
 }
+export function isVideo(res, accept) {
+    return accept === 'video';
+}

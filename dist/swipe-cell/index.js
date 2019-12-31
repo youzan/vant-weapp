@@ -8,11 +8,21 @@ VantComponent({
         disabled: Boolean,
         leftWidth: {
             type: Number,
-            value: 0
+            value: 0,
+            observer(leftWidth = 0) {
+                if (this.offset > 0) {
+                    this.swipeMove(leftWidth);
+                }
+            }
         },
         rightWidth: {
             type: Number,
-            value: 0
+            value: 0,
+            observer(rightWidth = 0) {
+                if (this.offset < 0) {
+                    this.swipeMove(-rightWidth);
+                }
+            }
         },
         asyncClose: Boolean,
         name: {

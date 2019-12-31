@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { isImageFile } from './utils';
+import { isImageFile, isVideo } from './utils';
 VantComponent({
     props: {
         disabled: Boolean,
@@ -54,6 +54,18 @@ VantComponent({
         imageFit: {
             type: String,
             value: 'scaleToFill'
+        },
+        camera: {
+            type: String,
+            value: 'back'
+        },
+        compressed: {
+            type: Boolean,
+            value: true
+        },
+        maxDuration: {
+            type: Number,
+            value: 60
         }
     },
     data: {
@@ -70,7 +82,7 @@ VantComponent({
         startUpload() {
             if (this.data.disabled)
                 return;
-            const { name = '', capture, maxCount, multiple, maxSize, accept, sizeType, lists, useBeforeRead = false // 是否定义了 beforeRead
+            const { name = '', capture, maxCount, multiple, maxSize, accept, sizeType, lists, camera, compressed, maxDuration, useBeforeRead = false // 是否定义了 beforeRead
              } = this.data;
             let chooseFile = null;
             const newMaxCount = maxCount - lists.length;
@@ -81,6 +93,18 @@ VantComponent({
                         count: multiple ? (newMaxCount > 9 ? 9 : newMaxCount) : 1,
                         sourceType: capture,
                         sizeType,
+                        success: resolve,
+                        fail: reject
+                    });
+                });
+            }
+            else if (accept === 'video') {
+                chooseFile = new Promise((resolve, reject) => {
+                    wx.chooseVideo({
+                        sourceType: capture,
+                        compressed,
+                        maxDuration,
+                        camera,
                         success: resolve,
                         fail: reject
                     });
@@ -98,7 +122,13 @@ VantComponent({
             }
             chooseFile
                 .then((res) => {
-                const file = multiple ? res.tempFiles : res.tempFiles[0];
+                let file = null;
+                if (isVideo(res, accept)) {
+                    file = Object.assign({ path: res.tempFilePath }, res);
+                }
+                else {
+                    file = multiple ? res.tempFiles : res.tempFiles[0];
+                }
                 // 检查文件大小
                 if (file instanceof Array) {
                     const sizeEnable = file.every(item => item.size <= maxSize);

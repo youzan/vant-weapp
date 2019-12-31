@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v1.0.2](https://github.com/youzan/vant-weapp/tree/v1.0.2)
+`2019-12-31`
+
+**Features**
+
+- Skeleton: 新增外部样式类`row-class``avatar-class``title-class` [\#2612](https://github.com/youzan/vant-weapp/pull/2612)
+- SwipeCell: 支持动态修改`width`属性 [\#2607](https://github.com/youzan/vant-weapp/pull/2607)
+- Uploader: 新增`camera``compressed``maxDuration`属性 [\#2584](https://github.com/youzan/vant-weapp/pull/2584)
+
+**Improvements**
+- Tab: 优化弹性滚动效果 [\#2606](https://github.com/youzan/vant-weapp/pull/2606)
+
+**Bug Fixes**
+
+- IndexBar: 修复字母未全部定义时click事件报错 [\#2605](https://github.com/youzan/vant-weapp/pull/2605)
+- Field: 修复点击清除图标后下一次点击无效 [\#2602](https://github.com/youzan/vant-weapp/pull/2602)
+
 ### [v1.0.1](https://github.com/youzan/vant-weapp/tree/v1.0.1)
 `2019-12-23`
 

@@ -2,6 +2,8 @@ import { VantComponent } from '../common/component';
 import { GREEN, GRAY_DARK } from '../common/color';
 
 VantComponent({
+  classes: ['desc-class'],
+
   props: {
     icon: String,
     steps: Array,

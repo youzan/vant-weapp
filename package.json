@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "author": "youzan",
   "license": "MIT",
-  "miniprogram": "dist",
+  "miniprogram": "lib",
   "description": "轻量、可靠的小程序 UI 组件库",
   "publishConfig": {
     "access": "public"

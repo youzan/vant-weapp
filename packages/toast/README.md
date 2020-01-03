@@ -69,6 +69,18 @@ const timer = setInterval(() => {
 <van-toast id="custom-selector" />
 ```
 
+### OnClose回调函数
+
+```javascript
+Toast({
+  type: 'success',
+  message: '提交成功',
+  onClose: () => {
+    console.log('执行OnClose函数')
+  }
+});
+```
+
 ## API
 
 ### 方法

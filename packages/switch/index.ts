@@ -7,7 +7,13 @@ VantComponent({
   classes: ['node-class'],
 
   props: {
-    checked: null,
+    checked: {
+      type: null,
+      observer(value) {
+        const loadingColor = this.getLoadingColor(value);
+        this.setData({ value, loadingColor });
+      }
+    },
     loading: Boolean,
     disabled: Boolean,
     activeColor: String,
@@ -23,13 +29,6 @@ VantComponent({
     inactiveValue: {
       type: null,
       value: false
-    }
-  },
-
-  watch: {
-    checked(value) {
-      const loadingColor = this.getLoadingColor(value);
-      this.setData({ value, loadingColor });
     }
   },
 

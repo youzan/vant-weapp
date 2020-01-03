@@ -9,7 +9,12 @@ VantComponent({
   mixins: [button, openType],
 
   props: {
-    show: Boolean,
+    show: {
+      type: Boolean,
+      observer(show: boolean) {
+        !show && this.stopLoading();
+      }
+    },
     title: String,
     message: String,
     useSlot: Boolean,
@@ -61,12 +66,6 @@ VantComponent({
     loading: {
       confirm: false,
       cancel: false
-    }
-  },
-
-  watch: {
-    show(show: boolean) {
-      !show && this.stopLoading();
     }
   },
 

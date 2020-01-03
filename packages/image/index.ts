@@ -16,7 +16,15 @@ VantComponent({
   classes: ['custom-class', 'loading-class', 'error-class', 'image-class'],
 
   props: {
-    src: String,
+    src: {
+      type: String,
+      observer() {
+        this.setData({
+          error: false,
+          loading: true
+        });
+      }
+    },
     round: Boolean,
     width: {
       type: null,
@@ -49,15 +57,6 @@ VantComponent({
   data: {
     error: false,
     loading: true
-  },
-
-  watch: {
-    src() {
-      this.setData({
-        error: false,
-        loading: true
-      });
-    }
   },
 
   mounted() {

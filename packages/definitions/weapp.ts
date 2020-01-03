@@ -92,13 +92,6 @@ export namespace Weapp {
   ) => void;
 
   /**
-   * watch定义
-   */
-  export interface WatchOption<Instance> {
-    [name: string]: string | Observer<Instance, any>
-  }
-
-  /**
    * methods定义，miniprogram-api-typings缺少this定义
    */
   export interface MethodOption<Instance> {

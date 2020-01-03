@@ -17,11 +17,39 @@ VantComponent({
   classes: ['input-class', 'plus-class', 'minus-class'],
 
   props: {
-    value: null,
+    value: {
+      type: null,
+      observer(value) {
+        if (value === '') {
+          return;
+        }
+
+        const newValue = this.range(value);
+
+        if (typeof newValue === 'number' && +this.data.value !== newValue) {
+          this.setData({ value: newValue });
+        }
+      },
+    },
     integer: Boolean,
     disabled: Boolean,
-    inputWidth: null,
-    buttonSize: null,
+    inputWidth: {
+      type: null,
+      observer() {
+        this.setData({
+          inputStyle: this.computeInputStyle()
+        });
+      },
+    },
+    buttonSize: {
+      type: null,
+      observer() {
+        this.setData({
+          inputStyle: this.computeInputStyle(),
+          buttonStyle: this.computeButtonStyle()
+        });
+      }
+    },
     asyncChange: Boolean,
     disableInput: Boolean,
     decimalLength: {
@@ -50,33 +78,6 @@ VantComponent({
     },
     disablePlus: Boolean,
     disableMinus: Boolean
-  },
-
-  watch: {
-    value(value) {
-      if (value === '') {
-        return;
-      }
-
-      const newValue = this.range(value);
-
-      if (typeof newValue === 'number' && +this.data.value !== newValue) {
-        this.setData({ value: newValue });
-      }
-    },
-
-    inputWidth() {
-      this.set({
-        inputStyle: this.computeInputStyle()
-      });
-    },
-
-    buttonSize() {
-      this.set({
-        inputStyle: this.computeInputStyle(),
-        buttonStyle: this.computeButtonStyle()
-      });
-    }
   },
 
   data: {

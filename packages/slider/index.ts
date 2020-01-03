@@ -25,17 +25,14 @@ VantComponent({
     },
     value: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(value: number) {
+        this.updateValue(value, false);
+      }
     },
     barHeight: {
       type: null,
       value: '2px'
-    }
-  },
-
-  watch: {
-    value(value: number) {
-      this.updateValue(value, false);
     }
   },
 

@@ -82,8 +82,9 @@
 
 <demo-block title="垂直居中">
   <van-cell
-    title="单元格"
-    value="多行内容多行内容多行内容多行内容"
     center
+    title="单元格"
+    value="内容"
+    label="描述信息"
   />
 </demo-block>

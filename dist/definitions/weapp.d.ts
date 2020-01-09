@@ -81,12 +81,6 @@ export declare namespace Weapp {
      */
     type Observer<Instance, T> = (this: Instance, newVal: T, oldVal: T, changedPath: Array<string | number>) => void;
     /**
-     * watch定义
-     */
-    export interface WatchOption<Instance> {
-        [name: string]: string | Observer<Instance, any>;
-    }
-    /**
      * methods定义，miniprogram-api-typings缺少this定义
      */
     export interface MethodOption<Instance> {

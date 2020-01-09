@@ -14,7 +14,10 @@ VantComponent({
         },
         defaultIndex: {
             type: Number,
-            value: 0
+            value: 0,
+            observer(value) {
+                this.setIndex(value);
+            }
         }
     },
     data: {
@@ -33,11 +36,6 @@ VantComponent({
         }).then(() => {
             this.setIndex(defaultIndex);
         });
-    },
-    watch: {
-        defaultIndex(value) {
-            this.setIndex(value);
-        }
     },
     methods: {
         getCount() {

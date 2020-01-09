@@ -5,7 +5,12 @@ import { GRAY, BLUE } from '../common/color';
 VantComponent({
     mixins: [button, openType],
     props: {
-        show: Boolean,
+        show: {
+            type: Boolean,
+            observer(show) {
+                !show && this.stopLoading();
+            }
+        },
         title: String,
         message: String,
         useSlot: Boolean,
@@ -56,11 +61,6 @@ VantComponent({
         loading: {
             confirm: false,
             cancel: false
-        }
-    },
-    watch: {
-        show(show) {
-            !show && this.stopLoading();
         }
     },
     methods: {

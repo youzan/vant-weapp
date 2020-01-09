@@ -5,7 +5,12 @@ VantComponent({
     props: {
         text: {
             type: String,
-            value: ''
+            value: '',
+            observer() {
+                wx.nextTick(() => {
+                    this.init();
+                });
+            },
         },
         mode: {
             type: String,
@@ -25,7 +30,12 @@ VantComponent({
         },
         speed: {
             type: Number,
-            value: 50
+            value: 50,
+            observer() {
+                wx.nextTick(() => {
+                    this.init();
+                });
+            }
         },
         scrollable: {
             type: Boolean,
@@ -47,14 +57,6 @@ VantComponent({
     },
     data: {
         show: true
-    },
-    watch: {
-        text() {
-            this.setData({}, this.init);
-        },
-        speed() {
-            this.setData({}, this.init);
-        }
     },
     created() {
         this.resetAnimation = wx.createAnimation({

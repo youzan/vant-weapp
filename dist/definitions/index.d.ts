@@ -12,7 +12,6 @@ export interface VantComponentOptions<Data, Props, Methods, Instance> {
     classes?: string[];
     mixins?: string[];
     props?: Props & Weapp.PropertyOption;
-    watch?: Weapp.WatchOption<Instance>;
     relation?: Weapp.RelationOption<Instance> & {
         name: string;
     };

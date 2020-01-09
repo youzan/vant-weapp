@@ -1,5 +1,4 @@
 import { basic } from '../mixins/basic';
-import { observe } from '../mixins/observer/index';
 function mapKeys(source, target, map) {
     Object.keys(map).forEach(key => {
         if (source[key]) {
@@ -42,7 +41,6 @@ function VantComponent(vantOptions = {}) {
         multipleSlots: true,
         addGlobalClass: true
     };
-    observe(vantOptions, options);
     Component(options);
 }
 export { VantComponent };

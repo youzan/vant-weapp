@@ -1,5 +1,19 @@
 # 更新日志
 
+
+### [v1.0.3](https://github.com/youzan/vant-weapp/tree/v1.0.3)
+`2020-01-09`
+
+**Bug Fixes**
+
+- Tab: 解决动态添加选项时，顺序错乱和下划线长度不变的问题 [\#2663](https://github.com/youzan/vant-weapp/pull/2663)
+- NavBar: 修复返回图标未居中的问题 [\#2633](https://github.com/youzan/vant-weapp/pull/2633)
+
+**Features**
+
+- npm包默认输出es5版本代码 [\#2639](https://github.com/youzan/vant-weapp/pull/2639)
+- Steps: 新增外部样式类 desc-class [\#2630](https://github.com/youzan/vant-weapp/pull/2630)
+
 ### [v1.0.2](https://github.com/youzan/vant-weapp/tree/v1.0.2)
 `2019-12-31`
 

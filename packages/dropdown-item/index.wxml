@@ -17,7 +17,7 @@
   >
     <van-cell
       wx:for="{{ options }}"
-      wx:key="{{ item.value }}"
+      wx:key="value"
       data-option="{{ item }}"
       class="{{ utils.bem('dropdown-item__option', { active: item.value === value } ) }}"
       clickable

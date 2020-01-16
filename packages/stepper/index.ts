@@ -77,7 +77,8 @@ VantComponent({
       value: true
     },
     disablePlus: Boolean,
-    disableMinus: Boolean
+    disableMinus: Boolean,
+    disableLongPress: Boolean
   },
 
   data: {
@@ -160,6 +161,9 @@ VantComponent({
     },
 
     onTouchStart(event: Weapp.Event) {
+      if (this.data.disableLongPress) {
+        return;
+      }
       clearTimeout(this.longPressTimer);
 
       const { type } = event.currentTarget.dataset;
@@ -174,6 +178,9 @@ VantComponent({
     },
 
     onTouchEnd() {
+      if (this.data.disableLongPress) {
+        return;
+      }
       clearTimeout(this.longPressTimer);
     },
 

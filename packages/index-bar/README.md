@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-index-bar": "path/to/@vant/weapp/dist/van-index-bar/index",
-  "van-index-anchor": "path/to/@vant/weapp/dist/van-index-anchor/index"
+  "van-index-bar": "path/to/@vant/weapp/dist/index-bar/index",
+  "van-index-anchor": "path/to/@vant/weapp/dist/index-anchor/index"
 }
 ```
 

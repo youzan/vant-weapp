@@ -78,7 +78,10 @@ VantComponent({
     },
     disablePlus: Boolean,
     disableMinus: Boolean,
-    disableLongPress: Boolean
+    longPress: {
+      type: Boolean,
+      value: true
+    },
   },
 
   data: {
@@ -161,7 +164,7 @@ VantComponent({
     },
 
     onTouchStart(event: Weapp.Event) {
-      if (this.data.disableLongPress) {
+      if (!this.data.longPress) {
         return;
       }
       clearTimeout(this.longPressTimer);
@@ -178,7 +181,7 @@ VantComponent({
     },
 
     onTouchEnd() {
-      if (this.data.disableLongPress) {
+      if (!this.data.longPress) {
         return;
       }
       clearTimeout(this.longPressTimer);

@@ -19,7 +19,7 @@
 </van-cell>
 
 <van-cell center title="禁用长按">
-  <van-stepper value="{{ 1 }}" disable-long-press />
+  <van-stepper value="{{ 1 }}" long-press="{{ false }}" />
 </van-cell>
 
 <van-cell center title="固定小数位数">

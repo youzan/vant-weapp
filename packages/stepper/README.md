@@ -64,12 +64,12 @@ Page({
 <van-stepper value="{{ 1 }}" disabled />
 ```
 
-### 禁用长按
+### 关闭长按
 
-通过设置`disable-long-press`属性来禁用步进器长按自动触发动作
+通过设置`long-press`属性决定步进器是否开启长按手势
 
 ```html
-<van-stepper value="{{ 1 }}" disable-long-press />
+<van-stepper value="{{ 1 }}" long-press="{{ false }}" />
 ```
 
 ### 固定小数位数
@@ -135,7 +135,7 @@ Page({
 | decimal-length | 固定显示的小数位数 | *number* | - | - |
 | disable-plus | 是否禁用增加按钮 | *boolean* | - | - |
 | disable-minus | 是否禁用减少按钮 | *boolean* | - | - |
-| disable-long-press | 是否禁用长按自动触发动作 | *boolean* | - | - |
+| long-press | 是否开启长按手势 | *boolean* | `true` | - |
 
 ### Events
 

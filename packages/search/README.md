@@ -20,6 +20,24 @@
 <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
 ```
 
+### 自定义背景色
+
+```html
+<van-search placeholder="Placeholder" value="{{ value }}" background="#c8c9cc"/>
+```
+
+### 禁用
+
+```html
+<van-search placeholder="请输入搜索关键词" value="{{ value }}" disabled/>
+```
+
+### 自定义输入内容对齐方式
+
+```html
+<van-search placeholder="Placeholder" value="{{ value }}" input-align="center"/>
+```
+
 ### 监听对应事件
 
 `van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的搜索按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发

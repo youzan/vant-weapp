@@ -39,7 +39,7 @@ function getContext() {
 }
 
 export default function Notify(options: NotifyOptions | string) {
-  options = Object.assign({}, defaultOptions, parseOptions(options));
+  options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);
@@ -57,7 +57,7 @@ export default function Notify(options: NotifyOptions | string) {
 }
 
 Notify.clear = function(options?: NotifyOptions) {
-  options = Object.assign({}, defaultOptions, parseOptions(options));
+  options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);

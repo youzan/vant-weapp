@@ -60,7 +60,7 @@ VantComponent({
       this.dragStatus = 'draging';
 
       this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        const diff = this.deltaX / rect.width * 100;
+        const diff = (this.deltaX / rect.width) * 100;
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
       });
@@ -81,7 +81,7 @@ VantComponent({
       const { min } = this.data;
 
       this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        const value = (event.detail.x - rect.left) / rect.width * this.getRange() + min;
+        const value = ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
         this.updateValue(value, true);
       });
     },

@@ -7,7 +7,7 @@
   />
 </demo-block>
 
-<demo-block title="禁用">
+<demo-block title="禁用搜索框">
   <van-search
     value="{{ value }}"
     placeholder="请输入搜索关键词"
@@ -23,7 +23,7 @@
   />
 </demo-block>
 
-<demo-block title="自定义输入内容对齐方式">
+<demo-block title="搜索框内容对齐">
   <van-search
     value="{{ value }}"
     placeholder="请输入搜索关键词"

@@ -18,6 +18,10 @@
   <van-stepper value="{{ 1 }}" disabled />
 </van-cell>
 
+<van-cell center title="禁用长按">
+  <van-stepper value="{{ 1 }}" long-press="{{ false }}" />
+</van-cell>
+
 <van-cell center title="固定小数位数">
   <van-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
 </van-cell>

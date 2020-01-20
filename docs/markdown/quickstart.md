@@ -34,6 +34,10 @@ npm i vant-weapp -S --production
 
 ## 使用
 
+### 在 app.json 中去除 "style": "v2"
+
+小程序给[新版基础组件](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style)强行加上了许多样式，难以去除，不关闭将造成样式混乱。
+
 ### 引入组件
 
 以 Button 组件为例，只需要在`app.json`或`index.json`中配置 Button 对应的路径即可。如果你是通过下载源代码的方式使用 @vant/weapp，请将路径修改为项目中 @vant/weapp 所在的目录。
@@ -58,8 +62,12 @@ npm i vant-weapp -S --production
 ### 在开发者工具中预览示例小程序
 
 ```bash
+
+# 将项目克隆到本地
+git clone git@github.com:youzan/vant-weapp.git
+
 # 安装项目依赖
-npm install
+cd vant-weapp && npm install
 
 # 执行组件编译
 npm run dev

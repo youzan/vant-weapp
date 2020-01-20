@@ -35,27 +35,11 @@ VantComponent({
   },
 
   data: {
-    wrapStyle: '',
-    containerStyle: ''
+    height: 0,
+    fixed: false
   },
 
   methods: {
-    setStyle() {
-      const { offsetTop, height, fixed, zIndex } = this.data;
-
-      if (fixed) {
-        this.setData({
-          wrapStyle: `top: ${offsetTop}px;`,
-          containerStyle: `height: ${height}px; z-index: ${zIndex};`
-        });
-      } else {
-        this.setData({
-          wrapStyle: '',
-          containerStyle: ''
-        });
-      }
-    },
-
     getContainerRect() {
       const nodesRef: WechatMiniprogram.NodesRef = this.data.container();
 
@@ -96,9 +80,8 @@ VantComponent({
 
       this.disconnectObserver('contentObserver');
       const contentObserver = this.createIntersectionObserver({
-        thresholds: [0, 1]
+        thresholds: [0.9, 1]
       });
-      this.contentObserver = contentObserver;
       contentObserver.relativeToViewport({ top: -offsetTop });
       contentObserver.observe(ROOT_ELEMENT, res => {
         if (this.data.disabled) {
@@ -107,6 +90,8 @@ VantComponent({
 
         this.setFixed(res.boundingClientRect.top);
       });
+
+      this.contentObserver = contentObserver;
     },
 
     observeContainer() {
@@ -122,7 +107,7 @@ VantComponent({
 
           this.disconnectObserver('containerObserver');
           const containerObserver = this.createIntersectionObserver({
-            thresholds: [0, 1]
+            thresholds: [0.9, 1]
           });
           this.containerObserver = containerObserver;
           containerObserver.relativeToViewport({
@@ -145,7 +130,7 @@ VantComponent({
 
       const fixed =
         containerHeight && height
-          ? top > height - containerHeight && top < offsetTop
+          ? top >= height - containerHeight && top < offsetTop
           : top < offsetTop;
 
       this.$emit('scroll', {
@@ -154,10 +139,6 @@ VantComponent({
       });
 
       this.setData({ fixed });
-
-      wx.nextTick(() => {
-        this.setStyle();
-      });
     }
   },
 

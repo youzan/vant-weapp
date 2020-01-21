@@ -20,26 +20,6 @@
 <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
 ```
 
-### 自定义背景色
-
-```html
-<van-search placeholder="Placeholder" value="{{ value }}" background="#c8c9cc"/>
-```
-
-### 禁用搜索框
-
-```html
-<van-search placeholder="请输入搜索关键词" value="{{ value }}" disabled/>
-```
-
-### 搜索框内容对齐
-
-通过 `input-align` 属性可以设置搜索框内容的对齐方式
-
-```html
-<van-search placeholder="Placeholder" value="{{ value }}" input-align="center"/>
-```
-
 ### 监听对应事件
 
 `van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的搜索按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
@@ -52,6 +32,30 @@
   bind:search="onSearch"
   bind:cancel="onCancel"
 />
+```
+
+### 自定义背景色
+
+通过 `background` 属性可以自定义组件背景色
+
+```html
+<van-search placeholder="Placeholder" value="{{ value }}" background="#c8c9cc"/>
+```
+
+### 禁用搜索框
+
+通过 `disabled` 属性可以将组件设置为禁用状态
+
+```html
+<van-search placeholder="请输入搜索关键词" value="{{ value }}" disabled/>
+```
+
+### 搜索框内容对齐
+
+通过 `input-align` 属性可以设置搜索框内容的对齐方式
+
+```html
+<van-search placeholder="Placeholder" value="{{ value }}" input-align="center"/>
 ```
 
 ### 自定义行动按钮

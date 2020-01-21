@@ -1,5 +1,21 @@
 # 更新日志
 
+### [v1.0.4](https://github.com/youzan/vant-weapp/tree/v1.0.4)
+`2020-01-21`
+
+**Bug Fixes**
+
+- Sticky: 修复真机上页面滚动缓慢时无法吸顶/取消吸顶 [\#2703](https://github.com/youzan/vant-weapp/pull/2703)
+- DropdownItem: 修复 wx:key 警告 [\#2670](https://github.com/youzan/vant-weapp/pull/2670)
+- IndexBar: 文档修复组件引入路径错误 [\#2689](https://github.com/youzan/vant-weapp/pull/2689)
+- 升级依赖版本以避免安全警告 [\#2680](https://github.com/youzan/vant-weapp/pull/2680)
+
+**Features**
+
+- Stepper: 新增 disable-long-press 属性 [\#2691](https://github.com/youzan/vant-weapp/pull/2691)
+- quickstart: 快速上手新增关闭 style v2 说明 [\#2704](https://github.com/youzan/vant-weapp/pull/2704)
+- Search: 新增 background、disabled、input-align 文档示例 [\#2698](https://github.com/youzan/vant-weapp/pull/2698)
+- Icon: 文档新增图标文字加载失败说明 [\#2681](https://github.com/youzan/vant-weapp/pull/2681)
 
 ### [v1.0.3](https://github.com/youzan/vant-weapp/tree/v1.0.3)
 `2020-01-09`

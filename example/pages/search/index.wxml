@@ -19,6 +19,30 @@
   />
 </demo-block>
 
+<demo-block title="禁用搜索框">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    disabled
+  />
+</demo-block>
+
+<demo-block title="自定义背景色">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    background="#c8c9cc"
+  />
+</demo-block>
+
+<demo-block title="搜索框内容对齐">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    input-align="center"
+  />
+</demo-block>
+
 <demo-block title="高级用法">
   <van-search
     value="{{ value }}"

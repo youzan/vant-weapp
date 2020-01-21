@@ -69,7 +69,11 @@ VantComponent({
             value: true
         },
         disablePlus: Boolean,
-        disableMinus: Boolean
+        disableMinus: Boolean,
+        longPress: {
+            type: Boolean,
+            value: true
+        },
     },
     data: {
         focus: false,
@@ -135,6 +139,9 @@ VantComponent({
             this.onChange();
         },
         onTouchStart(event) {
+            if (!this.data.longPress) {
+                return;
+            }
             clearTimeout(this.longPressTimer);
             const { type } = event.currentTarget.dataset;
             this.type = type;
@@ -146,6 +153,9 @@ VantComponent({
             }, LONG_PRESS_START_TIME);
         },
         onTouchEnd() {
+            if (!this.data.longPress) {
+                return;
+            }
             clearTimeout(this.longPressTimer);
         },
         triggerInput(value) {

@@ -1,0 +1,21 @@
+/* eslint-disable */
+function wrapStyle(data) {
+  if (data.fixed) {
+    return 'top: ' + data.offsetTop + 'px;';
+  }
+
+  return '';
+}
+
+function containerStyle(data) {
+  if (data.fixed) {
+    return 'height: ' + data.height + 'px; z-index: ' + data.zIndex + ';';
+  }
+
+  return '';
+}
+
+module.exports = {
+  wrapStyle: wrapStyle,
+  containerStyle: containerStyle
+};

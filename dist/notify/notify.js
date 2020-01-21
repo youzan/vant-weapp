@@ -20,7 +20,7 @@ function getContext() {
     return pages[pages.length - 1];
 }
 export default function Notify(options) {
-    options = Object.assign({}, defaultOptions, parseOptions(options));
+    options = Object.assign(Object.assign({}, defaultOptions), parseOptions(options));
     const context = options.context || getContext();
     const notify = context.selectComponent(options.selector);
     delete options.context;
@@ -33,7 +33,7 @@ export default function Notify(options) {
     console.warn('未找到 van-notify 节点，请确认 selector 及 context 是否正确');
 }
 Notify.clear = function (options) {
-    options = Object.assign({}, defaultOptions, parseOptions(options));
+    options = Object.assign(Object.assign({}, defaultOptions), parseOptions(options));
     const context = options.context || getContext();
     const notify = context.selectComponent(options.selector);
     if (notify) {

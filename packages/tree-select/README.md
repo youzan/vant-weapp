@@ -101,7 +101,7 @@ Page({
   bind:click-item="onClickItem"
 >
   <image src="https://img.yzcdn.cn/vant/apple-1.jpg" slot="content" />
-<van-tree-select/>
+</van-tree-select>
 ```
 
 ## API

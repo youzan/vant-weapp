@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   field: true,
@@ -44,9 +43,10 @@ VantComponent({
       instance.$emit('change', value);
     },
 
-    onChange(event: Weapp.Event) {
-      console.log(event);
-      this.emitChange(this.data.name);
+    onChange() {
+      if (!this.data.disabled) {
+        this.emitChange(this.data.name);
+      }
     },
 
     onClickLabel() {

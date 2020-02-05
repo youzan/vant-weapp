@@ -45,7 +45,7 @@ npm i vant-weapp -S --production
 ```json
 // app.json
 "usingComponents": {
-  "van-button": "@vant/weapp/button"
+  "van-button": "@vant/weapp/dist/button"
 }
 ```
 

@@ -1,5 +1,26 @@
 # 更新日志
 
+
+### [v1.0.5](https://github.com/youzan/vant-weapp/tree/v1.0.5)
+`2020-02-07`
+
+
+**Bug Fixes**
+
+- Radio: 修复`disabled`属性不生效 [\#2711](https://github.com/youzan/vant-weapp/pull/2711)
+- Tab: 修复`animated`属性无法动态切换 [\#2712](https://github.com/youzan/vant-weapp/pull/2712)
+- Circle: 修正文档错误，`size`属性不支持`string`类型 [\#2694](https://github.com/youzan/vant-weapp/pull/2694)
+- 修正文档默认 slot 名称为 default 的错误 [\#2726](https://github.com/youzan/vant-weapp/pull/2726)
+- TreeSelect: 修正文档示例代码标签闭合错误 [\#2710](https://github.com/youzan/vant-weapp/pull/2710)
+
+**Features**
+
+- ActionSheet: actions 支持更多 openType [\#2715](https://github.com/youzan/vant-weapp/pull/2715)
+- Uploader: 新增开始`disabled`时的组件样式 [\#2720](https://github.com/youzan/vant-weapp/pull/2720)
+- Icon: 调整示例小程序页面与vant对齐 [\#2728](https://github.com/youzan/vant-weapp/pull/2728)
+- 示例小程序首页与vant对齐 [\#2729](https://github.com/youzan/vant-weapp/pull/2729)
+- 完善快速上手文档，增加npm构建说明 [\#2726](https://github.com/youzan/vant-weapp/pull/2726)
+
 ### [v1.0.4](https://github.com/youzan/vant-weapp/tree/v1.0.4)
 `2020-01-21`
 

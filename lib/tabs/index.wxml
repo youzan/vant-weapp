@@ -53,7 +53,10 @@
     bind:touchend="onTouchEnd"
     bind:touchcancel="onTouchEnd"
   >
-    <view class="{{ utils.bem('tabs__track', [{ animated }]) }} van-tabs__track" style="{{ trackStyle }}">
+    <view
+      class="{{ utils.bem('tabs__track', [{ animated }]) }} van-tabs__track"
+      style="{{ getters.trackStyle({ duration, currentIndex, animated }) }}"
+    >
       <slot />
     </view>
   </view>

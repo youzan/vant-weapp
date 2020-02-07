@@ -26,7 +26,6 @@ VantComponent({
         size: {
             type: Number,
             value: 100,
-            observer: 'setStyle'
         },
         fill: String,
         layerColor: {
@@ -48,7 +47,6 @@ VantComponent({
         }
     },
     data: {
-        style: 'width: 100px; height: 100px;',
         hoverColor: BLUE
     },
     methods: {
@@ -70,11 +68,6 @@ VantComponent({
                 hoverColor = LinearColor;
             }
             this.setData({ hoverColor });
-        },
-        setStyle() {
-            const { size } = this.data;
-            const style = `width: ${size}px; height: ${size}px;`;
-            this.setData({ style });
         },
         presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {
             const { strokeWidth, lineCap, clockwise, size } = this.data;

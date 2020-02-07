@@ -31,8 +31,7 @@ VantComponent({
         animated: {
             type: Boolean,
             observer() {
-                this.setTrack();
-                this.children.forEach((child) => child.updateRender());
+                this.children.forEach((child, index) => child.updateRender(index === this.data.currentIndex, this));
             }
         },
         swipeable: Boolean,
@@ -93,7 +92,7 @@ VantComponent({
         lazyRender: {
             type: Boolean,
             value: true
-        },
+        }
     },
     data: {
         tabs: [],
@@ -112,7 +111,6 @@ VantComponent({
             container: () => this.createSelectorQuery().select('.van-tabs')
         });
         this.setLine(true);
-        this.setTrack();
         this.scrollIntoView();
     },
     methods: {
@@ -177,7 +175,6 @@ VantComponent({
             this.setData({ currentIndex });
             wx.nextTick(() => {
                 this.setLine();
-                this.setTrack();
                 this.scrollIntoView();
                 this.trigger('input');
                 if (shouldEmitChange) {
@@ -222,19 +219,6 @@ VantComponent({
             ${transition}
           `
                 });
-            });
-        },
-        setTrack() {
-            const { animated, duration, currentIndex } = this.data;
-            if (!animated) {
-                return;
-            }
-            this.setData({
-                trackStyle: `
-          transform: translate3d(${-100 * currentIndex}%, 0, 0);
-          -webkit-transition-duration: ${duration}s;
-          transition-duration: ${duration}s;
-        `
             });
         },
         // scroll active tab into view

@@ -1,5 +1,7 @@
 import { VantComponent } from '../common/component';
 
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
 VantComponent({
   field: true,
 
@@ -13,7 +15,7 @@ VantComponent({
     },
     unlinked(target) {
       this.children = this.children.filter(
-        (child: WechatMiniprogram.Component.TrivialInstance) => child !== target
+        (child: TrivialInstance) => child !== target
       );
     }
   },
@@ -32,16 +34,16 @@ VantComponent({
 
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
+      (this.children || []).forEach((child: TrivialInstance) =>
         this.updateChild(child)
       );
     },
 
-    updateChild(child: WechatMiniprogram.Component.TrivialInstance) {
+    updateChild(child: TrivialInstance) {
       const { value, disabled } = this.data;
       child.setData({
         value: value.indexOf(child.data.name) !== -1,
-        disabled: disabled || child.data.disabled
+        parentDisabled: disabled
       });
     }
   }

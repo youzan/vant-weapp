@@ -38,6 +38,10 @@ VantComponent({
     }
   },
 
+  data: {
+    parentDisabled: false
+  },
+
   methods: {
     emitChange(value: boolean) {
       if (this.parent) {
@@ -48,15 +52,15 @@ VantComponent({
     },
 
     toggle() {
-      const { disabled, value } = this.data;
-      if (!disabled) {
+      const { parentDisabled, disabled, value } = this.data;
+      if (!disabled && !parentDisabled) {
         this.emitChange(!value);
       }
     },
 
     onClickLabel() {
-      const { labelDisabled, disabled, value } = this.data;
-      if (!disabled && !labelDisabled) {
+      const { labelDisabled, parentDisabled, disabled, value } = this.data;
+      if (!disabled && !labelDisabled && !parentDisabled) {
         this.emitChange(!value);
       }
     },

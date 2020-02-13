@@ -3,24 +3,26 @@ page {
 }
 
 .col {
-  text-align: center;
-  height: 100px;
-  float: none;
   display: inline-block;
+  float: none;
+  text-align: center;
   vertical-align: middle;
 }
 
 .icon {
   display: block;
+  margin: 16px 0;
   color: #323233;
-  margin: 20px 0 10px;
 }
 
 .text {
-  font-size: 12px;
+  display: block;
+  height: 36px;
+  margin: -4px 0 4px;
   padding: 0 5px;
-  line-height: 14px;
-  color: #7d7e80;
+  color: #646566;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .demo-tab-pane {

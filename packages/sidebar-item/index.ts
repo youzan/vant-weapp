@@ -6,12 +6,10 @@ VantComponent({
     'disabled-class',
   ],
 
-  relation: {
+  simpleRelation: {
     type: 'ancestor',
     name: 'sidebar',
-    linked(target) {
-      this.parent = target;
-    }
+    current: 'sidebar-item',
   },
 
   props: {

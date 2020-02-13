@@ -33,7 +33,6 @@
         is-link
         url="/pages{{ item.path }}/index"
         data-url="/pages{{ item.path }}/index"
-        data-switch-tab="{{ true }}"
         title="{{ item.title }}"
         bind:click="onClick"
       />

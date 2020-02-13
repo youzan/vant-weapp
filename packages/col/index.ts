@@ -1,9 +1,10 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relation: {
+  simpleRelation: {
     name: 'row',
-    type: 'ancestor'
+    type: 'ancestor',
+    current: 'col',
   },
 
   props: {
@@ -12,7 +13,7 @@ VantComponent({
   },
 
   data: {
-    style: ''
+    viewStyle: ''
   },
 
   methods: {
@@ -20,8 +21,8 @@ VantComponent({
       const padding = `${gutter / 2}px`;
       const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
 
-      if (style !== this.data.style) {
-        this.setData({ style });
+      if (style !== this.data.viewStyle) {
+        this.setData({ viewStyle: style });
       }
     }
   }

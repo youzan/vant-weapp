@@ -3,15 +3,10 @@ import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
 
-  relation: {
+  simpleRelation: {
     name: 'radio-group',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
-    },
-    unlinked() {
-      this.parent = null;
-    }
+    current: 'radio',
   },
 
   classes: ['icon-class', 'label-class'],

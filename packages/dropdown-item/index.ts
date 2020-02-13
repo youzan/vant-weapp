@@ -4,16 +4,13 @@ import { Weapp } from 'definitions/weapp';
 VantComponent({
   field: true,
 
-  relation: {
+  simpleRelation: {
     name: 'dropdown-menu',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
+    current: 'dropdown-item',
+    linked() {
       this.updateDataFromParent();
     },
-    unlinked() {
-      this.parent = null;
-    }
   },
 
   props: {

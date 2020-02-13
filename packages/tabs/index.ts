@@ -10,17 +10,16 @@ VantComponent({
 
   classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
 
-  relation: {
+  simpleRelation: {
     name: 'tab',
     type: 'descendant',
+    current: 'tabs',
     linked(target) {
-      target.index = this.children.length;
-      this.children.push(target);
+      target.index = this.children.length - 1;
       this.updateTabs();
     },
-    unlinked(target) {
+    unlinked() {
       this.children = this.children
-        .filter((child: TrivialInstance) => child !== target)
         .map((child: TrivialInstance, index: number) => {
           child.index = index;
           return child;
@@ -114,16 +113,13 @@ VantComponent({
     container: null
   },
 
-  beforeCreate() {
-    this.children = [];
-  },
-
   mounted() {
     this.setData({
       container: () => this.createSelectorQuery().select('.van-tabs')
+    }, () => {
+      this.setLine(true);
+      this.scrollIntoView();
     });
-    this.setLine(true);
-    this.scrollIntoView();
   },
 
   methods: {

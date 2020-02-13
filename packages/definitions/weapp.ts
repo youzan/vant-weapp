@@ -82,6 +82,22 @@ export namespace Weapp {
   }
 
   /**
+   * simple relation定义，用于关联 祖-后 简单关系
+   */
+  export interface SimpleRelationOption<Instance> {
+    /** 目标组件的相对关系 */
+    type: 'ancestor' | 'descendant';
+    /** 需要关联的目标组件名字 */
+    name: string;
+    /** 当前组件名字 */
+    current: string;
+    /** 关系生命周期函数，当关系被建立在页面节点树中时触发，触发时机在组件attached生命周期之后 */
+    linked?(this: Instance, target: WechatMiniprogram.Component.TrivialInstance): void;
+    /** 关系生命周期函数，当关系脱离页面节点树时触发，触发时机在组件detached生命周期之后 */
+    unlinked?(this: Instance, target: WechatMiniprogram.Component.TrivialInstance): void;
+  }
+
+  /**
    * obverser定义，miniprogram-api-typings缺少this定义
    */
   type Observer<Instance, T> = (

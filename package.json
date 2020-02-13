@@ -10,6 +10,7 @@
   },
   "scripts": {
     "dev": "node build/dev.js",
+    "dev:baidu": "sh build/baidu.sh",
     "lint": "eslint ./packages --ext .js,.ts && stylelint \"packages/**/*.less\" --fix",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",

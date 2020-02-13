@@ -21,6 +21,11 @@ VantComponent({
     }
   },
 
+  data: {
+    // hack baidu
+    style: 'display: inline-flex;align-items: center;justify-content: center;',
+  },
+
   methods: {
     onClick() {
       this.$emit('click');

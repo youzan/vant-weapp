@@ -1,15 +1,10 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relation: {
+  simpleRelation: {
     name: 'tabs',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
-    },
-    unlinked() {
-      this.parent = null;
-    }
+    current: 'tab',
   },
 
   props: {
@@ -40,7 +35,9 @@ VantComponent({
   },
 
   data: {
-    active: false
+    active: false,
+    // hack baidu
+    style: 'flex-shrink: 0;box-sizing: border-box;width: 100%;',
   },
 
   methods: {

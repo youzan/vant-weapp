@@ -20,6 +20,7 @@ export interface VantComponentOptions<Data, Props, Methods, Instance> {
   mixins?: string[];
   props?: Props & Weapp.PropertyOption;
   relation?: Weapp.RelationOption<Instance> & { name: string };
+  simpleRelation?: Weapp.SimpleRelationOption<Instance>;
   relations?: {
     [componentName: string]: Weapp.RelationOption<Instance>;
   };

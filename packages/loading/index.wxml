@@ -7,7 +7,7 @@
   >
     <view
       wx:if="{{ type === 'spinner' }}"
-      wx:for="item in 12"
+      wx:for="{{ array12 }}"
       wx:key="index"
       class="van-loading__dot"
     />

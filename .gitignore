@@ -9,3 +9,4 @@ example/dist
 .history
 changelog.generated.md
 package-lock.json
+example_swan

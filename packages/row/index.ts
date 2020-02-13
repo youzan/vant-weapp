@@ -1,9 +1,10 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relation: {
+  simpleRelation: {
     name: 'col',
     type: 'descendant',
+    current: 'row',
     linked(target) {
       if (this.data.gutter) {
         target.setGutter(this.data.gutter);
@@ -16,6 +17,10 @@ VantComponent({
       type: Number,
       observer: 'setGutter'
     }
+  },
+
+  data: {
+    viewStyle: ''
   },
 
   mounted() {
@@ -32,8 +37,8 @@ VantComponent({
         ? `margin-right: ${margin}; margin-left: ${margin};`
         : '';
 
-      this.setData({ style });
-      this.getRelationNodes('../col/index').forEach(col => {
+      this.setData({ viewStyle: style });
+      this.children.forEach(col => {
         col.setGutter(this.data.gutter);
       });
     }

@@ -6,12 +6,10 @@ import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   mixins: [link, button, openType],
-  relation: {
+  simpleRelation: {
     type: 'ancestor',
     name: 'goods-action',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'goods-action-button',
   },
   props: {
     text: String,

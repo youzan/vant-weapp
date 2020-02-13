@@ -3,12 +3,10 @@ import { VantComponent } from '../common/component';
 import { addUnit } from '../common/utils';
 
 VantComponent({
-  relation: {
+  simpleRelation: {
     name: 'grid',
     type: 'ancestor',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'grid-item',
   },
 
   mixins: [link],
@@ -19,6 +17,10 @@ VantComponent({
     info: null,
     text: String,
     useSlot: Boolean
+  },
+
+  data: {
+    viewStyle: '',
   },
 
   mounted() {
@@ -65,7 +67,7 @@ VantComponent({
       }
 
       this.setData({
-        style: styleWrapper.join('; '),
+        viewStyle: styleWrapper.join('; '),
         contentStyle,
         center,
         border,

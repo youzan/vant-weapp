@@ -51,7 +51,7 @@ VantComponent({
   },
 
   data: {
-    style: 'width: 100px; height: 100px;',
+    baseStyle: 'width: 100px; height: 100px;',
     hoverColor: BLUE
   },
 
@@ -83,7 +83,7 @@ VantComponent({
       const { size } = this.data;
       const style = `width: ${size}px; height: ${size}px;`;
 
-      this.setData({ style });
+      this.setData({ baseStyle: style });
     },
 
     presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {

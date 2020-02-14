@@ -4,12 +4,7 @@ VantComponent({
   relation: {
     name: 'tabs',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
-    },
-    unlinked() {
-      this.parent = null;
-    }
+    current: 'tab',
   },
 
   props: {

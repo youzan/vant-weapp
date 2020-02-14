@@ -4,6 +4,7 @@ VantComponent({
   relation: {
     name: 'col',
     type: 'descendant',
+    current: 'row',
     linked(target) {
       if (this.data.gutter) {
         target.setGutter(this.data.gutter);

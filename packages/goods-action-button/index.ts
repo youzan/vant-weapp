@@ -9,9 +9,7 @@ VantComponent({
   relation: {
     type: 'ancestor',
     name: 'goods-action',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'goods-action-button',
   },
   props: {
     text: String,

@@ -6,9 +6,7 @@ VantComponent({
   relation: {
     name: 'grid',
     type: 'ancestor',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'grid-item',
   },
 
   mixins: [link],

@@ -4,12 +4,7 @@ VantComponent({
   relation: {
     name: 'index-bar',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
-    },
-    unlinked() {
-      this.parent = null;
-    }
+    current: 'index-anchor',
   },
 
   props: {

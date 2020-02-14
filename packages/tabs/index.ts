@@ -13,14 +13,13 @@ VantComponent({
   relation: {
     name: 'tab',
     type: 'descendant',
+    current: 'tabs',
     linked(target) {
-      target.index = this.children.length;
-      this.children.push(target);
+      target.index = this.children.length - 1;
       this.updateTabs();
     },
-    unlinked(target) {
+    unlinked() {
       this.children = this.children
-        .filter((child: TrivialInstance) => child !== target)
         .map((child: TrivialInstance, index: number) => {
           child.index = index;
           return child;
@@ -112,10 +111,6 @@ VantComponent({
     trackStyle: '',
     currentIndex: null,
     container: null
-  },
-
-  beforeCreate() {
-    this.children = [];
   },
 
   mounted() {

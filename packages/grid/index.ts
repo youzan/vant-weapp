@@ -5,14 +5,7 @@ VantComponent({
   relation: {
     name: 'grid-item',
     type: 'descendant',
-    linked(child) {
-      this.children.push(child);
-    },
-    unlinked(child) {
-      this.children = this.children.filter(
-        (item: WechatMiniprogram.Component.TrivialInstance) => item !== child
-      );
-    }
+    current: 'grid',
   },
 
   props: {

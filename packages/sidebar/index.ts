@@ -4,14 +4,11 @@ VantComponent({
   relation: {
     name: 'sidebar-item',
     type: 'descendant',
-    linked(target) {
-      this.children.push(target);
+    current: 'sidebar',
+    linked() {
       this.setActive(this.data.activeKey);
     },
-    unlinked(target) {
-      this.children = this.children.filter(
-        (item: WechatMiniprogram.Component.TrivialInstance) => item !== target
-      );
+    unlinked() {
       this.setActive(this.data.activeKey);
     }
   },
@@ -25,7 +22,6 @@ VantComponent({
   },
 
   beforeCreate() {
-    this.children = [];
     this.currentActive = -1;
   },
 

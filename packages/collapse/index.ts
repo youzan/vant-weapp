@@ -6,14 +6,7 @@ VantComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',
-    linked(child) {
-      this.children.push(child);
-    },
-    unlinked(child) {
-      this.children = this.children.filter(
-        (item: TrivialInstance) => item !== child
-      );
-    }
+    current: 'collapse',
   },
 
   props: {
@@ -29,10 +22,6 @@ VantComponent({
       type: Boolean,
       value: true
     }
-  },
-
-  beforeCreate() {
-    this.children = [];
   },
 
   methods: {

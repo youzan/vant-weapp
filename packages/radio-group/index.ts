@@ -6,16 +6,10 @@ VantComponent({
   relation: {
     name: 'radio',
     type: 'descendant',
+    current: 'radio-group',
     linked(target) {
-      this.children = this.children || [];
-      this.children.push(target);
       this.updateChild(target);
     },
-    unlinked(target) {
-      this.children = this.children.filter(
-        (child: WechatMiniprogram.Component.TrivialInstance) => child !== target
-      );
-    }
   },
 
   props: {

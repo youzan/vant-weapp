@@ -9,9 +9,7 @@ VantComponent({
   relation: {
     type: 'ancestor',
     name: 'sidebar',
-    linked(target) {
-      this.parent = target;
-    }
+    current: 'sidebar-item',
   },
 
   props: {

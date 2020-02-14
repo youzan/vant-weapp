@@ -3,7 +3,8 @@ import { VantComponent } from '../common/component';
 VantComponent({
   relation: {
     name: 'row',
-    type: 'ancestor'
+    type: 'ancestor',
+    current: 'col',
   },
 
   props: {

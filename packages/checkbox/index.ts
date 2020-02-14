@@ -8,7 +8,7 @@ function emit(target: WechatMiniprogram.Component.TrivialInstance, value: boolea
 VantComponent({
   field: true,
 
-  simpleRelation: {
+  relation: {
     name: 'checkbox-group',
     type: 'ancestor',
     current: 'checkbox',

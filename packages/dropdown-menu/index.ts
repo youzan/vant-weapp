@@ -8,7 +8,7 @@ let ARRAY: TrivialInstance[] = [];
 VantComponent({
   field: true,
 
-  simpleRelation: {
+  relation: {
     name: 'dropdown-item',
     type: 'descendant',
     current: 'dropdown-menu',

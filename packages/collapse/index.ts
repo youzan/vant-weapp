@@ -4,7 +4,7 @@ type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
 VantComponent({
 
-  simpleRelation: {
+  relation: {
     name: 'collapse-item',
     type: 'descendant',
     current: 'collapse',

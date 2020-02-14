@@ -30,8 +30,8 @@ function mapKeys(source: object, target: object, map: object) {
   });
 }
 
-function makeWechatSimpleRelation(options, vantOptions, simpleRelation) {
-  const { type, name, linked, unlinked } = simpleRelation;
+function makeRelation(options, vantOptions, relation) {
+  const { type, name, linked, unlinked, linkChanged } = relation;
   const { beforeCreate, destroyed } = vantOptions;
   if (type === 'descendant') {
     options.created = function () {
@@ -50,6 +50,9 @@ function makeWechatSimpleRelation(options, vantOptions, simpleRelation) {
         relationFunctions[type].linked.bind(this)(node);
         linked && linked.bind(this)(node);
       },
+      linkChanged(node) {
+        linkChanged && linkChanged.bind(this)(node);
+      },
       unlinked(node) {
         relationFunctions[type].unlinked.bind(this)(node);
         unlinked && unlinked.bind(this)(node);
@@ -58,9 +61,9 @@ function makeWechatSimpleRelation(options, vantOptions, simpleRelation) {
   });
 }
 
-function makeBaiduSimpleRelation(options, vantOptions, simpleRelation) {
+function makeBaiduRelation(options, vantOptions, relation) {
   const { created, beforeCreate, destroyed } = vantOptions;
-  const { type, name, current, linked, unlinked } = simpleRelation;
+  const { type, name, current, linked, unlinked } = relation;
   if (type === 'ancestor') {
     options.attached = function () {
       created && created.bind(this)();
@@ -98,6 +101,9 @@ function makeBaiduSimpleRelation(options, vantOptions, simpleRelation) {
         unlinked && unlinked.bind(this)(child);
       },
     };
+    options.getRelationNodes = function () {
+      return this.children || [];
+    };
     options.created = function () {
       beforeCreate && beforeCreate.bind(this)();
       this.children = this.children || [];
@@ -128,18 +134,10 @@ function VantComponent<Data, Props, Methods>(
     classes: 'externalClasses'
   });
 
-  const { relation, simpleRelation } = vantOptions;
-  if (relation && isWechat) {
-    options.relations = Object.assign(options.relations || {}, {
-      [`../${relation.name}/index`]: relation
-    });
-  }
-  if (simpleRelation) {
-    if (isWechat) {
-      makeWechatSimpleRelation(options, vantOptions, simpleRelation);
-    } else if (isBaidu) {
-      makeBaiduSimpleRelation(options, vantOptions, simpleRelation);
-    }
+  const { relation } = vantOptions;
+  if (relation) {
+    isWechat && makeRelation(options, vantOptions, relation);
+    isBaidu && makeBaiduRelation(options, vantOptions, relation);
   }
 
   // add default externalClasses

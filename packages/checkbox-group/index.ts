@@ -5,7 +5,7 @@ type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 VantComponent({
   field: true,
 
-  simpleRelation: {
+  relation: {
     name: 'checkbox',
     type: 'descendant',
     current: 'checkbox-group',

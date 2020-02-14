@@ -6,7 +6,7 @@ import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   mixins: [link, button, openType],
-  simpleRelation: {
+  relation: {
     type: 'ancestor',
     name: 'goods-action',
     current: 'goods-action-button',

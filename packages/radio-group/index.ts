@@ -3,7 +3,7 @@ import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
 
-  simpleRelation: {
+  relation: {
     name: 'radio',
     type: 'descendant',
     current: 'radio-group',

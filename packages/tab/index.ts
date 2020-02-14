@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  simpleRelation: {
+  relation: {
     name: 'tabs',
     type: 'ancestor',
     current: 'tab',

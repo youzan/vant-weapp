@@ -6,7 +6,7 @@ VantComponent({
     'disabled-class',
   ],
 
-  simpleRelation: {
+  relation: {
     type: 'ancestor',
     name: 'sidebar',
     current: 'sidebar-item',

@@ -3,7 +3,7 @@ import { VantComponent } from '../common/component';
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
 VantComponent({
-  simpleRelation: {
+  relation: {
     name: 'tabbar-item',
     type: 'descendant',
     current: 'tabbar',

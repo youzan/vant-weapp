@@ -4,7 +4,7 @@ import { Weapp } from 'definitions/weapp';
 VantComponent({
   field: true,
 
-  simpleRelation: {
+  relation: {
     name: 'dropdown-menu',
     type: 'ancestor',
     current: 'dropdown-item',

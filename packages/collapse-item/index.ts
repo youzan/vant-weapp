@@ -5,7 +5,7 @@ const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));
 VantComponent({
   classes: ['title-class', 'content-class'],
 
-  simpleRelation: {
+  relation: {
     name: 'collapse',
     type: 'ancestor',
     current: 'collapse-item',

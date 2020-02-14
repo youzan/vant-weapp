@@ -2,7 +2,7 @@ import { VantComponent } from '../common/component';
 import { addUnit } from '../common/utils';
 
 VantComponent({
-  simpleRelation: {
+  relation: {
     name: 'grid-item',
     type: 'descendant',
     current: 'grid',

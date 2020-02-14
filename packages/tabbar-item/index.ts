@@ -8,7 +8,7 @@ VantComponent({
     dot: Boolean
   },
 
-  simpleRelation: {
+  relation: {
     name: 'tabbar',
     type: 'ancestor',
     current: 'tabbar-item',

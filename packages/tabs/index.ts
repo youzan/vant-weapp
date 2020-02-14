@@ -10,7 +10,7 @@ VantComponent({
 
   classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
 
-  simpleRelation: {
+  relation: {
     name: 'tab',
     type: 'descendant',
     current: 'tabs',

@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  simpleRelation: {
+  relation: {
     type: 'descendant',
     name: 'goods-action-button',
     current: 'goods-action',

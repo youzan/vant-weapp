@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  simpleRelation: {
+  relation: {
     name: 'sidebar-item',
     type: 'descendant',
     current: 'sidebar',

@@ -27,12 +27,12 @@
 }
 
 .demo-home-nav__icon {
-  position: absolute;
+  position: absolute !important;
   top: 50%;
   right: 16px;
   width: 16px;
   height: 16px;
   margin-top: -8px;
   color: rgb(182, 195, 210);
-  font-weight: 900;
+  font-weight: 900 !important;
 }

@@ -2,8 +2,10 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    tabs: [1, 2, 3, 4],
-    tabsMore: [1, 2, 3, 4, 5, 6, 7, 8],
+    tabs2: [1, 2],
+    tabs3: [1, 2, 3],
+    tabs4: [1, 2, 3, 4],
+    tabs6: [1, 2, 3, 4, 5, 6],
     tabsWithName: [
       { name: 'a', index: 1 },
       { name: 'b', index: 2 },

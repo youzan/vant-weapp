@@ -13,5 +13,7 @@ VantComponent({
   },
   data: {
     array12: Array.from({ length: 12 }),
+    // hack baidu
+    style: 'font-size: 0; line-height: 1;',
   }
 });

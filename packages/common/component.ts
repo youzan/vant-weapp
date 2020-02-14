@@ -59,11 +59,11 @@ function makeWechatSimpleRelation(options, vantOptions, simpleRelation) {
 }
 
 function makeBaiduSimpleRelation(options, vantOptions, simpleRelation) {
-  const { beforeCreate, destroyed } = vantOptions;
+  const { created, beforeCreate, destroyed } = vantOptions;
   const { type, name, current, linked, unlinked } = simpleRelation;
   if (type === 'ancestor') {
-    options.created = function () {
-      beforeCreate && beforeCreate.bind(this)();
+    options.attached = function () {
+      created && created.bind(this)();
       this.dispatch(`${name}Linked`, {
         node: this,
       });

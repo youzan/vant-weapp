@@ -22,6 +22,10 @@ VantComponent({
       value: 'danger'
     }
   },
+  data: {
+    // hack baidu
+    style: 'flex: 1;',
+  },
 
   mounted() {
     this.updateStyle();

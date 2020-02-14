@@ -8,13 +8,16 @@ VantComponent({
     dot: Boolean
   },
 
-  relation: {
+  simpleRelation: {
     name: 'tabbar',
-    type: 'ancestor'
+    type: 'ancestor',
+    current: 'tabbar-item',
   },
 
   data: {
-    active: false
+    active: false,
+    // hack baidu
+    style: 'flex: 1;',
   },
 
   methods: {

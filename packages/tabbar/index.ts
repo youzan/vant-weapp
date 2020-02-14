@@ -3,18 +3,15 @@ import { VantComponent } from '../common/component';
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
 VantComponent({
-  relation: {
+  simpleRelation: {
     name: 'tabbar-item',
     type: 'descendant',
+    current: 'tabbar',
     linked(target) {
-      this.children.push(target);
       target.parent = this;
       target.updateFromParent();
     },
-    unlinked(target) {
-      this.children = this.children.filter(
-        (item: TrivialInstance) => item !== target
-      );
+    unlinked() {
       this.updateChildren();
     }
   },
@@ -48,10 +45,6 @@ VantComponent({
       type: Boolean,
       value: true
     }
-  },
-
-  beforeCreate() {
-    this.children = [];
   },
 
   methods: {

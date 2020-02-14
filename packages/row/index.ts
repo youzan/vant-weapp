@@ -20,7 +20,7 @@ VantComponent({
   },
 
   data: {
-    viewStyle: ''
+    viewStyle: '',
   },
 
   mounted() {
@@ -33,11 +33,11 @@ VantComponent({
     setGutter() {
       const { gutter } = this.data;
       const margin = `-${Number(gutter) / 2}px`;
-      const style = gutter
+      const viewStyle = gutter
         ? `margin-right: ${margin}; margin-left: ${margin};`
         : '';
 
-      this.setData({ viewStyle: style });
+      this.setData({ viewStyle });
       this.children.forEach(col => {
         col.setGutter(this.data.gutter);
       });

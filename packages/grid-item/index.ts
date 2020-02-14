@@ -21,6 +21,10 @@ VantComponent({
     useSlot: Boolean
   },
 
+  data: {
+    viewStyle: '',
+  },
+
   mounted() {
     this.updateStyle();
   },
@@ -65,7 +69,7 @@ VantComponent({
       }
 
       this.setData({
-        style: styleWrapper.join('; '),
+        viewStyle: styleWrapper.join('; '),
         contentStyle,
         center,
         border,

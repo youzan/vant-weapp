@@ -56,7 +56,8 @@ VantComponent({
 
   data: {
     error: false,
-    loading: true
+    loading: true,
+    viewStyle: '',
   },
 
   mounted() {
@@ -88,7 +89,7 @@ VantComponent({
         style += `border-radius: ${addUnit(radius)};`;
       }
 
-      this.setData({ style });
+      this.setData({ viewStyle: style });
     },
 
     onLoad(event) {

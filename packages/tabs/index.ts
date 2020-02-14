@@ -137,19 +137,19 @@ VantComponent({
       this.setCurrentIndexByName(this.getCurrentName() || data.active);
     },
 
-    trigger(eventName: string) {
+    trigger(eventName: string, child?: TrivialInstance) {
       const { currentIndex } = this.data;
 
-      const child = this.children[currentIndex];
+      const currentChild = child || this.children[currentIndex];
 
-      if (!isDef(child)) {
+      if (!isDef(currentChild)) {
         return;
       }
 
       this.$emit(eventName, {
-        index: currentIndex,
-        name: child.getComputedName(),
-        title: child.data.title
+        index: currentChild.index,
+        name: currentChild.getComputedName(),
+        title: currentChild.data.title
       });
     },
 
@@ -158,7 +158,7 @@ VantComponent({
       const child = this.children[index];
 
       if (child.data.disabled) {
-        this.trigger('disabled');
+        this.trigger('disabled', child);
       } else {
         this.setCurrentIndex(index);
         wx.nextTick(() => {

@@ -46,6 +46,10 @@ VantComponent({
     }
   },
 
+  data: {
+    viewStyle: '',
+  },
+
   beforeCreate() {
     this.children = [];
   },
@@ -54,7 +58,7 @@ VantComponent({
     const { gutter } = this.data;
     if (gutter) {
       this.setData({
-        style: `padding-left: ${addUnit(gutter)}`
+        viewStyle: `padding-left: ${addUnit(gutter)}`
       });
     }
   },

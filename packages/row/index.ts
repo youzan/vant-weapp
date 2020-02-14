@@ -18,6 +18,10 @@ VantComponent({
     }
   },
 
+  data: {
+    viewStyle: '',
+  },
+
   mounted() {
     if (this.data.gutter) {
       this.setGutter();
@@ -28,11 +32,11 @@ VantComponent({
     setGutter() {
       const { gutter } = this.data;
       const margin = `-${Number(gutter) / 2}px`;
-      const style = gutter
+      const viewStyle = gutter
         ? `margin-right: ${margin}; margin-left: ${margin};`
         : '';
 
-      this.setData({ style });
+      this.setData({ viewStyle });
       this.getRelationNodes('../col/index').forEach(col => {
         col.setGutter(this.data.gutter);
       });

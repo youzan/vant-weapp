@@ -8,13 +8,13 @@
   justify-content: center;
   box-sizing: border-box;
   padding: 0;
-  line-height: @button-line-height;
   text-align: center;
   vertical-align: middle;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
   .theme(height, '@button-default-height');
+  .theme(line-height, '@button-line-height');
   .theme(font-size, '@button-default-font-size');
   .theme(transition, 'opacity @animation-duration-fast');
   .theme(border-radius, '@button-border-radius');
@@ -50,36 +50,36 @@
 
   &--default {
     .theme(color, '@button-default-color');
-    .theme(background-color, '@button-default-background-color');
-    .theme(border, '1px solid @button-default-border-color');
+    .theme(background, '@button-default-background-color');
+    .theme(border, '@button-border-width solid @button-default-border-color');
   }
 
   &--primary {
     .theme(color, '@button-primary-color');
-    .theme(background-color, '@button-primary-background-color');
-    .theme(border, '1px solid @button-primary-border-color');
+    .theme(background, '@button-primary-background-color');
+    .theme(border, '@button-border-width solid @button-primary-border-color');
   }
 
   &--info {
     .theme(color, '@button-info-color');
-    .theme(background-color, '@button-info-background-color');
-    .theme(border, '1px solid @button-info-border-color');
+    .theme(background, '@button-info-background-color');
+    .theme(border, '@button-border-width solid @button-info-border-color');
   }
 
   &--danger {
     .theme(color, '@button-danger-color');
-    .theme(background-color, '@button-danger-background-color');
-    .theme(border, '1px solid @button-danger-border-color');
+    .theme(background, '@button-danger-background-color');
+    .theme(border, '@button-border-width solid @button-danger-border-color');
   }
 
   &--warning {
     .theme(color, '@button-warning-color');
-    .theme(background-color, '@button-warning-background-color');
-    .theme(border, '1px solid @button-warning-border-color');
+    .theme(background, '@button-warning-background-color');
+    .theme(border, '@button-border-width solid @button-warning-border-color');
   }
 
   &--plain {
-    .theme(background-color, '@button-plain-background-color');
+    .theme(background, '@button-plain-background-color');
 
     &.van-button--primary {
       .theme(color, '@button-primary-background-color');

@@ -78,6 +78,7 @@ VantComponent({
 
       const shouldEmitChange = this.data.value !== value;
       this.setData({ showPopup: false, value });
+      this.$emit('close');
 
       setTimeout(() => {
         this.setData({ showWrapper: false });

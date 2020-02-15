@@ -49,7 +49,7 @@ Page({
 通过设置`label-disabled`属性可以禁用复选框文本点击
 
 ```html
-<van-checkbox value="{{ checked }}" icon-disabled>复选框</van-checkbox>
+<van-checkbox value="{{ checked }}" label-disabled>复选框</van-checkbox>
 ```
 
 ### 自定义形状

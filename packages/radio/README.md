@@ -54,8 +54,8 @@ Page({
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1" icon-disabled>单选框 1</van-radio>
-  <van-radio name="2" icon-disabled>单选框 2</van-radio>
+  <van-radio name="1" label-disabled>单选框 1</van-radio>
+  <van-radio name="2" label-disabled>单选框 2</van-radio>
 </van-radio-group>
 ```
 

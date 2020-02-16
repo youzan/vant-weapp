@@ -4,10 +4,10 @@
 <h3 align="center">轻量、可靠的小程序 UI 组件库</h3>
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/@vant/weapp.svg?style=flat-square" alt="npm version" />
-  <img src="https://img.shields.io/npm/dt/@vant/weapp.svg?style=flat-square" alt="downloads" />
-  <img src="https://img.shields.io/npm/dm/@vant/weapp.svg?style=flat-square" alt="downloads" />
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg">
+  <img src="https://img.shields.io/npm/v/@vant/weapp.svg?style=for-the-badge" alt="npm version" />
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&color=#4fc08d" />
+  <img src="https://img.shields.io/npm/dt/@vant/weapp.svg?style=for-the-badge&color=#4fc08d" alt="downloads" />
+  <img src="https://img.shields.io/npm/dm/@vant/weapp.svg?style=for-the-badge&color=#4fc08d" alt="downloads" />
 </p>
 
 <p align="center">

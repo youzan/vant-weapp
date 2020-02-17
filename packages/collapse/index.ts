@@ -3,7 +3,6 @@ import { VantComponent } from '../common/component';
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
 VantComponent({
-
   relation: {
     name: 'collapse-item',
     type: 'descendant',

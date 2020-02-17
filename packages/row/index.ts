@@ -38,7 +38,7 @@ VantComponent({
         : '';
 
       this.setData({ viewStyle });
-      this.children.forEach(col => {
+      this.getRelationNodes('../col/index').forEach(col => {
         col.setGutter(this.data.gutter);
       });
     }

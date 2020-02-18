@@ -2,6 +2,6 @@ page {
   background-color: #fff;
 }
 
-.van-rate {
+.rate-position {
   margin-left: 15px;
 }

@@ -5,7 +5,10 @@ VantComponent({
   props: {
     row: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(value: number) {
+        this.setData({ rowArray: Array.from({ length: value }) });
+      },
     },
     title: Boolean,
     avatar: Boolean,
@@ -39,6 +42,7 @@ VantComponent({
   },
 
   data: {
-    isArray: false
+    isArray: false,
+    rowArray: [],
   }
 });

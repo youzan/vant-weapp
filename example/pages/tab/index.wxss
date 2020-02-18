@@ -17,10 +17,10 @@ page {
   background-color: #fff;
 }
 
-.tab-class {
+.special-tab {
   transition: all 0.25s ease-in-out;
 }
 
-.tab-active-class {
+.special-tab-active {
   font-size: 1.05em !important;
 }

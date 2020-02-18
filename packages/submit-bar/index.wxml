@@ -32,7 +32,8 @@
       loading="{{ loading }}"
       disabled="{{ disabled }}"
       class="van-submit-bar__button"
-      custom-class="van-submit-bar__button__shape button-class"
+      custom-class="button-class"
+      shape-class="van-submit-bar__button__shape"
       bind:click="onSubmit"
     >
       {{ loading ? '' : buttonText }}

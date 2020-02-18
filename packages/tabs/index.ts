@@ -116,9 +116,10 @@ VantComponent({
   mounted() {
     this.setData({
       container: () => this.createSelectorQuery().select('.van-tabs')
+    }, () => {
+      this.setLine(true);
+      this.scrollIntoView();
     });
-    this.setLine(true);
-    this.scrollIntoView();
   },
 
   methods: {

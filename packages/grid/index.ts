@@ -43,10 +43,6 @@ VantComponent({
     viewStyle: '',
   },
 
-  beforeCreate() {
-    this.children = [];
-  },
-
   created() {
     const { gutter } = this.data;
     if (gutter) {

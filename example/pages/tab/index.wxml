@@ -57,7 +57,7 @@
 </demo-block>
 
 <demo-block title="样式风格">
-  <van-tabs type="card" tab-class="tab-class">
+  <van-tabs type="card" tab-class="special-tab">
     <van-tab
       wx:for="{{ tabs3 }}"
       wx:key="index"
@@ -127,7 +127,7 @@
 </demo-block>
 
 <demo-block title="自定义标题">
-  <van-tabs active="{{ 1 }}" bind:change="onChange" tab-class="tab-class" tab-active-class="tab-active-class">
+  <van-tabs active="{{ 1 }}" bind:change="onChange" tab-class="special-tab" tab-active-class="special-tab-active">
     <van-icon
       slot="nav-right"
       name="search"

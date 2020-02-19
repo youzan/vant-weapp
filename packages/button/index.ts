@@ -5,7 +5,7 @@ import { openType } from '../mixins/open-type';
 VantComponent({
   mixins: [button, openType],
 
-  classes: ['hover-class', 'loading-class', 'shape-class'],
+  classes: ['hover-class', 'loading-class'],
 
   data: {
     baseStyle: ''

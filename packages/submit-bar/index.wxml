@@ -33,6 +33,7 @@
       disabled="{{ disabled }}"
       class="van-submit-bar__button"
       custom-class="button-class"
+      custom-style="width: 100%;"
       shape-class="van-submit-bar__button__shape"
       bind:click="onSubmit"
     >

@@ -79,12 +79,9 @@
   }
 
   &__button {
+    .theme(width,'@submit-bar-button-width');
     .theme(font-weight, '@font-weight-bold');
-
-    &__shape {
-      .theme(width, '@submit-bar-button-width');
-      .theme(height, '@submit-bar-button-height') !important;
-      .theme(line-height, '@submit-bar-button-height') !important;
-    }
+    .theme(--button-default-height, '@submit-bar-button-height') !important;
+    .theme(--button-line-height, '@submit-bar-button-height') !important;
   }
 }

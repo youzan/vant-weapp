@@ -40,7 +40,7 @@ VantComponent({
   },
 
   data: {
-    viewStyle: ''
+    viewStyle: '',
   },
 
   created() {

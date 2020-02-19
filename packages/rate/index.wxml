@@ -6,7 +6,7 @@
 >
   <view
     class="van-rate__item"
-    wx:for="{{ count }}"
+    wx:for="{{ innerCountArray }}"
     wx:key="index"
     style="padding-right: {{ index !== count - 1 ? utils.addUnit(gutter) : '' }}"
   >

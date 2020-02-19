@@ -1,6 +1,6 @@
 <demo-block title="基础用法">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     data-key="value1"
     value="{{ value1 }}"
   />
@@ -8,7 +8,7 @@
 
 <demo-block title="自定义图标">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     icon="like"
     void-icon="like-o"
     data-key="value2"
@@ -18,7 +18,7 @@
 
 <demo-block title="自定义样式">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     data-key="value3"
     value="{{ value3 }}"
     size="{{ 25 }}"
@@ -31,7 +31,7 @@
 
 <demo-block title="半星">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     data-key="value4"
     value="{{ value4 }}"
     size="{{ 25 }}"
@@ -46,7 +46,7 @@
 
 <demo-block title="自定义数量">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     data-key="value5"
     value="{{ value5 }}"
     count="{{ 6 }}"
@@ -56,7 +56,7 @@
 
 <demo-block title="禁用状态">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     data-key="value6"
     value="{{ value6 }}"
     disabled
@@ -65,7 +65,7 @@
 
 <demo-block title="只读状态">
   <van-rate
-    custom-class="van-rate"
+    custom-class="rate-position"
     data-key="value6"
     value="{{ value6 }}"
     readonly

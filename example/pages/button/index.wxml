@@ -1,4 +1,4 @@
-<demo-section>
+
   <demo-block title="按钮类型" padding>
     <view class="row">
       <van-button class="demo-margin-right">默认按钮</van-button>
@@ -58,4 +58,4 @@
     <van-button type="primary" custom-class="demo-margin-bottom">普通按钮</van-button>
     <van-button type="primary" block>块级元素</van-button>
   </demo-block>
-</demo-section>
+

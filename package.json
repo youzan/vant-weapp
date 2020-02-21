@@ -1,10 +1,10 @@
 {
-  "name": "@vant/weapp",
-  "version": "1.0.5",
+  "name": "vant-mp",
+  "version": "0.1.0",
   "author": "youzan",
   "license": "MIT",
   "miniprogram": "lib",
-  "description": "轻量、可靠的小程序 UI 组件库",
+  "description": "基于vant-weapp(1.0.6)，做了百度小程序的兼容修改",
   "publishConfig": {
     "access": "public"
   },

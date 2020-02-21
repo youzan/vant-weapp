@@ -7,14 +7,13 @@ VantComponent({
     relation: {
         name: 'tab',
         type: 'descendant',
+        current: 'tabs',
         linked(target) {
-            target.index = this.children.length;
-            this.children.push(target);
+            target.index = this.children.length - 1;
             this.updateTabs();
         },
-        unlinked(target) {
+        unlinked() {
             this.children = this.children
-                .filter((child) => child !== target)
                 .map((child, index) => {
                 child.index = index;
                 return child;
@@ -103,15 +102,13 @@ VantComponent({
         currentIndex: null,
         container: null
     },
-    beforeCreate() {
-        this.children = [];
-    },
     mounted() {
         this.setData({
             container: () => this.createSelectorQuery().select('.van-tabs')
+        }, () => {
+            this.setLine(true);
+            this.scrollIntoView();
         });
-        this.setLine(true);
-        this.scrollIntoView();
     },
     methods: {
         updateTabs() {
@@ -122,23 +119,23 @@ VantComponent({
             });
             this.setCurrentIndexByName(this.getCurrentName() || data.active);
         },
-        trigger(eventName) {
+        trigger(eventName, child) {
             const { currentIndex } = this.data;
-            const child = this.children[currentIndex];
-            if (!isDef(child)) {
+            const currentChild = child || this.children[currentIndex];
+            if (!isDef(currentChild)) {
                 return;
             }
             this.$emit(eventName, {
-                index: currentIndex,
-                name: child.getComputedName(),
-                title: child.data.title
+                index: currentChild.index,
+                name: currentChild.getComputedName(),
+                title: currentChild.data.title
             });
         },
         onTap(event) {
             const { index } = event.currentTarget.dataset;
             const child = this.children[index];
             if (child.data.disabled) {
-                this.trigger('disabled');
+                this.trigger('disabled', child);
             }
             else {
                 this.setCurrentIndex(index);

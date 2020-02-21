@@ -3,13 +3,12 @@ VantComponent({
     relation: {
         name: 'tabbar-item',
         type: 'descendant',
+        current: 'tabbar',
         linked(target) {
-            this.children.push(target);
             target.parent = this;
             target.updateFromParent();
         },
-        unlinked(target) {
-            this.children = this.children.filter((item) => item !== target);
+        unlinked() {
             this.updateChildren();
         }
     },
@@ -42,9 +41,6 @@ VantComponent({
             type: Boolean,
             value: true
         }
-    },
-    beforeCreate() {
-        this.children = [];
     },
     methods: {
         updateChildren() {

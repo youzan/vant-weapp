@@ -6,12 +6,11 @@ VantComponent({
     relation: {
         name: 'dropdown-item',
         type: 'descendant',
-        linked(target) {
-            this.children.push(target);
+        current: 'dropdown-menu',
+        linked() {
             this.updateItemListData();
         },
-        unlinked(target) {
-            this.children = this.children.filter((child) => child !== target);
+        unlinked() {
             this.updateItemListData();
         }
     },
@@ -55,7 +54,6 @@ VantComponent({
     beforeCreate() {
         const { windowHeight } = wx.getSystemInfoSync();
         this.windowHeight = windowHeight;
-        this.children = [];
         ARRAY.push(this);
     },
     destroyed() {

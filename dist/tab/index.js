@@ -3,12 +3,7 @@ VantComponent({
     relation: {
         name: 'tabs',
         type: 'ancestor',
-        linked(target) {
-            this.parent = target;
-        },
-        unlinked() {
-            this.parent = null;
-        }
+        current: 'tab',
     },
     props: {
         dot: {
@@ -37,7 +32,9 @@ VantComponent({
         }
     },
     data: {
-        active: false
+        active: false,
+        // hack baidu
+        style: 'flex-shrink: 0;box-sizing: border-box;width: 100%;',
     },
     methods: {
         getComputedName() {

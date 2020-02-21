@@ -8,12 +8,7 @@ VantComponent({
     relation: {
         name: 'checkbox-group',
         type: 'ancestor',
-        linked(target) {
-            this.parent = target;
-        },
-        unlinked() {
-            this.parent = null;
-        }
+        current: 'checkbox',
     },
     classes: ['icon-class', 'label-class'],
     props: {
@@ -32,6 +27,9 @@ VantComponent({
             value: 20
         }
     },
+    data: {
+        parentDisabled: false
+    },
     methods: {
         emitChange(value) {
             if (this.parent) {
@@ -42,14 +40,14 @@ VantComponent({
             }
         },
         toggle() {
-            const { disabled, value } = this.data;
-            if (!disabled) {
+            const { parentDisabled, disabled, value } = this.data;
+            if (!disabled && !parentDisabled) {
                 this.emitChange(!value);
             }
         },
         onClickLabel() {
-            const { labelDisabled, disabled, value } = this.data;
-            if (!disabled && !labelDisabled) {
+            const { labelDisabled, parentDisabled, disabled, value } = this.data;
+            if (!disabled && !labelDisabled && !parentDisabled) {
                 this.emitChange(!value);
             }
         },

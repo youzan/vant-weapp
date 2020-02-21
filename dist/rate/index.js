@@ -37,7 +37,10 @@ VantComponent({
         },
         count: {
             type: Number,
-            value: 5
+            value: 5,
+            observer(value) {
+                this.setData({ innerCountArray: Array.from({ length: value }) });
+            },
         },
         gutter: null,
         touchable: {
@@ -46,7 +49,8 @@ VantComponent({
         }
     },
     data: {
-        innerValue: 0
+        innerValue: 0,
+        innerCountArray: Array.from({ length: 5 }),
     },
     methods: {
         onSelect(event) {

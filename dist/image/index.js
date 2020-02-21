@@ -51,7 +51,8 @@ VantComponent({
     },
     data: {
         error: false,
-        loading: true
+        loading: true,
+        viewStyle: '',
     },
     mounted() {
         this.setMode();
@@ -76,7 +77,7 @@ VantComponent({
                 style += 'overflow: hidden;';
                 style += `border-radius: ${addUnit(radius)};`;
             }
-            this.setData({ style });
+            this.setData({ viewStyle: style });
         },
         onLoad(event) {
             this.setData({

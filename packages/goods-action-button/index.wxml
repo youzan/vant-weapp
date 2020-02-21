@@ -26,4 +26,5 @@
   bindlaunchapp="bindLaunchApp"
 >
   {{ text }}
+  <slot></slot>
 </van-button>

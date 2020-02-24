@@ -4,13 +4,10 @@ VantComponent({
     relation: {
         name: 'dropdown-menu',
         type: 'ancestor',
-        linked(target) {
-            this.parent = target;
+        current: 'dropdown-item',
+        linked() {
             this.updateDataFromParent();
         },
-        unlinked() {
-            this.parent = null;
-        }
     },
     props: {
         value: {
@@ -65,6 +62,7 @@ VantComponent({
             const { value } = option;
             const shouldEmitChange = this.data.value !== value;
             this.setData({ showPopup: false, value });
+            this.$emit('close');
             setTimeout(() => {
                 this.setData({ showWrapper: false });
             }, this.data.duration || 0);

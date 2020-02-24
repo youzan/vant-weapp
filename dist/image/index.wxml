@@ -1,7 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
 <view
-  style="{{ style }}"
+  style="{{ viewStyle }}"
   class="custom-class {{ utils.bem('image', { round })}}"
   bind:tap="onClick"
 >

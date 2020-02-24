@@ -8,7 +8,8 @@ VantComponent({
     },
     relation: {
         name: 'tabbar',
-        type: 'ancestor'
+        type: 'ancestor',
+        current: 'tabbar-item',
     },
     data: {
         active: false

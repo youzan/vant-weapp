@@ -22,18 +22,18 @@
       <text>{{ label || '合计：' }}</text>
       <text class="van-submit-bar__price price-class">
         <text class="van-submit-bar__currency">{{ currency }} </text>
-        <text>{{ priceStr }}</text>
+        <text class="van-submit-bar__price-integer">{{ integerStr }}</text><text>{{decimalStr}}</text>
       </text>
       <text class="van-submit-bar__suffix-label">{{ suffixLabel }}</text>
     </view>
     <van-button
-      square
-      size="large"
+      round
       type="{{ buttonType }}"
       loading="{{ loading }}"
       disabled="{{ disabled }}"
       class="van-submit-bar__button"
       custom-class="button-class"
+      custom-style="width: 100%;"
       bind:click="onSubmit"
     >
       {{ loading ? '' : buttonText }}

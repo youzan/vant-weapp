@@ -9,5 +9,8 @@ VantComponent({
         },
         size: String,
         textSize: String
-    }
+    },
+    data: {
+        array12: Array.from({ length: 12 }),
+    },
 });

@@ -42,9 +42,11 @@ VantComponent({
     methods: {
         updatePrice() {
             const { price, decimalLength } = this.data;
+            const priceStrArr = typeof price === 'number' && (price / 100).toFixed(decimalLength).split('.');
             this.setData({
                 hasPrice: typeof price === 'number',
-                priceStr: (price / 100).toFixed(decimalLength)
+                integerStr: priceStrArr && priceStrArr[0],
+                decimalStr: decimalLength && priceStrArr ? `.${priceStrArr[1]}` : ''
             });
         },
         updateTip() {

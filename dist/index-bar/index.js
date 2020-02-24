@@ -12,6 +12,7 @@ VantComponent({
     relation: {
         name: 'index-anchor',
         type: 'descendant',
+        current: 'index-bar',
         linked() {
             this.updateData();
         },

@@ -5,9 +5,7 @@ VantComponent({
     relation: {
         name: 'grid',
         type: 'ancestor',
-        linked(parent) {
-            this.parent = parent;
-        }
+        current: 'grid-item',
     },
     mixins: [link],
     props: {
@@ -16,6 +14,9 @@ VantComponent({
         info: null,
         text: String,
         useSlot: Boolean
+    },
+    data: {
+        viewStyle: '',
     },
     mounted() {
         this.updateStyle();
@@ -51,7 +52,7 @@ VantComponent({
         `;
             }
             this.setData({
-                style: styleWrapper.join('; '),
+                viewStyle: styleWrapper.join('; '),
                 contentStyle,
                 center,
                 border,

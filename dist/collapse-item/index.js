@@ -5,9 +5,7 @@ VantComponent({
     relation: {
         name: 'collapse',
         type: 'ancestor',
-        linked(parent) {
-            this.parent = parent;
-        }
+        current: 'collapse-item',
     },
     props: {
         name: null,

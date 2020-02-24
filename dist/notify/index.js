@@ -25,6 +25,9 @@ VantComponent({
             value: false
         }
     },
+    data: {
+        show: false,
+    },
     created() {
         const { statusBarHeight } = wx.getSystemInfoSync();
         this.setData({ statusBarHeight });

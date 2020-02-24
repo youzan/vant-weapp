@@ -1,6 +1,6 @@
 # 更新日志
 
-## [v1.0.6](https://github.com/youzan/vant-weapp/tree/v1.0.6)
+### [v1.0.6](https://github.com/youzan/vant-weapp/tree/v1.0.6)
 `2020-02-24`
 
 **Bug Fixes**

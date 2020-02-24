@@ -1,9 +1,26 @@
 # 更新日志
 
+## [v1.0.6](https://github.com/youzan/vant-weapp/tree/v1.0.6)
+`2020-02-24`
+
+**Bug Fixes**
+
+- DropdownItem: 修复点击选项时不触发`close`事件 [\#2766](https://github.com/youzan/vant-weapp/pull/2766)
+- GoodsActionButton: 修复低版本基础库下的样式问题 [\#2762](https://github.com/youzan/vant-weapp/pull/2762)
+- Tabs: 修复点击禁用项时事件参数错误 [\#2758](https://github.com/youzan/vant-weapp/pull/2758)
+- Checkbox: 修复动态设置`disabled`属性无效 [\#2748](https://github.com/youzan/vant-weapp/pull/2748)
+- Button: add loading color when plain is true [\#2746](https://github.com/youzan/vant-weapp/pull/2746)
+- Radio: 修复`label-disabled`文档错误 [\#2763](https://github.com/youzan/vant-weapp/pull/2763)
+
+**Features**
+
+- GoodsActionButton: 新增默认slot [\#2779](https://github.com/youzan/vant-weapp/pull/2779)
+- SubmitBar: 更新圆角样式 [\#2755](https://github.com/youzan/vant-weapp/pull/2755)
+- Card: 更新样式 [\#2754](https://github.com/youzan/vant-weapp/pull/2754)
+- 优化relation部分代码 [\#2760](https://github.com/youzan/vant-weapp/pull/2760)
 
 ### [v1.0.5](https://github.com/youzan/vant-weapp/tree/v1.0.5)
 `2020-02-07`
-
 
 **Bug Fixes**
 

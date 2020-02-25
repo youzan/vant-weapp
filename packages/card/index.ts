@@ -8,7 +8,7 @@ VantComponent({
     'thumb-class',
     'title-class',
     'price-class',
-    'origin-price-class',
+    'origin-price-class'
   ],
 
   mixins: [link],
@@ -43,7 +43,7 @@ VantComponent({
       const priceArr = price.toString().split('.');
       this.setData({
         integerStr: priceArr[0],
-        decimalStr: priceArr[1] ? `.${priceArr[1]}` : '',
+        decimalStr: priceArr[1] ? `.${priceArr[1]}` : ''
       });
     },
 

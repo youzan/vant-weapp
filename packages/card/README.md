@@ -71,6 +71,8 @@
 | title | 自定义标题栏，如果设置了`title`属性则不生效 |
 | desc | 自定义描述栏，如果设置了`desc`属性则不生效 |
 | price-top | 自定义价格上方区域 |
+| price | 自定义价格 |
+| num | 自定义数量 |
 | thumb | 自定义 thumb，如果设置了`thumb`属性则不生效 |
 | bottom | 自定义价格下方区域 |
 | footer | 自定义 footer |

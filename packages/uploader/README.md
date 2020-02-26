@@ -27,23 +27,21 @@ Page({
   data: {
     fileList: []
   },
-  methods: {
-    afterRead(event) {
-      const { file } = event.detail;
-      // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
-      wx.uploadFile({
-        url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
-        filePath: file.path,
-        name: 'file',
-        formData: { user: 'test' },
-        success(res) {
-          // 上传完成需要更新 fileList
-          const { fileList = [] } = this.data;
-          fileList.push({ ...file, url: res.data });
-          this.setData({ fileList });
-        }
-      });
-    }
+  afterRead(event) {
+    const { file } = event.detail;
+    // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
+    wx.uploadFile({
+      url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
+      filePath: file.path,
+      name: 'file',
+      formData: { user: 'test' },
+      success(res) {
+        // 上传完成需要更新 fileList
+        const { fileList = [] } = this.data;
+        fileList.push({ ...file, url: res.data });
+        this.setData({ fileList });
+      }
+    });
   }
 });
 ```
@@ -114,11 +112,9 @@ Page({
     fileList: []
   },
 
-  methods: {
-    beforeRead(event) {
-      const { file, callback } = event.detail;
-      callback(file.type === 'image');
-    }
+  beforeRead(event) {
+    const { file, callback } = event.detail;
+    callback(file.type === 'image');
   }
 });
 ```
@@ -163,40 +159,40 @@ uploadFilePromise(fileName, chooseResult) {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-----------|-----------|
-| name | 标识符，可以在回调函数的第二项参数中获取 | *string \| number* | - | - |
-| accept | 接受的文件类型, 可选值为`all` `image` `file` `video` | *string* | `image` | - |
-| sizeType | 所选的图片的尺寸, 当`accept`为`image`类型时设置所选图片的尺寸可选值为`original` `compressed`| *string[]* | `['original','compressed']` | - |
-| preview-size | 预览图和上传区域的尺寸，默认单位为`px` | *string \| number* | `80px` | - |
-| preview-image | 是否在上传完成后展示预览图 | *boolean* | `true` | - |
-| preview-full-image | 是否在点击预览图后展示全屏图片预览 | *boolean* | `true` | - |
-| multiple | 是否开启图片多选，部分安卓机型不支持 | *boolean* | `false` | - |
-| disabled | 是否禁用文件上传 | *boolean* | `false` | - |
-| deletable | 是否展示删除按钮 | *boolean* | `true` | - |
-| capture | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | *string \| string[]* | `['album', 'camera']` | - |
-| disabled | 是否禁用文件上传 | *boolean* | `false` | - |
-| max-size | 文件大小限制，单位为`byte` | *number* | - | - |
-| max-count | 文件上传数量限制 | *number* | - | - |
-| upload-text | 上传区域文字提示 | *string* | - | - |
-| image-fit | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性 | *string* | `scaleToFill` | - |
-| use-before-read | 是否开启文件读取前事件 | *boolean* | - | - |
-| camera | 当 accept 为 `video` 时生效，可选值为 `back` `front` | *string* | - | - |
-| compressed | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true` | *boolean* | - | - |
-| max-duration | 当 accept 为 `video` 时生效，拍摄视频最长拍摄时间，单位秒 | *number* | - | - |
+| 参数               | 说明                                                                                           | 类型                 | 默认值                      | 版本 |
+| ------------------ | ---------------------------------------------------------------------------------------------- | -------------------- | --------------------------- | ---- |
+| name               | 标识符，可以在回调函数的第二项参数中获取                                                       | _string \| number_   | -                           | -    |
+| accept             | 接受的文件类型, 可选值为`all` `image` `file` `video`                                           | _string_             | `image`                     | -    |
+| sizeType           | 所选的图片的尺寸, 当`accept`为`image`类型时设置所选图片的尺寸可选值为`original` `compressed`   | _string[]_           | `['original','compressed']` | -    |
+| preview-size       | 预览图和上传区域的尺寸，默认单位为`px`                                                         | _string \| number_   | `80px`                      | -    |
+| preview-image      | 是否在上传完成后展示预览图                                                                     | _boolean_            | `true`                      | -    |
+| preview-full-image | 是否在点击预览图后展示全屏图片预览                                                             | _boolean_            | `true`                      | -    |
+| multiple           | 是否开启图片多选，部分安卓机型不支持                                                           | _boolean_            | `false`                     | -    |
+| disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     | -    |
+| deletable          | 是否展示删除按钮                                                                               | _boolean_            | `true`                      | -    |
+| capture            | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | _string \| string[]_ | `['album', 'camera']`       | -    |
+| disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     | -    |
+| max-size           | 文件大小限制，单位为`byte`                                                                     | _number_             | -                           | -    |
+| max-count          | 文件上传数量限制                                                                               | _number_             | -                           | -    |
+| upload-text        | 上传区域文字提示                                                                               | _string_             | -                           | -    |
+| image-fit          | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性                                        | _string_             | `scaleToFill`               | -    |
+| use-before-read    | 是否开启文件读取前事件                                                                         | _boolean_            | -                           | -    |
+| camera             | 当 accept 为 `video` 时生效，可选值为 `back` `front`                                           | _string_             | -                           | -    |
+| compressed         | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true`                                        | _boolean_            | -                           | -    |
+| max-duration       | 当 accept 为 `video` 时生效，拍摄视频最长拍摄时间，单位秒                                      | _number_             | -                           | -    |
 
 ### Slot
 
-| 名称 | 说明 |
-|-----------|-----------|
-| - | 自定义上传区域 |
+| 名称 | 说明           |
+| ---- | -------------- |
+| -    | 自定义上传区域 |
 
 ### Event
 
-| 事件名 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
-| bind:before-read | 文件读取前，在回调函数中返回 `false` 可终止文件读取，绑定事件的同时需要将`use-before-read`属性设置为`true` | `event.detail.file`: 当前读取的文件，`event.detail.callback`: 回调函数，调用`callback(false)`终止文件读取 |
-| bind:after-read | 文件读取完成后 | `event.detail.file`: 当前读取的文件 |
-| bind:oversize | 文件超出大小限制 | - |
-| bind:click-preview | 点击预览图片 | `event.detail.index`: 点击图片的序号值 |
-| bind:delete | 删除图片 | `event.detail.index`: 删除图片的序号值 |
+| 事件名             | 说明                                                                                                       | 回调参数                                                                                                  |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| bind:before-read   | 文件读取前，在回调函数中返回 `false` 可终止文件读取，绑定事件的同时需要将`use-before-read`属性设置为`true` | `event.detail.file`: 当前读取的文件，`event.detail.callback`: 回调函数，调用`callback(false)`终止文件读取 |
+| bind:after-read    | 文件读取完成后                                                                                             | `event.detail.file`: 当前读取的文件                                                                       |
+| bind:oversize      | 文件超出大小限制                                                                                           | -                                                                                                         |
+| bind:click-preview | 点击预览图片                                                                                               | `event.detail.index`: 点击图片的序号值                                                                    |
+| bind:delete        | 删除图片                                                                                                   | `event.detail.index`: 删除图片的序号值                                                                    |

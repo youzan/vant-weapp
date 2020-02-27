@@ -130,8 +130,8 @@ VantComponent({
 
       const fixed =
         containerHeight && height
-          ? top >= height - containerHeight && top < offsetTop
-          : top < offsetTop;
+          ? top >= height - containerHeight && top <= offsetTop
+          : top <= offsetTop;
 
       this.$emit('scroll', {
         scrollTop: top,

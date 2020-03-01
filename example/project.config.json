@@ -334,6 +334,14 @@
 					"id": -1,
 					"name": "uploader",
 					"pathName": "pages/uploader/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "dropdown-menu",
+					"pathName": "pages/dropdown-menu/index",
+					"query": "",
 					"scene": null
 				}
 			]

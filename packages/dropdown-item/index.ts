@@ -10,7 +10,7 @@ VantComponent({
     current: 'dropdown-item',
     linked() {
       this.updateDataFromParent();
-    },
+    }
   },
 
   props: {
@@ -31,7 +31,8 @@ VantComponent({
       type: Array,
       value: [],
       observer: 'rerender'
-    }
+    },
+    popupStyle: String
   },
 
   data: {
@@ -67,9 +68,21 @@ VantComponent({
       }
     },
 
-    onClickOverlay() {
-      this.toggle();
+    onOpen() {
+      this.$emit('open');
+    },
+
+    onOpened() {
+      this.$emit('opened');
+    },
+
+    onClose() {
       this.$emit('close');
+    },
+
+    onClosed() {
+      this.$emit('closed');
+      this.setData({ showWrapper: false });
     },
 
     onOptionTap(event: Weapp.Event) {
@@ -80,10 +93,6 @@ VantComponent({
       this.setData({ showPopup: false, value });
       this.$emit('close');
 
-      setTimeout(() => {
-        this.setData({ showWrapper: false });
-      }, this.data.duration || 0);
-
       this.rerender();
 
       if (shouldEmitChange) {
@@ -92,9 +101,9 @@ VantComponent({
     },
 
     toggle(show, options = {}) {
-      const { showPopup, duration } = this.data;
+      const { showPopup } = this.data;
 
-      if (show == null) {
+      if (typeof show !== 'boolean') {
         show = !showPopup;
       }
 
@@ -102,27 +111,19 @@ VantComponent({
         return;
       }
 
-      if (!show) {
-        const time = options.immediate ? 0 : duration;
-        this.setData({ transition: !options.immediate, showPopup: show });
-
-        setTimeout(() => {
-          this.setData({ showWrapper: false });
-        }, time);
-
-        this.rerender();
-        return;
-      }
-
-      this.parent.getChildWrapperStyle().then((wrapperStyle: String = '') => {
-        this.setData({
-          transition: !options.immediate,
-          showPopup: show,
-          wrapperStyle,
-          showWrapper: true
-        });
-        this.rerender();
+      this.setData({
+        transition: !options.immediate,
+        showPopup: show,
       });
+
+      if (show) {
+        this.parent.getChildWrapperStyle().then((wrapperStyle: string) => {
+          this.setData({ wrapperStyle, showWrapper: true });
+          this.rerender();
+        });
+      } else {
+        this.rerender();
+      }
     }
   }
 });

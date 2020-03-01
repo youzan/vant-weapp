@@ -12,6 +12,7 @@ VantComponent({
   classes: ['icon-class', 'label-class'],
 
   props: {
+    name: null,
     value: null,
     disabled: Boolean,
     useIconSlot: Boolean,

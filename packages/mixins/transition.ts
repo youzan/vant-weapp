@@ -37,14 +37,11 @@ export const transition = function(showDefaultValue: boolean) {
       display: false
     },
 
-    attached() {
-      if (this.data.show) {
-        this.enter();
-      }
-    },
-
     methods: {
-      observeShow(value: boolean) {
+      observeShow(value: boolean, old: boolean) {
+        if (value === old) {
+          return;
+        }
         value ? this.enter() : this.leave();
       },
 

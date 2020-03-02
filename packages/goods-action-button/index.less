@@ -6,7 +6,10 @@
 }
 
 .van-goods-action-button {
-  .theme(--button-warning-background-color, '@goods-action-button-warning-color');
+  .theme(
+    --button-warning-background-color,
+    '@goods-action-button-warning-color'
+  );
   .theme(--button-danger-background-color, '@goods-action-button-danger-color');
   .theme(--button-default-height, '@goods-action-button-height');
   .theme(--button-line-height, '@goods-action-button-height');
@@ -31,6 +34,10 @@
       --button-border-radius,
       '0 @goods-action-button-border-radius @goods-action-button-border-radius 0'
     );
+  }
+
+  &--first&--last {
+    .theme(--button-border-radius, '@goods-action-button-border-radius');
   }
 
   &--plain {

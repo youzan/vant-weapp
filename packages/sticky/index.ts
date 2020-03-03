@@ -30,6 +30,7 @@ VantComponent({
         }
 
         this.observeContainer();
+        this.updateFixed();
       }
     }
   },
@@ -58,6 +59,22 @@ VantComponent({
           wx.nextTick(() => {
             this.observeContent();
             this.observeContainer();
+          });
+        }
+      );
+    },
+
+    updateFixed() {
+      Promise.all([this.getRect(ROOT_ELEMENT), this.getContainerRect()]).then(
+        ([
+          content,
+          container
+        ]: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
+          this.setData({ height: content.height });
+          this.containerHeight = container.height;
+
+          wx.nextTick(() => {
+            this.setFixed(content.top);
           });
         }
       );

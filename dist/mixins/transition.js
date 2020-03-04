@@ -32,13 +32,11 @@ export const transition = function (showDefaultValue) {
             inited: false,
             display: false
         },
-        attached() {
-            if (this.data.show) {
-                this.enter();
-            }
-        },
         methods: {
-            observeShow(value) {
+            observeShow(value, old) {
+                if (value === old) {
+                    return;
+                }
                 value ? this.enter() : this.leave();
             },
             enter() {

@@ -103,14 +103,17 @@ VantComponent({
         container: null
     },
     mounted() {
-        this.setData({
-            container: () => this.createSelectorQuery().select('.van-tabs')
-        }, () => {
+        wx.nextTick(() => {
             this.setLine(true);
             this.scrollIntoView();
         });
     },
     methods: {
+        updateContainer() {
+            this.setData({
+                container: () => this.createSelectorQuery().select('.van-tabs')
+            });
+        },
         updateTabs() {
             const { children = [], data } = this;
             this.setData({
@@ -173,6 +176,7 @@ VantComponent({
             wx.nextTick(() => {
                 this.setLine();
                 this.scrollIntoView();
+                this.updateContainer();
                 this.trigger('input');
                 if (shouldEmitChange) {
                     this.trigger('change');

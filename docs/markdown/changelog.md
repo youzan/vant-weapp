@@ -1,7 +1,32 @@
 # 更新日志
 
+### [v1.0.7](https://github.com/youzan/vant-weapp/tree/v1.0.7)
+`2020-03-04`
+
+**Features**
+
+- DropdownItem: 新增 `popupStyle` 属性 [\#2804](https://github.com/youzan/vant-weapp/pull/2804)
+- DropdownItem: 新增 `open` `close` `opened` `closed` 事件 [\#2804](https://github.com/youzan/vant-weapp/pull/2804)
+- Card: 新增 `price` `num` 插槽 [\#2787](https://github.com/youzan/vant-weapp/pull/2787)
+- Card: 新增 `origin-price-class` 外部样式类 [\#2787](https://github.com/youzan/vant-weapp/pull/2787)
+
+**Bug Fixes**
+
+- Tab: 修复内容项高度不同时粘性布局异常 [\#2817](https://github.com/youzan/vant-weapp/pull/2817)
+- Picker: 修复未选中项样式未置灰 [\#2816](https://github.com/youzan/vant-weapp/pull/2816)
+- GoodsActionButton: 修复仅使用一个button时样式异常 [\#2808](https://github.com/youzan/vant-weapp/pull/2808)
+- Radio: `name`类型与`value`统一 [\#2801](https://github.com/youzan/vant-weapp/pull/2801)
+- Uploader: 修复文档错误 [\#2777](https://github.com/youzan/vant-weapp/pull/2777)
+
 ### [v1.0.6](https://github.com/youzan/vant-weapp/tree/v1.0.6)
 `2020-02-24`
+
+**Features**
+
+- GoodsActionButton: 新增默认slot [\#2779](https://github.com/youzan/vant-weapp/pull/2779)
+- SubmitBar: 更新圆角样式 [\#2755](https://github.com/youzan/vant-weapp/pull/2755)
+- Card: 更新样式 [\#2754](https://github.com/youzan/vant-weapp/pull/2754)
+- 优化relation部分代码 [\#2760](https://github.com/youzan/vant-weapp/pull/2760)
 
 **Bug Fixes**
 
@@ -12,23 +37,8 @@
 - Button: add loading color when plain is true [\#2746](https://github.com/youzan/vant-weapp/pull/2746)
 - Radio: 修复`label-disabled`文档错误 [\#2763](https://github.com/youzan/vant-weapp/pull/2763)
 
-**Features**
-
-- GoodsActionButton: 新增默认slot [\#2779](https://github.com/youzan/vant-weapp/pull/2779)
-- SubmitBar: 更新圆角样式 [\#2755](https://github.com/youzan/vant-weapp/pull/2755)
-- Card: 更新样式 [\#2754](https://github.com/youzan/vant-weapp/pull/2754)
-- 优化relation部分代码 [\#2760](https://github.com/youzan/vant-weapp/pull/2760)
-
 ### [v1.0.5](https://github.com/youzan/vant-weapp/tree/v1.0.5)
 `2020-02-07`
-
-**Bug Fixes**
-
-- Radio: 修复`disabled`属性不生效 [\#2711](https://github.com/youzan/vant-weapp/pull/2711)
-- Tab: 修复`animated`属性无法动态切换 [\#2712](https://github.com/youzan/vant-weapp/pull/2712)
-- Circle: 修正文档错误，`size`属性不支持`string`类型 [\#2694](https://github.com/youzan/vant-weapp/pull/2694)
-- 修正文档默认 slot 名称为 default 的错误 [\#2726](https://github.com/youzan/vant-weapp/pull/2726)
-- TreeSelect: 修正文档示例代码标签闭合错误 [\#2710](https://github.com/youzan/vant-weapp/pull/2710)
 
 **Features**
 
@@ -38,15 +48,16 @@
 - 示例小程序首页与vant对齐 [\#2729](https://github.com/youzan/vant-weapp/pull/2729)
 - 完善快速上手文档，增加npm构建说明 [\#2726](https://github.com/youzan/vant-weapp/pull/2726)
 
-### [v1.0.4](https://github.com/youzan/vant-weapp/tree/v1.0.4)
-`2020-01-21`
-
 **Bug Fixes**
 
-- Sticky: 修复真机上页面滚动缓慢时无法吸顶/取消吸顶 [\#2703](https://github.com/youzan/vant-weapp/pull/2703)
-- DropdownItem: 修复 wx:key 警告 [\#2670](https://github.com/youzan/vant-weapp/pull/2670)
-- IndexBar: 文档修复组件引入路径错误 [\#2689](https://github.com/youzan/vant-weapp/pull/2689)
-- 升级依赖版本以避免安全警告 [\#2680](https://github.com/youzan/vant-weapp/pull/2680)
+- Radio: 修复`disabled`属性不生效 [\#2711](https://github.com/youzan/vant-weapp/pull/2711)
+- Tab: 修复`animated`属性无法动态切换 [\#2712](https://github.com/youzan/vant-weapp/pull/2712)
+- Circle: 修正文档错误，`size`属性不支持`string`类型 [\#2694](https://github.com/youzan/vant-weapp/pull/2694)
+- 修正文档默认 slot 名称为 default 的错误 [\#2726](https://github.com/youzan/vant-weapp/pull/2726)
+- TreeSelect: 修正文档示例代码标签闭合错误 [\#2710](https://github.com/youzan/vant-weapp/pull/2710)
+
+### [v1.0.4](https://github.com/youzan/vant-weapp/tree/v1.0.4)
+`2020-01-21`
 
 **Features**
 
@@ -55,18 +66,25 @@
 - Search: 新增 background、disabled、input-align 文档示例 [\#2698](https://github.com/youzan/vant-weapp/pull/2698)
 - Icon: 文档新增图标文字加载失败说明 [\#2681](https://github.com/youzan/vant-weapp/pull/2681)
 
-### [v1.0.3](https://github.com/youzan/vant-weapp/tree/v1.0.3)
-`2020-01-09`
-
 **Bug Fixes**
 
-- Tab: 解决动态添加选项时，顺序错乱和下划线长度不变的问题 [\#2663](https://github.com/youzan/vant-weapp/pull/2663)
-- NavBar: 修复返回图标未居中的问题 [\#2633](https://github.com/youzan/vant-weapp/pull/2633)
+- Sticky: 修复真机上页面滚动缓慢时无法吸顶/取消吸顶 [\#2703](https://github.com/youzan/vant-weapp/pull/2703)
+- DropdownItem: 修复 wx:key 警告 [\#2670](https://github.com/youzan/vant-weapp/pull/2670)
+- IndexBar: 文档修复组件引入路径错误 [\#2689](https://github.com/youzan/vant-weapp/pull/2689)
+- 升级依赖版本以避免安全警告 [\#2680](https://github.com/youzan/vant-weapp/pull/2680)
+
+### [v1.0.3](https://github.com/youzan/vant-weapp/tree/v1.0.3)
+`2020-01-09`
 
 **Features**
 
 - npm包默认输出es5版本代码 [\#2639](https://github.com/youzan/vant-weapp/pull/2639)
 - Steps: 新增外部样式类 desc-class [\#2630](https://github.com/youzan/vant-weapp/pull/2630)
+
+**Bug Fixes**
+
+- Tab: 解决动态添加选项时，顺序错乱和下划线长度不变的问题 [\#2663](https://github.com/youzan/vant-weapp/pull/2663)
+- NavBar: 修复返回图标未居中的问题 [\#2633](https://github.com/youzan/vant-weapp/pull/2633)
 
 ### [v1.0.2](https://github.com/youzan/vant-weapp/tree/v1.0.2)
 `2019-12-31`

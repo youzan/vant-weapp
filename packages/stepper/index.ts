@@ -38,7 +38,8 @@ VantComponent({
       value: true
     },
     disablePlus: Boolean,
-    disableMinus: Boolean
+    disableMinus: Boolean,
+    skipValueWatch: Boolean,
   },
 
   computed: {
@@ -53,7 +54,7 @@ VantComponent({
 
   watch: {
     value(value) {
-      if (value === '') {
+      if (value === '' || this.data.skipValueWatch) {
         return;
       }
 

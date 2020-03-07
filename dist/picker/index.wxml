@@ -1,4 +1,4 @@
-<import src="./toolbar" />
+<import src="./toolbar.wxml" />
 
 <view class="van-picker custom-class">
   <template is="toolbar" wx:if="{{ toolbarPosition === 'top' }}" data="{{ showToolbar, cancelButtonText, title, confirmButtonText }}"></template>

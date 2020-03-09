@@ -83,6 +83,14 @@ function VantComponent(vantOptions = {}) {
     if (vantOptions.field) {
         options.behaviors.push('wx://form-field');
     }
+    if (options.properties) {
+        Object.keys(options.properties).forEach(name => {
+            if (Array.isArray(options.properties[name])) {
+                // miniprogram do not allow multi type
+                options.properties[name] = null;
+            }
+        });
+    }
     // add default options
     options.options = {
         multipleSlots: true,

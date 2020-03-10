@@ -1,11 +1,14 @@
 import { VantComponent } from '../common/component';
-import { addUnit, isDef } from '../common/utils';
+import { isDef } from '../common/utils';
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
 // add num and avoid float number
 function add(num1, num2) {
     const cardinal = Math.pow(10, 10);
     return Math.round((num1 + num2) * cardinal) / cardinal;
+}
+function equal(value1, value2) {
+    return String(value1) === String(value2);
 }
 VantComponent({
     field: true,
@@ -14,47 +17,34 @@ VantComponent({
         value: {
             type: null,
             observer(value) {
-                if (value === '') {
-                    return;
+                if (!equal(value, this.data.currentValue)) {
+                    this.setData({ currentValue: this.format(value) });
                 }
-                const newValue = this.range(value);
-                if (typeof newValue === 'number' && +this.data.value !== newValue) {
-                    this.setData({ value: newValue });
-                }
-            },
-        },
-        integer: Boolean,
-        disabled: Boolean,
-        inputWidth: {
-            type: null,
-            observer() {
-                this.setData({
-                    inputStyle: this.computeInputStyle()
-                });
-            },
-        },
-        buttonSize: {
-            type: null,
-            observer() {
-                this.setData({
-                    inputStyle: this.computeInputStyle(),
-                    buttonStyle: this.computeButtonStyle()
-                });
             }
         },
+        integer: {
+            type: Boolean,
+            observer: 'check'
+        },
+        disabled: Boolean,
+        inputWidth: null,
+        buttonSize: null,
         asyncChange: Boolean,
         disableInput: Boolean,
         decimalLength: {
             type: Number,
-            value: null
+            value: null,
+            observer: 'check'
         },
         min: {
             type: null,
-            value: 1
+            value: 1,
+            observer: 'check'
         },
         max: {
             type: null,
-            value: Number.MAX_SAFE_INTEGER
+            value: Number.MAX_SAFE_INTEGER,
+            observer: 'check'
         },
         step: {
             type: null,
@@ -73,36 +63,52 @@ VantComponent({
         longPress: {
             type: Boolean,
             value: true
-        },
+        }
     },
     data: {
-        focus: false,
-        inputStyle: '',
-        buttonStyle: ''
+        currentValue: ''
     },
     created() {
         this.setData({
-            value: this.range(this.data.value)
+            currentValue: this.format(this.data.value)
         });
     },
     methods: {
+        check() {
+            const val = this.format(this.data.currentValue);
+            if (!equal(val, this.data.currentValue)) {
+                this.setData({ currentValue: val });
+            }
+        },
         isDisabled(type) {
             if (type === 'plus') {
-                return this.data.disabled || this.data.disablePlus || this.data.value >= this.data.max;
+                return (this.data.disabled ||
+                    this.data.disablePlus ||
+                    this.data.currentValue >= this.data.max);
             }
-            return this.data.disabled || this.data.disableMinus || this.data.value <= this.data.min;
+            return (this.data.disabled ||
+                this.data.disableMinus ||
+                this.data.currentValue <= this.data.min);
         },
         onFocus(event) {
             this.$emit('focus', event.detail);
         },
         onBlur(event) {
-            const value = this.range(this.data.value);
-            this.triggerInput(value);
-            this.$emit('blur', event.detail);
+            const value = this.format(event.detail.value);
+            this.emitChange(value);
+            this.$emit('blur', Object.assign(Object.assign({}, event.detail), { value }));
+        },
+        // filter illegal characters
+        filter(value) {
+            value = String(value).replace(/[^0-9.-]/g, '');
+            if (this.data.integer && value.indexOf('.') !== -1) {
+                value = value.split('.')[0];
+            }
+            return value;
         },
         // limit value range
-        range(value) {
-            value = String(value).replace(/[^0-9.-]/g, '');
+        format(value) {
+            value = this.filter(value);
             // format range
             value = value === '' ? 0 : +value;
             value = Math.max(Math.min(this.data.max, value), this.data.min);
@@ -114,7 +120,23 @@ VantComponent({
         },
         onInput(event) {
             const { value = '' } = event.detail || {};
-            this.triggerInput(value);
+            // allow input to be empty
+            if (value === '') {
+                return;
+            }
+            let formatted = this.filter(value);
+            // limit max decimal length
+            if (isDef(this.data.decimalLength) && formatted.indexOf('.') !== -1) {
+                const pair = formatted.split('.');
+                formatted = `${pair[0]}.${pair[1].slice(0, this.data.decimalLength)}`;
+            }
+            this.emitChange(formatted);
+        },
+        emitChange(value) {
+            if (!this.data.asyncChange) {
+                this.setData({ currentValue: value });
+            }
+            this.$emit('change', value);
         },
         onChange() {
             const { type } = this;
@@ -123,8 +145,8 @@ VantComponent({
                 return;
             }
             const diff = type === 'minus' ? -this.data.step : +this.data.step;
-            const value = add(+this.data.value, diff);
-            this.triggerInput(this.range(value));
+            const value = this.format(add(+this.data.currentValue, diff));
+            this.emitChange(value);
             this.$emit(type);
         },
         longPressStep() {
@@ -157,30 +179,6 @@ VantComponent({
                 return;
             }
             clearTimeout(this.longPressTimer);
-        },
-        triggerInput(value) {
-            this.setData({
-                value: this.data.asyncChange ? this.data.value : value
-            });
-            this.$emit('change', value);
-        },
-        computeInputStyle() {
-            let style = '';
-            if (this.data.inputWidth) {
-                style = `width: ${addUnit(this.data.inputWidth)};`;
-            }
-            if (this.data.buttonSize) {
-                style += `height: ${addUnit(this.data.buttonSize)};`;
-            }
-            return style;
-        },
-        computeButtonStyle() {
-            let style = '';
-            const size = addUnit(this.data.buttonSize);
-            if (this.data.buttonSize) {
-                style = `width: ${size};height: ${size};`;
-            }
-            return style;
         }
     }
 });

@@ -1,4 +1,5 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
 
 <van-cell
   size="{{ size }}"
@@ -16,7 +17,7 @@
 >
   <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
-  <view class="{{ utils.bem('field__body', [type, system]) }}">
+  <view class="{{ utils.bem('field__body', [type]) }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
       class="input-class {{ utils.bem('field__input', [inputAlign, type, { disabled, error }]) }}"
@@ -28,7 +29,8 @@
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
       placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
-      auto-height="{{ autosize }}"
+      auto-height="{{ !!autosize }}"
+      style="{{ computed.inputStyle(autosize) }}"
       cursor-spacing="{{ cursorSpacing }}"
       adjust-position="{{ adjustPosition }}"
       show-confirm-bar="{{ showConfirmBar }}"
@@ -67,7 +69,6 @@
     />
     <van-icon
       wx:if="{{ clearable && focused && value && !readonly }}"
-      size="16px"
       name="clear"
       class="van-field__clear-root van-field__icon-root"
       catch:touchstart="onClear"
@@ -75,7 +76,6 @@
     <view class="van-field__icon-container" bind:tap="onClickIcon">
       <van-icon
         wx:if="{{ rightIcon || icon }}"
-        size="16px"
         name="{{ rightIcon || icon }}"
         class="van-field__icon-root {{ iconClass }}"
         custom-class="right-icon-class"
@@ -86,6 +86,9 @@
     <view class="van-field__button">
       <slot name="button" />
     </view>
+  </view>
+  <view wx:if="{{ showWordLimit && maxlength }}" class="van-field__word-limit">
+    <view class="{{ utils.bem('field__word-num', { full: value.length >= maxlength }) }}">{{ value.length }}</view>/{{ maxlength }}
   </view>
   <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
     {{ errorMessage }}

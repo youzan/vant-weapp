@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { getSystemInfoSync } from '../common/utils';
 
 VantComponent({
   field: true,
@@ -19,7 +18,7 @@ VantComponent({
     leftIcon: String,
     rightIcon: String,
     disabled: Boolean,
-    autosize: Boolean,
+    autosize: [Boolean, Object],
     readonly: Boolean,
     required: Boolean,
     password: Boolean,
@@ -34,6 +33,7 @@ VantComponent({
     holdKeyboard: Boolean,
     errorMessage: String,
     arrowDirection: String,
+    showWordLimit: Boolean,
     placeholderStyle: String,
     errorMessageAlign: String,
     selectionEnd: {
@@ -76,7 +76,6 @@ VantComponent({
 
   data: {
     focused: false,
-    system: getSystemInfoSync().system.split(' ').shift().toLowerCase()
   },
 
   methods: {

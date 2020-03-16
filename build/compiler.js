@@ -83,7 +83,6 @@ tasks.buildExample = gulp.series(
     () =>
       gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
     () => {
-      gulp.watch(`${src}/**/*.ts`, tsCompiler(exampleDir, exampleConfig));
       gulp.watch(`${src}/**/*.less`, lessCompiler(exampleDir));
       gulp.watch(`${src}/**/*.wxml`, copier(exampleDir, 'wxml'));
       gulp.watch(`${src}/**/*.wxs`, copier(exampleDir, 'wxs'));

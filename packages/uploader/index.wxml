@@ -44,6 +44,7 @@
 
       <!-- 默认上传样式 -->
       <view
+        wx:if="{{ showUpload }}"
         class="van-uploader__upload {{ disabled ? 'van-uploader__upload--disabled': ''}}"
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
         bind:tap="startUpload"

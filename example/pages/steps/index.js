@@ -1,4 +1,5 @@
 import Page from '../../common/page';
+import Toast from '../../dist/toast/toast';
 
 Page({
   data: {
@@ -27,5 +28,9 @@ Page({
     this.setData({
       active: ++this.data.active % 4
     });
-  }
+  },
+
+  onClick(event) {
+    Toast(`Index: ${event.detail}`);
+  },
 });

@@ -44,6 +44,10 @@ VantComponent({
       type: Boolean,
       value: true
     },
+    showUpload: {
+      type: Boolean,
+      value: true
+    },
     previewImage: {
       type: Boolean,
       value: true

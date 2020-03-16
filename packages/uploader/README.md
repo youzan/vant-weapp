@@ -169,6 +169,7 @@ uploadFilePromise(fileName, chooseResult) {
 | preview-full-image | 是否在点击预览图后展示全屏图片预览                                                             | _boolean_            | `true`                      | -    |
 | multiple           | 是否开启图片多选，部分安卓机型不支持                                                           | _boolean_            | `false`                     | -    |
 | disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     | -    |
+| show-upload        | 是否展示文件上传按钮                                                                             | _boolean_            | `true`                     | -    |
 | deletable          | 是否展示删除按钮                                                                               | _boolean_            | `true`                      | -    |
 | capture            | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | _string \| string[]_ | `['album', 'camera']`       | -    |
 | disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     | -    |

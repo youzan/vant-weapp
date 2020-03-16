@@ -181,6 +181,7 @@ uploadFilePromise(fileName, chooseResult) {
 | camera             | 当 accept 为 `video` 时生效，可选值为 `back` `front`                                           | _string_             | -                           | -    |
 | compressed         | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true`                                        | _boolean_            | -                           | -    |
 | max-duration       | 当 accept 为 `video` 时生效，拍摄视频最长拍摄时间，单位秒                                      | _number_             | -                           | -    |
+| upload-icon | 上传区域图标，可选值见 [Icon 组件](#/icon) | *string* | `plus` | - |
 
 ### Slot
 

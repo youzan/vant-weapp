@@ -71,6 +71,10 @@ VantComponent({
     maxDuration: {
       type: Number,
       value: 60
+    },
+    uploadIcon: {
+      type: String,
+      value: 'plus'
     }
   },
 

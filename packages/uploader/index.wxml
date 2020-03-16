@@ -49,7 +49,7 @@
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
         bind:tap="startUpload"
       >
-        <van-icon name="plus" class="van-uploader__upload-icon" />
+        <van-icon name="{{ uploadIcon }}" class="van-uploader__upload-icon" />
         <text wx:if="{{ uploadText }}" class="van-uploader__upload-text">{{ uploadText }}</text>
       </view>
     </block>

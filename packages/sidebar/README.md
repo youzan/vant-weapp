@@ -82,6 +82,12 @@ Page({
 | dot | 是否显示右上角小红点 | *boolean* | `false` | - |
 | info | 提示消息 | *string \| number* | `''` | - |
 
+### SidebarItem Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| title | 自定义标题栏，如果设置了`title`属性则不生效 |
+
 ### SidebarItem Event
 
 | 事件名 | 说明 | 参数 |

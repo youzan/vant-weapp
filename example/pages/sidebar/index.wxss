@@ -5,3 +5,7 @@ page {
 .custom-sidebar {
   margin-left: 15px;
 }
+
+.custom-sidebar-slot {
+  --sidebar-width: 100px;
+}

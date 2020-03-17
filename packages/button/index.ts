@@ -68,7 +68,7 @@ VantComponent({
 
   methods: {
     onClick() {
-      if (!this.data.disabled && !this.data.loading) {
+      if (!this.data.loading) {
         this.$emit('click');
       }
     }

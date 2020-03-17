@@ -31,7 +31,7 @@ VantComponent({
   methods: {
     onClick(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
-      this.$emit('click', index);
+      this.$emit('click-step', index);
     }
   },
 });

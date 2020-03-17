@@ -30,7 +30,7 @@
 <demo-block title="click事件">
   <van-steps
     steps="{{ steps }}"
-    bind:click="onClick"
+    bind:click-step="onClick"
     active="{{ active }}"
     custom-class="demo-margin-bottom"
   />

@@ -26,3 +26,16 @@
     active-color="#ee0a24"
   />
 </demo-block>
+
+<demo-block title="click事件">
+  <van-steps
+    steps="{{ steps }}"
+    bind:click-step="onClick"
+    active="{{ active }}"
+    custom-class="demo-margin-bottom"
+  />
+
+  <van-button custom-class="demo-margin-left" bind:click="nextStep">下一步</van-button>
+</demo-block>
+
+<van-toast id="van-toast" />

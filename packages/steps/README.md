@@ -83,6 +83,12 @@ Page({
 | active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/icon) | *string* | `checked` | - |
 | inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/icon) | *string* | - | - |
 
+### Events
+
+| 事件名称 | 说明 | 回调参数 |
+|------|------|------|
+| bind:click-step | 点击步骤时触发的事件 | event.detail:当前步骤的索引 |
+
 ### 外部样式类
 
 | 类名 | 说明 |

@@ -13,3 +13,16 @@
     <van-sidebar-item title="标签名称" info="99+" />
   </van-sidebar>
 </demo-block>
+
+<demo-block title="自定义标题" class="custom-sidebar-slot">
+  <van-sidebar custom-class="custom-sidebar"  bind:change="onChange">
+    <van-sidebar-item info="5">
+      <view slot="title">
+        <van-icon name="wap-home-o" />
+        标签名称
+      </view>
+    </van-sidebar-item>
+    <van-sidebar-item title="标签名称" info="5" />
+    <van-sidebar-item title="标签名称" info="99+" />
+  </van-sidebar>
+</demo-block>

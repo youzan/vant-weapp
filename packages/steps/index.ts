@@ -27,6 +27,7 @@ VantComponent({
     },
     inactiveIcon: String
   },
+
   methods: {
     onClick(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;

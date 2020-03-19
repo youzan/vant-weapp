@@ -123,6 +123,12 @@
 | clickable  | 是否开启格子点击反馈 | *boolean* | `false` | - |
 | use-slot | 是否使用自定义内容的插槽 | *boolean* | `false` |
 
+### Grid 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+
 ### GridItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -147,3 +153,12 @@
 | - | 自定义宫格的所有内容，需要设置`use-slot`属性 |
 | icon | 自定义图标，如果设置了`use-slot`或者`icon`属性则不生效 |
 | text | 自定义文字，如果设置了`use-slot`或者`text`属性则不生效 |
+
+### GridItem 外部样式类
+
+| 类名 | 说明 |
+|-----------|-----------|
+| custom-class | 根节点样式类 |
+| content-class | 内容样式类 |
+| icon-class | 图标样式类 |
+| text-class | 文本样式类 |

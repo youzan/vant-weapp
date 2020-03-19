@@ -2,7 +2,7 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    fileList: [],
+    fileList1: [],
     fileList2: [
       { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
       { url: 'https://img.yzcdn.cn/vant/tree.jpg' }

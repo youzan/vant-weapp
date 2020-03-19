@@ -16,8 +16,8 @@
         alt="{{ item.name || ('图片' + index) }}"
         class="van-uploader__preview-image"
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
-        data-url="{{ item.url || item.path }}"
-        bind:tap="doPreviewImage"
+        data-index="{{ index }}"
+        bind:tap="onPreviewImage"
       />
       <view
         wx:else

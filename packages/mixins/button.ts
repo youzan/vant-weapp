@@ -3,10 +3,7 @@ export const button = Behavior({
 
   properties: {
     id: String,
-    lang: {
-      type: String,
-      value: 'en'
-    },
+    lang: String,
     businessId: Number,
     sessionFrom: String,
     sendMessageTitle: String,

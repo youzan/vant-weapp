@@ -44,14 +44,6 @@ Page({
 </van-checkbox>
 ```
 
-### 禁用文本点击
-
-通过设置`label-disabled`属性可以禁用复选框文本点击
-
-```html
-<van-checkbox value="{{ checked }}" label-disabled>复选框</van-checkbox>
-```
-
 ### 自定义形状
 
 将`shape`属性设置为`square`，复选框的形状会变成方形
@@ -107,6 +99,14 @@ Page({
 });
 ```
 
+### 禁用文本点击
+
+通过设置`label-disabled`属性可以禁用复选框文本点击
+
+```html
+<van-checkbox value="{{ checked }}" label-disabled>复选框</van-checkbox>
+```
+
 ### 复选框组
 
 需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
@@ -133,7 +133,7 @@ Page({
 });
 ```
 
-### 设置最大可选数
+### 限制最大可选数
 
 ```html
 <van-checkbox-group value="{{ result }}" bind:change="onChange" max="{{ 2 }}">

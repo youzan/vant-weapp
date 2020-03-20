@@ -18,6 +18,8 @@ const libDir = path.resolve(__dirname, '../lib');
 const esDir = path.resolve(__dirname, '../dist');
 const exampleDir = path.resolve(__dirname, '../example/dist');
 
+const baseCssPath = path.resolve(__dirname, '../packages/common/index.wxss');
+
 const lessCompiler = dist =>
   function compileLess() {
     return gulp
@@ -27,7 +29,11 @@ const lessCompiler = dist =>
       .pipe(
         insert.transform((contents, file) => {
           if (!file.path.includes('packages' + path.sep + 'common')) {
-            contents = `@import '../common/index.wxss';${contents}`;
+            const relativePath = path.relative(
+              path.normalize(`${file.path}${path.sep}..`),
+              baseCssPath
+            );
+            contents = `@import '${relativePath}';${contents}`;
           }
           return contents;
         })

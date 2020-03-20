@@ -48,7 +48,8 @@
     "pages/dropdown-menu/index",
     "pages/index-bar/index",
     "pages/skeleton/index",
-    "pages/divider/index"
+    "pages/divider/index",
+    "pages/calendar/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -119,7 +120,8 @@
     "van-grid-item": "./dist/grid-item/index",
     "van-dropdown-menu": "./dist/dropdown-menu/index",
     "van-dropdown-item": "./dist/dropdown-item/index",
-    "van-skeleton": "./dist/skeleton/index"
+    "van-skeleton": "./dist/skeleton/index",
+    "van-calendar": "./dist/calendar/index"
   },
   "sitemapLocation": "sitemap.json"
 }

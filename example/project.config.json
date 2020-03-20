@@ -343,6 +343,12 @@
 					"pathName": "pages/dropdown-menu/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "calendar",
+					"pathName": "pages/calendar/index",
+					"scene": null
 				}
 			]
 		}

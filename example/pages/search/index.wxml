@@ -7,7 +7,7 @@
   />
 </demo-block>
 
-<demo-block title="监听对应事件">
+<demo-block title="事件监听">
   <van-search
     value="{{ value }}"
     show-action
@@ -19,39 +19,40 @@
   />
 </demo-block>
 
-<demo-block title="禁用搜索框">
+<demo-block title="搜索框内容对齐">
   <van-search
     value="{{ value }}"
+    input-align="center"
     placeholder="请输入搜索关键词"
+  />
+</demo-block>
+
+<demo-block title="禁用搜索框">
+  <van-search
     disabled
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
   />
 </demo-block>
 
 <demo-block title="自定义背景色">
   <van-search
     value="{{ value }}"
+    shape="round"
+    background="#4fc08d"
     placeholder="请输入搜索关键词"
-    background="#c8c9cc"
   />
 </demo-block>
 
-<demo-block title="搜索框内容对齐">
+<demo-block title="自定义按钮">
   <van-search
     value="{{ value }}"
-    placeholder="请输入搜索关键词"
-    input-align="center"
-  />
-</demo-block>
-
-<demo-block title="高级用法">
-  <van-search
-    value="{{ value }}"
+    label="地址"
+    shape="round"
     placeholder="请输入搜索关键词"
     use-action-slot
     bind:change="onChange"
     bind:search="onSearch"
-    label="地址"
-    shape="round"
   >
     <view slot="action" bind:tap="onClick">搜索</view>
   </van-search>

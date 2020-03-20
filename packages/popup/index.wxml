@@ -18,7 +18,7 @@
   <van-icon
     wx:if="{{ closeable }}"
     name="{{ closeIcon }}"
-    class="van-popup__close-icon van-popup__close-icon--{{ closeIconPosition }}"
+    class="close-icon-class van-popup__close-icon van-popup__close-icon--{{ closeIconPosition }}"
     bind:tap="onClickCloseIcon"
   />
 </view>

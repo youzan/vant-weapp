@@ -1,0 +1,54 @@
+@import '../common/style/var';
+@import '../common/style/theme.less';
+
+.van-calendar {
+  display: flex;
+  flex-direction: column;
+  .theme(height, '@calendar-height');
+  .theme(background-color, '@calendar-background-color');
+
+  &__close-icon {
+    top: 11px;
+  }
+
+  &__popup--top,
+  &__popup--bottom {
+    .theme(height, '@calendar-popup-height');
+  }
+
+  &__popup--left,
+  &__popup--right {
+    height: 100%;
+  }
+
+  &__body {
+    flex: 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__footer {
+    flex-shrink: 0;
+    .theme(padding, '0 @padding-md');
+
+    &--safe-area-inset-bottom {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+
+  &__footer:empty,
+  &__footer + &__footer {
+    display: none;
+  }
+
+  &__footer:empty + &__footer {
+    display: block !important;
+  }
+
+  &__confirm {
+    .theme(height, '@calendar-confirm-button-height') !important;
+    .theme(margin, '@calendar-confirm-button-margin') !important;
+    .theme(line-height, '@calendar-confirm-button-line-height') !important;
+  }
+}

@@ -1,0 +1,125 @@
+@import '../../../common/style/var';
+@import '../../../common/style/theme.less';
+
+.van-calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .theme(background-color, '@calendar-background-color');
+
+  &__month-title {
+    text-align: center;
+    .theme(height, '@calendar-header-title-height');
+    .theme(font-weight, '@font-weight-bold');
+    .theme(font-size, '@calendar-month-title-font-size');
+    .theme(line-height, '@calendar-header-title-height');
+  }
+
+  &__days {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+  }
+
+  &__month-mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    .theme(color, '@calendar-month-mark-color');
+    .theme(font-size, '@calendar-month-mark-font-size');
+  }
+
+  &__day,
+  &__selected-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__day {
+    position: relative;
+    width: 14.285%;
+
+    .theme(height, '@calendar-day-height');
+    .theme(font-size, '@calendar-day-font-size');
+
+    &--end,
+    &--start,
+    &--start-end,
+    &--multiple-middle,
+    &--multiple-selected {
+      .theme(color, '@calendar-range-edge-color');
+      .theme(background-color, '@calendar-range-edge-background-color');
+    }
+
+    &--start {
+      .theme(border-radius, '@border-radius-md 0 0 @border-radius-md');
+    }
+
+    &--end {
+      .theme(border-radius, '0 @border-radius-md @border-radius-md 0');
+    }
+
+    &--start-end,
+    &--multiple-selected {
+      .theme(border-radius, '@border-radius-md');
+    }
+
+    &--middle {
+      .theme(color, '@calendar-range-middle-color');
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: currentColor;
+        content: '';
+
+        .theme(opacity, '@calendar-range-middle-background-opacity');
+      }
+    }
+
+    &--disabled {
+      cursor: default;
+
+      .theme(color, '@calendar-day-disabled-color');
+    }
+  }
+
+  &__top-info,
+  &__bottom-info {
+    position: absolute;
+    right: 0;
+    left: 0;
+    .theme(font-size, '@calendar-info-font-size');
+    .theme(line-height, '@calendar-info-line-height');
+
+    @media (max-width: 350px) {
+      font-size: 9px;
+    }
+  }
+
+  &__top-info {
+    top: 6px;
+  }
+
+  &__bottom-info {
+    bottom: 6px;
+  }
+
+  &__selected-day {
+    .theme(width, '@calendar-selected-day-size');
+    .theme(height, '@calendar-selected-day-size');
+    .theme(color, '@calendar-selected-day-color');
+    .theme(background-color, '@calendar-selected-day-background-color');
+    .theme(border-radius, '@border-radius-md');
+  }
+}

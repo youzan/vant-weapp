@@ -42,20 +42,20 @@ Page({
 通过`disabled`属性禁止选项切换，在`Radio`上设置`diabled`可以禁用单个选项
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange" disabled>
+<van-radio-group value="{{ radio }}" disabled bind:change="onChange">
   <van-radio name="1">单选框 1</van-radio>
   <van-radio name="2">单选框 2</van-radio>
 </van-radio-group>
 ```
 
-### 禁用文本点击
+### 自定义形状
 
-通过设置`label-disabled`属性可以禁用单选框文本点击
+将`shape`属性设置为`square`，单选框的形状会变成方形
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1" label-disabled>单选框 1</van-radio>
-  <van-radio name="2" label-disabled>单选框 2</van-radio>
+  <van-radio name="1" shape="square">单选框 1</van-radio>
+  <van-radio name="2" shape="square">单选框 2</van-radio>
 </van-radio-group>
 ```
 
@@ -77,8 +77,8 @@ Page({
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1">单选框 1</van-radio>
-  <van-radio name="2" icon-size="25px">单选框 2</van-radio>
+  <van-radio name="1" icon-size="24px">单选框 1</van-radio>
+  <van-radio name="2" icon-size="24px">单选框 2</van-radio>
 </van-radio-group>
 ```
 
@@ -114,6 +114,17 @@ Page({
     });
   }
 });
+```
+
+### 禁用文本点击
+
+通过设置`label-disabled`属性可以禁用单选框文本点击
+
+```html
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+  <van-radio name="1" label-disabled>单选框 1</van-radio>
+  <van-radio name="2" label-disabled>单选框 2</van-radio>
+</van-radio-group>
 ```
 
 ### 与 Cell 组件一起使用

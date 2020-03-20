@@ -26,18 +26,6 @@
   </van-checkbox>
 </demo-block>
 
-<demo-block title="禁用复选框文本点击">
-  <van-checkbox
-    label-disabled
-    value="{{ checkboxLabel }}"
-    data-key="checkboxLabel"
-    custom-class="demo-checkbox"
-    bind:change="onChange"
-  >
-    复选框
-  </van-checkbox>
-</demo-block>
-
 <demo-block title="自定义形状">
   <van-checkbox
     value="{{ checkboxShape }}"
@@ -92,6 +80,18 @@
   </van-checkbox>
 </demo-block>
 
+<demo-block title="禁用文本点击">
+  <van-checkbox
+    label-disabled
+    value="{{ checkboxLabel }}"
+    data-key="checkboxLabel"
+    custom-class="demo-checkbox"
+    bind:change="onChange"
+  >
+    复选框
+  </van-checkbox>
+</demo-block>
+
 <demo-block title="复选框组">
   <van-checkbox-group value="{{ result }}" data-key="result" bind:change="onChange">
     <van-checkbox
@@ -105,7 +105,7 @@
   </van-checkbox-group>
 </demo-block>
 
-<demo-block title="设置最大可选数">
+<demo-block title="限制最大可选数">
   <van-checkbox-group value="{{ result2 }}" data-key="result2" max="2" bind:change="onChange">
     <van-checkbox
       wx:for="{{ list }}"

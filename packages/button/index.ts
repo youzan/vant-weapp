@@ -71,6 +71,8 @@ VantComponent({
       if (!this.data.loading) {
         this.$emit('click');
       }
-    }
+    },
+
+    noop() {}
   }
 });

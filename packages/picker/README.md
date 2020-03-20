@@ -79,26 +79,6 @@ Page({
 });
 ```
 
-### 禁用选项
-
-选项可以为对象结构，通过设置 disabled 来禁用该选项
-
-```html
-<van-picker columns="{{ columns }}" />
-```
-
-```javascript
-Page({
-  data: {
-    columns: [
-      { text: '杭州', disabled: true },
-      { text: '宁波' },
-      { text: '温州' }
-    ]
-  }
-});
-```
-
 ### 多列联动
 
 ```html
@@ -129,6 +109,26 @@ Page({
   onChange(event) {
     const { picker, value, index } = event.detail;
     picker.setColumnValues(1, citys[value[0]]);
+  }
+});
+```
+
+### 禁用选项
+
+选项可以为对象结构，通过设置 disabled 来禁用该选项
+
+```html
+<van-picker columns="{{ columns }}" />
+```
+
+```javascript
+Page({
+  data: {
+    columns: [
+      { text: '杭州', disabled: true },
+      { text: '宁波' },
+      { text: '温州' }
+    ]
   }
 });
 ```

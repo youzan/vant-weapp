@@ -13,16 +13,16 @@ export const transition = function(showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,
+      // @ts-ignore
       show: {
         type: Boolean,
         value: showDefaultValue,
-        // @ts-ignore
         observer: 'observeShow'
       },
+      // @ts-ignore
       duration: {
         type: null,
         value: 300,
-        // @ts-ignore
         observer: 'observeDuration'
       },
       name: {

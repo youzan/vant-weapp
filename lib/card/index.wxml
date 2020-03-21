@@ -23,7 +23,7 @@
 
     <view class="van-card__content {{ utils.bem('card__content', { center: centered }) }}">
       <view>
-        <view wx:if="{{ title }}" class="van-card__title title-class">{{ title }}</view>
+        <view wx:if="{{ title }}" class="van-card__title van-multi-ellipsis--l2 title-class">{{ title }}</view>
         <slot wx:else name="title" />
 
         <view wx:if="{{ desc }}" class="van-card__desc desc-class">{{ desc }}</view>

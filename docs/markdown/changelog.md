@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v1.1.0](https://github.com/youzan/vant-weapp/tree/v1.1.0)
+`2020-03-21`
+
+**Features**
+
+- 新增 Calendar 日历组件  [\#2894](https://github.com/youzan/vant-weapp/pull/2894)
+- Grid: 新增外部样式类 custom-class、content-class、icon-class、text-class [\#2882](https://github.com/youzan/vant-weapp/pull/2882)
+- Steps: 新增 click 事件 [\#2874](https://github.com/youzan/vant-weapp/pull/2874)
+- SideBar: 新增 title 插槽 [\#2873](https://github.com/youzan/vant-weapp/pull/2873)
+- Uploader: 新增 upload-icon 属性 [\#2869](https://github.com/youzan/vant-weapp/pull/2869)
+- Uploader: 新增 show-upload 属性 [\#2868](https://github.com/youzan/vant-weapp/pull/2868)
+- Uploader: 更新样式、调整事件触发顺序与vant一致 [\#2886](https://github.com/youzan/vant-weapp/pull/2886)
+- Field: 新增 show-word-limit 属性 [\#2856](https://github.com/youzan/vant-weapp/pull/2856)
+- Field: autosize 属性支持传入对象，指定 maxHeight 与 minHeight [\#2856](https://github.com/youzan/vant-weapp/pull/2856)
+- Field: 新增若干CSS变量 [\#2856](https://github.com/youzan/vant-weapp/pull/2856)
+
+**Bug Fixes**
+
+- Button: 移除 lang 属性默认值 [\#2883](https://github.com/youzan/vant-weapp/pull/2883)
+- Button: 修复 disabled 属性对原生事件无效 [\#2878](https://github.com/youzan/vant-weapp/pull/2878)
+
 ### [v1.0.7](https://github.com/youzan/vant-weapp/tree/v1.0.7)
 `2020-03-04`
 

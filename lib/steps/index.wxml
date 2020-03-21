@@ -5,6 +5,8 @@
     <view
       wx:for="{{ steps }}"
       wx:key="index"
+      bindtap="onClick"
+      data-index="{{ index }}"
       class="{{ utils.bem('step', [direction, status(index, active)]) }} van-hairline"
       style="{{ status(index, active) === 'inactive' ? 'color: ' + inactiveColor: '' }}"
     >

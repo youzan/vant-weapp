@@ -7,7 +7,8 @@ VantComponent({
         'enter-to-class',
         'leave-class',
         'leave-active-class',
-        'leave-to-class'
+        'leave-to-class',
+        'close-icon-class'
     ],
     mixins: [transition(false)],
     props: {

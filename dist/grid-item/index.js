@@ -7,6 +7,7 @@ VantComponent({
         type: 'ancestor',
         current: 'grid-item',
     },
+    classes: ['content-class', 'icon-class', 'text-class'],
     mixins: [link],
     props: {
         icon: String,

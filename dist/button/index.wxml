@@ -15,13 +15,13 @@
   show-message-card="{{ showMessageCard }}"
   app-parameter="{{ appParameter }}"
   aria-label="{{ ariaLabel }}"
-  bindtap="onClick"
-  bindgetuserinfo="bindGetUserInfo"
-  bindcontact="bindContact"
-  bindgetphonenumber="bindGetPhoneNumber"
-  binderror="bindError"
-  bindlaunchapp="bindLaunchApp"
-  bindopensetting="bindOpenSetting"
+  bindtap="{{ !disabled ? 'onClick' : 'noop' }}"
+  bindgetuserinfo="{{ !disabled ? 'bindGetUserInfo' : 'noop' }}"
+  bindcontact="{{ !disabled ? 'bindContact' : 'noop' }}"
+  bindgetphonenumber="{{ !disabled ? 'bindGetPhoneNumber' : 'noop' }}"
+  binderror="{{ !disabled ? 'bindError' : 'noop' }}"
+  bindlaunchapp="{{ !disabled ? 'bindLaunchApp' : 'noop' }}"
+  bindopensetting="{{ !disabled ? 'bindOpenSetting' : 'noop' }}"
 >
   <block wx:if="{{ loading }}">
     <van-loading

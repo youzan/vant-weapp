@@ -23,5 +23,11 @@ VantComponent({
             value: 'checked'
         },
         inactiveIcon: String
-    }
+    },
+    methods: {
+        onClick(event) {
+            const { index } = event.currentTarget.dataset;
+            this.$emit('click-step', index);
+        }
+    },
 });

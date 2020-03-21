@@ -16,8 +16,8 @@
         alt="{{ item.name || ('图片' + index) }}"
         class="van-uploader__preview-image"
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
-        data-url="{{ item.url || item.path }}"
-        bind:tap="doPreviewImage"
+        data-index="{{ index }}"
+        bind:tap="onPreviewImage"
       />
       <view
         wx:else
@@ -44,11 +44,12 @@
 
       <!-- 默认上传样式 -->
       <view
+        wx:if="{{ showUpload }}"
         class="van-uploader__upload {{ disabled ? 'van-uploader__upload--disabled': ''}}"
         style="width: {{ utils.addUnit(previewSize) }}; height: {{ utils.addUnit(previewSize) }};"
         bind:tap="startUpload"
       >
-        <van-icon name="plus" class="van-uploader__upload-icon" />
+        <van-icon name="{{ uploadIcon }}" class="van-uploader__upload-icon" />
         <text wx:if="{{ uploadText }}" class="van-uploader__upload-text">{{ uploadText }}</text>
       </view>
     </block>

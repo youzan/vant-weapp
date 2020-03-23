@@ -9,7 +9,7 @@ VantComponent({
       type: Boolean,
       observer: 'setHeight'
     },
-    fill: {
+    placeholder: {
       type: Boolean,
       observer: 'setHeight'
     },
@@ -57,7 +57,7 @@ VantComponent({
     },
 
     setHeight() {
-      if (!this.data.fixed || !this.data.fill) {
+      if (!this.data.fixed || !this.data.placeholder) {
         return;
       }
 

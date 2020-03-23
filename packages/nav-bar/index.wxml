@@ -1,6 +1,6 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<view wx:if="{{ fixed && fill }}" style="height: {{ height }}px;" />
+<view wx:if="{{ fixed && placeholder }}" style="height: {{ height }}px;" />
 
 <view
   class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'van-hairline--bottom' : '' }}"

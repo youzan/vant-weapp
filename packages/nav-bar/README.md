@@ -56,6 +56,7 @@ Page({
 | right-text | 右侧文案 | *string* | `''` | - |
 | left-arrow | 是否显示左侧箭头 | *boolean* | `false` | - |
 | fixed | 是否固定在顶部 | *boolean* | `false` | - |
+| placeholder | 固定在顶部时是否开启占位 | *boolean* | `false` | - |
 | border | 是否显示下边框 | *boolean* | `true` | - |
 | z-index | 元素 z-index | *number* | `1` | - |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | *boolean* | `true` | - |

@@ -39,6 +39,10 @@ VantComponent({
       value: BLUE,
       observer: 'setHoverColor'
     },
+    type: {
+      type: String,
+      value: ''
+    },
     strokeWidth: {
       type: Number,
       value: 4
@@ -62,8 +66,9 @@ VantComponent({
     },
 
     setHoverColor() {
-      const context = this.getContext();
-      const { color, size } = this.data;
+      const { color, size, type } = this.data;
+      const context = type ? this.getContext(type) : this.getContext();
+
       let hoverColor = color;
 
       if (isObj(color)) {
@@ -111,8 +116,8 @@ VantComponent({
     },
 
     drawCircle(currentValue) {
-      const context = this.getContext();
-      const { size } = this.data;
+      const { size, type } = this.data;
+      const context = type ? this.getContext(type) : this.getContext();
       context.clearRect(0, 0, size, size);
       this.renderLayerCircle(context);
 

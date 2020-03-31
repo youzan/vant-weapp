@@ -71,6 +71,33 @@ Page({
 });
 ```
 
+### 上传状态
+
+通过`status`属性可以标识上传状态，`uploading`表示上传中，`failed`表示上传失败，`done`表示上传完成
+
+```html
+<van-uploader file-list="{{ fileList }}" />
+```
+
+```js
+Page({
+  data: {
+    fileList: [
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        statue: 'uploading',
+        message: '上传中',
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        status: 'failed',
+        message: '上传失败'
+      }
+    ]
+  }
+});
+```
+
 ### 限制上传数量
 
 通过`max-count`属性可以限制上传文件的数量，上传数量达到限制后，会自动隐藏上传区域

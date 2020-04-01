@@ -31,13 +31,16 @@ npm i vant-weapp -S --production
 
 如果你使用 typescript 开发小程序，需要在 tsconfig.json 中增加如下配置，防止 npm 构建后 tsc 编译报错
 
+请将`path/to/node_modules/@vant/weapp`修改为项目中 @vant/weapp 所在的目录
+
 ```json
 {
-  "baseUrl": ".",
-  "paths": {
-    "@vant/weapp/*": ["./node_modules/@vant/weapp/dist/*"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@vant/weapp/*": ["path/to/node_modules/@vant/weapp/dist/*"]
+    }
   }
-  ...
 }
 ```
 
@@ -59,21 +62,27 @@ npm i vant-weapp -S --production
 
 以 Button 组件为例，只需要在`app.json`或`index.json`中配置 Button 对应的路径即可。如果你是通过下载源代码的方式使用 @vant/weapp，请将路径修改为项目中 @vant/weapp 所在的目录。
 
-
-
 ```json
 // 通过 npm 安装
 // app.json
 "usingComponents": {
-  "van-button": "@vant/weapp/button"
+  "van-button": "@vant/weapp/button/index"
 }
 ```
 
 ```json
-// 通过下载源码使用
+// 通过下载源码使用 es6版本
 // app.json
 "usingComponents": {
-  "van-button": "path/to/@vant/weapp/dist/button"
+  "van-button": "path/to/@vant/weapp/dist/button/index"
+}
+```
+
+```json
+// 通过下载源码使用 es5版本
+// app.json
+"usingComponents": {
+  "van-button": "path/to/@vant/weapp/lib/button/index"
 }
 ```
 

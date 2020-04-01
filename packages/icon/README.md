@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-icon": "path/to/@vant/weapp/dist/icon/index"
+  "van-icon": "@vant/weapp/icon/index"
 }
 ```
 

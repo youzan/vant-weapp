@@ -10,7 +10,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ```json
 "usingComponents": {
-  "van-sticky": "path/to/@vant/weapp/dist/sticky/index"
+  "van-sticky": "@vant/weapp/sticky/index"
 }
 ```
 

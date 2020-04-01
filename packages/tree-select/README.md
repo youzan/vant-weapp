@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-tree-select": "path/to/@vant/weapp/dist/tree-select/index"
+  "van-tree-select": "@vant/weapp/tree-select/index"
 }
 ```
 

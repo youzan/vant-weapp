@@ -5,7 +5,7 @@
 
 ```json
 "usingComponents": {
-  "van-notify": "path/to/@vant/weapp/dist/notify/index"
+  "van-notify": "@vant/weapp/notify/index"
 }
 ```
 

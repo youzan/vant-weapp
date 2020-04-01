@@ -9,7 +9,7 @@
 
 ```json
 "usingComponents": {
-  "van-picker": "path/to/@vant/weapp/dist/picker/index"
+  "van-picker": "@vant/weapp/picker/index"
 }
 ```
 

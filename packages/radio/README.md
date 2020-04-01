@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-radio": "path/to/@vant/weapp/dist/radio/index",
-  "van-radio-group": "path/to/@vant/weapp/dist/radio-group/index"
+  "van-radio": "@vant/weapp/radio/index",
+  "van-radio-group": "@vant/weapp/radio-group/index"
 }
 ```
 

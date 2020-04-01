@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-action-sheet": "path/to/@vant/weapp/dist/action-sheet/index"
+  "van-action-sheet": "@vant/weapp/action-sheet/index"
 }
 ```
 
@@ -191,7 +191,7 @@ Page({
 | disabled | 是否为禁用状态 | *boolean* | - |
 | className | 为对应列添加额外的 class 类名 | *string* | - |
 | openType | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | *string* | - |
-| lang | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文 | *string* | `en` | 
+| lang | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文 | *string* | `en` |
 | sessionFrom | 会话来源，openType="contact"时有效 | *string* | - |
 | sendMessageTitle | 会话内消息卡片标题，openType="contact"时有效 | *string* | 当前标题 |
 | sendMessagePath | 会话内消息卡片点击跳转小程序路径，openType="contact"时有效 | *string* | 当前分享路径 |

@@ -12,7 +12,7 @@
 
 ```json
 "usingComponents": {
-  "van-dialog": "path/to/@vant/weapp/dist/dialog/index"
+  "van-dialog": "@vant/weapp/dialog/index"
 }
 ```
 

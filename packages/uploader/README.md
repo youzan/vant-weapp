@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-uploader": "path/to/@vant/weapp/dist/uploader/index"
+  "van-uploader": "@vant/weapp/uploader/index"
 }
 ```
 

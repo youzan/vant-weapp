@@ -6,9 +6,9 @@
 
 ```json
 "usingComponents": {
-  "van-goods-action": "path/to/@vant/weapp/dist/goods-action/index",
-  "van-goods-action-icon": "path/to/@vant/weapp/dist/goods-action-icon/index",
-  "van-goods-action-button": "path/to/@vant/weapp/dist/goods-action-button/index"
+  "van-goods-action": "@vant/weapp/goods-action/index",
+  "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+  "van-goods-action-button": "@vant/weapp/goods-action-button/index"
 }
 ```
 

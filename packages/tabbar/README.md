@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-tabbar": "path/to/@vant/weapp/dist/tabbar/index",
-  "van-tabbar-item": "path/to/@vant/weapp/dist/tabbar-item/index"
+  "van-tabbar": "@vant/weapp/tabbar/index",
+  "van-tabbar-item": "@vant/weapp/tabbar-item/index"
 }
 ```
 

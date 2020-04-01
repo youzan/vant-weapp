@@ -17,7 +17,7 @@
 下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发`confirm`事件
 
 ```html
-<van-cell title="选择单个日期" value="{{ date }}" bind:click="onShow" />
+<van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
 <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
 ```
 
@@ -28,7 +28,7 @@ Page({
     show: false
   },
 
-  onShow() {
+  onDisplay() {
     this.setData({ show: true });
   },
   onClose() {
@@ -52,7 +52,7 @@ Page({
 设置`type`为`multiple`后可以选择多个日期，此时`confirm`事件返回的 date 为数组结构，数组包含若干个选中的日期。
 
 ```html
-<van-cell title="选择多个日期" value="{{ text }}" bind:click="onShow" />
+<van-cell title="选择多个日期" value="{{ text }}" bind:click="onDisplay" />
 <van-calendar
   show="{{ show }}"
   type="multiple"
@@ -68,7 +68,7 @@ Page({
     show: false
   },
 
-  onShow() {
+  onDisplay() {
     this.setData({ show: true });
   },
   onClose() {
@@ -88,7 +88,7 @@ Page({
 设置`type`为`range`后可以选择日期区间，此时`confirm`事件返回的 date 为数组结构，数组第一项为开始时间，第二项为结束时间。
 
 ```html
-<van-cell title="选择日期区间" value="{{ date }}" bind:click="onShow" />
+<van-cell title="选择日期区间" value="{{ date }}" bind:click="onDisplay" />
 <van-calendar
   show="{{ show }}"
   type="range"
@@ -104,7 +104,7 @@ Page({
     show: false
   },
 
-  onShow() {
+  onDisplay() {
     this.setData({ show: true });
   },
   onClose() {

@@ -16,6 +16,10 @@ function getMonths(minDate, maxDate) {
 }
 
 function getButtonDisabled(type, currentDate) {
+  if (currentDate == null) {
+    return true;
+  }
+
   if (type === 'range') {
     return !currentDate[0] || !currentDate[1];
   }

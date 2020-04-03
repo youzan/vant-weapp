@@ -21,9 +21,9 @@
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" />
 </van-sidebar>
 ```
 
@@ -41,9 +41,9 @@ Page({
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
-  <van-sidebar-item title="标签名称" dot />
-  <van-sidebar-item title="标签名称" dot="5" />
-  <van-sidebar-item title="标签名称" dot="99+" />
+  <van-sidebar-item title="标签名" dot />
+  <van-sidebar-item title="标签名" dot="5" />
+  <van-sidebar-item title="标签名" dot="99+" />
 </van-sidebar>
 ```
 
@@ -53,9 +53,9 @@ Page({
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
-  <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" disabled />
-  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="标签名" />
+  <van-sidebar-item title="标签名" disabled />
+  <van-sidebar-item title="标签名" />
 </van-sidebar>
 ```
 
@@ -65,9 +65,9 @@ Page({
 
 ```html
 <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
-  <van-sidebar-item title="标签名1" />
-  <van-sidebar-item title="标签名2" />
-  <van-sidebar-item title="标签名3" />
+  <van-sidebar-item title="标签名 1" />
+  <van-sidebar-item title="标签名 2" />
+  <van-sidebar-item title="标签名 3" />
 </van-sidebar>
 
 <van-notify id="van-notify" />

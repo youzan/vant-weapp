@@ -55,7 +55,7 @@ Page({
 
 ```html
 <van-index-bar
-  scroll-top="{{ scrollTop }}"m
+  scroll-top="{{ scrollTop }}"
   index-list="{{ indexList }}"
 >
   <view>

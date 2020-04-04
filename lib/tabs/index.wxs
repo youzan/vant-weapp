@@ -51,6 +51,15 @@ function tabStyle(
   return styles.join(';');
 }
 
+function tabCardTypeBorderStyle(color, type) {
+  var isCard = type === 'card';
+  var styles = [];
+  if (isCard && color) {
+    styles.push('border-color:' + color);
+  }
+  return styles.join(';');
+}
+
 function trackStyle(data) {
   if (!data.animated) {
     return '';
@@ -66,3 +75,4 @@ function trackStyle(data) {
 module.exports.tabClass = tabClass;
 module.exports.tabStyle = tabStyle;
 module.exports.trackStyle = trackStyle;
+module.exports.tabCardTypeBorderStyle = tabCardTypeBorderStyle;

@@ -1,5 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
+<view wx:if="{{ fixed && placeholder }}" style="height: {{ height }}px;" />
+
 <view
   class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'van-hairline--bottom' : '' }}"
   style="z-index: {{ zIndex }}; padding-top: {{ safeAreaInsetTop ? statusBarHeight : 0 }}px;"

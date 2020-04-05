@@ -184,6 +184,7 @@ Page({
 | sticky | 是否使用粘性定位布局 | *boolean* | `false` | - |
 | swipeable | 是否开启手势滑动切换 | *boolean* | `false` | - |
 | lazy-render | 是否开启标签页内容延迟渲染 | *boolean* | `true` | - |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位`px` | *number* | - | - |
 
 ### Tab Props
 

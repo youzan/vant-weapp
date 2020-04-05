@@ -43,7 +43,7 @@ Page({
 
 ### 通过名称匹配
 
-在标签指定`name`属性的情况下，`active`的值为当前标签的`name`，默认启用第一个标签
+在标签指定`name`属性的情况下，`active`的值为当前标签的`name`（此时无法通过索引值来匹配标签）
 
 ```html
 <van-tabs active="a">

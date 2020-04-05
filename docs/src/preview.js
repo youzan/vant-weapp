@@ -1,4 +1,3 @@
-import './mourn';
 import Vue from 'vue';
 import Preview from './Preview.vue';
 

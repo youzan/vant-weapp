@@ -1,6 +1,6 @@
 {
   "name": "@vant/weapp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "youzan",
   "license": "MIT",
   "miniprogram": "lib",
@@ -14,7 +14,7 @@
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
-    "build:changelog": "vant changelog --tag v1.0.0 ./docs/markdown/changelog.generated.md"
+    "build:changelog": "vant changelog --tag v1.1.0 ./docs/markdown/changelog.generated.md"
   },
   "files": [
     "dist",

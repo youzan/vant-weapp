@@ -6,7 +6,9 @@ const FIT_MODE_MAP = {
     none: 'center',
     fill: 'scaleToFill',
     cover: 'aspectFill',
-    contain: 'aspectFit'
+    contain: 'aspectFit',
+    widthFix: 'widthFix',
+    heightFix: 'heightFix'
 };
 VantComponent({
     mixins: [button, openType],

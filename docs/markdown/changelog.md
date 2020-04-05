@@ -1,5 +1,25 @@
 # 更新日志
 
+### [v1.2.0](https://github.com/youzan/vant-weapp/tree/v1.2.0)
+`2020-04-04`
+
+**Features**
+
+- TreeSelect: 更新 nav 背景色 [\#2952](https://github.com/youzan/vant-weapp/pull/2952)
+- Sticky: 使用 page scroll 重构组件 [\#2950](https://github.com/youzan/vant-weapp/pull/2950)
+- Field: 新增 auto-focus、disable-default-padding、cursor 属性 [\#2936](https://github.com/youzan/vant-weapp/pull/2936)
+- Field: 新增 linechange、keyboardheightchange 事件 [\#2936](https://github.com/youzan/vant-weapp/pull/2936)
+- Uploader: 支持显示上传状态 [\#2929](https://github.com/youzan/vant-weapp/pull/2929)
+- Image: mode 属性新增 widthFix、heightFix [\#2908](https://github.com/youzan/vant-weapp/pull/2908)
+- Canvas: 新增 type 属性 [\#2906](https://github.com/youzan/vant-weapp/pull/2906)
+- NavBar: 新增 placeholder 属性 [\#2896](https://github.com/youzan/vant-weapp/pull/2896)
+
+**Bug Fixes**
+
+- Field: 修复输入过快时输入框内容不断回退 [\#2936](https://github.com/youzan/vant-weapp/pull/2936)
+- Calendar: 修复 show-confirm 为 true 时组件初始化报错 [\#2951](https://github.com/youzan/vant-weapp/pull/2951)
+- Tab: 修复 type 为 card 时 color 对边框无效 [\#2941](https://github.com/youzan/vant-weapp/pull/2941)
+
 ### [v1.1.0](https://github.com/youzan/vant-weapp/tree/v1.1.0)
 `2020-03-21`
 

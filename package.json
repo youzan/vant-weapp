@@ -34,7 +34,7 @@
     "@vant/cli": "^1.0.3",
     "@vant/doc": "^2.5.1",
     "@vant/eslint-config": "^1.2.4",
-    "@vant/icons": "1.1.13",
+    "@vant/icons": "1.2.0",
     "@vant/markdown-loader": "^2.2.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",

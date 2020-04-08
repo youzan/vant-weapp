@@ -114,8 +114,8 @@ Page({
     date = new Date(date);
     return `${date.getMonth() + 1}/${date.getDate()}`;
   },
-  onConfirm(date) {
-    const [start, end] = date;
+  onConfirm(event) {
+    const [start, end] = event.detail;
     this.setData({
       show: false,
       date: `${this.formatDate(start)} - ${this.formatDate(end)}`

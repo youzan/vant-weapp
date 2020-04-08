@@ -39,7 +39,7 @@
   title
   avatar
   row="3"
-  loading="loading"
+  loading="{{ loading }}"
 >
   <view>实际内容</view>
 </van-skeleton>

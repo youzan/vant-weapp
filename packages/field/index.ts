@@ -121,8 +121,12 @@ VantComponent({
     },
 
     emitChange() {
-      this.$emit('input', this.value);
-      this.$emit('change', this.value);
+      this.setData({ value: this.value });
+
+      wx.nextTick(() => {
+        this.$emit('input', this.value);
+        this.$emit('change', this.value);
+      });
     },
 
     setShowClear() {

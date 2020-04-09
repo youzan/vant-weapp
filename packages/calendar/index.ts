@@ -249,7 +249,7 @@ VantComponent({
         if (selected) {
           const cancelDate = currentDate.splice(selectedIndex, 1);
           this.setData({ currentDate });
-          this.cancel(cancelDate);
+          this.unselect(cancelDate);
         } else {
           this.select([...currentDate, date]);
         }
@@ -258,10 +258,10 @@ VantComponent({
       }
     },
 
-    cancel(dateArray) {
+    unselect(dateArray) {
       const date = dateArray[0];
       if (date) {
-        this.$emit('cancel', copyDates(date));
+        this.$emit('unselect', copyDates(date));
       }
     },
 

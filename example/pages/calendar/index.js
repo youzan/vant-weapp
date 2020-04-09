@@ -48,7 +48,7 @@ Page({
     console.log(event);
   },
 
-  onCancel(event) {
+  onUnselect(event) {
     console.log(event);
   },
 

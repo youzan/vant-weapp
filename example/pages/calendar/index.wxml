@@ -131,7 +131,7 @@
   confirm-disabled-text="{{ confirmDisabledText }}"
   bind:confirm="onConfirm"
   bind:select="onSelect"
-  bind:cancel="onCancel"
+  bind:unselect="onUnselect"
   bind:open="onOpen"
   bind:opened="onOpened"
   bind:close="onClose"

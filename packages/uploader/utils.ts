@@ -8,10 +8,10 @@ interface File {
   image: boolean; // 是否为图片
 }
 
-const IMAGE_EXT = ['jpeg', 'jpg', 'gif', 'png', 'svg'];
+const IMAGE_EXT = ['jpeg', 'jpg', 'gif', 'png', 'svg', 'webp'];
 
 export function isImageUrl(url: string): boolean {
-  return IMAGE_EXT.some(ext => url.indexOf(`.${ext}`) !== -1);
+  return IMAGE_EXT.some(ext => url.indexOf(`.${ext}`) !== -1 || url.indexOf(`.${ext.toLocaleUpperCase()}`) !== -1); // 有些七牛返回来的后缀的大写，加以判断
 }
 
 export function isImageFile(item: File): boolean {

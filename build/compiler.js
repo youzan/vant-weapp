@@ -29,10 +29,12 @@ const lessCompiler = dist =>
       .pipe(
         insert.transform((contents, file) => {
           if (!file.path.includes('packages' + path.sep + 'common')) {
-            const relativePath = path.relative(
-              path.normalize(`${file.path}${path.sep}..`),
-              baseCssPath
-            );
+            const relativePath = path
+              .relative(
+                path.normalize(`${file.path}${path.sep}..`),
+                baseCssPath
+              )
+              .replace(/\\/g, '/');
             contents = `@import '${relativePath}';${contents}`;
           }
           return contents;

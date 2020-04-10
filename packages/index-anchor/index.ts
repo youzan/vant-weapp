@@ -4,7 +4,7 @@ VantComponent({
   relation: {
     name: 'index-bar',
     type: 'ancestor',
-    current: 'index-anchor',
+    current: 'index-anchor'
   },
 
   props: {
@@ -16,5 +16,22 @@ VantComponent({
     active: false,
     wrapperStyle: '',
     anchorStyle: ''
+  },
+
+  methods: {
+    scrollIntoView(scrollTop) {
+      this.getBoundingClientRect().then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          wx.pageScrollTo({
+            duration: 0,
+            scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop
+          });
+        }
+      );
+    },
+
+    getBoundingClientRect() {
+      return this.getRect('.van-index-anchor-wrapper');
+    }
   }
 });

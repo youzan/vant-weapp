@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { GREEN } from '../common/color';
+import { pageScrollMixin } from '../mixins/page-scroll';
 
 const indexList = () => {
   const indexList = [];
@@ -20,9 +21,6 @@ VantComponent({
     linked() {
       this.updateData();
     },
-    linkChanged() {
-      this.updateData();
-    },
     unlinked() {
       this.updateData();
     }
@@ -41,11 +39,6 @@ VantComponent({
       type: String,
       value: GREEN
     },
-    scrollTop: {
-      type: Number,
-      value: 0,
-      observer: 'onScroll'
-    },
     stickyOffsetTop: {
       type: Number,
       value: 0
@@ -56,26 +49,39 @@ VantComponent({
     }
   },
 
+  mixins: [
+    pageScrollMixin(function(event) {
+      this.scrollTop = event.scrollTop || 0;
+      this.onScroll();
+    })
+  ],
+
   data: {
     activeAnchorIndex: null,
     showSidebar: false
   },
 
+  created() {
+    this.scrollTop = 0;
+  },
+
   methods: {
     updateData() {
-      this.timer && clearTimeout(this.timer);
+      wx.nextTick(() => {
+        if (this.timer != null) {
+          clearTimeout(this.timer);
+        }
 
-      this.timer = setTimeout(() => {
-        this.children = this.getRelationNodes('../index-anchor/index');
+        this.timer = setTimeout(() => {
+          this.setData({
+            showSidebar: !!this.children.length
+          });
 
-        this.setData({
-          showSidebar: !!this.children.length
-        });
-
-        this.setRect().then(() => {
-          this.onScroll();
-        });
-      }, 0);
+          this.setRect().then(() => {
+            this.onScroll();
+          });
+        }, 0);
+      });
     },
 
     setRect() {
@@ -95,7 +101,7 @@ VantComponent({
               (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
                 Object.assign(anchor, {
                   height: rect.height,
-                  top: rect.top + this.data.scrollTop
+                  top: rect.top + this.scrollTop
                 });
               }
             )
@@ -108,7 +114,7 @@ VantComponent({
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           Object.assign(this, {
             height: rect.height,
-            top: rect.top + this.data.scrollTop
+            top: rect.top + this.scrollTop
           });
         }
       );
@@ -147,8 +153,8 @@ VantComponent({
     },
 
     getActiveAnchorIndex() {
-      const { children } = this;
-      const { sticky, scrollTop, stickyOffsetTop } = this.data;
+      const { children, scrollTop } = this;
+      const { sticky, stickyOffsetTop } = this.data;
 
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
@@ -163,19 +169,13 @@ VantComponent({
     },
 
     onScroll() {
-      const { children = [] } = this;
+      const { children = [], scrollTop } = this;
 
       if (!children.length) {
         return;
       }
 
-      const {
-        sticky,
-        stickyOffsetTop,
-        zIndex,
-        highlightColor,
-        scrollTop
-      } = this.data;
+      const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
 
       const active = this.getActiveAnchorIndex();
 
@@ -298,11 +298,8 @@ VantComponent({
       );
 
       if (anchor) {
+        anchor.scrollIntoView(this.scrollTop);
         this.$emit('select', anchor.data.index);
-        wx.pageScrollTo({
-          duration: 0,
-          scrollTop: anchor.top
-        });
       }
     }
   }

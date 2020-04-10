@@ -48,6 +48,10 @@ Page({
     console.log(event);
   },
 
+  onUnselect(event) {
+    console.log(event);
+  },
+
   onClose() {
     this.setData({ showCalendar: false });
   },

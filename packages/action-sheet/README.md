@@ -72,7 +72,7 @@ Page({
   data: {
     show: false,
     actions: [
-      { name: '选项', color: '07c160' },
+      { name: '选项', color: '#07c160' },
       { loading: true },
       { name: '禁用选项', disabled: true }
     ]

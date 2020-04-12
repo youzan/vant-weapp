@@ -1,5 +1,19 @@
 # 更新日志
 
+### [v1.2.1](https://github.com/youzan/vant-weapp/tree/v1.2.1)
+`2020-04-12`
+
+**Features**
+
+- Field: 支持小程序双向绑定 [\#2986](https://github.com/youzan/vant-weapp/pull/2986)
+- Calendar: 多选模式下新增 unselect 事件 [\#2990](https://github.com/youzan/vant-weapp/pull/2990)
+
+**Bug Fixes**
+
+- IndexBar: 移除 scroll-top 属性 [\#2999](https://github.com/youzan/vant-weapp/pull/2999)
+- Uploader: 修复图片后缀名为大写时未正常识别 [\#2987](https://github.com/youzan/vant-weapp/pull/2987)
+- Field: 修复 autosize 属性 设置 max-height 不生效 [\#3007](https://github.com/youzan/vant-weapp/pull/3007)
+
 ### [v1.2.0](https://github.com/youzan/vant-weapp/tree/v1.2.0)
 `2020-04-04`
 

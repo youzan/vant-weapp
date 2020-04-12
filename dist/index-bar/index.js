@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { GREEN } from '../common/color';
+import { pageScrollMixin } from '../mixins/page-scroll';
 const indexList = () => {
     const indexList = [];
     const charCodeOfA = 'A'.charCodeAt(0);
@@ -14,9 +15,6 @@ VantComponent({
         type: 'descendant',
         current: 'index-bar',
         linked() {
-            this.updateData();
-        },
-        linkChanged() {
             this.updateData();
         },
         unlinked() {
@@ -36,11 +34,6 @@ VantComponent({
             type: String,
             value: GREEN
         },
-        scrollTop: {
-            type: Number,
-            value: 0,
-            observer: 'onScroll'
-        },
         stickyOffsetTop: {
             type: Number,
             value: 0
@@ -50,22 +43,34 @@ VantComponent({
             value: indexList()
         }
     },
+    mixins: [
+        pageScrollMixin(function (event) {
+            this.scrollTop = event.scrollTop || 0;
+            this.onScroll();
+        })
+    ],
     data: {
         activeAnchorIndex: null,
         showSidebar: false
     },
+    created() {
+        this.scrollTop = 0;
+    },
     methods: {
         updateData() {
-            this.timer && clearTimeout(this.timer);
-            this.timer = setTimeout(() => {
-                this.children = this.getRelationNodes('../index-anchor/index');
-                this.setData({
-                    showSidebar: !!this.children.length
-                });
-                this.setRect().then(() => {
-                    this.onScroll();
-                });
-            }, 0);
+            wx.nextTick(() => {
+                if (this.timer != null) {
+                    clearTimeout(this.timer);
+                }
+                this.timer = setTimeout(() => {
+                    this.setData({
+                        showSidebar: !!this.children.length
+                    });
+                    this.setRect().then(() => {
+                        this.onScroll();
+                    });
+                }, 0);
+            });
         },
         setRect() {
             return Promise.all([
@@ -80,7 +85,7 @@ VantComponent({
                 .then((rect) => {
                 Object.assign(anchor, {
                     height: rect.height,
-                    top: rect.top + this.data.scrollTop
+                    top: rect.top + this.scrollTop
                 });
             })));
         },
@@ -88,7 +93,7 @@ VantComponent({
             return this.getRect('.van-index-bar').then((rect) => {
                 Object.assign(this, {
                     height: rect.height,
-                    top: rect.top + this.data.scrollTop
+                    top: rect.top + this.scrollTop
                 });
             });
         },
@@ -120,8 +125,8 @@ VantComponent({
             }));
         },
         getActiveAnchorIndex() {
-            const { children } = this;
-            const { sticky, scrollTop, stickyOffsetTop } = this.data;
+            const { children, scrollTop } = this;
+            const { sticky, stickyOffsetTop } = this.data;
             for (let i = this.children.length - 1; i >= 0; i--) {
                 const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
                 const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
@@ -132,11 +137,11 @@ VantComponent({
             return -1;
         },
         onScroll() {
-            const { children = [] } = this;
+            const { children = [], scrollTop } = this;
             if (!children.length) {
                 return;
             }
-            const { sticky, stickyOffsetTop, zIndex, highlightColor, scrollTop } = this.data;
+            const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
             const active = this.getActiveAnchorIndex();
             this.setDiffData({
                 target: this,
@@ -237,11 +242,8 @@ VantComponent({
             this.scrollToAnchorIndex = index;
             const anchor = this.children.find((item) => item.data.index === this.data.indexList[index]);
             if (anchor) {
+                anchor.scrollIntoView(this.scrollTop);
                 this.$emit('select', anchor.data.index);
-                wx.pageScrollTo({
-                    duration: 0,
-                    scrollTop: anchor.top
-                });
             }
         }
     }

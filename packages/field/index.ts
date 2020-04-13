@@ -133,7 +133,7 @@ VantComponent({
       const { clearable, readonly } = this.data;
       const { focused, value } = this;
       this.setData({
-        showClear: clearable && focused && !!value && !readonly
+        showClear: !!clearable && !!focused && !!value && !readonly
       });
     },
 

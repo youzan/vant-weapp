@@ -4,6 +4,7 @@ interface NotifyOptions {
   type?: 'primary' | 'success' | 'danger' | 'warning';
   color?: string;
   zIndex?: number;
+  top?: number;
   message: string;
   context?: any;
   duration?: number;
@@ -22,6 +23,7 @@ const defaultOptions = {
   background: '',
   duration: 3000,
   zIndex: 110,
+  top: 0,
   color: WHITE,
   safeAreaInsetTop: false,
   onClick: () => {},

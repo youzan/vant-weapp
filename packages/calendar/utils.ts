@@ -49,7 +49,7 @@ export function compareDay(day1: Date | number, day2: Date | number) {
   return compareMonthResult;
 }
 
-function getDayByOffset(date: Date, offset: number) {
+export function getDayByOffset(date: Date, offset: number) {
   date = new Date(date);
   date.setDate(date.getDate() + offset);
 

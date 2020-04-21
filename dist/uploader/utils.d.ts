@@ -8,7 +8,6 @@ interface File {
     time: number;
     image: boolean;
 }
-export declare function isImageUrl(url: string): boolean;
 export declare function isImageFile(item: File): boolean;
 export declare function isVideo(res: any, accept: string): res is WechatMiniprogram.ChooseVideoSuccessCallbackResult;
 export declare function chooseFile({ accept, multiple, capture, compressed, maxDuration, sizeType, camera, maxCount }: {

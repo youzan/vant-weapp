@@ -6,6 +6,7 @@ const defaultOptions = {
     background: '',
     duration: 3000,
     zIndex: 110,
+    top: 0,
     color: WHITE,
     safeAreaInsetTop: false,
     onClick: () => { },

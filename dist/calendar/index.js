@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { ROW_HEIGHT, getNextDay, compareDay, copyDates, calcDateNum, formatMonthTitle, compareMonth, getMonths } from './utils';
+import { ROW_HEIGHT, getNextDay, compareDay, copyDates, calcDateNum, formatMonthTitle, compareMonth, getMonths, getDayByOffset } from './utils';
 import Toast from '../toast/toast';
 VantComponent({
     props: {
@@ -222,25 +222,38 @@ VantComponent({
             }
         },
         select(date, complete) {
+            if (complete && this.data.type === 'range') {
+                const valid = this.checkRange(date);
+                if (!valid) {
+                    // auto selected to max range if showConfirm
+                    if (this.data.showConfirm) {
+                        this.emit([date[0], getDayByOffset(date[0], this.data.maxRange - 1)]);
+                    }
+                    else {
+                        this.emit(date);
+                    }
+                    return;
+                }
+            }
+            this.emit(date);
+            if (complete && !this.data.showConfirm) {
+                this.onConfirm();
+            }
+        },
+        emit(date) {
             const getTime = (date) => (date instanceof Date ? date.getTime() : date);
             this.setData({
                 currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date)
             });
             this.$emit('select', copyDates(date));
-            if (complete && this.data.type === 'range') {
-                const valid = this.checkRange();
-                if (!valid) {
-                    return;
-                }
-            }
-            if (complete && !this.data.showConfirm) {
-                this.onConfirm();
-            }
         },
-        checkRange() {
-            const { maxRange, currentDate, rangePrompt } = this.data;
-            if (maxRange && calcDateNum(currentDate) > maxRange) {
-                Toast(rangePrompt || `选择天数不能超过 ${maxRange} 天`);
+        checkRange(date) {
+            const { maxRange, rangePrompt } = this.data;
+            if (maxRange && calcDateNum(date) > maxRange) {
+                Toast({
+                    context: this,
+                    message: rangePrompt || `选择天数不能超过 ${maxRange} 天`
+                });
                 return false;
             }
             return true;

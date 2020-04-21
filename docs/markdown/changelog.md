@@ -1,5 +1,20 @@
 # 更新日志
 
+
+### [v1.2.2](https://github.com/youzan/vant-weapp/tree/v1.2.2)
+`2020-04-21`
+
+**Features**
+
+- GoodsActionButton: 新增 CSS 变量 goods-action-line-height [\#3037](https://github.com/youzan/vant-weapp/pull/3037)
+- Calendar: 选择区间大于 range 时自动选中最大范围 [\#3026](https://github.com/youzan/vant-weapp/pull/3026)
+- Notify: 新增 top 属性 [\#3018](https://github.com/youzan/vant-weapp/pull/3018)
+
+**Bug Fixes**
+
+- Field: 修复未设置 autosize 时 wxs 报错 [\#3038](https://github.com/youzan/vant-weapp/pull/3038)
+- Field: 避免设置 showClear 为 undefined [\#3012](https://github.com/youzan/vant-weapp/pull/3012)
+
 ### [v1.2.1](https://github.com/youzan/vant-weapp/tree/v1.2.1)
 `2020-04-12`
 

@@ -67,7 +67,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.2.5",
-    "miniprogram-api-typings": "2.7.7-2",
+    "miniprogram-api-typings": "2.10.4",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^1.0.0",

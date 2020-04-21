@@ -48,40 +48,54 @@ export function chooseFile({
   maxCount
 }): Promise<
   | WechatMiniprogram.ChooseImageSuccessCallbackResult
+  | WechatMiniprogram.ChooseMediaSuccessCallbackResult
   | WechatMiniprogram.ChooseVideoSuccessCallbackResult
   | WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
 > {
-  if (accept === 'image') {
-    return new Promise((resolve, reject) => {
-      wx.chooseImage({
-        count: multiple ? Math.min(maxCount, 9) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
-        sourceType: capture, // 选择图片的来源，相册还是相机
-        sizeType,
-        success: resolve,
-        fail: reject
+  switch (accept) {
+    case 'image':
+      return new Promise((resolve, reject) => {
+        wx.chooseImage({
+          count: multiple ? Math.min(maxCount, 9) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
+          sourceType: capture, // 选择图片的来源，相册还是相机
+          sizeType,
+          success: resolve,
+          fail: reject
+        });
       });
-    });
-  }
-  if (accept === 'video') {
-    return new Promise((resolve, reject) => {
-      wx.chooseVideo({
-        sourceType: capture,
-        compressed,
-        maxDuration,
-        camera,
-        success: resolve,
-        fail: reject
+    case 'media':
+      return new Promise((resolve, reject) => {
+        wx.chooseMedia({
+          count: multiple ? Math.min(maxCount, 9) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
+          sourceType: capture, // 选择图片的来源，相册还是相机
+          maxDuration,
+          sizeType,
+          camera,
+          success: resolve,
+          fail: reject
+        });
       });
-    });
+    case 'video':
+      return new Promise((resolve, reject) => {
+        wx.chooseVideo({
+          sourceType: capture,
+          compressed,
+          maxDuration,
+          camera,
+          success: resolve,
+          fail: reject
+        });
+      });
+    default:
+      return new Promise((resolve, reject) => {
+        wx.chooseMessageFile({
+          count: multiple ? maxCount : 1, // 最多可以选择的数量，如果不支持多选则数量为1
+          type: 'file',
+          success: resolve,
+          fail: reject
+        });
+      });
   }
-  return new Promise((resolve, reject) => {
-    wx.chooseMessageFile({
-      count: multiple ? maxCount : 1, // 最多可以选择的数量，如果不支持多选则数量为1
-      type: 'file',
-      success: resolve,
-      fail: reject
-    });
-  });
 }
 
 export function isFunction(val: unknown): val is Function {

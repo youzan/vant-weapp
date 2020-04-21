@@ -86,7 +86,7 @@ Page({
       {
         url: 'https://img.yzcdn.cn/vant/leaf.jpg',
         statue: 'uploading',
-        message: '上传中',
+        message: '上传中'
       },
       {
         url: 'https://img.yzcdn.cn/vant/tree.jpg',
@@ -186,29 +186,39 @@ uploadFilePromise(fileName, chooseResult) {
 
 ### Props
 
-| 参数               | 说明                                                                                           | 类型                 | 默认值                      | 版本 |
-| ------------------ | ---------------------------------------------------------------------------------------------- | -------------------- | --------------------------- | ---- |
-| name               | 标识符，可以在回调函数的第二项参数中获取                                                       | _string \| number_   | -                           | -    |
-| accept             | 接受的文件类型, 可选值为`all` `image` `file` `video`                                           | _string_             | `image`                     | -    |
-| sizeType           | 所选的图片的尺寸, 当`accept`为`image`类型时设置所选图片的尺寸可选值为`original` `compressed`   | _string[]_           | `['original','compressed']` | -    |
-| preview-size       | 预览图和上传区域的尺寸，默认单位为`px`                                                         | _string \| number_   | `80px`                      | -    |
-| preview-image      | 是否在上传完成后展示预览图                                                                     | _boolean_            | `true`                      | -    |
-| preview-full-image | 是否在点击预览图后展示全屏图片预览                                                             | _boolean_            | `true`                      | -    |
-| multiple           | 是否开启图片多选，部分安卓机型不支持                                                           | _boolean_            | `false`                     | -    |
-| disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     | -    |
-| show-upload        | 是否展示文件上传按钮                                                                             | _boolean_            | `true`                     | -    |
-| deletable          | 是否展示删除按钮                                                                               | _boolean_            | `true`                      | -    |
-| capture            | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | _string \| string[]_ | `['album', 'camera']`       | -    |
-| disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     | -    |
-| max-size           | 文件大小限制，单位为`byte`                                                                     | _number_             | -                           | -    |
-| max-count          | 文件上传数量限制                                                                               | _number_             | -                           | -    |
-| upload-text        | 上传区域文字提示                                                                               | _string_             | -                           | -    |
-| image-fit          | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性                                        | _string_             | `scaleToFill`               | -    |
-| use-before-read    | 是否开启文件读取前事件                                                                         | _boolean_            | -                           | -    |
-| camera             | 当 accept 为 `video` 时生效，可选值为 `back` `front`                                           | _string_             | -                           | -    |
-| compressed         | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true`                                        | _boolean_            | -                           | -    |
-| max-duration       | 当 accept 为 `video` 时生效，拍摄视频最长拍摄时间，单位秒                                      | _number_             | -                           | -    |
-| upload-icon | 上传区域图标，可选值见 [Icon 组件](#/icon) | *string* | `plus` | - |
+| 参数               | 说明                                                                                           | 类型                 | 默认值                      |
+| ------------------ | ---------------------------------------------------------------------------------------------- | -------------------- | --------------------------- |
+| name               | 标识符，可以在回调函数的第二项参数中获取                                                       | _string \| number_   | -                           |
+| accept             | 接受的文件类型, 可选值为`all` `media` `image` `file` `video`                                   | _string_             | `image`                     |
+| sizeType           | 所选的图片的尺寸, 当`accept`为`image`类型时设置所选图片的尺寸可选值为`original` `compressed`   | _string[]_           | `['original','compressed']` |
+| preview-size       | 预览图和上传区域的尺寸，默认单位为`px`                                                         | _string \| number_   | `80px`                      |
+| preview-image      | 是否在上传完成后展示预览图                                                                     | _boolean_            | `true`                      |
+| preview-full-image | 是否在点击预览图后展示全屏图片预览                                                             | _boolean_            | `true`                      |
+| multiple           | 是否开启图片多选，部分安卓机型不支持                                                           | _boolean_            | `false`                     |
+| disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     |
+| show-upload        | 是否展示文件上传按钮                                                                           | _boolean_            | `true`                      |
+| deletable          | 是否展示删除按钮                                                                               | _boolean_            | `true`                      |
+| capture            | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | _string \| string[]_ | `['album', 'camera']`       |
+| disabled           | 是否禁用文件上传                                                                               | _boolean_            | `false`                     |
+| max-size           | 文件大小限制，单位为`byte`                                                                     | _number_             | -                           |
+| max-count          | 文件上传数量限制                                                                               | _number_             | -                           |
+| upload-text        | 上传区域文字提示                                                                               | _string_             | -                           |
+| image-fit          | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性                                        | _string_             | `scaleToFill`               |
+| use-before-read    | 是否开启文件读取前事件                                                                         | _boolean_            | -                           |
+| camera             | 当 accept 为 `video` 时生效，可选值为 `back` `front`                                           | _string_             | -                           |
+| compressed         | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true`                                        | _boolean_            | -                           |
+| max-duration       | 当 accept 为 `video` 时生效，拍摄视频最长拍摄时间，单位秒                                      | _number_             | -                           |
+| upload-icon        | 上传区域图标，可选值见 [Icon 组件](#/icon)                                                     | _string_             | `plus`                      |
+
+#### accept 的合法值
+
+| 参数    | 说明                           |
+| ------- | ------------------------------ |
+| `media` | 图片和视频                     |
+| `image` | 图片                           |
+| `video` | 视频                           |
+| `file`  | 除了图片和视频之外的其它的文件 |
+| `all`   | 所有文件                       |
 
 ### Slot
 

@@ -32,12 +32,12 @@
   },
   "lint-staged": {
     "*.{ts,js}": [
-      "eslint",
-      "git add"
+      "eslint --fix",
+      "prettier --write"
     ],
     "*.{css,less}": [
-      "stylelint",
-      "git add"
+      "stylelint --fix",
+      "prettier --write"
     ]
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
@@ -47,10 +47,10 @@
     "@babel/preset-env": "^7.5.5",
     "@vant/cli": "^1.0.3",
     "@vant/doc": "^2.5.5",
-    "@vant/eslint-config": "^1.2.4",
+    "@vant/eslint-config": "^2.2.0",
     "@vant/icons": "1.2.0",
     "@vant/markdown-loader": "^2.3.0",
-    "@vant/stylelint-config": "^1.0.0",
+    "@vant/stylelint-config": "^1.3.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "8.0.6",
     "cross-env": "^5.1.4",
@@ -66,13 +66,14 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "lint-staged": "^9.2.5",
+    "lint-staged": "^10.0.0",
     "miniprogram-api-typings": "2.10.4",
     "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^1.0.0",
-    "stylelint": "^11.1.1",
-    "typescript": "^3.5.3",
+    "stylelint": "^13.0.0",
+    "typescript": "^3.8.0",
     "vue": "2.6.10",
     "vue-loader": "^15.7.1",
     "vue-router": "^3.1.1",
@@ -82,7 +83,8 @@
     "webpack-serve": "^2.0.3"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "proseWrap": "never"
   },
   "browserslist": [
     "Chrome >= 53",

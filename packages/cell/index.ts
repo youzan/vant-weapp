@@ -8,7 +8,7 @@ VantComponent({
     'label-class',
     'value-class',
     'right-icon-class',
-    'hover-class'
+    'hover-class',
   ],
 
   mixins: [link],
@@ -29,14 +29,14 @@ VantComponent({
     useLabelSlot: Boolean,
     border: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   methods: {
     onClick(event: Weapp.Event) {
       this.$emit('click', event.detail);
       this.jumpLink();
-    }
-  }
+    },
+  },
 });

@@ -6,10 +6,10 @@ VantComponent({
     vertical: Boolean,
     type: {
       type: String,
-      value: 'circular'
+      value: 'circular',
     },
     size: String,
-    textSize: String
+    textSize: String,
   },
 
   data: {

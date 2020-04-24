@@ -2,7 +2,7 @@ import { Weapp } from 'definitions/weapp';
 
 export const openType = Behavior({
   properties: {
-    openType: String
+    openType: String,
   },
 
   methods: {
@@ -29,5 +29,5 @@ export const openType = Behavior({
     bindOpenSetting(event: Partial<Weapp.Event>) {
       this.$emit('opensetting', event.detail);
     },
-  }
+  },
 });

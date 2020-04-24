@@ -12,16 +12,16 @@ VantComponent({
   props: {
     value: {
       type: null,
-      observer: 'updateExpanded'
+      observer: 'updateExpanded',
     },
     accordion: {
       type: Boolean,
-      observer: 'updateExpanded'
+      observer: 'updateExpanded',
     },
     border: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   methods: {
@@ -37,13 +37,13 @@ VantComponent({
         name = expanded
           ? (value || []).concat(name)
           : (value || []).filter(
-            (activeName: string | number) => activeName !== name
-          );
+              (activeName: string | number) => activeName !== name
+            );
       } else {
         name = expanded ? name : '';
       }
       this.$emit('change', name);
       this.$emit('input', name);
-    }
-  }
+    },
+  },
 });

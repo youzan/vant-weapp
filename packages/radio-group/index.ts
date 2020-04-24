@@ -15,17 +15,19 @@ VantComponent({
   props: {
     value: {
       type: null,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     disabled: {
       type: Boolean,
-      observer: 'updateChildren'
-    }
+      observer: 'updateChildren',
+    },
   },
 
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
+      (
+        this.children || []
+      ).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
         this.updateChild(child)
       );
     },
@@ -34,8 +36,8 @@ VantComponent({
       const { value, disabled } = this.data;
       child.setData({
         value,
-        disabled: disabled || child.data.disabled
+        disabled: disabled || child.data.disabled,
       });
-    }
-  }
+    },
+  },
 });

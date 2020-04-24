@@ -19,8 +19,8 @@ VantComponent({
     plain: Boolean,
     type: {
       type: String,
-      value: 'danger'
-    }
+      value: 'danger',
+    },
   },
 
   mounted() {
@@ -39,8 +39,8 @@ VantComponent({
       const index = children.indexOf(this);
       this.setData({
         isFirst: index === 0,
-        isLast: index === length - 1
+        isLast: index === length - 1,
       });
-    }
-  }
+    },
+  },
 });

@@ -12,7 +12,7 @@ VantComponent({
       observer(value) {
         const loadingColor = this.getLoadingColor(value);
         this.setData({ value, loadingColor });
-      }
+      },
     },
     loading: Boolean,
     disabled: Boolean,
@@ -20,16 +20,16 @@ VantComponent({
     inactiveColor: String,
     size: {
       type: String,
-      value: '30px'
+      value: '30px',
     },
     activeValue: {
       type: null,
-      value: true
+      value: true,
     },
     inactiveValue: {
       type: null,
-      value: false
-    }
+      value: false,
+    },
   },
 
   created() {
@@ -53,6 +53,6 @@ VantComponent({
         this.$emit('input', value);
         this.$emit('change', value);
       }
-    }
-  }
+    },
+  },
 });

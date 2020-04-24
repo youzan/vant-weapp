@@ -11,6 +11,6 @@ export const button = Behavior({
     sendMessageImg: String,
     showMessageCard: Boolean,
     appParameter: String,
-    ariaLabel: String
-  }
+    ariaLabel: String,
+  },
 });

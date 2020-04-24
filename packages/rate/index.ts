@@ -13,7 +13,7 @@ VantComponent({
         if (value !== this.data.innerValue) {
           this.setData({ innerValue: value });
         }
-      }
+      },
     },
     readonly: Boolean,
     disabled: Boolean,
@@ -21,23 +21,23 @@ VantComponent({
     size: null,
     icon: {
       type: String,
-      value: 'star'
+      value: 'star',
     },
     voidIcon: {
       type: String,
-      value: 'star-o'
+      value: 'star-o',
     },
     color: {
       type: String,
-      value: '#ffd21e'
+      value: '#ffd21e',
     },
     voidColor: {
       type: String,
-      value: '#c7c7c7'
+      value: '#c7c7c7',
     },
     disabledColor: {
       type: String,
-      value: '#bdbdbd'
+      value: '#bdbdbd',
     },
     count: {
       type: Number,
@@ -49,8 +49,8 @@ VantComponent({
     gutter: null,
     touchable: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
@@ -78,16 +78,16 @@ VantComponent({
       this.getRect('.van-rate__icon', true).then(
         (list: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const target = list
-            .sort(item => item.right - item.left)
-            .find(item => clientX >= item.left && clientX <= item.right);
+            .sort((item) => item.right - item.left)
+            .find((item) => clientX >= item.left && clientX <= item.right);
           if (target != null) {
             this.onSelect({
               ...event,
-              currentTarget: target
+              currentTarget: target,
             });
           }
         }
       );
-    }
-  }
+    },
+  },
 });

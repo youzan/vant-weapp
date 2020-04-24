@@ -992,10 +992,10 @@
   resolved "https://registry.npm.taobao.org/@vant/doc/download/@vant/doc-2.6.1.tgz#667db2ca32cd86f3def452a03c66076c1b97c969"
   integrity sha1-Zn2yyjLNhvPe9FKgPGYHbBuXyWk=
 
-"@vant/eslint-config@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-2.2.1.tgz#3a4d492534f694ae2035c75fd6edfd9cc45bcb6a"
-  integrity sha512-IqzSDsGynKTBi6cOnLbGQUQDY+bM2QZJxc+q14YRGHAbIWMcru7QeyIbjT2Vc94fBF/1gW9OaDj9eFTmSKGvOA==
+"@vant/eslint-config@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-2.2.2.tgz#bd3bfb03da9806f0bf63d69e4f566577e8525b7e"
+  integrity sha512-cUtMEPCMz5ym9MnztZtuvgcSDydwrZpRD11Ex5+1gb1oOqDq58Cm6Ux7rDgSrAVn9Td4qQxyy7Zy4t2fYJGf3A==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.28.0"
     "@typescript-eslint/parser" "^2.28.0"

@@ -8,32 +8,32 @@ VantComponent({
     'main-active-class',
     'content-active-class',
     'main-disabled-class',
-    'content-disabled-class'
+    'content-disabled-class',
   ],
 
   props: {
     items: {
       type: Array,
-      observer: 'updateSubItems'
+      observer: 'updateSubItems',
     },
     activeId: null,
     mainActiveIndex: {
       type: Number,
       value: 0,
-      observer: 'updateSubItems'
+      observer: 'updateSubItems',
     },
     height: {
       type: [Number, String],
-      value: 300
+      value: 300,
     },
     max: {
       type: Number,
-      value: Infinity
-    }
+      value: Infinity,
+    },
   },
 
   data: {
-    subItems: []
+    subItems: [],
   },
 
   methods: {
@@ -68,6 +68,6 @@ VantComponent({
       const { children = [] } = items[mainActiveIndex] || {};
 
       return this.set({ subItems: children });
-    }
-  }
+    },
+  },
 });

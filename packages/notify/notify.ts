@@ -28,7 +28,7 @@ const defaultOptions = {
   safeAreaInsetTop: false,
   onClick: () => {},
   onOpened: () => {},
-  onClose: () => {}
+  onClose: () => {},
 };
 
 function parseOptions(message: NotifyOptions | string): NotifyOptions {
@@ -58,7 +58,7 @@ export default function Notify(options: NotifyOptions | string) {
   console.warn('未找到 van-notify 节点，请确认 selector 及 context 是否正确');
 }
 
-Notify.clear = function(options?: NotifyOptions) {
+Notify.clear = function (options?: NotifyOptions) {
   options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
 
   const context = options.context || getContext();

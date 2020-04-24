@@ -1,6 +1,9 @@
 import { VantComponent } from '../common/component';
 
-function emit(target: WechatMiniprogram.Component.TrivialInstance, value: boolean | any[]) {
+function emit(
+  target: WechatMiniprogram.Component.TrivialInstance,
+  value: boolean | any[]
+) {
   target.$emit('input', value);
   target.$emit('change', value);
 }
@@ -25,16 +28,16 @@ VantComponent({
     labelDisabled: Boolean,
     shape: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     iconSize: {
       type: null,
-      value: 20
-    }
+      value: 20,
+    },
   },
 
   data: {
-    parentDisabled: false
+    parentDisabled: false,
   },
 
   methods: {
@@ -60,7 +63,10 @@ VantComponent({
       }
     },
 
-    setParentValue(parent: WechatMiniprogram.Component.TrivialInstance, value: boolean) {
+    setParentValue(
+      parent: WechatMiniprogram.Component.TrivialInstance,
+      value: boolean
+    ) {
       const parentValue = parent.data.value.slice();
       const { name } = this.data;
       const { max } = parent.data;
@@ -81,6 +87,6 @@ VantComponent({
           emit(parent, parentValue);
         }
       }
-    }
-  }
+    },
+  },
 });

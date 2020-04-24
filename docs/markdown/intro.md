@@ -40,11 +40,11 @@ Vant Weapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) 的
 
 ### 链接
 
-* [意见反馈](https://github.com/youzan/vant-weapp/issues)
-* [加入我们](https://job.youzan.com)
-* [更新日志](#/changelog)
-* [Vue 组件库](https://github.com/youzan/vant)
-* [React 组件库](https://www.youzanyun.com/zanui/zent)
+- [意见反馈](https://github.com/youzan/vant-weapp/issues)
+- [加入我们](https://job.youzan.com)
+- [更新日志](#/changelog)
+- [Vue 组件库](https://github.com/youzan/vant)
+- [React 组件库](https://www.youzanyun.com/zanui/zent)
 
 ### 开源协议
 

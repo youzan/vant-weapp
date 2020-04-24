@@ -7,7 +7,9 @@ interface ToastOptions {
   type?: string;
   mask?: boolean;
   zIndex?: number;
-  context?: WechatMiniprogram.Component.TrivialInstance | WechatMiniprogram.Page.TrivialInstance;
+  context?:
+    | WechatMiniprogram.Component.TrivialInstance
+    | WechatMiniprogram.Page.TrivialInstance;
   position?: string;
   duration?: number;
   selector?: string;
@@ -27,7 +29,7 @@ const defaultOptions = {
   position: 'middle',
   forbidClick: false,
   loadingType: 'circular',
-  selector: '#van-toast'
+  selector: '#van-toast',
 };
 
 let queue = [];
@@ -42,10 +44,12 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Component.TrivialInstance {
+function Toast(
+  toastOptions: ToastOptions | ToastMessage
+): WechatMiniprogram.Component.TrivialInstance {
   const options = {
     ...currentOptions,
-    ...parseOptions(toastOptions)
+    ...parseOptions(toastOptions),
   } as ToastOptions;
 
   const context = options.context || getContext();
@@ -74,7 +78,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Com
   if (options.duration > 0) {
     toast.timer = setTimeout(() => {
       toast.clear();
-      queue = queue.filter(item => item !== toast);
+      queue = queue.filter((item) => item !== toast);
     }, options.duration);
   }
 
@@ -84,7 +88,7 @@ function Toast(toastOptions: ToastOptions | ToastMessage): WechatMiniprogram.Com
 const createMethod = (type: string) => (options: ToastOptions | ToastMessage) =>
   Toast({
     type,
-    ...parseOptions(options)
+    ...parseOptions(options),
   });
 
 Toast.loading = createMethod('loading');
@@ -92,7 +96,7 @@ Toast.success = createMethod('success');
 Toast.fail = createMethod('fail');
 
 Toast.clear = () => {
-  queue.forEach(toast => {
+  queue.forEach((toast) => {
     toast.clear();
   });
   queue = [];

@@ -5,6 +5,7 @@
 选择器组件通常与 [弹出层](#/popup) 组件配合使用
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
@@ -26,13 +27,13 @@ import Toast from 'path/to/@vant/weapp/dist/toast/toast';
 
 Page({
   data: {
-    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   },
 
   onChange(event) {
     const { picker, value, index } = event.detail;
     Toast(`当前值：${value}, 当前索引：${index}`);
-  }
+  },
 });
 ```
 
@@ -65,7 +66,7 @@ import Toast from 'path/to/@vant/weapp/dist/toast/toast';
 
 Page({
   data: {
-    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   },
 
   onConfirm(event) {
@@ -75,7 +76,7 @@ Page({
 
   onCancel() {
     Toast('取消');
-  }
+  },
 });
 ```
 
@@ -87,8 +88,8 @@ Page({
 
 ```javascript
 const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州']
+  浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+  福建: ['福州', '厦门', '莆田', '三明', '泉州'],
 };
 
 Page({
@@ -96,20 +97,20 @@ Page({
     columns: [
       {
         values: Object.keys(citys),
-        className: 'column1'
+        className: 'column1',
       },
       {
         values: citys['浙江'],
         className: 'column2',
-        defaultIndex: 2
-      }
-    ]
+        defaultIndex: 2,
+      },
+    ],
   },
 
   onChange(event) {
     const { picker, value, index } = event.detail;
     picker.setColumnValues(1, citys[value[0]]);
-  }
+  },
 });
 ```
 
@@ -127,9 +128,9 @@ Page({
     columns: [
       { text: '杭州', disabled: true },
       { text: '宁波' },
-      { text: '温州' }
-    ]
-  }
+      { text: '温州' },
+    ],
+  },
 });
 ```
 
@@ -146,25 +147,25 @@ Page({
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| columns | 对象数组，配置每一列显示的数据 | *Array* | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | *boolean* | `false` | - |
-| toolbar-position | 顶部栏位置，可选值为`bottom` | *string* | `top` | - |
-| title | 顶部栏标题 | *string* | `''` | - |
-| loading | 是否显示加载状态 | *boolean* | `false` | - |
-| value-key | 选项对象中，文字对应的 key | *string* | `text` | - |
-| item-height | 选项高度 | *number* | `44` | - |
-| confirm-button-text | 确认按钮文字 | *string* | `确认` | - |
-| cancel-button-text | 取消按钮文字 | *string* | `取消` | - |
-| visible-item-count | 可见的选项个数 | *number* | `5` | - |
-| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | *number* | `0` | - |
+| --- | --- | --- | --- | --- |
+| columns | 对象数组，配置每一列显示的数据 | _Array_ | `[]` | - |
+| show-toolbar | 是否显示顶部栏 | _boolean_ | `false` | - |
+| toolbar-position | 顶部栏位置，可选值为`bottom` | _string_ | `top` | - |
+| title | 顶部栏标题 | _string_ | `''` | - |
+| loading | 是否显示加载状态 | _boolean_ | `false` | - |
+| value-key | 选项对象中，文字对应的 key | _string_ | `text` | - |
+| item-height | 选项高度 | _number_ | `44` | - |
+| confirm-button-text | 确认按钮文字 | _string_ | `确认` | - |
+| cancel-button-text | 取消按钮文字 | _string_ | `取消` | - |
+| visible-item-count | 可见的选项个数 | _number_ | `5` | - |
+| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_ | `0` | - |
 
 ### Events
 
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 | 事件名 | 说明 | 参数 |
-|------|------|------|
+| --- | --- | --- |
 | confirm | 点击完成按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
 | cancel | 点击取消按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
 | change | 选项改变时触发 | 单列：Picker 实例，选中值，选中值对应的索引<br>多列：Picker 实例，所有列选中值，当前列对应的索引 |
@@ -173,26 +174,26 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 当传入多列数据时，`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`
 
-| key | 说明 |
-|------|------|
-| values | 列中对应的备选值 |
+| key          | 说明                       |
+| ------------ | -------------------------- |
+| values       | 列中对应的备选值           |
 | defaultIndex | 初始选中项的索引，默认为 0 |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
-| active-class | 选中项样式类 |
+| 类名          | 说明         |
+| ------------- | ------------ |
+| custom-class  | 根节点样式类 |
+| active-class  | 选中项样式类 |
 | toolbar-class | 顶部栏样式类 |
-| column-class | 列样式类 |
+| column-class  | 列样式类     |
 
 ### 方法
 
 通过 selectComponent 可以获取到 picker 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|------|------|------|------|
+| --- | --- | --- | --- |
 | getValues | - | values | 获取所有列选中的值 |
 | setValues | values | - | 设置所有列选中的值 |
 | getIndexes | - | indexes | 获取所有列选中值对应的索引 |

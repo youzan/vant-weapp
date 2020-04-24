@@ -9,21 +9,23 @@ VantComponent({
 
   props: {
     span: Number,
-    offset: Number
+    offset: Number,
   },
 
   data: {
-    viewStyle: ''
+    viewStyle: '',
   },
 
   methods: {
     setGutter(gutter: number) {
       const padding = `${gutter / 2}px`;
-      const viewStyle = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
+      const viewStyle = gutter
+        ? `padding-left: ${padding}; padding-right: ${padding};`
+        : '';
 
       if (viewStyle !== this.data.viewStyle) {
         this.setData({ viewStyle });
       }
-    }
-  }
+    },
+  },
 });

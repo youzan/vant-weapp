@@ -19,31 +19,31 @@ VantComponent({
     useRightIconSlot: Boolean,
     leftIcon: {
       type: String,
-      value: 'search'
+      value: 'search',
     },
     rightIcon: String,
     placeholder: String,
     placeholderStyle: String,
     actionText: {
       type: String,
-      value: '取消'
+      value: '取消',
     },
     background: {
       type: String,
-      value: '#ffffff'
+      value: '#ffffff',
     },
     maxlength: {
       type: Number,
-      value: -1
+      value: -1,
     },
     shape: {
       type: String,
-      value: 'square'
+      value: 'square',
     },
     clearable: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   methods: {
@@ -79,5 +79,5 @@ VantComponent({
     onClear() {
       this.$emit('clear');
     },
-  }
+  },
 });

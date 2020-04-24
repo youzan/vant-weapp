@@ -11,32 +11,32 @@ VantComponent({
   props: {
     square: {
       type: Boolean,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     gutter: {
       type: [Number, String],
       value: 0,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     clickable: {
       type: Boolean,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     columnNum: {
       type: Number,
       value: 4,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     center: {
       type: Boolean,
       value: true,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     border: {
       type: Boolean,
       value: true,
-      observer: 'updateChildren'
-    }
+      observer: 'updateChildren',
+    },
   },
 
   data: {
@@ -47,7 +47,7 @@ VantComponent({
     const { gutter } = this.data;
     if (gutter) {
       this.setData({
-        viewStyle: `padding-left: ${addUnit(gutter)}`
+        viewStyle: `padding-left: ${addUnit(gutter)}`,
       });
     }
   },
@@ -59,6 +59,6 @@ VantComponent({
           child.updateStyle();
         }
       );
-    }
-  }
+    },
+  },
 });

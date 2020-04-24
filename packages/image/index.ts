@@ -9,7 +9,7 @@ const FIT_MODE_MAP = {
   cover: 'aspectFill',
   contain: 'aspectFit',
   widthFix: 'widthFix',
-  heightFix: 'heightFix'
+  heightFix: 'heightFix',
 };
 
 VantComponent({
@@ -23,18 +23,18 @@ VantComponent({
       observer() {
         this.setData({
           error: false,
-          loading: true
+          loading: true,
         });
-      }
+      },
     },
     round: Boolean,
     width: {
       type: null,
-      observer: 'setStyle'
+      observer: 'setStyle',
     },
     height: {
       type: null,
-      observer: 'setStyle'
+      observer: 'setStyle',
     },
     radius: null,
     lazyLoad: Boolean,
@@ -44,16 +44,16 @@ VantComponent({
     fit: {
       type: String,
       value: 'fill',
-      observer: 'setMode'
+      observer: 'setMode',
     },
     showError: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showLoading: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
@@ -96,7 +96,7 @@ VantComponent({
 
     onLoad(event) {
       this.setData({
-        loading: false
+        loading: false,
       });
 
       this.$emit('load', event.detail);
@@ -105,7 +105,7 @@ VantComponent({
     onError(event) {
       this.setData({
         loading: false,
-        error: true
+        error: true,
       });
 
       this.$emit('error', event.detail);
@@ -113,6 +113,6 @@ VantComponent({
 
     onClick(event) {
       this.$emit('click', event.detail);
-    }
-  }
+    },
+  },
 });

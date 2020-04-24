@@ -11,21 +11,21 @@ VantComponent({
     millisecond: Boolean,
     time: {
       type: Number,
-      observer: 'reset'
+      observer: 'reset',
     },
     format: {
       type: String,
-      value: 'HH:mm:ss'
+      value: 'HH:mm:ss',
     },
     autoStart: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
     timeData: parseTimeData(0),
-    formattedTime: '0'
+    formattedTime: '0',
   },
 
   destroyed() {
@@ -107,13 +107,13 @@ VantComponent({
       }
 
       this.setData({
-        formattedTime: parseFormat(this.data.format, timeData)
+        formattedTime: parseFormat(this.data.format, timeData),
       });
 
       if (remain === 0) {
         this.pause();
         this.$emit('finish');
       }
-    }
-  }
+    },
+  },
 });

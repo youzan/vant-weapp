@@ -10,32 +10,32 @@ VantComponent({
   props: {
     dot: {
       type: Boolean,
-      observer: 'update'
+      observer: 'update',
     },
     info: {
       type: null,
-      observer: 'update'
+      observer: 'update',
     },
     title: {
       type: String,
-      observer: 'update'
+      observer: 'update',
     },
     disabled: {
       type: Boolean,
-      observer: 'update'
+      observer: 'update',
     },
     titleStyle: {
       type: String,
-      observer: 'update'
+      observer: 'update',
     },
     name: {
       type: [Number, String],
       value: '',
-    }
+    },
   },
 
   data: {
-    active: false
+    active: false,
   },
 
   methods: {
@@ -53,7 +53,7 @@ VantComponent({
       this.setData({
         active,
         shouldRender: this.inited || !parentData.lazyRender,
-        shouldShow: active || parentData.animated
+        shouldShow: active || parentData.animated,
       });
     },
 
@@ -61,6 +61,6 @@ VantComponent({
       if (this.parent) {
         this.parent.updateTabs();
       }
-    }
-  }
+    },
+  },
 });

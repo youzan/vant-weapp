@@ -10,19 +10,19 @@ VantComponent({
     trackColor: String,
     showPivot: {
       type: Boolean,
-      value: true
+      value: true,
     },
     color: {
       type: String,
-      value: BLUE
+      value: BLUE,
     },
     textColor: {
       type: String,
-      value: '#fff'
+      value: '#fff',
     },
     strokeWidth: {
       type: null,
-      value: 4
-    }
-  }
+      value: 4,
+    },
+  },
 });

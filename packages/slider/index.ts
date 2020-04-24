@@ -13,27 +13,27 @@ VantComponent({
     inactiveColor: String,
     max: {
       type: Number,
-      value: 100
+      value: 100,
     },
     min: {
       type: Number,
-      value: 0
+      value: 0,
     },
     step: {
       type: Number,
-      value: 1
+      value: 1,
     },
     value: {
       type: Number,
       value: 0,
       observer(value: number) {
         this.updateValue(value, false);
-      }
+      },
     },
     barHeight: {
       type: null,
-      value: '2px'
-    }
+      value: '2px',
+    },
   },
 
   created() {
@@ -59,11 +59,13 @@ VantComponent({
       this.touchMove(event);
       this.dragStatus = 'draging';
 
-      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        const diff = (this.deltaX / rect.width) * 100;
-        this.newValue = this.startValue + diff;
-        this.updateValue(this.newValue, false, true);
-      });
+      this.getRect('.van-slider').then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          const diff = (this.deltaX / rect.width) * 100;
+          this.newValue = this.startValue + diff;
+          this.updateValue(this.newValue, false, true);
+        }
+      );
     },
 
     onTouchEnd() {
@@ -80,10 +82,13 @@ VantComponent({
 
       const { min } = this.data;
 
-      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        const value = ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
-        this.updateValue(value, true);
-      });
+      this.getRect('.van-slider').then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          const value =
+            ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
+          this.updateValue(value, true);
+        }
+      );
     },
 
     updateValue(value: number, end: boolean, drag: boolean) {
@@ -117,6 +122,6 @@ VantComponent({
     format(value: number) {
       const { max, min, step } = this.data;
       return Math.round(Math.max(min, Math.min(value, max)) / step) * step;
-    }
-  }
+    },
+  },
 });

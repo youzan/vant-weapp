@@ -4,23 +4,13 @@ const registerRoute = () => {
   const route = [
     {
       path: '*',
-      redirect: to => `/intro`
-    }
+      redirect: () => `/intro`,
+    },
   ];
 
   const navs = docConfig.nav || [];
 
-  navs.forEach(nav => {
-    if (nav.groups) {
-      nav.groups.forEach(group => {
-        group.list.forEach(page => addRoute(page));
-      });
-    } else {
-      addRoute(nav);
-    }
-  });
-
-  function addRoute(page, isComponent) {
+  function addRoute(page) {
     let { path } = page;
     if (path) {
       path = path.replace('/', '');
@@ -40,11 +30,21 @@ const registerRoute = () => {
         path: `/${path}`,
         meta: {
           path,
-          name: page.title
-        }
+          name: page.title,
+        },
       });
     }
   }
+
+  navs.forEach((nav) => {
+    if (nav.groups) {
+      nav.groups.forEach((group) => {
+        group.list.forEach((page) => addRoute(page));
+      });
+    } else {
+      addRoute(nav);
+    }
+  });
 
   return route;
 };

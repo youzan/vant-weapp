@@ -13,38 +13,38 @@ VantComponent({
     },
     unlinked() {
       this.updateChildren();
-    }
+    },
   },
 
   props: {
     active: {
       type: null,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     activeColor: {
       type: String,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     inactiveColor: {
       type: String,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     fixed: {
       type: Boolean,
-      value: true
+      value: true,
     },
     border: {
       type: Boolean,
-      value: true
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 1
+      value: 1,
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   methods: {
@@ -66,6 +66,6 @@ VantComponent({
       if (active !== this.data.active) {
         this.$emit('change', active);
       }
-    }
-  }
+    },
+  },
 });

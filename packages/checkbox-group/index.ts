@@ -18,12 +18,12 @@ VantComponent({
     max: Number,
     value: {
       type: Array,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     disabled: {
       type: Boolean,
-      observer: 'updateChildren'
-    }
+      observer: 'updateChildren',
+    },
   },
 
   methods: {
@@ -37,8 +37,8 @@ VantComponent({
       const { value, disabled } = this.data;
       child.setData({
         value: value.indexOf(child.data.name) !== -1,
-        parentDisabled: disabled
+        parentDisabled: disabled,
       });
-    }
-  }
+    },
+  },
 });

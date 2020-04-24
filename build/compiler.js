@@ -20,7 +20,7 @@ const exampleDir = path.resolve(__dirname, '../example/dist');
 
 const baseCssPath = path.resolve(__dirname, '../packages/common/index.wxss');
 
-const lessCompiler = dist =>
+const lessCompiler = (dist) =>
   function compileLess() {
     return gulp
       .src(`${src}/**/*.less`)
@@ -55,21 +55,21 @@ const copier = (dist, ext) =>
     return gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
   };
 
-const staticCopier = dist =>
+const staticCopier = (dist) =>
   gulp.parallel(
     copier(dist, 'wxml'),
     copier(dist, 'wxs'),
     copier(dist, 'json')
   );
 
-const cleaner = path =>
+const cleaner = (path) =>
   function clean() {
     return exec(`npx rimraf ${path}`);
   };
 
 const tasks = [
   ['buildEs', esDir, esConfig],
-  ['buildLib', libDir, libConfig]
+  ['buildLib', libDir, libConfig],
 ].reduce((prev, [name, ...args]) => {
   prev[name] = gulp.series(
     cleaner(...args),

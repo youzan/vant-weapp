@@ -1,6 +1,7 @@
 # Collapse 折叠面板
 
 ### 引入
+
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
 
 ```json
@@ -30,16 +31,16 @@
 </van-collapse>
 ```
 
-``` javascript
+```javascript
 Page({
   data: {
-    activeNames: ['1']
+    activeNames: ['1'],
   },
   onChange(event) {
     this.setData({
-      activeNames: event.detail
+      activeNames: event.detail,
     });
-  }
+  },
 });
 ```
 
@@ -61,16 +62,16 @@ Page({
 </van-collapse>
 ```
 
-``` javascript
+```javascript
 Page({
   data: {
-    activeName: '1'
+    activeName: '1',
   },
   onChange(event) {
     this.setData({
-      activeName: event.detail
+      activeName: event.detail,
     });
-  }
+  },
 });
 ```
 
@@ -88,16 +89,16 @@ Page({
 </van-collapse>
 ```
 
-``` javascript
+```javascript
 Page({
   data: {
-    activeNames: ['1']
+    activeNames: ['1'],
   },
   onChange(event) {
     this.setData({
-      activeNames: event.detail
+      activeNames: event.detail,
     });
-  }
+  },
 });
 ```
 
@@ -106,50 +107,50 @@ Page({
 ### Collapse Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|
-| value | 当前展开面板的 name | 非手风琴模式：*(string \| number)[]*<br>手风琴模式：*string \| number* | - | - |
-| accordion | 是否开启手风琴模式 | *boolean* | `false` | - |
-| border | 是否显示外边框 | *boolean* | `true` | - |
+| --- | --- | --- | --- | --- |
+| value | 当前展开面板的 name | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | - | - |
+| accordion | 是否开启手风琴模式 | _boolean_ | `false` | - |
+| border | 是否显示外边框 | _boolean_ | `true` | - |
 
 ### Collapse Event
 
-| 事件名 | 说明 | 参数 |
-|------|------|------|
-| change | 切换面板时触发 | activeNames: *string \| Array* |
+| 事件名 | 说明           | 参数                           |
+| ------ | -------------- | ------------------------------ |
+| change | 切换面板时触发 | activeNames: _string \| Array_ |
 
 ### CollapseItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|------|------|------|------|------|------|
-| name | 唯一标识符，默认为索引值 | *string \| number* | `index` | - |
-| title | 标题栏左侧内容 | *string \| number* | - | - |
-| icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | *string* | - | - |
-| value | 标题栏右侧内容 | *string \| number* | - | - |
-| label | 标题栏描述信息 | *string* | - | - |
-| border | 是否显示内边框 | *boolean* | `true` | - |
-| is-link | 是否展示标题栏右侧箭头并开启点击反馈 | *boolean* | `true` | - |
-| clickable | 是否开启点击反馈 | *boolean* | `false` | - |
-| disabled | 是否禁用面板 | *boolean* | `false` | - |
+| --- | --- | --- | --- | --- |
+| name | 唯一标识符，默认为索引值 | _string \| number_ | `index` | - |
+| title | 标题栏左侧内容 | _string \| number_ | - | - |
+| icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
+| value | 标题栏右侧内容 | _string \| number_ | - | - |
+| label | 标题栏描述信息 | _string_ | - | - |
+| border | 是否显示内边框 | _boolean_ | `true` | - |
+| is-link | 是否展示标题栏右侧箭头并开启点击反馈 | _boolean_ | `true` | - |
+| clickable | 是否开启点击反馈 | _boolean_ | `false` | - |
+| disabled | 是否禁用面板 | _boolean_ | `false` | - |
 
 ### CollapseItem Slot
 
-| 名称 | 说明 |
-|------|------|
-| - | 面板内容 |
-| value | 自定义显示内容 |
-| icon | 自定义`icon` |
-| title | 自定义`title` |
+| 名称       | 说明                          |
+| ---------- | ----------------------------- |
+| -          | 面板内容                      |
+| value      | 自定义显示内容                |
+| icon       | 自定义`icon`                  |
+| title      | 自定义`title`                 |
 | right-icon | 自定义右侧按钮，默认是`arrow` |
 
 ### Collapse 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
+| 类名         | 说明         |
+| ------------ | ------------ |
 | custom-class | 根节点样式类 |
 
 ### CollapseItem 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
-| content-class | 内容样式类 |
+| 类名          | 说明         |
+| ------------- | ------------ |
+| custom-class  | 根节点样式类 |
+| content-class | 内容样式类   |

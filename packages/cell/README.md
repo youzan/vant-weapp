@@ -105,58 +105,58 @@
 
 ### CellGroup Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| title | 分组标题 | *string* | `-` | - |
-| border | 是否显示外边框 | *boolean* | `true` | - |
+| 参数   | 说明           | 类型      | 默认值 | 版本 |
+| ------ | -------------- | --------- | ------ | ---- |
+| title  | 分组标题       | _string_  | `-`    | -    |
+| border | 是否显示外边框 | _boolean_ | `true` | -    |
 
 ### CellGroup 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
+| 类名         | 说明         |
+| ------------ | ------------ |
 | custom-class | 根节点样式类 |
 
 ### Cell Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | *string* | - | - |
-| title | 左侧标题 | *string \| number* | - |
-| title-width | 标题宽度，须包含单位 | *string* | - | - |
-| value | 右侧内容 | *string \| number* | - | - |
-| label | 标题下方的描述信息 | *string* | - | - |
-| size | 单元格大小，可选值为 `large` | *string* | - | - |
-| border | 是否显示下边框 | *boolean* | `true` | - |
-| center | 是否使内容垂直居中 | *boolean* | `false` | - |
-| url | 点击后跳转的链接地址 | *string* | - | - |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
-| clickable | 是否开启点击反馈 | *boolean* | `false` | - |
-| is-link | 是否展示右侧箭头并开启点击反馈 | *boolean* | `false` | - |
-| required | 是否显示表单必填星号 | *boolean* | `false` | - |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | *string* | - | - |
-| use-label-slot | 是否使用 label slot | *boolean* | `false` | - |
+| --- | --- | --- | --- | --- |
+| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
+| title | 左侧标题 | _string \| number_ | - |
+| title-width | 标题宽度，须包含单位 | _string_ | - | - |
+| value | 右侧内容 | _string \| number_ | - | - |
+| label | 标题下方的描述信息 | _string_ | - | - |
+| size | 单元格大小，可选值为 `large` | _string_ | - | - |
+| border | 是否显示下边框 | _boolean_ | `true` | - |
+| center | 是否使内容垂直居中 | _boolean_ | `false` | - |
+| url | 点击后跳转的链接地址 | _string_ | - | - |
+| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` | - |
+| clickable | 是否开启点击反馈 | _boolean_ | `false` | - |
+| is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` | - |
+| required | 是否显示表单必填星号 | _boolean_ | `false` | - |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | - | - |
+| use-label-slot | 是否使用 label slot | _boolean_ | `false` | - |
 
 ### Cell Event
 
-| 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
-| bind:click | 点击单元格时触发 | - |
+| 事件名     | 说明             | 参数 |
+| ---------- | ---------------- | ---- |
+| bind:click | 点击单元格时触发 | -    |
 
 ### Cell Slot
 
-| 名称 | 说明 |
-|-----------|-----------|
-| - | 自定义`value`显示内容，如果设置了`value`属性则不生效 |
-| title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |
-| label | 自定义`label`显示内容，需要设置 `use-label-slot`属性 |
-| icon | 自定义`icon`显示内容，如果设置了`icon`属性则不生效 |
+| 名称       | 说明                                                           |
+| ---------- | -------------------------------------------------------------- |
+| -          | 自定义`value`显示内容，如果设置了`value`属性则不生效           |
+| title      | 自定义`title`显示内容，如果设置了`title`属性则不生效           |
+| label      | 自定义`label`显示内容，需要设置 `use-label-slot`属性           |
+| icon       | 自定义`icon`显示内容，如果设置了`icon`属性则不生效             |
 | right-icon | 自定义右侧按钮，默认是`arrow`，如果设置了`is-link`属性则不生效 |
 
 ### Cell 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
-| title-class | 标题样式类 |
-| label-class | 描述信息样式类 |
-| value-class | 右侧内容样式类 |
+| 类名         | 说明           |
+| ------------ | -------------- |
+| custom-class | 根节点样式类   |
+| title-class  | 标题样式类     |
+| label-class  | 描述信息样式类 |
+| value-class  | 右侧内容样式类 |

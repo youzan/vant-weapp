@@ -9,14 +9,14 @@ VantComponent({
       if (this.data.gutter) {
         target.setGutter(this.data.gutter);
       }
-    }
+    },
   },
 
   props: {
     gutter: {
       type: Number,
-      observer: 'setGutter'
-    }
+      observer: 'setGutter',
+    },
   },
 
   data: {
@@ -38,9 +38,9 @@ VantComponent({
         : '';
 
       this.setData({ viewStyle });
-      this.getRelationNodes('../col/index').forEach(col => {
+      this.getRelationNodes('../col/index').forEach((col) => {
         col.setGutter(this.data.gutter);
       });
-    }
-  }
+    },
+  },
 });

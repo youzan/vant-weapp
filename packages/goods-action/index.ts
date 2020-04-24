@@ -9,7 +9,7 @@ VantComponent({
   props: {
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
-    }
-  }
+      value: true,
+    },
+  },
 });

@@ -14,15 +14,15 @@ VantComponent({
     visibleItemCount: Number,
     initialOptions: {
       type: Array,
-      value: []
+      value: [],
     },
     defaultIndex: {
       type: Number,
       value: 0,
       observer(value: number) {
         this.setIndex(value);
-      }
-    }
+      },
+    },
   },
 
   data: {
@@ -31,7 +31,7 @@ VantComponent({
     duration: 0,
     startOffset: 0,
     options: [],
-    currentIndex: 0
+    currentIndex: 0,
   },
 
   created() {
@@ -39,7 +39,7 @@ VantComponent({
 
     this.set({
       currentIndex: defaultIndex,
-      options: initialOptions
+      options: initialOptions,
     }).then(() => {
       this.setIndex(defaultIndex);
     });
@@ -54,7 +54,7 @@ VantComponent({
       this.setData({
         startY: event.touches[0].clientY,
         startOffset: this.data.offset,
-        duration: 0
+        duration: 0,
       });
     },
 
@@ -66,7 +66,7 @@ VantComponent({
           data.startOffset + deltaY,
           -(this.getCount() * data.itemHeight),
           data.itemHeight
-        )
+        ),
       });
     },
 
@@ -140,6 +140,6 @@ VantComponent({
     getValue() {
       const { data } = this;
       return data.options[data.currentIndex];
-    }
-  }
+    },
+  },
 });

@@ -2,14 +2,9 @@ import { Weapp } from './weapp';
 
 type RecordToAny<T> = { [K in keyof T]: any };
 
-export type CombinedComponentInstance<
-  Data,
-  Props,
-  Methods
-> = Methods &
+export type CombinedComponentInstance<Data, Props, Methods> = Methods &
   WechatMiniprogram.Component.TrivialInstance &
-  Weapp.FormField &
-  {
+  Weapp.FormField & {
     data: Data & RecordToAny<Props>;
   };
 

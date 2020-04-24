@@ -72,7 +72,7 @@ export function calcDateNum(date: [Date, Date]) {
 
 export function copyDates(dates: Date | Date[]) {
   if (Array.isArray(dates)) {
-    return dates.map(date => {
+    return dates.map((date) => {
       if (date === null) {
         return date;
       }

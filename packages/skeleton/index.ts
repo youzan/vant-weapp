@@ -14,35 +14,35 @@ VantComponent({
     avatar: Boolean,
     loading: {
       type: Boolean,
-      value: true
+      value: true,
     },
     animate: {
       type: Boolean,
-      value: true
+      value: true,
     },
     avatarSize: {
       type: String,
-      value: '32px'
+      value: '32px',
     },
     avatarShape: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     titleWidth: {
       type: String,
-      value: '40%'
+      value: '40%',
     },
     rowWidth: {
       type: null,
       value: '100%',
       observer(val) {
         this.setData({ isArray: val instanceof Array });
-      }
-    }
+      },
+    },
   },
 
   data: {
     isArray: false,
     rowArray: [],
-  }
+  },
 });

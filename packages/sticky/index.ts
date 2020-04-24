@@ -9,33 +9,33 @@ VantComponent({
   props: {
     zIndex: {
       type: Number,
-      value: 99
+      value: 99,
     },
     offsetTop: {
       type: Number,
       value: 0,
-      observer: 'onScroll'
+      observer: 'onScroll',
     },
     disabled: {
       type: Boolean,
-      observer: 'onScroll'
+      observer: 'onScroll',
     },
     container: {
       type: null,
-      observer: 'onScroll'
-    }
+      observer: 'onScroll',
+    },
   },
 
   mixins: [
-    pageScrollMixin(function(event) {
+    pageScrollMixin(function (event) {
       this.onScroll(event);
-    })
+    }),
   ],
 
   data: {
     height: 0,
     fixed: false,
-    transform: 0
+    transform: 0,
   },
 
   mounted() {
@@ -49,7 +49,7 @@ VantComponent({
       if (disabled) {
         this.setDataAfterDiff({
           fixed: false,
-          transform: 0
+          transform: 0,
         });
         return;
       }
@@ -62,13 +62,13 @@ VantComponent({
             if (offsetTop + root.height > container.height + container.top) {
               this.setDataAfterDiff({
                 fixed: false,
-                transform: container.height - root.height
+                transform: container.height - root.height,
               });
             } else if (offsetTop >= root.top) {
               this.setDataAfterDiff({
                 fixed: true,
                 height: root.height,
-                transform: 0
+                transform: 0,
               });
             } else {
               this.setDataAfterDiff({ fixed: false, transform: 0 });
@@ -103,7 +103,7 @@ VantComponent({
 
         this.$emit('scroll', {
           scrollTop: this.scrollTop,
-          isFixed: data.fixed || this.data.fixed
+          isFixed: data.fixed || this.data.fixed,
         });
       });
     },
@@ -111,9 +111,9 @@ VantComponent({
     getContainerRect() {
       const nodesRef: WechatMiniprogram.NodesRef = this.data.container();
 
-      return new Promise(resolve =>
+      return new Promise((resolve) =>
         nodesRef.boundingClientRect(resolve).exec()
       );
-    }
-  }
+    },
+  },
 });

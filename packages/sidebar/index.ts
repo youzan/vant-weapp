@@ -10,15 +10,15 @@ VantComponent({
     },
     unlinked() {
       this.setActive(this.data.activeKey);
-    }
+    },
   },
 
   props: {
     activeKey: {
       type: Number,
       value: 0,
-      observer: 'setActive'
-    }
+      observer: 'setActive',
+    },
   },
 
   beforeCreate() {
@@ -46,6 +46,6 @@ VantComponent({
       }
 
       return Promise.all(stack);
-    }
-  }
+    },
+  },
 });

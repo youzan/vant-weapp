@@ -23,8 +23,8 @@
 // Component Colors
 @text-color: @gray-8;
 @active-color: @gray-2;
-@active-opacity: .7;
-@disabled-opacity: .5;
+@active-opacity: 0.7;
+@disabled-opacity: 0.5;
 @background-color: @gray-1;
 @background-color-light: #fafafa;
 
@@ -42,11 +42,15 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 @font-weight-bold: 500;
-@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
+@base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
+@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
 
 // Animation
-@animation-duration-base: .3s;
-@animation-duration-fast: .2s;
+@animation-duration-base: 0.3s;
+@animation-duration-fast: 0.2s;
 
 // Border
 @border-color: @gray-3;
@@ -186,7 +190,7 @@
 // Checkbox
 @checkbox-size: 20px;
 @checkbox-border-color: @gray-5;
-@checkbox-transition-duration: .2s;
+@checkbox-transition-duration: 0.2s;
 @checkbox-label-margin: 10px;
 @checkbox-label-color: @text-color;
 @checkbox-checked-icon-color: @blue;
@@ -198,7 +202,7 @@
 @circle-text-color: @text-color;
 
 // Collapse
-@collapse-item-transition-duration: .3s;
+@collapse-item-transition-duration: 0.3s;
 @collapse-item-content-padding: 15px;
 @collapse-item-content-font-size: 13px;
 @collapse-item-content-line-height: 1.5;
@@ -272,7 +276,7 @@
 @info-background-color: @red;
 @info-dot-color: @red;
 @info-dot-size: 8px;
-@info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
+@info-font-family: @price-integer-font-family;
 
 // Loading
 @loading-text-color: @gray-6;
@@ -280,7 +284,7 @@
 @loading-text-line-height: 20px;
 @loading-spinner-color: @gray-5;
 @loading-spinner-size: 30px;
-@loading-spinner-animation-duration: .8s;
+@loading-spinner-animation-duration: 0.8s;
 
 // NavBar
 @nav-bar-height: 44px;
@@ -329,8 +333,8 @@
 @picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
 @picker-loading-icon-color: @blue;
-@picker-loading-mask-color: rgba(255, 255, 255, .9);
-@picker-option-disabled-opacity: .3;
+@picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+@picker-option-disabled-opacity: 0.3;
 @picker-option-selected-text-color: @text-color;
 
 // Popup
@@ -354,7 +358,7 @@
 // Radio
 @radio-size: 20px;
 @radio-border-color: @gray-5;
-@radio-transition-duration: .2s;
+@radio-transition-duration: 0.2s;
 @radio-label-margin: 10px;
 @radio-label-color: @text-color;
 @radio-checked-icon-color: @blue;
@@ -372,12 +376,13 @@
 @switch-node-size: 1em;
 @switch-node-z-index: 1;
 @switch-node-background-color: @white;
-@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
 @switch-background-color: @white;
 @switch-on-background-color: @blue;
-@switch-transition-duration: .3s;
-@switch-disabled-opacity: .4;
-@switch-border: 1px solid rgba(0, 0, 0, .1);
+@switch-transition-duration: 0.3s;
+@switch-disabled-opacity: 0.4;
+@switch-border: 1px solid rgba(0, 0, 0, 0.1);
 
 // Search
 @search-background-color: @gray-1;
@@ -415,7 +420,7 @@
 @slider-button-height: 24px;
 @slider-button-border-radius: 50%;
 @slider-button-background-color: @white;
-@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 
 // Step
 @step-text-color: @gray-6;
@@ -494,12 +499,12 @@
 @tabs-bottom-bar-color: @tabs-default-color;
 
 // Tag
-@tag-padding: .2em .5em;
+@tag-padding: 0.2em 0.5em;
 @tag-font-size: @font-size-xs;
 @tag-medium-font-size: @font-size-sm;
 @tag-large-font-size: @font-size-md;
 @tag-text-color: @white;
-@tag-border-radius: .2em;
+@tag-border-radius: 0.2em;
 @tag-round-border-radius: @border-radius-max;
 @tag-dander-color: @red;
 @tag-primary-color: @blue;
@@ -514,7 +519,7 @@
 @toast-text-color: @white;
 @toast-line-height: 20px;
 @toast-border-radius: @border-radius-md;
-@toast-background-color: rgba(@text-color, .88);
+@toast-background-color: rgba(@text-color, 0.88);
 @toast-icon-size: 48px;
 @toast-text-min-width: 96px;
 @toast-text-padding: @padding-xs @padding-sm;

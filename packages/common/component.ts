@@ -1,5 +1,8 @@
 import { basic } from '../mixins/basic';
-import { VantComponentOptions, CombinedComponentInstance } from 'definitions/index';
+import {
+  VantComponentOptions,
+  CombinedComponentInstance,
+} from 'definitions/index';
 
 const relationFunctions = {
   ancestor: {
@@ -16,13 +19,13 @@ const relationFunctions = {
       this.children.push(child);
     },
     unlinked(child) {
-      this.children = (this.children || []).filter(it => it !== child);
+      this.children = (this.children || []).filter((it) => it !== child);
     },
   },
 };
 
 function mapKeys(source: object, target: object, map: object) {
-  Object.keys(map).forEach(key => {
+  Object.keys(map).forEach((key) => {
     if (source[key]) {
       target[map[key]] = source[key];
     }
@@ -56,7 +59,7 @@ function makeRelation(options, vantOptions, relation) {
         relationFunctions[type].unlinked.bind(this)(node);
         unlinked && unlinked.bind(this)(node);
       },
-    }
+    },
   });
 }
 
@@ -80,7 +83,7 @@ function VantComponent<Data, Props, Methods>(
     mounted: 'ready',
     relations: 'relations',
     destroyed: 'detached',
-    classes: 'externalClasses'
+    classes: 'externalClasses',
   });
 
   const { relation } = vantOptions;
@@ -102,7 +105,7 @@ function VantComponent<Data, Props, Methods>(
   }
 
   if (options.properties) {
-    Object.keys(options.properties).forEach(name => {
+    Object.keys(options.properties).forEach((name) => {
       if (Array.isArray(options.properties[name])) {
         // miniprogram do not allow multi type
         options.properties[name] = null;
@@ -113,7 +116,7 @@ function VantComponent<Data, Props, Methods>(
   // add default options
   options.options = {
     multipleSlots: true,
-    addGlobalClass: true
+    addGlobalClass: true,
   };
 
   Component(options);

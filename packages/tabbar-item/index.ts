@@ -5,7 +5,7 @@ VantComponent({
     info: null,
     name: null,
     icon: String,
-    dot: Boolean
+    dot: Boolean,
   },
 
   relation: {
@@ -15,7 +15,7 @@ VantComponent({
   },
 
   data: {
-    active: false
+    active: false,
   },
 
   methods: {
@@ -51,6 +51,6 @@ VantComponent({
       return Object.keys(patch).length > 0
         ? this.set(patch)
         : Promise.resolve();
-    }
-  }
+    },
+  },
 });

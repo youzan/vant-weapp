@@ -45,7 +45,7 @@ export function chooseFile({
   maxDuration,
   sizeType,
   camera,
-  maxCount
+  maxCount,
 }): Promise<
   | WechatMiniprogram.ChooseImageSuccessCallbackResult
   | WechatMiniprogram.ChooseMediaSuccessCallbackResult
@@ -60,7 +60,7 @@ export function chooseFile({
           sourceType: capture, // 选择图片的来源，相册还是相机
           sizeType,
           success: resolve,
-          fail: reject
+          fail: reject,
         });
       });
     case 'media':
@@ -72,7 +72,7 @@ export function chooseFile({
           sizeType,
           camera,
           success: resolve,
-          fail: reject
+          fail: reject,
         });
       });
     case 'video':
@@ -83,7 +83,7 @@ export function chooseFile({
           maxDuration,
           camera,
           success: resolve,
-          fail: reject
+          fail: reject,
         });
       });
     default:
@@ -92,7 +92,7 @@ export function chooseFile({
           count: multiple ? maxCount : 1, // 最多可以选择的数量，如果不支持多选则数量为1
           type: 'file',
           success: resolve,
-          fail: reject
+          fail: reject,
         });
       });
   }

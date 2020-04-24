@@ -7,39 +7,39 @@ VantComponent({
     title: String,
     fixed: {
       type: Boolean,
-      observer: 'setHeight'
+      observer: 'setHeight',
     },
     placeholder: {
       type: Boolean,
-      observer: 'setHeight'
+      observer: 'setHeight',
     },
     leftText: String,
     rightText: String,
     leftArrow: Boolean,
     border: {
       type: Boolean,
-      value: true
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 1
+      value: 1,
     },
     safeAreaInsetTop: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
     statusBarHeight: 0,
-    height: 44
+    height: 44,
   },
 
   created() {
     const { statusBarHeight } = wx.getSystemInfoSync();
     this.setData({
       statusBarHeight,
-      height: 44 + statusBarHeight
+      height: 44 + statusBarHeight,
     });
   },
 
@@ -68,6 +68,6 @@ VantComponent({
           }
         );
       });
-    }
-  }
+    },
+  },
 });

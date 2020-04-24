@@ -12,20 +12,20 @@ export default {
     logo: {
       image: 'https://img.yzcdn.cn/vant/logo.png',
       title: 'Vant Weapp',
-      href: '#/'
+      href: '#/',
     },
     nav: {
       logoLink: [
         {
           image: 'https://img.yzcdn.cn/vant/vant-o.svg',
-          url: '/vant'
+          url: '/vant',
         },
         {
           image: 'https://img.yzcdn.cn/vant/logo/github.svg',
-          url: github
-        }
-      ]
-    }
+          url: github,
+        },
+      ],
+    },
   },
   nav: [
     {
@@ -36,39 +36,39 @@ export default {
             {
               path: '/intro',
               title: '介绍',
-              md: true
+              md: true,
             },
             {
               path: '/quickstart',
               title: '快速上手',
-              md: true
+              md: true,
             },
             {
               path: '/changelog',
               title: '更新日志',
-              md: true
+              md: true,
             },
             {
               path: '/common',
-              title: '内置样式'
+              title: '内置样式',
             },
             {
               path: '/custom-style',
               title: '样式覆盖',
-              md: true
+              md: true,
             },
             {
               path: '/theme',
               title: '定制主题',
-              md: true
-            }
-          ]
-        }
-      ]
+              md: true,
+            },
+          ],
+        },
+      ],
     },
     {
       name: '组件',
-      groups: components
-    }
-  ]
+      groups: components,
+    },
+  ],
 };

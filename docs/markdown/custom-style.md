@@ -35,8 +35,8 @@ Vant Weapp 的所有组件都开启了`addGlobalClass: true`以接受外部样�
 ```js
 Component({
   options: {
-    styleIsolation: 'shared'
-  }
+    styleIsolation: 'shared',
+  },
 });
 ```
 

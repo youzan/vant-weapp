@@ -4,6 +4,6 @@ VantComponent({
   props: {
     dot: Boolean,
     info: null,
-    customStyle: String
-  }
+    customStyle: String,
+  },
 });

@@ -12,69 +12,71 @@ VantComponent({
     beforeRead: null,
     previewSize: {
       type: null,
-      value: 90
+      value: 90,
     },
     name: {
       type: [Number, String],
-      value: ''
+      value: '',
     },
     accept: {
       type: String,
-      value: 'image'
+      value: 'image',
     },
     fileList: {
       type: Array,
       value: [],
-      observer: 'formatFileList'
+      observer: 'formatFileList',
     },
     maxSize: {
       type: Number,
-      value: Number.MAX_VALUE
+      value: Number.MAX_VALUE,
     },
     maxCount: {
       type: Number,
-      value: 100
+      value: 100,
     },
     deletable: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showUpload: {
       type: Boolean,
-      value: true
+      value: true,
     },
     previewImage: {
       type: Boolean,
-      value: true
+      value: true,
     },
     previewFullImage: {
       type: Boolean,
-      value: true
+      value: true,
     },
     imageFit: {
       type: String,
-      value: 'scaleToFill'
+      value: 'scaleToFill',
     },
     uploadIcon: {
       type: String,
-      value: 'photograph'
+      value: 'photograph',
     },
     ...chooseImageProps,
-    ...chooseVideoProps
+    ...chooseVideoProps,
   },
 
   data: {
     lists: [],
-    isInCount: true
+    isInCount: true,
   },
 
   methods: {
     formatFileList() {
       const { fileList = [], maxCount } = this.data;
-      const lists = fileList.map(item => ({
+      const lists = fileList.map((item) => ({
         ...item,
         isImage:
-          typeof item.isImage === 'undefined' ? isImageFile(item) : item.isImage
+          typeof item.isImage === 'undefined'
+            ? isImageFile(item)
+            : item.isImage,
       }));
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
@@ -82,7 +84,7 @@ VantComponent({
     getDetail(index) {
       return {
         name: this.data.name,
-        index: index == null ? this.data.fileList.length : index
+        index: index == null ? this.data.fileList.length : index,
       };
     },
 
@@ -93,15 +95,15 @@ VantComponent({
 
       chooseFile({
         ...this.data,
-        maxCount: maxCount - lists.length
+        maxCount: maxCount - lists.length,
       })
-        .then(res => {
+        .then((res) => {
           let file = null;
 
           if (isVideo(res, accept)) {
             file = {
               path: res.tempFilePath,
-              ...res
+              ...res,
             };
           } else {
             file = multiple ? res.tempFiles : res.tempFiles[0];
@@ -109,7 +111,7 @@ VantComponent({
 
           this.onBeforeRead(file);
         })
-        .catch(error => {
+        .catch((error) => {
           this.$emit('error', error);
         });
     },
@@ -129,7 +131,7 @@ VantComponent({
             ...this.getDetail(),
             callback: (ok: boolean) => {
               ok ? resolve() : reject();
-            }
+            },
           });
         });
       }
@@ -148,7 +150,7 @@ VantComponent({
     onAfterRead(file) {
       const { maxSize } = this.data;
       const oversize = Array.isArray(file)
-        ? file.some(item => item.size > maxSize)
+        ? file.some((item) => item.size > maxSize)
         : file.size > maxSize;
 
       if (oversize) {
@@ -168,7 +170,7 @@ VantComponent({
 
       this.$emit('delete', {
         ...this.getDetail(index),
-        file: this.data.fileList[index]
+        file: this.data.fileList[index],
       });
     },
 
@@ -179,20 +181,20 @@ VantComponent({
 
       this.$emit('click-preview', {
         url: item.url || item.path,
-        ...this.getDetail(index)
+        ...this.getDetail(index),
       });
 
       if (!this.data.previewFullImage) return;
 
       wx.previewImage({
         urls: lists
-          .filter(item => item.isImage)
-          .map(item => item.url || item.path),
+          .filter((item) => item.isImage)
+          .map((item) => item.url || item.path),
         current: item.url || item.path,
         fail() {
           wx.showToast({ title: '预览图片失败', icon: 'none' });
-        }
+        },
       });
-    }
-  }
+    },
+  },
 });

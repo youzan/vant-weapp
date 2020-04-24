@@ -10,36 +10,36 @@ VantComponent({
     current: 'dropdown-item',
     linked() {
       this.updateDataFromParent();
-    }
+    },
   },
 
   props: {
     value: {
       type: null,
-      observer: 'rerender'
+      observer: 'rerender',
     },
     title: {
       type: String,
-      observer: 'rerender'
+      observer: 'rerender',
     },
     disabled: Boolean,
     titleClass: {
       type: String,
-      observer: 'rerender'
+      observer: 'rerender',
     },
     options: {
       type: Array,
       value: [],
-      observer: 'rerender'
+      observer: 'rerender',
     },
-    popupStyle: String
+    popupStyle: String,
   },
 
   data: {
     transition: true,
     showPopup: false,
     showWrapper: false,
-    displayTitle: ''
+    displayTitle: '',
   },
 
   methods: {
@@ -56,14 +56,14 @@ VantComponent({
           duration,
           activeColor,
           closeOnClickOverlay,
-          direction
+          direction,
         } = this.parent.data;
         this.setData({
           overlay,
           duration,
           activeColor,
           closeOnClickOverlay,
-          direction
+          direction,
         });
       }
     },
@@ -124,6 +124,6 @@ VantComponent({
       } else {
         this.rerender();
       }
-    }
-  }
+    },
+  },
 });

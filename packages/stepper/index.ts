@@ -27,11 +27,11 @@ VantComponent({
         if (!equal(value, this.data.currentValue)) {
           this.setData({ currentValue: this.format(value) });
         }
-      }
+      },
     },
     integer: {
       type: Boolean,
-      observer: 'check'
+      observer: 'check',
     },
     disabled: Boolean,
     inputWidth: null,
@@ -41,45 +41,45 @@ VantComponent({
     decimalLength: {
       type: Number,
       value: null,
-      observer: 'check'
+      observer: 'check',
     },
     min: {
       type: null,
       value: 1,
-      observer: 'check'
+      observer: 'check',
     },
     max: {
       type: null,
       value: Number.MAX_SAFE_INTEGER,
-      observer: 'check'
+      observer: 'check',
     },
     step: {
       type: null,
-      value: 1
+      value: 1,
     },
     showPlus: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showMinus: {
       type: Boolean,
-      value: true
+      value: true,
     },
     disablePlus: Boolean,
     disableMinus: Boolean,
     longPress: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
-    currentValue: ''
+    currentValue: '',
   },
 
   created() {
     this.setData({
-      currentValue: this.format(this.data.value)
+      currentValue: this.format(this.data.value),
     });
   },
 
@@ -116,7 +116,7 @@ VantComponent({
       this.emitChange(value);
       this.$emit('blur', {
         ...event.detail,
-        value
+        value,
       });
     },
 
@@ -224,6 +224,6 @@ VantComponent({
         return;
       }
       clearTimeout(this.longPressTimer);
-    }
-  }
+    },
+  },
 });

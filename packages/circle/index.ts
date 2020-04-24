@@ -14,16 +14,16 @@ VantComponent({
     text: String,
     lineCap: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     value: {
       type: Number,
       value: 0,
-      observer: 'reRender'
+      observer: 'reRender',
     },
     speed: {
       type: Number,
-      value: 50
+      value: 50,
     },
     size: {
       type: Number,
@@ -32,29 +32,29 @@ VantComponent({
     fill: String,
     layerColor: {
       type: String,
-      value: WHITE
+      value: WHITE,
     },
     color: {
       type: [String, Object],
       value: BLUE,
-      observer: 'setHoverColor'
+      observer: 'setHoverColor',
     },
     type: {
       type: String,
-      value: ''
+      value: '',
     },
     strokeWidth: {
       type: Number,
-      value: 4
+      value: 4,
     },
     clockwise: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
-    hoverColor: BLUE
+    hoverColor: BLUE,
   },
 
   methods: {
@@ -75,7 +75,9 @@ VantComponent({
         const LinearColor = context.createLinearGradient(size, 0, 0, 0);
         Object.keys(color)
           .sort((a, b) => parseFloat(a) - parseFloat(b))
-          .map(key => LinearColor.addColorStop(parseFloat(key) / 100, color[key]));
+          .map((key) =>
+            LinearColor.addColorStop(parseFloat(key) / 100, color[key])
+          );
         hoverColor = LinearColor;
       }
 
@@ -159,7 +161,7 @@ VantComponent({
         clearInterval(this.interval);
         this.interval = null;
       }
-    }
+    },
   },
 
   created() {
@@ -171,5 +173,5 @@ VantComponent({
   destroyed() {
     this.ctx = null;
     this.clearInterval();
-  }
+  },
 });

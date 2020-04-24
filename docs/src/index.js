@@ -15,7 +15,7 @@ const router = new VueRouter({
     }
 
     return { x: 0, y: 0 };
-  }
+  },
 });
 
 const ua = navigator.userAgent.toLowerCase();
@@ -44,12 +44,12 @@ new Vue({
         const el = document.querySelector(this.$route.hash);
         if (el) {
           el.scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
           });
         }
       }
     }, 1000);
   },
-  render: h => h(App),
-  router
+  render: (h) => h(App),
+  router,
 });

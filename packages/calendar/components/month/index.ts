@@ -3,46 +3,46 @@ import {
   getMonthEndDay,
   compareDay,
   getPrevDay,
-  getNextDay
+  getNextDay,
 } from '../../utils';
 
 VantComponent({
   props: {
     date: {
       type: null,
-      observer: 'setDays'
+      observer: 'setDays',
     },
     type: {
       type: String,
-      observer: 'setDays'
+      observer: 'setDays',
     },
     color: String,
     minDate: {
       type: null,
-      observer: 'setDays'
+      observer: 'setDays',
     },
     maxDate: {
       type: null,
-      observer: 'setDays'
+      observer: 'setDays',
     },
     showMark: Boolean,
     rowHeight: [Number, String],
     formatter: {
       type: null,
-      observer: 'setDays'
+      observer: 'setDays',
     },
     currentDate: {
       type: [null, Array],
-      observer: 'setDays'
+      observer: 'setDays',
     },
     allowSameDay: Boolean,
     showSubtitle: Boolean,
-    showMonthTitle: Boolean
+    showMonthTitle: Boolean,
   },
 
   data: {
     visible: true,
-    days: []
+    days: [],
   },
 
   methods: {
@@ -73,7 +73,7 @@ VantComponent({
           date,
           type,
           text: day,
-          bottomInfo: this.getBottomInfo(type)
+          bottomInfo: this.getBottomInfo(type),
         };
 
         if (this.data.formatter) {
@@ -92,8 +92,8 @@ VantComponent({
         return '';
       }
 
-      const isSelected = date =>
-        currentDate.some(item => compareDay(item, date) === 0);
+      const isSelected = (date) =>
+        currentDate.some((item) => compareDay(item, date) === 0);
 
       if (isSelected(day)) {
         const prevDay = getPrevDay(day);
@@ -185,6 +185,6 @@ VantComponent({
           return '开始/结束';
         }
       }
-    }
-  }
+    },
+  },
 });

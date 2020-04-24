@@ -8,7 +8,7 @@ VantComponent({
   classes: ['hover-class', 'loading-class'],
 
   data: {
-    baseStyle: ''
+    baseStyle: '',
   },
 
   props: {
@@ -24,19 +24,19 @@ VantComponent({
     customStyle: String,
     loadingType: {
       type: String,
-      value: 'circular'
+      value: 'circular',
     },
     type: {
       type: String,
-      value: 'default'
+      value: 'default',
     },
     size: {
       type: String,
-      value: 'normal'
+      value: 'normal',
     },
     loadingSize: {
       type: String,
-      value: '20px'
+      value: '20px',
     },
     color: {
       type: String,
@@ -62,8 +62,8 @@ VantComponent({
         if (style !== this.data.baseStyle) {
           this.setData({ baseStyle: style });
         }
-      }
-    }
+      },
+    },
   },
 
   methods: {
@@ -73,6 +73,6 @@ VantComponent({
       }
     },
 
-    noop() {}
-  }
+    noop() {},
+  },
 });

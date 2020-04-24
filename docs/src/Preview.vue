@@ -17,7 +17,7 @@
 const PREFIX = 'https://img.yzcdn.cn/vant-weapp/';
 const MAP = {
   index: 'index-20190715.png',
-  transition: 'transition-20180821.png'
+  transition: 'transition-20180821.png',
 };
 
 export default {
@@ -27,8 +27,8 @@ export default {
     },
     image() {
       return PREFIX + (MAP[this.imageName] || MAP.index);
-    }
-  }
+    },
+  },
 };
 </script>
 

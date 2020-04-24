@@ -4,18 +4,18 @@ VantComponent({
   relation: {
     name: 'index-bar',
     type: 'ancestor',
-    current: 'index-anchor'
+    current: 'index-anchor',
   },
 
   props: {
     useSlot: Boolean,
-    index: null
+    index: null,
   },
 
   data: {
     active: false,
     wrapperStyle: '',
-    anchorStyle: ''
+    anchorStyle: '',
   },
 
   methods: {
@@ -24,7 +24,7 @@ VantComponent({
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           wx.pageScrollTo({
             duration: 0,
-            scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop
+            scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
           });
         }
       );
@@ -32,6 +32,6 @@ VantComponent({
 
     getBoundingClientRect() {
       return this.getRect('.van-index-anchor-wrapper');
-    }
-  }
+    },
+  },
 });

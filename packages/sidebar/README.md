@@ -30,8 +30,8 @@
 ```javascript
 Page({
   data: {
-    activeKey: 0
-  }
+    activeKey: 0,
+  },
 });
 ```
 
@@ -78,12 +78,12 @@ import Notify from '@vant/weapp/dist/notify/notify';
 
 Page({
   data: {
-    activeKey: 0
+    activeKey: 0,
   },
 
   onChange(event) {
     Notify({ type: 'primary', message: event.detail });
-  }
+  },
 });
 ```
 

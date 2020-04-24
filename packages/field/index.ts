@@ -22,13 +22,13 @@ VantComponent({
     autosize: [Boolean, Object],
     readonly: {
       type: Boolean,
-      observer: 'setShowClear'
+      observer: 'setShowClear',
     },
     required: Boolean,
     iconClass: String,
     clearable: {
       type: Boolean,
-      observer: 'setShowClear'
+      observer: 'setShowClear',
     },
     clickable: Boolean,
     inputAlign: String,
@@ -39,18 +39,18 @@ VantComponent({
     errorMessageAlign: String,
     border: {
       type: Boolean,
-      value: true
+      value: true,
     },
     titleWidth: {
       type: String,
-      value: '90px'
-    }
+      value: '90px',
+    },
   },
 
   data: {
     focused: false,
     innerValue: '',
-    showClear: false
+    showClear: false,
   },
 
   created() {
@@ -133,10 +133,10 @@ VantComponent({
       const { clearable, readonly } = this.data;
       const { focused, value } = this;
       this.setData({
-        showClear: !!clearable && !!focused && !!value && !readonly
+        showClear: !!clearable && !!focused && !!value && !readonly,
       });
     },
 
-    noop() {}
-  }
+    noop() {},
+  },
 });

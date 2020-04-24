@@ -37,7 +37,8 @@ export const touch = Behavior({
       this.deltaY = touch.clientY - this.startY;
       this.offsetX = Math.abs(this.deltaX);
       this.offsetY = Math.abs(this.deltaY);
-      this.direction = this.direction || getDirection(this.offsetX, this.offsetY);
-    }
-  }
+      this.direction =
+        this.direction || getDirection(this.offsetX, this.offsetY);
+    },
+  },
 });

@@ -44,7 +44,6 @@ npm i vant-weapp -S --production
 }
 ```
 
-
 ### 步骤四 修改 app.json
 
 将 app.json 中的 `"style": "v2"` 去除，小程序的[新版基础组件](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style)强行加上了许多样式，难以去除，不关闭将造成部分组件样式混乱。

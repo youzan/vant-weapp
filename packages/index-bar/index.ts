@@ -23,42 +23,42 @@ VantComponent({
     },
     unlinked() {
       this.updateData();
-    }
+    },
   },
 
   props: {
     sticky: {
       type: Boolean,
-      value: true
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 1
+      value: 1,
     },
     highlightColor: {
       type: String,
-      value: GREEN
+      value: GREEN,
     },
     stickyOffsetTop: {
       type: Number,
-      value: 0
+      value: 0,
     },
     indexList: {
       type: Array,
-      value: indexList()
-    }
+      value: indexList(),
+    },
   },
 
   mixins: [
-    pageScrollMixin(function(event) {
+    pageScrollMixin(function (event) {
       this.scrollTop = event.scrollTop || 0;
       this.onScroll();
-    })
+    }),
   ],
 
   data: {
     activeAnchorIndex: null,
-    showSidebar: false
+    showSidebar: false,
   },
 
   created() {
@@ -74,7 +74,7 @@ VantComponent({
 
         this.timer = setTimeout(() => {
           this.setData({
-            showSidebar: !!this.children.length
+            showSidebar: !!this.children.length,
           });
 
           this.setRect().then(() => {
@@ -88,20 +88,20 @@ VantComponent({
       return Promise.all([
         this.setAnchorsRect(),
         this.setListRect(),
-        this.setSiderbarRect()
+        this.setSiderbarRect(),
       ]);
     },
 
     setAnchorsRect() {
       return Promise.all(
-        this.children.map(anchor =>
+        this.children.map((anchor) =>
           anchor
             .getRect('.van-index-anchor-wrapper')
             .then(
               (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
                 Object.assign(anchor, {
                   height: rect.height,
-                  top: rect.top + this.scrollTop
+                  top: rect.top + this.scrollTop,
                 });
               }
             )
@@ -114,17 +114,17 @@ VantComponent({
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           Object.assign(this, {
             height: rect.height,
-            top: rect.top + this.scrollTop
+            top: rect.top + this.scrollTop,
           });
         }
       );
     },
 
     setSiderbarRect() {
-      return this.getRect('.van-index-bar__sidebar').then(res => {
+      return this.getRect('.van-index-bar__sidebar').then((res) => {
         this.sidebar = {
           height: res.height,
-          top: res.top
+          top: res.top,
         };
       });
     },
@@ -132,7 +132,7 @@ VantComponent({
     setDiffData({ target, data }) {
       const diffData = {};
 
-      Object.keys(data).forEach(key => {
+      Object.keys(data).forEach((key) => {
         if (target.data[key] !== data[key]) {
           diffData[key] = data[key];
         }
@@ -148,7 +148,7 @@ VantComponent({
         .getRect('.van-index-anchor-wrapper')
         .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => ({
           height: rect.height,
-          top: rect.top
+          top: rect.top,
         }));
     },
 
@@ -182,8 +182,8 @@ VantComponent({
       this.setDiffData({
         target: this,
         data: {
-          activeAnchorIndex: active
-        }
+          activeAnchorIndex: active,
+        },
       });
 
       if (sticky) {
@@ -219,8 +219,8 @@ VantComponent({
               data: {
                 active: true,
                 anchorStyle,
-                wrapperStyle
-              }
+                wrapperStyle,
+              },
             });
           } else if (index === active - 1) {
             const currentAnchor = children[index];
@@ -245,8 +245,8 @@ VantComponent({
               target: item,
               data: {
                 active: true,
-                anchorStyle
-              }
+                anchorStyle,
+              },
             });
           } else {
             this.setDiffData({
@@ -254,8 +254,8 @@ VantComponent({
               data: {
                 active: false,
                 anchorStyle: '',
-                wrapperStyle: ''
-              }
+                wrapperStyle: '',
+              },
             });
           }
         });
@@ -301,6 +301,6 @@ VantComponent({
         anchor.scrollIntoView(this.scrollTop);
         this.$emit('select', anchor.data.index);
       }
-    }
-  }
+    },
+  },
 });

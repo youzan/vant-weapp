@@ -18,7 +18,7 @@ VantComponent({
     dot: Boolean,
     info: null,
     text: String,
-    useSlot: Boolean
+    useSlot: Boolean,
   },
 
   data: {
@@ -75,13 +75,13 @@ VantComponent({
         border,
         square,
         gutter,
-        clickable
+        clickable,
       });
     },
 
     onClick() {
       this.$emit('click');
       this.jumpLink();
-    }
-  }
+    },
+  },
 });

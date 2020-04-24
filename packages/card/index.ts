@@ -8,7 +8,7 @@ VantComponent({
     'thumb-class',
     'title-class',
     'price-class',
-    'origin-price-class'
+    'origin-price-class',
   ],
 
   mixins: [link],
@@ -21,7 +21,7 @@ VantComponent({
     title: String,
     price: {
       type: String,
-      observer: 'updatePrice'
+      observer: 'updatePrice',
     },
     centered: Boolean,
     lazyLoad: Boolean,
@@ -29,12 +29,12 @@ VantComponent({
     originPrice: String,
     thumbMode: {
       type: String,
-      value: 'aspectFit'
+      value: 'aspectFit',
     },
     currency: {
       type: String,
-      value: '¥'
-    }
+      value: '¥',
+    },
   },
 
   methods: {
@@ -43,12 +43,12 @@ VantComponent({
       const priceArr = price.toString().split('.');
       this.setData({
         integerStr: priceArr[0],
-        decimalStr: priceArr[1] ? `.${priceArr[1]}` : ''
+        decimalStr: priceArr[1] ? `.${priceArr[1]}` : '',
       });
     },
 
     onClickThumb() {
       this.jumpLink('thumbLink');
-    }
-  }
+    },
+  },
 });

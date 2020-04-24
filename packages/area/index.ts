@@ -24,16 +24,16 @@ VantComponent({
     areaList: {
       type: Object,
       value: {},
-      observer: 'setValues'
+      observer: 'setValues',
     },
     columnsNum: {
       type: null,
       value: 3,
       observer(value: number) {
         this.setData({
-          displayColumns: this.data.columns.slice(0, +value)
+          displayColumns: this.data.columns.slice(0, +value),
         });
-      }
+      },
     },
     columnsPlaceholder: {
       type: Array,
@@ -43,16 +43,16 @@ VantComponent({
             province: val[0] || '',
             city: val[1] || '',
             county: val[2] || '',
-          }
+          },
         });
-      }
-    }
+      },
+    },
   },
 
   data: {
     columns: [{ values: [] }, { values: [] }, { values: [] }],
     displayColumns: [{ values: [] }, { values: [] }, { values: [] }],
-    typeToColumnsPlaceholder: {}
+    typeToColumnsPlaceholder: {},
   },
 
   mounted() {
@@ -109,7 +109,7 @@ VantComponent({
         this.$emit('change', {
           picker,
           values: this.parseOutputValues(picker.getValues()),
-          index
+          index,
         });
       });
     },
@@ -127,9 +127,9 @@ VantComponent({
       }
 
       const list = this.getConfig(type);
-      result = Object.keys(list).map(code => ({
+      result = Object.keys(list).map((code) => ({
         code,
-        name: list[code]
+        name: list[code],
       }));
 
       if (code) {
@@ -138,15 +138,20 @@ VantComponent({
           code = '9';
         }
 
-        result = result.filter(item => item.code.indexOf(code) === 0);
+        result = result.filter((item) => item.code.indexOf(code) === 0);
       }
 
       if (typeToColumnsPlaceholder[type] && result.length) {
         // set columns placeholder
-        const codeFill = type === 'province' ? '' : type === 'city' ? COLUMNSPLACEHOLDERCODE.slice(2, 4) : COLUMNSPLACEHOLDERCODE.slice(4, 6);
+        const codeFill =
+          type === 'province'
+            ? ''
+            : type === 'city'
+            ? COLUMNSPLACEHOLDERCODE.slice(2, 4)
+            : COLUMNSPLACEHOLDERCODE.slice(4, 6);
         result.unshift({
           code: `${code}${codeFill}`,
-          name: typeToColumnsPlaceholder[type]
+          name: typeToColumnsPlaceholder[type],
         });
       }
 
@@ -218,7 +223,7 @@ VantComponent({
           picker.setIndexes([
             this.getIndex('province', code),
             this.getIndex('city', code),
-            this.getIndex('county', code)
+            this.getIndex('county', code),
           ])
         )
         .catch(() => {});
@@ -226,7 +231,7 @@ VantComponent({
 
     getValues() {
       const picker = this.getPicker();
-      return picker ? picker.getValues().filter(value => !!value) : [];
+      return picker ? picker.getValues().filter((value) => !!value) : [];
     },
 
     getDetail() {
@@ -236,7 +241,7 @@ VantComponent({
         country: '',
         province: '',
         city: '',
-        county: ''
+        county: '',
       };
 
       if (!values.length) {
@@ -260,6 +265,6 @@ VantComponent({
     reset(code) {
       this.code = code || '';
       return this.setValues();
-    }
-  }
+    },
+  },
 });

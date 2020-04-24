@@ -36,7 +36,7 @@ export const pageScrollMixin = (scroller: Scroller) =>
     detached() {
       const page = getCurrentPage();
       page.vanPageScroller = (page.vanPageScroller || []).filter(
-        item => item !== scroller
+        (item) => item !== scroller
       );
-    }
+    },
   });

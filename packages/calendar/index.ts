@@ -8,7 +8,7 @@ import {
   formatMonthTitle,
   compareMonth,
   getMonths,
-  getDayByOffset
+  getDayByOffset,
 } from './utils';
 
 import Toast from '../toast/toast';
@@ -17,7 +17,7 @@ VantComponent({
   props: {
     title: {
       type: String,
-      value: '日期选择'
+      value: '日期选择',
     },
     color: String,
     show: {
@@ -27,12 +27,12 @@ VantComponent({
           this.initRect();
           this.scrollIntoView();
         }
-      }
+      },
     },
     formatter: null,
     confirmText: {
       type: String,
-      value: '确定'
+      value: '确定',
     },
     rangePrompt: String,
     defaultDate: {
@@ -40,18 +40,18 @@ VantComponent({
       observer(val) {
         this.setData({ currentDate: val });
         this.scrollIntoView();
-      }
+      },
     },
     allowSameDay: Boolean,
     confirmDisabledText: String,
     type: {
       type: String,
       value: 'single',
-      observer: 'reset'
+      observer: 'reset',
     },
     minDate: {
       type: null,
-      value: Date.now()
+      value: Date.now(),
     },
     maxDate: {
       type: null,
@@ -59,63 +59,63 @@ VantComponent({
         new Date().getFullYear(),
         new Date().getMonth() + 6,
         new Date().getDate()
-      ).getTime()
+      ).getTime(),
     },
     position: {
       type: String,
-      value: 'bottom'
+      value: 'bottom',
     },
     rowHeight: {
       type: [Number, String],
-      value: ROW_HEIGHT
+      value: ROW_HEIGHT,
     },
     round: {
       type: Boolean,
-      value: true
+      value: true,
     },
     poppable: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showMark: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showTitle: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showConfirm: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showSubtitle: {
       type: Boolean,
-      value: true
+      value: true,
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
+      value: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      value: true
+      value: true,
     },
     maxRange: {
       type: [Number, String],
-      value: null
-    }
+      value: null,
+    },
   },
 
   data: {
     subtitle: '',
     currentDate: null,
-    scrollIntoView: ''
+    scrollIntoView: '',
   },
 
   created() {
     this.setData({
-      currentDate: this.getInitialDate()
+      currentDate: this.getInitialDate(),
     });
   },
 
@@ -139,13 +139,13 @@ VantComponent({
 
       const contentObserver = this.createIntersectionObserver({
         thresholds: [0, 0.1, 0.9, 1],
-        observeAll: true
+        observeAll: true,
       });
 
       this.contentObserver = contentObserver;
 
       contentObserver.relativeTo('.van-calendar__body');
-      contentObserver.observe('.month', res => {
+      contentObserver.observe('.month', (res) => {
         if (res.boundingClientRect.top <= res.relativeRect.top) {
           // @ts-ignore
           this.setData({ subtitle: formatMonthTitle(res.dataset.date) });
@@ -160,7 +160,7 @@ VantComponent({
         const [startDay, endDay] = defaultDate || [];
         return [
           startDay || minDate,
-          endDay || getNextDay(new Date(minDate)).getTime()
+          endDay || getNextDay(new Date(minDate)).getTime(),
         ];
       }
 
@@ -179,7 +179,7 @@ VantComponent({
           show,
           poppable,
           minDate,
-          maxDate
+          maxDate,
         } = this.data;
         const targetDate = type === 'single' ? currentDate : currentDate[0];
         const displayed = show || !poppable;
@@ -273,7 +273,10 @@ VantComponent({
         if (!valid) {
           // auto selected to max range if showConfirm
           if (this.data.showConfirm) {
-            this.emit([date[0], getDayByOffset(date[0], this.data.maxRange - 1)]);
+            this.emit([
+              date[0],
+              getDayByOffset(date[0], this.data.maxRange - 1),
+            ]);
           } else {
             this.emit(date);
           }
@@ -290,10 +293,10 @@ VantComponent({
 
     emit(date) {
       const getTime = (date: Date | number) =>
-        (date instanceof Date ? date.getTime() : date);
+        date instanceof Date ? date.getTime() : date;
 
       this.setData({
-        currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date)
+        currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date),
       });
       this.$emit('select', copyDates(date));
     },
@@ -304,7 +307,7 @@ VantComponent({
       if (maxRange && calcDateNum(date) > maxRange) {
         Toast({
           context: this,
-          message: rangePrompt || `选择天数不能超过 ${maxRange} 天`
+          message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
         });
         return false;
       }
@@ -319,6 +322,6 @@ VantComponent({
       wx.nextTick(() => {
         this.$emit('confirm', copyDates(this.data.currentDate));
       });
-    }
-  }
+    },
+  },
 });

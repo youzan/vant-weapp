@@ -19,17 +19,17 @@ VantComponent({
     checkedColor: String,
     labelPosition: {
       type: String,
-      value: 'right'
+      value: 'right',
     },
     labelDisabled: Boolean,
     shape: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     iconSize: {
       type: null,
-      value: 20
-    }
+      value: 20,
+    },
   },
 
   methods: {
@@ -50,6 +50,6 @@ VantComponent({
       if (!disabled && !labelDisabled) {
         this.emitChange(name);
       }
-    }
-  }
+    },
+  },
 });

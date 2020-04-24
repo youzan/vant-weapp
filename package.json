@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "node build/dev.js",
-    "lint": "eslint ./packages --ext .js,.ts && stylelint \"packages/**/*.less\" --fix",
+    "lint": "eslint ./packages --ext .js,.ts --fix && stylelint \"packages/**/*.less\" --fix",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
@@ -47,7 +47,7 @@
     "@babel/preset-env": "^7.5.5",
     "@vant/cli": "^1.0.3",
     "@vant/doc": "^2.5.5",
-    "@vant/eslint-config": "^2.2.0",
+    "@vant/eslint-config": "^2.2.1",
     "@vant/icons": "1.2.0",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/stylelint-config": "^1.3.0",

@@ -16,7 +16,7 @@ VantComponent({
         if (this.offset > 0) {
           this.swipeMove(leftWidth);
         }
-      }
+      },
     },
     rightWidth: {
       type: Number,
@@ -25,19 +25,19 @@ VantComponent({
         if (this.offset < 0) {
           this.swipeMove(-rightWidth);
         }
-      }
+      },
     },
     asyncClose: Boolean,
     name: {
       type: [Number, String],
-      value: ''
-    }
+      value: '',
+    },
   },
 
   mixins: [touch],
 
   data: {
-    catchMove: false
+    catchMove: false,
   },
 
   created() {
@@ -46,7 +46,7 @@ VantComponent({
   },
 
   destroyed() {
-    ARRAY = ARRAY.filter(item => item !== this);
+    ARRAY = ARRAY.filter((item) => item !== this);
   },
 
   methods: {
@@ -57,7 +57,7 @@ VantComponent({
 
       this.$emit('open', {
         position,
-        name: this.data.name
+        name: this.data.name,
       });
     },
 
@@ -65,7 +65,7 @@ VantComponent({
       this.swipeMove(0);
     },
 
-    swipeMove(offset: number = 0) {
+    swipeMove(offset = 0) {
       this.offset = range(offset, -this.data.rightWidth, this.data.leftWidth);
 
       const transform = `translate3d(${this.offset}px, 0, 0)`;
@@ -79,7 +79,7 @@ VantComponent({
         -webkit-transition: ${transition};
         transform: ${transform};
         transition: ${transition};
-      `
+      `,
       });
     },
 
@@ -120,7 +120,7 @@ VantComponent({
       }
 
       this.dragging = true;
-      ARRAY.filter(item => item !== this).forEach(item => item.close());
+      ARRAY.filter((item) => item !== this).forEach((item) => item.close());
       this.setData({ catchMove: true });
       this.swipeMove(this.startOffset + this.deltaX);
     },
@@ -146,11 +146,11 @@ VantComponent({
         this.$emit('close', {
           position,
           instance: this,
-          name: this.data.name
+          name: this.data.name,
         });
       } else {
         this.swipeMove(0);
       }
-    }
-  }
+    },
+  },
 });

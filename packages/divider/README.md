@@ -48,10 +48,12 @@
 
 ```html
 <van-divider contentPosition="center" textColor="#1989fa">文本颜色</van-divider>
-<van-divider contentPosition="center" borderColor="#1989fa"
-  >border颜色</van-divider
->
-<van-divider contentPosition="center" fontSize="18">字体大小</van-divider>
+<van-divider contentPosition="center" borderColor="#1989fa">
+  border 颜色
+</van-divider>
+<van-divider contentPosition="center" fontSize="18">
+  字体大小
+</van-divider>
 ```
 
 ### 自定义样式
@@ -59,9 +61,10 @@
 ```html
 <van-divider
   contentPosition="center"
-  customStyle="color: #1989fa;border-color: #1989fa;font-size: 18px;"
-  >文本</van-divider
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
 >
+  文本
+</van-divider>
 ```
 
 ## API

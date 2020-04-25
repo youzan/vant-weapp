@@ -62,7 +62,7 @@
   tip="{{ true }}"
 >
   <van-tag type="primary">标签</van-tag>
-  <view slot="tip"> 您的收货地址不支持同城送, <text>修改地址</text> </view>
+  <view slot="tip">您的收货地址不支持同城送, <text>修改地址</text></view>
 </van-submit-bar>
 ```
 

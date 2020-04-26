@@ -98,7 +98,7 @@ Page({
 ```html
 <van-action-sheet
   show="{{ show }}"
-  :actions="actions"
+  actions="{{ actions }}"
   description="这是一段描述信息"
 />
 ```

@@ -175,16 +175,11 @@ VantComponent({
     },
 
     onPreviewImage(event) {
+      if (!this.data.previewFullImage) return;
+
       const { index } = event.currentTarget.dataset;
       const { lists } = this.data;
       const item = lists[index];
-
-      this.$emit('click-preview', {
-        url: item.url || item.path,
-        ...this.getDetail(index),
-      });
-
-      if (!this.data.previewFullImage) return;
 
       wx.previewImage({
         urls: lists
@@ -194,6 +189,16 @@ VantComponent({
         fail() {
           wx.showToast({ title: '预览图片失败', icon: 'none' });
         },
+      });
+    },
+
+    onClickPreview(event) {
+      const { index } = event.currentTarget.dataset;
+      const item = this.data.lists[index];
+
+      this.$emit('click-preview', {
+        ...item,
+        ...this.getDetail(index),
       });
     },
   },

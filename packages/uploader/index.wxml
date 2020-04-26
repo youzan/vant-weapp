@@ -5,9 +5,11 @@
     <!-- 预览样式 -->
     <view
       wx:if="{{ previewImage }}"
-      wx:for="{{ lists  }}"
+      wx:for="{{ lists }}"
       wx:key="index"
       class="van-uploader__preview"
+      data-index="{{ index }}"
+      bindtap="onClickPreview"
     >
       <image
         wx:if="{{ item.isImage }}"
@@ -32,7 +34,7 @@
         class="van-uploader__mask"
       >
        <van-icon wx:if="{{ item.status === 'failed' }}" name="warning-o" class="van-uploader__mask-icon" />
-       <van-loading wx:else class="van-uploader__loading"  />
+       <van-loading wx:else class="van-uploader__loading" />
        <text wx:if="{{ item.message }}" class="van-uploader__upload-text">{{ item.message }}</text>
       </view>
       <van-icon

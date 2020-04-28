@@ -26,13 +26,13 @@ VantComponent({
         }
       );
       this.updateTabs();
-    },
+    }
   },
 
   props: {
     color: {
       type: String,
-      observer: 'setLine',
+      observer: 'setLine'
     },
     sticky: Boolean,
     animated: {
@@ -41,18 +41,18 @@ VantComponent({
         this.children.forEach((child: TrivialInstance, index: number) =>
           child.updateRender(index === this.data.currentIndex, this)
         );
-      },
+      }
     },
     swipeable: Boolean,
     lineWidth: {
       type: [String, Number],
       value: -1,
-      observer: 'setLine',
+      observer: 'setLine'
     },
     lineHeight: {
       type: [String, Number],
       value: -1,
-      observer: 'setLine',
+      observer: 'setLine'
     },
     titleActiveColor: String,
     titleInactiveColor: String,
@@ -63,45 +63,45 @@ VantComponent({
         if (name !== this.getCurrentName()) {
           this.setCurrentIndexByName(name);
         }
-      },
+      }
     },
     type: {
       type: String,
-      value: 'line',
+      value: 'line'
     },
     border: {
       type: Boolean,
-      value: true,
+      value: true
     },
     ellipsis: {
       type: Boolean,
-      value: true,
+      value: true
     },
     duration: {
       type: Number,
-      value: 0.3,
+      value: 0.3
     },
     zIndex: {
       type: Number,
-      value: 1,
+      value: 1
     },
     swipeThreshold: {
       type: Number,
       value: 4,
       observer(value) {
         this.setData({
-          scrollable: this.children.length > value || !this.data.ellipsis,
+          scrollable: this.children.length > value || !this.data.ellipsis
         });
-      },
+      }
     },
     offsetTop: {
       type: Number,
-      value: 0,
+      value: 0
     },
     lazyRender: {
       type: Boolean,
-      value: true,
-    },
+      value: true
+    }
   },
 
   data: {
@@ -111,7 +111,7 @@ VantComponent({
     scrollable: false,
     trackStyle: '',
     currentIndex: null,
-    container: null,
+    container: null
   },
 
   mounted() {
@@ -124,7 +124,7 @@ VantComponent({
   methods: {
     updateContainer() {
       this.setData({
-        container: () => this.createSelectorQuery().select('.van-tabs'),
+        container: () => this.createSelectorQuery().select('.van-tabs')
       });
     },
 
@@ -132,8 +132,7 @@ VantComponent({
       const { children = [], data } = this;
       this.setData({
         tabs: children.map((child: TrivialInstance) => child.data),
-        scrollable:
-          this.children.length > data.swipeThreshold || !data.ellipsis,
+        scrollable: this.children.length > data.swipeThreshold || !data.ellipsis
       });
 
       this.setCurrentIndexByName(this.getCurrentName() || data.active);
@@ -151,7 +150,7 @@ VantComponent({
       this.$emit(eventName, {
         index: currentChild.index,
         name: currentChild.getComputedName(),
-        title: currentChild.data.title,
+        title: currentChild.data.title
       });
     },
 
@@ -236,7 +235,7 @@ VantComponent({
         duration,
         currentIndex,
         lineWidth,
-        lineHeight,
+        lineHeight
       } = this.data;
 
       this.getRect('.van-tab', true).then(
@@ -271,7 +270,7 @@ VantComponent({
             -webkit-transform: translateX(${left}px);
             transform: translateX(${left}px);
             ${transition}
-          `,
+          `
           });
         }
       );
@@ -287,7 +286,7 @@ VantComponent({
 
       Promise.all([
         this.getRect('.van-tab', true),
-        this.getRect('.van-tabs__nav'),
+        this.getRect('.van-tabs__nav')
       ]).then(
         ([tabRects, navRect]: [
           WechatMiniprogram.BoundingClientRectCallbackResult[],
@@ -299,7 +298,7 @@ VantComponent({
             .reduce((prev, curr) => prev + curr.width, 0);
 
           this.setData({
-            scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
+            scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2
           });
         }
       );
@@ -336,6 +335,6 @@ VantComponent({
           this.setCurrentIndex(currentIndex + 1);
         }
       }
-    },
-  },
+    }
+  }
 });

@@ -27,7 +27,7 @@ export const pageScrollMixin = (scroller: Scroller) =>
       if (Array.isArray(page.vanPageScroller)) {
         page.vanPageScroller.push(scroller.bind(this));
       } else {
-        page.vanPageScroller = [page.onPageScroll, scroller.bind(this)];
+        page.vanPageScroller = [page.onPageScroll.bind(page), scroller.bind(this)];
       }
 
       page.onPageScroll = onPageScroll;

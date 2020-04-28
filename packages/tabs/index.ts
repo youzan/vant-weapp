@@ -249,8 +249,8 @@ VantComponent({
           const height =
             lineHeight !== -1
               ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(
-                  lineHeight
-                )};`
+                lineHeight
+              )};`
               : '';
 
           let left = rects

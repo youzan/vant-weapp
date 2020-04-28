@@ -10,7 +10,8 @@
     "types": ["miniprogram-api-typings"],
     "paths": {
       "definitions/*": ["./packages/definitions/*"]
-    }
+    },
+    "skipLibCheck": true
   },
   "include": ["packages/**/*"]
 }

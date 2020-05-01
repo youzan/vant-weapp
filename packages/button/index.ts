@@ -30,6 +30,7 @@ VantComponent({
       type: String,
       value: 'default',
     },
+    dataset: null,
     size: {
       type: String,
       value: 'normal',

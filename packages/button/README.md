@@ -140,6 +140,7 @@
 | send-message-path | 会话内消息卡片点击跳转小程序路径 | _string_ | 当前分享路径 | - |
 | send-message-img | sendMessageImg | _string_ | 截图 | - |
 | show-message-card | 显示会话内消息卡片 | _string_ | `false` | - |
+| dataset | 按钮 dataset，open-type 为 `share` 时，可在 onShareAppMessage 事件的 `event.target.dataset.detail` 中看到传入的值 | _any_ | - | - |
 
 ### Events
 

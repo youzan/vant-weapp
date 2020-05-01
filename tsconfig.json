@@ -9,7 +9,8 @@
     "baseUrl": ".",
     "types": ["miniprogram-api-typings"],
     "paths": {
-      "definitions/*": ["./packages/definitions/*"]
+      "definitions/*": ["./packages/definitions/*"],
+      "packages/*": ["./packages/*"]
     },
     "skipLibCheck": true
   },

@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { canIUseModel } from '../common/version';
 
 VantComponent({
   field: true,
@@ -64,8 +65,15 @@ VantComponent({
       const { score } = event.currentTarget.dataset;
       if (!data.disabled && !data.readonly) {
         this.setData({ innerValue: score + 1 });
-        this.$emit('input', score + 1);
-        this.$emit('change', score + 1);
+
+        if (canIUseModel()) {
+          this.setData({ value: score + 1 });
+        }
+
+        wx.nextTick(() => {
+          this.$emit('input', score + 1);
+          this.$emit('change', score + 1);
+        });
       }
     },
 

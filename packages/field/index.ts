@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { commonProps, inputProps, textareaProps } from './props';
+import { canIUseModel } from '../common/version';
 
 VantComponent({
   field: true,
@@ -121,7 +122,9 @@ VantComponent({
     },
 
     emitChange() {
-      this.setData({ value: this.value });
+      if (canIUseModel()) {
+        this.setData({ value: this.value });
+      }
 
       wx.nextTick(() => {
         this.$emit('input', this.value);

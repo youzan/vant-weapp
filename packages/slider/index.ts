@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
+import { canIUseModel } from '../common/version';
 
 VantComponent({
   mixins: [touch],
@@ -26,9 +26,7 @@ VantComponent({
     value: {
       type: Number,
       value: 0,
-      observer(value: number) {
-        this.updateValue(value, false);
-      },
+      observer: 'updateValue',
     },
     barHeight: {
       type: null,
@@ -93,14 +91,13 @@ VantComponent({
 
     updateValue(value: number, end: boolean, drag: boolean) {
       value = this.format(value);
-      const { barHeight, min } = this.data;
+      const { min } = this.data;
       const width = `${((value - min) * 100) / this.getRange()}%`;
 
       this.setData({
         value,
         barStyle: `
           width: ${width};
-          height: ${addUnit(barHeight)};
           ${drag ? 'transition: none;' : ''}
         `,
       });
@@ -111,6 +108,10 @@ VantComponent({
 
       if (end) {
         this.$emit('change', value);
+      }
+
+      if ((drag || end) && canIUseModel()) {
+        this.setData({ value });
       }
     },
 

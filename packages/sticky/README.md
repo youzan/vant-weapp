@@ -66,15 +66,58 @@ Page({
 });
 ```
 
+### 嵌套在 scroll-view 内使用
+
+通过 `scroll-top` 与 `offset-top` 属性可以实现在 scroll-view 内嵌套使用
+
+```html
+<scroll-view
+  bind:scroll="onScroll"
+  scroll-y
+  id="scroller"
+  style="height: 200px;"
+>
+  <view style="height: 400px; padding-top: 50px;">
+    <van-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}">
+      <van-button type="warning">
+        嵌套在 scroll-view 内
+      </van-button>
+    </van-sticky>
+  </view>
+</scroll-view>
+```
+
+```js
+Page({
+  data: {
+    scrollTop: 0,
+    offsetTop: 0,
+  },
+
+  onScroll(event) {
+    wx.createSelectorQuery()
+      .select('#scroller')
+      .boundingClientRect((res) => {
+        this.setData({
+          scrollTop: event.detail.scrollTop,
+          offsetTop: res.top,
+        });
+      })
+      .exec();
+  },
+});
+```
+
 ## API
 
 ### Props
 
-| 参数       | 说明                                   | 类型       | 默认值 |
-| ---------- | -------------------------------------- | ---------- | ------ |
-| offset-top | 吸顶时与顶部的距离，单位`px`           | _number_   | `0`    |
-| z-index    | 吸顶时的 z-index                       | _number_   | `99`   |
-| container  | 一个函数，返回容器对应的 NodesRef 节点 | _function_ | -      |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| offset-top | 吸顶时与顶部的距离，单位`px` | _number_ | `0` |
+| z-index | 吸顶时的 z-index | _number_ | `99` |
+| container | 一个函数，返回容器对应的 NodesRef 节点 | _function_ | - |
+| scroll-top | 当前滚动区域的滚动位置，非 `null` 时会禁用页面滚动事件的监听 | _number_ | - |
 
 ### Events
 

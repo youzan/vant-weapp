@@ -348,6 +348,13 @@
 					"id": -1,
 					"name": "calendar",
 					"pathName": "pages/calendar/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index-bar",
+					"pathName": "pages/index-bar/index",
 					"scene": null
 				}
 			]

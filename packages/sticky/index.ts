@@ -24,10 +24,19 @@ VantComponent({
       type: null,
       observer: 'onScroll',
     },
+    scrollTop: {
+      type: null,
+      observer(val) {
+        this.onScroll({ scrollTop: val });
+      },
+    },
   },
 
   mixins: [
     pageScrollMixin(function (event) {
+      if (this.data.scrollTop != null) {
+        return;
+      }
       this.onScroll(event);
     }),
   ],

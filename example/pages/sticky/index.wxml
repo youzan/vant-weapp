@@ -23,3 +23,20 @@
     </van-sticky>
   </view>
 </demo-block>
+
+<demo-block title="嵌套在 scroll-view 内使用">
+  <scroll-view
+    bind:scroll="onScroll"
+    scroll-y
+    id="scroller"
+    style="height: 200px; background-color: #fff;"
+  >
+    <view style="height: 400px; padding-top: 50px;">
+      <van-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}">
+        <van-button type="warning">
+          嵌套在 scroll-view 内
+        </van-button>
+      </van-sticky>
+    </view>
+  </scroll-view>
+</demo-block>

@@ -27,10 +27,10 @@ export const pageScrollMixin = (scroller: Scroller) =>
       if (Array.isArray(page.vanPageScroller)) {
         page.vanPageScroller.push(scroller.bind(this));
       } else {
-        page.vanPageScroller = [
-          page.onPageScroll.bind(page),
-          scroller.bind(this)
-        ];
+        page.vanPageScroller =
+          typeof page.onPageScroll === 'function'
+            ? [page.onPageScroll.bind(page), scroller.bind(this)]
+            : [scroller.bind(this)];
       }
 
       page.onPageScroll = onPageScroll;
@@ -39,7 +39,7 @@ export const pageScrollMixin = (scroller: Scroller) =>
     detached() {
       const page = getCurrentPage();
       page.vanPageScroller = (page.vanPageScroller || []).filter(
-        item => item !== scroller
+        (item) => item !== scroller
       );
-    }
+    },
   });

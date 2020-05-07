@@ -14,7 +14,8 @@
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
-    "build:changelog": "vant changelog --tag v1.1.0 ./docs/markdown/changelog.generated.md"
+    "build:changelog": "vant changelog --tag v1.1.0 ./docs/markdown/changelog.generated.md",
+    "upload:weapp": "node build/upload.js"
   },
   "files": [
     "dist",
@@ -68,6 +69,7 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^10.0.0",
     "miniprogram-api-typings": "2.10.4",
+    "miniprogram-ci": "^1.0.27",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
     "progress-bar-webpack-plugin": "^1.11.0",

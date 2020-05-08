@@ -16,7 +16,7 @@
     class="van-dialog__header {{ message || useSlot ? '' : 'van-dialog--isolated' }}"
   >
     <slot wx:if="{{ useTitleSlot }}" name="title" />
-    <block wx:elif="{{ title }}"> {{ title }}</block>
+    <block wx:elif="{{ title }}">{{ title }}</block>
   </view>
 
   <slot wx:if="{{ useSlot }}" />

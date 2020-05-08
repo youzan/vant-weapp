@@ -98,7 +98,7 @@
   <view wx:if="{{ showWordLimit && maxlength }}" class="van-field__word-limit">
     <view class="{{ utils.bem('field__word-num', { full: value.length >= maxlength }) }}">{{ value.length }}</view>/{{ maxlength }}
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+  <view wx:if="{{ errorMessage }}" class="{{ utils.bem('field__error-message', [errorMessageAlign, { disabled, error }]) }}">
     {{ errorMessage }}
   </view>
 </van-cell>

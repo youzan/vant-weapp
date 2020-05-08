@@ -1,5 +1,35 @@
 # 更新日志
 
+
+### [v1.3.0](https://github.com/youzan/vant-weapp/tree/v1.3.0)
+`2020-05-08`
+
+#### 支持简易双向绑定
+1.3.0中，我们为数个表单组件支持了简易双向绑定，涉及组件有
+
+Slider [\#3107](https://github.com/youzan/vant-weapp/pull/3107)
+
+Search [\#3106](https://github.com/youzan/vant-weapp/pull/3106)
+
+Rate [\#3105](https://github.com/youzan/vant-weapp/pull/3105)
+
+**Features**
+
+- sticky: 新增 scroll-top 属性 [\#3115](https://github.com/youzan/vant-weapp/pull/3115)
+- button: 新增 dataset 属性 [\#3075](https://github.com/youzan/vant-weapp/pull/3075)
+- uploader: 所有类型都会触发 click-preview 事件 [\#3071](https://github.com/youzan/vant-weapp/pull/3071)
+- Uploader: 属性 accept 新增值 media [\#3047](https://github.com/youzan/vant-weapp/pull/3047)
+- feat: 新增基础 font-family [\#3061](https://github.com/youzan/vant-weapp/pull/3061)
+- submit-bar: 使用另一个view实现 safe-area-inset-bottom 以避免样式冲突 [\#3104](https://github.com/youzan/vant-weapp/pull/3104)
+
+**Bug Fixes**
+
+- dialog: 修复 title 多余空格的问题 [\#3069](https://github.com/youzan/vant-weapp/pull/3069)
+- tab: 修复 tab 个数多时显示滚动条 [\#3072](https://github.com/youzan/vant-weapp/pull/3072)
+- Sticky: 修复使用组件时页面 onPageScroll 失效 [\#3092](https://github.com/youzan/vant-weapp/pull/3092)
+- button: 修复 disabled 属性对 open-type 类型的按钮无效 [\#3076](https://github.com/youzan/vant-weapp/pull/3076)
+
+
 ### [v1.2.2](https://github.com/youzan/vant-weapp/tree/v1.2.2)
 
 `2020-04-21`

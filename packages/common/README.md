@@ -57,3 +57,15 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 <!-- 全边框 -->
 <view class="van-hairline--surround"></view>
 ```
+
+### 全局字体
+
+推荐在 app.wxss 中设置以下全局字体，以保证在不同设备上提供最佳的视觉体验。
+
+```css
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}
+```

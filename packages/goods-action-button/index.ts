@@ -23,10 +23,6 @@ VantComponent({
     },
   },
 
-  mounted() {
-    this.updateStyle();
-  },
-
   methods: {
     onClick(event: Weapp.Event) {
       this.$emit('click', event.detail);
@@ -34,6 +30,10 @@ VantComponent({
     },
 
     updateStyle() {
+      if (this.parent == null) {
+        return;
+      }
+
       const { children = [] } = this.parent;
       const { length } = children;
       const index = children.indexOf(this);

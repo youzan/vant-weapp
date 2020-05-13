@@ -60,6 +60,7 @@ Page({
 | placeholder | 固定在顶部时是否开启占位 | _boolean_ | `false` | - |
 | border | 是否显示下边框 | _boolean_ | `true` | - |
 | z-index | 元素 z-index | _number_ | `1` | - |
+| custom-style | 自定义样式 | _string_ | - | - |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | _boolean_ | `true` | - |
 
 ### Slot

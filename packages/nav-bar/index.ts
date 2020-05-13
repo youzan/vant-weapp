@@ -15,6 +15,7 @@ VantComponent({
     },
     leftText: String,
     rightText: String,
+    customStyle: String,
     leftArrow: Boolean,
     border: {
       type: Boolean,
@@ -33,13 +34,18 @@ VantComponent({
   data: {
     statusBarHeight: 0,
     height: 44,
+    baseStyle: '',
   },
 
   created() {
     const { statusBarHeight } = wx.getSystemInfoSync();
+    const { safeAreaInsetTop, zIndex } = this.data;
+    const paddingTop = safeAreaInsetTop ? statusBarHeight : 0;
+    const baseStyle = `z-index: ${zIndex};padding-top: ${paddingTop}px;`;
     this.setData({
       statusBarHeight,
       height: 44 + statusBarHeight,
+      baseStyle
     });
   },
 

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-switch": "path/to/@vant/weapp/dist/switch/index"
+  "van-switch": "@vant/weapp/switch/index"
 }
 ```
 
@@ -21,13 +21,13 @@
 ```javascript
 Page({
   data: {
-    checked: true
+    checked: true,
   },
 
   onChange({ detail }) {
     // 需要手动对 checked 状态进行更新
     this.setData({ checked: detail });
-  }
+  },
 });
 ```
 
@@ -62,29 +62,26 @@ Page({
 ### 异步控制
 
 ```html
-<van-switch
-  checked="{{ checked }}"
-  bind:change="onChange"
-/>
+<van-switch checked="{{ checked }}" bind:change="onChange" />
 ```
 
 ```js
 Page({
   data: {
-    checked: true
+    checked: true,
   },
 
   onChange({ detail }) {
     wx.showModal({
       title: '提示',
       content: '是否切换开关？',
-      success: res => {
+      success: (res) => {
         if (res.confirm) {
           this.setData({ checked2: detail });
         }
-      }
+      },
     });
-  }
+  },
 });
 ```
 
@@ -92,27 +89,27 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - | - |
-| checked | 开关选中状态 | *any* | `false` | - |
-| loading | 是否为加载状态 | *boolean* | `false` | - |
-| disabled | 是否为禁用状态 | *boolean* | `false` | - |
-| size | 开关尺寸 | *string* | `30px` | - |
-| active-color | 打开时的背景色 | *string* | `#1989fa` | - |
-| inactive-color | 关闭时的背景色 | *string* | `#fff` | - |
-| active-value | 打开时的值 | *any* | `true` | - |
-| inactive-value | 关闭时的值 | *any* | `false` | - |
+| 参数           | 说明                   | 类型      | 默认值    | 版本 |
+| -------------- | ---------------------- | --------- | --------- | ---- |
+| name           | 在表单内提交时的标识符 | _string_  | -         | -    |
+| checked        | 开关选中状态           | _any_     | `false`   | -    |
+| loading        | 是否为加载状态         | _boolean_ | `false`   | -    |
+| disabled       | 是否为禁用状态         | _boolean_ | `false`   | -    |
+| size           | 开关尺寸               | _string_  | `30px`    | -    |
+| active-color   | 打开时的背景色         | _string_  | `#1989fa` | -    |
+| inactive-color | 关闭时的背景色         | _string_  | `#fff`    | -    |
+| active-value   | 打开时的值             | _any_     | `true`    | -    |
+| inactive-value | 关闭时的值             | _any_     | `false`   | -    |
 
 ### Events
 
-| 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+| 事件名      | 说明             | 参数                       |
+| ----------- | ---------------- | -------------------------- |
 | bind:change | 开关状态切换回调 | event.detail: 是否选中开关 |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
+| 类名         | 说明         |
+| ------------ | ------------ |
 | custom-class | 根节点样式类 |
-| node-class | 圆点样式类 |
+| node-class   | 圆点样式类   |

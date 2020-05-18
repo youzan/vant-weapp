@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-dropdown-menu": "path/to/@vant/weapp/dist/dropdown-menu/index",
-  "van-dropdown-item": "path/to/@vant/weapp/dist/dropdown-item/index"
+  "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+  "van-dropdown-item": "@vant/weapp/dropdown-item/index"
 }
 ```
 
@@ -28,16 +28,16 @@ Page({
     option1: [
       { text: '全部商品', value: 0 },
       { text: '新款商品', value: 1 },
-      { text: '活动商品', value: 2 }
+      { text: '活动商品', value: 2 },
     ],
     option2: [
       { text: '默认排序', value: 'a' },
       { text: '好评排序', value: 'b' },
-      { text: '销量排序', value: 'c' }
+      { text: '销量排序', value: 'c' },
     ],
     value1: 0,
-    value2: 'a'
-  }
+    value2: 'a',
+  },
 });
 ```
 
@@ -81,22 +81,22 @@ Page({
     option1: [
       { text: '全部商品', value: 0 },
       { text: '新款商品', value: 1 },
-      { text: '活动商品', value: 2 }
+      { text: '活动商品', value: 2 },
     ],
     value1: 0,
   },
 
-  onConfirm () {
+  onConfirm() {
     this.selectComponent('#item').toggle();
   },
 
-  onSwitch1Change ({ detail }) {
+  onSwitch1Change({ detail }) {
     this.setData({ switch1: detail });
   },
 
-  onSwitch2Change ({ detail }) {
+  onSwitch2Change({ detail }) {
     this.setData({ switch2: detail });
-  }
+  },
 });
 ```
 
@@ -131,45 +131,49 @@ Page({
 
 ### DropdownMenu Props
 
-| Attribute              | Description                    | Type      | Default   | Version |
-| ---------------------- | ------------------------------ | --------- | --------- | ------- |
-| active-color           | 菜单标题和选项的选中态颜色     | *string*  | `#1989fa` | -       |
-| z-index                | 菜单栏 z-index 层级            | *number*  | `10`      | -       |
-| duration               | 动画时长，单位毫秒             | *number*  | `200`     | -       |
-| direction              | 菜单展开方向，可选值为up       | *string*  | `down`    | -       |
-| overlay                | 是否显示遮罩层                 | *boolean* | `true`    | -       |
-| close-on-click-overlay | 是否在点击遮罩层后关闭菜单     | *boolean* | `true`    | -       |
-| close-on-click-outside | 是否在点击外部 menu 后关闭菜单 | *boolean* | `true`    | -       |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| active-color | 菜单标题和选项的选中态颜色 | _string_ | `#1989fa` |
+| z-index | 菜单栏 z-index 层级 | _number_ | `10` |
+| duration | 动画时长，单位毫秒 | _number_ | `200` |
+| direction | 菜单展开方向，可选值为 up | _string_ | `down` |
+| overlay | 是否显示遮罩层 | _boolean_ | `true` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
+| close-on-click-outside | 是否在点击外部 menu 后关闭菜单 | _boolean_ | `true` |
 
 ### DropdownItem Props
 
-| Attribute   | Description            | Type               | Default                 | Version |
-| ----------- | ---------------------- | ------------------ | ----------------------- | ------- |
-| value       | 当前选中项对应的 value | *string \| number* | -                       | -       |
-| title       | 菜单项标题             | *string*           | Text of selected option | -       |
-| options     | 选项数组               | *Option[]*         | `[]`                    | -       |
-| disabled    | 是否禁用菜单           | *boolean*          | `false`                 | -       |
-| title-class | 标题额外类名           | *string*           | -                       | -       |
+| 参数        | 说明                   | 类型               | 默认值         |
+| ----------- | ---------------------- | ------------------ | -------------- |
+| value       | 当前选中项对应的 value | _number \| string_ | -              |
+| title       | 菜单项标题             | _string_           | 当前选中项文字 |
+| options     | 选项数组               | _Option[]_         | `[]`           |
+| disabled    | 是否禁用菜单           | _boolean_          | `false`        |
+| title-class | 标题额外类名           | _string_           | -              |
+| popup-style | 自定义弹出层样式       | _string_           | -              |
 
 ### DropdownItem Events
 
-| Event  | Description                   | Arguments |
-| ------ | ----------------------------- | --------- |
-| change | 点击选项导致 value 变化时触发 | value     |
-| close  | 关闭菜单栏时触发              | -         |
+| 事件名 | 说明                          | 回调参数 |
+| ------ | ----------------------------- | -------- |
+| change | 点击选项导致 value 变化时触发 | value    |
+| open   | 打开菜单栏时触发              | -        |
+| close  | 关闭菜单栏时触发              | -        |
+| opened | 打开菜单栏且动画结束后触发    | -        |
+| closed | 关闭菜单栏且动画结束后触发    | -        |
 
-### DropdownItem Methods
+### DropdownItem 方法
 
 通过 selectComponent(id) 可访问
 
-| Name   | Attribute     | Return value | Description      |
-| ------ | ------------- | ------------ | ---------------- |
-| toggle | show: boolean | -            | 切换菜单是否展示 |
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggle | 切换菜单展示状态，传`true`为显示，`false`为隐藏，不传参为取反 | show?: boolean | - |
 
-### Data Structure of Option
+### Option 数据结构
 
-| Key   | Description                                | Type               |
-| ----- | ------------------------------------------ | ------------------ |
-| text  | 文字                                       | *string*           |
-| value | 标识符                                     | *string \| number* |
-| icon  | 左侧图标名称或图片链接，可选值见 Icon 组件 | *string*           |
+| 键名  | 说明                             | 类型               |
+| ----- | -------------------------------- | ------------------ |
+| text  | 文字                             | _string_           |
+| value | 标识符                           | _number \| string_ |
+| icon  | 左侧[图标名称](#/icon)或图片链接 | _string_           |

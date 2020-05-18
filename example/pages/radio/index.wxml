@@ -21,25 +21,14 @@
   </van-radio-group>
 </demo-block>
 
-<demo-block title="禁用单选框文本点击" padding>
-  <van-radio-group
-    value="{{ radioLabel }}"
-    data-key="radioLabel"
-    bind:change="onChange"
-  >
-    <van-radio label-disabled name="1" custom-class="demo-radio">单选框 1</van-radio>
-    <van-radio label-disabled name="2">单选框 2</van-radio>
-  </van-radio-group>
-</demo-block>
-
 <demo-block title="自定义形状" padding>
   <van-radio-group
     value="{{ radioShape }}"
     data-key="radioShape"
     bind:change="onChange"
   >
-    <van-radio name="1" shape="square" custom-class="demo-radio" checked-color="#07c160">单选框</van-radio>
-    <van-radio name="2" shape="square" checked-color="#07c160">单选框</van-radio>
+    <van-radio name="1" shape="square" custom-class="demo-radio">单选框</van-radio>
+    <van-radio name="2" shape="square">单选框</van-radio>
   </van-radio-group>
 </demo-block>
 
@@ -60,8 +49,8 @@
     data-key="radioSize"
     bind:change="onChange"
   >
-    <van-radio name="1" icon-size="20px" custom-class="demo-radio" checked-color="#07c160">单选框</van-radio>
-    <van-radio name="2" icon-size="25px" checked-color="#07c160">单选框</van-radio>
+    <van-radio name="1" icon-size="24px" custom-class="demo-radio">单选框</van-radio>
+    <van-radio name="2" icon-size="24px">单选框</van-radio>
   </van-radio-group>
 </demo-block>
 
@@ -89,6 +78,17 @@
         mode="widthFix"
       />
     </van-radio>
+  </van-radio-group>
+</demo-block>
+
+<demo-block title="禁用文本点击" padding>
+  <van-radio-group
+    value="{{ radioLabel }}"
+    data-key="radioLabel"
+    bind:change="onChange"
+  >
+    <van-radio label-disabled name="1" custom-class="demo-radio">单选框 1</van-radio>
+    <van-radio label-disabled name="2">单选框 2</van-radio>
   </van-radio-group>
 </demo-block>
 

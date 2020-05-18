@@ -1,29 +1,4 @@
-<template name="toolbar">
-  <view
-    wx:if="{{ showToolbar }}"
-    class="van-picker__toolbar van-hairline--top-bottom toolbar-class"
-  >
-    <view
-      class="van-picker__cancel"
-      hover-class="van-picker__cancel--hover"
-      hover-stay-time="70"
-      data-type="cancel"
-      bindtap="emit"
-    >
-      {{ cancelButtonText }}
-    </view>
-    <view wx:if="{{ title }}" class="van-picker__title van-ellipsis">{{ title }}</view>
-    <view
-      class="van-picker__confirm"
-      hover-class="van-picker__confirm--hover"
-      hover-stay-time="70"
-      data-type="confirm"
-      bindtap="emit"
-    >
-      {{ confirmButtonText }}
-    </view>
-  </view>
-</template>
+<import src="./toolbar.wxml" />
 
 <view class="van-picker custom-class">
   <template is="toolbar" wx:if="{{ toolbarPosition === 'top' }}" data="{{ showToolbar, cancelButtonText, title, confirmButtonText }}"></template>
@@ -49,6 +24,7 @@
       active-class="active-class"
       bind:change="onChange"
     />
+    <view class="van-picker__mask" style="background-size: 100% {{ (itemHeight * visibleItemCount - itemHeight) / 2 }}px" />
     <view
       class="van-picker__frame van-hairline--top-bottom"
       style="height: {{ itemHeight }}px"

@@ -2,11 +2,12 @@
 
 <button
   id="{{ id }}"
+  data-detail="{{ dataset }}"
   class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
   hover-class="van-button--active hover-class"
   lang="{{ lang }}"
-  style="{{ style }} {{ customStyle }}"
-  open-type="{{ openType }}"
+  style="{{ baseStyle }} {{ customStyle }}"
+  open-type="{{ disabled ? '' : openType }}"
   business-id="{{ businessId }}"
   session-from="{{ sessionFrom }}"
   send-message-title="{{ sendMessageTitle }}"
@@ -15,7 +16,7 @@
   show-message-card="{{ showMessageCard }}"
   app-parameter="{{ appParameter }}"
   aria-label="{{ ariaLabel }}"
-  bindtap="onClick"
+  bindtap="{{ !disabled ? 'onClick' : 'noop' }}"
   bindgetuserinfo="bindGetUserInfo"
   bindcontact="bindContact"
   bindgetphonenumber="bindGetPhoneNumber"
@@ -28,7 +29,7 @@
       custom-class="loading-class"
       size="{{ loadingSize }}"
       type="{{ loadingType }}"
-      color="{{ type === 'default' ? '#c9c9c9' : 'white' }}"
+      color="{{ loadingColor(type,color,plain) }}"
     />
     <view wx:if="{{ loadingText }}" class="van-button__loading-text">
       {{ loadingText }}
@@ -48,3 +49,19 @@
     </view>
   </block>
 </button>
+
+
+<wxs module="loadingColor">
+function get(type, color,plain) {
+  if(plain) {
+    return color ? color: '#c9c9c9';
+  }
+
+  if(type === 'default') {
+    return '#c9c9c9';
+  }
+  return 'white';
+}
+
+module.exports = get;
+</wxs>

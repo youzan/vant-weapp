@@ -5,7 +5,7 @@ VantComponent({
     title: String,
     border: {
       type: Boolean,
-      value: true
-    }
-  }
+      value: true,
+    },
+  },
 });

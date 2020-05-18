@@ -6,6 +6,6 @@
   color: #1989fa;
 }
 
-.van-tag {
+.submit-tag {
   margin-left: 15px;
 }

@@ -6,7 +6,7 @@
 
 ```json
 "usingComponents": {
-  "van-card": "path/to/@vant/weapp/dist/card/index"
+  "van-card": "@vant/weapp/card/index"
 }
 ```
 
@@ -49,40 +49,43 @@
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| thumb | 左侧图片 | *string* | - | - |
-| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | *string* | `aspectFit` | - |
-| title | 标题 | *string* | - | - |
-| desc | 描述 | *string* | - | - |
-| tag | 标签 | *string* | - | - |
-| num | 商品数量 | *string \| number* | - | - |
-| price | 商品价格 | *string \| number* | - | - |
-| origin-price | 商品划线原价 | *string \| number* | - | - |
-| centered | 内容是否垂直居中 | *string* | `false` | - |
-| currency | 货币符号 |  *string* | `¥` | - |
-| thumb-link | 点击左侧图片后跳转的链接地址 | *string* | - | - |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | *string* | `navigateTo` | - |
-| lazy-load | 是否开启图片懒加载 | *boolean* | `false` | - |
+| --- | --- | --- | --- | --- |
+| thumb | 左侧图片 | _string_ | - | - |
+| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | _string_ | `aspectFit` | - |
+| title | 标题 | _string_ | - | - |
+| desc | 描述 | _string_ | - | - |
+| tag | 标签 | _string_ | - | - |
+| num | 商品数量 | _string \| number_ | - | - |
+| price | 商品价格 | _string \| number_ | - | - |
+| origin-price | 商品划线原价 | _string \| number_ | - | - |
+| centered | 内容是否垂直居中 | _string_ | `false` | - |
+| currency | 货币符号 | _string_ | `¥` | - |
+| thumb-link | 点击左侧图片后跳转的链接地址 | _string_ | - | - |
+| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` | - |
+| lazy-load | 是否开启图片懒加载 | _boolean_ | `false` | - |
 
 ### Slot
 
-| 名称 | 说明 |
-|-----------|-----------|
-| title | 自定义标题栏，如果设置了`title`属性则不生效 |
-| desc | 自定义描述栏，如果设置了`desc`属性则不生效 |
-| thumb | 自定义 thumb，如果设置了`thumb`属性则不生效 |
-| bottom | 自定义价格下方区域 |
-| footer | 自定义 footer |
-| tags | 自定义 tags |
+| 名称      | 说明                                        |
+| --------- | ------------------------------------------- |
+| title     | 自定义标题栏，如果设置了`title`属性则不生效 |
+| desc      | 自定义描述栏，如果设置了`desc`属性则不生效  |
+| price-top | 自定义价格上方区域                          |
+| price     | 自定义价格                                  |
+| num       | 自定义数量                                  |
+| thumb     | 自定义 thumb，如果设置了`thumb`属性则不生效 |
+| bottom    | 自定义价格下方区域                          |
+| footer    | 自定义 footer                               |
+| tags      | 自定义 tags                                 |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
-| thumb-class | 左侧图片样式类 |
-| title-class | 标题样式类 |
-| price-class | 价格样式类 |
+| 类名               | 说明           |
+| ------------------ | -------------- |
+| custom-class       | 根节点样式类   |
+| thumb-class        | 左侧图片样式类 |
+| title-class        | 标题样式类     |
+| price-class        | 价格样式类     |
 | origin-price-class | 划线原价样式类 |
-| desc-class | 描述样式类 |
-| num-class | 数量样式类 |
+| desc-class         | 描述样式类     |
+| num-class          | 数量样式类     |

@@ -6,10 +6,10 @@ VantComponent({
   relation: {
     name: 'grid',
     type: 'ancestor',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'grid-item',
   },
+
+  classes: ['content-class', 'icon-class', 'text-class'],
 
   mixins: [link],
 
@@ -18,7 +18,11 @@ VantComponent({
     dot: Boolean,
     info: null,
     text: String,
-    useSlot: Boolean
+    useSlot: Boolean,
+  },
+
+  data: {
+    viewStyle: '',
   },
 
   mounted() {
@@ -65,19 +69,19 @@ VantComponent({
       }
 
       this.setData({
-        style: styleWrapper.join('; '),
+        viewStyle: styleWrapper.join('; '),
         contentStyle,
         center,
         border,
         square,
         gutter,
-        clickable
+        clickable,
       });
     },
 
     onClick() {
       this.$emit('click');
       this.jumpLink();
-    }
-  }
+    },
+  },
 });

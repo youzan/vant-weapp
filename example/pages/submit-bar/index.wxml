@@ -41,7 +41,7 @@
     tip="{{ true }}"
     safe-area-inset-bottom="{{ false }}"
   >
-    <van-tag type="primary" custom-class="van-tag">标签</van-tag>
+    <van-tag type="primary" custom-class="submit-tag">标签</van-tag>
     <view slot="tip">
       您的收货地址不支持同城送
       <text class="edit-address" bindtap="onClickLink">修改地址</text>

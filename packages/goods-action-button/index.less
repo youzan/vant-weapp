@@ -6,42 +6,47 @@
 }
 
 .van-goods-action-button {
-  .theme(height, '@goods-action-button-height') !important;
-  .theme(font-weight, '@font-weight-bold') !important;
-  .theme(line-height, '@goods-action-button-height') !important;
+  .theme(
+    --button-warning-background-color,
+    '@goods-action-button-warning-color'
+  );
+  .theme(--button-danger-background-color, '@goods-action-button-danger-color');
+  .theme(--button-default-height, '@goods-action-button-height');
+  .theme(--button-line-height, '@goods-action-button-line-height');
+  .theme(--button-plain-background-color, '@goods-action-button-plain-color');
+
+  display: block;
+
+  --button-border-width: 0;
 
   &--first {
-    display: block !important;
     margin-left: 5px;
-    .theme(border-top-left-radius, '@goods-action-button-border-radius') !important;
-    .theme(border-bottom-left-radius, '@goods-action-button-border-radius') !important;
+
+    .theme(
+      --button-border-radius,
+      '@goods-action-button-border-radius 0 0 @goods-action-button-border-radius'
+    );
   }
 
   &--last {
-    display: block !important;
     margin-right: 5px;
-    .theme(border-top-right-radius, '@goods-action-button-border-radius') !important;
-    .theme(border-bottom-right-radius, '@goods-action-button-border-radius') !important;
+    .theme(
+      --button-border-radius,
+      '0 @goods-action-button-border-radius @goods-action-button-border-radius 0'
+    );
   }
 
-  &--warning {
-    .theme(background, '@goods-action-button-warning-color');
-  }
-
-  &--danger {
-    .theme(background, '@goods-action-button-danger-color');
-  }
-
-  &--ordinary {
-    border: none !important;
+  &--first&--last {
+    .theme(--button-border-radius, '@goods-action-button-border-radius');
   }
 
   &--plain {
-    .theme(background, '@goods-action-button-plain-color');
+    --button-border-width: @button-border-width;
   }
 
-  &--no-right-border {
-    border-right-width: 0px !important;
+  &__inner {
+    width: 100%;
+    .theme(font-weight, '@font-weight-bold') !important;
   }
 
   @media (max-width: 321px) {

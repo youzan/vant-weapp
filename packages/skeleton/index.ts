@@ -5,40 +5,44 @@ VantComponent({
   props: {
     row: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(value: number) {
+        this.setData({ rowArray: Array.from({ length: value }) });
+      },
     },
     title: Boolean,
     avatar: Boolean,
     loading: {
       type: Boolean,
-      value: true
+      value: true,
     },
     animate: {
       type: Boolean,
-      value: true
+      value: true,
     },
     avatarSize: {
       type: String,
-      value: '32px'
+      value: '32px',
     },
     avatarShape: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     titleWidth: {
       type: String,
-      value: '40%'
+      value: '40%',
     },
     rowWidth: {
       type: null,
       value: '100%',
       observer(val) {
         this.setData({ isArray: val instanceof Array });
-      }
-    }
+      },
+    },
   },
 
   data: {
-    isArray: false
-  }
+    isArray: false,
+    rowArray: [],
+  },
 });

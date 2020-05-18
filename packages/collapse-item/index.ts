@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 
-const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));
+const nextTick = () => new Promise((resolve) => setTimeout(resolve, 20));
 
 VantComponent({
   classes: ['title-class', 'content-class'],
@@ -8,9 +8,7 @@ VantComponent({
   relation: {
     name: 'collapse',
     type: 'ancestor',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'collapse-item',
   },
 
   props: {
@@ -23,18 +21,18 @@ VantComponent({
     clickable: Boolean,
     border: {
       type: Boolean,
-      value: true
+      value: true,
     },
     isLink: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
     contentHeight: 0,
     expanded: false,
-    transition: false
+    transition: false,
   },
 
   mounted() {
@@ -81,11 +79,14 @@ VantComponent({
 
     updateStyle(expanded: boolean) {
       return this.getRect('.van-collapse-item__content')
-        .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => rect.height)
+        .then(
+          (rect: WechatMiniprogram.BoundingClientRectCallbackResult) =>
+            rect.height
+        )
         .then((height: number) => {
           if (expanded) {
             return this.set({
-              contentHeight: height ? `${height}px` : 'auto'
+              contentHeight: height ? `${height}px` : 'auto',
             });
           }
 
@@ -110,9 +111,9 @@ VantComponent({
     onTransitionEnd() {
       if (this.data.expanded) {
         this.setData({
-          contentHeight: 'auto'
+          contentHeight: 'auto',
         });
       }
-    }
-  }
+    },
+  },
 });

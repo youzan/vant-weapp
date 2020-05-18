@@ -9,9 +9,7 @@ VantComponent({
   relation: {
     type: 'ancestor',
     name: 'goods-action',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'goods-action-button',
   },
   props: {
     text: String,
@@ -21,12 +19,8 @@ VantComponent({
     plain: Boolean,
     type: {
       type: String,
-      value: 'danger'
-    }
-  },
-
-  mounted() {
-    this.updateStyle();
+      value: 'danger',
+    },
   },
 
   methods: {
@@ -36,18 +30,17 @@ VantComponent({
     },
 
     updateStyle() {
+      if (this.parent == null) {
+        return;
+      }
+
       const { children = [] } = this.parent;
       const { length } = children;
       const index = children.indexOf(this);
-      let rightBorderLess = false;
-      if (length > 1) {
-        rightBorderLess = index !== length - 1;
-      }
       this.setData({
         isFirst: index === 0,
-        rightBorderLess,
-        isLast: index === length - 1
+        isLast: index === length - 1,
       });
-    }
-  }
+    },
+  },
 });

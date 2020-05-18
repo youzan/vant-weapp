@@ -40,14 +40,15 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    .theme(padding, '@submit-bar-padding');
     .theme(height, '@submit-bar-height');
     .theme(font-size, '@submit-bar-text-font-size');
     .theme(background-color, '@submit-bar-background-color');
+  }
 
-    &--safe {
-      padding-bottom: constant(safe-area-inset-bottom);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
+  &__safe {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
   }
 
   &__text {
@@ -60,7 +61,13 @@
 
   &__price {
     .theme(color, '@submit-bar-price-color');
+    .theme(font-weight, '@font-weight-bold');
     .theme(font-size, '@submit-bar-price-font-size');
+
+    &-integer {
+      font-size: @submit-bar-price-integer-font-size;
+      font-family: @submit-bar-price-font-family;
+    }
   }
 
   &__currency {
@@ -72,6 +79,9 @@
   }
 
   &__button {
-    .theme(width, '@submit-bar-button-width');
+    .theme(width,'@submit-bar-button-width');
+    .theme(font-weight, '@font-weight-bold');
+    .theme(--button-default-height, '@submit-bar-button-height') !important;
+    .theme(--button-line-height, '@submit-bar-button-height') !important;
   }
 }

@@ -6,32 +6,28 @@ VantComponent({
   relation: {
     name: 'radio',
     type: 'descendant',
+    current: 'radio-group',
     linked(target) {
-      this.children = this.children || [];
-      this.children.push(target);
       this.updateChild(target);
     },
-    unlinked(target) {
-      this.children = this.children.filter(
-        (child: WechatMiniprogram.Component.TrivialInstance) => child !== target
-      );
-    }
   },
 
   props: {
     value: {
       type: null,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     disabled: {
       type: Boolean,
-      observer: 'updateChildren'
-    }
+      observer: 'updateChildren',
+    },
   },
 
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
+      (
+        this.children || []
+      ).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
         this.updateChild(child)
       );
     },
@@ -40,8 +36,8 @@ VantComponent({
       const { value, disabled } = this.data;
       child.setData({
         value,
-        disabled: disabled || child.data.disabled
+        disabled: disabled || child.data.disabled,
       });
-    }
-  }
+    },
+  },
 });

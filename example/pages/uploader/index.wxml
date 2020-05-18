@@ -29,6 +29,30 @@
   />
 </demo-block>
 
+<demo-block title="隐藏上传按钮" padding>
+  <van-uploader
+    name="2"
+    file-list="{{ fileList2 }}"
+    multiple
+    show-upload="{{ false }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
+<demo-block title="上传状态" padding>
+  <van-uploader
+    name="8"
+    file-list="{{ fileList8 }}"
+    multiple
+    max-count="{{ 2 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
 <demo-block title="限制上传数量" padding>
   <van-uploader
     name="3"

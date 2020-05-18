@@ -5,56 +5,49 @@ VantComponent({
   relation: {
     name: 'grid-item',
     type: 'descendant',
-    linked(child) {
-      this.children.push(child);
-    },
-    unlinked(child) {
-      this.children = this.children.filter(
-        (item: WechatMiniprogram.Component.TrivialInstance) => item !== child
-      );
-    }
+    current: 'grid',
   },
 
   props: {
     square: {
       type: Boolean,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     gutter: {
       type: [Number, String],
       value: 0,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     clickable: {
       type: Boolean,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     columnNum: {
       type: Number,
       value: 4,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     center: {
       type: Boolean,
       value: true,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     border: {
       type: Boolean,
       value: true,
-      observer: 'updateChildren'
-    }
+      observer: 'updateChildren',
+    },
   },
 
-  beforeCreate() {
-    this.children = [];
+  data: {
+    viewStyle: '',
   },
 
   created() {
     const { gutter } = this.data;
     if (gutter) {
       this.setData({
-        style: `padding-left: ${addUnit(gutter)}`
+        viewStyle: `padding-left: ${addUnit(gutter)}`,
       });
     }
   },
@@ -66,6 +59,6 @@ VantComponent({
           child.updateStyle();
         }
       );
-    }
-  }
+    },
+  },
 });

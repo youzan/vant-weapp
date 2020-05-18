@@ -6,8 +6,8 @@
 
 ```json
 "usingComponents": {
-  "van-radio": "path/to/@vant/weapp/dist/radio/index",
-  "van-radio-group": "path/to/@vant/weapp/dist/radio-group/index"
+  "van-radio": "@vant/weapp/radio/index",
+  "van-radio-group": "@vant/weapp/radio-group/index"
 }
 ```
 
@@ -27,13 +27,13 @@
 ```js
 Page({
   data: {
-    radio: '1'
+    radio: '1',
   },
   onChange(event) {
     this.setData({
-      radio: event.detail
+      radio: event.detail,
     });
-  }
+  },
 });
 ```
 
@@ -42,20 +42,20 @@ Page({
 通过`disabled`属性禁止选项切换，在`Radio`上设置`diabled`可以禁用单个选项
 
 ```html
-<van-radio-group value="{{ radio }}" bind:change="onChange" disabled>
+<van-radio-group value="{{ radio }}" disabled bind:change="onChange">
   <van-radio name="1">单选框 1</van-radio>
   <van-radio name="2">单选框 2</van-radio>
 </van-radio-group>
 ```
 
-### 禁用文本点击
+### 自定义形状
 
-通过设置`label-disabled`属性可以禁用单选框文本点击
+将`shape`属性设置为`square`，单选框的形状会变成方形
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1" icon-disabled>单选框 1</van-radio>
-  <van-radio name="2" icon-disabled>单选框 2</van-radio>
+  <van-radio name="1" shape="square">单选框 1</van-radio>
+  <van-radio name="2" shape="square">单选框 2</van-radio>
 </van-radio-group>
 ```
 
@@ -63,12 +63,11 @@ Page({
 
 通过`checked-color`属性设置选中状态的图标颜色
 
- ```html
+```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
   <van-radio name="1" checked-color="#07c160">单选框 1</van-radio>
   <van-radio name="2" checked-color="#07c160">单选框 2</van-radio>
 </van-radio-group>
-
 ```
 
 ### 自定义大小
@@ -77,8 +76,8 @@ Page({
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1">单选框 1</van-radio>
-  <van-radio name="2" icon-size="25px">单选框 2</van-radio>
+  <van-radio name="1" icon-size="24px">单选框 1</van-radio>
+  <van-radio name="2" icon-size="24px">单选框 2</van-radio>
 </van-radio-group>
 ```
 
@@ -105,15 +104,26 @@ Page({
     radio: true,
     icon: {
       normal: '//img.yzcdn.cn/icon-normal.png',
-      active: '//img.yzcdn.cn/icon-active.png'
-    }
+      active: '//img.yzcdn.cn/icon-active.png',
+    },
   },
   onChange(event) {
     this.setData({
-      radio: event.detail
+      radio: event.detail,
     });
-  }
+  },
 });
+```
+
+### 禁用文本点击
+
+通过设置`label-disabled`属性可以禁用单选框文本点击
+
+```html
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+  <van-radio name="1" label-disabled>单选框 1</van-radio>
+  <van-radio name="2" label-disabled>单选框 2</van-radio>
+</van-radio-group>
 ```
 
 ### 与 Cell 组件一起使用
@@ -123,20 +133,10 @@ Page({
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
   <van-cell-group>
-    <van-cell
-      title="单选框 1"
-      clickable
-      data-name="1"
-      bind:click="onClick"
-    >
+    <van-cell title="单选框 1" clickable data-name="1" bind:click="onClick">
       <van-radio slot="right-icon" name="1" />
     </van-cell>
-    <van-cell
-      title="单选框 2"
-      clickable
-      data-name="2"
-      bind:click="onClick"
-    >
+    <van-cell title="单选框 2" clickable data-name="2" bind:click="onClick">
       <van-radio slot="right-icon" name="2" />
     </van-cell>
   </van-cell-group>
@@ -146,64 +146,63 @@ Page({
 ```js
 Page({
   data: {
-    radio: '1'
+    radio: '1',
   },
 
   onChange(event) {
     this.setData({
-      radio: event.detail
+      radio: event.detail,
     });
   },
 
   onClick(event) {
     const { name } = event.currentTarget.dataset;
     this.setData({
-      radio: name
+      radio: name,
     });
-  }
+  },
 });
 ```
-
 
 ## API
 
 ### RadioGroup Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 在表单内提交时的标识符 | *string* | - | - |
-| value | 当前选中项的标识符 | *any* | - | - |
-| disabled | 是否禁用所有单选框 | *boolean* | `false` | - |
+| 参数     | 说明                   | 类型      | 默认值  | 版本 |
+| -------- | ---------------------- | --------- | ------- | ---- |
+| name     | 在表单内提交时的标识符 | _string_  | -       | -    |
+| value    | 当前选中项的标识符     | _any_     | -       | -    |
+| disabled | 是否禁用所有单选框     | _boolean_ | `false` | -    |
 
 ### Radio Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 标识符 | *string* | - | - |
-| shape | 形状，可选值为 `square` | *string* | `round` | - |
-| disabled | 是否为禁用状态 | *boolean* | `false` | - |
-| label-disabled | 是否禁用文本内容点击 | *boolean* | `false` | - |
-| label-position | 文本位置，可选值为 `left` | *string* | `right` | - |
-| icon-size | 图标大小，默认单位为`px` | *string \| number* | `20px` | - |
-| checked-color | 选中状态颜色 | *string* | `#1989fa` | - |
-| use-icon-slot | 是否使用 icon 插槽 | *boolean* | `false` | - |
+| --- | --- | --- | --- | --- |
+| name | 标识符 | _string_ | - | - |
+| shape | 形状，可选值为 `square` | _string_ | `round` | - |
+| disabled | 是否为禁用状态 | _boolean_ | `false` | - |
+| label-disabled | 是否禁用文本内容点击 | _boolean_ | `false` | - |
+| label-position | 文本位置，可选值为 `left` | _string_ | `right` | - |
+| icon-size | 图标大小，默认单位为`px` | _string \| number_ | `20px` | - |
+| checked-color | 选中状态颜色 | _string_ | `#1989fa` | - |
+| use-icon-slot | 是否使用 icon 插槽 | _boolean_ | `false` | - |
 
 ### Radio Event
 
-| 事件名 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
+| 事件名      | 说明                     | 回调参数          |
+| ----------- | ------------------------ | ----------------- |
 | bind:change | 当绑定值变化时触发的事件 | 当前选中项的 name |
 
 ### Radio 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| custom-class | 根节点样式类 |
-| icon-class | 图标样式类 |
-| label-class | 描述信息样式类 |
+| 类名         | 说明           |
+| ------------ | -------------- |
+| custom-class | 根节点样式类   |
+| icon-class   | 图标样式类     |
+| label-class  | 描述信息样式类 |
 
 ### RadioGroup Event
 
-| 事件名 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
+| 事件名      | 说明                     | 回调参数          |
+| ----------- | ------------------------ | ----------------- |
 | bind:change | 当绑定值变化时触发的事件 | 当前选中项的 name |

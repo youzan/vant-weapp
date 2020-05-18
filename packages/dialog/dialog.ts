@@ -7,7 +7,9 @@ type DialogOptions = {
   title?: string;
   width?: string | number;
   zIndex?: number;
-  context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
+  context?:
+    | WechatMiniprogram.Page.TrivialInstance
+    | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
   overlay?: boolean;
   selector?: string;
@@ -31,7 +33,7 @@ type DialogOptions = {
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
-}
+};
 
 interface Dialog {
   (options: DialogOptions): Promise<DialogAction>;
@@ -51,10 +53,10 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Dialog: Dialog = options => {
+const Dialog: Dialog = (options) => {
   options = {
     ...Dialog.currentOptions,
-    ...options
+    ...options,
   };
 
   return new Promise((resolve, reject) => {
@@ -68,11 +70,13 @@ const Dialog: Dialog = options => {
       dialog.setData({
         onCancel: reject,
         onConfirm: resolve,
-        ...options
+        ...options,
       });
       queue.push(dialog);
     } else {
-      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
+      console.warn(
+        '未找到 van-dialog 节点，请确认 selector 及 context 是否正确'
+      );
     }
   });
 };
@@ -96,31 +100,31 @@ Dialog.defaultOptions = {
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
-  confirmButtonOpenType: ''
+  confirmButtonOpenType: '',
 };
 
 Dialog.alert = Dialog;
 
-Dialog.confirm = options =>
+Dialog.confirm = (options) =>
   Dialog({
     showCancelButton: true,
-    ...options
+    ...options,
   });
 
 Dialog.close = () => {
-  queue.forEach(dialog => {
+  queue.forEach((dialog) => {
     dialog.close();
   });
   queue = [];
 };
 
 Dialog.stopLoading = () => {
-  queue.forEach(dialog => {
+  queue.forEach((dialog) => {
     dialog.stopLoading();
   });
 };
 
-Dialog.setDefaultOptions = options => {
+Dialog.setDefaultOptions = (options) => {
   Object.assign(Dialog.currentOptions, options);
 };
 

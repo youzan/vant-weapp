@@ -2,6 +2,7 @@ interface NotifyOptions {
     type?: 'primary' | 'success' | 'danger' | 'warning';
     color?: string;
     zIndex?: number;
+    top?: number;
     message: string;
     context?: any;
     duration?: number;

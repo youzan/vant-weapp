@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"cloudfunctionRoot": "functions/",
-	"libVersion": "2.8.2",
+	"libVersion": "2.9.3",
 	"appid": "wx1c01b35002d3ba14",
 	"projectname": "vant-weapp",
 	"debugOptions": {
@@ -334,6 +334,27 @@
 					"id": -1,
 					"name": "uploader",
 					"pathName": "pages/uploader/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "dropdown-menu",
+					"pathName": "pages/dropdown-menu/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "calendar",
+					"pathName": "pages/calendar/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "index-bar",
+					"pathName": "pages/index-bar/index",
 					"scene": null
 				}
 			]

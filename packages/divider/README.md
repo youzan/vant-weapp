@@ -10,7 +10,7 @@
 
 ```json
 "usingComponents": {
-  "van-divider": "path/to/@vant/weapp/dist/divider/index"
+  "van-divider": "@vant/weapp/divider/index"
 }
 ```
 
@@ -24,7 +24,7 @@
 <van-divider />
 ```
 
-### 使用hairline
+### 使用 hairline
 
 ```html
 <van-divider hairline />
@@ -40,22 +40,31 @@
 
 ```html
 <van-divider contentPosition="center">文本</van-divider>
-  <van-divider contentPosition="left">文本</van-divider>
-  <van-divider contentPosition="right">文本</van-divider>
+<van-divider contentPosition="left">文本</van-divider>
+<van-divider contentPosition="right">文本</van-divider>
 ```
 
 ### 自定义属性
 
 ```html
 <van-divider contentPosition="center" textColor="#1989fa">文本颜色</van-divider>
-<van-divider contentPosition="center" borderColor="#1989fa">border颜色</van-divider>
-<van-divider contentPosition="center" fontSize="18">字体大小</van-divider>
+<van-divider contentPosition="center" borderColor="#1989fa">
+  border 颜色
+</van-divider>
+<van-divider contentPosition="center" fontSize="18">
+  字体大小
+</van-divider>
 ```
 
 ### 自定义样式
 
 ```html
-<van-divider contentPosition="center" customStyle="color: #1989fa;border-color: #1989fa;font-size: 18px;">文本</van-divider>
+<van-divider
+  contentPosition="center"
+  customStyle="color: #1989fa; border-color: #1989fa; font-size: 18px;"
+>
+  文本
+</van-divider>
 ```
 
 ## API
@@ -63,14 +72,14 @@
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
-|-----------|-----------|-----------|-------------|-------------|
-| dashed | 虚线 | *boolean* | false | - |
-| hairline | 细线 | *boolean* | false | - |
-| content-position | 文本位置，`left` `center` `right` | *string* | - | - |
-| custom-style | 自定义样式 | *string* | - | - |
+| --- | --- | --- | --- | --- |
+| dashed | 虚线 | _boolean_ | false | - |
+| hairline | 细线 | _boolean_ | false | - |
+| content-position | 文本位置，`left` `center` `right` | _string_ | - | - |
+| custom-style | 自定义样式 | _string_ | - | - |
 
 ### Slot
 
-| 名称 | 说明 |
-|-----------|-----------|
+| 名称 | 说明           |
+| ---- | -------------- |
 | 默认 | 自定义文本内容 |

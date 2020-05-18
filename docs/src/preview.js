@@ -5,5 +5,5 @@ Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
-  render: h => h(Preview)
+  render: (h) => h(Preview),
 });

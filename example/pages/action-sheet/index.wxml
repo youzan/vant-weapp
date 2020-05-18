@@ -51,3 +51,15 @@
     <view class="content">内容</view>
   </van-action-sheet>
 </demo-block>
+
+<demo-block title="微信开发能力" padding>
+  <van-button type="primary" bind:click="toggleActionSheet6">弹出菜单</van-button>
+  <van-action-sheet
+    show="{{ show6 }}"
+    title="标题"
+    bind:close="toggleActionSheet6"
+    actions="{{ action6 }}"
+    bind:getuserinfo="onGetUserInfo"
+  >
+  </van-action-sheet>
+</demo-block>

@@ -1,14 +1,18 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { addUnit, isDef } from '../common/utils';
+import { isDef } from '../common/utils';
 
 const LONG_PRESS_START_TIME = 600;
 const LONG_PRESS_INTERVAL = 200;
 
 // add num and avoid float number
-function add(num1: number, num2: number): number {
+function add(num1: number, num2: number) {
   const cardinal = 10 ** 10;
   return Math.round((num1 + num2) * cardinal) / cardinal;
+}
+
+function equal(value1: number | string, value2: number | string) {
+  return String(value1) === String(value2);
 }
 
 VantComponent({
@@ -17,8 +21,18 @@ VantComponent({
   classes: ['input-class', 'plus-class', 'minus-class'],
 
   props: {
-    value: null,
-    integer: Boolean,
+    value: {
+      type: null,
+      observer(value) {
+        if (!equal(value, this.data.currentValue)) {
+          this.setData({ currentValue: this.format(value) });
+        }
+      },
+    },
+    integer: {
+      type: Boolean,
+      observer: 'check',
+    },
     disabled: Boolean,
     inputWidth: null,
     buttonSize: null,
@@ -26,78 +40,71 @@ VantComponent({
     disableInput: Boolean,
     decimalLength: {
       type: Number,
-      value: null
+      value: null,
+      observer: 'check',
     },
     min: {
       type: null,
-      value: 1
+      value: 1,
+      observer: 'check',
     },
     max: {
       type: null,
-      value: Number.MAX_SAFE_INTEGER
+      value: Number.MAX_SAFE_INTEGER,
+      observer: 'check',
     },
     step: {
       type: null,
-      value: 1
+      value: 1,
     },
     showPlus: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showMinus: {
       type: Boolean,
-      value: true
+      value: true,
     },
     disablePlus: Boolean,
-    disableMinus: Boolean
-  },
-
-  watch: {
-    value(value) {
-      if (value === '') {
-        return;
-      }
-
-      const newValue = this.range(value);
-
-      if (typeof newValue === 'number' && +this.data.value !== newValue) {
-        this.setData({ value: newValue });
-      }
+    disableMinus: Boolean,
+    longPress: {
+      type: Boolean,
+      value: true,
     },
-
-    inputWidth() {
-      this.set({
-        inputStyle: this.computeInputStyle()
-      });
-    },
-
-    buttonSize() {
-      this.set({
-        inputStyle: this.computeInputStyle(),
-        buttonStyle: this.computeButtonStyle()
-      });
-    }
   },
 
   data: {
-    focus: false,
-    inputStyle: '',
-    buttonStyle: ''
+    currentValue: '',
   },
 
   created() {
     this.setData({
-      value: this.range(this.data.value)
+      currentValue: this.format(this.data.value),
     });
   },
 
   methods: {
+    check() {
+      const val = this.format(this.data.currentValue);
+      if (!equal(val, this.data.currentValue)) {
+        this.setData({ currentValue: val });
+      }
+    },
+
     isDisabled(type: string) {
       if (type === 'plus') {
-        return this.data.disabled || this.data.disablePlus || this.data.value >= this.data.max;
+        return (
+          this.data.disabled ||
+          this.data.disablePlus ||
+          this.data.currentValue >= this.data.max
+        );
       }
 
-      return this.data.disabled || this.data.disableMinus || this.data.value <= this.data.min;
+      return (
+        this.data.disabled ||
+        this.data.disableMinus ||
+        this.data.currentValue <= this.data.min
+      );
     },
 
     onFocus(event: Weapp.Event) {
@@ -105,14 +112,28 @@ VantComponent({
     },
 
     onBlur(event: Weapp.Event) {
-      const value = this.range(this.data.value);
-      this.triggerInput(value);
-      this.$emit('blur', event.detail);
+      const value = this.format(event.detail.value);
+      this.emitChange(value);
+      this.$emit('blur', {
+        ...event.detail,
+        value,
+      });
+    },
+
+    // filter illegal characters
+    filter(value) {
+      value = String(value).replace(/[^0-9.-]/g, '');
+
+      if (this.data.integer && value.indexOf('.') !== -1) {
+        value = value.split('.')[0];
+      }
+
+      return value;
     },
 
     // limit value range
-    range(value) {
-      value = String(value).replace(/[^0-9.-]/g, '');
+    format(value) {
+      value = this.filter(value);
 
       // format range
       value = value === '' ? 0 : +value;
@@ -128,7 +149,29 @@ VantComponent({
 
     onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
-      this.triggerInput(value);
+
+      // allow input to be empty
+      if (value === '') {
+        return;
+      }
+
+      let formatted = this.filter(value);
+
+      // limit max decimal length
+      if (isDef(this.data.decimalLength) && formatted.indexOf('.') !== -1) {
+        const pair = formatted.split('.');
+        formatted = `${pair[0]}.${pair[1].slice(0, this.data.decimalLength)}`;
+      }
+
+      this.emitChange(formatted);
+    },
+
+    emitChange(value: string) {
+      if (!this.data.asyncChange) {
+        this.setData({ currentValue: value });
+      }
+
+      this.$emit('change', value);
     },
 
     onChange() {
@@ -139,9 +182,10 @@ VantComponent({
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
-      const value = add(+this.data.value, diff);
 
-      this.triggerInput(this.range(value));
+      const value = this.format(add(+this.data.currentValue, diff));
+
+      this.emitChange(value);
       this.$emit(type);
     },
 
@@ -159,6 +203,9 @@ VantComponent({
     },
 
     onTouchStart(event: Weapp.Event) {
+      if (!this.data.longPress) {
+        return;
+      }
       clearTimeout(this.longPressTimer);
 
       const { type } = event.currentTarget.dataset;
@@ -173,39 +220,10 @@ VantComponent({
     },
 
     onTouchEnd() {
+      if (!this.data.longPress) {
+        return;
+      }
       clearTimeout(this.longPressTimer);
     },
-
-    triggerInput(value: string) {
-      this.setData({
-        value: this.data.asyncChange ? this.data.value : value
-      });
-      this.$emit('change', value);
-    },
-
-    computeInputStyle() {
-      let style = '';
-
-      if (this.data.inputWidth) {
-        style = `width: ${addUnit(this.data.inputWidth)};`;
-      }
-
-      if (this.data.buttonSize) {
-        style += `height: ${addUnit(this.data.buttonSize)};`;
-      }
-
-      return style;
-    },
-
-    computeButtonStyle() {
-      let style = '';
-      const size = addUnit(this.data.buttonSize);
-
-      if (this.data.buttonSize) {
-        style = `width: ${size};height: ${size};`;
-      }
-
-      return style;
-    }
-  }
+  },
 });

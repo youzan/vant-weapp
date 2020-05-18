@@ -1,33 +1,55 @@
 <demo-block title="基本用法">
   <van-search
-    value="{{ value }}"
+    model:value="{{ value }}"
     placeholder="请输入搜索关键词"
-    bind:change="onChange"
     bind:search="onSearch"
   />
 </demo-block>
 
-<demo-block title="监听对应事件">
+<demo-block title="事件监听">
   <van-search
-    value="{{ value }}"
+    model:value="{{ value }}"
     show-action
     placeholder="请输入搜索关键词"
-    bind:change="onChange"
     bind:search="onSearch"
     bind:cancel="onCancel"
     bind:clear="onClear"
   />
 </demo-block>
 
-<demo-block title="高级用法">
+<demo-block title="搜索框内容对齐">
   <van-search
-    value="{{ value }}"
+    model:value="{{ value }}"
+    input-align="center"
     placeholder="请输入搜索关键词"
-    use-action-slot
-    bind:change="onChange"
-    bind:search="onSearch"
+  />
+</demo-block>
+
+<demo-block title="禁用搜索框">
+  <van-search
+    disabled
+    model:value="{{ value }}"
+    placeholder="请输入搜索关键词"
+  />
+</demo-block>
+
+<demo-block title="自定义背景色">
+  <van-search
+    model:value="{{ value }}"
+    shape="round"
+    background="#4fc08d"
+    placeholder="请输入搜索关键词"
+  />
+</demo-block>
+
+<demo-block title="自定义按钮">
+  <van-search
+    model:value="{{ value }}"
     label="地址"
     shape="round"
+    placeholder="请输入搜索关键词"
+    use-action-slot
+    bind:search="onSearch"
   >
     <view slot="action" bind:tap="onClick">搜索</view>
   </van-search>

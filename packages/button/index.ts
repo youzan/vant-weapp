@@ -8,7 +8,7 @@ VantComponent({
   classes: ['hover-class', 'loading-class'],
 
   data: {
-    style: '',
+    baseStyle: '',
   },
 
   props: {
@@ -34,6 +34,7 @@ VantComponent({
       type: String,
       value: 'default',
     },
+    dataset: null,
     size: {
       type: String,
       value: 'normal',
@@ -63,8 +64,8 @@ VantComponent({
           }
         }
 
-        if (style !== this.data.style) {
-          this.setData({ style });
+        if (style !== this.data.baseStyle) {
+          this.setData({ baseStyle: style });
         }
       },
     },
@@ -72,9 +73,11 @@ VantComponent({
 
   methods: {
     onClick() {
-      if (!this.data.disabled && !this.data.loading) {
+      if (!this.data.loading) {
         this.$emit('click');
       }
     },
+    
+    noop() {},
   },
 });

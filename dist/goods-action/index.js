@@ -1,22 +1,14 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-    relation: {
-        type: 'descendant',
-        name: 'goods-action-button',
-        linked(child) {
-            this.children.push(child);
-        },
-        unlinked(child) {
-            this.children = this.children.filter((item) => item !== child);
-        }
+  relation: {
+    type: 'descendant',
+    name: 'goods-action-button',
+    current: 'goods-action',
+  },
+  props: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true,
     },
-    beforeCreate() {
-        this.children = [];
-    },
-    props: {
-        safeAreaInsetBottom: {
-            type: Boolean,
-            value: true
-        }
-    }
+  },
 });

@@ -13,18 +13,18 @@ VantComponent({
   relation: {
     name: 'tab',
     type: 'descendant',
+    current: 'tabs',
     linked(target) {
-      target.index = this.children.length;
-      this.children.push(target);
+      target.index = this.children.length - 1;
       this.updateTabs();
     },
-    unlinked(target) {
-      this.children = this.children
-        .filter((child: TrivialInstance) => child !== target)
-        .map((child: TrivialInstance, index: number) => {
+    unlinked() {
+      this.children = this.children.map(
+        (child: TrivialInstance, index: number) => {
           child.index = index;
           return child;
-        });
+        }
+      );
       this.updateTabs();
     }
   },
@@ -38,8 +38,9 @@ VantComponent({
     animated: {
       type: Boolean,
       observer() {
-        this.setTrack();
-        this.children.forEach((child: TrivialInstance) => child.updateRender());
+        this.children.forEach((child: TrivialInstance, index: number) =>
+          child.updateRender(index === this.data.currentIndex, this)
+        );
       }
     },
     swipeable: Boolean,
@@ -100,7 +101,7 @@ VantComponent({
     lazyRender: {
       type: Boolean,
       value: true
-    },
+    }
   },
 
   data: {
@@ -113,20 +114,20 @@ VantComponent({
     container: null
   },
 
-  beforeCreate() {
-    this.children = [];
-  },
-
   mounted() {
-    this.setData({
-      container: () => this.createSelectorQuery().select('.van-tabs')
+    wx.nextTick(() => {
+      this.setLine(true);
+      this.scrollIntoView();
     });
-    this.setLine(true);
-    this.setTrack();
-    this.scrollIntoView();
   },
 
   methods: {
+    updateContainer() {
+      this.setData({
+        container: () => this.createSelectorQuery().select('.van-tabs')
+      });
+    },
+
     updateTabs() {
       const { children = [], data } = this;
       this.setData({
@@ -137,19 +138,19 @@ VantComponent({
       this.setCurrentIndexByName(this.getCurrentName() || data.active);
     },
 
-    trigger(eventName: string) {
+    trigger(eventName: string, child?: TrivialInstance) {
       const { currentIndex } = this.data;
 
-      const child = this.children[currentIndex];
+      const currentChild = child || this.children[currentIndex];
 
-      if (!isDef(child)) {
+      if (!isDef(currentChild)) {
         return;
       }
 
       this.$emit(eventName, {
-        index: currentIndex,
-        name: child.getComputedName(),
-        title: child.data.title
+        index: currentChild.index,
+        name: currentChild.getComputedName(),
+        title: currentChild.data.title
       });
     },
 
@@ -158,7 +159,7 @@ VantComponent({
       const child = this.children[index];
 
       if (child.data.disabled) {
-        this.trigger('disabled');
+        this.trigger('disabled', child);
       } else {
         this.setCurrentIndex(index);
         wx.nextTick(() => {
@@ -206,8 +207,8 @@ VantComponent({
 
       wx.nextTick(() => {
         this.setLine();
-        this.setTrack();
         this.scrollIntoView();
+        this.updateContainer();
 
         this.trigger('input');
         if (shouldEmitChange) {
@@ -246,7 +247,9 @@ VantComponent({
           const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
           const height =
             lineHeight !== -1
-              ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};`
+              ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(
+                  lineHeight
+                )};`
               : '';
 
           let left = rects
@@ -271,22 +274,6 @@ VantComponent({
           });
         }
       );
-    },
-
-    setTrack() {
-      const { animated, duration, currentIndex } = this.data;
-
-      if (!animated) {
-        return;
-      }
-
-      this.setData({
-        trackStyle: `
-          transform: translate3d(${-100 * currentIndex}%, 0, 0);
-          -webkit-transition-duration: ${duration}s;
-          transition-duration: ${duration}s;
-        `
-      });
     },
 
     // scroll active tab into view

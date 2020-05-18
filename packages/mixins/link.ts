@@ -3,8 +3,8 @@ export const link = Behavior({
     url: String,
     linkType: {
       type: String,
-      value: 'navigateTo'
-    }
+      value: 'navigateTo',
+    },
   },
 
   methods: {
@@ -13,6 +13,6 @@ export const link = Behavior({
       if (url) {
         wx[this.data.linkType]({ url });
       }
-    }
-  }
+    },
+  },
 });

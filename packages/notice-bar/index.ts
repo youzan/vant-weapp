@@ -8,64 +8,65 @@ VantComponent({
   props: {
     text: {
       type: String,
-      value: ''
+      value: '',
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     mode: {
       type: String,
-      value: ''
+      value: '',
     },
     url: {
       type: String,
-      value: ''
+      value: '',
     },
     openType: {
       type: String,
-      value: 'navigate'
+      value: 'navigate',
     },
     delay: {
       type: Number,
-      value: 1
+      value: 1,
     },
     speed: {
       type: Number,
-      value: 50
+      value: 50,
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     scrollable: {
       type: Boolean,
-      value: true
+      value: true,
     },
     leftIcon: {
       type: String,
-      value: ''
+      value: '',
     },
     color: {
       type: String,
-      value: FONT_COLOR
+      value: FONT_COLOR,
     },
     backgroundColor: {
       type: String,
-      value: BG_COLOR
+      value: BG_COLOR,
     },
-    wrapable: Boolean
+    wrapable: Boolean,
   },
 
   data: {
-    show: true
-  },
-
-  watch: {
-    text() {
-      this.setData({}, this.init);
-    },
-    speed() {
-      this.setData({}, this.init);
-    }
+    show: true,
   },
 
   created() {
     this.resetAnimation = wx.createAnimation({
       duration: 0,
-      timingFunction: 'linear'
+      timingFunction: 'linear',
     });
   },
 
@@ -77,7 +78,7 @@ VantComponent({
     init() {
       Promise.all([
         this.getRect('.van-notice-bar__content'),
-        this.getRect('.van-notice-bar__wrap')
+        this.getRect('.van-notice-bar__wrap'),
       ]).then((rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
         const [contentRect, wrapRect] = rects;
         if (
@@ -100,7 +101,7 @@ VantComponent({
           this.animation = wx.createAnimation({
             duration,
             timingFunction: 'linear',
-            delay
+            delay,
           });
 
           this.scroll();
@@ -116,7 +117,7 @@ VantComponent({
         animationData: this.resetAnimation
           .translateX(this.wrapWidth)
           .step()
-          .export()
+          .export(),
       });
 
       setTimeout(() => {
@@ -124,7 +125,7 @@ VantComponent({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
-            .export()
+            .export(),
         });
       }, 20);
 
@@ -142,6 +143,6 @@ VantComponent({
 
     onClick(event: Weapp.Event) {
       this.$emit('click', event);
-    }
-  }
+    },
+  },
 });

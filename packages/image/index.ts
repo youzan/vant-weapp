@@ -7,7 +7,9 @@ const FIT_MODE_MAP = {
   none: 'center',
   fill: 'scaleToFill',
   cover: 'aspectFill',
-  contain: 'aspectFit'
+  contain: 'aspectFit',
+  widthFix: 'widthFix',
+  heightFix: 'heightFix',
 };
 
 VantComponent({
@@ -16,15 +18,23 @@ VantComponent({
   classes: ['custom-class', 'loading-class', 'error-class', 'image-class'],
 
   props: {
-    src: String,
+    src: {
+      type: String,
+      observer() {
+        this.setData({
+          error: false,
+          loading: true,
+        });
+      },
+    },
     round: Boolean,
     width: {
       type: null,
-      observer: 'setStyle'
+      observer: 'setStyle',
     },
     height: {
       type: null,
-      observer: 'setStyle'
+      observer: 'setStyle',
     },
     radius: null,
     lazyLoad: Boolean,
@@ -34,30 +44,22 @@ VantComponent({
     fit: {
       type: String,
       value: 'fill',
-      observer: 'setMode'
+      observer: 'setMode',
     },
     showError: {
       type: Boolean,
-      value: true
+      value: true,
     },
     showLoading: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
     error: false,
-    loading: true
-  },
-
-  watch: {
-    src() {
-      this.setData({
-        error: false,
-        loading: true
-      });
-    }
+    loading: true,
+    viewStyle: '',
   },
 
   mounted() {
@@ -89,12 +91,12 @@ VantComponent({
         style += `border-radius: ${addUnit(radius)};`;
       }
 
-      this.setData({ style });
+      this.setData({ viewStyle: style });
     },
 
     onLoad(event) {
       this.setData({
-        loading: false
+        loading: false,
       });
 
       this.$emit('load', event.detail);
@@ -103,7 +105,7 @@ VantComponent({
     onError(event) {
       this.setData({
         loading: false,
-        error: true
+        error: true,
       });
 
       this.$emit('error', event.detail);
@@ -111,6 +113,6 @@ VantComponent({
 
     onClick(event) {
       this.$emit('click', event.detail);
-    }
-  }
+    },
+  },
 });

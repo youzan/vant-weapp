@@ -1,140 +1,109 @@
 import { VantComponent } from '../common/component';
+import { pageScrollMixin } from '../mixins/page-scroll';
 const ROOT_ELEMENT = '.van-sticky';
 VantComponent({
-    props: {
-        zIndex: {
-            type: Number,
-            value: 99
-        },
-        offsetTop: {
-            type: Number,
-            value: 0,
-            observer: 'observeContent'
-        },
-        disabled: {
-            type: Boolean,
-            observer(value) {
-                if (!this.mounted) {
-                    return;
-                }
-                value ? this.disconnectObserver() : this.initObserver();
+  props: {
+    zIndex: {
+      type: Number,
+      value: 99,
+    },
+    offsetTop: {
+      type: Number,
+      value: 0,
+      observer: 'onScroll',
+    },
+    disabled: {
+      type: Boolean,
+      observer: 'onScroll',
+    },
+    container: {
+      type: null,
+      observer: 'onScroll',
+    },
+    scrollTop: {
+      type: null,
+      observer(val) {
+        this.onScroll({ scrollTop: val });
+      },
+    },
+  },
+  mixins: [
+    pageScrollMixin(function (event) {
+      if (this.data.scrollTop != null) {
+        return;
+      }
+      this.onScroll(event);
+    }),
+  ],
+  data: {
+    height: 0,
+    fixed: false,
+    transform: 0,
+  },
+  mounted() {
+    this.onScroll();
+  },
+  methods: {
+    onScroll({ scrollTop } = {}) {
+      const { container, offsetTop, disabled } = this.data;
+      if (disabled) {
+        this.setDataAfterDiff({
+          fixed: false,
+          transform: 0,
+        });
+        return;
+      }
+      this.scrollTop = scrollTop || this.scrollTop;
+      if (typeof container === 'function') {
+        Promise.all([this.getRect(ROOT_ELEMENT), this.getContainerRect()]).then(
+          ([root, container]) => {
+            if (offsetTop + root.height > container.height + container.top) {
+              this.setDataAfterDiff({
+                fixed: false,
+                transform: container.height - root.height,
+              });
+            } else if (offsetTop >= root.top) {
+              this.setDataAfterDiff({
+                fixed: true,
+                height: root.height,
+                transform: 0,
+              });
+            } else {
+              this.setDataAfterDiff({ fixed: false, transform: 0 });
             }
-        },
-        container: {
-            type: null,
-            observer(target) {
-                if (typeof target !== 'function' || !this.data.height) {
-                    return;
-                }
-                this.observeContainer();
-            }
+          }
+        );
+        return;
+      }
+      this.getRect(ROOT_ELEMENT).then((root) => {
+        if (offsetTop >= root.top) {
+          this.setDataAfterDiff({ fixed: true, height: root.height });
+          this.transform = 0;
+        } else {
+          this.setDataAfterDiff({ fixed: false });
         }
+      });
     },
-    data: {
-        wrapStyle: '',
-        containerStyle: ''
+    setDataAfterDiff(data) {
+      wx.nextTick(() => {
+        const diff = Object.keys(data).reduce((prev, key) => {
+          if (data[key] !== this.data[key]) {
+            prev[key] = data[key];
+          }
+          return prev;
+        }, {});
+        this.setData(diff);
+        this.$emit('scroll', {
+          scrollTop: this.scrollTop,
+          isFixed: data.fixed || this.data.fixed,
+        });
+      });
     },
-    methods: {
-        setStyle() {
-            const { offsetTop, height, fixed, zIndex } = this.data;
-            if (fixed) {
-                this.setData({
-                    wrapStyle: `top: ${offsetTop}px;`,
-                    containerStyle: `height: ${height}px; z-index: ${zIndex};`
-                });
-            }
-            else {
-                this.setData({
-                    wrapStyle: '',
-                    containerStyle: ''
-                });
-            }
-        },
-        getContainerRect() {
-            const nodesRef = this.data.container();
-            return new Promise(resolve => nodesRef.boundingClientRect(resolve).exec());
-        },
-        initObserver() {
-            this.disconnectObserver();
-            this.getRect(ROOT_ELEMENT).then((rect) => {
-                this.setData({ height: rect.height });
-                wx.nextTick(() => {
-                    this.observeContent();
-                    this.observeContainer();
-                });
-            });
-        },
-        disconnectObserver(observerName) {
-            if (observerName) {
-                const observer = this[observerName];
-                observer && observer.disconnect();
-            }
-            else {
-                this.contentObserver && this.contentObserver.disconnect();
-                this.containerObserver && this.containerObserver.disconnect();
-            }
-        },
-        observeContent() {
-            const { offsetTop } = this.data;
-            this.disconnectObserver('contentObserver');
-            const contentObserver = this.createIntersectionObserver({
-                thresholds: [0, 1]
-            });
-            this.contentObserver = contentObserver;
-            contentObserver.relativeToViewport({ top: -offsetTop });
-            contentObserver.observe(ROOT_ELEMENT, res => {
-                if (this.data.disabled) {
-                    return;
-                }
-                this.setFixed(res.boundingClientRect.top);
-            });
-        },
-        observeContainer() {
-            if (typeof this.data.container !== 'function') {
-                return;
-            }
-            const { height } = this.data;
-            this.getContainerRect().then((rect) => {
-                this.containerHeight = rect.height;
-                this.disconnectObserver('containerObserver');
-                const containerObserver = this.createIntersectionObserver({
-                    thresholds: [0, 1]
-                });
-                this.containerObserver = containerObserver;
-                containerObserver.relativeToViewport({
-                    top: this.containerHeight - height
-                });
-                containerObserver.observe(ROOT_ELEMENT, res => {
-                    if (this.data.disabled) {
-                        return;
-                    }
-                    this.setFixed(res.boundingClientRect.top);
-                });
-            });
-        },
-        setFixed(top) {
-            const { offsetTop, height } = this.data;
-            const { containerHeight } = this;
-            const fixed = containerHeight && height
-                ? top > height - containerHeight && top < offsetTop
-                : top < offsetTop;
-            this.$emit('scroll', {
-                scrollTop: top,
-                isFixed: fixed
-            });
-            this.setData({ fixed });
-            wx.nextTick(() => {
-                this.setStyle();
-            });
-        }
+    getContainerRect() {
+      const nodesRef = this.data.container();
+      return new Promise((resolve) =>
+        nodesRef.boundingClientRect(resolve).exec()
+      );
     },
-    mounted() {
-        this.mounted = true;
-        if (!this.data.disabled) {
-            this.initObserver();
-        }
-    },
-    destroyed() {
-        this.disconnectObserver();
-    }
+  },
 });

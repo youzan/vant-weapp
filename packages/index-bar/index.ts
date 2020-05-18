@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { GREEN } from '../common/color';
+import { pageScrollMixin } from '../mixins/page-scroll';
 
 const indexList = () => {
   const indexList = [];
@@ -16,85 +17,91 @@ VantComponent({
   relation: {
     name: 'index-anchor',
     type: 'descendant',
+    current: 'index-bar',
     linked() {
-      this.updateData();
-    },
-    linkChanged() {
       this.updateData();
     },
     unlinked() {
       this.updateData();
-    }
+    },
   },
 
   props: {
     sticky: {
       type: Boolean,
-      value: true
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 1
+      value: 1,
     },
     highlightColor: {
       type: String,
-      value: GREEN
-    },
-    scrollTop: {
-      type: Number,
-      value: 0,
-      observer: 'onScroll'
+      value: GREEN,
     },
     stickyOffsetTop: {
       type: Number,
-      value: 0
+      value: 0,
     },
     indexList: {
       type: Array,
-      value: indexList()
-    }
+      value: indexList(),
+    },
   },
+
+  mixins: [
+    pageScrollMixin(function (event) {
+      this.scrollTop = event.scrollTop || 0;
+      this.onScroll();
+    }),
+  ],
 
   data: {
     activeAnchorIndex: null,
-    showSidebar: false
+    showSidebar: false,
+  },
+
+  created() {
+    this.scrollTop = 0;
   },
 
   methods: {
     updateData() {
-      this.timer && clearTimeout(this.timer);
+      wx.nextTick(() => {
+        if (this.timer != null) {
+          clearTimeout(this.timer);
+        }
 
-      this.timer = setTimeout(() => {
-        this.children = this.getRelationNodes('../index-anchor/index');
+        this.timer = setTimeout(() => {
+          this.setData({
+            showSidebar: !!this.children.length,
+          });
 
-        this.setData({
-          showSidebar: !!this.children.length
-        });
-
-        this.setRect().then(() => {
-          this.onScroll();
-        });
-      }, 0);
+          this.setRect().then(() => {
+            this.onScroll();
+          });
+        }, 0);
+      });
     },
 
     setRect() {
       return Promise.all([
         this.setAnchorsRect(),
         this.setListRect(),
-        this.setSiderbarRect()
+        this.setSiderbarRect(),
       ]);
     },
 
     setAnchorsRect() {
       return Promise.all(
-        this.children.map(anchor =>
+        this.children.map((anchor) =>
           anchor
             .getRect('.van-index-anchor-wrapper')
             .then(
               (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
                 Object.assign(anchor, {
                   height: rect.height,
-                  top: rect.top + this.data.scrollTop
+                  top: rect.top + this.scrollTop,
                 });
               }
             )
@@ -107,17 +114,17 @@ VantComponent({
         (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
           Object.assign(this, {
             height: rect.height,
-            top: rect.top + this.data.scrollTop
+            top: rect.top + this.scrollTop,
           });
         }
       );
     },
 
     setSiderbarRect() {
-      return this.getRect('.van-index-bar__sidebar').then(res => {
+      return this.getRect('.van-index-bar__sidebar').then((res) => {
         this.sidebar = {
           height: res.height,
-          top: res.top
+          top: res.top,
         };
       });
     },
@@ -125,7 +132,7 @@ VantComponent({
     setDiffData({ target, data }) {
       const diffData = {};
 
-      Object.keys(data).forEach(key => {
+      Object.keys(data).forEach((key) => {
         if (target.data[key] !== data[key]) {
           diffData[key] = data[key];
         }
@@ -141,13 +148,13 @@ VantComponent({
         .getRect('.van-index-anchor-wrapper')
         .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => ({
           height: rect.height,
-          top: rect.top
+          top: rect.top,
         }));
     },
 
     getActiveAnchorIndex() {
-      const { children } = this;
-      const { sticky, scrollTop, stickyOffsetTop } = this.data;
+      const { children, scrollTop } = this;
+      const { sticky, stickyOffsetTop } = this.data;
 
       for (let i = this.children.length - 1; i >= 0; i--) {
         const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
@@ -162,27 +169,21 @@ VantComponent({
     },
 
     onScroll() {
-      const { children = [] } = this;
+      const { children = [], scrollTop } = this;
 
       if (!children.length) {
         return;
       }
 
-      const {
-        sticky,
-        stickyOffsetTop,
-        zIndex,
-        highlightColor,
-        scrollTop
-      } = this.data;
+      const { sticky, stickyOffsetTop, zIndex, highlightColor } = this.data;
 
       const active = this.getActiveAnchorIndex();
 
       this.setDiffData({
         target: this,
         data: {
-          activeAnchorIndex: active
-        }
+          activeAnchorIndex: active,
+        },
       });
 
       if (sticky) {
@@ -218,8 +219,8 @@ VantComponent({
               data: {
                 active: true,
                 anchorStyle,
-                wrapperStyle
-              }
+                wrapperStyle,
+              },
             });
           } else if (index === active - 1) {
             const currentAnchor = children[index];
@@ -244,8 +245,8 @@ VantComponent({
               target: item,
               data: {
                 active: true,
-                anchorStyle
-              }
+                anchorStyle,
+              },
             });
           } else {
             this.setDiffData({
@@ -253,8 +254,8 @@ VantComponent({
               data: {
                 active: false,
                 anchorStyle: '',
-                wrapperStyle: ''
-              }
+                wrapperStyle: '',
+              },
             });
           }
         });
@@ -297,12 +298,9 @@ VantComponent({
       );
 
       if (anchor) {
+        anchor.scrollIntoView(this.scrollTop);
         this.$emit('select', anchor.data.index);
-        wx.pageScrollTo({
-          duration: 0,
-          scrollTop: anchor.top
-        });
       }
-    }
-  }
+    },
+  },
 });

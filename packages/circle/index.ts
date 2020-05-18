@@ -14,45 +14,47 @@ VantComponent({
     text: String,
     lineCap: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     value: {
       type: Number,
       value: 0,
-      observer: 'reRender'
+      observer: 'reRender',
     },
     speed: {
       type: Number,
-      value: 50
+      value: 50,
     },
     size: {
       type: Number,
       value: 100,
-      observer: 'setStyle'
     },
     fill: String,
     layerColor: {
       type: String,
-      value: WHITE
+      value: WHITE,
     },
     color: {
       type: [String, Object],
       value: BLUE,
-      observer: 'setHoverColor'
+      observer: 'setHoverColor',
+    },
+    type: {
+      type: String,
+      value: '',
     },
     strokeWidth: {
       type: Number,
-      value: 4
+      value: 4,
     },
     clockwise: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
-    style: 'width: 100px; height: 100px;',
-    hoverColor: BLUE
+    hoverColor: BLUE,
   },
 
   methods: {
@@ -64,28 +66,23 @@ VantComponent({
     },
 
     setHoverColor() {
-      const context = this.getContext();
-      const { color, size } = this.data;
+      const { color, size, type } = this.data;
+      const context = type ? this.getContext(type) : this.getContext();
+
       let hoverColor = color;
 
       if (isObj(color)) {
         const LinearColor = context.createLinearGradient(size, 0, 0, 0);
         Object.keys(color)
           .sort((a, b) => parseFloat(a) - parseFloat(b))
-          .map(key => LinearColor.addColorStop(parseFloat(key) / 100, color[key]));
+          .map((key) =>
+            LinearColor.addColorStop(parseFloat(key) / 100, color[key])
+          );
         hoverColor = LinearColor;
       }
 
       this.setData({ hoverColor });
     },
-
-    setStyle() {
-      const { size } = this.data;
-      const style = `width: ${size}px; height: ${size}px;`;
-
-      this.setData({ style });
-    },
-
     presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {
       const { strokeWidth, lineCap, clockwise, size } = this.data;
       const position = size / 2;
@@ -121,8 +118,8 @@ VantComponent({
     },
 
     drawCircle(currentValue) {
-      const context = this.getContext();
-      const { size } = this.data;
+      const { size, type } = this.data;
+      const context = type ? this.getContext(type) : this.getContext();
       context.clearRect(0, 0, size, size);
       this.renderLayerCircle(context);
 
@@ -164,7 +161,7 @@ VantComponent({
         clearInterval(this.interval);
         this.interval = null;
       }
-    }
+    },
   },
 
   created() {
@@ -176,5 +173,5 @@ VantComponent({
   destroyed() {
     this.ctx = null;
     this.clearInterval();
-  }
+  },
 });

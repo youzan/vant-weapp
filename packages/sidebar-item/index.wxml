@@ -13,6 +13,7 @@
       info="{{ info }}"
       custom-style="right: 4px"
     />
-    {{ title }}
+    <view wx:if="{{ title }}">{{ title }}</view>
+    <slot wx:else name="title" />
   </view>
 </view>

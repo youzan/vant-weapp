@@ -4,7 +4,6 @@ page {
   padding: 0 0 100rpx;
   color: #323233;
   font-size: 16px;
-  font-family: 'PingFang SC', Helvetica, Arial, sans-serif;
   background: #f7f8fa;
   -webkit-font-smoothing: antialiased;
 }

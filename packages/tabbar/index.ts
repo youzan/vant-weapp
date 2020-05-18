@@ -6,52 +6,45 @@ VantComponent({
   relation: {
     name: 'tabbar-item',
     type: 'descendant',
+    current: 'tabbar',
     linked(target) {
-      this.children.push(target);
       target.parent = this;
       target.updateFromParent();
     },
-    unlinked(target) {
-      this.children = this.children.filter(
-        (item: TrivialInstance) => item !== target
-      );
+    unlinked() {
       this.updateChildren();
-    }
+    },
   },
 
   props: {
     active: {
       type: null,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     activeColor: {
       type: String,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     inactiveColor: {
       type: String,
-      observer: 'updateChildren'
+      observer: 'updateChildren',
     },
     fixed: {
       type: Boolean,
-      value: true
+      value: true,
     },
     border: {
       type: Boolean,
-      value: true
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 1
+      value: 1,
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
-    }
-  },
-
-  beforeCreate() {
-    this.children = [];
+      value: true,
+    },
   },
 
   methods: {
@@ -73,6 +66,6 @@ VantComponent({
       if (active !== this.data.active) {
         this.$emit('change', active);
       }
-    }
-  }
+    },
+  },
 });

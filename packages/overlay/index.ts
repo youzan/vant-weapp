@@ -1,4 +1,3 @@
-
 import { VantComponent } from '../common/component';
 
 VantComponent({
@@ -7,12 +6,12 @@ VantComponent({
     customStyle: String,
     duration: {
       type: null,
-      value: 300
+      value: 300,
     },
     zIndex: {
       type: Number,
-      value: 1
-    }
+      value: 1,
+    },
   },
 
   methods: {
@@ -21,6 +20,6 @@ VantComponent({
     },
 
     // for prevent touchmove
-    noop() {}
-  }
+    noop() {},
+  },
 });

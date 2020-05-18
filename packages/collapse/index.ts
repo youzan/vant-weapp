@@ -6,33 +6,22 @@ VantComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',
-    linked(child) {
-      this.children.push(child);
-    },
-    unlinked(child) {
-      this.children = this.children.filter(
-        (item: TrivialInstance) => item !== child
-      );
-    }
+    current: 'collapse',
   },
 
   props: {
     value: {
       type: null,
-      observer: 'updateExpanded'
+      observer: 'updateExpanded',
     },
     accordion: {
       type: Boolean,
-      observer: 'updateExpanded'
+      observer: 'updateExpanded',
     },
     border: {
       type: Boolean,
-      value: true
-    }
-  },
-
-  beforeCreate() {
-    this.children = [];
+      value: true,
+    },
   },
 
   methods: {
@@ -48,13 +37,13 @@ VantComponent({
         name = expanded
           ? (value || []).concat(name)
           : (value || []).filter(
-            (activeName: string | number) => activeName !== name
-          );
+              (activeName: string | number) => activeName !== name
+            );
       } else {
         name = expanded ? name : '';
       }
       this.$emit('change', name);
       this.$emit('input', name);
-    }
-  }
+    },
+  },
 });

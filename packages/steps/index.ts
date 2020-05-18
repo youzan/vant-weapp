@@ -1,3 +1,4 @@
+import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
 import { GREEN, GRAY_DARK } from '../common/color';
 
@@ -10,20 +11,27 @@ VantComponent({
     active: Number,
     direction: {
       type: String,
-      value: 'horizontal'
+      value: 'horizontal',
     },
     activeColor: {
       type: String,
-      value: GREEN
+      value: GREEN,
     },
     inactiveColor: {
       type: String,
-      value: GRAY_DARK
+      value: GRAY_DARK,
     },
     activeIcon: {
       type: String,
-      value: 'checked'
+      value: 'checked',
     },
-    inactiveIcon: String
-  }
+    inactiveIcon: String,
+  },
+
+  methods: {
+    onClick(event: Weapp.Event) {
+      const { index } = event.currentTarget.dataset;
+      this.$emit('click-step', index);
+    },
+  },
 });

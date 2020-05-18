@@ -1,4 +1,4 @@
-<demo-section>
+
   <demo-block title="基础用法" padding>
     <van-row>
       <van-image
@@ -100,4 +100,4 @@
       </van-col>
     </van-row>
   </demo-block>
-</demo-section>
+

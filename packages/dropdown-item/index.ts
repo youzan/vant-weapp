@@ -7,41 +7,39 @@ VantComponent({
   relation: {
     name: 'dropdown-menu',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
+    current: 'dropdown-item',
+    linked() {
       this.updateDataFromParent();
     },
-    unlinked() {
-      this.parent = null;
-    }
   },
 
   props: {
     value: {
       type: null,
-      observer: 'rerender'
+      observer: 'rerender',
     },
     title: {
       type: String,
-      observer: 'rerender'
+      observer: 'rerender',
     },
     disabled: Boolean,
     titleClass: {
       type: String,
-      observer: 'rerender'
+      observer: 'rerender',
     },
     options: {
       type: Array,
       value: [],
-      observer: 'rerender'
-    }
+      observer: 'rerender',
+    },
+    popupStyle: String,
   },
 
   data: {
     transition: true,
     showPopup: false,
     showWrapper: false,
-    displayTitle: ''
+    displayTitle: '',
   },
 
   methods: {
@@ -58,21 +56,33 @@ VantComponent({
           duration,
           activeColor,
           closeOnClickOverlay,
-          direction
+          direction,
         } = this.parent.data;
         this.setData({
           overlay,
           duration,
           activeColor,
           closeOnClickOverlay,
-          direction
+          direction,
         });
       }
     },
 
-    onClickOverlay() {
-      this.toggle();
+    onOpen() {
+      this.$emit('open');
+    },
+
+    onOpened() {
+      this.$emit('opened');
+    },
+
+    onClose() {
       this.$emit('close');
+    },
+
+    onClosed() {
+      this.$emit('closed');
+      this.setData({ showWrapper: false });
     },
 
     onOptionTap(event: Weapp.Event) {
@@ -81,10 +91,7 @@ VantComponent({
 
       const shouldEmitChange = this.data.value !== value;
       this.setData({ showPopup: false, value });
-
-      setTimeout(() => {
-        this.setData({ showWrapper: false });
-      }, this.data.duration || 0);
+      this.$emit('close');
 
       this.rerender();
 
@@ -94,9 +101,9 @@ VantComponent({
     },
 
     toggle(show, options = {}) {
-      const { showPopup, duration } = this.data;
+      const { showPopup } = this.data;
 
-      if (show == null) {
+      if (typeof show !== 'boolean') {
         show = !showPopup;
       }
 
@@ -104,27 +111,19 @@ VantComponent({
         return;
       }
 
-      if (!show) {
-        const time = options.immediate ? 0 : duration;
-        this.setData({ transition: !options.immediate, showPopup: show });
-
-        setTimeout(() => {
-          this.setData({ showWrapper: false });
-        }, time);
-
-        this.rerender();
-        return;
-      }
-
-      this.parent.getChildWrapperStyle().then((wrapperStyle: String = '') => {
-        this.setData({
-          transition: !options.immediate,
-          showPopup: show,
-          wrapperStyle,
-          showWrapper: true
-        });
-        this.rerender();
+      this.setData({
+        transition: !options.immediate,
+        showPopup: show,
       });
-    }
-  }
+
+      if (show) {
+        this.parent.getChildWrapperStyle().then((wrapperStyle: string) => {
+          this.setData({ wrapperStyle, showWrapper: true });
+          this.rerender();
+        });
+      } else {
+        this.rerender();
+      }
+    },
+  },
 });

@@ -5,7 +5,8 @@ Page({
   data: {
     icons,
     active: 0,
-    demoIcon: 'location-o'
+    demoIcon: 'chat-o',
+    demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png',
   },
 
   onSwitch(event) {

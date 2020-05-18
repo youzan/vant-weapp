@@ -16,7 +16,7 @@
       style="{{ 'width:' + titleWidth }}"
     />
     <view
-      wx:for="{{ row }}"
+      wx:for="{{ rowArray }}"
       wx:key="index"
       wx:for-index="index"
       class="row-class {{ utils.bem('skeleton__row') }}"

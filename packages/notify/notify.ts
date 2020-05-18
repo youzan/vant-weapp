@@ -4,6 +4,7 @@ interface NotifyOptions {
   type?: 'primary' | 'success' | 'danger' | 'warning';
   color?: string;
   zIndex?: number;
+  top?: number;
   message: string;
   context?: any;
   duration?: number;
@@ -22,11 +23,12 @@ const defaultOptions = {
   background: '',
   duration: 3000,
   zIndex: 110,
+  top: 0,
   color: WHITE,
   safeAreaInsetTop: false,
   onClick: () => {},
   onOpened: () => {},
-  onClose: () => {}
+  onClose: () => {},
 };
 
 function parseOptions(message: NotifyOptions | string): NotifyOptions {
@@ -39,7 +41,7 @@ function getContext() {
 }
 
 export default function Notify(options: NotifyOptions | string) {
-  options = Object.assign({}, defaultOptions, parseOptions(options));
+  options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);
@@ -56,8 +58,8 @@ export default function Notify(options: NotifyOptions | string) {
   console.warn('未找到 van-notify 节点，请确认 selector 及 context 是否正确');
 }
 
-Notify.clear = function(options?: NotifyOptions) {
-  options = Object.assign({}, defaultOptions, parseOptions(options));
+Notify.clear = function (options?: NotifyOptions) {
+  options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);

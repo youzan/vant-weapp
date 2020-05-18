@@ -8,10 +8,11 @@ VantComponent({
   classes: ['hover-class', 'loading-class'],
 
   data: {
-    style: ''
+    style: '',
   },
 
   props: {
+    classPrefix: String,
     icon: String,
     plain: Boolean,
     block: Boolean,
@@ -24,19 +25,19 @@ VantComponent({
     customStyle: String,
     loadingType: {
       type: String,
-      value: 'circular'
+      value: 'circular',
     },
     type: {
       type: String,
-      value: 'default'
+      value: 'default',
     },
     size: {
       type: String,
-      value: 'normal'
+      value: 'normal',
     },
     loadingSize: {
       type: String,
-      value: '20px'
+      value: '20px',
     },
     color: {
       type: String,
@@ -62,8 +63,8 @@ VantComponent({
         if (style !== this.data.style) {
           this.setData({ style });
         }
-      }
-    }
+      },
+    },
   },
 
   methods: {
@@ -71,6 +72,6 @@ VantComponent({
       if (!this.data.disabled && !this.data.loading) {
         this.$emit('click');
       }
-    }
-  }
+    },
+  },
 });

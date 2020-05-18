@@ -30,10 +30,7 @@
       type="{{ loadingType }}"
       color="{{ type === 'default' ? '#c9c9c9' : 'white' }}"
     />
-    <view
-      wx:if="{{ loadingText }}"
-      class="van-button__loading-text"
-    >
+    <view wx:if="{{ loadingText }}" class="van-button__loading-text">
       {{ loadingText }}
     </view>
   </block>
@@ -42,6 +39,7 @@
       wx:if="{{ icon }}"
       size="1.2em"
       name="{{ icon }}"
+      class-prefix="{{classPrefix}}"
       class="van-button__icon"
       custom-style="line-height: inherit;"
     />

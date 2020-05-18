@@ -12,8 +12,11 @@ VantComponent({
   },
 
   props: {
-    classPrefix: String,
     icon: String,
+    classPrefix: {
+      type: String,
+      value: 'van-icon',
+    },
     plain: Boolean,
     block: Boolean,
     round: Boolean,

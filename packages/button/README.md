@@ -44,7 +44,7 @@
 
 ### 禁用状态
 
-通过`disabled`属性来禁用按钮，此时按钮不可点击
+通过`disabled`属性来禁用按钮，此时按钮的`bind:click`事件不会触发
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>

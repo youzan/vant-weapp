@@ -164,6 +164,23 @@ Page({
 </van-tabs>
 ```
 
+### 嵌套 popup
+
+如果将 van-tabs 嵌套在 van-popup 等会隐藏内容的组件或节点内，当 van-tabs 显示时下划线将不会正常显示。
+
+此时可以通过使用 `wx:if` 手动控制 van-tabs 的渲染来规避这种场景。
+
+```html
+<van-popup show="{{ show }}">
+  <van-tabs wx:if="{{ show }}">
+    <van-tab title="标签 1">内容 1</van-tab>
+    <van-tab title="标签 2">内容 2</van-tab>
+    <van-tab title="标签 3">内容 3</van-tab>
+    <van-tab title="标签 4">内容 4</van-tab>
+  </van-tabs>
+</van-popup>
+```
+
 ## API
 
 ### Tabs Props

@@ -33,15 +33,23 @@ VantComponent({
 
     switch(name: string | number, expanded: boolean) {
       const { accordion, value } = this.data;
+      const changeItem = name;
       if (!accordion) {
         name = expanded
           ? (value || []).concat(name)
           : (value || []).filter(
-              (activeName: string | number) => activeName !== name
-            );
+            (activeName: string | number) => activeName !== name
+          );
       } else {
         name = expanded ? name : '';
       }
+
+      if (expanded) {
+        this.$emit('open', changeItem);
+      } else {
+        this.$emit('close', changeItem);
+      }
+
       this.$emit('change', name);
       this.$emit('input', name);
     },

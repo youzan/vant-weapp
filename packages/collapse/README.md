@@ -117,6 +117,8 @@ Page({
 | 事件名 | 说明           | 参数                           |
 | ------ | -------------- | ------------------------------ |
 | change | 切换面板时触发 | activeNames: _string \| Array_ |
+| open | 展开面板时触发 | activeName: _string \| number_ |
+| close | 关闭面板时触发 | activeName: _string \| number_ |
 
 ### CollapseItem Props
 

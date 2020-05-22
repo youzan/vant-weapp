@@ -199,7 +199,6 @@ uploadFilePromise(fileName, chooseResult) {
 | show-upload | 是否展示文件上传按钮 | _boolean_ | `true` |
 | deletable | 是否展示删除按钮 | _boolean_ | `true` |
 | capture | 图片或者视频选取模式，当`accept`为`image`类型时设置`capture`可选值为`camera`可以直接调起摄像头 | _string \| string[]_ | `['album', 'camera']` |
-| disabled | 是否禁用文件上传 | _boolean_ | `false` |
 | max-size | 文件大小限制，单位为`byte` | _number_ | - |
 | max-count | 文件上传数量限制 | _number_ | - |
 | upload-text | 上传区域文字提示 | _string_ | - |

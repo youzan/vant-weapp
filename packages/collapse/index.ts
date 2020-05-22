@@ -6,22 +6,22 @@ VantComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',
-    current: 'collapse',
+    current: 'collapse'
   },
 
   props: {
     value: {
       type: null,
-      observer: 'updateExpanded',
+      observer: 'updateExpanded'
     },
     accordion: {
       type: Boolean,
-      observer: 'updateExpanded',
+      observer: 'updateExpanded'
     },
     border: {
       type: Boolean,
-      value: true,
-    },
+      value: true
+    }
   },
 
   methods: {
@@ -52,6 +52,6 @@ VantComponent({
 
       this.$emit('change', name);
       this.$emit('input', name);
-    },
-  },
+    }
+  }
 });

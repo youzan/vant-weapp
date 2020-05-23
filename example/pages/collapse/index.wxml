@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <van-collapse value="{{ active1 }}" data-key="active1" bind:change="onChange" bind:open="onOpen" bind:close="onClose">
+  <van-collapse value="{{ active1 }}" data-key="active1" bind:change="onChange">
     <van-collapse-item title="{{ title1 }}">{{ content1 }}</van-collapse-item>
     <van-collapse-item title="{{ title2 }}">{{ content2 }}</van-collapse-item>
     <van-collapse-item title="{{ title3 }}" disabled>{{ content3 }}</van-collapse-item>
@@ -7,6 +7,14 @@
 </demo-block>
 
 <demo-block title="手风琴">
+  <van-collapse value="{{ active2 }}" data-key="active2" accordion bind:change="onChange">
+    <van-collapse-item title="{{ title1 }}">{{ content1 }}</van-collapse-item>
+    <van-collapse-item title="{{ title2 }}">{{ content2 }}</van-collapse-item>
+    <van-collapse-item title="{{ title3 }}">{{ content3 }}</van-collapse-item>
+  </van-collapse>
+</demo-block>
+
+<demo-block title="监听面板打开关闭事件">
   <van-collapse value="{{ active2 }}" data-key="active2" accordion bind:change="onChange" bind:open="onOpen" bind:close="onClose">
     <van-collapse-item title="{{ title1 }}">{{ content1 }}</van-collapse-item>
     <van-collapse-item title="{{ title2 }}">{{ content2 }}</van-collapse-item>

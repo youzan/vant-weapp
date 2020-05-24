@@ -14,6 +14,14 @@
   </van-collapse>
 </demo-block>
 
+<demo-block title="监听面板打开关闭事件">
+  <van-collapse value="{{ active2 }}" data-key="active2" accordion bind:change="onChange" bind:open="onOpen" bind:close="onClose">
+    <van-collapse-item title="{{ title1 }}">{{ content1 }}</van-collapse-item>
+    <van-collapse-item title="{{ title2 }}">{{ content2 }}</van-collapse-item>
+    <van-collapse-item title="{{ title3 }}">{{ content3 }}</van-collapse-item>
+  </van-collapse>
+</demo-block>
+
 <demo-block title="自定义标题内容">
   <van-collapse value="{{ active3 }}" data-key="active3" bind:change="onChange">
     <van-collapse-item>
@@ -32,3 +40,5 @@
     </van-collapse-item>
   </van-collapse>
 </demo-block>
+
+<van-toast id="van-toast" />

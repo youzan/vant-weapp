@@ -75,6 +75,29 @@ Page({
 });
 ```
 
+### 事件监听
+
+`van-collapse` 提供了 `change`, `open` 和 `close` 事件。`change` 事件在面板切换时触发。`open` 事件在面板展开时触发。`close` 事件在面板关闭时触发。
+
+```html
+<van-collapse
+  value="{{ activeNames }}"
+  bind:change="onChange"
+  bind:open="onOpen"
+  bind:close="onClose"
+>
+  <van-collapse-item title="有赞微商城" name="1">
+    提供多样店铺模板，快速搭建网上商城
+  </van-collapse-item>
+  <van-collapse-item title="有赞零售" name="2">
+    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  </van-collapse-item>
+  <van-collapse-item title="有赞美业" name="3">
+    线上拓客，随时预约，贴心顺手的开单收银
+  </van-collapse-item>
+</van-collapse>
+```
+
 ### 自定义标题内容
 
 ```html
@@ -117,6 +140,8 @@ Page({
 | 事件名 | 说明           | 参数                           |
 | ------ | -------------- | ------------------------------ |
 | change | 切换面板时触发 | activeNames: _string \| Array_ |
+| open | 展开面板时触发 | currentName: _string \| number_ |
+| close | 关闭面板时触发 | currentName: _string \| number_ |
 
 ### CollapseItem Props
 

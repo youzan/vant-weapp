@@ -77,7 +77,7 @@ VantComponent({
         this.$emit('click');
       }
     },
-    
+
     noop() {},
   },
 });

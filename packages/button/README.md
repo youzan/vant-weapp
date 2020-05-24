@@ -120,6 +120,7 @@
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | _string_ | `normal` | - |
 | color | 按钮颜色，支持传入`linear-gradient`渐变色 | _string_ | - | 1.0.0 |
 | icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
+| class-prefix | 类名前缀 用法等同于[Icon 组件](#/icon) | _string_ | `van-icon` | - |
 | plain | 是否为朴素按钮 | _boolean_ | `false` | - |
 | block | 是否为块级元素 | _boolean_ | `false` | - |
 | round | 是否为圆形按钮 | _boolean_ | `false` | - |

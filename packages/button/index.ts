@@ -13,6 +13,10 @@ VantComponent({
 
   props: {
     icon: String,
+    classPrefix: {
+      type: String,
+      value: 'van-icon',
+    },
     plain: Boolean,
     block: Boolean,
     round: Boolean,
@@ -73,7 +77,7 @@ VantComponent({
         this.$emit('click');
       }
     },
-
+    
     noop() {},
   },
 });

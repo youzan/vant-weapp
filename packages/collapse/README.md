@@ -49,7 +49,7 @@ Page({
 通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
 
 ```html
-<van-collapse value="{{ activeName }}" bind:change="onChange" accordion>
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange">
   <van-collapse-item title="有赞微商城" name="1">
     提供多样店铺模板，快速搭建网上商城
   </van-collapse-item>
@@ -77,7 +77,7 @@ Page({
 
 ### 事件监听
 
-`van-collapse` 提供了 `change`, `open` 和 `close` 事件。`change` 事件在面板切换时触发。`open` 事件在面板展开时触发。`close` 事件在面板关闭时触发。
+`van-collapse` 提供了 `change`, `open` 和 `close` 事件。`change` 事件在面板切换时触发，`open` 事件在面板展开时触发，`close` 事件在面板关闭时触发。
 
 ```html
 <van-collapse
@@ -96,6 +96,25 @@ Page({
     线上拓客，随时预约，贴心顺手的开单收银
   </van-collapse-item>
 </van-collapse>
+```
+
+```javascript
+Page({
+  data: {
+    activeNames: ['1'],
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail,
+    });
+  },
+  onOpen(event) {
+    Toast(`展开: ${event.detail}`);
+  },
+  onClose(event) {
+    Toast(`关闭: ${event.detail}`);
+  },
+});
 ```
 
 ### 自定义标题内容

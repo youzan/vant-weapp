@@ -20,15 +20,15 @@ VantComponent({
       value: 'danger',
     },
   },
-  mounted() {
-    this.updateStyle();
-  },
   methods: {
     onClick(event) {
       this.$emit('click', event.detail);
       this.jumpLink();
     },
     updateStyle() {
+      if (this.parent == null) {
+        return;
+      }
       const { children = [] } = this.parent;
       const { length } = children;
       const index = children.indexOf(this);

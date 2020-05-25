@@ -36,7 +36,15 @@ VantComponent({
       }
 
       const { data, children } = this.parent;
-      const { columnNum, border, square, gutter, clickable, center } = data;
+      const {
+        columnNum,
+        border,
+        square,
+        gutter,
+        clickable,
+        center,
+        direction,
+      } = data;
       const width = `${100 / columnNum}%`;
 
       const styleWrapper = [];
@@ -76,6 +84,7 @@ VantComponent({
         square,
         gutter,
         clickable,
+        direction,
       });
     },
 

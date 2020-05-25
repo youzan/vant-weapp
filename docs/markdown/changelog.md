@@ -1,5 +1,17 @@
 # 更新日志
 
+### [v1.3.1](https://github.com/youzan/vant-weapp/tree/v1.3.1)
+`2020-05-24`
+
+**Features**
+
+- Button: 新增 class-prefix 属性 [\#3159](https://github.com/youzan/vant-weapp/pull/3159)
+- Collapse: 新增 open、close 事件 [\#3176](https://github.com/youzan/vant-weapp/pull/3176)
+
+**Bug Fixes**
+
+- 修复控制台提示选择器错误的问题 [\#3137](https://github.com/youzan/vant-weapp/pull/3137)
+- 修复 GoodsActionButton 在某些情况下报错的问题 [\#3145](https://github.com/youzan/vant-weapp/pull/3145)
 
 ### [v1.3.0](https://github.com/youzan/vant-weapp/tree/v1.3.0)
 `2020-05-08`

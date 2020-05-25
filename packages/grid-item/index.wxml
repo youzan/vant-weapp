@@ -2,7 +2,7 @@
 
 <view class="custom-class {{ utils.bem('grid-item', { square }) }}" style="{{ viewStyle }}" bindtap="onClick">
   <view
-    class="content-class {{ utils.bem('grid-item__content', { center, square, clickable, surround: border && gutter }) }} {{ border ? 'van-hairline--surround' : '' }}"
+    class="content-class {{ utils.bem('grid-item__content', [direction, { center, square, clickable, surround: border && gutter }]) }} {{ border ? 'van-hairline--surround' : '' }}"
     style="{{ contentStyle }}"
   >
     <block wx:if="{{ useSlot }}">

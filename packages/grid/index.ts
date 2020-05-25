@@ -37,6 +37,10 @@ VantComponent({
       value: true,
       observer: 'updateChildren',
     },
+    direction: {
+      type: String,
+      observer: 'updateChildren',
+    },
   },
 
   data: {

@@ -78,6 +78,50 @@
 <van-tag type="danger" size="large">标签</van-tag>
 ```
 
+### 可关闭标签
+
+添加`closeable`属性表示标签是可关闭的，关闭标签时会触发`close`事件，在`close`事件中可以执行隐藏标签的逻辑
+
+```html
+<van-tag
+  wx:if="{{ show.primary }}"
+  closeable
+  size="medium"
+  type="primary"
+  id="primary"
+  bind:close="onClose"
+>
+  标签
+</van-tag>
+<van-tag
+  wx:if="{{ show.success }}"
+  closeable
+  size="medium"
+  type="success"
+  id="success"
+  bind:close="onClose"
+>
+  标签
+</van-tag>
+```
+
+```js
+Page({
+  data: {
+    show: {
+      primary: true,
+      success: true,
+    },
+  },
+
+  onClose(event) {
+    this.setData({
+      [`show.${event.target.id}`]: false,
+    });
+  },
+});
+```
+
 ## API
 
 ### Props
@@ -91,12 +135,19 @@
 | round | 是否为圆角样式 | _boolean_ | `false` | - |
 | mark | 是否为标记样式 | _boolean_ | `false` | - |
 | text-color | 文本颜色，优先级高于`color`属性 | _string_ | `white` | - |
+| closeable | 是否为可关闭标签 | _boolean_ | `false` |
 
 ### Slot
 
 | 名称 | 说明                |
 | ---- | ------------------- |
 | -    | 自定义 Tag 显示内容 |
+
+### Events
+
+| 事件名 | 说明           | 回调参数 |
+| ------ | -------------- | -------- |
+| close  | 关闭标签时触发 | -        |
 
 ### 外部样式类
 

@@ -85,7 +85,7 @@ Page({
     fileList: [
       {
         url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        statue: 'uploading',
+        status: 'uploading',
         message: '上传中',
       },
       {

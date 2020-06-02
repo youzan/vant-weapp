@@ -7978,10 +7978,10 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-miniprogram-api-typings@2.10.4:
-  version "2.10.4"
-  resolved "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-2.10.4.tgz#13165d1e77084c3ec79ec93d8c74974f77425eb0"
-  integrity sha512-IXWi6sJFd/EH1wNR8rtOx2+hJOwZk7jKFVIshQ0aAlRaKk0P4Jack4SItzUwNURgRykvrleGgErI/jH5hsiniw==
+miniprogram-api-typings@2.11.0:
+  version "2.11.0"
+  resolved "http://registry.npm.qima-inc.com/miniprogram-api-typings/download/miniprogram-api-typings-2.11.0.tgz#c0a91ca2fea80e344509399c580cbad504a8f905"
+  integrity sha1-wKkcov6oDjRFCTmcWAy61QSo+QU=
 
 miniprogram-ci@^1.0.27:
   version "1.0.29"

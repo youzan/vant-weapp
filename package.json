@@ -68,7 +68,7 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^10.0.0",
-    "miniprogram-api-typings": "2.10.4",
+    "miniprogram-api-typings": "2.11.0",
     "miniprogram-ci": "^1.0.27",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",

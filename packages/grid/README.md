@@ -100,12 +100,12 @@
 
 ### 提示信息
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`badge`属性后，会在图标右上角展示相应的徽标
 
 ```html
 <van-grid column-num="2">
   <van-grid-item icon="home-o" text="文字" dot />
-  <van-grid-item icon="search" text="文字" info="99+" />
+  <van-grid-item icon="search" text="文字" badge="99+" />
 </van-grid>
 ```
 
@@ -116,6 +116,7 @@
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | column-num | 列数 | _number_ | `4` | - |
+| icon-size `v1.3.2` | 图标大小，默认单位为`px` | _string_ | `28px` |
 | gutter | 格子之间的间距，默认单位为`px` | _string \| number_ | `0` | - |
 | border | 是否显示边框 | _boolean_ | `true` | - |
 | center | 是否将格子内容居中显示 | _boolean_ | `true` | - |
@@ -136,7 +137,7 @@
 | text | 文字 | _string_ | - | - |
 | icon | 图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` | - |
-| info | 图标右上角徽标的内容 | _string \| number_ | - | - |
+| badge | 图标右上角徽标的内容 | _string \| number_ | - | - |
 | url | 点击后跳转的链接地址 | _string_ | - | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` | - |
 

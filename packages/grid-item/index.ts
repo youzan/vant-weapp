@@ -17,6 +17,7 @@ VantComponent({
     icon: String,
     dot: Boolean,
     info: null,
+    badge: null,
     text: String,
     useSlot: Boolean,
   },
@@ -44,6 +45,7 @@ VantComponent({
         clickable,
         center,
         direction,
+        iconSize,
       } = data;
       const width = `${100 / columnNum}%`;
 
@@ -85,6 +87,7 @@ VantComponent({
         gutter,
         clickable,
         direction,
+        iconSize,
       });
     },
 

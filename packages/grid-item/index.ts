@@ -59,7 +59,7 @@ VantComponent({
         styleWrapper.push(`padding-right: ${gutterValue}`);
 
         const index = children.indexOf(this);
-        if (index >= columnNum) {
+        if (index >= columnNum && !square) {
           styleWrapper.push(`margin-top: ${gutterValue}`);
         }
       }

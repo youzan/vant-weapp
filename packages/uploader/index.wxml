@@ -42,7 +42,7 @@
         name="clear"
         class="van-uploader__preview-delete"
         data-index="{{ index }}"
-        bind:tap="deleteItem"
+        catch:tap="deleteItem"
       />
     </view>
 

@@ -41,6 +41,10 @@ VantComponent({
       type: String,
       observer: 'updateChildren',
     },
+    iconSize: {
+      type: String,
+      observer: 'updateChildren',
+    },
   },
 
   data: {

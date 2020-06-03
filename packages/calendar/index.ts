@@ -316,7 +316,7 @@ VantComponent({
     },
 
     onConfirm() {
-      if (this.data.type === 'range' && !this.checkRange()) {
+      if (this.data.type === 'range' && !this.checkRange(this.data.currentDate)) {
         return;
       }
       wx.nextTick(() => {

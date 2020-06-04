@@ -234,8 +234,8 @@ VantComponent({
       }
 
       // date type
-      value = Math.max(value, data.minDate);
-      value = Math.min(value, data.maxDate);
+      value = Math.max(new Date(value).getTime(), data.minDate);
+      value = Math.min(new Date(value).getTime(), data.maxDate);
 
       return value;
     },

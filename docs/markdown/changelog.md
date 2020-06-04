@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v1.3.2](https://github.com/youzan/vant-weapp/tree/v1.3.2)
+`2020-06-04`
+
+**Features**
+
+- button: 新增 form-type 属性 [\#3208](https://github.com/youzan/vant-weapp/pull/3208)
+- grid: 新增 icon-size、badge 属性 [\#3236](https://github.com/youzan/vant-weapp/pull/3236)
+- grid: 新增 direction 属性 [\#3192](https://github.com/youzan/vant-weapp/pull/3192)
+
+**Bug Fixes**
+
+- Grid: 修复开启 `square` 时横、纵向间距不同 [\#3231](https://github.com/youzan/vant-weapp/pull/3231)
+- uploader: 修复点击删除图标时触发 click-preview 事件 [\#3230](https://github.com/youzan/vant-weapp/pull/3230)
+- circle: 修复 `type="2d"` 不生效 [\#3228](https://github.com/youzan/vant-weapp/pull/3228)
+- calendar: 修复在选择区间时，点击确定报错 [\#3195](https://github.com/youzan/vant-weapp/pull/3195)
+- tag: 修复 css 变量名拼写错误 [\#3191](https://github.com/youzan/vant-weapp/pull/3191)
+
 ### [v1.3.1](https://github.com/youzan/vant-weapp/tree/v1.3.1)
 `2020-05-24`
 

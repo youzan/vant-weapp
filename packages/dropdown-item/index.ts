@@ -122,6 +122,7 @@ VantComponent({
           this.rerender();
         });
       } else {
+        this.onClosed();
         this.rerender();
       }
     },

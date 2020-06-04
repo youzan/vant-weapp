@@ -35,6 +35,14 @@ VantComponent({
       value: true,
       observer: 'updateChildren',
     },
+    direction: {
+      type: String,
+      observer: 'updateChildren',
+    },
+    iconSize: {
+      type: String,
+      observer: 'updateChildren',
+    },
   },
   data: {
     viewStyle: '',

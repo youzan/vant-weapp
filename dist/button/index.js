@@ -1,13 +1,19 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
+import { canIUseFormFieldButton } from '../common/version';
+const mixins = [button, openType];
+if (canIUseFormFieldButton()) {
+  mixins.push('wx://form-field-button');
+}
 VantComponent({
-  mixins: [button, openType],
+  mixins,
   classes: ['hover-class', 'loading-class'],
   data: {
     baseStyle: '',
   },
   props: {
+    formType: String,
     icon: String,
     classPrefix: {
       type: String,

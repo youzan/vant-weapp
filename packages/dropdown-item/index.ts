@@ -126,5 +126,8 @@ VantComponent({
         this.rerender();
       }
     },
+    catchTouchmove:function(e) {
+      return;
+    },
   },
 });

@@ -8,6 +8,7 @@
     data-index="{{ index }}"
     class="{{ utils.bem('dropdown-menu__item', { disabled: item.disabled }) }}"
     bind:tap="onTitleTap"
+    catchtouchmove="catchTouchmove"
   >
     <view
       class="{{ item.titleClass }} {{ utils.bem('dropdown-menu__title', { active: item.showPopup, down: item.showPopup === (direction === 'down') }) }}"

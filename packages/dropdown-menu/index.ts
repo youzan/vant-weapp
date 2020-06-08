@@ -139,5 +139,8 @@ VantComponent({
         this.toggleItem(index);
       }
     },
+    catchTouchmove:function(e) {
+      return;
+    },
   },
 });

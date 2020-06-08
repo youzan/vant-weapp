@@ -7,7 +7,7 @@
 >
   <van-popup
     show="{{ showPopup }}"
-    custom-style="position: absolute;{{ popupStyle }}"
+    custom-style="position: absolute;height:{{options.length>5?'51%':'auto'}};{{popupStyle }}"
     overlay-style="position: absolute;"
     overlay="{{ overlay }}"
     position="{{ direction === 'down' ? 'top' : 'bottom' }}"
@@ -27,6 +27,7 @@
       clickable
       icon="{{ item.icon }}"
       bind:tap="onOptionTap"
+      atchtouchmove="{{options.length>5?'':'catchTouchmove'}}"
     >
       <view
         slot="title"

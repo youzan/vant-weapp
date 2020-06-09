@@ -66,12 +66,20 @@
 
     &-delete {
       position: absolute;
-      top: -8px;
-      right: -8px;
-      color: @uploader-delete-color;
-      font-size: @uploader-delete-icon-size;
-      background-color: @uploader-delete-background-color;
-      border-radius: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      display: flex;
+      padding: 10px;
+      border-radius: 50%;
+      transform: translate(50%, -50%);
+
+      &__icon {
+        color: @uploader-delete-color;
+        font-size: @uploader-delete-icon-size;
+        background-color: @uploader-delete-background-color;
+        border-radius: 50%;
+      }
     }
   }
 

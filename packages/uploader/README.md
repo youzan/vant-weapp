@@ -65,6 +65,32 @@ Page({
         url: 'http://iph.href.lu/60x60?text=default',
         name: '图片2',
         isImage: true,
+        deletable: true,
+      },
+    ],
+  },
+});
+```
+
+### 图片编辑状态
+
+通过`deletable `可以标识所有图片或者单张图片是否可删除。如果`Props `的全局`deletable `为`false`，则所有图片都不展示删除按钮；如果`Props `的全局`deletable `为`true`，则可通过设置每一个图片对象里的`deletable `来控制每一张图片是否显示删除按钮，如果图片对象里不设置则默认为`true`。
+
+```html
+<van-uploader file-list="{{ fileList }}" deletable="{{ true }}" />
+```
+
+```js
+Page({
+  data: {
+    fileList: [
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        deletable: true,
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        deletable: false,
       },
     ],
   },

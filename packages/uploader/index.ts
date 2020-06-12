@@ -77,6 +77,10 @@ VantComponent({
           typeof item.isImage === 'undefined'
             ? isImageFile(item)
             : item.isImage,
+        deletable:
+          typeof item.deletable === 'undefined'
+            ? true
+            : item.deletable,
       }));
       this.setData({ lists, isInCount: lists.length < maxCount });
     },

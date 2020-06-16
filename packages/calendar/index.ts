@@ -165,7 +165,7 @@ VantComponent({
       }
 
       if (type === 'multiple') {
-        return [defaultDate || minDate];
+        return defaultDate || [minDate];
       }
 
       return defaultDate || minDate;
@@ -316,7 +316,10 @@ VantComponent({
     },
 
     onConfirm() {
-      if (this.data.type === 'range' && !this.checkRange(this.data.currentDate)) {
+      if (
+        this.data.type === 'range' &&
+        !this.checkRange(this.data.currentDate)
+      ) {
         return;
       }
       wx.nextTick(() => {

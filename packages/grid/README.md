@@ -77,6 +77,18 @@
 </van-grid>
 ```
 
+### 内容横排
+
+将`direction`属性设置为`horizontal`，可以让宫格的内容呈横向排列
+
+```html
+<van-grid direction="horizontal" column-num="2">
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+  <van-grid-item icon="photo-o" text="文字" />
+</van-grid>
+```
+
 ### 页面跳转
 
 可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型
@@ -122,6 +134,7 @@
 | center | 是否将格子内容居中显示 | _boolean_ | `true` | - |
 | square | 是否将格子固定为正方形 | _boolean_ | `false` | - |
 | clickable | 是否开启格子点击反馈 | _boolean_ | `false` | - |
+| direction | 格子内容排列的方向，可选值为 `horizontal` | _string_ | `vertical` | - |
 | use-slot | 是否使用自定义内容的插槽 | _boolean_ | `false` |
 
 ### Grid 外部样式类

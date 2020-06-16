@@ -38,7 +38,7 @@
        <text wx:if="{{ item.message }}" class="van-uploader__upload-text">{{ item.message }}</text>
       </view>
       <view
-        wx:if="{{ deletable }}"
+        wx:if="{{ deletable && item.deletable }}"
         data-index="{{ index }}"
         class="van-uploader__preview-delete"
         catch:tap="deleteItem"

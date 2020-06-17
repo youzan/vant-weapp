@@ -11,6 +11,7 @@
   required="{{ required }}"
   clickable="{{ clickable }}"
   title-width="{{ titleWidth }}"
+  title-class="{{ labelClass }}"
   custom-style="{{ customStyle }}"
   arrow-direction="{{ arrowDirection }}"
   custom-class="van-field"

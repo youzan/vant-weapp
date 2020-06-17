@@ -6,7 +6,7 @@ import { canIUseModel } from '../common/version';
 VantComponent({
   field: true,
 
-  classes: ['label-class', 'input-class', 'right-icon-class'],
+  classes: ['input-class', 'right-icon-class'],
 
   props: {
     ...commonProps,
@@ -26,6 +26,7 @@ VantComponent({
       observer: 'setShowClear',
     },
     required: Boolean,
+    labelClass: String, 
     iconClass: String,
     clearable: {
       type: Boolean,

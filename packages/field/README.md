@@ -232,6 +232,7 @@ Page({
 | auto-focus | 自动聚焦，拉起键盘 | _boolean_ | `false` |
 | disable-default-padding | 是否去掉 iOS 下的默认内边距，只对 textarea 有效 | _boolean_ | `true` |
 | cursor | 指定 focus 时的光标位置 | _number_ | `-1` |
+| label-class | 左侧标题样式类 | _string_ | - |
 
 ### Events
 

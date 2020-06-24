@@ -1,9 +1,8 @@
 import { VantComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
-import { canIUseModel } from '../common/version';
 VantComponent({
   field: true,
-  classes: ['input-class', 'right-icon-class'],
+  classes: ['input-class', 'right-icon-class', 'label-class'],
   props: Object.assign(
     Object.assign(
       Object.assign(Object.assign({}, commonProps), inputProps),
@@ -105,9 +104,7 @@ VantComponent({
       this.$emit('keyboardheightchange', event.detail);
     },
     emitChange() {
-      if (canIUseModel()) {
-        this.setData({ value: this.value });
-      }
+      this.setData({ value: this.value });
       wx.nextTick(() => {
         this.$emit('input', this.value);
         this.$emit('change', this.value);

@@ -152,7 +152,7 @@ VantComponent({
         ];
       }
       if (type === 'multiple') {
-        return [defaultDate || minDate];
+        return defaultDate || [minDate];
       }
       return defaultDate || minDate;
     },

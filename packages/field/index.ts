@@ -6,7 +6,7 @@ import { canIUseModel } from '../common/version';
 VantComponent({
   field: true,
 
-  classes: ['input-class', 'right-icon-class'],
+  classes: ['input-class', 'right-icon-class', 'label-class'],
 
   props: {
     ...commonProps,

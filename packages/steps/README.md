@@ -56,6 +56,47 @@ Page({
 />
 ```
 
+### 自定义图标
+
+可以通过 `inactiveIcon` 和 `activeIcon` 属性分别设置每一项的图标
+
+```html
+<van-steps steps="{{ steps }}" active="{{ active }}" />
+```
+
+```javascript
+Page({
+  data: {
+    steps: [
+      {
+        text: '步骤一',
+        desc: '描述信息',
+        inactiveIcon: 'location-o',
+        activeIcon: 'success',
+      },
+      {
+        text: '步骤二',
+        desc: '描述信息',
+        inactiveIcon: 'like-o',
+        activeIcon: 'plus',
+      },
+      {
+        text: '步骤三',
+        desc: '描述信息',
+        inactiveIcon: 'star-o',
+        activeIcon: 'cross',
+      },
+      {
+        text: '步骤四',
+        desc: '描述信息',
+        inactiveIcon: 'phone-o',
+        activeIcon: 'fail',
+      },
+    ],
+  },
+});
+```
+
 ### 竖向步骤条
 
 可以通过设置`direction`属性来改变步骤条的显示方式

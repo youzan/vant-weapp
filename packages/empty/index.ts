@@ -15,6 +15,8 @@ VantComponent({
       this.setData({
         imageUrl: `https://img.yzcdn.cn/vant/empty-image-${this.data.image}.png`,
       });
+    } else {
+      this.setData({ imageUrl: this.data.image });
     }
   },
 });

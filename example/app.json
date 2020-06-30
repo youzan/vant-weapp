@@ -49,6 +49,7 @@
     "pages/index-bar/index",
     "pages/skeleton/index",
     "pages/divider/index",
+    "pages/empty/index",
     "pages/calendar/index"
   ],
   "window": {
@@ -72,6 +73,7 @@
     "van-count-down": "./dist/count-down/index",
     "van-dialog": "./dist/dialog/index",
     "van-divider": "./dist/divider/index",
+    "van-empty": "./dist/empty/index",
     "van-field": "./dist/field/index",
     "van-goods-action": "./dist/goods-action/index",
     "van-goods-action-icon": "./dist/goods-action-icon/index",

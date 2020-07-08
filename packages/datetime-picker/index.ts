@@ -292,12 +292,12 @@ VantComponent({
 
       const picker = this.getPicker();
 
+      const values = picker.getValues();
       if (data.type === 'time') {
-        const indexes = picker.getIndexes();
-        value = `${+data.columns[0].values[indexes[0]]}:${+data.columns[1]
-          .values[indexes[1]]}`;
+        const hour = getTrueValue(values[0]);
+        const minute = getTrueValue(values[1]);
+        value = `${padZero(hour)}:${padZero(minute)}`;
       } else {
-        const values = picker.getValues();
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);

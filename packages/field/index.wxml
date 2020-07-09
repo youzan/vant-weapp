@@ -16,7 +16,7 @@
   title-class="label-class"
 >
   <slot name="left-icon" slot="icon" />
-  <view wx:if="{{ label }}" class="van-field__label" slot="title">
+  <view wx:if="{{ label }}" class="{{ utils.bem('field__label', { disabled }) }}" slot="title">
     {{ label }}
   </view>
   <slot wx:else name="label" slot="title" />
@@ -33,7 +33,7 @@
       maxlength="{{ maxlength }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ utils.bem('field__placeholder', { error }) }}"
+      placeholder-class="{{ utils.bem('field__placeholder', { error, disabled }) }}"
       auto-height="{{ !!autosize }}"
       style="{{ computed.inputStyle(autosize) }}"
       cursor-spacing="{{ cursorSpacing }}"

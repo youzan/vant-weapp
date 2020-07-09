@@ -103,7 +103,7 @@ VantComponent({
   methods: {
     updateValue() {
       const { data } = this;
-      const val = this.correctValue(this.data.value);
+      const val = this.correctValue(data.value);
       const isEqual = val === data.innerValue;
       if (!isEqual) {
         this.updateColumnValue(val).then(() => {
@@ -291,13 +291,17 @@ VantComponent({
       let value;
 
       const picker = this.getPicker();
+      const originColumns = this.getOriginColumns();
 
       if (data.type === 'time') {
         const indexes = picker.getIndexes();
-        value = `${+data.columns[0].values[indexes[0]]}:${+data.columns[1]
+        value = `${+originColumns[0].values[indexes[0]]}:${+originColumns[1]
           .values[indexes[1]]}`;
       } else {
-        const values = picker.getValues();
+        const indexes = picker.getIndexes();
+        const values = indexes.map(
+          (value, index) => originColumns[index].values[value]
+        );
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);
@@ -324,7 +328,8 @@ VantComponent({
 
     updateColumnValue(value) {
       let values = [];
-      const { type, formatter = defaultFormatter } = this.data;
+      const { type } = this.data;
+      const formatter = this.data.formatter || defaultFormatter;
       const picker = this.getPicker();
 
       if (type === 'time') {

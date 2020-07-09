@@ -33,7 +33,7 @@
         wx:if="{{ item.status === 'uploading' || item.status === 'failed' }}"
         class="van-uploader__mask"
       >
-       <van-icon wx:if="{{ item.status === 'failed' }}" name="warning-o" class="van-uploader__mask-icon" />
+       <van-icon wx:if="{{ item.status === 'failed' }}" name="close" class="van-uploader__mask-icon" />
        <van-loading wx:else custom-class="van-uploader__loading" />
        <text wx:if="{{ item.message }}" class="van-uploader__mask-message">{{ item.message }}</text>
       </view>

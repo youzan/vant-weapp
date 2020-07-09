@@ -95,16 +95,21 @@ VantComponent({
     setAnchorsRect() {
       return Promise.all(
         this.children.map((anchor) =>
-          anchor
-            .getRect('.van-index-anchor-wrapper')
-            .then(
-              (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-                Object.assign(anchor, {
-                  height: rect.height,
-                  top: rect.top + this.scrollTop,
-                });
-              }
-            )
+          let scrollTop = 0;
+
+          return anchor
+            .createSelectorQuery()
+            .selectViewport()
+            .scrollOffset((res) => {
+              scrollTop = res.scrollTop;
+            })
+            .select('.van-index-anchor-wrapper')
+            .boundingClientRect((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+              Object.assign(anchor, {
+                height: rect.height,
+                top: rect.top + scrollTop,
+              });
+            }).exec();
         )
       );
     },

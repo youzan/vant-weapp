@@ -4,6 +4,11 @@
 .van-field {
   .theme(--cell-icon-size,  '@field-icon-size');
 
+  &__label {
+    .theme(color, '@field-label-color');
+    .theme(margin-right, '@field-label-margin-right');
+  }
+
   &__body {
     display: flex;
     align-items: center;

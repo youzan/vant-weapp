@@ -206,7 +206,7 @@ Page({
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | password | 是否是密码类型 | _boolean_ | `false` |
-| title-width | 标题宽度 | _string_ | `90px` |
+| title-width | 标题宽度 | _string_ | `6.2em` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `-1` |
 | placeholder | 输入框为空时占位符 | _string_ | - |
 | placeholder-style | 指定 placeholder 的样式 | _string_ | - |

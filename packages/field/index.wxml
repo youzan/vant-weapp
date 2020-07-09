@@ -4,7 +4,6 @@
 <van-cell
   size="{{ size }}"
   icon="{{ leftIcon }}"
-  title="{{ label }}"
   center="{{ center }}"
   border="{{ border }}"
   is-link="{{ isLink }}"
@@ -17,7 +16,10 @@
   title-class="label-class"
 >
   <slot name="left-icon" slot="icon" />
-  <slot name="label" slot="title" />
+  <view wx:if="{{ label }}" class="van-field__label" slot="title">
+    {{ label }}
+  </view>
+  <slot wx:else name="label" slot="title" />
   <view class="{{ utils.bem('field__body', [type]) }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"

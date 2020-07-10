@@ -13,7 +13,7 @@ VantComponent({
         beforeRead: null,
         previewSize: {
           type: null,
-          value: 90,
+          value: 80,
         },
         name: {
           type: [Number, String],

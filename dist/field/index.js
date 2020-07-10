@@ -18,16 +18,8 @@ VantComponent({
       leftIcon: String,
       rightIcon: String,
       autosize: [Boolean, Object],
-      readonly: {
-        type: Boolean,
-        observer: 'setShowClear',
-      },
       required: Boolean,
       iconClass: String,
-      clearable: {
-        type: Boolean,
-        observer: 'setShowClear',
-      },
       clickable: Boolean,
       inputAlign: String,
       customStyle: String,
@@ -35,13 +27,21 @@ VantComponent({
       arrowDirection: String,
       showWordLimit: Boolean,
       errorMessageAlign: String,
+      readonly: {
+        type: Boolean,
+        observer: 'setShowClear',
+      },
+      clearable: {
+        type: Boolean,
+        observer: 'setShowClear',
+      },
       border: {
         type: Boolean,
         value: true,
       },
       titleWidth: {
         type: String,
-        value: '90px',
+        value: '6.2em',
       },
     }
   ),

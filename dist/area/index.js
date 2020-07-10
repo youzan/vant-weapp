@@ -165,27 +165,30 @@ VantComponent({
         return;
       }
       const stack = [];
-      stack.push(picker.setColumnValues(0, province, false));
-      stack.push(picker.setColumnValues(1, city, false));
-      if (city.length && code.slice(2, 4) === '00') {
-        [{ code }] = city;
+      const indexes = [];
+      if (this.data.columnsNum >= 1) {
+        stack.push(picker.setColumnValues(0, province, false));
+        indexes.push(this.getIndex('province', code));
       }
-      stack.push(
-        picker.setColumnValues(
-          2,
-          this.getList('county', code.slice(0, 4)),
-          false
-        )
-      );
+      if (this.data.columnsNum >= 2) {
+        stack.push(picker.setColumnValues(1, city, false));
+        indexes.push(this.getIndex('province', code));
+        if (city.length && code.slice(2, 4) === '00') {
+          [{ code }] = city;
+        }
+      }
+      if (this.data.columnsNum === 3) {
+        stack.push(
+          picker.setColumnValues(
+            2,
+            this.getList('county', code.slice(0, 4)),
+            false
+          )
+        );
+      }
       return Promise.all(stack)
         .catch(() => {})
-        .then(() =>
-          picker.setIndexes([
-            this.getIndex('province', code),
-            this.getIndex('city', code),
-            this.getIndex('county', code),
-          ])
-        )
+        .then(() => picker.setIndexes(indexes))
         .catch(() => {});
     },
     getValues() {

@@ -123,6 +123,7 @@
 | icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
 | title | 左侧标题 | _string \| number_ | - |
 | title-width | 标题宽度，须包含单位 | _string_ | - | - |
+| spacing | 标题与内容间隔，须包含单位 | _string_ | - | 1.4.0 |
 | value | 右侧内容 | _string \| number_ | - | - |
 | label | 标题下方的描述信息 | _string_ | - | - |
 | size | 单元格大小，可选值为 `large` | _string_ | - | - |

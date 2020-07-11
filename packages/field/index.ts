@@ -45,6 +45,10 @@ VantComponent({
       type: String,
       value: '6.2em',
     },
+    spacing: {
+      type: String,
+      value: '12px',
+    },
   },
 
   data: {

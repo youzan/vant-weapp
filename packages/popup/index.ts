@@ -76,7 +76,7 @@ VantComponent({
     },
 
     observeClass() {
-      const { transition, position } = this.data;
+      const { transition, position, duration } = this.data;
 
       const updateData: { [key: string]: any } = {
         name: transition || position,
@@ -84,6 +84,9 @@ VantComponent({
 
       if (transition === 'none') {
         updateData.duration = 0;
+        this.originDuration = duration;
+      } else if (this.originDuration != null) {
+        updateData.duration = this.originDuration;
       }
 
       this.setData(updateData);

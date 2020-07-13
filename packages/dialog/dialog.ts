@@ -72,6 +72,11 @@ const Dialog: Dialog = (options) => {
         onConfirm: resolve,
         ...options,
       });
+
+      wx.nextTick(() => {
+        dialog.setData({ show: true });
+      });
+
       queue.push(dialog);
     } else {
       console.warn(
@@ -82,7 +87,7 @@ const Dialog: Dialog = (options) => {
 };
 
 Dialog.defaultOptions = {
-  show: true,
+  show: false,
   title: '',
   width: null,
   message: '',

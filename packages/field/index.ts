@@ -44,10 +44,11 @@ VantComponent({
     titleWidth: {
       type: String,
       value: '6.2em',
-    },
-    spacing: {
-      type: String,
-      value: '12px',
+      observer(val: string) {
+        this.setData({
+          titleStyle: this.makeTitleStyle(val),
+        });
+      },
     },
   },
 
@@ -55,11 +56,15 @@ VantComponent({
     focused: false,
     innerValue: '',
     showClear: false,
+    titleStyle: '',
   },
 
   created() {
     this.value = this.data.value;
-    this.setData({ innerValue: this.value });
+    this.setData({
+      innerValue: this.value,
+      titleStyle: this.makeTitleStyle(this.data.titleWidth),
+    });
   },
 
   methods: {
@@ -142,5 +147,13 @@ VantComponent({
     },
 
     noop() {},
+
+    makeTitleStyle(titleWidth) {
+      let titleStyle = 'margin-right: 12px; ';
+      if (titleWidth) {
+        titleStyle += `max-width: ${titleWidth}; min-width: ${titleWidth}; `;
+      }
+      return titleStyle;
+    },
   },
 });

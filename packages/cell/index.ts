@@ -27,7 +27,7 @@ VantComponent({
       type: String,
       observer(value: string) {
         this.setData({
-          titleStyle: this.makeTitleStyle(value, this.data.spacing),
+          titleViewStyle: this.makeTitleStyle(this.data.titleStyle, value),
         });
       },
     },
@@ -45,11 +45,11 @@ VantComponent({
       type: Boolean,
       value: true,
     },
-    spacing: {
+    titleStyle: {
       type: String,
       observer(value: string) {
         this.setData({
-          titleStyle: this.makeTitleStyle(this.data.titleWidth, value),
+          titleViewStyle: this.makeTitleStyle(value, this.data.titleWidth),
         });
       },
     },
@@ -57,14 +57,14 @@ VantComponent({
 
   data: {
     rightIconName: 'arrow',
-    titleStyle: '',
+    titleViewStyle: '',
   },
 
   mounted() {
-    const { arrowDirection, titleWidth, spacing } = this.data;
+    const { arrowDirection, titleStyle, titleWidth } = this.data;
     this.setData({
       rightIconName: this.makeRightIconName(arrowDirection),
-      titleStyle: this.makeTitleStyle(titleWidth, spacing),
+      titleViewStyle: this.makeTitleStyle(titleStyle, titleWidth),
     });
   },
 
@@ -76,15 +76,15 @@ VantComponent({
     makeRightIconName(arrowDirection) {
       return arrowDirection ? `arrow-${arrowDirection}` : 'arrow';
     },
-    makeTitleStyle(titleWidth, spacing) {
-      let titleStyle = '';
-      if (titleWidth) {
-        titleStyle += `max-width: ${titleWidth}; min-width: ${titleWidth}; `;
+    makeTitleStyle(titleStyle, titleWidth) {
+      let titleViewStyle = '';
+      // titleStyle 与 titleWidth 互斥，titleStyle 优先级更高
+      if (titleStyle) {
+        titleViewStyle = titleStyle;
+      } else if (titleWidth) {
+        titleViewStyle += `max-width: ${titleWidth}; min-width: ${titleWidth}; `;
       }
-      if (spacing) {
-        titleStyle += `margin-right: ${spacing}; `;
-      }
-      return titleStyle;
+      return titleViewStyle;
     },
   },
 });

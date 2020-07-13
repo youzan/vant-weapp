@@ -123,7 +123,6 @@
 | icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
 | title | 左侧标题 | _string \| number_ | - |
 | title-width | 标题宽度，须包含单位 | _string_ | - | - |
-| spacing | 标题与内容间隔，须包含单位 | _string_ | - | 1.4.0 |
 | value | 右侧内容 | _string \| number_ | - | - |
 | label | 标题下方的描述信息 | _string_ | - | - |
 | size | 单元格大小，可选值为 `large` | _string_ | - | - |
@@ -136,6 +135,7 @@
 | required | 是否显示表单必填星号 | _boolean_ | `false` | - |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | - | - |
 | use-label-slot | 是否使用 label slot | _boolean_ | `false` | - |
+| title-style | 标题样式，与 title-width 互斥，title-style优先级更高 | _string_ | - | 1.4.0 |
 
 ### Cell Event
 

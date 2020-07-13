@@ -16,7 +16,7 @@
   <slot wx:else name="icon" />
 
   <view
-    style="{{ titleStyle }}"
+    style="{{ titleViewStyle }}"
     class="van-cell__title title-class"
   >
     <block wx:if="{{ title }}">{{ title }}</block>

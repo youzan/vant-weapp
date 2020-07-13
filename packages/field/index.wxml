@@ -9,12 +9,11 @@
   is-link="{{ isLink }}"
   required="{{ required }}"
   clickable="{{ clickable }}"
-  title-width="{{ titleWidth }}"
+  title-style="{{ titleStyle }}"
   custom-style="{{ customStyle }}"
   arrow-direction="{{ arrowDirection }}"
   custom-class="van-field"
   title-class="label-class"
-  spacing="{{ spacing }}"
 >
   <slot name="left-icon" slot="icon" />
   <view wx:if="{{ label }}" class="{{ utils.bem('field__label', { disabled }) }}" slot="title">

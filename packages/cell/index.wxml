@@ -16,7 +16,7 @@
   <slot wx:else name="icon" />
 
   <view
-    style="{{ titleViewStyle }}"
+    style="{{ (titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth + ';' : '') + titleStyle }}"
     class="van-cell__title title-class"
   >
     <block wx:if="{{ title }}">{{ title }}</block>
@@ -35,7 +35,7 @@
 
   <van-icon
     wx:if="{{ isLink }}"
-    name="{{ rightIconName }}"
+    name="{{ arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow' }}"
     class="van-cell__right-icon-wrap right-icon-class"
     custom-class="van-cell__right-icon"
   />

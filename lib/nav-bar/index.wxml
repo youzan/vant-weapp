@@ -4,9 +4,9 @@
 
 <view
   class="{{ utils.bem('nav-bar', { fixed }) }} custom-class {{ border ? 'van-hairline--bottom' : '' }}"
-  style="{{ baseStyle }}"
+  style="{{ baseStyle }}; {{ customStyle }}"
 >
-  <view class="van-nav-bar__content" style="{{ customStyle }}">
+  <view class="van-nav-bar__content">
     <view class="van-nav-bar__left" bind:tap="onClickLeft">
       <block wx:if="{{ leftArrow || leftText }}">
         <van-icon

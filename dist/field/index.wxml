@@ -10,6 +10,7 @@
   required="{{ required }}"
   clickable="{{ clickable }}"
   title-width="{{ titleWidth }}"
+  title-style="margin-right: 12px;"
   custom-style="{{ customStyle }}"
   arrow-direction="{{ arrowDirection }}"
   custom-class="van-field"

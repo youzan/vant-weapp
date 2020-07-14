@@ -43,8 +43,8 @@
         class="van-uploader__preview-delete"
         catch:tap="deleteItem"
       >
-      <van-icon name="clear" class="van-uploader__preview-delete__icon" />
-    </view>
+        <van-icon name="cross" class="van-uploader__preview-delete-icon" />
+      </view>
     </view>
 
     <!-- 上传样式 -->

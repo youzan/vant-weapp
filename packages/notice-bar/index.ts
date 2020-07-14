@@ -1,9 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 
-const FONT_COLOR = '#ed6a0c';
-const BG_COLOR = '#fffbe8';
-
 VantComponent({
   props: {
     text: {
@@ -48,15 +45,10 @@ VantComponent({
       type: String,
       value: '',
     },
-    color: {
-      type: String,
-      value: FONT_COLOR,
-    },
-    backgroundColor: {
-      type: String,
-      value: BG_COLOR,
-    },
-    wrapable: Boolean,
+    color: String,
+    backgroundColor: String,
+    background: String,
+    wrapable: Boolean
   },
 
   data: {
@@ -134,11 +126,14 @@ VantComponent({
       }, this.duration);
     },
 
-    onClickIcon() {
-      this.timer && clearTimeout(this.timer);
-      this.timer = null;
+    onClickIcon(event) {
+      if (this.data.mode === 'closeable') {
+        this.timer && clearTimeout(this.timer);
+        this.timer = null;
 
-      this.setData({ show: false });
+        this.setData({ show: false });
+        this.$emit('close', event.detail);
+      }
     },
 
     onClick(event: Weapp.Event) {

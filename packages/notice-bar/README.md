@@ -16,62 +16,60 @@
 
 ```html
 <van-notice-bar
-  left-icon="https://img.yzcdn.cn/1.png"
-  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+  left-icon="volume-o"
+  text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
 />
 ```
 
-### 禁用滚动
+### 滚动播放
 
-文字内容多于一行时，可通过`scrollable`参数控制是否开启滚动
+通知栏的内容长度溢出时会自动开启滚动播放，通过 `scrollable` 属性可以控制该行为。
 
 ```html
+<!-- 文字较短时，通过设置 scrollable 属性开启滚动播放 -->
+<van-notice-bar scrollable text="技术是开发它的人的共同灵魂。" />
+
+<!-- 文字较长时，通过禁用 scrollable 属性关闭滚动播放 -->
 <van-notice-bar
-  scrollable="false"
-  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+  scrollable="{{ false }}"
+  text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
 />
 ```
 
 ### 多行展示
 
-禁用滚动时，可以设置`wrapable`来开启多行展示
+文字较长时，可以通过设置 `wrapable` 属性来开启多行展示。
 
 ```html
 <van-notice-bar
   wrapable
-  scrollable="false"
-  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+  scrollable="{{ false }}"
+  text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
 />
 ```
 
-### 使用左右插槽
+### 通知栏模式
 
-使用`left-icon`插槽和`right-icon`插槽自定义左右固定内容
-
-```html
-<van-notice-bar
-  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
->
-  <text slot="left-icon">[公告]</text>
-  <text slot="right-icon">[结束]</text>
-</van-notice-bar>
-```
-
-### 通告栏模式
-
-默认模式为空，支持`closeable`和`link`。
+通知栏支持 `closeable` 和 `link` 两种模式。
 
 ```html
 <!-- closeable 模式，在右侧显示关闭按钮 -->
-<van-notice-bar
-  mode="closeable"
-  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
-/>
+<van-notice-bar mode="closeable" text="技术是开发它的人的共同灵魂。" />
 
 <!-- link 模式，在右侧显示链接箭头 -->
+<van-notice-bar mode="link" text="技术是开发它的人的共同灵魂。" />
+```
+
+### 自定义样式
+
+通过 `color` 属性设置文本颜色，通过 `background` 属性设置背景色。
+
+```html
 <van-notice-bar
-  mode="link"
-  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+  color="#1989fa"
+  background="#ecf9ff"
+  left-icon="info-o"
+  text="技术是开发它的人的共同灵魂。"
 />
 ```
 
@@ -91,29 +89,32 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| mode | 通告栏模式，可选值为 `closeable` `link` | _string_ | `''` | - |
-| delay | 动画延迟时间 (s) | _number_ | `1` | - |
-| speed | 滚动速率 (px/s) | _number_ | `50` | - |
-| scrollable | 是否在长度溢出时滚动播放 | _boolean_ | `true` | - |
-| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
-| color | 文本颜色 | _string_ | `#ed6a0c` | - |
-| backgroundColor | 滚动条背景 | _string_ | `#fffbe8` | - |
-| open-type | 微信开放能力 | _string_ | `navigate` | - |
+| 参数       | 说明                                     | 类型      | 默认值     |
+| ---------- | ---------------------------------------- | --------- | ---------- |
+| mode       | 通告栏模式，可选值为 `closeable` `link`  | _string_  | `''`       |
+| text       | 通知文本内容                             | _string_  | `''`       |
+| color      | 通知文本颜色                             | _string_  | `#ed6a0c`  |
+| background | 滚动条背景                               | _string_  | `#fffbe8`  |
+| left-icon  | 左侧[图标名称](#/icon)或图片链接         | _string_  | -          |
+| delay      | 动画延迟时间 (s)                         | _number_  | `1`        |
+| speed      | 滚动速率 (px/s)                          | _number_  | `50`       |
+| scrollable | 是否开启滚动播放，内容长度溢出时默认开启 | _boolean_ | `true`     |
+| wrapable   | 是否开启文本换行，只在禁用滚动时生效     | _boolean_ | `false`    |
+| open-type  | 微信开放能力                             | _string_  | `navigate` |
 
 ### Events
 
-| 事件名     | 说明         | 参数 |
-| ---------- | ------------ | ---- |
-| bind:click | 点击事件回调 | -    |
+| 事件名 | 说明             | 参数           |
+| ------ | ---------------- | -------------- |
+| click  | 点击通知栏时触发 | _event: Event_ |
+| close  | 关闭通知栏时触发 | _event: Event_ |
 
 ### Slot
 
-| 名称       | 说明               |
-| ---------- | ------------------ |
-| left-icon  | 自定义左侧固定内容 |
-| right-icon | 自定义右侧固定内容 |
+| 名称       | 说明           |
+| ---------- | -------------- |
+| left-icon  | 自定义左侧图标 |
+| right-icon | 自定义右侧图标 |
 
 ### 外部样式类
 

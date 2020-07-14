@@ -15,6 +15,7 @@ VantComponent({
 
   props: {
     icon: String,
+    iconColor: String,
     dot: Boolean,
     info: null,
     badge: null,

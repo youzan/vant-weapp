@@ -10,7 +10,7 @@
     </block>
     <block wx:else>
       <view class="van-grid-item__icon icon-class">
-        <van-icon wx:if="{{ icon }}" name="{{ icon }}" dot="{{ dot }}" info="{{ badge || info }}" size="{{ iconSize }}" />
+        <van-icon wx:if="{{ icon }}" name="{{ icon }}" color="{{ iconColor }}" dot="{{ dot }}" info="{{ badge || info }}" size="{{ iconSize }}" />
         <slot wx:else name="icon"></slot>
       </view>
       <view class="van-grid-item__text text-class">

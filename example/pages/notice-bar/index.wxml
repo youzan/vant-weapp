@@ -1,40 +1,30 @@
 <demo-block title="基础用法">
   <van-notice-bar
     text="{{ text }}"
-    left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+    left-icon="volume-o"
   />
 </demo-block>
 
-<demo-block title="通告栏模式">
-  <van-notice-bar mode="closeable" text="{{ text }}" custom-class="demo-margin-bottom" />
-  <van-notice-bar mode="link" text="{{ text }}" />
-</demo-block>
-
-<demo-block title="禁用滚动">
-  <van-notice-bar scrollable="{{ false }}" text="{{ text }}" />
+<demo-block title="滚动模式">
+  <van-notice-bar scrollable text="{{ shortText }}" custom-class="demo-margin-bottom" />
+  <van-notice-bar scrollable="{{ false }}" text="{{ text }}" custom-class="demo-margin-bottom" />
 </demo-block>
 
 <demo-block title="多行展示">
   <van-notice-bar wrapable scrollable="{{ false }}" text="{{ text }}" />
 </demo-block>
 
-<demo-block title="使用左右插槽">
-  <van-notice-bar text="{{ text }}">
-    <text slot="left-icon">[公告]</text>
-    <text slot="right-icon">[结束]</text>
-  </van-notice-bar>
+<demo-block title="通知栏模式">
+  <van-notice-bar mode="closeable" text="{{ shortText }}" />
+  <van-notice-bar custom-class="margin-top" mode="link" text="{{ shortText }}" />
 </demo-block>
 
-<demo-block title="自定义滚动速率">
+<demo-block title="自定义样式">
   <van-notice-bar
-    text="{{ text }}"
-    speed="{{speedValue}}"
-    left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
-  />
-  当前速度{{speedValue}}px/s
-  <van-slider
-    value="{{speedValue}}"
-    custom-class="slider"
-    bind:change="onChange"
-  />
+    text="{{ shortText }}"
+    color="#1989fa"
+    background="#ecf9ff"
+    left-icon="info-o"
+  >
+  </van-notice-bar>
 </demo-block>

@@ -41,7 +41,10 @@ VantComponent({
       },
     },
     allowSameDay: Boolean,
-    confirmDisabledText: String,
+    confirmDisabledText: {
+      type: String,
+      value: '确定',
+    },
     type: {
       type: String,
       value: 'single',

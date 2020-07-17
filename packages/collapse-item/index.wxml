@@ -33,7 +33,7 @@
   <view
     class="{{ utils.bem('collapse-item__wrapper') }}"
     style="height: 0;"
-    animation="{{ animate }}"
+    animation="{{ animation }}"
   >
     <view
       class="van-collapse-item__content content-class"

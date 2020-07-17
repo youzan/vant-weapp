@@ -203,8 +203,8 @@ VantComponent({
         return `${hour}:${minute}`;
       }
       // date type
-      value = Math.max(new Date(value).getTime(), data.minDate);
-      value = Math.min(new Date(value).getTime(), data.maxDate);
+      value = Math.max(value, data.minDate);
+      value = Math.min(value, data.maxDate);
       return value;
     },
     getBoundary(type, innerValue) {

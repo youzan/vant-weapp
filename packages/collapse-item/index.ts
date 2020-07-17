@@ -32,7 +32,7 @@ VantComponent({
   },
 
   created() {
-    this.animate = wx.createAnimation({
+    this.animation = wx.createAnimation({
       duration: 0,
       timingFunction: 'ease-in-out'
     });
@@ -76,10 +76,10 @@ VantComponent({
             rect.height
         )
         .then((height: number) => {
-          const { animate } = this;
+          const { animation } = this;
 
           if (expanded) {
-            animate
+            animation
               .height(height)
               .top(1)
               .step({
@@ -89,12 +89,12 @@ VantComponent({
               .step();
 
             this.setData({
-              animate: this.animate.export()
+              animation: animation.export()
             });
             return;
           }
 
-          animate
+          animation
             .height(height)
             .top(0)
             .step({ duration: 1 })
@@ -104,7 +104,7 @@ VantComponent({
             });
 
           this.setData({
-            animate: this.animate.export()
+            animation: animation.export()
           });
         });
     },

@@ -1,5 +1,34 @@
 # 更新日志
 
+### [v1.4.0](https://github.com/youzan/vant-weapp/tree/v1.4.0)
+`2020-07-17`
+
+**Features**
+
+- Empty: 新增 Empty 组件 [\#3327](https://github.com/youzan/vant-weapp/pull/3327)
+- NoticeBar: 新增 background 属性 [\#3388](https://github.com/youzan/vant-weapp/pull/3388)
+- NoticeBar: 新增 close 事件 [\#3388](https://github.com/youzan/vant-weapp/pull/3388)
+- GridItem: 新增 icon-color 属性 [\#3386](https://github.com/youzan/vant-weapp/pull/3386)
+- NavBar: 现在 custom-style 将影响根节点[\#3371](https://github.com/youzan/vant-weapp/pull/3371)
+- Cell: 新增 title-style 属性, fix Field label width [\#3370](https://github.com/youzan/vant-weapp/pull/3370)
+- Uploader: 更新 failed 图标 [\#3359](https://github.com/youzan/vant-weapp/pull/3359)
+- Uploader: 更新删除图标样式 [\#3385](https://github.com/youzan/vant-weapp/pull/3385)
+- Uploader: 移除圆角样式 [\#3384](https://github.com/youzan/vant-weapp/pull/3384)
+- Field: 更新禁用态样式 [\#3358](https://github.com/youzan/vant-weapp/pull/3358)
+- Field: 更新 label 样式 [\#3357](https://github.com/youzan/vant-weapp/pull/3357)
+- Picker: 调整 action button 样式 [\#3316](https://github.com/youzan/vant-weapp/pull/3316)
+
+**Bug Fixes**
+
+- Collapse: 使用 animation 重构动画部分逻辑以修复动画卡顿 [\#3401](https://github.com/youzan/vant-weapp/pull/3401)
+- Uploader: 修复 loading 样式错误、调整 previewSize 属性默认值 [\#3317](https://github.com/youzan/vant-weapp/pull/3317)
+- Area: 修复低版本基础库下 columns-num 设置为 1 或 2 时真机环境报错 [\#3318](https://github.com/youzan/vant-weapp/pull/3318)
+- DatetimePicker: 修复使用 formatter 时，事件返回值可能不正确 [\#3352](https://github.com/youzan/vant-weapp/pull/3352)
+- Field: 修复 textarea 模式下 label 与 value 不在同一水平线上 [\#3383](https://github.com/youzan/vant-weapp/pull/3383)
+- Dialog: show dialog after class ready [\#3374](https://github.com/youzan/vant-weapp/pull/3374)
+- Calendar: confirm-disabled-text 属性增加默认值 [\#3394](https://github.com/youzan/vant-weapp/pull/3394)
+
+
 ### [v1.3.3](https://github.com/youzan/vant-weapp/tree/v1.3.3)
 `2020-06-24`
 

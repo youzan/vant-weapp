@@ -13,25 +13,29 @@ VantComponent({
     inactiveColor: String,
     max: {
       type: Number,
-      value: 100,
+      value: 100
     },
     min: {
       type: Number,
-      value: 0,
+      value: 0
     },
     step: {
       type: Number,
-      value: 1,
+      value: 1
     },
     value: {
       type: Number,
       value: 0,
-      observer: 'updateValue',
+      observer(val) {
+        if (val !== this.value) {
+          this.updateValue(val);
+        }
+      }
     },
     barHeight: {
       type: null,
-      value: '2px',
-    },
+      value: 2
+    }
   },
 
   created() {
@@ -43,7 +47,7 @@ VantComponent({
       if (this.data.disabled) return;
 
       this.touchStart(event);
-      this.startValue = this.format(this.data.value);
+      this.startValue = this.format(this.value);
       this.dragStatus = 'start';
     },
 
@@ -94,12 +98,13 @@ VantComponent({
       const { min } = this.data;
       const width = `${((value - min) * 100) / this.getRange()}%`;
 
+      this.value = value;
+
       this.setData({
-        value,
         barStyle: `
           width: ${width};
           ${drag ? 'transition: none;' : ''}
-        `,
+        `
       });
 
       if (drag) {
@@ -123,6 +128,6 @@ VantComponent({
     format(value: number) {
       const { max, min, step } = this.data;
       return Math.round(Math.max(min, Math.min(value, max)) / step) * step;
-    },
-  },
+    }
+  }
 });

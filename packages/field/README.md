@@ -42,6 +42,28 @@ Page({
 });
 ```
 
+### 双向绑定
+
+最低基础库版本在 2.9.3 以上时，可以使用[简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)
+
+```html
+<van-cell-group>
+  <van-field
+    model:value="{{ value }}"
+    placeholder="请输入用户名"
+    border="{{ false }}"
+  />
+</van-cell-group>
+```
+
+```js
+Page({
+  data: {
+    value: '',
+  },
+});
+```
+
 ### 自定义类型
 
 根据`type`属性定义不同类型的输入框

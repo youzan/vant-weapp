@@ -142,7 +142,7 @@ Page({
 
 ### 自定义日期范围
 
-通过`min-date`和`max-date`定义日历的范围
+通过`min-date`和`max-date`定义日历的范围，需要注意的是`min-date`和`max-date`的区间不宜过大，否则会造成严重的性能问题。
 
 ```html
 <van-calendar

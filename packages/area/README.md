@@ -91,7 +91,7 @@ db.collection('region')
 | columns-placeholder | 列占位提示文字 | _string[]_ | `[]` | - |
 | loading | 是否显示加载状态 | _boolean_ | `false` | - |
 | item-height | 选项高度 | _number_ | `44` | - |
-| visible-item-count | 可见的选项个数 | _number_ | `5` | - |
+| visible-item-count | 可见的选项个数 | _number_ | `6` | - |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` | - |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` | - |
 

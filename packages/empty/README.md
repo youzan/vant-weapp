@@ -6,12 +6,15 @@
 
 ### 引入
 
-```js
-import Vue from 'vue';
-import { Empty } from 'vant';
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
 
-Vue.use(Empty);
+```json
+"usingComponents": {
+  "van-empty": "@vant/weapp/empty/index"
+}
 ```
+
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
 
 ## 代码演示
 

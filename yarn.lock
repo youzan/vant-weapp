@@ -5855,7 +5855,7 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-globby@^9.0.0:
+globby@^9.0.0, globby@^9.2.0:
   version "9.2.0"
   resolved "https://registry.npmjs.org/globby/-/globby-9.2.0.tgz#fd029a706c703d29bdd170f4b6db3a3f7a7cb63d"
   integrity sha512-ollPHROa5mcxDEkwg6bPt3QbEf4pDQSNtd6JPL1YvOvAo/7/0VAm9TccUeoTmarjPw4pfUthSCqcyfNB1I3ZSg==
@@ -11555,6 +11555,14 @@ trough@^1.0.0:
   version "1.0.5"
   resolved "https://registry.npmjs.org/trough/-/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==
+
+tscpaths@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.npm.taobao.org/tscpaths/download/tscpaths-0.0.9.tgz#c77abfde6820920f10c64f83c27753b9505814ab"
+  integrity sha1-x3q/3mggkg8Qxk+DwndTuVBYFKs=
+  dependencies:
+    commander "^2.20.0"
+    globby "^9.2.0"
 
 tslib@1.10.0:
   version "1.10.0"

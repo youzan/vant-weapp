@@ -1,0 +1,6 @@
+project=vant-weapp
+user=youzan
+since-tag=v1.3.0
+token=0935f6bd6b40169f1bc45bba0782e309d4a13017
+exclude-labels=duplicate,question,invalid,wontfix
+issues=false

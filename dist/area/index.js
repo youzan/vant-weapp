@@ -166,18 +166,19 @@ VantComponent({
       }
       const stack = [];
       const indexes = [];
-      if (this.data.columnsNum >= 1) {
+      const { columnsNum } = this.data;
+      if (columnsNum >= 1) {
         stack.push(picker.setColumnValues(0, province, false));
         indexes.push(this.getIndex('province', code));
       }
-      if (this.data.columnsNum >= 2) {
+      if (columnsNum >= 2) {
         stack.push(picker.setColumnValues(1, city, false));
-        indexes.push(this.getIndex('province', code));
+        indexes.push(this.getIndex('city', code));
         if (city.length && code.slice(2, 4) === '00') {
           [{ code }] = city;
         }
       }
-      if (this.data.columnsNum === 3) {
+      if (columnsNum === 3) {
         stack.push(
           picker.setColumnValues(
             2,
@@ -185,6 +186,7 @@ VantComponent({
             false
           )
         );
+        indexes.push(this.getIndex('county', code));
       }
       return Promise.all(stack)
         .catch(() => {})

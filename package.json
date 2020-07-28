@@ -75,6 +75,7 @@
     "progress-bar-webpack-plugin": "^1.11.0",
     "style-loader": "^1.0.0",
     "stylelint": "^13.0.0",
+    "tscpaths": "^0.0.9",
     "typescript": "^3.8.0",
     "vue": "2.6.10",
     "vue-loader": "^15.7.1",

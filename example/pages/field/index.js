@@ -7,6 +7,7 @@ Page({
     password: '',
     username: '',
     username2: '',
+    username3: '',
     message: '',
     phone: '1365577'
   },

@@ -1,1 +1,4 @@
 /* pages/notice-bar/index.wxss */
+.margin-top {
+  margin-top: 4px;
+}

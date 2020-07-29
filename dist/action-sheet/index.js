@@ -1,40 +1,62 @@
 import { VantComponent } from '../common/component';
+import { button } from '../mixins/button';
+import { openType } from '../mixins/open-type';
 VantComponent({
+  mixins: [button, openType],
   props: {
     show: Boolean,
     title: String,
     cancelText: String,
+    description: String,
+    round: {
+      type: Boolean,
+      value: true,
+    },
     zIndex: {
       type: Number,
-      value: 100
+      value: 100,
     },
     actions: {
       type: Array,
-      value: []
+      value: [],
     },
     overlay: {
       type: Boolean,
-      value: true
+      value: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
+    closeOnClickAction: {
+      type: Boolean,
+      value: true,
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true,
+    },
   },
   methods: {
-    onSelect: function onSelect(event) {
-      var index = event.currentTarget.dataset.index;
-      var item = this.data.actions[index];
-
+    onSelect(event) {
+      const { index } = event.currentTarget.dataset;
+      const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {
         this.$emit('select', item);
+        if (this.data.closeOnClickAction) {
+          this.onClose();
+        }
       }
     },
-    onCancel: function onCancel() {
+    onCancel() {
       this.$emit('cancel');
     },
-    onClose: function onClose() {
+    onClose() {
       this.$emit('close');
-    }
-  }
+    },
+    onClickOverlay() {
+      this.$emit('click-overlay');
+      this.onClose();
+    },
+  },
 });

@@ -1,39 +1,44 @@
 import { VantComponent } from '../common/component';
 
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
 VantComponent({
   field: true,
 
   relation: {
     name: 'checkbox',
     type: 'descendant',
-    linked(target: Weapp.Component) {
-      const { value, disabled } = this.data;
-      target.setData({
-        value: value.indexOf(target.data.name) !== -1,
-        disabled: disabled || target.data.disabled
-      });
-    }
+    current: 'checkbox-group',
+    linked(target) {
+      this.updateChild(target);
+    },
   },
 
   props: {
-    value: Array,
-    disabled: Boolean,
-    max: Number
+    max: Number,
+    value: {
+      type: Array,
+      observer: 'updateChildren',
+    },
+    disabled: {
+      type: Boolean,
+      observer: 'updateChildren',
+    },
   },
 
-  watch: {
-    value(value) {
-      const children = this.getRelationNodes('../checkbox/index');
-      children.forEach(child => {
-        child.setData({ value: value.indexOf(child.data.name) !== -1 });
-      });
+  methods: {
+    updateChildren() {
+      (this.children || []).forEach((child: TrivialInstance) =>
+        this.updateChild(child)
+      );
     },
 
-    disabled(disabled: boolean) {
-      const children = this.getRelationNodes('../checkbox/index');
-      children.forEach(child => {
-        child.setData({ disabled: disabled || child.data.disabled });
+    updateChild(child: TrivialInstance) {
+      const { value, disabled } = this.data;
+      child.setData({
+        value: value.indexOf(child.data.name) !== -1,
+        parentDisabled: disabled,
       });
-    }
-  }
+    },
+  },
 });

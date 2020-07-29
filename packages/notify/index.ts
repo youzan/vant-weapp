@@ -1,31 +1,51 @@
+import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
-import { RED } from '../common/color';
+import { WHITE } from '../common/color';
 
 VantComponent({
   props: {
-    text: String,
+    message: String,
+    background: String,
+    type: {
+      type: String,
+      value: 'danger',
+    },
     color: {
       type: String,
-      value: '#fff'
-    },
-    backgroundColor: {
-      type: String,
-      value: RED
+      value: WHITE,
     },
     duration: {
       type: Number,
-      value: 3000
-    }
+      value: 3000,
+    },
+    zIndex: {
+      type: Number,
+      value: 110,
+    },
+    safeAreaInsetTop: {
+      type: Boolean,
+      value: false,
+    },
+    top: null,
+  },
+
+  data: {
+    show: false,
+  },
+
+  created() {
+    const { statusBarHeight } = wx.getSystemInfoSync();
+    this.setData({ statusBarHeight });
   },
 
   methods: {
     show() {
-      const { duration } = this.data;
+      const { duration, onOpened } = this.data;
 
       clearTimeout(this.timer);
-      this.setData({
-        show: true
-      });
+      this.setData({ show: true });
+
+      wx.nextTick(onOpened);
 
       if (duration > 0 && duration !== Infinity) {
         this.timer = setTimeout(() => {
@@ -35,10 +55,19 @@ VantComponent({
     },
 
     hide() {
+      const { onClose } = this.data;
+
       clearTimeout(this.timer);
-      this.setData({
-        show: false
-      });
-    }
-  }
+      this.setData({ show: false });
+
+      wx.nextTick(onClose);
+    },
+
+    onTap(event: Weapp.Event) {
+      const { onClick } = this.data;
+      if (onClick) {
+        onClick(event.detail);
+      }
+    },
+  },
 });

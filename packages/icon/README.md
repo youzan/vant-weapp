@@ -1,51 +1,84 @@
-## Icon 图标
+# Icon 图标
 
-### 使用指南
+### 介绍
 
-在 app.json 或 index.json 中引入组件
+基于字体的图标集， 可以通过 Icon 组件使用，也可以在其他组件中通过`icon`属性引用
+
+### 引入
+
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+
 ```json
 "usingComponents": {
-  "van-icon": "path/to/vant-weapp/dist/icon/index"
+  "van-icon": "@vant/weapp/icon/index"
 }
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
-设置`name`属性为对应的图标名称即可，所有可用的图标名称见右侧列表
+`Icon`的`name`属性支持传入图标名称或图片链接
 
 ```html
-<van-icon name="success" />
+<van-icon name="close" />
+<van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
 ```
 
-### API
+### 提示信息
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 图标名称 | `String` | - |
-| info | 图标右上角文字提示 | `String | Number` | - |
-| color | 图标颜色 | `String` | `inherit` |
-| size | 图标大小，如 `20px`，`2em` | `String` | `inherit` |
-| custom-style | 自定义样式 | `String` | - |
-| class-prefix | 类名前缀 | `String` | `van-icon` |
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
 
-### Event
+```html
+<van-icon name="chat" dot />
+<van-icon name="chat" info="9" />
+<van-icon name="chat" info="99+" />
+```
 
-| 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
-| bind:click | 点击图标时触发 | - |
+### 图标颜色
+
+设置`color`属性来控制图标颜色
+
+```html
+<van-icon name="chat" color="red" />
+```
+
+### 图标大小
+
+设置`size`属性来控制图标大小
+
+```html
+<van-icon name="chat" size="50px" />
+```
+
+## 常见问题
+
+### 开发者工具上提示 Faild to load font 是什么情况？
+
+这个是开发者工具本身的问题，可以忽略，具体可以查看[微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html)注意第 5 条
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| name | 图标名称或图片链接 | _string_ | - | - |
+| dot | 是否显示图标右上角小红点 | _boolean_ | `false` | - |
+| info | 图标右上角文字提示 | _string \| number_ | - | - |
+| color | 图标颜色 | _string_ | `inherit` | - |
+| size | 图标大小，如 `20px`，`2em`，默认单位为`px` | _string \| number_ | `inherit` | - |
+| custom-style | 自定义样式 | _string_ | - | - |
+| class-prefix | 类名前缀 | _string_ | `van-icon` | - |
+
+### Events
+
+| 事件名     | 说明           | 参数 |
+| ---------- | -------------- | ---- |
+| bind:click | 点击图标时触发 | -    |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
+| 类名         | 说明         |
+| ------------ | ------------ |
 | custom-class | 根节点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.2.1 | feature | 新增 class-prefix 属性 |
-| 0.3.6 | feature | 新增 custom-style 属性 |

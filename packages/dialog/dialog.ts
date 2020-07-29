@@ -2,21 +2,38 @@ let queue = [];
 
 type DialogAction = 'confirm' | 'cancel';
 type DialogOptions = {
+  lang?: string;
   show?: boolean;
   title?: string;
+  width?: string | number;
   zIndex?: number;
-  context?: any;
+  context?:
+    | WechatMiniprogram.Page.TrivialInstance
+    | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
   overlay?: boolean;
   selector?: string;
+  ariaLabel?: string;
+  className?: string;
+  customStyle?: string;
+  transition?: string;
   asyncClose?: boolean;
+  businessId?: number;
+  sessionFrom?: string;
+  overlayStyle?: string;
+  appParameter?: string;
+  messageAlign?: string;
+  sendMessageImg?: string;
+  showMessageCard?: boolean;
+  sendMessagePath?: string;
+  sendMessageTitle?: string;
   confirmButtonText?: string;
   cancelButtonText?: string;
   showConfirmButton?: boolean;
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
-}
+};
 
 interface Dialog {
   (options: DialogOptions): Promise<DialogAction>;
@@ -36,68 +53,83 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Dialog: Dialog = options => {
+const Dialog: Dialog = (options) => {
+  options = {
+    ...Dialog.currentOptions,
+    ...options,
+  };
+
   return new Promise((resolve, reject) => {
     const context = options.context || getContext();
     const dialog = context.selectComponent(options.selector);
+
+    delete options.context;
     delete options.selector;
 
     if (dialog) {
       dialog.setData({
         onCancel: reject,
         onConfirm: resolve,
-        ...options
+        ...options,
       });
+
+      wx.nextTick(() => {
+        dialog.setData({ show: true });
+      });
+
       queue.push(dialog);
     } else {
-      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
+      console.warn(
+        '未找到 van-dialog 节点，请确认 selector 及 context 是否正确'
+      );
     }
   });
 };
 
 Dialog.defaultOptions = {
-  show: true,
+  show: false,
   title: '',
+  width: null,
   message: '',
   zIndex: 100,
   overlay: true,
-  asyncClose: false,
   selector: '#van-dialog',
+  className: '',
+  asyncClose: false,
+  transition: 'scale',
+  customStyle: '',
+  messageAlign: '',
+  overlayStyle: '',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
-  confirmButtonOpenType: ''
+  confirmButtonOpenType: '',
 };
 
-Dialog.alert = options =>
-  Dialog({
-    ...Dialog.currentOptions,
-    ...options
-  });
+Dialog.alert = Dialog;
 
-Dialog.confirm = options =>
+Dialog.confirm = (options) =>
   Dialog({
-    ...Dialog.currentOptions,
     showCancelButton: true,
-    ...options
+    ...options,
   });
 
 Dialog.close = () => {
-  queue.forEach(dialog => {
+  queue.forEach((dialog) => {
     dialog.close();
   });
   queue = [];
 };
 
 Dialog.stopLoading = () => {
-  queue.forEach(dialog => {
+  queue.forEach((dialog) => {
     dialog.stopLoading();
   });
 };
 
-Dialog.setDefaultOptions = options => {
+Dialog.setDefaultOptions = (options) => {
   Object.assign(Dialog.currentOptions, options);
 };
 

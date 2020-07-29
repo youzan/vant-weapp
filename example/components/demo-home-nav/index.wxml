@@ -1,0 +1,15 @@
+<view class="demo-home-nav">
+  <view class="demo-home-nav__title">{{ group.groupName }}</view>
+  <view class="demo-home-nav__group">
+    <view
+      wx:for="{{ group.list }}"
+      wx:key="title"
+      class="demo-home-nav__block"
+      data-url="/pages{{ item.path }}/index"
+      bind:tap="onClick"
+    >
+      {{ item.title }}
+      <van-icon name="arrow" custom-class="demo-home-nav__icon" />
+    </view>
+  </view>
+</view>

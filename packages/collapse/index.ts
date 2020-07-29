@@ -1,50 +1,55 @@
 import { VantComponent } from '../common/component';
 
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
 VantComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',
-    linked(child: Weapp.Component) {
-      this.setData({
-        items: [...this.data.items, child]
-      }, () => {
-        child.updateExpanded();
-      });
-    }
+    current: 'collapse'
   },
 
   props: {
-    accordion: Boolean,
-    value: null
-  },
-
-  data: {
-    items: []
-  },
-
-  watch: {
-    value() {
-      this.data.items.forEach(child => {
-        child.updateExpanded();
-      });
+    value: {
+      type: null,
+      observer: 'updateExpanded'
     },
-    accordion() {
-      this.data.items.forEach(child => {
-        child.updateExpanded();
-      });
+    accordion: {
+      type: Boolean,
+      observer: 'updateExpanded'
+    },
+    border: {
+      type: Boolean,
+      value: true
     }
   },
 
   methods: {
-    switch(name, expanded) {
+    updateExpanded() {
+      this.children.forEach((child: TrivialInstance) => {
+        child.updateExpanded();
+      });
+    },
+
+    switch(name: string | number, expanded: boolean) {
       const { accordion, value } = this.data;
+      const changeItem = name;
       if (!accordion) {
         name = expanded
-          ? value.concat(name)
-          : value.filter(activeName => activeName !== name);
+          ? (value || []).concat(name)
+          : (value || []).filter(
+            (activeName: string | number) => activeName !== name
+          );
       } else {
         name = expanded ? name : '';
       }
+
+      if (expanded) {
+        this.$emit('open', changeItem);
+      } else {
+        this.$emit('close', changeItem);
+      }
+
       this.$emit('change', name);
       this.$emit('input', name);
     }

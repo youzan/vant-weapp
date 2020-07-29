@@ -1,8 +1,20 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+
 <van-transition
   name="slide-down"
   show="{{ show }}"
-  custom-class="van-notify"
-  custom-style="background-color:{{ backgroundColor }}; color: {{ color }}"
+  custom-class="van-notify__container"
+  custom-style="z-index: {{ zIndex }}; top: {{ utils.addUnit(top) }}"
+  bind:tap="onTap"
 >
-  {{ text }}
+  <view
+    class="van-notify van-notify--{{ type }}"
+    style="background:{{ background }};color:{{ color }};"
+  >
+    <view
+      wx:if="{{ safeAreaInsetTop }}"
+      style="height: {{ statusBarHeight }}px"
+    />
+    <text>{{ message }}</text>
+  </view>
 </van-transition>

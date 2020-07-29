@@ -7,69 +7,22 @@ VantComponent({
     percentage: Number,
     pivotText: String,
     pivotColor: String,
+    trackColor: String,
     showPivot: {
       type: Boolean,
-      value: true
+      value: true,
     },
     color: {
       type: String,
-      value: BLUE
+      value: BLUE,
     },
     textColor: {
       type: String,
-      value: '#fff'
-    }
-  },
-
-  data: {
-    pivotWidth: 0,
-    progressWidth: 0
-  },
-
-  watch: {
-    pivotText: 'getWidth',
-    showPivot: 'getWidth'
-  },
-
-  computed: {
-    portionStyle() {
-      const width = (this.data.progressWidth - this.data.pivotWidth) * this.data.percentage / 100 + 'px';
-      const background = this.getCurrentColor();
-      return `width: ${width}; background: ${background}; `;
+      value: '#fff',
     },
-
-    pivotStyle() {
-      const color = this.data.textColor;
-      const background = this.data.pivotColor || this.getCurrentColor();
-      return `color: ${color}; background: ${background}`
+    strokeWidth: {
+      type: null,
+      value: 4,
     },
-
-    text() {
-      return this.data.pivotText || this.data.percentage + '%';
-    }
   },
-
-  mounted() {
-    this.getWidth();
-  },
-
-  methods: {
-    getCurrentColor() {
-      return this.data.inactive ? '#cacaca' : this.data.color;
-    },
-
-    getWidth() {
-      this.getRect('.van-progress').then(rect => {
-        this.setData({
-          progressWidth: rect.width
-        });
-      });
-
-      this.getRect('.van-progress__pivot').then(rect => {
-        this.setData({
-          pivotWidth: rect.width || 0
-        });
-      });
-    }
-  }
 });

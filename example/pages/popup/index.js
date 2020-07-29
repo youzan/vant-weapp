@@ -3,40 +3,93 @@ import Page from '../../common/page';
 Page({
   data: {
     show: {
-      middle: false,
+      basic: false,
       top: false,
       bottom: false,
+      left: false,
       right: false,
-      right2: false
+      round: false,
+      closeIcon: false,
+      customCloseIcon: false,
+      customIconPosition: false
     }
   },
 
-  toggle(type) {
+  toggle(type, show) {
     this.setData({
-      [`show.${type}`]: !this.data.show[type]
+      [`show.${type}`]: show
     });
   },
 
-  togglePopup() {
-    this.toggle('middle');
+  showBasic() {
+    this.toggle('basic', true);
   },
 
-  toggleRightPopup() {
-    this.toggle('right');
+  hideBasic() {
+    this.toggle('basic', false);
   },
 
-  toggleRightPopup2() {
-    this.toggle('right2');
+  showTop() {
+    this.toggle('top', true);
   },
 
-  toggleBottomPopup() {
-    this.toggle('bottom');
+  hideTop() {
+    this.toggle('top', false);
   },
 
-  toggleTopPopup() {
-    this.toggle('top');
-    setTimeout(() => {
-      this.toggle('top');
-    }, 2000);
+  showLeft() {
+    this.toggle('left', true);
+  },
+
+  hideLeft() {
+    this.toggle('left', false);
+  },
+
+  showRight() {
+    this.toggle('right', true);
+  },
+
+  hideRight() {
+    this.toggle('right', false);
+  },
+
+  showBottom() {
+    this.toggle('bottom', true);
+  },
+
+  hideBottom() {
+    this.toggle('bottom', false);
+  },
+
+  showRound() {
+    this.toggle('round', true);
+  },
+
+  hideRound() {
+    this.toggle('round', false);
+  },
+
+  showCloseIcon() {
+    this.toggle('closeIcon', true);
+  },
+
+  hideCloseIcon() {
+    this.toggle('closeIcon', false);
+  },
+
+  showCustomCloseIcon() {
+    this.toggle('customCloseIcon', true);
+  },
+
+  hideCustomCloseIcon() {
+    this.toggle('customCloseIcon', false);
+  },
+
+  showCustomIconPosition() {
+    this.toggle('customIconPosition', true);
+  },
+
+  hideCustomIconPosition() {
+    this.toggle('customIconPosition', false);
   }
 });

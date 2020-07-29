@@ -1,16 +1,22 @@
-## Field 输入框
+# Field 输入框
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 介绍
+
+表单中的输入框组件
+
+### 引入
+
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+
 ```json
 "usingComponents": {
-  "van-field": "path/to/vant-weapp/dist/field/index"
+  "van-field": "@vant/weapp/field/index"
 }
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-cell-group>
@@ -26,17 +32,40 @@
 ```js
 Page({
   data: {
-    value: ''
+    value: '',
   },
 
   onChange(event) {
     // event.detail 为当前输入的值
     console.log(event.detail);
-  }
+  },
 });
 ```
 
-#### 自定义类型
+### 双向绑定
+
+最低基础库版本在 2.9.3 以上时，可以使用[简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)
+
+```html
+<van-cell-group>
+  <van-field
+    model:value="{{ value }}"
+    placeholder="请输入用户名"
+    border="{{ false }}"
+  />
+</van-cell-group>
+```
+
+```js
+Page({
+  data: {
+    value: '',
+  },
+});
+```
+
+### 自定义类型
+
 根据`type`属性定义不同类型的输入框
 
 ```html
@@ -46,7 +75,7 @@ Page({
     required
     clearable
     label="用户名"
-    icon="question"
+    icon="question-o"
     placeholder="请输入用户名"
     bind:click-icon="onClickIcon"
   />
@@ -62,7 +91,7 @@ Page({
 </van-cell-group>
 ```
 
-#### 禁用输入框
+### 禁用输入框
 
 ```html
 <van-cell-group>
@@ -76,7 +105,8 @@ Page({
 </van-cell-group>
 ```
 
-#### 错误提示
+### 错误提示
+
 通过`error`或者`error-message`属性增加对应的错误提示
 
 ```html
@@ -97,7 +127,23 @@ Page({
 </van-cell-group>
 ```
 
-#### 高度自适应
+### 内容对齐方式
+
+可以通过`input-align`属性设置内容的对齐方式
+
+```html
+<van-cell-group>
+  <van-field
+    value="{{ username3 }}"
+    label="用户名"
+    placeholder="请输入用户名"
+    input-align="right"
+  />
+</van-cell-group>
+```
+
+### 高度自适应
+
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
 ```html
@@ -113,7 +159,8 @@ Page({
 </van-cell-group>
 ```
 
-#### 插入按钮
+### 插入按钮
+
 通过 button slot 可以在输入框尾部插入按钮
 
 ```html
@@ -127,81 +174,114 @@ Page({
     border="{{ false }}"
     use-button-slot
   >
-    <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+    <van-button slot="button" size="small" type="primary"
+      >发送验证码</van-button
+    >
   </van-field>
 </van-cell-group>
 ```
 
-### API
+## 常见问题
+
+### 真机上为什么会出现聚焦时 placeholder 加粗、闪烁的现象？
+
+- 由于微信小程序的 input 组件和 textarea 组件是原生组件，聚焦时会将原生的输入框覆盖在对应位置上，导致了这个现象的产生。
+- 相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)
+
+### 真机上 placeholder 为什么会盖过 popup 等其它组件？
+
+由于微信小程序的 input 组件和 textarea 组件是原生组件，遵循原生组件的限制，详情可以查看[原生组件说明](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
+
+### textarea 的 placeholder 在真机上为什么会偏移？
+
+微信小程序的 textarea 组件在 Android 和 iOS 中默认样式不同，在 iOS 中会有默认的 `padding`，且无法置 0。
+
+同时 `placeholder-style` 对 `vertical-align`、`line-height` 等大量 css 属性都不生效。
+
+这一系列的问题导致了 placeholder 在真机上可能会出现偏移。@vant/weapp 已经尽量抹平 textarea 在不同环境下的差异。
+
+微信已经将 `padding` 的问题列为修复中的问题，可以查看[微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)
+
+### 手写输入法为什么会丢失部分字符 / 手写输入法为什么不会触发 input 事件？
+
+这是微信小程序的 input 组件本身的问题，如果需要兼容手写输入法的场景，可以在 `blur` 事件中取到输入的值。
+
+相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)
+
+## API
+
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 在表单内提交时的标识符 | `String` | - |
-| label | 输入框左侧文本 | `String` | - |
-| value | 当前输入的值 | `String | Number` | - |
-| type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | `String` | `text` |
-| fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | `Boolean` | `false` |
-| focus | 获取焦点 | `Boolean` | `false` |
-| border | 是否显示内边框 | `Boolean` | `true` |
-| disabled | 是否禁用输入框 | `Boolean` | `false` |
-| readonly | 是否只读 | `Boolean` | `false` |
-| clearable | 是否启用清除控件 | `Boolean` | `false` |
-| required | 是否显示表单必填星号 | `Boolean` | `false` |
-| title-width | 标题宽度 | `String` | `90px` |
-| maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `-1` |
-| placeholder | 输入框为空时占位符 | `String` | - |
-| placeholder-style | 指定 placeholder 的样式 | `String` | - |
-| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
-| error | 是否将输入内容标红 | `Boolean` | `false` |
-| error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
-| autosize | 自适应内容高度，只对 textarea 有效 | `Boolean` | `false` |
-| icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |
-| left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
-| confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | `String` | `done` |
-| cursor-spacing | 输入框聚焦时底部与键盘的距离 | `Number` | `50` |
-| use-icon-slot | 是否使用 icon slot  | `Boolean` | `false` |
-| use-button-slot | 是否使用 button slot  | `Boolean` | `false` |
+| --- | --- | --- | --- |
+| name | 在表单内提交时的标识符 | _string_ | - |
+| label | 输入框左侧文本 | _string_ | - |
+| size | 单元格大小，可选值为 `large` | _string_ | - |
+| value | 当前输入的值 | _string \| number_ | - |
+| type | 可设置为任意原生类型, 如 `number` `idcard` `textarea` `digit` | _string_ | `text` |
+| fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | _boolean_ | `false` |
+| focus | 获取焦点 | _boolean_ | `false` |
+| border | 是否显示内边框 | _boolean_ | `true` |
+| disabled | 是否禁用输入框 | _boolean_ | `false` |
+| readonly | 是否只读 | _boolean_ | `false` |
+| clearable | 是否启用清除控件 | _boolean_ | `false` |
+| clickable | 是否开启点击反馈 | _boolean_ | `false` |
+| required | 是否显示表单必填星号 | _boolean_ | `false` |
+| password | 是否是密码类型 | _boolean_ | `false` |
+| title-width | 标题宽度 | _string_ | `6.2em` |
+| maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `-1` |
+| placeholder | 输入框为空时占位符 | _string_ | - |
+| placeholder-style | 指定 placeholder 的样式 | _string_ | - |
+| custom-style | 自定义样式 | _string_ | - |
+| is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | - |
+| show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
+| error | 是否将输入内容标红 | _boolean_ | `false` |
+| error-message | 底部错误提示文案，为空时不展示 | _string_ | `''` |
+| error-message-align | 底部错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `''` |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | `left` |
+| autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| object_ | `false` |
+| left-icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - |
+| right-icon | 右侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - |
+| confirm-type | 设置键盘右下角按钮的文字，仅在 type='text' 时生效 | _string_ | `done` |
+| confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起，在 type='textarea' 时无效 | _boolean_ | `false` |
+| hold-keyboard | focus 时，点击页面的时候不收起键盘 | _boolean_ | `false` |
+| cursor-spacing | 输入框聚焦时底部与键盘的距离 | _number_ | `50` |
+| adjust-position | 键盘弹起时，是否自动上推页面 | _boolean_ | `true` |
+| show-confirm-bar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | _boolean_ | `true` |
+| selection-start | 光标起始位置，自动聚集时有效，需与 selection-end 搭配使用 | _number_ | `-1` |
+| selection-end | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用 | _number_ | `-1` |
+| auto-focus | 自动聚焦，拉起键盘 | _boolean_ | `false` |
+| disable-default-padding | 是否去掉 iOS 下的默认内边距，只对 textarea 有效 | _boolean_ | `true` |
+| cursor | 指定 focus 时的光标位置 | _number_ | `-1` |
 
-### Event
+### Events
 
 | 事件 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
+| --- | --- | --- |
 | bind:input | 输入内容时触发 | value: 当前输入值 |
 | bind:change | 输入内容时触发 | value: 当前输入值 |
 | bind:confirm | 点击完成按钮时触发 | value: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
-| bind:focus | 输入框聚焦时触发 | - |
-| bind:blur | 输入框失焦时触发 | - |
+| bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |
+| bind:blur | 输入框失焦时触发 | event.detail.value: 当前输入值; <br>event.detail.cursor: 游标位置(如果 `type` 不为 `textarea`，值为 `0`) |
 | bind:clear | 点击清空控件时触发 | - |
+| bind:linechange | 输入框行数变化时调用，只对 textarea 有效 | event.detail = { height: 0, heightRpx: 0, lineCount: 0 } |
+| bind:keyboardheightchange | 键盘高度发生变化的时候触发此事件 | event.detail = { height: height, duration: duration } |
 
 ### Slot
 
-| 名称 | 说明 |
-|-----------|-----------|
-| label | 自定义输入框标签，如果设置了`label`属性则不生效 |
-| icon | 自定义输入框尾部图标，需要设置`use-icon-slot`属性，如果设置了`icon`属性则不生效 |
-| button | 自定义输入框尾部按钮，需要设置`use-button-slot`属性 |
+| 名称       | 说明                                            |
+| ---------- | ----------------------------------------------- |
+| label      | 自定义输入框标签，如果设置了`label`属性则不生效 |
+| left-icon  | 自定义输入框头部图标                            |
+| right-icon | 自定义输入框尾部图标                            |
+| button     | 自定义输入框尾部按钮                            |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| input-class | 输入框样式类 |
-| icon-class | 右侧图标样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.0.1 | feature | 新增组件 |
-| 0.1.1 | bugfix | 修复在 form 组件内无法获取值的问题 |
-| 0.1.1 | bugfix | 修复 icon 插槽无法使用的问题 |
-| 0.2.0 | feature | 新增 name 属性 |
-| 0.2.1 | feature | 新增 title-width 属性 |
-| 0.3.0 | bugfix | 修复 title 宽度错误的问题 |
-| 0.3.2 | bugfix | 修复展示清除按钮时导致输入框高度变化的问题 |
-| 0.3.3 | bugfix | 修复边框长度溢出的问题 |
-| 0.3.3 | bugfix | 修复 input-align 属性不生效的问题 |
-| 0.3.6 | bugfix | 修复 readonly 属性不生效的问题 |
-| 0.3.6 | feature | 新增 placeholder-style 属性 |
+| 类名             | 说明           |
+| ---------------- | -------------- |
+| label-class      | 左侧文本样式类 |
+| input-class      | 输入框样式类   |
+| right-icon-class | 右侧图标样式类 |

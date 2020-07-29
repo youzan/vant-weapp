@@ -1,0 +1,42 @@
+<demo-block title="基础用法">
+  <van-sticky>
+    <van-button type="primary" custom-style="margin-left: 15px">
+      基础用法
+    </van-button>
+  </van-sticky>
+</demo-block>
+
+<demo-block title="吸顶距离">
+  <van-sticky offset-top="{{ 50 }}">
+    <van-button type="info" custom-style="margin-left: 115px">
+      吸顶距离
+    </van-button>
+  </van-sticky>
+</demo-block>
+
+<demo-block title="指定容器">
+  <view id="container" style="height: 150px; background-color: #fff;">
+    <van-sticky container="{{ container }}">
+      <van-button type="warning" custom-style="margin-left: 215px;">
+        指定容器
+      </van-button>
+    </van-sticky>
+  </view>
+</demo-block>
+
+<demo-block title="嵌套在 scroll-view 内使用">
+  <scroll-view
+    bind:scroll="onScroll"
+    scroll-y
+    id="scroller"
+    style="height: 200px; background-color: #fff;"
+  >
+    <view style="height: 400px; padding-top: 50px;">
+      <van-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}">
+        <van-button type="warning">
+          嵌套在 scroll-view 内
+        </van-button>
+      </van-sticky>
+    </view>
+  </scroll-view>
+</demo-block>

@@ -15,16 +15,22 @@ then
   if [[ `git status --porcelain` ]]; 
   then
     git add -A
-    git commit -am "[build] $VERSION"
+    git commit -am "build: compile $VERSION"
   fi
 
   # commit
-  npm version $VERSION --message "[release] $VERSION"
+  npm version $VERSION --message "build: release $VERSION"
 
   # publish
   git push origin master
   git push origin refs/tags/v$VERSION
-  npm publish
+
+  if [[ $VERSION =~ [beta] ]]
+  then
+    npm publish --tag beta
+  else 
+    npm publish
+  fi
 
   # sync dev
   git checkout dev

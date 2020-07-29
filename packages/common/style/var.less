@@ -1,43 +1,627 @@
-// Color variables
+// Color Palette
 @black: #000;
 @white: #fff;
-@red: #f44;
+@gray-1: #f7f8fa;
+@gray-2: #f2f3f5;
+@gray-3: #ebedf0;
+@gray-4: #dcdee0;
+@gray-5: #c8c9cc;
+@gray-6: #969799;
+@gray-7: #646566;
+@gray-8: #323233;
+@red: #ee0a24;
 @blue: #1989fa;
 @orange: #ff976a;
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
-@green: #4b0;
-@gray: #c9c9c9;
-@gray-light: #e5e5e5;
-@gray-darker: #7d7e80;
-@gray-dark: #999;
+@green: #07c160;
 
-// Default colors
-@text-color: #333;
-@border-color: #eee;
-@active-color: #e8e8e8;
-@background-color: #f8f8f8;
+// Gradient Colors
+@gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+@gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+// Component Colors
+@text-color: @gray-8;
+@active-color: @gray-2;
+@active-opacity: 0.7;
+@disabled-opacity: 0.5;
+@background-color: @gray-1;
 @background-color-light: #fafafa;
+@text-link-color: #576b95;
+
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
+
+// Font
+@font-size-xs: 10px;
+@font-size-sm: 12px;
+@font-size-md: 14px;
+@font-size-lg: 16px;
+@font-weight-bold: 500;
+@base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft Yahei', sans-serif;
+@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
+
+// Animation
+@animation-duration-base: 0.3s;
+@animation-duration-fast: 0.2s;
+
+// Border
+@border-color: @gray-3;
+@border-width-base: 1px;
+@border-radius-sm: 2px;
+@border-radius-md: 4px;
+@border-radius-lg: 8px;
+@border-radius-max: 999px;
+
+//ActionSheet
+@action-sheet-max-height: 90%;
+@action-sheet-header-height: 44px;
+@action-sheet-header-font-size: @font-size-lg;
+@action-sheet-description-color: @gray-7;
+@action-sheet-description-font-size: @font-size-md;
+@action-sheet-description-line-height: 20px;
+@action-sheet-item-height: 50px;
+@action-sheet-item-background: @white;
+@action-sheet-item-font-size: @font-size-lg;
+@action-sheet-item-text-color: @text-color;
+@action-sheet-item-disabled-text-color: @gray-5;
+@action-sheet-subname-color: @gray-7;
+@action-sheet-subname-font-size: @font-size-sm;
+@action-sheet-close-icon-size: 18px;
+@action-sheet-close-icon-color: @gray-6;
+@action-sheet-close-icon-padding: 0 @padding-sm;
+@action-sheet-cancel-padding-top: @padding-xs;
+@action-sheet-cancel-padding-color: @background-color;
 
 // Button
+@button-mini-height: 22px;
+@button-mini-min-width: 50px;
+@button-mini-font-size: @font-size-xs;
+@button-small-height: 30px;
+@button-small-font-size: @font-size-sm;
+@button-small-min-width: 60px;
+@button-normal-font-size: @font-size-md;
+@button-large-height: 50px;
 @button-default-color: @text-color;
+@button-default-height: 44px;
+@button-default-font-size: @font-size-lg;
 @button-default-background-color: @white;
 @button-default-border-color: @border-color;
 @button-primary-color: @white;
 @button-primary-background-color: @green;
 @button-primary-border-color: @green;
+@button-info-color: @white;
+@button-info-background-color: @blue;
+@button-info-border-color: @blue;
 @button-danger-color: @white;
 @button-danger-background-color: @red;
 @button-danger-border-color: @red;
 @button-warning-color: @white;
 @button-warning-background-color: @orange;
 @button-warning-border-color: @orange;
-@button-bottom-action-default-color: @white;
-@button-bottom-action-default-background-color: @orange;
-@button-bottom-action-primary-color: @white;
-@button-bottom-action-primary-background-color: @red;
+@button-line-height: 20px;
+@button-border-width: 1px;
+@button-border-radius: @border-radius-sm;
+@button-round-border-radius: @border-radius-max;
+@button-plain-background-color: @white;
+@button-disabled-opacity: @disabled-opacity;
+
+// Calendar
+@calendar-height: 100%;
+@calendar-background-color: @white;
+@calendar-popup-height: 80%;
+@calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
+@calendar-header-title-height: 44px;
+@calendar-header-title-font-size: @font-size-lg;
+@calendar-header-subtitle-font-size: @font-size-md;
+@calendar-weekdays-height: 30px;
+@calendar-weekdays-font-size: @font-size-sm;
+@calendar-month-title-font-size: @font-size-md;
+@calendar-month-mark-color: fade(@gray-2, 80%);
+@calendar-month-mark-font-size: 160px;
+@calendar-day-height: 64px;
+@calendar-day-font-size: @font-size-lg;
+@calendar-range-edge-color: @white;
+@calendar-range-edge-background-color: @red;
+@calendar-range-middle-color: @red;
+@calendar-range-middle-background-opacity: 0.1;
+@calendar-selected-day-size: 54px;
+@calendar-selected-day-color: @white;
+@calendar-info-font-size: @font-size-xs;
+@calendar-info-line-height: 14px;
+@calendar-selected-day-background-color: @red;
+@calendar-day-disabled-color: @gray-5;
+@calendar-confirm-button-height: 36px;
+@calendar-confirm-button-margin: 7px 0;
+@calendar-confirm-button-line-height: 34px;
+
+// Card
+@card-padding: @padding-xs @padding-md;
+@card-font-size: @font-size-sm;
+@card-text-color: @text-color;
+@card-background-color: @background-color-light;
+@card-thumb-size: 88px;
+@card-title-line-height: 16px;
+@card-desc-color: @gray-7;
+@card-desc-line-height: 20px;
+@card-price-color: @red;
+@card-origin-price-color: @gray-7;
+@card-origin-price-font-size: @font-size-xs;
+@card-price-font-size: @font-size-sm;
+@card-price-integer-font-size: @font-size-lg;
+@card-price-font-family: @price-integer-font-family;
+
+// Cell
+@cell-font-size: @font-size-md;
+@cell-line-height: 24px;
+@cell-vertical-padding: 10px;
+@cell-horizontal-padding: @padding-md;
+@cell-text-color: @text-color;
+@cell-background-color: @white;
+@cell-border-color: @border-color;
+@cell-active-color: @active-color;
+@cell-required-color: @red;
+@cell-label-color: @gray-6;
+@cell-label-font-size: @font-size-sm;
+@cell-label-line-height: 18px;
+@cell-label-margin-top: 3px;
+@cell-value-color: @gray-6;
+@cell-icon-size: 16px;
+@cell-right-icon-color: @gray-6;
+@cell-large-vertical-padding: @padding-sm;
+@cell-large-title-font-size: @font-size-lg;
+@cell-large-value-font-size: @font-size-lg;
+@cell-large-label-font-size: @font-size-md;
+
+// CellGroup
+@cell-group-background-color: @white;
+@cell-group-title-color: @gray-6;
+@cell-group-title-padding: @padding-md @padding-md @padding-xs;
+@cell-group-title-font-size: @font-size-md;
+@cell-group-title-line-height: 16px;
+
+// Checkbox
+@checkbox-size: 20px;
+@checkbox-border-color: @gray-5;
+@checkbox-transition-duration: 0.2s;
+@checkbox-label-margin: 10px;
+@checkbox-label-color: @text-color;
+@checkbox-checked-icon-color: @blue;
+@checkbox-disabled-icon-color: @gray-5;
+@checkbox-disabled-label-color: @gray-5;
+@checkbox-disabled-background-color: @border-color;
+
+// Circle
+@circle-text-color: @text-color;
+
+// Collapse
+@collapse-item-transition-duration: 0.3s;
+@collapse-item-content-padding: 15px;
+@collapse-item-content-font-size: 13px;
+@collapse-item-content-line-height: 1.5;
+@collapse-item-content-text-color: @gray-6;
+@collapse-item-content-background-color: @white;
+@collapse-item-title-disabled-color: @gray-5;
+
+// CountDown
+@count-down-text-color: @text-color;
+@count-down-font-size: @font-size-md;
+@count-down-line-height: 20px;
+
+// Dialog
+@dialog-width: 320px;
+@dialog-small-screen-width: 90%;
+@dialog-font-size: @font-size-lg;
+@dialog-border-radius: 16px;
+@dialog-background-color: @white;
+@dialog-header-font-weight: @font-weight-bold;
+@dialog-header-line-height: 24px;
+@dialog-header-padding-top: @padding-lg;
+@dialog-header-isolated-padding: @padding-lg 0;
+@dialog-message-padding: @padding-lg;
+@dialog-message-font-size: @font-size-md;
+@dialog-message-line-height: 20px;
+@dialog-message-max-height: 60vh;
+@dialog-has-title-message-text-color: @gray-7;
+@dialog-has-title-message-padding-top: @padding-sm;
+
+// Field
+@field-label-color: @gray-7;
+@field-input-text-color: @text-color;
+@field-input-error-text-color: @red;
+@field-input-disabled-text-color: @gray-5;
+@field-placeholder-text-color: @gray-5;
+@field-icon-size: 16px;
+@field-clear-icon-size: 16px;
+@field-clear-icon-color: @gray-5;
+@field-icon-container-color: @gray-6;
+@field-error-message-color: @red;
+@field-error-message-text-font-size: @font-size-sm;
+@field-text-area-min-height: 18px;
+@field-word-limit-color: @gray-7;
+@field-word-limit-font-size: @font-size-sm;
+@field-word-limit-line-height: 16px;
+@field-word-num-full-color: @red;
+@field-disabled-text-color: @gray-5;
+
+// GoodsAction
+@goods-action-background-color: @white;
+@goods-action-icon-height: 50px;
+@goods-action-icon-font-size: @font-size-xs;
+@goods-action-icon-text-color: @gray-7;
+@goods-action-button-height: 40px;
+@goods-action-button-line-height: @button-line-height;
+@goods-action-button-border-radius: @goods-action-button-height / 2;
+@goods-action-button-warning-color: @gradient-orange;
+@goods-action-button-danger-color: @gradient-red;
+@goods-action-button-plain-color: @white;
+
+// Image
+@image-placeholder-text-color: @gray-6;
+@image-placeholder-font-size: @font-size-md;
+@image-placeholder-background-color: @background-color;
+
+// Info
+@info-size: 16px;
+@info-color: @white;
+@info-padding: 0 3px;
+@info-font-size: 12px;
+@info-font-weight: 500;
+@info-border-width: 1px;
+@info-background-color: @red;
+@info-dot-color: @red;
+@info-dot-size: 8px;
+@info-font-family: @price-integer-font-family;
+
+// Loading
+@loading-text-color: @gray-6;
+@loading-text-font-size: @font-size-md;
+@loading-text-line-height: 20px;
+@loading-spinner-color: @gray-5;
+@loading-spinner-size: 30px;
+@loading-spinner-animation-duration: 0.8s;
+
+// NavBar
+@nav-bar-height: 44px;
+@nav-bar-background-color: @white;
+@nav-bar-text-color: @blue;
+@nav-bar-arrow-size: 16px;
+@nav-bar-title-font-size: @font-size-lg;
+@nav-bar-title-text-color: @text-color;
+
+// NoticeBar
+@notice-bar-height: 40px;
+@notice-bar-padding: 0 @padding-md;
+@notice-bar-wrapable-padding: @padding-xs @padding-md;
+@notice-bar-font-size: @font-size-md;
+@notice-bar-text-color: @orange-dark;
+@notice-bar-line-height: 24px;
+@notice-bar-background-color: @orange-light;
+@notice-bar-icon-size: 16px;
+@notice-bar-icon-min-width: 22px;
 
 // Notify
 @notify-padding: 6px 15px;
 @notify-font-size: 14px;
 @notify-line-height: 20px;
+@notify-primary-background-color: @blue;
+@notify-success-background-color: @green;
+@notify-danger-background-color: @red;
+@notify-warning-background-color: @orange;
+
+// Overlay
+@overlay-background-color: rgba(0, 0, 0, 0.7);
+
+// Panel
+@panel-background-color: @white;
+@panel-header-value-color: @red;
+@panel-footer-padding: @padding-xs @padding-md;
+
+// Picker
+@picker-background-color: @white;
+@picker-toolbar-height: 44px;
+@picker-title-font-size: @font-size-lg;
+@picker-action-padding: 0 @padding-md;
+@picker-action-font-size: @font-size-md;
+@picker-confirm-action-color: @text-link-color;
+@picker-cancel-action-color: @gray-6;
+@picker-option-font-size: @font-size-lg;
+@picker-option-text-color: @black;
+@picker-loading-icon-color: @blue;
+@picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+@picker-option-disabled-opacity: 0.3;
+@picker-option-selected-text-color: @text-color;
+
+// Popup
+@popup-background-color: @white;
+@popup-round-border-radius: 20px;
+@popup-close-icon-size: 18px;
+@popup-close-icon-color: @gray-6;
+@popup-close-icon-margin: 16px;
+@popup-close-icon-z-index: 1;
+
+// Progress
+@progress-height: 4px;
+@progress-background-color: @gray-3;
+@progress-pivot-padding: 0 5px;
+@progress-color: @blue;
+@progress-pivot-font-size: @font-size-xs;
+@progress-pivot-line-height: 1.6;
+@progress-pivot-background-color: @blue;
+@progress-pivot-text-color: @white;
+
+// Radio
+@radio-size: 20px;
+@radio-border-color: @gray-5;
+@radio-transition-duration: 0.2s;
+@radio-label-margin: 10px;
+@radio-label-color: @text-color;
+@radio-checked-icon-color: @blue;
+@radio-disabled-icon-color: @gray-5;
+@radio-disabled-label-color: @gray-5;
+@radio-disabled-background-color: @border-color;
+
+// Rate
+@rate-horizontal-padding: 2px;
+@rate-icon-size: 20px;
+
+// Switch
+@switch-width: 2em;
+@switch-height: 1em;
+@switch-node-size: 1em;
+@switch-node-z-index: 1;
+@switch-node-background-color: @white;
+@switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+@switch-background-color: @white;
+@switch-on-background-color: @blue;
+@switch-transition-duration: 0.3s;
+@switch-disabled-opacity: 0.4;
+@switch-border: 1px solid rgba(0, 0, 0, 0.1);
+
+// Search
+@search-background-color: @gray-1;
+@search-padding: 10px @padding-sm;
+@search-input-height: 34px;
+@search-label-padding: 0 5px;
+@search-label-color: @text-color;
+@search-label-font-size: @font-size-md;
+@search-left-icon-color: @gray-6;
+@search-action-padding: 0 @padding-xs;
+@search-action-text-color: @text-color;
+@search-action-font-size: @font-size-md;
+
+// Sidebar
+@sidebar-width: 85px;
+
+// SidebarItem
+@sidebar-font-size: @font-size-md;
+@sidebar-line-height: 20px;
+@sidebar-text-color: @text-color;
+@sidebar-disabled-text-color: @gray-5;
+@sidebar-padding: 20px @padding-sm 20px @padding-xs;
+@sidebar-active-color: @active-color;
+@sidebar-background-color: @background-color;
+@sidebar-selected-font-weight: @font-weight-bold;
+@sidebar-selected-text-color: @text-color;
+@sidebar-selected-border-color: @red;
+@sidebar-selected-background-color: @white;
+
+// Slider
+@slider-active-background-color: @blue;
+@slider-inactive-background-color: @gray-3;
+@slider-disabled-opacity: @disabled-opacity;
+@slider-button-width: 24px;
+@slider-button-height: 24px;
+@slider-button-border-radius: 50%;
+@slider-button-background-color: @white;
+@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+
+// Step
+@step-text-color: @gray-6;
+@step-process-text-color: @text-color;
+@step-font-size: @font-size-md;
+@step-line-color: @border-color;
+@step-finish-line-color: @green;
+@step-finish-text-color: @text-color;
+@step-icon-size: 12px;
+@step-circle-size: 5px;
+@step-circle-color: @gray-6;
+@step-horizontal-title-font-size: @font-size-sm;
+
+// Steps
+@steps-background-color: @white;
+
+// Stepper
+@stepper-active-color: #e8e8e8;
+@stepper-background-color: @gray-2;
+@stepper-button-icon-color: @text-color;
+@stepper-button-disabled-color: @gray-1;
+@stepper-button-disabled-icon-color: @gray-5;
+@stepper-input-width: 32px;
+@stepper-input-height: 28px;
+@stepper-input-font-size: @font-size-md;
+@stepper-input-text-color: @text-color;
+@stepper-input-disabled-text-color: @gray-5;
+@stepper-input-disabled-background-color: @gray-2;
+@stepper-border-radius: @border-radius-md;
+
+// SubmitBar
+@submit-bar-height: 50px;
+@submit-bar-z-index: 100;
+@submit-bar-background-color: @white;
+@submit-bar-button-width: 110px;
+@submit-bar-price-color: @red;
+@submit-bar-price-font-size: @font-size-sm;
+@submit-bar-currency-font-size: @font-size-sm;
+@submit-bar-text-color: @text-color;
+@submit-bar-text-font-size: 14px;
+@submit-bar-tip-padding: 10px;
+@submit-bar-tip-font-size: 12px;
+@submit-bar-tip-line-height: 1.5;
+@submit-bar-tip-color: #f56723;
+@submit-bar-tip-background-color: #fff7cc;
+@submit-bar-tip-icon-size: 12px;
+@submit-bar-button-height: 40px;
+@submit-bar-padding: 0 @padding-md;
+@submit-bar-price-integer-font-size: 20px;
+@submit-bar-price-font-family: @price-integer-font-family;
+
+// Tabbar
+@tabbar-height: 50px;
+@tabbar-background-color: @white;
+
+// TabbarItem
+@tabbar-item-font-size: @font-size-sm;
+@tabbar-item-text-color: @gray-7;
+@tabbar-item-active-color: @blue;
+@tabbar-item-line-height: 1;
+@tabbar-item-icon-size: 18px;
+@tabbar-item-margin-bottom: 5px;
+
+// Tab
+@tab-text-color: @gray-7;
+@tab-active-text-color: @text-color;
+@tab-disabled-text-color: @gray-5;
+@tab-font-size: @font-size-md;
+
+// Tabs
+@tabs-default-color: @red;
+@tabs-line-height: 44px;
+@tabs-card-height: 30px;
+@tabs-nav-background-color: @white;
+@tabs-bottom-bar-height: 3px;
+@tabs-bottom-bar-color: @tabs-default-color;
+
+// Tag
+@tag-padding: 0.2em 0.5em;
+@tag-font-size: @font-size-xs;
+@tag-medium-font-size: @font-size-sm;
+@tag-large-font-size: @font-size-md;
+@tag-text-color: @white;
+@tag-border-radius: 0.2em;
+@tag-round-border-radius: @border-radius-max;
+@tag-danger-color: @red;
+@tag-primary-color: @blue;
+@tag-success-color: @green;
+@tag-warning-color: @orange;
+@tag-default-color: @gray-6;
+@tag-plain-background-color: @white;
+
+// Toast
+@toast-max-width: 70%;
+@toast-font-size: 14px;
+@toast-text-color: @white;
+@toast-line-height: 20px;
+@toast-border-radius: @border-radius-lg;
+@toast-background-color: rgba(@text-color, 0.88);
+@toast-icon-size: 48px;
+@toast-text-min-width: 96px;
+@toast-text-padding: @padding-xs @padding-sm;
+@toast-default-padding: @padding-md;
+@toast-default-width: 90px;
+@toast-default-min-height: 90px;
+
+// GridItem
+@grid-item-content-padding: @padding-md @padding-xs;
+@grid-item-content-background-color: @white;
+@grid-item-content-active-color: @active-color;
+@grid-item-icon-size: 26px;
+@grid-item-text-color: @gray-7;
+@grid-item-text-font-size: @font-size-sm;
+
+// Divider
+@divider-margin: @padding-md 0;
+@divider-text-color: @gray-6;
+@divider-font-size: @font-size-md;
+@divider-line-height: 24px;
+@divider-border-color: @border-color;
+@divider-content-padding: @padding-md;
+@divider-content-left-width: 10%;
+@divider-content-right-width: 10%;
+
+// Empty
+@empty-padding: @padding-xl 0;
+@empty-image-size: 160px;
+@empty-description-margin-top: @padding-md;
+@empty-description-padding: 0 60px;
+@empty-description-color: @gray-6;
+@empty-description-font-size: 14px;
+@empty-description-line-height: 20px;
+@empty-bottom-margin-top: 24px;
+
+// TreeSelect
+@tree-select-font-size: @font-size-md;
+@tree-select-nav-background-color: @background-color;
+@tree-select-content-background-color: @white;
+@tree-select-nav-item-padding: @padding-sm @padding-xs @padding-sm @padding-sm;
+@tree-select-item-height: 44px;
+@tree-select-item-active-color: @red;
+@tree-select-item-disabled-color: @gray-5;
+
+// Uploader
+@uploader-size: 80px;
+@uploader-icon-size: 24px;
+@uploader-icon-color: @gray-4;
+@uploader-text-color: @gray-6;
+@uploader-text-font-size: @font-size-sm;
+@uploader-upload-background-color: @gray-1;
+@uploader-upload-active-color: @active-color;
+@uploader-delete-color: @white;
+@uploader-delete-icon-size: 14px;
+@uploader-delete-background-color: rgba(0, 0, 0, 0.7);
+@uploader-file-background-color: @background-color;
+@uploader-file-icon-size: 20px;
+@uploader-file-icon-color: @gray-7;
+@uploader-file-name-padding: 0 @padding-base;
+@uploader-file-name-margin-top: @padding-xs;
+@uploader-file-name-font-size: @font-size-sm;
+@uploader-file-name-text-color: @gray-7;
+@uploader-mask-background-color: fade(@gray-8, 88%);
+@uploader-mask-icon-size: 22px;
+@uploader-mask-message-font-size: @font-size-sm;
+@uploader-mask-message-line-height: 14px;
+@uploader-loading-icon-size: 22px;
+@uploader-loading-icon-color: @white;
+@uploader-disabled-opacity: @disabled-opacity;
+
+// DropdownMenu
+@dropdown-menu-height: 50px;
+@dropdown-menu-background-color: @white;
+@dropdown-menu-title-font-size: 15px;
+@dropdown-menu-title-text-color: @text-color;
+@dropdown-menu-title-active-text-color: @blue;
+@dropdown-menu-title-disabled-text-color: @gray-6;
+@dropdown-menu-title-padding: 0 @padding-xs;
+@dropdown-menu-title-line-height: 18px;
+@dropdown-menu-option-active-color: @blue;
+
+// IndexAnchor
+@index-anchor-padding: 0 @padding-md;
+@index-anchor-text-color: @text-color;
+@index-anchor-font-weight: 500;
+@index-anchor-font-size: @font-size-md;
+@index-anchor-line-height: 32px;
+@index-anchor-background-color: transparent;
+@index-anchor-active-background-color: @white;
+@index-anchor-active-text-color: @green;
+
+// IndexBar
+@index-bar-index-font-size: @font-size-xs;
+@index-bar-index-line-height: 14px;
+
+// skeleton
+@skeleton-padding: 0 @padding-md;
+@skeleton-row-height: 16px;
+@skeleton-row-background-color: @gray-2;
+@skeleton-row-margin-top: @padding-sm;
+@skeleton-avatar-background-color: @gray-2;
+@skeleton-animation-duration: 1.2s;

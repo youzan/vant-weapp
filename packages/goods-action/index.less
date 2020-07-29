@@ -1,9 +1,17 @@
 @import '../common/style/var.less';
+@import '../common/style/theme.less';
 
 .van-goods-action {
-  left: 0;
+  position: fixed;
   right: 0;
   bottom: 0;
+  left: 0;
   display: flex;
-  position: fixed;
+  align-items: center;
+  .theme(background-color, '@goods-action-background-color');
+
+  &--safe {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }

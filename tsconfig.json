@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "module": "es6",
+    "esModuleInterop": true,
     "target": "es6",
-    "noImplicitThis": true,
-    "noImplicitUseStrict": true
+    "declaration": true,
+    "noImplicitAny": false,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "types": ["miniprogram-api-typings"],
+    "paths": {
+      "definitions/*": ["./packages/definitions/*"],
+      "packages/*": ["./packages/*"]
+    },
+    "skipLibCheck": true
   },
-  "include": [
-    "types/**/*",
-    "packages/**/*"
-  ]
+  "include": ["packages/**/*"]
 }

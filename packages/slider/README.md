@@ -1,13 +1,18 @@
-## Slider 滑块
+# Slider 滑块
 
-### 使用指南
-在 app.json 或 index.json 中引入组件
+### 引入
+
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+
 ```json
 "usingComponents": {
-  "van-slider": "/packages/slider/index"
+  "van-slider": "@vant/weapp/slider/index"
 }
 ```
-#### 基本用法
+
+## 代码演示
+
+### 基本用法
 
 ```html
 <van-slider value="50" bind:change="onChange" />
@@ -18,55 +23,86 @@ Page({
   onChange(event) {
     wx.showToast({
       icon: 'none',
-      title: `当前值：${event.detail}`
+      title: `当前值：${event.detail}`,
     });
-  }
+  },
 });
 ```
 
-#### 指定选择范围
+### 指定选择范围
 
 ```html
-<van-slider value="50" min="10" max="90" />
+<van-slider min="-50" max="50" />
 ```
 
-#### 禁用
+### 禁用
 
 ```html
 <van-slider value="50" disabled />
 ```
 
-#### 指定步长
+### 指定步长
 
 ```html
-<van-slider value="50" step="10" bar-height="4px" />
+<van-slider value="50" step="10" />
 ```
 
-### API
+### 自定义样式
 
-| 参数       | 说明      | 类型       | 默认值       |
-|-----------|-----------|-----------|-------------|
-| value | 当前进度百分比，取值范围为 0-100 | `Number` | `0` |
-| disabled | 是否禁用滑块 | `Boolean` | `false` |
-| max | 最大值 | `Number` | `100` |
-| min | 最小值 | `Number` | `0` |
-| step | 步长 | `Number` | `1` |
-| bar-height | 进度条高度 | `String` | `2px` |
+```html
+<van-slider value="50" bar-height="4px" active-color="#ee0a24" />
+```
 
-### Event
+### 自定义按钮
 
-| 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
-| bind:change | 进度值改变后触发 | event.detail: 当前进度 |
+```html
+<van-slider value="{{ currentValue }}" use-button-slot bind:drag="onDrag">
+  <view class="custom-button" slot="button">
+    {{ currentValue }}/100
+  </view>
+</van-slider>
+```
+
+```js
+Page({
+  data: {
+    currentValue: 50,
+  },
+
+  onDrag(event) {
+    this.setData({
+      currentValue: event.detail.value,
+    });
+  },
+});
+```
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| value | 当前进度百分比，取值范围为 0-100 | _number_ | `0` | - |
+| disabled | 是否禁用滑块 | _boolean_ | `false` | - |
+| max | 最大值 | _number_ | `100` | - |
+| min | 最小值 | _number_ | `0` | - |
+| step | 步长 | _number_ | `1` | - |
+| bar-height | 进度条高度，默认单位为 `px` | _string \| number_ | `2px` | - |
+| active-color | 进度条激活态颜色 | _string_ | `#1989fa` | - |
+| inactive-color | 进度条默认颜色 | _string_ | `#e5e5e5` | - |
+
+### Events
+
+| 事件名          | 说明             | 参数                         |
+| --------------- | ---------------- | ---------------------------- |
+| bind:drag       | 拖动进度条时触发 | event.detail.value: 当前进度 |
+| bind:change     | 进度值改变后触发 | event.detail: 当前进度       |
+| bind:drag-start | 开始拖动时触发   | -                            |
+| bind:drag-end   | 结束拖动时触发   | -                            |
 
 ### 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
+| 类名         | 说明         |
+| ------------ | ------------ |
 | custom-class | 根节点样式类 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.2.0 | feature | 新增组件 |

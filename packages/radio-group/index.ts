@@ -6,33 +6,38 @@ VantComponent({
   relation: {
     name: 'radio',
     type: 'descendant',
-    linked(target: Weapp.Component) {
-      const { value, disabled } = this.data;
-      target.setData({
-        value: value,
-        disabled: disabled || target.data.disabled
-      });
-    }
+    current: 'radio-group',
+    linked(target) {
+      this.updateChild(target);
+    },
   },
 
   props: {
-    value: null,
-    disabled: Boolean
+    value: {
+      type: null,
+      observer: 'updateChildren',
+    },
+    disabled: {
+      type: Boolean,
+      observer: 'updateChildren',
+    },
   },
 
-  watch: {
-    value(value) {
-      const children = this.getRelationNodes('../radio/index');
-      children.forEach(child => {
-        child.setData({ value });
-      });
+  methods: {
+    updateChildren() {
+      (
+        this.children || []
+      ).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
+        this.updateChild(child)
+      );
     },
 
-    disabled(disabled: boolean) {
-      const children = this.getRelationNodes('../radio/index');
-      children.forEach(child => {
-        child.setData({ disabled: disabled || child.data.disabled });
+    updateChild(child: WechatMiniprogram.Component.TrivialInstance) {
+      const { value, disabled } = this.data;
+      child.setData({
+        value,
+        disabled: disabled || child.data.disabled,
       });
-    }
-  }
+    },
+  },
 });

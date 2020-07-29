@@ -1,48 +1,33 @@
 import { VantComponent } from '../common/component';
-import { GREEN } from '../common/color';
+import { GREEN, GRAY_DARK } from '../common/color';
 VantComponent({
+  classes: ['desc-class'],
   props: {
     icon: String,
     steps: Array,
     active: Number,
     direction: {
       type: String,
-      value: 'horizontal'
+      value: 'horizontal',
     },
     activeColor: {
       type: String,
-      value: GREEN
-    }
-  },
-  watch: {
-    steps: 'formatSteps',
-    active: 'formatSteps'
-  },
-  created: function created() {
-    this.formatSteps();
+      value: GREEN,
+    },
+    inactiveColor: {
+      type: String,
+      value: GRAY_DARK,
+    },
+    activeIcon: {
+      type: String,
+      value: 'checked',
+    },
+    inactiveIcon: String,
   },
   methods: {
-    formatSteps: function formatSteps() {
-      var _this = this;
-
-      var steps = this.data.steps;
-      steps.forEach(function (step, index) {
-        step.status = _this.getStatus(index);
-      });
-      this.setData({
-        steps: steps
-      });
+    onClick(event) {
+      const { index } = event.currentTarget.dataset;
+      this.$emit('click-step', index);
     },
-    getStatus: function getStatus(index) {
-      var active = this.data.active;
-
-      if (index < active) {
-        return 'finish';
-      } else if (index === active) {
-        return 'process';
-      }
-
-      return '';
-    }
-  }
+  },
 });

@@ -2,28 +2,21 @@ import { isObj } from '../common/utils';
 
 type ToastMessage = string | number;
 
-export type ToastOptions = {
+interface ToastOptions {
   show?: boolean;
   type?: string;
   mask?: boolean;
   zIndex?: number;
-  context?: any;
+  context?:
+    | WechatMiniprogram.Component.TrivialInstance
+    | WechatMiniprogram.Page.TrivialInstance;
   position?: string;
   duration?: number;
   selector?: string;
   forbidClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;
-}
-
-export interface Toast {
-  (message: ToastOptions | ToastMessage, options?: ToastOptions): Weapp.Component;
-  loading?(options?: ToastOptions | ToastMessage): Weapp.Component;
-  success?(options?: ToastOptions | ToastMessage): Weapp.Component;
-  fail?(options?: ToastOptions | ToastMessage): Weapp.Component;
-  clear?(): void;
-  setDefaultOptions?(options: ToastOptions): void;
-  resetDefaultOptions?(): void;
+  onClose?: () => void;
 }
 
 const defaultOptions = {
@@ -32,11 +25,11 @@ const defaultOptions = {
   message: '',
   show: true,
   zIndex: 1000,
-  duration: 3000,
+  duration: 2000,
   position: 'middle',
   forbidClick: false,
   loadingType: 'circular',
-  selector: '#van-toast'
+  selector: '#van-toast',
 };
 
 let queue = [];
@@ -51,10 +44,12 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Toast: Toast = (options = {}) => {
-  options = {
+function Toast(
+  toastOptions: ToastOptions | ToastMessage
+): WechatMiniprogram.Component.TrivialInstance {
+  const options = {
     ...currentOptions,
-    ...parseOptions(options)
+    ...parseOptions(toastOptions),
   } as ToastOptions;
 
   const context = options.context || getContext();
@@ -68,6 +63,14 @@ const Toast: Toast = (options = {}) => {
   delete options.context;
   delete options.selector;
 
+  toast.clear = () => {
+    toast.setData({ show: false });
+
+    if (options.onClose) {
+      options.onClose();
+    }
+  };
+
   queue.push(toast);
   toast.setData(options);
   clearTimeout(toast.timer);
@@ -75,29 +78,31 @@ const Toast: Toast = (options = {}) => {
   if (options.duration > 0) {
     toast.timer = setTimeout(() => {
       toast.clear();
-      queue = queue.filter(item => item !== toast);
+      queue = queue.filter((item) => item !== toast);
     }, options.duration);
   }
 
   return toast;
-};
+}
 
-const createMethod = type => options => Toast({
-  type, ...parseOptions(options)
-});
+const createMethod = (type: string) => (options: ToastOptions | ToastMessage) =>
+  Toast({
+    type,
+    ...parseOptions(options),
+  });
 
-['loading', 'success', 'fail'].forEach(method => {
-  Toast[method] = createMethod(method);
-});
+Toast.loading = createMethod('loading');
+Toast.success = createMethod('success');
+Toast.fail = createMethod('fail');
 
 Toast.clear = () => {
-  queue.forEach(toast => {
+  queue.forEach((toast) => {
     toast.clear();
   });
   queue = [];
 };
 
-Toast.setDefaultOptions = options => {
+Toast.setDefaultOptions = (options: ToastOptions) => {
   Object.assign(currentOptions, options);
 };
 

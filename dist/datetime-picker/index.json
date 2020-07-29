@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "van-loading": "../loading/index"
+    "van-picker": "../picker/index"
   }
 }

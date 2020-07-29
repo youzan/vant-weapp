@@ -1,56 +1,138 @@
-export const transition = function(showDefaultValue) {
+import { isObj } from '../common/utils';
+
+const getClassNames = (name: string) => ({
+  enter: `van-${name}-enter van-${name}-enter-active enter-class enter-active-class`,
+  'enter-to': `van-${name}-enter-to van-${name}-enter-active enter-to-class enter-active-class`,
+  leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
+  'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`,
+});
+
+const nextTick = () => new Promise((resolve) => setTimeout(resolve, 1000 / 30));
+
+export const transition = function (showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,
+      // @ts-ignore
       show: {
         type: Boolean,
         value: showDefaultValue,
-        observer: 'observeShow'
+        observer: 'observeShow',
       },
+      // @ts-ignore
       duration: {
-        type: Number,
-        value: 300
-      }
+        type: null,
+        value: 300,
+        observer: 'observeDuration',
+      },
+      name: {
+        type: String,
+        value: 'fade',
+      },
     },
 
     data: {
       type: '',
       inited: false,
-      display: false
-    },
-
-    attached() {
-      if (this.data.show) {
-        this.show();
-      }
+      display: false,
     },
 
     methods: {
-      observeShow(value) {
-        if (value) {
-          this.show();
-        } else {
-          this.setData({
-            type: 'leave'
-          });
+      observeShow(value: boolean, old: boolean) {
+        if (value === old) {
+          return;
+        }
+        value ? this.enter() : this.leave();
+      },
+
+      enter() {
+        const { duration, name } = this.data;
+        const classNames = getClassNames(name);
+        const currentDuration = isObj(duration) ? duration.enter : duration;
+
+        this.status = 'enter';
+        this.$emit('before-enter');
+
+        Promise.resolve()
+          .then(nextTick)
+          .then(() => {
+            this.checkStatus('enter');
+            this.$emit('enter');
+
+            this.setData({
+              inited: true,
+              display: true,
+              classes: classNames.enter,
+              currentDuration,
+            });
+          })
+          .then(nextTick)
+          .then(() => {
+            this.checkStatus('enter');
+            this.transitionEnded = false;
+
+            this.setData({
+              classes: classNames['enter-to'],
+            });
+          })
+          .catch(() => {});
+      },
+
+      leave() {
+        if (!this.data.display) {
+          return;
+        }
+
+        const { duration, name } = this.data;
+        const classNames = getClassNames(name);
+        const currentDuration = isObj(duration) ? duration.leave : duration;
+
+        this.status = 'leave';
+        this.$emit('before-leave');
+
+        Promise.resolve()
+          .then(nextTick)
+          .then(() => {
+            this.checkStatus('leave');
+            this.$emit('leave');
+
+            this.setData({
+              classes: classNames.leave,
+              currentDuration,
+            });
+          })
+          .then(nextTick)
+          .then(() => {
+            this.checkStatus('leave');
+            this.transitionEnded = false;
+            setTimeout(() => this.onTransitionEnd(), currentDuration);
+
+            this.setData({
+              classes: classNames['leave-to'],
+            });
+          })
+          .catch(() => {});
+      },
+
+      checkStatus(status: 'enter' | 'leave') {
+        if (status !== this.status) {
+          throw new Error(`incongruent status: ${status}`);
         }
       },
 
-      show() {
-        this.setData({
-          inited: true,
-          display: true,
-          type: 'enter'
-        });
-      },
-
-      onAnimationEnd() {
-        if (!this.data.show) {
-          this.setData({
-            display: false
-          });
+      onTransitionEnd() {
+        if (this.transitionEnded) {
+          return;
         }
-      }
-    }
+
+        this.transitionEnded = true;
+        this.$emit(`after-${this.status}`);
+
+        const { show, display } = this.data;
+        if (!show && display) {
+          this.setData({ display: false });
+        }
+      },
+    },
   });
 };

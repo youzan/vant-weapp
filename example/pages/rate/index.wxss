@@ -1,3 +1,7 @@
-.van-rate {
+page {
+  background-color: #fff;
+}
+
+.rate-position {
   margin-left: 15px;
 }

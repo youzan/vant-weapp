@@ -2,18 +2,21 @@ import { VantComponent } from '../common/component';
 VantComponent({
   props: {
     show: Boolean,
-    mask: Boolean,
     customStyle: String,
+    duration: {
+      type: null,
+      value: 300,
+    },
     zIndex: {
       type: Number,
-      value: 1
-    }
+      value: 1,
+    },
   },
   methods: {
-    onClick: function onClick() {
+    onClick() {
       this.$emit('click');
     },
     // for prevent touchmove
-    noop: function noop() {}
-  }
+    noop() {},
+  },
 });

@@ -1,65 +1,71 @@
 import { VantComponent } from '../common/component';
 
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
+
 VantComponent({
   relation: {
     name: 'tabbar-item',
     type: 'descendant',
-    linked(target: Weapp.Component) {
-      this.data.items.push(target);
-      setTimeout(() => {
-        this.setActiveItem();
-      });
+    current: 'tabbar',
+    linked(target) {
+      target.parent = this;
+      target.updateFromParent();
     },
-    unlinked(target: Weapp.Component) {
-      this.data.items = this.data.items.filter(item => item !== target);
-      setTimeout(() => {
-        this.setActiveItem();
-      });
-    }
+    unlinked() {
+      this.updateChildren();
+    },
   },
 
   props: {
-    active: Number,
+    active: {
+      type: null,
+      observer: 'updateChildren',
+    },
+    activeColor: {
+      type: String,
+      observer: 'updateChildren',
+    },
+    inactiveColor: {
+      type: String,
+      observer: 'updateChildren',
+    },
     fixed: {
       type: Boolean,
-      value: true
+      value: true,
+    },
+    border: {
+      type: Boolean,
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 1
-    }
-  },
-
-  data: {
-    items: [],
-    currentActive: -1
-  },
-
-  watch: {
-    active(active) {
-      this.setData({ currentActive: active });
-      this.setActiveItem();
-    }
-  },
-
-  created() {
-    this.setData({ currentActive: this.data.active });
+      value: 1,
+    },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   methods: {
-    setActiveItem() {
-      this.data.items.forEach((item, index) => {
-        item.setActive(index === this.data.currentActive);
-      });
+    updateChildren() {
+      const { children } = this;
+      if (!Array.isArray(children) || !children.length) {
+        return Promise.resolve();
+      }
+
+      return Promise.all(
+        children.map((child: TrivialInstance) => child.updateFromParent())
+      );
     },
 
-    onChange(child) {
-      const active = this.data.items.indexOf(child);
-      if (active !== this.data.currentActive && active !== -1) {
+    onChange(child: TrivialInstance) {
+      const index = this.children.indexOf(child);
+      const active = child.data.name || index;
+
+      if (active !== this.data.active) {
         this.$emit('change', active);
-        this.setData({ currentActive: active });
-        this.setActiveItem();
       }
-    }
-  }
+    },
+  },
 });

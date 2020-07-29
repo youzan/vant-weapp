@@ -1,92 +1,229 @@
 import { VantComponent } from '../common/component';
+import { Weapp } from 'definitions/weapp';
+import { isDef } from '../common/utils';
 
-// Note that the bitwise operators and shift operators operate on 32-bit ints
-// so in that case, the max safe integer is 2^31-1, or 2147483647
-const MAX = 2147483647;
+const LONG_PRESS_START_TIME = 600;
+const LONG_PRESS_INTERVAL = 200;
+
+// add num and avoid float number
+function add(num1: number, num2: number) {
+  const cardinal = 10 ** 10;
+  return Math.round((num1 + num2) * cardinal) / cardinal;
+}
+
+function equal(value1: number | string, value2: number | string) {
+  return String(value1) === String(value2);
+}
 
 VantComponent({
   field: true,
 
-  classes: [
-    'input-class',
-    'plus-class',
-    'minus-class'
-  ],
+  classes: ['input-class', 'plus-class', 'minus-class'],
 
   props: {
-    integer: Boolean,
+    value: {
+      type: null,
+      observer(value) {
+        if (!equal(value, this.data.currentValue)) {
+          this.setData({ currentValue: this.format(value) });
+        }
+      },
+    },
+    integer: {
+      type: Boolean,
+      observer: 'check',
+    },
     disabled: Boolean,
+    inputWidth: null,
+    buttonSize: null,
+    asyncChange: Boolean,
     disableInput: Boolean,
+    decimalLength: {
+      type: Number,
+      value: null,
+      observer: 'check',
+    },
     min: {
       type: null,
-      value: 1
+      value: 1,
+      observer: 'check',
     },
     max: {
       type: null,
-      value: MAX
+      value: Number.MAX_SAFE_INTEGER,
+      observer: 'check',
     },
     step: {
       type: null,
-      value: 1
-    }
+      value: 1,
+    },
+    showPlus: {
+      type: Boolean,
+      value: true,
+    },
+    showMinus: {
+      type: Boolean,
+      value: true,
+    },
+    disablePlus: Boolean,
+    disableMinus: Boolean,
+    longPress: {
+      type: Boolean,
+      value: true,
+    },
   },
 
-  computed: {
-    minusDisabled() {
-      return this.data.disabled || this.data.value <= this.data.min;
-    },
-
-    plusDisabled() {
-      return this.data.disabled || this.data.value >= this.data.max;
-    }
+  data: {
+    currentValue: '',
   },
 
   created() {
     this.setData({
-      value: this.range(this.data.value)
+      currentValue: this.format(this.data.value),
     });
   },
 
   methods: {
+    check() {
+      const val = this.format(this.data.currentValue);
+      if (!equal(val, this.data.currentValue)) {
+        this.setData({ currentValue: val });
+      }
+    },
+
+    isDisabled(type: string) {
+      if (type === 'plus') {
+        return (
+          this.data.disabled ||
+          this.data.disablePlus ||
+          this.data.currentValue >= this.data.max
+        );
+      }
+
+      return (
+        this.data.disabled ||
+        this.data.disableMinus ||
+        this.data.currentValue <= this.data.min
+      );
+    },
+
+    onFocus(event: Weapp.Event) {
+      this.$emit('focus', event.detail);
+    },
+
+    onBlur(event: Weapp.Event) {
+      const value = this.format(event.detail.value);
+      this.emitChange(value);
+      this.$emit('blur', {
+        ...event.detail,
+        value,
+      });
+    },
+
+    // filter illegal characters
+    filter(value) {
+      value = String(value).replace(/[^0-9.-]/g, '');
+
+      if (this.data.integer && value.indexOf('.') !== -1) {
+        value = value.split('.')[0];
+      }
+
+      return value;
+    },
+
     // limit value range
-    range(value) {
-      return Math.max(Math.min(this.data.max, value), this.data.min);
+    format(value) {
+      value = this.filter(value);
+
+      // format range
+      value = value === '' ? 0 : +value;
+      value = Math.max(Math.min(this.data.max, value), this.data.min);
+
+      // format decimal
+      if (isDef(this.data.decimalLength)) {
+        value = value.toFixed(this.data.decimalLength);
+      }
+
+      return value;
     },
 
     onInput(event: Weapp.Event) {
       const { value = '' } = event.detail || {};
-      this.triggerInput(value);
+
+      // allow input to be empty
+      if (value === '') {
+        return;
+      }
+
+      let formatted = this.filter(value);
+
+      // limit max decimal length
+      if (isDef(this.data.decimalLength) && formatted.indexOf('.') !== -1) {
+        const pair = formatted.split('.');
+        formatted = `${pair[0]}.${pair[1].slice(0, this.data.decimalLength)}`;
+      }
+
+      this.emitChange(formatted);
     },
 
-    onChange(type) {
-      if (this.data[`${type}Disabled`]) {
+    emitChange(value: string) {
+      if (!this.data.asyncChange) {
+        this.setData({ currentValue: value });
+      }
+
+      this.$emit('change', value);
+    },
+
+    onChange() {
+      const { type } = this;
+      if (this.isDisabled(type)) {
         this.$emit('overlimit', type);
         return;
       }
 
       const diff = type === 'minus' ? -this.data.step : +this.data.step;
-      const value = Math.round((this.data.value + diff) * 100) / 100;
-      this.triggerInput(this.range(value));
+
+      const value = this.format(add(+this.data.currentValue, diff));
+
+      this.emitChange(value);
       this.$emit(type);
     },
 
-    onBlur(event: Weapp.Event) {
-      const value = this.range(this.data.value);
-      this.triggerInput(value);
-      this.$emit('blur', event);
+    longPressStep() {
+      this.longPressTimer = setTimeout(() => {
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_INTERVAL);
     },
 
-    onMinus() {
-      this.onChange('minus');
+    onTap(event: Weapp.Event) {
+      const { type } = event.currentTarget.dataset;
+      this.type = type;
+      this.onChange();
     },
 
-    onPlus() {
-      this.onChange('plus');
+    onTouchStart(event: Weapp.Event) {
+      if (!this.data.longPress) {
+        return;
+      }
+      clearTimeout(this.longPressTimer);
+
+      const { type } = event.currentTarget.dataset;
+      this.type = type;
+      this.isLongPress = false;
+
+      this.longPressTimer = setTimeout(() => {
+        this.isLongPress = true;
+        this.onChange();
+        this.longPressStep();
+      }, LONG_PRESS_START_TIME);
     },
 
-    triggerInput(value) {
-      this.setData({ value });
-      this.$emit('change', value);
-    }
-  }
+    onTouchEnd() {
+      if (!this.data.longPress) {
+        return;
+      }
+      clearTimeout(this.longPressTimer);
+    },
+  },
 });

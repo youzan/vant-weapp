@@ -1,160 +1,126 @@
 import { VantComponent } from '../common/component';
-var FONT_COLOR = '#ed6a0c';
-var BG_COLOR = '#fffbe8';
 VantComponent({
   props: {
     text: {
       type: String,
-      value: ''
+      value: '',
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     mode: {
       type: String,
-      value: ''
+      value: '',
     },
     url: {
       type: String,
-      value: ''
+      value: '',
     },
     openType: {
       type: String,
-      value: 'navigate'
+      value: 'navigate',
     },
     delay: {
       type: Number,
-      value: 0
+      value: 1,
     },
     speed: {
       type: Number,
-      value: 50
+      value: 50,
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     scrollable: {
       type: Boolean,
-      value: true
+      value: true,
     },
     leftIcon: {
       type: String,
-      value: ''
+      value: '',
     },
-    color: {
-      type: String,
-      value: FONT_COLOR
-    },
-    backgroundColor: {
-      type: String,
-      value: BG_COLOR
-    }
+    color: String,
+    backgroundColor: String,
+    background: String,
+    wrapable: Boolean,
   },
   data: {
     show: true,
-    hasRightIcon: false,
-    width: undefined,
-    wrapWidth: undefined,
-    elapse: undefined,
-    animation: null,
-    resetAnimation: null,
-    timer: null
   },
-  watch: {
-    text: function text() {
-      this.setData({}, this.init);
-    }
+  created() {
+    this.resetAnimation = wx.createAnimation({
+      duration: 0,
+      timingFunction: 'linear',
+    });
   },
-  created: function created() {
-    if (this.data.mode) {
-      this.setData({
-        hasRightIcon: true
-      });
-    }
-  },
-  destroyed: function destroyed() {
-    var timer = this.data.timer;
-    timer && clearTimeout(timer);
+  destroyed() {
+    this.timer && clearTimeout(this.timer);
   },
   methods: {
-    init: function init() {
-      var _this = this;
-
-      this.getRect('.van-notice-bar__content').then(function (rect) {
-        if (!rect || !rect.width) {
+    init() {
+      Promise.all([
+        this.getRect('.van-notice-bar__content'),
+        this.getRect('.van-notice-bar__wrap'),
+      ]).then((rects) => {
+        const [contentRect, wrapRect] = rects;
+        if (
+          contentRect == null ||
+          wrapRect == null ||
+          !contentRect.width ||
+          !wrapRect.width
+        ) {
           return;
         }
-
-        _this.setData({
-          width: rect.width
-        });
-
-        _this.getRect('.van-notice-bar__content-wrap').then(function (rect) {
-          if (!rect || !rect.width) {
-            return;
-          }
-
-          var wrapWidth = rect.width;
-          var _this$data = _this.data,
-              width = _this$data.width,
-              speed = _this$data.speed,
-              scrollable = _this$data.scrollable,
-              delay = _this$data.delay;
-
-          if (scrollable && wrapWidth < width) {
-            var elapse = width / speed * 1000;
-            var animation = wx.createAnimation({
-              duration: elapse,
-              timeingFunction: 'linear',
-              delay: delay
-            });
-            var resetAnimation = wx.createAnimation({
-              duration: 0,
-              timeingFunction: 'linear'
-            });
-
-            _this.setData({
-              elapse: elapse,
-              wrapWidth: wrapWidth,
-              animation: animation,
-              resetAnimation: resetAnimation
-            }, function () {
-              _this.scroll();
-            });
-          }
-        });
+        const { speed, scrollable, delay } = this.data;
+        if (scrollable && wrapRect.width < contentRect.width) {
+          const duration = (contentRect.width / speed) * 1000;
+          this.wrapWidth = wrapRect.width;
+          this.contentWidth = contentRect.width;
+          this.duration = duration;
+          this.animation = wx.createAnimation({
+            duration,
+            timingFunction: 'linear',
+            delay,
+          });
+          this.scroll();
+        }
       });
     },
-    scroll: function scroll() {
-      var _this2 = this;
-
-      var _this$data2 = this.data,
-          animation = _this$data2.animation,
-          resetAnimation = _this$data2.resetAnimation,
-          wrapWidth = _this$data2.wrapWidth,
-          elapse = _this$data2.elapse,
-          speed = _this$data2.speed;
-      resetAnimation.translateX(wrapWidth).step();
-      var animationData = animation.translateX(-(elapse * speed) / 1000).step();
+    scroll() {
+      this.timer && clearTimeout(this.timer);
+      this.timer = null;
       this.setData({
-        animationData: resetAnimation.export()
+        animationData: this.resetAnimation
+          .translateX(this.wrapWidth)
+          .step()
+          .export(),
       });
-      setTimeout(function () {
-        _this2.setData({
-          animationData: animationData.export()
+      setTimeout(() => {
+        this.setData({
+          animationData: this.animation
+            .translateX(-this.contentWidth)
+            .step()
+            .export(),
         });
-      }, 100);
-      var timer = setTimeout(function () {
-        _this2.scroll();
-      }, elapse);
-      this.setData({
-        timer: timer
-      });
+      }, 20);
+      this.timer = setTimeout(() => {
+        this.scroll();
+      }, this.duration);
     },
-    onClickIcon: function onClickIcon() {
-      var timer = this.data.timer;
-      timer && clearTimeout(timer);
-      this.setData({
-        show: false,
-        timer: null
-      });
+    onClickIcon(event) {
+      if (this.data.mode === 'closeable') {
+        this.timer && clearTimeout(this.timer);
+        this.timer = null;
+        this.setData({ show: false });
+        this.$emit('close', event.detail);
+      }
     },
-    onClick: function onClick(event) {
+    onClick(event) {
       this.$emit('click', event);
-    }
-  }
+    },
+  },
 });

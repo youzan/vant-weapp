@@ -1,36 +1,47 @@
 @import '../common/style/var.less';
+@import '../common/style/theme.less';
 
 .van-button {
   position: relative;
-  padding: 0;
-  display: inline-block;
-  height: 44px;
-  line-height: 42px;
-  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  font-size: 16px;
+  padding: 0;
   text-align: center;
   vertical-align: middle;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
-  &::after {
-    content: " ";
+  .theme(height, '@button-default-height');
+  .theme(line-height, '@button-line-height');
+  .theme(font-size, '@button-default-font-size');
+  .theme(transition, 'opacity @animation-duration-fast');
+  .theme(border-radius, '@button-border-radius');
+
+  &::before {
     position: absolute;
     top: 50%;
     left: 50%;
-    opacity: 0;
     width: 100%;
     height: 100%;
     border: inherit;
-    border-color: @black;
-    background-color: @black;
     border-radius: inherit; /* inherit parent's border radius */
     transform: translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
+
+    .theme(background-color, '@black');
+    .theme(border-color, '@black');
   }
 
-  &:active::after {
-    opacity: .15;
+  // reset weapp default border
+  &::after {
+    border-width: 0;
+  }
+
+  &--active::before {
+    opacity: 0.15;
   }
 
   &--unclickable::after {
@@ -38,71 +49,78 @@
   }
 
   &--default {
-    color: @button-default-color;
-    background-color: @button-default-background-color;
-    border: 1px solid @button-default-border-color;
+    .theme(color, '@button-default-color');
+    .theme(background, '@button-default-background-color');
+    .theme(border, '@button-border-width solid @button-default-border-color');
   }
 
   &--primary {
-    color: @button-primary-color;
-    background-color: @button-primary-background-color;
-    border: 1px solid @button-primary-border-color;
+    .theme(color, '@button-primary-color');
+    .theme(background, '@button-primary-background-color');
+    .theme(border, '@button-border-width solid @button-primary-border-color');
+  }
+
+  &--info {
+    .theme(color, '@button-info-color');
+    .theme(background, '@button-info-background-color');
+    .theme(border, '@button-border-width solid @button-info-border-color');
   }
 
   &--danger {
-    color: @button-danger-color;
-    background-color: @button-danger-background-color;
-    border: 1px solid @button-danger-border-color;
+    .theme(color, '@button-danger-color');
+    .theme(background, '@button-danger-background-color');
+    .theme(border, '@button-border-width solid @button-danger-border-color');
   }
 
   &--warning {
-    color: @button-warning-color;
-    background-color: @button-warning-background-color;
-    border: 1px solid @button-warning-border-color;
+    .theme(color, '@button-warning-color');
+    .theme(background, '@button-warning-background-color');
+    .theme(border, '@button-border-width solid @button-warning-border-color');
   }
 
   &--plain {
-    background-color: @white;
+    .theme(background, '@button-plain-background-color');
 
     &.van-button--primary {
-      color: @button-primary-background-color;
+      .theme(color, '@button-primary-background-color');
+    }
+
+    &.van-button--info {
+      .theme(color, '@button-info-background-color');
     }
 
     &.van-button--danger {
-      color: @button-danger-background-color;
+      .theme(color, '@button-danger-background-color');
     }
 
     &.van-button--warning {
-      color: @button-warning-background-color;
+      .theme(color, '@button-warning-background-color');
     }
   }
 
   &--large {
     width: 100%;
-    height: 50px;
-    line-height: 48px;
+    .theme(height, '@button-large-height');
   }
 
   &--normal {
     padding: 0 15px;
-    font-size: 14px;
+    .theme(font-size, '@button-normal-font-size');
   }
 
   &--small {
-    height: 30px;
-    padding: 0 8px;
-    min-width: 60px;
-    font-size: 12px;
-    line-height: 28px;
+    .theme(min-width, '@button-small-min-width');
+    .theme(height, '@button-small-height');
+    .theme(padding, '0 @padding-xs');
+    .theme(font-size, '@button-small-font-size');
   }
 
-  /* mini图标默认宽度50px，文字不能超过4个 */
+  // mini图标默认宽度50px，文字不能超过4个
   &--mini {
     display: inline-block;
-    width: 50px;
-    height: 22px;
-    line-height: 20px;
-    font-size: 10px;
+    .theme(min-width, '@button-mini-min-width');
+    .theme(height, '@button-mini-height');
+    .theme(font-size, '@button-mini-font-size');
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -110,12 +128,12 @@
   }
 
   &--block {
+    display: flex;
     width: 100%;
-    display: block;
   }
 
   &--round {
-    border-radius: 10em;
+    .theme(border-radius, '@button-round-border-radius');
   }
 
   &--square {
@@ -123,6 +141,40 @@
   }
 
   &--disabled {
-    opacity: .5;
+    .theme(opacity, '@button-disabled-opacity');
+  }
+
+  &__text {
+    display: inline;
+  }
+
+  &__loading-text,
+  &__icon + &__text:not(:empty) {
+    margin-left: @padding-base;
+  }
+
+  &__icon {
+    min-width: 1em;
+    line-height: inherit !important;
+    vertical-align: top;
+  }
+
+  &--hairline {
+    padding-top: 1px; // add 1px padding for text vertical align middle
+    border-width: 0;
+
+    &::after {
+      border-color: inherit;
+      border-width: 1px;
+      .theme(border-radius, 'calc(@button-border-radius * 2)');
+    }
+
+    &.van-button--round::after {
+      .theme(border-radius, '@button-round-border-radius');
+    }
+
+    &.van-button--square::after {
+      border-radius: 0;
+    }
   }
 }

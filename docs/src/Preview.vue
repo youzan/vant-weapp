@@ -1,9 +1,12 @@
 <template>
   <div>
-    <img class="preview-image" :src="image">
+    <img
+      :class="['preview-image', `preview-image--${imageName}`]"
+      :src="image"
+    />
     <div class="preview-popup">
       <div class="preview-content">
-        <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg">
+        <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg" />
         <p>微信扫码体验</p>
       </div>
     </div>
@@ -13,100 +16,55 @@
 <script>
 const PREFIX = 'https://img.yzcdn.cn/vant-weapp/';
 const MAP = {
-  index: 'index-201808121630.png',
-  'action-sheet': 'action-sheet-201809071648.png',
-  area: 'area-20181015.png',
-  badge: 'badge-201808092138.png',
-  button: 'button-20181015.png',
-  card: 'card-201808092138.png',
-  col: 'layout-201808092138.png',
-  cell: 'cell-20181114.jpeg',
-  dialog: 'dialog-201809071648.png',
-  'datetime-picker': 'datetime-picker-201811102.png',
-  field: 'field-201808092138.png',
-  'goods-action': 'goods-action-20181015.png',
-  icon: 'icon-201808092138.png',
-  loading: 'loading-201808092138.png',
-  'nav-bar': 'nav-bar-201808110751.png',
-  'notice-bar': 'notice-bar-20181015.png',
-  notify: 'notify-201808112050.png',
-  panel: 'panel-201808092138.png',
-  popup: 'popup-201808092138.png',
-  progress: 'progress-201808232055.png',
-  radio: 'radio-20181110.jpeg',
-  slider: 'slider-201808221024.png',
-  stepper: 'stepper-201808092138.png',
-  search: 'search-201808092138.png',
-  steps: 'steps-20181015.png',
-  switch: 'switch-20181110.jpeg',
-  'switch-cell': 'switch-cell-201808221124.png',
-  'swipe-cell': 'swipe-cell-20181110.jpeg',
-  'submit-bar': 'submit-bar-a-201809271357.png',
-  tab: 'tab-20181015.png',
-  tag: 'tag-20181019.jpeg',
-  tabbar: 'tabbar-201808160922.png',
-  toast: 'toast-201808191046.png',
+  index: 'index-20190715.png',
   transition: 'transition-20180821.png',
-  'tree-select': 'tree-select-201808092138.png',
-  checkbox: 'checkbox-20181110.jpeg',
-  rate: 'rate-20181120-1.png',
-  collapse: 'collapse-20181123.png'
 };
 
 export default {
-  data() {
-    return {
-      currentPage: null
-    };
-  },
-
   computed: {
+    imageName() {
+      return location.hash.slice(1);
+    },
     image() {
-      if (this.currentPage === null) {
-        return '';
-      }
-      return PREFIX + (MAP[this.currentPage] || MAP.index);
-    }
+      return PREFIX + (MAP[this.imageName] || MAP.index);
+    },
   },
-
-  created() {
-    window.switchImage = path => {
-      path = path.replace('/', '');
-      this.currentPage = path;
-    };
-  }
 };
 </script>
 
 <style lang="less">
 body {
   margin: 0;
-  color: #333;
+  color: #323233;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
   line-height: 1;
-  background-color: #f8f8f8;
-  font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei',
-    Tohoma, Arial, sans-serif;
+  background-color: #f7f8fa;
   -webkit-font-smoothing: antialiased;
 }
 
 .preview {
   &-image {
-    width: 100%;
     display: block;
-    margin-top: -62px;
+    width: 100%;
+
+    &--transition {
+      margin-top: -62px;
+    }
   }
 
   &-popup {
-    opacity: 0;
-    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, .95);
-    transition: .3s;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transition: 0.3s;
 
     &:hover {
       opacity: 1;
@@ -114,27 +72,27 @@ body {
   }
 
   &-content {
-    left: 0;
+    position: absolute;
     top: 50%;
+    left: 0;
     width: 100%;
     height: 200px;
-    position: absolute;
     text-align: center;
     transform: translateY(-60%);
     user-select: none;
 
     img {
+      display: inline-block;
       width: 180px;
       height: 180px;
       margin-bottom: 15px;
-      display: inline-block;
     }
 
     p {
       margin: 0;
       color: #34495e;
-      line-height: 1.5;
       font-size: 16px;
+      line-height: 1.5;
     }
   }
 }

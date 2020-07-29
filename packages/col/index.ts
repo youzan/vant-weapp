@@ -3,35 +3,29 @@ import { VantComponent } from '../common/component';
 VantComponent({
   relation: {
     name: 'row',
-    type: 'ancestor'
+    type: 'ancestor',
+    current: 'col',
   },
 
   props: {
     span: Number,
-    offset: Number
+    offset: Number,
   },
 
   data: {
-    style: ''
-  },
-
-  computed: {
-    classes(): string {
-      const { span, offset } = this.data;
-      return this.classNames('custom-class', 'van-col', {
-        [`van-col--${span}`]: span,
-        [`van-col--offset-${offset}`]: offset
-      });
-    }
+    viewStyle: '',
   },
 
   methods: {
     setGutter(gutter: number) {
       const padding = `${gutter / 2}px`;
-      const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : '';
-      if (style !== this.data.style) {
-        this.setData({ style });
+      const viewStyle = gutter
+        ? `padding-left: ${padding}; padding-right: ${padding};`
+        : '';
+
+      if (viewStyle !== this.data.viewStyle) {
+        this.setData({ viewStyle });
       }
-    }
-  }
+    },
+  },
 });

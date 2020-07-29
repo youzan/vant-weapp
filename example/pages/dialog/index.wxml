@@ -1,59 +1,40 @@
-<demo-block title="消息提示" padding>
-  <van-button
-    plain
-    type="primary"
-    class="demo-margin-right"
-    bind:click="onClickAlert"
-  >
-    消息提示
+<demo-block title="提示弹窗" padding>
+  <van-button type="primary" class="demo-margin-right" bind:click="onClickAlert">
+    提示弹窗
   </van-button>
-  <van-button
-    plain
-    type="primary"
-    bind:click="onClickAlert2"
-  >
-    无标题提示
+  <van-button type="primary" bind:click="onClickAlert2">
+    提示弹窗（无标题）
   </van-button>
 </demo-block>
 
-<demo-block title="消息确认" padding>
-  <van-button
-    plain
-    type="primary"
-    bind:click="onClickConfirm"
-  >
-    消息确认
+<demo-block title="确认弹窗" padding>
+  <van-button type="primary" bind:click="onClickConfirm">
+    确认弹窗
+  </van-button>
+</demo-block>
+
+<demo-block title="异步关闭" padding>
+  <van-button type="primary" bind:click="onClickAsyncClose">
+    异步关闭
   </van-button>
 </demo-block>
 
 <demo-block title="组件调用" padding>
-  <van-button
-    plain
-    type="danger"
-    bind:click="showCustomDialog"
-  >
+  <van-button type="primary" class="demo-margin-right" bind:click="showCustomDialog">
     组件调用
   </van-button>
   <van-dialog
     use-slot
-    async-close
+    title="标题"
     show="{{ show }}"
     show-cancel-button
     bind:close="onClose"
     confirm-button-open-type="getUserInfo"
     bind:getuserinfo="getUserInfo"
   >
-    <van-field
-      value="{{ username }}"
-      label="用户名"
-      placeholder="请输入用户名"
-    />
-    <van-field
-      value="{{ password }}"
-      type="password"
-      label="密码"
-      border="{{ false }}"
-      placeholder="请输入密码"
+    <image
+      class="demo-image"
+      src="https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg"
     />
   </van-dialog>
 </demo-block>

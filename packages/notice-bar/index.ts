@@ -1,162 +1,143 @@
 import { VantComponent } from '../common/component';
-
-const FONT_COLOR = '#ed6a0c';
-const BG_COLOR = '#fffbe8';
+import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   props: {
     text: {
       type: String,
-      value: ''
+      value: '',
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     mode: {
       type: String,
-      value: ''
+      value: '',
     },
     url: {
       type: String,
-      value: ''
+      value: '',
     },
     openType: {
       type: String,
-      value: 'navigate'
+      value: 'navigate',
     },
     delay: {
       type: Number,
-      value: 0
+      value: 1,
     },
     speed: {
       type: Number,
-      value: 50
+      value: 50,
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     scrollable: {
       type: Boolean,
-      value: true
+      value: true,
     },
     leftIcon: {
       type: String,
-      value: ''
+      value: '',
     },
-    color: {
-      type: String,
-      value: FONT_COLOR
-    },
-    backgroundColor: {
-      type: String,
-      value: BG_COLOR
-    }
+    color: String,
+    backgroundColor: String,
+    background: String,
+    wrapable: Boolean
   },
 
   data: {
     show: true,
-    hasRightIcon: false,
-    width: undefined,
-    wrapWidth: undefined,
-    elapse: undefined,
-    animation: null,
-    resetAnimation: null,
-    timer: null
-  },
-
-  watch: {
-    text() {
-      this.setData({}, this.init);
-    }
   },
 
   created() {
-    if (this.data.mode) {
-      this.setData({
-        hasRightIcon: true
-      });
-    }
+    this.resetAnimation = wx.createAnimation({
+      duration: 0,
+      timingFunction: 'linear',
+    });
   },
 
   destroyed() {
-    const { timer } = this.data;
-    timer && clearTimeout(timer);
+    this.timer && clearTimeout(this.timer);
   },
 
   methods: {
     init() {
-      this.getRect('.van-notice-bar__content').then(rect => {
-        if (!rect || !rect.width) {
+      Promise.all([
+        this.getRect('.van-notice-bar__content'),
+        this.getRect('.van-notice-bar__wrap'),
+      ]).then((rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
+        const [contentRect, wrapRect] = rects;
+        if (
+          contentRect == null ||
+          wrapRect == null ||
+          !contentRect.width ||
+          !wrapRect.width
+        ) {
           return;
         }
-        this.setData({
-          width: rect.width
-        });
 
-        this.getRect('.van-notice-bar__content-wrap').then(rect => {
-          if (!rect || !rect.width) {
-            return;
-          }
+        const { speed, scrollable, delay } = this.data;
 
-          const wrapWidth = rect.width;
-          const {
-            width, speed, scrollable, delay
-          } = this.data;
+        if (scrollable && wrapRect.width < contentRect.width) {
+          const duration = (contentRect.width / speed) * 1000;
 
-          if (scrollable && wrapWidth < width) {
-            const elapse = width / speed * 1000;
-            const animation = wx.createAnimation({
-              duration: elapse,
-              timeingFunction: 'linear',
-              delay
-            });
-            const resetAnimation = wx.createAnimation({
-              duration: 0,
-              timeingFunction: 'linear'
-            });
+          this.wrapWidth = wrapRect.width;
+          this.contentWidth = contentRect.width;
+          this.duration = duration;
+          this.animation = wx.createAnimation({
+            duration,
+            timingFunction: 'linear',
+            delay,
+          });
 
-            this.setData({
-              elapse,
-              wrapWidth,
-              animation,
-              resetAnimation
-            }, () => {
-              this.scroll();
-            });
-          }
-        });
+          this.scroll();
+        }
       });
     },
 
     scroll() {
-      const {
-        animation, resetAnimation, wrapWidth, elapse, speed
-      } = this.data;
-      resetAnimation.translateX(wrapWidth).step();
-      const animationData = animation.translateX(-(elapse * speed) / 1000).step();
+      this.timer && clearTimeout(this.timer);
+      this.timer = null;
+
       this.setData({
-        animationData: resetAnimation.export()
+        animationData: this.resetAnimation
+          .translateX(this.wrapWidth)
+          .step()
+          .export(),
       });
+
       setTimeout(() => {
         this.setData({
-          animationData: animationData.export()
+          animationData: this.animation
+            .translateX(-this.contentWidth)
+            .step()
+            .export(),
         });
-      }, 100);
+      }, 20);
 
-      const timer = setTimeout(() => {
+      this.timer = setTimeout(() => {
         this.scroll();
-      }, elapse);
-
-      this.setData({
-        timer
-      });
+      }, this.duration);
     },
 
-    onClickIcon() {
-      const { timer } = this.data;
-      timer && clearTimeout(timer);
-      this.setData({
-        show: false,
-        timer: null
-      });
+    onClickIcon(event) {
+      if (this.data.mode === 'closeable') {
+        this.timer && clearTimeout(this.timer);
+        this.timer = null;
+
+        this.setData({ show: false });
+        this.$emit('close', event.detail);
+      }
     },
 
     onClick(event: Weapp.Event) {
       this.$emit('click', event);
-    }
-  }
+    },
+  },
 });

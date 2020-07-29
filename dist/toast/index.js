@@ -7,28 +7,23 @@ VantComponent({
     forbidClick: Boolean,
     zIndex: {
       type: Number,
-      value: 1000
+      value: 1000,
     },
     type: {
       type: String,
-      value: 'text'
+      value: 'text',
     },
     loadingType: {
       type: String,
-      value: 'circular'
+      value: 'circular',
     },
     position: {
       type: String,
-      value: 'middle'
-    }
+      value: 'middle',
+    },
   },
   methods: {
-    clear: function clear() {
-      this.setData({
-        show: false
-      });
-    },
     // for prevent touchmove
-    noop: function noop() {}
-  }
+    noop() {},
+  },
 });

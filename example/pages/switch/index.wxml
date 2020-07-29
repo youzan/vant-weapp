@@ -21,12 +21,27 @@
   />
 </demo-block>
 
-<demo-block title="高级用法" padding>
+<demo-block title="自定义大小" padding>
+  <van-switch
+    checked="{{ checked }}"
+    size="24px"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="自定义颜色" padding>
+  <van-switch
+    checked="{{ checked }}"
+    active-color="#07c160"
+    inactive-color="#ee0a24"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<demo-block title="异步控制" padding>
   <van-switch
     checked="{{ checked2 }}"
     size="36px"
-    active-color="#4b0"
-    inactive-color="#f44"
     bind:change="onChange2"
   />
 </demo-block>

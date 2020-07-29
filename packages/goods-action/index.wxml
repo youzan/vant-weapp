@@ -1,3 +1,5 @@
-<view class="van-goods-action custom-class">
+<wxs src="../wxs/utils.wxs" module="utils" />
+
+<view class="custom-class {{ utils.bem('goods-action', { safe: safeAreaInsetBottom }) }}">
   <slot />
 </view>

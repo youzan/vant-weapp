@@ -2,6 +2,6 @@
   vertical-align: middle;
 }
 
-.icon {
+.custom-icon {
   color: #1989fa;
 }

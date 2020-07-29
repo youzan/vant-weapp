@@ -1,117 +1,128 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
+import { Weapp } from 'definitions/weapp';
+import { range } from '../common/utils';
 
-const THRESHOLD = 0.15;
+const THRESHOLD = 0.3;
+let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
 
 VantComponent({
   props: {
     disabled: Boolean,
     leftWidth: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(leftWidth = 0) {
+        if (this.offset > 0) {
+          this.swipeMove(leftWidth);
+        }
+      },
     },
     rightWidth: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(rightWidth = 0) {
+        if (this.offset < 0) {
+          this.swipeMove(-rightWidth);
+        }
+      },
     },
-    asyncClose: Boolean
+    asyncClose: Boolean,
+    name: {
+      type: [Number, String],
+      value: '',
+    },
   },
 
   mixins: [touch],
 
   data: {
-    offset: 0,
-    draging: false
+    catchMove: false,
   },
 
-  computed: {
-    wrapperStyle() {
-      const { offset, draging } = this.data;
-      const transform = `translate3d(${offset}px, 0, 0)`;
-      const transition = draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)';
-      return `
+  created() {
+    this.offset = 0;
+    ARRAY.push(this);
+  },
+
+  destroyed() {
+    ARRAY = ARRAY.filter((item) => item !== this);
+  },
+
+  methods: {
+    open(position: 'left' | 'right') {
+      const { leftWidth, rightWidth } = this.data;
+      const offset = position === 'left' ? leftWidth : -rightWidth;
+      this.swipeMove(offset);
+
+      this.$emit('open', {
+        position,
+        name: this.data.name,
+      });
+    },
+
+    close() {
+      this.swipeMove(0);
+    },
+
+    swipeMove(offset = 0) {
+      this.offset = range(offset, -this.data.rightWidth, this.data.leftWidth);
+
+      const transform = `translate3d(${this.offset}px, 0, 0)`;
+      const transition = this.dragging
+        ? 'none'
+        : 'transform .6s cubic-bezier(0.18, 0.89, 0.32, 1)';
+
+      this.setData({
+        wrapperStyle: `
         -webkit-transform: ${transform};
         -webkit-transition: ${transition};
         transform: ${transform};
         transition: ${transition};
-      `;
-    }
-  },
-
-  methods: {
-    onTransitionend() {
-      this.swipe = false;
+      `,
+      });
     },
 
-    open(position) {
+    swipeLeaveTransition() {
       const { leftWidth, rightWidth } = this.data;
-      const offset = position === 'left' ? leftWidth : -rightWidth;
-      this.swipeMove(offset);
-      this.resetSwipeStatus();
-    },
+      const { offset } = this;
 
-    close() {
-      this.setData({ offset: 0 });
-    },
-
-    resetSwipeStatus() {
-      this.swiping = false;
-      this.opened = true;
-    },
-
-    swipeMove(offset = 0) {
-      this.setData({ offset });
-      offset && (this.swiping = true);
-      !offset && (this.opened = false);
-    },
-
-    swipeLeaveTransition(direction) {
-      const { offset, leftWidth, rightWidth } = this.data;
-      const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
-
-      // right
-      if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
+      if (rightWidth > 0 && -offset > rightWidth * THRESHOLD) {
         this.open('right');
-        // left
-      } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
+      } else if (leftWidth > 0 && offset > leftWidth * THRESHOLD) {
         this.open('left');
       } else {
-        this.swipeMove();
+        this.swipeMove(0);
       }
+      this.setData({ catchMove: false });
     },
 
-    startDrag(event) {
+    startDrag(event: Weapp.TouchEvent) {
       if (this.data.disabled) {
         return;
       }
 
-      this.setData({ draging: true });
+      this.startOffset = this.offset;
       this.touchStart(event);
-
-      if (this.opened) {
-        this.startX -= this.data.offset;
-      }
     },
 
-    onDrag(event) {
+    noop() {},
+
+    onDrag(event: Weapp.TouchEvent) {
       if (this.data.disabled) {
         return;
       }
 
       this.touchMove(event);
-      const { deltaX } = this;
-      const { leftWidth, rightWidth } = this.data;
 
-      if (
-        (deltaX < 0 && (-deltaX > rightWidth || !rightWidth)) ||
-        (deltaX > 0 && (deltaX > leftWidth || (deltaX > 0 && !leftWidth)))
-      ) {
+      if (this.direction !== 'horizontal') {
         return;
       }
 
-      if (this.direction === 'horizontal') {
-        this.swipeMove(deltaX);
-      }
+      this.dragging = true;
+      ARRAY.filter((item) => item !== this).forEach((item) => item.close());
+      this.setData({ catchMove: true });
+      this.swipeMove(this.startOffset + this.deltaX);
     },
 
     endDrag() {
@@ -119,25 +130,27 @@ VantComponent({
         return;
       }
 
-      this.setData({ draging: false });
-      if (this.swiping) {
-        this.swipeLeaveTransition(this.data.offset > 0 ? -1 : 1);
-      }
+      this.dragging = false;
+      this.swipeLeaveTransition();
     },
 
-    onClick(event) {
+    onClick(event: Weapp.Event) {
       const { key: position = 'outside' } = event.currentTarget.dataset;
       this.$emit('click', position);
 
-      if (!this.data.offset) {
+      if (!this.offset) {
         return;
       }
 
       if (this.data.asyncClose) {
-        this.$emit('close', { position, instance: this });
+        this.$emit('close', {
+          position,
+          instance: this,
+          name: this.data.name,
+        });
       } else {
         this.swipeMove(0);
       }
-    }
-  }
+    },
+  },
 });

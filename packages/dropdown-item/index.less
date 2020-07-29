@@ -1,0 +1,33 @@
+@import '../common/style/var.less';
+@import '../common/style/theme.less';
+
+.van-dropdown-item {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+
+  &__option {
+    text-align: left;
+
+    &--active {
+      .van-dropdown-item__title,
+      .van-dropdown-item__icon {
+        .theme(color, '@dropdown-menu-option-active-color');
+      }
+    }
+  }
+
+  &--up {
+    top: 0;
+  }
+
+  &--down {
+    bottom: 0;
+  }
+
+  &__icon {
+    display: block;
+    line-height: inherit;
+  }
+}

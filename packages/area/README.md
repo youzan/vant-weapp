@@ -1,18 +1,22 @@
-## Area 省市区选择
+# Area 省市区选择
+
+### 介绍
+
 省市区选择组件通常与 [弹出层](#/popup) 组件配合使用
 
-### 使用指南
+### 引入
 
-在 app.json 或 index.json 中引入组件
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+
 ```json
 "usingComponents": {
-  "van-area": "path/to/vant-weapp/dist/area/index"
+  "van-area": "@vant/weapp/area/index"
 }
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 要初始化一个`Area`组件，你需要传入一个`area-list`属性，数据格式具体可看下面数据格式章节
 
@@ -20,7 +24,7 @@
 <van-area area-list="{{ areaList }}" />
 ```
 
-#### 选中省市区
+### 选中省市区
 
 如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
 
@@ -28,7 +32,7 @@
 <van-area area-list="{{ areaList }}" value="110101" />
 ```
 
-#### 配置显示列
+### 配置显示列
 
 可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
 
@@ -36,37 +40,78 @@
 <van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" title="标题" />
 ```
 
-### API
+### 配置列占位提示文字
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| value | 当前选中的省市区`code` | `String` | - |
-| title | 顶部栏标题 | `String` | - |
-| area-list | 省市区数据，格式见下方 | `Object` | - |
-| columns-num | 省市区显示列数，3-省市区，2-省市，1-省 | `String | Number` | `3` |
-| loading | 是否显示加载状态 | `Boolean` | `false` |
-| item-height | 选项高度 | `Number` | `44` |
-| visible-item-count | 可见的选项个数 | `Number` | `5` |
+可以通过`columns-placeholder`属性配置每一列的占位提示文字
 
-### Event
+```html
+<van-area
+  area-list="{{ areaList }}"
+  columns-placeholder="{{ ['请选择', '请选择', '请选择'] }}"
+  title="标题"
+/>
+```
+
+## 云开发示例
+
+### 使用云开发获取省市区数据
+
+实际项目中，可以通过[小程序云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)的能力，将省市区数据保存在云开发的数据库中，并在小程序中使用云开发的接口异步获取数据。
+
+在小程序中使用云能力之前需要先调用`wx.could.init`方法完成云能力的初始化。
+
+```js
+const db = wx.cloud.database();
+
+db.collection('region')
+  .limit(1)
+  .get()
+  .then((res) => {
+    if (res.data && res.data.length > 0) {
+      this.setData({
+        areaList: res.data[0],
+      });
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| value | 当前选中的省市区`code` | _string_ | - | - |
+| title | 顶部栏标题 | _string_ | - | - |
+| area-list | 省市区数据，格式见下方 | _object_ | - | - |
+| columns-num | 省市区显示列数，3-省市区，2-省市，1-省 | _string \| number_ | `3` | - |
+| columns-placeholder | 列占位提示文字 | _string[]_ | `[]` | - |
+| loading | 是否显示加载状态 | _boolean_ | `false` | - |
+| item-height | 选项高度 | _number_ | `44` | - |
+| visible-item-count | 可见的选项个数 | _number_ | `6` | - |
+| confirm-button-text | 确认按钮文字 | _string_ | `确认` | - |
+| cancel-button-text | 取消按钮文字 | _string_ | `取消` | - |
+
+### Events
 
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |
-| confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节 |
-| cancel | 点击取消按钮时 | - |
-| change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
+| bind:confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节 |
+| bind:cancel | 点击取消按钮时 | - |
+| bind:change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
 
 ### 方法
 
-通过 selectComponent 可以获取到 area 实例并调用实例方法
+通过 selectComponent 可以获取到 Area 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|-----------|-----------|-----------|-------------|
-| reset | - | - | 重置所有选项到第一项 |
+| --- | --- | --- | --- |
+| reset | code: string | - | 根据 code 重置所有选项，若不传 code，则重置到第一项 |
 
-### 数据格式
-
-#### 省市区列表数据格式
+### 省市区列表数据格式
 
 整体是一个 Object，包含 `province_list`, `city_list`, `county_list` 三个 key。
 
@@ -101,9 +146,9 @@
 }
 ```
 
-完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/packages/area/demo/area.js)
+完整数据见 [area.js](https://github.com/youzan/vant/blob/dev/src/area/demo/area.js)
 
-#### 点击完成时返回的数据格式
+### 点击完成时返回的数据格式
 
 返回的数据整体为一个 Object，包含 `values`, `indexs` 两个 key
 
@@ -115,24 +160,17 @@
 [
   {
     code: '110000',
-    name: '北京市'
+    name: '北京市',
   },
   {
     code: '110100',
-    name: '北京市'
+    name: '北京市',
   },
   {
     code: '110101',
-    name: '东城区'
-  }
+    name: '东城区',
+  },
 ];
 ```
 
 `indexs` 为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中项的序号。
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.3.3 | feature | 新增组件 |
-| 0.3.5 | bugfix | 修复数据为空时报错的问题 |

@@ -1,0 +1,11 @@
+page {
+  background-color: #fff;
+}
+
+.text {
+  width: 100%;
+  margin-top: 5px;
+  color: #7d7e80;
+  font-size: 14px;
+  text-align: center;
+}

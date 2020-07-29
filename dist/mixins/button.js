@@ -1,15 +1,15 @@
-export var button = Behavior({
+export const button = Behavior({
+  externalClasses: ['hover-class'],
   properties: {
     id: String,
+    lang: String,
+    businessId: Number,
     sessionFrom: String,
-    appParameter: String,
-    sendMessageImg: String,
-    sendMessagePath: String,
-    showMessageCard: String,
     sendMessageTitle: String,
-    lang: {
-      type: String,
-      value: 'en'
-    }
-  }
+    sendMessagePath: String,
+    sendMessageImg: String,
+    showMessageCard: Boolean,
+    appParameter: String,
+    ariaLabel: String,
+  },
 });

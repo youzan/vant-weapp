@@ -1,90 +1,87 @@
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
 import { VantComponent } from '../common/component';
+import { canIUseModel } from '../common/version';
 VantComponent({
   field: true,
+  classes: ['icon-class'],
   props: {
+    value: {
+      type: Number,
+      observer(value) {
+        if (value !== this.data.innerValue) {
+          this.setData({ innerValue: value });
+        }
+      },
+    },
     readonly: Boolean,
     disabled: Boolean,
-    size: {
-      type: Number,
-      value: 20
+    allowHalf: Boolean,
+    size: null,
+    icon: {
+      type: String,
+      value: 'star',
+    },
+    voidIcon: {
+      type: String,
+      value: 'star-o',
     },
     color: {
       type: String,
-      value: '#ffd21e'
+      value: '#ffd21e',
     },
     voidColor: {
       type: String,
-      value: '#c7c7c7'
+      value: '#c7c7c7',
     },
     disabledColor: {
       type: String,
-      value: '#bdbdbd'
+      value: '#bdbdbd',
     },
     count: {
       type: Number,
-      value: 5
+      value: 5,
+      observer(value) {
+        this.setData({ innerCountArray: Array.from({ length: value }) });
+      },
     },
-    value: {
-      type: Number,
-      value: 0
-    }
+    gutter: null,
+    touchable: {
+      type: Boolean,
+      value: true,
+    },
   },
   data: {
-    innerValue: 0
-  },
-  watch: {
-    value: function value(_value) {
-      if (_value !== this.data.innerValue) {
-        this.setData({
-          innerValue: _value
-        });
-      }
-    }
-  },
-  computed: {
-    list: function list() {
-      var _this$data = this.data,
-          count = _this$data.count,
-          innerValue = _this$data.innerValue;
-      return Array.from({
-        length: count
-      }, function (_, index) {
-        return index < innerValue;
-      });
-    }
+    innerValue: 0,
+    innerCountArray: Array.from({ length: 5 }),
   },
   methods: {
-    onSelect: function onSelect(event) {
-      var data = this.data;
-      var index = event.currentTarget.dataset.index;
-
+    onSelect(event) {
+      const { data } = this;
+      const { score } = event.currentTarget.dataset;
       if (!data.disabled && !data.readonly) {
-        this.setData({
-          innerValue: index + 1
+        this.setData({ innerValue: score + 1 });
+        if (canIUseModel()) {
+          this.setData({ value: score + 1 });
+        }
+        wx.nextTick(() => {
+          this.$emit('input', score + 1);
+          this.$emit('change', score + 1);
         });
-        this.$emit('input', index + 1);
-        this.$emit('change', index + 1);
       }
     },
-    onTouchMove: function onTouchMove(event) {
-      var _this = this;
-
-      var _event$touches$ = event.touches[0],
-          clientX = _event$touches$.clientX,
-          clientY = _event$touches$.clientY;
-      this.getRect('.van-rate__item', true).then(function (list) {
-        var target = list.find(function (item) {
-          return clientX >= item.left && clientX <= item.right && clientY >= item.top && clientY <= item.bottom;
-        });
-
+    onTouchMove(event) {
+      const { touchable } = this.data;
+      if (!touchable) return;
+      const { clientX } = event.touches[0];
+      this.getRect('.van-rate__icon', true).then((list) => {
+        const target = list
+          .sort((item) => item.right - item.left)
+          .find((item) => clientX >= item.left && clientX <= item.right);
         if (target != null) {
-          _this.onSelect(_extends({}, event, {
-            currentTarget: target
-          }));
+          this.onSelect(
+            Object.assign(Object.assign({}, event), { currentTarget: target })
+          );
         }
       });
-    }
-  }
+    },
+  },
 });

@@ -1,0 +1,107 @@
+<demo-block title="基础用法" padding>
+  <van-uploader
+    name="1"
+    file-list="{{ fileList1 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
+<demo-block title="上传视频" padding>
+  <van-uploader
+    name="7"
+    accept="video"
+    file-list="{{ fileList7 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+  />
+</demo-block>
+
+<demo-block title="文件预览" padding>
+  <van-uploader
+    name="2"
+    file-list="{{ fileList2 }}"
+    multiple
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
+<demo-block title="隐藏上传按钮" padding>
+  <van-uploader
+    name="2"
+    file-list="{{ fileList2 }}"
+    multiple
+    show-upload="{{ false }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
+<demo-block title="上传状态" padding>
+  <van-uploader
+    name="8"
+    file-list="{{ fileList8 }}"
+    multiple
+    max-count="{{ 2 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
+<demo-block title="限制上传数量" padding>
+  <van-uploader
+    name="3"
+    file-list="{{ fileList3 }}"
+    multiple
+    max-count="{{ 2 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+  />
+</demo-block>
+
+<demo-block title="自定义上传样式" padding>
+  <van-uploader
+    name="4"
+    file-list="{{ fileList4 }}"
+    max-count="{{ 2 }}"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+    use-slot="{{ true }}"
+  >
+    <van-button icon="photo" type="primary">上传图片</van-button>
+  </van-uploader>
+</demo-block>
+
+<demo-block title="上传前校验" padding>
+  <van-uploader
+    name="5"
+    file-list="{{ fileList5 }}"
+    bind:before-read="beforeRead"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+    use-before-read="{{ true }}"
+  />
+</demo-block>
+
+<demo-block title="云存储上传" padding>
+  <van-uploader
+    name="6"
+    file-list="{{ fileList6 }}"
+    bind:before-read="beforeRead"
+    bind:after-read="afterRead"
+    bind:delete="delete"
+    bind:click-preview="clickPreview"
+    use-before-read="{{ true }}"
+  />
+  <view class="demo-margin-bottom">
+    <van-button type="primary" bind:click="uploadToCloud">上传至云存储</van-button>
+  </view>
+</demo-block>

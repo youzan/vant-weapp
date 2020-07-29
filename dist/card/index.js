@@ -1,7 +1,14 @@
 import { link } from '../mixins/link';
 import { VantComponent } from '../common/component';
 VantComponent({
-  classes: ['num-class', 'desc-class', 'thumb-class', 'title-class', 'price-class', 'origin-price-class'],
+  classes: [
+    'num-class',
+    'desc-class',
+    'thumb-class',
+    'title-class',
+    'price-class',
+    'origin-price-class',
+  ],
   mixins: [link],
   props: {
     tag: String,
@@ -9,23 +16,34 @@ VantComponent({
     desc: String,
     thumb: String,
     title: String,
-    price: String,
+    price: {
+      type: String,
+      observer: 'updatePrice',
+    },
     centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
     originPrice: String,
     thumbMode: {
       type: String,
-      value: 'scaleToFill'
+      value: 'aspectFit',
     },
     currency: {
       type: String,
-      value: '¥'
-    }
+      value: '¥',
+    },
   },
   methods: {
-    onClickThumb: function onClickThumb() {
+    updatePrice() {
+      const { price } = this.data;
+      const priceArr = price.toString().split('.');
+      this.setData({
+        integerStr: priceArr[0],
+        decimalStr: priceArr[1] ? `.${priceArr[1]}` : '',
+      });
+    },
+    onClickThumb() {
       this.jumpLink('thumbLink');
-    }
-  }
+    },
+  },
 });

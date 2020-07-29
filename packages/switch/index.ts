@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { BLUE, GRAY_DARK } from '../common/color';
 
 VantComponent({
   field: true,
@@ -6,48 +7,52 @@ VantComponent({
   classes: ['node-class'],
 
   props: {
-    checked: Boolean,
+    checked: {
+      type: null,
+      observer(value) {
+        const loadingColor = this.getLoadingColor(value);
+        this.setData({ value, loadingColor });
+      },
+    },
     loading: Boolean,
     disabled: Boolean,
     activeColor: String,
     inactiveColor: String,
     size: {
       type: String,
-      value: '30px'
-    }
-  },
-
-  watch: {
-    checked(value) {
-      this.setData({ value });
-    }
-  },
-
-  computed: {
-    classes(): string {
-      return this.classNames('custom-class', 'van-switch', {
-        'van-switch--on': this.data.checked,
-        'van-switch--disabled': this.data.disabled
-      });
+      value: '30px',
     },
-
-    style() {
-      const backgroundColor = this.data.checked ? this.data.activeColor : this.data.inactiveColor;
-      return `font-size: ${this.data.size}; ${ backgroundColor ? `background-color: ${backgroundColor}` : '' }`
-    }
+    activeValue: {
+      type: null,
+      value: true,
+    },
+    inactiveValue: {
+      type: null,
+      value: false,
+    },
   },
 
   created() {
-    this.setData({ value: this.data.checked });
+    const { checked: value } = this.data;
+    const loadingColor = this.getLoadingColor(value);
+
+    this.setData({ value, loadingColor });
   },
 
   methods: {
+    getLoadingColor(checked) {
+      const { activeColor, inactiveColor } = this.data;
+      return checked ? activeColor || BLUE : inactiveColor || GRAY_DARK;
+    },
+
     onClick() {
+      const { activeValue, inactiveValue } = this.data;
       if (!this.data.disabled && !this.data.loading) {
-        const checked = !this.data.checked;
-        this.$emit('input', checked);
-        this.$emit('change', checked);
+        const checked = this.data.checked === activeValue;
+        const value = checked ? inactiveValue : activeValue;
+        this.$emit('input', value);
+        this.$emit('change', value);
       }
-    }
-  }
+    },
+  },
 });

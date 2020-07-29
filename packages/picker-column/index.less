@@ -1,0 +1,22 @@
+@import '../common/style/var';
+@import '../common/style/theme';
+
+.van-picker-column {
+  overflow: hidden;
+  text-align: center;
+  .theme(color, '@picker-option-text-color');
+  .theme(font-size, '@picker-option-font-size');
+
+  &__item {
+    padding: 0 5px;
+
+    &--selected {
+      .theme(font-weight, '@font-weight-bold');
+      .theme(color, '@picker-option-selected-text-color');
+    }
+
+    &--disabled {
+      .theme(opacity, '@picker-option-disabled-opacity');
+    }
+  }
+}

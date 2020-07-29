@@ -1,17 +1,31 @@
+page {
+  padding-bottom: 0;
+}
+
 .col {
-  text-align: center;
-  height: 100px;
-  float: none;
   display: inline-block;
+  float: none;
+  text-align: center;
   vertical-align: middle;
 }
 
 .icon {
   display: block;
-  margin: 15px 0;
-  color: rgba(69, 90, 100, .8);
+  margin: 16px 0;
+  color: #323233;
 }
 
 .text {
-  font-size: 14px;
+  display: block;
+  height: 36px;
+  margin: -4px 0 4px;
+  padding: 0 5px;
+  color: #646566;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.demo-tab-pane {
+  margin: 20px;
+  background-color: #fff;
 }

@@ -1,18 +1,40 @@
-function isDef(value: any): boolean {
+export function isDef(value: any): boolean {
   return value !== undefined && value !== null;
 }
 
-function isObj(x: any): boolean {
+export function isObj(x: any): boolean {
   const type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
 }
 
-function isNumber(value) {
-  return /^\d+$/.test(value);
+export function isNumber(value) {
+  return /^\d+(\.\d+)?$/.test(value);
 }
 
-export {
-  isObj,
-  isDef,
-  isNumber
-};
+export function range(num: number, min: number, max: number) {
+  return Math.min(Math.max(num, min), max);
+}
+
+export function nextTick(fn: Function) {
+  setTimeout(() => {
+    fn();
+  }, 1000 / 30);
+}
+
+let systemInfo: WechatMiniprogram.GetSystemInfoSyncResult = null;
+export function getSystemInfoSync() {
+  if (systemInfo == null) {
+    systemInfo = wx.getSystemInfoSync();
+  }
+
+  return systemInfo;
+}
+
+export function addUnit(value?: string | number): string | undefined {
+  if (!isDef(value)) {
+    return undefined;
+  }
+
+  value = String(value);
+  return isNumber(value) ? `${value}px` : value;
+}

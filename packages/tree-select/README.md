@@ -94,6 +94,7 @@ Page({
 ```html
 <van-tree-select
   items="{{ items }}"
+  height="55vw"
   main-active-index="{{ mainActiveIndex }}"
   active-id="{{ activeId }}"
   bind:click-nav="onClickNav"
@@ -110,6 +111,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | items | 分类显示所需的数据 | _Array_ | `[]` | - |
+| height | 高度，默认单位为`px` | _number \| string_ | `300` |
 | main-active-index | 左侧选中项的索引 | _number_ | `0` | - |
 | active-id | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0` | - |
 | max | 右侧项最大选中个数 | _number_ | _Infinity_ | - |

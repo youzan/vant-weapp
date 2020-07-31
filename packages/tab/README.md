@@ -55,7 +55,7 @@ Page({
 
 ### 横向滚动
 
-多于 4 个标签时，Tab 可以横向滚动
+多于 5 个标签时，Tab 可以横向滚动
 
 ```html
 <van-tabs active="{{ active }}">
@@ -195,7 +195,7 @@ Page({
 | duration | 动画时间 (单位秒) | _number_ | `0.3` | - |
 | line-width | 底部条宽度 (px) | _string \| number_ | 与当前标签等宽 | - |
 | line-height | 底部条高度 (px) | _string \| number_ | `3px` | - |
-| swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | _number_ | `4` | - |
+| swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | _number_ | `5` | - |
 | animated | 是否使用动画切换 Tabs | _boolean_ | `false` | - |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` | - |
 | sticky | 是否使用粘性定位布局 | _boolean_ | `false` | - |

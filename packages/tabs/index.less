@@ -12,6 +12,18 @@
     &--scrollable {
       .van-tab {
         flex: 0 0 22%;
+
+        &--complete {
+          flex: 1 0 auto !important;
+          padding: 0 @padding-sm;
+        }
+      }
+
+      .van-tabs__nav {
+        &--complete {
+          padding-right: 8px;
+          padding-left: 8px;
+        }
       }
     }
   }
@@ -123,10 +135,6 @@
 
   &--disabled {
     .theme(color, '@tab-disabled-text-color');
-  }
-
-  &--complete {
-    flex: 1 0 auto !important;
   }
 
   &__title {

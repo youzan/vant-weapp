@@ -324,17 +324,39 @@ VantComponent({
     onTouchEnd() {
       if (!this.data.swipeable) return;
 
-      const { tabs, currentIndex } = this.data;
       const { direction, deltaX, offsetX } = this;
       const minSwipeDistance = 50;
 
       if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
-        if (deltaX > 0 && currentIndex !== 0) {
-          this.setCurrentIndex(currentIndex - 1);
-        } else if (deltaX < 0 && currentIndex !== tabs.length - 1) {
-          this.setCurrentIndex(currentIndex + 1);
+        const index = this.getAvaiableTab(deltaX);
+        if (index !== -1) {
+          this.setCurrentIndex(index);
         }
       }
+    },
+
+    getAvaiableTab(direction: number) {
+      const { tabs, currentIndex } = this.data;
+      const step = direction > 0 ? -1 : 1;
+
+      for (
+        let i = step;
+        currentIndex + i < tabs.length && currentIndex + i >= 0;
+        i += step
+      ) {
+        const index = currentIndex + i;
+
+        if (
+          index >= 0 &&
+          index < tabs.length &&
+          tabs[index] &&
+          !tabs[index].disabled
+        ) {
+          return index;
+        }
+      }
+
+      return -1;
     }
   }
 });

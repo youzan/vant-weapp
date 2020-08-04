@@ -7,6 +7,7 @@ type DialogOptions = {
   title?: string;
   width?: string | number;
   zIndex?: number;
+  theme?: string;
   context?:
     | WechatMiniprogram.Page.TrivialInstance
     | WechatMiniprogram.Component.TrivialInstance;
@@ -53,10 +54,10 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Dialog: Dialog = (options) => {
+const Dialog: Dialog = options => {
   options = {
     ...Dialog.currentOptions,
-    ...options,
+    ...options
   };
 
   return new Promise((resolve, reject) => {
@@ -70,7 +71,7 @@ const Dialog: Dialog = (options) => {
       dialog.setData({
         onCancel: reject,
         onConfirm: resolve,
-        ...options,
+        ...options
       });
 
       wx.nextTick(() => {
@@ -90,6 +91,7 @@ Dialog.defaultOptions = {
   show: false,
   title: '',
   width: null,
+  theme: 'default',
   message: '',
   zIndex: 100,
   overlay: true,
@@ -105,31 +107,31 @@ Dialog.defaultOptions = {
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
-  confirmButtonOpenType: '',
+  confirmButtonOpenType: ''
 };
 
 Dialog.alert = Dialog;
 
-Dialog.confirm = (options) =>
+Dialog.confirm = options =>
   Dialog({
     showCancelButton: true,
-    ...options,
+    ...options
   });
 
 Dialog.close = () => {
-  queue.forEach((dialog) => {
+  queue.forEach(dialog => {
     dialog.close();
   });
   queue = [];
 };
 
 Dialog.stopLoading = () => {
-  queue.forEach((dialog) => {
+  queue.forEach(dialog => {
     dialog.stopLoading();
   });
 };
 
-Dialog.setDefaultOptions = (options) => {
+Dialog.setDefaultOptions = options => {
   Object.assign(Dialog.currentOptions, options);
 };
 

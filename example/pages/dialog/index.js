@@ -12,15 +12,30 @@ Page({
     this.setData({ show: true });
   },
 
+  getUserInfo(event) {
+    console.log(event.detail);
+  },
+
+  onClickThemeAlert() {
+    Dialog.alert({
+      title: '标题',
+      theme: 'round-button',
+      message
+    });
+  },
+
+  onClickThemeAlert2() {
+    Dialog.alert({
+      theme: 'round-button',
+      message
+    });
+  },
+
   onClickAlert() {
     Dialog.alert({
       title: '标题',
       message
     });
-  },
-
-  getUserInfo(event) {
-    console.log(event.detail);
   },
 
   onClickAlert2() {
@@ -52,7 +67,7 @@ Page({
       });
   },
 
-  onClose(event) {
+  onClose() {
     this.setData({
       show: false
     });

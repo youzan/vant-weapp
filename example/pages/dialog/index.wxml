@@ -7,6 +7,15 @@
   </van-button>
 </demo-block>
 
+<demo-block title="圆角样式" padding>
+  <van-button type="primary" class="demo-margin-right" bind:click="onClickThemeAlert">
+    提示弹窗
+  </van-button>
+  <van-button type="primary" bind:click="onClickThemeAlert2">
+    提示弹窗（无标题）
+  </van-button>
+</demo-block>
+
 <demo-block title="确认弹窗" padding>
   <van-button type="primary" bind:click="onClickConfirm">
     确认弹窗

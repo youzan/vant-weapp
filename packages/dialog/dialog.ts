@@ -7,6 +7,7 @@ type DialogOptions = {
   title?: string;
   width?: string | number;
   zIndex?: number;
+  theme?: string;
   context?:
     | WechatMiniprogram.Page.TrivialInstance
     | WechatMiniprogram.Component.TrivialInstance;
@@ -90,6 +91,7 @@ Dialog.defaultOptions = {
   show: false,
   title: '',
   width: null,
+  theme: 'default',
   message: '',
   zIndex: 100,
   overlay: true,

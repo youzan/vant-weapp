@@ -29,6 +29,7 @@ Dialog.defaultOptions = {
   show: false,
   title: '',
   width: null,
+  theme: 'default',
   message: '',
   zIndex: 100,
   overlay: true,

@@ -27,7 +27,49 @@
     <text class="van-dialog__message-text">{{ message }}</text>
   </view>
 
-  <view class="van-hairline--top van-dialog__footer">
+  <van-goods-action wx:if="{{ theme === 'round-button' }}" custom-class="van-dialog__footer--round">
+    <van-goods-action-button
+      wx:if="{{ showCancelButton }}"
+      size="large"
+      loading="{{ loading.cancel }}"
+      class="van-dialog__button van-hairline--right"
+      custom-class="van-dialog__cancel"
+      custom-style="color: {{ cancelButtonColor }}"
+      bind:click="onCancel"
+    >
+      {{ cancelButtonText }}
+    </van-goods-action-button>
+    <van-goods-action-button
+      wx:if="{{ showConfirmButton }}"
+      size="large"
+      class="van-dialog__button"
+      loading="{{ loading.confirm }}"
+      custom-class="van-dialog__confirm"
+      custom-style="color: {{ confirmButtonColor }}"
+
+      open-type="{{ confirmButtonOpenType }}"
+      lang="{{ lang }}"
+      business-id="{{ businessId }}"
+      session-from="{{ sessionFrom }}"
+      send-message-title="{{ sendMessageTitle }}"
+      send-message-path="{{ sendMessagePath }}"
+      send-message-img="{{ sendMessageImg }}"
+      show-message-card="{{ showMessageCard }}"
+      app-parameter="{{ appParameter }}"
+
+      bind:click="onConfirm"
+      bindgetuserinfo="bindGetUserInfo"
+      bindcontact="bindContact"
+      bindgetphonenumber="bindGetPhoneNumber"
+      binderror="bindError"
+      bindlaunchapp="bindLaunchApp"
+      bindopensetting="bindOpenSetting"
+    >
+      {{ confirmButtonText }}
+    </van-goods-action-button>
+  </van-goods-action>
+
+  <view wx:else class="van-hairline--top van-dialog__footer">
     <van-button
       wx:if="{{ showCancelButton }}"
       size="large"

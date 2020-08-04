@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
-import { GRAY, BLUE } from '../common/color';
+import { GRAY, RED } from '../common/color';
 VantComponent({
   mixins: [button, openType],
   props: {
@@ -13,6 +13,10 @@ VantComponent({
     },
     title: String,
     message: String,
+    theme: {
+      type: String,
+      value: 'default',
+    },
     useSlot: Boolean,
     className: String,
     customStyle: String,
@@ -38,7 +42,7 @@ VantComponent({
     },
     confirmButtonColor: {
       type: String,
-      value: BLUE,
+      value: RED,
     },
     cancelButtonColor: {
       type: String,

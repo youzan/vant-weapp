@@ -13,7 +13,7 @@ VantComponent({
       type: Boolean,
       observer(show: boolean) {
         !show && this.stopLoading();
-      },
+      }
     },
     title: String,
     message: String,
@@ -34,43 +34,43 @@ VantComponent({
     width: null,
     zIndex: {
       type: Number,
-      value: 2000,
+      value: 2000
     },
     confirmButtonText: {
       type: String,
-      value: '确认',
+      value: '确认'
     },
     cancelButtonText: {
       type: String,
-      value: '取消',
+      value: '取消'
     },
     confirmButtonColor: {
       type: String,
-      value: RED,
+      value: RED
     },
     cancelButtonColor: {
       type: String,
-      value: GRAY,
+      value: GRAY
     },
     showConfirmButton: {
       type: Boolean,
-      value: true,
+      value: true
     },
     overlay: {
       type: Boolean,
-      value: true,
+      value: true
     },
     transition: {
       type: String,
-      value: 'scale',
-    },
+      value: 'scale'
+    }
   },
 
   data: {
     loading: {
       confirm: false,
-      cancel: false,
-    },
+      cancel: false
+    }
   },
 
   methods: {
@@ -89,7 +89,7 @@ VantComponent({
     handleAction(action: Action) {
       if (this.data.asyncClose) {
         this.setData({
-          [`loading.${action}`]: true,
+          [`loading.${action}`]: true
         });
       }
 
@@ -98,7 +98,7 @@ VantComponent({
 
     close() {
       this.setData({
-        show: false,
+        show: false
       });
     },
 
@@ -106,8 +106,8 @@ VantComponent({
       this.setData({
         loading: {
           confirm: false,
-          cancel: false,
-        },
+          cancel: false
+        }
       });
     },
 
@@ -126,6 +126,6 @@ VantComponent({
       if (callback) {
         callback(this);
       }
-    },
-  },
+    }
+  }
 });

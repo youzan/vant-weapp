@@ -5,7 +5,7 @@
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   transition="{{ transition }}"
-  custom-class="van-dialog {{ className }}"
+  custom-class="van-dialog van-dialog--{{ theme }} {{ className }}"
   custom-style="width: {{ utils.addUnit(width) }};{{ customStyle }}"
   overlay-style="{{ overlayStyle }}"
   close-on-click-overlay="{{ closeOnClickOverlay }}"
@@ -13,7 +13,7 @@
 >
   <view
     wx:if="{{ title || useTitleSlot  }}"
-    class="van-dialog__header {{ message || useSlot ? '' : 'van-dialog--isolated' }}"
+    class="{{ utils.bem('dialog__header', { isolated: !(message || useSlot) }) }}"
   >
     <slot wx:if="{{ useTitleSlot }}" name="title" />
     <block wx:elif="{{ title }}">{{ title }}</block>
@@ -22,12 +22,12 @@
   <slot wx:if="{{ useSlot }}" />
   <view
     wx:elif="{{ message }}"
-    class="van-dialog__message {{ title ? 'van-dialog__message--has-title' : '' }} {{ messageAlign ? 'van-dialog__message--' + messageAlign : '' }}"
+    class="{{ utils.bem('dialog__message', [theme, messageAlign, { hasTitle: title }]) }}"
   >
     <text class="van-dialog__message-text">{{ message }}</text>
   </view>
 
-  <van-goods-action wx:if="{{ theme === 'round-button' }}" custom-class="van-dialog__footer--round">
+  <van-goods-action wx:if="{{ theme === 'round-button' }}" custom-class="van-dialog__footer--round-button">
     <van-goods-action-button
       wx:if="{{ showCancelButton }}"
       size="large"

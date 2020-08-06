@@ -17,11 +17,11 @@
   transform: scale(0.5);
 }
 
-.hairline-bottom(@border-color: #eee, @left: 0) {
+.hairline-bottom(@border-color: #eee, @left: 0, @right: 0) {
   .hairline-common();
 
   top: auto;
-  right: 0;
+  right: @right;
   bottom: 0;
   left: @left;
   border-bottom: 1px solid @border-color;

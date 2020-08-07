@@ -78,7 +78,7 @@ VantComponent({
     },
     swipeThreshold: {
       type: Number,
-      value: 4,
+      value: 5,
       observer(value) {
         this.setData({
           scrollable: this.children.length > value || !this.data.ellipsis,
@@ -205,8 +205,7 @@ VantComponent({
         lineWidth,
         lineHeight,
       } = this.data;
-      this.getRect('.van-tab', true).then((rects = []) => {
-        const rect = rects[currentIndex];
+      this.getRect(`.van-tab--${currentIndex}`).then((rect) => {
         if (rect == null) {
           return;
         }
@@ -217,10 +216,7 @@ VantComponent({
                 lineHeight
               )};`
             : '';
-        let left = rects
-          .slice(0, currentIndex)
-          .reduce((prev, curr) => prev + curr.width, 0);
-        left += (rect.width - width) / 2;
+        const left = rect.left + (rect.width - width) / 2;
         const transition = skipTransition
           ? ''
           : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;

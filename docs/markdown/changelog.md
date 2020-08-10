@@ -1,5 +1,41 @@
 # 更新日志
 
+### [v1.4.3](https://github.com/youzan/vant-weapp/tree/v1.4.3)
+`2020-08-07`
+
+**Features**
+
+- Dialog: 增加圆角按钮样式 [#3476](https://github.com/youzan/vant-weapp/issues/3476)
+- Cell: 调整下划线位置 [#3487](https://github.com/youzan/vant-weapp/issues/3487)
+- Tabbar: 去除字体设置，使用全局字体 [#3493](https://github.com/youzan/vant-weapp/issues/3493)
+- Tab: 调整默认滚动阈值至 5 个、优化样式 [#3459](https://github.com/youzan/vant-weapp/issues/3459)
+
+### [v1.4.2](https://github.com/youzan/vant-weapp/tree/v1.4.2)
+`2020-08-03`
+
+**Features**
+
+- Toast: 优化样式 [#3451](https://github.com/youzan/vant-weapp/issues/3451)
+- Tag: 优化样式 [#3465](https://github.com/youzan/vant-weapp/issues/3465)
+
+**Bug Fixes**
+
+- Calendar: 修复超出 max-range 时未显示 Toast [#3466](https://github.com/youzan/vant-weapp/issues/3466)
+- Tab: 修复手势滚动可切换至禁用项 [#3467](https://github.com/youzan/vant-weapp/issues/3467)
+
+### [v1.4.1](https://github.com/youzan/vant-weapp/tree/v1.4.1)
+`2020-07-28`
+
+**Features**
+
+- Picker: 调整默认可见的选项个数为 6 个 [#3418](https://github.com/youzan/vant-weapp/issues/3418)
+- Toast: 调整圆角为 8px [#3419](https://github.com/youzan/vant-weapp/issues/3419)
+
+**Bug Fixes**
+
+- Slider: 修复点击会触发 drag 事件 [#3415](https://github.com/youzan/vant-weapp/issues/3415)
+- Area: 修复中间列无法滚动 [#3443](https://github.com/youzan/vant-weapp/issues/3443)
+
 ### [v1.4.0](https://github.com/youzan/vant-weapp/tree/v1.4.0)
 `2020-07-17`
 
@@ -27,7 +63,6 @@
 - Field: 修复 textarea 模式下 label 与 value 不在同一水平线上 [\#3383](https://github.com/youzan/vant-weapp/pull/3383)
 - Dialog: show dialog after class ready [\#3374](https://github.com/youzan/vant-weapp/pull/3374)
 - Calendar: confirm-disabled-text 属性增加默认值 [\#3394](https://github.com/youzan/vant-weapp/pull/3394)
-
 
 ### [v1.3.3](https://github.com/youzan/vant-weapp/tree/v1.3.3)
 `2020-06-24`

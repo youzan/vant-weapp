@@ -7,7 +7,6 @@
 
 - Dialog: 增加圆角按钮样式 [#3476](https://github.com/youzan/vant-weapp/issues/3476)
 - Cell: 调整下划线位置 [#3487](https://github.com/youzan/vant-weapp/issues/3487)
-- Tabbar: 去除字体设置，使用全局字体 [#3493](https://github.com/youzan/vant-weapp/issues/3493)
 - Tab: 调整默认滚动阈值至 5 个、优化样式 [#3459](https://github.com/youzan/vant-weapp/issues/3459)
 
 ### [v1.4.2](https://github.com/youzan/vant-weapp/tree/v1.4.2)

@@ -1,39 +1,48 @@
 # 更新日志
 
+### [1.4.4](https://github.com/youzan/vant-weapp/tree/v1.4.4)
+`2020-08-12`
+
+**Bug Fixes**
+
+- Transition: 重构组件以修复卡顿问题 [#3498](https://github.com/youzan/vant-weapp/pull/3498)
+- Icon: 修复数字未对齐 [#3501](https://github.com/youzan/vant-weapp/pull/3501)
+- Tab: 修复可滚动时下划线位置错误 [#3511](https://github.com/youzan/vant-weapp/pull/3511)
+
 ### [v1.4.3](https://github.com/youzan/vant-weapp/tree/v1.4.3)
 `2020-08-07`
 
 **Features**
 
-- Dialog: 增加圆角按钮样式 [#3476](https://github.com/youzan/vant-weapp/issues/3476)
-- Cell: 调整下划线位置 [#3487](https://github.com/youzan/vant-weapp/issues/3487)
-- Tab: 调整默认滚动阈值至 5 个、优化样式 [#3459](https://github.com/youzan/vant-weapp/issues/3459)
+- Dialog: 增加圆角按钮样式 [#3476](https://github.com/youzan/vant-weapp/pull/3476)
+- Cell: 调整下划线位置 [#3487](https://github.com/youzan/vant-weapp/pull/3487)
+- Tab: 调整默认滚动阈值至 5 个、优化样式 [#3459](https://github.com/youzan/vant-weapp/pull/3459)
 
 ### [v1.4.2](https://github.com/youzan/vant-weapp/tree/v1.4.2)
 `2020-08-03`
 
 **Features**
 
-- Toast: 优化样式 [#3451](https://github.com/youzan/vant-weapp/issues/3451)
-- Tag: 优化样式 [#3465](https://github.com/youzan/vant-weapp/issues/3465)
+- Toast: 优化样式 [#3451](https://github.com/youzan/vant-weapp/pull/3451)
+- Tag: 优化样式 [#3465](https://github.com/youzan/vant-weapp/pull/3465)
 
 **Bug Fixes**
 
-- Calendar: 修复超出 max-range 时未显示 Toast [#3466](https://github.com/youzan/vant-weapp/issues/3466)
-- Tab: 修复手势滚动可切换至禁用项 [#3467](https://github.com/youzan/vant-weapp/issues/3467)
+- Calendar: 修复超出 max-range 时未显示 Toast [#3466](https://github.com/youzan/vant-weapp/pull/3466)
+- Tab: 修复手势滚动可切换至禁用项 [#3467](https://github.com/youzan/vant-weapp/pull/3467)
 
 ### [v1.4.1](https://github.com/youzan/vant-weapp/tree/v1.4.1)
 `2020-07-28`
 
 **Features**
 
-- Picker: 调整默认可见的选项个数为 6 个 [#3418](https://github.com/youzan/vant-weapp/issues/3418)
-- Toast: 调整圆角为 8px [#3419](https://github.com/youzan/vant-weapp/issues/3419)
+- Picker: 调整默认可见的选项个数为 6 个 [#3418](https://github.com/youzan/vant-weapp/pull/3418)
+- Toast: 调整圆角为 8px [#3419](https://github.com/youzan/vant-weapp/pull/3419)
 
 **Bug Fixes**
 
-- Slider: 修复点击会触发 drag 事件 [#3415](https://github.com/youzan/vant-weapp/issues/3415)
-- Area: 修复中间列无法滚动 [#3443](https://github.com/youzan/vant-weapp/issues/3443)
+- Slider: 修复点击会触发 drag 事件 [#3415](https://github.com/youzan/vant-weapp/pull/3415)
+- Area: 修复中间列无法滚动 [#3443](https://github.com/youzan/vant-weapp/pull/3443)
 
 ### [v1.4.0](https://github.com/youzan/vant-weapp/tree/v1.4.0)
 `2020-07-17`

@@ -205,7 +205,8 @@ VantComponent({
         lineWidth,
         lineHeight,
       } = this.data;
-      this.getRect(`.van-tab--${currentIndex}`).then((rect) => {
+      this.getRect('.van-tab', true).then((rects = []) => {
+        const rect = rects[currentIndex];
         if (rect == null) {
           return;
         }
@@ -216,7 +217,10 @@ VantComponent({
                 lineHeight
               )};`
             : '';
-        const left = rect.left + (rect.width - width) / 2;
+        let left = rects
+          .slice(0, currentIndex)
+          .reduce((prev, curr) => prev + curr.width, 0);
+        left += (rect.width - width) / 2;
         const transition = skipTransition
           ? ''
           : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;

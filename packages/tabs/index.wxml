@@ -25,7 +25,7 @@
             wx:for="{{ tabs }}"
             wx:key="index"
             data-index="{{ index }}"
-            class="{{ getters.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', ['' + index, { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }]) }}"
+            class="{{ getters.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }) }}"
             style="{{ getters.tabStyle(index === currentIndex, ellipsis, color, type, item.disabled, titleActiveColor, titleInactiveColor, swipeThreshold, scrollable) }}"
             bind:tap="onTap"
           >

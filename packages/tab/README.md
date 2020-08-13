@@ -191,7 +191,7 @@ Page({
 | color | 标签颜色 | _string_ | `#ee0a24` | - |
 | z-index | z-index 层级 | _number_ | `1` | - |
 | type | 样式风格，可选值为`card` | _string_ | `line` | - |
-| border | 是否展示外边框，仅在`line`风格下生效 | _boolean_ | `true` | - |
+| border | 是否展示外边框，仅在 `line` 风格下生效 | _boolean_ | `false` | - |
 | duration | 动画时间 (单位秒) | _number_ | `0.3` | - |
 | line-width | 底部条宽度 (px) | _string \| number_ | `40px` | - |
 | line-height | 底部条高度 (px) | _string \| number_ | `3px` | - |

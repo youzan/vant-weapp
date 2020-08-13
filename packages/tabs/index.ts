@@ -30,11 +30,15 @@ VantComponent({
   },
 
   props: {
+    sticky: Boolean,
+    border: Boolean,
+    swipeable: Boolean,
+    titleActiveColor: String,
+    titleInactiveColor: String,
     color: {
       type: String,
       observer: 'setLine',
     },
-    sticky: Boolean,
     animated: {
       type: Boolean,
       observer() {
@@ -43,7 +47,6 @@ VantComponent({
         );
       },
     },
-    swipeable: Boolean,
     lineWidth: {
       type: [String, Number],
       value: 40,
@@ -54,8 +57,6 @@ VantComponent({
       value: -1,
       observer: 'setLine',
     },
-    titleActiveColor: String,
-    titleInactiveColor: String,
     active: {
       type: [String, Number],
       value: 0,
@@ -68,10 +69,6 @@ VantComponent({
     type: {
       type: String,
       value: 'line',
-    },
-    border: {
-      type: Boolean,
-      value: true,
     },
     ellipsis: {
       type: Boolean,

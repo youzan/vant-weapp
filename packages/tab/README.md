@@ -193,7 +193,7 @@ Page({
 | type | 样式风格，可选值为`card` | _string_ | `line` | - |
 | border | 是否展示外边框，仅在`line`风格下生效 | _boolean_ | `true` | - |
 | duration | 动画时间 (单位秒) | _number_ | `0.3` | - |
-| line-width | 底部条宽度 (px) | _string \| number_ | 与当前标签等宽 | - |
+| line-width | 底部条宽度 (px) | _string \| number_ | `40px` | - |
 | line-height | 底部条高度 (px) | _string \| number_ | `3px` | - |
 | swipe-threshold | 滚动阈值，设置标签数量超过多少个可滚动 | _number_ | `5` | - |
 | animated | 是否使用动画切换 Tabs | _boolean_ | `false` | - |

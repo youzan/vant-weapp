@@ -46,7 +46,7 @@ VantComponent({
     swipeable: Boolean,
     lineWidth: {
       type: [String, Number],
-      value: -1,
+      value: 40,
       observer: 'setLine',
     },
     lineHeight: {
@@ -245,7 +245,6 @@ VantComponent({
           if (rect == null) {
             return;
           }
-          const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
           const height =
             lineHeight !== -1
               ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(
@@ -257,7 +256,7 @@ VantComponent({
             .slice(0, currentIndex)
             .reduce((prev, curr) => prev + curr.width, 0);
 
-          left += (rect.width - width) / 2;
+          left += (rect.width - lineWidth) / 2;
 
           const transition = skipTransition
             ? ''
@@ -266,7 +265,7 @@ VantComponent({
           this.setData({
             lineStyle: `
             ${height}
-            width: ${addUnit(width)};
+            width: ${addUnit(lineWidth)};
             background-color: ${color};
             -webkit-transform: translateX(${left}px);
             transform: translateX(${left}px);

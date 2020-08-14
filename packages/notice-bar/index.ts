@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { requestAnimationFrame } from '../common/utils';
 
 VantComponent({
   props: {
@@ -48,7 +49,7 @@ VantComponent({
     color: String,
     backgroundColor: String,
     background: String,
-    wrapable: Boolean
+    wrapable: Boolean,
   },
 
   data: {
@@ -112,14 +113,14 @@ VantComponent({
           .export(),
       });
 
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this.setData({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
             .export(),
         });
-      }, 20);
+      });
 
       this.timer = setTimeout(() => {
         this.scroll();

@@ -44,7 +44,7 @@ VantComponent({
       this.setData({
         hasPrice: typeof price === 'number',
         integerStr: priceStrArr && priceStrArr[0],
-        decimalStr: decimalLength && priceStrArr ? `.${priceStrArr[1]}` : '',
+        decimalStr: decimalLength && priceStrArr ? `.${priceStrArr[1] || 0}` : '',
       });
     },
     updateTip() {

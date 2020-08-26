@@ -37,13 +37,13 @@ Page({
 
 ### 徽标提示
 
-设置`dot`属性后，会在右上角展示一个小红点。设置`dot`属性后，会在右上角展示相应的徽标
+设置`dot`属性后，会在右上角展示一个小红点。设置`badge`属性后，会在右上角展示相应的徽标
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
   <van-sidebar-item title="标签名" dot />
-  <van-sidebar-item title="标签名" dot="5" />
-  <van-sidebar-item title="标签名" dot="99+" />
+  <van-sidebar-item title="标签名" badge="5" />
+  <van-sidebar-item title="标签名" badge="99+" />
 </van-sidebar>
 ```
 
@@ -109,12 +109,13 @@ Page({
 
 ### SidebarItem Props
 
-| 参数     | 说明                 | 类型               | 默认值  |
-| -------- | -------------------- | ------------------ | ------- |
-| title    | 内容                 | _string_           | `''`    |
-| dot      | 是否显示右上角小红点 | _boolean_          | `false` |
-| info     | 提示消息             | _string \| number_ | `''`    |
-| disabled | 是否禁用该项         | _boolean_          | `false` |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 内容 | _string_ | `''` |
+| dot | 是否显示右上角小红点 | _boolean_ | `false` |
+| info | 图标右上角徽标的内容（已废弃，请使用 badge 属性） | _string \| number_ | `''` |
+| badge `v1.5.0` | 图标右上角徽标的内容 | _string \| number_ | `''` |
+| disabled | 是否禁用该项 | _boolean_ | `false` |
 
 ### SidebarItem Slot
 

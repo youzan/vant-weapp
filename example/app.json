@@ -50,7 +50,8 @@
     "pages/skeleton/index",
     "pages/divider/index",
     "pages/empty/index",
-    "pages/calendar/index"
+    "pages/calendar/index",
+    "pages/share-sheet/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -123,7 +124,8 @@
     "van-dropdown-menu": "./dist/dropdown-menu/index",
     "van-dropdown-item": "./dist/dropdown-item/index",
     "van-skeleton": "./dist/skeleton/index",
-    "van-calendar": "./dist/calendar/index"
+    "van-calendar": "./dist/calendar/index",
+    "van-share-sheet": "./dist/share-sheet/index"
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -374,12 +374,21 @@
 					"id": -1,
 					"name": "index-bar",
 					"pathName": "pages/index-bar/index",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "empty",
 					"pathName": "pages/empty/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/share-sheet/index",
+					"pathName": "pages/share-sheet/index",
+					"query": "",
 					"scene": null
 				}
 			]

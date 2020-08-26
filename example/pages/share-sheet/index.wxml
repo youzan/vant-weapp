@@ -1,0 +1,45 @@
+<demo-block card title="基础用法">
+  <van-cell is-link title="显示分享面板" data-type="basic" bind:click="onShowShareSheet" />
+  <van-share-sheet
+    show="{{ show.basic }}"
+    title="立即分享给好友"
+    options="{{ options }}"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />
+</demo-block>
+
+<demo-block card title="展示多行选项">
+  <van-cell is-link title="显示分享面板" data-type="multiLine" bind:click="onShowShareSheet" />
+  <van-share-sheet
+    show="{{ show.multiLine }}"
+    title="立即分享给好友"
+    options="{{ multiLineOptions }}"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />
+</demo-block>
+
+<demo-block card title="自定义图标">
+  <van-cell is-link title="显示分享面板" data-type="customIcon" bind:click="onShowShareSheet" />
+  <van-share-sheet
+    show="{{ show.customIcon }}"
+    options="{{ customIconOptions }}"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />
+</demo-block>
+
+<demo-block card title="展示描述信息">
+  <van-cell is-link title="显示分享面板" data-type="withDesc" bind:click="onShowShareSheet" />
+  <van-share-sheet
+    show="{{ show.withDesc }}"
+    title="立即分享给好友"
+    options="{{ optionsWithDesc }}"
+    description="描述信息"
+    bind:close="onClose"
+    bind:select="onSelect"
+  />
+</demo-block>
+
+<van-toast id="van-toast" />

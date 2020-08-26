@@ -116,6 +116,10 @@ export default [
         title: 'Overlay 遮罩层',
       },
       {
+        path: '/share-sheet',
+        title: 'ShareSheet 分享面板',
+      },
+      {
         path: '/swipe-cell',
         title: 'SwipeCell 滑动单元格',
       },

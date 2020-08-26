@@ -6,7 +6,7 @@ VantComponent({
   relation: {
     name: 'collapse',
     type: 'ancestor',
-    current: 'collapse-item'
+    current: 'collapse-item',
   },
 
   props: {
@@ -19,22 +19,22 @@ VantComponent({
     clickable: Boolean,
     border: {
       type: Boolean,
-      value: true
+      value: true,
     },
     isLink: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
-    expanded: false
+    expanded: false,
   },
 
   created() {
     this.animation = wx.createAnimation({
       duration: 0,
-      timingFunction: 'ease-in-out'
+      timingFunction: 'ease-in-out',
     });
   },
 
@@ -79,32 +79,31 @@ VantComponent({
           const { animation } = this;
 
           if (expanded) {
-            animation
-              .height(height)
-              .top(1)
-              .step({
-                duration: inited ? 300 : 1
-              })
-              .height('auto')
-              .step();
+            if (height === 0) {
+              animation.height('auto').top(1).step();
+            } else {
+              animation
+                .height(height)
+                .top(1)
+                .step({
+                  duration: inited ? 300 : 1,
+                })
+                .height('auto')
+                .step();
+            }
 
             this.setData({
-              animation: animation.export()
+              animation: animation.export(),
             });
             return;
           }
 
-          animation
-            .height(height)
-            .top(0)
-            .step({ duration: 1 })
-            .height(0)
-            .step({
-              duration: 300
-            });
+          animation.height(height).top(0).step({ duration: 1 }).height(0).step({
+            duration: 300,
+          });
 
           this.setData({
-            animation: animation.export()
+            animation: animation.export(),
           });
         });
     },
@@ -119,6 +118,6 @@ VantComponent({
       const currentName = name == null ? index : name;
 
       this.parent.switch(currentName, !expanded);
-    }
-  }
+    },
+  },
 });

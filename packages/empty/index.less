@@ -13,10 +13,18 @@
     width: @empty-image-size;
     height: @empty-image-size;
 
+    &:empty {
+      display: none;
+    }
+
     &__img {
       width: 100%;
       height: 100%;
     }
+  }
+
+  &__image:not(:empty) + &__image {
+    display: none;
   }
 
   &__description {
@@ -25,6 +33,14 @@
     color: @empty-description-color;
     font-size: @empty-description-font-size;
     line-height: @empty-description-line-height;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__description:not(:empty) + &__description {
+    display: none;
   }
 
   &__bottom {

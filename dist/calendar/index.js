@@ -11,6 +11,7 @@ import {
   getDayByOffset,
 } from './utils';
 import Toast from '../toast/toast';
+import { requestAnimationFrame } from '../common/utils';
 VantComponent({
   props: {
     title: {
@@ -157,7 +158,7 @@ VantComponent({
       return defaultDate || minDate;
     },
     scrollIntoView() {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const {
           currentDate,
           type,
@@ -179,7 +180,7 @@ VantComponent({
           }
           return false;
         });
-      }, 100);
+      });
     },
     onOpen() {
       this.$emit('open');

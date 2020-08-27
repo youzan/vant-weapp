@@ -61,14 +61,18 @@ VantComponent({
         .then((height) => {
           const { animation } = this;
           if (expanded) {
-            animation
-              .height(height)
-              .top(1)
-              .step({
-                duration: inited ? 300 : 1,
-              })
-              .height('auto')
-              .step();
+            if (height === 0) {
+              animation.height('auto').top(1).step();
+            } else {
+              animation
+                .height(height)
+                .top(1)
+                .step({
+                  duration: inited ? 300 : 1,
+                })
+                .height('auto')
+                .step();
+            }
             this.setData({
               animation: animation.export(),
             });

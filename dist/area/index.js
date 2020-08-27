@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { pickerProps } from '../picker/shared';
+import { requestAnimationFrame } from '../common/utils';
 const COLUMNSPLACEHOLDERCODE = '000000';
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
@@ -44,9 +45,9 @@ VantComponent({
     typeToColumnsPlaceholder: {},
   },
   mounted() {
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       this.setValues();
-    }, 0);
+    });
   },
   methods: {
     getPicker() {

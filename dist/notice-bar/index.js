@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { requestAnimationFrame } from '../common/utils';
 VantComponent({
   props: {
     text: {
@@ -99,14 +100,14 @@ VantComponent({
           .step()
           .export(),
       });
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this.setData({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
             .export(),
         });
-      }, 20);
+      });
       this.timer = setTimeout(() => {
         this.scroll();
       }, this.duration);

@@ -1,6 +1,26 @@
 # 更新日志
 
+### [1.5.0](https://github.com/youzan/vant-weapp/compare/v1.5.0)
+
+`2020-08-27`
+
+**Features**
+
+- ShareSheet: 新增组件 [#3559](https://github.com/youzan/vant-weapp/issues/3559)
+- Icons: 升级 @vant/icons 至 v1.2.5 [#3539](https://github.com/youzan/vant-weapp/issues/3539)
+- sidebar: 新增 badge 属性 [#3564](https://github.com/youzan/vant-weapp/issues/3564)
+- Tabs: 调整默认 line-width 至 40px [#3518](https://github.com/youzan/vant-weapp/issues/3518)
+- Tabs: 去除默认边框 [#3519](https://github.com/youzan/vant-weapp/issues/3519)
+- TreeSelect: 新增 selected-icon 属性 [#3565](https://github.com/youzan/vant-weapp/issues/3565)
+- TreeSelect: 支持 badge、dot 显示 [#3565](https://github.com/youzan/vant-weapp/issues/3565)
+
+**Bug Fixes**
+
+- collapse: 修复嵌套在 popup 等组件中时默认展开无效 [#3562](https://github.com/youzan/vant-weapp/issues/3562)
+- empty: 修复 image、description 插槽不生效 [#3563](https://github.com/youzan/vant-weapp/issues/3563)
+
 ### [1.4.4](https://github.com/youzan/vant-weapp/tree/v1.4.4)
+
 `2020-08-12`
 
 **Bug Fixes**
@@ -10,6 +30,7 @@
 - Tab: 修复可滚动时下划线位置错误 [#3511](https://github.com/youzan/vant-weapp/pull/3511)
 
 ### [v1.4.3](https://github.com/youzan/vant-weapp/tree/v1.4.3)
+
 `2020-08-07`
 
 **Features**
@@ -19,6 +40,7 @@
 - Tab: 调整默认滚动阈值至 5 个、优化样式 [#3459](https://github.com/youzan/vant-weapp/pull/3459)
 
 ### [v1.4.2](https://github.com/youzan/vant-weapp/tree/v1.4.2)
+
 `2020-08-03`
 
 **Features**
@@ -32,6 +54,7 @@
 - Tab: 修复手势滚动可切换至禁用项 [#3467](https://github.com/youzan/vant-weapp/pull/3467)
 
 ### [v1.4.1](https://github.com/youzan/vant-weapp/tree/v1.4.1)
+
 `2020-07-28`
 
 **Features**
@@ -45,6 +68,7 @@
 - Area: 修复中间列无法滚动 [#3443](https://github.com/youzan/vant-weapp/pull/3443)
 
 ### [v1.4.0](https://github.com/youzan/vant-weapp/tree/v1.4.0)
+
 `2020-07-17`
 
 **Features**
@@ -73,6 +97,7 @@
 - Calendar: confirm-disabled-text 属性增加默认值 [\#3394](https://github.com/youzan/vant-weapp/pull/3394)
 
 ### [v1.3.3](https://github.com/youzan/vant-weapp/tree/v1.3.3)
+
 `2020-06-24`
 
 **Features**
@@ -92,6 +117,7 @@
 - nav-bar: 修复未设置 left-text 时左侧图标样式异常 [\#3263](https://github.com/youzan/vant-weapp/pull/3263)
 
 ### [v1.3.2](https://github.com/youzan/vant-weapp/tree/v1.3.2)
+
 `2020-06-04`
 
 **Features**
@@ -109,6 +135,7 @@
 - tag: 修复 css 变量名拼写错误 [\#3191](https://github.com/youzan/vant-weapp/pull/3191)
 
 ### [v1.3.1](https://github.com/youzan/vant-weapp/tree/v1.3.1)
+
 `2020-05-24`
 
 **Features**
@@ -122,10 +149,12 @@
 - 修复 GoodsActionButton 在某些情况下报错的问题 [\#3145](https://github.com/youzan/vant-weapp/pull/3145)
 
 ### [v1.3.0](https://github.com/youzan/vant-weapp/tree/v1.3.0)
+
 `2020-05-08`
 
 #### 支持简易双向绑定
-1.3.0中，我们为数个表单组件支持了简易双向绑定，涉及组件有
+
+1.3.0 中，我们为数个表单组件支持了简易双向绑定，涉及组件有
 
 Slider [\#3107](https://github.com/youzan/vant-weapp/pull/3107)
 
@@ -140,7 +169,7 @@ Rate [\#3105](https://github.com/youzan/vant-weapp/pull/3105)
 - uploader: 所有类型都会触发 click-preview 事件 [\#3071](https://github.com/youzan/vant-weapp/pull/3071)
 - Uploader: 属性 accept 新增值 media [\#3047](https://github.com/youzan/vant-weapp/pull/3047)
 - feat: 新增基础 font-family [\#3061](https://github.com/youzan/vant-weapp/pull/3061)
-- submit-bar: 使用另一个view实现 safe-area-inset-bottom 以避免样式冲突 [\#3104](https://github.com/youzan/vant-weapp/pull/3104)
+- submit-bar: 使用另一个 view 实现 safe-area-inset-bottom 以避免样式冲突 [\#3104](https://github.com/youzan/vant-weapp/pull/3104)
 
 **Bug Fixes**
 
@@ -148,7 +177,6 @@ Rate [\#3105](https://github.com/youzan/vant-weapp/pull/3105)
 - tab: 修复 tab 个数多时显示滚动条 [\#3072](https://github.com/youzan/vant-weapp/pull/3072)
 - Sticky: 修复使用组件时页面 onPageScroll 失效 [\#3092](https://github.com/youzan/vant-weapp/pull/3092)
 - button: 修复 disabled 属性对 open-type 类型的按钮无效 [\#3076](https://github.com/youzan/vant-weapp/pull/3076)
-
 
 ### [v1.2.2](https://github.com/youzan/vant-weapp/tree/v1.2.2)
 

@@ -15,7 +15,7 @@
         disabled-class="main-disabled-class"
         badge="{{ item.badge }}"
         dot="{{ item.dot }}"
-        title="{{ item.text }}"
+        title="{{ item[activeText] }}"
         disabled="{{ item.disabled }}"
       />
     </van-sidebar>
@@ -29,7 +29,7 @@
       data-item="{{ item }}"
       bind:tap="onSelectItem"
     >
-      {{ item.text }}
+      {{ item[activeText] }}
       <van-icon
         wx:if="{{ wxs.isActive(activeId, item.id) }}"
         name="{{ selectedIcon }}"

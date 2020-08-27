@@ -17,6 +17,10 @@ VantComponent({
       observer: 'updateSubItems',
     },
     activeId: null,
+    activeText: {
+      type: String,
+      value: 'text',
+    },
     mainActiveIndex: {
       type: Number,
       value: 0,

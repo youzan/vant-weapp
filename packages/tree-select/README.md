@@ -114,6 +114,7 @@ Page({
 | height | 高度，默认单位为`px` | _number \| string_ | `300` |
 | main-active-index | 左侧选中项的索引 | _number_ | `0` | - |
 | active-id | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0` | - |
+| active-text | 左侧和右侧选项中展示的key | _string_ | `text` |
 | max | 右侧项最大选中个数 | _number_ | _Infinity_ | - |
 | selected-icon `v1.5.0` | 自定义右侧栏选中状态的图标 | _string_ | `success` |
 

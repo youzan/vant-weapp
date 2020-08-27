@@ -19,6 +19,17 @@
   ></van-tree-select>
 </demo-block>
 
+<demo-block title="自定义展示名称">
+  <van-tree-select
+    items="{{ customTextItems}}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    active-text="name"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  ></van-tree-select>
+</demo-block>
+
 <demo-block title="自定义内容">
   <van-tree-select
     items="{{ [{ text: '分组 1' }, { text: '分组 2' }] }}"

@@ -17,8 +17,34 @@ const items = [
   },
 ];
 
+const customTextItems = [
+  {
+    name: config.pro1Name,
+    children: config.pro1.map((item) => {
+      item.name = item.text;
+      return item;
+    }),
+  },
+  {
+    name: config.pro2Name,
+    children: config.pro2.map((item) => {
+      item.name = item.text;
+      return item;
+    }),
+  },
+  {
+    name: config.pro3Name,
+    disabled: true,
+    children: config.pro3.map((item) => {
+      item.name = item.text;
+      return item;
+    }),
+  },
+];
+
 Page({
   data: {
+    customTextItems,
     items,
     badgeItems: items.slice(0, 2).map((item, index) => {
       if (index === 0) {

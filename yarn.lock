@@ -1547,6 +1547,11 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
+"@types/wechat-miniprogram@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@types/wechat-miniprogram/download/@types/wechat-miniprogram-3.0.0.tgz#401d0bf4f437dd9463e8ca99209e4742302d1e54"
+  integrity sha1-QB0L9PQ33ZRj6MqZIJ5HQjAtHlQ=
+
 "@typescript-eslint/eslint-plugin@^2.28.0":
   version "2.34.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.34.0.tgz#6f8ce8a46c7dea4a6f1d171d2bb8fbae6dac2be9"
@@ -7977,11 +7982,6 @@ minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-
-miniprogram-api-typings@2.11.0:
-  version "2.11.0"
-  resolved "http://registry.npm.qima-inc.com/miniprogram-api-typings/download/miniprogram-api-typings-2.11.0.tgz#c0a91ca2fea80e344509399c580cbad504a8f905"
-  integrity sha1-wKkcov6oDjRFCTmcWAy61QSo+QU=
 
 miniprogram-ci@^1.0.27:
   version "1.0.29"

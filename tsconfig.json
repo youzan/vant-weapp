@@ -8,7 +8,6 @@
     "outDir": "dist",
     "baseUrl": ".",
     "strict": false,
-    "types": ["miniprogram-api-typings"],
     "paths": {
       "definitions/*": ["./packages/definitions/*"],
       "packages/*": ["./packages/*"]

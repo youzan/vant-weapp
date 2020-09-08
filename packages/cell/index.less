@@ -14,7 +14,7 @@
   .theme(background-color, '@cell-background-color');
 
   &::after {
-    .hairline-bottom(@border-color, @padding-md);
+    .hairline-bottom(@border-color, @padding-md, @padding-md);
   }
 
   &--borderless::after {
@@ -100,6 +100,10 @@
 
     .van-cell__title {
       .theme(font-size, '@cell-large-title-font-size');
+    }
+
+    .van-cell__value {
+      .theme(font-size, '@cell-large-value-font-size');
     }
 
     .van-cell__label {

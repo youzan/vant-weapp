@@ -2,8 +2,10 @@ import Page from '../../common/page';
 
 Page({
   data: {
-    tabs: [1, 2, 3, 4],
-    tabsMore: [1, 2, 3, 4, 5, 6, 7, 8],
+    tabs2: [1, 2],
+    tabs3: [1, 2, 3],
+    tabs4: [1, 2, 3, 4],
+    tabs6: [1, 2, 3, 4, 5, 6],
     tabsWithName: [
       { name: 'a', index: 1 },
       { name: 'b', index: 2 },
@@ -13,14 +15,14 @@ Page({
 
   onClickDisabled(event) {
     wx.showToast({
-      title: `标签 ${event.detail.name} 已被禁用`,
+      title: `标签 ${event.detail.index + 1} 已被禁用`,
       icon: 'none'
     });
   },
 
   onChange(event) {
     wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
+      title: `切换到标签 ${event.detail.index + 1}`,
       icon: 'none'
     });
   },
@@ -34,7 +36,7 @@ Page({
 
   onClick(event) {
     wx.showToast({
-      title: `点击标签 ${event.detail.name}`,
+      title: `点击标签 ${event.detail.index + 1}`,
       icon: 'none'
     });
   }

@@ -1,7 +1,10 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
+import { button } from '../mixins/button';
+import { openType } from '../mixins/open-type';
 
 VantComponent({
+  mixins: [button, openType],
   props: {
     show: Boolean,
     title: String,
@@ -9,32 +12,32 @@ VantComponent({
     description: String,
     round: {
       type: Boolean,
-      value: true
+      value: true,
     },
     zIndex: {
       type: Number,
-      value: 100
+      value: 100,
     },
     actions: {
       type: Array,
-      value: []
+      value: [],
     },
     overlay: {
       type: Boolean,
-      value: true
+      value: true,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      value: true
+      value: true,
     },
     closeOnClickAction: {
       type: Boolean,
-      value: true
+      value: true,
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   methods: {
@@ -61,6 +64,6 @@ VantComponent({
     onClickOverlay() {
       this.$emit('click-overlay');
       this.onClose();
-    }
-  }
+    },
+  },
 });

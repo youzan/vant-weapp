@@ -9,23 +9,18 @@ VantComponent({
   relation: {
     type: 'ancestor',
     name: 'goods-action',
-    linked(parent) {
-      this.parent = parent;
-    }
+    current: 'goods-action-button',
   },
   props: {
     text: String,
     color: String,
     loading: Boolean,
     disabled: Boolean,
+    plain: Boolean,
     type: {
       type: String,
-      value: 'danger'
-    }
-  },
-
-  mounted() {
-    this.updateStyle();
+      value: 'danger',
+    },
   },
 
   methods: {
@@ -35,13 +30,17 @@ VantComponent({
     },
 
     updateStyle() {
-      const { children = [] } = this.parent;
-      const index = children.indexOf(this);
+      if (this.parent == null) {
+        return;
+      }
 
+      const { children = [] } = this.parent;
+      const { length } = children;
+      const index = children.indexOf(this);
       this.setData({
         isFirst: index === 0,
-        isLast: index === children.length - 1
+        isLast: index === length - 1,
       });
-    }
-  }
+    },
+  },
 });

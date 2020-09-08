@@ -4,28 +4,24 @@ VantComponent({
   relation: {
     name: 'sidebar-item',
     type: 'descendant',
-    linked(target) {
-      this.children.push(target);
+    current: 'sidebar',
+    linked() {
       this.setActive(this.data.activeKey);
     },
-    unlinked(target) {
-      this.items = this.children.filter(
-        (item: WechatMiniprogram.Component.TrivialInstance) => item !== target
-      );
+    unlinked() {
       this.setActive(this.data.activeKey);
-    }
+    },
   },
 
   props: {
     activeKey: {
       type: Number,
       value: 0,
-      observer: 'setActive'
-    }
+      observer: 'setActive',
+    },
   },
 
   beforeCreate() {
-    this.children = [];
     this.currentActive = -1;
   },
 
@@ -39,7 +35,7 @@ VantComponent({
 
       this.currentActive = activeKey;
 
-      const stack = [];
+      const stack: Promise<unknown>[] = [];
 
       if (currentActive !== activeKey && children[currentActive]) {
         stack.push(children[currentActive].setActive(false));
@@ -50,6 +46,6 @@ VantComponent({
       }
 
       return Promise.all(stack);
-    }
-  }
+    },
+  },
 });

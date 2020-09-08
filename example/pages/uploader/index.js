@@ -4,12 +4,27 @@ Page({
   data: {
     fileList1: [],
     fileList2: [
-      { url: 'https://img.yzcdn.cn/vant/cat.jpeg', name: '图片1' },
-      { url: 'http://iph.href.lu/60x60?text=default', name: '图片2', isImage: true }
+      { url: 'https://img.yzcdn.cn/vant/leaf.jpg' },
+      { url: 'https://img.yzcdn.cn/vant/tree.jpg' }
     ],
-    fileList3: [],
+    fileList3: [{ url: 'https://img.yzcdn.cn/vant/sand.jpg' }],
     fileList4: [],
-    fileList5: []
+    fileList5: [],
+    fileList6: [],
+    cloudPath: [],
+    fileList7: [],
+    fileList8: [
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        status: 'uploading',
+        message: '上传中'
+      },
+      {
+        url: 'https://img.yzcdn.cn/vant/tree.jpg',
+        status: 'failed',
+        message: '上传失败'
+      }
+    ]
   },
 
   beforeRead(event) {
@@ -40,5 +55,34 @@ Page({
     this.setData({ [`fileList${name}`]: fileList });
   },
 
-  clickPreview() {}
+  clickPreview() {},
+
+  uploadToCloud() {
+    wx.cloud.init();
+    const { fileList6: fileList = [] } = this.data;
+    if (!fileList.length) {
+      wx.showToast({ title: '请选择图片', icon: 'none' });
+    } else {
+      const uploadTasks = fileList.map((file, index) =>
+        this.uploadFilePromise(`my-photo${index}.png`, file)
+      );
+      Promise.all(uploadTasks)
+        .then(data => {
+          wx.showToast({ title: '上传成功', icon: 'none' });
+          const fileList = data.map(item => ({ url: item.fileID }));
+          this.setData({ cloudPath: data, fileList6: fileList });
+        })
+        .catch(e => {
+          wx.showToast({ title: '上传失败', icon: 'none' });
+          console.log(e);
+        });
+    }
+  },
+
+  uploadFilePromise(fileName, chooseResult) {
+    return wx.cloud.uploadFile({
+      cloudPath: fileName,
+      filePath: chooseResult.path
+    });
+  }
 });

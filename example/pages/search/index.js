@@ -11,7 +11,16 @@ Page({
     });
   },
 
-  onSearch(event) {
+  onSearch() {
+    if (this.data.value) {
+      wx.showToast({
+        title: '搜索：' + this.data.value,
+        icon: 'none'
+      });
+    }
+  },
+
+  onClick() {
     if (this.data.value) {
       wx.showToast({
         title: '搜索：' + this.data.value,

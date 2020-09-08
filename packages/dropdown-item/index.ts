@@ -7,79 +7,123 @@ VantComponent({
   relation: {
     name: 'dropdown-menu',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
+    current: 'dropdown-item',
+    linked() {
+      this.updateDataFromParent();
     },
-    unlinked() {
-      this.parent = null;
-    }
   },
 
   props: {
-    value: null,
-    title: String,
+    value: {
+      type: null,
+      observer: 'rerender',
+    },
+    title: {
+      type: String,
+      observer: 'rerender',
+    },
     disabled: Boolean,
-    titleClass: String,
+    titleClass: {
+      type: String,
+      observer: 'rerender',
+    },
     options: {
       type: Array,
-      value: []
-    }
+      value: [],
+      observer: 'rerender',
+    },
+    popupStyle: String,
   },
 
   data: {
     transition: true,
     showPopup: false,
     showWrapper: false,
-    displayTitle: ''
-  },
-
-  created() {
-    this.setData({ displayTitle: this.computedDisplayTitle(this.data.value) });
+    displayTitle: '',
   },
 
   methods: {
-    computedDisplayTitle(curValue) {
-      const { title, options } = this.data;
-
-      if (title) {
-        return title;
-      }
-
-      const match = options.filter(option => option.value === curValue);
-      const displayTitle = match.length ? match[0].text : '';
-      return displayTitle;
+    rerender() {
+      wx.nextTick(() => {
+        this.parent && this.parent.updateItemListData();
+      });
     },
 
-    onClickOverlay() {
-      this.toggle();
+    updateDataFromParent() {
+      if (this.parent) {
+        const {
+          overlay,
+          duration,
+          activeColor,
+          closeOnClickOverlay,
+          direction,
+        } = this.parent.data;
+        this.setData({
+          overlay,
+          duration,
+          activeColor,
+          closeOnClickOverlay,
+          direction,
+        });
+      }
+    },
+
+    onOpen() {
+      this.$emit('open');
+    },
+
+    onOpened() {
+      this.$emit('opened');
+    },
+
+    onClose() {
       this.$emit('close');
     },
 
-    onOptionTap(event: Weapp.Event) {
-      let { value, displayTitle } = this.data;
-      const { option } = event.currentTarget.dataset;
-      const { value: optionValue } = option;
-
-      if (optionValue !== value) {
-        value = optionValue;
-        displayTitle = this.computedDisplayTitle(optionValue);
-        this.$emit('change', optionValue);
-      }
-      this.setData({ showPopup: false, value, displayTitle });
-
-      const time = this.data.duration || 0;
-      setTimeout(() => {
-        this.setData({ showWrapper: false });
-      }, time);
-
-      // parent 中的 itemListData 是 children 上的数据的集合
-      // 数据的更新由 children 各自维护，但是模板的更新需要额外触发 parent 的 setData
-      this.parent.setData({ itemListData: this.parent.data.itemListData });
+    onClosed() {
+      this.$emit('closed');
+      this.setData({ showWrapper: false });
     },
 
-    toggle() {
-      const { childIndex } = this.data;
-      this.parent.toggleItem(childIndex);
-    }
-  }
+    onOptionTap(event: Weapp.Event) {
+      const { option } = event.currentTarget.dataset;
+      const { value } = option;
+
+      const shouldEmitChange = this.data.value !== value;
+      this.setData({ showPopup: false, value });
+      this.$emit('close');
+
+      this.rerender();
+
+      if (shouldEmitChange) {
+        this.$emit('change', value);
+      }
+    },
+
+    toggle(show, options = {}) {
+      const { showPopup } = this.data;
+
+      if (typeof show !== 'boolean') {
+        show = !showPopup;
+      }
+
+      if (show === showPopup) {
+        return;
+      }
+
+      this.setData({
+        transition: !options.immediate,
+        showPopup: show,
+      });
+
+      if (show) {
+        this.parent.getChildWrapperStyle().then((wrapperStyle: string) => {
+          this.setData({ wrapperStyle, showWrapper: true });
+          this.rerender();
+        });
+      } else {
+        this.rerender();
+      }
+    },
+  },
 });

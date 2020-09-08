@@ -7,10 +7,12 @@
     "noImplicitAny": false,
     "outDir": "dist",
     "baseUrl": ".",
-    "types": ["miniprogram-api-typings"],
+    "strict": false,
     "paths": {
-      "definitions/*": ["./packages/definitions/*"]
-    }
+      "definitions/*": ["./packages/definitions/*"],
+      "packages/*": ["./packages/*"]
+    },
+    "skipLibCheck": true
   },
   "include": ["packages/**/*"]
 }

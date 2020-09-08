@@ -15,19 +15,13 @@
 import pkgJson from '../../package.json';
 import docConfig, { github, versions } from './doc.config';
 
-const UNSHARED = [
-  'common',
-  'quickstart',
-  'changelog',
-  'intro',
-  'transition'
-];
+const UNSHARED = ['common', 'quickstart', 'changelog', 'intro', 'transition'];
 
 export default {
   data() {
     return {
       github,
-      versions
+      versions,
     };
   },
 
@@ -40,7 +34,10 @@ export default {
       let prefix = '';
       const { path } = this.$route.meta;
 
-      if (location.hostname === '0.0.0.0' || location.hostname === 'localhost') {
+      if (
+        location.hostname === '0.0.0.0' ||
+        location.hostname === 'localhost'
+      ) {
         prefix = 'https://youzan.github.io';
       }
 
@@ -49,7 +46,7 @@ export default {
       }
 
       return `./preview.html#${path}`;
-    }
+    },
   },
 
   methods: {
@@ -57,15 +54,15 @@ export default {
       if (version !== pkgJson.version) {
         location.href = `https://youzan.github.io/vant-weapp/${version}`;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="less">
 .van-doc-intro {
   padding-top: 20px;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 
   &__logo {

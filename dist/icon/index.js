@@ -1,39 +1,27 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 VantComponent({
-    props: {
-        dot: Boolean,
-        info: null,
-        size: {
-            type: null,
-            observer: 'setSizeWithUnit'
-        },
-        color: String,
-        customStyle: String,
-        classPrefix: {
-            type: String,
-            value: 'van-icon'
-        },
-        name: {
-            type: String,
-            observer(val) {
-                this.setData({
-                    isImageName: val.indexOf('/') !== -1
-                });
-            }
-        }
+  props: {
+    dot: Boolean,
+    info: null,
+    size: null,
+    color: String,
+    customStyle: String,
+    classPrefix: {
+      type: String,
+      value: 'van-icon',
     },
-    data: {
-        sizeWithUnit: null,
+    name: {
+      type: String,
+      observer(val) {
+        this.setData({
+          isImageName: val.indexOf('/') !== -1,
+        });
+      },
     },
-    methods: {
-        onClick() {
-            this.$emit('click');
-        },
-        setSizeWithUnit(size) {
-            this.setData({
-                sizeWithUnit: addUnit(size)
-            });
-        }
-    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('click');
+    },
+  },
 });

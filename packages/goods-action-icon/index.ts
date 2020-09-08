@@ -15,13 +15,13 @@ VantComponent({
     info: String,
     icon: String,
     disabled: Boolean,
-    loading: Boolean
+    loading: Boolean,
   },
 
   methods: {
     onClick(event: Weapp.Event) {
       this.$emit('click', event.detail);
       this.jumpLink();
-    }
-  }
+    },
+  },
 });

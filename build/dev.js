@@ -8,5 +8,5 @@ const gulpConfig = path.resolve(__dirname, './compiler.js');
 serve({}, { config });
 
 const p = exec(`npx gulp -f ${gulpConfig} buildExample --color`);
-p.stdout.on('data', stdout => console.info(stdout));
-p.stderr.on('data', stderr => console.info(stderr));
+p.stdout.on('data', (stdout) => console.info(stdout));
+p.stderr.on('data', (stderr) => console.info(stderr));

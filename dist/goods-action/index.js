@@ -1,22 +1,32 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-    relation: {
-        type: 'descendant',
-        name: 'goods-action-button',
-        linked(child) {
-            this.children.push(child);
-        },
-        unlinked(child) {
-            this.children = this.children.filter((item) => item !== child);
-        }
+  relation: {
+    type: 'descendant',
+    name: 'goods-action-button',
+    current: 'goods-action',
+    linked() {
+      this.updateStyle();
     },
-    beforeCreate() {
-        this.children = [];
+    unlinked() {
+      this.updateStyle();
     },
-    props: {
-        safeAreaInsetBottom: {
-            type: Boolean,
-            value: true
-        }
-    }
+    linkChanged() {
+      this.updateStyle();
+    },
+  },
+  props: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true,
+    },
+  },
+  methods: {
+    updateStyle() {
+      wx.nextTick(() => {
+        this.children.forEach((child) => {
+          child.updateStyle();
+        });
+      });
+    },
+  },
 });

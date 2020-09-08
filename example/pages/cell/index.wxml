@@ -79,3 +79,12 @@
     <van-icon slot="right-icon" name="search" />
   </van-cell>
 </demo-block>
+
+<demo-block title="垂直居中">
+  <van-cell
+    center
+    title="单元格"
+    value="内容"
+    label="描述信息"
+  />
+</demo-block>

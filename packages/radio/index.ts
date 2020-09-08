@@ -1,6 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   field: true,
@@ -8,56 +6,43 @@ VantComponent({
   relation: {
     name: 'radio-group',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
-    },
-    unlinked() {
-      this.parent = null;
-    }
+    current: 'radio',
   },
 
   classes: ['icon-class', 'label-class'],
 
   props: {
+    name: null,
     value: null,
     disabled: Boolean,
     useIconSlot: Boolean,
     checkedColor: String,
     labelPosition: {
       type: String,
-      value: 'right'
+      value: 'right',
     },
     labelDisabled: Boolean,
     shape: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     iconSize: {
       type: null,
-      observer: 'setIconSizeUnit'
-    }
-  },
-
-  data: {
-    iconSizeWithUnit: '20px'
+      value: 20,
+    },
   },
 
   methods: {
-    setIconSizeUnit(val) {
-      this.setData({
-        iconSizeWithUnit: addUnit(val)
-      });
-    },
-
     emitChange(value: boolean) {
       const instance = this.parent || this;
       instance.$emit('input', value);
       instance.$emit('change', value);
     },
 
-    onChange(event: Weapp.Event) {
-      console.log(event);
-      this.emitChange(this.data.name);
+    onChange() {
+      if (!this.data.disabled) {
+        this.emitChange(this.data.name);
+      }
     },
 
     onClickLabel() {
@@ -65,6 +50,6 @@ VantComponent({
       if (!disabled && !labelDisabled) {
         this.emitChange(name);
       }
-    }
-  }
+    },
+  },
 });

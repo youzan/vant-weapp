@@ -1,15 +1,13 @@
-import { isObj } from '../common/utils';
+import { isObj, requestAnimationFrame } from '../common/utils';
 
 const getClassNames = (name: string) => ({
   enter: `van-${name}-enter van-${name}-enter-active enter-class enter-active-class`,
   'enter-to': `van-${name}-enter-to van-${name}-enter-active enter-to-class enter-active-class`,
   leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
-  'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
+  'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`,
 });
 
-const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
-
-export const transition = function(showDefaultValue: boolean) {
+export const transition = function (showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,
@@ -17,34 +15,31 @@ export const transition = function(showDefaultValue: boolean) {
       show: {
         type: Boolean,
         value: showDefaultValue,
-        observer: 'observeShow'
+        observer: 'observeShow',
       },
       // @ts-ignore
       duration: {
         type: null,
         value: 300,
-        observer: 'observeDuration'
+        observer: 'observeDuration',
       },
       name: {
         type: String,
-        value: 'fade'
-      }
+        value: 'fade',
+      },
     },
 
     data: {
       type: '',
       inited: false,
-      display: false
-    },
-
-    attached() {
-      if (this.data.show) {
-        this.enter();
-      }
+      display: false,
     },
 
     methods: {
-      observeShow(value: boolean) {
+      observeShow(value: boolean, old: boolean) {
+        if (value === old) {
+          return;
+        }
         value ? this.enter() : this.leave();
       },
 
@@ -56,29 +51,24 @@ export const transition = function(showDefaultValue: boolean) {
         this.status = 'enter';
         this.$emit('before-enter');
 
-        Promise.resolve()
-          .then(nextTick)
-          .then(() => {
-            this.checkStatus('enter');
-            this.$emit('enter');
+        requestAnimationFrame(() => {
+          this.checkStatus('enter');
+          this.$emit('enter');
 
-            this.setData({
-              inited: true,
-              display: true,
-              classes: classNames.enter,
-              currentDuration
-            });
-          })
-          .then(nextTick)
-          .then(() => {
+          this.setData({
+            inited: true,
+            display: true,
+            classes: classNames.enter,
+            currentDuration,
+          });
+
+          requestAnimationFrame(() => {
             this.checkStatus('enter');
             this.transitionEnded = false;
 
-            this.setData({
-              classes: classNames['enter-to']
-            });
-          })
-          .catch(() => {});
+            this.setData({ classes: classNames['enter-to'] });
+          });
+        });
       },
 
       leave() {
@@ -93,28 +83,23 @@ export const transition = function(showDefaultValue: boolean) {
         this.status = 'leave';
         this.$emit('before-leave');
 
-        Promise.resolve()
-          .then(nextTick)
-          .then(() => {
-            this.checkStatus('leave');
-            this.$emit('leave');
+        requestAnimationFrame(() => {
+          this.checkStatus('leave');
+          this.$emit('leave');
 
-            this.setData({
-              classes: classNames.leave,
-              currentDuration
-            });
-          })
-          .then(nextTick)
-          .then(() => {
+          this.setData({
+            classes: classNames.leave,
+            currentDuration,
+          });
+
+          requestAnimationFrame(() => {
             this.checkStatus('leave');
             this.transitionEnded = false;
             setTimeout(() => this.onTransitionEnd(), currentDuration);
 
-            this.setData({
-              classes: classNames['leave-to']
-            });
-          })
-          .catch(() => {});
+            this.setData({ classes: classNames['leave-to'] });
+          });
+        });
       },
 
       checkStatus(status: 'enter' | 'leave') {
@@ -135,7 +120,7 @@ export const transition = function(showDefaultValue: boolean) {
         if (!show && display) {
           this.setData({ display: false });
         }
-      }
-    }
+      },
+    },
   });
 };

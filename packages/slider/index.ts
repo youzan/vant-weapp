@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
+import { canIUseModel } from '../common/version';
 
 VantComponent({
   mixins: [touch],
@@ -25,17 +25,16 @@ VantComponent({
     },
     value: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(val) {
+        if (val !== this.value) {
+          this.updateValue(val);
+        }
+      }
     },
     barHeight: {
       type: null,
-      value: '2px'
-    }
-  },
-
-  watch: {
-    value(value: number) {
-      this.updateValue(value, false);
+      value: 2
     }
   },
 
@@ -48,7 +47,7 @@ VantComponent({
       if (this.data.disabled) return;
 
       this.touchStart(event);
-      this.startValue = this.format(this.data.value);
+      this.startValue = this.format(this.value);
       this.dragStatus = 'start';
     },
 
@@ -62,11 +61,13 @@ VantComponent({
       this.touchMove(event);
       this.dragStatus = 'draging';
 
-      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        const diff = this.deltaX / rect.width * 100;
-        this.newValue = this.startValue + diff;
-        this.updateValue(this.newValue, false, true);
-      });
+      this.getRect('.van-slider').then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          const diff = (this.deltaX / rect.width) * 100;
+          this.newValue = this.startValue + diff;
+          this.updateValue(this.newValue, false, true);
+        }
+      );
     },
 
     onTouchEnd() {
@@ -83,24 +84,27 @@ VantComponent({
 
       const { min } = this.data;
 
-      this.getRect('.van-slider').then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-        const value = (event.detail.x - rect.left) / rect.width * this.getRange() + min;
-        this.updateValue(value, true);
-      });
+      this.getRect('.van-slider').then(
+        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          const value =
+            ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
+          this.updateValue(value, true);
+        }
+      );
     },
 
     updateValue(value: number, end: boolean, drag: boolean) {
       value = this.format(value);
-      const { barHeight, min } = this.data;
+      const { min } = this.data;
       const width = `${((value - min) * 100) / this.getRange()}%`;
 
+      this.value = value;
+
       this.setData({
-        value,
         barStyle: `
           width: ${width};
-          height: ${addUnit(barHeight)};
           ${drag ? 'transition: none;' : ''}
-        `,
+        `
       });
 
       if (drag) {
@@ -109,6 +113,10 @@ VantComponent({
 
       if (end) {
         this.$emit('change', value);
+      }
+
+      if ((drag || end) && canIUseModel()) {
+        this.setData({ value });
       }
     },
 

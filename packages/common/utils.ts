@@ -21,7 +21,7 @@ export function nextTick(fn: Function) {
   }, 1000 / 30);
 }
 
-let systemInfo: WechatMiniprogram.GetSystemInfoSuccessCallbackResult = null;
+let systemInfo: WechatMiniprogram.GetSystemInfoSyncResult = null;
 export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();
@@ -37,4 +37,20 @@ export function addUnit(value?: string | number): string | undefined {
 
   value = String(value);
   return isNumber(value) ? `${value}px` : value;
+}
+
+export function requestAnimationFrame(cb: Function) {
+  const systemInfo = getSystemInfoSync();
+
+  if (systemInfo.platform === 'devtools') {
+    return nextTick(cb);
+  }
+
+  return wx
+    .createSelectorQuery()
+    .selectViewport()
+    .boundingClientRect()
+    .exec(() => {
+      cb();
+    });
 }

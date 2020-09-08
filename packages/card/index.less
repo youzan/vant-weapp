@@ -33,12 +33,21 @@
   &__img {
     width: 100%;
     height: 100%;
+    .theme(border-radius, '@border-radius-lg');
   }
 
   &__content {
     position: relative;
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 0; /* hack for flex box ellipsis */
+    .theme(min-height, '@card-thumb-size');
+
+    &--center {
+      justify-content: center;
+    }
   }
 
   &__title,
@@ -64,6 +73,16 @@
     display: inline-block;
     font-weight: bold;
     .theme(color, '@card-price-color');
+    .theme(font-size, '@card-price-font-size');
+
+    &-integer {
+      .theme(font-size, '@card-price-integer-font-size');
+      .theme(font-family, '@card-price-font-family');
+    }
+
+    &-decimal {
+      .theme(font-family, '@card-price-font-family');
+    }
   }
 
   &__origin-price {

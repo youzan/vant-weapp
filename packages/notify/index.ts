@@ -1,4 +1,3 @@
-
 import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
 import { WHITE } from '../common/color';
@@ -9,24 +8,34 @@ VantComponent({
     background: String,
     type: {
       type: String,
-      value: 'danger'
+      value: 'danger',
     },
     color: {
       type: String,
-      value: WHITE
+      value: WHITE,
     },
     duration: {
       type: Number,
-      value: 3000
+      value: 3000,
     },
     zIndex: {
       type: Number,
-      value: 110
+      value: 110,
     },
     safeAreaInsetTop: {
       type: Boolean,
-      value: false
-    }
+      value: false,
+    },
+    top: null,
+  },
+
+  data: {
+    show: false,
+  },
+
+  created() {
+    const { statusBarHeight } = wx.getSystemInfoSync();
+    this.setData({ statusBarHeight });
   },
 
   methods: {
@@ -34,9 +43,9 @@ VantComponent({
       const { duration, onOpened } = this.data;
 
       clearTimeout(this.timer);
-      this.setData({
-        show: true
-      }, onOpened);
+      this.setData({ show: true });
+
+      wx.nextTick(onOpened);
 
       if (duration > 0 && duration !== Infinity) {
         this.timer = setTimeout(() => {
@@ -49,9 +58,9 @@ VantComponent({
       const { onClose } = this.data;
 
       clearTimeout(this.timer);
-      this.setData({
-        show: false
-      }, onClose);
+      this.setData({ show: false });
+
+      wx.nextTick(onClose);
     },
 
     onTap(event: Weapp.Event) {
@@ -59,6 +68,6 @@ VantComponent({
       if (onClick) {
         onClick(event.detail);
       }
-    }
-  }
+    },
+  },
 });

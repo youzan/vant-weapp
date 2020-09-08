@@ -7,30 +7,30 @@ module.exports = {
   mode: 'development',
   entry: {
     'vant-docs': './docs/src/index.js',
-    'vant-preview': './docs/src/preview.js'
+    'vant-preview': './docs/src/preview.js',
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
-    chunkFilename: 'async_[name].js'
+    chunkFilename: 'async_[name].js',
   },
   stats: {
     modules: false,
-    children: false
+    children: false,
   },
   serve: {
     open: true,
     host: '0.0.0.0',
     devMiddleware: {
-      logLevel: 'warn'
+      logLevel: 'warn',
     },
     hotClient: {
       logLevel: 'warn',
-      allEntries: true
-    }
+      allEntries: true,
+    },
   },
   resolve: {
-    extensions: ['.js', '.vue', '.css']
+    extensions: ['.js', '.vue', '.css'],
   },
   module: {
     rules: [
@@ -41,34 +41,26 @@ module.exports = {
             loader: 'vue-loader',
             options: {
               compilerOptions: {
-                preserveWhitespace: false
-              }
-            }
-          }
-        ]
+                preserveWhitespace: false,
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.(css|less)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'less-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
       },
       {
         test: /\.md$/,
-        use: [
-          'vue-loader',
-          '@vant/markdown-loader'
-        ]
-      }
-    ]
+        use: ['vue-loader', '@vant/markdown-loader'],
+      },
+    ],
   },
   plugins: [
     new VueLoaderPlugin(),
@@ -77,13 +69,13 @@ module.exports = {
       chunks: ['vant-docs'],
       template: 'docs/src/index.tpl',
       filename: 'index.html',
-      inject: true
+      inject: true,
     }),
     new HtmlWebpackPlugin({
       chunks: ['vant-preview'],
       template: 'docs/src/index.tpl',
       filename: 'preview.html',
-      inject: true
-    })
-  ]
+      inject: true,
+    }),
+  ],
 };

@@ -24,15 +24,15 @@
   />
 </demo-block>
 
-<demo-block title="禁用选项">
-  <van-picker columns="{{ column2 }}" />
-</demo-block>
-
 <demo-block title="多列联动">
   <van-picker
     columns="{{ column4 }}"
     bind:change="onChange2"
   />
+</demo-block>
+
+<demo-block title="禁用选项">
+  <van-picker columns="{{ column2 }}" />
 </demo-block>
 
 <demo-block title="加载状态">

@@ -37,9 +37,14 @@
       word-wrap: break-word;
     }
 
-    &--has-title {
+    &--hasTitle {
       .theme(padding-top, '@dialog-has-title-message-padding-top');
       .theme(color, '@dialog-has-title-message-text-color');
+    }
+
+    &--round-button {
+      padding-bottom: @padding-md;
+      color: @text-color;
     }
 
     &--left {
@@ -53,6 +58,11 @@
 
   &__footer {
     display: flex;
+
+    &--round-button {
+      position: relative !important;
+      padding: @padding-xs @padding-lg @padding-md !important;
+    }
   }
 
   &__button {

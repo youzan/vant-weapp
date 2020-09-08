@@ -1,18 +1,29 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
+import { canIUseFormFieldButton } from '../common/version';
+
+const mixins = [button, openType];
+if (canIUseFormFieldButton()) {
+  mixins.push('wx://form-field-button');
+}
 
 VantComponent({
-  mixins: [button, openType],
+  mixins,
 
   classes: ['hover-class', 'loading-class'],
 
   data: {
-    style: ''
+    baseStyle: '',
   },
 
   props: {
+    formType: String,
     icon: String,
+    classPrefix: {
+      type: String,
+      value: 'van-icon',
+    },
     plain: Boolean,
     block: Boolean,
     round: Boolean,
@@ -24,19 +35,20 @@ VantComponent({
     customStyle: String,
     loadingType: {
       type: String,
-      value: 'circular'
+      value: 'circular',
     },
     type: {
       type: String,
-      value: 'default'
+      value: 'default',
     },
+    dataset: null,
     size: {
       type: String,
-      value: 'normal'
+      value: 'normal',
     },
     loadingSize: {
       type: String,
-      value: '20px'
+      value: '20px',
     },
     color: {
       type: String,
@@ -59,18 +71,20 @@ VantComponent({
           }
         }
 
-        if (style !== this.data.style) {
-          this.setData({ style });
+        if (style !== this.data.baseStyle) {
+          this.setData({ baseStyle: style });
         }
-      }
-    }
+      },
+    },
   },
 
   methods: {
     onClick() {
-      if (!this.data.disabled && !this.data.loading) {
+      if (!this.data.loading) {
         this.$emit('click');
       }
-    }
-  }
+    },
+
+    noop() {},
+  },
 });

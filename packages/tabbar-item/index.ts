@@ -5,16 +5,17 @@ VantComponent({
     info: null,
     name: null,
     icon: String,
-    dot: Boolean
+    dot: Boolean,
   },
 
   relation: {
     name: 'tabbar',
-    type: 'ancestor'
+    type: 'ancestor',
+    current: 'tabbar-item',
   },
 
   data: {
-    active: false
+    active: false,
   },
 
   methods: {
@@ -50,6 +51,6 @@ VantComponent({
       return Object.keys(patch).length > 0
         ? this.set(patch)
         : Promise.resolve();
-    }
-  }
+    },
+  },
 });

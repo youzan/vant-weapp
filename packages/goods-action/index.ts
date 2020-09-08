@@ -4,20 +4,33 @@ VantComponent({
   relation: {
     type: 'descendant',
     name: 'goods-action-button',
-    linked(child) {
-      this.children.push(child);
+    current: 'goods-action',
+    linked() {
+      this.updateStyle();
     },
-    unlinked(child) {
-      this.children = this.children.filter((item) => item !== child);
-    }
-  },
-  beforeCreate() {
-    this.children = [];
+    unlinked() {
+      this.updateStyle();
+    },
+    linkChanged() {
+      this.updateStyle();
+    },
   },
   props: {
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
-    }
-  }
+      value: true,
+    },
+  },
+
+  methods: {
+    updateStyle() {
+      wx.nextTick(() => {
+        this.children.forEach(
+          (child: WechatMiniprogram.Component.TrivialInstance) => {
+            child.updateStyle();
+          }
+        );
+      });
+    },
+  },
 });

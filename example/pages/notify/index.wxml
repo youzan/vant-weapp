@@ -18,4 +18,8 @@
   <van-button type="primary" bind:click="showCustomDuration">自定义时长</van-button>
 </demo-block>
 
-<van-notify id="van-notify" safe-area-inset-top />
+<demo-block padding title="插入状态栏高度">
+  <van-button type="primary" class="demo-margin-right" bind:click="showSafe">插入状态栏高度</van-button>
+</demo-block>
+
+<van-notify id="van-notify" />

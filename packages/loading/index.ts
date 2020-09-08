@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   props: {
@@ -7,29 +6,13 @@ VantComponent({
     vertical: Boolean,
     type: {
       type: String,
-      value: 'circular'
+      value: 'circular',
     },
-    size: {
-      type: String,
-      observer: 'setSizeWithUnit'
-    },
-    textSize: {
-      type: String,
-      observer: 'setTextSizeWithUnit'
-    }
+    size: String,
+    textSize: String,
   },
 
-  methods: {
-    setSizeWithUnit(size: string | number): void {
-      this.setData({
-        sizeWithUnit: addUnit(size)
-      });
-    },
-
-    setTextSizeWithUnit(size: string | number): void {
-      this.set({
-        textSizeWithUnit: addUnit(size)
-      });
-    }
-  }
+  data: {
+    array12: Array.from({ length: 12 }),
+  },
 });

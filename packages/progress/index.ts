@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { BLUE } from '../common/color';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   props: {
@@ -11,31 +10,19 @@ VantComponent({
     trackColor: String,
     showPivot: {
       type: Boolean,
-      value: true
+      value: true,
     },
     color: {
       type: String,
-      value: BLUE
+      value: BLUE,
     },
     textColor: {
       type: String,
-      value: '#fff'
+      value: '#fff',
     },
     strokeWidth: {
       type: null,
-      observer: 'setStrokeWidthUnit'
-    }
+      value: 4,
+    },
   },
-
-  data: {
-    strokeWidthUnit: '4px'
-  },
-
-  methods: {
-    setStrokeWidthUnit(val) {
-      this.setData({
-        strokeWidthUnit: addUnit(val)
-      });
-    }
-  }
 });

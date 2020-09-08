@@ -2,7 +2,7 @@
   <van-tabbar
     active="{{ active }}"
     data-key="active"
-    custom-class="tabbar"
+    custom-class="tabbar-position"
     safe-area-inset-bottom="{{ false }}"
     bind:change="onChange"
   >
@@ -17,7 +17,7 @@
   <van-tabbar
     active="{{ active2 }}"
     data-key="active2"
-    custom-class="tabbar"
+    custom-class="tabbar-position"
     safe-area-inset-bottom="{{ false }}"
     bind:change="onChange"
   >
@@ -32,7 +32,7 @@
   <van-tabbar
     active="{{ active3 }}"
     data-key="active3"
-    custom-class="tabbar"
+    custom-class="tabbar-position"
     safe-area-inset-bottom="{{ false }}"
     bind:change="onChange"
   >
@@ -47,7 +47,7 @@
   <van-tabbar
     active="{{ active4 }}"
     data-key="active4"
-    custom-class="tabbar"
+    custom-class="tabbar-position"
     safe-area-inset-bottom="{{ false }}"
     bind:change="onChange"
   >
@@ -75,7 +75,7 @@
   <van-tabbar
     active="{{ active5 }}"
     data-key="active5"
-    custom-class="tabbar"
+    custom-class="tabbar-position"
     active-color="#07c160"
     inactive-color="#000"
     safe-area-inset-bottom="{{ false }}"
@@ -85,5 +85,21 @@
     <van-tabbar-item icon="search">标签</van-tabbar-item>
     <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
     <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  </van-tabbar>
+</demo-block>
+
+
+<demo-block title="切换标签事件">
+  <van-tabbar
+    active="{{ active6 }}"
+    data-key="active6"
+    custom-class="tabbar-position"
+    safe-area-inset-bottom="{{ false }}"
+    bind:change="handleChange"
+  >
+    <van-tabbar-item icon="home-o">标签1</van-tabbar-item>
+    <van-tabbar-item icon="search">标签2</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签3</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签4</van-tabbar-item>
   </van-tabbar>
 </demo-block>

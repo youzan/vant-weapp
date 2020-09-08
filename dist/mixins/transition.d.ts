@@ -1,1 +1,1 @@
-export declare const transition: (showDefaultValue: boolean) => any;
+export declare const transition: (showDefaultValue: boolean) => string;

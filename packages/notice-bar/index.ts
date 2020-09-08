@@ -1,68 +1,65 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-
-const FONT_COLOR = '#ed6a0c';
-const BG_COLOR = '#fffbe8';
+import { requestAnimationFrame } from '../common/utils';
 
 VantComponent({
   props: {
     text: {
       type: String,
-      value: ''
+      value: '',
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     mode: {
       type: String,
-      value: ''
+      value: '',
     },
     url: {
       type: String,
-      value: ''
+      value: '',
     },
     openType: {
       type: String,
-      value: 'navigate'
+      value: 'navigate',
     },
     delay: {
       type: Number,
-      value: 1
+      value: 1,
     },
     speed: {
       type: Number,
-      value: 50
+      value: 50,
+      observer() {
+        wx.nextTick(() => {
+          this.init();
+        });
+      },
     },
     scrollable: {
       type: Boolean,
-      value: true
+      value: true,
     },
     leftIcon: {
       type: String,
-      value: ''
+      value: '',
     },
-    color: {
-      type: String,
-      value: FONT_COLOR
-    },
-    backgroundColor: {
-      type: String,
-      value: BG_COLOR
-    },
-    wrapable: Boolean
+    color: String,
+    backgroundColor: String,
+    background: String,
+    wrapable: Boolean,
   },
 
   data: {
-    show: true
-  },
-
-  watch: {
-    text() {
-      this.setData({}, this.init);
-    }
+    show: true,
   },
 
   created() {
     this.resetAnimation = wx.createAnimation({
       duration: 0,
-      timingFunction: 'linear'
+      timingFunction: 'linear',
     });
   },
 
@@ -74,7 +71,7 @@ VantComponent({
     init() {
       Promise.all([
         this.getRect('.van-notice-bar__content'),
-        this.getRect('.van-notice-bar__wrap')
+        this.getRect('.van-notice-bar__wrap'),
       ]).then((rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
         const [contentRect, wrapRect] = rects;
         if (
@@ -97,7 +94,7 @@ VantComponent({
           this.animation = wx.createAnimation({
             duration,
             timingFunction: 'linear',
-            delay
+            delay,
           });
 
           this.scroll();
@@ -113,32 +110,35 @@ VantComponent({
         animationData: this.resetAnimation
           .translateX(this.wrapWidth)
           .step()
-          .export()
+          .export(),
       });
 
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this.setData({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
-            .export()
+            .export(),
         });
-      }, 20);
+      });
 
       this.timer = setTimeout(() => {
         this.scroll();
       }, this.duration);
     },
 
-    onClickIcon() {
-      this.timer && clearTimeout(this.timer);
-      this.timer = null;
+    onClickIcon(event) {
+      if (this.data.mode === 'closeable') {
+        this.timer && clearTimeout(this.timer);
+        this.timer = null;
 
-      this.setData({ show: false });
+        this.setData({ show: false });
+        this.$emit('close', event.detail);
+      }
     },
 
     onClick(event: Weapp.Event) {
       this.$emit('click', event);
-    }
-  }
+    },
+  },
 });

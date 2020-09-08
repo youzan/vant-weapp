@@ -57,6 +57,17 @@
   </van-cell-group>
 </demo-block>
 
+<demo-block title="内容对齐方式">
+  <van-cell-group>
+    <van-field
+      value="{{ username3 }}"
+      label="用户名"
+      placeholder="请输入用户名"
+      input-align="right"
+    />
+  </van-cell-group>
+</demo-block>
+
 <demo-block title="高度自适应">
   <van-cell-group>
     <van-field

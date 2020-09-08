@@ -18,7 +18,9 @@ const libDir = path.resolve(__dirname, '../lib');
 const esDir = path.resolve(__dirname, '../dist');
 const exampleDir = path.resolve(__dirname, '../example/dist');
 
-const lessCompiler = dist =>
+const baseCssPath = path.resolve(__dirname, '../packages/common/index.wxss');
+
+const lessCompiler = (dist) =>
   function compileLess() {
     return gulp
       .src(`${src}/**/*.less`)
@@ -27,7 +29,13 @@ const lessCompiler = dist =>
       .pipe(
         insert.transform((contents, file) => {
           if (!file.path.includes('packages' + path.sep + 'common')) {
-            contents = `@import '../common/index.wxss';${contents}`;
+            const relativePath = path
+              .relative(
+                path.normalize(`${file.path}${path.sep}..`),
+                baseCssPath
+              )
+              .replace(/\\/g, '/');
+            contents = `@import '${relativePath}';${contents}`;
           }
           return contents;
         })
@@ -47,21 +55,21 @@ const copier = (dist, ext) =>
     return gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
   };
 
-const staticCopier = dist =>
+const staticCopier = (dist) =>
   gulp.parallel(
     copier(dist, 'wxml'),
     copier(dist, 'wxs'),
     copier(dist, 'json')
   );
 
-const cleaner = path =>
+const cleaner = (path) =>
   function clean() {
     return exec(`npx rimraf ${path}`);
   };
 
 const tasks = [
   ['buildEs', esDir, esConfig],
-  ['buildLib', libDir, libConfig]
+  ['buildLib', libDir, libConfig],
 ].reduce((prev, [name, ...args]) => {
   prev[name] = gulp.series(
     cleaner(...args),
@@ -83,7 +91,6 @@ tasks.buildExample = gulp.series(
     () =>
       gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
     () => {
-      gulp.watch(`${src}/**/*.ts`, tsCompiler(exampleDir, exampleConfig));
       gulp.watch(`${src}/**/*.less`, lessCompiler(exampleDir));
       gulp.watch(`${src}/**/*.wxml`, copier(exampleDir, 'wxml'));
       gulp.watch(`${src}/**/*.wxs`, copier(exampleDir, 'wxs'));

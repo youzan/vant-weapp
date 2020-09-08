@@ -1,156 +1,188 @@
 import { VantComponent } from '../common/component';
-import { isImageFile } from './utils';
-import { addUnit } from '../common/utils';
+import { isImageFile, isVideo, chooseFile, isPromise } from './utils';
+import { chooseImageProps, chooseVideoProps } from './shared';
 VantComponent({
-    props: {
+  props: Object.assign(
+    Object.assign(
+      {
         disabled: Boolean,
+        multiple: Boolean,
         uploadText: String,
+        useBeforeRead: Boolean,
+        afterRead: null,
+        beforeRead: null,
         previewSize: {
-            type: null,
-            value: 90,
-            observer: 'setComputedPreviewSize'
+          type: null,
+          value: 80,
         },
         name: {
-            type: [Number, String],
-            value: ''
+          type: [Number, String],
+          value: '',
         },
         accept: {
-            type: String,
-            value: 'image'
+          type: String,
+          value: 'image',
         },
         fileList: {
-            type: Array,
-            value: [],
-            observer: 'formatFileList'
+          type: Array,
+          value: [],
+          observer: 'formatFileList',
         },
         maxSize: {
-            type: Number,
-            value: Number.MAX_VALUE
+          type: Number,
+          value: Number.MAX_VALUE,
         },
         maxCount: {
-            type: Number,
-            value: 100
+          type: Number,
+          value: 100,
+        },
+        deletable: {
+          type: Boolean,
+          value: true,
+        },
+        showUpload: {
+          type: Boolean,
+          value: true,
         },
         previewImage: {
-            type: Boolean,
-            value: true
+          type: Boolean,
+          value: true,
         },
         previewFullImage: {
-            type: Boolean,
-            value: true
+          type: Boolean,
+          value: true,
         },
         imageFit: {
-            type: String,
-            value: 'scaleToFill'
+          type: String,
+          value: 'scaleToFill',
         },
-        useSlot: Boolean,
-        useBeforeRead: Boolean
+        uploadIcon: {
+          type: String,
+          value: 'photograph',
+        },
+      },
+      chooseImageProps
+    ),
+    chooseVideoProps
+  ),
+  data: {
+    lists: [],
+    isInCount: true,
+  },
+  methods: {
+    formatFileList() {
+      const { fileList = [], maxCount } = this.data;
+      const lists = fileList.map((item) =>
+        Object.assign(Object.assign({}, item), {
+          isImage:
+            typeof item.isImage === 'undefined'
+              ? isImageFile(item)
+              : item.isImage,
+          deletable:
+            typeof item.deletable === 'undefined' ? true : item.deletable,
+        })
+      );
+      this.setData({ lists, isInCount: lists.length < maxCount });
     },
-    data: {
-        lists: [],
-        computedPreviewSize: '',
-        isInCount: true
+    getDetail(index) {
+      return {
+        name: this.data.name,
+        index: index == null ? this.data.fileList.length : index,
+      };
     },
-    methods: {
-        formatFileList() {
-            const { fileList = [], maxCount } = this.data;
-            const lists = fileList.map(item => (Object.assign(Object.assign({}, item), { isImage: typeof item.isImage === 'undefined'
-                    ? isImageFile(item)
-                    : item.isImage })));
-            this.setData({ lists, isInCount: lists.length < maxCount });
+    startUpload() {
+      const { maxCount, multiple, accept, lists, disabled } = this.data;
+      if (disabled) return;
+      chooseFile(
+        Object.assign(Object.assign({}, this.data), {
+          maxCount: maxCount - lists.length,
+        })
+      )
+        .then((res) => {
+          let file = null;
+          if (isVideo(res, accept)) {
+            file = Object.assign({ path: res.tempFilePath }, res);
+          } else {
+            file = multiple ? res.tempFiles : res.tempFiles[0];
+          }
+          this.onBeforeRead(file);
+        })
+        .catch((error) => {
+          this.$emit('error', error);
+        });
+    },
+    onBeforeRead(file) {
+      const { beforeRead, useBeforeRead } = this.data;
+      let res = true;
+      if (typeof beforeRead === 'function') {
+        res = beforeRead(file, this.getDetail());
+      }
+      if (useBeforeRead) {
+        res = new Promise((resolve, reject) => {
+          this.$emit(
+            'before-read',
+            Object.assign(Object.assign({ file }, this.getDetail()), {
+              callback: (ok) => {
+                ok ? resolve() : reject();
+              },
+            })
+          );
+        });
+      }
+      if (!res) {
+        return;
+      }
+      if (isPromise(res)) {
+        res.then((data) => this.onAfterRead(data || file));
+      } else {
+        this.onAfterRead(file);
+      }
+    },
+    onAfterRead(file) {
+      const { maxSize } = this.data;
+      const oversize = Array.isArray(file)
+        ? file.some((item) => item.size > maxSize)
+        : file.size > maxSize;
+      if (oversize) {
+        this.$emit('oversize', Object.assign({ file }, this.getDetail()));
+        return;
+      }
+      if (typeof this.data.afterRead === 'function') {
+        this.data.afterRead(file, this.getDetail());
+      }
+      this.$emit('after-read', Object.assign({ file }, this.getDetail()));
+    },
+    deleteItem(event) {
+      const { index } = event.currentTarget.dataset;
+      this.$emit(
+        'delete',
+        Object.assign(Object.assign({}, this.getDetail(index)), {
+          file: this.data.fileList[index],
+        })
+      );
+    },
+    onPreviewImage(event) {
+      if (!this.data.previewFullImage) return;
+      const { index } = event.currentTarget.dataset;
+      const { lists } = this.data;
+      const item = lists[index];
+      wx.previewImage({
+        urls: lists
+          .filter((item) => item.isImage)
+          .map((item) => item.url || item.path),
+        current: item.url || item.path,
+        fail() {
+          wx.showToast({ title: '预览图片失败', icon: 'none' });
         },
-        setComputedPreviewSize(val) {
-            this.setData({
-                computedPreviewSize: addUnit(val)
-            });
-        },
-        startUpload() {
-            if (this.data.disabled)
-                return;
-            const { name = '', capture = ['album', 'camera'], maxCount = 100, multiple = false, maxSize, accept, lists, useBeforeRead = false // 是否定义了 beforeRead
-             } = this.data;
-            let chooseFile = null;
-            const newMaxCount = maxCount - lists.length;
-            // 设置为只选择图片的时候使用 chooseImage 来实现
-            if (accept === 'image') {
-                chooseFile = new Promise((resolve, reject) => {
-                    wx.chooseImage({
-                        count: multiple ? (newMaxCount > 9 ? 9 : newMaxCount) : 1,
-                        sourceType: capture,
-                        success: res => {
-                            resolve(res);
-                        },
-                        fail: err => {
-                            reject(err);
-                        }
-                    });
-                });
-            }
-            else {
-                chooseFile = new Promise((resolve, reject) => {
-                    wx.chooseMessageFile({
-                        count: multiple ? newMaxCount : 1,
-                        type: 'file',
-                        success(res) {
-                            resolve(res);
-                        },
-                        fail: err => {
-                            reject(err);
-                        }
-                    });
-                });
-            }
-            chooseFile.then(res => {
-                const file = multiple ? res.tempFiles : res.tempFiles[0];
-                // 检查文件大小
-                if (file instanceof Array) {
-                    const sizeEnable = file.every(item => item.size <= maxSize);
-                    if (!sizeEnable) {
-                        this.$emit('oversize', { name });
-                        return;
-                    }
-                }
-                else if (file.size > maxSize) {
-                    this.$emit('oversize', { name });
-                    return;
-                }
-                // 触发上传之前的钩子函数
-                if (useBeforeRead) {
-                    this.$emit('before-read', {
-                        file,
-                        name,
-                        callback: result => {
-                            if (result) {
-                                // 开始上传
-                                this.$emit('after-read', { file, name });
-                            }
-                        }
-                    });
-                }
-                else {
-                    this.$emit('after-read', { file, name });
-                }
-            });
-        },
-        deleteItem(event) {
-            const { index } = event.currentTarget.dataset;
-            this.$emit('delete', { index, name: this.data.name });
-        },
-        doPreviewImage(event) {
-            if (!this.data.previewFullImage)
-                return;
-            const curUrl = event.currentTarget.dataset.url;
-            const images = this.data.lists
-                .filter(item => item.isImage)
-                .map(item => item.url || item.path);
-            this.$emit('click-preview', { url: curUrl, name: this.data.name });
-            wx.previewImage({
-                urls: images,
-                current: curUrl,
-                fail() {
-                    wx.showToast({ title: '预览图片失败', icon: 'none' });
-                }
-            });
-        }
-    }
+      });
+    },
+    onClickPreview(event) {
+      const { index } = event.currentTarget.dataset;
+      const item = this.data.lists[index];
+      this.$emit(
+        'click-preview',
+        Object.assign(Object.assign({}, item), this.getDetail(index))
+      );
+    },
+  },
 });

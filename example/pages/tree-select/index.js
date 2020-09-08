@@ -1,32 +1,44 @@
 import Page from '../../common/page';
 import config from './config';
 
+const items = [
+  {
+    text: config.pro1Name,
+    children: config.pro1,
+  },
+  {
+    text: config.pro2Name,
+    children: config.pro2,
+  },
+  {
+    text: config.pro3Name,
+    disabled: true,
+    children: config.pro3,
+  },
+];
+
 Page({
   data: {
-    items: [{
-      text: '所有城市',
-      children: [...config.pro1, ...config.pro2]
-    }, {
-      text: config.pro1Name,
-      children: config.pro1
-    }, {
-      text: config.pro2Name,
-      children: config.pro2
-    }, {
-      text: config.pro3Name,
-      disabled: true,
-      children: config.pro3
-    }
-    ],
+    items,
+    badgeItems: items.slice(0, 2).map((item, index) => {
+      if (index === 0) {
+        return { ...item, dot: true };
+      }
+      if (index === 1) {
+        return { ...item, badge: 5 };
+      }
+
+      return item;
+    }),
     mainActiveIndex: 0,
     activeId: 0,
     mainActiveIndexMulti: 0,
-    activeIdMulti: []
+    activeIdMulti: [],
   },
 
   onClickNav({ detail }) {
     this.setData({
-      mainActiveIndex: detail.index || 0
+      mainActiveIndex: detail.index || 0,
     });
   },
 
@@ -38,7 +50,7 @@ Page({
 
   onClickNavMulti({ detail }) {
     this.setData({
-      mainActiveIndexMulti: detail.index || 0
+      mainActiveIndexMulti: detail.index || 0,
     });
   },
 
@@ -52,5 +64,5 @@ Page({
     }
 
     this.setData({ activeIdMulti });
-  }
+  },
 });

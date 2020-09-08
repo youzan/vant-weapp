@@ -2,17 +2,25 @@
 @import '../common/style/theme.less';
 
 .van-field {
+  .theme(--cell-icon-size,  '@field-icon-size');
+
+  &__label {
+    .theme(color, '@field-label-color');
+
+    &--disabled {
+      .theme(color, '@field-disabled-text-color');
+    }
+  }
+
   &__body {
     display: flex;
     align-items: center;
 
     &--textarea {
+      box-sizing: border-box;
+      padding: 3.6px 0;
       line-height: 1.2em;
       .theme(min-height, '@cell-line-height');
-    }
-
-    &--textarea&--ios {
-      margin-top: -4.5px;
     }
   }
 
@@ -90,10 +98,12 @@
   }
 
   &__clear-root {
+    .theme(font-size, '@field-clear-icon-size');
     .theme(color, '@field-clear-icon-color');
   }
 
   &__icon-container {
+    .theme(font-size, '@field-icon-size');
     .theme(color, '@field-icon-container-color');
 
     &:empty {
@@ -120,6 +130,22 @@
 
     &--right {
       text-align: right;
+    }
+  }
+
+  &__word-limit {
+    text-align: right;
+    .theme(margin-top, '@padding-base');
+    .theme(color, '@field-word-limit-color');
+    .theme(font-size, '@field-word-limit-font-size');
+    .theme(line-height, '@field-word-limit-line-height');
+  }
+
+  &__word-num {
+    display: inline;
+
+    &--full {
+      .theme(color, '@field-word-num-full-color');
     }
   }
 }

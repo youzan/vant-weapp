@@ -1,7 +1,9 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 
-function emit(target: WechatMiniprogram.Component.TrivialInstance, value: boolean | any[]) {
+function emit(
+  target: WechatMiniprogram.Component.TrivialInstance,
+  value: boolean | any[]
+) {
   target.$emit('input', value);
   target.$emit('change', value);
 }
@@ -12,12 +14,7 @@ VantComponent({
   relation: {
     name: 'checkbox-group',
     type: 'ancestor',
-    linked(target) {
-      this.parent = target;
-    },
-    unlinked() {
-      this.parent = null;
-    }
+    current: 'checkbox',
   },
 
   classes: ['icon-class', 'label-class'],
@@ -31,16 +28,16 @@ VantComponent({
     labelDisabled: Boolean,
     shape: {
       type: String,
-      value: 'round'
+      value: 'round',
     },
     iconSize: {
       type: null,
-      observer: 'setSizeWithUnit'
-    }
+      value: 20,
+    },
   },
 
   data: {
-    sizeWithUnit: '20px'
+    parentDisabled: false,
   },
 
   methods: {
@@ -53,20 +50,23 @@ VantComponent({
     },
 
     toggle() {
-      const { disabled, value } = this.data;
-      if (!disabled) {
+      const { parentDisabled, disabled, value } = this.data;
+      if (!disabled && !parentDisabled) {
         this.emitChange(!value);
       }
     },
 
     onClickLabel() {
-      const { labelDisabled, disabled, value } = this.data;
-      if (!disabled && !labelDisabled) {
+      const { labelDisabled, parentDisabled, disabled, value } = this.data;
+      if (!disabled && !labelDisabled && !parentDisabled) {
         this.emitChange(!value);
       }
     },
 
-    setParentValue(parent: WechatMiniprogram.Component.TrivialInstance, value: boolean) {
+    setParentValue(
+      parent: WechatMiniprogram.Component.TrivialInstance,
+      value: boolean
+    ) {
       const parentValue = parent.data.value.slice();
       const { name } = this.data;
       const { max } = parent.data;
@@ -88,11 +88,5 @@ VantComponent({
         }
       }
     },
-
-    setSizeWithUnit(size: string | number): void {
-      this.set({
-        sizeWithUnit: addUnit(size)
-      });
-    },
-  }
+  },
 });

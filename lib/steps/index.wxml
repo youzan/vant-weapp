@@ -5,32 +5,35 @@
     <view
       wx:for="{{ steps }}"
       wx:key="index"
+      bindtap="onClick"
+      data-index="{{ index }}"
       class="{{ utils.bem('step', [direction, status(index, active)]) }} van-hairline"
+      style="{{ status(index, active) === 'inactive' ? 'color: ' + inactiveColor: '' }}"
     >
       <view class="van-step__title" style="{{ index === active ? 'color: ' + activeColor : '' }}">
         <view>{{ item.text }}</view>
-        <view>{{ item.desc }}</view>
+        <view class="desc-class">{{ item.desc }}</view>
       </view>
       <view class="van-step__circle-container">
         <block wx:if="{{ index !== active }}">
           <van-icon
-            wx:if="{{ inactiveIcon }}"
-            color="#969799"
-            name="{{ inactiveIcon }}"
+            wx:if="{{ item.inactiveIcon || inactiveIcon }}"
+            color="{{ status(index, active) === 'inactive' ? inactiveColor: activeColor }}"
+            name="{{ item.inactiveIcon || inactiveIcon }}"
             custom-class="van-step__icon"
           />
           <view
             wx:else
             class="van-step__circle"
-            style="{{ index < active ? 'background-color: ' + activeColor : '' }}"
+            style="{{ 'background-color: ' + (index < active ? activeColor : inactiveColor) }}"
           />
         </block>
 
-        <van-icon wx:else name="{{ activeIcon }}" color="{{ activeColor }}" custom-class="van-step__icon" />
+        <van-icon wx:else name="{{ item.activeIcon || activeIcon }}" color="{{ activeColor }}" custom-class="van-step__icon" />
       </view>
       <view
         wx:if="{{ index !== steps.length - 1 }}"
-        class="van-step__line" style="{{ index < active ? 'background-color: ' + activeColor : '' }}"
+        class="van-step__line" style="{{ 'background-color: ' + (index < active ? activeColor : inactiveColor) }}"
       />
     </view>
   </view>
@@ -44,7 +47,7 @@ function get(index, active) {
     return 'process';
   }
 
-  return '';
+  return 'inactive';
 }
 
 module.exports = get;

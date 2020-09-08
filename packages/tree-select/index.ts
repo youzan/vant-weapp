@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   classes: [
@@ -9,37 +8,36 @@ VantComponent({
     'main-active-class',
     'content-active-class',
     'main-disabled-class',
-    'content-disabled-class'
+    'content-disabled-class',
   ],
 
   props: {
     items: {
       type: Array,
-      observer: 'updateSubItems'
+      observer: 'updateSubItems',
     },
     activeId: null,
     mainActiveIndex: {
       type: Number,
       value: 0,
-      observer: 'updateSubItems'
+      observer: 'updateSubItems',
     },
     height: {
       type: [Number, String],
       value: 300,
-      observer: 'updateHeight'
     },
     max: {
       type: Number,
-      value: Infinity
-    }
+      value: Infinity,
+    },
+    selectedIcon: {
+      type: String,
+      value: 'success',
+    },
   },
 
   data: {
-    subItems: []
-  },
-
-  created() {
-    this.updateHeight();
+    subItems: [],
   },
 
   methods: {
@@ -75,11 +73,5 @@ VantComponent({
 
       return this.set({ subItems: children });
     },
-
-    updateHeight() {
-      this.setData({
-        innerHeight: addUnit(this.data.height)
-      });
-    }
-  }
+  },
 });

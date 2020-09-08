@@ -4,31 +4,31 @@ VantComponent({
   props: {
     dashed: {
       type: Boolean,
-      value: false
+      value: false,
     },
     hairline: {
       type: Boolean,
-      value: false
+      value: false,
     },
     contentPosition: {
       type: String,
-      value: ''
+      value: '',
     },
     fontSize: {
       type: Number,
-      value: ''
+      value: '',
     },
     borderColor: {
       type: String,
-      value: ''
+      value: '',
     },
     textColor: {
       type: String,
-      value: ''
+      value: '',
     },
     customStyle: {
       type: String,
-      value: ''
-    }
-  }
+      value: '',
+    },
+  },
 });

@@ -33,6 +33,19 @@
       hover-class="van-action-sheet__item--hover"
       data-index="{{ index }}"
       bind:tap="onSelect"
+      bindgetuserinfo="bindGetUserInfo"
+      bindcontact="bindContact"
+      bindgetphonenumber="bindGetPhoneNumber"
+      binderror="bindError"
+      bindlaunchapp="bindLaunchApp"
+      bindopensetting="bindOpenSetting"
+      lang="{{ lang }}"
+      session-from="{{ sessionFrom }}"
+      send-message-title="{{ sendMessageTitle }}"
+      send-message-path="{{ sendMessagePath }}"
+      send-message-img="{{ sendMessageImg }}"
+      show-message-card="{{ showMessageCard }}"
+      app-parameter="{{ appParameter }}"
     >
       <block wx:if="{{ !item.loading }}">
         {{ item.name }}

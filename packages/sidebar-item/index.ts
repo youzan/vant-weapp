@@ -1,24 +1,20 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  classes: [
-    'active-class',
-    'disabled-class',
-  ],
+  classes: ['active-class', 'disabled-class'],
 
   relation: {
     type: 'ancestor',
     name: 'sidebar',
-    linked(target) {
-      this.parent = target;
-    }
+    current: 'sidebar-item',
   },
 
   props: {
     dot: Boolean,
+    badge: null,
     info: null,
     title: String,
-    disabled: Boolean
+    disabled: Boolean,
   },
 
   methods: {
@@ -39,6 +35,6 @@ VantComponent({
 
     setActive(selected: boolean) {
       return this.setData({ selected });
-    }
-  }
+    },
+  },
 });

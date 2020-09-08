@@ -2,6 +2,7 @@
   <van-steps
     steps="{{ steps }}"
     active="{{ active }}"
+    bind:click-step="onClick"
     custom-class="demo-margin-bottom"
   />
 
@@ -18,6 +19,13 @@
   />
 </demo-block>
 
+<demo-block title="自定义图标">
+  <van-steps
+    steps="{{ customIconSteps }}"
+    active="{{ active }}"
+  />
+</demo-block>
+
 <demo-block title="竖向步骤条">
   <van-steps
     steps="{{ steps }}"
@@ -26,3 +34,5 @@
     active-color="#ee0a24"
   />
 </demo-block>
+
+<van-toast id="van-toast" />

@@ -4,7 +4,9 @@ import Page from '../../common/page';
 Page({
   data: {
     icons,
-    active: 0
+    active: 0,
+    demoIcon: 'chat-o',
+    demoImage: 'https://b.yzcdn.cn/vant/icon-demo-1126.png',
   },
 
   onSwitch(event) {

@@ -2,14 +2,9 @@ import { Weapp } from './weapp';
 
 type RecordToAny<T> = { [K in keyof T]: any };
 
-export type CombinedComponentInstance<
-  Data,
-  Props,
-  Methods
-> = Methods &
+export type CombinedComponentInstance<Data, Props, Methods> = Methods &
   WechatMiniprogram.Component.TrivialInstance &
-  Weapp.FormField &
-  {
+  Weapp.FormField & {
     data: Data & RecordToAny<Props>;
   };
 
@@ -19,8 +14,11 @@ export interface VantComponentOptions<Data, Props, Methods, Instance> {
   classes?: string[];
   mixins?: string[];
   props?: Props & Weapp.PropertyOption;
-  watch?: Weapp.WatchOption<Instance>;
-  relation?: Weapp.RelationOption<Instance> & { name: string };
+  relation?: Weapp.RelationOption<Instance> & {
+    type: 'ancestor' | 'descendant';
+    name: string;
+    current: string;
+  };
   relations?: {
     [componentName: string]: Weapp.RelationOption<Instance>;
   };

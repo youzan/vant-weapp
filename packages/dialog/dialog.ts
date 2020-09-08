@@ -7,7 +7,10 @@ type DialogOptions = {
   title?: string;
   width?: string | number;
   zIndex?: number;
-  context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
+  theme?: string;
+  context?:
+    | WechatMiniprogram.Page.TrivialInstance
+    | WechatMiniprogram.Component.TrivialInstance;
   message?: string;
   overlay?: boolean;
   selector?: string;
@@ -31,7 +34,7 @@ type DialogOptions = {
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
-}
+};
 
 interface Dialog {
   (options: DialogOptions): Promise<DialogAction>;
@@ -70,17 +73,25 @@ const Dialog: Dialog = options => {
         onConfirm: resolve,
         ...options
       });
+
+      wx.nextTick(() => {
+        dialog.setData({ show: true });
+      });
+
       queue.push(dialog);
     } else {
-      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
+      console.warn(
+        '未找到 van-dialog 节点，请确认 selector 及 context 是否正确'
+      );
     }
   });
 };
 
 Dialog.defaultOptions = {
-  show: true,
+  show: false,
   title: '',
   width: null,
+  theme: 'default',
   message: '',
   zIndex: 100,
   overlay: true,

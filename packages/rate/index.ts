@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { addUnit } from '../common/utils';
+import { canIUseModel } from '../common/version';
 
 VantComponent({
   field: true,
@@ -8,82 +8,72 @@ VantComponent({
   classes: ['icon-class'],
 
   props: {
-    value: Number,
+    value: {
+      type: Number,
+      observer(value: number) {
+        if (value !== this.data.innerValue) {
+          this.setData({ innerValue: value });
+        }
+      },
+    },
     readonly: Boolean,
     disabled: Boolean,
     allowHalf: Boolean,
-    size: {
-      type: null,
-      observer: 'setSizeWithUnit'
-    },
+    size: null,
     icon: {
       type: String,
-      value: 'star'
+      value: 'star',
     },
     voidIcon: {
       type: String,
-      value: 'star-o'
+      value: 'star-o',
     },
     color: {
       type: String,
-      value: '#ffd21e'
+      value: '#ffd21e',
     },
     voidColor: {
       type: String,
-      value: '#c7c7c7'
+      value: '#c7c7c7',
     },
     disabledColor: {
       type: String,
-      value: '#bdbdbd'
+      value: '#bdbdbd',
     },
     count: {
       type: Number,
-      value: 5
+      value: 5,
+      observer(value: number) {
+        this.setData({ innerCountArray: Array.from({ length: value }) });
+      },
     },
-    gutter: {
-      type: null,
-      observer: 'setGutterWithUnit'
-    },
+    gutter: null,
     touchable: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   data: {
     innerValue: 0,
-    gutterWithUnit: undefined,
-    sizeWithUnit: '20px'
-  },
-
-  watch: {
-    value(value: number) {
-      if (value !== this.data.innerValue) {
-        this.setData({ innerValue: value });
-      }
-    }
+    innerCountArray: Array.from({ length: 5 }),
   },
 
   methods: {
-    setSizeWithUnit(val) {
-      this.setData({
-        sizeWithUnit: addUnit(val)
-      });
-    },
-
-    setGutterWithUnit(val) {
-      this.setData({
-        gutterWithUnit: addUnit(val)
-      });
-    },
-
     onSelect(event: Weapp.Event) {
       const { data } = this;
       const { score } = event.currentTarget.dataset;
       if (!data.disabled && !data.readonly) {
         this.setData({ innerValue: score + 1 });
-        this.$emit('input', score + 1);
-        this.$emit('change', score + 1);
+
+        if (canIUseModel()) {
+          this.setData({ value: score + 1 });
+        }
+
+        wx.nextTick(() => {
+          this.$emit('input', score + 1);
+          this.$emit('change', score + 1);
+        });
       }
     },
 
@@ -96,16 +86,16 @@ VantComponent({
       this.getRect('.van-rate__icon', true).then(
         (list: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
           const target = list
-            .sort(item => item.right - item.left)
-            .find(item => clientX >= item.left && clientX <= item.right);
+            .sort((item) => item.right - item.left)
+            .find((item) => clientX >= item.left && clientX <= item.right);
           if (target != null) {
             this.onSelect({
               ...event,
-              currentTarget: target
+              currentTarget: target,
             });
           }
         }
       );
-    }
-  }
+    },
+  },
 });

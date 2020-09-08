@@ -8,7 +8,8 @@ VantComponent({
     'enter-to-class',
     'leave-class',
     'leave-active-class',
-    'leave-to-class'
+    'leave-to-class',
+    'close-icon-class',
   ],
 
   mixins: [transition(false)],
@@ -20,41 +21,41 @@ VantComponent({
     overlayStyle: String,
     transition: {
       type: String,
-      observer: 'observeClass'
+      observer: 'observeClass',
     },
     zIndex: {
       type: Number,
-      value: 100
+      value: 100,
     },
     overlay: {
       type: Boolean,
-      value: true
+      value: true,
     },
     closeIcon: {
       type: String,
-      value: 'cross'
+      value: 'cross',
     },
     closeIconPosition: {
       type: String,
-      value: 'top-right'
+      value: 'top-right',
     },
     closeOnClickOverlay: {
       type: Boolean,
-      value: true
+      value: true,
     },
     position: {
       type: String,
       value: 'center',
-      observer: 'observeClass'
+      observer: 'observeClass',
     },
     safeAreaInsetBottom: {
       type: Boolean,
-      value: true
+      value: true,
     },
     safeAreaInsetTop: {
       type: Boolean,
-      value: false
-    }
+      value: false,
+    },
   },
 
   created() {
@@ -75,17 +76,20 @@ VantComponent({
     },
 
     observeClass() {
-      const { transition, position } = this.data;
+      const { transition, position, duration } = this.data;
 
       const updateData: { [key: string]: any } = {
-        name: transition || position
+        name: transition || position,
       };
 
       if (transition === 'none') {
         updateData.duration = 0;
+        this.originDuration = duration;
+      } else if (this.originDuration != null) {
+        updateData.duration = this.originDuration;
       }
 
       this.setData(updateData);
-    }
-  }
+    },
+  },
 });

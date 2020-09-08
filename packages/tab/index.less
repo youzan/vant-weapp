@@ -1,6 +1,13 @@
+:host {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 .van-tab__pane {
   box-sizing: border-box;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 
   &--active {
     height: auto;

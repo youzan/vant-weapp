@@ -7,30 +7,29 @@ VantComponent({
   classes: ['node-class'],
 
   props: {
-    checked: null,
+    checked: {
+      type: null,
+      observer(value) {
+        const loadingColor = this.getLoadingColor(value);
+        this.setData({ value, loadingColor });
+      },
+    },
     loading: Boolean,
     disabled: Boolean,
     activeColor: String,
     inactiveColor: String,
     size: {
       type: String,
-      value: '30px'
+      value: '30px',
     },
     activeValue: {
       type: null,
-      value: true
+      value: true,
     },
     inactiveValue: {
       type: null,
-      value: false
-    }
-  },
-
-  watch: {
-    checked(value) {
-      const loadingColor = this.getLoadingColor(value);
-      this.setData({ value, loadingColor });
-    }
+      value: false,
+    },
   },
 
   created() {
@@ -54,6 +53,6 @@ VantComponent({
         this.$emit('input', value);
         this.$emit('change', value);
       }
-    }
-  }
+    },
+  },
 });

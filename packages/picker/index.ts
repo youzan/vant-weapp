@@ -14,15 +14,15 @@ VantComponent({
     ...pickerProps,
     valueKey: {
       type: String,
-      value: 'text'
+      value: 'text',
     },
     toolbarPosition: {
       type: String,
-      value: 'top'
+      value: 'top',
     },
     defaultIndex: {
       type: Number,
-      value: 0
+      value: 0,
     },
     columns: {
       type: Array,
@@ -34,8 +34,8 @@ VantComponent({
         if (Array.isArray(this.children) && this.children.length) {
           this.setColumns().catch(() => {});
         }
-      }
-    }
+      },
+    },
   },
 
   beforeCreate() {
@@ -59,12 +59,12 @@ VantComponent({
       if (this.simple) {
         this.$emit(type, {
           value: this.getColumnValue(0),
-          index: this.getColumnIndex(0)
+          index: this.getColumnIndex(0),
         });
       } else {
         this.$emit(type, {
           value: this.getValues(),
-          index: this.getIndexes()
+          index: this.getIndexes(),
         });
       }
     },
@@ -74,13 +74,13 @@ VantComponent({
         this.$emit('change', {
           picker: this,
           value: this.getColumnValue(0),
-          index: this.getColumnIndex(0)
+          index: this.getColumnIndex(0),
         });
       } else {
         this.$emit('change', {
           picker: this,
           value: this.getValues(),
-          index: event.currentTarget.dataset.index
+          index: event.currentTarget.dataset.index,
         });
       }
     },
@@ -152,7 +152,9 @@ VantComponent({
 
     // get values of all columns
     getValues() {
-      return this.children.map((child: WechatMiniprogram.Component.TrivialInstance) => child.getValue());
+      return this.children.map(
+        (child: WechatMiniprogram.Component.TrivialInstance) => child.getValue()
+      );
     },
 
     // set values of all columns
@@ -166,7 +168,8 @@ VantComponent({
     // get indexes of all columns
     getIndexes() {
       return this.children.map(
-        (child: WechatMiniprogram.Component.TrivialInstance) => child.data.currentIndex
+        (child: WechatMiniprogram.Component.TrivialInstance) =>
+          child.data.currentIndex
       );
     },
 
@@ -176,6 +179,6 @@ VantComponent({
         this.setColumnIndex(columnIndex, optionIndex)
       );
       return Promise.all(stack);
-    }
-  }
+    },
+  },
 });

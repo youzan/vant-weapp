@@ -1,8 +1,9 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="./index.wxs" module="getters" />
 
 <view
   class="van-progress custom-class"
-  style="height: {{ strokeWidthUnit }}; {{ trackColor ? 'background: ' + trackColor : '' }}"
+  style="height: {{ utils.addUnit(strokeWidth) }}; {{ trackColor ? 'background: ' + trackColor : '' }}"
 >
   <view
     class="van-progress__portion"

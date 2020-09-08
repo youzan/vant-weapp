@@ -1,15 +1,9 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
-import { nextTick, isDef, addUnit } from '../common/utils';
+import { isDef, addUnit } from '../common/utils';
 
-type TabItemData = {
-  width?: number;
-  active: boolean;
-  inited?: boolean;
-  animated?: boolean;
-  name?: string | number;
-};
+type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
 VantComponent({
   mixins: [touch],
@@ -19,86 +13,92 @@ VantComponent({
   relation: {
     name: 'tab',
     type: 'descendant',
-    linked(child) {
-      child.index = this.children.length;
-      this.children.push(child);
-      this.updateTabs(this.data.tabs.concat(child.data));
+    current: 'tabs',
+    linked(target) {
+      target.index = this.children.length - 1;
+      this.updateTabs();
     },
-    unlinked(child) {
-      const index = this.children.indexOf(child);
-      const { tabs } = this.data;
-      tabs.splice(index, 1);
-      this.children.splice(index, 1);
-
-      let i = index;
-      while (i >= 0 && i < this.children.length) {
-        const currentChild = this.children[i];
-        currentChild.index--;
-        i++;
-      }
-
-      this.updateTabs(tabs);
-    }
+    unlinked() {
+      this.children = this.children.map(
+        (child: TrivialInstance, index: number) => {
+          child.index = index;
+          return child;
+        }
+      );
+      this.updateTabs();
+    },
   },
 
   props: {
+    sticky: Boolean,
+    border: Boolean,
+    swipeable: Boolean,
+    titleActiveColor: String,
+    titleInactiveColor: String,
     color: {
       type: String,
-      observer: 'setLine'
+      observer: 'setLine',
     },
-    sticky: Boolean,
     animated: {
       type: Boolean,
-      observer: 'setTrack'
+      observer() {
+        this.children.forEach((child: TrivialInstance, index: number) =>
+          child.updateRender(index === this.data.currentIndex, this)
+        );
+      },
     },
-    swipeable: Boolean,
     lineWidth: {
       type: [String, Number],
-      value: -1,
-      observer: 'setLine'
+      value: 40,
+      observer: 'setLine',
     },
     lineHeight: {
       type: [String, Number],
       value: -1,
-      observer: 'setLine'
+      observer: 'setLine',
     },
     active: {
       type: [String, Number],
       value: 0,
-      observer(value) {
-        this.currentName = value;
-        this.setActiveTab();
-      }
+      observer(name) {
+        if (name !== this.getCurrentName()) {
+          this.setCurrentIndexByName(name);
+        }
+      },
     },
     type: {
       type: String,
-      value: 'line'
+      value: 'line',
     },
-    border: {
+    ellipsis: {
       type: Boolean,
-      value: true
+      value: true,
     },
     duration: {
       type: Number,
-      value: 0.3
+      value: 0.3,
     },
     zIndex: {
       type: Number,
-      value: 1
+      value: 1,
     },
     swipeThreshold: {
       type: Number,
-      value: 4,
-      observer() {
+      value: 5,
+      observer(value) {
         this.setData({
-          scrollable: this.children.length > this.data.swipeThreshold
+          scrollable: this.children.length > value || !this.data.ellipsis,
         });
-      }
+      },
     },
     offsetTop: {
       type: Number,
-      value: 0
-    }
+      value: 0,
+    },
+    lazyRender: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   data: {
@@ -107,58 +107,119 @@ VantComponent({
     scrollLeft: 0,
     scrollable: false,
     trackStyle: '',
-    wrapStyle: '',
-    position: '',
-    currentIndex: 0
-  },
-
-  beforeCreate() {
-    this.children = [];
+    currentIndex: null,
+    container: null,
   },
 
   mounted() {
-    this.setLine(true);
-    this.setTrack();
-    this.scrollIntoView();
+    wx.nextTick(() => {
+      this.setLine(true);
+      this.scrollIntoView();
+    });
   },
 
   methods: {
-    updateTabs(tabs: TabItemData[]) {
-      tabs = tabs || this.data.tabs;
+    updateContainer() {
       this.setData({
-        tabs,
-        scrollable: tabs.length > this.data.swipeThreshold
+        container: () => this.createSelectorQuery().select('.van-tabs'),
       });
-      this.setActiveTab();
     },
 
-    trigger(eventName: string, name: string | number) {
-      const { tabs, currentIndex } = this.data;
+    updateTabs() {
+      const { children = [], data } = this;
+      this.setData({
+        tabs: children.map((child: TrivialInstance) => child.data),
+        scrollable:
+          this.children.length > data.swipeThreshold || !data.ellipsis,
+      });
+
+      this.setCurrentIndexByName(this.getCurrentName() || data.active);
+    },
+
+    trigger(eventName: string, child?: TrivialInstance) {
+      const { currentIndex } = this.data;
+
+      const currentChild = child || this.children[currentIndex];
+
+      if (!isDef(currentChild)) {
+        return;
+      }
 
       this.$emit(eventName, {
-        name,
-        title: tabs[currentIndex].title
+        index: currentChild.index,
+        name: currentChild.getComputedName(),
+        title: currentChild.data.title,
       });
     },
 
     onTap(event: Weapp.Event) {
       const { index } = event.currentTarget.dataset;
       const child = this.children[index];
-      const computedName = child.getComputedName();
 
-      if (this.data.tabs[index].disabled) {
-        this.trigger('disabled', computedName);
+      if (child.data.disabled) {
+        this.trigger('disabled', child);
       } else {
-        this.trigger('click', computedName);
-        this.setActive(computedName);
+        this.setCurrentIndex(index);
+        wx.nextTick(() => {
+          this.trigger('click');
+        });
       }
     },
 
-    setActive(name) {
-      if (name !== this.currentName) {
-        this.currentName = name;
-        this.trigger('change', name);
-        this.setActiveTab();
+    // correct the index of active tab
+    setCurrentIndexByName(name) {
+      const { children = [] } = this;
+      const matched = children.filter(
+        (child: TrivialInstance) => child.getComputedName() === name
+      );
+
+      if (matched.length) {
+        this.setCurrentIndex(matched[0].index);
+      }
+    },
+
+    setCurrentIndex(currentIndex) {
+      const { data, children = [] } = this;
+
+      if (
+        !isDef(currentIndex) ||
+        currentIndex >= children.length ||
+        currentIndex < 0
+      ) {
+        return;
+      }
+
+      children.forEach((item: TrivialInstance, index: number) => {
+        const active = index === currentIndex;
+        if (active !== item.data.active || !item.inited) {
+          item.updateRender(active, this);
+        }
+      });
+
+      if (currentIndex === data.currentIndex) {
+        return;
+      }
+
+      const shouldEmitChange = data.currentIndex !== null;
+      this.setData({ currentIndex });
+
+      wx.nextTick(() => {
+        this.setLine();
+        this.scrollIntoView();
+        this.updateContainer();
+
+        this.trigger('input');
+        if (shouldEmitChange) {
+          this.trigger('change');
+        }
+      });
+    },
+
+    getCurrentName() {
+      const activeTab = this.children[this.data.currentIndex];
+
+      if (activeTab) {
+        return activeTab.getComputedName();
       }
     },
 
@@ -172,23 +233,27 @@ VantComponent({
         duration,
         currentIndex,
         lineWidth,
-        lineHeight
+        lineHeight,
       } = this.data;
 
       this.getRect('.van-tab', true).then(
-        (rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
+        (rects: WechatMiniprogram.BoundingClientRectCallbackResult[] = []) => {
           const rect = rects[currentIndex];
-          const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
+          if (rect == null) {
+            return;
+          }
           const height =
             lineHeight !== -1
-              ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(lineHeight)};`
+              ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(
+                  lineHeight
+                )};`
               : '';
 
           let left = rects
             .slice(0, currentIndex)
             .reduce((prev, curr) => prev + curr.width, 0);
 
-          left += (rect.width - width) / 2;
+          left += (rect.width - lineWidth) / 2;
 
           const transition = skipTransition
             ? ''
@@ -197,80 +262,15 @@ VantComponent({
           this.setData({
             lineStyle: `
             ${height}
-            width: ${addUnit(width)};
+            width: ${addUnit(lineWidth)};
             background-color: ${color};
             -webkit-transform: translateX(${left}px);
             transform: translateX(${left}px);
             ${transition}
-          `
+          `,
           });
         }
       );
-    },
-
-    setTrack() {
-      const { animated, duration, currentIndex } = this.data;
-
-      if (!animated) return '';
-
-      this.getRect('.van-tabs__content').then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          const { width } = rect;
-
-          this.setData({
-            trackStyle: `
-              width: ${width * this.children.length}px;
-              left: ${-1 * currentIndex * width}px;
-              transition: left ${duration}s;
-              display: -webkit-box;
-              display: flex;
-            `
-          });
-
-          const data = { width, animated };
-
-          this.children.forEach(
-            (item: WechatMiniprogram.Component.TrivialInstance) => {
-              item.setData(data);
-            }
-          );
-        }
-      );
-    },
-
-    setActiveTab() {
-      if (!isDef(this.currentName)) {
-        const { active } = this.data;
-        const { children = [] } = this;
-
-        this.currentName =
-          active === '' && children.length
-            ? children[0].getComputedName()
-            : active;
-      }
-
-      this.children.forEach(
-        (item: WechatMiniprogram.Component.TrivialInstance, index: number) => {
-          const data: TabItemData = {
-            active: item.getComputedName() === this.currentName
-          };
-
-          if (data.active) {
-            this.setData({ currentIndex: index });
-            data.inited = true;
-          }
-
-          if (data.active !== item.data.active) {
-            item.setData(data);
-          }
-        }
-      );
-
-      nextTick(() => {
-        this.setLine();
-        this.setTrack();
-        this.scrollIntoView();
-      });
     },
 
     // scroll active tab into view
@@ -283,7 +283,7 @@ VantComponent({
 
       Promise.all([
         this.getRect('.van-tab', true),
-        this.getRect('.van-tabs__nav')
+        this.getRect('.van-tabs__nav'),
       ]).then(
         ([tabRects, navRect]: [
           WechatMiniprogram.BoundingClientRectCallbackResult[],
@@ -295,7 +295,7 @@ VantComponent({
             .reduce((prev, curr) => prev + curr.width, 0);
 
           this.setData({
-            scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2
+            scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
           });
         }
       );
@@ -321,20 +321,39 @@ VantComponent({
     onTouchEnd() {
       if (!this.data.swipeable) return;
 
-      const { tabs, currentIndex } = this.data;
-
       const { direction, deltaX, offsetX } = this;
       const minSwipeDistance = 50;
 
       if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
-        if (deltaX > 0 && currentIndex !== 0) {
-          const child = this.children[currentIndex - 1];
-          this.setActive(child.getComputedName());
-        } else if (deltaX < 0 && currentIndex !== tabs.length - 1) {
-          const child = this.children[currentIndex + 1];
-          this.setActive(child.getComputedName());
+        const index = this.getAvaiableTab(deltaX);
+        if (index !== -1) {
+          this.setCurrentIndex(index);
         }
       }
-    }
-  }
+    },
+
+    getAvaiableTab(direction: number) {
+      const { tabs, currentIndex } = this.data;
+      const step = direction > 0 ? -1 : 1;
+
+      for (
+        let i = step;
+        currentIndex + i < tabs.length && currentIndex + i >= 0;
+        i += step
+      ) {
+        const index = currentIndex + i;
+
+        if (
+          index >= 0 &&
+          index < tabs.length &&
+          tabs[index] &&
+          !tabs[index].disabled
+        ) {
+          return index;
+        }
+      }
+
+      return -1;
+    },
+  },
 });

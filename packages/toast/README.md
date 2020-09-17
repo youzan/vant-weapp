@@ -26,10 +26,19 @@ Toast('我是提示文案，建议不超过十五字~');
 
 ### 加载提示
 
+使用 `Toast.loading` 方法展示加载提示，通过 `forbidClick` 属性可以禁用背景点击，通过 `loadingType` 属性可以自定义加载图标类型。
+
 ```javascript
 Toast.loading({
-  mask: true,
   message: '加载中...',
+  forbidClick: true,
+});
+
+// 自定义加载图标
+Toast.loading({
+  message: '加载中...',
+  forbidClick: true,
+  loadingType: 'spinner',
 });
 ```
 
@@ -40,14 +49,13 @@ Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
 
-### 高级用法
+### 动态更新提示
 
 ```javascript
 const toast = Toast.loading({
   duration: 0, // 持续展示 toast
-  forbidClick: true, // 禁用背景点击
+  forbidClick: true,
   message: '倒计时 3 秒',
-  loadingType: 'spinner',
   selector: '#custom-selector',
 });
 

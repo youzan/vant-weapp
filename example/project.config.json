@@ -5,15 +5,35 @@
 	},
 	"setting": {
 		"urlCheck": false,
+		"scopeDataCheck": false,
+		"coverView": true,
 		"es6": true,
 		"postcss": true,
+		"compileHotReLoad": false,
+		"preloadBackgroundData": false,
 		"minified": true,
+		"autoAudits": false,
 		"newFeature": true,
-		"nodeModules": true
+		"uglifyFileName": false,
+		"uploadWithSourceMap": true,
+		"useIsolateContext": true,
+		"nodeModules": true,
+		"enhance": false,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"showShadowRootInWxmlPanel": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": false
 	},
 	"compileType": "miniprogram",
 	"cloudfunctionRoot": "functions/",
-	"libVersion": "2.9.3",
+	"libVersion": "2.3.0",
 	"appid": "wx1c01b35002d3ba14",
 	"projectname": "vant-weapp",
 	"debugOptions": {
@@ -355,6 +375,21 @@
 					"id": -1,
 					"name": "index-bar",
 					"pathName": "pages/index-bar/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "empty",
+					"pathName": "pages/empty/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 51,
+					"name": "share-sheet",
+					"pathName": "pages/share-sheet/index",
+					"query": "",
 					"scene": null
 				}
 			]

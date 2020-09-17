@@ -68,12 +68,15 @@ VantComponent({
       }
     },
     observeClass() {
-      const { transition, position } = this.data;
+      const { transition, position, duration } = this.data;
       const updateData = {
         name: transition || position,
       };
       if (transition === 'none') {
         updateData.duration = 0;
+        this.originDuration = duration;
+      } else if (this.originDuration != null) {
+        updateData.duration = this.originDuration;
       }
       this.setData(updateData);
     },

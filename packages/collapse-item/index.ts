@@ -1,7 +1,5 @@
 import { VantComponent } from '../common/component';
 
-const nextTick = () => new Promise((resolve) => setTimeout(resolve, 20));
-
 VantComponent({
   classes: ['title-class', 'content-class'],
 
@@ -30,23 +28,20 @@ VantComponent({
   },
 
   data: {
-    contentHeight: 0,
     expanded: false,
-    transition: false,
+  },
+
+  created() {
+    this.animation = wx.createAnimation({
+      duration: 0,
+      timingFunction: 'ease-in-out',
+    });
   },
 
   mounted() {
-    this.updateExpanded()
-      .then(nextTick)
-      .then(() => {
-        const data: Record<string, boolean | string> = { transition: true };
+    this.updateExpanded();
 
-        if (this.data.expanded) {
-          data.contentHeight = 'auto';
-        }
-
-        this.setData(data);
-      });
+    this.inited = true;
   },
 
   methods: {
@@ -66,33 +61,50 @@ VantComponent({
         ? value === currentName
         : (value || []).some((name: string | number) => name === currentName);
 
-      const stack = [];
-
       if (expanded !== this.data.expanded) {
-        stack.push(this.updateStyle(expanded));
+        this.updateStyle(expanded);
       }
 
-      stack.push(this.set({ index, expanded }));
-
-      return Promise.all(stack);
+      this.setData({ index, expanded });
     },
 
     updateStyle(expanded: boolean) {
-      return this.getRect('.van-collapse-item__content')
+      const { inited } = this;
+      this.getRect('.van-collapse-item__content')
         .then(
           (rect: WechatMiniprogram.BoundingClientRectCallbackResult) =>
             rect.height
         )
         .then((height: number) => {
+          const { animation } = this;
+
           if (expanded) {
-            return this.set({
-              contentHeight: height ? `${height}px` : 'auto',
+            if (height === 0) {
+              animation.height('auto').top(1).step();
+            } else {
+              animation
+                .height(height)
+                .top(1)
+                .step({
+                  duration: inited ? 300 : 1,
+                })
+                .height('auto')
+                .step();
+            }
+
+            this.setData({
+              animation: animation.export(),
             });
+            return;
           }
 
-          return this.set({ contentHeight: `${height}px` })
-            .then(nextTick)
-            .then(() => this.set({ contentHeight: 0 }));
+          animation.height(height).top(0).step({ duration: 1 }).height(0).step({
+            duration: 300,
+          });
+
+          this.setData({
+            animation: animation.export(),
+          });
         });
     },
 
@@ -106,14 +118,6 @@ VantComponent({
       const currentName = name == null ? index : name;
 
       this.parent.switch(currentName, !expanded);
-    },
-
-    onTransitionEnd() {
-      if (this.data.expanded) {
-        this.setData({
-          contentHeight: 'auto',
-        });
-      }
     },
   },
 });

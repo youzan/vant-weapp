@@ -7,7 +7,7 @@
     "noImplicitAny": false,
     "outDir": "dist",
     "baseUrl": ".",
-    "types": ["miniprogram-api-typings"],
+    "strict": false,
     "paths": {
       "definitions/*": ["./packages/definitions/*"],
       "packages/*": ["./packages/*"]

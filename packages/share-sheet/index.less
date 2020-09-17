@@ -1,0 +1,69 @@
+@import '../common/style/var';
+@import '../common/style/mixins/hairline.less';
+
+.van-share-sheet {
+  &__header {
+    padding: @share-sheet-header-padding;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: @padding-xs;
+    color: @share-sheet-title-color;
+    font-weight: normal;
+    font-size: @share-sheet-title-font-size;
+    line-height: @share-sheet-title-line-height;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__title:not(:empty) + &__title {
+    display: none;
+  }
+
+  &__description {
+    display: block;
+    margin-top: @padding-xs;
+    color: @share-sheet-description-color;
+    font-size: @share-sheet-description-font-size;
+    line-height: @share-sheet-description-line-height;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__description:not(:empty) + &__description {
+    display: none;
+  }
+
+  &__cancel {
+    display: block;
+    box-sizing: content-box;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    font-size: @share-sheet-cancel-button-font-size;
+    line-height: @share-sheet-cancel-button-height;
+    text-align: center;
+    background: @share-sheet-cancel-button-background;
+    border: none;
+
+    &::before {
+      display: block;
+      height: @padding-xs;
+      background-color: @background-color;
+      content: ' ';
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+}

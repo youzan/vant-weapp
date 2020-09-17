@@ -35,7 +35,7 @@ VantComponent({
 
       this.currentActive = activeKey;
 
-      const stack = [];
+      const stack: Promise<unknown>[] = [];
 
       if (currentActive !== activeKey && children[currentActive]) {
         stack.push(children[currentActive].setActive(false));

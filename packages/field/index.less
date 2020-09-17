@@ -4,11 +4,21 @@
 .van-field {
   .theme(--cell-icon-size,  '@field-icon-size');
 
+  &__label {
+    .theme(color, '@field-label-color');
+
+    &--disabled {
+      .theme(color, '@field-disabled-text-color');
+    }
+  }
+
   &__body {
     display: flex;
     align-items: center;
 
     &--textarea {
+      box-sizing: border-box;
+      padding: 3.6px 0;
       line-height: 1.2em;
       .theme(min-height, '@cell-line-height');
     }

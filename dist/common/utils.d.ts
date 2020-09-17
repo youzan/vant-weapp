@@ -6,3 +6,6 @@ export declare function range(num: number, min: number, max: number): number;
 export declare function nextTick(fn: Function): void;
 export declare function getSystemInfoSync(): WechatMiniprogram.GetSystemInfoSyncResult;
 export declare function addUnit(value?: string | number): string | undefined;
+export declare function requestAnimationFrame(
+  cb: Function
+): void | WechatMiniprogram.NodesRef;

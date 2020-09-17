@@ -11,19 +11,19 @@
 </p>
 
 <p align="center">
-  🔥 <a href="https://youzan.github.io/vant-weapp">文档网站</a>
-  &nbsp;
-  &nbsp;
-  💡 <a href="https://vant-contrib.gitee.io/vant-weapp">国内镜像文档</a>
+  🔥 <a href="https://vant-contrib.gitee.io/vant-weapp">文档网站</a>
   &nbsp;
   &nbsp;
   🚀 <a href="https://github.com/youzan/vant" target="_blank">Vue 版</a>
 </p>
+
 ---
 
-## 介绍
+### 介绍
 
-Vant Weapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
+Vant 是**有赞前端团队**开源的移动端组件库，于 2016 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万前端开发者，是业界主流的移动端组件库之一。
+
+目前 Vant 官方提供了 [Vue 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)。
 
 ## 预览
 
@@ -111,7 +111,7 @@ Vant Weapp 最低支持到小程序基础库 1.9.9 版本
 
 我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
 
-- <a target="_blank" href="https://app.mokahr.com/apply/youzan/6252#/job/96f5d2c7-e657-4d31-9244-195edc443a7f?_k=jf2141">职位详情</a>（Base: 杭州/深圳）
+- <a target="_blank" href="https://app.mokahr.com/apply/youzan/3750#/jobs/?keyword=%E5%89%8D%E7%AB%AF&_k=tueqds">职位详情</a>（Base: 杭州/深圳）
 - <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
 - <a target="_blank" href="https://github.com/youzan">开源项目</a>
 
@@ -120,7 +120,7 @@ Vant Weapp 最低支持到小程序基础库 1.9.9 版本
 * [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
 * [意见反馈](https://github.com/youzan/vant-weapp/issues)
 * [加入我们](https://job.youzan.com)
-* [Vant: 移动端 Vue UI](https://github.com/youzan/vant)
+* [Vant Vue 版](https://github.com/youzan/vant)
 
 ## 开源协议
 

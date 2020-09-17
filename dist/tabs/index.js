@@ -21,11 +21,15 @@ VantComponent({
     },
   },
   props: {
+    sticky: Boolean,
+    border: Boolean,
+    swipeable: Boolean,
+    titleActiveColor: String,
+    titleInactiveColor: String,
     color: {
       type: String,
       observer: 'setLine',
     },
-    sticky: Boolean,
     animated: {
       type: Boolean,
       observer() {
@@ -34,10 +38,9 @@ VantComponent({
         );
       },
     },
-    swipeable: Boolean,
     lineWidth: {
       type: [String, Number],
-      value: -1,
+      value: 40,
       observer: 'setLine',
     },
     lineHeight: {
@@ -45,8 +48,6 @@ VantComponent({
       value: -1,
       observer: 'setLine',
     },
-    titleActiveColor: String,
-    titleInactiveColor: String,
     active: {
       type: [String, Number],
       value: 0,
@@ -59,10 +60,6 @@ VantComponent({
     type: {
       type: String,
       value: 'line',
-    },
-    border: {
-      type: Boolean,
-      value: true,
     },
     ellipsis: {
       type: Boolean,
@@ -78,7 +75,7 @@ VantComponent({
     },
     swipeThreshold: {
       type: Number,
-      value: 4,
+      value: 5,
       observer(value) {
         this.setData({
           scrollable: this.children.length > value || !this.data.ellipsis,
@@ -210,7 +207,6 @@ VantComponent({
         if (rect == null) {
           return;
         }
-        const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
         const height =
           lineHeight !== -1
             ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(
@@ -220,14 +216,14 @@ VantComponent({
         let left = rects
           .slice(0, currentIndex)
           .reduce((prev, curr) => prev + curr.width, 0);
-        left += (rect.width - width) / 2;
+        left += (rect.width - lineWidth) / 2;
         const transition = skipTransition
           ? ''
           : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
         this.setData({
           lineStyle: `
             ${height}
-            width: ${addUnit(width)};
+            width: ${addUnit(lineWidth)};
             background-color: ${color};
             -webkit-transform: translateX(${left}px);
             transform: translateX(${left}px);
@@ -269,16 +265,34 @@ VantComponent({
     // watch swipe touch end
     onTouchEnd() {
       if (!this.data.swipeable) return;
-      const { tabs, currentIndex } = this.data;
       const { direction, deltaX, offsetX } = this;
       const minSwipeDistance = 50;
       if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
-        if (deltaX > 0 && currentIndex !== 0) {
-          this.setCurrentIndex(currentIndex - 1);
-        } else if (deltaX < 0 && currentIndex !== tabs.length - 1) {
-          this.setCurrentIndex(currentIndex + 1);
+        const index = this.getAvaiableTab(deltaX);
+        if (index !== -1) {
+          this.setCurrentIndex(index);
         }
       }
+    },
+    getAvaiableTab(direction) {
+      const { tabs, currentIndex } = this.data;
+      const step = direction > 0 ? -1 : 1;
+      for (
+        let i = step;
+        currentIndex + i < tabs.length && currentIndex + i >= 0;
+        i += step
+      ) {
+        const index = currentIndex + i;
+        if (
+          index >= 0 &&
+          index < tabs.length &&
+          tabs[index] &&
+          !tabs[index].disabled
+        ) {
+          return index;
+        }
+      }
+      return -1;
     },
   },
 });

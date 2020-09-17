@@ -49,7 +49,9 @@
     "pages/index-bar/index",
     "pages/skeleton/index",
     "pages/divider/index",
-    "pages/calendar/index"
+    "pages/empty/index",
+    "pages/calendar/index",
+    "pages/share-sheet/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -72,6 +74,7 @@
     "van-count-down": "./dist/count-down/index",
     "van-dialog": "./dist/dialog/index",
     "van-divider": "./dist/divider/index",
+    "van-empty": "./dist/empty/index",
     "van-field": "./dist/field/index",
     "van-goods-action": "./dist/goods-action/index",
     "van-goods-action-icon": "./dist/goods-action-icon/index",
@@ -121,7 +124,8 @@
     "van-dropdown-menu": "./dist/dropdown-menu/index",
     "van-dropdown-item": "./dist/dropdown-item/index",
     "van-skeleton": "./dist/skeleton/index",
-    "van-calendar": "./dist/calendar/index"
+    "van-calendar": "./dist/calendar/index",
+    "van-share-sheet": "./dist/share-sheet/index"
   },
   "sitemapLocation": "sitemap.json"
 }

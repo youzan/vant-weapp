@@ -5,34 +5,49 @@ const message = '代码是写出来给人看的，附带能在机器上运行';
 
 Page({
   data: {
-    show: false
+    show: false,
   },
 
   showCustomDialog() {
     this.setData({ show: true });
   },
 
-  onClickAlert() {
-    Dialog.alert({
-      title: '标题',
-      message
-    });
-  },
-
   getUserInfo(event) {
     console.log(event.detail);
   },
 
+  onClickThemeAlert() {
+    Dialog.alert({
+      title: '标题',
+      theme: 'round-button',
+      message,
+    });
+  },
+
+  onClickThemeAlert2() {
+    Dialog.alert({
+      theme: 'round-button',
+      message,
+    });
+  },
+
+  onClickAlert() {
+    Dialog.alert({
+      title: '标题',
+      message,
+    });
+  },
+
   onClickAlert2() {
     Dialog.alert({
-      message
+      message,
     });
   },
 
   onClickConfirm() {
     Dialog.confirm({
       title: '标题',
-      message
+      message,
     });
   },
 
@@ -40,7 +55,7 @@ Page({
     Dialog.confirm({
       title: '标题',
       message,
-      asyncClose: true
+      asyncClose: true,
     })
       .then(() => {
         setTimeout(() => {
@@ -52,9 +67,9 @@ Page({
       });
   },
 
-  onClose(event) {
+  onClose() {
     this.setData({
-      show: false
+      show: false,
     });
-  }
+  },
 });

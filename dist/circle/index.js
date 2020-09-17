@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { isObj } from '../common/utils';
 import { BLUE, WHITE } from '../common/color';
+import { adaptor } from './canvas';
 function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
 }
@@ -26,6 +27,9 @@ VantComponent({
     size: {
       type: Number,
       value: 100,
+      observer() {
+        this.drawCircle(this.currentValue);
+      },
     },
     fill: String,
     layerColor: {
@@ -35,7 +39,11 @@ VantComponent({
     color: {
       type: [String, Object],
       value: BLUE,
-      observer: 'setHoverColor',
+      observer() {
+        this.setHoverColor().then(() => {
+          this.drawCircle(this.currentValue);
+        });
+      },
     },
     type: {
       type: String,
@@ -55,25 +63,45 @@ VantComponent({
   },
   methods: {
     getContext() {
-      if (!this.ctx) {
-        this.ctx = wx.createCanvasContext('van-circle', this);
+      const { type, size } = this.data;
+      if (type === '') {
+        const ctx = wx.createCanvasContext('van-circle', this);
+        return Promise.resolve(ctx);
       }
-      return this.ctx;
+      const dpr = wx.getSystemInfoSync().pixelRatio;
+      return new Promise((resolve) => {
+        wx.createSelectorQuery()
+          .in(this)
+          .select('#van-circle')
+          .node()
+          .exec((res) => {
+            const canvas = res[0].node;
+            const ctx = canvas.getContext(type);
+            if (!this.inited) {
+              this.inited = true;
+              canvas.width = size * dpr;
+              canvas.height = size * dpr;
+              ctx.scale(dpr, dpr);
+            }
+            resolve(adaptor(ctx));
+          });
+      });
     },
     setHoverColor() {
-      const { color, size, type } = this.data;
-      const context = type ? this.getContext(type) : this.getContext();
-      let hoverColor = color;
+      const { color, size } = this.data;
       if (isObj(color)) {
-        const LinearColor = context.createLinearGradient(size, 0, 0, 0);
-        Object.keys(color)
-          .sort((a, b) => parseFloat(a) - parseFloat(b))
-          .map((key) =>
-            LinearColor.addColorStop(parseFloat(key) / 100, color[key])
-          );
-        hoverColor = LinearColor;
+        return this.getContext().then((context) => {
+          const LinearColor = context.createLinearGradient(size, 0, 0, 0);
+          Object.keys(color)
+            .sort((a, b) => parseFloat(a) - parseFloat(b))
+            .map((key) =>
+              LinearColor.addColorStop(parseFloat(key) / 100, color[key])
+            );
+          this.hoverColor = LinearColor;
+        });
       }
-      this.setData({ hoverColor });
+      this.hoverColor = color;
+      return Promise.resolve();
     },
     presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {
       const { strokeWidth, lineCap, clockwise, size } = this.data;
@@ -95,24 +123,25 @@ VantComponent({
       this.presetCanvas(context, layerColor, 0, PERIMETER, fill);
     },
     renderHoverCircle(context, formatValue) {
-      const { clockwise, hoverColor } = this.data;
+      const { clockwise } = this.data;
       // 结束角度
       const progress = PERIMETER * (formatValue / 100);
       const endAngle = clockwise
         ? BEGIN_ANGLE + progress
         : 3 * Math.PI - (BEGIN_ANGLE + progress);
-      this.presetCanvas(context, hoverColor, BEGIN_ANGLE, endAngle);
+      this.presetCanvas(context, this.hoverColor, BEGIN_ANGLE, endAngle);
     },
     drawCircle(currentValue) {
-      const { size, type } = this.data;
-      const context = type ? this.getContext(type) : this.getContext();
-      context.clearRect(0, 0, size, size);
-      this.renderLayerCircle(context);
-      const formatValue = format(currentValue);
-      if (formatValue !== 0) {
-        this.renderHoverCircle(context, formatValue);
-      }
-      context.draw();
+      const { size } = this.data;
+      this.getContext().then((context) => {
+        context.clearRect(0, 0, size, size);
+        this.renderLayerCircle(context);
+        const formatValue = format(currentValue);
+        if (formatValue !== 0) {
+          this.renderHoverCircle(context, formatValue);
+        }
+        context.draw();
+      });
     },
     reRender() {
       // tofector 动画暂时没有想到好的解决方案
@@ -143,13 +172,13 @@ VantComponent({
       }
     },
   },
-  created() {
-    const { value } = this.data;
-    this.currentValue = value;
-    this.drawCircle(value);
+  mounted() {
+    this.currentValue = this.data.value;
+    this.setHoverColor().then(() => {
+      this.drawCircle(this.currentValue);
+    });
   },
   destroyed() {
-    this.ctx = null;
     this.clearInterval();
   },
 });

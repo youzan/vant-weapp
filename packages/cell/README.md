@@ -135,6 +135,7 @@
 | required | 是否显示表单必填星号 | _boolean_ | `false` | - |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | - | - |
 | use-label-slot | 是否使用 label slot | _boolean_ | `false` | - |
+| title-style | 标题样式 | _string_ | - | 1.4.0 |
 
 ### Cell Event
 

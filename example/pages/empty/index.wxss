@@ -1,0 +1,10 @@
+
+.custom-image .van-empty__image {
+  width: 90px;
+  height: 90px;
+}
+
+.bottom-button {
+  width: 160px;
+  height: 40px;
+}

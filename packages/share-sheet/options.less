@@ -1,0 +1,63 @@
+@import '../common/style/var';
+@import '../common/style/mixins/hairline.less';
+
+.van-share-sheet {
+  &__options {
+    position: relative;
+    display: flex;
+    padding: @padding-md 0 @padding-md @padding-xs;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+
+    &--border::before {
+      .hairline-top(@cell-border-color, @padding-md);
+    }
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+
+    &:active {
+      opacity: @active-opacity;
+    }
+  }
+
+  &__button {
+    height: auto;
+    padding: 0;
+    line-height: inherit;
+    background-color: transparent;
+    border: 0;
+
+    &::after {
+      border: 0;
+    }
+  }
+
+  &__icon {
+    width: @share-sheet-icon-size;
+    height: @share-sheet-icon-size;
+    margin: 0 @padding-md;
+  }
+
+  &__name {
+    margin-top: @padding-xs;
+    padding: 0 @padding-base;
+    color: @share-sheet-option-name-color;
+    font-size: @share-sheet-option-name-font-size;
+  }
+
+  &__option-description {
+    padding: 0 @padding-base;
+    color: @share-sheet-option-description-color;
+    font-size: @share-sheet-option-description-font-size;
+  }
+}

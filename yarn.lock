@@ -1547,6 +1547,11 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
+"@types/wechat-miniprogram@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@types/wechat-miniprogram/download/@types/wechat-miniprogram-3.0.0.tgz#401d0bf4f437dd9463e8ca99209e4742302d1e54"
+  integrity sha1-QB0L9PQ33ZRj6MqZIJ5HQjAtHlQ=
+
 "@typescript-eslint/eslint-plugin@^2.28.0":
   version "2.34.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.34.0.tgz#6f8ce8a46c7dea4a6f1d171d2bb8fbae6dac2be9"
@@ -1617,10 +1622,10 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.2.0.tgz#ed31f367185704fa2ef9b437a0c8d3ee5e4f5f58"
-  integrity sha512-japcEMXv5BWyWNwjL52WX9pdMWB2wrZtvF0p0CwhbKJyoz/WxuvHVsNjzbeCtkBlofa+0txfJTt22qyz5BABaA==
+"@vant/icons@1.2.5":
+  version "1.2.5"
+  resolved "http://registry.npm.qima-inc.com/@vant/icons/download/@vant/icons-1.2.5.tgz#f3db43c4b300300829e3c4e909beaa33d1cbe786"
+  integrity sha1-89tDxLMAMAgp48TpCb6qM9HL54Y=
 
 "@vant/markdown-loader@^2.3.0":
   version "2.3.0"
@@ -3256,7 +3261,7 @@ braces@^3.0.1, braces@~3.0.2:
 
 brorand@^1.0.1:
   version "1.1.0"
-  resolved "https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
+  resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
@@ -4727,9 +4732,9 @@ elegant-spinner@^2.0.0:
   integrity sha512-5YRYHhvhYzV/FC4AiMdeSIg3jAYGq9xFvbhZMpPlJoBsfYgrw2DSCYeXfat6tYBu45PWiyRr3+flaCPPmviPaA==
 
 elliptic@^6.0.0, elliptic@^6.5.2:
-  version "6.5.2"
-  resolved "https://registry.npmjs.org/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
-  integrity sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
+  integrity sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
@@ -5855,7 +5860,7 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-globby@^9.0.0:
+globby@^9.0.0, globby@^9.2.0:
   version "9.2.0"
   resolved "https://registry.npmjs.org/globby/-/globby-9.2.0.tgz#fd029a706c703d29bdd170f4b6db3a3f7a7cb63d"
   integrity sha512-ollPHROa5mcxDEkwg6bPt3QbEf4pDQSNtd6JPL1YvOvAo/7/0VAm9TccUeoTmarjPw4pfUthSCqcyfNB1I3ZSg==
@@ -6095,7 +6100,7 @@ hash-sum@^1.0.2:
 
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.1.7"
-  resolved "https://registry.npmjs.org/hash.js/-/hash.js-1.1.7.tgz#0babca538e8d4ee4a0f8988d68866537a003cf42"
+  resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.7.tgz#0babca538e8d4ee4a0f8988d68866537a003cf42"
   integrity sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==
   dependencies:
     inherits "^2.0.3"
@@ -6128,7 +6133,7 @@ highlight.js@^9.16.2:
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
-  resolved "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
+  resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
   integrity sha1-0nRXAQJabHdabFRXk+1QL8DGSaE=
   dependencies:
     hash.js "^1.0.3"
@@ -7523,9 +7528,9 @@ lodash.uniq@^4.3.0, lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.4:
-  version "4.17.15"
-  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-symbols@^2.0.0, log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
@@ -7941,12 +7946,12 @@ min-indent@^1.0.0:
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
+  resolved "https://registry.yarnpkg.com/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
   integrity sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==
 
 minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.npmjs.org/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
+  resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
   integrity sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo=
 
 minimatch@3.0.4, minimatch@^3.0.4:
@@ -7977,11 +7982,6 @@ minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
-
-miniprogram-api-typings@2.10.4:
-  version "2.10.4"
-  resolved "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-2.10.4.tgz#13165d1e77084c3ec79ec93d8c74974f77425eb0"
-  integrity sha512-IXWi6sJFd/EH1wNR8rtOx2+hJOwZk7jKFVIshQ0aAlRaKk0P4Jack4SItzUwNURgRykvrleGgErI/jH5hsiniw==
 
 miniprogram-ci@^1.0.27:
   version "1.0.29"
@@ -11555,6 +11555,14 @@ trough@^1.0.0:
   version "1.0.5"
   resolved "https://registry.npmjs.org/trough/-/trough-1.0.5.tgz#b8b639cefad7d0bb2abd37d433ff8293efa5f406"
   integrity sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==
+
+tscpaths@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.npm.taobao.org/tscpaths/download/tscpaths-0.0.9.tgz#c77abfde6820920f10c64f83c27753b9505814ab"
+  integrity sha1-x3q/3mggkg8Qxk+DwndTuVBYFKs=
+  dependencies:
+    commander "^2.20.0"
+    globby "^9.2.0"
 
 tslib@1.10.0:
   version "1.10.0"

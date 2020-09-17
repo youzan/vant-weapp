@@ -12,7 +12,7 @@ export const pickerProps = {
   },
   visibleItemCount: {
     type: Number,
-    value: 5,
+    value: 6,
   },
   itemHeight: {
     type: Number,

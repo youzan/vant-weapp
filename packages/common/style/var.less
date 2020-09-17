@@ -27,6 +27,7 @@
 @disabled-opacity: 0.5;
 @background-color: @gray-1;
 @background-color-light: #fafafa;
+@text-link-color: #576b95;
 
 // Padding
 @padding-base: 4px;
@@ -42,6 +43,10 @@
 @font-size-md: 14px;
 @font-size-lg: 16px;
 @font-weight-bold: 500;
+@line-height-xs: 14px;
+@line-height-sm: 18px;
+@line-height-md: 20px;
+@line-height-lg: 22px;
 @base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
   Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
   'Microsoft Yahei', sans-serif;
@@ -230,12 +235,13 @@
 @dialog-message-line-height: 20px;
 @dialog-message-max-height: 60vh;
 @dialog-has-title-message-text-color: @gray-7;
-@dialog-has-title-message-padding-top: @padding-sm;
+@dialog-has-title-message-padding-top: @padding-xs;
 
 // Field
+@field-label-color: @gray-7;
 @field-input-text-color: @text-color;
 @field-input-error-text-color: @red;
-@field-input-disabled-text-color: @gray-6;
+@field-input-disabled-text-color: @gray-5;
 @field-placeholder-text-color: @gray-5;
 @field-icon-size: 16px;
 @field-clear-icon-size: 16px;
@@ -248,6 +254,7 @@
 @field-word-limit-font-size: @font-size-sm;
 @field-word-limit-line-height: 16px;
 @field-word-num-full-color: @red;
+@field-disabled-text-color: @gray-5;
 
 // GoodsAction
 @goods-action-background-color: @white;
@@ -276,7 +283,7 @@
 @info-background-color: @red;
 @info-dot-color: @red;
 @info-dot-size: 8px;
-@info-font-family: @price-integer-font-family;
+@info-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
 // Loading
 @loading-text-color: @gray-6;
@@ -328,8 +335,8 @@
 @picker-title-font-size: @font-size-lg;
 @picker-action-padding: 0 @padding-md;
 @picker-action-font-size: @font-size-md;
-@picker-action-text-color: @blue;
-@picker-action-active-color: @active-color;
+@picker-confirm-action-color: @text-link-color;
+@picker-cancel-action-color: @gray-6;
 @picker-option-font-size: @font-size-lg;
 @picker-option-text-color: @black;
 @picker-loading-icon-color: @blue;
@@ -383,6 +390,23 @@
 @switch-transition-duration: 0.3s;
 @switch-disabled-opacity: 0.4;
 @switch-border: 1px solid rgba(0, 0, 0, 0.1);
+
+// ShareSheet
+@share-sheet-header-padding: @padding-sm @padding-md @padding-base;
+@share-sheet-title-color: @text-color;
+@share-sheet-title-font-size: @font-size-md;
+@share-sheet-title-line-height: @line-height-md;
+@share-sheet-description-color: @gray-6;
+@share-sheet-description-font-size: @font-size-sm;
+@share-sheet-description-line-height: 16px;
+@share-sheet-icon-size: 48px;
+@share-sheet-option-name-color: @gray-7;
+@share-sheet-option-name-font-size: @font-size-sm;
+@share-sheet-option-description-color: @gray-5;
+@share-sheet-option-description-font-size: @font-size-sm;
+@share-sheet-cancel-button-font-size: @font-size-lg;
+@share-sheet-cancel-button-height: 48px;
+@share-sheet-cancel-button-background: @white;
 
 // Search
 @search-background-color: @gray-1;
@@ -499,14 +523,17 @@
 @tabs-bottom-bar-color: @tabs-default-color;
 
 // Tag
-@tag-padding: 0.2em 0.5em;
-@tag-font-size: @font-size-xs;
-@tag-medium-font-size: @font-size-sm;
-@tag-large-font-size: @font-size-md;
+@tag-padding: 0 @padding-base;
 @tag-text-color: @white;
-@tag-border-radius: 0.2em;
+@tag-font-size: @font-size-sm;
+@tag-border-radius: 2px;
+@tag-line-height: 16px;
+@tag-medium-padding: 2px 6px;
+@tag-large-padding: @padding-base @padding-xs;
+@tag-large-border-radius: @border-radius-md;
+@tag-large-font-size: @font-size-md;
 @tag-round-border-radius: @border-radius-max;
-@tag-dander-color: @red;
+@tag-danger-color: @red;
 @tag-primary-color: @blue;
 @tag-success-color: @green;
 @tag-warning-color: @orange;
@@ -518,14 +545,14 @@
 @toast-font-size: 14px;
 @toast-text-color: @white;
 @toast-line-height: 20px;
-@toast-border-radius: @border-radius-md;
-@toast-background-color: rgba(@text-color, 0.88);
-@toast-icon-size: 48px;
+@toast-border-radius: @border-radius-lg;
+@toast-background-color: fade(@black, 70%);
+@toast-icon-size: 36px;
 @toast-text-min-width: 96px;
 @toast-text-padding: @padding-xs @padding-sm;
 @toast-default-padding: @padding-md;
-@toast-default-width: 90px;
-@toast-default-min-height: 90px;
+@toast-default-width: 88px;
+@toast-default-min-height: 88px;
 
 // GridItem
 @grid-item-content-padding: @padding-md @padding-xs;
@@ -545,6 +572,16 @@
 @divider-content-left-width: 10%;
 @divider-content-right-width: 10%;
 
+// Empty
+@empty-padding: @padding-xl 0;
+@empty-image-size: 160px;
+@empty-description-margin-top: @padding-md;
+@empty-description-padding: 0 60px;
+@empty-description-color: @gray-6;
+@empty-description-font-size: 14px;
+@empty-description-line-height: 20px;
+@empty-bottom-margin-top: 24px;
+
 // TreeSelect
 @tree-select-font-size: @font-size-md;
 @tree-select-nav-background-color: @background-color;
@@ -560,12 +597,11 @@
 @uploader-icon-color: @gray-4;
 @uploader-text-color: @gray-6;
 @uploader-text-font-size: @font-size-sm;
-@uploader-upload-border-radius: 8px;
 @uploader-upload-background-color: @gray-1;
 @uploader-upload-active-color: @active-color;
-@uploader-delete-color: @gray-6;
-@uploader-delete-icon-size: 18px;
-@uploader-delete-background-color: @white;
+@uploader-delete-color: @white;
+@uploader-delete-icon-size: 14px;
+@uploader-delete-background-color: rgba(0, 0, 0, 0.7);
 @uploader-file-background-color: @background-color;
 @uploader-file-icon-size: 20px;
 @uploader-file-icon-color: @gray-7;

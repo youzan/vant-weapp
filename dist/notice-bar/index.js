@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
-const FONT_COLOR = '#ed6a0c';
-const BG_COLOR = '#fffbe8';
+import { requestAnimationFrame } from '../common/utils';
 VantComponent({
   props: {
     text: {
@@ -45,14 +44,9 @@ VantComponent({
       type: String,
       value: '',
     },
-    color: {
-      type: String,
-      value: FONT_COLOR,
-    },
-    backgroundColor: {
-      type: String,
-      value: BG_COLOR,
-    },
+    color: String,
+    backgroundColor: String,
+    background: String,
     wrapable: Boolean,
   },
   data: {
@@ -106,22 +100,25 @@ VantComponent({
           .step()
           .export(),
       });
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this.setData({
           animationData: this.animation
             .translateX(-this.contentWidth)
             .step()
             .export(),
         });
-      }, 20);
+      });
       this.timer = setTimeout(() => {
         this.scroll();
       }, this.duration);
     },
-    onClickIcon() {
-      this.timer && clearTimeout(this.timer);
-      this.timer = null;
-      this.setData({ show: false });
+    onClickIcon(event) {
+      if (this.data.mode === 'closeable') {
+        this.timer && clearTimeout(this.timer);
+        this.timer = null;
+        this.setData({ show: false });
+        this.$emit('close', event.detail);
+      }
     },
     onClick(event) {
       this.$emit('click', event);

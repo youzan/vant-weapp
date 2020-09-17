@@ -19,11 +19,18 @@
   &__confirm {
     .theme(padding, '@picker-action-padding');
     .theme(font-size, '@picker-action-font-size');
-    .theme(color, '@picker-action-text-color');
 
     &--hover {
-      .theme(background-color, '@picker-action-active-color');
+      opacity: @active-opacity;
     }
+  }
+
+  &__confirm {
+    .theme(color, '@picker-confirm-action-color');
+  }
+
+  &__cancel {
+    .theme(color, '@picker-cancel-action-color');
   }
 
   &__title {
@@ -75,13 +82,12 @@
     pointer-events: none;
   }
 
-  &__loading .van-loading,
   &__frame {
     position: absolute;
     top: 50%;
-    left: 0;
+    right: @padding-md;
+    left: @padding-md;
     z-index: 1;
-    width: 100%;
     transform: translateY(-50%);
     pointer-events: none;
   }

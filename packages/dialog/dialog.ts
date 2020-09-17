@@ -7,6 +7,7 @@ type DialogOptions = {
   title?: string;
   width?: string | number;
   zIndex?: number;
+  theme?: string;
   context?:
     | WechatMiniprogram.Page.TrivialInstance
     | WechatMiniprogram.Component.TrivialInstance;
@@ -72,6 +73,11 @@ const Dialog: Dialog = (options) => {
         onConfirm: resolve,
         ...options,
       });
+
+      wx.nextTick(() => {
+        dialog.setData({ show: true });
+      });
+
       queue.push(dialog);
     } else {
       console.warn(
@@ -82,9 +88,10 @@ const Dialog: Dialog = (options) => {
 };
 
 Dialog.defaultOptions = {
-  show: true,
+  show: false,
   title: '',
   width: null,
+  theme: 'default',
   message: '',
   zIndex: 100,
   overlay: true,

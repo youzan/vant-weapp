@@ -1,12 +1,11 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
 import { commonProps, inputProps, textareaProps } from './props';
-import { canIUseModel } from '../common/version';
 
 VantComponent({
   field: true,
 
-  classes: ['input-class', 'right-icon-class'],
+  classes: ['input-class', 'right-icon-class', 'label-class'],
 
   props: {
     ...commonProps,
@@ -21,16 +20,8 @@ VantComponent({
     leftIcon: String,
     rightIcon: String,
     autosize: [Boolean, Object],
-    readonly: {
-      type: Boolean,
-      observer: 'setShowClear',
-    },
     required: Boolean,
     iconClass: String,
-    clearable: {
-      type: Boolean,
-      observer: 'setShowClear',
-    },
     clickable: Boolean,
     inputAlign: String,
     customStyle: String,
@@ -38,13 +29,21 @@ VantComponent({
     arrowDirection: String,
     showWordLimit: Boolean,
     errorMessageAlign: String,
+    readonly: {
+      type: Boolean,
+      observer: 'setShowClear',
+    },
+    clearable: {
+      type: Boolean,
+      observer: 'setShowClear',
+    },
     border: {
       type: Boolean,
       value: true,
     },
     titleWidth: {
       type: String,
-      value: '90px',
+      value: '6.2em',
     },
   },
 
@@ -122,9 +121,7 @@ VantComponent({
     },
 
     emitChange() {
-      if (canIUseModel()) {
-        this.setData({ value: this.value });
-      }
+      this.setData({ value: this.value });
 
       wx.nextTick(() => {
         this.$emit('input', this.value);

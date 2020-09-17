@@ -15,8 +15,10 @@ VantComponent({
 
   props: {
     icon: String,
+    iconColor: String,
     dot: Boolean,
     info: null,
+    badge: null,
     text: String,
     useSlot: Boolean,
   },
@@ -36,7 +38,16 @@ VantComponent({
       }
 
       const { data, children } = this.parent;
-      const { columnNum, border, square, gutter, clickable, center } = data;
+      const {
+        columnNum,
+        border,
+        square,
+        gutter,
+        clickable,
+        center,
+        direction,
+        iconSize,
+      } = data;
       const width = `${100 / columnNum}%`;
 
       const styleWrapper = [];
@@ -51,7 +62,7 @@ VantComponent({
         styleWrapper.push(`padding-right: ${gutterValue}`);
 
         const index = children.indexOf(this);
-        if (index >= columnNum) {
+        if (index >= columnNum && !square) {
           styleWrapper.push(`margin-top: ${gutterValue}`);
         }
       }
@@ -76,6 +87,8 @@ VantComponent({
         square,
         gutter,
         clickable,
+        direction,
+        iconSize,
       });
     },
 

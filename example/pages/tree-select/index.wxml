@@ -44,3 +44,13 @@
     />
   </van-tree-select>
 </demo-block>
+
+<demo-block title="徽标提示">
+  <van-tree-select
+    items="{{ badgeItems }}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  ></van-tree-select>
+</demo-block>

@@ -25,3 +25,7 @@ export function canIUseModel() {
   const system = getSystemInfoSync();
   return compareVersion(system.SDKVersion, '2.9.3') >= 0;
 }
+export function canIUseFormFieldButton() {
+  const system = getSystemInfoSync();
+  return compareVersion(system.SDKVersion, '2.10.3') >= 0;
+}

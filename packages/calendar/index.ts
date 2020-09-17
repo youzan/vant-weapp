@@ -12,6 +12,7 @@ import {
 } from './utils';
 
 import Toast from '../toast/toast';
+import { requestAnimationFrame } from '../common/utils';
 
 VantComponent({
   props: {
@@ -165,14 +166,14 @@ VantComponent({
       }
 
       if (type === 'multiple') {
-        return [defaultDate || minDate];
+        return defaultDate || [minDate];
       }
 
       return defaultDate || minDate;
     },
 
     scrollIntoView() {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         const {
           currentDate,
           type,
@@ -197,7 +198,7 @@ VantComponent({
 
           return false;
         });
-      }, 100);
+      });
     },
 
     onOpen() {
@@ -316,7 +317,10 @@ VantComponent({
     },
 
     onConfirm() {
-      if (this.data.type === 'range' && !this.checkRange()) {
+      if (
+        this.data.type === 'range' &&
+        !this.checkRange(this.data.currentDate)
+      ) {
         return;
       }
       wx.nextTick(() => {

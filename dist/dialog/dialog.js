@@ -14,6 +14,9 @@ const Dialog = (options) => {
       dialog.setData(
         Object.assign({ onCancel: reject, onConfirm: resolve }, options)
       );
+      wx.nextTick(() => {
+        dialog.setData({ show: true });
+      });
       queue.push(dialog);
     } else {
       console.warn(
@@ -23,9 +26,10 @@ const Dialog = (options) => {
   });
 };
 Dialog.defaultOptions = {
-  show: true,
+  show: false,
   title: '',
   width: null,
+  theme: 'default',
   message: '',
   zIndex: 100,
   overlay: true,

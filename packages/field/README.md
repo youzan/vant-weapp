@@ -42,6 +42,28 @@ Page({
 });
 ```
 
+### 双向绑定
+
+最低基础库版本在 2.9.3 以上时，可以使用[简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)
+
+```html
+<van-cell-group>
+  <van-field
+    model:value="{{ value }}"
+    placeholder="请输入用户名"
+    border="{{ false }}"
+  />
+</van-cell-group>
+```
+
+```js
+Page({
+  data: {
+    value: '',
+  },
+});
+```
+
 ### 自定义类型
 
 根据`type`属性定义不同类型的输入框
@@ -206,7 +228,7 @@ Page({
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | password | 是否是密码类型 | _boolean_ | `false` |
-| title-width | 标题宽度 | _string_ | `90px` |
+| title-width | 标题宽度 | _string_ | `6.2em` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `-1` |
 | placeholder | 输入框为空时占位符 | _string_ | - |
 | placeholder-style | 指定 placeholder 的样式 | _string_ | - |
@@ -260,5 +282,6 @@ Page({
 
 | 类名             | 说明           |
 | ---------------- | -------------- |
+| label-class      | 左侧文本样式类 |
 | input-class      | 输入框样式类   |
 | right-icon-class | 右侧图标样式类 |

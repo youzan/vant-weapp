@@ -2,18 +2,14 @@
 @import '../common/style/theme.less';
 
 .van-tag {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  line-height: normal;
   .theme(padding, '@tag-padding');
   .theme(color, '@tag-text-color');
   .theme(font-size, '@tag-font-size');
+  .theme(line-height, '@tag-line-height');
   .theme(border-radius, '@tag-border-radius');
-
-  &::after {
-    border-color: currentColor;
-    .theme(border-radius, '@tag-border-radius * 2');
-  }
 
   &--default {
     .theme(background-color, '@tag-default-color');
@@ -24,10 +20,10 @@
   }
 
   &--danger {
-    .theme(background-color, '@tag-dander-color');
+    .theme(background-color, '@tag-danger-color');
 
     &.van-tag--plain {
-      .theme(color, '@tag-dander-color');
+      .theme(color, '@tag-danger-color');
     }
   }
 
@@ -57,36 +53,49 @@
 
   &--plain {
     .theme(background-color, '@tag-plain-background-color');
-  }
 
-  &--mark {
-    padding-right: 0.7em;
-
-    &,
-    &::after {
-      .theme(
-        border-radius,
-        '0 @tag-round-border-radius @tag-round-border-radius 0'
-      );
-    }
-  }
-
-  &--round {
-    &,
-    &::after {
-      .theme(border-radius, '@tag-round-border-radius');
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 1px solid currentColor;
+      border-radius: inherit;
+      content: '';
+      pointer-events: none;
     }
   }
 
   &--medium {
-    .theme(font-size, '@tag-medium-font-size');
+    .theme(padding, '@tag-medium-padding');
   }
 
   &--large {
+    .theme(padding, '@tag-large-padding');
     .theme(font-size, '@tag-large-font-size');
+    .theme(border-radius, '@tag-large-border-radius');
+  }
+
+  &--mark {
+    .theme(
+        border-radius,
+        '0 @tag-round-border-radius @tag-round-border-radius 0'
+      );
+
+    &::after {
+      display: block;
+      width: 2px;
+      content: '';
+    }
+  }
+
+  &--round {
+    .theme(border-radius, '@tag-round-border-radius');
   }
 
   &__close {
+    min-width: 1em;
     margin-left: 2px;
   }
 }

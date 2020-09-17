@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { getSystemInfoSync } from '../common/utils';
 VantComponent({
   classes: ['title-class'],
   props: {
@@ -34,7 +35,7 @@ VantComponent({
     baseStyle: '',
   },
   created() {
-    const { statusBarHeight } = wx.getSystemInfoSync();
+    const { statusBarHeight } = getSystemInfoSync();
     const { safeAreaInsetTop, zIndex } = this.data;
     const paddingTop = safeAreaInsetTop ? statusBarHeight : 0;
     const baseStyle = `z-index: ${zIndex};padding-top: ${paddingTop}px;`;

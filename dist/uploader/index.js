@@ -13,7 +13,7 @@ VantComponent({
         beforeRead: null,
         previewSize: {
           type: null,
-          value: 90,
+          value: 80,
         },
         name: {
           type: [Number, String],
@@ -78,6 +78,8 @@ VantComponent({
             typeof item.isImage === 'undefined'
               ? isImageFile(item)
               : item.isImage,
+          deletable:
+            typeof item.deletable === 'undefined' ? true : item.deletable,
         })
       );
       this.setData({ lists, isInCount: lists.length < maxCount });

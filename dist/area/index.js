@@ -1,5 +1,6 @@
 import { VantComponent } from '../common/component';
 import { pickerProps } from '../picker/shared';
+import { requestAnimationFrame } from '../common/utils';
 const COLUMNSPLACEHOLDERCODE = '000000';
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
@@ -44,9 +45,9 @@ VantComponent({
     typeToColumnsPlaceholder: {},
   },
   mounted() {
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       this.setValues();
-    }, 0);
+    });
   },
   methods: {
     getPicker() {
@@ -165,27 +166,32 @@ VantComponent({
         return;
       }
       const stack = [];
-      stack.push(picker.setColumnValues(0, province, false));
-      stack.push(picker.setColumnValues(1, city, false));
-      if (city.length && code.slice(2, 4) === '00') {
-        [{ code }] = city;
+      const indexes = [];
+      const { columnsNum } = this.data;
+      if (columnsNum >= 1) {
+        stack.push(picker.setColumnValues(0, province, false));
+        indexes.push(this.getIndex('province', code));
       }
-      stack.push(
-        picker.setColumnValues(
-          2,
-          this.getList('county', code.slice(0, 4)),
-          false
-        )
-      );
+      if (columnsNum >= 2) {
+        stack.push(picker.setColumnValues(1, city, false));
+        indexes.push(this.getIndex('city', code));
+        if (city.length && code.slice(2, 4) === '00') {
+          [{ code }] = city;
+        }
+      }
+      if (columnsNum === 3) {
+        stack.push(
+          picker.setColumnValues(
+            2,
+            this.getList('county', code.slice(0, 4)),
+            false
+          )
+        );
+        indexes.push(this.getIndex('county', code));
+      }
       return Promise.all(stack)
         .catch(() => {})
-        .then(() =>
-          picker.setIndexes([
-            this.getIndex('province', code),
-            this.getIndex('city', code),
-            this.getIndex('county', code),
-          ])
-        )
+        .then(() => picker.setIndexes(indexes))
         .catch(() => {});
     },
     getValues() {

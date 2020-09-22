@@ -21,7 +21,7 @@ export function nextTick(fn: Function) {
   }, 1000 / 30);
 }
 
-let systemInfo: WechatMiniprogram.GetSystemInfoSyncResult = null;
+let systemInfo: WechatMiniprogram.GetSystemInfoSyncResult;
 export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();
@@ -53,4 +53,30 @@ export function requestAnimationFrame(cb: Function) {
     .exec(() => {
       cb();
     });
+}
+
+export function getRect(
+  this: WechatMiniprogram.Component.TrivialInstance,
+  selector: string
+): Promise<WechatMiniprogram.BoundingClientRectCallbackResult> {
+  return new Promise((resolve) => {
+    wx.createSelectorQuery()
+      .in(this)
+      .select(selector)
+      .boundingClientRect()
+      .exec((rect = []) => resolve(rect[0]));
+  });
+}
+
+export function getAllRect(
+  this: WechatMiniprogram.Component.TrivialInstance,
+  selector: string
+): Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]> {
+  return new Promise((resolve) => {
+    wx.createSelectorQuery()
+      .in(this)
+      .selectAll(selector)
+      .boundingClientRect()
+      .exec((rect = []) => resolve(rect[0]));
+  });
 }

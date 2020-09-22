@@ -1,6 +1,5 @@
 let queue = [];
 
-type DialogAction = 'confirm' | 'cancel';
 type DialogOptions = {
   lang?: string;
   show?: boolean;
@@ -36,27 +35,41 @@ type DialogOptions = {
   confirmButtonOpenType?: string;
 };
 
-interface Dialog {
-  (options: DialogOptions): Promise<DialogAction>;
-  alert?: (options: DialogOptions) => Promise<DialogAction>;
-  confirm?: (options: DialogOptions) => Promise<DialogAction>;
-  close?: () => void;
-  stopLoading?: () => void;
-  install?: () => void;
-  setDefaultOptions?: (options: DialogOptions) => void;
-  resetDefaultOptions?: () => void;
-  defaultOptions?: DialogOptions;
-  currentOptions?: DialogOptions;
-}
+const defaultOptions: DialogOptions = {
+  show: false,
+  title: '',
+  width: null,
+  theme: 'default',
+  message: '',
+  zIndex: 100,
+  overlay: true,
+  selector: '#van-dialog',
+  className: '',
+  asyncClose: false,
+  transition: 'scale',
+  customStyle: '',
+  messageAlign: '',
+  overlayStyle: '',
+  confirmButtonText: '确认',
+  cancelButtonText: '取消',
+  showConfirmButton: true,
+  showCancelButton: false,
+  closeOnClickOverlay: false,
+  confirmButtonOpenType: '',
+};
+
+let currentOptions: DialogOptions = { ...defaultOptions };
 
 function getContext() {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
 
-const Dialog: Dialog = (options) => {
+const Dialog = (
+  options: DialogOptions
+): Promise<WechatMiniprogram.Component.TrivialInstance> => {
   options = {
-    ...Dialog.currentOptions,
+    ...currentOptions,
     ...options,
   };
 
@@ -87,32 +100,9 @@ const Dialog: Dialog = (options) => {
   });
 };
 
-Dialog.defaultOptions = {
-  show: false,
-  title: '',
-  width: null,
-  theme: 'default',
-  message: '',
-  zIndex: 100,
-  overlay: true,
-  selector: '#van-dialog',
-  className: '',
-  asyncClose: false,
-  transition: 'scale',
-  customStyle: '',
-  messageAlign: '',
-  overlayStyle: '',
-  confirmButtonText: '确认',
-  cancelButtonText: '取消',
-  showConfirmButton: true,
-  showCancelButton: false,
-  closeOnClickOverlay: false,
-  confirmButtonOpenType: '',
-};
+Dialog.alert = (options: DialogOptions) => Dialog(options);
 
-Dialog.alert = Dialog;
-
-Dialog.confirm = (options) =>
+Dialog.confirm = (options: DialogOptions) =>
   Dialog({
     showCancelButton: true,
     ...options,
@@ -131,12 +121,17 @@ Dialog.stopLoading = () => {
   });
 };
 
-Dialog.setDefaultOptions = (options) => {
-  Object.assign(Dialog.currentOptions, options);
+Dialog.currentOptions = currentOptions;
+Dialog.defaultOptions = defaultOptions;
+
+Dialog.setDefaultOptions = (options: DialogOptions) => {
+  currentOptions = { ...currentOptions, ...options };
+  Dialog.currentOptions = currentOptions;
 };
 
 Dialog.resetDefaultOptions = () => {
-  Dialog.currentOptions = { ...Dialog.defaultOptions };
+  currentOptions = { ...defaultOptions };
+  Dialog.currentOptions = currentOptions;
 };
 
 Dialog.resetDefaultOptions();

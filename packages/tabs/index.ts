@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { Weapp } from 'definitions/weapp';
-import { isDef, addUnit } from '../common/utils';
+import { getAllRect, getRect, isDef } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
@@ -35,10 +35,7 @@ VantComponent({
     swipeable: Boolean,
     titleActiveColor: String,
     titleInactiveColor: String,
-    color: {
-      type: String,
-      observer: 'setLine',
-    },
+    color: String,
     animated: {
       type: Boolean,
       observer() {
@@ -55,7 +52,6 @@ VantComponent({
     lineHeight: {
       type: [String, Number],
       value: -1,
-      observer: 'setLine',
     },
     active: {
       type: [String, Number],
@@ -102,13 +98,15 @@ VantComponent({
   },
 
   data: {
-    tabs: [],
+    tabs: [] as Record<string, unknown>[],
     lineStyle: '',
     scrollLeft: 0,
     scrollable: false,
     trackStyle: '',
-    currentIndex: null,
+    currentIndex: 0,
     container: null,
+    skipTransition: true,
+    lineOffsetLeft: 0,
   },
 
   mounted() {
@@ -223,54 +221,34 @@ VantComponent({
       }
     },
 
-    setLine(skipTransition?: boolean) {
+    setLine(skipTransition = false) {
       if (this.data.type !== 'line') {
         return;
       }
 
-      const {
-        color,
-        duration,
-        currentIndex,
-        lineWidth,
-        lineHeight,
-      } = this.data;
+      const { currentIndex } = this.data;
 
-      this.getRect('.van-tab', true).then(
-        (rects: WechatMiniprogram.BoundingClientRectCallbackResult[] = []) => {
-          const rect = rects[currentIndex];
-          if (rect == null) {
-            return;
-          }
-          const height =
-            lineHeight !== -1
-              ? `height: ${addUnit(lineHeight)}; border-radius: ${addUnit(
-                  lineHeight
-                )};`
-              : '';
+      Promise.all([
+        getAllRect.call(this, '.van-tab'),
+        getRect.call(this, '.van-tabs__line'),
+      ]).then(([rects = [], lineRect]) => {
+        const rect = rects[currentIndex];
 
-          let left = rects
-            .slice(0, currentIndex)
-            .reduce((prev, curr) => prev + curr.width, 0);
-
-          left += (rect.width - lineWidth) / 2;
-
-          const transition = skipTransition
-            ? ''
-            : `transition-duration: ${duration}s; -webkit-transition-duration: ${duration}s;`;
-
-          this.setData({
-            lineStyle: `
-            ${height}
-            width: ${addUnit(lineWidth)};
-            background-color: ${color};
-            -webkit-transform: translateX(${left}px);
-            transform: translateX(${left}px);
-            ${transition}
-          `,
-          });
+        if (rect == null) {
+          return;
         }
-      );
+
+        let lineOffsetLeft = rects
+          .slice(0, currentIndex)
+          .reduce((prev, curr) => prev + curr.width, 0);
+
+        lineOffsetLeft += (rect.width - lineRect.width) / 2;
+
+        this.setData({
+          lineOffsetLeft,
+          skipTransition,
+        });
+      });
     },
 
     // scroll active tab into view
@@ -282,23 +260,18 @@ VantComponent({
       }
 
       Promise.all([
-        this.getRect('.van-tab', true),
-        this.getRect('.van-tabs__nav'),
-      ]).then(
-        ([tabRects, navRect]: [
-          WechatMiniprogram.BoundingClientRectCallbackResult[],
-          WechatMiniprogram.BoundingClientRectCallbackResult
-        ]) => {
-          const tabRect = tabRects[currentIndex];
-          const offsetLeft = tabRects
-            .slice(0, currentIndex)
-            .reduce((prev, curr) => prev + curr.width, 0);
+        getAllRect.call(this, '.van-tab'),
+        getRect.call(this, '.van-tabs__nav'),
+      ]).then(([tabRects, navRect]) => {
+        const tabRect = tabRects[currentIndex];
+        const offsetLeft = tabRects
+          .slice(0, currentIndex)
+          .reduce((prev, curr) => prev + curr.width, 0);
 
-          this.setData({
-            scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
-          });
-        }
-      );
+        this.setData({
+          scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
+        });
+      });
     },
 
     onTouchScroll(event: Weapp.TouchEvent) {

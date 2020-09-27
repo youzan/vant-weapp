@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { getSystemInfoSync } from '../common/utils';
+import { getRect, getSystemInfoSync } from '../common/utils';
 
 VantComponent({
   classes: ['title-class'],
@@ -33,20 +33,15 @@ VantComponent({
   },
 
   data: {
-    statusBarHeight: 0,
-    height: 44,
-    baseStyle: '',
+    height: 46,
   },
 
   created() {
     const { statusBarHeight } = getSystemInfoSync();
-    const { safeAreaInsetTop, zIndex } = this.data;
-    const paddingTop = safeAreaInsetTop ? statusBarHeight : 0;
-    const baseStyle = `z-index: ${zIndex};padding-top: ${paddingTop}px;`;
+
     this.setData({
       statusBarHeight,
-      height: 44 + statusBarHeight,
-      baseStyle,
+      height: 46 + statusBarHeight,
     });
   },
 
@@ -69,11 +64,9 @@ VantComponent({
       }
 
       wx.nextTick(() => {
-        this.getRect('.van-nav-bar').then(
-          (res: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-            this.setData({ height: res.height });
-          }
-        );
+        getRect.call(this, '.van-nav-bar').then((res) => {
+          this.setData({ height: res.height });
+        });
       });
     },
   },

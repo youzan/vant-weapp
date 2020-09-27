@@ -11,6 +11,7 @@
 
   &__content {
     position: relative;
+    height: 100%;
   }
 
   &__text {
@@ -27,8 +28,8 @@
 
   &__arrow {
     vertical-align: middle;
-    .theme(font-size, '@nav-bar-arrow-size');
-    .theme(color, '@nav-bar-text-color');
+    .theme(font-size, '@nav-bar-arrow-size') !important;
+    .theme(color, '@nav-bar-icon-color') !important;
 
     + .van-nav-bar__text {
       margin-left: -20px;

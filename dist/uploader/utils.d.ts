@@ -1,4 +1,4 @@
-/// <reference types="miniprogram-api-typings" />
+/// <reference types="wechat-miniprogram" />
 interface File {
   path: string;
   url: string;

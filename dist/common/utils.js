@@ -16,7 +16,7 @@ export function nextTick(fn) {
     fn();
   }, 1000 / 30);
 }
-let systemInfo = null;
+let systemInfo;
 export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();
@@ -42,4 +42,22 @@ export function requestAnimationFrame(cb) {
     .exec(() => {
       cb();
     });
+}
+export function getRect(selector) {
+  return new Promise((resolve) => {
+    wx.createSelectorQuery()
+      .in(this)
+      .select(selector)
+      .boundingClientRect()
+      .exec((rect = []) => resolve(rect[0]));
+  });
+}
+export function getAllRect(selector) {
+  return new Promise((resolve) => {
+    wx.createSelectorQuery()
+      .in(this)
+      .selectAll(selector)
+      .boundingClientRect()
+      .exec((rect = []) => resolve(rect[0]));
+  });
 }

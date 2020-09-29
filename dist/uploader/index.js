@@ -176,6 +176,27 @@ VantComponent({
         },
       });
     },
+    // fix: accept 为 video 时不能展示视频
+    onPreviewVideo: function (event) {
+      if (!this.data.previewFullImage) return;
+      var index = event.currentTarget.dataset.index;
+      var lists = this.data.lists;
+      wx.previewMedia({
+        sources: lists
+          .filter(function (item) {
+            return item.isVideo;
+          })
+          .map(function (item) {
+            item.type = 'video';
+            item.url = item.url || item.path;
+            return item;
+          }),
+        current: index,
+        fail: function () {
+          wx.showToast({ title: '预览视频失败', icon: 'none' });
+        },
+      });
+    },
     onClickPreview(event) {
       const { index } = event.currentTarget.dataset;
       const item = this.data.lists[index];

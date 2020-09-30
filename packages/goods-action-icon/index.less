@@ -2,20 +2,21 @@
 @import '../common/style/theme.less';
 
 .van-goods-action-icon {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  line-height: 1 !important;
   border: none !important;
-  .theme(width, '@goods-action-icon-height') !important;
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    line-height: 1;
-    .theme(font-size, '@goods-action-icon-font-size');
-    .theme(color, '@goods-action-icon-text-color');
-  }
+  .theme(font-size, '@goods-action-icon-font-size') !important;
+  .theme(color, '@goods-action-icon-text-color') !important;
+  .theme(min-width, '@goods-action-icon-width');
+  .theme(height, '@goods-action-icon-height') !important;
 
   &__icon {
-    margin-bottom: 4px;
+    display: flex;
+    margin: 0 auto 5px;
+    .theme(color, '@goods-action-icon-color');
+    .theme(font-size, '@goods-action-icon-size');
   }
 }

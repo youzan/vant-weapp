@@ -1,5 +1,24 @@
 # 更新日志
 
+### [1.5.1](https://github.com/youzan/vant-weapp/compare/v1.5.1)
+
+`2020-09-29`
+
+**Features**
+
+- Card: 新增 `origin-price` `tag` 插槽 [#3645](https://github.com/youzan/vant-weapp/issues/3645)
+- ShareSheet: 调整默认 z-index 至 100 [#3575](https://github.com/youzan/vant-weapp/issues/3575)
+- ShareSheet: 新增 item 属性 openType [#3575](https://github.com/youzan/vant-weapp/issues/3575)
+- Uploader: 扩大删除按钮点击区域 [#3631](https://github.com/youzan/vant-weapp/issues/3631)
+
+**Bug Fixes**
+
+- Uploader: 支持预览视频 [#3594](https://github.com/youzan/vant-weapp/issues/3594)
+- Dialog: 调整类型定义 [#3630](https://github.com/youzan/vant-weapp/issues/3630)
+- NavBar: 修复 CSS 变量 --nav-bar-icon-color 不生效 [#3643](https://github.com/youzan/vant-weapp/issues/3643)
+- NavBar: 修复未设置 title 时样式异常 [#3643](https://github.com/youzan/vant-weapp/issues/3643)
+- Tab: 修复 line-width 属性不支持 string [#3628](https://github.com/youzan/vant-weapp/issues/3628)
+
 ### [1.5.0](https://github.com/youzan/vant-weapp/compare/v1.5.0)
 
 `2020-08-27`

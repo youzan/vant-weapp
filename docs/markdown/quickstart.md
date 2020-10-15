@@ -8,7 +8,7 @@
 
 ### 步骤一 通过 npm 安装
 
-需要注意的是 **package.json** 和 **node_modules** 必须在 **miniprogram** 目录下
+> 使用 npm 构建前，请先阅读微信官方的 [npm 支持](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
 
 ```bash
 # 通过 npm 安装
@@ -21,7 +21,32 @@ yarn add @vant/weapp --production
 npm i vant-weapp -S --production
 ```
 
-### 步骤二 构建 npm 包
+### 步骤二 修改 app.json
+
+将 app.json 中的 `"style": "v2"` 去除，小程序的[新版基础组件](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style)强行加上了许多样式，难以去除，不关闭将造成部分组件样式混乱。
+
+### 步骤三 修改 project.config.json
+
+开发者工具创建的项目，`miniprogramRoot` 默认为 `miniprogram`，`package.json` 在其外部，npm 构建无法正常工作。
+
+需要手动在 `project.config.json` 内添加如下配置，使开发者工具可以正确索引到 npm 依赖的位置
+
+```json
+{
+  ...
+  "setting": {
+    ...
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./miniprogram/"
+      }
+    ]
+  }
+}
+```
+
+### 步骤四 构建 npm 包
 
 打开微信开发者工具，点击 **工具 -> 构建 npm**，并勾选 **使用 npm 模块** 选项，构建完成后，即可引入组件
 
@@ -29,24 +54,23 @@ npm i vant-weapp -S --production
 
 ### 步骤三 修改 tsconfig.json
 
-如果你使用 typescript 开发小程序，需要在 tsconfig.json 中增加如下配置，防止 npm 构建后 tsc 编译报错
+如果你使用 typescript 开发小程序，需要在 `tsconfig.json` 中增加如下配置，防止 tsc 编译报错
 
-请将`path/to/node_modules/@vant/weapp`修改为项目中 @vant/weapp 所在的目录
+请将`path/to/node_modules/@vant/weapp`修改为项目的 `node_modules` 中 @vant/weapp 所在的目录
 
 ```json
 {
+  ...
   "compilerOptions": {
+    ...
     "baseUrl": ".",
     "paths": {
       "@vant/weapp/*": ["path/to/node_modules/@vant/weapp/dist/*"]
-    }
+    },
+    "lib": ["es6"]
   }
 }
 ```
-
-### 步骤四 修改 app.json
-
-将 app.json 中的 `"style": "v2"` 去除，小程序的[新版基础组件](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style)强行加上了许多样式，难以去除，不关闭将造成部分组件样式混乱。
 
 ### 示例工程
 
@@ -59,7 +83,9 @@ npm i vant-weapp -S --production
 
 ### 引入组件
 
-以 Button 组件为例，只需要在`app.json`或`index.json`中配置 Button 对应的路径即可。如果你是通过下载源代码的方式使用 @vant/weapp，请将路径修改为项目中 @vant/weapp 所在的目录。
+以 Button 组件为例，只需要在`app.json`或`index.json`中配置 Button 对应的路径即可。
+
+所有组件文档中的引入路径均以 npm 安装为例，如果你是通过下载源代码的方式使用 @vant/weapp，请将路径修改为项目中 @vant/weapp 所在的目录。
 
 ```json
 // 通过 npm 安装

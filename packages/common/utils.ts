@@ -1,3 +1,5 @@
+import { isNumber, isPlainObject } from './validator';
+
 export function isDef(value: any): boolean {
   return value !== undefined && value !== null;
 }
@@ -5,10 +7,6 @@ export function isDef(value: any): boolean {
 export function isObj(x: any): boolean {
   const type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
-}
-
-export function isNumber(value) {
-  return /^\d+(\.\d+)?$/.test(value);
 }
 
 export function range(num: number, min: number, max: number) {
@@ -53,6 +51,20 @@ export function requestAnimationFrame(cb: Function) {
     .exec(() => {
       cb();
     });
+}
+
+export function pickExclude(obj: unknown, keys: string[]) {
+  if (!isPlainObject(obj)) {
+    return {};
+  }
+
+  return Object.keys(obj).reduce((prev, key) => {
+    if (!keys.includes(key)) {
+      prev[key] = obj[key];
+    }
+
+    return prev;
+  }, {});
 }
 
 export function getRect(

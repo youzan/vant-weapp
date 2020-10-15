@@ -38,6 +38,7 @@ VantComponent({
 
   data: {
     catchMove: false,
+    wrapperStyle: '',
   },
 
   created() {

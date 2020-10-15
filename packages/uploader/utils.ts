@@ -1,26 +1,24 @@
+import { pickExclude } from '../common/utils';
+import { isImageUrl, isVideoUrl } from '../common/validator';
+
 interface File {
-  path: string; // 上传临时地址
   url: string; // 上传临时地址
-  size: number; // 上传大小
-  name: string; // 上传文件名称，accept="image" 不存在
-  type: string; // 上传类型，accept="image" 不存在
-  time: number; // 上传时间，accept="image" 不存在
-  image: boolean; // 是否为图片
-}
-
-const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg)/i;
-
-function isImageUrl(url: string): boolean {
-  return IMAGE_REGEXP.test(url);
+  size?: number; // 上传大小
+  name?: string;
+  type: string; // 上传类型
+  duration?: number; // 上传时间
+  time?: number; // 消息文件时间
+  isImage?: boolean;
+  isVideo?: boolean;
 }
 
 export function isImageFile(item: File): boolean {
-  if (item.type) {
-    return item.type.indexOf('image') === 0;
+  if (item.isImage != null) {
+    return item.isImage;
   }
 
-  if (item.path) {
-    return isImageUrl(item.path);
+  if (item.type) {
+    return item.type === 'image';
   }
 
   if (item.url) {
@@ -30,11 +28,62 @@ export function isImageFile(item: File): boolean {
   return false;
 }
 
-export function isVideo(
-  res: any,
-  accept: string
-): res is WechatMiniprogram.ChooseVideoSuccessCallbackResult {
-  return accept === 'video';
+export function isVideoFile(item: File): boolean {
+  if (item.isVideo != null) {
+    return item.isVideo;
+  }
+
+  if (item.type) {
+    return item.type === 'video';
+  }
+
+  if (item.url) {
+    return isVideoUrl(item.url);
+  }
+
+  return false;
+}
+
+function formatImage(
+  res: WechatMiniprogram.ChooseImageSuccessCallbackResult
+): File[] {
+  return res.tempFiles.map((item) => ({
+    ...pickExclude(item, ['path']),
+    type: 'image',
+    url: item.path,
+    thumb: item.path,
+  }));
+}
+
+function formatVideo(
+  res: WechatMiniprogram.ChooseVideoSuccessCallbackResult & Record<string, any>
+) {
+  return [
+    {
+      ...pickExclude(res, ['tempFilePath', 'thumbTempFilePath', 'errMsg']),
+      type: 'video',
+      url: res.tempFilePath,
+      thumb: res.thumbTempFilePath,
+    },
+  ];
+}
+
+function formatMedia(res: WechatMiniprogram.ChooseMediaSuccessCallbackResult) {
+  return res.tempFiles.map((item) => ({
+    ...pickExclude(item, ['fileType', 'thumbTempFilePath', 'tempFilePath']),
+    type: res.type,
+    url: item.tempFilePath,
+    thumb: res.type === 'video' ? item.thumbTempFilePath : item.tempFilePath,
+  }));
+}
+
+function formatFile(
+  res: WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
+) {
+  return res.tempFiles.map((item) => ({
+    ...pickExclude(item, ['path']),
+    url: item.path,
+  }));
 }
 
 export function chooseFile({
@@ -46,66 +95,47 @@ export function chooseFile({
   sizeType,
   camera,
   maxCount,
-}): Promise<
-  | WechatMiniprogram.ChooseImageSuccessCallbackResult
-  | WechatMiniprogram.ChooseMediaSuccessCallbackResult
-  | WechatMiniprogram.ChooseVideoSuccessCallbackResult
-  | WechatMiniprogram.ChooseMessageFileSuccessCallbackResult
-> {
-  switch (accept) {
-    case 'image':
-      return new Promise((resolve, reject) => {
+}) {
+  return new Promise((resolve, reject) => {
+    switch (accept) {
+      case 'image':
         wx.chooseImage({
-          count: multiple ? Math.min(maxCount, 9) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
-          sourceType: capture, // 选择图片的来源，相册还是相机
+          count: multiple ? Math.min(maxCount, 9) : 1,
+          sourceType: capture,
           sizeType,
-          success: resolve,
+          success: (res) => resolve(formatImage(res)),
           fail: reject,
         });
-      });
-    case 'media':
-      return new Promise((resolve, reject) => {
+        break;
+      case 'media':
         wx.chooseMedia({
-          count: multiple ? Math.min(maxCount, 9) : 1, // 最多可以选择的数量，如果不支持多选则数量为1
-          sourceType: capture, // 选择图片的来源，相册还是相机
+          count: multiple ? Math.min(maxCount, 9) : 1,
+          sourceType: capture,
           maxDuration,
           sizeType,
           camera,
-          success: resolve,
+          success: (res) => resolve(formatMedia(res)),
           fail: reject,
         });
-      });
-    case 'video':
-      return new Promise((resolve, reject) => {
+        break;
+      case 'video':
         wx.chooseVideo({
           sourceType: capture,
           compressed,
           maxDuration,
           camera,
-          success: resolve,
+          success: (res) => resolve(formatVideo(res)),
           fail: reject,
         });
-      });
-    default:
-      return new Promise((resolve, reject) => {
+        break;
+      default:
         wx.chooseMessageFile({
-          count: multiple ? maxCount : 1, // 最多可以选择的数量，如果不支持多选则数量为1
-          type: 'file',
-          success: resolve,
+          count: multiple ? maxCount : 1,
+          type: accept,
+          success: (res) => resolve(formatFile(res)),
           fail: reject,
         });
-      });
-  }
-}
-
-export function isFunction(val: unknown): val is Function {
-  return typeof val === 'function';
-}
-
-export function isObject(val: any): val is Record<any, any> {
-  return val !== null && typeof val === 'object';
-}
-
-export function isPromise<T = any>(val: unknown): val is Promise<T> {
-  return isObject(val) && isFunction(val.then) && isFunction(val.catch);
+        break;
+    }
+  });
 }

@@ -27,6 +27,7 @@ Page({
   data: {
     fileList: [],
   },
+
   afterRead(event) {
     const { file } = event.detail;
     // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
@@ -48,7 +49,7 @@ Page({
 
 ### 图片预览
 
-通过向组件传入`file-list`属性，可以绑定已经上传的图片列表，并展示图片列表的预览图
+通过向组件传入`file-list`属性，可以绑定已经上传的图片列表，并展示图片列表的预览图。file-list 的详细结构可见下方。
 
 ```html
 <van-uploader file-list="{{ fileList }}" />
@@ -58,10 +59,14 @@ Page({
 Page({
   data: {
     fileList: [
-      { url: 'https://img.yzcdn.cn/vant/leaf.jpg', name: '图片1' },
+      {
+        url: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        name: '图片1',
+      },
       // Uploader 根据文件后缀来判断是否为图片文件
       // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
       {
+        url: 'http://iph.href.lu?text=default',
         url: 'http://iph.href.lu/60x60?text=default',
         name: '图片2',
         isImage: true,
@@ -74,7 +79,7 @@ Page({
 
 ### 图片编辑状态
 
-通过`deletable `可以标识所有图片或者单张图片是否可删除。如果`Props `的全局`deletable `为`false`，则所有图片都不展示删除按钮；如果`Props `的全局`deletable `为`true`，则可通过设置每一个图片对象里的`deletable `来控制每一张图片是否显示删除按钮，如果图片对象里不设置则默认为`true`。
+通过`deletable`可以标识所有图片或者单张图片是否可删除。如果`Props`的全局`deletable`为`false`，则所有图片都不展示删除按钮；如果`Props`的全局`deletable`为`true`，则可通过设置每一个图片对象里的`deletable`来控制每一张图片是否显示删除按钮，如果图片对象里不设置则默认为`true`。
 
 ```html
 <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" />
@@ -153,6 +158,7 @@ Page({
 ```html
 <van-uploader
   file-list="{{ fileList }}"
+  accept="media"
   use-before-read
   bind:before-read="beforeRead"
   bind:after-read="afterRead"
@@ -237,13 +243,26 @@ uploadFilePromise(fileName, chooseResult) {
 
 #### accept 的合法值
 
-| 参数    | 说明                           |
-| ------- | ------------------------------ |
-| `media` | 图片和视频                     |
-| `image` | 图片                           |
-| `video` | 视频                           |
-| `file`  | 除了图片和视频之外的其它的文件 |
-| `all`   | 所有文件                       |
+| 参数    | 说明                                 |
+| ------- | ------------------------------------ |
+| `media` | 图片和视频                           |
+| `image` | 图片                                 |
+| `video` | 视频                                 |
+| `file`  | 从客户端会话选择图片和视频以外的文件 |
+| `all`   | 从客户端会话选择所有文件             |
+
+### FileList
+
+`file-list` 为一个对象数组，数组中的每一个对象包含以下 `key`
+
+| 参数      | 说明                                                   |
+| --------- | ------------------------------------------------------ |
+| `url`     | 图片和视频的网络资源地址                               |
+| `name`    | 文件名称，视频将在全屏预览时作为标题显示               |
+| `thumb`   | 图片缩略图或视频封面的网络资源地址，仅对图片和视频有效 |
+| `type`    | 文件类型，可选值`image` `video` `file`                 |
+| `isImage` | 手动标记图片资源                                       |
+| `isVideo` | 手动标记视频资源                                       |
 
 ### Slot
 

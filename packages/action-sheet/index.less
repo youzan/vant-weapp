@@ -15,6 +15,11 @@
     &--hover {
       .theme(background-color, '@active-color');
     }
+
+    // reset weapp default border
+    &::after {
+      border-width: 0;
+    }
   }
 
   &__cancel {
@@ -51,7 +56,7 @@
 
   &__description {
     text-align: center;
-    .theme(padding, '@padding-md');
+    .theme(padding, '20px @padding-md');
     .theme(color, '@action-sheet-description-color');
     .theme(font-size, '@action-sheet-description-font-size');
     .theme(line-height, '@action-sheet-description-line-height');

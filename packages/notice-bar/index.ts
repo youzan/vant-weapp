@@ -85,7 +85,7 @@ VantComponent({
 
         const { speed, scrollable, delay } = this.data;
 
-        if (scrollable && wrapRect.width < contentRect.width) {
+        if (scrollable || wrapRect.width < contentRect.width) {
           const duration = (contentRect.width / speed) * 1000;
 
           this.wrapWidth = wrapRect.width;

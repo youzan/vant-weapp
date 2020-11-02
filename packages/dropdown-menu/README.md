@@ -53,6 +53,7 @@ Page({
         size="24px"
         style="height: 26px"
         checked="{{ switch1 }}"
+        active-color="#ee0a24"
         bind:change="onSwitch1Change"
       />
     </van-cell>
@@ -62,12 +63,15 @@ Page({
         size="24px"
         style="height: 26px"
         checked="{{ switch2 }}"
+        active-color="#ee0a24"
         bind:change="onSwitch2Change"
       />
     </van-cell>
-    <van-button type="info" block bind:click="onConfirm">
-      确定
-    </van-button>
+    <view style="padding: 5px 16px;">
+      <van-button type="danger" block round bind:click="onConfirm">
+        确认
+      </van-button>
+    </view>
   </van-dropdown-item>
 </van-dropdown-menu>
 ```
@@ -103,7 +107,7 @@ Page({
 ### 自定义选中状态颜色
 
 ```html
-<van-dropdown-menu active-color="#ee0a24">
+<van-dropdown-menu active-color="#1989fa">
   <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
   <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
 </van-dropdown-menu>
@@ -133,7 +137,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| active-color | 菜单标题和选项的选中态颜色 | _string_ | `#1989fa` |
+| active-color | 菜单标题和选项的选中态颜色 | _string_ | `#ee0a24` |
 | z-index | 菜单栏 z-index 层级 | _number_ | `10` |
 | duration | 动画时长，单位毫秒 | _number_ | `200` |
 | direction | 菜单展开方向，可选值为 up | _string_ | `down` |

@@ -5,7 +5,6 @@
   display: block;
   box-sizing: border-box;
   overflow: hidden;
-  word-wrap: break-word;
   border-left: 3px solid transparent;
   user-select: none;
   .theme(padding, '@sidebar-padding');
@@ -17,6 +16,7 @@
   &__text {
     position: relative;
     display: inline-block;
+    word-break: break-all;
   }
 
   &--hover:not(&--disabled) {

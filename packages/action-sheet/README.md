@@ -38,7 +38,7 @@ Page({
       },
       {
         name: '选项',
-        subname: '副文本',
+        subname: '描述信息',
         openType: 'share',
       },
     ],
@@ -71,7 +71,7 @@ Page({
   data: {
     show: false,
     actions: [
-      { name: '选项', color: '#07c160' },
+      { name: '着色选项', color: '#ee0a24' },
       { loading: true },
       { name: '禁用选项', disabled: true },
     ],

@@ -50,7 +50,7 @@ VantComponent({
       } = data;
       const width = `${100 / columnNum}%`;
 
-      const styleWrapper = [];
+      const styleWrapper: string[] = [];
       styleWrapper.push(`width: ${width}`);
 
       if (square) {

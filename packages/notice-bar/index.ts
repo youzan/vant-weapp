@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { Weapp } from 'definitions/weapp';
-import { requestAnimationFrame } from '../common/utils';
+import { getRect, requestAnimationFrame } from '../common/utils';
 
 VantComponent({
   props: {
@@ -70,9 +70,9 @@ VantComponent({
   methods: {
     init() {
       Promise.all([
-        this.getRect('.van-notice-bar__content'),
-        this.getRect('.van-notice-bar__wrap'),
-      ]).then((rects: WechatMiniprogram.BoundingClientRectCallbackResult[]) => {
+        getRect.call(this, '.van-notice-bar__content'),
+        getRect.call(this, '.van-notice-bar__wrap'),
+      ]).then((rects) => {
         const [contentRect, wrapRect] = rects;
         if (
           contentRect == null ||

@@ -89,7 +89,7 @@ export function getMonthEndDay(year: number, month: number): number {
 }
 
 export function getMonths(minDate: number, maxDate: number) {
-  const months = [];
+  const months: number[] = [];
   const cursor = new Date(minDate);
 
   cursor.setDate(1);

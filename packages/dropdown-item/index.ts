@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
+import { Option } from './shared';
 
 VantComponent({
   field: true,
@@ -58,6 +58,7 @@ VantComponent({
           closeOnClickOverlay,
           direction,
         } = this.parent.data;
+
         this.setData({
           overlay,
           duration,
@@ -85,9 +86,9 @@ VantComponent({
       this.setData({ showWrapper: false });
     },
 
-    onOptionTap(event: Weapp.Event) {
+    onOptionTap(event: WechatMiniprogram.TapEvent) {
       const { option } = event.currentTarget.dataset;
-      const { value } = option;
+      const { value } = (option as unknown) as Option;
 
       const shouldEmitChange = this.data.value !== value;
       this.setData({ showPopup: false, value });
@@ -100,7 +101,7 @@ VantComponent({
       }
     },
 
-    toggle(show, options = {}) {
+    toggle(show?: boolean, options: { immediate?: boolean } = {}) {
       const { showPopup } = this.data;
 
       if (typeof show !== 'boolean') {

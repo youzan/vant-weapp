@@ -70,25 +70,29 @@ export function pickExclude(obj: unknown, keys: string[]) {
 export function getRect(
   this: WechatMiniprogram.Component.TrivialInstance,
   selector: string
-): Promise<WechatMiniprogram.BoundingClientRectCallbackResult> {
-  return new Promise((resolve) => {
-    wx.createSelectorQuery()
-      .in(this)
-      .select(selector)
-      .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
-  });
+) {
+  return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult>(
+    (resolve) => {
+      wx.createSelectorQuery()
+        .in(this)
+        .select(selector)
+        .boundingClientRect()
+        .exec((rect = []) => resolve(rect[0]));
+    }
+  );
 }
 
 export function getAllRect(
   this: WechatMiniprogram.Component.TrivialInstance,
   selector: string
-): Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]> {
-  return new Promise((resolve) => {
-    wx.createSelectorQuery()
-      .in(this)
-      .selectAll(selector)
-      .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
-  });
+) {
+  return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]>(
+    (resolve) => {
+      wx.createSelectorQuery()
+        .in(this)
+        .selectAll(selector)
+        .boundingClientRect()
+        .exec((rect = []) => resolve(rect[0]));
+    }
+  );
 }

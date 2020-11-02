@@ -1,10 +1,14 @@
 export const basic = Behavior({
   methods: {
-    $emit(...args) {
-      this.triggerEvent(...args);
+    $emit(
+      name: string,
+      detail?: Record<string, unknown>,
+      options?: Record<string, unknown>
+    ) {
+      this.triggerEvent(name, detail, options);
     },
 
-    set(data: object, callback: Function) {
+    set(data: object, callback: () => void) {
       this.setData(data, callback);
 
       return new Promise((resolve) => wx.nextTick(resolve));

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { isObj, requestAnimationFrame } from '../common/utils';
 
 const getClassNames = (name: string) => ({
@@ -7,7 +8,7 @@ const getClassNames = (name: string) => ({
   'leave-to': `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`,
 });
 
-export const transition = function (showDefaultValue: boolean) {
+export function transition(showDefaultValue: boolean) {
   return Behavior({
     properties: {
       customStyle: String,
@@ -123,4 +124,4 @@ export const transition = function (showDefaultValue: boolean) {
       },
     },
   });
-};
+}

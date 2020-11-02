@@ -1,10 +1,10 @@
-let queue = [];
+let queue: WechatMiniprogram.Component.TrivialInstance[] = [];
 
-type DialogOptions = {
+interface DialogOptions {
   lang?: string;
   show?: boolean;
   title?: string;
-  width?: string | number;
+  width?: string | number | null;
   zIndex?: number;
   theme?: string;
   context?:
@@ -33,7 +33,7 @@ type DialogOptions = {
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;
   confirmButtonOpenType?: string;
-};
+}
 
 const defaultOptions: DialogOptions = {
   show: false,
@@ -65,39 +65,39 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-const Dialog = (
-  options: DialogOptions
-): Promise<WechatMiniprogram.Component.TrivialInstance> => {
+const Dialog = (options: DialogOptions) => {
   options = {
     ...currentOptions,
     ...options,
   };
 
-  return new Promise((resolve, reject) => {
-    const context = options.context || getContext();
-    const dialog = context.selectComponent(options.selector);
+  return new Promise<WechatMiniprogram.Component.TrivialInstance>(
+    (resolve, reject) => {
+      const context = options.context || getContext();
+      const dialog = context.selectComponent(options.selector as string);
 
-    delete options.context;
-    delete options.selector;
+      delete options.context;
+      delete options.selector;
 
-    if (dialog) {
-      dialog.setData({
-        onCancel: reject,
-        onConfirm: resolve,
-        ...options,
-      });
+      if (dialog) {
+        dialog.setData({
+          onCancel: reject,
+          onConfirm: resolve,
+          ...options,
+        });
 
-      wx.nextTick(() => {
-        dialog.setData({ show: true });
-      });
+        wx.nextTick(() => {
+          dialog.setData({ show: true });
+        });
 
-      queue.push(dialog);
-    } else {
-      console.warn(
-        '未找到 van-dialog 节点，请确认 selector 及 context 是否正确'
-      );
+        queue.push(dialog);
+      } else {
+        console.warn(
+          '未找到 van-dialog 节点，请确认 selector 及 context 是否正确'
+        );
+      }
     }
-  });
+  );
 };
 
 Dialog.alert = (options: DialogOptions) => Dialog(options);

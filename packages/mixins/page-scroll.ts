@@ -1,5 +1,8 @@
 type IPageScrollOption = WechatMiniprogram.Page.IPageScrollOption;
-type Scroller = (event: IPageScrollOption) => void;
+type Scroller = (
+  this: WechatMiniprogram.Component.TrivialInstance,
+  event?: IPageScrollOption
+) => void;
 type TrivialInstance = WechatMiniprogram.Page.TrivialInstance & {
   vanPageScroller?: Scroller[];
 };
@@ -9,11 +12,12 @@ function getCurrentPage(): TrivialInstance {
   return pages[pages.length - 1] || ({} as TrivialInstance);
 }
 
-function onPageScroll(event: IPageScrollOption) {
+function onPageScroll(event?: IPageScrollOption) {
   const { vanPageScroller = [] } = getCurrentPage();
 
   vanPageScroller.forEach((scroller: Scroller) => {
     if (typeof scroller === 'function') {
+      // @ts-ignore
       scroller(event);
     }
   });

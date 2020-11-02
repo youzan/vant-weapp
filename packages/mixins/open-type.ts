@@ -1,4 +1,4 @@
-import { Weapp } from 'definitions/weapp';
+// @ts-nocheck
 
 export const openType = Behavior({
   properties: {
@@ -6,27 +6,27 @@ export const openType = Behavior({
   },
 
   methods: {
-    bindGetUserInfo(event: Partial<Weapp.Event>) {
+    bindGetUserInfo(event: WechatMiniprogram.TapEvent) {
       this.$emit('getuserinfo', event.detail);
     },
 
-    bindContact(event: Partial<Weapp.Event>) {
+    bindContact(event: WechatMiniprogram.TapEvent) {
       this.$emit('contact', event.detail);
     },
 
-    bindGetPhoneNumber(event: Partial<Weapp.Event>) {
+    bindGetPhoneNumber(event: WechatMiniprogram.TapEvent) {
       this.$emit('getphonenumber', event.detail);
     },
 
-    bindError(event: Partial<Weapp.Event>) {
+    bindError(event: WechatMiniprogram.TapEvent) {
       this.$emit('error', event.detail);
     },
 
-    bindLaunchApp(event: Partial<Weapp.Event>) {
+    bindLaunchApp(event: WechatMiniprogram.TapEvent) {
       this.$emit('launchapp', event.detail);
     },
 
-    bindOpenSetting(event: Partial<Weapp.Event>) {
+    bindOpenSetting(event: WechatMiniprogram.TapEvent) {
       this.$emit('opensetting', event.detail);
     },
   },

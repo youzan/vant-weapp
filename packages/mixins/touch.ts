@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Weapp } from 'definitions/weapp';
 
 const MIN_DISTANCE = 10;

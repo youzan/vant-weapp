@@ -7,9 +7,10 @@
 
   &__item,
   &__cancel {
+    padding: 14px @padding-md;
     text-align: center;
     .theme(font-size, '@action-sheet-item-font-size');
-    .theme(line-height, '@action-sheet-item-height');
+    .theme(line-height, '@action-sheet-item-line-height');
     .theme(background-color, '@action-sheet-item-background');
 
     &--hover {
@@ -24,13 +25,12 @@
 
   &__cancel {
     .theme(color, '@action-sheet-cancel-text-color');
+  }
 
-    &::before {
-      display: block;
-      content: ' ';
-      .theme(height, '@action-sheet-cancel-padding-top');
-      .theme(background-color, '@action-sheet-cancel-padding-color');
-    }
+  &__gap {
+    display: block;
+    .theme(height, '@action-sheet-cancel-padding-top');
+    .theme(background-color, '@action-sheet-cancel-padding-color');
   }
 
   &__item--disabled {
@@ -42,9 +42,10 @@
   }
 
   &__subname {
-    .theme(margin-left, '@padding-base');
+    .theme(margin-top, '@padding-xs');
     .theme(font-size, '@action-sheet-subname-font-size');
     .theme(color, '@action-sheet-subname-color');
+    .theme(line-height, '@action-sheet-subname-line-height');
   }
 
   &__header {
@@ -74,6 +75,5 @@
 
   &__loading {
     display: flex !important;
-    .theme(height, '@action-sheet-item-height');
   }
 }

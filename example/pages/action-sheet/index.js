@@ -48,6 +48,7 @@ Page({
   toggleActionSheet5() {
     this.toggle('show5');
   },
+
   toggleActionSheet6() {
     this.toggle('show6');
   },

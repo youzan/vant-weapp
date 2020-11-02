@@ -49,19 +49,21 @@
     >
       <block wx:if="{{ !item.loading }}">
         {{ item.name }}
-        <text wx:if="{{ item.subname }}" class="van-action-sheet__subname" >{{ item.subname }}</text>
+        <view wx:if="{{ item.subname }}" class="van-action-sheet__subname" >{{ item.subname }}</view>
       </block>
       <van-loading wx:else custom-class="van-action-sheet__loading" size="22px" />
     </button>
   </view>
   <slot />
-  <view
-    wx:if="{{ cancelText }}"
-    class="van-action-sheet__cancel"
-    hover-class="van-action-sheet__cancel--hover"
-    hover-stay-time="70"
-    bind:tap="onCancel"
-  >
-    {{ cancelText }}
-  </view>
+  <block wx:if="{{ cancelText }}">
+    <view class="van-action-sheet__gap" />
+    <view
+      class="van-action-sheet__cancel"
+      hover-class="van-action-sheet__cancel--hover"
+      hover-stay-time="70"
+      bind:tap="onCancel"
+    >
+      {{ cancelText }}
+    </view>
+  </block>
 </van-popup>

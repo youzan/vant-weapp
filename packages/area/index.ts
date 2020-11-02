@@ -122,7 +122,7 @@ VantComponent({
 
     getList(type: string, code?: string): AreaItem[] {
       const { typeToColumnsPlaceholder } = this.data;
-      let result = [];
+      let result: { code: string; name: string }[] = [];
       if (type !== 'province' && !code) {
         return result;
       }
@@ -133,13 +133,15 @@ VantComponent({
         name: list[code],
       }));
 
-      if (code) {
+      if (code != null) {
         // oversea code
         if (code[0] === '9' && type === 'city') {
           code = '9';
         }
 
-        result = result.filter((item) => item.code.indexOf(code) === 0);
+        result = result.filter(
+          (item) => item.code.indexOf(code as string) === 0
+        );
       }
 
       if (typeToColumnsPlaceholder[type] && result.length) {
@@ -159,7 +161,7 @@ VantComponent({
       return result;
     },
 
-    getIndex(type: string, code: string): number {
+    getIndex(type: string, code: string) {
       let compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
       const list = this.getList(type, code.slice(0, compareNum - 2));
 
@@ -201,8 +203,8 @@ VantComponent({
         return;
       }
 
-      const stack = [];
-      const indexes = [];
+      const stack: Promise<void>[] = [];
+      const indexes: number[] = [];
       const { columnsNum } = this.data;
 
       if (columnsNum >= 1) {

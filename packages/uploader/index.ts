@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { isImageFile, chooseFile, isVideoFile } from './utils';
+import { isImageFile, chooseFile, isVideoFile, File } from './utils';
 import { chooseImageProps, chooseVideoProps } from './shared';
 import { isBoolean, isPromise } from '../common/validator';
 
@@ -79,8 +79,6 @@ VantComponent({
         deletable: isBoolean(item.deletable) ? item.deletable : true,
       }));
 
-      console.log(lists);
-
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
 
@@ -92,7 +90,7 @@ VantComponent({
     },
 
     startUpload() {
-      const { maxCount, multiple, accept, lists, disabled } = this.data;
+      const { maxCount, multiple, lists, disabled } = this.data;
 
       if (disabled) return;
 
@@ -101,8 +99,6 @@ VantComponent({
         maxCount: maxCount - lists.length,
       })
         .then((res) => {
-          console.log(res);
-
           this.onBeforeRead(multiple ? res : res[0]);
         })
         .catch((error) => {
@@ -110,7 +106,7 @@ VantComponent({
         });
     },
 
-    onBeforeRead(file) {
+    onBeforeRead(file: File) {
       const { beforeRead, useBeforeRead } = this.data;
       let res: boolean | Promise<void> = true;
 
@@ -172,7 +168,7 @@ VantComponent({
       if (!this.data.previewFullImage) return;
 
       const { index } = event.currentTarget.dataset;
-      const { lists } = this.data;
+      const { lists } = this.data as { lists: File[] };
       const item = lists[index];
 
       wx.previewImage({
@@ -187,7 +183,7 @@ VantComponent({
     onPreviewVideo(event) {
       if (!this.data.previewFullImage) return;
       const { index } = event.currentTarget.dataset;
-      const { lists } = this.data;
+      const { lists } = this.data as { lists: File[] };
 
       wx.previewMedia({
         sources: lists
@@ -205,7 +201,7 @@ VantComponent({
 
     onClickPreview(event) {
       const { index } = event.currentTarget.dataset;
-      const item = this.data.lists[index];
+      const item: File = this.data.lists[index];
 
       this.$emit('click-preview', {
         ...item,

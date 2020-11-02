@@ -1,7 +1,7 @@
 import { pickExclude } from '../common/utils';
 import { isImageUrl, isVideoUrl } from '../common/validator';
 
-interface File {
+export interface File {
   url: string; // 上传临时地址
   size?: number; // 上传大小
   name?: string;
@@ -83,7 +83,7 @@ function formatFile(
   return res.tempFiles.map((item) => ({
     ...pickExclude(item, ['path']),
     url: item.path,
-  }));
+  })) as File[];
 }
 
 export function chooseFile({
@@ -96,7 +96,7 @@ export function chooseFile({
   camera,
   maxCount,
 }) {
-  return new Promise((resolve, reject) => {
+  return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
       case 'image':
         wx.chooseImage({

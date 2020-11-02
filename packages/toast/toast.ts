@@ -32,7 +32,7 @@ const defaultOptions = {
   selector: '#van-toast',
 };
 
-let queue = [];
+let queue: WechatMiniprogram.Component.TrivialInstance[] = [];
 let currentOptions: ToastOptions = { ...defaultOptions };
 
 function parseOptions(message): ToastOptions {
@@ -44,16 +44,14 @@ function getContext() {
   return pages[pages.length - 1];
 }
 
-function Toast(
-  toastOptions: ToastOptions | ToastMessage
-): WechatMiniprogram.Component.TrivialInstance {
+function Toast(toastOptions: ToastOptions | ToastMessage) {
   const options = {
     ...currentOptions,
     ...parseOptions(toastOptions),
   } as ToastOptions;
 
   const context = options.context || getContext();
-  const toast = context.selectComponent(options.selector);
+  const toast = context.selectComponent(options.selector as string);
 
   if (!toast) {
     console.warn('未找到 van-toast 节点，请确认 selector 及 context 是否正确');
@@ -75,7 +73,7 @@ function Toast(
   toast.setData(options);
   clearTimeout(toast.timer);
 
-  if (options.duration > 0) {
+  if (options.duration != null && options.duration > 0) {
     toast.timer = setTimeout(() => {
       toast.clear();
       queue = queue.filter((item) => item !== toast);

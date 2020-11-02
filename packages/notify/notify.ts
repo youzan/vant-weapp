@@ -16,7 +16,7 @@ interface NotifyOptions {
   onClose?: () => void;
 }
 
-const defaultOptions = {
+const defaultOptions: NotifyOptions = {
   selector: '#van-notify',
   type: 'danger',
   message: '',
@@ -31,7 +31,13 @@ const defaultOptions = {
   onClose: () => {},
 };
 
-function parseOptions(message: NotifyOptions | string): NotifyOptions {
+function parseOptions(
+  message?: NotifyOptions | string
+): Partial<NotifyOptions> {
+  if (message == null) {
+    return {};
+  }
+
   return typeof message === 'string' ? { message } : message;
 }
 
@@ -41,7 +47,7 @@ function getContext() {
 }
 
 export default function Notify(options: NotifyOptions | string) {
-  options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
+  options = { ...defaultOptions, ...parseOptions(options) };
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);
@@ -59,7 +65,7 @@ export default function Notify(options: NotifyOptions | string) {
 }
 
 Notify.clear = function (options?: NotifyOptions) {
-  options = { ...defaultOptions, ...parseOptions(options) } as NotifyOptions;
+  options = { ...defaultOptions, ...parseOptions(options) };
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);

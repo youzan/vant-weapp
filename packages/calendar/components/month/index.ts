@@ -6,6 +6,13 @@ import {
   getNextDay,
 } from '../../utils';
 
+interface Day {
+  date: Date;
+  type: string;
+  text: number;
+  bottomInfo: string;
+}
+
 VantComponent({
   props: {
     date: {
@@ -48,14 +55,14 @@ VantComponent({
   methods: {
     onClick(event) {
       const { index } = event.currentTarget.dataset;
-      const item = this.data.days[index];
+      const item: Day = this.data.days[index];
       if (item.type !== 'disabled') {
         this.$emit('click', item);
       }
     },
 
     setDays() {
-      const days = [];
+      const days: Day[] = [];
       const startDate = new Date(this.data.date);
       const year = startDate.getFullYear();
       const month = startDate.getMonth();
@@ -69,7 +76,7 @@ VantComponent({
         const date = new Date(year, month, day);
         const type = this.getDayType(date);
 
-        let config = {
+        let config: Day = {
           date,
           type,
           text: day,

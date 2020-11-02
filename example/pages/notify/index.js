@@ -12,6 +12,8 @@ Page({
       color: '#ad0000',
       background: '#ffe1e1'
     });
+
+    Notify.clear();
   },
 
   showCustomDuration() {

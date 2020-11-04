@@ -33,7 +33,7 @@ Page({
     // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
     wx.uploadFile({
       url: 'https://example.weixin.qq.com/upload', // 仅为示例，非真实的接口地址
-      filePath: file.path,
+      filePath: file.url,
       name: 'file',
       formData: { user: 'test' },
       success(res) {
@@ -66,7 +66,6 @@ Page({
       // Uploader 根据文件后缀来判断是否为图片文件
       // 如果图片 URL 中不包含类型信息，可以添加 isImage 标记来声明
       {
-        url: 'http://iph.href.lu?text=default',
         url: 'http://iph.href.lu/60x60?text=default',
         name: '图片2',
         isImage: true,
@@ -77,9 +76,11 @@ Page({
 });
 ```
 
-### 图片编辑状态
+### 图片可删除状态
 
-通过`deletable`可以标识所有图片或者单张图片是否可删除。如果`Props`的全局`deletable`为`false`，则所有图片都不展示删除按钮；如果`Props`的全局`deletable`为`true`，则可通过设置每一个图片对象里的`deletable`来控制每一张图片是否显示删除按钮，如果图片对象里不设置则默认为`true`。
+通过`deletable`属性可控制是否开启所有图片的可删除状态，`deletable`默认为`true`，即所有图片都可删除。
+
+若希望控制单张图片的可删除状态，可将`deletable`属性设置为`true`，并在`fileList`中为每一项设置`deletable`属性。
 
 ```html
 <van-uploader file-list="{{ fileList }}" deletable="{{ true }}" />
@@ -91,7 +92,6 @@ Page({
     fileList: [
       {
         url: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        deletable: true,
       },
       {
         url: 'https://img.yzcdn.cn/vant/tree.jpg',
@@ -209,7 +209,7 @@ uploadToCloud() {
 uploadFilePromise(fileName, chooseResult) {
   return wx.cloud.uploadFile({
     cloudPath: fileName,
-    filePath: chooseResult.path
+    filePath: chooseResult.url
   });
 }
 ```

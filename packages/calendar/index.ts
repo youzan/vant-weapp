@@ -182,6 +182,7 @@ VantComponent({
           minDate,
           maxDate,
         } = this.data;
+        // @ts-ignore
         const targetDate = type === 'single' ? currentDate : currentDate[0];
         const displayed = show || !poppable;
         if (!targetDate || !displayed) {
@@ -222,6 +223,7 @@ VantComponent({
       const { type, currentDate, allowSameDay } = this.data;
 
       if (type === 'range') {
+        // @ts-ignore
         const [startDay, endDay] = currentDate;
 
         if (startDay && !endDay) {
@@ -240,6 +242,7 @@ VantComponent({
       } else if (type === 'multiple') {
         let selectedIndex: number;
 
+        // @ts-ignore
         const selected = currentDate.some((dateItem: number, index: number) => {
           const equal = compareDay(dateItem, date) === 0;
           if (equal) {
@@ -249,10 +252,12 @@ VantComponent({
         });
 
         if (selected) {
+          // @ts-ignore
           const cancelDate = currentDate.splice(selectedIndex, 1);
           this.setData({ currentDate });
           this.unselect(cancelDate);
         } else {
+          // @ts-ignore
           this.select([...currentDate, date]);
         }
       } else {
@@ -324,6 +329,7 @@ VantComponent({
         return;
       }
       wx.nextTick(() => {
+        // @ts-ignore
         this.$emit('confirm', copyDates(this.data.currentDate));
       });
     },

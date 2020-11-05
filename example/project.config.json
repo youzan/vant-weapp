@@ -1,398 +1,402 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"scopeDataCheck": false,
-		"coverView": true,
-		"es6": true,
-		"postcss": true,
-		"compileHotReLoad": false,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"autoAudits": false,
-		"newFeature": true,
-		"uglifyFileName": false,
-		"uploadWithSourceMap": true,
-		"useIsolateContext": true,
-		"nodeModules": true,
-		"enhance": false,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"showShadowRootInWxmlPanel": true,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"bundle": false
-	},
-	"compileType": "miniprogram",
-	"cloudfunctionRoot": "functions/",
-	"libVersion": "2.3.0",
-	"appid": "wx1c01b35002d3ba14",
-	"projectname": "vant-weapp",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"scripts": {},
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 42,
-			"list": [
-				{
-					"id": -1,
-					"name": "button",
-					"pathName": "pages/button/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "loading",
-					"pathName": "pages/loading/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "icon",
-					"pathName": "pages/icon/index",
-					"query": ""
-				},
-				{
-					"id": 3,
-					"name": "layout",
-					"pathName": "pages/col/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "cell",
-					"pathName": "pages/cell/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "card",
-					"pathName": "pages/card/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "stepper",
-					"pathName": "pages/stepper/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "switch",
-					"pathName": "pages/switch/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "tag",
-					"pathName": "pages/tag/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "notice-bar",
-					"pathName": "pages/notice-bar/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "tree-select",
-					"pathName": "pages/tree-select/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "select",
-					"pathName": "pages/select/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "field",
-					"pathName": "pages/field/index",
-					"query": ""
-				},
-				{
-					"id": 13,
-					"name": "sidebar",
-					"pathName": "pages/sidebar/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "panel",
-					"pathName": "pages/panel/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "popup",
-					"pathName": "pages/popup/index",
-					"query": ""
-				},
-				{
-					"id": 16,
-					"name": "action-sheet",
-					"pathName": "pages/action-sheet/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "steps",
-					"pathName": "pages/steps/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "search",
-					"pathName": "pages/search/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "nav-bar",
-					"pathName": "pages/nav-bar/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "notify",
-					"pathName": "pages/notify/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "toast",
-					"pathName": "pages/toast/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "tabbar",
-					"pathName": "pages/tabbar/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "transition",
-					"pathName": "pages/transition/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "slider",
-					"pathName": "pages/slider/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "switch-cell",
-					"pathName": "pages/switch-cell/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "progress",
-					"pathName": "pages/progress/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "area",
-					"pathName": "pages/area/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "tab",
-					"pathName": "pages/tab/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "dialog",
-					"pathName": "pages/dialog/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "submit-bar",
-					"pathName": "pages/submit-bar/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "checkbox",
-					"pathName": "pages/checkbox/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "goods-action",
-					"pathName": "pages/goods-action/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "radio",
-					"pathName": "pages/radio/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "swipe-cell",
-					"pathName": "pages/swipe-cell/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "rate",
-					"pathName": "pages/rate/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "collapse",
-					"pathName": "pages/collapse/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "datetime-picker",
-					"pathName": "pages/datetime-picker/index",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "sticky",
-					"pathName": "pages/sticky/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "picker",
-					"pathName": "pages/picker/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "overlay",
-					"pathName": "pages/overlay/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "circle",
-					"pathName": "pages/circle/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "grid",
-					"pathName": "pages/grid/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "count-down",
-					"pathName": "pages/count-down/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "image",
-					"pathName": "pages/image/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 45,
-					"name": "skeleton",
-					"pathName": "pages/skeleton/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "uploader",
-					"pathName": "pages/uploader/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "dropdown-menu",
-					"pathName": "pages/dropdown-menu/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "calendar",
-					"pathName": "pages/calendar/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "index-bar",
-					"pathName": "pages/index-bar/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "empty",
-					"pathName": "pages/empty/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 51,
-					"name": "share-sheet",
-					"pathName": "pages/share-sheet/index",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "cloudfunctionRoot": "functions/",
+  "libVersion": "2.3.0",
+  "appid": "wx1c01b35002d3ba14",
+  "projectname": "vant-weapp",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 42,
+      "list": [
+        {
+          "id": -1,
+          "name": "button",
+          "pathName": "pages/button/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "loading",
+          "pathName": "pages/loading/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "icon",
+          "pathName": "pages/icon/index",
+          "query": ""
+        },
+        {
+          "id": 3,
+          "name": "layout",
+          "pathName": "pages/col/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "cell",
+          "pathName": "pages/cell/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "card",
+          "pathName": "pages/card/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "stepper",
+          "pathName": "pages/stepper/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "switch",
+          "pathName": "pages/switch/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "tag",
+          "pathName": "pages/tag/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "notice-bar",
+          "pathName": "pages/notice-bar/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "tree-select",
+          "pathName": "pages/tree-select/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "select",
+          "pathName": "pages/select/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "field",
+          "pathName": "pages/field/index",
+          "query": ""
+        },
+        {
+          "id": 13,
+          "name": "sidebar",
+          "pathName": "pages/sidebar/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "panel",
+          "pathName": "pages/panel/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "popup",
+          "pathName": "pages/popup/index",
+          "query": ""
+        },
+        {
+          "id": 16,
+          "name": "action-sheet",
+          "pathName": "pages/action-sheet/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "steps",
+          "pathName": "pages/steps/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "search",
+          "pathName": "pages/search/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "nav-bar",
+          "pathName": "pages/nav-bar/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "notify",
+          "pathName": "pages/notify/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "toast",
+          "pathName": "pages/toast/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "tabbar",
+          "pathName": "pages/tabbar/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "transition",
+          "pathName": "pages/transition/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "slider",
+          "pathName": "pages/slider/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "switch-cell",
+          "pathName": "pages/switch-cell/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "progress",
+          "pathName": "pages/progress/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "area",
+          "pathName": "pages/area/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "tab",
+          "pathName": "pages/tab/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "dialog",
+          "pathName": "pages/dialog/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "submit-bar",
+          "pathName": "pages/submit-bar/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "checkbox",
+          "pathName": "pages/checkbox/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "goods-action",
+          "pathName": "pages/goods-action/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "radio",
+          "pathName": "pages/radio/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "swipe-cell",
+          "pathName": "pages/swipe-cell/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "rate",
+          "pathName": "pages/rate/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "collapse",
+          "pathName": "pages/collapse/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "datetime-picker",
+          "pathName": "pages/datetime-picker/index",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "sticky",
+          "pathName": "pages/sticky/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "picker",
+          "pathName": "pages/picker/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "overlay",
+          "pathName": "pages/overlay/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "circle",
+          "pathName": "pages/circle/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "grid",
+          "pathName": "pages/grid/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "count-down",
+          "pathName": "pages/count-down/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "image",
+          "pathName": "pages/image/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 45,
+          "name": "skeleton",
+          "pathName": "pages/skeleton/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "uploader",
+          "pathName": "pages/uploader/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "dropdown-menu",
+          "pathName": "pages/dropdown-menu/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "calendar",
+          "pathName": "pages/calendar/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "index-bar",
+          "pathName": "pages/index-bar/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "empty",
+          "pathName": "pages/empty/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 51,
+          "name": "share-sheet",
+          "pathName": "pages/share-sheet/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

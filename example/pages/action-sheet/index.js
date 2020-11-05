@@ -11,21 +11,21 @@ Page({
     action1: [
       { name: '选项' },
       { name: '选项' },
-      { name: '选项', subname: '副文本' }
+      { name: '选项', subname: '描述信息' },
     ],
     action2: [
-      { name: '选项', color: '#07c160' },
+      { name: '着色选项', color: '#ee0a24' },
       { loading: true },
-      { name: '禁用选项', disabled: true }
+      { name: '禁用选项', disabled: true },
     ],
     action6: [
       { name: '获取用户信息', color: '#07c160', openType: 'getUserInfo' },
-    ]
+    ],
   },
 
   toggle(type) {
     this.setData({
-      [type]: !this.data[type]
+      [type]: !this.data[type],
     });
   },
 
@@ -48,10 +48,11 @@ Page({
   toggleActionSheet5() {
     this.toggle('show5');
   },
+
   toggleActionSheet6() {
     this.toggle('show6');
   },
   onGetUserInfo(e) {
     console.log(e.detail);
-  }
+  },
 });

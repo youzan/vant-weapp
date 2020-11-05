@@ -48,7 +48,7 @@
 @line-height-md: 20px;
 @line-height-lg: 22px;
 @base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
   'Microsoft Yahei', sans-serif;
 @price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
   sans-serif;
@@ -67,21 +67,23 @@
 
 //ActionSheet
 @action-sheet-max-height: 90%;
-@action-sheet-header-height: 44px;
+@action-sheet-header-height: 48px;
 @action-sheet-header-font-size: @font-size-lg;
-@action-sheet-description-color: @gray-7;
+@action-sheet-description-color: @gray-6;
 @action-sheet-description-font-size: @font-size-md;
 @action-sheet-description-line-height: 20px;
-@action-sheet-item-height: 50px;
 @action-sheet-item-background: @white;
 @action-sheet-item-font-size: @font-size-lg;
+@action-sheet-item-line-height: 22px;
 @action-sheet-item-text-color: @text-color;
 @action-sheet-item-disabled-text-color: @gray-5;
-@action-sheet-subname-color: @gray-7;
+@action-sheet-subname-color: @gray-6;
 @action-sheet-subname-font-size: @font-size-sm;
-@action-sheet-close-icon-size: 18px;
-@action-sheet-close-icon-color: @gray-6;
-@action-sheet-close-icon-padding: 0 @padding-sm;
+@action-sheet-subname-line-height: 20px;
+@action-sheet-close-icon-size: 22px;
+@action-sheet-close-icon-color: @gray-5;
+@action-sheet-close-icon-padding: 0 @padding-md;
+@action-sheet-cancel-text-color: @gray-7;
 @action-sheet-cancel-padding-top: @padding-xs;
 @action-sheet-cancel-padding-color: @background-color;
 
@@ -276,6 +278,10 @@
 @image-placeholder-text-color: @gray-6;
 @image-placeholder-font-size: @font-size-md;
 @image-placeholder-background-color: @background-color;
+@image-loading-icon-size: 32px;
+@image-loading-icon-color: @gray-4;
+@image-error-icon-size: 32px;
+@image-error-icon-color: @gray-4;
 
 // Info
 @info-size: 16px;
@@ -351,7 +357,7 @@
 
 // Popup
 @popup-background-color: @white;
-@popup-round-border-radius: 20px;
+@popup-round-border-radius: 16px;
 @popup-close-icon-size: 18px;
 @popup-close-icon-color: @gray-6;
 @popup-close-icon-margin: 16px;
@@ -426,7 +432,7 @@
 @search-action-font-size: @font-size-md;
 
 // Sidebar
-@sidebar-width: 85px;
+@sidebar-width: 80px;
 
 // SidebarItem
 @sidebar-font-size: @font-size-md;
@@ -510,8 +516,8 @@
 @tabbar-item-text-color: @gray-7;
 @tabbar-item-active-color: @blue;
 @tabbar-item-line-height: 1;
-@tabbar-item-icon-size: 18px;
-@tabbar-item-margin-bottom: 5px;
+@tabbar-item-icon-size: 22px;
+@tabbar-item-margin-bottom: 4px;
 
 // Tab
 @tab-text-color: @gray-7;
@@ -627,11 +633,11 @@
 @dropdown-menu-background-color: @white;
 @dropdown-menu-title-font-size: 15px;
 @dropdown-menu-title-text-color: @text-color;
-@dropdown-menu-title-active-text-color: @blue;
+@dropdown-menu-title-active-text-color: @red;
 @dropdown-menu-title-disabled-text-color: @gray-6;
 @dropdown-menu-title-padding: 0 @padding-xs;
 @dropdown-menu-title-line-height: 18px;
-@dropdown-menu-option-active-color: @blue;
+@dropdown-menu-option-active-color: @red;
 
 // IndexAnchor
 @index-anchor-padding: 0 @padding-md;

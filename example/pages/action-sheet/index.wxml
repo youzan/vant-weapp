@@ -4,7 +4,6 @@
     show="{{ show1 }}"
     actions="{{ action1 }}"
     bind:close="toggleActionSheet1"
-    bind:select="toggleActionSheet1"
   />
 </demo-block>
 
@@ -14,8 +13,6 @@
     show="{{ show2 }}"
     actions="{{ action2 }}"
     bind:close="toggleActionSheet2"
-    bind:cancel="toggleActionSheet2"
-    bind:select="toggleActionSheet2"
   />
 </demo-block>
 
@@ -52,7 +49,7 @@
   </van-action-sheet>
 </demo-block>
 
-<demo-block title="微信开发能力" padding>
+<demo-block title="微信开放能力" padding>
   <van-button type="primary" bind:click="toggleActionSheet6">弹出菜单</van-button>
   <van-action-sheet
     show="{{ show6 }}"

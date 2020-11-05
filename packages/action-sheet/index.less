@@ -7,23 +7,30 @@
 
   &__item,
   &__cancel {
+    padding: 14px @padding-md;
     text-align: center;
     .theme(font-size, '@action-sheet-item-font-size');
-    .theme(line-height, '@action-sheet-item-height');
+    .theme(line-height, '@action-sheet-item-line-height');
     .theme(background-color, '@action-sheet-item-background');
 
     &--hover {
       .theme(background-color, '@active-color');
     }
+
+    // reset weapp default border
+    &::after {
+      border-width: 0;
+    }
   }
 
   &__cancel {
-    &::before {
-      display: block;
-      content: ' ';
-      .theme(height, '@action-sheet-cancel-padding-top');
-      .theme(background-color, '@action-sheet-cancel-padding-color');
-    }
+    .theme(color, '@action-sheet-cancel-text-color');
+  }
+
+  &__gap {
+    display: block;
+    .theme(height, '@action-sheet-cancel-padding-top');
+    .theme(background-color, '@action-sheet-cancel-padding-color');
   }
 
   &__item--disabled {
@@ -35,9 +42,10 @@
   }
 
   &__subname {
-    .theme(margin-left, '@padding-base');
+    .theme(margin-top, '@padding-xs');
     .theme(font-size, '@action-sheet-subname-font-size');
     .theme(color, '@action-sheet-subname-color');
+    .theme(line-height, '@action-sheet-subname-line-height');
   }
 
   &__header {
@@ -49,7 +57,7 @@
 
   &__description {
     text-align: center;
-    .theme(padding, '@padding-md');
+    .theme(padding, '20px @padding-md');
     .theme(color, '@action-sheet-description-color');
     .theme(font-size, '@action-sheet-description-font-size');
     .theme(line-height, '@action-sheet-description-line-height');
@@ -67,6 +75,5 @@
 
   &__loading {
     display: flex !important;
-    .theme(height, '@action-sheet-item-height');
   }
 }

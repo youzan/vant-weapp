@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
-import { isImageFile, isVideo, chooseFile, isPromise } from './utils';
+import { isImageFile, chooseFile, isVideoFile, File } from './utils';
 import { chooseImageProps, chooseVideoProps } from './shared';
+import { isBoolean, isPromise } from '../common/validator';
 
 VantComponent({
   props: {
@@ -73,13 +74,11 @@ VantComponent({
       const { fileList = [], maxCount } = this.data;
       const lists = fileList.map((item) => ({
         ...item,
-        isImage:
-          typeof item.isImage === 'undefined'
-            ? isImageFile(item)
-            : item.isImage,
-        deletable:
-          typeof item.deletable === 'undefined' ? true : item.deletable,
+        isImage: isImageFile(item),
+        isVideo: isVideoFile(item),
+        deletable: isBoolean(item.deletable) ? item.deletable : true,
       }));
+
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
 
@@ -91,7 +90,7 @@ VantComponent({
     },
 
     startUpload() {
-      const { maxCount, multiple, accept, lists, disabled } = this.data;
+      const { maxCount, multiple, lists, disabled } = this.data;
 
       if (disabled) return;
 
@@ -100,34 +99,23 @@ VantComponent({
         maxCount: maxCount - lists.length,
       })
         .then((res) => {
-          let file = null;
-
-          if (isVideo(res, accept)) {
-            file = {
-              path: res.tempFilePath,
-              ...res,
-            };
-          } else {
-            file = multiple ? res.tempFiles : res.tempFiles[0];
-          }
-
-          this.onBeforeRead(file);
+          this.onBeforeRead(multiple ? res : res[0]);
         })
         .catch((error) => {
           this.$emit('error', error);
         });
     },
 
-    onBeforeRead(file) {
+    onBeforeRead(file: File) {
       const { beforeRead, useBeforeRead } = this.data;
-      let res: boolean | Promise<any> = true;
+      let res: boolean | Promise<void> = true;
 
       if (typeof beforeRead === 'function') {
         res = beforeRead(file, this.getDetail());
       }
 
       if (useBeforeRead) {
-        res = new Promise((resolve, reject) => {
+        res = new Promise<void>((resolve, reject) => {
           this.$emit('before-read', {
             file,
             ...this.getDetail(),
@@ -150,7 +138,7 @@ VantComponent({
     },
 
     onAfterRead(file) {
-      const { maxSize } = this.data;
+      const { maxSize, afterRead } = this.data;
       const oversize = Array.isArray(file)
         ? file.some((item) => item.size > maxSize)
         : file.size > maxSize;
@@ -160,8 +148,8 @@ VantComponent({
         return;
       }
 
-      if (typeof this.data.afterRead === 'function') {
-        this.data.afterRead(file, this.getDetail());
+      if (typeof afterRead === 'function') {
+        afterRead(file, this.getDetail());
       }
 
       this.$emit('after-read', { file, ...this.getDetail() });
@@ -180,36 +168,32 @@ VantComponent({
       if (!this.data.previewFullImage) return;
 
       const { index } = event.currentTarget.dataset;
-      const { lists } = this.data;
+      const { lists } = this.data as { lists: File[] };
       const item = lists[index];
 
       wx.previewImage({
-        urls: lists
-          .filter((item) => item.isImage)
-          .map((item) => item.url || item.path),
-        current: item.url || item.path,
+        urls: lists.filter((item) => isImageFile(item)).map((item) => item.url),
+        current: item.url,
         fail() {
           wx.showToast({ title: '预览图片失败', icon: 'none' });
         },
       });
     },
-    // fix: accept 为 video 时不能展示视频
-    onPreviewVideo: function (event) {
+
+    onPreviewVideo(event) {
       if (!this.data.previewFullImage) return;
-      var index = event.currentTarget.dataset.index;
-      var lists = this.data.lists;
+      const { index } = event.currentTarget.dataset;
+      const { lists } = this.data as { lists: File[] };
+
       wx.previewMedia({
         sources: lists
-          .filter(function (item) {
-            return item.isVideo;
-          })
-          .map(function (item) {
-            item.type = 'video';
-            item.url = item.url || item.path;
-            return item;
-          }),
+          .filter((item) => isVideoFile(item))
+          .map((item) => ({
+            ...item,
+            type: 'video',
+          })),
         current: index,
-        fail: function () {
+        fail() {
           wx.showToast({ title: '预览视频失败', icon: 'none' });
         },
       });
@@ -217,7 +201,7 @@ VantComponent({
 
     onClickPreview(event) {
       const { index } = event.currentTarget.dataset;
-      const item = this.data.lists[index];
+      const item: File = this.data.lists[index];
 
       this.$emit('click-preview', {
         ...item,

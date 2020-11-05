@@ -1,7 +1,7 @@
 export const commonProps = {
   value: {
     type: String,
-    observer(value: string) {
+    observer(this: WechatMiniprogram.Component.TrivialInstance, value: string) {
       if (value !== this.value) {
         this.setData({ innerValue: value });
         this.value = value;

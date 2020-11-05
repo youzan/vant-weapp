@@ -1,9 +1,10 @@
-import { VantComponent } from '../common/component';
 import { GREEN } from '../common/color';
+import { VantComponent } from '../common/component';
+import { getRect } from '../common/utils';
 import { pageScrollMixin } from '../mixins/page-scroll';
 
 const indexList = () => {
-  const indexList = [];
+  const indexList: string[] = [];
   const charCodeOfA = 'A'.charCodeAt(0);
 
   for (let i = 0; i < 26; i++) {
@@ -51,7 +52,7 @@ VantComponent({
 
   mixins: [
     pageScrollMixin(function (event) {
-      this.scrollTop = event.scrollTop || 0;
+      this.scrollTop = event?.scrollTop || 0;
       this.onScroll();
     }),
   ],
@@ -94,34 +95,29 @@ VantComponent({
 
     setAnchorsRect() {
       return Promise.all(
-        this.children.map((anchor) =>
-          anchor
-            .getRect('.van-index-anchor-wrapper')
-            .then(
-              (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-                Object.assign(anchor, {
-                  height: rect.height,
-                  top: rect.top + this.scrollTop,
-                });
-              }
-            )
+        this.children.map(
+          (anchor: WechatMiniprogram.Component.TrivialInstance) =>
+            getRect.call(anchor, '.van-index-anchor-wrapper').then((rect) => {
+              Object.assign(anchor, {
+                height: rect.height,
+                top: rect.top + this.scrollTop,
+              });
+            })
         )
       );
     },
 
     setListRect() {
-      return this.getRect('.van-index-bar').then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          Object.assign(this, {
-            height: rect.height,
-            top: rect.top + this.scrollTop,
-          });
-        }
-      );
+      return getRect.call(this, '.van-index-bar').then((rect) => {
+        Object.assign(this, {
+          height: rect.height,
+          top: rect.top + this.scrollTop,
+        });
+      });
     },
 
     setSiderbarRect() {
-      return this.getRect('.van-index-bar__sidebar').then((res) => {
+      return getRect.call(this, '.van-index-bar__sidebar').then((res) => {
         this.sidebar = {
           height: res.height,
           top: res.top,
@@ -144,12 +140,10 @@ VantComponent({
     },
 
     getAnchorRect(anchor) {
-      return anchor
-        .getRect('.van-index-anchor-wrapper')
-        .then((rect: WechatMiniprogram.BoundingClientRectCallbackResult) => ({
-          height: rect.height,
-          top: rect.top,
-        }));
+      return getRect.call(anchor, '.van-index-anchor-wrapper').then((rect) => ({
+        height: rect.height,
+        top: rect.top,
+      }));
     },
 
     getActiveAnchorIndex() {

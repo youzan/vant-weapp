@@ -1,5 +1,20 @@
 # 更新日志
 
+### [1.5.2](https://github.com/youzan/vant-weapp/compare/v1.5.2)
+`2020-10-15`
+
+**Features**
+
+- Uploader: 标准化 file-list 与事件参数 ([#3673](https://github.com/youzan/vant-weapp/issues/3673))
+- Uploader: 新增 thumb，支持缩略图展示 ([#3673](https://github.com/youzan/vant-weapp/issues/3673))
+- GoodsAction: 新增若干 CSS 变量 ([#3654](https://github.com/youzan/vant-weapp/issues/3654))
+- 移动 @types/wechat-miniprogram 至 dependencies ([#3654](https://github.com/youzan/vant-weapp/issues/3674))
+
+**Bug Fixes**
+
+- Button: 修复细边框样式问题 ([#3653](https://github.com/youzan/vant-weapp/issues/3653))
+- Tab: 重构动画实现，不再使用 `transform` ([#3668](https://github.com/youzan/vant-weapp/issues/3668))
+
 ### [1.5.1](https://github.com/youzan/vant-weapp/compare/v1.5.1)
 
 `2020-09-29`

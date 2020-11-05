@@ -12,7 +12,7 @@ function range(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
 }
 
-function padZero(val: string | number): string {
+function padZero(val: string | number) {
   return `00${val}`.slice(-2);
 }
 
@@ -26,8 +26,7 @@ function times(n: number, iteratee: (index: number) => string): string[] {
   return result;
 }
 
-function getTrueValue(formattedValue: string): number {
-  if (!formattedValue) return;
+function getTrueValue(formattedValue: string) {
   while (isNaN(parseInt(formattedValue, 10))) {
     formattedValue = formattedValue.slice(1);
   }
@@ -38,7 +37,10 @@ function getMonthEndDay(year: number, month: number): number {
   return 32 - new Date(year, month - 1, 32).getDate();
 }
 
-const defaultFormatter = (_, value) => value;
+const defaultFormatter = (
+  type: 'year' | 'month' | 'day' | 'hour' | 'minute',
+  value: string
+) => value;
 
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
@@ -327,7 +329,7 @@ VantComponent({
     },
 
     updateColumnValue(value) {
-      let values = [];
+      let values: string[] = [];
       const { type } = this.data;
       const formatter = this.data.formatter || defaultFormatter;
       const picker = this.getPicker();

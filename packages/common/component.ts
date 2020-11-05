@@ -7,18 +7,23 @@ import {
 const relationFunctions = {
   ancestor: {
     linked(parent) {
+      // @ts-ignore
       this.parent = parent;
     },
     unlinked() {
+      // @ts-ignore
       this.parent = null;
     },
   },
   descendant: {
     linked(child) {
+      // @ts-ignore
       this.children = this.children || [];
+      // @ts-ignore
       this.children.push(child);
     },
     unlinked(child) {
+      // @ts-ignore
       this.children = (this.children || []).filter((it) => it !== child);
     },
   },

@@ -7,7 +7,7 @@
     "noImplicitAny": false,
     "outDir": "dist",
     "baseUrl": ".",
-    "strict": false,
+    "strict": true,
     "paths": {
       "definitions/*": ["./packages/definitions/*"],
       "packages/*": ["./packages/*"]

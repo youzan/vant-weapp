@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { Weapp } from 'definitions/weapp';
 import { canIUseModel } from '../common/version';
 
 VantComponent({
@@ -43,7 +42,7 @@ VantComponent({
   },
 
   methods: {
-    onTouchStart(event: Weapp.TouchEvent) {
+    onTouchStart(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) return;
 
       this.touchStart(event);
@@ -51,7 +50,7 @@ VantComponent({
       this.dragStatus = 'start';
     },
 
-    onTouchMove(event: Weapp.TouchEvent) {
+    onTouchMove(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) return;
 
       if (this.dragStatus === 'start') {
@@ -79,7 +78,7 @@ VantComponent({
       }
     },
 
-    onClick(event: Weapp.TouchEvent) {
+    onClick(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) return;
 
       const { min } = this.data;

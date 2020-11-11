@@ -8,6 +8,8 @@
     "outDir": "dist",
     "baseUrl": ".",
     "strict": true,
+    "lib": ["ES6"],
+    "types": ["miniprogram-api-typings"],
     "paths": {
       "definitions/*": ["./packages/definitions/*"],
       "packages/*": ["./packages/*"]

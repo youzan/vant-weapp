@@ -34,7 +34,7 @@ VantComponent({
   },
 
   methods: {
-    onClick(event: WechatMiniprogram.TapEvent) {
+    onClick(event: WechatMiniprogram.TouchEvent) {
       this.$emit('click', event.detail);
       this.jumpLink();
     },

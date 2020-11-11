@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 import { addUnit } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
@@ -121,7 +120,7 @@ VantComponent({
       );
     },
 
-    onTitleTap(event: Weapp.Event) {
+    onTitleTap(event: WechatMiniprogram.TouchEvent) {
       const { index } = event.currentTarget.dataset;
       const child = this.children[index];
 

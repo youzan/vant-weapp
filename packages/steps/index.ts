@@ -1,4 +1,3 @@
-import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
 import { GREEN, GRAY_DARK } from '../common/color';
 
@@ -29,7 +28,7 @@ VantComponent({
   },
 
   methods: {
-    onClick(event: Weapp.Event) {
+    onClick(event: WechatMiniprogram.TouchEvent) {
       const { index } = event.currentTarget.dataset;
       this.$emit('click-step', index);
     },

@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { pickerProps } from './shared';
-import { Weapp } from 'definitions/weapp';
 
 interface Column {
   values: object[];
@@ -54,22 +53,7 @@ VantComponent({
       return Promise.all(stack);
     },
 
-    emit(event: Weapp.Event) {
-      const { type } = event.currentTarget.dataset;
-      if (this.simple) {
-        this.$emit(type, {
-          value: this.getColumnValue(0),
-          index: this.getColumnIndex(0),
-        });
-      } else {
-        this.$emit(type, {
-          value: this.getValues(),
-          index: this.getIndexes(),
-        });
-      }
-    },
-
-    onChange(event: Weapp.Event) {
+    onChange(event: WechatMiniprogram.CustomEvent) {
       if (this.simple) {
         this.$emit('change', {
           picker: this,

@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { Weapp } from 'definitions/weapp';
 import { range } from '../common/utils';
 
 const THRESHOLD = 0.3;
@@ -98,7 +97,7 @@ VantComponent({
       this.setData({ catchMove: false });
     },
 
-    startDrag(event: Weapp.TouchEvent) {
+    startDrag(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) {
         return;
       }
@@ -109,7 +108,7 @@ VantComponent({
 
     noop() {},
 
-    onDrag(event: Weapp.TouchEvent) {
+    onDrag(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) {
         return;
       }
@@ -135,7 +134,7 @@ VantComponent({
       this.swipeLeaveTransition();
     },
 
-    onClick(event: Weapp.Event) {
+    onClick(event: WechatMiniprogram.TouchEvent) {
       const { key: position = 'outside' } = event.currentTarget.dataset;
       this.$emit('click', position);
 

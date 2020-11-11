@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { isObj, range } from '../common/utils';
-import { Weapp } from 'definitions/weapp';
 
 const DEFAULT_DURATION = 200;
 
@@ -50,7 +49,7 @@ VantComponent({
       return this.data.options.length;
     },
 
-    onTouchStart(event: Weapp.TouchEvent) {
+    onTouchStart(event: WechatMiniprogram.TouchEvent) {
       this.setData({
         startY: event.touches[0].clientY,
         startOffset: this.data.offset,
@@ -58,7 +57,7 @@ VantComponent({
       });
     },
 
-    onTouchMove(event: Weapp.TouchEvent) {
+    onTouchMove(event: WechatMiniprogram.TouchEvent) {
       const { data } = this;
       const deltaY = event.touches[0].clientY - data.startY;
       this.setData({
@@ -84,7 +83,7 @@ VantComponent({
       }
     },
 
-    onClickItem(event: Weapp.Event) {
+    onClickItem(event: WechatMiniprogram.TouchEvent) {
       const { index } = event.currentTarget.dataset;
       this.setIndex(index, true);
     },

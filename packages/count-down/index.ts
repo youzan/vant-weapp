@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { isSameSecond, parseFormat, parseTimeData } from './utils';
 
-function simpleTick(fn: Function) {
+function simpleTick(fn: WechatMiniprogram.SetTimeoutCompleteCallback) {
   return setTimeout(fn, 30);
 }
 

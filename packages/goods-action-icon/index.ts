@@ -1,8 +1,7 @@
 import { VantComponent } from '../common/component';
-import { link } from '../mixins/link';
 import { button } from '../mixins/button';
+import { link } from '../mixins/link';
 import { openType } from '../mixins/open-type';
-import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   classes: ['icon-class', 'text-class'],
@@ -19,7 +18,7 @@ VantComponent({
   },
 
   methods: {
-    onClick(event: Weapp.Event) {
+    onClick(event: WechatMiniprogram.CustomEvent) {
       this.$emit('click', event.detail);
       this.jumpLink();
     },

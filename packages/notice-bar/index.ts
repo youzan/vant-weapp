@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 import { getRect, requestAnimationFrame } from '../common/utils';
 
 VantComponent({
@@ -137,7 +136,7 @@ VantComponent({
       }
     },
 
-    onClick(event: Weapp.Event) {
+    onClick(event: WechatMiniprogram.TouchEvent) {
       this.$emit('click', event);
     },
   },

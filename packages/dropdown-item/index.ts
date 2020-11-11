@@ -86,7 +86,7 @@ VantComponent({
       this.setData({ showWrapper: false });
     },
 
-    onOptionTap(event: WechatMiniprogram.TapEvent) {
+    onOptionTap(event: WechatMiniprogram.TouchEvent) {
       const { option } = event.currentTarget.dataset;
       const { value } = (option as unknown) as Option;
 

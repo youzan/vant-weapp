@@ -6,27 +6,27 @@ export const openType = Behavior({
   },
 
   methods: {
-    bindGetUserInfo(event: WechatMiniprogram.TapEvent) {
+    bindGetUserInfo(event: WechatMiniprogram.ButtonGetUserInfo) {
       this.$emit('getuserinfo', event.detail);
     },
 
-    bindContact(event: WechatMiniprogram.TapEvent) {
+    bindContact(event: WechatMiniprogram.ButtonContact) {
       this.$emit('contact', event.detail);
     },
 
-    bindGetPhoneNumber(event: WechatMiniprogram.TapEvent) {
+    bindGetPhoneNumber(event: WechatMiniprogram.ButtonGetPhoneNumber) {
       this.$emit('getphonenumber', event.detail);
     },
 
-    bindError(event: WechatMiniprogram.TapEvent) {
+    bindError(event: WechatMiniprogram.ButtonError) {
       this.$emit('error', event.detail);
     },
 
-    bindLaunchApp(event: WechatMiniprogram.TapEvent) {
+    bindLaunchApp(event: WechatMiniprogram.ButtonLaunchApp) {
       this.$emit('launchapp', event.detail);
     },
 
-    bindOpenSetting(event: WechatMiniprogram.TapEvent) {
+    bindOpenSetting(event: WechatMiniprogram.ButtonOpenSetting) {
       this.$emit('opensetting', event.detail);
     },
   },

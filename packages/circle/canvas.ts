@@ -1,8 +1,8 @@
 type CanvasContext = WechatMiniprogram.CanvasContext;
 
 export function adaptor(
-  ctx: CanvasRenderingContext2D
-): CanvasContext & CanvasRenderingContext2D {
+  ctx: CanvasContext & Record<string, unknown>
+): CanvasContext {
   // @ts-ignore
   return Object.assign(ctx, {
     setStrokeStyle(val) {

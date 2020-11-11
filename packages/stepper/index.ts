@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 import { isDef } from '../common/utils';
 
 const LONG_PRESS_START_TIME = 600;
@@ -107,11 +106,11 @@ VantComponent({
       );
     },
 
-    onFocus(event: Weapp.Event) {
+    onFocus(event: WechatMiniprogram.InputFocus) {
       this.$emit('focus', event.detail);
     },
 
-    onBlur(event: Weapp.Event) {
+    onBlur(event: WechatMiniprogram.InputBlur) {
       const value = this.format(event.detail.value);
       this.emitChange(value);
       this.$emit('blur', {
@@ -147,7 +146,7 @@ VantComponent({
       return value;
     },
 
-    onInput(event: Weapp.Event) {
+    onInput(event: WechatMiniprogram.Input) {
       const { value = '' } = event.detail || {};
 
       // allow input to be empty
@@ -196,13 +195,13 @@ VantComponent({
       }, LONG_PRESS_INTERVAL);
     },
 
-    onTap(event: Weapp.Event) {
+    onTap(event: WechatMiniprogram.TouchEvent) {
       const { type } = event.currentTarget.dataset;
       this.type = type;
       this.onChange();
     },
 
-    onTouchStart(event: Weapp.Event) {
+    onTouchStart(event: WechatMiniprogram.TouchEvent) {
       if (!this.data.longPress) {
         return;
       }

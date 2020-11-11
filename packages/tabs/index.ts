@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { Weapp } from 'definitions/weapp';
 import { getAllRect, getRect, isDef } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
@@ -150,7 +149,7 @@ VantComponent({
       });
     },
 
-    onTap(event: Weapp.Event) {
+    onTap(event: WechatMiniprogram.TouchEvent) {
       const { index } = event.currentTarget.dataset;
       const child = this.children[index];
 
@@ -274,17 +273,17 @@ VantComponent({
       });
     },
 
-    onTouchScroll(event: Weapp.TouchEvent) {
+    onTouchScroll(event: WechatMiniprogram.CustomEvent) {
       this.$emit('scroll', event.detail);
     },
 
-    onTouchStart(event: Weapp.TouchEvent) {
+    onTouchStart(event: WechatMiniprogram.TouchEvent) {
       if (!this.data.swipeable) return;
 
       this.touchStart(event);
     },
 
-    onTouchMove(event: Weapp.TouchEvent) {
+    onTouchMove(event: WechatMiniprogram.TouchEvent) {
       if (!this.data.swipeable) return;
 
       this.touchMove(event);

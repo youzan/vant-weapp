@@ -68,6 +68,7 @@
     "less": "^3.9.0",
     "less-loader": "^7.0.0",
     "lint-staged": "^10.0.0",
+    "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.0.27",
     "postcss": "^8.1.1",
     "postcss-loader": "^4.0.0",
@@ -94,7 +95,5 @@
     "ChromeAndroid >= 53",
     "iOS >= 8"
   ],
-  "dependencies": {
-    "@types/wechat-miniprogram": "^3.0.0"
-  }
+  "dependencies": {}
 }

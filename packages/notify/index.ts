@@ -1,4 +1,3 @@
-import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
 import { WHITE } from '../common/color';
 
@@ -63,7 +62,7 @@ VantComponent({
       wx.nextTick(onClose);
     },
 
-    onTap(event: Weapp.Event) {
+    onTap(event: WechatMiniprogram.TouchEvent) {
       const { onClick } = this.data;
       if (onClick) {
         onClick(event.detail);

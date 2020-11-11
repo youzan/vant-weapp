@@ -40,7 +40,7 @@ VantComponent({
   },
 
   methods: {
-    onSelect(event: WechatMiniprogram.TapEvent) {
+    onSelect(event: WechatMiniprogram.TouchEvent) {
       const { index } = event.currentTarget.dataset;
       const item = this.data.actions[index];
       if (item && !item.disabled && !item.loading) {

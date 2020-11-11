@@ -1648,11 +1648,6 @@
     "@types/webpack-sources" "*"
     source-map "^0.6.0"
 
-"@types/wechat-miniprogram@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/@types/wechat-miniprogram/download/@types/wechat-miniprogram-3.0.0.tgz#401d0bf4f437dd9463e8ca99209e4742302d1e54"
-  integrity sha1-QB0L9PQ33ZRj6MqZIJ5HQjAtHlQ=
-
 "@typescript-eslint/eslint-plugin@^2.28.0":
   version "2.34.0"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-2.34.0.tgz?cache=0&sync_timestamp=1602523203775&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40typescript-eslint%2Feslint-plugin%2Fdownload%2F%40typescript-eslint%2Feslint-plugin-2.34.0.tgz#6f8ce8a46c7dea4a6f1d171d2bb8fbae6dac2be9"
@@ -8085,6 +8080,11 @@ minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
+
+miniprogram-api-typings@^3.1.6:
+  version "3.1.6"
+  resolved "https://registry.npm.taobao.org/miniprogram-api-typings/download/miniprogram-api-typings-3.1.6.tgz?cache=0&sync_timestamp=1604494894079&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminiprogram-api-typings%2Fdownload%2Fminiprogram-api-typings-3.1.6.tgz#d4fcb47d6dddc041205adbab9161010f459b9f33"
+  integrity sha1-1Py0fW3dwEEgWturkWEBD0WbnzM=
 
 miniprogram-ci@^1.0.27:
   version "1.0.83"

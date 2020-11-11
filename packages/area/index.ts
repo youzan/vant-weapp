@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { pickerProps } from '../picker/shared';
-import { Weapp } from 'definitions/weapp';
 import { requestAnimationFrame } from '../common/utils';
 
 type AreaItem = {
@@ -70,11 +69,11 @@ VantComponent({
       return this.picker;
     },
 
-    onCancel(event: Weapp.Event) {
+    onCancel(event: WechatMiniprogram.CustomEvent) {
       this.emit('cancel', event.detail);
     },
 
-    onConfirm(event: Weapp.Event) {
+    onConfirm(event: WechatMiniprogram.CustomEvent) {
       const { index } = event.detail;
       let { value } = event.detail;
       value = this.parseOutputValues(value);
@@ -103,7 +102,7 @@ VantComponent({
       });
     },
 
-    onChange(event: Weapp.Event) {
+    onChange(event: WechatMiniprogram.CustomEvent) {
       const { index, picker, value } = event.detail;
       this.code = value[index].code;
       this.setValues().then(() => {

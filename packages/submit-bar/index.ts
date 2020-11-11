@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 
 VantComponent({
   classes: ['bar-class', 'price-class', 'button-class'],
@@ -56,7 +55,7 @@ VantComponent({
       this.setData({ hasTip: typeof this.data.tip === 'string' });
     },
 
-    onSubmit(event: Weapp.Event) {
+    onSubmit(event: WechatMiniprogram.CustomEvent) {
       this.$emit('submit', event.detail);
     },
   },

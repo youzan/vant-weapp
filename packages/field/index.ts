@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 import { commonProps, inputProps, textareaProps } from './props';
 
 VantComponent({
@@ -59,7 +58,7 @@ VantComponent({
   },
 
   methods: {
-    onInput(event: Weapp.Event) {
+    onInput(event: WechatMiniprogram.Input | WechatMiniprogram.TextareaInput) {
       const { value = '' } = event.detail || {};
 
       this.value = value;
@@ -67,13 +66,17 @@ VantComponent({
       this.emitChange();
     },
 
-    onFocus(event: Weapp.Event) {
+    onFocus(
+      event: WechatMiniprogram.InputFocus | WechatMiniprogram.TextareaFocus
+    ) {
       this.focused = true;
       this.setShowClear();
       this.$emit('focus', event.detail);
     },
 
-    onBlur(event: Weapp.Event) {
+    onBlur(
+      event: WechatMiniprogram.InputBlur | WechatMiniprogram.TextareaBlur
+    ) {
       this.focused = false;
       this.setShowClear();
       this.$emit('blur', event.detail);
@@ -94,7 +97,9 @@ VantComponent({
       });
     },
 
-    onConfirm(event) {
+    onConfirm(
+      event: WechatMiniprogram.InputConfirm | WechatMiniprogram.TextareaConfirm
+    ) {
       const { value = '' } = event.detail || {};
       this.value = value;
       this.setShowClear();
@@ -112,11 +117,15 @@ VantComponent({
       this.emitChange();
     },
 
-    onLineChange(event) {
+    onLineChange(event: WechatMiniprogram.TextareaLineChange) {
       this.$emit('linechange', event.detail);
     },
 
-    onKeyboardHeightChange(event) {
+    onKeyboardHeightChange(
+      event:
+        | WechatMiniprogram.InputKeyboardHeightChange
+        | WechatMiniprogram.TextareaKeyboardHeightChange
+    ) {
       this.$emit('keyboardheightchange', event.detail);
     },
 

@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 import { canIUseModel } from '../common/version';
 
 VantComponent({
@@ -48,7 +47,7 @@ VantComponent({
   },
 
   methods: {
-    onChange(event: Weapp.Event) {
+    onChange(event: WechatMiniprogram.CustomEvent) {
       if (canIUseModel()) {
         this.setData({ value: event.detail });
       }
@@ -69,19 +68,19 @@ VantComponent({
       }, 200);
     },
 
-    onSearch(event) {
+    onSearch(event: WechatMiniprogram.CustomEvent) {
       this.$emit('search', event.detail);
     },
 
-    onFocus(event) {
+    onFocus(event: WechatMiniprogram.CustomEvent) {
       this.$emit('focus', event.detail);
     },
 
-    onBlur(event) {
+    onBlur(event: WechatMiniprogram.CustomEvent) {
       this.$emit('blur', event.detail);
     },
 
-    onClear(event) {
+    onClear(event: WechatMiniprogram.CustomEvent) {
       this.$emit('clear', event.detail);
     },
   },

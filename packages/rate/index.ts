@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { Weapp } from 'definitions/weapp';
 import { canIUseModel } from '../common/version';
 
 VantComponent({
@@ -60,7 +59,7 @@ VantComponent({
   },
 
   methods: {
-    onSelect(event: Weapp.Event) {
+    onSelect(event: WechatMiniprogram.CustomEvent) {
       const { data } = this;
       const { score } = event.currentTarget.dataset;
       if (!data.disabled && !data.readonly) {
@@ -77,7 +76,7 @@ VantComponent({
       }
     },
 
-    onTouchMove(event: Weapp.TouchEvent) {
+    onTouchMove(event: WechatMiniprogram.TouchEvent) {
       const { touchable } = this.data;
       if (!touchable) return;
 

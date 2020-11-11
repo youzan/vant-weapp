@@ -1,4 +1,3 @@
-import { Weapp } from 'definitions/weapp';
 import { VantComponent } from '../common/component';
 
 VantComponent({
@@ -50,7 +49,7 @@ VantComponent({
       this.$emit('cancel');
     },
 
-    onSelect(event: Weapp.Event) {
+    onSelect(event: WechatMiniprogram.CustomEvent) {
       this.$emit('select', event.detail);
     },
 

@@ -1,7 +1,7 @@
 export const basic = Behavior({
   methods: {
-    $emit(...args) {
-      this.triggerEvent(...args);
+    $emit(name, detail, options) {
+      this.triggerEvent(name, detail, options);
     },
     set(data, callback) {
       this.setData(data, callback);

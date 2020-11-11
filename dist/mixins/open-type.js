@@ -1,3 +1,4 @@
+// @ts-nocheck
 export const openType = Behavior({
   properties: {
     openType: String,

@@ -1,4 +1,4 @@
-/// <reference types="wechat-miniprogram" />
+/// <reference types="miniprogram-api-typings" />
 declare type ToastMessage = string | number;
 interface ToastOptions {
   show?: boolean;
@@ -18,32 +18,49 @@ interface ToastOptions {
 }
 declare function Toast(
   toastOptions: ToastOptions | ToastMessage
-): WechatMiniprogram.Component.TrivialInstance;
+):
+  | WechatMiniprogram.Component.Instance<
+      Record<string, any>,
+      Record<string, any>,
+      Record<string, any>,
+      Record<string, any>,
+      false
+    >
+  | undefined;
 declare namespace Toast {
   var loading: (
     options: string | number | ToastOptions
-  ) => WechatMiniprogram.Component.Instance<
-    Record<string, any>,
-    Record<string, any>,
-    Record<string, any>,
-    Record<string, any>
-  >;
+  ) =>
+    | WechatMiniprogram.Component.Instance<
+        Record<string, any>,
+        Record<string, any>,
+        Record<string, any>,
+        Record<string, any>,
+        false
+      >
+    | undefined;
   var success: (
     options: string | number | ToastOptions
-  ) => WechatMiniprogram.Component.Instance<
-    Record<string, any>,
-    Record<string, any>,
-    Record<string, any>,
-    Record<string, any>
-  >;
+  ) =>
+    | WechatMiniprogram.Component.Instance<
+        Record<string, any>,
+        Record<string, any>,
+        Record<string, any>,
+        Record<string, any>,
+        false
+      >
+    | undefined;
   var fail: (
     options: string | number | ToastOptions
-  ) => WechatMiniprogram.Component.Instance<
-    Record<string, any>,
-    Record<string, any>,
-    Record<string, any>,
-    Record<string, any>
-  >;
+  ) =>
+    | WechatMiniprogram.Component.Instance<
+        Record<string, any>,
+        Record<string, any>,
+        Record<string, any>,
+        Record<string, any>,
+        false
+      >
+    | undefined;
   var clear: () => void;
   var setDefaultOptions: (options: ToastOptions) => void;
   var resetDefaultOptions: () => void;

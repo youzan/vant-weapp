@@ -14,6 +14,9 @@ const defaultOptions = {
   onClose: () => {},
 };
 function parseOptions(message) {
+  if (message == null) {
+    return {};
+  }
   return typeof message === 'string' ? { message } : message;
 }
 function getContext() {

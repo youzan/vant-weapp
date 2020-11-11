@@ -33,6 +33,7 @@ VantComponent({
   mixins: [touch],
   data: {
     catchMove: false,
+    wrapperStyle: '',
   },
   created() {
     this.offset = 0;

@@ -80,7 +80,6 @@ VantComponent({
           deletable: isBoolean(item.deletable) ? item.deletable : true,
         })
       );
-      console.log(lists);
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
     getDetail(index) {
@@ -90,7 +89,7 @@ VantComponent({
       };
     },
     startUpload() {
-      const { maxCount, multiple, accept, lists, disabled } = this.data;
+      const { maxCount, multiple, lists, disabled } = this.data;
       if (disabled) return;
       chooseFile(
         Object.assign(Object.assign({}, this.data), {
@@ -98,7 +97,6 @@ VantComponent({
         })
       )
         .then((res) => {
-          console.log(res);
           this.onBeforeRead(multiple ? res : res[0]);
         })
         .catch((error) => {

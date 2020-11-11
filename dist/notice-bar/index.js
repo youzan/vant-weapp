@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { requestAnimationFrame } from '../common/utils';
+import { getRect, requestAnimationFrame } from '../common/utils';
 VantComponent({
   props: {
     text: {
@@ -64,8 +64,8 @@ VantComponent({
   methods: {
     init() {
       Promise.all([
-        this.getRect('.van-notice-bar__content'),
-        this.getRect('.van-notice-bar__wrap'),
+        getRect.call(this, '.van-notice-bar__content'),
+        getRect.call(this, '.van-notice-bar__wrap'),
       ]).then((rects) => {
         const [contentRect, wrapRect] = rects;
         if (
@@ -77,7 +77,7 @@ VantComponent({
           return;
         }
         const { speed, scrollable, delay } = this.data;
-        if (scrollable && wrapRect.width < contentRect.width) {
+        if (scrollable || wrapRect.width < contentRect.width) {
           const duration = (contentRect.width / speed) * 1000;
           this.wrapWidth = wrapRect.width;
           this.contentWidth = contentRect.width;

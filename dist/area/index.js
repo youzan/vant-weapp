@@ -110,7 +110,7 @@ VantComponent({
         code,
         name: list[code],
       }));
-      if (code) {
+      if (code != null) {
         // oversea code
         if (code[0] === '9' && type === 'city') {
           code = '9';

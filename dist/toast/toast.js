@@ -42,7 +42,7 @@ function Toast(toastOptions) {
   queue.push(toast);
   toast.setData(options);
   clearTimeout(toast.timer);
-  if (options.duration > 0) {
+  if (options.duration != null && options.duration > 0) {
     toast.timer = setTimeout(() => {
       toast.clear();
       queue = queue.filter((item) => item !== toast);

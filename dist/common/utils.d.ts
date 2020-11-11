@@ -1,4 +1,4 @@
-/// <reference types="wechat-miniprogram" />
+/// <reference types="miniprogram-api-typings" />
 export declare function isDef(value: any): boolean;
 export declare function isObj(x: any): boolean;
 export declare function range(num: number, min: number, max: number): number;

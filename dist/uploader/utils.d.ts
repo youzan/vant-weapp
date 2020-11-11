@@ -1,4 +1,4 @@
-interface File {
+export interface File {
   url: string;
   size?: number;
   name?: string;
@@ -28,5 +28,4 @@ export declare function chooseFile({
   sizeType: any;
   camera: any;
   maxCount: any;
-}): Promise<unknown>;
-export {};
+}): Promise<File | File[]>;

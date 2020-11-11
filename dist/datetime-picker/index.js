@@ -20,7 +20,6 @@ function times(n, iteratee) {
   return result;
 }
 function getTrueValue(formattedValue) {
-  if (!formattedValue) return;
   while (isNaN(parseInt(formattedValue, 10))) {
     formattedValue = formattedValue.slice(1);
   }
@@ -29,7 +28,7 @@ function getTrueValue(formattedValue) {
 function getMonthEndDay(year, month) {
   return 32 - new Date(year, month - 1, 32).getDate();
 }
-const defaultFormatter = (_, value) => value;
+const defaultFormatter = (type, value) => value;
 VantComponent({
   classes: ['active-class', 'toolbar-class', 'column-class'],
   props: Object.assign(Object.assign({}, pickerProps), {

@@ -8,7 +8,7 @@
     "outDir": "dist",
     "baseUrl": ".",
     "strict": true,
-    "lib": ["ES6"],
+    "lib": ["ESNext"],
     "types": ["miniprogram-api-typings"],
     "paths": {
       "definitions/*": ["./packages/definitions/*"],

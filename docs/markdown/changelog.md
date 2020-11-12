@@ -1,5 +1,13 @@
 # 更新日志
 
+### [1.6.1](https://github.com/youzan/vant-weapp/tree/v1.6.1)
+`2020-11-12`
+
+**Bug Fixes**
+
+- Field: 修复未传入 `label` 属性时仍渲染 label [#3756](https://github.com/youzan/vant-weapp/issues/3756)
+- Picker: 修复 confirm、cancel 事件报错 [#3755](https://github.com/youzan/vant-weapp/issues/3755)
+
 ### [1.6.0](https://github.com/youzan/vant-weapp/tree/v1.6.0)
 `2020-11-11`
 

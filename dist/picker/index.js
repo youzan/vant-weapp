@@ -40,6 +40,20 @@ VantComponent({
       );
       return Promise.all(stack);
     },
+    emit(event) {
+      const { type } = event.currentTarget.dataset;
+      if (this.simple) {
+        this.$emit(type, {
+          value: this.getColumnValue(0),
+          index: this.getColumnIndex(0),
+        });
+      } else {
+        this.$emit(type, {
+          value: this.getValues(),
+          index: this.getIndexes(),
+        });
+      }
+    },
     onChange(event) {
       if (this.simple) {
         this.$emit('change', {

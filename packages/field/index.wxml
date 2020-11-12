@@ -19,9 +19,7 @@
   <view wx:if="{{ label }}" class="label-class {{ utils.bem('field__label', { disabled }) }}" slot="title">
     {{ label }}
   </view>
-  <view wx:else slot="title" class="label-class">
-    <slot name="label" />
-  </view>
+  <slot wx:else name="label" slot="title" />
   <view class="{{ utils.bem('field__body', [type]) }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"

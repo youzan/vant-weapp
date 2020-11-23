@@ -233,8 +233,6 @@ VantComponent({
       ]).then(([rects = [], lineRect]) => {
         const rect = rects[currentIndex];
 
-        console.log(rects);
-
         if (rect == null) {
           return;
         }

@@ -225,13 +225,15 @@ VantComponent({
         return;
       }
 
-      const { currentIndex } = this.data;
+      const { currentIndex, ellipsis } = this.data;
 
       Promise.all([
         getAllRect.call(this, '.van-tab'),
         getRect.call(this, '.van-tabs__line'),
       ]).then(([rects = [], lineRect]) => {
         const rect = rects[currentIndex];
+
+        console.log(rects);
 
         if (rect == null) {
           return;
@@ -241,7 +243,8 @@ VantComponent({
           .slice(0, currentIndex)
           .reduce((prev, curr) => prev + curr.width, 0);
 
-        lineOffsetLeft += (rect.width - lineRect.width) / 2;
+        lineOffsetLeft +=
+          (rect.width - lineRect.width) / 2 + (ellipsis ? 0 : 8);
 
         this.setData({
           lineOffsetLeft,

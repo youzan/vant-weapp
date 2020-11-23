@@ -5,13 +5,16 @@
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  line-height: 1.2;
   white-space: nowrap;
   text-align: center;
   transform: translate(50%, -50%);
   transform-origin: 100%;
 
+  .theme(height, '@info-size');
   .theme(min-width, '@info-size');
   .theme(padding, '@info-padding');
   .theme(color, '@info-color');

@@ -27,6 +27,9 @@ function times(n: number, iteratee: (index: number) => string): string[] {
 }
 
 function getTrueValue(formattedValue: string) {
+  if (formattedValue === undefined) {
+    formattedValue = '1';
+  }
   while (isNaN(parseInt(formattedValue, 10))) {
     formattedValue = formattedValue.slice(1);
   }

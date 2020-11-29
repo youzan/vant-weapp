@@ -1,5 +1,23 @@
 # 更新日志
 
+### [1.6.2](https://github.com/youzan/vant-weapp/tree/v1.6.2)
+`2020-11-29`
+
+**Features**
+
+- Tabbar: 新增 `placeholder` `icon-prefix` 属性 ([#3792](https://github.com/youzan/vant-weapp/issues/3792))
+
+**Bug Fixes**
+
+- DatetimePicker: 修复 `type=year-month` 时选择出现报错 ([#3783](https://github.com/youzan/vant-weapp/issues/3783))
+- Info: 修复部分安卓设备中文案不完全居中 ([#3778](https://github.com/youzan/vant-weapp/issues/3778))
+- Tab: 修复 `ellipsis` 为 `false` 时下划线位置不正确 ([#3777](https://github.com/youzan/vant-weapp/issues/3777))
+- Notify: 修复组件未全局居中 ([#3751](https://github.com/youzan/vant-weapp/issues/3751))
+
+**Improvements**
+
+- Icon: 使用 wxs 优化性能 ([#3791](https://github.com/youzan/vant-weapp/issues/3791))
+
 ### [1.6.1](https://github.com/youzan/vant-weapp/tree/v1.6.1)
 `2020-11-12`
 
@@ -13,7 +31,7 @@
 
 **Features**
 
-- swipe-cell: 新增外部样式类 `custom-class` [#3678](https://github.com/youzan/vant-weapp/issues/3678)
+- SwipeCell: 新增外部样式类 `custom-class` [#3678](https://github.com/youzan/vant-weapp/issues/3678)
 - ActionSheet: 调整取消文字颜色至 @gray-7 [#3719](https://github.com/youzan/vant-weapp/issues/3719)
 - ActionSheet: 调整顶部栏样式 [#3720](https://github.com/youzan/vant-weapp/issues/3720)
 - ActionSheet: 调整加载图标大小至 22px [#3718](https://github.com/youzan/vant-weapp/issues/3718)

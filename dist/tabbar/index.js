@@ -1,3 +1,4 @@
+import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
 VantComponent({
   relation: {
@@ -28,6 +29,11 @@ VantComponent({
     fixed: {
       type: Boolean,
       value: true,
+      observer: 'setHeight',
+    },
+    placeholder: {
+      type: Boolean,
+      observer: 'setHeight',
     },
     border: {
       type: Boolean,
@@ -42,20 +48,26 @@ VantComponent({
       value: true,
     },
   },
+  data: {
+    height: 50,
+  },
   methods: {
     updateChildren() {
       const { children } = this;
       if (!Array.isArray(children) || !children.length) {
-        return Promise.resolve();
+        return;
       }
-      return Promise.all(children.map((child) => child.updateFromParent()));
+      children.forEach((child) => child.updateFromParent());
     },
-    onChange(child) {
-      const index = this.children.indexOf(child);
-      const active = child.data.name || index;
-      if (active !== this.data.active) {
-        this.$emit('change', active);
+    setHeight() {
+      if (!this.data.fixed || !this.data.placeholder) {
+        return;
       }
+      wx.nextTick(() => {
+        getRect.call(this, '.van-tabbar').then((res) => {
+          this.setData({ height: res.height });
+        });
+      });
     },
   },
 });

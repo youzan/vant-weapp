@@ -25,24 +25,24 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    width: @uploader-size;
-    height: @uploader-size;
-    margin: 0 @padding-xs @padding-xs 0;
-    background-color: @uploader-upload-background-color;
+    .theme(width, '@uploader-size');
+    .theme(height, '@uploader-size');
+    .theme(margin, '0 @padding-xs @padding-xs 0');
+    .theme(background-color, '@uploader-upload-background-color');
 
     &:active {
-      background-color: @uploader-upload-active-color;
+      .theme(background-color, '@uploader-upload-active-color');
     }
 
     &-icon {
-      color: @uploader-icon-color;
-      font-size: @uploader-icon-size;
+      .theme(color, '@uploader-icon-color');
+      .theme(font-size, '@uploader-icon-size');
     }
 
     &-text {
-      margin-top: @padding-xs;
-      color: @uploader-text-color;
-      font-size: @uploader-text-font-size;
+      .theme(margin-top, '@padding-xs');
+      .theme(color, '@uploader-text-color');
+      .theme(font-size, '@uploader-text-font-size');
     }
 
     &--disabled {
@@ -52,33 +52,33 @@
 
   &__preview {
     position: relative;
-    margin: 0 @padding-xs @padding-xs 0;
     cursor: pointer;
+    .theme(margin, '0 @padding-xs @padding-xs 0');
 
     &-image {
       display: block;
-      width: @uploader-size;
-      height: @uploader-size;
       overflow: hidden;
+      .theme(width, '@uploader-size');
+      .theme(height, '@uploader-size');
     }
 
     &-delete {
       position: absolute;
       top: 0;
       right: 0;
-      width: @uploader-delete-icon-size;
-      height: @uploader-delete-icon-size;
-      padding: 0 0 @padding-xs @padding-xs;
+      .theme(width, '@uploader-delete-icon-size');
+      .theme(height, '@uploader-delete-icon-size');
+      .theme(padding, '0 0 @padding-xs @padding-xs');
 
       &::after {
         position: absolute;
         top: 0;
         right: 0;
-        width: @uploader-delete-icon-size;
-        height: @uploader-delete-icon-size;
-        background-color: @uploader-delete-background-color;
-        border-radius: 0 0 0 @uploader-delete-icon-size - 2px;
         content: '';
+        .theme(width, '@uploader-delete-icon-size');
+        .theme(height, '@uploader-delete-icon-size');
+        .theme(background-color, '@uploader-delete-background-color');
+        .theme(border-radius, '0 0 0 calc(@uploader-delete-icon-size - 2px)');
       }
 
       &-icon {
@@ -86,9 +86,11 @@
         top: -2px;
         right: -2px;
         z-index: 1;
-        color: @uploader-delete-color;
-        font-size: 16px;
+        // font-size: 16px;
         transform: scale(0.5);
+        // .theme(font-size, 'calc(@uploader-delete-icon-size / 2 + 9px)');
+        .theme(font-size, 'calc(@uploader-delete-icon-size + 2px)');
+        .theme(color, '@uploader-delete-color');
       }
     }
   }
@@ -98,23 +100,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: @uploader-size;
-    height: @uploader-size;
-    background-color: @uploader-file-background-color;
+    .theme(width, '@uploader-size');
+    .theme(height, '@uploader-size');
+    .theme(background-color, '@uploader-file-background-color');
 
     &-icon {
-      color: @uploader-file-icon-color;
-      font-size: @uploader-file-icon-size;
+      .theme(color, '@uploader-file-icon-color');
+      .theme(font-size, '@uploader-file-icon-size');
     }
 
     &-name {
       box-sizing: border-box;
       width: 100%;
-      margin-top: @uploader-file-name-margin-top;
-      padding: @uploader-file-name-padding;
-      color: @uploader-file-name-text-color;
-      font-size: @uploader-file-name-font-size;
       text-align: center;
+      .theme(margin-top, '@uploader-file-name-margin-top');
+      .theme(padding, '@uploader-file-name-padding');
+      .theme(color, '@uploader-file-name-text-color');
+      .theme(font-size, '@uploader-file-name-font-size');
     }
   }
 
@@ -128,24 +130,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: @white;
-    background-color: @uploader-mask-background-color;
+    .theme(color, '@white');
+    .theme(background-color, '@uploader-mask-background-color');
 
     &-icon {
-      font-size: @uploader-mask-icon-size;
+      .theme(font-size, '@uploader-mask-icon-size');
     }
 
     &-message {
       margin-top: 6px;
-      padding: 0 @padding-base;
-      font-size: @uploader-mask-message-font-size;
-      line-height: @uploader-mask-message-line-height;
+      .theme(padding, '0 @padding-base');
+      .theme(font-size, '@uploader-mask-message-font-size');
+      .theme(line-height, '@uploader-mask-message-line-height');
     }
   }
 
   &__loading {
-    width: @uploader-loading-icon-size;
-    height: @uploader-loading-icon-size;
-    color: @uploader-loading-icon-color !important;
+    .theme(width, '@uploader-loading-icon-size');
+    .theme(height, '@uploader-loading-icon-size');
+    .theme(color, '@uploader-loading-icon-color !important');
   }
 }

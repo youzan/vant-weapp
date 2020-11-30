@@ -70,7 +70,7 @@ VantComponent({
       const { items, mainActiveIndex } = this.data;
       const { children = [] } = items[mainActiveIndex] || {};
 
-      return this.set({ subItems: children });
+      this.setData({ subItems: children });
     },
   },
 });

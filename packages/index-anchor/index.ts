@@ -1,3 +1,4 @@
+import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
 
 VantComponent({
@@ -20,18 +21,12 @@ VantComponent({
 
   methods: {
     scrollIntoView(scrollTop) {
-      this.getBoundingClientRect().then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          wx.pageScrollTo({
-            duration: 0,
-            scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
-          });
-        }
-      );
-    },
-
-    getBoundingClientRect() {
-      return this.getRect('.van-index-anchor-wrapper');
+      getRect.call(this, '.van-index-anchor-wrapper').then((rect) => {
+        wx.pageScrollTo({
+          duration: 0,
+          scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
+        });
+      });
     },
   },
 });

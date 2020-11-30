@@ -1,9 +1,8 @@
+import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { pageScrollMixin } from '../mixins/page-scroll';
 
 const ROOT_ELEMENT = '.van-sticky';
-
-type BoundingClientRect = WechatMiniprogram.BoundingClientRectCallbackResult;
 
 VantComponent({
   props: {
@@ -66,29 +65,30 @@ VantComponent({
       this.scrollTop = scrollTop || this.scrollTop;
 
       if (typeof container === 'function') {
-        Promise.all([this.getRect(ROOT_ELEMENT), this.getContainerRect()]).then(
-          ([root, container]: BoundingClientRect[]) => {
-            if (offsetTop + root.height > container.height + container.top) {
-              this.setDataAfterDiff({
-                fixed: false,
-                transform: container.height - root.height,
-              });
-            } else if (offsetTop >= root.top) {
-              this.setDataAfterDiff({
-                fixed: true,
-                height: root.height,
-                transform: 0,
-              });
-            } else {
-              this.setDataAfterDiff({ fixed: false, transform: 0 });
-            }
+        Promise.all([
+          getRect.call(this, ROOT_ELEMENT),
+          this.getContainerRect(),
+        ]).then(([root, container]) => {
+          if (offsetTop + root.height > container.height + container.top) {
+            this.setDataAfterDiff({
+              fixed: false,
+              transform: container.height - root.height,
+            });
+          } else if (offsetTop >= root.top) {
+            this.setDataAfterDiff({
+              fixed: true,
+              height: root.height,
+              transform: 0,
+            });
+          } else {
+            this.setDataAfterDiff({ fixed: false, transform: 0 });
           }
-        );
+        });
 
         return;
       }
 
-      this.getRect(ROOT_ELEMENT).then((root: BoundingClientRect) => {
+      getRect.call(this, ROOT_ELEMENT).then((root) => {
         if (offsetTop >= root.top) {
           this.setDataAfterDiff({ fixed: true, height: root.height });
           this.transform = 0;

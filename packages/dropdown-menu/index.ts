@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
+import { addUnit, getRect } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 let ARRAY: TrivialInstance[] = [];
@@ -101,23 +101,20 @@ VantComponent({
     getChildWrapperStyle() {
       const { zIndex, direction } = this.data;
 
-      return this.getRect('.van-dropdown-menu').then(
-        (rect: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-          const { top = 0, bottom = 0 } = rect;
-          const offset =
-            direction === 'down' ? bottom : this.windowHeight - top;
+      return getRect.call(this, '.van-dropdown-menu').then((rect) => {
+        const { top = 0, bottom = 0 } = rect;
+        const offset = direction === 'down' ? bottom : this.windowHeight - top;
 
-          let wrapperStyle = `z-index: ${zIndex};`;
+        let wrapperStyle = `z-index: ${zIndex};`;
 
-          if (direction === 'down') {
-            wrapperStyle += `top: ${addUnit(offset)};`;
-          } else {
-            wrapperStyle += `bottom: ${addUnit(offset)};`;
-          }
-
-          return wrapperStyle;
+        if (direction === 'down') {
+          wrapperStyle += `top: ${addUnit(offset)};`;
+        } else {
+          wrapperStyle += `bottom: ${addUnit(offset)};`;
         }
-      );
+
+        return wrapperStyle;
+      });
     },
 
     onTitleTap(event: WechatMiniprogram.TouchEvent) {

@@ -1,3 +1,4 @@
+import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
 
 VantComponent({
@@ -70,11 +71,9 @@ VantComponent({
 
     updateStyle(expanded: boolean) {
       const { inited } = this;
-      this.getRect('.van-collapse-item__content')
-        .then(
-          (rect: WechatMiniprogram.BoundingClientRectCallbackResult) =>
-            rect.height
-        )
+      getRect
+        .call(this, '.van-collapse-item__content')
+        .then((rect) => rect.height)
         .then((height: number) => {
           const { animation } = this;
 

@@ -58,10 +58,15 @@ VantComponent({
   },
 
   methods: {
+    getValue(value) {
+      if (maxlength >= 0) return value.slice(0, maxlength);
+      return value;
+    }
+    
     onInput(event: WechatMiniprogram.Input | WechatMiniprogram.TextareaInput) {
       const { value = '' } = event.detail || {};
 
-      this.value = value;
+      this.value = this.getValue(value);
       this.setShowClear();
       this.emitChange();
     },
@@ -107,7 +112,7 @@ VantComponent({
     },
 
     setValue(value) {
-      this.value = value;
+      this.value = this.getValue(value);
       this.setShowClear();
 
       if (value === '') {

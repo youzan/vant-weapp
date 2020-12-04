@@ -92,19 +92,22 @@ Dialog.confirm({
 设置`asyncClose`属性开启异步关闭，开启后可以手动调用`Dialog.close`方法关闭弹窗
 
 ```javascript
+const beforeClose = (action) => new Promise((resolve) => {
+  setTimeout(() => {
+    if (action === 'confirm') {
+      resolve(true);
+    } else {
+      // 拦截取消操作
+      resolve(false);
+    }
+  }, 1000);
+});
+
 Dialog.confirm({
   title: '标题',
   message: '弹窗内容'
-  asyncClose: true
-})
-  .then(() => {
-    setTimeout(() => {
-      Dialog.close();
-    }, 1000);
-  })
-  .catch(() => {
-    Dialog.close();
-  });
+  beforeClose
+});
 ```
 
 ### 组件调用
@@ -159,28 +162,28 @@ Page({
 
 通过函数调用 Dialog 时，支持传入以下选项：
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| title | 标题 | _string_ | - | - |
-| width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` | 1.0.0 |
-| message | 文本内容，支持通过`\n`换行 | _string_ | - | 1.0.0 |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 标题 | _string_ | - |
+| width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` |
+| message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
-| messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` | - |
-| zIndex | z-index 层级 | _number_ | `100` | - |
-| className | 自定义类名，dialog 在自定义组件内时无效 | _string_ | '' | - |
-| customStyle | 自定义样式 | _string_ | '' | - |
-| selector | 自定义选择器 | _string_ | `van-dialog` | - |
-| showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` | - |
-| showCancelButton | 是否展示取消按钮 | _boolean_ | `false` | - |
-| confirmButtonText | 确认按钮的文案 | _string_ | `确认` | - |
-| cancelButtonText | 取消按钮的文案 | _string_ | `取消` | - |
-| overlay | 是否展示遮罩层 | _boolean_ | `true` | - |
-| overlayStyle | 自定义遮罩层样式 | _object_ | - | 1.0.0 |
-| closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | _boolean_ | `false` | - |
-| asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | _boolean_ | `false` | - |
-| context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_ | 当前页面 | - |
-| transition | 动画名称，可选值为`fade` `none` | _string_ | `scale` | - |
-| confirmButtonOpenType | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | _string_ | - | - |
+| messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
+| zIndex | z-index 层级 | _number_ | `100` |
+| className | 自定义类名，dialog 在自定义组件内时无效 | _string_ | '' |
+| customStyle | 自定义样式 | _string_ | '' |
+| selector | 自定义选择器 | _string_ | `van-dialog` |
+| showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` |
+| showCancelButton | 是否展示取消按钮 | _boolean_ | `false` |
+| confirmButtonText | 确认按钮的文案 | _string_ | `确认` |
+| cancelButtonText | 取消按钮的文案 | _string_ | `取消` |
+| overlay | 是否展示遮罩层 | _boolean_ | `true` |
+| overlayStyle | 自定义遮罩层样式 | _object_ | - |
+| closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | _boolean_ | `false` |
+| asyncClose | 是否异步关闭弹窗，开启后需要手动控制弹窗的关闭 | _boolean_ | `false` |
+| context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_ | 当前页面 |
+| transition | 动画名称，可选值为`fade` `none` | _string_ | `scale` |
+| confirmButtonOpenType | 确认按钮的微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | _string_ | - |
 
 ### OpenType Options
 
@@ -205,7 +208,7 @@ Page({
 | --- | --- | --- | --- |
 | show | 是否显示弹窗 | _boolean_ | - |
 | title | 标题 | _string_ | - |
-| width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` | 1.0.0 |
+| width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
 | message-align | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |

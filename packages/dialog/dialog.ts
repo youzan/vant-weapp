@@ -1,4 +1,5 @@
 let queue: WechatMiniprogram.Component.TrivialInstance[] = [];
+export type Action = 'confirm' | 'cancel' | 'overlay';
 
 interface DialogOptions {
   lang?: string;
@@ -17,7 +18,11 @@ interface DialogOptions {
   className?: string;
   customStyle?: string;
   transition?: string;
+  /**
+   * @deprecated use beforeClose instead
+   */
   asyncClose?: boolean;
+  beforeClose?: null | (() => Promise<void> | void);
   businessId?: number;
   sessionFrom?: string;
   overlayStyle?: string;
@@ -46,6 +51,7 @@ const defaultOptions: DialogOptions = {
   selector: '#van-dialog',
   className: '',
   asyncClose: false,
+  beforeClose: null,
   transition: 'scale',
   customStyle: '',
   messageAlign: '',
@@ -81,8 +87,12 @@ const Dialog = (options: DialogOptions) => {
 
       if (dialog) {
         dialog.setData({
-          onCancel: reject,
-          onConfirm: resolve,
+          callback: (
+            action: Action,
+            instance: WechatMiniprogram.Component.TrivialInstance
+          ) => {
+            action === 'confirm' ? resolve(instance) : reject(instance);
+          },
           ...options,
         });
 

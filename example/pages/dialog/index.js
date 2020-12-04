@@ -52,19 +52,23 @@ Page({
   },
 
   onClickAsyncClose() {
+    const beforeClose = (action) =>
+      new Promise((resolve) => {
+        setTimeout(() => {
+          if (action === 'confirm') {
+            resolve(true);
+          } else {
+            // 拦截取消操作
+            resolve(false);
+          }
+        }, 1000);
+      });
+
     Dialog.confirm({
       title: '标题',
       message,
-      asyncClose: true,
-    })
-      .then(() => {
-        setTimeout(() => {
-          Dialog.close();
-        }, 1000);
-      })
-      .catch(() => {
-        Dialog.close();
-      });
+      beforeClose,
+    });
   },
 
   onClose() {

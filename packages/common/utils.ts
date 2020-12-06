@@ -1,4 +1,4 @@
-import { isNumber, isPlainObject } from './validator';
+import { isNumber, isPlainObject, isPromise } from './validator';
 
 export function isDef(value: any): boolean {
   return value !== undefined && value !== null;
@@ -95,4 +95,12 @@ export function getAllRect(
         .exec((rect = []) => resolve(rect[0]));
     }
   );
+}
+
+export function toPromise(promiseLike: Promise<unknown> | unknown) {
+  if (isPromise(promiseLike)) {
+    return promiseLike;
+  }
+
+  return Promise.resolve(promiseLike);
 }

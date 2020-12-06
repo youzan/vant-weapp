@@ -2,8 +2,8 @@ import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 import { GRAY, RED } from '../common/color';
-
-type Action = 'confirm' | 'cancel' | 'overlay';
+import { toPromise } from '../common/utils';
+import type { Action } from './dialog';
 
 VantComponent({
   mixins: [button, openType],
@@ -26,6 +26,7 @@ VantComponent({
     customStyle: String,
     asyncClose: Boolean,
     messageAlign: String,
+    beforeClose: null,
     overlayStyle: String,
     useTitleSlot: Boolean,
     showCancelButton: Boolean,
@@ -86,19 +87,16 @@ VantComponent({
       this.onClose('overlay');
     },
 
-    handleAction(action: Action) {
-      if (this.data.asyncClose) {
-        this.setData({
-          [`loading.${action}`]: true,
-        });
-      }
+    close(action) {
+      this.setData({ show: false });
 
-      this.onClose(action);
-    },
+      wx.nextTick(() => {
+        this.$emit('close', action);
 
-    close() {
-      this.setData({
-        show: false,
+        const { callback } = this.data;
+        if (callback) {
+          callback(action, this);
+        }
       });
     },
 
@@ -111,20 +109,27 @@ VantComponent({
       });
     },
 
-    onClose(action: Action) {
-      if (!this.data.asyncClose) {
-        this.close();
-      }
-      this.$emit('close', action);
-
-      // 把 dialog 实例传递出去，可以通过 stopLoading() 在外部关闭按钮的 loading
+    handleAction(action: Action) {
       this.$emit(action, { dialog: this });
 
-      const callback = this.data[
-        action === 'confirm' ? 'onConfirm' : 'onCancel'
-      ];
-      if (callback) {
-        callback(this);
+      const { asyncClose, beforeClose } = this.data;
+      if (!asyncClose && !beforeClose) {
+        this.close(action);
+        return;
+      }
+
+      this.setData({
+        [`loading.${action}`]: true,
+      });
+
+      if (beforeClose) {
+        toPromise(beforeClose(action)).then((value) => {
+          if (value) {
+            this.close(action);
+          } else {
+            this.stopLoading();
+          }
+        });
       }
     },
   },

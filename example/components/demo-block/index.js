@@ -1,8 +1,9 @@
 Component({
   properties: {
     title: String,
-    padding: Boolean
+    padding: Boolean,
+    card: Boolean,
   },
 
-  externalClasses: ['custom-class']
+  externalClasses: ['custom-class'],
 });

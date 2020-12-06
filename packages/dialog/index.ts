@@ -110,16 +110,17 @@ VantComponent({
     },
 
     handleAction(action: Action) {
+      this.$emit(action, { dialog: this });
+
       const { asyncClose, beforeClose } = this.data;
       if (!asyncClose && !beforeClose) {
         this.close(action);
+        return;
       }
 
       this.setData({
         [`loading.${action}`]: true,
       });
-
-      this.$emit(action, { dialog: this });
 
       if (beforeClose) {
         toPromise(beforeClose(action)).then((value) => {

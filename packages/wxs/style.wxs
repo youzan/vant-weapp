@@ -4,7 +4,7 @@ var object = require('./object.wxs');
 function style(styles) {
   return object.keys(styles)
     .filter(function (key) {
-      return styles[key];
+      return styles[key] != null;
     })
     .map(function (key) {
       return [key, [styles[key]]].join(':');

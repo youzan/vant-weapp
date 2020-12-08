@@ -1,13 +1,16 @@
 Component({
   properties: {
-    group: Object
+    group: Object,
   },
 
   methods: {
     onClick(event) {
-      wx.navigateTo({
-        url: event.target.dataset.url
-      });
-    }
-  }
+      const { url } = event.target.dataset;
+      if (getCurrentPages().length > 9) {
+        wx.redirectTo({ url });
+      } else {
+        wx.navigateTo({ url });
+      }
+    },
+  },
 });

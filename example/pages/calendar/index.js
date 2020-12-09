@@ -40,7 +40,7 @@ Page({
     this.setData({ showCalendar: false });
 
     this.setData({
-      [`date.${this.data.id}`]: event.detail
+      [`date.${this.data.id}`]: Array.isArray(event.detail) ? event.detail.map(date => date.valueOf()) : event.detail.valueOf()
     });
   },
 

@@ -1,9 +1,13 @@
 import { VantComponent } from '../common/component';
 import { BLUE } from '../common/color';
+import { getRect } from '../common/utils';
 VantComponent({
   props: {
     inactive: Boolean,
-    percentage: Number,
+    percentage: {
+      type: Number,
+      observer: 'setLeft',
+    },
     pivotText: String,
     pivotColor: String,
     trackColor: String,
@@ -22,6 +26,26 @@ VantComponent({
     strokeWidth: {
       type: null,
       value: 4,
+    },
+  },
+  data: {
+    right: 0,
+  },
+  mounted() {
+    this.setLeft();
+  },
+  methods: {
+    setLeft() {
+      Promise.all([
+        getRect.call(this, '.van-progress'),
+        getRect.call(this, '.van-progress__pivot'),
+      ]).then(([portion, pivot]) => {
+        if (portion && pivot) {
+          this.setData({
+            right: (pivot.width * (this.data.percentage - 100)) / 100,
+          });
+        }
+      });
     },
   },
 });

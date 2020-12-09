@@ -17,3 +17,6 @@ export declare function getAllRect(
   this: WechatMiniprogram.Component.TrivialInstance,
   selector: string
 ): Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]>;
+export declare function toPromise(
+  promiseLike: Promise<unknown> | unknown
+): Promise<unknown>;

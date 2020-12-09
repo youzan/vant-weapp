@@ -1,4 +1,5 @@
 /// <reference types="miniprogram-api-typings" />
+export declare type Action = 'confirm' | 'cancel' | 'overlay';
 interface DialogOptions {
   lang?: string;
   show?: boolean;
@@ -16,7 +17,11 @@ interface DialogOptions {
   className?: string;
   customStyle?: string;
   transition?: string;
+  /**
+   * @deprecated use beforeClose instead
+   */
   asyncClose?: boolean;
+  beforeClose?: null | (() => Promise<void> | void);
   businessId?: number;
   sessionFrom?: string;
   overlayStyle?: string;

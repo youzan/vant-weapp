@@ -1,3 +1,4 @@
+import { getAllRect } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { canIUseModel } from '../common/version';
 VantComponent({
@@ -72,7 +73,7 @@ VantComponent({
       const { touchable } = this.data;
       if (!touchable) return;
       const { clientX } = event.touches[0];
-      this.getRect('.van-rate__icon', true).then((list) => {
+      getAllRect.call(this, '.van-rate__icon').then((list) => {
         const target = list
           .sort((item) => item.right - item.left)
           .find((item) => clientX >= item.left && clientX <= item.right);

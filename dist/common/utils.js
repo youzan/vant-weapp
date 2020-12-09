@@ -1,4 +1,4 @@
-import { isNumber, isPlainObject } from './validator';
+import { isNumber, isPlainObject, isPromise } from './validator';
 export function isDef(value) {
   return value !== undefined && value !== null;
 }
@@ -69,4 +69,10 @@ export function getAllRect(selector) {
       .boundingClientRect()
       .exec((rect = []) => resolve(rect[0]));
   });
+}
+export function toPromise(promiseLike) {
+  if (isPromise(promiseLike)) {
+    return promiseLike;
+  }
+  return Promise.resolve(promiseLike);
 }

@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
+import { getRect } from '../common/utils';
 VantComponent({
   mixins: [touch],
   props: {
@@ -51,7 +52,7 @@ VantComponent({
       }
       this.touchMove(event);
       this.dragStatus = 'draging';
-      this.getRect('.van-slider').then((rect) => {
+      getRect.call(this, '.van-slider').then((rect) => {
         const diff = (this.deltaX / rect.width) * 100;
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
@@ -67,7 +68,7 @@ VantComponent({
     onClick(event) {
       if (this.data.disabled) return;
       const { min } = this.data;
-      this.getRect('.van-slider').then((rect) => {
+      getRect.call(this, '.van-slider').then((rect) => {
         const value =
           ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
         this.updateValue(value, true);

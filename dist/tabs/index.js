@@ -38,7 +38,7 @@ VantComponent({
     lineWidth: {
       type: [String, Number],
       value: 40,
-      observer: 'setLine',
+      observer: 'resize',
     },
     lineHeight: {
       type: [String, Number],
@@ -100,7 +100,7 @@ VantComponent({
   },
   mounted() {
     wx.nextTick(() => {
-      this.setLine(true);
+      this.resize(true);
       this.scrollIntoView();
     });
   },
@@ -174,7 +174,7 @@ VantComponent({
       const shouldEmitChange = data.currentIndex !== null;
       this.setData({ currentIndex });
       wx.nextTick(() => {
-        this.setLine();
+        this.resize();
         this.scrollIntoView();
         this.updateContainer();
         this.trigger('input');
@@ -189,7 +189,7 @@ VantComponent({
         return activeTab.getComputedName();
       }
     },
-    setLine(skipTransition = false) {
+    resize(skipTransition = false) {
       if (this.data.type !== 'line') {
         return;
       }

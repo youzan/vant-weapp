@@ -55,7 +55,9 @@ VantComponent({
       }
       wx.nextTick(() => {
         getRect.call(this, '.van-nav-bar').then((res) => {
-          this.setData({ height: res.height });
+          if (res && 'height' in res) {
+            this.setData({ height: res.height });
+          }
         });
       });
     },

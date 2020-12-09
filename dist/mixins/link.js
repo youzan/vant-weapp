@@ -10,7 +10,14 @@ export const link = Behavior({
     jumpLink(urlKey = 'url') {
       const url = this.data[urlKey];
       if (url) {
-        wx[this.data.linkType]({ url });
+        if (
+          this.data.linkType === 'navigateTo' &&
+          getCurrentPages().length > 9
+        ) {
+          wx.redirectTo({ url });
+        } else {
+          wx[this.data.linkType]({ url });
+        }
       }
     },
   },

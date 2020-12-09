@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
+import { addUnit, getRect } from '../common/utils';
 let ARRAY = [];
 VantComponent({
   field: true,
@@ -87,7 +87,7 @@ VantComponent({
     },
     getChildWrapperStyle() {
       const { zIndex, direction } = this.data;
-      return this.getRect('.van-dropdown-menu').then((rect) => {
+      return getRect.call(this, '.van-dropdown-menu').then((rect) => {
         const { top = 0, bottom = 0 } = rect;
         const offset = direction === 'down' ? bottom : this.windowHeight - top;
         let wrapperStyle = `z-index: ${zIndex};`;

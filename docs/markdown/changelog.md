@@ -1,71 +1,98 @@
 # 更新日志
 
+### [1.6.3](https://github.com/youzan/vant-weapp/tree/v1.6.3)
+
+`2020-12-09`
+
+**Features**
+
+- Dialog: 新增 `beforeClose` 属性 ([#3815](https://github.com/youzan/vant-weapp/pull/3815))
+- uploader: 新增若干 CSS 变量 ([#3797](https://github.com/youzan/vant-weapp/pull/3797))
+- Aarea: 支持不传入 `county_list` 数据 ([#3824](https://github.com/youzan/vant-weapp/pull/3824))
+- Tab: 新增 `resize` 方法 ([#3827](https://github.com/youzan/vant-weapp/pull/3827))
+
+**Improvements**
+
+- Collapse: 使用 animate 提升动画性能 ([#3826](https://github.com/youzan/vant-weapp/pull/3826))
+- Tab: 优化样式拼装性能 ([#3827](https://github.com/youzan/vant-weapp/pull/3827))
+
+**Bug Fixes**
+
+- Field: 修复输入中文时显示字数暂时超出 maxlength ([#3802](https://github.com/youzan/vant-weapp/pull/3802))
+- Info: 修复样式错误 ([#3823](https://github.com/youzan/vant-weapp/pull/3823))
+- NavBar: 修复动态渲染时组件报错 ([#3822](https://github.com/youzan/vant-weapp/pull/3822))
+- Progress: 修复 `percentage` 为 0 时样式异常 ([#3808](https://github.com/youzan/vant-weapp/pull/3808))
+
 ### [1.6.2](https://github.com/youzan/vant-weapp/tree/v1.6.2)
+
 `2020-11-29`
 
 **Features**
 
-- Tabbar: 新增 `placeholder` `icon-prefix` 属性 ([#3792](https://github.com/youzan/vant-weapp/issues/3792))
+- Tabbar: 新增 `placeholder` `icon-prefix` 属性 ([#3792](https://github.com/youzan/vant-weapp/pull/3792))
 
 **Bug Fixes**
 
-- DatetimePicker: 修复 `type=year-month` 时选择出现报错 ([#3783](https://github.com/youzan/vant-weapp/issues/3783))
-- Info: 修复部分安卓设备中文案不完全居中 ([#3778](https://github.com/youzan/vant-weapp/issues/3778))
-- Tab: 修复 `ellipsis` 为 `false` 时下划线位置不正确 ([#3777](https://github.com/youzan/vant-weapp/issues/3777))
-- Notify: 修复组件未全局居中 ([#3751](https://github.com/youzan/vant-weapp/issues/3751))
+- DatetimePicker: 修复 `type=year-month` 时选择出现报错 ([#3783](https://github.com/youzan/vant-weapp/pull/3783))
+- Info: 修复部分安卓设备中文案不完全居中 ([#3778](https://github.com/youzan/vant-weapp/pull/3778))
+- Tab: 修复 `ellipsis` 为 `false` 时下划线位置不正确 ([#3777](https://github.com/youzan/vant-weapp/pull/3777))
+- Notify: 修复组件未全局居中 ([#3751](https://github.com/youzan/vant-weapp/pull/3751))
 
 **Improvements**
 
-- Icon: 使用 wxs 优化性能 ([#3791](https://github.com/youzan/vant-weapp/issues/3791))
+- Icon: 使用 wxs 优化性能 ([#3791](https://github.com/youzan/vant-weapp/pull/3791))
 
 ### [1.6.1](https://github.com/youzan/vant-weapp/tree/v1.6.1)
+
 `2020-11-12`
 
 **Bug Fixes**
 
-- Field: 修复未传入 `label` 属性时仍渲染 label [#3756](https://github.com/youzan/vant-weapp/issues/3756)
-- Picker: 修复 confirm、cancel 事件报错 [#3755](https://github.com/youzan/vant-weapp/issues/3755)
+- Field: 修复未传入 `label` 属性时仍渲染 label [#3756](https://github.com/youzan/vant-weapp/pull/3756)
+- Picker: 修复 confirm、cancel 事件报错 [#3755](https://github.com/youzan/vant-weapp/pull/3755)
 
 ### [1.6.0](https://github.com/youzan/vant-weapp/tree/v1.6.0)
+
 `2020-11-11`
 
 **Features**
 
-- SwipeCell: 新增外部样式类 `custom-class` [#3678](https://github.com/youzan/vant-weapp/issues/3678)
-- ActionSheet: 调整取消文字颜色至 @gray-7 [#3719](https://github.com/youzan/vant-weapp/issues/3719)
-- ActionSheet: 调整顶部栏样式 [#3720](https://github.com/youzan/vant-weapp/issues/3720)
-- ActionSheet: 调整加载图标大小至 22px [#3718](https://github.com/youzan/vant-weapp/issues/3718)
-- ActionSheet: 调整描述文字样式 [#3726](https://github.com/youzan/vant-weapp/issues/3726)
-- Cell: 调整图标外边距至 4px [#3721](https://github.com/youzan/vant-weapp/issues/3721)
-- DropdownMenu: 增加默认阴影 [#3723](https://github.com/youzan/vant-weapp/issues/3723)
-- DropdownMenu: 调整选中态默认颜色至 #ee0a24 [#3725](https://github.com/youzan/vant-weapp/issues/3725)
-- Image: 调整图标大小至 36px [#3724](https://github.com/youzan/vant-weapp/issues/3724)
-- Popup: 调整圆角至 16px [#3713](https://github.com/youzan/vant-weapp/issues/3713)
-- Search: 调整左侧内边距至 12px [#3716](https://github.com/youzan/vant-weapp/issues/3716)
-- Sidebar: 调整宽度至 85px [#3722](https://github.com/youzan/vant-weapp/issues/3722)
-- TabbarItem: 调整图标大小至 22px [#3717](https://github.com/youzan/vant-weapp/issues/3717)
+- SwipeCell: 新增外部样式类 `custom-class` [#3678](https://github.com/youzan/vant-weapp/pull/3678)
+- ActionSheet: 调整取消文字颜色至 @gray-7 [#3719](https://github.com/youzan/vant-weapp/pull/3719)
+- ActionSheet: 调整顶部栏样式 [#3720](https://github.com/youzan/vant-weapp/pull/3720)
+- ActionSheet: 调整加载图标大小至 22px [#3718](https://github.com/youzan/vant-weapp/pull/3718)
+- ActionSheet: 调整描述文字样式 [#3726](https://github.com/youzan/vant-weapp/pull/3726)
+- Cell: 调整图标外边距至 4px [#3721](https://github.com/youzan/vant-weapp/pull/3721)
+- DropdownMenu: 增加默认阴影 [#3723](https://github.com/youzan/vant-weapp/pull/3723)
+- DropdownMenu: 调整选中态默认颜色至 #ee0a24 [#3725](https://github.com/youzan/vant-weapp/pull/3725)
+- Image: 调整图标大小至 36px [#3724](https://github.com/youzan/vant-weapp/pull/3724)
+- Popup: 调整圆角至 16px [#3713](https://github.com/youzan/vant-weapp/pull/3713)
+- Search: 调整左侧内边距至 12px [#3716](https://github.com/youzan/vant-weapp/pull/3716)
+- Sidebar: 调整宽度至 85px [#3722](https://github.com/youzan/vant-weapp/pull/3722)
+- TabbarItem: 调整图标大小至 22px [#3717](https://github.com/youzan/vant-weapp/pull/3717)
 
 **Bug Fixes**
 
-- Field: 修复使用 `label` 属性时 `label-class` 样式类不生效 [#3729](https://github.com/youzan/vant-weapp/issues/3729)
-- NoticeBar: 修复内容较短时开启 `scrollable` 不生效 [#3727](https://github.com/youzan/vant-weapp/issues/3727)
-- SidebarItem: 修复长数字不换行的问题 [#3714](https://github.com/youzan/vant-weapp/issues/3714)
-- Tag: 默认字体加入 miui [#3715](https://github.com/youzan/vant-weapp/issues/3715)
+- Field: 修复使用 `label` 属性时 `label-class` 样式类不生效 [#3729](https://github.com/youzan/vant-weapp/pull/3729)
+- NoticeBar: 修复内容较短时开启 `scrollable` 不生效 [#3727](https://github.com/youzan/vant-weapp/pull/3727)
+- SidebarItem: 修复长数字不换行的问题 [#3714](https://github.com/youzan/vant-weapp/pull/3714)
+- Tag: 默认字体加入 miui [#3715](https://github.com/youzan/vant-weapp/pull/3715)
 
 ### [1.5.2](https://github.com/youzan/vant-weapp/tree/v1.5.2)
+
 `2020-10-15`
 
 **Features**
 
-- Uploader: 标准化 file-list 与事件参数 [#3673](https://github.com/youzan/vant-weapp/issues/3673)
-- Uploader: 新增 thumb，支持缩略图展示 [#3673](https://github.com/youzan/vant-weapp/issues/3673)
-- GoodsAction: 新增若干 CSS 变量 [#3654](https://github.com/youzan/vant-weapp/issues/3654)
-- 移动 @types/wechat-miniprogram 至 dependencies [#3654](https://github.com/youzan/vant-weapp/issues/3674)
+- Uploader: 标准化 file-list 与事件参数 [#3673](https://github.com/youzan/vant-weapp/pull/3673)
+- Uploader: 新增 thumb，支持缩略图展示 [#3673](https://github.com/youzan/vant-weapp/pull/3673)
+- GoodsAction: 新增若干 CSS 变量 [#3654](https://github.com/youzan/vant-weapp/pull/3654)
+- 移动 @types/wechat-miniprogram 至 dependencies [#3654](https://github.com/youzan/vant-weapp/pull/3674)
 
 **Bug Fixes**
 
-- Button: 修复细边框样式问题 [#3653](https://github.com/youzan/vant-weapp/issues/3653)
-- Tab: 重构动画实现，不再使用 `transform` [#3668](https://github.com/youzan/vant-weapp/issues/3668)
+- Button: 修复细边框样式问题 [#3653](https://github.com/youzan/vant-weapp/pull/3653)
+- Tab: 重构动画实现，不再使用 `transform` [#3668](https://github.com/youzan/vant-weapp/pull/3668)
 
 ### [1.5.1](https://github.com/youzan/vant-weapp/tree/v1.5.1)
 
@@ -73,18 +100,18 @@
 
 **Features**
 
-- Card: 新增 `origin-price` `tag` 插槽 [#3645](https://github.com/youzan/vant-weapp/issues/3645)
-- ShareSheet: 调整默认 z-index 至 100 [#3575](https://github.com/youzan/vant-weapp/issues/3575)
-- ShareSheet: 新增 item 属性 openType [#3575](https://github.com/youzan/vant-weapp/issues/3575)
-- Uploader: 扩大删除按钮点击区域 [#3631](https://github.com/youzan/vant-weapp/issues/3631)
+- Card: 新增 `origin-price` `tag` 插槽 [#3645](https://github.com/youzan/vant-weapp/pull/3645)
+- ShareSheet: 调整默认 z-index 至 100 [#3575](https://github.com/youzan/vant-weapp/pull/3575)
+- ShareSheet: 新增 item 属性 openType [#3575](https://github.com/youzan/vant-weapp/pull/3575)
+- Uploader: 扩大删除按钮点击区域 [#3631](https://github.com/youzan/vant-weapp/pull/3631)
 
 **Bug Fixes**
 
-- Uploader: 支持预览视频 [#3594](https://github.com/youzan/vant-weapp/issues/3594)
-- Dialog: 调整类型定义 [#3630](https://github.com/youzan/vant-weapp/issues/3630)
-- NavBar: 修复 CSS 变量 --nav-bar-icon-color 不生效 [#3643](https://github.com/youzan/vant-weapp/issues/3643)
-- NavBar: 修复未设置 title 时样式异常 [#3643](https://github.com/youzan/vant-weapp/issues/3643)
-- Tab: 修复 line-width 属性不支持 string [#3628](https://github.com/youzan/vant-weapp/issues/3628)
+- Uploader: 支持预览视频 [#3594](https://github.com/youzan/vant-weapp/pull/3594)
+- Dialog: 调整类型定义 [#3630](https://github.com/youzan/vant-weapp/pull/3630)
+- NavBar: 修复 CSS 变量 --nav-bar-icon-color 不生效 [#3643](https://github.com/youzan/vant-weapp/pull/3643)
+- NavBar: 修复未设置 title 时样式异常 [#3643](https://github.com/youzan/vant-weapp/pull/3643)
+- Tab: 修复 line-width 属性不支持 string [#3628](https://github.com/youzan/vant-weapp/pull/3628)
 
 ### [1.5.0](https://github.com/youzan/vant-weapp/tree/v1.5.0)
 
@@ -92,18 +119,18 @@
 
 **Features**
 
-- ShareSheet: 新增组件 [#3559](https://github.com/youzan/vant-weapp/issues/3559)
-- Icons: 升级 @vant/icons 至 v1.2.5 [#3539](https://github.com/youzan/vant-weapp/issues/3539)
-- sidebar: 新增 badge 属性 [#3564](https://github.com/youzan/vant-weapp/issues/3564)
-- Tabs: 调整默认 line-width 至 40px [#3518](https://github.com/youzan/vant-weapp/issues/3518)
-- Tabs: 去除默认边框 [#3519](https://github.com/youzan/vant-weapp/issues/3519)
-- TreeSelect: 新增 selected-icon 属性 [#3565](https://github.com/youzan/vant-weapp/issues/3565)
-- TreeSelect: 支持 badge、dot 显示 [#3565](https://github.com/youzan/vant-weapp/issues/3565)
+- ShareSheet: 新增组件 [#3559](https://github.com/youzan/vant-weapp/pull/3559)
+- Icons: 升级 @vant/icons 至 v1.2.5 [#3539](https://github.com/youzan/vant-weapp/pull/3539)
+- sidebar: 新增 badge 属性 [#3564](https://github.com/youzan/vant-weapp/pull/3564)
+- Tabs: 调整默认 line-width 至 40px [#3518](https://github.com/youzan/vant-weapp/pull/3518)
+- Tabs: 去除默认边框 [#3519](https://github.com/youzan/vant-weapp/pull/3519)
+- TreeSelect: 新增 selected-icon 属性 [#3565](https://github.com/youzan/vant-weapp/pull/3565)
+- TreeSelect: 支持 badge、dot 显示 [#3565](https://github.com/youzan/vant-weapp/pull/3565)
 
 **Bug Fixes**
 
-- collapse: 修复嵌套在 popup 等组件中时默认展开无效 [#3562](https://github.com/youzan/vant-weapp/issues/3562)
-- empty: 修复 image、description 插槽不生效 [#3563](https://github.com/youzan/vant-weapp/issues/3563)
+- collapse: 修复嵌套在 popup 等组件中时默认展开无效 [#3562](https://github.com/youzan/vant-weapp/pull/3562)
+- empty: 修复 image、description 插槽不生效 [#3563](https://github.com/youzan/vant-weapp/pull/3563)
 
 ### [1.4.4](https://github.com/youzan/vant-weapp/tree/v1.4.4)
 

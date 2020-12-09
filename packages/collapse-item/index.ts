@@ -1,5 +1,5 @@
-import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
+import { setContentAnimate } from './animate';
 
 VantComponent({
   classes: ['title-class', 'content-class'],
@@ -32,23 +32,15 @@ VantComponent({
     expanded: false,
   },
 
-  created() {
-    this.animation = wx.createAnimation({
-      duration: 0,
-      timingFunction: 'ease-in-out',
-    });
-  },
-
   mounted() {
     this.updateExpanded();
-
-    this.inited = true;
+    this.mounted = true;
   },
 
   methods: {
     updateExpanded() {
       if (!this.parent) {
-        return Promise.resolve();
+        return;
       }
 
       const { value, accordion } = this.parent.data;
@@ -63,48 +55,10 @@ VantComponent({
         : (value || []).some((name: string | number) => name === currentName);
 
       if (expanded !== this.data.expanded) {
-        this.updateStyle(expanded);
+        setContentAnimate(this, expanded, this.mounted);
       }
 
       this.setData({ index, expanded });
-    },
-
-    updateStyle(expanded: boolean) {
-      const { inited } = this;
-      getRect
-        .call(this, '.van-collapse-item__content')
-        .then((rect) => rect.height)
-        .then((height: number) => {
-          const { animation } = this;
-
-          if (expanded) {
-            if (height === 0) {
-              animation.height('auto').top(1).step();
-            } else {
-              animation
-                .height(height)
-                .top(1)
-                .step({
-                  duration: inited ? 300 : 1,
-                })
-                .height('auto')
-                .step();
-            }
-
-            this.setData({
-              animation: animation.export(),
-            });
-            return;
-          }
-
-          animation.height(height).top(0).step({ duration: 1 }).height(0).step({
-            duration: 300,
-          });
-
-          this.setData({
-            animation: animation.export(),
-          });
-        });
     },
 
     onClick() {

@@ -1,34 +1,34 @@
 import { VantComponent } from '../common/component';
 
-type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
-
 VantComponent({
   relation: {
     name: 'collapse-item',
     type: 'descendant',
-    current: 'collapse'
+    current: 'collapse',
   },
 
   props: {
     value: {
       type: null,
-      observer: 'updateExpanded'
+      observer: 'updateExpanded',
     },
     accordion: {
       type: Boolean,
-      observer: 'updateExpanded'
+      observer: 'updateExpanded',
     },
     border: {
       type: Boolean,
-      value: true
-    }
+      value: true,
+    },
   },
 
   methods: {
     updateExpanded() {
-      this.children.forEach((child: TrivialInstance) => {
-        child.updateExpanded();
-      });
+      this.children.forEach(
+        (child: WechatMiniprogram.Component.TrivialInstance) => {
+          child.updateExpanded();
+        }
+      );
     },
 
     switch(name: string | number, expanded: boolean) {
@@ -38,8 +38,8 @@ VantComponent({
         name = expanded
           ? (value || []).concat(name)
           : (value || []).filter(
-            (activeName: string | number) => activeName !== name
-          );
+              (activeName: string | number) => activeName !== name
+            );
       } else {
         name = expanded ? name : '';
       }
@@ -52,6 +52,6 @@ VantComponent({
 
       this.$emit('change', name);
       this.$emit('input', name);
-    }
-  }
+    },
+  },
 });

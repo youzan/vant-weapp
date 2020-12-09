@@ -40,7 +40,7 @@ Page({
     this.setData({ showCalendar: false });
 
     this.setData({
-      [`date.${this.data.id}`]: event.detail
+      [`date.${this.data.id}`]: event.detail.valueOf()
     });
   },
 

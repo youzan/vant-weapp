@@ -46,6 +46,7 @@ npm i vant-weapp -S --production
   }
 }
 ```
+注意： 由于目前新版开发者工具创建的小程序目录文件结构问题，npm构建的文件目录为miniprogram_npm，并且开发工具会默认在当前目录下创建miniprogram_npm的文件名，所以新版本的miniprogramNpmDistDir配置为'./'即可
 
 ### 步骤四 构建 npm 包
 

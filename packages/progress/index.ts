@@ -41,8 +41,8 @@ VantComponent({
   methods: {
     setLeft() {
       Promise.all([
-        getRect.call(this, '.van-progress'),
-        getRect.call(this, '.van-progress__pivot'),
+        getRect(this, '.van-progress'),
+        getRect(this, '.van-progress__pivot'),
       ]).then(([portion, pivot]) => {
         if (portion && pivot) {
           this.setData({

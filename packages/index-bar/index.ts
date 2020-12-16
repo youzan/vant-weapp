@@ -108,7 +108,7 @@ VantComponent({
     },
 
     setListRect() {
-      return getRect.call(this, '.van-index-bar').then((rect) => {
+      return getRect(this, '.van-index-bar').then((rect) => {
         Object.assign(this, {
           height: rect.height,
           top: rect.top + this.scrollTop,
@@ -117,7 +117,7 @@ VantComponent({
     },
 
     setSiderbarRect() {
-      return getRect.call(this, '.van-index-bar__sidebar').then((res) => {
+      return getRect(this, '.van-index-bar__sidebar').then((res) => {
         this.sidebar = {
           height: res.height,
           top: res.top,

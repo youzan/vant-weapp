@@ -8,7 +8,7 @@ function getSafeArea() {
             wx.getSystemInfo({
                 success: ({ model, statusBarHeight }) => {
                     const deviceType = model.replace(/\s/g, '-');
-                    const iphoneNew = /iphone-x|iPhone11|iPhone12/i.test(deviceType);
+                    const iphoneNew = /iphone-x|iPhone11|iPhone12|iPhone13/i.test(deviceType);
                     cache = {
                         isIPhoneX: iphoneNew,
                         statusBarHeight

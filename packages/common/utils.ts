@@ -1,4 +1,5 @@
 import { isNumber, isPlainObject, isPromise } from './validator';
+import { canIUseGroupSetData } from './version';
 
 export function isDef(value: any): boolean {
   return value !== undefined && value !== null;
@@ -68,13 +69,13 @@ export function pickExclude(obj: unknown, keys: string[]) {
 }
 
 export function getRect(
-  this: WechatMiniprogram.Component.TrivialInstance,
+  context: WechatMiniprogram.Component.TrivialInstance,
   selector: string
 ) {
   return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult>(
     (resolve) => {
       wx.createSelectorQuery()
-        .in(this)
+        .in(context)
         .select(selector)
         .boundingClientRect()
         .exec((rect = []) => resolve(rect[0]));
@@ -83,18 +84,29 @@ export function getRect(
 }
 
 export function getAllRect(
-  this: WechatMiniprogram.Component.TrivialInstance,
+  context: WechatMiniprogram.Component.TrivialInstance,
   selector: string
 ) {
   return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]>(
     (resolve) => {
       wx.createSelectorQuery()
-        .in(this)
+        .in(context)
         .selectAll(selector)
         .boundingClientRect()
         .exec((rect = []) => resolve(rect[0]));
     }
   );
+}
+
+export function groupSetData(
+  context: WechatMiniprogram.Component.TrivialInstance,
+  cb: () => void
+) {
+  if (canIUseGroupSetData()) {
+    context.groupSetData(cb);
+  } else {
+    cb();
+  }
 }
 
 export function toPromise(promiseLike: Promise<unknown> | unknown) {

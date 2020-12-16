@@ -101,7 +101,7 @@ VantComponent({
     getChildWrapperStyle() {
       const { zIndex, direction } = this.data;
 
-      return getRect.call(this, '.van-dropdown-menu').then((rect) => {
+      return getRect(this, '.van-dropdown-menu').then((rect) => {
         const { top = 0, bottom = 0 } = rect;
         const offset = direction === 'down' ? bottom : this.windowHeight - top;
 

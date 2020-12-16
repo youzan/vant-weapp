@@ -61,7 +61,7 @@ VantComponent({
       this.touchMove(event);
       this.dragStatus = 'draging';
 
-      getRect.call(this, '.van-slider').then((rect) => {
+      getRect(this, '.van-slider').then((rect) => {
         const diff = (this.deltaX / rect.width) * this.data.max;
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
@@ -82,7 +82,7 @@ VantComponent({
 
       const { min } = this.data;
 
-      getRect.call(this, '.van-slider').then((rect) => {
+      getRect(this, '.van-slider').then((rect) => {
         const value =
           ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
         this.updateValue(value, true);

@@ -73,7 +73,7 @@ VantComponent({
       }
 
       wx.nextTick(() => {
-        getRect.call(this, '.van-tabbar').then((res) => {
+        getRect(this, '.van-tabbar').then((res) => {
           this.setData({ height: res.height });
         });
       });

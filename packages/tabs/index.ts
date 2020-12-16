@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { getAllRect, getRect, isDef } from '../common/utils';
+import { getAllRect, getRect, groupSetData, isDef } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
@@ -186,11 +186,13 @@ VantComponent({
         return;
       }
 
-      children.forEach((item: TrivialInstance, index: number) => {
-        const active = index === currentIndex;
-        if (active !== item.data.active || !item.inited) {
-          item.updateRender(active, this);
-        }
+      groupSetData(this, () => {
+        children.forEach((item: TrivialInstance, index: number) => {
+          const active = index === currentIndex;
+          if (active !== item.data.active || !item.inited) {
+            item.updateRender(active, this);
+          }
+        });
       });
 
       if (currentIndex === data.currentIndex) {
@@ -228,8 +230,8 @@ VantComponent({
       const { currentIndex, ellipsis } = this.data;
 
       Promise.all([
-        getAllRect.call(this, '.van-tab'),
-        getRect.call(this, '.van-tabs__line'),
+        getAllRect(this, '.van-tab'),
+        getRect(this, '.van-tabs__line'),
       ]).then(([rects = [], lineRect]) => {
         const rect = rects[currentIndex];
 
@@ -260,8 +262,8 @@ VantComponent({
       }
 
       Promise.all([
-        getAllRect.call(this, '.van-tab'),
-        getRect.call(this, '.van-tabs__nav'),
+        getAllRect(this, '.van-tab'),
+        getRect(this, '.van-tabs__nav'),
       ]).then(([tabRects, navRect]) => {
         const tabRect = tabRects[currentIndex];
         const offsetLeft = tabRects

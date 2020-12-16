@@ -83,7 +83,7 @@ VantComponent({
 
       const { clientX } = event.touches[0];
 
-      getAllRect.call(this, '.van-rate__icon').then((list) => {
+      getAllRect(this, '.van-rate__icon').then((list) => {
         const target = list
           .sort((item) => item.right - item.left)
           .find((item) => clientX >= item.left && clientX <= item.right);

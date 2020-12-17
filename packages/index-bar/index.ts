@@ -97,7 +97,7 @@ VantComponent({
       return Promise.all(
         this.children.map(
           (anchor: WechatMiniprogram.Component.TrivialInstance) =>
-            getRect.call(anchor, '.van-index-anchor-wrapper').then((rect) => {
+            getRect(anchor, '.van-index-anchor-wrapper').then((rect) => {
               Object.assign(anchor, {
                 height: rect.height,
                 top: rect.top + this.scrollTop,
@@ -140,7 +140,7 @@ VantComponent({
     },
 
     getAnchorRect(anchor) {
-      return getRect.call(anchor, '.van-index-anchor-wrapper').then((rect) => ({
+      return getRect(anchor, '.van-index-anchor-wrapper').then((rect) => ({
         height: rect.height,
         top: rect.top,
       }));

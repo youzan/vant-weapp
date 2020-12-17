@@ -1,5 +1,6 @@
 // @ts-nocheck
-import { isObj, requestAnimationFrame } from '../common/utils';
+import { requestAnimationFrame } from '../common/utils';
+import { isObj } from '../common/validator';
 
 const getClassNames = (name: string) => ({
   enter: `van-${name}-enter van-${name}-enter-active enter-class enter-active-class`,

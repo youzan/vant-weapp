@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { getAllRect, getRect, groupSetData, isDef } from '../common/utils';
+import { getAllRect, getRect, groupSetData } from '../common/utils';
+import { isDef } from '../common/validator';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 

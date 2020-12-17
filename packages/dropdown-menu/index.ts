@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { addUnit, getRect } from '../common/utils';
+import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 let ARRAY: TrivialInstance[] = [];
@@ -59,7 +59,7 @@ VantComponent({
   },
 
   beforeCreate() {
-    const { windowHeight } = wx.getSystemInfoSync();
+    const { windowHeight } = getSystemInfoSync();
     this.windowHeight = windowHeight;
     ARRAY.push(this);
   },

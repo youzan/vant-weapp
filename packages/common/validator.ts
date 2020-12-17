@@ -10,7 +10,7 @@ export function isPromise<T = unknown>(val: unknown): val is Promise<T> {
   return isPlainObject(val) && isFunction(val.then) && isFunction(val.catch);
 }
 
-export function isDef(value: any): boolean {
+export function isDef(value: unknown): boolean {
   return value !== undefined && value !== null;
 }
 

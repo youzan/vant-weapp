@@ -1,5 +1,4 @@
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   relation: {
@@ -45,19 +44,6 @@ VantComponent({
       type: String,
       observer: 'updateChildren',
     },
-  },
-
-  data: {
-    viewStyle: '',
-  },
-
-  created() {
-    const { gutter } = this.data;
-    if (gutter) {
-      this.setData({
-        viewStyle: `padding-left: ${addUnit(gutter)}`,
-      });
-    }
   },
 
   methods: {

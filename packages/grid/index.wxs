@@ -2,13 +2,12 @@
 var style = require('../wxs/style.wxs');
 var addUnit = require('../wxs/add-unit.wxs');
 
-function barStyle(barHeight, activeColor) {
+function rootStyle(data) {
   return style({
-    height: addUnit(barHeight),
-    background: activeColor,
+    'padding-left': addUnit(data.gutter),
   });
 }
 
 module.exports = {
-  barStyle: barStyle,
+  rootStyle: rootStyle,
 };

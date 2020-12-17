@@ -1,10 +1,9 @@
-<wxs src="../wxs/utils.wxs" module="utils" />
-<wxs src="./computed.wxs" module="computed" />
+<wxs src="./index.wxs" module="computed" />
 
 <view
   class="{{ computed.rootClass({ classPrefix, name }) }}"
   style="{{ computed.rootStyle({ customStyle, color, size }) }}"
-  bind:tap="onClick"
+  bindtap="onClick"
 >
   <van-info
     wx:if="{{ info !== null || dot }}"

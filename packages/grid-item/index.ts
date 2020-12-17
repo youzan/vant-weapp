@@ -1,6 +1,5 @@
 import { link } from '../mixins/link';
 import { VantComponent } from '../common/component';
-import { addUnit } from '../common/utils';
 
 VantComponent({
   relation: {
@@ -48,40 +47,8 @@ VantComponent({
         direction,
         iconSize,
       } = data;
-      const width = `${100 / columnNum}%`;
-
-      const styleWrapper: string[] = [];
-      styleWrapper.push(`width: ${width}`);
-
-      if (square) {
-        styleWrapper.push(`padding-top: ${width}`);
-      }
-
-      if (gutter) {
-        const gutterValue = addUnit(gutter);
-        styleWrapper.push(`padding-right: ${gutterValue}`);
-
-        const index = children.indexOf(this);
-        if (index >= columnNum && !square) {
-          styleWrapper.push(`margin-top: ${gutterValue}`);
-        }
-      }
-
-      let contentStyle = '';
-
-      if (square && gutter) {
-        const gutterValue = addUnit(gutter);
-
-        contentStyle = `
-          right: ${gutterValue};
-          bottom: ${gutterValue};
-          height: auto;
-        `;
-      }
 
       this.setData({
-        viewStyle: styleWrapper.join('; '),
-        contentStyle,
         center,
         border,
         square,
@@ -89,6 +56,8 @@ VantComponent({
         clickable,
         direction,
         iconSize,
+        index: children.indexOf(this),
+        columnNum,
       });
     },
 

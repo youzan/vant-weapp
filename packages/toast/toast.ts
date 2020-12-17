@@ -1,4 +1,4 @@
-import { isObj } from '../common/utils';
+import { isObj } from '../common/validator';
 
 type ToastMessage = string | number;
 

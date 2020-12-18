@@ -1,14 +1,18 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData } from './version';
+import { canIUseGroupSetData, canIUseNextTick } from './version';
 
 export function range(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
 }
 
-export function nextTick(fn: Function) {
-  setTimeout(() => {
-    fn();
-  }, 1000 / 30);
+export function nextTick(cb: (...args: any[]) => void) {
+  if (canIUseNextTick()) {
+    wx.nextTick(cb);
+  } else {
+    setTimeout(() => {
+      cb();
+    }, 1000 / 30);
+  }
 }
 
 let systemInfo: WechatMiniprogram.GetSystemInfoSyncResult;

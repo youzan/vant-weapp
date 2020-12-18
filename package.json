@@ -49,7 +49,7 @@
     "@vant/cli": "^1.0.3",
     "@vant/doc": "^2.5.5",
     "@vant/eslint-config": "^2.2.2",
-    "@vant/icons": "1.3.2",
+    "@vant/icons": "1.5.0",
     "@vant/markdown-loader": "^2.3.0",
     "@vant/stylelint-config": "^1.3.0",
     "autoprefixer": "^10.0.0",

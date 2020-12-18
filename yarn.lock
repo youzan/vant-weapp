@@ -1718,10 +1718,10 @@
     eslint-plugin-import "^2.20.2"
     eslint-plugin-vue "^6.2.2"
 
-"@vant/icons@1.3.2":
-  version "1.3.2"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.3.2.tgz#f0930010e7aaa9b06b03636fe9b5bc6477ea224b"
-  integrity sha1-8JMAEOeqqbBrA2Nv6bW8ZHfqIks=
+"@vant/icons@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.0.tgz?cache=0&sync_timestamp=1608190068028&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Ficons%2Fdownload%2F%40vant%2Ficons-1.5.0.tgz#ce78a2f055a1a4099129bb6c44d54584f3740e27"
+  integrity sha1-znii8FWhpAmRKbtsRNVFhPN0Dic=
 
 "@vant/markdown-loader@^2.3.0":
   version "2.3.0"

@@ -1,6 +1,13 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { getAllRect, getRect, isDef } from '../common/utils';
+import {
+  getAllRect,
+  getRect,
+  groupSetData,
+  nextTick,
+  requestAnimationFrame,
+} from '../common/utils';
+import { isDef } from '../common/validator';
 VantComponent({
   mixins: [touch],
   classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
@@ -89,27 +96,23 @@ VantComponent({
   },
   data: {
     tabs: [],
-    lineStyle: '',
     scrollLeft: 0,
     scrollable: false,
-    trackStyle: '',
     currentIndex: 0,
     container: null,
     skipTransition: true,
     lineOffsetLeft: 0,
   },
   mounted() {
-    wx.nextTick(() => {
+    requestAnimationFrame(() => {
+      this.setData({
+        container: () => this.createSelectorQuery().select('.van-tabs'),
+      });
       this.resize(true);
       this.scrollIntoView();
     });
   },
   methods: {
-    updateContainer() {
-      this.setData({
-        container: () => this.createSelectorQuery().select('.van-tabs'),
-      });
-    },
     updateTabs() {
       const { children = [], data } = this;
       this.setData({
@@ -117,7 +120,7 @@ VantComponent({
         scrollable:
           this.children.length > data.swipeThreshold || !data.ellipsis,
       });
-      this.setCurrentIndexByName(this.getCurrentName() || data.active);
+      this.setCurrentIndexByName(data.active || this.getCurrentName());
     },
     trigger(eventName, child) {
       const { currentIndex } = this.data;
@@ -138,7 +141,7 @@ VantComponent({
         this.trigger('disabled', child);
       } else {
         this.setCurrentIndex(index);
-        wx.nextTick(() => {
+        nextTick(() => {
           this.trigger('click');
         });
       }
@@ -162,21 +165,22 @@ VantComponent({
       ) {
         return;
       }
-      children.forEach((item, index) => {
-        const active = index === currentIndex;
-        if (active !== item.data.active || !item.inited) {
-          item.updateRender(active, this);
-        }
+      groupSetData(this, () => {
+        children.forEach((item, index) => {
+          const active = index === currentIndex;
+          if (active !== item.data.active || !item.inited) {
+            item.updateRender(active, this);
+          }
+        });
       });
       if (currentIndex === data.currentIndex) {
         return;
       }
       const shouldEmitChange = data.currentIndex !== null;
       this.setData({ currentIndex });
-      wx.nextTick(() => {
+      nextTick(() => {
         this.resize();
         this.scrollIntoView();
-        this.updateContainer();
         this.trigger('input');
         if (shouldEmitChange) {
           this.trigger('change');
@@ -195,8 +199,8 @@ VantComponent({
       }
       const { currentIndex, ellipsis } = this.data;
       Promise.all([
-        getAllRect.call(this, '.van-tab'),
-        getRect.call(this, '.van-tabs__line'),
+        getAllRect(this, '.van-tab'),
+        getRect(this, '.van-tabs__line'),
       ]).then(([rects = [], lineRect]) => {
         const rect = rects[currentIndex];
         if (rect == null) {
@@ -220,8 +224,8 @@ VantComponent({
         return;
       }
       Promise.all([
-        getAllRect.call(this, '.van-tab'),
-        getRect.call(this, '.van-tabs__nav'),
+        getAllRect(this, '.van-tab'),
+        getRect(this, '.van-tabs__nav'),
       ]).then(([tabRects, navRect]) => {
         const tabRect = tabRects[currentIndex];
         const offsetLeft = tabRects

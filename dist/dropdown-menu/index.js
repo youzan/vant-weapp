@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { addUnit, getRect } from '../common/utils';
+import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
 let ARRAY = [];
 VantComponent({
   field: true,
@@ -52,7 +52,7 @@ VantComponent({
     itemListData: [],
   },
   beforeCreate() {
-    const { windowHeight } = wx.getSystemInfoSync();
+    const { windowHeight } = getSystemInfoSync();
     this.windowHeight = windowHeight;
     ARRAY.push(this);
   },
@@ -87,7 +87,7 @@ VantComponent({
     },
     getChildWrapperStyle() {
       const { zIndex, direction } = this.data;
-      return getRect.call(this, '.van-dropdown-menu').then((rect) => {
+      return getRect(this, '.van-dropdown-menu').then((rect) => {
         const { top = 0, bottom = 0 } = rect;
         const offset = direction === 'down' ? bottom : this.windowHeight - top;
         let wrapperStyle = `z-index: ${zIndex};`;

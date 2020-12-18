@@ -1,14 +1,15 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
+<wxs src="./index.wxs" module="computed" />
 
 <view
-  style="{{ viewStyle }}"
+  style="{{ computed.rootStyle({ width, height, radius }) }}"
   class="custom-class {{ utils.bem('image', { round })}}"
   bind:tap="onClick"
 >
   <image
     wx:if="{{ !error }}"
     src="{{ src }}"
-    mode="{{ mode }}"
+    mode="{{ computed.mode(fit) }}"
     lazy-load="{{ lazyLoad }}"
     class="image-class van-image__img"
     show-menu-by-longpress="{{ showMenuByLongpress }}"

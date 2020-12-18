@@ -57,7 +57,7 @@ VantComponent({
       this.scrollTop = scrollTop || this.scrollTop;
       if (typeof container === 'function') {
         Promise.all([
-          getRect.call(this, ROOT_ELEMENT),
+          getRect(this, ROOT_ELEMENT),
           this.getContainerRect(),
         ]).then(([root, container]) => {
           if (offsetTop + root.height > container.height + container.top) {
@@ -77,7 +77,7 @@ VantComponent({
         });
         return;
       }
-      getRect.call(this, ROOT_ELEMENT).then((root) => {
+      getRect(this, ROOT_ELEMENT).then((root) => {
         if (offsetTop >= root.top) {
           this.setDataAfterDiff({ fixed: true, height: root.height });
           this.transform = 0;

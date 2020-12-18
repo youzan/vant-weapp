@@ -64,8 +64,8 @@ VantComponent({
   methods: {
     init() {
       Promise.all([
-        getRect.call(this, '.van-notice-bar__content'),
-        getRect.call(this, '.van-notice-bar__wrap'),
+        getRect(this, '.van-notice-bar__content'),
+        getRect(this, '.van-notice-bar__wrap'),
       ]).then((rects) => {
         const [contentRect, wrapRect] = rects;
         if (

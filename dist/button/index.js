@@ -45,28 +45,7 @@ VantComponent({
       type: String,
       value: '20px',
     },
-    color: {
-      type: String,
-      observer(color) {
-        let style = '';
-        if (color) {
-          style += `color: ${this.data.plain ? color : 'white'};`;
-          if (!this.data.plain) {
-            // Use background instead of backgroundColor to make linear-gradient work
-            style += `background: ${color};`;
-          }
-          // hide border when color is linear-gradient
-          if (color.indexOf('gradient') !== -1) {
-            style += 'border: 0;';
-          } else {
-            style += `border-color: ${color};`;
-          }
-        }
-        if (style !== this.data.baseStyle) {
-          this.setData({ baseStyle: style });
-        }
-      },
-    },
+    color: String,
   },
   methods: {
     onClick() {

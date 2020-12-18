@@ -1,22 +1,24 @@
 /// <reference types="miniprogram-api-typings" />
-export declare function isDef(value: any): boolean;
-export declare function isObj(x: any): boolean;
 export declare function range(num: number, min: number, max: number): number;
-export declare function nextTick(fn: Function): void;
+export declare function nextTick(cb: (...args: any[]) => void): void;
 export declare function getSystemInfoSync(): WechatMiniprogram.GetSystemInfoSyncResult;
 export declare function addUnit(value?: string | number): string | undefined;
 export declare function requestAnimationFrame(
-  cb: Function
-): void | WechatMiniprogram.NodesRef;
+  cb: () => void
+): number | WechatMiniprogram.NodesRef;
 export declare function pickExclude(obj: unknown, keys: string[]): {};
 export declare function getRect(
-  this: WechatMiniprogram.Component.TrivialInstance,
+  context: WechatMiniprogram.Component.TrivialInstance,
   selector: string
 ): Promise<WechatMiniprogram.BoundingClientRectCallbackResult>;
 export declare function getAllRect(
-  this: WechatMiniprogram.Component.TrivialInstance,
+  context: WechatMiniprogram.Component.TrivialInstance,
   selector: string
 ): Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]>;
+export declare function groupSetData(
+  context: WechatMiniprogram.Component.TrivialInstance,
+  cb: () => void
+): void;
 export declare function toPromise(
   promiseLike: Promise<unknown> | unknown
 ): Promise<unknown>;

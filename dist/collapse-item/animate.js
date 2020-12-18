@@ -60,8 +60,7 @@ function useAnimation(context, expanded, mounted, height) {
   });
 }
 export function setContentAnimate(context, expanded, mounted) {
-  getRect
-    .call(context, '.van-collapse-item__content')
+  getRect(context, '.van-collapse-item__content')
     .then((rect) => rect.height)
     .then((height) => {
       canIUseAnimate()

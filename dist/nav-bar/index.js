@@ -54,7 +54,7 @@ VantComponent({
         return;
       }
       wx.nextTick(() => {
-        getRect.call(this, '.van-nav-bar').then((res) => {
+        getRect(this, '.van-nav-bar').then((res) => {
           if (res && 'height' in res) {
             this.setData({ height: res.height });
           }

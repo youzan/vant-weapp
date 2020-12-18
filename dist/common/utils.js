@@ -1,18 +1,16 @@
-import { isNumber, isPlainObject, isPromise } from './validator';
-export function isDef(value) {
-  return value !== undefined && value !== null;
-}
-export function isObj(x) {
-  const type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
-}
+import { isDef, isNumber, isPlainObject, isPromise } from './validator';
+import { canIUseGroupSetData, canIUseNextTick } from './version';
 export function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
-export function nextTick(fn) {
-  setTimeout(() => {
-    fn();
-  }, 1000 / 30);
+export function nextTick(cb) {
+  if (canIUseNextTick()) {
+    wx.nextTick(cb);
+  } else {
+    setTimeout(() => {
+      cb();
+    }, 1000 / 30);
+  }
 }
 let systemInfo;
 export function getSystemInfoSync() {
@@ -31,7 +29,9 @@ export function addUnit(value) {
 export function requestAnimationFrame(cb) {
   const systemInfo = getSystemInfoSync();
   if (systemInfo.platform === 'devtools') {
-    return nextTick(cb);
+    return setTimeout(() => {
+      cb();
+    }, 1000 / 30);
   }
   return wx
     .createSelectorQuery()
@@ -52,23 +52,30 @@ export function pickExclude(obj, keys) {
     return prev;
   }, {});
 }
-export function getRect(selector) {
+export function getRect(context, selector) {
   return new Promise((resolve) => {
     wx.createSelectorQuery()
-      .in(this)
+      .in(context)
       .select(selector)
       .boundingClientRect()
       .exec((rect = []) => resolve(rect[0]));
   });
 }
-export function getAllRect(selector) {
+export function getAllRect(context, selector) {
   return new Promise((resolve) => {
     wx.createSelectorQuery()
-      .in(this)
+      .in(context)
       .selectAll(selector)
       .boundingClientRect()
       .exec((rect = []) => resolve(rect[0]));
   });
+}
+export function groupSetData(context, cb) {
+  if (canIUseGroupSetData()) {
+    context.groupSetData(cb);
+  } else {
+    cb();
+  }
 }
 export function toPromise(promiseLike) {
   if (isPromise(promiseLike)) {

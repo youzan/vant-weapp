@@ -1,7 +1,8 @@
 import { VantComponent } from '../common/component';
-import { isObj } from '../common/utils';
 import { BLUE, WHITE } from '../common/color';
 import { adaptor } from './canvas';
+import { isObj } from '../common/validator';
+import { getSystemInfoSync } from '../common/utils';
 function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
 }
@@ -68,7 +69,7 @@ VantComponent({
         const ctx = wx.createCanvasContext('van-circle', this);
         return Promise.resolve(ctx);
       }
-      const dpr = wx.getSystemInfoSync().pixelRatio;
+      const dpr = getSystemInfoSync().pixelRatio;
       return new Promise((resolve) => {
         wx.createSelectorQuery()
           .in(this)

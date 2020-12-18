@@ -33,11 +33,13 @@ export function addUnit(value?: string | number): string | undefined {
   return isNumber(value) ? `${value}px` : value;
 }
 
-export function requestAnimationFrame(cb: Function) {
+export function requestAnimationFrame(cb: () => void) {
   const systemInfo = getSystemInfoSync();
 
   if (systemInfo.platform === 'devtools') {
-    return nextTick(cb);
+    return setTimeout(() => {
+      cb();
+    }, 1000 / 30);
   }
 
   return wx

@@ -1,5 +1,26 @@
 # 更新日志
 
+### [1.6.4](https://github.com/youzan/vant-weapp/tree/v1.6.4)
+
+`2020-12-18`
+
+**Improvements**
+
+- Tab: 优化粘性布局时的渲染性能 ([#3875](https://github.com/youzan/vant-weapp/pull/3875))
+- Grid: 使用 wxs 优化性能 ([#3839](https://github.com/youzan/vant-weapp/pull/3868))
+- Image: 使用 wxs 优化性能 ([#3839](https://github.com/youzan/vant-weapp/pull/3868))
+- Button: 使用 wxs 优化性能 ([#3839](https://github.com/youzan/vant-weapp/pull/3839))
+- Icon: 减少代码体积 ([#3839](https://github.com/youzan/vant-weapp/pull/3868))
+- Checkbox: 减少代码体积 ([#3839](https://github.com/youzan/vant-weapp/pull/3868))
+- Slider: 减少代码体积 ([#3839](https://github.com/youzan/vant-weapp/pull/3868))
+
+**Bug Fixes**
+
+- Calendar: 修复在 phone 设备上选择日期后显示错误 ([#3833](https://github.com/youzan/vant-weapp/pull/3833))
+- GoodsAction: 修复部分设备上高度异常 ([#3865](https://github.com/youzan/vant-weapp/pull/3865))
+- Slider: 修复设置 `max` `min` 时滑动不均匀 ([#3876](https://github.com/youzan/vant-weapp/pull/3876))
+- Tab: 修复切换时内容区闪烁的问题 ([#3866](https://github.com/youzan/vant-weapp/pull/3866))
+
 ### [1.6.3](https://github.com/youzan/vant-weapp/tree/v1.6.3)
 
 `2020-12-09`

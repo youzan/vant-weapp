@@ -83,8 +83,7 @@ export function setContentAnimate(
   expanded: boolean,
   mounted: boolean
 ) {
-  getRect
-    .call(context, '.van-collapse-item__content')
+  getRect(context, '.van-collapse-item__content')
     .then((rect) => rect.height)
     .then((height: number) => {
       canIUseAnimate()

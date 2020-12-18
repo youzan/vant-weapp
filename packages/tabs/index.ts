@@ -1,6 +1,12 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
-import { getAllRect, getRect, groupSetData } from '../common/utils';
+import {
+  getAllRect,
+  getRect,
+  groupSetData,
+  nextTick,
+  requestAnimationFrame,
+} from '../common/utils';
 import { isDef } from '../common/validator';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
@@ -99,10 +105,8 @@ VantComponent({
 
   data: {
     tabs: [] as Record<string, unknown>[],
-    lineStyle: '',
     scrollLeft: 0,
     scrollable: false,
-    trackStyle: '',
     currentIndex: 0,
     container: null,
     skipTransition: true,
@@ -110,19 +114,17 @@ VantComponent({
   },
 
   mounted() {
-    wx.nextTick(() => {
+    requestAnimationFrame(() => {
+      this.setData({
+        container: () => this.createSelectorQuery().select('.van-tabs'),
+      });
+
       this.resize(true);
       this.scrollIntoView();
     });
   },
 
   methods: {
-    updateContainer() {
-      this.setData({
-        container: () => this.createSelectorQuery().select('.van-tabs'),
-      });
-    },
-
     updateTabs() {
       const { children = [], data } = this;
       this.setData({
@@ -158,7 +160,7 @@ VantComponent({
         this.trigger('disabled', child);
       } else {
         this.setCurrentIndex(index);
-        wx.nextTick(() => {
+        nextTick(() => {
           this.trigger('click');
         });
       }
@@ -203,10 +205,9 @@ VantComponent({
       const shouldEmitChange = data.currentIndex !== null;
       this.setData({ currentIndex });
 
-      wx.nextTick(() => {
+      nextTick(() => {
         this.resize();
         this.scrollIntoView();
-        this.updateContainer();
 
         this.trigger('input');
         if (shouldEmitChange) {

@@ -47,7 +47,13 @@ Dialog.alert({
 
 用于确认消息，包含取消和确认按钮
 
+```html
+<van-dialog id="van-dialog" />
+```
+
 ```javascript
+import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+
 Dialog.confirm({
   title: '标题',
   message: '弹窗内容',
@@ -91,7 +97,13 @@ Dialog.alert({
 
 通过 `beforeClose` 属性可以传入一个回调函数，在弹窗关闭前进行特定操作。
 
+```html
+<van-dialog id="van-dialog" />
+```
+
 ```javascript
+import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+
 const beforeClose = (action) => new Promise((resolve) => {
   setTimeout(() => {
     if (action === 'confirm') {

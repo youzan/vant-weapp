@@ -131,7 +131,7 @@ VantComponent({
           this.children.length > data.swipeThreshold || !data.ellipsis,
       });
 
-      this.setCurrentIndexByName(this.getCurrentName() || data.active);
+      this.setCurrentIndexByName(data.active || this.getCurrentName());
     },
 
     trigger(eventName: string, child?: TrivialInstance) {

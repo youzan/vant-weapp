@@ -62,7 +62,7 @@ VantComponent({
       this.dragStatus = 'draging';
 
       getRect(this, '.van-slider').then((rect) => {
-        const diff = (this.deltaX / rect.width) * this.data.max;
+        const diff = (this.deltaX / rect.width) * this.getRange();
         this.newValue = this.startValue + diff;
         this.updateValue(this.newValue, false, true);
       });

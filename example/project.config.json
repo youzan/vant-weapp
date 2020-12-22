@@ -48,12 +48,6 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
@@ -390,6 +384,17 @@
           "name": "share-sheet",
           "pathName": "pages/share-sheet/index",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "col",
+          "pathName": "pages/col/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "divider",
+          "pathName": "pages/divider/index",
           "scene": null
         }
       ]

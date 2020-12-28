@@ -84,7 +84,7 @@ VantComponent({
     },
 
     onClickOverlay() {
-      this.onClose('overlay');
+      this.close('overlay');
     },
 
     close(action) {

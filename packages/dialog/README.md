@@ -232,7 +232,7 @@ Page({
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮的文案 | _string_ | `确认` |
 | cancel-button-text | 取消按钮的文案 | _string_ | `取消` |
-| confirm-button-color | 确认按钮的字体颜色 | _string_ | `#1989fa` |
+| confirm-button-color | 确认按钮的字体颜色 | _string_ | `#ee0a24` |
 | cancel-button-color | 取消按钮的字体颜色 | _string_ | `#333` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
 | overlay-style | 自定义遮罩层样式 | _object_ | - | 1.0.0 |

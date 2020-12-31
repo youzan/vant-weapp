@@ -1,11 +1,8 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 
 VantComponent({
-  relation: {
-    name: 'collapse-item',
-    type: 'descendant',
-    current: 'collapse',
-  },
+  relation: useChildren('collapse-item'),
 
   props: {
     value: {
@@ -24,11 +21,9 @@ VantComponent({
 
   methods: {
     updateExpanded() {
-      this.children.forEach(
-        (child: WechatMiniprogram.Component.TrivialInstance) => {
-          child.updateExpanded();
-        }
-      );
+      this.children.forEach((child) => {
+        child.updateExpanded();
+      });
     },
 
     switch(name: string | number, expanded: boolean) {

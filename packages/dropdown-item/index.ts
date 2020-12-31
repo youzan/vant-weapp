@@ -1,17 +1,13 @@
+import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 import { Option } from './shared';
 
 VantComponent({
   field: true,
 
-  relation: {
-    name: 'dropdown-menu',
-    type: 'ancestor',
-    current: 'dropdown-item',
-    linked() {
-      this.updateDataFromParent();
-    },
-  },
+  relation: useParent('dropdown-menu', function () {
+    this.updateDataFromParent();
+  }),
 
   props: {
     value: {
@@ -45,7 +41,7 @@ VantComponent({
   methods: {
     rerender() {
       wx.nextTick(() => {
-        this.parent && this.parent.updateItemListData();
+        this.parent?.updateItemListData();
       });
     },
 
@@ -118,7 +114,7 @@ VantComponent({
       });
 
       if (show) {
-        this.parent.getChildWrapperStyle().then((wrapperStyle: string) => {
+        this.parent?.getChildWrapperStyle().then((wrapperStyle: string) => {
           this.setData({ wrapperStyle, showWrapper: true });
           this.rerender();
         });

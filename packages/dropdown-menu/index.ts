@@ -1,23 +1,15 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
 
-type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
-let ARRAY: TrivialInstance[] = [];
+let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
 
 VantComponent({
   field: true,
 
-  relation: {
-    name: 'dropdown-item',
-    type: 'descendant',
-    current: 'dropdown-menu',
-    linked() {
-      this.updateItemListData();
-    },
-    unlinked() {
-      this.updateItemListData();
-    },
-  },
+  relation: useChildren('dropdown-item', function () {
+    this.updateItemListData();
+  }),
 
   props: {
     activeColor: {
@@ -55,7 +47,7 @@ VantComponent({
   },
 
   data: {
-    itemListData: [],
+    itemListData: [] as Record<string, unknown>[],
   },
 
   beforeCreate() {
@@ -71,18 +63,18 @@ VantComponent({
   methods: {
     updateItemListData() {
       this.setData({
-        itemListData: this.children.map((child: TrivialInstance) => child.data),
+        itemListData: this.children.map((child) => child.data),
       });
     },
 
     updateChildrenData() {
-      this.children.forEach((child: TrivialInstance) => {
+      this.children.forEach((child) => {
         child.updateDataFromParent();
       });
     },
 
     toggleItem(active: number) {
-      this.children.forEach((item: TrivialInstance, index: number) => {
+      this.children.forEach((item, index) => {
         const { showPopup } = item.data;
         if (index === active) {
           item.toggle();
@@ -93,7 +85,7 @@ VantComponent({
     },
 
     close() {
-      this.children.forEach((child: TrivialInstance) => {
+      this.children.forEach((child) => {
         child.toggle(false, { immediate: true });
       });
     },

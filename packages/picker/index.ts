@@ -151,13 +151,11 @@ VantComponent({
 
     // get values of all columns
     getValues() {
-      return this.children.map(
-        (child: WechatMiniprogram.Component.TrivialInstance) => child.getValue()
-      );
+      return this.children.map((child) => child.getValue());
     },
 
     // set values of all columns
-    setValues(values: []) {
+    setValues(values: any[]) {
       const stack = values.map((value, index) =>
         this.setColumnValue(index, value)
       );
@@ -166,10 +164,7 @@ VantComponent({
 
     // get indexes of all columns
     getIndexes() {
-      return this.children.map(
-        (child: WechatMiniprogram.Component.TrivialInstance) =>
-          child.data.currentIndex
-      );
+      return this.children.map((child) => child.data.currentIndex);
     },
 
     // set indexes of all columns

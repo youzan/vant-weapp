@@ -1,13 +1,10 @@
 import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
 
 VantComponent({
   field: true,
 
-  relation: {
-    name: 'radio-group',
-    type: 'ancestor',
-    current: 'radio',
-  },
+  relation: useParent('radio-group'),
 
   classes: ['icon-class', 'label-class'],
 

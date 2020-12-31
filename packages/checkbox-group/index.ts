@@ -1,3 +1,4 @@
+import { useChildren } from '../common/relation';
 import { VantComponent } from '../common/component';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
@@ -5,14 +6,9 @@ type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 VantComponent({
   field: true,
 
-  relation: {
-    name: 'checkbox',
-    type: 'descendant',
-    current: 'checkbox-group',
-    linked(target) {
-      this.updateChild(target);
-    },
-  },
+  relation: useChildren('checkbox', function (target) {
+    this.updateChild(target);
+  }),
 
   props: {
     max: Number,
@@ -28,9 +24,7 @@ VantComponent({
 
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child: TrivialInstance) =>
-        this.updateChild(child)
-      );
+      this.children.forEach((child) => this.updateChild(child));
     },
 
     updateChild(child: TrivialInstance) {

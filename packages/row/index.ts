@@ -1,18 +1,14 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 
 VantComponent({
-  relation: {
-    name: 'col',
-    type: 'descendant',
-    current: 'row',
-    linked(target) {
-      const { gutter } = this.data;
+  relation: useChildren('col', function (target) {
+    const { gutter } = this.data;
 
-      if (gutter) {
-        target.setData({ gutter });
-      }
-    },
-  },
+    if (gutter) {
+      target.setData({ gutter });
+    }
+  }),
 
   props: {
     gutter: {
@@ -23,8 +19,8 @@ VantComponent({
 
   methods: {
     setGutter() {
-      this.getRelationNodes('../col/index').forEach((col) => {
-        col.setData(this.data.gutter);
+      this.children.forEach((col) => {
+        col.setData(this.data);
       });
     },
   },

@@ -1,11 +1,8 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 
 VantComponent({
-  relation: {
-    name: 'grid-item',
-    type: 'descendant',
-    current: 'grid',
-  },
+  relation: useChildren('grid-item'),
 
   props: {
     square: {
@@ -13,7 +10,7 @@ VantComponent({
       observer: 'updateChildren',
     },
     gutter: {
-      type: [Number, String],
+      type: null,
       value: 0,
       observer: 'updateChildren',
     },
@@ -48,11 +45,9 @@ VantComponent({
 
   methods: {
     updateChildren() {
-      this.children.forEach(
-        (child: WechatMiniprogram.Component.TrivialInstance) => {
-          child.updateStyle();
-        }
-      );
+      this.children.forEach((child) => {
+        child.updateStyle();
+      });
     },
   },
 });

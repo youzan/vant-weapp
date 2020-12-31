@@ -1,5 +1,6 @@
 import { GREEN } from '../common/color';
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 import { getRect } from '../common/utils';
 import { pageScrollMixin } from '../mixins/page-scroll';
 
@@ -15,17 +16,9 @@ const indexList = () => {
 };
 
 VantComponent({
-  relation: {
-    name: 'index-anchor',
-    type: 'descendant',
-    current: 'index-bar',
-    linked() {
-      this.updateData();
-    },
-    unlinked() {
-      this.updateData();
-    },
-  },
+  relation: useChildren('index-anchor', function () {
+    this.updateData();
+  }),
 
   props: {
     sticky: {
@@ -95,14 +88,13 @@ VantComponent({
 
     setAnchorsRect() {
       return Promise.all(
-        this.children.map(
-          (anchor: WechatMiniprogram.Component.TrivialInstance) =>
-            getRect(anchor, '.van-index-anchor-wrapper').then((rect) => {
-              Object.assign(anchor, {
-                height: rect.height,
-                top: rect.top + this.scrollTop,
-              });
-            })
+        this.children.map((anchor) =>
+          getRect(anchor, '.van-index-anchor-wrapper').then((rect) => {
+            Object.assign(anchor, {
+              height: rect.height,
+              top: rect.top + this.scrollTop,
+            });
+          })
         )
       );
     },
@@ -287,8 +279,7 @@ VantComponent({
       this.scrollToAnchorIndex = index;
 
       const anchor = this.children.find(
-        (item: WechatMiniprogram.Component.TrivialInstance) =>
-          item.data.index === this.data.indexList[index]
+        (item) => item.data.index === this.data.indexList[index]
       );
 
       if (anchor) {

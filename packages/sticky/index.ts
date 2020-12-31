@@ -122,8 +122,8 @@ VantComponent({
     getContainerRect() {
       const nodesRef: WechatMiniprogram.NodesRef = this.data.container();
 
-      return new Promise((resolve) =>
-        nodesRef.boundingClientRect(resolve).exec()
+      return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult>(
+        (resolve) => nodesRef.boundingClientRect(resolve).exec()
       );
     },
   },

@@ -1,14 +1,11 @@
 import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
 import { setContentAnimate } from './animate';
 
 VantComponent({
   classes: ['title-class', 'content-class'],
 
-  relation: {
-    name: 'collapse',
-    type: 'ancestor',
-    current: 'collapse-item',
-  },
+  relation: useParent('collapse'),
 
   props: {
     name: null,

@@ -90,7 +90,7 @@ VantComponent({
         if (target != null) {
           this.onSelect({
             ...event,
-            currentTarget: target,
+            currentTarget: (target as unknown) as WechatMiniprogram.Target,
           });
         }
       });

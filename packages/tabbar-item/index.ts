@@ -1,4 +1,5 @@
 import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
 
 VantComponent({
   props: {
@@ -12,14 +13,12 @@ VantComponent({
     },
   },
 
-  relation: {
-    name: 'tabbar',
-    type: 'ancestor',
-    current: 'tabbar-item',
-  },
+  relation: useParent('tabbar'),
 
   data: {
     active: false,
+    activeColor: '',
+    inactiveColor: '',
   },
 
   methods: {

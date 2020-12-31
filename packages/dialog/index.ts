@@ -72,6 +72,10 @@ VantComponent({
       confirm: false,
       cancel: false,
     },
+    callback: ((() => {}) as unknown) as (
+      action: string,
+      context: WechatMiniprogram.Component.TrivialInstance
+    ) => {},
   },
 
   methods: {

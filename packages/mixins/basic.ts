@@ -3,13 +3,13 @@ export const basic = Behavior({
     $emit(
       name: string,
       detail?: Record<string, unknown>,
-      options?: Record<string, unknown>
+      options?: WechatMiniprogram.Component.TriggerEventOption
     ) {
       this.triggerEvent(name, detail, options);
     },
 
-    set(data: object, callback: () => void) {
-      this.setData(data, callback);
+    set(data: Record<string, unknown>) {
+      this.setData(data);
 
       return new Promise((resolve) => wx.nextTick(resolve));
     },

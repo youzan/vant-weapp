@@ -1,19 +1,15 @@
+import { getCurrentPage } from '../common/utils';
+
 type IPageScrollOption = WechatMiniprogram.Page.IPageScrollOption;
 type Scroller = (
   this: WechatMiniprogram.Component.TrivialInstance,
   event?: IPageScrollOption
 ) => void;
-type TrivialInstance = WechatMiniprogram.Page.TrivialInstance & {
-  vanPageScroller?: Scroller[];
-};
-
-function getCurrentPage(): TrivialInstance {
-  const pages = getCurrentPages();
-  return pages[pages.length - 1] || ({} as TrivialInstance);
-}
 
 function onPageScroll(event?: IPageScrollOption) {
-  const { vanPageScroller = [] } = getCurrentPage();
+  const { vanPageScroller = [] } = getCurrentPage<{
+    vanPageScroller: Scroller[];
+  }>();
 
   vanPageScroller.forEach((scroller: Scroller) => {
     if (typeof scroller === 'function') {
@@ -26,7 +22,7 @@ function onPageScroll(event?: IPageScrollOption) {
 export const pageScrollMixin = (scroller: Scroller) =>
   Behavior({
     attached() {
-      const page = getCurrentPage();
+      const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
 
       if (Array.isArray(page.vanPageScroller)) {
         page.vanPageScroller.push(scroller.bind(this));
@@ -41,9 +37,8 @@ export const pageScrollMixin = (scroller: Scroller) =>
     },
 
     detached() {
-      const page = getCurrentPage();
-      page.vanPageScroller = (page.vanPageScroller || []).filter(
-        (item) => item !== scroller
-      );
+      const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
+      page.vanPageScroller =
+        page.vanPageScroller?.filter((item) => item !== scroller) || [];
     },
   });

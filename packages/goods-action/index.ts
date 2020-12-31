@@ -1,36 +1,17 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 
 VantComponent({
-  relation: {
-    type: 'descendant',
-    name: 'goods-action-button',
-    current: 'goods-action',
-    linked() {
-      this.updateStyle();
-    },
-    unlinked() {
-      this.updateStyle();
-    },
-    linkChanged() {
-      this.updateStyle();
-    },
-  },
+  relation: useChildren('goods-action-button', function () {
+    this.children.forEach((item) => {
+      item.updateStyle();
+    });
+  }),
+
   props: {
     safeAreaInsetBottom: {
       type: Boolean,
       value: true,
-    },
-  },
-
-  methods: {
-    updateStyle() {
-      wx.nextTick(() => {
-        this.children.forEach(
-          (child: WechatMiniprogram.Component.TrivialInstance) => {
-            child.updateStyle();
-          }
-        );
-      });
     },
   },
 });

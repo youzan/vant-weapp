@@ -1,17 +1,10 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 
 VantComponent({
-  relation: {
-    name: 'sidebar-item',
-    type: 'descendant',
-    current: 'sidebar',
-    linked() {
-      this.setActive(this.data.activeKey);
-    },
-    unlinked() {
-      this.setActive(this.data.activeKey);
-    },
-  },
+  relation: useChildren('sidebar-item', function () {
+    this.setActive(this.data.activeKey);
+  }),
 
   props: {
     activeKey: {

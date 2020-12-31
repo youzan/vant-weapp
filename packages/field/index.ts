@@ -18,7 +18,7 @@ VantComponent({
     isLink: Boolean,
     leftIcon: String,
     rightIcon: String,
-    autosize: [Boolean, Object],
+    autosize: null,
     required: Boolean,
     iconClass: String,
     clickable: Boolean,

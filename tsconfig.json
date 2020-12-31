@@ -11,8 +11,7 @@
     "lib": ["ESNext"],
     "types": ["miniprogram-api-typings"],
     "paths": {
-      "definitions/*": ["./packages/definitions/*"],
-      "packages/*": ["./packages/*"]
+      "definitions/*": ["./packages/definitions/*"]
     },
     "skipLibCheck": true
   },

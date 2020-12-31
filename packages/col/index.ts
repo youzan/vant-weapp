@@ -1,11 +1,8 @@
+import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 
 VantComponent({
-  relation: {
-    name: 'row',
-    type: 'ancestor',
-    current: 'col',
-  },
+  relation: useParent('row'),
 
   props: {
     span: Number,

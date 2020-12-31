@@ -31,6 +31,9 @@ VantComponent({
 
   data: {
     show: false,
+    onOpened: (null as unknown) as () => void,
+    onClose: (null as unknown) as () => void,
+    onClick: (null as unknown) as (detail: Record<string, null>) => void,
   },
 
   created() {

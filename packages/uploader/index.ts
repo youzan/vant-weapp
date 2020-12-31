@@ -16,7 +16,7 @@ VantComponent({
       value: 80,
     },
     name: {
-      type: [Number, String],
+      type: null,
       value: '',
     },
     accept: {
@@ -65,7 +65,7 @@ VantComponent({
   },
 
   data: {
-    lists: [],
+    lists: [] as File[],
     isInCount: true,
   },
 
@@ -168,7 +168,7 @@ VantComponent({
       if (!this.data.previewFullImage) return;
 
       const { index } = event.currentTarget.dataset;
-      const { lists } = this.data as { lists: File[] };
+      const { lists } = this.data;
       const item = lists[index];
 
       wx.previewImage({

@@ -39,7 +39,7 @@ VantComponent({
     disableInput: Boolean,
     decimalLength: {
       type: Number,
-      value: null,
+      value: (null as unknown) as number,
       observer: 'check',
     },
     min: {

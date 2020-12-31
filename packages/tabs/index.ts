@@ -8,6 +8,7 @@ import {
   requestAnimationFrame,
 } from '../common/utils';
 import { isDef } from '../common/validator';
+import { useChildren } from '../common/relation';
 
 type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 
@@ -16,24 +17,9 @@ VantComponent({
 
   classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
 
-  relation: {
-    name: 'tab',
-    type: 'descendant',
-    current: 'tabs',
-    linked(target) {
-      target.index = this.children.length - 1;
-      this.updateTabs();
-    },
-    unlinked() {
-      this.children = this.children.map(
-        (child: TrivialInstance, index: number) => {
-          child.index = index;
-          return child;
-        }
-      );
-      this.updateTabs();
-    },
-  },
+  relation: useChildren('tab', function () {
+    this.updateTabs();
+  }),
 
   props: {
     sticky: Boolean,
@@ -45,22 +31,22 @@ VantComponent({
     animated: {
       type: Boolean,
       observer() {
-        this.children.forEach((child: TrivialInstance, index: number) =>
+        this.children.forEach((child, index) =>
           child.updateRender(index === this.data.currentIndex, this)
         );
       },
     },
     lineWidth: {
-      type: [String, Number],
+      type: null,
       value: 40,
       observer: 'resize',
     },
     lineHeight: {
-      type: [String, Number],
+      type: null,
       value: -1,
     },
     active: {
-      type: [String, Number],
+      type: null,
       value: 0,
       observer(name) {
         if (name !== this.getCurrentName()) {
@@ -108,7 +94,7 @@ VantComponent({
     scrollLeft: 0,
     scrollable: false,
     currentIndex: 0,
-    container: null,
+    container: (null as unknown) as () => WechatMiniprogram.NodesRef,
     skipTransition: true,
     lineOffsetLeft: 0,
   },

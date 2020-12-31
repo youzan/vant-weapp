@@ -120,7 +120,11 @@ VantComponent({
       }
 
       this.dragging = true;
-      ARRAY.filter((item) => item !== this).forEach((item) => item.close());
+
+      ARRAY.filter(
+        (item) => item !== this && item.offset !== 0
+      ).forEach((item) => item.close());
+
       this.setData({ catchMove: true });
       this.swipeMove(this.startOffset + this.deltaX);
     },

@@ -1,3 +1,4 @@
+import { nextTick } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
 
@@ -86,12 +87,16 @@ VantComponent({
       this.$emit('click-icon');
     },
 
+    onClickInput(event: WechatMiniprogram.TouchEvent) {
+      this.$emit('click-input', event.detail);
+    },
+
     onClear() {
       this.setData({ innerValue: '' });
       this.value = '';
       this.setShowClear();
 
-      wx.nextTick(() => {
+      nextTick(() => {
         this.emitChange();
         this.$emit('clear', '');
       });
@@ -132,7 +137,7 @@ VantComponent({
     emitChange() {
       this.setData({ value: this.value });
 
-      wx.nextTick(() => {
+      nextTick(() => {
         this.$emit('input', this.value);
         this.$emit('change', this.value);
       });
@@ -141,6 +146,7 @@ VantComponent({
     setShowClear() {
       const { clearable, readonly } = this.data;
       const { focused, value } = this;
+
       this.setData({
         showClear: !!clearable && !!focused && !!value && !readonly,
       });

@@ -185,8 +185,9 @@ Page({
 
 ### 真机上为什么会出现聚焦时 placeholder 加粗、闪烁的现象？
 
-- 由于微信小程序的 input 组件和 textarea 组件是原生组件，聚焦时会将原生的输入框覆盖在对应位置上，导致了这个现象的产生。
-- 相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)
+由于微信小程序的 input 组件和 textarea 组件是原生组件，聚焦时会将原生的输入框覆盖在对应位置上，导致了这个现象的产生。
+
+相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)
 
 ### 真机上 placeholder 为什么会盖过 popup 等其它组件？
 
@@ -198,9 +199,9 @@ Page({
 
 同时 `placeholder-style` 对 `vertical-align`、`line-height` 等大量 css 属性都不生效。
 
-这一系列的问题导致了 placeholder 在真机上可能会出现偏移。@vant/weapp 已经尽量抹平 textarea 在不同环境下的差异。
+这一系列的问题导致了 placeholder 在真机上可能会出现偏移。
 
-微信已经将 `padding` 的问题列为修复中的问题，可以查看[微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)
+微信已经在 `2.10.0` 基础库版本后支持移除默认的 `padding`，但低版本仍有问题。详情可以查看 [微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)
 
 ### 手写输入法为什么会丢失部分字符 / 手写输入法为什么不会触发 input 事件？
 
@@ -259,24 +260,26 @@ Page({
 
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |
-| bind:input | 输入内容时触发 | value: 当前输入值 |
-| bind:change | 输入内容时触发 | value: 当前输入值 |
-| bind:confirm | 点击完成按钮时触发 | value: 当前输入值 |
+| bind:input | 输入内容时触发 | event.detail: 当前输入值 |
+| bind:change | 输入内容时触发 | event.detail: 当前输入值 |
+| bind:confirm | 点击完成按钮时触发 | event.detail: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
 | bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |
 | bind:blur | 输入框失焦时触发 | event.detail.value: 当前输入值; <br>event.detail.cursor: 游标位置(如果 `type` 不为 `textarea`，值为 `0`) |
 | bind:clear | 点击清空控件时触发 | - |
+| bind:click-input | 点击输入区域时触发 | - |
 | bind:linechange | 输入框行数变化时调用，只对 textarea 有效 | event.detail = { height: 0, heightRpx: 0, lineCount: 0 } |
 | bind:keyboardheightchange | 键盘高度发生变化的时候触发此事件 | event.detail = { height: height, duration: duration } |
 
 ### Slot
 
-| 名称       | 说明                                            |
-| ---------- | ----------------------------------------------- |
-| label      | 自定义输入框标签，如果设置了`label`属性则不生效 |
-| left-icon  | 自定义输入框头部图标                            |
-| right-icon | 自定义输入框尾部图标                            |
-| button     | 自定义输入框尾部按钮                            |
+| 名称       | 说明                                                       |
+| ---------- | ---------------------------------------------------------- |
+| label      | 自定义输入框标签，如果设置了`label`属性则不生效            |
+| left-icon  | 自定义输入框头部图标                                       |
+| right-icon | 自定义输入框尾部图标                                       |
+| button     | 自定义输入框尾部按钮                                       |
+| input      | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
 
 ### 外部样式类
 

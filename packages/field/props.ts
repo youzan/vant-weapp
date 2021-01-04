@@ -1,7 +1,7 @@
-export const commonProps = {
+export const commonProps: WechatMiniprogram.Component.PropertyOption = {
   value: {
     type: String,
-    observer(this: WechatMiniprogram.Component.TrivialInstance, value: string) {
+    observer(this: WechatMiniprogram.Component.TrivialInstance, value) {
       if (value !== this.value) {
         this.setData({ innerValue: value });
         this.value = value;
@@ -41,7 +41,7 @@ export const commonProps = {
   holdKeyboard: Boolean,
 };
 
-export const inputProps = {
+export const inputProps: WechatMiniprogram.Component.PropertyOption = {
   type: {
     type: String,
     value: 'text',
@@ -51,7 +51,7 @@ export const inputProps = {
   confirmHold: Boolean,
 };
 
-export const textareaProps = {
+export const textareaProps: WechatMiniprogram.Component.PropertyOption = {
   autoHeight: Boolean,
   fixed: Boolean,
   showConfirmBar: {

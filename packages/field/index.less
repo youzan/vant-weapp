@@ -24,9 +24,13 @@
     }
   }
 
-  &__input {
-    position: relative;
+  &__control:empty + &__control {
     display: block;
+  }
+
+  &__control {
+    position: relative;
+    display: none;
     box-sizing: border-box;
     width: 100%;
     margin: 0;
@@ -36,9 +40,14 @@
     background-color: transparent;
     border: 0;
     resize: none;
+
     .theme(color, '@field-input-text-color');
     .theme(height, '@cell-line-height');
     .theme(min-height, '@cell-line-height');
+
+    &:empty {
+      display: none;
+    }
 
     &--textarea {
       .theme(height, '@field-text-area-min-height');
@@ -61,6 +70,13 @@
 
     &--right {
       text-align: right;
+    }
+
+    &--custom {
+      display: flex;
+      align-items: center;
+
+      .theme(min-height, '@cell-line-height');
     }
   }
 

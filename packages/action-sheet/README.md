@@ -189,7 +189,7 @@ Page({
 | loading | 是否为加载状态 | _boolean_ | - |
 | disabled | 是否为禁用状态 | _boolean_ | - |
 | className | 为对应列添加额外的 class 类名 | _string_ | - |
-| openType | 微信开放能力，具体支持可参考 [微信官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html) | _string_ | - |
+| openType | 微信开放能力，具体支持可参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) | _string_ | - |
 | lang | 指定返回用户信息的语言，zh_CN 简体中文，zh_TW 繁体中文，en 英文 | _string_ | `en` |
 | sessionFrom | 会话来源，openType="contact"时有效 | _string_ | - |
 | sendMessageTitle | 会话内消息卡片标题，openType="contact"时有效 | _string_ | 当前标题 |

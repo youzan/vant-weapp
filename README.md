@@ -87,7 +87,7 @@ npm install
 npm run dev
 ```
 
-打开[微信开发者工具](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
+打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
 
 PS：关于 `van-area`  Area 省市区选择组件，地区数据初始化可以直接在云开发环境中导入`vant-weapp/example/database_area.JSON`文件使用
 
@@ -130,6 +130,6 @@ Vant Weapp 最低支持到小程序基础库 2.2.3 版本
 [issue]: https://github.com/youzan/vant-weapp/issues/new
 [PR]: https://github.com/youzan/vant-weapp/compare
 [MIT]: http://opensource.org/licenses/MIT
-[小程序简易教程]: https://mp.weixin.qq.com/debug/wxadoc/dev/
-[小程序框架介绍]: https://mp.weixin.qq.com/debug/wxadoc/dev/framework/MINA.html
-[微信开发者工具]: https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html
+[小程序简易教程]: https://developers.weixin.qq.com/miniprogram/dev/framework/
+[小程序框架介绍]: https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html
+[微信开发者工具]: https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html

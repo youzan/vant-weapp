@@ -28,7 +28,6 @@ VantComponent({
       value: [],
       observer(columns = []) {
         this.simple = columns.length && !columns[0].values;
-        this.children = this.selectAllComponents('.van-picker__column');
 
         if (Array.isArray(this.children) && this.children.length) {
           this.setColumns().catch(() => {});
@@ -38,7 +37,9 @@ VantComponent({
   },
 
   beforeCreate() {
-    this.children = [];
+    Object.defineProperty(this, 'children', {
+      get: () => this.selectAllComponents('.van-picker__column') || [],
+    });
   },
 
   methods: {

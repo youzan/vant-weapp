@@ -1,5 +1,38 @@
 # 更新日志
 
+### [1.6.5](https://github.com/youzan/vant-weapp/tree/v1.6.5)
+
+`2021-01-19`
+
+**Features**
+
+- Field: 新增 input 插槽 ([#3932](https://github.com/youzan/vant-weapp/pull/3932))
+- Field: 新增 click-input 事件 ([#3932](https://github.com/youzan/vant-weapp/pull/3932))
+- Icon: 新增 delete-o、sort、font、font-o、revoke 图标 ([#3881](https://github.com/youzan/vant-weapp/pull/3881))
+
+**Bug Fixes**
+
+- Button: 修复 custom-style 属性不生效 ([#3903](https://github.com/youzan/vant-weapp/pull/3903))
+- Dialog: 修复 close-on-click-overlay 属性不生效 ([#3913](https://github.com/youzan/vant-weapp/pull/3913))
+
+**Improvements**
+
+- Cell: 优化性能 ([#3888](https://github.com/youzan/vant-weapp/issues/3888))
+- Col: 优化性能 ([#3886](https://github.com/youzan/vant-weapp/issues/3886))
+- Divider: 优化性能 ([#3887](https://github.com/youzan/vant-weapp/issues/3887))
+- Empty: 优化性能 ([#3933](https://github.com/youzan/vant-weapp/issues/3933))
+- Loading: 优化性能 ([#3892](https://github.com/youzan/vant-weapp/issues/3892))
+- Notice-bar: 优化性能 ([#3891](https://github.com/youzan/vant-weapp/issues/3891))
+- Notify: 优化性能 ([#3893](https://github.com/youzan/vant-weapp/issues/3893))
+- Picker: 优化性能 ([#3949](https://github.com/youzan/vant-weapp/issues/3949))
+- Stepper: 优化性能 ([#3890](https://github.com/youzan/vant-weapp/issues/3890))
+- Sticky: 优化性能 ([#3879](https://github.com/youzan/vant-weapp/issues/3879))
+- SwipeCell: 优化性能 ([#3928](https://github.com/youzan/vant-weapp/issues/3928))
+- Switch: 优化性能 ([#3889](https://github.com/youzan/vant-weapp/issues/3889))
+- Tag: 优化性能 ([#3894](https://github.com/youzan/vant-weapp/issues/3894))
+- Transition: 优化性能 ([#3895](https://github.com/youzan/vant-weapp/issues/3895))
+- Uploader: 优化性能 ([#3897](https://github.com/youzan/vant-weapp/issues/3897))
+
 ### [1.6.4](https://github.com/youzan/vant-weapp/tree/v1.6.4)
 
 `2020-12-18`

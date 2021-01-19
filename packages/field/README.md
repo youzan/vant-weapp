@@ -228,6 +228,7 @@ Page({
 | clearable | 是否启用清除控件 | _boolean_ | `false` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
+| center | 是否使内容垂直居中 | _boolean_ | `false` |
 | password | 是否是密码类型 | _boolean_ | `false` |
 | title-width | 标题宽度 | _string_ | `6.2em` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `-1` |

@@ -1,14 +1,10 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 VantComponent({
   field: true,
-  relation: {
-    name: 'radio',
-    type: 'descendant',
-    current: 'radio-group',
-    linked(target) {
-      this.updateChild(target);
-    },
-  },
+  relation: useChildren('radio', function (target) {
+    this.updateChild(target);
+  }),
   props: {
     value: {
       type: null,

@@ -94,7 +94,9 @@ VantComponent({
           }
           return prev;
         }, {});
-        this.setData(diff);
+        if (Object.keys(diff).length > 0) {
+          this.setData(diff);
+        }
         this.$emit('scroll', {
           scrollTop: this.scrollTop,
           isFixed: data.fixed || this.data.fixed,

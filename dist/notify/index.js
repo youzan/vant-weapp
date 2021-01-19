@@ -29,6 +29,9 @@ VantComponent({
   },
   data: {
     show: false,
+    onOpened: null,
+    onClose: null,
+    onClick: null,
   },
   created() {
     const { statusBarHeight } = getSystemInfoSync();

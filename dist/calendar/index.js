@@ -35,7 +35,7 @@ VantComponent({
     },
     rangePrompt: String,
     defaultDate: {
-      type: [Number, Array],
+      type: null,
       observer(val) {
         this.setData({ currentDate: val });
         this.scrollIntoView();
@@ -65,7 +65,7 @@ VantComponent({
       value: 'bottom',
     },
     rowHeight: {
-      type: [Number, String],
+      type: null,
       value: ROW_HEIGHT,
     },
     round: {
@@ -101,7 +101,7 @@ VantComponent({
       value: true,
     },
     maxRange: {
-      type: [Number, String],
+      type: null,
       value: null,
     },
   },

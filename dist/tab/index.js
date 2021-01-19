@@ -1,10 +1,7 @@
+import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 VantComponent({
-  relation: {
-    name: 'tabs',
-    type: 'ancestor',
-    current: 'tab',
-  },
+  relation: useParent('tabs'),
   props: {
     dot: {
       type: Boolean,
@@ -27,7 +24,7 @@ VantComponent({
       observer: 'update',
     },
     name: {
-      type: [Number, String],
+      type: null,
       value: '',
     },
   },

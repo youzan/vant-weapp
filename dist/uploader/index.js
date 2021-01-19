@@ -17,7 +17,7 @@ VantComponent({
           value: 80,
         },
         name: {
-          type: [Number, String],
+          type: null,
           value: '',
         },
         accept: {

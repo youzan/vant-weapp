@@ -1,7 +1,4 @@
-function getCurrentPage() {
-  const pages = getCurrentPages();
-  return pages[pages.length - 1] || {};
-}
+import { getCurrentPage } from '../common/utils';
 function onPageScroll(event) {
   const { vanPageScroller = [] } = getCurrentPage();
   vanPageScroller.forEach((scroller) => {
@@ -26,9 +23,11 @@ export const pageScrollMixin = (scroller) =>
       page.onPageScroll = onPageScroll;
     },
     detached() {
+      var _a;
       const page = getCurrentPage();
-      page.vanPageScroller = (page.vanPageScroller || []).filter(
-        (item) => item !== scroller
-      );
+      page.vanPageScroller =
+        ((_a = page.vanPageScroller) === null || _a === void 0
+          ? void 0
+          : _a.filter((item) => item !== scroller)) || [];
     },
   });

@@ -83,3 +83,7 @@ export function toPromise(promiseLike) {
   }
   return Promise.resolve(promiseLike);
 }
+export function getCurrentPage() {
+  const pages = getCurrentPages();
+  return pages[pages.length - 1];
+}

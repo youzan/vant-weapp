@@ -1,3 +1,4 @@
+import { nextTick } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
 VantComponent({
@@ -17,7 +18,7 @@ VantComponent({
       isLink: Boolean,
       leftIcon: String,
       rightIcon: String,
-      autosize: [Boolean, Object],
+      autosize: null,
       required: Boolean,
       iconClass: String,
       clickable: Boolean,
@@ -74,11 +75,14 @@ VantComponent({
     onClickIcon() {
       this.$emit('click-icon');
     },
+    onClickInput(event) {
+      this.$emit('click-input', event.detail);
+    },
     onClear() {
       this.setData({ innerValue: '' });
       this.value = '';
       this.setShowClear();
-      wx.nextTick(() => {
+      nextTick(() => {
         this.emitChange();
         this.$emit('clear', '');
       });
@@ -105,7 +109,7 @@ VantComponent({
     },
     emitChange() {
       this.setData({ value: this.value });
-      wx.nextTick(() => {
+      nextTick(() => {
         this.$emit('input', this.value);
         this.$emit('change', this.value);
       });

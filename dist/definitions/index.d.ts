@@ -1,31 +1,43 @@
 /// <reference types="miniprogram-api-typings" />
-import { Weapp } from './weapp';
-declare type RecordToAny<T> = {
-  [K in keyof T]: any;
-};
-export declare type CombinedComponentInstance<Data, Props, Methods> = Methods &
-  WechatMiniprogram.Component.TrivialInstance &
-  Weapp.FormField & {
-    data: Data & RecordToAny<Props>;
-  };
-export interface VantComponentOptions<Data, Props, Methods, Instance> {
+interface VantComponentInstance {
+  parent: WechatMiniprogram.Component.TrivialInstance;
+  children: WechatMiniprogram.Component.TrivialInstance[];
+  index: number;
+  $emit: (
+    name: string,
+    detail?: unknown,
+    options?: WechatMiniprogram.Component.TriggerEventOption
+  ) => void;
+}
+export declare type VantComponentOptions<
+  Data extends WechatMiniprogram.Component.DataOption,
+  Props extends WechatMiniprogram.Component.PropertyOption,
+  Methods extends WechatMiniprogram.Component.MethodOption
+> = {
   data?: Data;
   field?: boolean;
   classes?: string[];
   mixins?: string[];
-  props?: Props & Weapp.PropertyOption;
-  relation?: Weapp.RelationOption<Instance> & {
-    type: 'ancestor' | 'descendant';
-    name: string;
-    current: string;
+  props?: Props;
+  relation?: {
+    relations: Record<string, WechatMiniprogram.Component.RelationOption>;
+    mixin: string;
   };
-  relations?: {
-    [componentName: string]: Weapp.RelationOption<Instance>;
-  };
-  methods?: Methods & Weapp.MethodOption<Instance>;
-  beforeCreate?: (this: Instance) => void;
-  created?: (this: Instance) => void;
-  mounted?: (this: Instance) => void;
-  destroyed?: (this: Instance) => void;
-}
+  methods?: Methods;
+  beforeCreate?: () => void;
+  created?: () => void;
+  mounted?: () => void;
+  destroyed?: () => void;
+} & ThisType<
+  VantComponentInstance &
+    WechatMiniprogram.Component.Instance<
+      Data & {
+        name: string;
+        value: any;
+      },
+      Props,
+      Methods
+    > &
+    Record<string, any>
+>;
 export {};

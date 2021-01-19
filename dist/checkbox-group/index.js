@@ -1,14 +1,10 @@
+import { useChildren } from '../common/relation';
 import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
-  relation: {
-    name: 'checkbox',
-    type: 'descendant',
-    current: 'checkbox-group',
-    linked(target) {
-      this.updateChild(target);
-    },
-  },
+  relation: useChildren('checkbox', function (target) {
+    this.updateChild(target);
+  }),
   props: {
     max: Number,
     value: {
@@ -22,7 +18,7 @@ VantComponent({
   },
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child) => this.updateChild(child));
+      this.children.forEach((child) => this.updateChild(child));
     },
     updateChild(child) {
       const { value, disabled } = this.data;

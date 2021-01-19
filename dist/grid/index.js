@@ -1,17 +1,14 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 VantComponent({
-  relation: {
-    name: 'grid-item',
-    type: 'descendant',
-    current: 'grid',
-  },
+  relation: useChildren('grid-item'),
   props: {
     square: {
       type: Boolean,
       observer: 'updateChildren',
     },
     gutter: {
-      type: [Number, String],
+      type: null,
       value: 0,
       observer: 'updateChildren',
     },

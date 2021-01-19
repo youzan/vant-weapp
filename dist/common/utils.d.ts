@@ -22,3 +22,9 @@ export declare function groupSetData(
 export declare function toPromise(
   promiseLike: Promise<unknown> | unknown
 ): Promise<unknown>;
+export declare function getCurrentPage<T>(): T &
+  WechatMiniprogram.OptionalInterface<WechatMiniprogram.Page.ILifetime> &
+  WechatMiniprogram.Page.InstanceProperties &
+  WechatMiniprogram.Page.InstanceMethods<Record<string, any>> &
+  WechatMiniprogram.Page.Data<Record<string, any>> &
+  Record<string, any>;

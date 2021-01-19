@@ -1,5 +1,6 @@
 import { GREEN } from '../common/color';
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 import { getRect } from '../common/utils';
 import { pageScrollMixin } from '../mixins/page-scroll';
 const indexList = () => {
@@ -11,17 +12,9 @@ const indexList = () => {
   return indexList;
 };
 VantComponent({
-  relation: {
-    name: 'index-anchor',
-    type: 'descendant',
-    current: 'index-bar',
-    linked() {
-      this.updateData();
-    },
-    unlinked() {
-      this.updateData();
-    },
-  },
+  relation: useChildren('index-anchor', function () {
+    this.updateData();
+  }),
   props: {
     sticky: {
       type: Boolean,

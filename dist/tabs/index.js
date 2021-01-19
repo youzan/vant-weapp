@@ -8,25 +8,13 @@ import {
   requestAnimationFrame,
 } from '../common/utils';
 import { isDef } from '../common/validator';
+import { useChildren } from '../common/relation';
 VantComponent({
   mixins: [touch],
   classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
-  relation: {
-    name: 'tab',
-    type: 'descendant',
-    current: 'tabs',
-    linked(target) {
-      target.index = this.children.length - 1;
-      this.updateTabs();
-    },
-    unlinked() {
-      this.children = this.children.map((child, index) => {
-        child.index = index;
-        return child;
-      });
-      this.updateTabs();
-    },
-  },
+  relation: useChildren('tab', function () {
+    this.updateTabs();
+  }),
   props: {
     sticky: Boolean,
     border: Boolean,
@@ -43,16 +31,16 @@ VantComponent({
       },
     },
     lineWidth: {
-      type: [String, Number],
+      type: null,
       value: 40,
       observer: 'resize',
     },
     lineHeight: {
-      type: [String, Number],
+      type: null,
       value: -1,
     },
     active: {
-      type: [String, Number],
+      type: null,
       value: 0,
       observer(name) {
         if (name !== this.getCurrentName()) {

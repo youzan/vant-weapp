@@ -1,23 +1,16 @@
 import { VantComponent } from '../common/component';
-import { BLUE, GRAY_DARK } from '../common/color';
 VantComponent({
   field: true,
   classes: ['node-class'],
   props: {
-    checked: {
-      type: null,
-      observer(value) {
-        const loadingColor = this.getLoadingColor(value);
-        this.setData({ value, loadingColor });
-      },
-    },
+    checked: null,
     loading: Boolean,
     disabled: Boolean,
     activeColor: String,
     inactiveColor: String,
     size: {
       type: String,
-      value: '30px',
+      value: '30',
     },
     activeValue: {
       type: null,
@@ -28,24 +21,16 @@ VantComponent({
       value: false,
     },
   },
-  created() {
-    const { checked: value } = this.data;
-    const loadingColor = this.getLoadingColor(value);
-    this.setData({ value, loadingColor });
-  },
   methods: {
-    getLoadingColor(checked) {
-      const { activeColor, inactiveColor } = this.data;
-      return checked ? activeColor || BLUE : inactiveColor || GRAY_DARK;
-    },
     onClick() {
-      const { activeValue, inactiveValue } = this.data;
-      if (!this.data.disabled && !this.data.loading) {
-        const checked = this.data.checked === activeValue;
-        const value = checked ? inactiveValue : activeValue;
-        this.$emit('input', value);
-        this.$emit('change', value);
+      const { activeValue, inactiveValue, disabled, loading } = this.data;
+      if (disabled || loading) {
+        return;
       }
+      const checked = this.data.checked === activeValue;
+      const value = checked ? inactiveValue : activeValue;
+      this.$emit('input', value);
+      this.$emit('change', value);
     },
   },
 });

@@ -1,11 +1,8 @@
 import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
 VantComponent({
   classes: ['active-class', 'disabled-class'],
-  relation: {
-    type: 'ancestor',
-    name: 'sidebar',
-    current: 'sidebar-item',
-  },
+  relation: useParent('sidebar'),
   props: {
     dot: Boolean,
     badge: null,

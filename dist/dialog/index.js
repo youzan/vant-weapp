@@ -68,6 +68,7 @@ VantComponent({
       confirm: false,
       cancel: false,
     },
+    callback: () => {},
   },
   methods: {
     onConfirm() {
@@ -77,7 +78,7 @@ VantComponent({
       this.handleAction('cancel');
     },
     onClickOverlay() {
-      this.onClose('overlay');
+      this.close('overlay');
     },
     close(action) {
       this.setData({ show: false });

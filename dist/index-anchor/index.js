@@ -1,11 +1,8 @@
 import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
+import { useParent } from '../common/relation';
 VantComponent({
-  relation: {
-    name: 'index-bar',
-    type: 'ancestor',
-    current: 'index-anchor',
-  },
+  relation: useParent('index-bar'),
   props: {
     useSlot: Boolean,
     index: null,

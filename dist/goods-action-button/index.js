@@ -1,14 +1,11 @@
 import { VantComponent } from '../common/component';
-import { link } from '../mixins/link';
+import { useParent } from '../common/relation';
 import { button } from '../mixins/button';
+import { link } from '../mixins/link';
 import { openType } from '../mixins/open-type';
 VantComponent({
   mixins: [link, button, openType],
-  relation: {
-    type: 'ancestor',
-    name: 'goods-action',
-    current: 'goods-action-button',
-  },
+  relation: useParent('goods-action'),
   props: {
     text: String,
     color: String,
@@ -29,12 +26,11 @@ VantComponent({
       if (this.parent == null) {
         return;
       }
+      const { index } = this;
       const { children = [] } = this.parent;
-      const { length } = children;
-      const index = children.indexOf(this);
       this.setData({
         isFirst: index === 0,
-        isLast: index === length - 1,
+        isLast: index === children.length - 1,
       });
     },
   },

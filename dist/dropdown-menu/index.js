@@ -1,19 +1,12 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
 let ARRAY = [];
 VantComponent({
   field: true,
-  relation: {
-    name: 'dropdown-item',
-    type: 'descendant',
-    current: 'dropdown-menu',
-    linked() {
-      this.updateItemListData();
-    },
-    unlinked() {
-      this.updateItemListData();
-    },
-  },
+  relation: useChildren('dropdown-item', function () {
+    this.updateItemListData();
+  }),
   props: {
     activeColor: {
       type: String,

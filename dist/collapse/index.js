@@ -1,10 +1,7 @@
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
 VantComponent({
-  relation: {
-    name: 'collapse-item',
-    type: 'descendant',
-    current: 'collapse',
-  },
+  relation: useChildren('collapse-item'),
   props: {
     value: {
       type: null,

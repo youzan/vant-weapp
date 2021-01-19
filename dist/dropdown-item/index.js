@@ -1,14 +1,10 @@
+import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 VantComponent({
   field: true,
-  relation: {
-    name: 'dropdown-menu',
-    type: 'ancestor',
-    current: 'dropdown-item',
-    linked() {
-      this.updateDataFromParent();
-    },
-  },
+  relation: useParent('dropdown-menu', function () {
+    this.updateDataFromParent();
+  }),
   props: {
     value: {
       type: null,
@@ -39,7 +35,10 @@ VantComponent({
   methods: {
     rerender() {
       wx.nextTick(() => {
-        this.parent && this.parent.updateItemListData();
+        var _a;
+        (_a = this.parent) === null || _a === void 0
+          ? void 0
+          : _a.updateItemListData();
       });
     },
     updateDataFromParent() {
@@ -85,6 +84,7 @@ VantComponent({
       }
     },
     toggle(show, options = {}) {
+      var _a;
       const { showPopup } = this.data;
       if (typeof show !== 'boolean') {
         show = !showPopup;
@@ -97,10 +97,12 @@ VantComponent({
         showPopup: show,
       });
       if (show) {
-        this.parent.getChildWrapperStyle().then((wrapperStyle) => {
-          this.setData({ wrapperStyle, showWrapper: true });
-          this.rerender();
-        });
+        (_a = this.parent) === null || _a === void 0
+          ? void 0
+          : _a.getChildWrapperStyle().then((wrapperStyle) => {
+              this.setData({ wrapperStyle, showWrapper: true });
+              this.rerender();
+            });
       } else {
         this.rerender();
       }

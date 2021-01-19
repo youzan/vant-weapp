@@ -3,8 +3,8 @@ export const basic = Behavior({
     $emit(name, detail, options) {
       this.triggerEvent(name, detail, options);
     },
-    set(data, callback) {
-      this.setData(data, callback);
+    set(data) {
+      this.setData(data);
       return new Promise((resolve) => wx.nextTick(resolve));
     },
   },

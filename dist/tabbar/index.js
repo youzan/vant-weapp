@@ -1,18 +1,10 @@
-import { getRect } from '../common/utils';
 import { VantComponent } from '../common/component';
+import { useChildren } from '../common/relation';
+import { getRect } from '../common/utils';
 VantComponent({
-  relation: {
-    name: 'tabbar-item',
-    type: 'descendant',
-    current: 'tabbar',
-    linked(target) {
-      target.parent = this;
-      target.updateFromParent();
-    },
-    unlinked() {
-      this.updateChildren();
-    },
-  },
+  relation: useChildren('tabbar-item', function () {
+    this.updateChildren();
+  }),
   props: {
     active: {
       type: null,

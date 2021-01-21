@@ -1,5 +1,23 @@
 # 更新日志
 
+### [1.6.6](https://github.com/youzan/vant-weapp/tree/v1.6.6)
+
+`2021-01-21`
+
+
+**Features**
+
+- Uploader: 支持文件预览 ([#3975](https://github.com/youzan/vant-weapp/pull/3975))
+
+**Bug Fixes**
+
+- Picker: 修复标题栏无法显示 ([#3973](https://github.com/youzan/vant-weapp/pull/3973))
+
+**Improvements**
+
+- Calendar: 优化模板代码 ([#3972](https://github.com/youzan/vant-weapp/pull/3972))
+
+
 ### [1.6.5](https://github.com/youzan/vant-weapp/tree/v1.6.5)
 
 `2021-01-19`

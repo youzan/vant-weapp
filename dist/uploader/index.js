@@ -182,6 +182,13 @@ VantComponent({
         },
       });
     },
+    onPreviewFile(event) {
+      const { index } = event.currentTarget.dataset;
+      wx.openDocument({
+        filePath: this.data.lists[index].url,
+        showMenu: true,
+      });
+    },
     onClickPreview(event) {
       const { index } = event.currentTarget.dataset;
       const item = this.data.lists[index];

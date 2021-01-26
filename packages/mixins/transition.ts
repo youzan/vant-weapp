@@ -37,6 +37,12 @@ export function transition(showDefaultValue: boolean) {
       display: false,
     },
 
+    ready() {
+      if (this.data.show === true) {
+        this.observeShow(true, false);
+      }
+    },
+
     methods: {
       observeShow(value: boolean, old: boolean) {
         if (value === old) {

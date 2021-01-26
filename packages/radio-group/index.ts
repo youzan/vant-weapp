@@ -13,6 +13,7 @@ VantComponent({
       type: null,
       observer: 'updateChildren',
     },
+    direction: String,
     disabled: {
       type: Boolean,
       observer: 'updateChildren',
@@ -21,17 +22,17 @@ VantComponent({
 
   methods: {
     updateChildren() {
-      (
-        this.children || []
-      ).forEach((child: WechatMiniprogram.Component.TrivialInstance) =>
-        this.updateChild(child)
+      this.children.forEach(
+        (child: WechatMiniprogram.Component.TrivialInstance) =>
+          this.updateChild(child)
       );
     },
 
     updateChild(child: WechatMiniprogram.Component.TrivialInstance) {
-      const { value, disabled } = this.data;
+      const { value, disabled, direction } = this.data;
       child.setData({
         value,
+        direction,
         disabled: disabled || child.data.disabled,
       });
     },

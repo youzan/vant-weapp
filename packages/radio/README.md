@@ -29,12 +29,28 @@ Page({
   data: {
     radio: '1',
   },
+
   onChange(event) {
     this.setData({
       radio: event.detail,
     });
   },
 });
+```
+
+### 水平排列
+
+将`direction`属性设置为`horizontal`后，单选框组会变成水平排列。
+
+```html
+<van-radio-group
+  value="{{ radio }}"
+  bind:change="onChange"
+  direction="horizontal"
+>
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2">单选框 2</van-radio>
+</van-radio-group>
 ```
 
 ### 禁用状态
@@ -168,24 +184,25 @@ Page({
 
 ### RadioGroup Props
 
-| 参数     | 说明                   | 类型      | 默认值  | 版本 |
-| -------- | ---------------------- | --------- | ------- | ---- |
-| name     | 在表单内提交时的标识符 | _string_  | -       | -    |
-| value    | 当前选中项的标识符     | _any_     | -       | -    |
-| disabled | 是否禁用所有单选框     | _boolean_ | `false` | -    |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| name | 在表单内提交时的标识符 | _string_ | - |
+| value | 当前选中项的标识符 | _any_ | - |
+| disabled | 是否禁用所有单选框 | _boolean_ | `false` |
+| direction `v1.6.7` | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
 
 ### Radio Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| name | 标识符 | _string_ | - | - |
-| shape | 形状，可选值为 `square` | _string_ | `round` | - |
-| disabled | 是否为禁用状态 | _boolean_ | `false` | - |
-| label-disabled | 是否禁用文本内容点击 | _boolean_ | `false` | - |
-| label-position | 文本位置，可选值为 `left` | _string_ | `right` | - |
-| icon-size | 图标大小，默认单位为`px` | _string \| number_ | `20px` | - |
-| checked-color | 选中状态颜色 | _string_ | `#1989fa` | - |
-| use-icon-slot | 是否使用 icon 插槽 | _boolean_ | `false` | - |
+| 参数           | 说明                      | 类型               | 默认值    |
+| -------------- | ------------------------- | ------------------ | --------- |
+| name           | 标识符                    | _string_           | -         |
+| shape          | 形状，可选值为 `square`   | _string_           | `round`   |
+| disabled       | 是否为禁用状态            | _boolean_          | `false`   |
+| label-disabled | 是否禁用文本内容点击      | _boolean_          | `false`   |
+| label-position | 文本位置，可选值为 `left` | _string_           | `right`   |
+| icon-size      | 图标大小，默认单位为`px`  | _string \| number_ | `20px`    |
+| checked-color  | 选中状态颜色              | _string_           | `#1989fa` |
+| use-icon-slot  | 是否使用 icon 插槽        | _boolean_          | `false`   |
 
 ### Radio Event
 

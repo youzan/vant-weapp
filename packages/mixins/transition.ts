@@ -42,6 +42,7 @@ export function transition(showDefaultValue: boolean) {
         if (value === old) {
           return;
         }
+
         value ? this.enter() : this.leave();
       },
 
@@ -54,7 +55,10 @@ export function transition(showDefaultValue: boolean) {
         this.$emit('before-enter');
 
         requestAnimationFrame(() => {
-          this.checkStatus('enter');
+          if (this.status !== 'enter') {
+            return;
+          }
+
           this.$emit('enter');
 
           this.setData({
@@ -65,9 +69,11 @@ export function transition(showDefaultValue: boolean) {
           });
 
           requestAnimationFrame(() => {
-            this.checkStatus('enter');
-            this.transitionEnded = false;
+            if (this.status !== 'enter') {
+              return;
+            }
 
+            this.transitionEnded = false;
             this.setData({ classes: classNames['enter-to'] });
           });
         });
@@ -86,7 +92,10 @@ export function transition(showDefaultValue: boolean) {
         this.$emit('before-leave');
 
         requestAnimationFrame(() => {
-          this.checkStatus('leave');
+          if (this.status !== 'leave') {
+            return;
+          }
+
           this.$emit('leave');
 
           this.setData({
@@ -95,19 +104,16 @@ export function transition(showDefaultValue: boolean) {
           });
 
           requestAnimationFrame(() => {
-            this.checkStatus('leave');
+            if (this.status !== 'leave') {
+              return;
+            }
+
             this.transitionEnded = false;
             setTimeout(() => this.onTransitionEnd(), currentDuration);
 
             this.setData({ classes: classNames['leave-to'] });
           });
         });
-      },
-
-      checkStatus(status: 'enter' | 'leave') {
-        if (status !== this.status) {
-          throw new Error(`incongruent status: ${status}`);
-        }
       },
 
       onTransitionEnd() {

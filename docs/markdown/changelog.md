@@ -1,5 +1,18 @@
 # 更新日志
 
+### [1.6.7](https://github.com/youzan/vant-weapp/tree/v1.6.7)
+`2021-01-27`
+
+**Features**
+
+- Radio: 新增 `direction` 属性 ([#4007](https://github.com/youzan/vant-weapp/issues/4007))
+
+
+**Bug Fixes**
+
+- Icons: 修复部分地区图标不显示 ([#4012](https://github.com/youzan/vant-weapp/issues/4012))
+- Transition: 修复默认设置 `show` 属性为 `true` 时不生效 ([#4005](https://github.com/youzan/vant-weapp/issues/4005))
+
 ### [1.6.6](https://github.com/youzan/vant-weapp/tree/v1.6.6)
 
 `2021-01-21`

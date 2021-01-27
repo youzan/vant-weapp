@@ -33,6 +33,11 @@ export function transition(showDefaultValue) {
       inited: false,
       display: false,
     },
+    ready() {
+      if (this.data.show === true) {
+        this.observeShow(true, false);
+      }
+    },
     methods: {
       observeShow(value, old) {
         if (value === old) {
@@ -47,7 +52,9 @@ export function transition(showDefaultValue) {
         this.status = 'enter';
         this.$emit('before-enter');
         requestAnimationFrame(() => {
-          this.checkStatus('enter');
+          if (this.status !== 'enter') {
+            return;
+          }
           this.$emit('enter');
           this.setData({
             inited: true,
@@ -56,7 +63,9 @@ export function transition(showDefaultValue) {
             currentDuration,
           });
           requestAnimationFrame(() => {
-            this.checkStatus('enter');
+            if (this.status !== 'enter') {
+              return;
+            }
             this.transitionEnded = false;
             this.setData({ classes: classNames['enter-to'] });
           });
@@ -72,24 +81,23 @@ export function transition(showDefaultValue) {
         this.status = 'leave';
         this.$emit('before-leave');
         requestAnimationFrame(() => {
-          this.checkStatus('leave');
+          if (this.status !== 'leave') {
+            return;
+          }
           this.$emit('leave');
           this.setData({
             classes: classNames.leave,
             currentDuration,
           });
           requestAnimationFrame(() => {
-            this.checkStatus('leave');
+            if (this.status !== 'leave') {
+              return;
+            }
             this.transitionEnded = false;
             setTimeout(() => this.onTransitionEnd(), currentDuration);
             this.setData({ classes: classNames['leave-to'] });
           });
         });
-      },
-      checkStatus(status) {
-        if (status !== this.status) {
-          throw new Error(`incongruent status: ${status}`);
-        }
       },
       onTransitionEnd() {
         if (this.transitionEnded) {

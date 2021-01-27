@@ -10,6 +10,7 @@ VantComponent({
       type: null,
       observer: 'updateChildren',
     },
+    direction: String,
     disabled: {
       type: Boolean,
       observer: 'updateChildren',
@@ -17,12 +18,13 @@ VantComponent({
   },
   methods: {
     updateChildren() {
-      (this.children || []).forEach((child) => this.updateChild(child));
+      this.children.forEach((child) => this.updateChild(child));
     },
     updateChild(child) {
-      const { value, disabled } = this.data;
+      const { value, disabled, direction } = this.data;
       child.setData({
         value,
+        direction,
         disabled: disabled || child.data.disabled,
       });
     },

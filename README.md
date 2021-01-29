@@ -11,8 +11,9 @@
 </p>
 
 <p align="center">
-  🔥 <a href="https://vant-contrib.gitee.io/vant-weapp">文档网站</a>
+  🔥 <a href="https://vant-contrib.gitee.io/vant-weapp">文档网站（国内）</a>
   &nbsp;
+  🌈 <a href="https://youzan.github.io/vant-weapp">文档网站（GitHub）</a>
   &nbsp;
   🚀 <a href="https://github.com/youzan/vant" target="_blank">Vue 版</a>
 </p>
@@ -21,9 +22,9 @@
 
 ### 介绍
 
-Vant 是**有赞前端团队**开源的移动端组件库，于 2016 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万开发者，是业界主流的移动端组件库之一。
+Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万开发者，是业界主流的移动端组件库之一。
 
-目前 Vant 官方提供了 [Vue 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)和[支付宝小程序版本](https://github.com/ant-move/Vant-Aliapp)。
+目前 Vant 官方提供了 [Vue 2 版本](https://vant-contrib.gitee.io/vant)、[Vue 3 版本](https://vant-contrib.gitee.io/vant/v3)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)和[支付宝小程序版本](https://github.com/ant-move/Vant-Aliapp)。
 
 ## 预览
 

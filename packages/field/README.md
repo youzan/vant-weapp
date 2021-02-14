@@ -174,9 +174,9 @@ Page({
     border="{{ false }}"
     use-button-slot
   >
-    <van-button slot="button" size="small" type="primary"
-      >发送验证码</van-button
-    >
+    <van-button slot="button" size="small" type="primary">
+      发送验证码
+    </van-button>
   </van-field>
 </van-cell-group>
 ```

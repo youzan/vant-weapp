@@ -38,4 +38,8 @@
   <van-stepper value="{{ 1 }}" input-width="40px" button-size="32px" />
 </van-cell>
 
+<van-cell center title="圆角风格">
+  <van-stepper value="{{ 1 }}" theme="round" button-size="22px" />
+</van-cell>
+
 <van-toast id="van-toast" />

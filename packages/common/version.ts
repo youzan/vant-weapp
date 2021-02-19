@@ -27,26 +27,32 @@ function compareVersion(v1, v2) {
   return 0;
 }
 
-export function canIUseModel() {
+function gte(version: string) {
   const system = getSystemInfoSync();
-  return compareVersion(system.SDKVersion, '2.9.3') >= 0;
+
+  return compareVersion(system.SDKVersion, version) >= 0;
+}
+
+export function canIUseModel() {
+  return gte('2.9.3');
 }
 
 export function canIUseFormFieldButton() {
-  const system = getSystemInfoSync();
-  return compareVersion(system.SDKVersion, '2.10.3') >= 0;
+  return gte('2.10.3');
 }
 
 export function canIUseAnimate() {
-  const system = getSystemInfoSync();
-  return compareVersion(system.SDKVersion, '2.9.0') >= 0;
+  return gte('2.9.0');
 }
 
 export function canIUseGroupSetData() {
-  const system = getSystemInfoSync();
-  return compareVersion(system.SDKVersion, '2.4.0') >= 0;
+  return gte('2.4.0');
 }
 
 export function canIUseNextTick() {
   return wx.canIUse('nextTick');
+}
+
+export function canIUseCanvas2d() {
+  return gte('2.9.0');
 }

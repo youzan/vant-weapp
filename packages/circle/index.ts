@@ -1,8 +1,9 @@
-import { VantComponent } from '../common/component';
 import { BLUE, WHITE } from '../common/color';
-import { adaptor } from './canvas';
-import { isObj } from '../common/validator';
+import { VantComponent } from '../common/component';
 import { getSystemInfoSync } from '../common/utils';
+import { isObj } from '../common/validator';
+import { canIUseCanvas2d } from '../common/version';
+import { adaptor } from './canvas';
 
 function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
@@ -70,7 +71,7 @@ VantComponent({
     getContext() {
       const { type, size } = this.data;
 
-      if (type === '') {
+      if (type === '' || !canIUseCanvas2d()) {
         const ctx = wx.createCanvasContext('van-circle', this);
         return Promise.resolve(ctx);
       }

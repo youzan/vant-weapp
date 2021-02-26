@@ -39,13 +39,13 @@
       binderror="bindError"
       bindlaunchapp="bindLaunchApp"
       bindopensetting="bindOpenSetting"
-      lang="{{ item.lang }}"
-      session-from="{{ item.sessionFrom }}"
-      send-message-title="{{ item.sendMessageTitle }}"
-      send-message-path="{{ item.sendMessagePath }}"
-      send-message-img="{{ item.sendMessageImg }}"
-      show-message-card="{{ item.showMessageCard }}"
-      app-parameter="{{ item.appParameter }}"
+      lang="{{ lang }}"
+      session-from="{{ sessionFrom }}"
+      send-message-title="{{ sendMessageTitle }}"
+      send-message-path="{{ sendMessagePath }}"
+      send-message-img="{{ sendMessageImg }}"
+      show-message-card="{{ showMessageCard }}"
+      app-parameter="{{ appParameter }}"
     >
       <block wx:if="{{ !item.loading }}">
         {{ item.name }}

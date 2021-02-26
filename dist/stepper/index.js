@@ -16,11 +16,7 @@ VantComponent({
   props: {
     value: {
       type: null,
-      observer(value) {
-        if (!equal(value, this.data.currentValue)) {
-          this.setData({ currentValue: this.format(value) });
-        }
-      },
+      observer: 'observeValue',
     },
     integer: {
       type: Boolean,
@@ -64,6 +60,7 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    theme: String,
   },
   data: {
     currentValue: '',
@@ -74,6 +71,12 @@ VantComponent({
     });
   },
   methods: {
+    observeValue() {
+      const { value, currentValue } = this.data;
+      if (!equal(value, currentValue)) {
+        this.setData({ currentValue: this.format(value) });
+      }
+    },
     check() {
       const val = this.format(this.data.currentValue);
       if (!equal(val, this.data.currentValue)) {
@@ -81,18 +84,18 @@ VantComponent({
       }
     },
     isDisabled(type) {
+      const {
+        disabled,
+        disablePlus,
+        disableMinus,
+        currentValue,
+        max,
+        min,
+      } = this.data;
       if (type === 'plus') {
-        return (
-          this.data.disabled ||
-          this.data.disablePlus ||
-          this.data.currentValue >= this.data.max
-        );
+        return disabled || disablePlus || currentValue >= max;
       }
-      return (
-        this.data.disabled ||
-        this.data.disableMinus ||
-        this.data.currentValue <= this.data.min
-      );
+      return disabled || disableMinus || currentValue <= min;
     },
     onFocus(event) {
       this.$emit('focus', event.detail);

@@ -1,12 +1,31 @@
 # 更新日志
 
+### [1.6.8](https://github.com/youzan/vant-weapp/tree/v1.6.8)
+
+`2021-02-26`
+
+**Features**
+
+- NoticeBar: 新增默认插槽 ([#4048](https://github.com/youzan/vant-weapp/pull/4048))
+- Stepper: 新增 theme 属性，支持圆形风格 ([#4049](https://github.com/youzan/vant-weapp/pull/4049))
+- Stepper: 新增 plus & minus 插槽 ([#4049](https://github.com/youzan/vant-weapp/pull/4049))
+
+**Bug Fixes**
+
+- Checkbox: 修复 label-position 属性无效 ([#4036](https://github.com/youzan/vant-weapp/pull/4036))
+- Dialog: 修复 beforeClose 方法类型定义 ([#4019](https://github.com/youzan/vant-weapp/pull/4019))
+
+**Improvements**
+
+- Circle: 当内置 canvas 不支持同层渲染时降级至默认 type ([#4050](https://github.com/youzan/vant-weapp/pull/4050))
+
 ### [1.6.7](https://github.com/youzan/vant-weapp/tree/v1.6.7)
+
 `2021-01-27`
 
 **Features**
 
 - Radio: 新增 `direction` 属性 ([#4007](https://github.com/youzan/vant-weapp/issues/4007))
-
 
 **Bug Fixes**
 
@@ -16,7 +35,6 @@
 ### [1.6.6](https://github.com/youzan/vant-weapp/tree/v1.6.6)
 
 `2021-01-21`
-
 
 **Features**
 
@@ -29,7 +47,6 @@
 **Improvements**
 
 - Calendar: 优化模板代码 ([#3972](https://github.com/youzan/vant-weapp/pull/3972))
-
 
 ### [1.6.5](https://github.com/youzan/vant-weapp/tree/v1.6.5)
 

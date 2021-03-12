@@ -29,6 +29,13 @@
   </van-cell-group>
 </demo-block>
 
+<demo-block title="有点击反馈">
+  <van-cell-group>
+    <van-cell title="单元格" clickable />
+    <van-cell title="单元格" is-link clickable />
+  </van-cell-group>
+</demo-block>
+
 <demo-block title="展示图标">
   <van-cell
     title="单元格"

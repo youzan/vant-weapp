@@ -146,7 +146,7 @@ db.collection('region')
 }
 ```
 
-完整数据见 [area.js](https://github.com/youzan/vant/blob/dev/src/area/demo/area.js)
+完整数据见 [area.ts](https://github.com/youzan/vant/blob/dev/src/area/demo/area.ts)
 
 ### 点击完成时返回的数据格式
 

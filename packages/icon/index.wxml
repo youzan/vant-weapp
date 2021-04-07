@@ -3,7 +3,7 @@
 <view
   class="{{ computed.rootClass({ classPrefix, name }) }}"
   style="{{ computed.rootStyle({ customStyle, color, size }) }}"
-  bindtap="onClick"
+  catchtap="onClick"
 >
   <van-info
     wx:if="{{ info !== null || dot }}"

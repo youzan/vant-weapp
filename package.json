@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "node build/dev.js",
     "lint": "eslint ./packages --ext .js,.ts --fix && stylelint \"packages/**/*.less\" --fix",
+    "prepare": "husky install",
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
@@ -24,12 +25,6 @@
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/youzan/vant-weapp.git"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant-cli commit-lint"
-    }
   },
   "lint-staged": {
     "*.{ts,js}": [

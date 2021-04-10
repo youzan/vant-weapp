@@ -14,7 +14,7 @@
     "release": "sh build/release.sh",
     "release:site": "sh build/release-site.sh",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
-    "build:changelog": "vant changelog --tag v1.3.0 ./docs/markdown/changelog.generated.md",
+    "build:changelog": "vant-cli changelog",
     "upload:weapp": "node build/upload.js"
   },
   "files": [
@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "@vant/cli": "^3.9.3",
+    "@vant/cli": "^3.10.0",
     "@vant/icons": "1.5.2",
     "cross-env": "^7.0.0",
     "cssnano": "^4.1.10",

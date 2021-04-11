@@ -36,4 +36,7 @@ then
   git checkout dev
   git rebase master
   git push origin dev
+
+  # changelog
+  vant-cli changelog
 fi

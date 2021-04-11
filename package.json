@@ -13,7 +13,7 @@
     "lint": "eslint ./packages --ext .js,.ts --fix && stylelint \"packages/**/*.less\" --fix",
     "prepare": "husky install",
     "release": "sh build/release.sh",
-    "release:site": "sh build/release-site.sh",
+    "release:site": "vant-cli build-site && gh-pages -d site --add",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
     "build:changelog": "vant-cli changelog",
     "upload:weapp": "node build/upload.js"
@@ -40,19 +40,14 @@
   "devDependencies": {
     "@vant/cli": "^3.10.0",
     "@vant/icons": "1.5.2",
-    "cross-env": "^7.0.0",
     "cssnano": "^4.1.10",
-    "gh-pages": "^3.0.0",
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",
     "gulp-less": "^4.0.1",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
-    "less": "^3.9.0",
-    "lint-staged": "^10.0.0",
     "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.0.27",
-    "prettier": "^2.0.5",
     "tscpaths": "^0.0.9",
     "vue": "^3.0.0",
     "@vue/compiler-sfc": "^3.0.0"
@@ -65,6 +60,5 @@
     "Chrome >= 53",
     "ChromeAndroid >= 53",
     "iOS >= 8"
-  ],
-  "dependencies": {}
+  ]
 }

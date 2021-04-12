@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -30,7 +30,7 @@
 
 ### 异步关闭
 
-当开启`async-close`时， 通过绑定`close`事件，可以自定义两侧滑动内容点击时的关闭行为
+当开启`async-close`时， 通过绑定`close`事件，可以自定义两侧滑动内容点击时的关闭行为。
 
 ```html
 <van-swipe-cell

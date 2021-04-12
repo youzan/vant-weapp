@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -136,9 +136,7 @@ Page({
 
 ### items 数据结构
 
-`items` 整体为一个数组，数组内包含一系列描述分类的对象
-
-每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项
+`items` 整体为一个数组，数组内包含一系列描述分类的对象。每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项。
 
 ```javascript
 [

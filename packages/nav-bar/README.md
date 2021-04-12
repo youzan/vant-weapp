@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -42,7 +42,7 @@ Page({
 
 ### 高级用法
 
-通过 slot 定制内容
+通过 slot 定制内容。
 
 ```html
 <van-nav-bar title="标题" left-text="返回" left-arrow>

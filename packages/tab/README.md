@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -19,7 +19,7 @@
 
 ### 基础用法
 
-通过`active`设定当前激活标签对应的索引值，默认情况下启用第一个标签
+通过`active`设定当前激活标签对应的索引值，默认情况下启用第一个标签。
 
 ```html
 <van-tabs active="{{ active }}" bind:change="onChange">
@@ -47,7 +47,7 @@ Page({
 
 ### 通过名称匹配
 
-在标签指定`name`属性的情况下，`active`的值为当前标签的`name`（此时无法通过索引值来匹配标签）
+在标签指定`name`属性的情况下，`active`的值为当前标签的`name`（此时无法通过索引值来匹配标签）。
 
 ```html
 <van-tabs active="a">
@@ -59,7 +59,7 @@ Page({
 
 ### 横向滚动
 
-多于 5 个标签时，Tab 可以横向滚动
+多于 5 个标签时，Tab 可以横向滚动。
 
 ```html
 <van-tabs active="{{ active }}">
@@ -74,7 +74,7 @@ Page({
 
 ### 禁用标签
 
-设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`van-tabs`上监听`disabled`事件
+设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`van-tabs`上监听`disabled`事件。
 
 ```html
 <van-tabs bind:disabled="onClickDisabled">
@@ -97,7 +97,7 @@ Page({
 
 ### 样式风格
 
-`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格
+`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格。
 
 ```html
 <van-tabs type="card">
@@ -109,7 +109,7 @@ Page({
 
 ### 点击事件
 
-可以在`van-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和标识符
+可以在`van-tabs`上绑定`click`事件，在回调参数的`event.detail`中可以取得被点击标签的标题和标识符。
 
 ```html
 <van-tabs bind:click="onClick">
@@ -131,7 +131,7 @@ Page({
 
 ### 粘性布局
 
-通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
+通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶。
 
 ```html
 <van-tabs sticky>
@@ -157,7 +157,7 @@ Page({
 
 ### 滑动切换
 
-通过`swipeable`属性可以开启滑动切换标签页
+通过`swipeable`属性可以开启滑动切换标签页。
 
 ```html
 <van-tabs swipeable>
@@ -193,13 +193,13 @@ Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位
 
 #### 解决方法
 
-方法一，使用 `wx:if` 来控制组件展示，使组件重新初始化：
+方法一，使用 `wx:if` 来控制组件展示，使组件重新初始化。
 
 ```html
 <van-tabs wx:if="show" />
 ```
 
-方法二，调用组件的 resize 方法来主动触发重绘：
+方法二，调用组件的 resize 方法来主动触发重绘。
 
 ```html
 <van-tabs id="tabs" />
@@ -277,7 +277,7 @@ this.selectComponent('#tabs').resize();
 
 ### 方法
 
-通过 selectComponent 可以获取到 Tabs 实例并调用实例方法
+通过 selectComponent 可以获取到 Tabs 实例并调用实例方法。
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 | --- | --- | --- | --- |

@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -21,7 +21,7 @@
 
 ### 基础用法
 
-点击索引栏时，会自动跳转到对应的`IndexAnchor`锚点位置
+点击索引栏时，会自动跳转到对应的`IndexAnchor`锚点位置。
 
 ```html
 <van-index-bar>
@@ -45,7 +45,7 @@
 
 ### 自定义索引列表
 
-可以通过`index-list`属性自定义展示的索引字符列表，
+可以通过`index-list`属性自定义展示的索引字符列表。
 
 ```html
 <van-index-bar index-list="{{ indexList }}">

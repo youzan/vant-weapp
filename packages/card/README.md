@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -30,7 +30,7 @@
 
 ### 高级用法
 
-可以通过插槽添加定制内容
+可以通过插槽添加定制内容。
 
 ```html
 <van-card

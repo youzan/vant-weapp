@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -14,13 +14,13 @@
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)。
 
 ## 代码演示
 
 ### 基本用法
 
-`time`属性表示倒计时总时长，单位为毫秒
+`time`属性表示倒计时总时长，单位为毫秒。
 
 ```html
 <van-count-down time="{{ time }}" />
@@ -36,7 +36,7 @@ Page({
 
 ### 自定义格式
 
-通过`format`属性设置倒计时文本的内容
+通过`format`属性设置倒计时文本的内容。
 
 ```html
 <van-count-down time="{{ time }}" format="DD 天 HH 时 mm 分 ss 秒" />
@@ -44,7 +44,7 @@ Page({
 
 ### 毫秒级渲染
 
-倒计时默认每秒渲染一次，设置`millisecond`属性可以开启毫秒级渲染
+倒计时默认每秒渲染一次，设置`millisecond`属性可以开启毫秒级渲染。
 
 ```html
 <van-count-down millisecond time="{{ time }}" format="HH:mm:ss:SSS" />
@@ -52,7 +52,7 @@ Page({
 
 ### 自定义样式
 
-设置`use-slot`属性后可以自定义倒计时样式，需要通过`bind:change`事件获取`timeData`对象并自行渲染，格式见下方表格
+设置`use-slot`属性后可以自定义倒计时样式，需要通过`bind:change`事件获取`timeData`对象并自行渲染，格式见下方表格。
 
 ```html
 <van-count-down use-slot time="{{ time }}" bind:change="onChange">
@@ -92,7 +92,7 @@ Page({
 
 ### 手动控制
 
-通过 `selectComponent` 选择器获取到组件实例后，可以调用`start`、`pause`、`reset`方法
+通过 `selectComponent` 选择器获取到组件实例后，可以调用`start`、`pause`、`reset`方法。
 
 ```html
 <van-count-down
@@ -165,7 +165,7 @@ Page({
 
 ### 方法
 
-通过 selectComponent 可以获取到 CountDown 实例并调用实例方法
+通过 selectComponent 可以获取到 CountDown 实例并调用实例方法。
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 | --- | --- | --- | --- |

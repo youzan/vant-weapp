@@ -2,11 +2,11 @@
 
 ### 介绍
 
-创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作
+创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -41,7 +41,7 @@ Page({
 
 ### 嵌入内容
 
-通过默认插槽可以在遮罩层上嵌入任意内容
+通过默认插槽可以在遮罩层上嵌入任意内容。
 
 ```html
 <van-button type="primary" bind:click="onClickShow">嵌入内容</van-button>

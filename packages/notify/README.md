@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -31,7 +31,7 @@ Notify('通知内容');
 
 ### 通知类型
 
-支持`primary`、`success`、`warning`、`danger`四种通知类型，默认为`danger`
+支持`primary`、`success`、`warning`、`danger`四种通知类型，默认为`danger`。
 
 ```js
 // 主要通知
@@ -49,7 +49,7 @@ Notify({ type: 'warning', message: '通知内容' });
 
 ### 自定义通知
 
-自定义消息通知的颜色和展示时长
+自定义消息通知的颜色和展示时长。
 
 ```js
 Notify({

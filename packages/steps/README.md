@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -49,7 +49,7 @@ Page({
 
 ### 自定义样式
 
-可以通过 `active-icon` 和 `active-color` 属性设置激活状态下的图标和颜色
+可以通过 `active-icon` 和 `active-color` 属性设置激活状态下的图标和颜色。
 
 ```html
 <van-steps
@@ -62,7 +62,7 @@ Page({
 
 ### 自定义图标
 
-可以通过 `inactiveIcon` 和 `activeIcon` 属性分别设置每一项的图标
+可以通过 `inactiveIcon` 和 `activeIcon` 属性分别设置每一项的图标。
 
 ```html
 <van-steps steps="{{ steps }}" active="{{ active }}" />
@@ -103,7 +103,7 @@ Page({
 
 ### 竖向步骤条
 
-可以通过设置`direction`属性来改变步骤条的显示方式
+可以通过设置`direction`属性来改变步骤条的显示方式。
 
 ```html
 <van-steps

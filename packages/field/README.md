@@ -2,11 +2,11 @@
 
 ### 介绍
 
-表单中的输入框组件
+用户可以在文本框内输入或编辑文字。
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -44,7 +44,7 @@ Page({
 
 ### 双向绑定
 
-最低基础库版本在 2.9.3 以上时，可以使用[简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)
+最低基础库版本在 2.9.3 以上时，可以使用[简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)。
 
 ```html
 <van-cell-group>
@@ -66,7 +66,7 @@ Page({
 
 ### 自定义类型
 
-根据`type`属性定义不同类型的输入框
+根据`type`属性定义不同类型的输入框。
 
 ```html
 <van-cell-group>
@@ -107,7 +107,7 @@ Page({
 
 ### 错误提示
 
-通过`error`或者`error-message`属性增加对应的错误提示
+通过`error`或者`error-message`属性增加对应的错误提示。
 
 ```html
 <van-cell-group>
@@ -129,7 +129,7 @@ Page({
 
 ### 内容对齐方式
 
-可以通过`input-align`属性设置内容的对齐方式
+可以通过`input-align`属性设置内容的对齐方式。
 
 ```html
 <van-cell-group>
@@ -144,7 +144,7 @@ Page({
 
 ### 高度自适应
 
-对于 textarea，可以通过`autosize`属性设置高度自适应
+对于 textarea，可以通过`autosize`属性设置高度自适应。
 
 ```html
 <van-cell-group>
@@ -161,7 +161,7 @@ Page({
 
 ### 插入按钮
 
-通过 button slot 可以在输入框尾部插入按钮
+通过 button slot 可以在输入框尾部插入按钮。
 
 ```html
 <van-cell-group>
@@ -187,11 +187,11 @@ Page({
 
 由于微信小程序的 input 组件和 textarea 组件是原生组件，聚焦时会将原生的输入框覆盖在对应位置上，导致了这个现象的产生。
 
-相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)
+相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=placeholder%20%E9%97%AA%E7%83%81%20%E5%8A%A0%E7%B2%97)。
 
 ### 真机上 placeholder 为什么会盖过 popup 等其它组件？
 
-由于微信小程序的 input 组件和 textarea 组件是原生组件，遵循原生组件的限制，详情可以查看[原生组件说明](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
+由于微信小程序的 input 组件和 textarea 组件是原生组件，遵循原生组件的限制，详情可以查看[原生组件说明](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)。
 
 ### textarea 的 placeholder 在真机上为什么会偏移？
 
@@ -201,13 +201,13 @@ Page({
 
 这一系列的问题导致了 placeholder 在真机上可能会出现偏移。
 
-微信已经在 `2.10.0` 基础库版本后支持移除默认的 `padding`，但低版本仍有问题。详情可以查看 [微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)
+微信已经在 `2.10.0` 基础库版本后支持移除默认的 `padding`，但低版本仍有问题。详情可以查看 [微信开放社区](https://developers.weixin.qq.com/community/develop/issue/96)。
 
 ### 手写输入法为什么会丢失部分字符 / 手写输入法为什么不会触发 input 事件？
 
 这是微信小程序的 input 组件本身的问题，如果需要兼容手写输入法的场景，可以在 `blur` 事件中取到输入的值。
 
-相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)
+相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)。
 
 ## API
 

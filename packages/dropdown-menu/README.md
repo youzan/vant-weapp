@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)。
 
 ```json
 "usingComponents": {
@@ -172,7 +172,7 @@ Page({
 
 ### DropdownItem 方法
 
-通过 selectComponent(id) 可访问
+通过 selectComponent(id) 可访问。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |

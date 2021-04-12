@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -14,13 +14,13 @@
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)。
 
 ## 代码演示
 
 ### 基础用法
 
-基础用法与原生 [image](<(https://developers.weixin.qq.com/miniprogram/dev/component/image.html)>) 标签一致，可以设置`src`、`width`、`height`等原生属性
+基础用法与原生 [image](<(https://developers.weixin.qq.com/miniprogram/dev/component/image.html)>) 标签一致，可以设置`src`、`width`、`height`等原生属性。
 
 ```html
 <van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
@@ -28,7 +28,7 @@
 
 ### 填充模式
 
-通过`fit`属性可以设置图片填充模式，可选值见下方表格
+通过`fit`属性可以设置图片填充模式，可选值见下方表格。
 
 ```html
 <van-image
@@ -54,7 +54,7 @@
 
 ### 图片懒加载
 
-图片懒加载，在即将进入一定范围（上下三屏）时才开始加载
+图片懒加载，在即将进入一定范围（上下三屏）时才开始加载。
 
 ```html
 <van-image
@@ -67,7 +67,7 @@
 
 ### 加载中提示
 
-`Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容
+`Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容。
 
 ```html
 <van-image use-loading-slot>
@@ -77,7 +77,7 @@
 
 ### 加载失败提示
 
-`Image`组件提供了默认的加载失败提示，支持通过`error`插槽自定义内容
+`Image`组件提供了默认的加载失败提示，支持通过`error`插槽自定义内容。
 
 ```html
 <van-image use-error-slot>

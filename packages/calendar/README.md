@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 选择单个日期
 
-下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发`confirm`事件
+下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发`confirm`事件。
 
 ```html
 <van-cell title="选择单个日期" value="{{ date }}" bind:click="onDisplay" />
@@ -130,7 +130,7 @@ Page({
 
 ### 快捷选择
 
-将`show-confirm`设置为`false`可以隐藏确认按钮，这种情况下选择完成后会立即触发`confirm`事件
+将`show-confirm`设置为`false`可以隐藏确认按钮，这种情况下选择完成后会立即触发`confirm`事件。
 
 ```html
 <van-calendar show="{{ show }}" show-confirm="{{ false }}" />
@@ -138,7 +138,7 @@ Page({
 
 ### 自定义颜色
 
-通过`color`属性可以自定义日历的颜色，对选中日期和底部按钮生效
+通过`color`属性可以自定义日历的颜色，对选中日期和底部按钮生效。
 
 ```html
 <van-calendar show="{{ show }}" color="#07c160" />
@@ -168,7 +168,7 @@ Page({
 
 ### 自定义按钮文字
 
-通过`confirm-text`设置按钮文字，通过`confirm-disabled-text`设置按钮禁用时的文字
+通过`confirm-text`设置按钮文字，通过`confirm-disabled-text`设置按钮禁用时的文字。
 
 ```html
 <van-calendar
@@ -218,7 +218,7 @@ Page({
 
 ### 自定义弹出位置
 
-通过`position`属性自定义弹出层的弹出位置，可选值为`top`、`left`、`right`
+通过`position`属性自定义弹出层的弹出位置，可选值为`top`、`left`、`right`。
 
 ```html
 <van-calendar show="{{ show }}" round="false" position="right" />
@@ -226,7 +226,7 @@ Page({
 
 ### 日期区间最大范围
 
-选择日期区间时，可以通过`max-range`属性来指定最多可选天数，选择的范围超过最多可选天数时，会弹出相应的提示文案
+选择日期区间时，可以通过`max-range`属性来指定最多可选天数，选择的范围超过最多可选天数时，会弹出相应的提示文案。
 
 ```html
 <van-calendar type="range" max-range="{{ 3 }}" />
@@ -234,7 +234,7 @@ Page({
 
 ### 平铺展示
 
-将`poppable`设置为`false`，日历会直接展示在页面内，而不是以弹层的形式出现
+将`poppable`设置为`false`，日历会直接展示在页面内，而不是以弹层的形式出现。
 
 ```html
 <van-calendar
@@ -297,7 +297,7 @@ Page({
 
 ### Day 数据结构
 
-日历中的每个日期都对应一个 Day 对象，通过`formatter`属性可以自定义 Day 对象的内容
+日历中的每个日期都对应一个 Day 对象，通过`formatter`属性可以自定义 Day 对象的内容。
 
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
@@ -328,7 +328,7 @@ Page({
 
 ### 方法
 
-通过 selectComponent 可以获取到 Calendar 实例并调用实例方法
+通过 selectComponent 可以获取到 Calendar 实例并调用实例方法。
 
 | 方法名 | 说明                   | 参数 | 返回值 |
 | ------ | ---------------------- | ---- | ------ |

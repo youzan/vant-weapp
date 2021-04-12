@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -19,7 +19,7 @@
 
 ### 基础用法
 
-通过`value`绑定值当前选中项的 name
+通过`value`绑定值当前选中项的 name 。
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
@@ -59,7 +59,7 @@ Page({
 
 ### 禁用状态
 
-通过`disabled`属性禁止选项切换，在`Radio`上设置`diabled`可以禁用单个选项
+通过`disabled`属性禁止选项切换，在`Radio`上设置`diabled`可以禁用单个选项。
 
 ```html
 <van-radio-group value="{{ radio }}" disabled bind:change="onChange">
@@ -70,7 +70,7 @@ Page({
 
 ### 自定义形状
 
-将`shape`属性设置为`square`，单选框的形状会变成方形
+将`shape`属性设置为`square`，单选框的形状会变成方形。
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
@@ -81,7 +81,7 @@ Page({
 
 ### 自定义颜色
 
-通过`checked-color`属性设置选中状态的图标颜色
+通过`checked-color`属性设置选中状态的图标颜色。
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
@@ -92,7 +92,7 @@ Page({
 
 ### 自定义大小
 
-通过`icon-size`属性可以自定义图标的大小
+通过`icon-size`属性可以自定义图标的大小。
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
@@ -103,7 +103,7 @@ Page({
 
 ### 自定义图标
 
-通过`icon`插槽自定义图标，需要设置`use-icon-slot`属性
+通过`icon`插槽自定义图标，需要设置`use-icon-slot`属性。
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">
@@ -137,7 +137,7 @@ Page({
 
 ### 禁用文本点击
 
-通过设置`label-disabled`属性可以禁用单选框文本点击
+通过设置`label-disabled`属性可以禁用单选框文本点击。
 
 ```html
 <van-radio-group value="{{ radio }}" bind:change="onChange">

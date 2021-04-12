@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -26,7 +26,7 @@
 
 ### 事件监听
 
-`van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的搜索按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
+`van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的搜索按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发。
 
 ```html
 <van-search
@@ -40,7 +40,7 @@
 
 ### 搜索框内容对齐
 
-通过 `input-align` 属性可以设置搜索框内容的对齐方式
+通过 `input-align` 属性可以设置搜索框内容的对齐方式。
 
 ```html
 <van-search
@@ -52,7 +52,7 @@
 
 ### 禁用搜索框
 
-通过 `disabled` 属性可以将组件设置为禁用状态
+通过 `disabled` 属性可以将组件设置为禁用状态。
 
 ```html
 <van-search disabled value="{{ value }}" placeholder="请输入搜索关键词" />
@@ -60,7 +60,7 @@
 
 ### 自定义背景色
 
-通过`background`属性可以设置搜索框外部的背景色，通过`shape`属性设置搜索框的形状，可选值为`round`
+通过`background`属性可以设置搜索框外部的背景色，通过`shape`属性设置搜索框的形状，可选值为`round`。
 
 ```html
 <van-search

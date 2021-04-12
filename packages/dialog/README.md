@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 消息提示
 
-用于提示一些消息，只包含一个确认按钮
+用于提示一些消息，只包含一个确认按钮。
 
 ```html
 <van-dialog id="van-dialog" />
@@ -43,7 +43,7 @@ Dialog.alert({
 
 ### 消息确认
 
-用于确认消息，包含取消和确认按钮
+用于确认消息，包含取消和确认按钮。
 
 ```html
 <van-dialog id="van-dialog" />

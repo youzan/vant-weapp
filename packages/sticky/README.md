@@ -6,7 +6,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -20,7 +20,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ### 基础用法
 
-将内容包裹在`Sticky`组件内即可
+将内容包裹在`Sticky`组件内即可。
 
 ```html
 <van-sticky>
@@ -30,7 +30,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ### 吸顶距离
 
-通过`offset-top`属性可以设置组件在吸顶时与顶部的距离
+通过`offset-top`属性可以设置组件在吸顶时与顶部的距离。
 
 ```html
 <van-sticky offset-top="{{ 50 }}">
@@ -40,7 +40,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 
 ### 指定容器
 
-通过`container`属性可以指定组件的容器，页面滚动时，组件会始终保持在容器范围内，当组件即将超出容器底部时，会返回原位置
+通过`container`属性可以指定组件的容器，页面滚动时，组件会始终保持在容器范围内，当组件即将超出容器底部时，会返回原位置。
 
 ```html
 <view id="container" style="height: 150px;">
@@ -68,7 +68,7 @@ Page({
 
 ### 嵌套在 scroll-view 内使用
 
-通过 `scroll-top` 与 `offset-top` 属性可以实现在 scroll-view 内嵌套使用
+通过 `scroll-top` 与 `offset-top` 属性可以实现在 scroll-view 内嵌套使用。
 
 ```html
 <scroll-view

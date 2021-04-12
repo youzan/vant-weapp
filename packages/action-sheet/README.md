@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -85,7 +85,7 @@ Page({
 
 ### 展示取消按钮
 
-设置`cancel-text`属`性后，会在底部展示取消按钮，点击后关闭当前菜单
+设置`cancel-text`属`性后，会在底部展示取消按钮，点击后关闭当前菜单。
 
 ```html
 <van-action-sheet
@@ -97,7 +97,7 @@ Page({
 
 ### 展示描述信息
 
-设置`description`属性后，会在选项上方显示描述信息
+设置`description`属性后，会在选项上方显示描述信息。
 
 ```html
 <van-action-sheet
@@ -109,7 +109,7 @@ Page({
 
 ### 展示标题栏
 
-通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容
+通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容。
 
 ```html
 <van-action-sheet show="{{ show }}" title="标题">

@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -30,7 +30,7 @@
 
 ### 单元格大小
 
-通过`size`属性可以控制单元格的大小
+通过`size`属性可以控制单元格的大小。
 
 ```html
 <van-cell title="单元格" value="内容" size="large" />
@@ -39,7 +39,7 @@
 
 ### 展示图标
 
-通过`icon`属性在标题左侧展示图标
+通过`icon`属性在标题左侧展示图标。
 
 ```html
 <van-cell title="单元格" icon="location-o" />
@@ -47,7 +47,7 @@
 
 ### 展示箭头
 
-设置`is-link`属性后会在单元格右侧显示箭头，并且可以通过`arrow-direction`属性控制箭头方向
+设置`is-link`属性后会在单元格右侧显示箭头，并且可以通过`arrow-direction`属性控制箭头方向。
 
 ```html
 <van-cell title="单元格" is-link />
@@ -57,7 +57,7 @@
 
 ### 页面跳转
 
-可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型
+可以通过`url`属性进行页面跳转，通过`link-type`属性控制跳转类型。
 
 ```html
 <van-cell
@@ -70,7 +70,7 @@
 
 ### 分组标题
 
-通过`CellGroup`的`title`属性可以指定分组标题
+通过`CellGroup`的`title`属性可以指定分组标题。
 
 ```html
 <van-cell-group title="分组1">
@@ -83,7 +83,7 @@
 
 ### 使用插槽
 
-如以上用法不能满足你的需求，可以使用插槽来自定义内容
+如以上用法不能满足你的需求，可以使用插槽来自定义内容。
 
 ```html
 <van-cell value="内容" icon="shop-o" is-link>
@@ -99,7 +99,7 @@
 
 ### 垂直居中
 
-通过`center`属性可以让`Cell`的左右内容都垂直居中
+通过`center`属性可以让`Cell`的左右内容都垂直居中。
 
 ```html
 <van-cell center title="单元格" value="内容" label="描述信息" />

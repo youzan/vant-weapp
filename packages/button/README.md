@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 按钮类型
 
-支持`default`、`primary`、`info`、`warning`、`danger`五种类型，默认为`default`
+支持`default`、`primary`、`info`、`warning`、`danger`五种类型，默认为`default`。
 
 ```html
 <van-button type="default">默认按钮</van-button>
@@ -30,7 +30,7 @@
 
 ### 朴素按钮
 
-通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
+通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
 
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
@@ -39,7 +39,7 @@
 
 ### 细边框
 
-设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
+设置`hairline`属性可以开启 0.5px 边框，基于伪类实现。
 
 ```html
 <van-button plain hairline type="primary">细边框按钮</van-button>
@@ -48,7 +48,7 @@
 
 ### 禁用状态
 
-通过`disabled`属性来禁用按钮，此时按钮的`bind:click`事件不会触发
+通过`disabled`属性来禁用按钮，此时按钮的`bind:click`事件不会触发。
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>
@@ -72,7 +72,7 @@
 
 ### 图标按钮
 
-通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL
+通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL。
 
 ```html
 <van-button icon="star-o" type="primary" />
@@ -84,7 +84,7 @@
 
 ### 按钮尺寸
 
-支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
+支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`。
 
 ```html
 <van-button type="primary" size="large">大号按钮</van-button>
@@ -95,7 +95,7 @@
 
 ### 块级元素
 
-通过`block`属性可以将按钮的元素类型设置为块级元素
+通过`block`属性可以将按钮的元素类型设置为块级元素。
 
 ```html
 <van-button type="primary" block>块级元素</van-button>
@@ -103,7 +103,7 @@
 
 ### 自定义颜色
 
-通过`color`属性可以自定义按钮的颜色
+通过`color`属性可以自定义按钮的颜色。
 
 ```html
 <van-button color="#7232dd">单色按钮</van-button>

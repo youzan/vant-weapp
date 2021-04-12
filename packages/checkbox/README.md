@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -19,7 +19,7 @@
 
 ### 基础用法
 
-通过`value`绑定复选框的勾选状态
+通过`value`绑定复选框的勾选状态。
 
 ```html
 <van-checkbox value="{{ checked }}" bind:change="onChange">复选框</van-checkbox>
@@ -41,7 +41,7 @@ Page({
 
 ### 禁用状态
 
-通过设置`disabled`属性可以禁用复选框
+通过设置`disabled`属性可以禁用复选框。
 
 ```html
 <van-checkbox disabled value="{{ checked }}" bind:change="onChange">
@@ -51,7 +51,7 @@ Page({
 
 ### 自定义形状
 
-将`shape`属性设置为`square`，复选框的形状会变成方形
+将`shape`属性设置为`square`，复选框的形状会变成方形。
 
 ```html
 <van-checkbox value="{{ checked }}" shape="square" bind:change="onChange">
@@ -61,7 +61,7 @@ Page({
 
 ### 自定义颜色
 
-通过`checked-color`属性可以自定义选中状态下的图标颜色
+通过`checked-color`属性可以自定义选中状态下的图标颜色。
 
 ```html
 <van-checkbox
@@ -75,7 +75,7 @@ Page({
 
 ### 自定义大小
 
-通过`icon-size`属性可以自定义图标的大小
+通过`icon-size`属性可以自定义图标的大小。
 
 ```html
 <van-checkbox value="{{ checked }}" icon-size="25px">复选框</van-checkbox>
@@ -83,7 +83,7 @@ Page({
 
 ### 自定义图标
 
-通过 icon 插槽自定义图标
+通过 icon 插槽自定义图标。
 
 ```html
 <van-checkbox use-icon-slot value="{{ checked }}" bind:change="onChange">
@@ -110,7 +110,7 @@ Page({
 
 ### 禁用文本点击
 
-通过设置`label-disabled`属性可以禁用复选框文本点击
+通过设置`label-disabled`属性可以禁用复选框文本点击。
 
 ```html
 <van-checkbox value="{{ checked }}" label-disabled>复选框</van-checkbox>
@@ -118,7 +118,7 @@ Page({
 
 ### 复选框组
 
-需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
+需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`value`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值。
 
 ```html
 <van-checkbox-group value="{{ result }}" bind:change="onChange">
@@ -154,7 +154,7 @@ Page({
 
 ### 搭配单元格组件使用
 
-此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
+此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换。
 
 ```html
 <van-checkbox-group value="{{ result }}" bind:change="onChange">
@@ -261,7 +261,7 @@ Page({
 
 ### Checkbox 方法
 
-通过 selectComponent 可以获取到 checkbox 实例并调用实例方法
+通过 selectComponent 可以获取到 checkbox 实例并调用实例方法。
 
 | 方法名 | 参数 | 返回值 | 介绍         |
 | ------ | ---- | ------ | ------------ |

@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -21,7 +21,7 @@
 
 ### 基础用法
 
-通过在`van-sidebar`上设置`activeKey`属性来控制选中项
+通过在`van-sidebar`上设置`activeKey`属性来控制选中项。
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
@@ -41,7 +41,7 @@ Page({
 
 ### 徽标提示
 
-设置`dot`属性后，会在右上角展示一个小红点。设置`badge`属性后，会在右上角展示相应的徽标
+设置`dot`属性后，会在右上角展示一个小红点。设置`badge`属性后，会在右上角展示相应的徽标。
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
@@ -53,7 +53,7 @@ Page({
 
 ### 禁用选项
 
-通过`disabled`属性禁用选项
+通过`disabled`属性禁用选项。
 
 ```html
 <van-sidebar active-key="{{ activeKey }}">
@@ -65,7 +65,7 @@ Page({
 
 ### 监听切换事件
 
-设置`change`方法来监听切换导航项时的事件
+设置`change`方法来监听切换导航项时的事件。
 
 ```html
 <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">

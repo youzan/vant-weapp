@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 基础用法
 
-进度条默认为蓝色，使用`percentage`属性来设置当前进度
+进度条默认为蓝色，使用`percentage`属性来设置当前进度。
 
 ```html
 <van-progress percentage="50" />
@@ -26,7 +26,7 @@
 
 ### 线条粗细
 
-通过`stroke-width`可以设置进度条的粗细
+通过`stroke-width`可以设置进度条的粗细。
 
 ```html
 <van-progress :percentage="50" stroke-width="8" />
@@ -42,7 +42,7 @@
 
 ### 样式定制
 
-可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色
+可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色。
 
 ```html
 <van-progress pivot-text="橙色" color="#f2826a" percentage="25" />

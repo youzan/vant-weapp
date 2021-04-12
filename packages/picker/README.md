@@ -2,11 +2,11 @@
 
 ### 介绍
 
-选择器组件通常与 [弹出层](#/popup) 组件配合使用
+提供多个选项集合供用户选择，支持单列选择和多列级联，通常与 [弹出层](#/popup) 组件配合使用。
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -39,7 +39,7 @@ Page({
 
 ### 默认选中项
 
-单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
+单列选择器可以直接通过`default-index`属性设置初始选中项的索引值。
 
 ```html
 <van-picker
@@ -116,7 +116,7 @@ Page({
 
 ### 禁用选项
 
-选项可以为对象结构，通过设置 disabled 来禁用该选项
+选项可以为对象结构，通过设置 disabled 来禁用该选项。
 
 ```html
 <van-picker columns="{{ columns }}" />
@@ -136,7 +136,7 @@ Page({
 
 ### 加载状态
 
-当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示
+当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示。
 
 ```html
 <van-picker columns="{{ columns }}" loading />
@@ -162,7 +162,7 @@ Page({
 
 ### Events
 
-Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
+Picker 组件的事件会根据 columns 是单列或多列返回不同的参数。
 
 | 事件名 | 说明 | 参数 |
 | --- | --- | --- |
@@ -172,7 +172,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 ### Columns 数据结构
 
-当传入多列数据时，`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`
+当传入多列数据时，`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`。
 
 | key          | 说明                       |
 | ------------ | -------------------------- |
@@ -190,7 +190,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
 ### 方法
 
-通过 selectComponent 可以获取到 picker 实例并调用实例方法
+通过 selectComponent 可以获取到 picker 实例并调用实例方法。
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 | --- | --- | --- | --- |

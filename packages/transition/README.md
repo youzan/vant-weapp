@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 基础用法
 
-将元素包裹在 transition 组件内，在元素展示/隐藏时，会有相应的过渡动画
+将元素包裹在 transition 组件内，在元素展示/隐藏时，会有相应的过渡动画。
 
 ```html
 <van-transition show="{{ show }}" custom-class="block">
@@ -28,7 +28,7 @@
 
 ### 动画类型
 
-transition 组件内置了多种动画，可以通过`name`字段指定动画类型
+transition 组件内置了多种动画，可以通过`name`字段指定动画类型。
 
 ```html
 <van-transition name="fade-up" />
@@ -36,7 +36,7 @@ transition 组件内置了多种动画，可以通过`name`字段指定动画类
 
 ### 高级用法
 
-可以通过外部样式类自定义过渡效果，还可以定制进入和移出的持续时间：
+可以通过外部样式类自定义过渡效果，还可以定制进入和移出的持续时间。
 
 ```html
 <van-transition

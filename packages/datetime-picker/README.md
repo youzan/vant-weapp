@@ -2,11 +2,11 @@
 
 ### 介绍
 
-用于选择时间，支持日期、时分等时间维度，通常与 [弹出层](#/popup) 组件配合使用
+用于选择时间，支持日期、时分等时间维度，通常与 [弹出层](#/popup) 组件配合使用。
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 选择完整时间
 
-`value` 为时间戳
+`value` 为时间戳。
 
 ```html
 <van-datetime-picker
@@ -50,7 +50,7 @@ Page({
 
 ### 选择日期（年月日）
 
-`value` 为时间戳，通过传入 `formatter` 函数对选项文字进行处理
+`value` 为时间戳，通过传入 `formatter` 函数对选项文字进行处理。
 
 ```html
 <van-datetime-picker
@@ -87,7 +87,7 @@ Page({
 
 ### 选择日期（年月）
 
-`value` 为时间戳
+`value` 为时间戳。
 
 ```html
 <van-datetime-picker
@@ -115,7 +115,7 @@ Page({
 
 ### 选择时间
 
-`value` 为字符串
+`value` 为字符串。
 
 ```html
 <van-datetime-picker
@@ -145,7 +145,7 @@ Page({
 
 ### 选项过滤器
 
-通过传入 `filter` 函数，可以对选项数组进行过滤，实现自定义时间间隔
+通过传入 `filter` 函数，可以对选项数组进行过滤，实现自定义时间间隔。
 
 ```html
 <van-datetime-picker

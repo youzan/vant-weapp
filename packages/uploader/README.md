@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
+在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)。
 
 ```json
 "usingComponents": {
@@ -20,7 +20,7 @@
 
 ### 基础用法
 
-文件上传完毕后会触发`after-read`回调函数，获取到对应的文件的临时地址，然后再使用`wx.uploadFile`将图片上传到远程服务器上
+文件上传完毕后会触发`after-read`回调函数，获取到对应的文件的临时地址，然后再使用`wx.uploadFile`将图片上传到远程服务器上。
 
 ```html
 <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
@@ -108,7 +108,7 @@ Page({
 
 ### 上传状态
 
-通过`status`属性可以标识上传状态，`uploading`表示上传中，`failed`表示上传失败，`done`表示上传完成
+通过`status`属性可以标识上传状态，`uploading`表示上传中，`failed`表示上传失败，`done`表示上传完成。
 
 ```html
 <van-uploader file-list="{{ fileList }}" />
@@ -135,7 +135,7 @@ Page({
 
 ### 限制上传数量
 
-通过`max-count`属性可以限制上传文件的数量，上传数量达到限制后，会自动隐藏上传区域
+通过`max-count`属性可以限制上传文件的数量，上传数量达到限制后，会自动隐藏上传区域。
 
 ```html
 <van-uploader
@@ -147,7 +147,7 @@ Page({
 
 ### 自定义上传样式
 
-通过插槽可以自定义上传区域的样式
+通过插槽可以自定义上传区域的样式。
 
 ```html
 <van-uploader>
@@ -257,7 +257,7 @@ uploadFilePromise(fileName, chooseResult) {
 
 ### FileList
 
-`file-list` 为一个对象数组，数组中的每一个对象包含以下 `key`
+`file-list` 为一个对象数组，数组中的每一个对象包含以下 `key`。
 
 | 参数      | 说明                                                   |
 | --------- | ------------------------------------------------------ |

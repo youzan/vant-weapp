@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -16,7 +16,7 @@
 }
 ```
 
-> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)
+> Vant Weapp 1.0 版本开始支持此组件，升级方式参见[快速上手](#/quickstart)。
 
 ## 代码演示
 
@@ -49,7 +49,7 @@ Page({
 
 ### 提示信息
 
-设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标
+设置`dot`属性后，会在图标右上角展示一个小红点。设置`info`属性后，会在图标右上角展示相应的徽标。
 
 ```html
 <van-goods-action>
@@ -63,7 +63,7 @@ Page({
 
 ### 自定义按钮颜色
 
-通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色
+通过`color`属性可以自定义按钮的颜色，支持传入`linear-gradient`渐变色。
 
 ```html
 <van-goods-action>
@@ -77,7 +77,7 @@ Page({
 
 ### 朴素按钮
 
-通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
+通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
 
 ```html
 <van-goods-action>

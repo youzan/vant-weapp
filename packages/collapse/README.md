@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -19,7 +19,7 @@
 
 ### 基础用法
 
-通过`value`控制展开的面板列表，`activeNames`为数组格式
+通过`value`控制展开的面板列表，`activeNames`为数组格式。
 
 ```html
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
@@ -50,7 +50,7 @@ Page({
 
 ### 手风琴
 
-通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
+通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式。
 
 ```html
 <van-collapse accordion value="{{ activeName }}" bind:change="onChange">

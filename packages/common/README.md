@@ -6,7 +6,7 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 
 ### 引入
 
-在 app.wxss 中引入内置样式
+在 app.wxss 中引入内置样式。
 
 ```css
 @import '@vant/weapp/common/index.wxss';
@@ -20,17 +20,17 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 
 ```xml
 <view class="van-ellipsis">
-  这是一段宽度限制 250px 的文字，后面的内容会省略
+  这是一段宽度限制 250px 的文字，后面的内容会省略。
 </view>
 
 <!-- 最多显示两行 -->
 <view class="van-multi-ellipsis--l2">
-  这是一段最多显示两行的文字，后面的内容会省略
+  这是一段最多显示两行的文字，后面的内容会省略。
 </view>
 
 <!-- 最多显示三行 -->
 <view class="van-multi-ellipsis--l3">
-  这是一段最多显示三行的文字，后面的内容会省略
+  这是一段最多显示三行的文字，后面的内容会省略。
 </view>
 ```
 

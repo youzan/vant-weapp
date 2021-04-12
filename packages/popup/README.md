@@ -2,11 +2,11 @@
 
 ### 介绍
 
-弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示
+弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -18,7 +18,7 @@
 
 ### 基础用法
 
-通过`show`属性控制弹出层是否展示
+通过`show`属性控制弹出层是否展示。
 
 ```html
 <van-cell title="展示弹出层" is-link bind:click="showPopup" />
@@ -44,7 +44,7 @@ Page({
 
 ### 弹出位置
 
-通过`position`属性设置弹出位置，默认居中弹出，可以设置为`top`、`bottom`、`left`、`right`
+通过`position`属性设置弹出位置，默认居中弹出，可以设置为`top`、`bottom`、`left`、`right`。
 
 ```html
 <van-popup
@@ -57,7 +57,7 @@ Page({
 
 ### 关闭图标
 
-设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置
+设置`closeable`属性后，会在弹出层的右上角显示关闭图标，并且可以通过`close-icon`属性自定义图标，使用`close-icon-position`属性可以自定义图标位置。
 
 ```html
 <van-popup
@@ -91,7 +91,7 @@ Page({
 
 ### 圆角弹窗
 
-设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式
+设置`round`属性后，弹窗会根据弹出位置添加不同的圆角样式。
 
 ```html
 <van-popup

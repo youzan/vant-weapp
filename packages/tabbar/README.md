@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -42,7 +42,7 @@ Page({
 
 ### 通过名称匹配
 
-在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
+在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`。
 
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
@@ -77,7 +77,7 @@ Page({
 
 ### 自定义图标
 
-可以通过 slot 自定义图标，其中 icon slot 代表未选中状态下的图标，icon-active slot 代表选中状态下的图标
+可以通过 slot 自定义图标，其中 icon slot 代表未选中状态下的图标，icon-active slot 代表选中状态下的图标。
 
 ```html
 <van-tabbar active="{{ active }}" bind:change="onChange">
@@ -170,7 +170,7 @@ Page({
 
 ### 结合自定义 tabBar
 
-请参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) 与 [代码片段](https://developers.weixin.qq.com/s/vaXgTsmQ7hnm)
+请参考 [微信官方文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html) 与 [代码片段](https://developers.weixin.qq.com/s/vaXgTsmQ7hnm)。
 
 ## API
 

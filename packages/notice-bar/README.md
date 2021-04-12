@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -79,7 +79,7 @@
 
 ### 自定义滚动速率
 
-使用`speed`属性控制滚动速率
+使用`speed`属性控制滚动速率。
 
 ```html
 <van-notice-bar

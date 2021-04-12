@@ -6,7 +6,7 @@
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -26,7 +26,7 @@
 
 ### 宽度定制
 
-通过`stroke-width`属性来控制进度条宽度
+通过`stroke-width`属性来控制进度条宽度。
 
 ```html
 <van-circle value="{{ value }}" stroke-width="6" text="宽度定制" />
@@ -34,7 +34,7 @@
 
 ### 颜色定制
 
-通过`color`属性来控制进度条颜色，`layer-color`属性来控制轨道颜色
+通过`color`属性来控制进度条颜色，`layer-color`属性来控制轨道颜色。
 
 ```html
 <van-circle
@@ -47,7 +47,7 @@
 
 ### 渐变色
 
-`color`属性支持传入对象格式来定义渐变色
+`color`属性支持传入对象格式来定义渐变色。
 
 ```html
 <van-circle value="{{ value }}" color="{{ gradientColor }}" text="渐变色" />
@@ -67,7 +67,7 @@ Page({
 
 ### 逆时针方向
 
-将`clockwise`设置为`false`，进度会从逆时针方向开始
+将`clockwise`设置为`false`，进度会从逆时针方向开始。
 
 ```html
 <van-circle
@@ -80,7 +80,7 @@ Page({
 
 ### 大小定制
 
-通过`size`属性设置圆环直径
+通过`size`属性设置圆环直径。
 
 ```html
 <van-circle value="{{ value }}" size="120" text="大小定制" />

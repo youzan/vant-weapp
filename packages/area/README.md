@@ -2,11 +2,11 @@
 
 ### 介绍
 
-省市区选择组件通常与 [弹出层](#/popup) 组件配合使用
+省市区选择组件通常与 [弹出层](#/popup) 组件配合使用。
 
 ### 引入
 
-在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)
+在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)。
 
 ```json
 "usingComponents": {
@@ -52,7 +52,7 @@ const areaList = {
 
 ### @vant/area-data
 
-Vant 官方提供了一份默认的省市区数据，可以通过 [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data) 引入：
+Vant 官方提供了一份默认的省市区数据，可以通过 [@vant/area-data](https://github.com/youzan/vant/tree/dev/packages/vant-area-data) 引入。
 
 ```bash
 yarn add @vant/area-data
@@ -70,7 +70,7 @@ Page({
 
 ### 选中省市区
 
-如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
+如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`。
 
 ```html
 <van-area area-list="{{ areaList }}" value="110101" />
@@ -78,7 +78,7 @@ Page({
 
 ### 配置显示列
 
-可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
+可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择。
 
 ```html
 <van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" title="标题" />
@@ -86,7 +86,7 @@ Page({
 
 ### 配置列占位提示文字
 
-可以通过`columns-placeholder`属性配置每一列的占位提示文字
+可以通过`columns-placeholder`属性配置每一列的占位提示文字。
 
 ```html
 <van-area
@@ -149,7 +149,7 @@ db.collection('region')
 
 ### 方法
 
-通过 selectComponent 可以获取到 Area 实例并调用实例方法
+通过 selectComponent 可以获取到 Area 实例并调用实例方法。
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 | --- | --- | --- | --- |
@@ -157,11 +157,11 @@ db.collection('region')
 
 ### 点击完成时返回的数据格式
 
-返回的数据整体为一个 Object，包含 `values`, `indexs` 两个 key
+返回的数据整体为一个 Object，包含 `values`, `indexs` 两个 key。
 
 `values` 整体为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中的数据。
 
-`code` 代表被选中的地区编码， `name` 代表被选中的地区名称
+`code` 代表被选中的地区编码， `name` 代表被选中的地区名称。
 
 ```javascript
 [

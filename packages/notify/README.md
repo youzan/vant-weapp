@@ -1,5 +1,9 @@
 # Notify 消息提示
 
+### 介绍
+
+在页面顶部展示消息提示，支持函数调用和组件调用两种方式。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

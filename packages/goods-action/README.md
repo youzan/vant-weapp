@@ -1,5 +1,9 @@
 # GoodsAction 商品导航
 
+### 介绍
+
+用于为商品相关操作提供便捷交互。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

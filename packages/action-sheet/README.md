@@ -1,5 +1,9 @@
 # ActionSheet 上拉菜单
 
+### 介绍
+
+底部弹起的模态面板，包含与当前情境相关的多个选项。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

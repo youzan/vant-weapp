@@ -1,5 +1,9 @@
 # TreeSelect 分类选择
 
+### 介绍
+
+用于从一组相关联的数据集合中进行选择。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

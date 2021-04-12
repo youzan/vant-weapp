@@ -1,5 +1,9 @@
 # Card 商品卡片
 
+### 介绍
+
+商品卡片，用于展示商品的图片、价格等信息。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

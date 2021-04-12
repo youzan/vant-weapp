@@ -1,5 +1,9 @@
 # Tabbar 标签栏
 
+### 介绍
+
+底部导航栏，用于在不同页面之间进行切换。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

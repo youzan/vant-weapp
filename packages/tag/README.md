@@ -1,5 +1,9 @@
 # Tag 标签
 
+### 介绍
+
+用于标记关键词和概括主要内容。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

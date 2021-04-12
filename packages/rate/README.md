@@ -1,5 +1,9 @@
 # Rate 评分
 
+### 介绍
+
+用于对事物进行评级操作。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

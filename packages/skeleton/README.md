@@ -1,5 +1,9 @@
 # Skeleton 骨架屏
 
+### 介绍
+
+用于在内容加载过程中展示一组占位图形。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

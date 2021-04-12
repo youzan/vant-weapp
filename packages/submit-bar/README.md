@@ -1,5 +1,9 @@
 # SubmitBar 提交订单栏
 
+### 介绍
+
+用于展示订单金额与提交订单。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

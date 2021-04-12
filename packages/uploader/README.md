@@ -1,5 +1,9 @@
 # Uploader 文件上传
 
+### 介绍
+
+用于将本地的图片或文件上传至服务器，并在上传过程中展示预览图和上传进度。目前 Uploader 组件不包含将文件上传至服务器的接口逻辑，该步骤需要自行实现。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，默认为`ES6`版本，`ES5`引入方式参见[快速上手](#/quickstart)
@@ -186,7 +190,7 @@ Page({
 
 ```js
 // 上传图片
-uploadToCloud() {
+uploadToCloud() { 
   wx.cloud.init();
   const { fileList } = this.data;
   if (!fileList.length) {

@@ -1,5 +1,9 @@
 # Search 搜索
 
+### 介绍
+
+用于搜索场景的输入框组件。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

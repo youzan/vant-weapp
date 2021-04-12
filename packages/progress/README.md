@@ -1,5 +1,9 @@
 # Progress 进度条
 
+### 介绍
+
+用于展示操作的当前进度。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

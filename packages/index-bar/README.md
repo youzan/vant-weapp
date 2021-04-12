@@ -1,5 +1,9 @@
 # IndexBar 索引栏
 
+### 介绍
+
+用于列表的索引分类显示和快速定位。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

@@ -1,5 +1,9 @@
 # Slider 滑块
 
+### 介绍
+
+滑动输入条，用于在给定的范围内选择一个值。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

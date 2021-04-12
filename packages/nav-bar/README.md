@@ -1,5 +1,9 @@
 # NavBar 导航栏
 
+### 介绍
+
+为页面提供导航功能，常用于页面顶部。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

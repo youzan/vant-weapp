@@ -1,5 +1,9 @@
 # Calendar 日历
 
+### 介绍
+
+日历组件用于选择日期或日期区间。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

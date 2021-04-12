@@ -1,5 +1,9 @@
 # Loading 加载
 
+### 介绍
+
+加载图标，用于表示加载中的过渡状态。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

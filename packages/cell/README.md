@@ -1,5 +1,9 @@
 # Cell 单元格
 
+### 介绍
+
+单元格为列表中的单个展示项。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

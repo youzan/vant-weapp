@@ -1,4 +1,4 @@
-# NoticeBar 通告栏
+# NoticeBar 通知栏
 
 ### 介绍
 
@@ -95,7 +95,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| mode | 通告栏模式，可选值为 `closeable` `link` | _string_ | `''` |
+| mode | 通知栏模式，可选值为 `closeable` `link` | _string_ | `''` |
 | text | 通知文本内容 | _string_ | `''` |
 | color | 通知文本颜色 | _string_ | `#ed6a0c` |
 | background | 滚动条背景 | _string_ | `#fffbe8` |

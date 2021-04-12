@@ -93,7 +93,7 @@ export default [
     list: [
       {
         path: '/action-sheet',
-        title: 'ActionSheet 上拉菜单',
+        title: 'ActionSheet 动作面板',
       },
       {
         path: '/dialog',
@@ -155,7 +155,7 @@ export default [
       },
       {
         path: '/notice-bar',
-        title: 'NoticeBar 通告栏',
+        title: 'NoticeBar 通知栏',
       },
       {
         path: '/panel',

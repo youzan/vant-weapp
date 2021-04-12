@@ -1,5 +1,9 @@
 # SwipeCell 滑动单元格
 
+### 介绍
+
+可以左右滑动来展示操作按钮的单元格组件。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

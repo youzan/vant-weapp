@@ -1,5 +1,9 @@
 # Collapse 折叠面板
 
+### 介绍
+
+将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

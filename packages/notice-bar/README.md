@@ -1,5 +1,9 @@
 # NoticeBar 通告栏
 
+### 介绍
+
+用于循环播放展示一组消息通知。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

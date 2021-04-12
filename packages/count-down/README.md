@@ -1,5 +1,9 @@
 # CountDown 倒计时
 
+### 介绍
+
+用于实时展示倒计时数值，支持毫秒精度。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

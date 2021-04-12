@@ -1,5 +1,9 @@
 # Transition 动画
 
+### 介绍
+
+使元素从一种样式逐渐变化为另一种样式的效果。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

@@ -1,5 +1,9 @@
 # Switch 开关
 
+### 介绍
+
+用于在打开和关闭状态之间进行切换。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

@@ -1,5 +1,9 @@
 # Tab 标签页
 
+### 介绍
+
+选项卡组件，用于在不同的内容区域之间进行切换。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

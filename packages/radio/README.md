@@ -1,5 +1,9 @@
 # Radio 单选框
 
+### 介绍
+
+在一组备选项中进行单选。
+
 ### 引入
 
 在`app.json`或`index.json`中引入组件，详细介绍见[快速上手](#/quickstart#yin-ru-zu-jian)

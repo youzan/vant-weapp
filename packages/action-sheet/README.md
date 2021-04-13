@@ -85,7 +85,7 @@ Page({
 
 ### 展示取消按钮
 
-设置`cancel-text`属`性后，会在底部展示取消按钮，点击后关闭当前菜单。
+设置`cancel-text`属性后，会在底部展示取消按钮，点击后关闭当前菜单。
 
 ```html
 <van-action-sheet

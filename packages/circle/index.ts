@@ -187,6 +187,9 @@ VantComponent({
           } else {
             this.currentValue -= STEP;
           }
+          if (Math.abs(this.currentValue - value) < STEP) {
+            this.currentValue = value
+          }
           this.drawCircle(this.currentValue);
         } else {
           this.clearInterval();

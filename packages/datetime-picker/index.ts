@@ -52,7 +52,7 @@ VantComponent({
     ...pickerProps,
     value: {
       type: null,
-      observer: 'updateValue',
+      observer: 'updateValueNotEmit',
     },
     filter: null,
     type: {
@@ -114,6 +114,17 @@ VantComponent({
         this.updateColumnValue(val).then(() => {
           this.$emit('input', val);
         });
+      } else {
+        this.updateColumns();
+      }
+    },
+    
+    updateValueNotEmit() {
+      const { data } = this;
+      const val = this.correctValue(data.value);
+      const isEqual = val === data.innerValue;
+      if (!isEqual) {
+        this.updateColumnValue(val);
       } else {
         this.updateColumns();
       }

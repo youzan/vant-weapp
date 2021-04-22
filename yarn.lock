@@ -3111,10 +3111,10 @@
     eslint-plugin-markdown "^2.0.0"
     eslint-plugin-vue "^7.1.0"
 
-"@vant/icons@1.5.2":
-  version "1.5.2"
-  resolved "https://registry.npm.taobao.org/@vant/icons/download/@vant/icons-1.5.2.tgz?cache=0&sync_timestamp=1611633258561&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vant%2Ficons%2Fdownload%2F%40vant%2Ficons-1.5.2.tgz#3f3ea353a0eacd38c113757bd31836489facb10b"
-  integrity sha1-Pz6jU6DqzTjBE3V70xg2SJ+ssQs=
+"@vant/icons@1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.5.3.tgz#b7779f67bf608d417a82452fbede406dfa46b439"
+  integrity sha512-OQaJqAWN6quHicWje4buknX9zcDo3UDy3X4nrk/ldnr9Fj8Str4nMtQbMbIrCMtmjQdP2ei769uuY508dudrjA==
 
 "@vant/markdown-loader@^4.1.0":
   version "4.1.0"

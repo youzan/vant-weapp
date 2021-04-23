@@ -10924,9 +10924,9 @@ minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
 miniprogram-api-typings@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.npm.taobao.org/miniprogram-api-typings/download/miniprogram-api-typings-3.1.6.tgz?cache=0&sync_timestamp=1604494894079&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fminiprogram-api-typings%2Fdownload%2Fminiprogram-api-typings-3.1.6.tgz#d4fcb47d6dddc041205adbab9161010f459b9f33"
-  integrity sha1-1Py0fW3dwEEgWturkWEBD0WbnzM=
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.3.1.tgz#1cc58437873fe01c1b4f382aa7630bd73d848c42"
+  integrity sha512-3MTHaLgcuaLlMiEIVn3OdzJjLKgZfkpV/KrwxUYIL/+4b4BM6TAFYcwsXmQH7edOG9AUwU7pkQESpzE0ZjpPUQ==
 
 miniprogram-ci@^1.0.27:
   version "1.0.83"

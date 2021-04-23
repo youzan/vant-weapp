@@ -47,7 +47,7 @@
     "gulp-rename": "^2.0.0",
     "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.0.27",
-    "less": "^3.0.0",
+    "less": "^4.1.1",
     "tscpaths": "^0.0.9",
     "vue": "^3.0.0",
     "@vue/compiler-sfc": "^3.0.0"

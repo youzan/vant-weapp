@@ -51,7 +51,7 @@ VantComponent({
   },
 
   methods: {
-    onScroll({ scrollTop } = {}) {
+    onScroll({ scrollTop }: { scrollTop?: number } = {}) {
       const { container, offsetTop, disabled } = this.data;
 
       if (disabled) {

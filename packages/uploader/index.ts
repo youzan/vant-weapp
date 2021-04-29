@@ -82,7 +82,7 @@ VantComponent({
       this.setData({ lists, isInCount: lists.length < maxCount });
     },
 
-    getDetail(index) {
+    getDetail(index?: number) {
       return {
         name: this.data.name,
         index: index == null ? this.data.fileList.length : index,

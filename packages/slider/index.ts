@@ -89,7 +89,7 @@ VantComponent({
       });
     },
 
-    updateValue(value: number, end: boolean, drag: boolean) {
+    updateValue(value: number, end?: boolean, drag?: boolean) {
       value = this.format(value);
       const { min } = this.data;
       const width = `${((value - min) * 100) / this.getRange()}%`;

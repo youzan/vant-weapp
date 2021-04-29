@@ -15,7 +15,7 @@ export function nextTick(cb: (...args: any[]) => void) {
   }
 }
 
-let systemInfo: WechatMiniprogram.GetSystemInfoSyncResult;
+let systemInfo: WechatMiniprogram.SystemInfo;
 export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();

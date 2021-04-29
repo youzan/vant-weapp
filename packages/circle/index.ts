@@ -68,7 +68,7 @@ VantComponent({
   },
 
   methods: {
-    getContext() {
+    getContext(): Promise<WechatMiniprogram.CanvasContext> {
       const { type, size } = this.data;
 
       if (type === '' || !canIUseCanvas2d()) {
@@ -108,7 +108,10 @@ VantComponent({
           Object.keys(color)
             .sort((a, b) => parseFloat(a) - parseFloat(b))
             .map((key) =>
-              LinearColor.addColorStop(parseFloat(key) / 100, color[key])
+              LinearColor.addColorStop(
+                parseFloat(key) / 100,
+                color[key] as string
+              )
             );
           this.hoverColor = LinearColor;
         });
@@ -118,7 +121,7 @@ VantComponent({
       return Promise.resolve();
     },
 
-    presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {
+    presetCanvas(context, strokeStyle, beginAngle, endAngle, fill?: string) {
       const { strokeWidth, lineCap, clockwise, size } = this.data;
       const position = size / 2;
       const radius = position - strokeWidth / 2;

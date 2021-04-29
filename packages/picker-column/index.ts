@@ -113,7 +113,7 @@ VantComponent({
         : option;
     },
 
-    setIndex(index: number, userAction: boolean) {
+    setIndex(index: number, userAction?: boolean) {
       const { data } = this;
       index = this.adjustIndex(index) || 0;
       const offset = -index * data.itemHeight;

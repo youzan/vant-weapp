@@ -272,7 +272,7 @@ VantComponent({
       }
     },
 
-    select(date, complete) {
+    select(date, complete?: boolean) {
       if (complete && this.data.type === 'range') {
         const valid = this.checkRange(date);
 

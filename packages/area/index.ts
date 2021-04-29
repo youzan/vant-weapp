@@ -102,7 +102,7 @@ VantComponent({
     onChange(event: WechatMiniprogram.CustomEvent) {
       const { index, picker, value } = event.detail;
       this.code = value[index].code;
-      this.setValues().then(() => {
+      this.setValues()?.then(() => {
         this.$emit('change', {
           picker,
           values: this.parseValues(picker.getValues()),

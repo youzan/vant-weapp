@@ -2978,10 +2978,10 @@
     "@typescript-eslint/types" "4.21.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vant/cli@^3.10.0":
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.10.2.tgz#b5766a2ab136694543d86d102168ab981acfadff"
-  integrity sha512-CF118Co5BAfH/DtH6jrqBNG2v9pErIkC7ps7JZhZb1CYTPb5l5xkEq0GwjCmGcL1UtbQO/3GvPROFbpYtoLDVA==
+"@vant/cli@^3.10.3":
+  version "3.10.3"
+  resolved "https://registry.nlark.com/@vant/cli/download/@vant/cli-3.10.3.tgz?cache=0&sync_timestamp=1619699867594&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vant%2Fcli%2Fdownload%2F%40vant%2Fcli-3.10.3.tgz#021d9a136e9be81c5aa51da0fe1ef61410460bf6"
+  integrity sha1-Ah2aE26b6BxapR2g/h72FBBGC/Y=
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/preset-env" "^7.12.11"

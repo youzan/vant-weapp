@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "@vant/cli": "^3.10.0",
+    "@vant/cli": "^3.10.3",
     "@vant/icons": "1.5.3",
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",

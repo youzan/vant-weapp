@@ -96,26 +96,6 @@ PS：关于 `van-area`  Area 省市区选择组件，地区数据初始化可以
 
 Vant Weapp 最低支持到小程序基础库 2.2.3 版本
 
-## 微信讨论群
-
-欢迎大家在微信上联系我们，添加下方微信并注明『交流 vant-weapp』即可
-
-<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
-
-## 加入我们
-
-**有赞前端团队**是由一群年轻、皮实、对技术饱含热情的小伙伴组成的，目前共有 100 多名前端工程师，分布在业务中台、电商、零售、美业、资产、有赞云、赋能平台、增长中心等业务线。
-
-我们热爱分享和开源，崇尚用工程师的方式解决问题，因此造了很多工具来解决我们遇到的问题，目前我们维护的开源产品有：
-
-<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" width="320" height="303">
-
-我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
-
-- <a target="_blank" href="https://app.mokahr.com/apply/youzan/3750#/jobs/?keyword=%E5%89%8D%E7%AB%AF&_k=tueqds">职位详情</a>（Base: 杭州/深圳）
-- <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
-- <a target="_blank" href="https://github.com/youzan">开源项目</a>
-
 ## 链接
 
 * [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)

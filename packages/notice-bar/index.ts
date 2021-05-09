@@ -75,7 +75,7 @@ VantComponent({
             contentRect == null ||
             wrapRect == null ||
             !contentRect.width ||
-            !wrapRect.width
+            !wrapRect.width1
           ) {
             return;
           }

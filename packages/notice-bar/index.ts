@@ -29,9 +29,9 @@ VantComponent({
       value: 50,
       observer: 'init',
     },
-    scrollable: {
-      type: Boolean,
-      value: true,
+    scroll: {
+      type: String,
+      value: 'auto',
     },
     leftIcon: {
       type: String,
@@ -45,6 +45,7 @@ VantComponent({
 
   data: {
     show: true,
+    scrollable: true,
   },
 
   created() {
@@ -79,9 +80,11 @@ VantComponent({
             return;
           }
 
-          const { speed, scrollable, delay } = this.data;
+          const { speed, scroll, delay } = this.data;
 
-          if (scrollable || wrapRect.width < contentRect.width) {
+          if ((scroll === 'auto' && wrapRect.width < contentRect.width) || scroll === 'on') {
+            this.setData({ scrollable: true })
+
             const duration = (contentRect.width / speed) * 1000;
 
             this.wrapWidth = wrapRect.width;
@@ -94,6 +97,8 @@ VantComponent({
             });
 
             this.scroll();
+          } else {
+            this.setData({ scrollable: false })
           }
         });
       });

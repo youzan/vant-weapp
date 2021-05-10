@@ -293,7 +293,7 @@ Page({
 | --- | --- | --- | --- |
 | max-range | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
 | range-prompt | 范围选择超过最多可选天数时的提示文案 | _string_ | `选择天数不能超过 xx 天` |
-| allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `fasle` |
+| allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Day 数据结构
 

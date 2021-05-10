@@ -23,6 +23,7 @@ function getDayStyle(type, index, date, rowHeight, color) {
     if (
       type === 'start' ||
       type === 'end' ||
+      type === 'start-end' ||
       type === 'multiple-selected' ||
       type === 'multiple-middle'
     ) {

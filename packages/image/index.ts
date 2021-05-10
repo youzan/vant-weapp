@@ -1,9 +1,8 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
-import { openType } from '../mixins/open-type';
 
 VantComponent({
-  mixins: [button, openType],
+  mixins: [button],
 
   classes: ['custom-class', 'loading-class', 'error-class', 'image-class'],
 

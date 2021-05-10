@@ -2,10 +2,9 @@ import { VantComponent } from '../common/component';
 import { useParent } from '../common/relation';
 import { button } from '../mixins/button';
 import { link } from '../mixins/link';
-import { openType } from '../mixins/open-type';
 
 VantComponent({
-  mixins: [link, button, openType],
+  mixins: [link, button],
 
   relation: useParent('goods-action'),
 

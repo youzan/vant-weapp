@@ -16,27 +16,27 @@ export const button = Behavior({
   },
 
   methods: {
-    bindGetUserInfo(event: WechatMiniprogram.ButtonGetUserInfo) {
+    onGetUserInfo(event: WechatMiniprogram.ButtonGetUserInfo) {
       this.triggerEvent('getuserinfo', event.detail);
     },
 
-    bindContact(event: WechatMiniprogram.ButtonContact) {
+    onContact(event: WechatMiniprogram.ButtonContact) {
       this.triggerEvent('contact', event.detail);
     },
 
-    bindGetPhoneNumber(event: WechatMiniprogram.ButtonGetPhoneNumber) {
+    onGetPhoneNumber(event: WechatMiniprogram.ButtonGetPhoneNumber) {
       this.triggerEvent('getphonenumber', event.detail);
     },
 
-    bindError(event: WechatMiniprogram.ButtonError) {
+    onError(event: WechatMiniprogram.ButtonError) {
       this.triggerEvent('error', event.detail);
     },
 
-    bindLaunchApp(event: WechatMiniprogram.ButtonLaunchApp) {
+    onLaunchApp(event: WechatMiniprogram.ButtonLaunchApp) {
       this.triggerEvent('launchapp', event.detail);
     },
 
-    bindOpenSetting(event: WechatMiniprogram.ButtonOpenSetting) {
+    onOpenSetting(event: WechatMiniprogram.ButtonOpenSetting) {
       this.triggerEvent('opensetting', event.detail);
     },
   },

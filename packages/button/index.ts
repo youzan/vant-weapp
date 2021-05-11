@@ -1,9 +1,8 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
-import { openType } from '../mixins/open-type';
 import { canIUseFormFieldButton } from '../common/version';
 
-const mixins = [button, openType];
+const mixins = [button];
 if (canIUseFormFieldButton()) {
   mixins.push('wx://form-field-button');
 }
@@ -54,12 +53,19 @@ VantComponent({
   },
 
   methods: {
-    onClick() {
-      if (!this.data.loading) {
-        this.$emit('click');
+    onClick(event: WechatMiniprogram.TouchEvent) {
+      this.$emit('click', event);
+
+      const { canIUseGetUserProfile, openType, getUserProfileDesc } = this.data;
+
+      if (openType === 'getUserInfo' && canIUseGetUserProfile) {
+        wx.getUserProfile({
+          desc: getUserProfileDesc || '  ',
+          complete: (userProfile) => {
+            this.$emit('getuserinfo', userProfile);
+          },
+        });
       }
     },
-
-    noop() {},
   },
 });

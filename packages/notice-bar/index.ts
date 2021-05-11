@@ -29,10 +29,7 @@ VantComponent({
       value: 50,
       observer: 'init',
     },
-    scrollable: {
-      type: Boolean,
-      value: true,
-    },
+    scrollable: null,
     leftIcon: {
       type: String,
       value: '',
@@ -70,16 +67,16 @@ VantComponent({
           getRect(this, '.van-notice-bar__wrap'),
         ]).then((rects) => {
           const [contentRect, wrapRect] = rects;
+          const { speed, scrollable, delay } = this.data;
           if (
             contentRect == null ||
             wrapRect == null ||
             !contentRect.width ||
-            !wrapRect.width
+            !wrapRect.width ||
+            scrollable === false
           ) {
             return;
           }
-
-          const { speed, scrollable, delay } = this.data;
 
           if (scrollable || wrapRect.width < contentRect.width) {
             const duration = (contentRect.width / speed) * 1000;

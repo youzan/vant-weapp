@@ -37,7 +37,7 @@ export type VantComponentOptions<
       Data & {
         name: string;
         value: any;
-      },
+      } & Record<string, any>,
       Props,
       Methods
     > &

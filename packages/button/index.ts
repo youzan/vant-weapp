@@ -53,12 +53,19 @@ VantComponent({
   },
 
   methods: {
-    onClick() {
-      if (!this.data.loading) {
-        this.$emit('click');
+    onClick(event: WechatMiniprogram.TouchEvent) {
+      this.$emit('click', event);
+
+      const { canIUseGetUserProfile, openType, getUserProfileDesc } = this.data;
+
+      if (openType === 'getUserInfo' && canIUseGetUserProfile) {
+        wx.getUserProfile({
+          desc: getUserProfileDesc || '  ',
+          complete: (userProfile) => {
+            this.$emit('getuserinfo', userProfile);
+          },
+        });
       }
     },
-
-    noop() {},
   },
 });

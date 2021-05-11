@@ -1,3 +1,5 @@
+import { canIUseGetUserProfile } from '../common/version';
+
 export const button = Behavior({
   externalClasses: ['hover-class'],
 
@@ -13,6 +15,11 @@ export const button = Behavior({
     appParameter: String,
     ariaLabel: String,
     openType: String,
+    getUserProfileDesc: String,
+  },
+
+  data: {
+    canIUseGetUserProfile: canIUseGetUserProfile(),
   },
 
   methods: {

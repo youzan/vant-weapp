@@ -27,7 +27,7 @@
 使用`slot`自定义内容。
 
 ```html
-<van-panel title="标题" desc="描述信息" status="状态" use-footer-slot>
+<van-panel title="标题" desc="描述信息" status="状态">
   <view>内容</view>
   <view slot="footer">
     <van-button size="small">按钮</van-button>
@@ -40,12 +40,11 @@
 
 ### Props
 
-| 参数            | 说明                 | 类型      | 默认值  | 版本 |
-| --------------- | -------------------- | --------- | ------- | ---- |
-| title           | 标题                 | _string_  | -       | -    |
-| desc            | 描述                 | _string_  | -       | -    |
-| status          | 状态                 | _string_  | -       | -    |
-| use-footer-slot | 是否使用 footer slot | _boolean_ | `false` | -    |
+| 参数   | 说明 | 类型     | 默认值 | 版本 |
+| ------ | ---- | -------- | ------ | ---- |
+| title  | 标题 | _string_ | -      | -    |
+| desc   | 描述 | _string_ | -      | -    |
+| status | 状态 | _string_ | -      | -    |
 
 ### Slot
 
@@ -53,7 +52,7 @@
 | ------ | -------------------------------------------------------------- |
 | -      | 自定义内容                                                     |
 | header | 自定义 header，如果设置了`title`、`desc`、`status`属性则不生效 |
-| footer | 自定义 footer，需要设置 `use-footer-slot`属性                  |
+| footer | 自定义 footer                                                  |
 
 ### 外部样式类
 

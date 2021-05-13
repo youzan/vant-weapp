@@ -13,6 +13,7 @@ import {
 
 import Toast from '../toast/toast';
 import { requestAnimationFrame } from '../common/utils';
+import { isDef } from '../common/validator';
 
 VantComponent({
   props: {
@@ -35,7 +36,10 @@ VantComponent({
       type: String,
       value: '确定',
     },
-    rangePrompt: String,
+    rangePrompt: {
+      type: String,
+      optionalTypes: [null],
+    },
     defaultDate: {
       type: null,
       observer(val) {
@@ -311,10 +315,15 @@ VantComponent({
       const { maxRange, rangePrompt } = this.data;
 
       if (maxRange && calcDateNum(date) > maxRange) {
-        Toast({
-          context: this,
-          message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
-        });
+        if (isDef(rangePrompt)) {
+          Toast({
+            duration: 0,
+            context: this,
+            message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
+          });
+        }
+        this.$emit('over-range');
+
         return false;
       }
 

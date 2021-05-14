@@ -13,7 +13,6 @@ import {
 
 import Toast from '../toast/toast';
 import { requestAnimationFrame } from '../common/utils';
-import { isDef } from '../common/validator';
 
 VantComponent({
   props: {
@@ -36,9 +35,10 @@ VantComponent({
       type: String,
       value: '确定',
     },
-    rangePrompt: {
-      type: String,
-      optionalTypes: [null],
+    rangePrompt: String,
+    showRangePrompt: {
+      type: Boolean,
+      value: true,
     },
     defaultDate: {
       type: null,
@@ -312,10 +312,10 @@ VantComponent({
     },
 
     checkRange(date) {
-      const { maxRange, rangePrompt } = this.data;
+      const { maxRange, rangePrompt, showRangePrompt } = this.data;
 
       if (maxRange && calcDateNum(date) > maxRange) {
-        if (isDef(rangePrompt)) {
+        if (showRangePrompt) {
           Toast({
             duration: 0,
             context: this,

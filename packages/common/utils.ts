@@ -37,9 +37,9 @@ export function requestAnimationFrame(cb: () => void) {
   const systemInfo = getSystemInfoSync();
 
   if (systemInfo.platform === 'devtools') {
-    return setTimeout(() => {
+    return nextTick(() => {
       cb();
-    }, 1000 / 30);
+    });
   }
 
   return wx

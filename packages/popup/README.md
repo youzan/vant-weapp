@@ -103,20 +103,29 @@ Page({
 />
 ```
 
-## 常见问题
+### 禁止滚动穿透
 
-### 组件滚动穿透该怎么解决？
+使用组件时，会发现内容部分滚动到底时，继续划动会导致底层页面的滚动，这就是滚动穿透。
 
-使用组件时，会发现内容部分滚动到底时，继续划动会导致页面的滚动，这就是滚动穿透。
+目前，组件内部无法很好地处理滚动穿透问题。不过，开发者仍可使用下面提供的 2 种方法自行处理：
 
-在web中，可以通过给 body 增加样式或者劫持内容部分的 `touchstart` 事件，判断后动态调用 `preventDefault` 来实现。不幸的是，这两种方法在小程序中都是不可行的，组件内部无法很好地处理滚动穿透问题。
+#### 阻止 touchstart 事件
 
-如果你有禁止滚动的需要，可以显式地 `catch` 组件的 `touchstart` 事件，不过需要注意的是，这也会禁止组件内容部分的滚动。
+需要注意的是，这也会禁止组件内容部分的滚动
+
 ```html
-<van-popup
-  ...
-  catch:touchstart
-/>
+<van-popup catch:touchstart />
+```
+
+#### [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
+
+当小程序基础库最低版本在 2.9.0 以上时，即可使用 [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html) 组件动态修改页面样式
+
+```html
+<!-- page-meta 只能是页面内的第一个节点 -->
+<page-meta page-style="{{ show ? 'overflow: hidden;' : '' }}" />
+
+<van-popup show="{{ show }}" catch:touchstart />
 ```
 
 ## API

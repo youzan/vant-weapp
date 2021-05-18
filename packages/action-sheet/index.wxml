@@ -27,7 +27,7 @@
     <button
       wx:for="{{ actions }}"
       wx:key="index"
-      open-type="{{ item.disabled || item.loading || canIUseGetUserProfile ? '' : item.openType }}"
+      open-type="{{ item.disabled || item.loading || (canIUseGetUserProfile && item.openType === 'getUserInfo') ? '' : item.openType }}"
       style="{{ item.color ? 'color: ' + item.color : '' }}"
       class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} {{ item.className || '' }}"
       hover-class="van-action-sheet__item--hover"

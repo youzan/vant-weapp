@@ -294,8 +294,8 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | max-range | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
-| range-prompt | 范围选择超过最多可选天数时的提示文案，<br>当为`null`时不展示提示文案 | _string \| null_ | `选择天数不能超过 xx 天` |
-| show-range-prompt | 是否超出最多可选天数提示文案 | _boolean_ | `true` |
+| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string \| null_ | `选择天数不能超过 xx 天` |
+| show-range-prompt | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
 | allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Day 数据结构

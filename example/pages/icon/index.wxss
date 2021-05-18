@@ -11,7 +11,7 @@ page {
 
 .icon {
   margin: 16px 0;
-  color: #323233 !important;
+  color: #323233;
 }
 
 .text {

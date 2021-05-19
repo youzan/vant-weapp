@@ -9,11 +9,31 @@ VantComponent({
     subtitle: String,
     showTitle: Boolean,
     showSubtitle: Boolean,
+    firstDayOfWeek: {
+      type: Number,
+      observer: 'initWeekDay',
+    },
   },
 
   data: {
-    weekdays: ['日', '一', '二', '三', '四', '五', '六'],
+    weekdays: [] as Array<string>,
   },
 
-  methods: {},
+  created() {
+    this.initWeekDay();
+  },
+
+  methods: {
+    initWeekDay() {
+      const defaultWeeks = ['日', '一', '二', '三', '四', '五', '六'];
+      const firstDayOfWeek = this.data.firstDayOfWeek || 0;
+
+      this.setData({
+        weekdays: [
+          ...defaultWeeks.slice(firstDayOfWeek, 7),
+          ...defaultWeeks.slice(0, firstDayOfWeek),
+        ],
+      });
+    },
+  },
 });

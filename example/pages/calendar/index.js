@@ -13,7 +13,7 @@ Page({
       customConfirm: [],
       customRange: null,
       customDayText: [],
-      customPosition: null
+      customPosition: null,
     },
     type: 'single',
     round: true,
@@ -32,7 +32,8 @@ Page({
     tiledMinDate: new Date(2012, 0, 10).getTime(),
     tiledMaxDate: new Date(2012, 2, 20).getTime(),
     confirmText: undefined,
-    confirmDisabledText: undefined
+    confirmDisabledText: undefined,
+    firstDayOfWeek: 0,
   },
 
   onConfirm(event) {
@@ -40,7 +41,9 @@ Page({
     this.setData({ showCalendar: false });
 
     this.setData({
-      [`date.${this.data.id}`]: Array.isArray(event.detail) ? event.detail.map(date => date.valueOf()) : event.detail.valueOf()
+      [`date.${this.data.id}`]: Array.isArray(event.detail)
+        ? event.detail.map((date) => date.valueOf())
+        : event.detail.valueOf(),
     });
   },
 
@@ -83,7 +86,7 @@ Page({
       formatter: null,
       showConfirm: true,
       confirmText: '确定',
-      confirmDisabledText: null
+      confirmDisabledText: null,
     });
   },
 
@@ -93,7 +96,7 @@ Page({
     const data = {
       id,
       type,
-      showCalendar: true
+      showCalendar: true,
     };
 
     switch (id) {
@@ -150,5 +153,5 @@ Page({
     }
 
     return day;
-  }
+  },
 });

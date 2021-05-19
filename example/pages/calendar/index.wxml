@@ -112,6 +112,7 @@
     show-confirm="{{ false }}"
     min-date="{{ tiledMinDate }}"
     max-date="{{ tiledMaxDate }}"
+    first-day-of-week="{{ firstDayOfWeek }}"
     class="tiled-calendar"
   />
 </demo-block>
@@ -129,6 +130,7 @@
   show-confirm="{{ showConfirm }}"
   confirm-text="{{ confirmText }}"
   confirm-disabled-text="{{ confirmDisabledText }}"
+  first-day-of-week="{{ firstDayOfWeek }}"
   bind:confirm="onConfirm"
   bind:select="onSelect"
   bind:unselect="onUnselect"

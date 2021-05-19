@@ -110,6 +110,10 @@ VantComponent({
       type: null,
       value: null,
     },
+    firstDayOfWeek: {
+      type: Number,
+      value: 0,
+    },
   },
 
   data: {

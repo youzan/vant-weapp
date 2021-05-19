@@ -106,12 +106,23 @@ VantComponent({
       type: null,
       value: null,
     },
+    firstDayOfWeek: {
+      type: Number,
+      value: 0,
+      observer(value: number) {
+        const v = Math.ceil(value);
+        this.setData({
+          startDayOfWeek: v > 6 || v < 0 ? 0 : v,
+        });
+      },
+    },
   },
 
   data: {
     subtitle: '',
     currentDate: null as any,
     scrollIntoView: '',
+    startDayOfWeek: 0,
   },
 
   created() {

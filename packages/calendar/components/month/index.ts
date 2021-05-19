@@ -42,6 +42,10 @@ VantComponent({
       type: null,
       observer: 'setDays',
     },
+    firstDayOfWeek: {
+      type: Number,
+      observer: 'setDays',
+    },
     allowSameDay: Boolean,
     showSubtitle: Boolean,
     showMonthTitle: Boolean,

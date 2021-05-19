@@ -4,7 +4,7 @@
     showTitle="{{ showTitle }}"
     subtitle="{{ subtitle }}"
     showSubtitle="{{ showSubtitle }}"
-    firstDayOfWeek="{{ startDayOfWeek }}"
+    firstDayOfWeek="{{ firstDayOfWeek }}"
   >
     <slot name="title" slot="title"></slot>
   </header>
@@ -32,7 +32,7 @@
       showSubtitle="{{ showSubtitle }}"
       allowSameDay="{{ allowSameDay }}"
       showMonthTitle="{{ index !== 0 || !showSubtitle }}"
-      firstDayOfWeek="{{ startDayOfWeek }}"
+      firstDayOfWeek="{{ firstDayOfWeek }}"
       bind:click="onClickDay"
     />
   </scroll-view>

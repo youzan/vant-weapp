@@ -156,10 +156,14 @@ VantComponent({
       this.currentValue = this.currentValue || 0;
       this.interval = setInterval(() => {
         if (this.currentValue !== value) {
-          if (this.currentValue < value) {
-            this.currentValue += STEP;
+          if (Math.abs(this.currentValue - value) < STEP) {
+            this.currentValue = value;
           } else {
-            this.currentValue -= STEP;
+            if (this.currentValue < value) {
+              this.currentValue += STEP;
+            } else {
+              this.currentValue -= STEP;
+            }
           }
           this.drawCircle(this.currentValue);
         } else {

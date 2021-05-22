@@ -1,8 +1,7 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
-import { openType } from '../mixins/open-type';
 VantComponent({
-  mixins: [button, openType],
+  mixins: [button],
   props: {
     show: Boolean,
     title: String,
@@ -40,11 +39,20 @@ VantComponent({
   methods: {
     onSelect(event) {
       const { index } = event.currentTarget.dataset;
-      const item = this.data.actions[index];
-      if (item && !item.disabled && !item.loading) {
+      const { actions, closeOnClickAction, canIUseGetUserProfile } = this.data;
+      const item = actions[index];
+      if (item) {
         this.$emit('select', item);
-        if (this.data.closeOnClickAction) {
+        if (closeOnClickAction) {
           this.onClose();
+        }
+        if (item.openType === 'getUserInfo' && canIUseGetUserProfile) {
+          wx.getUserProfile({
+            desc: item.getUserProfileDesc || '  ',
+            complete: (userProfile) => {
+              this.$emit('getuserinfo', userProfile);
+            },
+          });
         }
       }
     },

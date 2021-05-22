@@ -1,7 +1,7 @@
 /// <reference types="miniprogram-api-typings" />
 export declare function range(num: number, min: number, max: number): number;
 export declare function nextTick(cb: (...args: any[]) => void): void;
-export declare function getSystemInfoSync(): WechatMiniprogram.GetSystemInfoSyncResult;
+export declare function getSystemInfoSync(): WechatMiniprogram.SystemInfo;
 export declare function addUnit(value?: string | number): string | undefined;
 export declare function requestAnimationFrame(
   cb: () => void
@@ -25,6 +25,6 @@ export declare function toPromise(
 export declare function getCurrentPage<T>(): T &
   WechatMiniprogram.OptionalInterface<WechatMiniprogram.Page.ILifetime> &
   WechatMiniprogram.Page.InstanceProperties &
-  WechatMiniprogram.Page.InstanceMethods<Record<string, any>> &
-  WechatMiniprogram.Page.Data<Record<string, any>> &
-  Record<string, any>;
+  WechatMiniprogram.Page.InstanceMethods<WechatMiniprogram.IAnyObject> &
+  WechatMiniprogram.Page.Data<WechatMiniprogram.IAnyObject> &
+  WechatMiniprogram.IAnyObject;

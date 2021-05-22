@@ -34,6 +34,10 @@ VantComponent({
       value: '确定',
     },
     rangePrompt: String,
+    showRangePrompt: {
+      type: Boolean,
+      value: true,
+    },
     defaultDate: {
       type: null,
       observer(val) {
@@ -103,6 +107,10 @@ VantComponent({
     maxRange: {
       type: null,
       value: null,
+    },
+    firstDayOfWeek: {
+      type: Number,
+      value: 0,
     },
   },
   data: {
@@ -271,12 +279,16 @@ VantComponent({
       this.$emit('select', copyDates(date));
     },
     checkRange(date) {
-      const { maxRange, rangePrompt } = this.data;
+      const { maxRange, rangePrompt, showRangePrompt } = this.data;
       if (maxRange && calcDateNum(date) > maxRange) {
-        Toast({
-          context: this,
-          message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
-        });
+        if (showRangePrompt) {
+          Toast({
+            duration: 0,
+            context: this,
+            message: rangePrompt || `选择天数不能超过 ${maxRange} 天`,
+          });
+        }
+        this.$emit('over-range');
         return false;
       }
       return true;

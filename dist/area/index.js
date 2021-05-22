@@ -80,15 +80,18 @@ VantComponent({
       });
     },
     onChange(event) {
+      var _a;
       const { index, picker, value } = event.detail;
       this.code = value[index].code;
-      this.setValues().then(() => {
-        this.$emit('change', {
-          picker,
-          values: this.parseValues(picker.getValues()),
-          index,
-        });
-      });
+      (_a = this.setValues()) === null || _a === void 0
+        ? void 0
+        : _a.then(() => {
+            this.$emit('change', {
+              picker,
+              values: this.parseValues(picker.getValues()),
+              index,
+            });
+          });
     },
     getConfig(type) {
       const { areaList } = this.data;

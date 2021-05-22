@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-types
 export function isFunction(val) {
   return typeof val === 'function';
 }

@@ -1,6 +1,6 @@
 # 更新日志
 
-### [1.6.9-beta.0](https://github.com/youzan/vant-weapp/compare/v1.6.8...v1.6.9-beta.0) (2021-05-22)
+### [1.6.9-beta.2](https://github.com/youzan/vant-weapp/compare/v1.6.8...v1.6.9-beta.2) (2021-05-22)
 
 `2021-05-23`
 

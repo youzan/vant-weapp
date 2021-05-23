@@ -1,3 +1,25 @@
+### [1.6.9-beta.0](https://github.com/youzan/vant-weapp/compare/v1.6.8...v1.6.9-beta.0) (2021-05-22)
+
+`2021-05-23`
+
+**Bug Fixes**
+
+- Button: 修复 open-type 不生效 [#4222](https://github.com/youzan/vant-weapp/issues/4222)
+- Calendar: 修复 allow-same-day 开启时 custom-color 属性无效 [#4200](https://github.com/youzan/vant-weapp/issues/4200)
+- Circle: 修复 value 是小数时抖动的情况 [#4152](https://github.com/youzan/vant-weapp/issues/4152)
+- NoticeBar: 调整滚动行为 [#4201](https://github.com/youzan/vant-weapp/issues/4201)
+- NoticeBar: 修复不正确的滚动速度 [cde3876](https://github.com/youzan/vant-weapp/commit/cde3876fb0742cacf3e481a8eb2b487dabc8709e)
+- Radio: 支持动态设置 disabled [#4191](https://github.com/youzan/vant-weapp/issues/4191)
+- Rate: 支持滑动选择半星 [#4195](https://github.com/youzan/vant-weapp/issues/4195)
+
+**Features**
+
+- Calendar: 增加 first-day-of-week 属性，设置周起始日 [#4211](https://github.com/youzan/vant-weapp/issues/4211)
+- Calendar: 增加 show-range-prompt 属性和 over-range 事件，设置是否展示提示文案 [#4212](https://github.com/youzan/vant-weapp/issues/4212)
+- Icons: 图标库迁移至iconfont.cn [#4219](https://github.com/youzan/vant-weapp/issues/4219)
+- OpenType: 支持 getUserProfile [#4203](https://github.com/youzan/vant-weapp/issues/4203)
+- Panel: 移除 useFooterSlot [#4205](https://github.com/youzan/vant-weapp/issues/4205)
+
 # 更新日志
 
 ### [1.6.8](https://github.com/youzan/vant-weapp/tree/v1.6.8)

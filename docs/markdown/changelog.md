@@ -1,3 +1,5 @@
+# 更新日志
+
 ### [1.6.9-beta.0](https://github.com/youzan/vant-weapp/compare/v1.6.8...v1.6.9-beta.0) (2021-05-22)
 
 `2021-05-23`
@@ -20,7 +22,6 @@
 - OpenType: 支持 getUserProfile [#4203](https://github.com/youzan/vant-weapp/issues/4203)
 - Panel: 移除 useFooterSlot [#4205](https://github.com/youzan/vant-weapp/issues/4205)
 
-# 更新日志
 
 ### [1.6.8](https://github.com/youzan/vant-weapp/tree/v1.6.8)
 

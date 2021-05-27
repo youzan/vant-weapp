@@ -29,7 +29,7 @@ Page({
 
   beforeRead(event) {
     const { file, callback = () => {} } = event.detail;
-    if (file.path.indexOf('jpeg') < 0) {
+    if (file.url.indexOf('jpeg') < 0) {
       wx.showToast({ title: '请选择jpg图片上传', icon: 'none' });
       callback(false);
       return;

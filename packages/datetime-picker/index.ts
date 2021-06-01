@@ -110,11 +110,10 @@ VantComponent({
       const { data } = this;
       const val = this.correctValue(data.value);
       const isEqual = val === data.innerValue;
-      if (!isEqual) {
-        this.updateColumnValue(val).then(() => {
-          this.$emit('input', val);
-        });
-      } else {
+      this.updateColumnValue(val).then(() => {
+        this.$emit('input', val);
+      });
+      if (isEqual) {
         this.updateColumns();
       }
     },

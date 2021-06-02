@@ -285,15 +285,6 @@ VantComponent({
     },
 
     onConfirm() {
-      const d: Date = new Date(this.data.innerValue);
-
-      const year = d.getFullYear();
-      const month = d.getMonth();
-      const day = d.getDate();
-      const hour = d.getHours();
-      const minute = d.getMinutes();
-
-      console.log(`${year}-${month}-${day} ${hour}:${minute}`);
       this.$emit('confirm', this.data.innerValue);
     },
 

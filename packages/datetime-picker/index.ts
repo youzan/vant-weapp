@@ -111,11 +111,10 @@ VantComponent({
       const val = this.correctValue(data.value);
       const isEqual = val === data.innerValue;
       this.updateColumnValue(val).then(() => {
-        this.$emit('input', val);
+        if (!isEqual) {
+          this.$emit('input', val);
+        }
       });
-      if (isEqual) {
-        this.updateColumns();
-      }
     },
 
     getPicker() {
@@ -286,6 +285,15 @@ VantComponent({
     },
 
     onConfirm() {
+      const d: Date = new Date(this.data.innerValue);
+
+      const year = d.getFullYear();
+      const month = d.getMonth();
+      const day = d.getDate();
+      const hour = d.getHours();
+      const minute = d.getMinutes();
+
+      console.log(`${year}-${month}-${day} ${hour}:${minute}`);
       this.$emit('confirm', this.data.innerValue);
     },
 

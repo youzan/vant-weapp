@@ -43,6 +43,9 @@ VantComponent({
       type: null,
       value: 0,
       observer(name) {
+        if (!this.skipInit) {
+          this.skipInit = true;
+        }
         if (name !== this.getCurrentName()) {
           this.setCurrentIndexByName(name);
         }
@@ -89,6 +92,7 @@ VantComponent({
     currentIndex: 0,
     container: null,
     skipTransition: true,
+    scrollWithAnimation: false,
     lineOffsetLeft: 0,
   },
   mounted() {
@@ -96,8 +100,10 @@ VantComponent({
       this.setData({
         container: () => this.createSelectorQuery().select('.van-tabs'),
       });
-      this.resize(true);
-      this.scrollIntoView();
+      if (!this.skipInit) {
+        this.resize();
+        this.scrollIntoView();
+      }
     });
   },
   methods: {
@@ -166,9 +172,11 @@ VantComponent({
       }
       const shouldEmitChange = data.currentIndex !== null;
       this.setData({ currentIndex });
-      nextTick(() => {
+      requestAnimationFrame(() => {
         this.resize();
         this.scrollIntoView();
+      });
+      nextTick(() => {
         this.trigger('input');
         if (shouldEmitChange) {
           this.trigger('change');
@@ -181,11 +189,11 @@ VantComponent({
         return activeTab.getComputedName();
       }
     },
-    resize(skipTransition = false) {
+    resize() {
       if (this.data.type !== 'line') {
         return;
       }
-      const { currentIndex, ellipsis } = this.data;
+      const { currentIndex, ellipsis, skipTransition } = this.data;
       Promise.all([
         getAllRect(this, '.van-tab'),
         getRect(this, '.van-tabs__line'),
@@ -199,15 +207,17 @@ VantComponent({
           .reduce((prev, curr) => prev + curr.width, 0);
         lineOffsetLeft +=
           (rect.width - lineRect.width) / 2 + (ellipsis ? 0 : 8);
-        this.setData({
-          lineOffsetLeft,
-          skipTransition,
-        });
+        this.setData({ lineOffsetLeft });
+        if (skipTransition) {
+          nextTick(() => {
+            this.setData({ skipTransition: false });
+          });
+        }
       });
     },
     // scroll active tab into view
     scrollIntoView() {
-      const { currentIndex, scrollable } = this.data;
+      const { currentIndex, scrollable, scrollWithAnimation } = this.data;
       if (!scrollable) {
         return;
       }
@@ -222,6 +232,11 @@ VantComponent({
         this.setData({
           scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
         });
+        if (!scrollWithAnimation) {
+          nextTick(() => {
+            this.setData({ scrollWithAnimation: true });
+          });
+        }
       });
     },
     onTouchScroll(event) {

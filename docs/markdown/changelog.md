@@ -10,7 +10,7 @@
  - Tabs: 修复 tab数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)
  - Uploader: 修复 demo 中 beforeRead 报错 [#4235](https://github.com/youzan/vant-weapp/issues/4235)
 
-### [1.6.9](https://github.com/youzan/vant-weapp/tree/v1.6.9-beta.2)
+### [1.6.9-beta.2](https://github.com/youzan/vant-weapp/tree/v1.6.9-beta.2)
 
 `2021-05-22`
 

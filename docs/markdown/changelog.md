@@ -1,8 +1,18 @@
 # 更新日志
 
-### [1.6.9-beta.2](https://github.com/youzan/vant-weapp/compare/v1.6.8...v1.6.9-beta.2) (2021-05-22)
+### [1.6.9](https://github.com/youzan/vant-weapp/tree/v1.6.9)
 
-`2021-05-23`
+`2021-06-06`
+
+### Bug Fixes
+
+ - DatetimePicker: 修复 动态设置 min-hour min-date 显示不正确 [#4245](https://github.com/youzan/vant-weapp/issues/4245)
+ - Tabs: 修复 tab数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)
+ - Uploader: 修复 demo 中 beforeRead 报错 [#4235](https://github.com/youzan/vant-weapp/issues/4235)
+
+### [1.6.9](https://github.com/youzan/vant-weapp/tree/v1.6.9-beta.2)
+
+`2021-05-22`
 
 **Bug Fixes**
 

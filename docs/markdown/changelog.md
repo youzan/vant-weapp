@@ -4,7 +4,7 @@
 
 `2021-06-06`
 
-### Bug Fixes
+**Bug Fixes**
 
  - DatetimePicker: 修复 动态设置 min-hour min-date 显示不正确 [#4245](https://github.com/youzan/vant-weapp/issues/4245)
  - Tabs: 修复 tab数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)

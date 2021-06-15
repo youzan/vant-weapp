@@ -38,6 +38,7 @@ VantComponent({
 
   data: {
     parentDisabled: false,
+    direction: 'vertical',
   },
 
   methods: {

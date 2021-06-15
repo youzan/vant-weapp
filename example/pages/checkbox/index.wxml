@@ -105,6 +105,19 @@
   </van-checkbox-group>
 </demo-block>
 
+<demo-block title="水平排列">
+  <van-checkbox-group direction="horizontal" value="{{ result4 }}" data-key="result4" bind:change="onChange">
+    <van-checkbox
+      wx:for="{{ list }}"
+      wx:key="*this"
+      name="{{ item }}"
+      custom-class="demo-checkbox"
+    >
+      复选框 {{ item }}
+    </van-checkbox>
+  </van-checkbox-group>
+</demo-block>
+
 <demo-block title="限制最大可选数">
   <van-checkbox-group value="{{ result2 }}" data-key="result2" max="2" bind:change="onChange">
     <van-checkbox

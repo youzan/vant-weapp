@@ -12,8 +12,9 @@ Page({
     result: ['a', 'b'],
     result2: [],
     result3: [],
+    result4: [],
     activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-    inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
+    inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
   },
 
   onChange(event) {
@@ -24,7 +25,7 @@ Page({
   onClick(event) {
     const { value } = event.currentTarget.dataset;
     this.setData({
-      radio3: value
+      radio3: value,
     });
   },
 
@@ -34,5 +35,5 @@ Page({
     checkbox.toggle();
   },
 
-  noop() {}
+  noop() {},
 });

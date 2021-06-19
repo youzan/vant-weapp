@@ -51,6 +51,31 @@
 <van-icon name="chat" size="50px" />
 ```
 
+### 自定义图标
+
+如果需要在现有 Icon 的基础上使用更多图标，可以引入第三方 iconfont 对应的字体文件和 CSS 文件，之后就可以在 Icon 组件中直接使用。例如，可以在 `app.wxss` 文件中引入。
+
+```css
+/* 引入第三方或自定义的字体图标样式 */
+@font-face {
+  font-family: 'my-icon';
+  src: url('./my-icon.ttf') format('truetype');
+}
+
+.my-icon {
+  font-family: 'my-icon';
+}
+
+.my-icon-extra::before {
+  content: '\e626';
+}
+```
+
+```html
+<!-- 通过 class-prefix 指定类名为 my-icon -->
+<van-icon class-prefix="my-icon" name="extra" />
+```
+
 ## 常见问题
 
 ### 开发者工具上提示 Failed to load font 是什么情况？

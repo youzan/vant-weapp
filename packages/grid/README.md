@@ -135,6 +135,7 @@
 | square | 是否将格子固定为正方形 | _boolean_ | `false` | - |
 | clickable | 是否开启格子点击反馈 | _boolean_ | `false` | - |
 | direction | 格子内容排列的方向，可选值为 `horizontal` | _string_ | `vertical` | - |
+| reverse `v1.7.0` | 是否调换图标和文本的位置 | _boolean_ | `false` |
 | use-slot | 是否使用自定义内容的插槽 | _boolean_ | `false` |
 
 ### Grid 外部样式类

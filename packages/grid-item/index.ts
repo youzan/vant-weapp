@@ -42,6 +42,7 @@ VantComponent({
         clickable,
         center,
         direction,
+        reverse,
         iconSize,
       } = data;
 
@@ -52,6 +53,7 @@ VantComponent({
         gutter,
         clickable,
         direction,
+        reverse,
         iconSize,
         index: children.indexOf(this),
         columnNum,

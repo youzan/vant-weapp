@@ -94,6 +94,12 @@
         },
         {
           "id": -1,
+          "name": "config-provider",
+          "pathName": "pages/config-provider/index",
+          "query": ""
+        },
+        {
+          "id": -1,
           "name": "card",
           "pathName": "pages/card/index",
           "query": ""

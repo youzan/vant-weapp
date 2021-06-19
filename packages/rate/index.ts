@@ -28,10 +28,7 @@ VantComponent({
       type: String,
       value: 'star-o',
     },
-    color: {
-      type: String,
-      value: '#ffd21e',
-    },
+    color: String,
     voidColor: {
       type: String,
       value: '#c7c7c7',

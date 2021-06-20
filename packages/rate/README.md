@@ -74,6 +74,14 @@ Page({
 />
 ```
 
+```javascript
+Page({
+  data: {
+    value: 2.5,
+  },
+});
+````
+
 ### 自定义数量
 
 ```html
@@ -90,6 +98,26 @@ Page({
 
 ```html
 <van-rate readonly value="{{ value }}" bind:change="onChange" />
+```
+
+### 监听 change 事件
+
+评分变化时，会触发 `change` 事件。
+
+```html
+<van-rate value="{{ value }}" bind:change="onChange" />
+```
+
+```javascript
+Page({
+  data: {
+    value: 2,
+  },
+
+  onChange(event) {
+    Toast(`当前值：${event.detail}`);
+  },
+});
 ```
 
 ## API

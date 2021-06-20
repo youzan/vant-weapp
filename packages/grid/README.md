@@ -150,6 +150,7 @@
 | text | 文字 | _string_ | - | - |
 | icon | 图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
 | icon-color | 图标颜色 | _string_ | - | - |
+| icon-prefix `v1.7.0` | 第三方图标前缀 | _string_ | `van-icon` | - |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` | - |
 | badge | 图标右上角徽标的内容 | _string \| number_ | - | - |
 | url | 点击后跳转的链接地址 | _string_ | - | - |

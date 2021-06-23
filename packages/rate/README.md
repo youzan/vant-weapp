@@ -100,6 +100,14 @@ Page({
 <van-rate readonly value="{{ value }}" bind:change="onChange" />
 ```
 
+### 只读状态小数显示
+
+设置 `readonly` 和 `allow-half` 属性后，Rate 组件可以展示任意小数结果。
+
+```html
+<van-rate value="{{ value }}" readonly allow-half />
+```
+
 ### 监听 change 事件
 
 评分变化时，会触发 `change` 事件。

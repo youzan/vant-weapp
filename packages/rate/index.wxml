@@ -1,35 +1,34 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="../wxs/style.wxs" module="style" />
+<wxs src="./index.wxs" module="computed" />
 
 <view
   class="van-rate custom-class"
+  bind:touchstart="onTouchStart"
   bind:touchmove="onTouchMove"
 >
   <view
-    class="{{ utils.bem('rate__item') }}"
-    wx:for="{{ innerCountArray }}"
     wx:key="index"
-    style="{{ style({ paddingRight: index !== count - 1 ? utils.addUnit(gutter) : null }) }}"
+    class="{{ utils.bem('rate__item') }}"
+    wx:for="{{ computed.getList({ count, modelValue: innerValue, allowHalf, readonly, gutter }) }}"
+    style="{{ style(item.style) }}"
+    data-score="{{ item.score }}"
+    bind:tap="onClickItem"
   >
     <van-icon
-      name="{{ index + 1 <= innerValue ? icon : voidIcon }}"
-      class="{{ utils.bem('rate__icon', ['full']) }}"
-      style="{{ style({ fontSize: utils.addUnit(size) }) }}"
+      style="{{ style({ fontSize: utils.addUnit(size) })}}"
+      name="{{ item.isFull ? icon : voidIcon }}"
+      class="{{ utils.bem('rate__icon', { disabled, full: item.isFull }) }}"
       custom-class="icon-class"
-      data-score="{{ index }}"
-      color="{{ disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor }}"
-      bind:click="onSelect"
+      color="{{ disabled ? disabledColor : item.isFull ? color : voidColor }}"
     />
-
     <van-icon
-      wx:if="{{ allowHalf && index + 0.5 >= innerValue }}"
-      name="{{ index + 0.5 <= innerValue ? icon : voidIcon }}"
-      class="{{ utils.bem('rate__icon', ['half', 'full']) }}"
-      style="{{ style({ fontSize: utils.addUnit(size) }) }}"
+      wx:if="{{ item.renderHalf }}"
+      style="{{ style({ fontSize: utils.addUnit(size), width: item.value + 'em' })}}"
+      name="{{ item.isVoid ? voidIcon : icon }}"
+      class="{{ utils.bem('rate__icon', ['half', { disabled, full: !item.isVoid }])}}"
+      color="{{ disabled ? disabledColor : isVoid ? voidColor : color }}"
       custom-class="icon-class"
-      data-score="{{ index - 0.5 }}"
-      color="{{ disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor }}"
-      bind:click="onSelect"
     />
   </view>
 </view>

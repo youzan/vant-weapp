@@ -1,0 +1,62 @@
+/* eslint-disable */
+function getRateStatus(
+  value,
+  index,
+  allowHalf,
+  readonly
+) {
+  if (value >= index) {
+    return { status: 'full', value: 1 };
+  }
+
+  if (value + 0.5 >= index && allowHalf && !readonly) {
+    return { status: 'half', value: 0.5 };
+  }
+
+  if (value + 1 >= index && allowHalf && readonly) {
+    var cardinal = Math.pow(10, 10);
+    return {
+      status: 'half',
+      value: Math.round((value - index + 1) * cardinal) / cardinal,
+    };
+  }
+
+  return { status: 'void', value: 0 };
+}
+
+function getList(options) {
+  var count = options.count;
+  var modelValue = options.modelValue;
+  var allowHalf = options.allowHalf;
+  var readonly = options.readonly;
+  var gutter = options.gutter;
+  var list = [];
+  for (var i = 0; i < count; i++) {
+    var score = i + 1;
+    var item = getRateStatus(
+      modelValue,
+      score,
+      allowHalf,
+      readonly
+    );
+
+    item.score = score;
+    item.isFull = item.status === 'full';
+    item.isVoid = item.status === 'void';
+    item.renderHalf = allowHalf && item.value > 0 && item.value < 1;
+
+    item.style = {};
+    if (gutter && score !== +count) {
+      item.style = {
+        paddingRight: addUnit(gutter),
+      };
+    }
+
+    list.push(item);
+  }
+  return list;
+}
+
+module.exports = {
+  getList: getList,
+};

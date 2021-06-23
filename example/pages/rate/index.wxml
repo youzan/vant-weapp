@@ -61,6 +61,15 @@
   />
 </demo-block>
 
+<demo-block title="只读状态小数显示">
+  <van-rate
+    custom-class="rate-position"
+    value="{{ value7 }}"
+    readonly
+    allow-half
+  />
+</demo-block>
+
 <demo-block title="监听 change 事件">
   <van-rate
     custom-class="rate-position"

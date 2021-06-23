@@ -9,6 +9,7 @@ Page({
     value4: 2.5,
     value5: 4,
     value6: 3,
+    value7: 3.3,
     value8: 2,
   },
 

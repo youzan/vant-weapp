@@ -19,9 +19,9 @@
     custom-class="rate-position"
     model:value="{{ value3 }}"
     size="{{ 25 }}"
-    color="#ee0a24"
-    void-color="#eee"
+    color="#ffd21e"
     void-icon="star"
+    void-color="#eee"
   />
 </demo-block>
 

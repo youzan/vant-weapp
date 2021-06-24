@@ -3215,9 +3215,9 @@
     eslint-visitor-keys "^2.0.0"
 
 "@vant/cli@^3.10.3":
-  version "3.10.6"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.10.6.tgz#bb00687290ab5a4c73389b7e49589ae9fdc0e79a"
-  integrity sha512-+ypt69vkPzpsTZZIVI8I53ThZ9RrTu1DkDkfyNeuWXU394cJrrWF3ACJ/e8MiX53CtN0twOqHvLrdDYHXR5Y+w==
+  version "3.10.8"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.10.8.tgz#aa3875bc7b40e33ff7bd59ee517c0c937d4dc767"
+  integrity sha512-w4I3B9FkM3i2IS2LLoFC8timU5+1YYV+UaC5uN+4mHpB7KUFd6/ef0Iv0uJdqZb4zqx52iKj8hBtLN7IC4SCMw==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/preset-env" "^7.14.5"
@@ -3259,7 +3259,7 @@
     lodash "^4.17.21"
     ora "^5.4.1"
     portfinder "^1.0.28"
-    postcss "^7.0.0"
+    postcss "^7.0.36"
     postcss-load-config "^3.0.1"
     postcss-loader "^4.1.0"
     prettier "2.3.1"
@@ -12830,10 +12830,10 @@ postcss@^6.0.17:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.5, postcss@^7.0.6:
-  version "7.0.35"
-  resolved "https://registry.npm.taobao.org/postcss/download/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
-  integrity sha1-0r4AuZj38hHYonaXQHny6SuXDiQ=
+postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.2, postcss@^7.0.21, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.35, postcss@^7.0.36, postcss@^7.0.5, postcss@^7.0.6:
+  version "7.0.36"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
+  integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"

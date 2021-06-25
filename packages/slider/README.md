@@ -85,16 +85,16 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| value | 当前进度百分比，取值范围为 0-100 | _number_ | `0` | - |
-| disabled | 是否禁用滑块 | _boolean_ | `false` | - |
-| max | 最大值 | _number_ | `100` | - |
-| min | 最小值 | _number_ | `0` | - |
-| step | 步长 | _number_ | `1` | - |
-| bar-height | 进度条高度，默认单位为 `px` | _string \| number_ | `2px` | - |
-| active-color | 进度条激活态颜色 | _string_ | `#1989fa` | - |
-| inactive-color | 进度条默认颜色 | _string_ | `#e5e5e5` | - |
+| 参数           | 说明                             | 类型               | 默认值    | 版本 |
+| -------------- | -------------------------------- | ------------------ | --------- | ---- |
+| value          | 当前进度百分比，取值范围为 0-100 | _number_           | `0`       | -    |
+| disabled       | 是否禁用滑块                     | _boolean_          | `false`   | -    |
+| max            | 最大值                           | _number_           | `100`     | -    |
+| min            | 最小值                           | _number_           | `0`       | -    |
+| step           | 步长                             | _number_           | `1`       | -    |
+| bar-height     | 进度条高度，默认单位为 `px`      | _string \| number_ | `2px`     | -    |
+| active-color   | 进度条激活态颜色                 | _string_           | `#1989fa` | -    |
+| inactive-color | 进度条默认颜色                   | _string_           | `#e5e5e5` | -    |
 
 ### Events
 

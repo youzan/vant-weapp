@@ -182,14 +182,8 @@ VantComponent({
 
     scrollIntoView() {
       requestAnimationFrame(() => {
-        const {
-          currentDate,
-          type,
-          show,
-          poppable,
-          minDate,
-          maxDate,
-        } = this.data;
+        const { currentDate, type, show, poppable, minDate, maxDate } =
+          this.data;
         // @ts-ignore
         const targetDate = type === 'single' ? currentDate : currentDate[0];
         const displayed = show || !poppable;
@@ -240,7 +234,7 @@ VantComponent({
           if (compareToStart === 1) {
             this.select([startDay, date], true);
           } else if (compareToStart === -1) {
-            this.select([date, null]);
+            this.select([date, startDay], true);
           } else if (allowSameDay) {
             this.select([date, date]);
           }

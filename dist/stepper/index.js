@@ -84,14 +84,8 @@ VantComponent({
       }
     },
     isDisabled(type) {
-      const {
-        disabled,
-        disablePlus,
-        disableMinus,
-        currentValue,
-        max,
-        min,
-      } = this.data;
+      const { disabled, disablePlus, disableMinus, currentValue, max, min } =
+        this.data;
       if (type === 'plus') {
         return disabled || disablePlus || currentValue >= max;
       }

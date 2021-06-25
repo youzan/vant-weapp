@@ -144,20 +144,10 @@ VantComponent({
           },
         ];
       }
-      const {
-        maxYear,
-        maxDate,
-        maxMonth,
-        maxHour,
-        maxMinute,
-      } = this.getBoundary('max', data.innerValue);
-      const {
-        minYear,
-        minDate,
-        minMonth,
-        minHour,
-        minMinute,
-      } = this.getBoundary('min', data.innerValue);
+      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } =
+        this.getBoundary('max', data.innerValue);
+      const { minYear, minDate, minMonth, minHour, minMinute } =
+        this.getBoundary('min', data.innerValue);
       const result = [
         {
           type: 'year',

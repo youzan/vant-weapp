@@ -39,9 +39,9 @@ interface DialogOptions {
   confirmButtonOpenType?: string;
 }
 declare const Dialog: {
-  (options: DialogOptions): Promise<
-    WechatMiniprogram.Component.TrivialInstance
-  >;
+  (
+    options: DialogOptions
+  ): Promise<WechatMiniprogram.Component.TrivialInstance>;
   alert(
     options: DialogOptions
   ): Promise<WechatMiniprogram.Component.TrivialInstance>;

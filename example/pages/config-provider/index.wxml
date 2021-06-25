@@ -1,0 +1,39 @@
+<demo-block title="默认主题">
+  <van-cell-group>
+    <van-field label="评分">
+      <view slot="input" style="width: 100%">
+        <van-rate model:value="{{ rate }}" data-key="rate" bind:change="onChange" />
+      </view>
+    </van-field>
+    <van-field label="滑块" border="{{ false }}">
+      <view slot="input" style="width: 100%">
+        <van-slider value="{{ slider }}" data-key="slider" bind:change="onChange" />
+      </view>
+    </van-field>
+  </van-cell-group>
+
+  <view style="margin: 16px">
+    <van-button round block type="primary">提交</van-button>
+  </view>
+</demo-block>
+
+<demo-block title="定制主题">
+  <van-config-provider theme-vars="{{ themeVars }}">
+    <van-cell-group>
+      <van-field label="评分">
+        <view slot="input" style="width: 100%">
+          <van-rate model:value="{{ rate }}" data-key="rate" bind:change="onChange" />
+        </view>
+      </van-field>
+      <van-field label="滑块" border="{{ false }}">
+        <view slot="input" style="width: 100%">
+          <van-slider value="{{ slider }}" data-key="slider" bind:change="onChange" />
+        </view>
+      </van-field>
+    </van-cell-group>
+
+    <view style="margin: 16px">
+      <van-button round block type="primary">提交</van-button>
+    </view>
+  </van-config-provider>
+</demo-block>

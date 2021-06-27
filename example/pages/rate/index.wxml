@@ -60,3 +60,13 @@
     readonly
   />
 </demo-block>
+
+<demo-block title="监听 change 事件">
+  <van-rate
+    custom-class="rate-position"
+    value="{{ value8 }}"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<van-toast id="van-toast" />

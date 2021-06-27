@@ -1,17 +1,17 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
-<wxs src="./index.wxs" module="computed" />
+<wxs src="../wxs/style.wxs" module="style" />
 
 <view
   class="custom-class {{ utils.bem('slider', { disabled }) }}"
-  style="{{ inactiveColor ? 'background:' + inactiveColor : '' }}"
+  style="{{ style({ background: inactiveColor, height: utils.addUnit(barHeight) }) }}"
   bind:tap="onClick"
 >
   <view
-    class="van-slider__bar"
-    style="{{ barStyle }};{{ computed.barStyle(barHeight, activeColor) }}"
+    class="{{ utils.bem('slider__bar') }}"
+    style="{{ barStyle }}; {{ style({ backgroundColor: activeColor }) }}"
   >
     <view
-      class="van-slider__button-wrapper"
+      class="{{ utils.bem('slider__button-wrapper') }}"
       bind:touchstart="onTouchStart"
       catch:touchmove="onTouchMove"
       bind:touchend="onTouchEnd"
@@ -23,7 +23,7 @@
       />
       <view
         wx:else
-        class="van-slider__button"
+        class="{{ utils.bem('slider__button') }}"
       />
     </view>
   </view>

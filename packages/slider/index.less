@@ -19,9 +19,12 @@
 
   &__bar {
     position: relative;
-    border-radius: inherit;
-    .theme(transition, 'width @animation-duration-fast');
+    width: 100%;
+    height: 100%;
     .theme(background-color, '@slider-active-background-color');
+
+    border-radius: inherit;
+    .theme(transition, 'all @animation-duration-fast');
   }
 
   &__button {

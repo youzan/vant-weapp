@@ -41,6 +41,11 @@ VantComponent({
       type: String,
       observer: 'updateChildren',
     },
+    reverse: {
+      type: Boolean,
+      value: false,
+      observer: 'updateChildren',
+    },
   },
 
   methods: {

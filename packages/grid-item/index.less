@@ -43,10 +43,25 @@
 
     &--horizontal {
       flex-direction: row;
+      
+      .van-grid-item__text {
+        margin: 0 0 0 @padding-xs;
+      }
+    }
+    
+    &--reverse {
+      flex-direction: column-reverse;
 
-      .van-grid-item__icon + .van-grid-item__text {
-        margin-top: 0;
-        margin-left: @padding-xs;
+      .van-grid-item__text {
+        margin: 0 0 @padding-xs;
+      }
+    }
+
+    &--horizontal&--reverse {
+      flex-direction: row-reverse;
+
+      .van-grid-item__text {
+        margin: 0 @padding-xs 0 0;
       }
     }
 

@@ -95,13 +95,13 @@ Page({
 ### 禁用状态
 
 ```html
-<van-rate value="{{ value }}" disabled bind:change="onChange" />
+<van-rate disabled value="{{ value }}" bind:change="onChange" />
 ```
 
 ### 只读状态
 
 ```html
-<van-rate value="{{ value }}" readonly bind:change="onChange" />
+<van-rate readonly value="{{ value }}" bind:change="onChange" />
 ```
 
 ### 监听 change 事件

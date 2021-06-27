@@ -29,11 +29,9 @@
   <van-rate
     custom-class="rate-position"
     model:value="{{ value4 }}"
-    size="{{ 25 }}"
     allow-half
-    color="#ee0a24"
-    void-color="#eee"
     void-icon="star"
+    void-color="#eee"
   />
 </demo-block>
 

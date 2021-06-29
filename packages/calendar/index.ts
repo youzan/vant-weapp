@@ -240,7 +240,7 @@ VantComponent({
           if (compareToStart === 1) {
             this.select([startDay, date], true);
           } else if (compareToStart === -1) {
-            this.select([date, null]);
+            this.select([date,startDay], true);
           } else if (allowSameDay) {
             this.select([date, date]);
           }

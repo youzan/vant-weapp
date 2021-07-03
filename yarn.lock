@@ -10454,7 +10454,7 @@ less-loader@^7.2.1:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
-"less@2.6.x || ^3.7.1", less@^3.0.0:
+"less@2.6.x || ^3.7.1":
   version "3.13.1"
   resolved "https://registry.npmjs.org/less/-/less-3.13.1.tgz#0ebc91d2a0e9c0c6735b83d496b0ab0583077909"
   integrity sha512-SwA1aQXGUvp+P5XdZslUOhhLnClSLIjWvJhmd+Vgib5BFIr9lMNlQwmwUNOjXThF/A0x+MCYYPeWEfeWiLRnTw==

@@ -1,14 +1,36 @@
 # 更新日志
 
+### [1.7.0](https://github.com/youzan/vant-weapp/tree/v1.7.0)
+
+`2021-07-04`
+
+**Bug Fixes**
+
+- Button: 修复 type 为 getUserInfo & wx.getUserProfile 可用时 lang 参数失效 [#4250](https://github.com/youzan/vant-weapp/issues/4250)
+- ShareSheet: 新增内置icon `weapp-qrcode` `wechat-moments` [#4256](https://github.com/youzan/vant-weapp/issues/4256)
+
+**Features**
+
+- Checkbox: 增加 direction 属性，设置排列方向 [#4265](https://github.com/youzan/vant-weapp/issues/4265)
+- ConfigProvider: 增加全局配置组件 [#4279](https://github.com/youzan/vant-weapp/issues/4279)
+- Grid: 增加 reverse 属性，支持文本&图片位置互换 [#4280](https://github.com/youzan/vant-weapp/issues/4280)
+- GridItem: 增加 icon-prefix 属性，支持第三方字体 [#4276](https://github.com/youzan/vant-weapp/issues/4276)
+- Rate: 增加更多 css 变量 [#4297](https://github.com/youzan/vant-weapp/issues/4297)
+- Slider: 增加更多 css 变量 [#4305](https://github.com/youzan/vant-weapp/issues/4305)
+
+**Improvements**
+
+- wxs style 方法支持驼峰变量命名，以便能更好的在wxml中使用 [#4281](https://github.com/youzan/vant-weapp/issues/4281)
+
 ### [1.6.9](https://github.com/youzan/vant-weapp/tree/v1.6.9)
 
 `2021-06-06`
 
 **Bug Fixes**
 
- - DatetimePicker: 修复 动态设置 min-hour min-date 显示不正确 [#4245](https://github.com/youzan/vant-weapp/issues/4245)
- - Tabs: 修复 tab数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)
- - Uploader: 修复 demo 中 beforeRead 报错 [#4235](https://github.com/youzan/vant-weapp/issues/4235)
+- DatetimePicker: 修复 动态设置 min-hour min-date 显示不正确 [#4245](https://github.com/youzan/vant-weapp/issues/4245)
+- Tabs: 修复 tab数量较多时滚动距离不正确 [#4202](https://github.com/youzan/vant-weapp/issues/4202)
+- Uploader: 修复 demo 中 beforeRead 报错 [#4235](https://github.com/youzan/vant-weapp/issues/4235)
 
 ### [1.6.9-beta.2](https://github.com/youzan/vant-weapp/tree/v1.6.9-beta.2)
 

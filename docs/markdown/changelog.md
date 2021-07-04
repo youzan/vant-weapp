@@ -4,6 +4,7 @@
 
 `2021-07-04`
 
+
 **Bug Fixes**
 
 - Button: 修复 type 为 getUserInfo & wx.getUserProfile 可用时 lang 参数失效 [#4250](https://github.com/youzan/vant-weapp/issues/4250)

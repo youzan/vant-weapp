@@ -29,6 +29,7 @@ VantComponent({
   },
   data: {
     parentDisabled: false,
+    direction: 'vertical',
   },
   methods: {
     emitChange(value) {

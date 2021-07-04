@@ -111,7 +111,6 @@ VantComponent({
     setSiderbarRect() {
       return getRect(this, '.van-index-bar__sidebar').then((res) => {
         if (!isDef(res)) {
-          this.sidebar = undefined;
           return;
         }
         this.sidebar = {

@@ -1,6 +1,8 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
 import { canIUseGroupSetData, canIUseNextTick } from './version';
 
+export { isDef } from './validator';
+
 export function range(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
 }

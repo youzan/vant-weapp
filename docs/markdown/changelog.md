@@ -4,7 +4,7 @@
 
 `2021-07-06`
 
-### Bug Fixes
+**Bug Fixes**
 
 - Col: 修复样式问题 [#4322](https://github.com/youzan/vant-weapp/issues/4322)
 - Grid: 增加 icon-prefix 属性默认值 [#4318](https://github.com/youzan/vant-weapp/issues/4318)

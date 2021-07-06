@@ -10,7 +10,6 @@
 - Grid: 增加 icon-prefix 属性默认值 [#4318](https://github.com/youzan/vant-weapp/issues/4318)
 - IndexBar: 修复当索引列表为空时报错 [#4310](https://github.com/youzan/vant-weapp/issues/4310)
 
-
 ### [1.7.0](https://github.com/youzan/vant-weapp/tree/v1.7.0)
 
 `2021-07-04`

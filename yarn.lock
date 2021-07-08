@@ -3215,9 +3215,9 @@
     eslint-visitor-keys "^2.0.0"
 
 "@vant/cli@^3.10.3":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.11.0.tgz#95812fd72f15c844b2a81f974e85901219a599ec"
-  integrity sha512-MERBUKZlJvbQT8JJVKkoxL0z532uXHnT5lfs9puszi9uvxLV042PuTm2eF/CAz5mwV5jEZyTapMTZBpmOfLuUA==
+  version "3.11.1"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.11.1.tgz#131977e0df7522ff845fa2c8f6304abfd7d33f73"
+  integrity sha512-tGvXjOKQZfJC/AqGz8W17ONdaYliqqKAz0ZK/fWb7B2vYIYtpLUdaLL/qhU5NYsrJuddC0jQ6XnBzR1lTER0+A==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/preset-env" "^7.14.5"

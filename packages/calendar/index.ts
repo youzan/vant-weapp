@@ -16,8 +16,8 @@ import {
 import Toast from '../toast/toast';
 import { requestAnimationFrame } from '../common/utils';
 
-const initalMinDate = getToday().getTime();
-const initalMaxDate = (() => {
+const initialMinDate = getToday().getTime();
+const initialMaxDate = (() => {
   const now = getToday();
   return new Date(
     now.getFullYear(),
@@ -68,11 +68,11 @@ VantComponent({
     },
     minDate: {
       type: null,
-      value: initalMinDate,
+      value: initialMinDate,
     },
     maxDate: {
       type: null,
-      value: initalMaxDate,
+      value: initialMaxDate,
     },
     position: {
       type: String,
@@ -175,13 +175,13 @@ VantComponent({
       minDate: number | null = null,
       maxDate: number | null = null
     ) {
-      const _minDate = minDate || this.data.minDate;
-      const _maxDate = maxDate || this.data.maxDate;
-      if (compareDay(date, _minDate) === -1) {
-        return _minDate;
+      minDate = minDate || (this.data.minDate as number);
+      maxDate = maxDate || (this.data.maxDate as number);
+      if (compareDay(date, minDate) === -1) {
+        return minDate;
       }
-      if (compareDay(date, _maxDate) === 1) {
-        return _maxDate;
+      if (compareDay(date, maxDate) === 1) {
+        return maxDate;
       }
       return date;
     },

@@ -2,10 +2,21 @@
 @import '../common/style/theme.less';
 
 .van-cell-group {
+  &--inset {
+    .theme(margin, '@cell-group-inset-padding');
+    .theme(border-radius, '@cell-group-inset-border-radius');
+
+    overflow: hidden;
+  }
+
   &__title {
     .theme(padding, '@cell-group-title-padding');
     .theme(font-size, '@cell-group-title-font-size');
     .theme(line-height, '@cell-group-title-line-height');
     .theme(color, '@cell-group-title-color');
+
+    &--inset {
+      .theme(padding, '@cell-group-inset-title-padding');
+    }
   }
 }

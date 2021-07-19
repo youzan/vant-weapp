@@ -1,5 +1,6 @@
 # 更新日志
 
+
 ### [1.7.2](https://github.com/youzan/vant-weapp/tree/v1.7.2)
 
 `2021-07-19`

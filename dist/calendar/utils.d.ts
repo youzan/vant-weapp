@@ -11,6 +11,7 @@ export declare function compareDay(
 export declare function getDayByOffset(date: Date, offset: number): Date;
 export declare function getPrevDay(date: Date): Date;
 export declare function getNextDay(date: Date): Date;
+export declare function getToday(): Date;
 export declare function calcDateNum(date: [Date, Date]): number;
 export declare function copyDates(dates: Date | Date[]): Date | Date[];
 export declare function getMonthEndDay(year: number, month: number): number;

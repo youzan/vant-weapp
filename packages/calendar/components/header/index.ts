@@ -35,5 +35,9 @@ VantComponent({
         ],
       });
     },
+
+    onClickSubtitle(event: WechatMiniprogram.TouchEvent) {
+      this.$emit('click-subtitle', event);
+    },
   },
 });

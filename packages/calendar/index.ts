@@ -390,5 +390,9 @@ VantComponent({
         this.$emit('confirm', copyDates(this.data.currentDate));
       });
     },
+
+    onClickSubtitle(event: WechatMiniprogram.TouchEvent) {
+      this.$emit('click-subtitle', event);
+    },
   },
 });

@@ -5,7 +5,7 @@
     custom-style="padding: 30px 50px"
     bind:close="hideBasic"
   >
-    <view wx:for="{{ 30 }}">block</view>
+    内容
   </van-popup>
 </demo-block>
 
@@ -84,6 +84,3 @@
     bind:close="hideRound"
   />
 </demo-block>
-
-
-<view wx:for="{{ 30 }}">block</view>

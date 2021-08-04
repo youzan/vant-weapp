@@ -7,5 +7,6 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    inset: Boolean,
   },
 });

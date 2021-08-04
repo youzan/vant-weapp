@@ -43,3 +43,6 @@ export function canIUseNextTick() {
 export function canIUseCanvas2d() {
   return gte('2.9.0');
 }
+export function canIUseGetUserProfile() {
+  return !!wx.getUserProfile;
+}

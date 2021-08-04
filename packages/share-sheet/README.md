@@ -176,7 +176,7 @@ Page({
 | --- | --- | --- |
 | name | 分享渠道名称 | _string_ |
 | description | 分享选项描述 | _string_ |
-| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | _string_ |
+| icon | 图标，可选值为 `qq` `link` `weibo` `wechat` `poster` `qrcode` `weapp-qrcode` `wechat-moments`，支持传入图片 URL | _string_ |
 | openType | 按钮 `open-type`，可用于实现分享功能，可选值为 `share` | _string_ |
 
 ### Events

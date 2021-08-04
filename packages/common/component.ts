@@ -1,7 +1,11 @@
 import { basic } from '../mixins/basic';
 import { VantComponentOptions } from 'definitions/index';
 
-function mapKeys(source: object, target: object, map: object) {
+function mapKeys(
+  source: Record<string, any>,
+  target: Record<string, any>,
+  map: Record<string, any>
+) {
   Object.keys(map).forEach((key) => {
     if (source[key]) {
       target[map[key]] = source[key];

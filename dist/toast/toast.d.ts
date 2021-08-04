@@ -18,49 +18,17 @@ interface ToastOptions {
 }
 declare function Toast(
   toastOptions: ToastOptions | ToastMessage
-):
-  | WechatMiniprogram.Component.Instance<
-      Record<string, any>,
-      Record<string, any>,
-      Record<string, any>,
-      Record<string, any>,
-      false
-    >
-  | undefined;
+): WechatMiniprogram.Component.TrivialInstance | undefined;
 declare namespace Toast {
   var loading: (
-    options: string | number | ToastOptions
-  ) =>
-    | WechatMiniprogram.Component.Instance<
-        Record<string, any>,
-        Record<string, any>,
-        Record<string, any>,
-        Record<string, any>,
-        false
-      >
-    | undefined;
+    options: ToastMessage | ToastOptions
+  ) => WechatMiniprogram.Component.TrivialInstance | undefined;
   var success: (
-    options: string | number | ToastOptions
-  ) =>
-    | WechatMiniprogram.Component.Instance<
-        Record<string, any>,
-        Record<string, any>,
-        Record<string, any>,
-        Record<string, any>,
-        false
-      >
-    | undefined;
+    options: ToastMessage | ToastOptions
+  ) => WechatMiniprogram.Component.TrivialInstance | undefined;
   var fail: (
-    options: string | number | ToastOptions
-  ) =>
-    | WechatMiniprogram.Component.Instance<
-        Record<string, any>,
-        Record<string, any>,
-        Record<string, any>,
-        Record<string, any>,
-        false
-      >
-    | undefined;
+    options: ToastMessage | ToastOptions
+  ) => WechatMiniprogram.Component.TrivialInstance | undefined;
   var clear: () => void;
   var setDefaultOptions: (options: ToastOptions) => void;
   var resetDefaultOptions: () => void;

@@ -20,6 +20,10 @@ VantComponent({
       type: Boolean,
       observer: 'updateChildren',
     },
+    direction: {
+      type: String,
+      value: 'vertical',
+    },
   },
 
   methods: {
@@ -28,10 +32,11 @@ VantComponent({
     },
 
     updateChild(child: TrivialInstance) {
-      const { value, disabled } = this.data;
+      const { value, disabled, direction } = this.data;
       child.setData({
         value: value.indexOf(child.data.name) !== -1,
         parentDisabled: disabled,
+        direction,
       });
     },
   },

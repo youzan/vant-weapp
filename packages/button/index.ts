@@ -56,11 +56,12 @@ VantComponent({
     onClick(event: WechatMiniprogram.TouchEvent) {
       this.$emit('click', event);
 
-      const { canIUseGetUserProfile, openType, getUserProfileDesc } = this.data;
+      const { canIUseGetUserProfile, openType, getUserProfileDesc, lang } = this.data;
 
       if (openType === 'getUserInfo' && canIUseGetUserProfile) {
         wx.getUserProfile({
           desc: getUserProfileDesc || '  ',
+          lang: lang || 'en',
           complete: (userProfile) => {
             this.$emit('getuserinfo', userProfile);
           },

@@ -25,18 +25,9 @@ VantComponent({
       type: String,
       value: 'star-o',
     },
-    color: {
-      type: String,
-      value: '#ffd21e',
-    },
-    voidColor: {
-      type: String,
-      value: '#c7c7c7',
-    },
-    disabledColor: {
-      type: String,
-      value: '#bdbdbd',
-    },
+    color: String,
+    voidColor: String,
+    disabledColor: String,
     count: {
       type: Number,
       value: 5,
@@ -75,7 +66,7 @@ VantComponent({
       const { clientX } = event.touches[0];
       getAllRect(this, '.van-rate__icon').then((list) => {
         const target = list
-          .sort((item) => item.right - item.left)
+          .sort((cur, next) => cur.dataset.score - next.dataset.score)
           .find((item) => clientX >= item.left && clientX <= item.right);
         if (target != null) {
           this.onSelect(

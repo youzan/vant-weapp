@@ -64,6 +64,12 @@ export function getNextDay(date: Date) {
   return getDayByOffset(date, 1);
 }
 
+export function getToday() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+}
+
 export function calcDateNum(date: [Date, Date]) {
   const day1 = new Date(date[0]).getTime();
   const day2 = new Date(date[1]).getTime();

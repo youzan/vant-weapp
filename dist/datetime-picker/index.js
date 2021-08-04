@@ -93,13 +93,11 @@ VantComponent({
       const { data } = this;
       const val = this.correctValue(data.value);
       const isEqual = val === data.innerValue;
-      if (!isEqual) {
-        this.updateColumnValue(val).then(() => {
+      this.updateColumnValue(val).then(() => {
+        if (!isEqual) {
           this.$emit('input', val);
-        });
-      } else {
-        this.updateColumns();
-      }
+        }
+      });
     },
     getPicker() {
       if (this.picker == null) {
@@ -122,9 +120,8 @@ VantComponent({
       const { filter } = this.data;
       const results = this.getRanges().map(({ type, range }) => {
         let values = times(range[1] - range[0] + 1, (index) => {
-          let value = range[0] + index;
-          value = type === 'year' ? `${value}` : padZero(value);
-          return value;
+          const value = range[0] + index;
+          return type === 'year' ? `${value}` : padZero(value);
         });
         if (filter) {
           values = filter(type, values);

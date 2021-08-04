@@ -32,10 +32,7 @@ VantComponent({
         }
       },
     },
-    barHeight: {
-      type: null,
-      value: 2,
-    },
+    barHeight: null,
   },
 
   created() {

@@ -193,6 +193,9 @@
 @cell-group-title-padding: @padding-md @padding-md @padding-xs;
 @cell-group-title-font-size: @font-size-md;
 @cell-group-title-line-height: 16px;
+@cell-group-inset-padding: 0 @padding-md;
+@cell-group-inset-border-radius: @border-radius-lg;
+@cell-group-inset-title-padding: @padding-md @padding-md @padding-xs @padding-xl;
 
 // Checkbox
 @checkbox-size: 20px;
@@ -269,7 +272,7 @@
 @goods-action-icon-text-color: @gray-7;
 @goods-action-button-height: 40px;
 @goods-action-button-line-height: @button-line-height;
-@goods-action-button-border-radius: @goods-action-button-height / 2;
+@goods-action-button-border-radius: @border-radius-max;
 @goods-action-button-warning-color: @gradient-orange;
 @goods-action-button-danger-color: @gradient-red;
 @goods-action-button-plain-color: @white;
@@ -387,6 +390,10 @@
 // Rate
 @rate-horizontal-padding: 2px;
 @rate-icon-size: 20px;
+@rate-icon-void-color: @gray-5;
+@rate-icon-full-color: @red;
+@rate-icon-disabled-color: @gray-5;
+@rate-icon-gutter: @padding-base;
 
 // Switch
 @switch-width: 2em;
@@ -451,6 +458,7 @@
 @slider-active-background-color: @blue;
 @slider-inactive-background-color: @gray-3;
 @slider-disabled-opacity: @disabled-opacity;
+@slider-bar-height: 2px;
 @slider-button-width: 24px;
 @slider-button-height: 24px;
 @slider-button-border-radius: 50%;

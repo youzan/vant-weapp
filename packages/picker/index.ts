@@ -2,7 +2,7 @@ import { VantComponent } from '../common/component';
 import { pickerProps } from './shared';
 
 interface Column {
-  values: object[];
+  values: any[];
   defaultIndex?: number;
 }
 

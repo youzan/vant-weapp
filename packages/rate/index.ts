@@ -28,18 +28,9 @@ VantComponent({
       type: String,
       value: 'star-o',
     },
-    color: {
-      type: String,
-      value: '#ffd21e',
-    },
-    voidColor: {
-      type: String,
-      value: '#c7c7c7',
-    },
-    disabledColor: {
-      type: String,
-      value: '#bdbdbd',
-    },
+    color: String,
+    voidColor: String,
+    disabledColor: String,
     count: {
       type: Number,
       value: 5,

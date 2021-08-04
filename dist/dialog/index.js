@@ -1,10 +1,9 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
-import { openType } from '../mixins/open-type';
 import { GRAY, RED } from '../common/color';
 import { toPromise } from '../common/utils';
 VantComponent({
-  mixins: [button, openType],
+  mixins: [button],
   props: {
     show: {
       type: Boolean,

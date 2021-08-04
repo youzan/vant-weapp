@@ -1,10 +1,9 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 import { link } from '../mixins/link';
-import { openType } from '../mixins/open-type';
 VantComponent({
   classes: ['icon-class', 'text-class'],
-  mixins: [link, button, openType],
+  mixins: [link, button],
   props: {
     text: String,
     dot: Boolean,

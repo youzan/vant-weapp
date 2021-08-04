@@ -19,9 +19,9 @@
     custom-class="rate-position"
     model:value="{{ value3 }}"
     size="{{ 25 }}"
-    color="#ee0a24"
-    void-color="#eee"
+    color="#ffd21e"
     void-icon="star"
+    void-color="#eee"
   />
 </demo-block>
 
@@ -29,11 +29,9 @@
   <van-rate
     custom-class="rate-position"
     model:value="{{ value4 }}"
-    size="{{ 25 }}"
     allow-half
-    color="#ee0a24"
-    void-color="#eee"
     void-icon="star"
+    void-color="#eee"
   />
 </demo-block>
 
@@ -60,3 +58,13 @@
     readonly
   />
 </demo-block>
+
+<demo-block title="监听 change 事件">
+  <van-rate
+    custom-class="rate-position"
+    value="{{ value8 }}"
+    bind:change="onChange"
+  />
+</demo-block>
+
+<van-toast id="van-toast" />

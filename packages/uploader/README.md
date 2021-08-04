@@ -190,7 +190,7 @@ Page({
 
 ```js
 // 上传图片
-uploadToCloud() { 
+uploadToCloud() {
   wx.cloud.init();
   const { fileList } = this.data;
   if (!fileList.length) {
@@ -200,7 +200,7 @@ uploadToCloud() {
     Promise.all(uploadTasks)
       .then(data => {
         wx.showToast({ title: '上传成功', icon: 'none' });
-        const newFileList = data.map(item => { url: item.fileID });
+        const newFileList = data.map(item => ({ url: item.fileID }));
         this.setData({ cloudPath: data, fileList: newFileList });
       })
       .catch(e => {

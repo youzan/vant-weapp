@@ -28,6 +28,17 @@
 </van-cell-group>
 ```
 
+### 卡片风格
+
+通过 `CellGroup` 的 `inset` 属性，可以将单元格转换为圆角卡片风格（从 1.7.2 版本开始支持）。
+
+```html
+<van-cell-group inset>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
+</van-cell-group>
+```
+
 ### 单元格大小
 
 通过`size`属性可以控制单元格的大小。
@@ -109,10 +120,11 @@
 
 ### CellGroup Props
 
-| 参数   | 说明           | 类型      | 默认值 | 版本 |
-| ------ | -------------- | --------- | ------ | ---- |
-| title  | 分组标题       | _string_  | `-`    | -    |
-| border | 是否显示外边框 | _boolean_ | `true` | -    |
+| 参数           | 说明                   | 类型      | 默认值  |
+| -------------- | ---------------------- | --------- | ------- |
+| title          | 分组标题               | _string_  | `-`     |
+| inset `v1.7.2` | 是否展示为圆角卡片风格 | _boolean_ | `false` |
+| border         | 是否显示外边框         | _boolean_ | `true`  |
 
 ### CellGroup 外部样式类
 
@@ -122,24 +134,24 @@
 
 ### Cell Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| icon | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
-| title | 左侧标题 | _string \| number_ | - |
-| title-width | 标题宽度，须包含单位 | _string_ | - | - |
-| value | 右侧内容 | _string \| number_ | - | - |
-| label | 标题下方的描述信息 | _string_ | - | - |
-| size | 单元格大小，可选值为 `large` | _string_ | - | - |
-| border | 是否显示下边框 | _boolean_ | `true` | - |
-| center | 是否使内容垂直居中 | _boolean_ | `false` | - |
-| url | 点击后跳转的链接地址 | _string_ | - | - |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` | - |
-| clickable | 是否开启点击反馈 | _boolean_ | `false` | - |
-| is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` | - |
-| required | 是否显示表单必填星号 | _boolean_ | `false` | - |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | - | - |
-| use-label-slot | 是否使用 label slot | _boolean_ | `false` | - |
-| title-style | 标题样式 | _string_ | - | 1.4.0 |
+| 参数                 | 说明                                                       | 类型               | 默认值       |
+| -------------------- | ---------------------------------------------------------- | ------------------ | ------------ |
+| icon                 | 左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon)       | _string_           | -            |
+| title                | 左侧标题                                                   | _string \| number_ | -            |
+| title-width          | 标题宽度，须包含单位                                       | _string_           | -            |
+| value                | 右侧内容                                                   | _string \| number_ | -            |
+| label                | 标题下方的描述信息                                         | _string_           | -            |
+| size                 | 单元格大小，可选值为 `large`                               | _string_           | -            |
+| border               | 是否显示下边框                                             | _boolean_          | `true`       |
+| center               | 是否使内容垂直居中                                         | _boolean_          | `false`      |
+| url                  | 点击后跳转的链接地址                                       | _string_           | -            |
+| link-type            | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_           | `navigateTo` |
+| clickable            | 是否开启点击反馈                                           | _boolean_          | `false`      |
+| is-link              | 是否展示右侧箭头并开启点击反馈                             | _boolean_          | `false`      |
+| required             | 是否显示表单必填星号                                       | _boolean_          | `false`      |
+| arrow-direction      | 箭头方向，可选值为 `left` `up` `down`                      | _string_           | -            |
+| use-label-slot       | 是否使用 label slot                                        | _boolean_          | `false`      |
+| title-style `v1.4.0` | 标题样式                                                   | _string_           | -            |
 
 ### Cell Event
 

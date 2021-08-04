@@ -145,6 +145,7 @@ Page({
 | bind:focus  | 输入框聚焦时触发   | -                        |
 | bind:blur   | 输入框失焦时触发   | -                        |
 | bind:clear  | 点击清空控件时触发 | -                        |
+| bind:click-input | 点击搜索区域时触发 | -                   |
 
 ### Slot
 

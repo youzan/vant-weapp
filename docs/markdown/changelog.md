@@ -1,5 +1,19 @@
 # 更新日志
 
+
+### [1.7.2](https://github.com/youzan/vant-weapp/tree/v1.7.2)
+
+`2021-07-19`
+
+**Bug Fixes**
+
+ - Calendar: 初始日期设置为当前日期 [#4339](https://github.com/youzan/vant-weapp/issues/4339)
+
+**Features**
+
+ - Cell: CellGroup 新增 inset 属性 [#4341](https://github.com/youzan/vant-weapp/issues/4341)
+ - Search: 新增click-input 事件 [#4337](https://github.com/youzan/vant-weapp/issues/4337)
+
 ### [1.7.1](https://github.com/youzan/vant-weapp/tree/v1.7.1)
 
 `2021-07-06`

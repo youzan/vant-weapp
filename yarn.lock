@@ -3215,9 +3215,9 @@
     eslint-visitor-keys "^2.0.0"
 
 "@vant/cli@^3.10.3":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.11.0.tgz#95812fd72f15c844b2a81f974e85901219a599ec"
-  integrity sha512-MERBUKZlJvbQT8JJVKkoxL0z532uXHnT5lfs9puszi9uvxLV042PuTm2eF/CAz5mwV5jEZyTapMTZBpmOfLuUA==
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/@vant/cli/-/cli-3.11.2.tgz#d6a91160b6d64a8a302bebff1858ef8ea3671b0c"
+  integrity sha512-8sd61UqKHBsCkc3K1wrymuo9f6JxRFfKbX6nq5rlexygZLmoydKgXL8fpB9w3uhriiJJLt3JKNm6Q8k49IjyeA==
   dependencies:
     "@babel/core" "^7.14.5"
     "@babel/preset-env" "^7.14.5"
@@ -3292,9 +3292,9 @@
     eslint-plugin-vue "^7.1.0"
 
 "@vant/icons@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.6.0.tgz#3db7eb7f963f51a2a08676720d5af9c4c3512feb"
-  integrity sha512-4Hvq4tl4grCOJLZ0e8ZaivBV8xOcmTPmTT8BDkTrEIKqnDowRFDdsXxcHECzWmbmMx+CYGdngvd2Cq8YR9DfKA==
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.7.0.tgz#02d427532a8142c35db159da9c364fe6890c3ac9"
+  integrity sha512-sqKvtYcSgSd6+AU1nBPaZARn2Nzf8hi0ErLhfXVR6f+Y7R0gojGZVoxuB83yUI6+0LwbitW5IfN3E6qzEsu21Q==
 
 "@vant/markdown-loader@^4.1.0":
   version "4.1.0"
@@ -11065,9 +11065,9 @@ minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
 miniprogram-api-typings@^3.1.6:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.3.1.tgz#1cc58437873fe01c1b4f382aa7630bd73d848c42"
-  integrity sha512-3MTHaLgcuaLlMiEIVn3OdzJjLKgZfkpV/KrwxUYIL/+4b4BM6TAFYcwsXmQH7edOG9AUwU7pkQESpzE0ZjpPUQ==
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.4.1.tgz#17cef4c184d32b2e12e2deb5559d1c01c84fa891"
+  integrity sha512-kGUJ4zLgwzGyhtCOR2DTz8LTPkKJVek9OqspzGoMVcrmAKV76WqJ6sEOwJoQ1kO/VlTuXEKCu9+ZXB7hFKLcmw==
 
 miniprogram-ci@^1.0.27:
   version "1.2.3"

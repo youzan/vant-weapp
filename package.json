@@ -58,6 +58,6 @@
   "browserslist": [
     "Chrome >= 53",
     "ChromeAndroid >= 53",
-    "iOS >= 8"
+    "iOS >= 9"
   ]
 }

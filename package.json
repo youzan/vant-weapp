@@ -6,7 +6,8 @@
   "miniprogram": "lib",
   "description": "轻量、可靠的小程序 UI 组件库",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "node build/dev.js",

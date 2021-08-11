@@ -84,8 +84,8 @@ VantComponent({
       this.$emit('clear', event.detail);
     },
 
-    onClickInput: function (event) {
+    onClickInput(event) {
       this.$emit('click-input', event.detail);
-    },    
+    },
   },
 });

@@ -74,5 +74,8 @@ VantComponent({
     onClear(event) {
       this.$emit('clear', event.detail);
     },
+    onClickInput: function (event) {
+      this.$emit('click-input', event.detail);
+    },
   },
 });

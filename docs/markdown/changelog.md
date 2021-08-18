@@ -1,5 +1,18 @@
 # 更新日志
 
+### [v1.8.1](https://github.com/youzan/vant-weapp/compare/v1.8.0...v1.8.1)
+
+`2021-08-18`
+
+**Feature**
+
+- Calendar: 新增 click-subtitle 事件 [#4385](https://github.com/youzan/vant-weapp/issues/4385)
+- Circle: 使用 setTimeout 代替 setInterval [#4401](https://github.com/youzan/vant-weapp/issues/4401)
+
+**Bug Fixes**
+
+- Picker: 修复 template 引用路径不是相对路径的问题 [#4408](https://github.com/youzan/vant-weapp/issues/4408)
+
 ### [v1.8.0](https://github.com/youzan/vant-weapp/compare/v1.7.2...v1.8.0)
 
 `2021-08-11`

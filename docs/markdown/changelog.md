@@ -1,5 +1,14 @@
 # 更新日志
 
+### [v1.8.2](https://github.com/youzan/vant-weapp/compare/v1.8.1...v1.8.2)
+
+`2021-08-18`
+
+**Bug Fixes**
+
+- Calendar: 修复 template 引用路径不是相对路径的问题 [7f7cf6](https://github.com/youzan/vant-weapp/commit/7f7cf62ee0f675ad6b86d41f70b23336e7ddc7a1)
+- Field: 修复 template 引用路径不是相对路径的问题 [6dd42a](https://github.com/youzan/vant-weapp/commit/6dd42a0473578e26e5f5f96158959e56689f68b6)
+
 ### [v1.8.1](https://github.com/youzan/vant-weapp/compare/v1.8.0...v1.8.1)
 
 `2021-08-18`

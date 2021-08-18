@@ -331,7 +331,7 @@ Page({
 | opened                 | 打开弹出层且动画结束后触发                                         | -                              |
 | closed                 | 关闭弹出层且动画结束后触发                                         | -                              |
 | over-range             | 范围选择超过最多可选天数时触发                                     | -                              |
-| click-subtitle `1.7.3` | 范围选择超过最多可选天数时触发                                     | _WechatMiniprogram.TouchEvent_ |
+| click-subtitle `1.8.1` | 点击日历副标题时触发                                     | _WechatMiniprogram.TouchEvent_ |
 
 ### Slots
 

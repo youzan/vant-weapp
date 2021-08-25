@@ -107,15 +107,8 @@ Page({
 
 使用组件时，会发现内容部分滚动到底时，继续划动会导致底层页面的滚动，这就是滚动穿透。
 
-目前，组件内部无法很好地处理滚动穿透问题。不过，开发者仍可使用下面提供的 2 种方法自行处理：
-
-#### 阻止 touchstart 事件
-
-需要注意的是，这也会禁止组件内容部分的滚动
-
-```html
-<van-popup catch:touchstart />
-```
+目前，组件可以通过 `lock-scroll` 属性处理部分滚动穿透问题。 **但由于小程序自身原因，弹窗内容区域仍会出现滚动穿透。**
+不过，我们为开发者提供了一个推荐方案以完整解决滚动穿透：
 
 #### [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
 

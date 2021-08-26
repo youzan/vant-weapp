@@ -30,5 +30,8 @@ VantComponent({
         ],
       });
     },
+    onClickSubtitle(event) {
+      this.$emit('click-subtitle', event);
+    },
   },
 });

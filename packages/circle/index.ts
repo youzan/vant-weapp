@@ -181,29 +181,31 @@ VantComponent({
         return;
       }
 
-      this.clearInterval();
+      this.clearMockInterval();
       this.currentValue = this.currentValue || 0;
-      this.interval = setInterval(() => {
-        if (this.currentValue !== value) {
-          if (Math.abs(this.currentValue - value) < STEP) {
-            this.currentValue = value;
-          } else {
-            if (this.currentValue < value) {
+      const run = () => {
+        this.interval = setTimeout(() => {
+          if (this.currentValue !== value) {
+            if (Math.abs(this.currentValue - value) < STEP) {
+              this.currentValue = value;
+            } else if (this.currentValue < value) {
               this.currentValue += STEP;
             } else {
               this.currentValue -= STEP;
             }
+            this.drawCircle(this.currentValue);
+            run();
+          } else {
+            this.clearMockInterval();
           }
-          this.drawCircle(this.currentValue);
-        } else {
-          this.clearInterval();
-        }
-      }, 1000 / speed);
+        }, 1000 / speed);
+      };
+      run();
     },
 
-    clearInterval() {
+    clearMockInterval() {
       if (this.interval) {
-        clearInterval(this.interval);
+        clearTimeout(this.interval);
         this.interval = null;
       }
     },
@@ -218,6 +220,6 @@ VantComponent({
   },
 
   destroyed() {
-    this.clearInterval();
+    this.clearMockInterval();
   },
 });

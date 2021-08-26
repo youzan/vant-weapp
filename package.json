@@ -1,12 +1,13 @@
 {
   "name": "@vant/weapp",
-  "version": "1.7.2",
+  "version": "1.8.2",
   "author": "youzan",
   "license": "MIT",
   "miniprogram": "lib",
   "description": "轻量、可靠的小程序 UI 组件库",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "dev": "node build/dev.js",
@@ -38,7 +39,7 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "@vant/cli": "^3.10.3",
+    "@vant/cli": "^3.11.2",
     "@vant/icons": "^1.6.0",
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",
@@ -48,8 +49,8 @@
     "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.0.27",
     "tscpaths": "^0.0.9",
-    "vue": "^3.0.0",
-    "@vue/compiler-sfc": "^3.0.0"
+    "vue": "^3.2.1",
+    "@vue/compiler-sfc": "^3.2.1"
   },
   "prettier": {
     "singleQuote": true,
@@ -58,6 +59,6 @@
   "browserslist": [
     "Chrome >= 53",
     "ChromeAndroid >= 53",
-    "iOS >= 8"
+    "iOS >= 9"
   ]
 }

@@ -339,5 +339,8 @@ VantComponent({
         this.$emit('confirm', copyDates(this.data.currentDate));
       });
     },
+    onClickSubtitle(event) {
+      this.$emit('click-subtitle', event);
+    },
   },
 });

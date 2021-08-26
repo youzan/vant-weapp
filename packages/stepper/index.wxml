@@ -13,7 +13,7 @@
     bind:touchstart="onTouchStart"
     bind:touchend="onTouchEnd"
   >
-    <slot name="plus" />
+    <slot name="minus" />
   </view>
   <input
     type="{{ integer ? 'number' : 'digit' }}"
@@ -37,6 +37,6 @@
     bind:touchstart="onTouchStart"
     bind:touchend="onTouchEnd"
   >
-    <slot name="minus" />
+    <slot name="plus" />
   </view>
 </view>

@@ -12,6 +12,10 @@ VantComponent({
       type: Number,
       value: 1,
     },
+    lockScroll: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   methods: {

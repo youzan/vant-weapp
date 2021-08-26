@@ -56,6 +56,10 @@ VantComponent({
       type: Boolean,
       value: false,
     },
+    lockScroll: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   created() {

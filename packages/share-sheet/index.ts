@@ -5,7 +5,7 @@ VantComponent({
     // whether to show popup
     show: Boolean,
     // overlay custom style
-    overlayStyle: Object,
+    overlayStyle: String,
     // z-index
     zIndex: {
       type: Number,

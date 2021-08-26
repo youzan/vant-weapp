@@ -5,6 +5,7 @@
     subtitle="{{ subtitle }}"
     showSubtitle="{{ showSubtitle }}"
     firstDayOfWeek="{{ firstDayOfWeek }}"
+    bind:click-subtitle="onClickSubtitle"
   >
     <slot name="title" slot="title"></slot>
   </header>

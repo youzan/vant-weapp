@@ -24,8 +24,8 @@
     <view class="{{ utils.bem('field__control', [inputAlign, 'custom']) }}" bindtap="onClickInput">
       <slot name="input" />
     </view>
-    <include wx:if="{{ type === 'textarea' }}" src="textarea.wxml" />
-    <include wx:else src="input.wxml" />
+    <include wx:if="{{ type === 'textarea' }}" src="./textarea.wxml" />
+    <include wx:else src="./input.wxml" />
 
     <van-icon
       wx:if="{{ showClear }}"

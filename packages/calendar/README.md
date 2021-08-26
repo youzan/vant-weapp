@@ -265,24 +265,24 @@ Page({
 
 ### Props
 
-| 参数                  | 说明                                                                                               | 类型                 | 默认值             |
-| --------------------- | -------------------------------------------------------------------------------------------------- | -------------------- | ------------------ |
-| type                  | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_             | `single`           |
-| title                 | 日历标题                                                                                           | _string_             | `日期选择`         |
-| color                 | 主题色，对底部按钮和选中日期生效                                                                   | _string_             | `#ee0a24`          |
-| min-date              | 可选择的最小日期                                                                                   | _number_             | 当前日期           |
-| max-date              | 可选择的最大日期                                                                                   | _number_             | 当前日期的六个月后 |
-| default-date          | 默认选中的日期，`type`为`multiple`或`range`时为数组                                                | _number \| number[]_ | 今天               |
-| row-height            | 日期行高                                                                                           | _number \            | string_            | `64` |
-| formatter             | 日期格式化函数                                                                                     | _(day: Day) => Day_  | -                  |
-| poppable              | 是否以弹层的形式展示日历                                                                           | _boolean_            | `true`             |
-| show-mark             | 是否显示月份背景水印                                                                               | _boolean_            | `true`             |
-| show-title            | 是否展示日历标题                                                                                   | _boolean_            | `true`             |
-| show-subtitle         | 是否展示日历副标题（年月）                                                                         | _boolean_            | `true`             |
-| show-confirm          | 是否展示确认按钮                                                                                   | _boolean_            | `true`             |
-| confirm-text          | 确认按钮的文字                                                                                     | _string_             | `确定`             |
-| confirm-disabled-text | 确认按钮处于禁用状态时的文字                                                                       | _string_             | `确定`             |
-| first-day-of-week     | 设置周起始日                                                                                       | _0~6_                | `0`                |
+| 参数                  | 说明                                                                                               | 类型                       | 默认值             |
+| --------------------- | -------------------------------------------------------------------------------------------------- | --------------------       | ------------------ |
+| type                  | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_                   | `single`           |
+| title                 | 日历标题                                                                                           | _string_                   | `日期选择`         |
+| color                 | 主题色，对底部按钮和选中日期生效                                                                   | _string_                   | `#ee0a24`          |
+| min-date              | 可选择的最小日期                                                                                   | _timestamp_                | 当前日期           |
+| max-date              | 可选择的最大日期                                                                                   | _timestamp_                | 当前日期的六个月后 |
+| default-date          | 默认选中的日期，`type`为`multiple`或`range`时为数组                                                | _timestamp \| timestamp[]_ | 今天               |
+| row-height            | 日期行高                                                                                           | _number \| string_         | `64`               |
+| formatter             | 日期格式化函数                                                                                     | _(day: Day) => Day_        | -                  |
+| poppable              | 是否以弹层的形式展示日历                                                                           | _boolean_                  | `true`             |
+| show-mark             | 是否显示月份背景水印                                                                               | _boolean_                  | `true`             |
+| show-title            | 是否展示日历标题                                                                                   | _boolean_                  | `true`             |
+| show-subtitle         | 是否展示日历副标题（年月）                                                                         | _boolean_                  | `true`             |
+| show-confirm          | 是否展示确认按钮                                                                                   | _boolean_                  | `true`             |
+| confirm-text          | 确认按钮的文字                                                                                     | _string_                   | `确定`             |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字                                                                       | _string_                   | `确定`             |
+| first-day-of-week     | 设置周起始日                                                                                       | _0~6_                      | `0`                |
 
 ### Poppable Props
 
@@ -331,7 +331,7 @@ Page({
 | opened                 | 打开弹出层且动画结束后触发                                         | -                              |
 | closed                 | 关闭弹出层且动画结束后触发                                         | -                              |
 | over-range             | 范围选择超过最多可选天数时触发                                     | -                              |
-| click-subtitle `1.8.1` | 点击日历副标题时触发                                     | _WechatMiniprogram.TouchEvent_ |
+| click-subtitle `1.8.1` | 点击日历副标题时触发                                               | _WechatMiniprogram.TouchEvent_ |
 
 ### Slots
 

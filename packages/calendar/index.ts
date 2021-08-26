@@ -67,11 +67,11 @@ VantComponent({
       observer: 'reset',
     },
     minDate: {
-      type: null,
+      type: Number,
       value: initialMinDate,
     },
     maxDate: {
-      type: null,
+      type: Number,
       value: initialMaxDate,
     },
     position: {
@@ -132,7 +132,7 @@ VantComponent({
 
   created() {
     this.setData({
-      currentDate: this.getInitialDate(),
+      currentDate: this.getInitialDate(this.data.defaultDate),
     });
   },
 

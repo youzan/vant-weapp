@@ -89,7 +89,10 @@ VantComponent({
       }
 
       getRect(this, ROOT_ELEMENT).then((root) => {
-        if (offsetTop >= root?.top) {
+        if (!root) {
+          return;
+        }
+        if (offsetTop >= root.top) {
           this.setDataAfterDiff({ fixed: true, height: root.height });
           this.transform = 0;
         } else {

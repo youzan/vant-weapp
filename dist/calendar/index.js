@@ -64,11 +64,11 @@ VantComponent({
       observer: 'reset',
     },
     minDate: {
-      type: null,
+      type: Number,
       value: initialMinDate,
     },
     maxDate: {
-      type: null,
+      type: Number,
       value: initialMaxDate,
     },
     position: {
@@ -127,7 +127,7 @@ VantComponent({
   },
   created() {
     this.setData({
-      currentDate: this.getInitialDate(),
+      currentDate: this.getInitialDate(this.data.defaultDate),
     });
   },
   mounted() {
@@ -180,11 +180,11 @@ VantComponent({
         const start = this.limitDateRange(
           startDay || now,
           minDate,
-          getPrevDay(maxDate).getTime()
+          getPrevDay(new Date(maxDate)).getTime()
         );
         const end = this.limitDateRange(
           endDay || now,
-          getNextDay(minDate).getTime()
+          getNextDay(new Date(minDate)).getTime()
         );
         return [start, end];
       }

@@ -54,15 +54,15 @@ VantComponent({
 
       this.touchStart(event);
       this.startValue = this.format(this.value);
-      this.newValue = this.data.value;
+      const currentValue = this.value;
 
-      if (this.isRange(this.newValue)) {
-        this.startValue = this.newValue.map((val) => this.format(val)) as [
+      if (this.isRange(currentValue)) {
+        this.startValue = currentValue.map((val) => this.format(val)) as [
           number,
           number
         ];
       } else {
-        this.startValue = this.format(this.newValue);
+        this.startValue = this.format(currentValue);
       }
       this.dragStatus = 'start';
     },

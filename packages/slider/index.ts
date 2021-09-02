@@ -108,8 +108,8 @@ VantComponent({
         const value =
           ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
 
-        if (this.isRange(this.data.value)) {
-          const [left, right] = this.data.value;
+        if (this.isRange(this.value)) {
+          const [left, right] = this.value;
           const middle = (left + right) / 2;
 
           if (value <= middle) {
@@ -147,6 +147,14 @@ VantComponent({
 
       this.value = value;
 
+      this.setData({
+        barStyle: `
+          width: ${this.calcMainAxis()};
+          left: ${this.isRange(value) ? `${value[0]}%` : 0};
+          ${drag ? 'transition: none;' : ''}
+        `,
+      });
+
       if (drag) {
         this.$emit('drag', { value });
       }
@@ -158,14 +166,6 @@ VantComponent({
       if ((drag || end) && canIUseModel()) {
         this.setData({ value });
       }
-
-      this.setData({
-        barStyle: `
-          width: ${this.calcMainAxis()};
-          left: ${this.isRange(value) ? `${value[0]}%` : 0};
-          ${drag ? 'transition: none;' : ''}
-        `,
-      });
     },
 
     getScope() {
@@ -179,7 +179,8 @@ VantComponent({
 
     // 计算选中条的长度百分比
     calcMainAxis() {
-      const { value, min } = this.data;
+      const { value } = this;
+      const { min } = this.data;
       const scope = this.getScope();
       if (this.isRange(value)) {
         return `${((value[1] - value[0]) * 100) / scope}%`;

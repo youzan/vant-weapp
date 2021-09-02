@@ -11,15 +11,3 @@
   border-radius: 100px;
   background-color: #ee0a24;
 }
-
-
-.left-button {
-  width: 40px;
-  height: 40px;
-  background-color: red;
-}
-.right-button {
-  width: 40px;
-  height: 40px;
-  background-color: blue;
-}

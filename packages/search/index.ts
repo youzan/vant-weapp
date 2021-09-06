@@ -44,6 +44,10 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    clearTrigger: {
+      type: String,
+      value: 'focus',
+    },
   },
 
   methods: {

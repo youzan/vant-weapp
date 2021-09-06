@@ -75,6 +75,14 @@ Page({
 });
 ```
 
+## 常见问题
+
+### 嵌套在滚动元素中 IndexAnchor 失效？
+
+由于 `<IndexBar />` 内部使用 wx.pageScrollTo 滚动到指定位置，因此只支持页面级滚动，无法在滚动元素中嵌套使用，例如：`view` 使用 `overflow: scroll;` 或者 `scroll-view`，
+具体可查看[微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/wx.pageScrollTo.html)。
+历史issue: [#4252](https://github.com/youzan/vant-weapp/issues/4252)
+
 ## API
 
 ### IndexBar Props

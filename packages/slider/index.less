@@ -34,11 +34,19 @@
     .theme(box-shadow, '@slider-button-box-shadow');
     .theme(background-color, '@slider-button-background-color');
 
-    &-wrapper {
+    &-wrapper,
+    &-wrapper-right {
       position: absolute;
       top: 50%;
       right: 0;
       transform: translate3d(50%, -50%, 0);
+    }
+
+    &-wrapper-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate3d(-50%, -50%, 0);
     }
   }
 

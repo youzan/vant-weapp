@@ -93,18 +93,18 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| mode | 通知栏模式，可选值为 `closeable` `link` | _string_ | `''` |
-| text | 通知文本内容 | _string_ | `''` |
-| color | 通知文本颜色 | _string_ | `#ed6a0c` |
-| background | 滚动条背景 | _string_ | `#fffbe8` |
-| left-icon | 左侧[图标名称](#/icon)或图片链接 | _string_ | - |
-| delay | 动画延迟时间 (s) | _number_ | `1` |
-| speed | 滚动速率 (px/s) | _number_ | `60` |
-| scrollable | 是否开启滚动播放，内容长度溢出时默认开启 | _boolean_ | - |
-| wrapable | 是否开启文本换行，只在禁用滚动时生效 | _boolean_ | `false` |
-| open-type | 微信开放能力 | _string_ | `navigate` |
+| 参数       | 说明                                     | 类型      | 默认值     |
+| ---------- | ---------------------------------------- | --------- | ---        |
+| mode       | 通知栏模式，可选值为 `closeable` `link`  | _string_  | `''`       |
+| text       | 通知文本内容                             | _string_  | `''`       |
+| color      | 通知文本颜色                             | _string_  | `#ed6a0c`  |
+| background | 滚动条背景                               | _string_  | `#fffbe8`  |
+| left-icon  | 左侧[图标名称](#/icon)或图片链接         | _string_  | -          |
+| delay      | 动画延迟时间 (s)                         | _number_  | `1`        |
+| speed      | 滚动速率 (px/s)                          | _number_  | `60`       |
+| scrollable | 是否开启滚动播放，内容长度溢出时默认开启 | _boolean_ | -          |
+| wrapable   | 是否开启文本换行，只在禁用滚动时生效     | _boolean_ | `false`    |
+| open-type  | 微信开放能力                             | _string_  | `navigate` |
 
 ### Events
 

@@ -90,18 +90,18 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| value | 目标进度 | _number_ | `0` | - |
-| type | 指定 canvas 类型，可选值为 `2d` | _string_ | - | - |
-| size | 圆环直径，默认单位为 `px` | _number_ | `100` | - |
-| color | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` | - |
-| layer-color | 轨道颜色 | _string_ | `#fff` | - |
-| fill | 填充颜色 | _string_ | - | - |
-| speed | 动画速度（单位为 value/s） | _number_ | `50` | - |
-| text | 文字 | _string_ | - | - |
-| stroke-width | 进度条宽度 | _number_ | `4` | - |
-| clockwise | 是否顺时针增加 | _boolean_ | `true` | - |
+| 参数         | 说明                                   | 类型               | 默认值    |
+| ------------ | -------------------------------------- | ------------------ | -------   |
+| value        | 目标进度                               | _number_           | `0`       |
+| type         | 指定 canvas 类型，可选值为 `2d`        | _string_           | -         |
+| size         | 圆环直径，默认单位为 `px`              | _number_           | `100`     |
+| color        | 进度条颜色，传入对象格式可以定义渐变色 | _string \| object_ | `#1989fa` |
+| layer-color  | 轨道颜色                               | _string_           | `#fff`    |
+| fill         | 填充颜色                               | _string_           | -         |
+| speed        | 动画速度（单位为 value/s）             | _number_           | `50`      |
+| text         | 文字                                   | _string_           | -         |
+| stroke-width | 进度条宽度                             | _number_           | `4`       |
+| clockwise    | 是否顺时针增加                         | _boolean_          | `true`    |
 
 ### Slots
 

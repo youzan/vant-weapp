@@ -93,17 +93,17 @@ Page({
 
 ### Props
 
-| 参数           | 说明                   | 类型      | 默认值    | 版本 |
-| -------------- | ---------------------- | --------- | --------- | ---- |
-| name           | 在表单内提交时的标识符 | _string_  | -         | -    |
-| checked        | 开关选中状态           | _any_     | `false`   | -    |
-| loading        | 是否为加载状态         | _boolean_ | `false`   | -    |
-| disabled       | 是否为禁用状态         | _boolean_ | `false`   | -    |
-| size           | 开关尺寸               | _string_  | `30px`    | -    |
-| active-color   | 打开时的背景色         | _string_  | `#1989fa` | -    |
-| inactive-color | 关闭时的背景色         | _string_  | `#fff`    | -    |
-| active-value   | 打开时的值             | _any_     | `true`    | -    |
-| inactive-value | 关闭时的值             | _any_     | `false`   | -    |
+| 参数           | 说明                   | 类型      | 默认值    |
+| -------------- | ---------------------- | --------- | --------- |
+| name           | 在表单内提交时的标识符 | _string_  | -         |
+| checked        | 开关选中状态           | _any_     | `false`   |
+| loading        | 是否为加载状态         | _boolean_ | `false`   |
+| disabled       | 是否为禁用状态         | _boolean_ | `false`   |
+| size           | 开关尺寸               | _string_  | `30px`    |
+| active-color   | 打开时的背景色         | _string_  | `#1989fa` |
+| inactive-color | 关闭时的背景色         | _string_  | `#fff`    |
+| active-value   | 打开时的值             | _any_     | `true`    |
+| inactive-value | 关闭时的值             | _any_     | `false`   |
 
 ### Events
 

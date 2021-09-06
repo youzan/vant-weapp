@@ -176,16 +176,16 @@ Page({
 
 ### Tabbar Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| active | 当前选中标签的索引 | _number_ | - | - |
-| fixed | 是否固定在底部 | _boolean_ | `true` | - |
-| placeholder | 固定在底部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
-| border | 是否展示外边框 | _boolean_ | `true` | - |
-| z-index | 元素 z-index | _number_ | `1` | - |
-| active-color | 选中标签的颜色 | _string_ | `#1989fa` | - |
-| inactive-color | 未选中标签的颜色 | _string_ | `#7d7e80` | - |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` | - |
+| 参数                   | 说明                                               | 类型      | 默认值    |
+| ---------------------- | -------------------------------------------------- | --------- | ---       |
+| active                 | 当前选中标签的索引                                 | _number_  | -         |
+| fixed                  | 是否固定在底部                                     | _boolean_ | `true`    |
+| placeholder            | 固定在底部时，是否在标签位置生成一个等高的占位元素 | _boolean_ | `false`   |
+| border                 | 是否展示外边框                                     | _boolean_ | `true`    |
+| z-index                | 元素 z-index                                       | _number_  | `1`       |
+| active-color           | 选中标签的颜色                                     | _string_  | `#1989fa` |
+| inactive-color         | 未选中标签的颜色                                   | _string_  | `#7d7e80` |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离                    | _boolean_ | `true`    |
 
 ### Tabbar Event
 
@@ -195,13 +195,13 @@ Page({
 
 ### TabbarItem Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| name | 标签名称，作为匹配的标识符 | _string \| number_ | 当前标签的索引值 | - |
-| icon | 图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
-| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/icon#props) | _string_ | `van-icon` |
-| dot | 是否显示小红点 | _boolean_ | - | - |
-| info | 图标右上角提示信息 | _string \| number_ | - | - |
+| 参数        | 说明                                                           | 类型               | 默认值           |
+| ----------- | -------------------------------------------------------------- | ------------------ | ---------------- |
+| name        | 标签名称，作为匹配的标识符                                     | _string \| number_ | 当前标签的索引值 |
+| icon        | 图标名称或图片链接，可选值见 [Icon 组件](#/icon)               | _string_           | -                |
+| icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/icon#props) | _string_           | `van-icon`       |
+| dot         | 是否显示小红点                                                 | _boolean_          | -                |
+| info        | 图标右上角提示信息                                             | _string \| number_ | -                |
 
 ### TabbarItem Slot
 

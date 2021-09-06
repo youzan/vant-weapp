@@ -52,21 +52,21 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| thumb | 左侧图片 | _string_ | - | - |
-| thumb-mode | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | _string_ | `aspectFit` | - |
-| title | 标题 | _string_ | - | - |
-| desc | 描述 | _string_ | - | - |
-| tag | 标签 | _string_ | - | - |
-| num | 商品数量 | _string \| number_ | - | - |
-| price | 商品价格 | _string \| number_ | - | - |
-| origin-price | 商品划线原价 | _string \| number_ | - | - |
-| centered | 内容是否垂直居中 | _string_ | `false` | - |
-| currency | 货币符号 | _string_ | `¥` | - |
-| thumb-link | 点击左侧图片后跳转的链接地址 | _string_ | - | - |
-| link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` | - |
-| lazy-load | 是否开启图片懒加载 | _boolean_ | `false` | - |
+| 参数         | 说明                                                              | 类型               | 默认值       |
+| ------------ | ----------------------------------------------------------------- | ------------------ | ------------ |
+| thumb        | 左侧图片                                                          | _string_           | -            |
+| thumb-mode   | 左侧图片裁剪、缩放的模式，可选值参考小程序 image 组件 mode 属性值 | _string_           | `aspectFit`  |
+| title        | 标题                                                              | _string_           | -            |
+| desc         | 描述                                                              | _string_           | -            |
+| tag          | 标签                                                              | _string_           | -            |
+| num          | 商品数量                                                          | _string \| number_ | -            |
+| price        | 商品价格                                                          | _string \| number_ | -            |
+| origin-price | 商品划线原价                                                      | _string \| number_ | -            |
+| centered     | 内容是否垂直居中                                                  | _string_           | `false`      |
+| currency     | 货币符号                                                          | _string_           | `¥`          |
+| thumb-link   | 点击左侧图片后跳转的链接地址                                      | _string_           | -            |
+| link-type    | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch`        | _string_           | `navigateTo` |
+| lazy-load    | 是否开启图片懒加载                                                | _boolean_          | `false`      |
 
 ### Slot
 

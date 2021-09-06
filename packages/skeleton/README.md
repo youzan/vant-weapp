@@ -61,16 +61,14 @@ Page({
 
 ### Props
 
-### Props
-
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| row | 段落占位图行数 | _number_ | `0` | - |
-| row-width | 段落占位图宽度，可传数组来设置每一行的宽度 | _string \| string[]_ | `100%` | - |
-| title | 是否显示标题占位图 | _boolean_ | `false` | - |
-| title-width | 标题占位图宽度 | _string \| number_ | `40%` | - |
-| avatar | 是否显示头像占位图 | _boolean_ | `false` | - |
-| avatar-size | 头像占位图大小 | _string \| number_ | `32px` | - |
-| avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` | - |
-| loading | 是否显示占位图，传`false`时会展示子组件内容 | _boolean_ | `true` | - |
-| animate | 是否开启动画 | _boolean_ | `true` | - |
+| 参数         | 说明                                        | 类型                 | 默认值  |
+| ------------ | ------------------------------------------- | -------------------- | ------- |
+| row          | 段落占位图行数                              | _number_             | `0`     |
+| row-width    | 段落占位图宽度，可传数组来设置每一行的宽度  | _string \| string[]_ | `100%`  |
+| title        | 是否显示标题占位图                          | _boolean_            | `false` |
+| title-width  | 标题占位图宽度                              | _string \| number_   | `40%`   |
+| avatar       | 是否显示头像占位图                          | _boolean_            | `false` |
+| avatar-size  | 头像占位图大小                              | _string \| number_   | `32px`  |
+| avatar-shape | 头像占位图形状，可选值为`square`            | _string_             | `round` |
+| loading      | 是否显示占位图，传`false`时会展示子组件内容 | _boolean_            | `true`  |
+| animate      | 是否开启动画                                | _boolean_            | `true`  |

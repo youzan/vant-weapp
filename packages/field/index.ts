@@ -153,7 +153,7 @@ VantComponent({
 
       let showClear = false;
 
-      if (!!clearable && !readonly) {
+      if (clearable && !readonly) {
         const hasValue = !!value;
         const trigger =
           clearTrigger === 'always' || (clearTrigger === 'focus' && focused);

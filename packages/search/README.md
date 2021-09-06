@@ -116,7 +116,7 @@ Page({
 | name | 在表单内提交时的标识符 | _string_ | - | - |
 | label | 搜索框左侧文本 | _string_ | - | - |
 | shape | 形状，可选值为 `round` | _string_ | `square` | - |
-| value | 当前输入的值 | _string \| number_ | - | - |
+| value | 当前输入的值 | _string \j number_ | - | - |
 | background | 搜索框背景色 | _string_ | `#f2f2f2` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | _boolean_ | `false` | - |
 | action-text | 取消按钮文字 | _boolean_ | `取消` | 1.0.0 |
@@ -134,6 +134,7 @@ Page({
 | use-right-icon-slot | 是否使用输入框右侧图标 slot | _boolean_ | `false` | - |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-left-icon-slot，则该属性无效） | _string_ | `search` | - |
 | right-icon | 输入框右侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-right-icon-slot，则该属性无效） | _string_ | - | - |
+| clear-icon `v1.8.4` | 清除[图标名称](#/icon)或图片链接 | _string_ | `clear` |
 
 ### Events
 

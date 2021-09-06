@@ -45,6 +45,10 @@ VantComponent({
       type: String,
       value: '6.2em',
     },
+    clearIcon: {
+      type: String,
+      value: 'clear',
+    },
   },
 
   data: {

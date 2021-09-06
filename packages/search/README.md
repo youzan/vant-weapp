@@ -116,7 +116,7 @@ Page({
 | name                   | 在表单内提交时的标识符                                                                            | _string_           | -         |
 | label                  | 搜索框左侧文本                                                                                    | _string_           | -         |
 | shape                  | 形状，可选值为 `round`                                                                            | _string_           | `square`  |
-| value                  | 当前输入的值                                                                                      | _string \j number_ | -         |
+| value                  | 当前输入的值                                                                                      | _string \| number_ | -         |
 | background             | 搜索框背景色                                                                                      | _string_           | `#f2f2f2` |
 | show-action            | 是否在搜索框右侧显示取消按钮                                                                      | _boolean_          | `false`   |
 | action-text `v1.0.0`   | 取消按钮文字                                                                                      | _boolean_          | `取消`    |

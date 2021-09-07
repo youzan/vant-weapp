@@ -74,20 +74,20 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| price | 价格（单位分） | _number_ | - | - |
-| label | 价格文案 | _string_ | `合计：` | - |
-| suffix-label | 价格右侧文案 | _string_ | - | - |
-| button-text | 按钮文字 | _string_ | - | - |
-| button-type | 按钮类型 | _string_ | `danger` | - |
-| tip | 提示文案 | _string \| boolean_ | - | - |
-| tip-icon | 图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
-| disabled | 是否禁用按钮 | _boolean_ | `false` | - |
-| loading | 是否显示加载中的按钮 | _boolean_ | `false` | - |
-| currency | 货币符号 | _string_ | `¥` | - |
-| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` | - |
-| decimal-length | 价格小数点后位数 | _number_ | `2` | - |
+| 参数                   | 说明                                             | 类型                | 默认值   |
+| ---------------------- | ------------------------------------------------ | ------------------- | -------- |
+| price                  | 价格（单位分）                                   | _number_            | -        |
+| label                  | 价格文案                                         | _string_            | `合计：` |
+| suffix-label           | 价格右侧文案                                     | _string_            | -        |
+| button-text            | 按钮文字                                         | _string_            | -        |
+| button-type            | 按钮类型                                         | _string_            | `danger` |
+| tip                    | 提示文案                                         | _string \| boolean_ | -        |
+| tip-icon               | 图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_            | -        |
+| disabled               | 是否禁用按钮                                     | _boolean_           | `false`  |
+| loading                | 是否显示加载中的按钮                             | _boolean_           | `false`  |
+| currency               | 货币符号                                         | _string_            | `¥`      |
+| safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离                  | _boolean_           | `true`   |
+| decimal-length         | 价格小数点后位数                                 | _number_            | `2`      |
 
 ### Events
 

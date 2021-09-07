@@ -48,6 +48,10 @@ VantComponent({
       type: String,
       value: 'focus',
     },
+    clearIcon: {
+      type: String,
+      value: 'clear',
+    },
   },
 
   methods: {

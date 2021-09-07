@@ -152,33 +152,33 @@ Page({
 
 ### Collapse Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| value | 当前展开面板的 name | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | - | - |
-| accordion | 是否开启手风琴模式 | _boolean_ | `false` | - |
-| border | 是否显示外边框 | _boolean_ | `true` | - |
+| 参数      | 说明                | 类型                                                                   | 默认值  |
+| --------- | ------------------- | ---------------------------------------------------------------------- | ------- |
+| value     | 当前展开面板的 name | 非手风琴模式：_(string \| number)[]_<br>手风琴模式：_string \| number_ | -       |
+| accordion | 是否开启手风琴模式  | _boolean_                                                              | `false` |
+| border    | 是否显示外边框      | _boolean_                                                              | `true`  |
 
 ### Collapse Event
 
-| 事件名 | 说明           | 参数                           |
-| ------ | -------------- | ------------------------------ |
-| change | 切换面板时触发 | activeNames: _string \| Array_ |
-| open | 展开面板时触发 | currentName: _string \| number_ |
-| close | 关闭面板时触发 | currentName: _string \| number_ |
+| 事件名 | 说明           | 参数                            |
+| ------ | -------------- | ------------------------------  |
+| change | 切换面板时触发 | activeNames: _string \| Array_  |
+| open   | 展开面板时触发 | currentName: _string \| number_ |
+| close  | 关闭面板时触发 | currentName: _string \| number_ |
 
 ### CollapseItem Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| name | 唯一标识符，默认为索引值 | _string \| number_ | `index` | - |
-| title | 标题栏左侧内容 | _string \| number_ | - | - |
-| icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - | - |
-| value | 标题栏右侧内容 | _string \| number_ | - | - |
-| label | 标题栏描述信息 | _string_ | - | - |
-| border | 是否显示内边框 | _boolean_ | `true` | - |
-| is-link | 是否展示标题栏右侧箭头并开启点击反馈 | _boolean_ | `true` | - |
-| clickable | 是否开启点击反馈 | _boolean_ | `false` | - |
-| disabled | 是否禁用面板 | _boolean_ | `false` | - |
+| 参数      | 说明                                                       | 类型               | 默认值  |
+| --------- | ---------------------------------------------------------- | ------------------ | ------- |
+| name      | 唯一标识符，默认为索引值                                   | _string \| number_ | `index` |
+| title     | 标题栏左侧内容                                             | _string \| number_ | -       |
+| icon      | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_           | -       |
+| value     | 标题栏右侧内容                                             | _string \| number_ | -       |
+| label     | 标题栏描述信息                                             | _string_           | -       |
+| border    | 是否显示内边框                                             | _boolean_          | `true`  |
+| is-link   | 是否展示标题栏右侧箭头并开启点击反馈                       | _boolean_          | `true`  |
+| clickable | 是否开启点击反馈                                           | _boolean_          | `false` |
+| disabled  | 是否禁用面板                                               | _boolean_          | `false` |
 
 ### CollapseItem Slot
 

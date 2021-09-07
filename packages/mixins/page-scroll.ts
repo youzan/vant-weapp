@@ -1,4 +1,4 @@
-import { getCurrentPage } from '../common/utils';
+import { getCurrentPage, isDef } from '../common/utils';
 
 type IPageScrollOption = WechatMiniprogram.Page.IPageScrollOption;
 type Scroller = (
@@ -38,7 +38,9 @@ export const pageScrollMixin = (scroller: Scroller) =>
 
     detached() {
       const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
-      page.vanPageScroller =
-        page.vanPageScroller?.filter((item) => item !== scroller) || [];
+      if (!isDef(page)) {
+        page.vanPageScroller =
+          page.vanPageScroller?.filter((item) => item !== scroller) || [];
+      }
     },
   });

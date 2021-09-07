@@ -37,6 +37,10 @@ VantComponent({
       type: Boolean,
       observer: 'setShowClear',
     },
+    clearTrigger: {
+      type: String,
+      value: 'focus',
+    },
     border: {
       type: Boolean,
       value: true,
@@ -44,6 +48,10 @@ VantComponent({
     titleWidth: {
       type: String,
       value: '6.2em',
+    },
+    clearIcon: {
+      type: String,
+      value: 'clear',
     },
   },
 
@@ -144,12 +152,20 @@ VantComponent({
     },
 
     setShowClear() {
-      const { clearable, readonly } = this.data;
+      const { clearable, readonly, clearTrigger } = this.data;
       const { focused, value } = this;
 
-      this.setData({
-        showClear: !!clearable && !!focused && !!value && !readonly,
-      });
+      let showClear = false;
+
+      if (clearable && !readonly) {
+        const hasValue = !!value;
+        const trigger =
+          clearTrigger === 'always' || (clearTrigger === 'focus' && focused);
+
+        showClear = hasValue && trigger;
+      }
+
+      this.setData({ showClear });
     },
 
     noop() {},

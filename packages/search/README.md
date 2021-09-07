@@ -126,6 +126,7 @@ Page({
 | readonly               | 是否只读                                                                                          | _boolean_          | `false`   |
 | clearable              | 是否启用清除控件                                                                                  | _boolean_          | `true`    |
 | clear-trigger `v1.8.4` | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示     | _string_           | `focus`   |
+| clear-icon `v1.8.4`    | 清除[图标名称](#/icon)或图片链接                                                                  | _string_           | `clear`   |
 | maxlength              | 最大输入长度，设置为 -1 的时候不限制最大长度                                                      | _number_           | `-1`      |
 | use-action-slot        | 是否使用 action slot                                                                              | _boolean_          | `false`   |
 | placeholder            | 输入框为空时占位符                                                                                | _string_           | -         |
@@ -135,7 +136,6 @@ Page({
 | use-right-icon-slot    | 是否使用输入框右侧图标 slot                                                                       | _boolean_          | `false`   |
 | left-icon              | 输入框左侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-left-icon-slot，则该属性无效）   | _string_           | `search`  |
 | right-icon             | 输入框右侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-right-icon-slot，则该属性无效）  | _string_           | -         |
-| clear-icon `v1.8.4` | 清除[图标名称](#/icon)或图片链接 | _string_ | `clear` |
 
 ### Events
 

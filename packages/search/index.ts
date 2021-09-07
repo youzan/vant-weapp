@@ -44,6 +44,10 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    clearIcon: {
+      type: String,
+      value: 'clear',
+    },
   },
 
   methods: {

@@ -1,5 +1,20 @@
 # 更新日志
 
+### [1.8.4](https://github.com/youzan/vant-weapp/compare/v1.8.3...v1.8.4)
+
+`2021-09-07`
+
+**Bug Fixes**
+
+- page-scroll: 修复 getCurrentPage 为空时报错 [#4458](https://github.com/youzan/vant-weapp/issues/4458)
+
+**Features**
+
+- Field: 新增 clear-trigger 属性 [#4461](https://github.com/youzan/vant-weapp/issues/4461)
+- Search: 新增 clear-icon 属性 [#4463](https://github.com/youzan/vant-weapp/issues/4463)
+- Search: 新增 clear-trigger 属性 [9e17b13](https://github.com/youzan/vant-weapp/commit/9e17b13164e57ff09140d755870853f702a89a39)
+- Slider: 新增 range 属性 [#4442](https://github.com/youzan/vant-weapp/issues/4442)
+
 ### [v1.8.3](https://github.com/youzan/vant-weapp/compare/v1.8.2...v1.8.3)
 
 `2021-08-30`

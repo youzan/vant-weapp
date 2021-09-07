@@ -21,6 +21,8 @@
       disabled="{{ disabled }}"
       readonly="{{ readonly }}"
       clearable="{{ clearable }}"
+      clear-trigger="{{ clearTrigger }}"
+      clear-icon="{{ clearIcon }}"
       maxlength="{{ maxlength }}"
       input-align="{{ inputAlign }}"
       input-class="input-class"

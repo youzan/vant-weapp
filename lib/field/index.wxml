@@ -29,7 +29,7 @@
 
     <van-icon
       wx:if="{{ showClear }}"
-      name="clear"
+      name="{{ clearIcon }}"
       class="van-field__clear-root van-field__icon-root"
       catch:touchstart="onClear"
     />

@@ -188,12 +188,12 @@ Page({
 
 ### RadioGroup Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| name | 在表单内提交时的标识符 | _string_ | - |
-| value | 当前选中项的标识符 | _any_ | - |
-| disabled | 是否禁用所有单选框 | _boolean_ | `false` |
-| direction `v1.6.7` | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
+| 参数               | 说明                            | 类型      | 默认值     |
+| ------------------ | ------------------------------- | --------- | ---        |
+| name               | 在表单内提交时的标识符          | _string_  | -          |
+| value              | 当前选中项的标识符              | _any_     | -          |
+| disabled           | 是否禁用所有单选框              | _boolean_ | `false`    |
+| direction `v1.6.7` | 排列方向，可选值为 `horizontal` | _string_  | `vertical` |
 
 ### Radio Props
 

@@ -133,14 +133,14 @@ Page({
 | position               | 弹出位置，可选值为 `top` `bottom` `right` `left` | _string_           | `center` |
 | duration               | 动画时长，单位为毫秒                             | _number \| object_ | `300`    |
 | round                  | 是否显示圆角                                     | _boolean_          | `false`  |
-| custom-style           | 自定义弹出层样式                                 | _string_           | ``       |
-| overlay-style          | 自定义遮罩层样式                                 | _string_           | ``       |
+| custom-style           | 自定义弹出层样式                                 | _string_           | `''`     |
+| overlay-style          | 自定义遮罩层样式                                 | _string_           | `''`     |
 | close-on-click-overlay | 是否在点击遮罩层后关闭                           | _boolean_          | `true`   |
 | closeable              | 是否显示关闭图标                                 | _boolean_          | `false`  |
 | close-icon             | 关闭图标名称或图片链接                           | _string_           | `cross`  |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离                  | _boolean_          | `true`   |
 | safe-area-inset-top    | 是否留出顶部安全距离（状态栏高度）               | _boolean_          | `false`  |
-| lock-scroll `1.7.3`    | 是否锁定背景滚动                                 | _boolean_          | `true`   |
+| lock-scroll `v1.7.3`   | 是否锁定背景滚动                                 | _boolean_          | `true`   |
 
 ### Events
 

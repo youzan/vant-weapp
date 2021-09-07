@@ -138,13 +138,13 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| time | 倒计时时长，单位毫秒 | _number_ | - | - |
-| format | 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒 | _string_ | `HH:mm:ss` | - |
-| auto-start | 是否自动开始倒计时 | _boolean_ | `true` | - |
-| millisecond | 是否开启毫秒级渲染 | _boolean_ | `false` | - |
-| use-slot | 是否使用自定义样式插槽 | _boolean_ | `false` | - |
+| 参数        | 说明                                           | 类型      | 默认值     |
+| ----------- | ---------------------------------------------- | --------- | ---        |
+| time        | 倒计时时长，单位毫秒                           | _number_  | -          |
+| format      | 时间格式，DD-日，HH-时，mm-分，ss-秒，SSS-毫秒 | _string_  | `HH:mm:ss` |
+| auto-start  | 是否自动开始倒计时                             | _boolean_ | `true`     |
+| millisecond | 是否开启毫秒级渲染                             | _boolean_ | `false`    |
+| use-slot    | 是否使用自定义样式插槽                         | _boolean_ | `false`    |
 
 ### Events
 

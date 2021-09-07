@@ -146,29 +146,29 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| columns | 对象数组，配置每一列显示的数据 | _Array_ | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | _boolean_ | `false` | - |
-| toolbar-position | 顶部栏位置，可选值为`bottom` | _string_ | `top` | - |
-| title | 顶部栏标题 | _string_ | `''` | - |
-| loading | 是否显示加载状态 | _boolean_ | `false` | - |
-| value-key | 选项对象中，文字对应的 key | _string_ | `text` | - |
-| item-height | 选项高度 | _number_ | `44` | - |
-| confirm-button-text | 确认按钮文字 | _string_ | `确认` | - |
-| cancel-button-text | 取消按钮文字 | _string_ | `取消` | - |
-| visible-item-count | 可见的选项个数 | _number_ | `6` | - |
-| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_ | `0` | - |
+| 参数                | 说明                                                                | 类型      | 默认值  |
+| ------------------- | ------------------------------------------------------------------- | --------- | ---     |
+| columns             | 对象数组，配置每一列显示的数据                                      | _Array_   | `[]`    |
+| show-toolbar        | 是否显示顶部栏                                                      | _boolean_ | `false` |
+| toolbar-position    | 顶部栏位置，可选值为`bottom`                                        | _string_  | `top`   |
+| title               | 顶部栏标题                                                          | _string_  | `''`    |
+| loading             | 是否显示加载状态                                                    | _boolean_ | `false` |
+| value-key           | 选项对象中，文字对应的 key                                          | _string_  | `text`  |
+| item-height         | 选项高度                                                            | _number_  | `44`    |
+| confirm-button-text | 确认按钮文字                                                        | _string_  | `确认`  |
+| cancel-button-text  | 取消按钮文字                                                        | _string_  | `取消`  |
+| visible-item-count  | 可见的选项个数                                                      | _number_  | `6`     |
+| default-index       | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_  | `0`     |
 
 ### Events
 
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数。
 
-| 事件名 | 说明 | 参数 |
-| --- | --- | --- |
-| confirm | 点击完成按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
-| cancel | 点击取消按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
-| change | 选项改变时触发 | 单列：Picker 实例，选中值，选中值对应的索引<br>多列：Picker 实例，所有列选中值，当前列对应的索引 |
+| 事件名  | 说明               | 参数                                                                                             |
+| ------- | ------------------ | ------------------------------------------------------------------------------------------------ |
+| confirm | 点击完成按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引                     |
+| cancel  | 点击取消按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引                     |
+| change  | 选项改变时触发     | 单列：Picker 实例，选中值，选中值对应的索引<br>多列：Picker 实例，所有列选中值，当前列对应的索引 |
 
 ### Columns 数据结构
 
@@ -192,15 +192,15 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 
 通过 selectComponent 可以获取到 picker 实例并调用实例方法。
 
-| 方法名 | 参数 | 返回值 | 介绍 |
-| --- | --- | --- | --- |
-| getValues | - | values | 获取所有列选中的值 |
-| setValues | values | - | 设置所有列选中的值 |
-| getIndexes | - | indexes | 获取所有列选中值对应的索引 |
-| setIndexes | indexes | - | 设置所有列选中值对应的索引 |
-| getColumnValue | columnIndex | value | 获取对应列选中的值 |
-| setColumnValue | columnIndex, value | - | 设置对应列选中的值 |
-| getColumnIndex | columnIndex | optionIndex | 获取对应列选中项的索引 |
-| setColumnIndex | columnIndex, optionIndex | - | 设置对应列选中项的索引 |
-| getColumnValues | columnIndex | values | 获取对应列中所有选项 |
-| setColumnValues | columnIndex, values | - | 设置对应列中所有选项 |
+| 方法名          | 参数                     | 返回值      | 介绍                       |
+| --------------- | ------------------------ | ----------- | -------------------------- |
+| getValues       | -                        | values      | 获取所有列选中的值         |
+| setValues       | values                   | -           | 设置所有列选中的值         |
+| getIndexes      | -                        | indexes     | 获取所有列选中值对应的索引 |
+| setIndexes      | indexes                  | -           | 设置所有列选中值对应的索引 |
+| getColumnValue  | columnIndex              | value       | 获取对应列选中的值         |
+| setColumnValue  | columnIndex, value       | -           | 设置对应列选中的值         |
+| getColumnIndex  | columnIndex              | optionIndex | 获取对应列选中项的索引     |
+| setColumnIndex  | columnIndex, optionIndex | -           | 设置对应列选中项的索引     |
+| getColumnValues | columnIndex              | values      | 获取对应列中所有选项       |
+| setColumnValues | columnIndex, values      | -           | 设置对应列中所有选项       |

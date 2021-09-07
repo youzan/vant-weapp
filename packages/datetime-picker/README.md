@@ -70,7 +70,7 @@ Page({
     formatter(type, value) {
       if (type === 'year') {
         return `${value}年`;
-      } 
+      }
       if (type === 'month') {
         return `${value}月`;
       }
@@ -175,25 +175,25 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| value | 当前选中值 | _string \| number_ | - | - |
-| type | 类型，可选值为 `date` `time` `year-month` <br> <strong>不建议动态修改</strong> | _string_ | `datetime` | - |
-| min-date | 可选的最小时间，精确到分钟 | _number_ | 十年前 | - |
-| max-date | 可选的最大时间，精确到分钟 | _number_ | 十年后 | - |
-| min-hour | 可选的最小小时，针对 time 类型 | _number_ | `0` | - |
-| max-hour | 可选的最大小时，针对 time 类型 | _number_ | `23` | - |
-| min-minute | 可选的最小分钟，针对 time 类型 | _number_ | `0` | - |
-| max-minute | 可选的最大分钟，针对 time 类型 | _number_ | `59` | - |
-| filter | 选项过滤函数 | _(type, values) => values_ | - | - |
-| formatter | 选项格式化函数 | _(type, value) => value_ | - | - |
-| title | 顶部栏标题 | _string_ | `''` | - |
-| show-toolbar | 是否显示顶部栏 | _boolean_ | `true` | - |
-| loading | 是否显示加载状态 | _boolean_ | `false` | - |
-| item-height | 选项高度 | _number_ | `44` | - |
-| confirm-button-text | 确认按钮文字 | _string_ | `确认` | - |
-| cancel-button-text | 取消按钮文字 | _string_ | `取消` | - |
-| visible-item-count | 可见的选项个数 | _number_ | `6` | - |
+| 参数                | 说明                                                                           | 类型                       | 默认值     |
+| ------------------- | ------------------------------------------------------------------------------ | -------------------------- | ---------- |
+| value               | 当前选中值                                                                     | _string \| number_         | -          |
+| type                | 类型，可选值为 `date` `time` `year-month` <br> <strong>不建议动态修改</strong> | _string_                   | `datetime` |
+| min-date            | 可选的最小时间，精确到分钟                                                     | _number_                   | 十年前     |
+| max-date            | 可选的最大时间，精确到分钟                                                     | _number_                   | 十年后     |
+| min-hour            | 可选的最小小时，针对 time 类型                                                 | _number_                   | `0`        |
+| max-hour            | 可选的最大小时，针对 time 类型                                                 | _number_                   | `23`       |
+| min-minute          | 可选的最小分钟，针对 time 类型                                                 | _number_                   | `0`        |
+| max-minute          | 可选的最大分钟，针对 time 类型                                                 | _number_                   | `59`       |
+| filter              | 选项过滤函数                                                                   | _(type, values) => values_ | -          |
+| formatter           | 选项格式化函数                                                                 | _(type, value) => value_   | -          |
+| title               | 顶部栏标题                                                                     | _string_                   | `''`       |
+| show-toolbar        | 是否显示顶部栏                                                                 | _boolean_                  | `true`     |
+| loading             | 是否显示加载状态                                                               | _boolean_                  | `false`    |
+| item-height         | 选项高度                                                                       | _number_                   | `44`       |
+| confirm-button-text | 确认按钮文字                                                                   | _string_                   | `确认`     |
+| cancel-button-text  | 取消按钮文字                                                                   | _string_                   | `取消`     |
+| visible-item-count  | 可见的选项个数                                                                 | _number_                   | `6`        |
 
 ### Events
 

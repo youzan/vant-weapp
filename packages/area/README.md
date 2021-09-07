@@ -126,34 +126,34 @@ db.collection('region')
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| value | 当前选中的省市区`code` | _string_ | - | - |
-| title | 顶部栏标题 | _string_ | - | - |
-| area-list | 省市区数据，格式见下方 | _object_ | - | - |
-| columns-num | 省市区显示列数，3-省市区，2-省市，1-省 | _string \| number_ | `3` | - |
-| columns-placeholder | 列占位提示文字 | _string[]_ | `[]` | - |
-| loading | 是否显示加载状态 | _boolean_ | `false` | - |
-| item-height | 选项高度 | _number_ | `44` | - |
-| visible-item-count | 可见的选项个数 | _number_ | `6` | - |
-| confirm-button-text | 确认按钮文字 | _string_ | `确认` | - |
-| cancel-button-text | 取消按钮文字 | _string_ | `取消` | - |
+| 参数                | 说明                                   | 类型               | 默认值  |
+| ------------------- | -------------------------------------- | ------------------ | ------- |
+| value               | 当前选中的省市区`code`                 | _string_           | -       |
+| title               | 顶部栏标题                             | _string_           | -       |
+| area-list           | 省市区数据，格式见下方                 | _object_           | -       |
+| columns-num         | 省市区显示列数，3-省市区，2-省市，1-省 | _string \| number_ | `3`     |
+| columns-placeholder | 列占位提示文字                         | _string[]_         | `[]`    |
+| loading             | 是否显示加载状态                       | _boolean_          | `false` |
+| item-height         | 选项高度                               | _number_           | `44`    |
+| visible-item-count  | 可见的选项个数                         | _number_           | `6`     |
+| confirm-button-text | 确认按钮文字                           | _string_           | `确认`  |
+| cancel-button-text  | 取消按钮文字                           | _string_           | `取消`  |
 
 ### Events
 
-| 事件 | 说明 | 回调参数 |
-| --- | --- | --- |
-| bind:confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节 |
-| bind:cancel | 点击取消按钮时 | - |
-| bind:change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
+| 事件         | 说明               | 回调参数                                    |
+| ------------ | ------------------ | ------------------------------------------- |
+| bind:confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节    |
+| bind:cancel  | 点击取消按钮时     | -                                           |
+| bind:change  | 选项改变时触发     | Picker 实例，所有列选中值，当前列对应的索引 |
 
 ### 方法
 
 通过 selectComponent 可以获取到 Area 实例并调用实例方法。
 
-| 方法名 | 参数 | 返回值 | 介绍 |
-| --- | --- | --- | --- |
-| reset | code: string | - | 根据 code 重置所有选项，若不传 code，则重置到第一项 |
+| 方法名 | 参数         | 返回值 | 介绍                                                |
+| ------ | ------------ | ------ | --------------------------------------------------- |
+| reset  | code: string | -      | 根据 code 重置所有选项，若不传 code，则重置到第一项 |
 
 ### 点击完成时返回的数据格式
 

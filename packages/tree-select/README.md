@@ -112,21 +112,21 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| items | 分类显示所需的数据 | _Array_ | `[]` | - |
-| height | 高度，默认单位为`px` | _number \| string_ | `300` |
-| main-active-index | 左侧选中项的索引 | _number_ | `0` | - |
-| active-id | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0` | - |
-| max | 右侧项最大选中个数 | _number_ | _Infinity_ | - |
-| selected-icon `v1.5.0` | 自定义右侧栏选中状态的图标 | _string_ | `success` |
+| 参数                   | 说明                          | 类型                        | 默认值     |
+| ---------------------- | ----------------------------- | --------------------------- | ---------- |
+| items                  | 分类显示所需的数据            | _Array_                     | `[]`       |
+| height                 | 高度，默认单位为`px`          | _number \| string_          | `300`      |
+| main-active-index      | 左侧选中项的索引              | _number_                    | `0`        |
+| active-id              | 右侧选中项的 id，支持传入数组 | _string \| number \| Array_ | `0`        |
+| max                    | 右侧项最大选中个数            | _number_                    | _Infinity_ |
+| selected-icon `v1.5.0` | 自定义右侧栏选中状态的图标    | _string_                    | `success`  |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| bind:click-nav | 左侧导航点击时，触发的事件 | event.detail.index：被点击的导航的索引 |
-| bind:click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据 |
+| 事件名          | 说明                             | 回调参数                               |
+| --------------- | -------------------------------- | -------------------------------------- |
+| bind:click-nav  | 左侧导航点击时，触发的事件       | event.detail.index：被点击的导航的索引 |
+| bind:click-item | 右侧选择项被点击时，会触发的事件 | event.detail: 该点击项的数据           |
 
 ### Slots
 

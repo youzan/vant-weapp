@@ -54,18 +54,18 @@ Page({
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| title | 标题 | _string_ | `''` | - |
-| left-text | 左侧文案 | _string_ | `''` | - |
-| right-text | 右侧文案 | _string_ | `''` | - |
-| left-arrow | 是否显示左侧箭头 | _boolean_ | `false` | - |
-| fixed | 是否固定在顶部 | _boolean_ | `false` | - |
-| placeholder | 固定在顶部时是否开启占位 | _boolean_ | `false` | - |
-| border | 是否显示下边框 | _boolean_ | `true` | - |
-| z-index | 元素 z-index | _number_ | `1` | - |
-| custom-style | 根节点自定义样式 | _string_ | - | - |
-| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | _boolean_ | `true` | - |
+| 参数                | 说明                               | 类型      | 默认值  |
+| ------------------- | ---------------------------------- | --------- | ------- |
+| title               | 标题                               | _string_  | `''`    |
+| left-text           | 左侧文案                           | _string_  | `''`    |
+| right-text          | 右侧文案                           | _string_  | `''`    |
+| left-arrow          | 是否显示左侧箭头                   | _boolean_ | `false` |
+| fixed               | 是否固定在顶部                     | _boolean_ | `false` |
+| placeholder         | 固定在顶部时是否开启占位           | _boolean_ | `false` |
+| border              | 是否显示下边框                     | _boolean_ | `true`  |
+| z-index             | 元素 z-index                       | _number_  | `1`     |
+| custom-style        | 根节点自定义样式                   | _string_  | -       |
+| safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | _boolean_ | `true`  |
 
 ### Slot
 

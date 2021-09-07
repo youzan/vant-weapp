@@ -89,21 +89,21 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | 版本 |
-| --- | --- | --- | --- | --- |
-| src | 图片链接 | _string_ | - | - |
-| fit | 图片填充模式 | _string_ | _fill_ | - |
-| alt | 替代文本 | _string_ | - | - |
-| width | 宽度，默认单位为`px` | _string \| number_ | - | - |
-| height | 高度，默认单位为`px` | _string \| number_ | - | - |
-| radius | 圆角大小，默认单位为`px` | _string \| number_ | `0` | - |
-| round | 是否显示为圆形 | _boolean_ | `false` | - |
-| lazy-load | 是否懒加载 | _boolean_ | `false` | - |
-| show-error | 是否展示图片加载失败提示 | _boolean_ | `true` | - |
-| show-loading | 是否展示图片加载中提示 | _boolean_ | `true` | - |
-| use-error-slot | 是否使用 error 插槽 | _boolean_ | `false` | - |
-| use-loading-slot | 是否使用 loading 插槽 | _boolean_ | `false` | - |
-| show-menu-by-longpress | 是否开启长按图片显示识别小程序码菜单 | _boolean_ | `false` | - |
+| 参数                   | 说明                                 | 类型               | 默认值  |
+| ---------------------- | ------------------------------------ | ------------------ | ------- |
+| src                    | 图片链接                             | _string_           | -       |
+| fit                    | 图片填充模式                         | _string_           | _fill_  |
+| alt                    | 替代文本                             | _string_           | -       |
+| width                  | 宽度，默认单位为`px`                 | _string \| number_ | -       |
+| height                 | 高度，默认单位为`px`                 | _string \| number_ | -       |
+| radius                 | 圆角大小，默认单位为`px`             | _string \| number_ | `0`     |
+| round                  | 是否显示为圆形                       | _boolean_          | `false` |
+| lazy-load              | 是否懒加载                           | _boolean_          | `false` |
+| show-error             | 是否展示图片加载失败提示             | _boolean_          | `true`  |
+| show-loading           | 是否展示图片加载中提示               | _boolean_          | `true`  |
+| use-error-slot         | 是否使用 error 插槽                  | _boolean_          | `false` |
+| use-loading-slot       | 是否使用 loading 插槽                | _boolean_          | `false` |
+| show-menu-by-longpress | 是否开启长按图片显示识别小程序码菜单 | _boolean_          | `false` |
 
 ### 图片填充模式 
 

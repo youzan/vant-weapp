@@ -28,7 +28,8 @@ VantComponent({
     },
     asyncClose: Boolean,
     name: {
-      type: null,
+      type: String,
+      optionalTypes: [Number],
       value: '',
     },
   },

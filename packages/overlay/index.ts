@@ -5,7 +5,8 @@ VantComponent({
     show: Boolean,
     customStyle: String,
     duration: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: 300,
     },
     zIndex: {

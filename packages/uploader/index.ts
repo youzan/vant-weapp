@@ -12,11 +12,13 @@ VantComponent({
     afterRead: null,
     beforeRead: null,
     previewSize: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: 80,
     },
     name: {
-      type: null,
+      type: String,
+      optionalTypes: [Number],
       value: '',
     },
     accept: {

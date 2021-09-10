@@ -37,12 +37,14 @@ VantComponent({
       },
     },
     lineWidth: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: 40,
       observer: 'resize',
     },
     lineHeight: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: -1,
     },
     active: {
@@ -98,7 +100,7 @@ VantComponent({
     scrollLeft: 0,
     scrollable: false,
     currentIndex: 0,
-    container: null as unknown as () => WechatMiniprogram.NodesRef,
+    container: (null as unknown) as () => WechatMiniprogram.NodesRef,
     skipTransition: true,
     scrollWithAnimation: false,
     lineOffsetLeft: 0,

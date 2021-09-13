@@ -33,6 +33,25 @@ Page({
 });
 ```
 
+### 双滑块
+
+添加 `range` 属性就可以开启双滑块模式，确保 `value` 的值是一个数组。
+
+```html
+<van-slider value="{{ 10, 50 }}" range @change="onChange" />
+```
+
+```js
+Page({
+  onChange(event) {
+    wx.showToast({
+      icon: 'none',
+      title: `当前值：${event.detail}`,
+    });
+  },
+});
+```
+
 ### 指定选择范围
 
 ```html
@@ -81,22 +100,51 @@ Page({
 });
 ```
 
+### 垂直方向
+
+设置 `vertical` 属性后，滑块会垂直展示，且高度为 100% 父元素高度。
+
+```html
+<view style="height: 150px;">
+  <van-slider value="50" vertical bind:change="onChange" />
+  <van-slider
+    value="{{ [10, 50] }}"
+    range
+    vertical
+    style="margin-left: 100px;"
+    bind:change="onChange"
+  />
+</view>
+```
+
+```js
+Page({
+  onChange(event) {
+    wx.showToast({
+      icon: 'none',
+      title: `当前值：${event.detail}`,
+    });
+  },
+});
+```
+
 ## API
 
 ### Props
 
-| 参数            | 说明                                     | 类型                 | 默认值    |
-| --------------- | ---------------------------------------- | -------------------- | --------- |
-| value           | 当前进度百分比，在双滑块模式下为数组格式 | _number \| number[]_ | `0`       |
-| disabled        | 是否禁用滑块                             | _boolean_            | `false`   |
-| max             | 最大值                                   | _number_             | `100`     |
-| min             | 最小值                                   | _number_             | `0`       |
-| step            | 步长                                     | _number_             | `1`       |
-| bar-height      | 进度条高度，默认单位为 `px`              | _string \| number_   | `2px`     |
-| active-color    | 进度条激活态颜色                         | _string_             | `#1989fa` |
-| inactive-color  | 进度条默认颜色                           | _string_             | `#e5e5e5` |
-| use-slot-button | 是否使用钮插槽                           | _boolean_            | `false`   |
-| range `v1.8.4`  | 是否开启双滑块模式                       | _boolean_            | `false`   |
+| 参数              | 说明                                     | 类型                 | 默认值    |
+| ---------------   | ---------------------------------------- | -------------------- | --------- |
+| value             | 当前进度百分比，在双滑块模式下为数组格式 | _number \| number[]_ | `0`       |
+| disabled          | 是否禁用滑块                             | _boolean_            | `false`   |
+| max               | 最大值                                   | _number_             | `100`     |
+| min               | 最小值                                   | _number_             | `0`       |
+| step              | 步长                                     | _number_             | `1`       |
+| bar-height        | 进度条高度，默认单位为 `px`              | _string \| number_   | `2px`     |
+| active-color      | 进度条激活态颜色                         | _string_             | `#1989fa` |
+| inactive-color    | 进度条默认颜色                           | _string_             | `#e5e5e5` |
+| use-slot-button   | 是否使用钮插槽                           | _boolean_            | `false`   |
+| range `v1.8.4`    | 是否开启双滑块模式                       | _boolean_            | `false`   |
+| vertical `v1.8.5` | 是否垂直展示                             | _boolean_            | `false`   |
 
 ### Events
 

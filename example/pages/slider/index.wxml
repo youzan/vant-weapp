@@ -63,3 +63,21 @@
     </view>
   </van-slider>
 </demo-block>
+
+<demo-block title="垂直方向">
+  <view style="height: 150px; padding-left: 30px;">
+    <van-slider
+      value="{{ currentValue }}"
+      vertical
+      custom-class="slider"
+      bind:change="onChange"
+    />
+    <van-slider
+      value="{{ [20, 60 ] }}"
+      vertical
+      range
+      custom-class="slider"
+      bind:change="onChange"
+    />
+  </view>
+</demo-block>

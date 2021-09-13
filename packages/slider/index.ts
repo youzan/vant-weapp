@@ -41,9 +41,6 @@ VantComponent({
   },
 
   created() {
-    this.setData({
-      wrapperStyle: {},
-    });
     this.updateValue(this.data.value);
   },
 

@@ -1,22 +1,27 @@
 @import '../common/style/var';
-@import '../common/style/theme';
 
 .van-picker-column {
   overflow: hidden;
   text-align: center;
-  .theme(color, '@picker-option-text-color');
-  .theme(font-size, '@picker-option-font-size');
+  color: var(--picker-option-text-color, @picker-option-text-color);
+  font-size: var(--picker-option-font-size, @picker-option-font-size);
 
   &__item {
     padding: 0 5px;
 
     &--selected {
-      .theme(font-weight, '@font-weight-bold');
-      .theme(color, '@picker-option-selected-text-color');
+      font-weight: var(--font-weight-bold, @font-weight-bold);
+      color: var(
+        --picker-option-selected-text-color,
+        @picker-option-selected-text-color
+      );
     }
 
     &--disabled {
-      .theme(opacity, '@picker-option-disabled-opacity');
+      opacity: var(
+        --picker-option-disabled-opacity,
+        @picker-option-disabled-opacity
+      );
     }
   }
 }

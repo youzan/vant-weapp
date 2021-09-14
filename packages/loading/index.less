@@ -1,5 +1,4 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 :host {
   font-size: 0;
@@ -10,17 +9,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  .theme(color, '@loading-spinner-color');
+  color: var(--loading-spinner-color, @loading-spinner-color);
 
   &__spinner {
     position: relative;
     box-sizing: border-box;
-    .theme(width, '@loading-spinner-size');
+    width: var(--loading-spinner-size, @loading-spinner-size);
     // compatible for 0.x, users may set width or height in root element
     max-width: 100%;
     max-height: 100%;
-    .theme(height, '@loading-spinner-size');
-    .theme(animation, 'van-rotate @loading-spinner-animation-duration linear infinite');
+    height: var(--loading-spinner-size, @loading-spinner-size);
+    animation: van-rotate
+      var(
+        --loading-spinner-animation-duration,
+        @loading-spinner-animation-duration
+      )
+      linear infinite;
 
     &--spinner {
       animation-timing-function: steps(12);
@@ -34,10 +38,10 @@
   }
 
   &__text {
-    .theme(margin-left, '@padding-xs');
-    .theme(color, '@loading-text-color');
-    .theme(font-size, '@loading-text-font-size');
-    .theme(line-height, '@loading-text-line-height');
+    margin-left: var(--padding-xs, @padding-xs);
+    color: var(--loading-text-color, @loading-text-color);
+    font-size: var(--loading-text-font-size, @loading-text-font-size);
+    line-height: var(--loading-text-line-height, @loading-text-line-height);
 
     &:empty {
       display: none;
@@ -48,7 +52,7 @@
     flex-direction: column;
 
     .van-loading__text {
-      .theme(margin, '@padding-xs 0 0');
+      margin: var(--padding-xs, @padding-xs) 0 0;
     }
   }
 

@@ -22,14 +22,12 @@
 
     &::after {
       z-index: 1;
-      border-width: 0
-        var(--border-width-base, var(--border-width-base, @border-width-base))
-        var(--border-width-base, var(--border-width-base, @border-width-base)) 0;
+      border-width: 0 @border-width-base @border-width-base 0;
     }
 
     &--surround {
       &::after {
-        border-width: var(--border-width-base, @border-width-base);
+        border-width: @border-width-base;
       }
     }
 

@@ -56,16 +56,16 @@
     &--card {
       box-sizing: border-box;
       height: var(--tabs-card-height, @tabs-card-height);
-      border: var(--border-width-base, @border-width-base) solid
+      border: @border-width-base solid
         var(--tabs-default-color, @tabs-default-color);
-      border-radius: var(--border-radius-sm, @border-radius-sm);
+      border-radius: @border-radius-sm;
 
       .van-tab {
         color: var(--tabs-default-color, @tabs-default-color);
         line-height: calc(
           var(--tabs-card-height, @tabs-card-height) - 2 * @border-width-base
         );
-        border-right: var(--border-width-base, @border-width-base) solid
+        border-right: @border-width-base solid
           var(--tabs-default-color, @tabs-default-color);
 
         &:last-child {
@@ -73,7 +73,7 @@
         }
 
         &.van-tab--active {
-          color: var(--white, @white);
+          color: @white;
           background-color: var(--tabs-default-color, @tabs-default-color);
         }
 

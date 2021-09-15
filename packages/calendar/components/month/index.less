@@ -71,22 +71,16 @@
     }
 
     &--start {
-      border-radius: var(
-          --border-radius-md,
-          var(--border-radius-md, @border-radius-md)
-        )
-        0 0 var(--border-radius-md, var(--border-radius-md, @border-radius-md));
+      border-radius: @border-radius-md 0 0 @border-radius-md;
     }
 
     &--end {
-      border-radius: 0
-        var(--border-radius-md, var(--border-radius-md, @border-radius-md))
-        var(--border-radius-md, var(--border-radius-md, @border-radius-md)) 0;
+      border-radius: 0 @border-radius-md @border-radius-md 0;
     }
 
     &--start-end,
     &--multiple-selected {
-      border-radius: var(--border-radius-md, @border-radius-md);
+      border-radius: @border-radius-md;
     }
 
     &--middle {
@@ -142,6 +136,6 @@
       --calendar-selected-day-background-color,
       @calendar-selected-day-background-color
     );
-    border-radius: var(--border-radius-md, @border-radius-md);
+    border-radius: @border-radius-md;
   }
 }

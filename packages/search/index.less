@@ -10,11 +10,11 @@
     display: flex;
     flex: 1;
     padding-left: var(--padding-sm, @padding-sm);
-    border-radius: var(--border-radius-sm, @border-radius-sm);
+    border-radius: @border-radius-sm;
     background-color: var(--search-background-color, @search-background-color);
 
     &--round {
-      border-radius: var(--border-radius-max, @border-radius-max);
+      border-radius: @border-radius-max;
     }
   }
 
@@ -44,7 +44,7 @@
     color: var(--search-action-text-color, @search-action-text-color);
 
     &--hover {
-      background-color: var(--active-color, @active-color);
+      background-color: @active-color;
     }
   }
 }

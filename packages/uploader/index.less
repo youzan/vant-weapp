@@ -26,8 +26,7 @@
     box-sizing: border-box;
     width: var(--uploader-size, @uploader-size);
     height: var(--uploader-size, @uploader-size);
-    margin: 0 var(--padding-xs, var(--padding-xs, @padding-xs))
-      var(--padding-xs, var(--padding-xs, @padding-xs)) 0;
+    margin: 0 @padding-xs @padding-xs 0;
     background-color: var(
       --uploader-upload-background-color,
       @uploader-upload-background-color
@@ -59,8 +58,7 @@
   &__preview {
     position: relative;
     cursor: pointer;
-    margin: 0 var(--padding-xs, var(--padding-xs, @padding-xs))
-      var(--padding-xs, var(--padding-xs, @padding-xs)) 0;
+    margin: 0 @padding-xs @padding-xs 0;
 
     &-image {
       display: block;
@@ -149,7 +147,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--white, @white);
+    color: @white;
     background-color: var(
       --uploader-mask-background-color,
       @uploader-mask-background-color

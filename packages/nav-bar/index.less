@@ -16,12 +16,12 @@
   &__text {
     display: inline-block;
     vertical-align: middle;
-    margin: 0 -var(--padding-md, @padding-md);
+    margin: 0 calc(-1 * var(--padding-md, @padding-md));
     padding: 0 var(--padding-md, @padding-md);
     color: var(--nav-bar-text-color, @nav-bar-text-color);
 
     &--hover {
-      background-color: var(--active-color, @active-color);
+      background-color: @active-color;
     }
   }
 

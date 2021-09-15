@@ -14,7 +14,7 @@
   height: var(--button-default-height, @button-default-height);
   line-height: var(--button-line-height, @button-line-height);
   font-size: var(--button-default-font-size, @button-default-font-size);
-  transition: opacity var(--animation-duration-fast, @animation-duration-fast);
+  transition: opacity @animation-duration-fast;
   border-radius: var(--button-border-radius, @button-border-radius);
 
   &::before {
@@ -28,8 +28,8 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     content: ' ';
-    background-color: var(--black, @black);
-    border-color: var(--black, @black);
+    background-color: @black;
+    border-color: @black;
   }
 
   // reset weapp default border

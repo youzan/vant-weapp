@@ -3,7 +3,7 @@
 .van-slider {
   position: relative;
   height: var(--slider-bar-height, @slider-bar-height);
-  border-radius: var(--border-radius-max, @border-radius-max);
+  border-radius: @border-radius-max;
   background-color: var(
     --slider-inactive-background-color,
     @slider-inactive-background-color
@@ -15,8 +15,8 @@
     right: 0;
     left: 0;
     content: '';
-    top: -var(--padding-xs, @padding-xs);
-    bottom: -var(--padding-xs, @padding-xs);
+    top: calc(-1 * var(--padding-xs, @padding-xs));
+    bottom: calc(-1 * var(--padding-xs, @padding-xs));
   }
 
   &__bar {
@@ -28,7 +28,7 @@
       @slider-active-background-color
     );
     border-radius: inherit;
-    transition: all var(--animation-duration-fast, @animation-duration-fast);
+    transition: all @animation-duration-fast;
   }
 
   &__button {

@@ -51,9 +51,7 @@
 <van-divider contentPosition="center" borderColor="#1989fa">
   border 颜色
 </van-divider>
-<van-divider contentPosition="center" fontSize="18">
-  字体大小
-</van-divider>
+<van-divider contentPosition="center" fontSize="18">字体大小</van-divider>
 ```
 
 ### 自定义样式

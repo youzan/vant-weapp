@@ -265,73 +265,73 @@ Page({
 
 ### Props
 
-| 参数                  | 说明                                                                                               | 类型                       | 默认值             |
-| --------------------- | -------------------------------------------------------------------------------------------------- | --------------------       | ------------------ |
-| type                  | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_                   | `single`           |
-| title                 | 日历标题                                                                                           | _string_                   | `日期选择`         |
-| color                 | 主题色，对底部按钮和选中日期生效                                                                   | _string_                   | `#ee0a24`          |
-| min-date              | 可选择的最小日期                                                                                   | _timestamp_                | 当前日期           |
-| max-date              | 可选择的最大日期                                                                                   | _timestamp_                | 当前日期的六个月后 |
-| default-date          | 默认选中的日期，`type`为`multiple`或`range`时为数组                                                | _timestamp \| timestamp[]_ | 今天               |
-| row-height            | 日期行高                                                                                           | _number \| string_         | `64`               |
-| formatter             | 日期格式化函数                                                                                     | _(day: Day) => Day_        | -                  |
-| poppable              | 是否以弹层的形式展示日历                                                                           | _boolean_                  | `true`             |
-| show-mark             | 是否显示月份背景水印                                                                               | _boolean_                  | `true`             |
-| show-title            | 是否展示日历标题                                                                                   | _boolean_                  | `true`             |
-| show-subtitle         | 是否展示日历副标题（年月）                                                                         | _boolean_                  | `true`             |
-| show-confirm          | 是否展示确认按钮                                                                                   | _boolean_                  | `true`             |
-| confirm-text          | 确认按钮的文字                                                                                     | _string_                   | `确定`             |
-| confirm-disabled-text | 确认按钮处于禁用状态时的文字                                                                       | _string_                   | `确定`             |
-| first-day-of-week     | 设置周起始日                                                                                       | _0~6_                      | `0`                |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 选择类型:<br>`single`表示选择单个日期，<br>`multiple`表示选择多个日期，<br>`range`表示选择日期区间 | _string_ | `single` |
+| title | 日历标题 | _string_ | `日期选择` |
+| color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
+| min-date | 可选择的最小日期 | _timestamp_ | 当前日期 |
+| max-date | 可选择的最大日期 | _timestamp_ | 当前日期的六个月后 |
+| default-date | 默认选中的日期，`type`为`multiple`或`range`时为数组 | _timestamp \| timestamp[]_ | 今天 |
+| row-height | 日期行高 | _number \| string_ | `64` |
+| formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
+| poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
+| show-mark | 是否显示月份背景水印 | _boolean_ | `true` |
+| show-title | 是否展示日历标题 | _boolean_ | `true` |
+| show-subtitle | 是否展示日历副标题（年月） | _boolean_ | `true` |
+| show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
+| confirm-text | 确认按钮的文字 | _string_ | `确定` |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
+| first-day-of-week | 设置周起始日 | _0~6_ | `0` |
 
 ### Poppable Props
 
 当 Calendar 的 `poppable` 为 `true` 时，支持以下 props:
 
-| 参数                   | 说明                                    | 类型      | 默认值   |
-| ---------------------- | --------------------------------------- | --------- | -------- |
-| show                   | 是否显示日历弹窗                        | _boolean_ | `false`  |
-| position               | 弹出位置，可选值为 `top` `right` `left` | _string_  | `bottom` |
-| round                  | 是否显示圆角弹窗                        | _boolean_ | `true`   |
-| close-on-click-overlay | 是否在点击遮罩层后关闭                  | _boolean_ | `true`   |
-| safe-area-inset-bottom | 是否开启底部安全区适配                  | _boolean_ | `true`   |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| show | 是否显示日历弹窗 | _boolean_ | `false` |
+| position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
+| round | 是否显示圆角弹窗 | _boolean_ | `true` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启底部安全区适配 | _boolean_ | `true` |
 
 ### Range Props
 
 当 Calendar 的 `type` 为 `range` 时，支持以下 props:
 
-| 参数               | 说明                                          | 类型               | 默认值                   |
-| ------------------ | --------------------------------------------- | ------------------ | ------------------------ |
-| max-range          | 日期区间最多可选天数，默认无限制              | _number \| string_ | -                        |
-| range-prompt       | 范围选择超过最多可选天数时的提示文案          | _string \| null_   | `选择天数不能超过 xx 天` |
-| show-range-prompt  | 范围选择超过最多可选天数时，是否展示提示文案  | _boolean_          | `true`                   |
-| allow-same-day     | 是否允许日期范围的起止时间为同一天            | _boolean_          | `false`                  |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| max-range | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
+| range-prompt | 范围选择超过最多可选天数时的提示文案 | _string \| null_ | `选择天数不能超过 xx 天` |
+| show-range-prompt | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
+| allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Day 数据结构
 
 日历中的每个日期都对应一个 Day 对象，通过`formatter`属性可以自定义 Day 对象的内容。
 
-| 键名       | 说明                                                               | 类型     |
-| ---------- | ------------------------------------------------------------------ | -------- |
-| date       | 日期对应的 Date 对象                                               | _Date_   |
-| type       | 日期类型，可选值为`selected`、`start`、`middle`、`end`、`disabled` | _string_ |
-| text       | 中间显示的文字                                                     | _string_ |
-| topInfo    | 上方的提示信息                                                     | _string_ |
-| bottomInfo | 下方的提示信息                                                     | _string_ |
+| 键名 | 说明 | 类型 |
+| --- | --- | --- |
+| date | 日期对应的 Date 对象 | _Date_ |
+| type | 日期类型，可选值为`selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| text | 中间显示的文字 | _string_ |
+| topInfo | 上方的提示信息 | _string_ |
+| bottomInfo | 下方的提示信息 | _string_ |
 
 ### Events
 
-| 事件名                  | 说明                                                               | 回调参数                       |
-| ----------------------- | ------------------------------------------------------------------ | ------------------------------ |
-| select                  | 点击任意日期时触发                                                 | _value: Date \| Date[]_        |
-| unselect                | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发     | _value: Date_                  |
-| confirm                 | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_        |
-| open                    | 打开弹出层时触发                                                   | -                              |
-| close                   | 关闭弹出层时触发                                                   | -                              |
-| opened                  | 打开弹出层且动画结束后触发                                         | -                              |
-| closed                  | 关闭弹出层且动画结束后触发                                         | -                              |
-| over-range              | 范围选择超过最多可选天数时触发                                     | -                              |
-| click-subtitle `v1.8.1` | 点击日历副标题时触发                                               | _WechatMiniprogram.TouchEvent_ |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| select | 点击任意日期时触发 | _value: Date \| Date[]_ |
+| unselect | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发 | _value: Date_ |
+| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
+| open | 打开弹出层时触发 | - |
+| close | 关闭弹出层时触发 | - |
+| opened | 打开弹出层且动画结束后触发 | - |
+| closed | 关闭弹出层且动画结束后触发 | - |
+| over-range | 范围选择超过最多可选天数时触发 | - |
+| click-subtitle `v1.8.1` | 点击日历副标题时触发 | _WechatMiniprogram.TouchEvent_ |
 
 ### Slots
 

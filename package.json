@@ -52,10 +52,6 @@
     "vue": "^3.2.1",
     "@vue/compiler-sfc": "^3.2.1"
   },
-  "prettier": {
-    "singleQuote": true,
-    "proseWrap": "never"
-  },
   "browserslist": [
     "Chrome >= 53",
     "ChromeAndroid >= 53",

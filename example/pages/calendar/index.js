@@ -86,7 +86,7 @@ Page({
       formatter: null,
       showConfirm: true,
       confirmText: '确定',
-      confirmDisabledText: null,
+      confirmDisabledText: '确定',
     });
   },
 

@@ -53,16 +53,14 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 
 ```html
 <van-empty description="描述文字">
-  <van-button round type="danger" class="bottom-button">
-    按钮
-  </van-button>
+  <van-button round type="danger" class="bottom-button">按钮</van-button>
 </van-empty>
 
 <style>
-.bottom-button {
-  width: 160px;
-  height: 40px;
-}
+  .bottom-button {
+    width: 160px;
+    height: 40px;
+  }
 </style>
 ```
 
@@ -70,10 +68,10 @@ Empty 组件内置了多种占位图片类型，可以在不同业务场景下�
 
 ### Props
 
-| 参数        | 说明                                                            | 类型     | 默认值    |
-| ----------- | --------------------------------------------------------------- | -------- | --------- |
-| image       | 图片类型，可选值为 `error` `network` `search`，支持传入图片 URL | _string_ | `default` |
-| description | 图片下方的描述文字                                              | _string_ | -         |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| image | 图片类型，可选值为 `error` `network` `search`，支持传入图片 URL | _string_ | `default` |
+| description | 图片下方的描述文字 | _string_ | - |
 
 ### Slots
 

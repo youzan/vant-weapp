@@ -95,7 +95,7 @@ Page({
 | bar-height      | 进度条高度，默认单位为 `px`              | _string \| number_   | `2px`     |
 | active-color    | 进度条激活态颜色                         | _string_             | `#1989fa` |
 | inactive-color  | 进度条默认颜色                           | _string_             | `#e5e5e5` |
-| use-slot-button | 是否使用钮插槽                           | _boolean_            | `false`   |
+| use-slot-button | 是否使用按钮插槽                           | _boolean_            | `false`   |
 | range `v1.8.4`  | 是否开启双滑块模式                       | _boolean_            | `false`   |
 
 ### Events

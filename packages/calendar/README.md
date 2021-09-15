@@ -286,7 +286,7 @@ Page({
 
 ### Poppable Props
 
-当 Canlendar 的 `poppable` 为 `true` 时，支持以下 props:
+当 Calendar 的 `poppable` 为 `true` 时，支持以下 props:
 
 | 参数                   | 说明                                    | 类型      | 默认值   |
 | ---------------------- | --------------------------------------- | --------- | -------- |
@@ -298,7 +298,7 @@ Page({
 
 ### Range Props
 
-当 Canlendar 的 `type` 为 `range` 时，支持以下 props:
+当 Calendar 的 `type` 为 `range` 时，支持以下 props:
 
 | 参数               | 说明                                          | 类型               | 默认值                   |
 | ------------------ | --------------------------------------------- | ------------------ | ------------------------ |
@@ -324,7 +324,7 @@ Page({
 | 事件名                  | 说明                                                               | 回调参数                       |
 | ----------------------- | ------------------------------------------------------------------ | ------------------------------ |
 | select                  | 点击任意日期时触发                                                 | _value: Date \| Date[]_        |
-| unselect                | 当 Canlendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发     | _value: Date_                  |
+| unselect                | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发     | _value: Date_                  |
 | confirm                 | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_        |
 | open                    | 打开弹出层时触发                                                   | -                              |
 | close                   | 关闭弹出层时触发                                                   | -                              |

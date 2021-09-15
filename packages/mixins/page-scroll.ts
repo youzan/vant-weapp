@@ -38,7 +38,7 @@ export const pageScrollMixin = (scroller: Scroller) =>
 
     detached() {
       const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
-      if (!isDef(page)) {
+      if (isDef(page)) {
         page.vanPageScroller =
           page.vanPageScroller?.filter((item) => item !== scroller) || [];
       }

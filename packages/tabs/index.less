@@ -62,7 +62,9 @@
 
       .van-tab {
         color: var(--tabs-default-color, @tabs-default-color);
-        line-height: calc;
+        line-height: calc(
+          var(--tabs-card-height, @tabs-card-height) - 2 * @border-width-base
+        );
         border-right: var(--border-width-base, @border-width-base) solid
           var(--tabs-default-color, @tabs-default-color);
 

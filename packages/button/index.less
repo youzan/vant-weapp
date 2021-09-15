@@ -198,7 +198,9 @@
     &::after {
       border-color: inherit;
       border-width: 1px;
-      border-radius: calc;
+      border-radius: calc(
+        var(--button-border-radius, @button-border-radius) * 2
+      );
     }
 
     &.van-button--round::after {

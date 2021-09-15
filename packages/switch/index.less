@@ -25,9 +25,8 @@
       @switch-node-background-color
     );
     box-shadow: var(--switch-node-box-shadow, @switch-node-box-shadow);
-    transition: transform
-      var(--switch-transition-duration, @switch-transition-duration)
-      cubic-bezier;
+    transition: var(--switch-transition-duration, @switch-transition-duration)
+      cubic-bezier(0.3, 1.05, 0.4, 1.05);
   }
 
   &__loading {
@@ -45,7 +44,12 @@
     );
 
     .van-switch__node {
-      transform: translatex;
+      transform: translateX(
+        calc(
+          var(--switch-width, @switch-width) -
+            var(--switch-node-size, @switch-node-size)
+        )
+      );
     }
   }
 

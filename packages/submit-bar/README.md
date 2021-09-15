@@ -36,7 +36,7 @@
   price="{{ 3050 }}"
   button-text="提交订单"
   tip="您的收货地址不支持同城送, 我们已为您推荐快递"
-  tip-icon="https://img.yzcdn.cn/1.png"
+  tip-icon="info-o"
   bind:submit="onSubmit"
 />
 ```

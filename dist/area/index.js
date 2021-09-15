@@ -18,7 +18,8 @@ VantComponent({
       observer: 'setValues',
     },
     columnsNum: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: 3,
     },
     columnsPlaceholder: {

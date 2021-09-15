@@ -32,7 +32,8 @@ VantComponent({
       value: '40%',
     },
     rowWidth: {
-      type: null,
+      type: String,
+      optionalTypes: [Array],
       value: '100%',
       observer(val) {
         this.setData({ isArray: val instanceof Array });

@@ -25,7 +25,7 @@ export const pageScrollMixin = (scroller) =>
     detached() {
       var _a;
       const page = getCurrentPage();
-      if (!isDef(page)) {
+      if (isDef(page)) {
         page.vanPageScroller =
           ((_a = page.vanPageScroller) === null || _a === void 0
             ? void 0

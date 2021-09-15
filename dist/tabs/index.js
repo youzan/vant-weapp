@@ -31,12 +31,14 @@ VantComponent({
       },
     },
     lineWidth: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: 40,
       observer: 'resize',
     },
     lineHeight: {
-      type: null,
+      type: Number,
+      optionalTypes: [String],
       value: -1,
     },
     active: {

@@ -39,7 +39,8 @@ VantComponent({
       value: WHITE,
     },
     color: {
-      type: null,
+      type: String,
+      optionalTypes: [Object],
       value: BLUE,
       observer() {
         this.setHoverColor().then(() => {

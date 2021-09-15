@@ -24,8 +24,9 @@ VantComponent({
       value: '#fff',
     },
     strokeWidth: {
-      type: null,
+      type: Number,
       value: 4,
+      optionalTypes: [String],
     },
   },
   data: {

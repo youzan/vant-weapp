@@ -119,7 +119,7 @@ Page({
 | value                  | 当前输入的值                                                                                      | _string \| number_ | -         |
 | background             | 搜索框背景色                                                                                      | _string_           | `#f2f2f2` |
 | show-action            | 是否在搜索框右侧显示取消按钮                                                                      | _boolean_          | `false`   |
-| action-text `v1.0.0`   | 取消按钮文字                                                                                      | _boolean_          | `取消`    |
+| action-text `v1.0.0`   | 取消按钮文字                                                                                      | _string_          | `取消`    |
 | focus                  | 获取焦点                                                                                          | _boolean_          | `false`   |
 | error                  | 是否将输入内容标红                                                                                | _boolean_          | `false`   |
 | disabled               | 是否禁用输入框                                                                                    | _boolean_          | `false`   |

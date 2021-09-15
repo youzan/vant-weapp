@@ -1,5 +1,14 @@
 # 更新日志
 
+### [1.8.5](https://github.com/youzan/vant-weapp/compare/v1.8.4...v1.8.5)
+
+`2021-09-15`
+
+**Bug Fixes**
+
+- Calendar: 修复超出选择范围 toast 提示一直存在问题 [#4474](https://github.com/youzan/vant-weapp/issues/4474)
+- page-scroll: 修复 isDef 取反问题 [#4488](https://github.com/youzan/vant-weapp/issues/4488)
+
 ### [1.8.4](https://github.com/youzan/vant-weapp/compare/v1.8.3...v1.8.4)
 
 `2021-09-07`

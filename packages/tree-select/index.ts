@@ -22,8 +22,7 @@ VantComponent({
       observer: 'updateSubItems',
     },
     height: {
-      type: Number,
-      optionalTypes: [String],
+      type: null,
       value: 300,
     },
     max: {

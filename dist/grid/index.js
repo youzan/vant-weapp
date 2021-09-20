@@ -8,8 +8,7 @@ VantComponent({
       observer: 'updateChildren',
     },
     gutter: {
-      type: Number,
-      optionalTypes: [String],
+      type: null,
       value: 0,
       observer: 'updateChildren',
     },

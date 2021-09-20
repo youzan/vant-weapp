@@ -23,9 +23,8 @@ VantComponent({
       value: 1,
     },
     value: {
-      type: Number,
+      type: null,
       value: 0,
-      optionalTypes: [Array],
       observer(val) {
         if (val !== this.value) {
           this.updateValue(val);

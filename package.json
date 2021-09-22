@@ -39,18 +39,18 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "@vant/cli": "^3.11.2",
-    "@vant/icons": "^1.6.0",
+    "@vant/cli": "^4.0.0-beta.5",
+    "@vant/icons": "^1.7.1",
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",
     "gulp-less": "^5.0.0",
-    "gulp-postcss": "^9.0.0",
+    "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "miniprogram-api-typings": "^3.1.6",
-    "miniprogram-ci": "^1.0.27",
+    "miniprogram-ci": "^1.6.1",
     "tscpaths": "^0.0.9",
     "vue": "^3.2.1",
-    "@vue/compiler-sfc": "^3.2.1"
+    "@vue/compiler-sfc": "^3.2.13"
   },
   "browserslist": [
     "Chrome >= 53",

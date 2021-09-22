@@ -1,4 +1,13 @@
 # 更新日志
+### [1.8.6](https://github.com/youzan/vant-weapp/compare/v1.8.5...v1.8.6)
+
+`2021-09-20`
+
+**Bug Fixes**
+
+- Calendar: 新增 confirmDisabledText 默认文案 [#4490](https://github.com/youzan/vant-weapp/issues/4490)) ([8629da1](https://github.com/youzan/vant-weapp/commit/8629da1b75bb50e2f0a99905de90fd85015fb785)
+- VantComponent: 移除 optionalTypes [#4501](https://github.com/youzan/vant-weapp/issues/4501)) ([3afe10c](https://github.com/youzan/vant-weapp/commit/3afe10c0f929e5c6b0f32ca34de9dc8d05c8c016)
+- Docs: 修复文档错误 [#4489](https://github.com/youzan/vant-weapp/issues/4489)
 
 ### [1.8.5](https://github.com/youzan/vant-weapp/compare/v1.8.4...v1.8.5)
 

@@ -1,12 +1,24 @@
 # 更新日志
+
+### [v1.8.7](https://github.com/youzan/vant-weapp/compare/v1.8.6...v1.8.7)
+
+`2021-09-22`
+
+**Features**
+
+- Icons: 新增 guide-o 图标 [#4507](https://github.com/youzan/vant-weapp/issues/4507)
+
 ### [1.8.6](https://github.com/youzan/vant-weapp/compare/v1.8.5...v1.8.6)
 
 `2021-09-20`
 
-**Bug Fixes**
+**Features**
 
 - Calendar: 新增 confirmDisabledText 默认文案 [#4490](https://github.com/youzan/vant-weapp/issues/4490)) ([8629da1](https://github.com/youzan/vant-weapp/commit/8629da1b75bb50e2f0a99905de90fd85015fb785)
-- VantComponent: 移除 optionalTypes [#4501](https://github.com/youzan/vant-weapp/issues/4501)) ([3afe10c](https://github.com/youzan/vant-weapp/commit/3afe10c0f929e5c6b0f32ca34de9dc8d05c8c016)
+
+**Bug Fixes**
+
+- 移除 optionalTypes [#4501](https://github.com/youzan/vant-weapp/issues/4501)) ([3afe10c](https://github.com/youzan/vant-weapp/commit/3afe10c0f929e5c6b0f32ca34de9dc8d05c8c016)
 - Docs: 修复文档错误 [#4489](https://github.com/youzan/vant-weapp/issues/4489)
 
 ### [1.8.5](https://github.com/youzan/vant-weapp/compare/v1.8.4...v1.8.5)
@@ -39,11 +51,11 @@
 
 **Bug Fixes**
 
-- Canlendar: 修复 default-date 属性失效问题 [#4430](https://github.com/youzan/vant-weapp/issues/4430)
-- ShareSheet: 调整 overlayStyle 属性类型为string [8c408e2](https://github.com/youzan/vant-weapp/commit/8c408e23030e65a0baf62f0b21fb8ed3f2c9df67)
+- Calendar: 修复 default-date 属性失效问题 [#4430](https://github.com/youzan/vant-weapp/issues/4430)
+- ShareSheet: 调整 overlayStyle 属性类型为 string [8c408e2](https://github.com/youzan/vant-weapp/commit/8c408e23030e65a0baf62f0b21fb8ed3f2c9df67)
 - Stepper: 调整 minus/plus slots 位置 [#4427](https://github.com/youzan/vant-weapp/issues/4427)
-- Sticky: 修复 root 为 null 时，读取root.top报错问题 [#4433](https://github.com/youzan/vant-weapp/issues/4433)
-- Calendar: 调整 minDate 和 maxDate 传值类型为Number [37d8e69](https://github.com/youzan/vant-weapp/commit/37d8e697c9e3d985b926f68553b8afbb5c0a0569)
+- Sticky: 修复 root 为 null 时，读取 root.top 报错问题 [#4433](https://github.com/youzan/vant-weapp/issues/4433)
+- Calendar: 调整 minDate 和 maxDate 传值类型为 Number [37d8e69](https://github.com/youzan/vant-weapp/commit/37d8e697c9e3d985b926f68553b8afbb5c0a0569)
 
 ### Features
 

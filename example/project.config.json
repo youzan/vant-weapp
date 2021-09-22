@@ -6,13 +6,13 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": false,
-    "postcss": true,
+    "enhance": true,
+    "postcss": false,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": true,
+    "newFeature": false,
     "coverView": true,
-    "nodeModules": true,
+    "nodeModules": false,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
@@ -21,6 +21,7 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
     "useApiHostProcess": false,
@@ -30,17 +31,14 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
-    "bundle": false,
     "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "showES6CompileOption": false
   },
   "compileType": "miniprogram",
-  "cloudfunctionRoot": "functions/",
   "libVersion": "2.6.5",
   "appid": "wx1c01b35002d3ba14",
   "projectname": "vant-weapp",
@@ -48,13 +46,22 @@
     "hidedInDevtools": []
   },
   "scripts": {},
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "staticServerOptions": {
+    "baseURL": "",
+    "servePath": ""
+  },
+  "isGameTourist": false,
   "condition": {
-    "plugin": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
       "list": []
     },
     "game": {
+      "list": []
+    },
+    "plugin": {
       "list": []
     },
     "gamePlugin": {
@@ -217,12 +224,6 @@
           "id": -1,
           "name": "slider",
           "pathName": "pages/slider/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "switch-cell",
-          "pathName": "pages/switch-cell/index",
           "query": ""
         },
         {

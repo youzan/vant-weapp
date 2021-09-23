@@ -31,8 +31,7 @@ VantComponent({
       value: 'round',
     },
     iconSize: {
-      type: Number,
-      optionalTypes: [String],
+      type: null,
       value: 20,
     },
   },

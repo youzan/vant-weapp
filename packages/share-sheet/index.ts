@@ -34,8 +34,7 @@ VantComponent({
       value: true,
     },
     duration: {
-      type: Number,
-      optionalTypes: [String],
+      type: null,
       value: 300,
     },
   },

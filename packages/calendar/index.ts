@@ -47,6 +47,10 @@ VantComponent({
       type: String,
       value: '确定',
     },
+    confirmDisabledText: {
+      type: String,
+      value: '确定',
+    },
     rangePrompt: String,
     showRangePrompt: {
       type: Boolean,
@@ -60,7 +64,6 @@ VantComponent({
       },
     },
     allowSameDay: Boolean,
-    confirmDisabledText: String,
     type: {
       type: String,
       value: 'single',

@@ -26,9 +26,12 @@ Vant Weapp 组件通过丰富的 [CSS 变量](https://developer.mozilla.org/zh-C
 
 ```css
 .van-button--primary {
-  color: var(--button-primary-color,#fff);
-  background: var(--button-primary-background-color,#07c160);
-  border: var(--button-border-width,1px) solid var(--button-primary-border-color,#07c160);
+  color: var(--button-primary-color, #fff);
+  background: var(--button-primary-background-color, #07c160);
+  border: var(--button-border-width, 1px) solid var(
+      --button-primary-border-color,
+      #07c160
+    );
 }
 ```
 
@@ -54,12 +57,20 @@ page {
   <van-cell-group>
     <van-field label="评分">
       <view slot="input" style="width: 100%">
-        <van-rate model:value="{{ rate }}" data-key="rate" bind:change="onChange" />
+        <van-rate
+          model:value="{{ rate }}"
+          data-key="rate"
+          bind:change="onChange"
+        />
       </view>
     </van-field>
     <van-field label="滑块" border="{{ false }}">
       <view slot="input" style="width: 100%">
-        <van-slider value="{{ slider }}" data-key="slider" bind:change="onChange" />
+        <van-slider
+          value="{{ slider }}"
+          data-key="slider"
+          bind:change="onChange"
+        />
       </view>
     </van-field>
   </van-cell-group>
@@ -85,7 +96,7 @@ Page({
       sliderActiveBackgroundColor: '#07c160',
       buttonPrimaryBorderColor: '#07c160',
       buttonPrimaryBackgroundColor: '#07c160',
-    }
+    },
   },
 
   onChange(event) {
@@ -93,7 +104,7 @@ Page({
     this.setData({
       [key]: event.detail,
     });
-  }
+  },
 });
 ```
 

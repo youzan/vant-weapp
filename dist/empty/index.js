@@ -1,10 +1,10 @@
 import { VantComponent } from '../common/component';
 VantComponent({
-  props: {
-    description: String,
-    image: {
-      type: String,
-      value: 'default',
+    props: {
+        description: String,
+        image: {
+            type: String,
+            value: 'default',
+        },
     },
-  },
 });

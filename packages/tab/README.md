@@ -189,25 +189,25 @@ Page({
 
 ### Tabs Props
 
-| 参数                 | 说明                                                           | 类型               | 默认值    |
-| -------------------- | -------------------------------------------------------------- | ------------------ | --------- |
-| type                 | 样式风格，可选值为`card`                                       | _string_           | `line`    |
-| color                | 标签主题色                                                     | _string_           | `#ee0a24` |
-| active               | 当前选中标签的标识符                                           | _string \| number_ | `0`       |
-| duration             | 动画时间，单位秒                                               | _number_           | `0.3`     |
-| line-width           | 底部条宽度，默认单位`px`                                       | _string \| number_ | `40px`    |
-| line-height          | 底部条高度，默认单位`px`                                       | _string \| number_ | `3px`     |
-| animated             | 是否开启切换标签内容时的转场动画                               | _boolean_          | `false`   |
-| border               | 是否展示外边框，仅在 `line` 风格下生效                         | _boolean_          | `false`   |
-| ellipsis             | 是否省略过长的标题文字                                         | _boolean_          | `true`    |
-| sticky               | 是否使用粘性定位布局                                           | _boolean_          | `false`   |
-| swipeable            | 是否开启手势滑动切换                                           | _boolean_          | `false`   |
-| lazy-render          | 是否开启标签页内容延迟渲染                                     | _boolean_          | `true`    |
-| offset-top           | 粘性定位布局下与顶部的最小距离，单位`px`                       | _number_           | -         |
-| swipe-threshold      | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number_           | `5`       |
-| title-active-color   | 标题选中态颜色                                                 | _string_           | -         |
-| title-inactive-color | 标题默认态颜色                                                 | _string_           | -         |
-| z-index              | z-index 层级                                                   | _number_           | `1`       |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 样式风格，可选值为`card` | _string_ | `line` |
+| color | 标签主题色 | _string_ | `#ee0a24` |
+| active | 当前选中标签的标识符 | _string \| number_ | `0` |
+| duration | 动画时间，单位秒 | _number_ | `0.3` |
+| line-width | 底部条宽度，默认单位`px` | _string \| number_ | `40px` |
+| line-height | 底部条高度，默认单位`px` | _string \| number_ | `3px` |
+| animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
+| border | 是否展示外边框，仅在 `line` 风格下生效 | _boolean_ | `false` |
+| ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
+| sticky | 是否使用粘性定位布局 | _boolean_ | `false` |
+| swipeable | 是否开启手势滑动切换 | _boolean_ | `false` |
+| lazy-render | 是否开启标签页内容延迟渲染 | _boolean_ | `true` |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位`px` | _number_ | - |
+| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number_ | `5` |
+| title-active-color | 标题选中态颜色 | _string_ | - |
+| title-inactive-color | 标题默认态颜色 | _string_ | - |
+| z-index | z-index 层级 | _number_ | `1` |
 
 ### Tab Props
 
@@ -235,12 +235,12 @@ Page({
 
 ### Tabs Event
 
-| 事件名        | 说明                     | 参数                                           |
-| ------------- | ------------------------ | ---------------------------------------------- |
-| bind:click    | 点击标签时触发           | name：标签标识符，title：标题                  |
-| bind:change   | 当前激活的标签改变时触发 | name：标签标识符，title：标题                  |
-| bind:disabled | 点击被禁用的标签时触发   | name：标签标识符，title：标题                  |
-| bind:scroll   | 滚动时触发               | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| 事件名 | 说明 | 参数 |
+| --- | --- | --- |
+| bind:click | 点击标签时触发 | name：标签标识符，title：标题 |
+| bind:change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
+| bind:disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
+| bind:scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### 外部样式类
 
@@ -255,9 +255,9 @@ Page({
 
 通过 selectComponent 可以获取到 Tabs 实例并调用实例方法。
 
-| 方法名 | 参数 | 返回值 | 介绍                                                       |
-| ------ | ---- | ------ | ---------------------------------------------------------- |
-| resize | -    | -      | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 |
+| 方法名 | 参数 | 返回值 | 介绍 |
+| --- | --- | --- | --- |
+| resize | - | - | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 |
 
 ## 常见问题
 

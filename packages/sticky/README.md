@@ -45,9 +45,7 @@ Sticky 组件与 CSS 中`position: sticky`属性实现的效果一致，当组�
 ```html
 <view id="container" style="height: 150px;">
   <van-sticky container="{{ container }}">
-    <van-button type="warning">
-      指定容器
-    </van-button>
+    <van-button type="warning">指定容器</van-button>
   </van-sticky>
 </view>
 ```
@@ -79,9 +77,7 @@ Page({
 >
   <view style="height: 400px; padding-top: 50px;">
     <van-sticky scroll-top="{{ scrollTop }}" offset-top="{{ offsetTop }}">
-      <van-button type="warning">
-        嵌套在 scroll-view 内
-      </van-button>
+      <van-button type="warning">嵌套在 scroll-view 内</van-button>
     </van-sticky>
   </view>
 </scroll-view>
@@ -112,12 +108,12 @@ Page({
 
 ### Props
 
-| 参数       | 说明                                                         | 类型       | 默认值 |
-| ---------- | ------------------------------------------------------------ | ---------- | ------ |
-| offset-top | 吸顶时与顶部的距离，单位`px`                                 | _number_   | `0`    |
-| z-index    | 吸顶时的 z-index                                             | _number_   | `99`   |
-| container  | 一个函数，返回容器对应的 NodesRef 节点                       | _function_ | -      |
-| scroll-top | 当前滚动区域的滚动位置，非 `null` 时会禁用页面滚动事件的监听 | _number_   | -      |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| offset-top | 吸顶时与顶部的距离，单位`px` | _number_ | `0` |
+| z-index | 吸顶时的 z-index | _number_ | `99` |
+| container | 一个函数，返回容器对应的 NodesRef 节点 | _function_ | - |
+| scroll-top | 当前滚动区域的滚动位置，非 `null` 时会禁用页面滚动事件的监听 | _number_ | - |
 
 ### Events
 

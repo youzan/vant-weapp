@@ -1,5 +1,4 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 .van-goods-action-icon {
   display: flex !important;
@@ -7,16 +6,21 @@
   justify-content: center !important;
   line-height: 1 !important;
   border: none !important;
-
-  .theme(font-size, '@goods-action-icon-font-size') !important;
-  .theme(color, '@goods-action-icon-text-color') !important;
-  .theme(min-width, '@goods-action-icon-width');
-  .theme(height, '@goods-action-icon-height') !important;
+  font-size: var(
+    --goods-action-icon-font-size,
+    @goods-action-icon-font-size
+  ) !important;
+  color: var(
+    --goods-action-icon-text-color,
+    @goods-action-icon-text-color
+  ) !important;
+  min-width: var(--goods-action-icon-width, @goods-action-icon-width);
+  height: var(--goods-action-icon-height, @goods-action-icon-height) !important;
 
   &__icon {
     display: flex;
     margin: 0 auto 5px;
-    .theme(color, '@goods-action-icon-color');
-    .theme(font-size, '@goods-action-icon-size');
+    color: var(--goods-action-icon-color, @goods-action-icon-color);
+    font-size: var(--goods-action-icon-size, @goods-action-icon-size);
   }
 }

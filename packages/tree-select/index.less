@@ -1,15 +1,17 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 .van-tree-select {
   position: relative;
   display: flex;
   user-select: none;
-  .theme(font-size, '@tree-select-font-size');
+  font-size: var(--tree-select-font-size, @tree-select-font-size);
 
   &__nav {
     flex: 1;
-    .theme(background-color, '@tree-select-nav-background-color');
+    background-color: var(
+      --tree-select-nav-background-color,
+      @tree-select-nav-background-color
+    );
 
     &__inner {
       width: 100% !important;
@@ -21,22 +23,30 @@
 
   &__content {
     flex: 2;
-    .theme(background-color, '@tree-select-content-background-color');
+    background-color: var(
+      --tree-select-content-background-color,
+      @tree-select-content-background-color
+    );
   }
 
   &__item {
     position: relative;
     font-weight: bold;
-
-    .theme(padding, '0 32px 0 @padding-md');
-    .theme(line-height, '@tree-select-item-height');
+    padding: 0 32px 0 var(--padding-md, @padding-md);
+    line-height: var(--tree-select-item-height, @tree-select-item-height);
 
     &--active {
-      .theme(color, '@tree-select-item-active-color');
+      color: var(
+        --tree-select-item-active-color,
+        @tree-select-item-active-color
+      );
     }
 
     &--disabled {
-      .theme(color, '@tree-select-item-disabled-color');
+      color: var(
+        --tree-select-item-disabled-color,
+        @tree-select-item-disabled-color
+      );
     }
   }
 
@@ -44,6 +54,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    .theme(right, '@padding-md');
+    right: var(--padding-md, @padding-md);
   }
 }

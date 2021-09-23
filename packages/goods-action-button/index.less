@@ -1,19 +1,30 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 :host {
   flex: 1;
 }
 
 .van-goods-action-button {
-  .theme(
-    --button-warning-background-color,
-    '@goods-action-button-warning-color'
+  --button-warning-background-color: var(
+    --goods-action-button-warning-color,
+    @goods-action-button-warning-color
   );
-  .theme(--button-danger-background-color, '@goods-action-button-danger-color');
-  .theme(--button-default-height, '@goods-action-button-height');
-  .theme(--button-line-height, '@goods-action-button-line-height');
-  .theme(--button-plain-background-color, '@goods-action-button-plain-color');
+  --button-danger-background-color: var(
+    --goods-action-button-danger-color,
+    @goods-action-button-danger-color
+  );
+  --button-default-height: var(
+    --goods-action-button-height,
+    @goods-action-button-height
+  );
+  --button-line-height: var(
+    --goods-action-button-line-height,
+    @goods-action-button-line-height
+  );
+  --button-plain-background-color: var(
+    --goods-action-button-plain-color,
+    @goods-action-button-plain-color
+  );
 
   display: block;
 
@@ -22,22 +33,29 @@
   &--first {
     margin-left: 5px;
 
-    .theme(
-      --button-border-radius,
-      '@goods-action-button-border-radius 0 0 @goods-action-button-border-radius'
-    );
+    --button-border-radius: @goods-action-button-border-radius 0 0
+      var(
+        --goods-action-button-border-radius,
+        @goods-action-button-border-radius
+      );
   }
 
   &--last {
     margin-right: 5px;
-    .theme(
-      --button-border-radius,
-      '0 @goods-action-button-border-radius @goods-action-button-border-radius 0'
-    );
+
+    --button-border-radius: 0 @goods-action-button-border-radius
+      var(
+        --goods-action-button-border-radius,
+        @goods-action-button-border-radius
+      )
+      0;
   }
 
   &--first&--last {
-    .theme(--button-border-radius, '@goods-action-button-border-radius');
+    --button-border-radius: var(
+      --goods-action-button-border-radius,
+      @goods-action-button-border-radius
+    );
   }
 
   &--plain {
@@ -46,7 +64,7 @@
 
   &__inner {
     width: 100%;
-    .theme(font-weight, '@font-weight-bold') !important;
+    font-weight: var(--font-weight-bold, @font-weight-bold) !important;
   }
 
   @media (max-width: 321px) {

@@ -1,24 +1,23 @@
 @import '../common/style/var';
-@import '../common/style/theme.less';
 
 .van-picker {
   position: relative;
   overflow: hidden;
   -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
   user-select: none;
-  .theme(background-color, '@picker-background-color');
+  background-color: var(--picker-background-color, @picker-background-color);
 
   &__toolbar {
     display: flex;
     justify-content: space-between;
-    .theme(height, '@picker-toolbar-height');
-    .theme(line-height, '@picker-toolbar-height');
+    height: var(--picker-toolbar-height, @picker-toolbar-height);
+    line-height: var(--picker-toolbar-height, @picker-toolbar-height);
   }
 
   &__cancel,
   &__confirm {
-    .theme(padding, '@picker-action-padding');
-    .theme(font-size, '@picker-action-font-size');
+    padding: var(--picker-action-padding, @picker-action-padding);
+    font-size: var(--picker-action-font-size, @picker-action-font-size);
 
     &--hover {
       opacity: @active-opacity;
@@ -26,18 +25,18 @@
   }
 
   &__confirm {
-    .theme(color, '@picker-confirm-action-color');
+    color: var(--picker-confirm-action-color, @picker-confirm-action-color);
   }
 
   &__cancel {
-    .theme(color, '@picker-cancel-action-color');
+    color: var(--picker-cancel-action-color, @picker-cancel-action-color);
   }
 
   &__title {
     max-width: 50%;
     text-align: center;
-    .theme(font-weight, '@font-weight-bold');
-    .theme(font-size, '@picker-option-font-size');
+    font-weight: var(--font-weight-bold, @font-weight-bold);
+    font-size: var(--picker-option-font-size, @picker-option-font-size);
   }
 
   &__columns {
@@ -60,7 +59,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .theme(background-color, '@picker-loading-mask-color');
+    background-color: var(
+      --picker-loading-mask-color,
+      @picker-loading-mask-color
+    );
   }
 
   &__mask {

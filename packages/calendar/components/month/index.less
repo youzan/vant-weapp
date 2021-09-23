@@ -1,18 +1,26 @@
 @import '../../../common/style/var';
-@import '../../../common/style/theme.less';
 
 .van-calendar {
   display: flex;
   flex-direction: column;
   height: 100%;
-  .theme(background-color, '@calendar-background-color');
+  background-color: var(
+    --calendar-background-color,
+    @calendar-background-color
+  );
 
   &__month-title {
     text-align: center;
-    .theme(height, '@calendar-header-title-height');
-    .theme(font-weight, '@font-weight-bold');
-    .theme(font-size, '@calendar-month-title-font-size');
-    .theme(line-height, '@calendar-header-title-height');
+    height: var(--calendar-header-title-height, @calendar-header-title-height);
+    font-weight: var(--font-weight-bold, @font-weight-bold);
+    font-size: var(
+      --calendar-month-title-font-size,
+      @calendar-month-title-font-size
+    );
+    line-height: var(
+      --calendar-header-title-height,
+      @calendar-header-title-height
+    );
   }
 
   &__days {
@@ -29,9 +37,11 @@
     z-index: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
-
-    .theme(color, '@calendar-month-mark-color');
-    .theme(font-size, '@calendar-month-mark-font-size');
+    color: var(--calendar-month-mark-color, @calendar-month-mark-color);
+    font-size: var(
+      --calendar-month-mark-font-size,
+      @calendar-month-mark-font-size
+    );
   }
 
   &__day,
@@ -45,34 +55,36 @@
   &__day {
     position: relative;
     width: 14.285%;
-
-    .theme(height, '@calendar-day-height');
-    .theme(font-size, '@calendar-day-font-size');
+    height: var(--calendar-day-height, @calendar-day-height);
+    font-size: var(--calendar-day-font-size, @calendar-day-font-size);
 
     &--end,
     &--start,
     &--start-end,
     &--multiple-middle,
     &--multiple-selected {
-      .theme(color, '@calendar-range-edge-color');
-      .theme(background-color, '@calendar-range-edge-background-color');
+      color: var(--calendar-range-edge-color, @calendar-range-edge-color);
+      background-color: var(
+        --calendar-range-edge-background-color,
+        @calendar-range-edge-background-color
+      );
     }
 
     &--start {
-      .theme(border-radius, '@border-radius-md 0 0 @border-radius-md');
+      border-radius: @border-radius-md 0 0 @border-radius-md;
     }
 
     &--end {
-      .theme(border-radius, '0 @border-radius-md @border-radius-md 0');
+      border-radius: 0 @border-radius-md @border-radius-md 0;
     }
 
     &--start-end,
     &--multiple-selected {
-      .theme(border-radius, '@border-radius-md');
+      border-radius: @border-radius-md;
     }
 
     &--middle {
-      .theme(color, '@calendar-range-middle-color');
+      color: var(--calendar-range-middle-color, @calendar-range-middle-color);
 
       &::after {
         position: absolute;
@@ -82,15 +94,16 @@
         left: 0;
         background-color: currentColor;
         content: '';
-
-        .theme(opacity, '@calendar-range-middle-background-opacity');
+        opacity: var(
+          --calendar-range-middle-background-opacity,
+          @calendar-range-middle-background-opacity
+        );
       }
     }
 
     &--disabled {
       cursor: default;
-
-      .theme(color, '@calendar-day-disabled-color');
+      color: var(--calendar-day-disabled-color, @calendar-day-disabled-color);
     }
   }
 
@@ -99,8 +112,8 @@
     position: absolute;
     right: 0;
     left: 0;
-    .theme(font-size, '@calendar-info-font-size');
-    .theme(line-height, '@calendar-info-line-height');
+    font-size: var(--calendar-info-font-size, @calendar-info-font-size);
+    line-height: var(--calendar-info-line-height, @calendar-info-line-height);
 
     @media (max-width: 350px) {
       font-size: 9px;
@@ -116,10 +129,13 @@
   }
 
   &__selected-day {
-    .theme(width, '@calendar-selected-day-size');
-    .theme(height, '@calendar-selected-day-size');
-    .theme(color, '@calendar-selected-day-color');
-    .theme(background-color, '@calendar-selected-day-background-color');
-    .theme(border-radius, '@border-radius-md');
+    width: var(--calendar-selected-day-size, @calendar-selected-day-size);
+    height: var(--calendar-selected-day-size, @calendar-selected-day-size);
+    color: var(--calendar-selected-day-color, @calendar-selected-day-color);
+    background-color: var(
+      --calendar-selected-day-background-color,
+      @calendar-selected-day-background-color
+    );
+    border-radius: @border-radius-md;
   }
 }

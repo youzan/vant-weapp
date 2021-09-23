@@ -1,15 +1,14 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 .van-panel {
-  .theme(background, '@panel-background-color');
+  background: var(--panel-background-color, @panel-background-color);
 
   &__header-value {
-    .theme(color, '@panel-header-value-color');
+    color: var(--panel-header-value-color, @panel-header-value-color);
   }
 
   &__footer {
-    .theme(padding,'@panel-footer-padding');
+    padding: var(--panel-footer-padding, @panel-footer-padding);
 
     &:empty {
       display: none;

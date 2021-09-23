@@ -1,11 +1,13 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 .van-slider {
   position: relative;
-  .theme(height, '@slider-bar-height');
-  .theme(border-radius, '@border-radius-max');
-  .theme(background-color, '@slider-inactive-background-color');
+  height: var(--slider-bar-height, @slider-bar-height);
+  border-radius: @border-radius-max;
+  background-color: var(
+    --slider-inactive-background-color,
+    @slider-inactive-background-color
+  );
 
   // use pseudo element to expand click area
   &::before {
@@ -13,26 +15,34 @@
     right: 0;
     left: 0;
     content: '';
-    .theme(top, '-@padding-xs');
-    .theme(bottom, '-@padding-xs');
+    top: calc(-1 * var(--padding-xs, @padding-xs));
+    bottom: calc(-1 * var(--padding-xs, @padding-xs));
   }
 
   &__bar {
     position: relative;
     width: 100%;
     height: 100%;
-    .theme(background-color, '@slider-active-background-color');
-
+    background-color: var(
+      --slider-active-background-color,
+      @slider-active-background-color
+    );
     border-radius: inherit;
-    .theme(transition, 'all @animation-duration-fast');
+    transition: all @animation-duration-fast;
   }
 
   &__button {
-    .theme(width, '@slider-button-width');
-    .theme(height, '@slider-button-height');
-    .theme(border-radius, '@slider-button-border-radius');
-    .theme(box-shadow, '@slider-button-box-shadow');
-    .theme(background-color, '@slider-button-background-color');
+    width: var(--slider-button-width, @slider-button-width);
+    height: var(--slider-button-height, @slider-button-height);
+    border-radius: var(
+      --slider-button-border-radius,
+      @slider-button-border-radius
+    );
+    box-shadow: var(--slider-button-box-shadow, @slider-button-box-shadow);
+    background-color: var(
+      --slider-button-background-color,
+      @slider-button-background-color
+    );
 
     &-wrapper,
     &-wrapper-right {
@@ -51,6 +61,6 @@
   }
 
   &--disabled {
-    .theme(opacity, '@slider-disabled-opacity');
+    opacity: var(--slider-disabled-opacity, @slider-disabled-opacity);
   }
 }

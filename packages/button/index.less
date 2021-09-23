@@ -1,5 +1,4 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 .van-button {
   position: relative;
@@ -12,12 +11,11 @@
   vertical-align: middle;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
-
-  .theme(height, '@button-default-height');
-  .theme(line-height, '@button-line-height');
-  .theme(font-size, '@button-default-font-size');
-  .theme(transition, 'opacity @animation-duration-fast');
-  .theme(border-radius, '@button-border-radius');
+  height: var(--button-default-height, @button-default-height);
+  line-height: var(--button-line-height, @button-line-height);
+  font-size: var(--button-default-font-size, @button-default-font-size);
+  transition: opacity @animation-duration-fast;
+  border-radius: var(--button-border-radius, @button-border-radius);
 
   &::before {
     position: absolute;
@@ -30,9 +28,8 @@
     transform: translate(-50%, -50%);
     opacity: 0;
     content: ' ';
-
-    .theme(background-color, '@black');
-    .theme(border-color, '@black');
+    background-color: @black;
+    border-color: @black;
   }
 
   // reset weapp default border
@@ -49,78 +46,110 @@
   }
 
   &--default {
-    .theme(color, '@button-default-color');
-    .theme(background, '@button-default-background-color');
-    .theme(border, '@button-border-width solid @button-default-border-color');
+    color: var(--button-default-color, @button-default-color);
+    background: var(
+      --button-default-background-color,
+      @button-default-background-color
+    );
+    border: var(--button-border-width, @button-border-width) solid
+      var(--button-default-border-color, @button-default-border-color);
   }
 
   &--primary {
-    .theme(color, '@button-primary-color');
-    .theme(background, '@button-primary-background-color');
-    .theme(border, '@button-border-width solid @button-primary-border-color');
+    color: var(--button-primary-color, @button-primary-color);
+    background: var(
+      --button-primary-background-color,
+      @button-primary-background-color
+    );
+    border: var(--button-border-width, @button-border-width) solid
+      var(--button-primary-border-color, @button-primary-border-color);
   }
 
   &--info {
-    .theme(color, '@button-info-color');
-    .theme(background, '@button-info-background-color');
-    .theme(border, '@button-border-width solid @button-info-border-color');
+    color: var(--button-info-color, @button-info-color);
+    background: var(
+      --button-info-background-color,
+      @button-info-background-color
+    );
+    border: var(--button-border-width, @button-border-width) solid
+      var(--button-info-border-color, @button-info-border-color);
   }
 
   &--danger {
-    .theme(color, '@button-danger-color');
-    .theme(background, '@button-danger-background-color');
-    .theme(border, '@button-border-width solid @button-danger-border-color');
+    color: var(--button-danger-color, @button-danger-color);
+    background: var(
+      --button-danger-background-color,
+      @button-danger-background-color
+    );
+    border: var(--button-border-width, @button-border-width) solid
+      var(--button-danger-border-color, @button-danger-border-color);
   }
 
   &--warning {
-    .theme(color, '@button-warning-color');
-    .theme(background, '@button-warning-background-color');
-    .theme(border, '@button-border-width solid @button-warning-border-color');
+    color: var(--button-warning-color, @button-warning-color);
+    background: var(
+      --button-warning-background-color,
+      @button-warning-background-color
+    );
+    border: var(--button-border-width, @button-border-width) solid
+      var(--button-warning-border-color, @button-warning-border-color);
   }
 
   &--plain {
-    .theme(background, '@button-plain-background-color');
+    background: var(
+      --button-plain-background-color,
+      @button-plain-background-color
+    );
 
     &.van-button--primary {
-      .theme(color, '@button-primary-background-color');
+      color: var(
+        --button-primary-background-color,
+        @button-primary-background-color
+      );
     }
 
     &.van-button--info {
-      .theme(color, '@button-info-background-color');
+      color: var(--button-info-background-color, @button-info-background-color);
     }
 
     &.van-button--danger {
-      .theme(color, '@button-danger-background-color');
+      color: var(
+        --button-danger-background-color,
+        @button-danger-background-color
+      );
     }
 
     &.van-button--warning {
-      .theme(color, '@button-warning-background-color');
+      color: var(
+        --button-warning-background-color,
+        @button-warning-background-color
+      );
     }
   }
 
   &--large {
     width: 100%;
-    .theme(height, '@button-large-height');
+    height: var(--button-large-height, @button-large-height);
   }
 
   &--normal {
     padding: 0 15px;
-    .theme(font-size, '@button-normal-font-size');
+    font-size: var(--button-normal-font-size, @button-normal-font-size);
   }
 
   &--small {
-    .theme(min-width, '@button-small-min-width');
-    .theme(height, '@button-small-height');
-    .theme(padding, '0 @padding-xs');
-    .theme(font-size, '@button-small-font-size');
+    min-width: var(--button-small-min-width, @button-small-min-width);
+    height: var(--button-small-height, @button-small-height);
+    padding: 0 var(--padding-xs, @padding-xs);
+    font-size: var(--button-small-font-size, @button-small-font-size);
   }
 
   // mini图标默认宽度50px，文字不能超过4个
   &--mini {
     display: inline-block;
-    .theme(min-width, '@button-mini-min-width');
-    .theme(height, '@button-mini-height');
-    .theme(font-size, '@button-mini-font-size');
+    min-width: var(--button-mini-min-width, @button-mini-min-width);
+    height: var(--button-mini-height, @button-mini-height);
+    font-size: var(--button-mini-font-size, @button-mini-font-size);
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -133,7 +162,10 @@
   }
 
   &--round {
-    .theme(border-radius, '@button-round-border-radius');
+    border-radius: var(
+      --button-round-border-radius,
+      @button-round-border-radius
+    );
   }
 
   &--square {
@@ -141,7 +173,7 @@
   }
 
   &--disabled {
-    .theme(opacity, '@button-disabled-opacity');
+    opacity: var(--button-disabled-opacity, @button-disabled-opacity);
   }
 
   &__text {
@@ -166,11 +198,16 @@
     &::after {
       border-color: inherit;
       border-width: 1px;
-      .theme(border-radius, 'calc(@button-border-radius * 2)');
+      border-radius: calc(
+        var(--button-border-radius, @button-border-radius) * 2
+      );
     }
 
     &.van-button--round::after {
-      .theme(border-radius, '@button-round-border-radius');
+      border-radius: var(
+        --button-round-border-radius,
+        @button-round-border-radius
+      );
     }
 
     &.van-button--square::after {

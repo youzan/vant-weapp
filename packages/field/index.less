@@ -1,14 +1,13 @@
 @import '../common/style/var.less';
-@import '../common/style/theme.less';
 
 .van-field {
-  .theme(--cell-icon-size,  '@field-icon-size');
+  --cell-icon-size: var(--field-icon-size, @field-icon-size);
 
   &__label {
-    .theme(color, '@field-label-color');
+    color: var(--field-label-color, @field-label-color);
 
     &--disabled {
-      .theme(color, '@field-disabled-text-color');
+      color: var(--field-disabled-text-color, @field-disabled-text-color);
     }
   }
 
@@ -20,7 +19,7 @@
       box-sizing: border-box;
       padding: 3.6px 0;
       line-height: 1.2em;
-      .theme(min-height, '@cell-line-height');
+      min-height: var(--cell-line-height, @cell-line-height);
     }
   }
 
@@ -40,28 +39,33 @@
     background-color: transparent;
     border: 0;
     resize: none;
-
-    .theme(color, '@field-input-text-color');
-    .theme(height, '@cell-line-height');
-    .theme(min-height, '@cell-line-height');
+    color: var(--field-input-text-color, @field-input-text-color);
+    height: var(--cell-line-height, @cell-line-height);
+    min-height: var(--cell-line-height, @cell-line-height);
 
     &:empty {
       display: none;
     }
 
     &--textarea {
-      .theme(height, '@field-text-area-min-height');
-      .theme(min-height, '@field-text-area-min-height');
+      height: var(--field-text-area-min-height, @field-text-area-min-height);
+      min-height: var(
+        --field-text-area-min-height,
+        @field-text-area-min-height
+      );
     }
 
     &--error {
-      .theme(color, '@field-input-error-text-color');
+      color: var(--field-input-error-text-color, @field-input-error-text-color);
     }
 
     &--disabled {
       background-color: transparent;
       opacity: 1;
-      .theme(color, '@field-input-disabled-text-color');
+      color: var(
+        --field-input-disabled-text-color,
+        @field-input-disabled-text-color
+      );
     }
 
     &--center {
@@ -75,8 +79,7 @@
     &--custom {
       display: flex;
       align-items: center;
-
-      .theme(min-height, '@cell-line-height');
+      min-height: var(--cell-line-height, @cell-line-height);
     }
   }
 
@@ -86,25 +89,25 @@
     right: 0;
     left: 0;
     pointer-events: none;
-    .theme(color, '@field-placeholder-text-color');
+    color: var(--field-placeholder-text-color, @field-placeholder-text-color);
 
     &--error {
-      .theme(color, '@field-error-message-color');
+      color: var(--field-error-message-color, @field-error-message-color);
     }
   }
 
   &__icon-root {
     display: flex;
     align-items: center;
-    .theme(min-height, '@cell-line-height');
+    min-height: var(--cell-line-height, @cell-line-height);
   }
 
   &__clear-root,
   &__icon-container {
     line-height: inherit;
     vertical-align: middle;
-    .theme(padding, '0 @padding-xs');
-    .theme(margin-right, '-@padding-xs');
+    padding: 0 var(--padding-xs, @padding-xs);
+    margin-right: calc(-1 * var(--padding-xs, @padding-xs));
   }
 
   &__clear-root,
@@ -114,13 +117,13 @@
   }
 
   &__clear-root {
-    .theme(font-size, '@field-clear-icon-size');
-    .theme(color, '@field-clear-icon-color');
+    font-size: var(--field-clear-icon-size, @field-clear-icon-size);
+    color: var(--field-clear-icon-color, @field-clear-icon-color);
   }
 
   &__icon-container {
-    .theme(font-size, '@field-icon-size');
-    .theme(color, '@field-icon-container-color');
+    font-size: var(--field-icon-size, @field-icon-size);
+    color: var(--field-icon-container-color, @field-icon-container-color);
 
     &:empty {
       display: none;
@@ -128,7 +131,7 @@
   }
 
   &__button {
-    .theme(padding-left, '@padding-xs');
+    padding-left: var(--padding-xs, @padding-xs);
 
     &:empty {
       display: none;
@@ -137,8 +140,11 @@
 
   &__error-message {
     text-align: left;
-    .theme(font-size, '@field-error-message-text-font-size');
-    .theme(color, '@field-error-message-color');
+    font-size: var(
+      --field-error-message-text-font-size,
+      @field-error-message-text-font-size
+    );
+    color: var(--field-error-message-color, @field-error-message-color);
 
     &--center {
       text-align: center;
@@ -151,17 +157,20 @@
 
   &__word-limit {
     text-align: right;
-    .theme(margin-top, '@padding-base');
-    .theme(color, '@field-word-limit-color');
-    .theme(font-size, '@field-word-limit-font-size');
-    .theme(line-height, '@field-word-limit-line-height');
+    margin-top: var(--padding-base, @padding-base);
+    color: var(--field-word-limit-color, @field-word-limit-color);
+    font-size: var(--field-word-limit-font-size, @field-word-limit-font-size);
+    line-height: var(
+      --field-word-limit-line-height,
+      @field-word-limit-line-height
+    );
   }
 
   &__word-num {
     display: inline;
 
     &--full {
-      .theme(color, '@field-word-num-full-color');
+      color: var(--field-word-num-full-color, @field-word-num-full-color);
     }
   }
 }

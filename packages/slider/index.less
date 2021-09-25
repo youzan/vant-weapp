@@ -66,8 +66,7 @@
 
   &--vertical {
     display: inline-block;
-    .theme(width, '@slider-bar-height');
-
+    width: var(--slider-bar-height, @slider-bar-height);
     height: 100%;
 
     .van-slider__button-wrapper,
@@ -88,10 +87,9 @@
     // use pseudo element to expand click area
     &::before {
       top: 0;
-      .theme(right, '-@padding-xs');
-
+      right: -@padding-xs;
       bottom: 0;
-      .theme(left, '-@padding-xs');
+      left: -@padding-xs;
     }
   }
 }

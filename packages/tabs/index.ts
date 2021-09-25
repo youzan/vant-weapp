@@ -94,7 +94,7 @@ VantComponent({
     scrollLeft: 0,
     scrollable: false,
     currentIndex: 0,
-    container: null as unknown as () => WechatMiniprogram.NodesRef,
+    container: (null as unknown) as () => WechatMiniprogram.NodesRef,
     skipTransition: true,
     scrollWithAnimation: false,
     lineOffsetLeft: 0,

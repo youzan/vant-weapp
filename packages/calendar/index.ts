@@ -128,7 +128,7 @@ VantComponent({
     readonly: {
       type: Boolean,
       value: false,
-    }
+    },
   },
 
   data: {

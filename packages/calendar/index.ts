@@ -125,10 +125,7 @@ VantComponent({
       type: Number,
       value: 0,
     },
-    readonly: {
-      type: Boolean,
-      value: false,
-    },
+    readonly: Boolean,
   },
 
   data: {
@@ -281,6 +278,10 @@ VantComponent({
       const { date } = event.detail;
       const { type, currentDate, allowSameDay } = this.data;
 
+      if (this.data.readonly) {
+        return;
+      }
+
       if (type === 'range') {
         // @ts-ignore
         const [startDay, endDay] = currentDate;
@@ -332,9 +333,6 @@ VantComponent({
     },
 
     select(date, complete?: boolean) {
-      if (this.data.readonly) {
-        return;
-      }
       if (complete && this.data.type === 'range') {
         const valid = this.checkRange(date);
 

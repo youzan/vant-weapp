@@ -106,10 +106,6 @@ VantComponent({
             type: Number,
             value: 0,
         },
-        readonly: {
-            type: Boolean,
-            value: false,
-        },
     },
     data: {
         subtitle: '',
@@ -268,9 +264,6 @@ VantComponent({
             }
         },
         select(date, complete) {
-            if (this.data.readonly) {
-                return;
-            }
             if (complete && this.data.type === 'range') {
                 const valid = this.checkRange(date);
                 if (!valid) {

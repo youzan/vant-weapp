@@ -4,7 +4,7 @@
 .idea
 .vscode
 node_modules
-site
+site-dist
 docs/dist
 example/dist
 .history

@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v1.9.0](https://github.com/youzan/vant-weapp/compare/v1.8.7...v1.9.0)
+
+`2021-09-27`
+
+**Bug Fixes**
+
+- Slider: 移除 theme mixin [#4520](https://github.com/youzan/vant-weapp/issues/4520)
+- Tab: 修复初始位置不正确问题 [#4521](https://github.com/youzan/vant-weapp/issues/4521)
+
+**Document**
+
+- ActionSheet: 添加 show 属性说明 [#4518](https://github.com/youzan/vant-weapp/issues/4518)
+
+**Feature**
+
+- Slider: 添加 vertical 属性 [#4486](https://github.com/youzan/vant-weapp/issues/4486)
+
+**Performance**
+
+- 移除 CSS variables 兼容代码 [#4487](https://github.com/youzan/vant-weapp/issues/4487)
+
 ### [v1.8.7](https://github.com/youzan/vant-weapp/compare/v1.8.6...v1.8.7)
 
 `2021-09-22`
@@ -57,11 +78,11 @@
 - Sticky: 修复 root 为 null 时，读取 root.top 报错问题 [#4433](https://github.com/youzan/vant-weapp/issues/4433)
 - Calendar: 调整 minDate 和 maxDate 传值类型为 Number [37d8e69](https://github.com/youzan/vant-weapp/commit/37d8e697c9e3d985b926f68553b8afbb5c0a0569)
 
-### Features
+**Features**
 
 - Popup: 新增 lock-scroll 属性 [#4384](https://github.com/youzan/vant-weapp/issues/4384)
 
-### Performance Improvements
+**Performance Improvements**
 
 - Radio: label 的 margin-left 改为 padding-left，增大可点击区域，增强用户体验 [#4165](https://github.com/youzan/vant-weapp/issues/4165)
 
@@ -101,8 +122,6 @@
 - 移除了 iOS8 相关的 polyfill，减少包体积 [#4395](https://github.com/youzan/vant-weapp/issues/4395)
 
 ### [v1.7.2](https://github.com/youzan/vant-weapp/compare/v1.7.1...v1.7.2)
-
-### [1.7.2](https://github.com/youzan/vant-weapp/tree/v1.7.2)
 
 `2021-07-19`
 

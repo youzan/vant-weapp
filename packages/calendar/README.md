@@ -318,6 +318,7 @@ Page({
 | text | 中间显示的文字 | _string_ |
 | topInfo | 上方的提示信息 | _string_ |
 | bottomInfo | 下方的提示信息 | _string_ |
+| className | 自定义 className | _string_ |
 
 ### Events
 

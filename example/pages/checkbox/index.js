@@ -22,13 +22,6 @@ Page({
     this.setData({ [key]: event.detail });
   },
 
-  onClick(event) {
-    const { value } = event.currentTarget.dataset;
-    this.setData({
-      radio3: value,
-    });
-  },
-
   toggle(event) {
     const { index } = event.currentTarget.dataset;
     const checkbox = this.selectComponent(`.checkboxes-${index}`);

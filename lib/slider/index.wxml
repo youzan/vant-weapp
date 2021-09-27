@@ -2,8 +2,8 @@
 <wxs src="../wxs/style.wxs" module="style" />
 
 <view
-  class="custom-class {{ utils.bem('slider', { disabled }) }}"
-  style="{{ style({ background: inactiveColor, height: utils.addUnit(barHeight) }) }}"
+  class="custom-class {{ utils.bem('slider', { disabled, vertical }) }}"
+  style="{{ wrapperStyle }}"
   bind:tap="onClick"
 >
   <view

@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
-import { getRect } from '../common/utils';
+import { getRect, addUnit } from '../common/utils';
 VantComponent({
     mixins: [touch],
     props: {
@@ -31,6 +31,7 @@ VantComponent({
                 }
             },
         },
+        vertical: Boolean,
         barHeight: null,
     },
     created() {
@@ -64,7 +65,10 @@ VantComponent({
             this.touchMove(event);
             this.dragStatus = 'draging';
             getRect(this, '.van-slider').then((rect) => {
-                const diff = (this.deltaX / rect.width) * this.getRange();
+                const { vertical } = this.data;
+                const delta = vertical ? this.deltaY : this.deltaX;
+                const total = vertical ? rect.height : rect.width;
+                const diff = (delta / total) * this.getRange();
                 if (this.isRange(this.startValue)) {
                     this.newValue[this.buttonIndex] =
                         this.startValue[this.buttonIndex] + diff;
@@ -88,7 +92,12 @@ VantComponent({
                 return;
             const { min } = this.data;
             getRect(this, '.van-slider').then((rect) => {
-                const value = ((event.detail.x - rect.left) / rect.width) * this.getRange() + min;
+                const { vertical } = this.data;
+                const delta = vertical
+                    ? event.detail.y - rect.top
+                    : event.detail.x - rect.left;
+                const total = vertical ? rect.height : rect.width;
+                const value = Number(min) + (delta / total) * this.getRange();
                 if (this.isRange(this.value)) {
                     const [left, right] = this.value;
                     const middle = (left + right) / 2;
@@ -122,10 +131,17 @@ VantComponent({
                 value = this.format(value);
             }
             this.value = value;
+            const { vertical } = this.data;
+            const mainAxis = vertical ? 'height' : 'width';
             this.setData({
+                wrapperStyle: `
+          background: ${this.data.inactiveColor || ''};
+          ${mainAxis}: ${addUnit(this.data.barHeight) || ''};
+        `,
                 barStyle: `
-          width: ${this.calcMainAxis()};
-          left: ${this.isRange(value) ? `${value[0]}%` : 0};
+          ${mainAxis}: ${this.calcMainAxis()};
+          left: ${vertical ? 0 : this.calcOffset()};
+          top: ${vertical ? this.calcOffset() : 0};
           ${drag ? 'transition: none;' : ''}
         `,
             });
@@ -155,6 +171,16 @@ VantComponent({
                 return `${((value[1] - value[0]) * 100) / scope}%`;
             }
             return `${((value - Number(min)) * 100) / scope}%`;
+        },
+        // 计算选中条的开始位置的偏移量
+        calcOffset() {
+            const { value } = this;
+            const { min } = this.data;
+            const scope = this.getScope();
+            if (this.isRange(value)) {
+                return `${((value[0] - Number(min)) * 100) / scope}%`;
+            }
+            return '0%';
         },
         format(value) {
             const { max, min, step } = this.data;

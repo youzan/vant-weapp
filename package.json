@@ -14,7 +14,7 @@
     "lint": "eslint ./packages --ext .js,.ts --fix && stylelint \"packages/**/*.less\" --fix",
     "prepare": "husky install",
     "release": "sh build/release.sh",
-    "release:site": "vant-cli build-site && gh-pages -d site --add",
+    "release:site": "vant-cli build-site && gh-pages -d site-dist --add",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
     "build:changelog": "vant-cli changelog",
     "upload:weapp": "node build/upload.js"
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
-    "@vant/cli": "^4.0.0-beta.5",
+    "@vant/cli": "^4.0.0-beta.7",
     "@vant/icons": "^1.7.1",
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",

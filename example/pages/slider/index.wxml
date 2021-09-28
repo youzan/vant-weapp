@@ -67,7 +67,7 @@
 <demo-block title="垂直方向">
   <view style="height: 150px; padding-left: 30px;">
     <van-slider
-      value="{{ currentValue }}"
+      value="{{ 50 }}"
       vertical
       custom-class="slider"
       bind:change="onChange"

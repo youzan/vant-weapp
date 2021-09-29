@@ -93,9 +93,10 @@ VantComponent({
             const { min } = this.data;
             getRect(this, '.van-slider').then((rect) => {
                 const { vertical } = this.data;
+                const touch = event.touches[0];
                 const delta = vertical
-                    ? event.detail.y - rect.top
-                    : event.detail.x - rect.left;
+                    ? touch.clientY - rect.top
+                    : touch.clientX - rect.left;
                 const total = vertical ? rect.height : rect.width;
                 const value = Number(min) + (delta / total) * this.getRange();
                 if (this.isRange(this.value)) {
@@ -136,7 +137,7 @@ VantComponent({
             this.setData({
                 wrapperStyle: `
           background: ${this.data.inactiveColor || ''};
-          ${mainAxis}: ${addUnit(this.data.barHeight) || ''};
+          ${vertical ? 'width' : 'height'}: ${addUnit(this.data.barHeight) || ''};
         `,
                 barStyle: `
           ${mainAxis}: ${this.calcMainAxis()};

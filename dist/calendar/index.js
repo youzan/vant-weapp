@@ -106,6 +106,7 @@ VantComponent({
             type: Number,
             value: 0,
         },
+        readonly: Boolean,
     },
     data: {
         subtitle: '',
@@ -211,6 +212,9 @@ VantComponent({
             this.$emit('closed');
         },
         onClickDay(event) {
+            if (this.data.readonly) {
+                return;
+            }
             const { date } = event.detail;
             const { type, currentDate, allowSameDay } = this.data;
             if (type === 'range') {

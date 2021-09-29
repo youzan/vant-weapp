@@ -275,12 +275,12 @@ VantComponent({
     },
 
     onClickDay(event) {
-      const { date } = event.detail;
-      const { type, currentDate, allowSameDay } = this.data;
-
       if (this.data.readonly) {
         return;
       }
+      
+      const { date } = event.detail;
+      const { type, currentDate, allowSameDay } = this.data;
 
       if (type === 'range') {
         // @ts-ignore

@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v1.9.1](https://github.com/youzan/vant-weapp/compare/v1.9.0...v1.9.1)
+
+`2021-09-29`
+
+**Bug Fixes**
+
+- CheckBox: 移除无用方法 [#4527](https://github.com/youzan/vant-weapp/issues/4527)
+- Slider: 修复 vertical 属性导致点击无效问题 [#4532](https://github.com/youzan/vant-weapp/issues/4532)
+
+**Document**
+
+- Calendar: Day 数据结构增加 className 属性说明 [#4524](https://github.com/youzan/vant-weapp/issues/4524)
+
+**Feature**
+
+- Calendar: 增加 readonly 属性 [#4529](https://github.com/youzan/vant-weapp/issues/4529)
+
 ### [v1.9.0](https://github.com/youzan/vant-weapp/compare/v1.8.7...v1.9.0)
 
 `2021-09-27`

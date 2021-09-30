@@ -94,7 +94,7 @@ VantComponent({
     scrollLeft: 0,
     scrollable: false,
     currentIndex: 0,
-    container: (null as unknown) as () => WechatMiniprogram.NodesRef,
+    container: null as unknown as () => WechatMiniprogram.NodesRef,
     skipTransition: true,
     scrollWithAnimation: false,
     lineOffsetLeft: 0,
@@ -102,6 +102,7 @@ VantComponent({
 
   mounted() {
     requestAnimationFrame(() => {
+      this.swiping = true;
       this.setData({
         container: () => this.createSelectorQuery().select('.van-tabs'),
       });
@@ -238,6 +239,7 @@ VantComponent({
           (rect.width - lineRect.width) / 2 + (ellipsis ? 0 : 8);
 
         this.setData({ lineOffsetLeft });
+        this.swiping = true;
 
         if (skipTransition) {
           nextTick(() => {
@@ -287,14 +289,14 @@ VantComponent({
     },
 
     onTouchMove(event: WechatMiniprogram.TouchEvent) {
-      if (!this.data.swipeable) return;
+      if (!this.data.swipeable || !this.swiping) return;
 
       this.touchMove(event);
     },
 
     // watch swipe touch end
     onTouchEnd() {
-      if (!this.data.swipeable) return;
+      if (!this.data.swipeable || !this.swiping) return;
 
       const { direction, deltaX, offsetX } = this;
       const minSwipeDistance = 50;
@@ -305,6 +307,8 @@ VantComponent({
           this.setCurrentIndex(index);
         }
       }
+
+      this.swiping = false;
     },
 
     getAvaiableTab(direction: number) {

@@ -31,8 +31,9 @@ Page({
   },
 
   onInput(event) {
-    const { detail, currentTarget } = event;
-    const result = this.getResult(detail, currentTarget.dataset.type);
+    const { type } = event.currentTarget.dataset.type
+    const { detail } = event;
+    const result = this.getResult(detail, type);
 
     Toast(result);
   },

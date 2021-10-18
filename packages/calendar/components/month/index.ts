@@ -6,7 +6,7 @@ import {
   getNextDay,
 } from '../../utils';
 
-interface Day {
+export interface Day {
   date: Date;
   type: string;
   text: number;

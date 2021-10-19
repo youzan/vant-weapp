@@ -294,8 +294,7 @@ VantComponent({
                 getTime(startDay) < getTime(day.date) &&
                 getTime(day.date) < getTime(date);
               if (isDisabled) {
-                /* eslint prefer-destructuring: ["error", {VariableDeclarator: {object: true}}] */
-                date = days[index - 1].date;
+                ({ date } = days[index - 1]);
               }
               return isDisabled;
             });

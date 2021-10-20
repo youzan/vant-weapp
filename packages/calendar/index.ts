@@ -12,6 +12,7 @@ import {
   getMonths,
   getDayByOffset,
 } from './utils';
+import { Day } from './components/month/index';
 
 import Toast from '../toast/toast';
 import { requestAnimationFrame } from '../common/utils';
@@ -25,6 +26,8 @@ const initialMaxDate = (() => {
     now.getDate()
   ).getTime();
 })();
+const getTime = (date: Date | number) =>
+  date instanceof Date ? date.getTime() : date;
 
 VantComponent({
   props: {
@@ -230,14 +233,8 @@ VantComponent({
 
     scrollIntoView() {
       requestAnimationFrame(() => {
-        const {
-          currentDate,
-          type,
-          show,
-          poppable,
-          minDate,
-          maxDate,
-        } = this.data;
+        const { currentDate, type, show, poppable, minDate, maxDate } =
+          this.data;
         // @ts-ignore
         const targetDate = type === 'single' ? currentDate : currentDate[0];
         const displayed = show || !poppable;
@@ -278,8 +275,8 @@ VantComponent({
       if (this.data.readonly) {
         return;
       }
-      
-      const { date } = event.detail;
+
+      let { date } = event.detail;
       const { type, currentDate, allowSameDay } = this.data;
 
       if (type === 'range') {
@@ -290,6 +287,17 @@ VantComponent({
           const compareToStart = compareDay(date, startDay);
 
           if (compareToStart === 1) {
+            const { days } = this.selectComponent('.month').data;
+            days.some((day: Day, index) => {
+              const isDisabled =
+                day.type === 'disabled' &&
+                getTime(startDay) < getTime(day.date) &&
+                getTime(day.date) < getTime(date);
+              if (isDisabled) {
+                ({ date } = days[index - 1]);
+              }
+              return isDisabled;
+            });
             this.select([startDay, date], true);
           } else if (compareToStart === -1) {
             this.select([date, null]);
@@ -358,9 +366,6 @@ VantComponent({
     },
 
     emit(date) {
-      const getTime = (date: Date | number) =>
-        date instanceof Date ? date.getTime() : date;
-
       this.setData({
         currentDate: Array.isArray(date) ? date.map(getTime) : getTime(date),
       });

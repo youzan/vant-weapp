@@ -49,6 +49,7 @@ export const inputProps: WechatMiniprogram.Component.PropertyOption = {
   password: Boolean,
   confirmType: String,
   confirmHold: Boolean,
+  alwaysEmbed: Boolean,
 };
 
 export const textareaProps: WechatMiniprogram.Component.PropertyOption = {

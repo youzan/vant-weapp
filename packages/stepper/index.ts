@@ -173,7 +173,10 @@ VantComponent({
 
     emitChange(value: string) {
       if (!this.data.asyncChange) {
-        this.setData({ currentValue: value });
+        this.setData({ 
+          currentValue: value，
+          value: value
+         });
       }
 
       this.$emit('change', value);

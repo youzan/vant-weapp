@@ -40,7 +40,12 @@
     }
 
     &--card {
+      box-sizing: border-box;
       margin: 0 var(--padding-md, @padding-md);
+      border: @border-width-base solid
+        var(--tabs-default-color, @tabs-default-color);
+      width: calc(100% - calc(var(--padding-md, @padding-md) * 2));
+      border-radius: @border-radius-sm;
     }
 
     &::-webkit-scrollbar {
@@ -56,9 +61,6 @@
     &--card {
       box-sizing: border-box;
       height: var(--tabs-card-height, @tabs-card-height);
-      border: @border-width-base solid
-        var(--tabs-default-color, @tabs-default-color);
-      border-radius: @border-radius-sm;
 
       .van-tab {
         color: var(--tabs-default-color, @tabs-default-color);

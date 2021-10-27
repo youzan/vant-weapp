@@ -101,6 +101,9 @@ VantComponent({
 
     setListRect() {
       return getRect(this, '.van-index-bar').then((rect) => {
+        if (!isDef(rect)) {
+          return;
+        }
         Object.assign(this, {
           height: rect.height,
           top: rect.top + this.scrollTop,

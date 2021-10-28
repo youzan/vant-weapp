@@ -86,6 +86,7 @@ VantComponent({
     },
     mounted() {
         requestAnimationFrame(() => {
+            this.swiping = true;
             this.setData({
                 container: () => this.createSelectorQuery().select('.van-tabs'),
             });
@@ -191,6 +192,7 @@ VantComponent({
                 lineOffsetLeft +=
                     (rect.width - lineRect.width) / 2 + (ellipsis ? 0 : 8);
                 this.setData({ lineOffsetLeft });
+                this.swiping = true;
                 if (skipTransition) {
                     nextTick(() => {
                         this.setData({ skipTransition: false });
@@ -231,13 +233,13 @@ VantComponent({
             this.touchStart(event);
         },
         onTouchMove(event) {
-            if (!this.data.swipeable)
+            if (!this.data.swipeable || !this.swiping)
                 return;
             this.touchMove(event);
         },
         // watch swipe touch end
         onTouchEnd() {
-            if (!this.data.swipeable)
+            if (!this.data.swipeable || !this.swiping)
                 return;
             const { direction, deltaX, offsetX } = this;
             const minSwipeDistance = 50;
@@ -247,6 +249,7 @@ VantComponent({
                     this.setCurrentIndex(index);
                 }
             }
+            this.swiping = false;
         },
         getAvaiableTab(direction) {
             const { tabs, currentIndex } = this.data;

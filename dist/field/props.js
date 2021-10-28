@@ -48,6 +48,7 @@ export const inputProps = {
     password: Boolean,
     confirmType: String,
     confirmHold: Boolean,
+    alwaysEmbed: Boolean,
 };
 export const textareaProps = {
     autoHeight: Boolean,

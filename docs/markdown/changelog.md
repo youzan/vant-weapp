@@ -1,5 +1,23 @@
 # 更新日志
 
+### [v1.9.2](https://github.com/youzan/vant-weapp/compare/v1.9.1...v1.9.2)
+
+`2021-10-28`
+
+**Bug Fixes**
+
+- Calendar: 选择最小可选日期范围 [#4569](https://github.com/youzan/vant-weapp/issues/4569)
+- Collapse: 修复多次点击失效问题 [#4567](https://github.com/youzan/vant-weapp/issues/4567)
+- Tab: 修复卡片模式标签页样式问题 [#4582](https://github.com/youzan/vant-weapp/issues/4582)
+- Tab: 修复多指滑动多个标签问题 [#4539](https://github.com/youzan/vant-weapp/issues/4539)
+
+**Feature**
+
+- DropdownMenu: 新增 --dropdown-menu-box-shadow CssVariable [#4565](https://github.com/youzan/vant-weapp/issues/4565)
+- DropdownMenu: 新增 custom-class [#4583](https://github.com/youzan/vant-weapp/issues/4583)
+- Field: 新增 always-embed 属性 [#4571](https://github.com/youzan/vant-weapp/issues/4571)
+- Toast: 支持 html type [#4581](https://github.com/youzan/vant-weapp/issues/4581)
+
 ### [v1.9.1](https://github.com/youzan/vant-weapp/compare/v1.9.0...v1.9.1)
 
 `2021-09-29`

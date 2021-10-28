@@ -185,3 +185,9 @@ Page({
 | text  | 文字                             | _string_           |
 | value | 标识符                           | _number \| string_ |
 | icon  | 左侧[图标名称](#/icon)或图片链接 | _string_           |
+
+### 外部样式类
+
+| 类名         | 说明         |
+| ------------ | ------------ |
+| custom-class | 根节点样式类 |

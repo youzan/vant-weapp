@@ -1,15 +1,14 @@
 import path from 'path';
-import simulate, { RootComponent } from 'miniprogram-simulate';
-import {renderSlot} from "vue";
-// import { mount } from '../../../test';
-// import { Button } from '..';
+import simulate from 'miniprogram-simulate';
 
 describe('button', () => {
-  let id: string
-
-  const VanButton = simulate.load(path.resolve(__dirname, '../../button/index'), 'van-button', {
-    rootPath: path.resolve(__dirname, '../../'),
-  });
+  const VanButton = simulate.load(
+    path.resolve(__dirname, '../../button/index'),
+    'van-button',
+    {
+      rootPath: path.resolve(__dirname, '../../'),
+    }
+  );
 
   test('should emit click event', async () => {
     const comp = simulate.render(
@@ -24,13 +23,13 @@ describe('button', () => {
         methods: {
           onClick() {
             this.setData({
-              tapValue: this.data.tapValue+1
-            })
-          }
-        }
+              tapValue: this.data.tapValue + 1,
+            });
+          },
+        },
       })
     );
-    comp.attach(document.createElement('parent-wrapper'))
+    comp.attach(document.createElement('parent-wrapper'));
 
     const wrapper = comp.querySelector('#wrapper');
     const btn = wrapper?.querySelector('.van-button');
@@ -52,13 +51,13 @@ describe('button', () => {
         methods: {
           onClick() {
             this.setData({
-              tapValue: this.data.tapValue+1
-            })
-          }
-        }
+              tapValue: this.data.tapValue + 1,
+            });
+          },
+        },
       })
     );
-    comp.attach(document.createElement('parent-wrapper'))
+    comp.attach(document.createElement('parent-wrapper'));
 
     const wrapper = comp.querySelector('#wrapper');
     const btn = wrapper?.querySelector('.van-button');

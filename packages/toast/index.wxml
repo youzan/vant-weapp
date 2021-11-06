@@ -10,7 +10,7 @@
   custom-class="van-toast__container"
 >
   <view
-    class="van-toast van-toast--{{ type === 'icon' ? 'icon' : 'text' }} van-toast--{{ position }}"
+    class="van-toast van-toast--{{ (type === 'text' || type === 'html') ? 'text' : 'icon' }} van-toast--{{ position }}"
     catch:touchmove="noop"
   >
     <!-- text only -->

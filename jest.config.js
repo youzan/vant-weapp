@@ -4,10 +4,15 @@ module.exports = {
   testEnvironment: 'jsdom',
   testURL: 'https://jest.test',
   moduleFileExtensions: ['js', 'ts'],
-  testMatch: ['<rootDir>/packages/**/test/**/*.test.{js,ts}'],
+  testMatch: ['<rootDir>/packages/**/test/**/*.spec.{js,ts}'],
+  transform: {
+    "^.+\\.jsx?$": "babel-jest", // Adding this line solved the issue
+    "^.+\\.tsx?$": "ts-jest"
+  },
   collectCoverageFrom: [
     '<rootDir>/packages/**/*.{js,ts}',
     '!**/test/**'
   ],
-  snapshotSerializers: ['miniprogram-simulate/jest-snapshot-plugin']
+  preset: "ts-jest",
+  snapshotSerializers: ['miniprogram-simulate/jest-snapshot-plugin'],
 }

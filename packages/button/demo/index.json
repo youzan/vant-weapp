@@ -2,6 +2,6 @@
   "component": true,
   "usingComponents": {
     "van-button": "../../button/index",
-    "demo-block": "@example/components/demo-block/index"
+    "demo-block": "../../../example/components/demo-block/index"
   }
 }

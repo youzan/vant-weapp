@@ -65,7 +65,7 @@ const copier = (dist, ext) =>
       .pipe(
         insert.transform((contents, file) => {
           if (ext === 'json' && file.path.includes('/demo/')) {
-            contents = contents.replace(/@example\//g, '../../../');
+            contents = contents.replace('/example', '');
           }
           return contents;
         })

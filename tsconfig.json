@@ -16,5 +16,6 @@
     "moduleResolution": "node",
     "skipLibCheck": true
   },
-  "include": ["packages/**/*"]
+  "include": ["packages/**/*"],
+  "exclude": ["packages/**/test/*", "packages/**/demo/*"]
 }

@@ -52,7 +52,9 @@ const tsCompiler = (dist, config) =>
 
 const copier = (dist, ext) =>
   function copy() {
-    return gulp.src(`${src}/**/*.${ext}`).pipe(gulp.dest(dist));
+    return gulp
+      .src([`${src}/**/*.${ext}`, `!${src}/**/demo/**/*.${ext}`])
+      .pipe(gulp.dest(dist));
   };
 
 const staticCopier = (dist) =>

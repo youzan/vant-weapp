@@ -22,8 +22,12 @@ const baseCssPath = path.resolve(__dirname, '../packages/common/index.wxss');
 
 const lessCompiler = (dist) =>
   function compileLess() {
+    const srcPath = [`${src}/**/*.less`];
+    if ([esDir, libDir].indexOf(dist) !== -1) {
+      srcPath.push(`!${src}/**/demo/**/*.less`);
+    }
     return gulp
-      .src(`${src}/**/*.less`)
+      .src(srcPath)
       .pipe(less())
       .pipe(postcss())
       .pipe(
@@ -52,8 +56,20 @@ const tsCompiler = (dist, config) =>
 
 const copier = (dist, ext) =>
   function copy() {
+    const srcPath = [`${src}/**/*.${ext}`];
+    if ([esDir, libDir].indexOf(dist) !== -1) {
+      srcPath.push(`!${src}/**/demo/**/*.${ext}`);
+    }
     return gulp
-      .src([`${src}/**/*.${ext}`, `!${src}/**/demo/**/*.${ext}`])
+      .src(srcPath)
+      .pipe(
+        insert.transform((contents, file) => {
+          if (ext === 'json' && file.path.includes('/demo/')) {
+            contents = contents.replace(/@example\//g, '../../../');
+          }
+          return contents;
+        })
+      )
       .pipe(gulp.dest(dist));
   };
 

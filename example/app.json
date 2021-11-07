@@ -66,6 +66,7 @@
     "van-action-sheet": "./dist/action-sheet/index",
     "van-area": "./dist/area/index",
     "van-button": "./dist/button/index",
+    "van-button-demo": "./dist/button/demo/index",
     "van-card": "./dist/card/index",
     "van-cell": "./dist/cell/index",
     "van-cell-group": "./dist/cell-group/index",

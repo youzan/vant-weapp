@@ -17,7 +17,8 @@
     "release:site": "vant-cli build-site && gh-pages -d site-dist --add",
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
     "build:changelog": "vant-cli changelog",
-    "upload:weapp": "node build/upload.js"
+    "upload:weapp": "node build/upload.js",
+    "test": "jest"
   },
   "files": [
     "dist",
@@ -39,18 +40,25 @@
   },
   "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.2",
     "@vant/cli": "^4.0.0-beta.7",
     "@vant/icons": "^1.7.1",
+    "@vue/compiler-sfc": "^3.2.13",
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",
     "gulp-less": "^5.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
+    "jest": "^27.3.1",
     "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.6.1",
+    "miniprogram-simulate": "^1.4.2",
+    "ts-jest": "^27.0.7",
     "tscpaths": "^0.0.9",
-    "vue": "^3.2.1",
-    "@vue/compiler-sfc": "^3.2.13"
+    "typescript": "^4.4.4",
+    "vue": "^3.2.1"
   },
   "browserslist": [
     "Chrome >= 53",

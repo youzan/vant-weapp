@@ -3,5 +3,6 @@
   "compilerOptions": {
     "watch": true,
     "outDir": "example/dist"
-  }
+  },
+  "exclude": ["packages/**/test/*"]
 }

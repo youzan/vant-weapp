@@ -8,12 +8,14 @@
     "outDir": "dist",
     "baseUrl": ".",
     "strict": true,
-    "lib": ["ESNext"],
-    "types": ["miniprogram-api-typings"],
+    "lib": ["ESNext", "dom"],
+    "types": ["@types/jest", "node", "miniprogram-api-typings"],
     "paths": {
       "definitions/*": ["./packages/definitions/*"]
     },
+    "moduleResolution": "node",
     "skipLibCheck": true
   },
-  "include": ["packages/**/*"]
+  "include": ["packages/**/*"],
+  "exclude": ["packages/**/test/*", "packages/**/demo/*"]
 }

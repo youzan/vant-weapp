@@ -55,7 +55,7 @@ npm i vant-weapp -S --production
 
 ### 方式二. 下载代码
 
-直接通过 git 下载 Vant Weapp 源代码，并将`dist`目录拷贝到自己的项目中
+直接通过 git 下载 Vant Weapp 源代码，并将 `dist` 目录拷贝到自己的项目中。
 
 ```bash
 git clone https://github.com/youzan/vant-weapp.git

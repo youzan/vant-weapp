@@ -10,7 +10,7 @@
 
 Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源，已持续维护 4 年时间。Vant 对内承载了有赞所有核心业务，对外服务十多万开发者，是业界主流的移动端组件库之一。
 
-目前 Vant 官方提供了 [Vue 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)。
+目前 Vant 官方提供了 [Vue 2 版本](https://vant-contrib.gitee.io/vant)、[Vue 3 版本](https://vant-contrib.gitee.io/vant/v3)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/mxdi9i7/vant-react)和[支付宝小程序版本](https://github.com/ant-move/Vant-Aliapp)。
 
 ### 预览
 
@@ -20,25 +20,7 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 
 ### 快速上手
 
-请参考 [快速上手](#/quickstart)
-
-### 贡献代码
-
-使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant-weapp/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant-weapp/pulls)
-
-### 加入我们
-
-**有赞前端团队**是由一群年轻、皮实、对技术饱含热情的小伙伴组成的，目前共有 100 多名前端工程师，分布在业务中台、电商、零售、美业、资产、有赞云、赋能平台、增长中心等业务线。
-
-我们热爱分享和开源，崇尚用工程师的方式解决问题，因此造了很多工具来解决我们遇到的问题，目前我们维护的开源产品有：
-
-<img src="https://img.yzcdn.cn/public_files/2019/07/22/f4b70763c55c8710c52c667ecf192c05.jpeg" style="width: 320px; height: 303px; box-shadow: none;">
-
-我们正在寻找更多优秀的小伙伴，一起拓展前端技术的边界，期待你的加入！
-
-- <a target="_blank" href="https://app.mokahr.com/apply/youzan/3750#/jobs/?keyword=%E5%89%8D%E7%AB%AF&_k=tueqds">职位详情</a>（Base: 杭州/深圳）
-- <a target="_blank" href="https://tech.youzan.com/tag/front-end/">团队博客</a>
-- <a target="_blank" href="https://github.com/youzan">开源项目</a>
+请参考 [快速上手](#/quickstart)。
 
 ### 链接
 
@@ -47,6 +29,20 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 - [更新日志](#/changelog)
 - [Vant Vue 版](https://github.com/youzan/vant)
 
+## 贡献
+
+### 核心团队
+
+以下是 Vant 和 Vant Weapp 的核心贡献者们：
+
+| [![chenjiahan](https://avatars.githubusercontent.com/u/7237365?s=80&v=4)](https://github.com/chenjiahan/) | [![cookfront](https://avatars.githubusercontent.com/u/4829465?s=80&v=4)](https://github.com/cookfront/) | [![w91](https://avatars.githubusercontent.com/u/2599455?s=80&v=4)](https://github.com/w91/) | [![pangxie1991](https://avatars.githubusercontent.com/u/5961240?s=80&v=4)](https://github.com/pangxie1991/) | [![rex-zsd](https://avatars.githubusercontent.com/u/8767877?s=80&v=4)](https://github.com/rex-zsd/) | [![nemo-shen](https://avatars.githubusercontent.com/u/13480805?s=80&v=4)](https://github.com/nemo-shen/) | [![Lindysen](https://avatars.githubusercontent.com/u/33708359?s=80&v=4)](https://github.com/Lindysen/) | [![nemo-shen](https://avatars.githubusercontent.com/u/16181940?s=80&v=4)](https://github.com/JakeLaoyu/) |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| [chenjiahan](https://github.com/chenjiahan/) | [cookfront](https://github.com/cookfront/) | [wangnaiyi](https://github.com/w91/) | [pangxie](https://github.com/pangxie1991/) | [rex-zsd](https://github.com/rex-zsd/) | [nemo-shen](https://github.com/nemo-shen/) | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) |
+
+### 贡献代码
+
+使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant-weapp/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant-weapp/pulls)。
+
 ### 开源协议
 
-本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源
+本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。

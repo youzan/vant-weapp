@@ -91,7 +91,7 @@ npm run dev
 
 打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
 
-PS：关于 `van-area` Area 省市区选择组件，地区数据初始化可以直接在云开发环境中导入`vant-weapp/example/database_area.JSON`文件使用
+PS：关于 `van-area` Area 省市区选择组件，地区数据初始化可以直接在云开发环境中导入`vant-weapp/example/database_area.JSON` 文件使用。
 
 ## 基础库版本
 

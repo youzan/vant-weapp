@@ -55,7 +55,8 @@ npm i vant-weapp -S --production
 
 ### 方式二. 下载代码
 
-直接通过 git 下载 Vant Weapp 源代码，并将`dist`目录拷贝到自己的项目中
+直接通过 git 下载 Vant Weapp 源代码，并将 `dist` 目录拷贝到自己的项目中。
+
 ```bash
 git clone https://github.com/youzan/vant-weapp.git
 ```
@@ -90,27 +91,27 @@ npm run dev
 
 打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，把`vant-weapp/example`目录添加进去就可以预览示例了。
 
-PS：关于 `van-area`  Area 省市区选择组件，地区数据初始化可以直接在云开发环境中导入`vant-weapp/example/database_area.JSON`文件使用
+PS：关于 `van-area` Area 省市区选择组件，地区数据初始化可以直接在云开发环境中导入`vant-weapp/example/database_area.JSON` 文件使用。
 
 ## 基础库版本
 
-Vant Weapp 最低支持到小程序基础库 2.6.5 版本
+Vant Weapp 最低支持到小程序基础库 2.6.5 版本。
 
 ## 链接
 
-* [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
-* [意见反馈](https://github.com/youzan/vant-weapp/issues)
-* [加入我们](https://job.youzan.com)
-* [Vant Vue 版](https://github.com/youzan/vant)
+- [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
+- [意见反馈](https://github.com/youzan/vant-weapp/issues)
+- [加入我们](https://job.youzan.com)
+- [Vant Vue 版](https://github.com/youzan/vant)
+
+## 核心团队
+
+以下是 Vant 和 Vant Weapp 的核心贡献者们：
+
+| [![chenjiahan](https://avatars.githubusercontent.com/u/7237365?s=80&v=4)](https://github.com/chenjiahan/) | [![cookfront](https://avatars.githubusercontent.com/u/4829465?s=80&v=4)](https://github.com/cookfront/) | [![w91](https://avatars.githubusercontent.com/u/2599455?s=80&v=4)](https://github.com/w91/) | [![pangxie1991](https://avatars.githubusercontent.com/u/5961240?s=80&v=4)](https://github.com/pangxie1991/) | [![rex-zsd](https://avatars.githubusercontent.com/u/8767877?s=80&v=4)](https://github.com/rex-zsd/) | [![nemo-shen](https://avatars.githubusercontent.com/u/13480805?s=80&v=4)](https://github.com/nemo-shen/) | [![Lindysen](https://avatars.githubusercontent.com/u/33708359?s=80&v=4)](https://github.com/Lindysen/) | [![nemo-shen](https://avatars.githubusercontent.com/u/16181940?s=80&v=4)](https://github.com/JakeLaoyu/) |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| [chenjiahan](https://github.com/chenjiahan/) | [cookfront](https://github.com/cookfront/) | [wangnaiyi](https://github.com/w91/) | [pangxie](https://github.com/pangxie1991/) | [rex-zsd](https://github.com/rex-zsd/) | [nemo-shen](https://github.com/nemo-shen/) | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) |
 
 ## 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。
-
-[vant-weapp]: https://github.com/youzan/vant-weapp
-[issue]: https://github.com/youzan/vant-weapp/issues/new
-[PR]: https://github.com/youzan/vant-weapp/compare
-[MIT]: http://opensource.org/licenses/MIT
-[小程序简易教程]: https://developers.weixin.qq.com/miniprogram/dev/framework/
-[小程序框架介绍]: https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html
-[微信开发者工具]: https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html

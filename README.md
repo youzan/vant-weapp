@@ -112,6 +112,14 @@ Vant Weapp 最低支持到小程序基础库 2.6.5 版本。
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | [chenjiahan](https://github.com/chenjiahan/) | [cookfront](https://github.com/cookfront/) | [wangnaiyi](https://github.com/w91/) | [pangxie](https://github.com/pangxie1991/) | [rex-zsd](https://github.com/rex-zsd/) | [nemo-shen](https://github.com/nemo-shen/) | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) |
 
+## 贡献者们
+
+感谢以下小伙伴们为 Vant Weapp 发展做出的贡献：
+
+<a href="https://github.com/youzan/vant-weapp/graphs/contributors">
+  <img src="https://opencollective.com/vant-weapp/contributors.svg?width=890&button=false" alt="contributors">
+</a>
+
 ## 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)协议，请自由地享受和参与开源。

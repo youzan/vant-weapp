@@ -39,6 +39,14 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | [chenjiahan](https://github.com/chenjiahan/) | [cookfront](https://github.com/cookfront/) | [wangnaiyi](https://github.com/w91/) | [pangxie](https://github.com/pangxie1991/) | [rex-zsd](https://github.com/rex-zsd/) | [nemo-shen](https://github.com/nemo-shen/) | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) |
 
+### 贡献者们
+
+感谢以下小伙伴们为 Vant Weapp 发展做出的贡献：
+
+<a href="https://github.com/youzan/vant-weapp/graphs/contributors">
+  <img src="https://opencollective.com/vant-weapp/contributors.svg?width=890&button=false" alt="contributors">
+</a>
+
 ### 贡献代码
 
 使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant-weapp/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant-weapp/pulls)。

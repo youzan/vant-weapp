@@ -24,7 +24,7 @@ export const pageScrollMixin = (scroller: Scroller) =>
     attached() {
       const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
 
-      if (isDef(page)) {
+      if (!isDef(page)) {
         return;
       }
 

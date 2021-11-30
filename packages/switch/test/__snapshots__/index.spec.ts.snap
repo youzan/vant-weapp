@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`switch should allow to custom active-value and inactive-value 1`] = `
+<wx-view
+  class="van-switch van-switch--on custom-class"
+  style="font-size:30px;background-color:#07c160"
+  bind:tap="onClick"
+>
+  <wx-view
+    class="van-switch__node node-class"
+  />
+</wx-view>
+`;
+
+exports[`switch should allow to custom active-value and inactive-value 2`] = `
+<wx-view
+  class="van-switch custom-class"
+  style="font-size:30px;background-color:#ee0a24"
+  bind:tap="onClick"
+>
+  <wx-view
+    class="van-switch__node node-class"
+  />
+</wx-view>
+`;

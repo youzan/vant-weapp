@@ -24,6 +24,10 @@ export const pageScrollMixin = (scroller: Scroller) =>
     attached() {
       const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
 
+      if (!isDef(page)) {
+        return;
+      }
+
       if (Array.isArray(page.vanPageScroller)) {
         page.vanPageScroller.push(scroller.bind(this));
       } else {

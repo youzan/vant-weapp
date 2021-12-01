@@ -1,0 +1,875 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基本用法
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+        data-key="checkbox1"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用状态
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right van-checkbox__label--disabled"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+      <van-checkbox
+        customClass="demo-checkbox"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right van-checkbox__label--disabled"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义形状
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+        data-key="checkboxShape"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+        data-key="checkbox2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px;border-color:#07c160;background-color:#07c160"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义大小
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+        data-key="checkboxSize"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:25px"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+        data-key="checkbox3"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <wx-image
+              class="icon"
+              mode="widthFix"
+              slot="icon"
+              src="https://img.yzcdn.cn/vant/user-active.png"
+            />
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    自定义图标
+    
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用文本点击
+      </wx-view>
+      <van-checkbox
+        customClass="demo-checkbox"
+        data-key="checkboxLabel"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox custom-class"
+        >
+          <wx-view
+            class="van-checkbox__icon-wrap"
+            bind:tap="toggle"
+          >
+            <van-icon
+              class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+              customClass="icon-class"
+              style="font-size:20px"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-success"
+                style="font-size:0.8em;line-height: 1.25em;"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="label-class van-checkbox__label van-checkbox__label--right"
+            bind:tap="onClickLabel"
+          >
+            
+    复选框
+  
+          </wx-view>
+        </wx-view>
+      </van-checkbox>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        复选框组
+      </wx-view>
+      <van-checkbox-group
+        data-key="result"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox-group"
+        >
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 a
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 b
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 c
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+        </wx-view>
+      </van-checkbox-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        水平排列
+      </wx-view>
+      <van-checkbox-group
+        data-key="result4"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox-group van-checkbox-group--horizontal"
+        >
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox van-checkbox--horizontal custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 a
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox van-checkbox--horizontal custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 b
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox van-checkbox--horizontal custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 c
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+        </wx-view>
+      </van-checkbox-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        限制最大可选数
+      </wx-view>
+      <van-checkbox-group
+        data-key="result2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox-group"
+        >
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 a
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 b
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+          <van-checkbox
+            customClass="demo-checkbox"
+          >
+            <wx-view
+              class="van-checkbox custom-class"
+            >
+              <wx-view
+                class="van-checkbox__icon-wrap"
+                bind:tap="toggle"
+              >
+                <van-icon
+                  class="van-checkbox__icon van-checkbox__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="font-size:0.8em;line-height: 1.25em;"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-checkbox__label van-checkbox__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      复选框 c
+    
+              </wx-view>
+            </wx-view>
+          </van-checkbox>
+        </wx-view>
+      </van-checkbox-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        搭配单元格组件使用
+      </wx-view>
+      <van-checkbox-group
+        data-key="result3"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-checkbox-group"
+        >
+          <van-cell-group>
+            <van-cell
+              data-index="{{0}}"
+              valueClass="value-class"
+              bind:click="toggle"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--clickable"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style=""
+                >
+                  复选框 a
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <van-checkbox
+                    class="checkboxes-0"
+                    catch:tap="noop"
+                  >
+                    <wx-view
+                      class="van-checkbox custom-class"
+                    >
+                      <wx-view
+                        class="van-checkbox__icon-wrap"
+                        bind:tap="toggle"
+                      >
+                        <van-icon
+                          class="van-checkbox__icon van-checkbox__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class van-icon van-icon-success"
+                            style="font-size:0.8em;line-height: 1.25em;"
+                            bind:tap="onClick"
+                          />
+                        </van-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class van-checkbox__label van-checkbox__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </van-checkbox>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+            <van-cell
+              data-index="{{1}}"
+              valueClass="value-class"
+              bind:click="toggle"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--clickable"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style=""
+                >
+                  复选框 b
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <van-checkbox
+                    class="checkboxes-1"
+                    catch:tap="noop"
+                  >
+                    <wx-view
+                      class="van-checkbox custom-class"
+                    >
+                      <wx-view
+                        class="van-checkbox__icon-wrap"
+                        bind:tap="toggle"
+                      >
+                        <van-icon
+                          class="van-checkbox__icon van-checkbox__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class van-icon van-icon-success"
+                            style="font-size:0.8em;line-height: 1.25em;"
+                            bind:tap="onClick"
+                          />
+                        </van-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class van-checkbox__label van-checkbox__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </van-checkbox>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+            <van-cell
+              data-index="{{2}}"
+              valueClass="value-class"
+              bind:click="toggle"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--clickable"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style=""
+                >
+                  复选框 c
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <van-checkbox
+                    class="checkboxes-2"
+                    catch:tap="noop"
+                  >
+                    <wx-view
+                      class="van-checkbox custom-class"
+                    >
+                      <wx-view
+                        class="van-checkbox__icon-wrap"
+                        bind:tap="toggle"
+                      >
+                        <van-icon
+                          class="van-checkbox__icon van-checkbox__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class van-icon van-icon-success"
+                            style="font-size:0.8em;line-height: 1.25em;"
+                            bind:tap="onClick"
+                          />
+                        </van-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class van-checkbox__label van-checkbox__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </van-checkbox>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-cell-group>
+        </wx-view>
+      </van-checkbox-group>
+    </wx-view>
+  </demo-block>
+</main>
+`;

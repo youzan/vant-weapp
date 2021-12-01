@@ -75,6 +75,7 @@
     "van-cell-demo": "./dist/cell/demo/index",
     "van-cell-group": "./dist/cell-group/index",
     "van-checkbox": "./dist/checkbox/index",
+    "van-checkbox-demo": "./dist/checkbox/demo/index",
     "van-checkbox-group": "./dist/checkbox-group/index",
     "van-col": "./dist/col/index",
     "van-count-down": "./dist/count-down/index",

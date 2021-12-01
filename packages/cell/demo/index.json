@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-cell": "../../cell/index",
+    "van-cell-group": "../../cell-group/index",
+    "van-icon": "../../icon/index",
+    "van-tag": "../../tag/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

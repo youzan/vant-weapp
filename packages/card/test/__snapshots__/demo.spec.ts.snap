@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <wx-view
+    class="container"
+  >
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block van-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          基础用法
+        </wx-view>
+        <van-card>
+          <wx-view
+            class="custom-class van-card"
+          >
+            <wx-view
+              class="van-card__header"
+            >
+              <wx-view
+                class="van-card__thumb"
+                bind:tap="onClickThumb"
+              >
+                <wx-image
+                  class="van-card__img thumb-class"
+                  lazyLoad="{{false}}"
+                  mode="aspectFit"
+                  src="https://img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg"
+                />
+              </wx-view>
+              <wx-view
+                class="van-card__content van-card__content"
+              >
+                <wx-view>
+                  <wx-view
+                    class="van-card__title title-class"
+                  >
+                    2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男
+                  </wx-view>
+                  <wx-view
+                    class="van-card__desc desc-class"
+                  >
+                    描述信息
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-card__bottom"
+                >
+                  <wx-view
+                    class="van-card__price price-class"
+                  >
+                    <wx-text>
+                      ¥
+                    </wx-text>
+                    <wx-text
+                      class="van-card__price-integer"
+                    >
+                      2
+                    </wx-text>
+                    <wx-text
+                      class="van-card__price-decimal"
+                    >
+                      .00
+                    </wx-text>
+                  </wx-view>
+                  <wx-view
+                    class="van-card__num num-class"
+                  >
+                    x 2
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="van-card__footer"
+            />
+          </wx-view>
+        </van-card>
+      </wx-view>
+    </demo-block>
+    <demo-block>
+      <wx-view
+        class="custom-class demo-block van-clearfix "
+      >
+        <wx-view
+          class="demo-block__title"
+        >
+          高级用法
+        </wx-view>
+        <van-card>
+          <wx-view
+            class="custom-class van-card"
+          >
+            <wx-view
+              class="van-card__header"
+            >
+              <wx-view
+                class="van-card__thumb"
+                bind:tap="onClickThumb"
+              >
+                <wx-image
+                  class="van-card__img thumb-class"
+                  lazyLoad="{{false}}"
+                  mode="aspectFit"
+                  src="https://img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg"
+                />
+                <van-tag
+                  customClass="van-card__tag"
+                >
+                  <wx-view
+                    class="custom-class van-tag van-tag--danger van-tag--mark"
+                    style=""
+                  >
+                    
+        标签
+      
+                  </wx-view>
+                </van-tag>
+              </wx-view>
+              <wx-view
+                class="van-card__content van-card__content"
+              >
+                <wx-view>
+                  <wx-view
+                    class="van-card__title title-class"
+                  >
+                    2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男
+                  </wx-view>
+                  <wx-view
+                    class="van-card__desc desc-class"
+                  >
+                    描述信息
+                  </wx-view>
+                  <wx-view
+                    slot="tags"
+                  >
+                    <van-tag
+                      customClass="tag"
+                      plain="{{true}}"
+                      type="danger"
+                    >
+                      标签1
+                    </van-tag>
+                    <van-tag
+                      plain="{{true}}"
+                      type="danger"
+                    >
+                      标签2
+                    </van-tag>
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-card__bottom"
+                >
+                  <wx-view
+                    class="van-card__price price-class"
+                  >
+                    <wx-text>
+                      ¥
+                    </wx-text>
+                    <wx-text
+                      class="van-card__price-integer"
+                    >
+                      2
+                    </wx-text>
+                    <wx-text
+                      class="van-card__price-decimal"
+                    >
+                      .00
+                    </wx-text>
+                  </wx-view>
+                  <wx-view
+                    class="van-card__origin-price origin-price-class"
+                  >
+                    ¥ 10.00
+                  </wx-view>
+                  <wx-view
+                    class="van-card__num num-class"
+                  >
+                    x 2
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="van-card__footer"
+            >
+              <wx-view
+                class="van-card__footer"
+                slot="footer"
+              >
+                <van-button
+                  customClass="button"
+                  round="{{true}}"
+                  size="mini"
+                >
+                  按钮
+                </van-button>
+                <van-button
+                  round="{{true}}"
+                  size="mini"
+                >
+                  按钮
+                </van-button>
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </van-card>
+      </wx-view>
+    </demo-block>
+  </wx-view>
+</main>
+`;

@@ -1,0 +1,1246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基本用法
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class van-hairline--top"
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义列数
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class van-hairline--top"
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px;margin-top:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px;margin-top:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px;margin-top:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义内容
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class "
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center "
+                style=""
+              >
+                <wx-image
+                  src="https://img.yzcdn.cn/vant/apple-1.jpg"
+                  style="width: 100%; height: 90px;"
+                />
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center "
+                style=""
+              >
+                <wx-image
+                  src="https://img.yzcdn.cn/vant/apple-2.jpg"
+                  style="width: 100%; height: 90px;"
+                />
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center "
+                style=""
+              >
+                <wx-image
+                  src="https://img.yzcdn.cn/vant/apple-3.jpg"
+                  style="width: 100%; height: 90px;"
+                />
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        正方形格子
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class van-hairline--top"
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item van-grid-item--square"
+              style="width:25%;padding-top:25%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline--surround"
+                style="right:0px;bottom:0px;height:auto"
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        格子间距
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class "
+          style="padding-left:10px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:25%;padding-right:10px;margin-top:10px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        内容横排
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class van-hairline--top"
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:33.333333333333336%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        页面跳转
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class van-hairline--top"
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-home-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    Navigate 跳转
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    ReLaunch 跳转
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        徽标提示
+      </wx-view>
+      <van-grid>
+        <wx-view
+          class="van-grid custom-class van-hairline--top"
+          style="padding-left:0px"
+        >
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-home-o"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <van-info
+                        customClass="van-icon__info"
+                      >
+                        <wx-view
+                          class="van-info van-info van-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </van-info>
+                    </wx-view>
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+          <van-grid-item>
+            <wx-view
+              class="custom-class van-grid-item"
+              style="width:50%;padding-right:0px"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="content-class van-grid-item__content van-grid-item__content--center van-hairline--surround"
+                style=""
+              >
+                <wx-view
+                  class="van-grid-item__icon icon-class"
+                >
+                  <van-icon>
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    >
+                      <van-info
+                        customClass="van-icon__info"
+                      >
+                        <wx-view
+                          class="van-info van-info custom-class"
+                          style=""
+                        >
+                          99+
+                        </wx-view>
+                      </van-info>
+                    </wx-view>
+                  </van-icon>
+                </wx-view>
+                <wx-view
+                  class="van-grid-item__text text-class"
+                >
+                  <wx-text>
+                    文字
+                  </wx-text>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-grid-item>
+        </wx-view>
+      </van-grid>
+    </wx-view>
+  </demo-block>
+</main>
+`;

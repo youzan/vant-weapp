@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-button": "../../button/index",
+    "van-cell": "../../cell/index",
+    "van-checkbox": "../../checkbox/index",
+    "van-checkbox-group": "../../checkbox-group/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

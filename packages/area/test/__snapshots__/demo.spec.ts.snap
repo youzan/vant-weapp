@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-area
+        bind:cancel="onCancel"
+        bind:change="onChange"
+        bind:confirm="onConfirm"
+      >
+        <van-picker
+          activeClass="active-class"
+          class="van-area__picker"
+          columnClass="column-class"
+          toolbarClass="toolbar-class"
+          bind:cancel="onCancel"
+          bind:change="onChange"
+          bind:confirm="onConfirm"
+        >
+          <wx-view
+            class="van-picker custom-class"
+          >
+            <wx-view
+              class="van-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="van-picker__cancel"
+                data-type="cancel"
+                hoverClass="van-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    取消
+  
+              </wx-view>
+              <wx-view
+                class="van-picker__confirm"
+                data-type="confirm"
+                hoverClass="van-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    确认
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="van-picker__loading"
+            >
+              <loading>
+                <wx-view
+                  class="custom-class van-loading"
+                >
+                  <wx-view
+                    class="van-loading__spinner van-loading__spinner--circular"
+                    style="color:#1989fa"
+                  />
+                  <wx-view
+                    class="van-loading__text"
+                    style=""
+                  />
+                </wx-view>
+              </loading>
+            </wx-view>
+            <wx-view
+              class="van-picker__columns"
+              style="height:264px"
+              catch:touchmove="noop"
+            >
+              <picker-column
+                activeClass="active-class"
+                class="van-picker__column"
+                customClass="column-class"
+                data-index="{{0}}"
+                bind:change="onChange"
+              >
+                <wx-view
+                  class="van-picker-column custom-class"
+                  style="height:264px"
+                  bind:touchcancel="onTouchEnd"
+                  bind:touchend="onTouchEnd"
+                  catch:touchmove="onTouchMove"
+                  bind:touchstart="onTouchStart"
+                >
+                  <wx-view
+                    style="transition:transform 0ms;line-height:44px;transform:translate3d(0, 110px, 0)"
+                  />
+                </wx-view>
+              </picker-column>
+              <picker-column
+                activeClass="active-class"
+                class="van-picker__column"
+                customClass="column-class"
+                data-index="{{1}}"
+                bind:change="onChange"
+              >
+                <wx-view
+                  class="van-picker-column custom-class"
+                  style="height:264px"
+                  bind:touchcancel="onTouchEnd"
+                  bind:touchend="onTouchEnd"
+                  catch:touchmove="onTouchMove"
+                  bind:touchstart="onTouchStart"
+                >
+                  <wx-view
+                    style="transition:transform 0ms;line-height:44px;transform:translate3d(0, 110px, 0)"
+                  />
+                </wx-view>
+              </picker-column>
+              <picker-column
+                activeClass="active-class"
+                class="van-picker__column"
+                customClass="column-class"
+                data-index="{{2}}"
+                bind:change="onChange"
+              >
+                <wx-view
+                  class="van-picker-column custom-class"
+                  style="height:264px"
+                  bind:touchcancel="onTouchEnd"
+                  bind:touchend="onTouchEnd"
+                  catch:touchmove="onTouchMove"
+                  bind:touchstart="onTouchStart"
+                >
+                  <wx-view
+                    style="transition:transform 0ms;line-height:44px;transform:translate3d(0, 110px, 0)"
+                  />
+                </wx-view>
+              </picker-column>
+              <wx-view
+                class="van-picker__mask"
+                style="background-size:100% 110px"
+              />
+              <wx-view
+                class="van-picker__frame van-hairline--top-bottom"
+                style="height:44px"
+              />
+            </wx-view>
+          </wx-view>
+        </van-picker>
+      </van-area>
+    </wx-view>
+  </demo-block>
+  <van-toast
+    id="van-toast"
+  >
+    <van-transition
+      customClass="van-toast__container"
+    />
+  </van-toast>
+</main>
+`;

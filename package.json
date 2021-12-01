@@ -18,7 +18,8 @@
     "build:lib": "yarn && npx gulp -f build/compiler.js --series buildEs buildLib",
     "build:changelog": "vant-cli changelog",
     "upload:weapp": "node build/upload.js",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "files": [
     "dist",

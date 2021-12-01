@@ -1,0 +1,627 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell van-cell--borderless"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+                <wx-view
+                  class="van-cell__label label-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        卡片风格
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-cell-group--inset van-hairline--top-bottom"
+        >
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+                <wx-view
+                  class="van-cell__label label-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        单元格大小
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell van-cell--large"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell van-cell--large van-cell--borderless"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+                <wx-view
+                  class="van-cell__label label-class"
+                >
+                  <wx-view
+                    slot="label"
+                  >
+                    描述信息
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示图标
+      </wx-view>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--borderless"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <van-icon
+            class="van-cell__left-icon-wrap"
+            customClass="van-cell__left-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-location-o"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          >
+            内容
+          </wx-view>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示箭头
+      </wx-view>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          >
+            内容
+          </wx-view>
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--borderless van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          >
+            内容
+          </wx-view>
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow-down"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        页面跳转
+      </wx-view>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        分组标题
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="van-cell-group__title"
+        >
+          
+  分组 1
+
+        </wx-view>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+        </wx-view>
+      </van-cell-group>
+      <van-cell-group>
+        <wx-view
+          class="van-cell-group__title"
+        >
+          
+  分组 2
+
+        </wx-view>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-cell>
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                单元格
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                内容
+              </wx-view>
+            </wx-view>
+          </van-cell>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        使用插槽
+      </wx-view>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <van-icon
+            class="van-cell__left-icon-wrap"
+            customClass="van-cell__left-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-shop-o"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            <wx-view
+              slot="title"
+            >
+              <wx-view
+                class="title"
+              >
+                单元格
+              </wx-view>
+              <van-tag>
+                <wx-view
+                  class="custom-class van-tag van-tag--danger"
+                  style=""
+                >
+                  标签
+                </wx-view>
+              </van-tag>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          >
+            内容
+          </wx-view>
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--borderless"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            slot="right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-search"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        垂直居中
+      </wx-view>
+      <van-cell>
+        <wx-view
+          class="custom-class van-cell van-cell--center"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            单元格
+            <wx-view
+              class="van-cell__label label-class"
+            >
+              描述信息
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          >
+            内容
+          </wx-view>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+</main>
+`;

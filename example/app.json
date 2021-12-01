@@ -104,6 +104,7 @@
     "van-swipe-cell": "./dist/swipe-cell/index",
     "van-uploader": "./dist/uploader/index",
     "van-switch": "./dist/switch/index",
+    "van-switch-demo": "./dist/switch/demo/index",
     "van-tab": "./dist/tab/index",
     "van-tabs": "./dist/tabs/index",
     "van-tabbar": "./dist/tabbar/index",

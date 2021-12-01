@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-switch van-switch--on custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          />
+        </wx-view>
+      </van-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用状态
+      </wx-view>
+      <van-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-switch van-switch--on van-switch--disabled custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          />
+        </wx-view>
+      </van-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        加载状态
+      </wx-view>
+      <van-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-switch van-switch--on custom-class"
+          style="font-size:30px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          >
+            <van-loading
+              customClass="van-switch__loading"
+            >
+              <wx-view
+                class="custom-class van-loading"
+              >
+                <wx-view
+                  class="van-loading__spinner van-loading__spinner--circular"
+                  style="color:#1989fa"
+                />
+                <wx-view
+                  class="van-loading__text"
+                  style=""
+                />
+              </wx-view>
+            </van-loading>
+          </wx-view>
+        </wx-view>
+      </van-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义大小
+      </wx-view>
+      <van-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-switch van-switch--on custom-class"
+          style="font-size:24px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          />
+        </wx-view>
+      </van-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <van-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-switch van-switch--on custom-class"
+          style="font-size:30px;background-color:#07c160"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          />
+        </wx-view>
+      </van-switch>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        异步控制
+      </wx-view>
+      <van-switch
+        bind:change="onChange2"
+      >
+        <wx-view
+          class="van-switch van-switch--on custom-class"
+          style="font-size:36px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          />
+        </wx-view>
+      </van-switch>
+    </wx-view>
+  </demo-block>
+  <van-dialog>
+    <van-popup
+      customClass="van-dialog van-dialog--default "
+      bind:close="onClickOverlay"
+    >
+      <van-overlay
+        bind:click="onClickOverlay"
+      >
+        <van-transition
+          customClass="van-overlay"
+          bind:tap="onClick"
+          catch:touchmove="noop"
+        />
+      </van-overlay>
+    </van-popup>
+  </van-dialog>
+</main>
+`;

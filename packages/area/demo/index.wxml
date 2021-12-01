@@ -1,0 +1,11 @@
+<demo-block title="基础用法">
+  <van-area
+    value="{{ value }}"
+    loading="{{ loading }}"
+    area-list="{{ areaList }}"
+    bind:change="onChange"
+    bind:confirm="onConfirm"
+    bind:cancel="onCancel"
+  />
+</demo-block>
+<van-toast id="van-toast" />

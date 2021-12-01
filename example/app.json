@@ -64,6 +64,7 @@
   "usingComponents": {
     "demo-block": "./components/demo-block/index",
     "van-action-sheet": "./dist/action-sheet/index",
+    "van-action-sheet-demo": "./dist/action-sheet/demo/index",
     "van-area": "./dist/area/index",
     "van-button": "./dist/button/index",
     "van-button-demo": "./dist/button/demo/index",

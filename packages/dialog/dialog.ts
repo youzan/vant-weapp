@@ -22,7 +22,7 @@ interface DialogOptions {
    * @deprecated use beforeClose instead
    */
   asyncClose?: boolean;
-  beforeClose?: null | ((action: Action) => Promise<void> | void);
+  beforeClose?: null | ((action: Action) => Promise<void | boolean> | void);
   businessId?: number;
   sessionFrom?: string;
   overlayStyle?: string;

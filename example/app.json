@@ -83,6 +83,7 @@
     "van-dialog": "./dist/dialog/index",
     "van-dialog-demo": "./dist/dialog/demo/index",
     "van-divider": "./dist/divider/index",
+    "van-divider-demo": "./dist/divider/demo/index",
     "van-empty": "./dist/empty/index",
     "van-field": "./dist/field/index",
     "van-goods-action": "./dist/goods-action/index",

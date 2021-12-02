@@ -1,0 +1,977 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-like"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-like"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-like"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-like-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-like-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义样式
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style="font-size:25px"
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#ffd21e"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style="font-size:25px"
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#ffd21e"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style="font-size:25px"
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#ffd21e"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style="font-size:25px"
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style="font-size:25px"
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        半星
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+            <van-icon
+              class="van-rate__icon van-rate__icon--half van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{-0.5}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+            <van-icon
+              class="van-rate__icon van-rate__icon--half van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0.5}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+            <van-icon
+              class="van-rate__icon van-rate__icon--half van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1.5}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+            <van-icon
+              class="van-rate__icon van-rate__icon--half"
+              customClass="icon-class"
+              data-score="{{2.5}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+            <van-icon
+              class="van-rate__icon van-rate__icon--half"
+              customClass="icon-class"
+              data-score="{{3.5}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style="color:#eee"
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义数量
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{5}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用状态
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--disabled van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--disabled van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--disabled van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--disabled"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--disabled"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        只读状态
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        监听 change 事件
+      </wx-view>
+      <van-rate
+        customClass="rate-position"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-rate custom-class"
+          bind:touchmove="onTouchMove"
+        >
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{0}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon van-rate__icon--full"
+              customClass="icon-class"
+              data-score="{{1}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{2}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{3}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+          <wx-view
+            class="van-rate__item"
+            style=""
+          >
+            <van-icon
+              class="van-rate__icon"
+              customClass="icon-class"
+              data-score="{{4}}"
+              style=""
+              bind:click="onSelect"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-star-o"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </wx-view>
+      </van-rate>
+    </wx-view>
+  </demo-block>
+  <van-toast
+    id="van-toast"
+  >
+    <van-transition
+      customClass="van-toast__container"
+    />
+  </van-toast>
+</main>
+`;

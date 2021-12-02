@@ -1,0 +1,711 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        默认主题
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    评分
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    >
+                      <wx-view
+                        slot="input"
+                        style="width: 100%"
+                      >
+                        <van-rate
+                          data-key="rate"
+                          bind:change="onChange"
+                        >
+                          <wx-view
+                            class="van-rate custom-class"
+                            bind:touchmove="onTouchMove"
+                          >
+                            <wx-view
+                              class="van-rate__item"
+                              style=""
+                            >
+                              <van-icon
+                                class="van-rate__icon van-rate__icon--full"
+                                customClass="icon-class"
+                                data-score="{{0}}"
+                                style=""
+                                bind:click="onSelect"
+                              >
+                                <wx-view
+                                  class="custom-class van-icon van-icon-star"
+                                  style=""
+                                  bind:tap="onClick"
+                                />
+                              </van-icon>
+                            </wx-view>
+                            <wx-view
+                              class="van-rate__item"
+                              style=""
+                            >
+                              <van-icon
+                                class="van-rate__icon van-rate__icon--full"
+                                customClass="icon-class"
+                                data-score="{{1}}"
+                                style=""
+                                bind:click="onSelect"
+                              >
+                                <wx-view
+                                  class="custom-class van-icon van-icon-star"
+                                  style=""
+                                  bind:tap="onClick"
+                                />
+                              </van-icon>
+                            </wx-view>
+                            <wx-view
+                              class="van-rate__item"
+                              style=""
+                            >
+                              <van-icon
+                                class="van-rate__icon van-rate__icon--full"
+                                customClass="icon-class"
+                                data-score="{{2}}"
+                                style=""
+                                bind:click="onSelect"
+                              >
+                                <wx-view
+                                  class="custom-class van-icon van-icon-star"
+                                  style=""
+                                  bind:tap="onClick"
+                                />
+                              </van-icon>
+                            </wx-view>
+                            <wx-view
+                              class="van-rate__item"
+                              style=""
+                            >
+                              <van-icon
+                                class="van-rate__icon van-rate__icon--full"
+                                customClass="icon-class"
+                                data-score="{{3}}"
+                                style=""
+                                bind:click="onSelect"
+                              >
+                                <wx-view
+                                  class="custom-class van-icon van-icon-star"
+                                  style=""
+                                  bind:tap="onClick"
+                                />
+                              </van-icon>
+                            </wx-view>
+                            <wx-view
+                              class="van-rate__item"
+                              style=""
+                            >
+                              <van-icon
+                                class="van-rate__icon"
+                                customClass="icon-class"
+                                data-score="{{4}}"
+                                style=""
+                                bind:click="onSelect"
+                              >
+                                <wx-view
+                                  class="custom-class van-icon van-icon-star-o"
+                                  style=""
+                                  bind:tap="onClick"
+                                />
+                              </van-icon>
+                            </wx-view>
+                          </wx-view>
+                        </van-rate>
+                      </wx-view>
+                    </wx-view>
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder=""
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    滑块
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    >
+                      <wx-view
+                        slot="input"
+                        style="width: 100%"
+                      >
+                        <van-slider
+                          data-key="slider"
+                          bind:change="onChange"
+                        >
+                          <wx-view
+                            class="custom-class van-slider"
+                            style="
+          background: ;
+          height: ;
+        "
+                            bind:tap="onClick"
+                          >
+                            <wx-view
+                              class="van-slider__bar"
+                              style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+                            >
+                              <wx-view
+                                class="van-slider__button-wrapper"
+                                bind:touchcancel="onTouchEnd"
+                                bind:touchend="onTouchEnd"
+                                catch:touchmove="onTouchMove"
+                                bind:touchstart="onTouchStart"
+                              >
+                                <wx-view
+                                  class="van-slider__button"
+                                />
+                              </wx-view>
+                            </wx-view>
+                          </wx-view>
+                        </van-slider>
+                      </wx-view>
+                    </wx-view>
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder=""
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+      <wx-view
+        style="margin: 16px"
+      >
+        <van-button>
+          <wx-button
+            appParameter=""
+            ariaLabel=""
+            businessId="{{0}}"
+            class="custom-class van-button van-button--primary van-button--normal van-button--block van-button--round "
+            data-detail="{{null}}"
+            formType=""
+            hoverClass="van-button--active hover-class"
+            id=""
+            lang=""
+            openType=""
+            sendMessageImg=""
+            sendMessagePath=""
+            sendMessageTitle=""
+            sessionFrom=""
+            showMessageCard="{{false}}"
+            style=""
+            bind:contact="onContact"
+            bind:error="onError"
+            bind:getphonenumber="onGetPhoneNumber"
+            bind:getuserinfo="onGetUserInfo"
+            bind:launchapp="onLaunchApp"
+            bind:opensetting="onOpenSetting"
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-button__text"
+            >
+              提交
+            </wx-view>
+          </wx-button>
+        </van-button>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        定制主题
+      </wx-view>
+      <van-config-provider>
+        <wx-view
+          class="van-config-provider"
+          style="--rate-icon-full-color:#07c160;--slider-bar-height:4px;--slider-button-width:20px;--slider-button-height:20px;--slider-active-background-color:#07c160;--button-primary-border-color:#07c160;--button-primary-background-color:#07c160"
+        >
+          <van-cell-group>
+            <wx-view
+              class="custom-class van-cell-group van-hairline--top-bottom"
+            >
+              <van-field>
+                <van-cell
+                  customClass="van-field"
+                >
+                  <wx-view
+                    class="custom-class van-cell"
+                    hoverClass="van-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-cell__title title-class"
+                      style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                    >
+                      <wx-view
+                        class="label-class van-field__label"
+                        slot="title"
+                      >
+                        
+    评分
+  
+                      </wx-view>
+                    </wx-view>
+                    <wx-view
+                      class="van-cell__value value-class"
+                    >
+                      <wx-view
+                        class="van-field__body van-field__body--text"
+                      >
+                        <wx-view
+                          class="van-field__control van-field__control--custom"
+                          bind:tap="onClickInput"
+                        >
+                          <wx-view
+                            slot="input"
+                            style="width: 100%"
+                          >
+                            <van-rate
+                              data-key="rate"
+                              bind:change="onChange"
+                            >
+                              <wx-view
+                                class="van-rate custom-class"
+                                bind:touchmove="onTouchMove"
+                              >
+                                <wx-view
+                                  class="van-rate__item"
+                                  style=""
+                                >
+                                  <van-icon
+                                    class="van-rate__icon van-rate__icon--full"
+                                    customClass="icon-class"
+                                    data-score="{{0}}"
+                                    style=""
+                                    bind:click="onSelect"
+                                  >
+                                    <wx-view
+                                      class="custom-class van-icon van-icon-star"
+                                      style=""
+                                      bind:tap="onClick"
+                                    />
+                                  </van-icon>
+                                </wx-view>
+                                <wx-view
+                                  class="van-rate__item"
+                                  style=""
+                                >
+                                  <van-icon
+                                    class="van-rate__icon van-rate__icon--full"
+                                    customClass="icon-class"
+                                    data-score="{{1}}"
+                                    style=""
+                                    bind:click="onSelect"
+                                  >
+                                    <wx-view
+                                      class="custom-class van-icon van-icon-star"
+                                      style=""
+                                      bind:tap="onClick"
+                                    />
+                                  </van-icon>
+                                </wx-view>
+                                <wx-view
+                                  class="van-rate__item"
+                                  style=""
+                                >
+                                  <van-icon
+                                    class="van-rate__icon van-rate__icon--full"
+                                    customClass="icon-class"
+                                    data-score="{{2}}"
+                                    style=""
+                                    bind:click="onSelect"
+                                  >
+                                    <wx-view
+                                      class="custom-class van-icon van-icon-star"
+                                      style=""
+                                      bind:tap="onClick"
+                                    />
+                                  </van-icon>
+                                </wx-view>
+                                <wx-view
+                                  class="van-rate__item"
+                                  style=""
+                                >
+                                  <van-icon
+                                    class="van-rate__icon van-rate__icon--full"
+                                    customClass="icon-class"
+                                    data-score="{{3}}"
+                                    style=""
+                                    bind:click="onSelect"
+                                  >
+                                    <wx-view
+                                      class="custom-class van-icon van-icon-star"
+                                      style=""
+                                      bind:tap="onClick"
+                                    />
+                                  </van-icon>
+                                </wx-view>
+                                <wx-view
+                                  class="van-rate__item"
+                                  style=""
+                                >
+                                  <van-icon
+                                    class="van-rate__icon"
+                                    customClass="icon-class"
+                                    data-score="{{4}}"
+                                    style=""
+                                    bind:click="onSelect"
+                                  >
+                                    <wx-view
+                                      class="custom-class van-icon van-icon-star-o"
+                                      style=""
+                                      bind:tap="onClick"
+                                    />
+                                  </van-icon>
+                                </wx-view>
+                              </wx-view>
+                            </van-rate>
+                          </wx-view>
+                        </wx-view>
+                        <wx-input
+                          adjustPosition="{{true}}"
+                          alwaysEmbed="{{false}}"
+                          autoFocus="{{false}}"
+                          class="van-field__control input-class"
+                          confirmHold="{{false}}"
+                          confirmType=""
+                          cursor="{{-1}}"
+                          cursorSpacing="{{50}}"
+                          disabled="{{false}}"
+                          focus="{{false}}"
+                          holdKeyboard="{{false}}"
+                          maxlength="{{-1}}"
+                          password="{{false}}"
+                          placeholder=""
+                          placeholderClass="van-field__placeholder"
+                          placeholderStyle=""
+                          selectionEnd="{{-1}}"
+                          selectionStart="{{-1}}"
+                          type="text"
+                          value=""
+                          bind:blur="onBlur"
+                          bind:confirm="onConfirm"
+                          bind:focus="onFocus"
+                          bind:input="onInput"
+                          bind:keyboardheightchange="onKeyboardHeightChange"
+                          bind:tap="onClickInput"
+                        />
+                        <wx-view
+                          class="van-field__icon-container"
+                          bind:tap="onClickIcon"
+                        />
+                        <wx-view
+                          class="van-field__button"
+                        />
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-cell>
+              </van-field>
+              <van-field>
+                <van-cell
+                  customClass="van-field"
+                >
+                  <wx-view
+                    class="custom-class van-cell van-cell--borderless"
+                    hoverClass="van-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-cell__title title-class"
+                      style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                    >
+                      <wx-view
+                        class="label-class van-field__label"
+                        slot="title"
+                      >
+                        
+    滑块
+  
+                      </wx-view>
+                    </wx-view>
+                    <wx-view
+                      class="van-cell__value value-class"
+                    >
+                      <wx-view
+                        class="van-field__body van-field__body--text"
+                      >
+                        <wx-view
+                          class="van-field__control van-field__control--custom"
+                          bind:tap="onClickInput"
+                        >
+                          <wx-view
+                            slot="input"
+                            style="width: 100%"
+                          >
+                            <van-slider
+                              data-key="slider"
+                              bind:change="onChange"
+                            >
+                              <wx-view
+                                class="custom-class van-slider"
+                                style="
+          background: ;
+          height: ;
+        "
+                                bind:tap="onClick"
+                              >
+                                <wx-view
+                                  class="van-slider__bar"
+                                  style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+                                >
+                                  <wx-view
+                                    class="van-slider__button-wrapper"
+                                    bind:touchcancel="onTouchEnd"
+                                    bind:touchend="onTouchEnd"
+                                    catch:touchmove="onTouchMove"
+                                    bind:touchstart="onTouchStart"
+                                  >
+                                    <wx-view
+                                      class="van-slider__button"
+                                    />
+                                  </wx-view>
+                                </wx-view>
+                              </wx-view>
+                            </van-slider>
+                          </wx-view>
+                        </wx-view>
+                        <wx-input
+                          adjustPosition="{{true}}"
+                          alwaysEmbed="{{false}}"
+                          autoFocus="{{false}}"
+                          class="van-field__control input-class"
+                          confirmHold="{{false}}"
+                          confirmType=""
+                          cursor="{{-1}}"
+                          cursorSpacing="{{50}}"
+                          disabled="{{false}}"
+                          focus="{{false}}"
+                          holdKeyboard="{{false}}"
+                          maxlength="{{-1}}"
+                          password="{{false}}"
+                          placeholder=""
+                          placeholderClass="van-field__placeholder"
+                          placeholderStyle=""
+                          selectionEnd="{{-1}}"
+                          selectionStart="{{-1}}"
+                          type="text"
+                          value=""
+                          bind:blur="onBlur"
+                          bind:confirm="onConfirm"
+                          bind:focus="onFocus"
+                          bind:input="onInput"
+                          bind:keyboardheightchange="onKeyboardHeightChange"
+                          bind:tap="onClickInput"
+                        />
+                        <wx-view
+                          class="van-field__icon-container"
+                          bind:tap="onClickIcon"
+                        />
+                        <wx-view
+                          class="van-field__button"
+                        />
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-cell>
+              </van-field>
+            </wx-view>
+          </van-cell-group>
+          <wx-view
+            style="margin: 16px"
+          >
+            <van-button>
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class van-button van-button--primary van-button--normal van-button--block van-button--round "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="van-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  提交
+                </wx-view>
+              </wx-button>
+            </van-button>
+          </wx-view>
+        </wx-view>
+      </van-config-provider>
+    </wx-view>
+  </demo-block>
+</main>
+`;

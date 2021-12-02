@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-circle>
+        <wx-view
+          class="van-circle"
+        >
+          <wx-canvas
+            canvasId="van-circle"
+            class="van-circle__canvas"
+            id="van-circle"
+            style="width: 100px;height:100px"
+            type="2d"
+          />
+          <wx-cover-view
+            class="van-circle__text"
+          >
+            25%
+          </wx-cover-view>
+        </wx-view>
+      </van-circle>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        样式定制
+      </wx-view>
+      <van-circle>
+        <wx-view
+          class="van-circle"
+        >
+          <wx-canvas
+            canvasId="van-circle"
+            class="van-circle__canvas"
+            id="van-circle"
+            style="width: 100px;height:100px"
+            type=""
+          />
+          <wx-cover-view
+            class="van-circle__text"
+          >
+            宽度定制
+          </wx-cover-view>
+        </wx-view>
+      </van-circle>
+      <van-circle>
+        <wx-view
+          class="van-circle"
+        >
+          <wx-canvas
+            canvasId="van-circle"
+            class="van-circle__canvas"
+            id="van-circle"
+            style="width: 100px;height:100px"
+            type=""
+          />
+          <wx-cover-view
+            class="van-circle__text"
+          >
+            颜色定制
+          </wx-cover-view>
+        </wx-view>
+      </van-circle>
+      <van-circle>
+        <wx-view
+          class="van-circle"
+        >
+          <wx-canvas
+            canvasId="van-circle"
+            class="van-circle__canvas"
+            id="van-circle"
+            style="width: 100px;height:100px"
+            type=""
+          />
+          <wx-cover-view
+            class="van-circle__text"
+          >
+            渐变色
+          </wx-cover-view>
+        </wx-view>
+      </van-circle>
+      <van-circle>
+        <wx-view
+          class="van-circle"
+        >
+          <wx-canvas
+            canvasId="van-circle"
+            class="van-circle__canvas"
+            id="van-circle"
+            style="width: 100px;height:100px"
+            type=""
+          />
+          <wx-cover-view
+            class="van-circle__text"
+          >
+            逆时针
+          </wx-cover-view>
+        </wx-view>
+      </van-circle>
+      <van-circle>
+        <wx-view
+          class="van-circle"
+        >
+          <wx-canvas
+            canvasId="van-circle"
+            class="van-circle__canvas"
+            id="van-circle"
+            style="width: 120px;height:120px"
+            type=""
+          />
+          <wx-cover-view
+            class="van-circle__text"
+          >
+            大小定制
+          </wx-cover-view>
+        </wx-view>
+      </van-circle>
+    </wx-view>
+  </demo-block>
+  <van-button
+    data-step="10"
+    size="small"
+    type="primary"
+    bind:tap="run"
+  >
+    增加
+  </van-button>
+  <van-button
+    data-step="-10"
+    size="small"
+    type="danger"
+    bind:tap="run"
+  >
+    减少
+  </van-button>
+</main>
+`;

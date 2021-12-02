@@ -125,6 +125,7 @@
     "van-picker": "./dist/picker/index",
     "van-overlay": "./dist/overlay/index",
     "van-circle": "./dist/circle/index",
+    "van-circle-demo": "./dist/circle/demo/index",
     "van-index-bar": "./dist/index-bar/index",
     "van-index-anchor": "./dist/index-anchor/index",
     "van-grid": "./dist/grid/index",

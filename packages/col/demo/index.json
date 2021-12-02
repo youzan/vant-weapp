@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-row": "../../row/index",
+    "van-col": "../../col/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

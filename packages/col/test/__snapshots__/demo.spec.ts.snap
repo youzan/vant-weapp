@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-row>
+        <wx-view
+          class="van-row custom-class"
+          style=""
+        >
+          <van-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class van-col van-col--8 "
+              style=""
+            >
+              span: 8
+            </wx-view>
+          </van-col>
+          <van-col
+            customClass="light"
+          >
+            <wx-view
+              class="custom-class van-col van-col--8 "
+              style=""
+            >
+              span: 8
+            </wx-view>
+          </van-col>
+          <van-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class van-col van-col--8 "
+              style=""
+            >
+              span: 8
+            </wx-view>
+          </van-col>
+        </wx-view>
+      </van-row>
+      <van-row>
+        <wx-view
+          class="van-row custom-class"
+          style=""
+        >
+          <van-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class van-col van-col--4 "
+              style=""
+            >
+              span: 4
+            </wx-view>
+          </van-col>
+          <van-col
+            customClass="light"
+          >
+            <wx-view
+              class="custom-class van-col van-col--10 van-col--offset-4"
+              style=""
+            >
+              offset: 4, span: 10
+            </wx-view>
+          </van-col>
+        </wx-view>
+      </van-row>
+      <van-row>
+        <wx-view
+          class="van-row custom-class"
+          style=""
+        >
+          <van-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class van-col van-col--12 van-col--offset-12"
+              style=""
+            >
+              offset: 12, span: 12
+            </wx-view>
+          </van-col>
+        </wx-view>
+      </van-row>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        在列元素之间增加间距
+      </wx-view>
+      <van-row>
+        <wx-view
+          class="van-row custom-class"
+          style="margin-right:-10px;margin-left:-10px"
+        >
+          <van-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class van-col van-col--8 "
+              style="padding-right:10px;padding-left:10px"
+            >
+              span: 8
+            </wx-view>
+          </van-col>
+          <van-col
+            customClass="light"
+          >
+            <wx-view
+              class="custom-class van-col van-col--8 "
+              style="padding-right:10px;padding-left:10px"
+            >
+              span: 8
+            </wx-view>
+          </van-col>
+          <van-col
+            customClass="dark"
+          >
+            <wx-view
+              class="custom-class van-col van-col--8 "
+              style="padding-right:10px;padding-left:10px"
+            >
+              span: 8
+            </wx-view>
+          </van-col>
+        </wx-view>
+      </van-row>
+    </wx-view>
+  </demo-block>
+</main>
+`;

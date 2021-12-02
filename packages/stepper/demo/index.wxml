@@ -6,7 +6,7 @@
   <van-stepper value="{{ 1 }}" step="2" />
 </van-cell>
 
-<vanpackages/stepper/demo/index.less-cell center title="限制输入范围">
+<van-cell center title="限制输入范围">
   <van-stepper value="{{ 1 }}" min="5" max="8" />
 </van-cell>
 

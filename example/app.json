@@ -121,6 +121,7 @@
     "van-switch": "./dist/switch/index",
     "van-switch-demo": "./dist/switch/demo/index",
     "van-tab": "./dist/tab/index",
+    "van-tab-demo": "./dist/tab/demo/index",
     "van-tabs": "./dist/tabs/index",
     "van-tabbar": "./dist/tabbar/index",
     "van-tabbar-item": "./dist/tabbar-item/index",

@@ -128,6 +128,7 @@
     "van-tree-select": "./dist/tree-select/index",
     "van-datetime-picker": "./dist/datetime-picker/index",
     "van-rate": "./dist/rate/index",
+    "van-rate-demo": "./dist/rate/demo/index",
     "van-collapse": "./dist/collapse/index",
     "van-collapse-item": "./dist/collapse-item/index",
     "van-picker": "./dist/picker/index",

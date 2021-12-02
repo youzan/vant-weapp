@@ -107,6 +107,7 @@
     "van-radio-group": "./dist/radio-group/index",
     "van-row": "./dist/row/index",
     "van-search": "./dist/search/index",
+    "van-search-demo": "./dist/search/demo/index",
     "van-sidebar": "./dist/sidebar/index",
     "van-sidebar-item": "./dist/sidebar-item/index",
     "van-slider": "./dist/slider/index",

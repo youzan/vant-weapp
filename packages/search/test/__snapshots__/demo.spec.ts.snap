@@ -1,0 +1,679 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基本用法
+      </wx-view>
+      <van-search
+        bind:search="onSearch"
+      >
+        <wx-view
+          class="van-search custom-class"
+          style="background: #ffffff"
+        >
+          <wx-view
+            class="van-search__content van-search__content--square"
+          >
+            <van-field
+              class="van-search__field field-class"
+              inputClass="input-class"
+              bind:blur="onBlur"
+              bind:change="onChange"
+              bind:clear="onClear"
+              bind:click-input="onClickInput"
+              bind:confirm="onSearch"
+              bind:focus="onFocus"
+            >
+              <van-cell
+                customClass="van-field"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style="padding: 5px 10px 5px 0; background-color: transparent;"
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                  />
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    <wx-view
+                      class="van-field__body van-field__body--search"
+                    >
+                      <wx-view
+                        class="van-field__control van-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="van-field__control input-class"
+                        confirmHold="{{false}}"
+                        confirmType="search"
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder="请输入搜索关键词"
+                        placeholderClass="van-field__placeholder"
+                        placeholderStyle=""
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="search"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="van-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="van-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </van-cell>
+            </van-field>
+          </wx-view>
+        </wx-view>
+      </van-search>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        事件监听
+      </wx-view>
+      <van-search
+        bind:cancel="onCancel"
+        bind:clear="onClear"
+        bind:search="onSearch"
+      >
+        <wx-view
+          class="van-search van-search--withaction custom-class"
+          style="background: #ffffff"
+        >
+          <wx-view
+            class="van-search__content van-search__content--square"
+          >
+            <van-field
+              class="van-search__field field-class"
+              inputClass="input-class"
+              bind:blur="onBlur"
+              bind:change="onChange"
+              bind:clear="onClear"
+              bind:click-input="onClickInput"
+              bind:confirm="onSearch"
+              bind:focus="onFocus"
+            >
+              <van-cell
+                customClass="van-field"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style="padding: 5px 10px 5px 0; background-color: transparent;"
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                  />
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    <wx-view
+                      class="van-field__body van-field__body--search"
+                    >
+                      <wx-view
+                        class="van-field__control van-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="van-field__control input-class"
+                        confirmHold="{{false}}"
+                        confirmType="search"
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder="请输入搜索关键词"
+                        placeholderClass="van-field__placeholder"
+                        placeholderStyle=""
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="search"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="van-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="van-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </van-cell>
+            </van-field>
+          </wx-view>
+          <wx-view
+            class="van-search__action"
+            hoverClass="van-search__action--hover"
+            hoverStayTime="70"
+          >
+            <wx-view
+              class="cancel-class"
+              bind:tap="onCancel"
+            >
+              取消
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-search>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        搜索框内容对齐
+      </wx-view>
+      <van-search>
+        <wx-view
+          class="van-search custom-class"
+          style="background: #ffffff"
+        >
+          <wx-view
+            class="van-search__content van-search__content--square"
+          >
+            <van-field
+              class="van-search__field field-class"
+              inputClass="input-class"
+              bind:blur="onBlur"
+              bind:change="onChange"
+              bind:clear="onClear"
+              bind:click-input="onClickInput"
+              bind:confirm="onSearch"
+              bind:focus="onFocus"
+            >
+              <van-cell
+                customClass="van-field"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style="padding: 5px 10px 5px 0; background-color: transparent;"
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                  />
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    <wx-view
+                      class="van-field__body van-field__body--search"
+                    >
+                      <wx-view
+                        class="van-field__control van-field__control--center van-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="van-field__control van-field__control--center input-class"
+                        confirmHold="{{false}}"
+                        confirmType="search"
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder="请输入搜索关键词"
+                        placeholderClass="van-field__placeholder"
+                        placeholderStyle=""
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="search"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="van-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="van-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </van-cell>
+            </van-field>
+          </wx-view>
+        </wx-view>
+      </van-search>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用搜索框
+      </wx-view>
+      <van-search>
+        <wx-view
+          class="van-search custom-class"
+          style="background: #ffffff"
+        >
+          <wx-view
+            class="van-search__content van-search__content--square"
+          >
+            <van-field
+              class="van-search__field field-class"
+              inputClass="input-class"
+              bind:blur="onBlur"
+              bind:change="onChange"
+              bind:clear="onClear"
+              bind:click-input="onClickInput"
+              bind:confirm="onSearch"
+              bind:focus="onFocus"
+            >
+              <van-cell
+                customClass="van-field"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style="padding: 5px 10px 5px 0; background-color: transparent;"
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                  />
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    <wx-view
+                      class="van-field__body van-field__body--search"
+                    >
+                      <wx-view
+                        class="van-field__control van-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="van-field__control van-field__control--disabled input-class"
+                        confirmHold="{{false}}"
+                        confirmType="search"
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{true}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder="请输入搜索关键词"
+                        placeholderClass="van-field__placeholder"
+                        placeholderStyle=""
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="search"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="van-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="van-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </van-cell>
+            </van-field>
+          </wx-view>
+        </wx-view>
+      </van-search>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义背景色
+      </wx-view>
+      <van-search>
+        <wx-view
+          class="van-search custom-class"
+          style="background: #4fc08d"
+        >
+          <wx-view
+            class="van-search__content van-search__content--round"
+          >
+            <van-field
+              class="van-search__field field-class"
+              inputClass="input-class"
+              bind:blur="onBlur"
+              bind:change="onChange"
+              bind:clear="onClear"
+              bind:click-input="onClickInput"
+              bind:confirm="onSearch"
+              bind:focus="onFocus"
+            >
+              <van-cell
+                customClass="van-field"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style="padding: 5px 10px 5px 0; background-color: transparent;"
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                  />
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    <wx-view
+                      class="van-field__body van-field__body--search"
+                    >
+                      <wx-view
+                        class="van-field__control van-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="van-field__control input-class"
+                        confirmHold="{{false}}"
+                        confirmType="search"
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder="请输入搜索关键词"
+                        placeholderClass="van-field__placeholder"
+                        placeholderStyle=""
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="search"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="van-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="van-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </van-cell>
+            </van-field>
+          </wx-view>
+        </wx-view>
+      </van-search>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义按钮
+      </wx-view>
+      <van-search
+        bind:search="onSearch"
+      >
+        <wx-view
+          class="van-search van-search--withaction custom-class"
+          style="background: #ffffff"
+        >
+          <wx-view
+            class="van-search__content van-search__content--round"
+          >
+            <wx-view
+              class="van-search__label"
+            >
+              地址
+            </wx-view>
+            <van-field
+              class="van-search__field field-class"
+              inputClass="input-class"
+              bind:blur="onBlur"
+              bind:change="onChange"
+              bind:clear="onClear"
+              bind:click-input="onClickInput"
+              bind:confirm="onSearch"
+              bind:focus="onFocus"
+            >
+              <van-cell
+                customClass="van-field"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style="padding: 5px 10px 5px 0; background-color: transparent;"
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                  />
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    <wx-view
+                      class="van-field__body van-field__body--search"
+                    >
+                      <wx-view
+                        class="van-field__control van-field__control--custom"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-input
+                        adjustPosition="{{true}}"
+                        alwaysEmbed="{{false}}"
+                        autoFocus="{{false}}"
+                        class="van-field__control input-class"
+                        confirmHold="{{false}}"
+                        confirmType="search"
+                        cursor="{{-1}}"
+                        cursorSpacing="{{50}}"
+                        disabled="{{false}}"
+                        focus="{{false}}"
+                        holdKeyboard="{{false}}"
+                        maxlength="{{-1}}"
+                        password="{{false}}"
+                        placeholder="请输入搜索关键词"
+                        placeholderClass="van-field__placeholder"
+                        placeholderStyle=""
+                        selectionEnd="{{-1}}"
+                        selectionStart="{{-1}}"
+                        type="search"
+                        value=""
+                        bind:blur="onBlur"
+                        bind:confirm="onConfirm"
+                        bind:focus="onFocus"
+                        bind:input="onInput"
+                        bind:keyboardheightchange="onKeyboardHeightChange"
+                        bind:tap="onClickInput"
+                      />
+                      <wx-view
+                        class="van-field__icon-container"
+                        bind:tap="onClickIcon"
+                      />
+                      <wx-view
+                        class="van-field__button"
+                      />
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </van-cell>
+            </van-field>
+          </wx-view>
+          <wx-view
+            class="van-search__action"
+            hoverClass="van-search__action--hover"
+            hoverStayTime="70"
+          >
+            <wx-view
+              slot="action"
+              bind:tap="onClick"
+            >
+              搜索
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-search>
+    </wx-view>
+  </demo-block>
+</main>
+`;

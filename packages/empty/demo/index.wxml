@@ -1,0 +1,36 @@
+<demo-block title="基础用法" padding>
+    <van-empty description="描述文字" />
+</demo-block>
+
+<demo-block title="图片类型">
+  <van-tabs
+    active="{{ activeTab }}"
+    bind:change="onChange"
+  >
+    <van-tab title="通用错误">
+      <van-empty image="error" description="描述文字" />
+    </van-tab>
+    <van-tab title="网络错误">
+      <van-empty image="network" description="描述文字" />
+    </van-tab>
+    <van-tab title="搜索提示">
+      <van-empty image="search" description="描述文字" />
+    </van-tab>
+  </van-tabs>
+</demo-block>
+
+<demo-block title="自定义图片" padding>
+  <van-empty
+    custom-class="custom-image"
+    image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+    description="描述文字"
+  />
+</demo-block>
+
+<demo-block title="底部内容" padding>
+  <van-empty description="描述文字">
+    <van-button round type="danger" custom-class="bottom-button">
+      按钮
+    </van-button>
+  </van-empty>
+</demo-block>

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-divider>
+        <wx-view
+          class="custom-class van-divider"
+          style=""
+        />
+      </van-divider>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        内容位置
+      </wx-view>
+      <van-divider>
+        <wx-view
+          class="custom-class van-divider van-divider--center"
+          style=""
+        >
+          文本
+        </wx-view>
+      </van-divider>
+      <van-divider>
+        <wx-view
+          class="custom-class van-divider van-divider--left"
+          style=""
+        >
+          文本
+        </wx-view>
+      </van-divider>
+      <van-divider>
+        <wx-view
+          class="custom-class van-divider van-divider--right"
+          style=""
+        >
+          文本
+        </wx-view>
+      </van-divider>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        虚线
+      </wx-view>
+      <van-divider>
+        <wx-view
+          class="custom-class van-divider van-divider--dashed"
+          style=""
+        />
+      </van-divider>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义样式
+      </wx-view>
+      <van-divider>
+        <wx-view
+          class="custom-class van-divider van-divider--center"
+          style=";color: #1989fa;border-color: #1989fa;font-size: 18px;"
+        >
+          文本
+        </wx-view>
+      </van-divider>
+    </wx-view>
+  </demo-block>
+</main>
+`;

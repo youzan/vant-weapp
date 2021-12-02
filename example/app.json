@@ -85,6 +85,7 @@
     "van-divider": "./dist/divider/index",
     "van-divider-demo": "./dist/divider/demo/index",
     "van-empty": "./dist/empty/index",
+    "van-empty-demo": "./dist/empty/demo/index",
     "van-field": "./dist/field/index",
     "van-goods-action": "./dist/goods-action/index",
     "van-goods-action-icon": "./dist/goods-action-icon/index",

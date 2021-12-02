@@ -1,0 +1,330 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-empty>
+        <wx-view
+          class="custom-class van-empty"
+        >
+          <wx-view
+            class="van-empty__image"
+          />
+          <wx-view
+            class="van-empty__image"
+          >
+            <wx-image
+              class="van-empty__image__img"
+              src="https://img.yzcdn.cn/vant/empty-image-default.png"
+            />
+          </wx-view>
+          <wx-view
+            class="van-empty__description"
+          />
+          <wx-view
+            class="van-empty__description"
+          >
+            
+    描述文字
+  
+          </wx-view>
+          <wx-view
+            class="van-empty__bottom"
+          />
+        </wx-view>
+      </van-empty>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        图片类型
+      </wx-view>
+      <van-tabs
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              通用错误
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              网络错误
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              搜索提示
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <van-empty>
+                    <wx-view
+                      class="custom-class van-empty"
+                    >
+                      <wx-view
+                        class="van-empty__image"
+                      />
+                      <wx-view
+                        class="van-empty__image"
+                      >
+                        <wx-image
+                          class="van-empty__image__img"
+                          src="https://img.yzcdn.cn/vant/empty-image-error.png"
+                        />
+                      </wx-view>
+                      <wx-view
+                        class="van-empty__description"
+                      />
+                      <wx-view
+                        class="van-empty__description"
+                      >
+                        
+    描述文字
+  
+                      </wx-view>
+                      <wx-view
+                        class="van-empty__bottom"
+                      />
+                    </wx-view>
+                  </van-empty>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图片
+      </wx-view>
+      <van-empty
+        customClass="custom-image"
+      >
+        <wx-view
+          class="custom-class van-empty"
+        >
+          <wx-view
+            class="van-empty__image"
+          />
+          <wx-view
+            class="van-empty__image"
+          >
+            <wx-image
+              class="van-empty__image__img"
+              src="https://img.yzcdn.cn/vant/custom-empty-image.png"
+            />
+          </wx-view>
+          <wx-view
+            class="van-empty__description"
+          />
+          <wx-view
+            class="van-empty__description"
+          >
+            
+    描述文字
+  
+          </wx-view>
+          <wx-view
+            class="van-empty__bottom"
+          />
+        </wx-view>
+      </van-empty>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        底部内容
+      </wx-view>
+      <van-empty>
+        <wx-view
+          class="custom-class van-empty"
+        >
+          <wx-view
+            class="van-empty__image"
+          />
+          <wx-view
+            class="van-empty__image"
+          >
+            <wx-image
+              class="van-empty__image__img"
+              src="https://img.yzcdn.cn/vant/empty-image-default.png"
+            />
+          </wx-view>
+          <wx-view
+            class="van-empty__description"
+          />
+          <wx-view
+            class="van-empty__description"
+          >
+            
+    描述文字
+  
+          </wx-view>
+          <wx-view
+            class="van-empty__bottom"
+          >
+            <van-button
+              customClass="bottom-button"
+            >
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class van-button van-button--danger van-button--normal van-button--round "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="van-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style=""
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  
+      按钮
+    
+                </wx-view>
+              </wx-button>
+            </van-button>
+          </wx-view>
+        </wx-view>
+      </van-empty>
+    </wx-view>
+  </demo-block>
+</main>
+`;

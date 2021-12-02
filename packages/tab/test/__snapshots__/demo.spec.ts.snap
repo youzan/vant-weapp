@@ -1,0 +1,1552 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-tabs
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容2
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        通过名称匹配
+      </wx-view>
+      <van-tabs>
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容2
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        横向滚动
+      </wx-view>
+      <van-tabs>
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap van-tabs__wrap--scrollable "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{true}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{3}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 4
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{4}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 5
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{5}}"
+                        style="flex-basis:17.6%"
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 6
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用标签
+      </wx-view>
+      <van-tabs
+        bind:disabled="onClickDisabled"
+      >
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab van-tab--disabled"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        样式风格
+      </wx-view>
+      <van-tabs
+        tabClass="special-tab"
+      >
+        <wx-view
+          class="custom-class van-tabs van-tabs--card"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--card"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--card nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content-2"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        点击事件
+      </wx-view>
+      <van-tabs
+        bind:click="onClick"
+      >
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        粘性布局
+      </wx-view>
+      <van-tabs>
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        切换动画
+      </wx-view>
+      <van-tabs>
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track--animated van-tabs__track"
+              style="left:0%;transition-duration:0.3s;-webkit-transition-duration:0.3s"
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style=""
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style=""
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style=""
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        滑动切换
+      </wx-view>
+      <van-tabs>
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容1
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义标题
+      </wx-view>
+      <van-tabs
+        tabActiveClass="special-tab-active"
+        tabClass="special-tab"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-tabs van-tabs--line"
+        >
+          <van-sticky
+            bind:scroll="onTouchScroll"
+          >
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:1"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:1"
+              >
+                <wx-view
+                  class="van-tabs__wrap "
+                >
+                  <wx-scroll-view
+                    class="van-tabs__scroll van-tabs__scroll--line"
+                    scrollLeft="{{0}}"
+                    scrollWithAnimation="{{false}}"
+                    scrollX="{{false}}"
+                    style=""
+                  >
+                    <wx-view
+                      class="van-tabs__nav van-tabs__nav--line nav-class"
+                      style=""
+                    >
+                      <wx-view
+                        class="van-tabs__line"
+                        style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                      />
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{0}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 1
+              
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                        data-index="{{1}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 2
+              
+                          <van-info
+                            customClass="van-tab__title__info"
+                          >
+                            <wx-view
+                              class="van-info van-info van-info--dot custom-class"
+                              style=""
+                            >
+                              
+                            </wx-view>
+                          </van-info>
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{2}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 3
+              
+                          <van-info
+                            customClass="van-tab__title__info"
+                          >
+                            <wx-view
+                              class="van-info van-info custom-class"
+                              style=""
+                            >
+                              99
+                            </wx-view>
+                          </van-info>
+                        </wx-view>
+                      </wx-view>
+                      <wx-view
+                        class="tab-class van-ellipsis van-tab"
+                        data-index="{{3}}"
+                        style=""
+                        bind:tap="onTap"
+                      >
+                        <wx-view
+                          class="van-ellipsis"
+                          style=""
+                        >
+                          
+              标签 4
+              
+                        </wx-view>
+                      </wx-view>
+                    </wx-view>
+                  </wx-scroll-view>
+                  <van-icon
+                    customClass="right-nav"
+                    slot="nav-right"
+                    bind:click="onClickNavRight"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-search"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+          <wx-view
+            class="van-tabs__content"
+            bind:touchcancel="onTouchEnd"
+            bind:touchend="onTouchEnd"
+            bind:touchmove="onTouchMove"
+            bind:touchstart="onTouchStart"
+          >
+            <wx-view
+              class="van-tabs__track van-tabs__track"
+              style=""
+            >
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--active"
+                  style=""
+                >
+                  <wx-view
+                    class="content"
+                  >
+                    
+        内容2
+      
+                  </wx-view>
+                </wx-view>
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+              <van-tab>
+                <wx-view
+                  class="custom-class van-tab__pane van-tab__pane--inactive"
+                  style="display: none;"
+                />
+              </van-tab>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-tabs>
+    </wx-view>
+  </demo-block>
+</main>
+`;

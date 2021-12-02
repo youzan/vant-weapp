@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-skeleton>
+        <wx-view
+          class="custom-class van-skeleton van-skeleton--animate"
+        >
+          <wx-view
+            class="van-skeleton__content"
+          >
+            <wx-view
+              class="title-class van-skeleton__title"
+              style="width:40%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:80%"
+            />
+          </wx-view>
+        </wx-view>
+      </van-skeleton>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        显示头像
+      </wx-view>
+      <van-skeleton>
+        <wx-view
+          class="custom-class van-skeleton van-skeleton--animate"
+        >
+          <wx-view
+            class="avatar-class van-skeleton__avatar van-skeleton__avatar--round"
+            style="width:32px;height:32px"
+          />
+          <wx-view
+            class="van-skeleton__content"
+          >
+            <wx-view
+              class="title-class van-skeleton__title"
+              style="width:40%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+          </wx-view>
+        </wx-view>
+      </van-skeleton>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示子组件
+      </wx-view>
+      <van-switch
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-switch custom-class"
+          style="font-size:24px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-switch__node node-class"
+          />
+        </wx-view>
+      </van-switch>
+      <van-skeleton>
+        <wx-view
+          class="custom-class van-skeleton van-skeleton--animate"
+        >
+          <wx-view
+            class="avatar-class van-skeleton__avatar van-skeleton__avatar--round"
+            style="width:32px;height:32px"
+          />
+          <wx-view
+            class="van-skeleton__content"
+          >
+            <wx-view
+              class="title-class van-skeleton__title"
+              style="width:40%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+            <wx-view
+              class="row-class van-skeleton__row"
+              style="width:100%"
+            />
+          </wx-view>
+        </wx-view>
+      </van-skeleton>
+    </wx-view>
+  </demo-block>
+</main>
+`;

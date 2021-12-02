@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-col": "../../col/index",
+    "van-tab": "../../tab/index",
+    "van-tabs": "../../tabs/index",
+    "van-icon": "../../icon/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

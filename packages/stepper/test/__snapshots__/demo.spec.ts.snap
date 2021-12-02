@@ -1,0 +1,585 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        基础用法
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        步长设置
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        限制输入范围
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{5}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        限制输入整数
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="number"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        禁用状态
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input van-stepper__input--disabled"
+              disabled="{{true}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus van-stepper__plus--disabled"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        禁用长按
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        固定小数位数
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="1.0"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        异步变更
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper
+          bind:change="onChange"
+        >
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style=""
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        自定义大小
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style="width:32px;height:32px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style="width:40px;height:32px"
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style="width:32px;height:32px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-cell>
+    <wx-view
+      class="custom-class van-cell van-cell--center"
+      hoverClass="van-cell--hover hover-class"
+      hoverStayTime="70"
+      style=""
+      bind:tap="onClick"
+    >
+      <wx-view
+        class="van-cell__title title-class"
+        style=""
+      >
+        圆角风格
+      </wx-view>
+      <wx-view
+        class="van-cell__value value-class"
+      >
+        <van-stepper>
+          <wx-view
+            class="van-stepper van-stepper--round custom-class"
+          >
+            <wx-view
+              class="minus-class van-stepper__minus van-stepper__minus--disabled"
+              data-type="minus"
+              hoverClass="van-stepper__minus--hover"
+              hoverStayTime="70"
+              style="width:22px;height:22px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+            <wx-input
+              class="input-class van-stepper__input"
+              disabled="{{false}}"
+              focus=""
+              style="height:22px"
+              type="digit"
+              value="{{1}}"
+              bind:blur="onBlur"
+              bind:focus="onFocus"
+              bind:input="onInput"
+            />
+            <wx-view
+              class="plus-class van-stepper__plus"
+              data-type="plus"
+              hoverClass="van-stepper__plus--hover"
+              hoverStayTime="70"
+              style="width:22px;height:22px"
+              bind:tap="onTap"
+              bind:touchend="onTouchEnd"
+              bind:touchstart="onTouchStart"
+            />
+          </wx-view>
+        </van-stepper>
+      </wx-view>
+    </wx-view>
+  </van-cell>
+  <van-toast
+    id="van-toast"
+  >
+    <van-transition
+      customClass="van-toast__container"
+    />
+  </van-toast>
+</main>
+`;

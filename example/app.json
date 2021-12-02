@@ -112,6 +112,7 @@
     "van-sidebar-item": "./dist/sidebar-item/index",
     "van-slider": "./dist/slider/index",
     "van-stepper": "./dist/stepper/index",
+    "van-stepper-demo": "./dist/stepper/demo/index",
     "van-steps": "./dist/steps/index",
     "van-sticky": "./dist/sticky/index",
     "van-submit-bar": "./dist/submit-bar/index",

@@ -93,6 +93,7 @@
     "van-icon": "./dist/icon/index",
     "van-icon-demo": "./dist/icon/demo/index",
     "van-image": "./dist/image/index",
+    "van-image-demo": "./dist/image/demo/index",
     "van-loading": "./dist/loading/index",
     "van-nav-bar": "./dist/nav-bar/index",
     "van-notice-bar": "./dist/notice-bar/index",

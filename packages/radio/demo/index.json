@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-radio": "../../radio/index",
+    "van-radio-group": "../../radio-group/index",
+    "van-cell": "../../cell/index",
+    "van-cell-group": "../../cell-group/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

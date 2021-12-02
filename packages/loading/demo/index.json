@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-loading": "../../loading/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

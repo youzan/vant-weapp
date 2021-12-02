@@ -1,0 +1,761 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基本用法
+      </wx-view>
+      <van-radio-group
+        data-key="radio1"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio
+            customClass="demo-radio"
+          >
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框 1
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框 2
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        水平排列
+      </wx-view>
+      <van-radio-group
+        data-key="radio1"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group van-radio-group--horizontal"
+        >
+          <van-radio>
+            <wx-view
+              class="van-radio van-radio--horizontal custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框 1
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio van-radio--horizontal custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框 2
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用状态
+      </wx-view>
+      <van-radio-group
+        data-key="radio2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio
+            customClass="demo-radio"
+          >
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--disabled"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right van-radio__label--disabled"
+                bind:tap="onClickLabel"
+              >
+                单选框 1
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--disabled van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right van-radio__label--disabled"
+                bind:tap="onClickLabel"
+              >
+                单选框 2
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义形状
+      </wx-view>
+      <van-radio-group
+        data-key="radioShape"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio
+            customClass="demo-radio"
+          >
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--square van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--square"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <van-radio-group
+        data-key="radio3"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio
+            customClass="demo-radio"
+          >
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px;border-color:#07c160;background-color:#07c160"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义大小
+      </wx-view>
+      <van-radio-group
+        data-key="radioSize"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio
+            customClass="demo-radio"
+          >
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 24px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:24px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:24px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 24px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round"
+                  customClass="icon-class"
+                  style="font-size:24px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:24px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <van-radio-group
+        data-key="radio4"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <wx-image
+                  class="icon"
+                  mode="widthFix"
+                  slot="icon"
+                  src="https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png"
+                />
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      自定义图标
+      
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <wx-image
+                  class="icon"
+                  mode="widthFix"
+                  slot="icon"
+                  src="https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png"
+                />
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                
+      自定义图标
+      
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用文本点击
+      </wx-view>
+      <van-radio-group
+        data-key="radioLabel"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-radio
+            customClass="demo-radio"
+          >
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框 1
+              </wx-view>
+            </wx-view>
+          </van-radio>
+          <van-radio>
+            <wx-view
+              class="van-radio custom-class"
+            >
+              <wx-view
+                class="van-radio__icon-wrap"
+                style="font-size: 20px"
+                bind:tap="onChange"
+              >
+                <van-icon
+                  class="van-radio__icon van-radio__icon--round"
+                  customClass="icon-class"
+                  style="font-size:20px"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style=";line-height:20px;font-size:.8em;display:block"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="label-class van-radio__label van-radio__label--right"
+                bind:tap="onClickLabel"
+              >
+                单选框 2
+              </wx-view>
+            </wx-view>
+          </van-radio>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        与 Cell 组件一起使用
+      </wx-view>
+      <van-radio-group>
+        <wx-view
+          class="van-radio-group"
+        >
+          <van-cell-group>
+            <wx-view
+              class="custom-class van-cell-group van-hairline--top-bottom"
+            >
+              <van-cell
+                data-name="1"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    单选框 1
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-radio
+                    slot="right-icon"
+                  >
+                    <wx-view
+                      class="van-radio custom-class"
+                    >
+                      <wx-view
+                        class="van-radio__icon-wrap"
+                        style="font-size: 20px"
+                        bind:tap="onChange"
+                      >
+                        <van-icon
+                          class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class van-icon van-icon-success"
+                            style=";line-height:20px;font-size:.8em;display:block"
+                            bind:tap="onClick"
+                          />
+                        </van-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class van-radio__label van-radio__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </van-radio>
+                </wx-view>
+              </van-cell>
+              <van-cell
+                data-name="2"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    单选框 2
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-radio
+                    slot="right-icon"
+                  >
+                    <wx-view
+                      class="van-radio custom-class"
+                    >
+                      <wx-view
+                        class="van-radio__icon-wrap"
+                        style="font-size: 20px"
+                        bind:tap="onChange"
+                      >
+                        <van-icon
+                          class="van-radio__icon van-radio__icon--round"
+                          customClass="icon-class"
+                          style="font-size:20px"
+                        >
+                          <wx-view
+                            class="custom-class van-icon van-icon-success"
+                            style=";line-height:20px;font-size:.8em;display:block"
+                            bind:tap="onClick"
+                          />
+                        </van-icon>
+                      </wx-view>
+                      <wx-view
+                        class="label-class van-radio__label van-radio__label--right"
+                        bind:tap="onClickLabel"
+                      />
+                    </wx-view>
+                  </van-radio>
+                </wx-view>
+              </van-cell>
+            </wx-view>
+          </van-cell-group>
+        </wx-view>
+      </van-radio-group>
+    </wx-view>
+  </demo-block>
+</main>
+`;

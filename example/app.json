@@ -78,6 +78,7 @@
     "van-checkbox-demo": "./dist/checkbox/demo/index",
     "van-checkbox-group": "./dist/checkbox-group/index",
     "van-col": "./dist/col/index",
+    "van-col-demo": "./dist/col/demo/index",
     "van-count-down": "./dist/count-down/index",
     "van-dialog": "./dist/dialog/index",
     "van-divider": "./dist/divider/index",

@@ -95,6 +95,7 @@
     "van-image": "./dist/image/index",
     "van-image-demo": "./dist/image/demo/index",
     "van-loading": "./dist/loading/index",
+    "van-loading-demo": "./dist/loading/demo/index",
     "van-nav-bar": "./dist/nav-bar/index",
     "van-notice-bar": "./dist/notice-bar/index",
     "van-notify": "./dist/notify/index",

@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        加载类型
+      </wx-view>
+      <van-loading
+        customClass="demo-loading"
+      >
+        <wx-view
+          class="custom-class van-loading"
+        >
+          <wx-view
+            class="van-loading__spinner van-loading__spinner--circular"
+            style=""
+          />
+          <wx-view
+            class="van-loading__text"
+            style=""
+          />
+        </wx-view>
+      </van-loading>
+      <van-loading
+        customClass="demo-loading"
+      >
+        <wx-view
+          class="custom-class van-loading"
+        >
+          <wx-view
+            class="van-loading__spinner van-loading__spinner--spinner"
+            style=""
+          >
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+          </wx-view>
+          <wx-view
+            class="van-loading__text"
+            style=""
+          />
+        </wx-view>
+      </van-loading>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <van-loading
+        customClass="demo-loading"
+      >
+        <wx-view
+          class="custom-class van-loading"
+        >
+          <wx-view
+            class="van-loading__spinner van-loading__spinner--circular"
+            style="color:#1989fa"
+          />
+          <wx-view
+            class="van-loading__text"
+            style=""
+          />
+        </wx-view>
+      </van-loading>
+      <van-loading
+        customClass="demo-loading"
+      >
+        <wx-view
+          class="custom-class van-loading"
+        >
+          <wx-view
+            class="van-loading__spinner van-loading__spinner--spinner"
+            style="color:#1989fa"
+          >
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+            <wx-view
+              class="van-loading__dot"
+            />
+          </wx-view>
+          <wx-view
+            class="van-loading__text"
+            style=""
+          />
+        </wx-view>
+      </van-loading>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        加载文案
+      </wx-view>
+      <van-loading
+        customClass="demo-loading"
+      >
+        <wx-view
+          class="custom-class van-loading"
+        >
+          <wx-view
+            class="van-loading__spinner van-loading__spinner--circular"
+            style="width:24px;height:24px"
+          />
+          <wx-view
+            class="van-loading__text"
+            style=""
+          >
+            加载中...
+          </wx-view>
+        </wx-view>
+      </van-loading>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        垂直排列
+      </wx-view>
+      <van-loading
+        customClass="demo-loading"
+      >
+        <wx-view
+          class="custom-class van-loading van-loading--vertical"
+        >
+          <wx-view
+            class="van-loading__spinner van-loading__spinner--circular"
+            style="width:24px;height:24px"
+          />
+          <wx-view
+            class="van-loading__text"
+            style=""
+          >
+            加载中...
+          </wx-view>
+        </wx-view>
+      </van-loading>
+    </wx-view>
+  </demo-block>
+</main>
+`;

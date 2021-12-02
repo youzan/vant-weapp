@@ -1,0 +1,37 @@
+<demo-block title="基础用法">
+  <van-skeleton
+    title
+    row="3"
+    row-width="{{ ['100%', '100%', '80%'] }}"
+  />
+</demo-block>
+
+<demo-block title="显示头像">
+  <van-skeleton
+    title
+    avatar
+    row="3"
+  />
+</demo-block>
+
+<demo-block title="展示子组件">
+  <van-switch
+    checked="{{ show }}"
+    size="24px"
+    bind:change="onChange"
+  />
+  <van-skeleton
+    title
+    avatar
+    row="3"
+    loading="{{ !show }}"
+  >
+    <view class="demo-preview">
+      <image class="demo-preview-img" src="https://img.yzcdn.cn/vant/logo.png" />
+      <view class="demo-content">
+        <view class="demo-content-h3">关于 Vant Weapp</view>
+        <view class="domo-content-p">Vant Weapp 是移动端 Vue 组件库 Vant 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。</view>
+      </view>
+    </view>
+  </van-skeleton>
+</demo-block>

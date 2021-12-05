@@ -127,6 +127,7 @@
     "van-tab-demo": "./dist/tab/demo/index",
     "van-tabs": "./dist/tabs/index",
     "van-tabbar": "./dist/tabbar/index",
+    "van-tabbar-demo": "./dist/tabbar/demo/index",
     "van-tabbar-item": "./dist/tabbar-item/index",
     "van-tag": "./dist/tag/index",
     "van-toast": "./dist/toast/index",

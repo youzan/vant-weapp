@@ -118,6 +118,7 @@
     "van-sticky": "./dist/sticky/index",
     "van-sticky-demo": "./dist/sticky/demo/index",
     "van-submit-bar": "./dist/submit-bar/index",
+    "van-submit-bar-demo": "./dist/submit-bar/demo/index",
     "van-swipe-cell": "./dist/swipe-cell/index",
     "van-uploader": "./dist/uploader/index",
     "van-switch": "./dist/switch/index",

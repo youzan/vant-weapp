@@ -1,0 +1,357 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--primary"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--success"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--warning"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        圆角样式
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--primary van-tag--round"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--success van-tag--round"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger van-tag--round"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--warning van-tag--round"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        标记样式
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--primary van-tag--mark"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--success van-tag--mark"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger van-tag--mark"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--warning van-tag--mark"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        空心样式
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--primary van-tag--plain"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--success van-tag--plain"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger van-tag--plain"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--warning van-tag--plain"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--default"
+          style="background-color:#f2826a"
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--default"
+          style="background-color:#7232dd"
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--default van-tag--plain"
+          style="color:#7232dd"
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--default"
+          style="background-color:#ffe1e1;color:#ad0000"
+        >
+          标签
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        标签大小
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger van-tag--medium"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--danger van-tag--large"
+          style=""
+        >
+          标签
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        可关闭标签
+      </wx-view>
+      <van-tag
+        class="demo-margin-right"
+        id="primary"
+        bind:close="onClose"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--primary van-tag--medium"
+          style=""
+        >
+          标签
+          <van-icon
+            customClass="van-tag__close"
+            bind:click="onClose"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-cross"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-tag>
+      <van-tag
+        class="demo-margin-right"
+        id="success"
+        bind:close="onClose"
+      >
+        <wx-view
+          class="custom-class van-tag van-tag--success van-tag--medium"
+          style=""
+        >
+          标签
+          <van-icon
+            customClass="van-tag__close"
+            bind:click="onClose"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-cross"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-tag>
+    </wx-view>
+  </demo-block>
+</main>
+`;

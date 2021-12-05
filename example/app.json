@@ -116,6 +116,7 @@
     "van-steps": "./dist/steps/index",
     "van-steps-demo": "./dist/steps/demo/index",
     "van-sticky": "./dist/sticky/index",
+    "van-sticky-demo": "./dist/sticky/demo/index",
     "van-submit-bar": "./dist/submit-bar/index",
     "van-swipe-cell": "./dist/swipe-cell/index",
     "van-uploader": "./dist/uploader/index",

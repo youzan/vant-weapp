@@ -1,0 +1,254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-sticky>
+        <wx-view
+          class="custom-class van-sticky"
+          style="z-index:99"
+        >
+          <wx-view
+            class="van-sticky-wrap"
+            style="z-index:99"
+          >
+            <van-button>
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class van-button van-button--primary van-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="van-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="margin-left: 15px"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  
+      基础用法
+    
+                </wx-view>
+              </wx-button>
+            </van-button>
+          </wx-view>
+        </wx-view>
+      </van-sticky>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        吸顶距离
+      </wx-view>
+      <van-sticky>
+        <wx-view
+          class="custom-class van-sticky"
+          style="z-index:99"
+        >
+          <wx-view
+            class="van-sticky-wrap"
+            style="z-index:99"
+          >
+            <van-button>
+              <wx-button
+                appParameter=""
+                ariaLabel=""
+                businessId="{{0}}"
+                class="custom-class van-button van-button--info van-button--normal "
+                data-detail="{{null}}"
+                formType=""
+                hoverClass="van-button--active hover-class"
+                id=""
+                lang=""
+                openType=""
+                sendMessageImg=""
+                sendMessagePath=""
+                sendMessageTitle=""
+                sessionFrom=""
+                showMessageCard="{{false}}"
+                style="margin-left: 115px"
+                bind:contact="onContact"
+                bind:error="onError"
+                bind:getphonenumber="onGetPhoneNumber"
+                bind:getuserinfo="onGetUserInfo"
+                bind:launchapp="onLaunchApp"
+                bind:opensetting="onOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  
+      吸顶距离
+    
+                </wx-view>
+              </wx-button>
+            </van-button>
+          </wx-view>
+        </wx-view>
+      </van-sticky>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        指定容器
+      </wx-view>
+      <wx-view
+        id="container"
+        style="height: 150px; background-color: #fff;"
+      >
+        <van-sticky>
+          <wx-view
+            class="custom-class van-sticky"
+            style="z-index:99"
+          >
+            <wx-view
+              class="van-sticky-wrap"
+              style="z-index:99"
+            >
+              <van-button>
+                <wx-button
+                  appParameter=""
+                  ariaLabel=""
+                  businessId="{{0}}"
+                  class="custom-class van-button van-button--warning van-button--normal "
+                  data-detail="{{null}}"
+                  formType=""
+                  hoverClass="van-button--active hover-class"
+                  id=""
+                  lang=""
+                  openType=""
+                  sendMessageImg=""
+                  sendMessagePath=""
+                  sendMessageTitle=""
+                  sessionFrom=""
+                  showMessageCard="{{false}}"
+                  style="margin-left: 215px;"
+                  bind:contact="onContact"
+                  bind:error="onError"
+                  bind:getphonenumber="onGetPhoneNumber"
+                  bind:getuserinfo="onGetUserInfo"
+                  bind:launchapp="onLaunchApp"
+                  bind:opensetting="onOpenSetting"
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-button__text"
+                  >
+                    
+        指定容器
+      
+                  </wx-view>
+                </wx-button>
+              </van-button>
+            </wx-view>
+          </wx-view>
+        </van-sticky>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        嵌套在 scroll-view 内使用
+      </wx-view>
+      <wx-scroll-view
+        id="scroller"
+        scrollY="{{true}}"
+        style="height: 200px; background-color: #fff;"
+        bind:scroll="onScroll"
+      >
+        <wx-view
+          style="height: 400px; padding-top: 50px;"
+        >
+          <van-sticky>
+            <wx-view
+              class="custom-class van-sticky"
+              style="z-index:99"
+            >
+              <wx-view
+                class="van-sticky-wrap"
+                style="z-index:99"
+              >
+                <van-button>
+                  <wx-button
+                    appParameter=""
+                    ariaLabel=""
+                    businessId="{{0}}"
+                    class="custom-class van-button van-button--warning van-button--normal "
+                    data-detail="{{null}}"
+                    formType=""
+                    hoverClass="van-button--active hover-class"
+                    id=""
+                    lang=""
+                    openType=""
+                    sendMessageImg=""
+                    sendMessagePath=""
+                    sendMessageTitle=""
+                    sessionFrom=""
+                    showMessageCard="{{false}}"
+                    style=""
+                    bind:contact="onContact"
+                    bind:error="onError"
+                    bind:getphonenumber="onGetPhoneNumber"
+                    bind:getuserinfo="onGetUserInfo"
+                    bind:launchapp="onLaunchApp"
+                    bind:opensetting="onOpenSetting"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-button__text"
+                    >
+                      
+          嵌套在 scroll-view 内
+        
+                    </wx-view>
+                  </wx-button>
+                </van-button>
+              </wx-view>
+            </wx-view>
+          </van-sticky>
+        </wx-view>
+      </wx-scroll-view>
+    </wx-view>
+  </demo-block>
+</main>
+`;

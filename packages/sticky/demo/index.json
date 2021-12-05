@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-sticky": "../../sticky/index",
+    "van-button": "../../button/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

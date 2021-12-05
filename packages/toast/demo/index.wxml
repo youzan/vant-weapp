@@ -1,0 +1,20 @@
+<demo-block title="文字提示" padding>
+  <van-button type="primary" bind:tap="showToast" class="demo-margin-right">文字提示</van-button>
+  <van-button type="primary" bind:tap="showLongToast">长文字提示</van-button>
+</demo-block>
+
+<demo-block title="加载提示" padding>
+  <van-button type="primary" bind:tap="showLoadingToast" class="demo-margin-right">加载提示</van-button>
+  <van-button type="primary" bind:tap="showCustomLoadingToast">自定义加载图标</van-button>
+</demo-block>
+
+<demo-block title="成功/失败提示" padding>
+  <van-button type="info" bind:tap="showSuccessToast" class="demo-margin-right">成功提示</van-button>
+  <van-button type="danger" bind:tap="showFailToast">失败提示</van-button>
+</demo-block>
+
+<demo-block title="动态更新提示" padding>
+  <van-button type="primary" bind:tap="showCustomizedToast">动态更新提示</van-button>
+</demo-block>
+
+<van-toast id="van-toast" />

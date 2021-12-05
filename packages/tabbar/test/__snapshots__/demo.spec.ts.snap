@@ -1,0 +1,832 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-tabbar
+        customClass="tabbar-position"
+        data-key="active"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-hairline--top-bottom van-tabbar van-tabbar--fixed custom-class"
+          style="z-index: 1"
+        >
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item van-tabbar-item--active custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-home-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-search"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-friends-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-setting-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+        </wx-view>
+      </van-tabbar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        通过名称匹配
+      </wx-view>
+      <van-tabbar
+        customClass="tabbar-position"
+        data-key="active2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-hairline--top-bottom van-tabbar van-tabbar--fixed custom-class"
+          style="z-index: 1"
+        >
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item van-tabbar-item--active custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-home-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-search"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-friends-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-setting-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+        </wx-view>
+      </van-tabbar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        显示徽标
+      </wx-view>
+      <van-tabbar
+        customClass="tabbar-position"
+        data-key="active3"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-hairline--top-bottom van-tabbar van-tabbar--fixed custom-class"
+          style="z-index: 1"
+        >
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item van-tabbar-item--active custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-home-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-search"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                >
+                  <wx-view
+                    class="van-info van-info van-info--dot custom-class"
+                    style=""
+                  >
+                    
+                  </wx-view>
+                </van-info>
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-friends-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                >
+                  <wx-view
+                    class="van-info van-info custom-class"
+                    style=""
+                  >
+                    5
+                  </wx-view>
+                </van-info>
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-setting-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                >
+                  <wx-view
+                    class="van-info van-info custom-class"
+                    style=""
+                  >
+                    20
+                  </wx-view>
+                </van-info>
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+        </wx-view>
+      </van-tabbar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <van-tabbar
+        customClass="tabbar-position"
+        data-key="active4"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-hairline--top-bottom van-tabbar van-tabbar--fixed custom-class"
+          style="z-index: 1"
+        >
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item van-tabbar-item--active custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <wx-image
+                  mode="aspectFit"
+                  slot="icon"
+                  src="https://img.yzcdn.cn/vant/user-inactive.png"
+                  style="width: 30px; height: 18px;"
+                />
+                <van-info
+                  customClass="van-tabbar-item__info"
+                >
+                  <wx-view
+                    class="van-info van-info custom-class"
+                    style=""
+                  >
+                    3
+                  </wx-view>
+                </van-info>
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                
+      自定义
+    
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-search"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-setting-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+        </wx-view>
+      </van-tabbar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义颜色
+      </wx-view>
+      <van-tabbar
+        customClass="tabbar-position"
+        data-key="active5"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="van-hairline--top-bottom van-tabbar van-tabbar--fixed custom-class"
+          style="z-index: 1"
+        >
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item van-tabbar-item--active custom-class"
+              style="color: #07c160"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-home-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: #000"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-search"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: #000"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-friends-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: #000"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-setting-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+        </wx-view>
+      </van-tabbar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        切换标签事件
+      </wx-view>
+      <van-tabbar
+        customClass="tabbar-position"
+        data-key="active6"
+        bind:change="handleChange"
+      >
+        <wx-view
+          class="van-hairline--top-bottom van-tabbar van-tabbar--fixed custom-class"
+          style="z-index: 1"
+        >
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item van-tabbar-item--active custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-home-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签1
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-search"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签2
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-friends-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签3
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+          <van-tabbar-item>
+            <wx-view
+              class="van-tabbar-item custom-class"
+              style="color: "
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-tabbar-item__icon"
+              >
+                <van-icon
+                  customClass="van-tabbar-item__icon__inner"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-setting-o"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <van-info
+                  customClass="van-tabbar-item__info"
+                />
+              </wx-view>
+              <wx-view
+                class="van-tabbar-item__text"
+              >
+                标签4
+              </wx-view>
+            </wx-view>
+          </van-tabbar-item>
+        </wx-view>
+      </van-tabbar>
+    </wx-view>
+  </demo-block>
+</main>
+`;

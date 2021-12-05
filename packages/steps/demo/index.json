@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-steps": "../../steps/index",
+    "van-toast": "../../toast/index",
+    "van-button": "../../button/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

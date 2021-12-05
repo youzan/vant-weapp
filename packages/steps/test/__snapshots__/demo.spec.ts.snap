@@ -1,0 +1,682 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-steps
+        customClass="demo-margin-bottom"
+        bind:click-step="onClick"
+      >
+        <wx-view
+          class="custom-class van-steps van-steps--horizontal"
+        >
+          <wx-view
+            class="van-step__wrapper"
+          >
+            <wx-view
+              class="van-step van-step--horizontal van-step--finish van-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <wx-view
+                  class="van-step__circle"
+                  style="background-color: #07c160"
+                />
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #07c160"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--process van-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style="color: #07c160"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-checked"
+                    style="color:#07c160"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--inactive van-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <wx-view
+                  class="van-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--inactive van-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <wx-view
+                  class="van-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-steps>
+      <van-button
+        customClass="demo-margin-left"
+        bind:click="nextStep"
+      >
+        <wx-button
+          appParameter=""
+          ariaLabel=""
+          businessId="{{0}}"
+          class="custom-class van-button van-button--default van-button--normal "
+          data-detail="{{null}}"
+          formType=""
+          hoverClass="van-button--active hover-class"
+          id=""
+          lang=""
+          openType=""
+          sendMessageImg=""
+          sendMessagePath=""
+          sendMessageTitle=""
+          sessionFrom=""
+          showMessageCard="{{false}}"
+          style=""
+          bind:contact="onContact"
+          bind:error="onError"
+          bind:getphonenumber="onGetPhoneNumber"
+          bind:getuserinfo="onGetUserInfo"
+          bind:launchapp="onLaunchApp"
+          bind:opensetting="onOpenSetting"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-button__text"
+          >
+            下一步
+          </wx-view>
+        </wx-button>
+      </van-button>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义样式
+      </wx-view>
+      <van-steps>
+        <wx-view
+          class="custom-class van-steps van-steps--horizontal"
+        >
+          <wx-view
+            class="van-step__wrapper"
+          >
+            <wx-view
+              class="van-step van-step--horizontal van-step--finish van-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-arrow"
+                    style="color:#38f"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #38f"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--process van-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style="color: #38f"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-success"
+                    style="color:#38f"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--inactive van-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-arrow"
+                    style="color:#969799"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--inactive van-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-arrow"
+                    style="color:#969799"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-steps>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <van-steps>
+        <wx-view
+          class="custom-class van-steps van-steps--horizontal"
+        >
+          <wx-view
+            class="van-step__wrapper"
+          >
+            <wx-view
+              class="van-step van-step--horizontal van-step--finish van-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-location-o"
+                    style="color:#07c160"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #07c160"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--process van-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style="color: #07c160"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-arrow-left"
+                    style="color:#07c160"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--inactive van-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-star-o"
+                    style="color:#969799"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--horizontal van-step--inactive van-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-phone-o"
+                    style="color:#969799"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-steps>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        竖向步骤条
+      </wx-view>
+      <van-steps>
+        <wx-view
+          class="custom-class van-steps van-steps--vertical"
+        >
+          <wx-view
+            class="van-step__wrapper"
+          >
+            <wx-view
+              class="van-step van-step--vertical van-step--finish van-hairline"
+              data-index="{{0}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤一
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <wx-view
+                  class="van-step__circle"
+                  style="background-color: #ee0a24"
+                />
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #ee0a24"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--vertical van-step--process van-hairline"
+              data-index="{{1}}"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style="color: #ee0a24"
+              >
+                <wx-view>
+                  步骤二
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <van-icon
+                  customClass="van-step__icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-checked"
+                    style="color:#ee0a24"
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--vertical van-step--inactive van-hairline"
+              data-index="{{2}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤三
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <wx-view
+                  class="van-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+              <wx-view
+                class="van-step__line"
+                style="background-color: #969799"
+              />
+            </wx-view>
+            <wx-view
+              class="van-step van-step--vertical van-step--inactive van-hairline"
+              data-index="{{3}}"
+              style="color: #969799"
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-step__title"
+                style=""
+              >
+                <wx-view>
+                  步骤四
+                </wx-view>
+                <wx-view
+                  class="desc-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-step__circle-container"
+              >
+                <wx-view
+                  class="van-step__circle"
+                  style="background-color: #969799"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-steps>
+    </wx-view>
+  </demo-block>
+  <van-toast
+    id="van-toast"
+  >
+    <van-transition
+      customClass="van-toast__container"
+    />
+  </van-toast>
+</main>
+`;

@@ -1,0 +1,38 @@
+<demo-block title="基础用法">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    bind:click-step="onClick"
+    custom-class="demo-margin-bottom"
+  />
+
+  <van-button custom-class="demo-margin-left" bind:click="nextStep">下一步</van-button>
+</demo-block>
+
+<demo-block title="自定义样式">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    active-icon="success"
+    active-color="#38f"
+    inactive-icon="arrow"
+  />
+</demo-block>
+
+<demo-block title="自定义图标">
+  <van-steps
+    steps="{{ customIconSteps }}"
+    active="{{ active }}"
+  />
+</demo-block>
+
+<demo-block title="竖向步骤条">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    direction="vertical"
+    active-color="#ee0a24"
+  />
+</demo-block>
+
+<van-toast id="van-toast" />

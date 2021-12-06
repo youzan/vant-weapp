@@ -1,0 +1,56 @@
+<demo-block title="单选模式">
+  <van-tree-select
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  ></van-tree-select>
+</demo-block>
+
+<demo-block title="多选模式">
+  <van-tree-select
+    max="2"
+    items="{{ items }}"
+    main-active-index="{{ mainActiveIndexMulti }}"
+    active-id="{{ activeIdMulti }}"
+    bind:click-item="onClickItemMulti"
+    bind:click-nav="onClickNavMulti"
+  ></van-tree-select>
+</demo-block>
+
+<demo-block title="自定义内容">
+  <van-tree-select
+    items="{{ [{ text: '分组 1' }, { text: '分组 2' }] }}"
+    height="55vw"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  >
+    <van-image
+      wx:if="{{ mainActiveIndex === 0 }}"
+      src="https://img.yzcdn.cn/vant/apple-1.jpg"
+      width="100%"
+      height="100%"
+      slot="content"
+    />
+    <van-image
+      wx:elif="{{ mainActiveIndex === 1 }}"
+      src="https://img.yzcdn.cn/vant/apple-2.jpg"
+      width="100%"
+      height="100%"
+      slot="content"
+    />
+  </van-tree-select>
+</demo-block>
+
+<demo-block title="徽标提示">
+  <van-tree-select
+    items="{{ badgeItems }}"
+    main-active-index="{{ mainActiveIndex }}"
+    active-id="{{ activeId }}"
+    bind:click-item="onClickItem"
+    bind:click-nav="onClickNav"
+  ></van-tree-select>
+</demo-block>

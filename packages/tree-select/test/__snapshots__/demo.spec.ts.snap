@@ -1,0 +1,593 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        单选模式
+      </wx-view>
+      <van-tree-select
+        bind:click-item="onClickItem"
+        bind:click-nav="onClickNav"
+      >
+        <wx-view
+          class="van-tree-select"
+          style="height: 300px"
+        >
+          <wx-scroll-view
+            class="van-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <van-sidebar
+              customClass="van-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        浙江
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        江苏
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--disabled  disabled-class custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        福建
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="van-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 1,
+                  "text": "杭州",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      杭州
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 2,
+                  "text": "温州",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      温州
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item van-tree-select__item--disabled  content-disabled-class"
+              data-item="{{
+                Object {
+                  "disabled": true,
+                  "id": 3,
+                  "text": "宁波",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      宁波
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 4,
+                  "text": "义乌",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      义乌
+      
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </van-tree-select>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        多选模式
+      </wx-view>
+      <van-tree-select
+        bind:click-item="onClickItemMulti"
+        bind:click-nav="onClickNavMulti"
+      >
+        <wx-view
+          class="van-tree-select"
+          style="height: 300px"
+        >
+          <wx-scroll-view
+            class="van-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <van-sidebar
+              customClass="van-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        浙江
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        江苏
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--disabled  disabled-class custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        福建
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="van-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 1,
+                  "text": "杭州",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      杭州
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 2,
+                  "text": "温州",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      温州
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item van-tree-select__item--disabled  content-disabled-class"
+              data-item="{{
+                Object {
+                  "disabled": true,
+                  "id": 3,
+                  "text": "宁波",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      宁波
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 4,
+                  "text": "义乌",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      义乌
+      
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </van-tree-select>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义内容
+      </wx-view>
+      <van-tree-select
+        bind:click-item="onClickItem"
+        bind:click-nav="onClickNav"
+      >
+        <wx-view
+          class="van-tree-select"
+          style="height: 55vw"
+        >
+          <wx-scroll-view
+            class="van-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <van-sidebar
+              customClass="van-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        分组 1
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info />
+                      <wx-view>
+                        分组 2
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="van-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <van-image
+              slot="content"
+            >
+              <wx-view
+                class="custom-class van-image"
+                style="width:100%;height:100%"
+                bind:tap="onClick"
+              >
+                <wx-image
+                  class="image-class van-image__img"
+                  lazyLoad="{{false}}"
+                  mode="scaleToFill"
+                  showMenuByLongpress="{{false}}"
+                  src="https://img.yzcdn.cn/vant/apple-1.jpg"
+                  bind:error="onError"
+                  bind:load="onLoad"
+                />
+                <wx-view
+                  class="loading-class van-image__loading"
+                >
+                  <van-icon
+                    customClass="van-image__loading-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-photo"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </wx-view>
+            </van-image>
+          </wx-scroll-view>
+        </wx-view>
+      </van-tree-select>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        徽标提示
+      </wx-view>
+      <van-tree-select
+        bind:click-item="onClickItem"
+        bind:click-nav="onClickNav"
+      >
+        <wx-view
+          class="van-tree-select"
+          style="height: 300px"
+        >
+          <wx-scroll-view
+            class="van-tree-select__nav"
+            scrollY="{{true}}"
+          >
+            <van-sidebar
+              customClass="van-tree-select__nav__inner"
+              bind:change="onClickNav"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info>
+                        <wx-view
+                          class="van-info van-info van-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </van-info>
+                      <wx-view>
+                        浙江
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item
+                  activeClass="main-active-class"
+                  customClass="main-item-class"
+                  disabledClass="main-disabled-class"
+                >
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info>
+                        <wx-view
+                          class="van-info van-info custom-class"
+                          style=""
+                        >
+                          5
+                        </wx-view>
+                      </van-info>
+                      <wx-view>
+                        江苏
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-scroll-view>
+          <wx-scroll-view
+            class="van-tree-select__content"
+            scrollY="{{true}}"
+          >
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 1,
+                  "text": "杭州",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      杭州
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 2,
+                  "text": "温州",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      温州
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item van-tree-select__item--disabled  content-disabled-class"
+              data-item="{{
+                Object {
+                  "disabled": true,
+                  "id": 3,
+                  "text": "宁波",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      宁波
+      
+            </wx-view>
+            <wx-view
+              class="van-ellipsis content-item-class van-tree-select__item  "
+              data-item="{{
+                Object {
+                  "id": 4,
+                  "text": "义乌",
+                }
+              }}"
+              bind:tap="onSelectItem"
+            >
+              
+      义乌
+      
+            </wx-view>
+          </wx-scroll-view>
+        </wx-view>
+      </van-tree-select>
+    </wx-view>
+  </demo-block>
+</main>
+`;

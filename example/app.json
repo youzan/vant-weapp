@@ -88,6 +88,7 @@
     "van-empty-demo": "./dist/empty/demo/index",
     "van-field": "./dist/field/index",
     "van-goods-action": "./dist/goods-action/index",
+    "van-goods-action-demo": "./dist/goods-action/demo/index",
     "van-goods-action-icon": "./dist/goods-action-icon/index",
     "van-goods-action-button": "./dist/goods-action-button/index",
     "van-icon": "./dist/icon/index",

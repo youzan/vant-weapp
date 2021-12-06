@@ -154,6 +154,7 @@
     "van-skeleton": "./dist/skeleton/index",
     "van-skeleton-demo": "./dist/skeleton/demo/index",
     "van-calendar": "./dist/calendar/index",
+    "van-calendar-demo": "./dist/calendar/demo/index",
     "van-share-sheet": "./dist/share-sheet/index",
     "van-config-provider": "./dist/config-provider/index",
     "van-config-provider-demo": "./dist/config-provider/demo/index"

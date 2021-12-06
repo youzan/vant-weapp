@@ -1,0 +1,1730 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-cell
+        data-id="selectSingle"
+        data-type="single"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            选择单个日期
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="selectMultiple"
+        data-type="multiple"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            选择多个日期
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="selectRange"
+        data-type="range"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            选择日期区间
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        快捷选择
+      </wx-view>
+      <van-cell
+        data-id="quickSelect1"
+        data-type="single"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            选择单个日期
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="quickSelect2"
+        data-type="range"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            选择日期区间
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义日历
+      </wx-view>
+      <van-cell
+        data-id="customColor"
+        data-type="range"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            自定义颜色
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="customRange"
+        data-type="single"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            自定义日期范围
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="customConfirm"
+        data-type="range"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            自定义按钮文字
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="customDayText"
+        data-type="range"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            自定义日期文案
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="customPosition"
+        data-type="single"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            自定义弹出位置
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        data-id="maxRange"
+        data-type="range"
+        bind:click="show"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            日期区间最大范围
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        平铺展示
+      </wx-view>
+      <van-calendar
+        class="tiled-calendar"
+      >
+        <wx-view
+          class="van-calendar"
+        >
+          <header
+            bind:click-subtitle="onClickSubtitle"
+          >
+            <wx-view
+              class="van-calendar__header"
+            >
+              <wx-view
+                class="van-calendar__header-title"
+              />
+              <wx-view
+                class="van-calendar__header-title"
+              >
+                日历
+              </wx-view>
+              <wx-view
+                class="van-calendar__header-subtitle"
+                bind:tap="onClickSubtitle"
+              >
+                
+    
+  
+              </wx-view>
+              <wx-view
+                class="van-calendar__weekdays"
+              >
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      日
+    
+                </wx-view>
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      一
+    
+                </wx-view>
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      二
+    
+                </wx-view>
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      三
+    
+                </wx-view>
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      四
+    
+                </wx-view>
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      五
+    
+                </wx-view>
+                <wx-view
+                  class="van-calendar__weekday"
+                >
+                  
+      六
+    
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </header>
+          <wx-scroll-view
+            class="van-calendar__body"
+            scrollIntoView=""
+            scrollY="{{true}}"
+          >
+            <month
+              class="month"
+              data-date="{{1325347200000}}"
+              id="month0"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="van-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="van-calendar__days"
+                >
+                  <wx-view
+                    class="van-calendar__month-mark"
+                  >
+                    
+      1
+    
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{0}}"
+                    style="margin-left:0%"
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        1
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{1}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        2
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{2}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        3
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{3}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        4
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{4}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        5
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{5}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        6
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{6}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        7
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{7}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        8
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{8}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        9
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{9}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        10
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{10}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        11
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{11}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        12
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{12}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        13
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{13}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        14
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{14}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        15
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{15}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        16
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{16}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        17
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{17}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        18
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{18}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        19
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{19}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        20
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{20}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        21
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{21}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        22
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{22}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        23
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{23}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        24
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{24}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        25
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{25}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        26
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{26}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        27
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{27}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        28
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{28}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        29
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{29}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        30
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{30}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        31
+        
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+            <month
+              class="month"
+              data-date="{{1328025600000}}"
+              id="month1"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="van-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="van-calendar__month-title"
+                >
+                  
+    2012年2月
+  
+                </wx-view>
+                <wx-view
+                  class="van-calendar__days"
+                >
+                  <wx-view
+                    class="van-calendar__month-mark"
+                  >
+                    
+      2
+    
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{0}}"
+                    style="margin-left:42.857142857142854%"
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        1
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{1}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        2
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{2}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        3
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{3}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        4
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{4}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        5
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{5}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        6
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{6}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        7
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{7}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        8
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{8}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        9
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{9}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        10
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{10}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        11
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{11}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        12
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{12}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        13
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{13}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        14
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{14}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        15
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{15}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        16
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{16}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        17
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{17}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        18
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{18}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        19
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{19}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        20
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{20}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        21
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{21}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        22
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{22}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        23
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{23}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        24
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{24}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        25
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{25}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        26
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{26}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        27
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{27}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        28
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{28}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        29
+        
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+            <month
+              class="month"
+              data-date="{{1330531200000}}"
+              id="month2"
+              bind:click="onClickDay"
+            >
+              <wx-view
+                class="van-calendar__month"
+                style=""
+              >
+                <wx-view
+                  class="van-calendar__month-title"
+                >
+                  
+    2012年3月
+  
+                </wx-view>
+                <wx-view
+                  class="van-calendar__days"
+                >
+                  <wx-view
+                    class="van-calendar__month-mark"
+                  >
+                    
+      3
+    
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{0}}"
+                    style="margin-left:57.142857142857146%"
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        1
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{1}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        2
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{2}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        3
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{3}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        4
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{4}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        5
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{5}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        6
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{6}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        7
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{7}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        8
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{8}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        9
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{9}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        10
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{10}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        11
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{11}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        12
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{12}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        13
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{13}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        14
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{14}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        15
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{15}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        16
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{16}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        17
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{17}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        18
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day "
+                    data-index="{{18}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        19
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--selected "
+                    data-index="{{19}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-calendar__selected-day"
+                      style="background: "
+                    >
+                      
+        20
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{20}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        21
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{21}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        22
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{22}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        23
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{23}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        24
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{24}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        25
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{25}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        26
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{26}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        27
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{27}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        28
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{28}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        29
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{29}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        30
+        
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-calendar__day van-calendar__day--disabled "
+                    data-index="{{30}}"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view>
+                      
+        31
+        
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </month>
+          </wx-scroll-view>
+          <wx-view
+            class="van-calendar__footer van-calendar__footer--safeAreaInsetBottom"
+          />
+          <wx-view
+            class="van-calendar__footer van-calendar__footer--safeAreaInsetBottom"
+          />
+        </wx-view>
+        <van-toast
+          id="van-toast"
+        >
+          <van-transition
+            customClass="van-toast__container"
+          />
+        </van-toast>
+      </van-calendar>
+    </wx-view>
+  </demo-block>
+  <van-calendar
+    bind:close="onClose"
+    bind:closed="onClosed"
+    bind:confirm="onConfirm"
+    bind:open="onOpen"
+    bind:opened="onOpened"
+    bind:select="onSelect"
+    bind:unselect="onUnselect"
+  >
+    <van-popup
+      closeIconClass="van-calendar__close-icon"
+      customClass="van-calendar__popup--bottom"
+      bind:after-enter="onOpened"
+      bind:after-leave="onClosed"
+      bind:close="onClose"
+      bind:enter="onOpen"
+    >
+      <van-overlay
+        bind:click="onClickOverlay"
+      >
+        <van-transition
+          customClass="van-overlay"
+          bind:tap="onClick"
+          catch:touchmove="noop"
+        />
+      </van-overlay>
+    </van-popup>
+    <van-toast
+      id="van-toast"
+    >
+      <van-transition
+        customClass="van-toast__container"
+      />
+    </van-toast>
+  </van-calendar>
+</main>
+`;

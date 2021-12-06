@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-cell": "../../cell/index",
+    "van-toast": "../../toast/index",
+    "van-share-sheet": "../../share-sheet/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

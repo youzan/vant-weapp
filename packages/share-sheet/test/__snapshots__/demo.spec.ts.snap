@@ -1,0 +1,281 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <van-cell
+          data-type="basic"
+          bind:click="onShowShareSheet"
+        >
+          <wx-view
+            class="custom-class van-cell van-cell--clickable"
+            hoverClass="van-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-cell__title title-class"
+              style=""
+            >
+              显示分享面板
+            </wx-view>
+            <wx-view
+              class="van-cell__value value-class"
+            />
+            <van-icon
+              class="van-cell__right-icon-wrap right-icon-class"
+              customClass="van-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-arrow"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </van-cell>
+        <van-share-sheet
+          bind:close="onClose"
+          bind:select="onSelect"
+        >
+          <van-popup
+            class="van-share-sheet"
+            bind:click-overlay="onClickOverlay"
+            bind:close="onClose"
+          >
+            <van-overlay
+              bind:click="onClickOverlay"
+            >
+              <van-transition
+                customClass="van-overlay"
+                bind:tap="onClick"
+                catch:touchmove="noop"
+              />
+            </van-overlay>
+          </van-popup>
+        </van-share-sheet>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示多行选项
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <van-cell
+          data-type="multiLine"
+          bind:click="onShowShareSheet"
+        >
+          <wx-view
+            class="custom-class van-cell van-cell--clickable"
+            hoverClass="van-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-cell__title title-class"
+              style=""
+            >
+              显示分享面板
+            </wx-view>
+            <wx-view
+              class="van-cell__value value-class"
+            />
+            <van-icon
+              class="van-cell__right-icon-wrap right-icon-class"
+              customClass="van-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-arrow"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </van-cell>
+        <van-share-sheet
+          bind:close="onClose"
+          bind:select="onSelect"
+        >
+          <van-popup
+            class="van-share-sheet"
+            bind:click-overlay="onClickOverlay"
+            bind:close="onClose"
+          >
+            <van-overlay
+              bind:click="onClickOverlay"
+            >
+              <van-transition
+                customClass="van-overlay"
+                bind:tap="onClick"
+                catch:touchmove="noop"
+              />
+            </van-overlay>
+          </van-popup>
+        </van-share-sheet>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义图标
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <van-cell
+          data-type="customIcon"
+          bind:click="onShowShareSheet"
+        >
+          <wx-view
+            class="custom-class van-cell van-cell--clickable"
+            hoverClass="van-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-cell__title title-class"
+              style=""
+            >
+              显示分享面板
+            </wx-view>
+            <wx-view
+              class="van-cell__value value-class"
+            />
+            <van-icon
+              class="van-cell__right-icon-wrap right-icon-class"
+              customClass="van-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-arrow"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </van-cell>
+        <van-share-sheet
+          bind:close="onClose"
+          bind:select="onSelect"
+        >
+          <van-popup
+            class="van-share-sheet"
+            bind:click-overlay="onClickOverlay"
+            bind:close="onClose"
+          >
+            <van-overlay
+              bind:click="onClickOverlay"
+            >
+              <van-transition
+                customClass="van-overlay"
+                bind:tap="onClick"
+                catch:touchmove="noop"
+              />
+            </van-overlay>
+          </van-popup>
+        </van-share-sheet>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        展示描述信息
+      </wx-view>
+      <wx-view
+        class="demo-block__card"
+      >
+        <van-cell
+          data-type="withDesc"
+          bind:click="onShowShareSheet"
+        >
+          <wx-view
+            class="custom-class van-cell van-cell--clickable"
+            hoverClass="van-cell--hover hover-class"
+            hoverStayTime="70"
+            style=""
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-cell__title title-class"
+              style=""
+            >
+              显示分享面板
+            </wx-view>
+            <wx-view
+              class="van-cell__value value-class"
+            />
+            <van-icon
+              class="van-cell__right-icon-wrap right-icon-class"
+              customClass="van-cell__right-icon"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-arrow"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-view>
+        </van-cell>
+        <van-share-sheet
+          bind:close="onClose"
+          bind:select="onSelect"
+        >
+          <van-popup
+            class="van-share-sheet"
+            bind:click-overlay="onClickOverlay"
+            bind:close="onClose"
+          >
+            <van-overlay
+              bind:click="onClickOverlay"
+            >
+              <van-transition
+                customClass="van-overlay"
+                bind:tap="onClick"
+                catch:touchmove="noop"
+              />
+            </van-overlay>
+          </van-popup>
+        </van-share-sheet>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+  <van-toast
+    id="van-toast"
+  >
+    <van-transition
+      customClass="van-toast__container"
+    />
+  </van-toast>
+</main>
+`;

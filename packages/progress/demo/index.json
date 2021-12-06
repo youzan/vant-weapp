@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-progress": "../../progress/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

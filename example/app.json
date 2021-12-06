@@ -105,6 +105,7 @@
     "van-popup": "./dist/popup/index",
     "van-popup-demo": "./dist/popup/demo/index",
     "van-progress": "./dist/progress/index",
+    "van-progress-demo": "./dist/progress/demo/index",
     "van-radio": "./dist/radio/index",
     "van-radio-demo": "./dist/radio/demo/index",
     "van-radio-group": "./dist/radio-group/index",

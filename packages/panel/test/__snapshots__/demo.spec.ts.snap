@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-panel>
+        <wx-view
+          class="van-panel van-hairline--top-bottom custom-class"
+        >
+          <van-cell
+            customClass="header-class"
+            valueClass="van-panel__header-value"
+          >
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                标题
+                <wx-view
+                  class="van-cell__label label-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                状态
+              </wx-view>
+            </wx-view>
+          </van-cell>
+          <wx-view
+            class="van-panel__content"
+          >
+            <wx-view
+              class="content"
+            >
+              内容
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-panel__footer van-hairline--top footer-class"
+          />
+        </wx-view>
+      </van-panel>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        高级用法
+      </wx-view>
+      <van-panel
+        useFooterSlot="{{true}}"
+      >
+        <wx-view
+          class="van-panel van-hairline--top-bottom custom-class"
+        >
+          <van-cell
+            customClass="header-class"
+            valueClass="van-panel__header-value"
+          >
+            <wx-view
+              class="custom-class van-cell"
+              hoverClass="van-cell--hover hover-class"
+              hoverStayTime="70"
+              style=""
+              bind:tap="onClick"
+            >
+              <wx-view
+                class="van-cell__title title-class"
+                style=""
+              >
+                标题
+                <wx-view
+                  class="van-cell__label label-class"
+                >
+                  描述信息
+                </wx-view>
+              </wx-view>
+              <wx-view
+                class="van-cell__value value-class"
+              >
+                状态
+              </wx-view>
+            </wx-view>
+          </van-cell>
+          <wx-view
+            class="van-panel__content"
+          >
+            <wx-view
+              class="content"
+            >
+              内容
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-panel__footer van-hairline--top footer-class"
+          >
+            <wx-view
+              class="footer"
+              slot="footer"
+            >
+              <van-button
+                class="demo-margin-right"
+              >
+                <wx-button
+                  appParameter=""
+                  ariaLabel=""
+                  businessId="{{0}}"
+                  class="custom-class van-button van-button--default van-button--small "
+                  data-detail="{{null}}"
+                  formType=""
+                  hoverClass="van-button--active hover-class"
+                  id=""
+                  lang=""
+                  openType=""
+                  sendMessageImg=""
+                  sendMessagePath=""
+                  sendMessageTitle=""
+                  sessionFrom=""
+                  showMessageCard="{{false}}"
+                  style=""
+                  bind:contact="onContact"
+                  bind:error="onError"
+                  bind:getphonenumber="onGetPhoneNumber"
+                  bind:getuserinfo="onGetUserInfo"
+                  bind:launchapp="onLaunchApp"
+                  bind:opensetting="onOpenSetting"
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-button__text"
+                  >
+                    按钮
+                  </wx-view>
+                </wx-button>
+              </van-button>
+              <van-button>
+                <wx-button
+                  appParameter=""
+                  ariaLabel=""
+                  businessId="{{0}}"
+                  class="custom-class van-button van-button--danger van-button--small "
+                  data-detail="{{null}}"
+                  formType=""
+                  hoverClass="van-button--active hover-class"
+                  id=""
+                  lang=""
+                  openType=""
+                  sendMessageImg=""
+                  sendMessagePath=""
+                  sendMessageTitle=""
+                  sessionFrom=""
+                  showMessageCard="{{false}}"
+                  style=""
+                  bind:contact="onContact"
+                  bind:error="onError"
+                  bind:getphonenumber="onGetPhoneNumber"
+                  bind:getuserinfo="onGetUserInfo"
+                  bind:launchapp="onLaunchApp"
+                  bind:opensetting="onOpenSetting"
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-button__text"
+                  >
+                    按钮
+                  </wx-view>
+                </wx-button>
+              </van-button>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-panel>
+    </wx-view>
+  </demo-block>
+</main>
+`;

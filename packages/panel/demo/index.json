@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-panel": "../../panel/index",
+    "van-button": "../../button/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

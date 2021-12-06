@@ -103,6 +103,7 @@
     "van-panel": "./dist/panel/index",
     "van-panel-demo": "./dist/panel/demo/index",
     "van-popup": "./dist/popup/index",
+    "van-popup-demo": "./dist/popup/demo/index",
     "van-progress": "./dist/progress/index",
     "van-radio": "./dist/radio/index",
     "van-radio-demo": "./dist/radio/demo/index",

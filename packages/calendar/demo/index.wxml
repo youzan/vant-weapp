@@ -1,0 +1,142 @@
+<wxs src="./index.wxs" module="computed"></wxs>
+
+<demo-block title="基础用法">
+  <van-cell
+    is-link
+    title="选择单个日期"
+    data-type="single"
+    data-id="selectSingle"
+    value="{{ computed.formatFullDate(date.selectSingle) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="选择多个日期"
+    data-type="multiple"
+    data-id="selectMultiple"
+    value="{{ computed.formatMultiple(date.selectMultiple) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="选择日期区间"
+    data-type="range"
+    data-id="selectRange"
+    value="{{ computed.formatRange(date.selectRange) }}"
+    bind:click="show"
+  />
+</demo-block>
+
+<demo-block title="快捷选择">
+  <van-cell
+    is-link
+    title="选择单个日期"
+    data-type="single"
+    data-id="quickSelect1"
+    value="{{ computed.formatFullDate(date.quickSelect1) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="选择日期区间"
+    data-type="range"
+    data-id="quickSelect2"
+    value="{{ computed.formatRange(date.quickSelect2) }}"
+    bind:click="show"
+  />
+</demo-block>
+
+<demo-block title="自定义日历">
+  <van-cell
+    is-link
+    title="自定义颜色"
+    data-type="range"
+    data-id="customColor"
+    value="{{ computed.formatRange(date.customColor) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="自定义日期范围"
+    data-type="single"
+    data-id="customRange"
+    value="{{ computed.formatFullDate(date.customRange) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="自定义按钮文字"
+    data-type="range"
+    data-id="customConfirm"
+    value="{{ computed.formatRange(date.customConfirm) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="自定义日期文案"
+    data-type="range"
+    data-id="customDayText"
+    value="{{ computed.formatRange(date.customDayText) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="自定义弹出位置"
+    data-type="single"
+    data-id="customPosition"
+    value="{{ computed.formatFullDate(date.customPosition) }}"
+    bind:click="show"
+  />
+
+  <van-cell
+    is-link
+    title="日期区间最大范围"
+    data-type="range"
+    data-id="maxRange"
+    value="{{ computed.formatRange(date.maxRange) }}"
+    bind:click="show"
+  />
+</demo-block>
+
+<demo-block title="平铺展示">
+  <van-calendar
+    title="日历"
+    poppable="{{ false }}"
+    show-confirm="{{ false }}"
+    min-date="{{ tiledMinDate }}"
+    max-date="{{ tiledMaxDate }}"
+    first-day-of-week="{{ firstDayOfWeek }}"
+    class="tiled-calendar"
+  />
+</demo-block>
+
+<van-calendar
+  show="{{ showCalendar }}"
+  type="{{ type }}"
+  color="{{ color }}"
+  round="{{ round }}"
+  position="{{ position }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  max-range="{{ maxRange }}"
+  formatter="{{ formatter }}"
+  show-confirm="{{ showConfirm }}"
+  confirm-text="{{ confirmText }}"
+  confirm-disabled-text="{{ confirmDisabledText }}"
+  first-day-of-week="{{ firstDayOfWeek }}"
+  bind:confirm="onConfirm"
+  bind:select="onSelect"
+  bind:unselect="onUnselect"
+  bind:open="onOpen"
+  bind:opened="onOpened"
+  bind:close="onClose"
+  bind:closed="onClosed"
+>
+</van-calendar>

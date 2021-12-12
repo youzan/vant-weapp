@@ -1,0 +1,48 @@
+<demo-block title="基础用法">
+  <van-count-down time="{{ time }}" />
+</demo-block>
+
+<demo-block title="自定义格式">
+  <van-count-down
+    time="{{ time }}"
+    format="DD 天 HH 时 mm 分 ss 秒"
+  />
+</demo-block>
+
+<demo-block title="毫秒级渲染">
+  <van-count-down
+    millisecond
+    time="{{ time }}"
+    format="HH:mm:ss:SSS"
+  />
+</demo-block>
+
+<demo-block title="自定义样式">
+  <van-count-down
+    use-slot
+    time="{{ time }}"
+    bind:change="onChange"
+  >
+    <text class="item">{{ timeData.hours }}</text>
+    <text class="item">{{ timeData.minutes }}</text>
+    <text class="item">{{ timeData.seconds }}</text>
+  </van-count-down>
+</demo-block>
+
+<demo-block title="手动控制">
+  <van-count-down
+    class="control-count-down"
+    millisecond
+    time="{{ 3000 }}"
+    auto-start="{{ false }}"
+    format="ss:SSS"
+    bind:finish="finished"
+  />
+  <van-grid clickable column-num="3">
+    <van-grid-item text="开始" icon="play-circle-o" bindclick="start" />
+    <van-grid-item text="暂停" icon="pause-circle-o" bindclick="pause" />
+    <van-grid-item text="重置" icon="replay" bind:click="reset" />
+  </van-grid>
+</demo-block>
+
+<van-toast id="van-toast" />

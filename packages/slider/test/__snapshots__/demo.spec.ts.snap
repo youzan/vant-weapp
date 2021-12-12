@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="van-slider__button-wrapper"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        双滑块
+      </wx-view>
+      <van-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 40%;
+          left: 20%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="van-slider__button-wrapper-left"
+              data-index="{{0}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+            <wx-view
+              class="van-slider__button-wrapper-right"
+              data-index="{{1}}"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        指定选择范围
+      </wx-view>
+      <van-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="van-slider__button-wrapper"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用
+      </wx-view>
+      <van-slider
+        customClass="slider"
+      >
+        <wx-view
+          class="custom-class van-slider van-slider--disabled"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="van-slider__button-wrapper"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        指定步长
+      </wx-view>
+      <van-slider
+        customClass="slider"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; "
+          >
+            <wx-view
+              class="van-slider__button-wrapper"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义样式
+      </wx-view>
+      <van-slider
+        customClass="slider"
+      >
+        <wx-view
+          class="custom-class van-slider"
+          style="
+          background: ;
+          height: 4px;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; background-color:#ee0a24"
+          >
+            <wx-view
+              class="van-slider__button-wrapper"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="van-slider__button"
+              />
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义按钮
+      </wx-view>
+      <van-slider
+        customClass="slider"
+        bind:drag="onDrag"
+      >
+        <wx-view
+          class="custom-class van-slider"
+          style="
+          background: ;
+          height: ;
+        "
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-slider__bar"
+            style="
+          width: 50%;
+          left: 0%;
+          top: 0;
+          
+        ; background-color:#ee0a24"
+          >
+            <wx-view
+              class="van-slider__button-wrapper"
+              bind:touchcancel="onTouchEnd"
+              bind:touchend="onTouchEnd"
+              catch:touchmove="onTouchMove"
+              bind:touchstart="onTouchStart"
+            >
+              <wx-view
+                class="custom-button"
+                slot="button"
+              >
+                
+      50
+    
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-slider>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        垂直方向
+      </wx-view>
+      <wx-view
+        style="height: 150px; padding-left: 30px;"
+      >
+        <van-slider
+          customClass="slider"
+          bind:change="onChange"
+        >
+          <wx-view
+            class="custom-class van-slider van-slider--vertical"
+            style="
+          background: ;
+          width: ;
+        "
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-slider__bar"
+              style="
+          height: 50%;
+          left: 0;
+          top: 0%;
+          
+        ; "
+            >
+              <wx-view
+                class="van-slider__button-wrapper"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="van-slider__button"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </van-slider>
+        <van-slider
+          customClass="slider"
+          bind:change="onChange"
+        >
+          <wx-view
+            class="custom-class van-slider van-slider--vertical"
+            style="
+          background: ;
+          width: ;
+        "
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-slider__bar"
+              style="
+          height: 40%;
+          left: 0;
+          top: 20%;
+          
+        ; "
+            >
+              <wx-view
+                class="van-slider__button-wrapper-left"
+                data-index="{{0}}"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="van-slider__button"
+                />
+              </wx-view>
+              <wx-view
+                class="van-slider__button-wrapper-right"
+                data-index="{{1}}"
+                bind:touchcancel="onTouchEnd"
+                bind:touchend="onTouchEnd"
+                catch:touchmove="onTouchMove"
+                bind:touchstart="onTouchStart"
+              >
+                <wx-view
+                  class="van-slider__button"
+                />
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </van-slider>
+      </wx-view>
+    </wx-view>
+  </demo-block>
+</main>
+`;

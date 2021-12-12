@@ -131,6 +131,7 @@
     "van-submit-bar": "./dist/submit-bar/index",
     "van-submit-bar-demo": "./dist/submit-bar/demo/index",
     "van-swipe-cell": "./dist/swipe-cell/index",
+    "van-swipe-cell-demo": "./dist/swipe-cell/demo/index",
     "van-uploader": "./dist/uploader/index",
     "van-switch": "./dist/switch/index",
     "van-switch-demo": "./dist/switch/demo/index",

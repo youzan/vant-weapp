@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-swipe-cell>
+        <wx-view
+          class="van-swipe-cell custom-class"
+          data-key="cell"
+          catch:tap="onClick"
+          bind:touchcancel="endDrag"
+          bind:touchend="endDrag"
+          catch:touchmove=""
+          bind:touchstart="startDrag"
+        >
+          <wx-view
+            style=""
+          >
+            <wx-view
+              class="van-swipe-cell__left"
+              data-key="left"
+              catch:tap="onClick"
+            >
+              <wx-view
+                class="van-swipe-cell__left"
+                slot="left"
+              >
+                选择
+              </wx-view>
+            </wx-view>
+            <van-cell-group>
+              <wx-view
+                class="custom-class van-cell-group van-hairline--top-bottom"
+              >
+                <van-cell>
+                  <wx-view
+                    class="custom-class van-cell"
+                    hoverClass="van-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-cell__title title-class"
+                      style=""
+                    >
+                      单元格
+                    </wx-view>
+                    <wx-view
+                      class="van-cell__value value-class"
+                    >
+                      内容
+                    </wx-view>
+                  </wx-view>
+                </van-cell>
+              </wx-view>
+            </van-cell-group>
+            <wx-view
+              class="van-swipe-cell__right"
+              data-key="right"
+              catch:tap="onClick"
+            >
+              <wx-view
+                class="van-swipe-cell__right"
+                slot="right"
+              >
+                删除
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-swipe-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        异步关闭
+      </wx-view>
+      <van-swipe-cell
+        id="swipe-cell"
+        bind:close="onClose"
+      >
+        <wx-view
+          class="van-swipe-cell custom-class"
+          data-key="cell"
+          catch:tap="onClick"
+          bind:touchcancel="endDrag"
+          bind:touchend="endDrag"
+          catch:touchmove=""
+          bind:touchstart="startDrag"
+        >
+          <wx-view
+            style=""
+          >
+            <wx-view
+              class="van-swipe-cell__left"
+              data-key="left"
+              catch:tap="onClick"
+            >
+              <wx-view
+                class="van-swipe-cell__left"
+                slot="left"
+              >
+                选择
+              </wx-view>
+            </wx-view>
+            <van-cell-group>
+              <wx-view
+                class="custom-class van-cell-group van-hairline--top-bottom"
+              >
+                <van-cell>
+                  <wx-view
+                    class="custom-class van-cell"
+                    hoverClass="van-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-cell__title title-class"
+                      style=""
+                    >
+                      单元格
+                    </wx-view>
+                    <wx-view
+                      class="van-cell__value value-class"
+                    >
+                      内容
+                    </wx-view>
+                  </wx-view>
+                </van-cell>
+              </wx-view>
+            </van-cell-group>
+            <wx-view
+              class="van-swipe-cell__right"
+              data-key="right"
+              catch:tap="onClick"
+            >
+              <wx-view
+                class="van-swipe-cell__right"
+                slot="right"
+              >
+                删除
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-swipe-cell>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        主动打开
+      </wx-view>
+      <van-swipe-cell
+        id="swipe-cell2"
+        bind:open="onOpen"
+      >
+        <wx-view
+          class="van-swipe-cell custom-class"
+          data-key="cell"
+          catch:tap="onClick"
+          bind:touchcancel="endDrag"
+          bind:touchend="endDrag"
+          catch:touchmove=""
+          bind:touchstart="startDrag"
+        >
+          <wx-view
+            style=""
+          >
+            <wx-view
+              class="van-swipe-cell__left"
+              data-key="left"
+              catch:tap="onClick"
+            >
+              <wx-view
+                class="van-swipe-cell__left"
+                slot="left"
+              >
+                选择
+              </wx-view>
+            </wx-view>
+            <van-cell-group>
+              <wx-view
+                class="custom-class van-cell-group van-hairline--top-bottom"
+              >
+                <van-cell>
+                  <wx-view
+                    class="custom-class van-cell"
+                    hoverClass="van-cell--hover hover-class"
+                    hoverStayTime="70"
+                    style=""
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-cell__title title-class"
+                      style=""
+                    >
+                      单元格
+                    </wx-view>
+                    <wx-view
+                      class="van-cell__value value-class"
+                    >
+                      内容
+                    </wx-view>
+                  </wx-view>
+                </van-cell>
+              </wx-view>
+            </van-cell-group>
+            <wx-view
+              class="van-swipe-cell__right"
+              data-key="right"
+              catch:tap="onClick"
+            >
+              <wx-view
+                class="van-swipe-cell__right"
+                slot="right"
+              >
+                删除
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-swipe-cell>
+    </wx-view>
+  </demo-block>
+  <van-dialog>
+    <van-popup
+      customClass="van-dialog van-dialog--default "
+      bind:close="onClickOverlay"
+    >
+      <van-overlay
+        bind:click="onClickOverlay"
+      >
+        <van-transition
+          customClass="van-overlay"
+          bind:tap="onClick"
+          catch:touchmove="noop"
+        />
+      </van-overlay>
+    </van-popup>
+  </van-dialog>
+  <van-notify
+    id="van-notify"
+  >
+    <van-transition
+      customClass="van-notify__container"
+      bind:tap="onTap"
+    />
+  </van-notify>
+</main>
+`;

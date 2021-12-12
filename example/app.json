@@ -153,6 +153,7 @@
     "van-collapse-demo": "./dist/collapse/demo/index",
     "van-collapse-item": "./dist/collapse-item/index",
     "van-picker": "./dist/picker/index",
+    "van-picker-demo": "./dist/picker/demo/index",
     "van-overlay": "./dist/overlay/index",
     "van-overlay-demo": "./dist/overlay/demo/index",
     "van-circle": "./dist/circle/index",

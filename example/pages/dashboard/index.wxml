@@ -1,1 +1,1 @@
-<demo-home list="{{ list }}" />
+<van-dashboard-demo />

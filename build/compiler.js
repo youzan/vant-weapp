@@ -1,3 +1,4 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const path = require('path');
 const less = require('gulp-less');
@@ -16,8 +17,10 @@ const exampleConfig = path.resolve(__dirname, '../tsconfig.example.json');
 
 const libDir = path.resolve(__dirname, '../lib');
 const esDir = path.resolve(__dirname, '../dist');
-const exampleDir = path.resolve(__dirname, '../example/dist');
+const exampleDistDir = path.resolve(__dirname, '../example/dist');
+const examplePagesDir = path.resolve(__dirname, '../example/pages');
 
+const exampleAppJsonPath = path.resolve(__dirname, '../example/app.json');
 const baseCssPath = path.resolve(__dirname, '../packages/common/index.wxss');
 
 const lessCompiler = (dist) =>
@@ -101,18 +104,34 @@ const tasks = [
 }, {});
 
 tasks.buildExample = gulp.series(
-  cleaner(exampleDir),
+  cleaner(exampleDistDir),
   gulp.parallel(
-    tsCompiler(exampleDir, exampleConfig),
-    lessCompiler(exampleDir),
-    staticCopier(exampleDir),
+    tsCompiler(exampleDistDir, exampleConfig),
+    lessCompiler(exampleDistDir),
+    staticCopier(exampleDistDir),
     () =>
-      gulp.src(`${icons}/**/*`).pipe(gulp.dest(`${exampleDir}/@vant/icons`)),
+      gulp
+        .src(`${icons}/**/*`)
+        .pipe(gulp.dest(`${exampleDistDir}/@vant/icons`)),
     () => {
-      gulp.watch(`${src}/**/*.less`, lessCompiler(exampleDir));
-      gulp.watch(`${src}/**/*.wxml`, copier(exampleDir, 'wxml'));
-      gulp.watch(`${src}/**/*.wxs`, copier(exampleDir, 'wxs'));
-      gulp.watch(`${src}/**/*.json`, copier(exampleDir, 'json'));
+      const appJson = JSON.parse(fs.readFileSync(exampleAppJsonPath));
+      appJson.pages.forEach((path) => {
+        const component = path.replace(/(pages\/|\/index)/g, '');
+        fs.writeFileSync(
+          `${examplePagesDir}/${component}/index.js`,
+          "import Page from '../../common/page';Page();"
+        );
+        fs.writeFileSync(
+          `${examplePagesDir}/${component}/index.wxml`,
+          `<van-${component}-demo />`
+        );
+      });
+    },
+    () => {
+      gulp.watch(`${src}/**/*.less`, lessCompiler(exampleDistDir));
+      gulp.watch(`${src}/**/*.wxml`, copier(exampleDistDir, 'wxml'));
+      gulp.watch(`${src}/**/*.wxs`, copier(exampleDistDir, 'wxs'));
+      gulp.watch(`${src}/**/*.json`, copier(exampleDistDir, 'json'));
     }
   )
 );

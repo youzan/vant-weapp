@@ -154,6 +154,7 @@
     "van-circle": "./dist/circle/index",
     "van-circle-demo": "./dist/circle/demo/index",
     "van-index-bar": "./dist/index-bar/index",
+    "van-index-bar-demo": "./dist/index-bar/demo/index",
     "van-index-anchor": "./dist/index-anchor/index",
     "van-grid": "./dist/grid/index",
     "van-grid-demo": "./dist/grid/demo/index",

@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-tab": "../../tab/index",
+    "van-tabs": "../../tabs/index",
+    "van-cell": "../../cell/index",
+    "van-index-bar": "../../index-bar/index",
+    "van-index-anchor": "../../index-anchor/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

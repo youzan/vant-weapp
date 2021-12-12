@@ -167,6 +167,7 @@
     "van-grid-demo": "./dist/grid/demo/index",
     "van-grid-item": "./dist/grid-item/index",
     "van-dropdown-menu": "./dist/dropdown-menu/index",
+    "van-dropdown-menu-demo": "./dist/dropdown-menu/demo/index",
     "van-dropdown-item": "./dist/dropdown-item/index",
     "van-skeleton": "./dist/skeleton/index",
     "van-skeleton-demo": "./dist/skeleton/demo/index",

@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-cell": "../../cell/index",
+    "van-switch": "../../switch/index",
+    "van-button": "../../button/index",
+    "van-dropdown-item": "../../dropdown-item/index",
+    "van-dropdown-menu": "../../dropdown-menu/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

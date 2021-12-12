@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-dropdown-menu>
+        <wx-view
+          class="van-dropdown-menu van-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <van-dropdown-item />
+          <van-dropdown-item />
+        </wx-view>
+      </van-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义菜单内容
+      </wx-view>
+      <van-dropdown-menu>
+        <wx-view
+          class="van-dropdown-menu van-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        筛选
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <van-dropdown-item />
+          <van-dropdown-item
+            id="item"
+          />
+        </wx-view>
+      </van-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义选中状态颜色
+      </wx-view>
+      <van-dropdown-menu>
+        <wx-view
+          class="van-dropdown-menu van-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <van-dropdown-item />
+          <van-dropdown-item />
+        </wx-view>
+      </van-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        向上展开
+      </wx-view>
+      <van-dropdown-menu>
+        <wx-view
+          class="van-dropdown-menu van-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title van-dropdown-menu__title--down"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title van-dropdown-menu__title--down"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <van-dropdown-item />
+          <van-dropdown-item />
+        </wx-view>
+      </van-dropdown-menu>
+    </wx-view>
+  </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用菜单
+      </wx-view>
+      <van-dropdown-menu>
+        <wx-view
+          class="van-dropdown-menu van-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <wx-view
+            class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
+            data-index="{{1}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        默认排序
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <van-dropdown-item />
+          <van-dropdown-item />
+        </wx-view>
+      </van-dropdown-menu>
+    </wx-view>
+  </demo-block>
+</main>
+`;

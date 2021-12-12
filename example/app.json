@@ -80,6 +80,7 @@
     "van-col": "./dist/col/index",
     "van-col-demo": "./dist/col/demo/index",
     "van-count-down": "./dist/count-down/index",
+    "van-count-down-demo": "./dist/count-down/demo/index",
     "van-dialog": "./dist/dialog/index",
     "van-dialog-demo": "./dist/dialog/demo/index",
     "van-divider": "./dist/divider/index",

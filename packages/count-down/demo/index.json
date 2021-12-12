@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-grid": "../../grid/index",
+    "van-toast": "../../toast/index",
+    "van-grid-item": "../../grid-item/index",
+    "van-count-down": "../../count-down/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

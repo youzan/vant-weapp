@@ -146,6 +146,7 @@
     "van-toast": "./dist/toast/index",
     "van-toast-demo": "./dist/toast/demo/index",
     "van-transition": "./dist/transition/index",
+    "van-transition-demo": "./dist/transition/demo/index",
     "van-tree-select": "./dist/tree-select/index",
     "van-tree-select-demo": "./dist/tree-select/demo/index",
     "van-datetime-picker": "./dist/datetime-picker/index",

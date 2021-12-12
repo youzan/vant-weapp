@@ -5,6 +5,7 @@ const less = require('gulp-less');
 const insert = require('gulp-insert');
 const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
+const ts = require('gulp-typescript');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
@@ -52,9 +53,23 @@ const lessCompiler = (dist) =>
   };
 
 const tsCompiler = (dist, config) =>
-  async function compileTs() {
-    await exec(`npx tsc -p ${config}`);
-    await exec(`npx tscpaths -p ${config} -s ../packages -o ${dist}`);
+  function compileTs() {
+    const tsProject = ts.createProject(config);
+    return tsProject
+      .src()
+      .pipe(tsProject())
+      .js.pipe(
+        insert.transform((contents, file) => {
+          if (dist === exampleDistDir && file.path.includes('/demo/')) {
+            contents = contents.replace(
+              '@vant/icons/src/config',
+              '../../@vant/icons/src/config'
+            );
+          }
+          return contents;
+        })
+      )
+      .pipe(gulp.dest(dist));
   };
 
 const copier = (dist, ext) =>
@@ -119,7 +134,7 @@ tasks.buildExample = gulp.series(
         const component = path.replace(/(pages\/|\/index)/g, '');
         fs.writeFileSync(
           `${examplePagesDir}/${component}/index.js`,
-          "import Page from '../../common/page';Page();"
+          "import Page from '../../common/page';\n\nPage();"
         );
         fs.writeFileSync(
           `${examplePagesDir}/${component}/index.wxml`,

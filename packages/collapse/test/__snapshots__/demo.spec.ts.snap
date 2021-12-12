@@ -1,0 +1,704 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-collapse
+        data-key="active1"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-collapse van-hairline--top-bottom"
+        >
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class "
+            >
+              <van-cell
+                class="van-collapse-item__title van-collapse-item__title--expanded"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞微商城
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  提供多样店铺模板，快速搭建网上商城
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞零售
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title van-collapse-item__title--disabled"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞美业
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  线上拓客，随时预约，贴心顺手的开单收银
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+        </wx-view>
+      </van-collapse>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        手风琴
+      </wx-view>
+      <van-collapse
+        data-key="active2"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-collapse van-hairline--top-bottom"
+        >
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class "
+            >
+              <van-cell
+                class="van-collapse-item__title van-collapse-item__title--expanded"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞微商城
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  提供多样店铺模板，快速搭建网上商城
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞零售
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞美业
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  线上拓客，随时预约，贴心顺手的开单收银
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+        </wx-view>
+      </van-collapse>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        事件监听
+      </wx-view>
+      <van-collapse
+        data-key="active3"
+        bind:change="onChange"
+        bind:close="onClose"
+        bind:open="onOpen"
+      >
+        <wx-view
+          class="custom-class van-collapse van-hairline--top-bottom"
+        >
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class "
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞微商城
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  提供多样店铺模板，快速搭建网上商城
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞零售
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞美业
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  线上拓客，随时预约，贴心顺手的开单收银
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+        </wx-view>
+      </van-collapse>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义标题内容
+      </wx-view>
+      <van-collapse
+        data-key="active4"
+        bind:change="onChange"
+      >
+        <wx-view
+          class="custom-class van-collapse van-hairline--top-bottom"
+        >
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class "
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    <wx-view
+                      slot="title"
+                    >
+                      
+        有赞微商城
+        
+                      <van-icon
+                        customClass="van-icon-question"
+                        name="question-o"
+                      />
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  />
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  
+      提供多样店铺模板，快速搭建网上商城
+    
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+          <van-collapse-item>
+            <wx-view
+              class="van-collapse-item custom-class van-hairline--top"
+            >
+              <van-cell
+                class="van-collapse-item__title"
+                customClass="van-cell"
+                hoverClass="van-cell--hover"
+                rightIconClass="van-cell__right-icon"
+                titleClass="title-class"
+                bind:click="onClick"
+              >
+                <wx-view
+                  class="custom-class van-cell van-cell--borderless van-cell--clickable"
+                  hoverClass="van-cell--hover hover-class"
+                  hoverStayTime="70"
+                  style=""
+                  bind:tap="onClick"
+                >
+                  <van-icon
+                    class="van-cell__left-icon-wrap"
+                    customClass="van-cell__left-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-shop-o"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                  <wx-view
+                    class="van-cell__title title-class"
+                    style=""
+                  >
+                    有赞零售
+                  </wx-view>
+                  <wx-view
+                    class="van-cell__value value-class"
+                  >
+                    内容
+                  </wx-view>
+                  <van-icon
+                    class="van-cell__right-icon-wrap right-icon-class"
+                    customClass="van-cell__right-icon"
+                  >
+                    <wx-view
+                      class="custom-class van-icon van-icon-arrow"
+                      style=""
+                      bind:tap="onClick"
+                    />
+                  </van-icon>
+                </wx-view>
+              </van-cell>
+              <wx-view
+                animation=""
+                class="van-collapse-item__wrapper"
+                style="height: 0;"
+              >
+                <wx-view
+                  class="van-collapse-item__content content-class"
+                >
+                  
+      网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+    
+                </wx-view>
+              </wx-view>
+            </wx-view>
+          </van-collapse-item>
+        </wx-view>
+      </van-collapse>
+    </wx-view>
+  </demo-block>
+  <van-toast
+    id="van-toast"
+  >
+    <van-transition
+      customClass="van-toast__container"
+    />
+  </van-toast>
+</main>
+`;

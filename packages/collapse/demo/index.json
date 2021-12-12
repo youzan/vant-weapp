@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-collapse": "../../collapse/index",
+    "van-collapse-item": "../../collapse-item/index",
+    "van-toast": "../../toast/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

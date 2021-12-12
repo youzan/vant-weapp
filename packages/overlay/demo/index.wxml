@@ -1,0 +1,17 @@
+<demo-block title="基础用法" padding>
+  <van-button type="primary" bind:click="onClickShow">
+    显示遮罩层
+  </van-button>
+  <van-overlay show="{{ show }}" bind:click="onClickHide" />
+</demo-block>
+
+<demo-block title="嵌入内容" padding>
+  <van-button type="primary" bind:click="onClickShowEmbedded">
+    嵌入内容
+  </van-button>
+  <van-overlay show="{{ showEmbedded }}" bind:click="onClickHideEmbedded">
+    <view class="wrapper">
+      <div class="block" catch:tap="noop" />
+    </view>
+  </van-overlay>
+</demo-block>

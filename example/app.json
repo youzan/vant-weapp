@@ -99,6 +99,7 @@
     "van-loading-demo": "./dist/loading/demo/index",
     "van-nav-bar": "./dist/nav-bar/index",
     "van-notice-bar": "./dist/notice-bar/index",
+    "van-notice-bar-demo": "./dist/notice-bar/demo/index",
     "van-notify": "./dist/notify/index",
     "van-notify-demo": "./dist/notify/demo/index",
     "van-panel": "./dist/panel/index",

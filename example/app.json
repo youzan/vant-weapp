@@ -150,6 +150,7 @@
     "van-rate": "./dist/rate/index",
     "van-rate-demo": "./dist/rate/demo/index",
     "van-collapse": "./dist/collapse/index",
+    "van-collapse-demo": "./dist/collapse/demo/index",
     "van-collapse-item": "./dist/collapse-item/index",
     "van-picker": "./dist/picker/index",
     "van-overlay": "./dist/overlay/index",

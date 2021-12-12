@@ -52,6 +52,7 @@
     "gulp-less": "^5.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "jest": "^27.3.1",
     "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.6.1",

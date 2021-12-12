@@ -117,6 +117,7 @@
     "van-search": "./dist/search/index",
     "van-search-demo": "./dist/search/demo/index",
     "van-sidebar": "./dist/sidebar/index",
+    "van-sidebar-demo": "./dist/sidebar/demo/index",
     "van-sidebar-item": "./dist/sidebar-item/index",
     "van-slider": "./dist/slider/index",
     "van-slider-demo": "./dist/slider/demo/index",

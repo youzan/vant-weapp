@@ -1,0 +1,342 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <van-grid>
+    <wx-view
+      class="van-grid custom-class "
+      style="padding-left:0px"
+    >
+      <van-grid-item>
+        <wx-view
+          class="custom-class van-grid-item"
+          style="width:50%;padding-right:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class van-grid-item__content van-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              基础用法
+            </h3>
+            <van-sidebar
+              customClass="custom-sidebar"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-view>
+        </wx-view>
+      </van-grid-item>
+      <van-grid-item>
+        <wx-view
+          class="custom-class van-grid-item"
+          style="width:50%;padding-right:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class van-grid-item__content van-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              徽标提示
+            </h3>
+            <van-sidebar
+              customClass="custom-sidebar"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info>
+                        <wx-view
+                          class="van-info van-info van-info--dot custom-class"
+                          style=""
+                        >
+                          
+                        </wx-view>
+                      </van-info>
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info>
+                        <wx-view
+                          class="van-info van-info custom-class"
+                          style=""
+                        >
+                          5
+                        </wx-view>
+                      </van-info>
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <van-info>
+                        <wx-view
+                          class="van-info van-info custom-class"
+                          style=""
+                        >
+                          99+
+                        </wx-view>
+                      </van-info>
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-view>
+        </wx-view>
+      </van-grid-item>
+      <van-grid-item>
+        <wx-view
+          class="custom-class van-grid-item"
+          style="width:50%;padding-right:0px;margin-top:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class van-grid-item__content van-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              禁用选项
+            </h3>
+            <van-sidebar
+              customClass="custom-sidebar"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--disabled  disabled-class custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-view>
+        </wx-view>
+      </van-grid-item>
+      <van-grid-item>
+        <wx-view
+          class="custom-class van-grid-item"
+          style="width:50%;padding-right:0px;margin-top:0px"
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="content-class van-grid-item__content van-grid-item__content--center "
+            style=""
+          >
+            <h3
+              class="demo-sidebar-title"
+            >
+              监听切换事件
+            </h3>
+            <van-sidebar
+              customClass="custom-sidebar"
+              bind:change="onChange"
+            >
+              <wx-view
+                class="van-sidebar custom-class"
+              >
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item van-sidebar-item--selected active-class  custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名 1
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名 2
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+                <van-sidebar-item>
+                  <wx-view
+                    class="van-sidebar-item   custom-class"
+                    hoverClass="van-sidebar-item--hover"
+                    hoverStayTime="70"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-sidebar-item__text"
+                    >
+                      <wx-view>
+                        标签名 3
+                      </wx-view>
+                    </wx-view>
+                  </wx-view>
+                </van-sidebar-item>
+              </wx-view>
+            </van-sidebar>
+          </wx-view>
+        </wx-view>
+      </van-grid-item>
+    </wx-view>
+  </van-grid>
+  <van-notify
+    id="van-notify"
+  >
+    <van-transition
+      customClass="van-notify__container"
+      bind:tap="onTap"
+    />
+  </van-notify>
+</main>
+`;

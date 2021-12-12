@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix demo-block--padding"
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-cell
+        bind:click="onClickFade"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Fade
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickFadeUp"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Fade Up
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickFadeDown"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Fade Down
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickFadeLeft"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Fade Left
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickFadeRight"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Fade Right
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickSlideUp"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Slide Up
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickSlideDown"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Slide Down
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickSlideLeft"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Slide Left
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickSlideRight"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Slide Right
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-cell
+        bind:click="onClickCustom"
+      >
+        <wx-view
+          class="custom-class van-cell van-cell--clickable"
+          hoverClass="van-cell--hover hover-class"
+          hoverStayTime="70"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-cell__title title-class"
+            style=""
+          >
+            Custom
+          </wx-view>
+          <wx-view
+            class="van-cell__value value-class"
+          />
+          <van-icon
+            class="van-cell__right-icon-wrap right-icon-class"
+            customClass="van-cell__right-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-arrow"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-cell>
+      <van-transition
+        customClass="block"
+      />
+      <van-transition
+        customClass="block"
+        enterActiveClass="van-enter-active-class"
+        enterClass="van-enter-class"
+        leaveActiveClass="van-leave-active-class"
+        leaveToClass="van-leave-to-class"
+        bind:after-enter="onAfterEnter"
+        bind:after-leave="onAfterLeave"
+        bind:before-enter="onBeforeEnter"
+        bind:before-leave="onBeforeLeave"
+        bind:enter="onEnter"
+        bind:leave="onLeave"
+      />
+    </wx-view>
+  </demo-block>
+</main>
+`;

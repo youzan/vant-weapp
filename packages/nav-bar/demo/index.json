@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-icon": "../../icon/index",
+    "van-nav-bar": "../../nav-bar/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

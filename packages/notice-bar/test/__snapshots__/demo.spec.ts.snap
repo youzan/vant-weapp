@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-notice-bar>
+        <wx-view
+          class="custom-class van-notice-bar"
+          style=""
+          bind:tap="onClick"
+        >
+          <van-icon
+            class="van-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-volume-o"
+              style="font-size:16px"
+              bind:tap="onClick"
+            />
+          </van-icon>
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content "
+            >
+              
+      在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        滚动模式
+      </wx-view>
+      <van-notice-bar
+        customClass="demo-margin-bottom"
+      >
+        <wx-view
+          class="custom-class van-notice-bar"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content "
+            >
+              
+      技术是开发它的人的共同灵魂。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-notice-bar>
+      <van-notice-bar
+        customClass="demo-margin-bottom"
+      >
+        <wx-view
+          class="custom-class van-notice-bar"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content van-ellipsis"
+            >
+              
+      在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        多行展示
+      </wx-view>
+      <van-notice-bar>
+        <wx-view
+          class="custom-class van-notice-bar van-notice-bar--wrapable"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content "
+            >
+              
+      在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        通知栏模式
+      </wx-view>
+      <van-notice-bar>
+        <wx-view
+          class="custom-class van-notice-bar van-notice-bar--withicon"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content "
+            >
+              
+      技术是开发它的人的共同灵魂。
+      
+            </wx-view>
+          </wx-view>
+          <van-icon
+            class="van-notice-bar__right-icon"
+            catch:tap="onClickIcon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-cross"
+              style=""
+              bind:tap="onClick"
+            />
+          </van-icon>
+        </wx-view>
+      </van-notice-bar>
+      <van-notice-bar
+        customClass="margin-top"
+      >
+        <wx-view
+          class="custom-class van-notice-bar van-notice-bar--withicon"
+          style=""
+          bind:tap="onClick"
+        >
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content "
+            >
+              
+      技术是开发它的人的共同灵魂。
+      
+            </wx-view>
+          </wx-view>
+          <wx-navigator
+            openType="navigate"
+            url=""
+          >
+            <van-icon
+              class="van-notice-bar__right-icon"
+            >
+              <wx-view
+                class="custom-class van-icon van-icon-arrow"
+                style=""
+                bind:tap="onClick"
+              />
+            </van-icon>
+          </wx-navigator>
+        </wx-view>
+      </van-notice-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义样式
+      </wx-view>
+      <van-notice-bar>
+        <wx-view
+          class="custom-class van-notice-bar"
+          style="color:#1989fa;background:#ecf9ff"
+          bind:tap="onClick"
+        >
+          <van-icon
+            class="van-notice-bar__left-icon"
+          >
+            <wx-view
+              class="custom-class van-icon van-icon-info-o"
+              style="font-size:16px"
+              bind:tap="onClick"
+            />
+          </van-icon>
+          <wx-view
+            class="van-notice-bar__wrap"
+          >
+            <wx-view
+              animation=""
+              class="van-notice-bar__content "
+            >
+              
+      技术是开发它的人的共同灵魂。
+      
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-notice-bar>
+    </wx-view>
+  </demo-block>
+</main>
+`;

@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-nav-bar
+        bind:click-left="onClickLeft"
+        bind:click-right="onClickRight"
+      >
+        <wx-view
+          class="van-nav-bar custom-class van-hairline--bottom"
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="van-nav-bar__content"
+          >
+            <wx-view
+              class="van-nav-bar__left"
+              bind:tap="onClickLeft"
+            >
+              <van-icon
+                customClass="van-nav-bar__arrow"
+              >
+                <wx-view
+                  class="custom-class van-icon van-icon-arrow-left"
+                  style="font-size:16px"
+                  bind:tap="onClick"
+                />
+              </van-icon>
+            </wx-view>
+            <wx-view
+              class="van-nav-bar__title title-class van-ellipsis"
+            >
+              标题
+            </wx-view>
+            <wx-view
+              class="van-nav-bar__right"
+              bind:tap="onClickRight"
+            >
+              <wx-view
+                class="van-nav-bar__text"
+                hoverClass="van-nav-bar__text--hover"
+                hoverStayTime="70"
+              >
+                按钮
+              </wx-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-nav-bar>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        高级用法
+      </wx-view>
+      <van-nav-bar>
+        <wx-view
+          class="van-nav-bar custom-class van-hairline--bottom"
+          style="z-index:1;padding-top:20px; "
+        >
+          <wx-view
+            class="van-nav-bar__content"
+          >
+            <wx-view
+              class="van-nav-bar__left"
+              bind:tap="onClickLeft"
+            >
+              <van-icon
+                customClass="van-nav-bar__arrow"
+              >
+                <wx-view
+                  class="custom-class van-icon van-icon-arrow-left"
+                  style="font-size:16px"
+                  bind:tap="onClick"
+                />
+              </van-icon>
+              <wx-view
+                class="van-nav-bar__text"
+                hoverClass="van-nav-bar__text--hover"
+                hoverStayTime="70"
+              >
+                返回
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="van-nav-bar__title title-class van-ellipsis"
+            >
+              标题
+            </wx-view>
+            <wx-view
+              class="van-nav-bar__right"
+              bind:tap="onClickRight"
+            >
+              <van-icon
+                customClass="icon"
+                slot="right"
+              >
+                <wx-view
+                  class="custom-class van-icon van-icon-search"
+                  style="font-size:18px"
+                  bind:tap="onClick"
+                />
+              </van-icon>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-nav-bar>
+    </wx-view>
+  </demo-block>
+</main>
+`;

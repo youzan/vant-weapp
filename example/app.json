@@ -100,6 +100,7 @@
     "van-nav-bar": "./dist/nav-bar/index",
     "van-notice-bar": "./dist/notice-bar/index",
     "van-notify": "./dist/notify/index",
+    "van-notify-demo": "./dist/notify/demo/index",
     "van-panel": "./dist/panel/index",
     "van-panel-demo": "./dist/panel/demo/index",
     "van-popup": "./dist/popup/index",

@@ -133,6 +133,7 @@
     "van-swipe-cell": "./dist/swipe-cell/index",
     "van-swipe-cell-demo": "./dist/swipe-cell/demo/index",
     "van-uploader": "./dist/uploader/index",
+    "van-uploader-demo": "./dist/uploader/demo/index",
     "van-switch": "./dist/switch/index",
     "van-switch-demo": "./dist/switch/demo/index",
     "van-tab": "./dist/tab/index",

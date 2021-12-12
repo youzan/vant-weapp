@@ -1,0 +1,2037 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <van-tabs
+    bind:change="onChange"
+  >
+    <wx-view
+      class="custom-class van-tabs van-tabs--line"
+    >
+      <van-sticky
+        bind:scroll="onTouchScroll"
+      >
+        <wx-view
+          class="custom-class van-sticky"
+          style="z-index:1"
+        >
+          <wx-view
+            class="van-sticky-wrap"
+            style="z-index:1"
+          >
+            <wx-view
+              class="van-tabs__wrap "
+            >
+              <wx-scroll-view
+                class="van-tabs__scroll van-tabs__scroll--line"
+                scrollLeft="{{0}}"
+                scrollWithAnimation="{{false}}"
+                scrollX="{{false}}"
+                style=""
+              >
+                <wx-view
+                  class="van-tabs__nav van-tabs__nav--line nav-class"
+                  style=""
+                >
+                  <wx-view
+                    class="van-tabs__line"
+                    style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                  />
+                  <wx-view
+                    class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"
+                    data-index="{{0}}"
+                    style=""
+                    bind:tap="onTap"
+                  >
+                    <wx-view
+                      class="van-ellipsis"
+                      style=""
+                    >
+                      
+              基础用法
+              
+                    </wx-view>
+                  </wx-view>
+                  <wx-view
+                    class="tab-class van-ellipsis van-tab"
+                    data-index="{{1}}"
+                    style=""
+                    bind:tap="onTap"
+                  >
+                    <wx-view
+                      class="van-ellipsis"
+                      style=""
+                    >
+                      
+              自定义索引列表
+              
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-scroll-view>
+            </wx-view>
+          </wx-view>
+        </wx-view>
+      </van-sticky>
+      <wx-view
+        class="van-tabs__content"
+        bind:touchcancel="onTouchEnd"
+        bind:touchend="onTouchEnd"
+        bind:touchmove="onTouchMove"
+        bind:touchstart="onTouchStart"
+      >
+        <wx-view
+          class="van-tabs__track van-tabs__track"
+          style=""
+        >
+          <van-tab>
+            <wx-view
+              class="custom-class van-tab__pane van-tab__pane--active"
+              style=""
+            >
+              <van-index-bar
+                scrollTop="{{0}}"
+              >
+                <wx-view
+                  class="van-index-bar"
+                >
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            A
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            B
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            C
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            D
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            E
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            F
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            G
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            H
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            I
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            J
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            K
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            L
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            M
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            N
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            O
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            P
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            Q
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            R
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            S
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            T
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            U
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            V
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            W
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            X
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            Y
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                  <wx-view>
+                    <van-index-anchor>
+                      <wx-view
+                        class="van-index-anchor-wrapper"
+                        style=""
+                      >
+                        <wx-view
+                          class="van-index-anchor "
+                          style=""
+                        >
+                          <wx-text>
+                            Z
+                          </wx-text>
+                        </wx-view>
+                      </wx-view>
+                    </van-index-anchor>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                    <van-cell>
+                      <wx-view
+                        class="custom-class van-cell"
+                        hoverClass="van-cell--hover hover-class"
+                        hoverStayTime="70"
+                        style=""
+                        bind:tap="onClick"
+                      >
+                        <wx-view
+                          class="van-cell__title title-class"
+                          style=""
+                        >
+                          文本
+                        </wx-view>
+                        <wx-view
+                          class="van-cell__value value-class"
+                        />
+                      </wx-view>
+                    </van-cell>
+                  </wx-view>
+                </wx-view>
+              </van-index-bar>
+            </wx-view>
+          </van-tab>
+          <van-tab>
+            <wx-view
+              class="custom-class van-tab__pane van-tab__pane--inactive"
+              style="display: none;"
+            />
+          </van-tab>
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </van-tabs>
+</main>
+`;

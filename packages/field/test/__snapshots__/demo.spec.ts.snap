@@ -1,0 +1,827 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<main>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        基础用法
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                />
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        自定义类型
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field
+            rightIconClass="custom-icon"
+            bind:click-icon="onClickIcon"
+          >
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--required"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    >
+                      <van-icon
+                        class="van-field__icon-root "
+                        customClass="right-icon-class"
+                      >
+                        <wx-view
+                          class="custom-class van-icon van-icon-question-o"
+                          style=""
+                          bind:tap="onClick"
+                        />
+                      </van-icon>
+                    </wx-view>
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--required van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    密码
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--password"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{true}}"
+                      placeholder="请输入密码"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="password"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        禁用输入框
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <van-icon
+                  class="van-cell__left-icon-wrap"
+                  customClass="van-cell__left-icon"
+                >
+                  <wx-view
+                    class="custom-class van-icon van-icon-contact"
+                    style=""
+                    bind:tap="onClick"
+                  />
+                </van-icon>
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label van-field__label--disabled"
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control van-field__control--disabled input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{true}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder=""
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value="输入框已禁用"
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        错误提示
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control van-field__control--error input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="van-field__placeholder van-field__placeholder--error"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    手机号
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入手机号"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value="1365577"
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                  <wx-view
+                    class="van-field__error-message"
+                  >
+                    
+    手机号格式错误
+  
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        内容对齐方式
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field>
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    用户名
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--right van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control van-field__control--right input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入用户名"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        高度自适应
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field
+            rows="1"
+          >
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    留言
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--textarea"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-textarea
+                      adjustPosition="{{true}}"
+                      autoFocus="{{false}}"
+                      autoHeight="{{true}}"
+                      class="van-field__control van-field__control--textarea input-class"
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      disableDefaultPadding="{{true}}"
+                      fixed="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      placeholder="请输入留言"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      showConfirmBar="{{true}}"
+                      style=""
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:linechange="onLineChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    />
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+  <demo-block>
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        插入按钮
+      </wx-view>
+      <van-cell-group>
+        <wx-view
+          class="custom-class van-cell-group van-hairline--top-bottom"
+        >
+          <van-field
+            useButtonSlot="{{true}}"
+          >
+            <van-cell
+              customClass="van-field"
+            >
+              <wx-view
+                class="custom-class van-cell van-cell--center van-cell--borderless"
+                hoverClass="van-cell--hover hover-class"
+                hoverStayTime="70"
+                style=""
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-cell__title title-class"
+                  style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
+                >
+                  <wx-view
+                    class="label-class van-field__label"
+                    slot="title"
+                  >
+                    
+    短信验证码
+  
+                  </wx-view>
+                </wx-view>
+                <wx-view
+                  class="van-cell__value value-class"
+                >
+                  <wx-view
+                    class="van-field__body van-field__body--text"
+                  >
+                    <wx-view
+                      class="van-field__control van-field__control--custom"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-input
+                      adjustPosition="{{true}}"
+                      alwaysEmbed="{{false}}"
+                      autoFocus="{{false}}"
+                      class="van-field__control input-class"
+                      confirmHold="{{false}}"
+                      confirmType=""
+                      cursor="{{-1}}"
+                      cursorSpacing="{{50}}"
+                      disabled="{{false}}"
+                      focus="{{false}}"
+                      holdKeyboard="{{false}}"
+                      maxlength="{{-1}}"
+                      password="{{false}}"
+                      placeholder="请输入短信验证码"
+                      placeholderClass="van-field__placeholder"
+                      placeholderStyle=""
+                      selectionEnd="{{-1}}"
+                      selectionStart="{{-1}}"
+                      type="text"
+                      value=""
+                      bind:blur="onBlur"
+                      bind:confirm="onConfirm"
+                      bind:focus="onFocus"
+                      bind:input="onInput"
+                      bind:keyboardheightchange="onKeyboardHeightChange"
+                      bind:tap="onClickInput"
+                    />
+                    <wx-view
+                      class="van-field__icon-container"
+                      bind:tap="onClickIcon"
+                    />
+                    <wx-view
+                      class="van-field__button"
+                    >
+                      <van-button
+                        customClass="button"
+                        size="small"
+                        slot="button"
+                        type="primary"
+                      >
+                        发送验证码
+                      </van-button>
+                    </wx-view>
+                  </wx-view>
+                </wx-view>
+              </wx-view>
+            </van-cell>
+          </van-field>
+        </wx-view>
+      </van-cell-group>
+    </wx-view>
+  </demo-block>
+</main>
+`;

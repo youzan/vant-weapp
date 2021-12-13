@@ -4,6 +4,9 @@ var utils = require('./utils.wxs');
 function getMonths(minDate, maxDate) {
   var months = [];
   var cursor = getDate(minDate);
+  cursor.setHours(0);
+  cursor.setMinutes(0);
+  cursor.setSeconds(0);
 
   cursor.setDate(1);
 

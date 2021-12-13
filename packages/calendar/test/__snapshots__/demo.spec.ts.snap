@@ -497,7 +497,7 @@ exports[`should render demo and match snapshot 1`] = `
           >
             <month
               class="month"
-              data-date="{{1325347200000}}"
+              data-date="{{1325376000000}}"
               id="month0"
               bind:click="onClickDay"
             >
@@ -892,7 +892,7 @@ exports[`should render demo and match snapshot 1`] = `
             </month>
             <month
               class="month"
-              data-date="{{1328025600000}}"
+              data-date="{{1328054400000}}"
               id="month1"
               bind:click="onClickDay"
             >
@@ -1270,7 +1270,7 @@ exports[`should render demo and match snapshot 1`] = `
             </month>
             <month
               class="month"
-              data-date="{{1330531200000}}"
+              data-date="{{1330560000000}}"
               id="month2"
               bind:click="onClickDay"
             >

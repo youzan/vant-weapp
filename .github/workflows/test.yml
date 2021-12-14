@@ -28,6 +28,9 @@ jobs:
     - name: Install dependencies
       uses: bahmutov/npm-install@v1
 
+    - name: Export yarn.lock
+      run: cat yarn.lock
+
     - name: Run test cases
       run: npm test
 

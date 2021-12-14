@@ -31,6 +31,9 @@ jobs:
     - name: Export yarn.lock
       run: cat yarn.lock
 
+    - name: Export gst
+      run: git status
+
     - name: Run test cases
       run: npm test
 

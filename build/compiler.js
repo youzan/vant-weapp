@@ -61,9 +61,13 @@ const tsCompiler = (dist, config) =>
       .js.pipe(
         insert.transform((contents, file) => {
           if (dist === exampleDistDir && file.path.includes('/demo/')) {
+            const iconConfig = '@vant/icons/src/config';
             contents = contents.replace(
-              '@vant/icons/src/config',
-              '../../@vant/icons/src/config'
+              iconConfig,
+              path.relative(
+                path.dirname(file.path),
+                `${exampleDistDir}/${iconConfig}`
+              )
             );
           }
           return contents;
@@ -132,14 +136,27 @@ tasks.buildExample = gulp.series(
       const appJson = JSON.parse(fs.readFileSync(exampleAppJsonPath));
       appJson.pages.forEach((path) => {
         const component = path.replace(/(pages\/|\/index)/g, '');
-        fs.writeFileSync(
-          `${examplePagesDir}/${component}/index.js`,
-          "import Page from '../../common/page';\n\nPage();"
-        );
-        fs.writeFileSync(
-          `${examplePagesDir}/${component}/index.wxml`,
-          `<van-${component}-demo />`
-        );
+        const writeFiles = [
+          {
+            path: `${examplePagesDir}/${component}/index.js`,
+            contents: "import Page from '../../common/page';\n\nPage();",
+          },
+          {
+            path: `${examplePagesDir}/${component}/index.wxml`,
+            contents: `<van-${component}-demo />`,
+          },
+        ];
+        writeFiles.forEach((writeFile) => {
+          fs.access(writeFile.path, fs.constants.F_OK, (fileNotExists) => {
+            if (fileNotExists) {
+              fs.writeFile(writeFile.path, writeFile.contents, (err) => {
+                if (err) {
+                  throw err;
+                }
+              });
+            }
+          });
+        });
       });
     },
     () => {

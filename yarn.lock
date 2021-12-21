@@ -9354,12 +9354,7 @@ minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.npm.taobao.org/minimist/download/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
-miniprogram-api-typings@^3.1.6:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.4.3.tgz#c88cc624973322d990353d94ae765db90938d132"
-  integrity sha512-wdBZG2IImFjkTFv66r225455J+//gn4c7Ja99aC3mVV0AqTRl45FwAFA7ur9KZd2j+ORGtyK1ldBT49rXpVE2w==
-
-miniprogram-api-typings@^3.2.2:
+miniprogram-api-typings@^3.1.6, miniprogram-api-typings@^3.2.2:
   version "3.4.4"
   resolved "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-3.4.4.tgz#a68ce1f10ff2479b521cd4af276a23041b90f2f6"
   integrity sha512-vT4avEJxCnscNXjY3rI0dNtU1tf/mNll9RhAS0uS+eN5IdQ7MrnG5thGOxjoWnDJSiPYLG912IMcf6KKsXEDAQ==

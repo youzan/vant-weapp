@@ -11,6 +11,9 @@ function onPageScroll(event) {
 export const pageScrollMixin = (scroller) => Behavior({
     attached() {
         const page = getCurrentPage();
+        if (!isDef(page)) {
+            return;
+        }
         if (Array.isArray(page.vanPageScroller)) {
             page.vanPageScroller.push(scroller.bind(this));
         }

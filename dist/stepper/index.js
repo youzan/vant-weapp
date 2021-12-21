@@ -61,6 +61,7 @@ VantComponent({
             value: true,
         },
         theme: String,
+        alwaysEmbed: Boolean,
     },
     data: {
         currentValue: '',

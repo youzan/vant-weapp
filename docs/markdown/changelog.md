@@ -1,5 +1,23 @@
 # 更新日志
 
+### [v1.10.0](https://github.com/youzan/vant-weapp/compare/v1.9.2...v1.10.0)
+
+`2021-12-21`
+
+**Bug Fixes**
+
+- page-scroll: 修复当 vanPageScroller 为 undefined 时报错 [#4640](https://github.com/youzan/vant-weapp/issues/4640)
+- Switch: 修复当使用 active-value 时 自定义颜色失效 [#4645](https://github.com/youzan/vant-weapp/issues/4645)
+- Toast: 修复当 type 为 success/error 时 toast 样式不正确 [#4587](https://github.com/youzan/vant-weapp/issues/4587)
+
+**Document**
+
+- NoticeBar: 修复文档中 单位标识 错误 [#4641](https://github.com/youzan/vant-weapp/issues/4641)
+
+**Feature**
+
+- Stepper: 新增 always-embed 属性 [#4678](https://github.com/youzan/vant-weapp/issues/4678)
+
 ### [v1.9.2](https://github.com/youzan/vant-weapp/compare/v1.9.1...v1.9.2)
 
 `2021-10-28`

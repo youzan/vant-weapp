@@ -7969,10 +7969,10 @@ istanbul-reports@^3.0.2:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-j-component@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.npmjs.org/j-component/-/j-component-1.4.4.tgz#f9b46db2fe67b57b6637e70b007d9d9504a89553"
-  integrity sha512-slXAVngICuOjd2DEVgFAWWD/rxxvXesKgCk+lkXuea/v2yOm+2lUK+nk0Ruml6l5EoI6D36nKC+Z7cav4poOiw==
+j-component@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/j-component/-/j-component-1.4.5.tgz#9841a99d04b98c29591f425947d02538c952a950"
+  integrity sha512-Ve/mk7zJFacpA3qN99zIiAeoUWOWvoCdcNkHNeYETB5DpQKmmATOA9S2n4tGWO48igzkDBxkvBrpZJ3Dx5cC9A==
   dependencies:
     expr-parser "^1.0.0"
     miniprogram-api-typings "^3.2.2"
@@ -9456,12 +9456,12 @@ miniprogram-exparser@2.15.0:
   integrity sha512-W6aS1R3oVTwYw5hPguRqICFqx3wk2dtPAcwT6269WeWRjuQslbVPZRW/nlN16bg0NM5eQFmfU49PM6/PQ5DE8w==
 
 miniprogram-simulate@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.npmjs.org/miniprogram-simulate/-/miniprogram-simulate-1.4.2.tgz#6a1c21432df830900979dc1e512bb55676f003a2"
-  integrity sha512-eJ21rTum/3mXPCPAsZvxrvXosidPdAEIv8WhutJC9eO5YT9fyxDDMxbSH3kvo0AujCDlQ+f+Z8uKWJeEZZYa9Q==
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/miniprogram-simulate/-/miniprogram-simulate-1.4.3.tgz#950f94cde0dd02fe4f5f52ec5c12d054baf1be3f"
+  integrity sha512-BxAWYxFO4l5rS6nLzsIor7nBo/CKtLP2hdVOG35QOwxUu0ZgsUnxa2m/ojSBNfMJnpFpU83iJQqindv4e3RM2Q==
   dependencies:
     csso "^3.5.1"
-    j-component "^1.4.4"
+    j-component "^1.4.5"
     less "^3.10.3"
     miniprogram-compiler latest
     postcss "^7.0.23"

@@ -134,35 +134,39 @@ tasks.buildExample = gulp.series(
         .pipe(gulp.dest(`${exampleDistDir}/@vant/icons`)),
     () => {
       const appJson = JSON.parse(fs.readFileSync(exampleAppJsonPath));
-      appJson.pages.forEach((path) => {
-        const component = path.replace(/(pages\/|\/index)/g, '');
-        const writeFiles = [
-          {
-            path: `${examplePagesDir}/${component}/index.js`,
-            contents: "import Page from '../../common/page';\n\nPage();",
-          },
-          {
-            path: `${examplePagesDir}/${component}/index.wxml`,
-            contents: `<van-${component}-demo />`,
-          },
-        ];
-        writeFiles.forEach((writeFile) => {
-          fs.access(writeFile.path, fs.constants.F_OK, (fileNotExists) => {
-            if (fileNotExists) {
-              fs.writeFile(writeFile.path, writeFile.contents, (err) => {
-                if (err) {
-                  throw err;
-                }
-              });
-            }
+      const excludePages = ['pages/dashboard/index'];
+      appJson.pages
+        .filter((page) => page.indexOf(excludePages) === -1)
+        .forEach((path) => {
+          const component = path.replace(/(pages\/|\/index)/g, '');
+          const writeFiles = [
+            {
+              path: `${examplePagesDir}/${component}/index.js`,
+              contents: "import Page from '../../common/page';\n\nPage();",
+            },
+            {
+              path: `${examplePagesDir}/${component}/index.wxml`,
+              contents: `<van-${component}-demo />`,
+            },
+          ];
+          writeFiles.forEach((writeFile) => {
+            fs.access(writeFile.path, fs.constants.F_OK, (fileNotExists) => {
+              if (fileNotExists) {
+                fs.writeFile(writeFile.path, writeFile.contents, (err) => {
+                  if (err) {
+                    throw err;
+                  }
+                });
+              }
+            });
           });
         });
-      });
     },
     () => {
       gulp.watch(`${src}/**/*.less`, lessCompiler(exampleDistDir));
       gulp.watch(`${src}/**/*.wxml`, copier(exampleDistDir, 'wxml'));
       gulp.watch(`${src}/**/*.wxs`, copier(exampleDistDir, 'wxs'));
+      gulp.watch(`${src}/**/*.ts`, tsCompiler(exampleDistDir, exampleConfig));
       gulp.watch(`${src}/**/*.json`, copier(exampleDistDir, 'json'));
     }
   )

@@ -22,7 +22,7 @@ exports[`should render demo and match snapshot 1`] = `
           >
             <wx-view
               class="custom-class van-icon van-icon-volume-o"
-              style="font-size:16px"
+              style=""
               bind:tap="onClick"
             />
           </van-icon>
@@ -225,7 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
           >
             <wx-view
               class="custom-class van-icon van-icon-info-o"
-              style="font-size:16px"
+              style=""
               bind:tap="onClick"
             />
           </van-icon>

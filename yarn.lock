@@ -2582,9 +2582,9 @@
     eslint-plugin-vue "^7.15.2"
 
 "@vant/icons@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.npmjs.org/@vant/icons/-/icons-1.7.1.tgz#49ae420302b5581e54e6894891e5a05bc76e9f87"
-  integrity sha512-66LPEq89w4kl258nALZcRNd14eUJC8VajvTJwvZKOaZawz6CUeVZ6ybhedTUhQhRjeA8SyWD7dFt4ALf33Sabw==
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.7.3.tgz#e51b46065cfde445617401ebe309a33b62a29725"
+  integrity sha512-tW4EqzxN4kXw1rnlnQJQHofEifPbt/gECOWiibomht8QLyvoGuE4iUmDFS288dJ07ZjuTy0bhdABj0SENo2fmQ==
 
 "@vant/markdown-vetur@^2.2.0":
   version "2.2.0"

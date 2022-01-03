@@ -117,6 +117,7 @@ Page({
 | send-message-path | 会话内消息卡片点击跳转小程序路径 | _string_ | 当前分享路径 |
 | send-message-img | sendMessageImg | _string_ | 截图 |
 | show-message-card | 显示会话内消息卡片 | _string_ | `false` |
+| class-prefix `v1.10.1` | 类名前缀 | _string_ | `van-icon` |
 
 ### GoodsActionButton Props
 

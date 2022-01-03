@@ -152,3 +152,13 @@ npm run dev
 ```
 
 接着打开微信开发者工具，导入`example`目录的项目就可以预览示例了。
+
+### 关于用户隐私保护指引
+
+@vant/weapp 部分组件使用了微信提供的接口，其中部分接口涉及获取用户隐私信息。
+
+例如 `<Uploader />` 使用了微信提供的选择用户相册中图片接口`(wx.chooseImage)`。
+
+当小程序引入 @vant/weapp 并发布时，
+根据微信[《用户隐私保护指引填写说明》](https://developers.weixin.qq.com/miniprogram/dev/framework/user-privacy/)，
+如检测到代码中存在涉及用户隐私信息接口则需填写用户隐私保护指引信息，如已填写则无需重复填写。

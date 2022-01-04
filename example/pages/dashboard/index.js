@@ -1,3 +1,8 @@
+import list from '../../config';
 import Page from '../../common/page';
 
-Page();
+Page({
+  data: {
+    list,
+  },
+});

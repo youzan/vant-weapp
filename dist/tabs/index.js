@@ -230,6 +230,7 @@ VantComponent({
         onTouchStart(event) {
             if (!this.data.swipeable)
                 return;
+            this.swiping = true;
             this.touchStart(event);
         },
         onTouchMove(event) {

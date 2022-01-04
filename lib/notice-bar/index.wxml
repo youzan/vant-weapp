@@ -9,7 +9,6 @@
 >
   <van-icon
     wx:if="{{ leftIcon }}"
-    size="16px"
     name="{{ leftIcon }}"
     class="van-notice-bar__left-icon"
   />

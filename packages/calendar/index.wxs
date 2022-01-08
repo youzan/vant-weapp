@@ -6,6 +6,7 @@ function getMonths(minDate, maxDate) {
   var cursor = getDate(minDate);
 
   cursor.setDate(1);
+  cursor.setHours(0, 0, 0, 0);
 
   do {
     months.push(cursor.getTime());

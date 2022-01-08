@@ -106,7 +106,6 @@
 </demo-block>
 
 <demo-block title="平铺展示">
-  min-date: {{ tiledMinDate }}
   <van-calendar
     title="日历"
     poppable="{{ false }}"

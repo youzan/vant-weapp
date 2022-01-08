@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v1.10.1](https://github.com/youzan/vant-weapp/compare/v1.10.0...v1.10.1)
+
+`2022-01-04`
+
+**Bug Fixes**
+
+- NoticeBar: 移除 默认 icon 尺寸 [#4692](https://github.com/youzan/vant-weapp/issues/4692)
+- Tab: 修复 滑动失效问题 [#4715](https://github.com/youzan/vant-weapp/issues/4715)
+
+**Document**
+
+- quickstart: 增加 用户隐私保护 说明 [#4711](https://github.com/youzan/vant-weapp/issues/4711)
+
+**Feature**
+
+- GoodsAction: 增加 GoodsActionIcon 组件的 class-prefix 属性 [#4712](https://github.com/youzan/vant-weapp/issues/4712)
+
 ### [v1.10.0](https://github.com/youzan/vant-weapp/compare/v1.9.2...v1.10.0)
 
 `2021-12-21`

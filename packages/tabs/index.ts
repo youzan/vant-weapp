@@ -284,6 +284,7 @@ VantComponent({
 
     onTouchStart(event: WechatMiniprogram.TouchEvent) {
       if (!this.data.swipeable) return;
+      this.swiping = true;
 
       this.touchStart(event);
     },

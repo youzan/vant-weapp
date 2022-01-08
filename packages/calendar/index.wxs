@@ -3,6 +3,7 @@ var utils = require('./utils.wxs');
 
 function getMonths(minDate, maxDate) {
   var months = [];
+  minDate = 1640966400000;
   var cursor = getDate(minDate);
 
   cursor.setDate(1);

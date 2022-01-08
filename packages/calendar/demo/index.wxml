@@ -111,8 +111,8 @@
     title="日历"
     poppable="{{ false }}"
     show-confirm="{{ false }}"
-    min-date="{{ tiledMinDate }}"
-    max-date="{{ tiledMaxDate }}"
+    min-date="{{ 1326124800000 }}"
+    max-date="{{ 1332172800000 }}"
     first-day-of-week="{{ firstDayOfWeek }}"
     class="tiled-calendar"
   />

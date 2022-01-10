@@ -204,22 +204,19 @@ exports[`should render demo and match snapshot 1`] = `
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="van-calendar__day van-calendar__day--selected "
+                    class="van-calendar__day van-calendar__day--disabled "
                     data-index="{{7}}"
                     style=""
                     bind:tap="onClick"
                   >
-                    <wx-view
-                      class="van-calendar__selected-day"
-                      style="background: "
-                    >
+                    <wx-view>
                       
         8
         
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="van-calendar__day "
+                    class="van-calendar__day van-calendar__day--disabled "
                     data-index="{{8}}"
                     style=""
                     bind:tap="onClick"
@@ -231,7 +228,7 @@ exports[`should render demo and match snapshot 1`] = `
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="van-calendar__day "
+                    class="van-calendar__day van-calendar__day--disabled "
                     data-index="{{9}}"
                     style=""
                     bind:tap="onClick"
@@ -243,12 +240,15 @@ exports[`should render demo and match snapshot 1`] = `
                     </wx-view>
                   </wx-view>
                   <wx-view
-                    class="van-calendar__day "
+                    class="van-calendar__day van-calendar__day--selected "
                     data-index="{{10}}"
                     style=""
                     bind:tap="onClick"
                   >
-                    <wx-view>
+                    <wx-view
+                      class="van-calendar__selected-day"
+                      style="background: "
+                    >
                       
         11
         

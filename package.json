@@ -54,6 +54,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "jest": "^27.3.1",
+    "merge2": "^1.4.1",
     "miniprogram-api-typings": "^3.1.6",
     "miniprogram-ci": "^1.6.1",
     "miniprogram-simulate": "^1.4.2",

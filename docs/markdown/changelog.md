@@ -1,5 +1,15 @@
 # 更新日志
 
+### [v1.10.2](https://github.com/youzan/vant-weapp/compare/v1.10.1...v1.10.2)
+
+`2022-01-11`
+
+**Bug Fixes**
+
+- build: 修复编译时 dts 文件丢失 [#4741](https://github.com/youzan/vant-weapp/issues/4741)
+- Calendar: 修复 row-height 样式问题 [#4733](https://github.com/youzan/vant-weapp/issues/4733)
+- ShareSheet: 修复 点击文字 时 未触发小程序开放能力 [#4739](https://github.com/youzan/vant-weapp/pull/4739)
+
 ### [v1.10.1](https://github.com/youzan/vant-weapp/compare/v1.10.0...v1.10.1)
 
 `2022-01-04`

@@ -7,6 +7,7 @@ const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const ts = require('gulp-typescript');
 const util = require('util');
+const merge2 = require('merge2');
 const exec = util.promisify(require('child_process').exec);
 
 const src = path.resolve(__dirname, '../packages');
@@ -54,26 +55,31 @@ const lessCompiler = (dist) =>
 
 const tsCompiler = (dist, config) =>
   function compileTs() {
-    const tsProject = ts.createProject(config);
-    return tsProject
-      .src()
-      .pipe(tsProject())
-      .js.pipe(
-        insert.transform((contents, file) => {
-          if (dist === exampleDistDir && file.path.includes('/demo/')) {
-            const iconConfig = '@vant/icons/src/config';
-            contents = contents.replace(
-              iconConfig,
-              path.relative(
-                path.dirname(file.path),
-                `${exampleDistDir}/${iconConfig}`
-              )
-            );
-          }
-          return contents;
-        })
-      )
-      .pipe(gulp.dest(dist));
+    const tsProject = ts.createProject(config, {
+      declaration: true,
+    });
+    const tsResult = tsProject.src().pipe(tsProject());
+
+    return merge2(
+      tsResult.js
+        .pipe(
+          insert.transform((contents, file) => {
+            if (dist === exampleDistDir && file.path.includes('/demo/')) {
+              const iconConfig = '@vant/icons/src/config';
+              contents = contents.replace(
+                iconConfig,
+                path.relative(
+                  path.dirname(file.path),
+                  `${exampleDistDir}/${iconConfig}`
+                )
+              );
+            }
+            return contents;
+          })
+        )
+        .pipe(gulp.dest(dist)),
+      tsResult.dts.pipe(gulp.dest(dist))
+    );
   };
 
 const copier = (dist, ext) =>

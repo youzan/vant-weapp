@@ -14,6 +14,10 @@ VantComponent({
 
   props: {
     ...pickerProps,
+    showToolbar: {
+      type: Boolean,
+      default: true,
+    },
     value: {
       type: String,
       observer(value: string) {

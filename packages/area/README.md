@@ -138,6 +138,7 @@ db.collection('region')
 | visible-item-count | 可见的选项个数 | _number_ | `6` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
+| show-toolbar `1.10.3` | 是否显示顶部栏 | _boolean_ | `true` |
 
 ### Events
 

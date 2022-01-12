@@ -29,6 +29,32 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-picker custom-class"
           >
             <wx-view
+              class="van-picker__toolbar toolbar-class"
+            >
+              <wx-view
+                class="van-picker__cancel"
+                data-type="cancel"
+                hoverClass="van-picker__cancel--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    取消
+  
+              </wx-view>
+              <wx-view
+                class="van-picker__confirm"
+                data-type="confirm"
+                hoverClass="van-picker__confirm--hover"
+                hoverStayTime="70"
+                bind:tap="emit"
+              >
+                
+    确认
+  
+              </wx-view>
+            </wx-view>
+            <wx-view
               class="van-picker__loading"
             >
               <loading>

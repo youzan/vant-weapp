@@ -16,7 +16,7 @@ VantComponent({
     ...pickerProps,
     showToolbar: {
       type: Boolean,
-      default: true,
+      value: true,
     },
     value: {
       type: String,

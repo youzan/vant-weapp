@@ -91,19 +91,19 @@ VantComponent({
               delay,
             });
 
-            this.scroll();
+            this.scroll(true);
           }
         });
       });
     },
 
-    scroll() {
+    scroll(isInit = false) {
       this.timer && clearTimeout(this.timer);
       this.timer = null;
 
       this.setData({
         animationData: this.resetAnimation
-          .translateX(this.wrapWidth)
+          .translateX(isInit ? 0 : this.wrapWidth)
           .step()
           .export(),
       });

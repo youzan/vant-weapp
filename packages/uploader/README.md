@@ -274,7 +274,7 @@ uploadFilePromise(fileName, chooseResult) {
 | ---- | -------------- |
 | -    | 自定义上传区域 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |

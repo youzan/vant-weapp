@@ -110,8 +110,8 @@
 
 | 事件名 | 说明             | 参数           |
 | ------ | ---------------- | -------------- |
-| click  | 点击通知栏时触发 | _event: Event_ |
-| close  | 关闭通知栏时触发 | _event: Event_ |
+| bind:click  | 点击通知栏时触发 | _event: Event_ |
+| bind:close  | 关闭通知栏时触发 | _event: Event_ |
 
 ### Slot
 

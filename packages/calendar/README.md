@@ -325,15 +325,15 @@ Page({
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| select | 点击任意日期时触发 | _value: Date \| Date[]_ |
-| unselect | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发 | _value: Date_ |
-| confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
-| open | 打开弹出层时触发 | - |
-| close | 关闭弹出层时触发 | - |
-| opened | 打开弹出层且动画结束后触发 | - |
-| closed | 关闭弹出层且动画结束后触发 | - |
-| over-range | 范围选择超过最多可选天数时触发 | - |
-| click-subtitle `v1.8.1` | 点击日历副标题时触发 | _WechatMiniprogram.TouchEvent_ |
+| bind:select | 点击任意日期时触发 | _value: Date \| Date[]_ |
+| bind:unselect | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发 | _value: Date_ |
+| bind:confirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
+| bind:open | 打开弹出层时触发 | - |
+| bind:close | 关闭弹出层时触发 | - |
+| bind:opened | 打开弹出层且动画结束后触发 | - |
+| bind:closed | 关闭弹出层且动画结束后触发 | - |
+| bind:over-range | 范围选择超过最多可选天数时触发 | - |
+| bind:click-subtitle `v1.8.1` | 点击日历副标题时触发 | _WechatMiniprogram.TouchEvent_ |
 
 ### Slots
 

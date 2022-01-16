@@ -120,9 +120,9 @@
 
 | 事件名 | 说明               | 回调参数     |
 | ------ | ------------------ | ------------ |
-| click  | 点击图片时触发     | event: Event |
-| load   | 图片加载完毕时触发 | event: Event |
-| error  | 图片加载失败时触发 | event: Event |
+| bind:click  | 点击图片时触发     | event: Event |
+| bind:load   | 图片加载完毕时触发 | event: Event |
+| bind:error  | 图片加载失败时触发 | event: Event |
 
 ### Slots
 

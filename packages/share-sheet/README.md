@@ -183,10 +183,10 @@ Page({
 
 | 事件名        | 说明               | 回调参数                        |
 | ------------- | ------------------ | ------------------------------- |
-| select        | 点击分享选项时触发 | _option: Option, index: number_ |
-| close         | 关闭时触发         | -                               |
-| cancel        | 点击取消按钮时触发 | -                               |
-| click-overlay | 点击遮罩层时触发   | -                               |
+| bind:select        | 点击分享选项时触发 | _option: Option, index: number_ |
+| bind:close         | 关闭时触发         | -                               |
+| bind:cancel        | 点击取消按钮时触发 | -                               |
+| bind:click-overlay | 点击遮罩层时触发   | -                               |
 
 ### Slots
 

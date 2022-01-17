@@ -140,7 +140,7 @@ Page({
 | icon | 选中时的图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | `star` |
 | void-icon | 未选中时的图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | `star-o` |
 | allow-half | 是否允许半选 | _boolean_ | `false` |
-| readonly | 是否为只读状态  | _boolean_ | `false` |
+| readonly | 是否为只读状态 | _boolean_ | `false` |
 | disabled | 是否禁用评分 | _boolean_ | `false` |
 | disabled-color | 禁用时的颜色 | _string_ | `#bdbdbd` |
 | touchable | 是否可以通过滑动手势选择评分 | _boolean_ | `true` |
@@ -149,7 +149,7 @@ Page({
 
 | 事件名称 | 说明                     | 回调参数              |
 | -------- | ------------------------ | --------------------- |
-| change   | 当前分值变化时触发的事件 | event.detail:当前分值 |
+| bind:change   | 当前分值变化时触发的事件 | event.detail:当前分值 |
 
 ### 外部样式类
 

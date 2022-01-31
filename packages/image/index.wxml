@@ -6,17 +6,6 @@
   class="custom-class {{ utils.bem('image', { round })}}"
   bind:tap="onClick"
 >
-  <image
-    wx:if="{{ !error }}"
-    src="{{ src }}"
-    mode="{{ computed.mode(fit) }}"
-    lazy-load="{{ lazyLoad }}"
-    class="image-class van-image__img"
-    show-menu-by-longpress="{{ showMenuByLongpress }}"
-    bind:load="onLoad"
-    bind:error="onError"
-  />
-
   <view
     wx:if="{{ loading && showLoading }}"
     class="loading-class van-image__loading"
@@ -31,4 +20,15 @@
     <slot wx:if="{{ useErrorSlot }}" name="error" />
     <van-icon wx:else name="photo-fail" custom-class="van-image__error-icon" />
   </view>
+
+  <image
+    wx:if="{{ !error }}"
+    src="{{ src }}"
+    mode="{{ computed.mode(fit) }}"
+    lazy-load="{{ lazyLoad }}"
+    class="image-class van-image__img"
+    show-menu-by-longpress="{{ showMenuByLongpress }}"
+    bind:load="onLoad"
+    bind:error="onError"
+  />
 </view>

@@ -22,15 +22,6 @@ exports[`should render demo and match snapshot 1`] = `
               style="width:100px;height:100px"
               bind:tap="onClick"
             >
-              <wx-image
-                class="image-class van-image__img"
-                lazyLoad="{{false}}"
-                mode="scaleToFill"
-                showMenuByLongpress="{{false}}"
-                src="https://img.yzcdn.cn/vant/cat.jpeg"
-                bind:error="onError"
-                bind:load="onLoad"
-              />
               <wx-view
                 class="loading-class van-image__loading"
               >
@@ -44,6 +35,15 @@ exports[`should render demo and match snapshot 1`] = `
                   />
                 </van-icon>
               </wx-view>
+              <wx-image
+                class="image-class van-image__img"
+                lazyLoad="{{false}}"
+                mode="scaleToFill"
+                showMenuByLongpress="{{false}}"
+                src="https://img.yzcdn.cn/vant/cat.jpeg"
+                bind:error="onError"
+                bind:load="onLoad"
+              />
             </wx-view>
           </van-image>
         </wx-view>
@@ -75,15 +75,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="aspectFit"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -97,6 +88,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="aspectFit"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -117,15 +117,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="aspectFill"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -139,6 +130,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="aspectFill"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -159,15 +159,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="scaleToFill"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -181,6 +172,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="scaleToFill"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -201,15 +201,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="center"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -223,6 +214,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="center"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -243,15 +243,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode=""
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -265,6 +256,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode=""
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -285,15 +285,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="widthFix"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -307,6 +298,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="widthFix"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -327,15 +327,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="heightFix"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -349,6 +340,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="heightFix"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -387,15 +387,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="aspectFit"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -409,6 +400,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="aspectFit"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -429,15 +429,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="aspectFill"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -451,6 +442,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="aspectFill"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -471,15 +471,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="scaleToFill"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -493,6 +484,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="scaleToFill"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -513,15 +513,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="center"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -535,6 +526,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="center"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -555,15 +555,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode=""
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -577,6 +568,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode=""
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -597,15 +597,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="widthFix"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -619,6 +610,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="widthFix"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -639,15 +639,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="heightFix"
-                    showMenuByLongpress="{{false}}"
-                    src="https://img.yzcdn.cn/vant/cat.jpeg"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -661,6 +652,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="heightFix"
+                    showMenuByLongpress="{{false}}"
+                    src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -699,15 +699,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="scaleToFill"
-                    showMenuByLongpress="{{false}}"
-                    src=""
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -721,6 +712,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="scaleToFill"
+                    showMenuByLongpress="{{false}}"
+                    src=""
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -741,15 +741,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="scaleToFill"
-                    showMenuByLongpress="{{false}}"
-                    src=""
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -807,6 +798,15 @@ exports[`should render demo and match snapshot 1`] = `
                       </wx-view>
                     </van-loading>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="scaleToFill"
+                    showMenuByLongpress="{{false}}"
+                    src=""
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -845,15 +845,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="scaleToFill"
-                    showMenuByLongpress="{{false}}"
-                    src="x"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -867,6 +858,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="scaleToFill"
+                    showMenuByLongpress="{{false}}"
+                    src="x"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view
@@ -887,15 +887,6 @@ exports[`should render demo and match snapshot 1`] = `
                   style="width:100%;height:27vw"
                   bind:tap="onClick"
                 >
-                  <wx-image
-                    class="image-class van-image__img"
-                    lazyLoad="{{false}}"
-                    mode="scaleToFill"
-                    showMenuByLongpress="{{false}}"
-                    src="x"
-                    bind:error="onError"
-                    bind:load="onLoad"
-                  />
                   <wx-view
                     class="loading-class van-image__loading"
                   >
@@ -909,6 +900,15 @@ exports[`should render demo and match snapshot 1`] = `
                       />
                     </van-icon>
                   </wx-view>
+                  <wx-image
+                    class="image-class van-image__img"
+                    lazyLoad="{{false}}"
+                    mode="scaleToFill"
+                    showMenuByLongpress="{{false}}"
+                    src="x"
+                    bind:error="onError"
+                    bind:load="onLoad"
+                  />
                 </wx-view>
               </van-image>
               <wx-view

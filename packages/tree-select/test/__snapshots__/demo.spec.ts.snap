@@ -407,15 +407,6 @@ exports[`should render demo and match snapshot 1`] = `
                 style="width:100%;height:100%"
                 bind:tap="onClick"
               >
-                <wx-image
-                  class="image-class van-image__img"
-                  lazyLoad="{{false}}"
-                  mode="scaleToFill"
-                  showMenuByLongpress="{{false}}"
-                  src="https://img.yzcdn.cn/vant/apple-1.jpg"
-                  bind:error="onError"
-                  bind:load="onLoad"
-                />
                 <wx-view
                   class="loading-class van-image__loading"
                 >
@@ -429,6 +420,15 @@ exports[`should render demo and match snapshot 1`] = `
                     />
                   </van-icon>
                 </wx-view>
+                <wx-image
+                  class="image-class van-image__img"
+                  lazyLoad="{{false}}"
+                  mode="scaleToFill"
+                  showMenuByLongpress="{{false}}"
+                  src="https://img.yzcdn.cn/vant/apple-1.jpg"
+                  bind:error="onError"
+                  bind:load="onLoad"
+                />
               </wx-view>
             </van-image>
           </wx-scroll-view>

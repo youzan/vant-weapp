@@ -9501,9 +9501,9 @@ minimist@^1.1.3, minimist@^1.2.0, minimist@^1.2.5:
   integrity sha1-Z9ZgFLZqaoqqDAg8X9WN9OTpdgI=
 
 miniprogram-api-typings@^3.1.6, miniprogram-api-typings@^3.2.2:
-  version "3.4.4"
-  resolved "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-3.4.4.tgz#a68ce1f10ff2479b521cd4af276a23041b90f2f6"
-  integrity sha512-vT4avEJxCnscNXjY3rI0dNtU1tf/mNll9RhAS0uS+eN5IdQ7MrnG5thGOxjoWnDJSiPYLG912IMcf6KKsXEDAQ==
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.4.5.tgz#060e73b58ccc28db85ffb4ae60a838112866fb3e"
+  integrity sha512-GWvMdmPhJ40PLq4/sOh+n2xGRKf2R3kcuOaSe7IRTdT+Os8lfNrJYehYdgH7IoUWqaHqV8mFEWQj5oPIGhVv4Q==
 
 miniprogram-ci@^1.6.1:
   version "1.6.10"

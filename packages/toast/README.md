@@ -111,7 +111,7 @@ Toast({
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 提示类型，可选值为 `loading` `success` `fail` `html` | _string_ | `text` |
+| type | 提示类型，可选值为 `loading` `success` `fail` `html`；若要使用自定义图标/图片，可将 type 值设置为图标/图片的地址 | _string_ | `text` |
 | position | 位置，可选值为 `top` `middle` `bottom` | _string_ | `middle` |
 | message | 内容 | _string_ | `''` |
 | mask | 是否显示遮罩层 | _boolean_ | `false` |

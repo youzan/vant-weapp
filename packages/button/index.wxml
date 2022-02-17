@@ -19,6 +19,7 @@
   app-parameter="{{ appParameter }}"
   aria-label="{{ ariaLabel }}"
   bindtap="{{ disabled || loading ? '' : 'onClick' }}"
+  disabled="{{ disabled }}"
   bindgetuserinfo="onGetUserInfo"
   bindcontact="onContact"
   bindgetphonenumber="onGetPhoneNumber"

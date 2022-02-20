@@ -64,14 +64,14 @@ const tsCompiler = (dist, config) =>
       tsResult.js
         .pipe(
           insert.transform((contents, file) => {
-            if (dist === exampleDistDir && file.path.includes('/demo/')) {
+            if (dist === exampleDistDir && file.path.includes(`${path.sep}demo${path.sep}`)) {
               const iconConfig = '@vant/icons/src/config';
               contents = contents.replace(
                 iconConfig,
                 path.relative(
                   path.dirname(file.path),
                   `${exampleDistDir}/${iconConfig}`
-                )
+                ).replace(/\\/g, '/')
               );
             }
             return contents;
@@ -92,7 +92,7 @@ const copier = (dist, ext) =>
       .src(srcPath)
       .pipe(
         insert.transform((contents, file) => {
-          if (ext === 'json' && file.path.includes('/demo/')) {
+          if (ext === 'json' &&  file.path.includes(`${path.sep}demo${path.sep}`)  ) {
             contents = contents.replace('/example', '');
           }
           return contents;

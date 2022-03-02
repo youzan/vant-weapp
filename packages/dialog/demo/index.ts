@@ -87,7 +87,7 @@ VantComponent({
       this.setData({ beforeClose: this.beforeCloseFn()});
       this.setData({ show: true });
     },
-    beforeCloseFn(action?: Action) {
+    beforeCloseFn() {
       const beforeClose = (action?: Action) => new Promise((resolve) => {
         setTimeout(() => {
           if (action === 'confirm') {
@@ -99,7 +99,7 @@ VantComponent({
           }
         }, 1000);
       });
-      return () => beforeClose(action);
+      return (action) => beforeClose(action);
     },
   },
 });

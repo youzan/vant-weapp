@@ -15,6 +15,7 @@
 
 <demo-block card title="组件调用" padding>
   <van-cell title="组件调用" bind:click="showCustomDialog" />
+  <van-cell title="异步关闭" bind:click="onClickCustomAsyncClose" />
 </demo-block>
 
 <van-dialog

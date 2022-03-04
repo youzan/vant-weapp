@@ -77,7 +77,23 @@ VantComponent({
         beforeClose,
       });
     },
-
+    onClickCustomAsyncClose() {
+      this.setData({ beforeClose: this.beforeCloseFn() });
+      this.setData({ show: true });
+    },
+    beforeCloseFn() {
+      return (action: Action) => new Promise((resolve) => {
+        setTimeout(() => {
+          if (action === 'confirm') {
+            resolve(true);
+          }
+          else {
+            // 拦截取消操作
+            resolve(false);
+          }
+        }, 1000);
+      });
+    },
     onClose() {
       this.setData({
         show: false,

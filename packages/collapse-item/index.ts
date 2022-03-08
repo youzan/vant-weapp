@@ -8,6 +8,7 @@ VantComponent({
   relation: useParent('collapse'),
 
   props: {
+    size: null,
     name: null,
     title: null,
     value: null,

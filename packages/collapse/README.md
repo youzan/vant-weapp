@@ -172,6 +172,7 @@ Page({
 | --- | --- | --- | --- |
 | name | 唯一标识符，默认为索引值 | _string \| number_ | `index` |
 | title | 标题栏左侧内容 | _string \| number_ | - |
+| size | 标题栏大小，可选值为`large` | _string_ | - |
 | icon | 标题栏左侧图标名称或图片链接，可选值见 [Icon 组件](#/icon) | _string_ | - |
 | value | 标题栏右侧内容 | _string \| number_ | - |
 | label | 标题栏描述信息 | _string_ | - |

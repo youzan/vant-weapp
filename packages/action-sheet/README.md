@@ -58,6 +58,30 @@ Page({
 });
 ```
 
+### 展示取消按钮
+
+设置`cancel-text`属性后，会在底部展示取消按钮，点击后关闭当前菜单。
+
+```html
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+/>
+```
+
+### 展示描述信息
+
+设置`description`属性后，会在选项上方显示描述信息。
+
+```html
+<van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  description="这是一段描述信息"
+/>
+```
+
 ### 选项状态
 
 选项可以设置为加载状态或禁用状态。
@@ -83,31 +107,7 @@ Page({
 });
 ```
 
-### 展示取消按钮
-
-设置`cancel-text`属性后，会在底部展示取消按钮，点击后关闭当前菜单。
-
-```html
-<van-action-sheet
-  show="{{ show }}"
-  actions="{{ actions }}"
-  cancel-text="取消"
-/>
-```
-
-### 展示描述信息
-
-设置`description`属性后，会在选项上方显示描述信息。
-
-```html
-<van-action-sheet
-  show="{{ show }}"
-  actions="{{ actions }}"
-  description="这是一段描述信息"
-/>
-```
-
-### 展示标题栏
+### 自定义面板
 
 通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容。
 

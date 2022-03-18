@@ -44,7 +44,7 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 感谢以下小伙伴们为 Vant Weapp 发展做出的贡献：
 
 <a href="https://github.com/youzan/vant-weapp/graphs/contributors">
-  <img src="https://opencollective.com/vant-weapp/contributors.svg?width=890&button=false" alt="contributors">
+  <img src="https://opencollective.com/vant-weapp/contributors.svg?width=890&button=false" alt="contributors" style="width: 100%; margin: 16px 0">
 </a>
 
 ### 贡献代码

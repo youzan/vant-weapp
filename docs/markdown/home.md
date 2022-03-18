@@ -25,9 +25,9 @@ Vant 是**有赞前端团队**开源的移动端组件库，于 2017 年开源�
 ### 链接
 
 - [意见反馈](https://github.com/youzan/vant-weapp/issues)
-- [加入我们](https://job.youzan.com)
-- [更新日志](#/changelog)
-- [Vant Vue 版](https://github.com/youzan/vant)
+- [设计资源](https://vant-contrib.gitee.io/vant/#/zh-CN/design)
+- [更新日志](https://vant-contrib.gitee.io/vant-weapp/#/changelog)
+- [官方示例](https://github.com/youzan/vant-demo)
 
 ## 贡献
 

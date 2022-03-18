@@ -99,10 +99,10 @@ Vant Weapp 最低支持到小程序基础库 2.6.5 版本。
 
 ## 链接
 
-- [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
 - [意见反馈](https://github.com/youzan/vant-weapp/issues)
-- [加入我们](https://job.youzan.com)
-- [Vant Vue 版](https://github.com/youzan/vant)
+- [设计资源](https://vant-contrib.gitee.io/vant/#/zh-CN/design)
+- [更新日志](https://vant-contrib.gitee.io/vant-weapp/#/changelog)
+- [官方示例](https://github.com/youzan/vant-demo)
 
 ## 核心团队
 

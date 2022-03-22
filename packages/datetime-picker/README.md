@@ -185,8 +185,8 @@ Page({
 | max-hour | 可选的最大小时，针对 time 类型 | _number_ | `23` |
 | min-minute | 可选的最小分钟，针对 time 类型 | _number_ | `0` |
 | max-minute | 可选的最大分钟，针对 time 类型 | _number_ | `59` |
-| filter | 选项过滤函数 | _(type, values) => values_ | - |
-| formatter | 选项格式化函数 | _(type, value) => value_ | - |
+| filter | 选项过滤函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`) | _(type, values) => values_ | - |
+| formatter | 选项格式化函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`) | _(type, value) => value_ | - |
 | title | 顶部栏标题 | _string_ | `''` |
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |

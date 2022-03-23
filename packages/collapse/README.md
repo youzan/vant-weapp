@@ -23,14 +23,14 @@
 
 ```html
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
-  <van-collapse-item title="有赞微商城" name="1">
-    提供多样店铺模板，快速搭建网上商城
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
-    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  <van-collapse-item title="标题2" name="2">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3" disabled>
-    线上拓客，随时预约，贴心顺手的开单收银
+  <van-collapse-item title="标题3" name="3" disabled>
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
 </van-collapse>
 ```
@@ -54,14 +54,14 @@ Page({
 
 ```html
 <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
-  <van-collapse-item title="有赞微商城" name="1">
-    提供多样店铺模板，快速搭建网上商城
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
-    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  <van-collapse-item title="标题2" name="2">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3">
-    线上拓客，随时预约，贴心顺手的开单收银
+  <van-collapse-item title="标题3" name="3">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
 </van-collapse>
 ```
@@ -90,14 +90,14 @@ Page({
   bind:open="onOpen"
   bind:close="onClose"
 >
-  <van-collapse-item title="有赞微商城" name="1">
-    提供多样店铺模板，快速搭建网上商城
+  <van-collapse-item title="标题1" name="1">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
-    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  <van-collapse-item title="标题2" name="2">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3">
-    线上拓客，随时预约，贴心顺手的开单收银
+  <van-collapse-item title="标题3" name="3">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
 </van-collapse>
 ```
@@ -126,11 +126,11 @@ Page({
 ```html
 <van-collapse value="{{ activeNames }}" bind:change="onChange">
   <van-collapse-item name="1">
-    <view slot="title">有赞微商城<van-icon name="question-o" /></view>
-    提供多样店铺模板，快速搭建网上商城
+    <view slot="title">标题1<van-icon name="question-o" /></view>
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2" icon="shop-o">
-    网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
+  <van-collapse-item title="标题2" name="2" icon="shop-o">
+    代码是写出来给人看的，附带能在机器上运行
   </van-collapse-item>
 </van-collapse>
 ```

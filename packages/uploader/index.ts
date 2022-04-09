@@ -60,6 +60,10 @@ VantComponent({
       type: String,
       value: 'photograph',
     },
+    extension: {
+      type: Array,
+      value: [],
+    },
     ...chooseImageProps,
     ...chooseVideoProps,
   },

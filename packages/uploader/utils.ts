@@ -95,6 +95,7 @@ export function chooseFile({
   sizeType,
   camera,
   maxCount,
+  extension,
 }) {
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
@@ -132,6 +133,7 @@ export function chooseFile({
         wx.chooseMessageFile({
           count: multiple ? maxCount : 1,
           type: accept,
+          extension: accept === 'file' ? extension : [],
           success: (res) => resolve(formatFile(res)),
           fail: reject,
         });

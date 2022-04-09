@@ -8,6 +8,16 @@
   />
 </demo-block>
 
+<demo-block title="上传文件根据后缀名过滤" padding>
+    <van-uploader
+      name="9"
+      accept="file"
+      extension="{{['pdf']}}"
+      file-list="{{ fileList9 }}"
+      bind:after-read="afterRead"
+      bind:delete="delete"
+    />
+  </demo-block>
 <demo-block title="上传视频" padding>
   <van-uploader
     name="7"

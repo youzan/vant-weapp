@@ -25,6 +25,7 @@ VantComponent({
         message: '上传失败',
       },
     ],
+    fileList9: [],
   },
 
   methods: {

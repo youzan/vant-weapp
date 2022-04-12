@@ -19,7 +19,7 @@
 ### 文字提示
 
 ```javascript
-import Toast from 'path/to/@vant/weapp/dist/toast/toast';
+import Toast from '@vant/weapp/toast/toast';
 
 Toast('我是提示文案，建议不超过十五字~');
 ```

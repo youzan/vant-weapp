@@ -158,7 +158,7 @@ db.collection('region')
 
 ### 点击完成时返回的数据格式
 
-返回的数据整体为一个 Object，包含 `values`, `indexs` 两个 key。
+返回的数据整体为一个 Object，包含 `values`, `index` 两个 key。
 
 `values` 整体为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中的数据。
 
@@ -181,4 +181,4 @@ db.collection('region')
 ];
 ```
 
-`indexs` 为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中项的序号。
+`index` 为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中项的序号。

@@ -4,7 +4,10 @@ import { requestAnimationFrame } from '../common/utils';
 const EMPTY_CODE = '000000';
 VantComponent({
     classes: ['active-class', 'toolbar-class', 'column-class'],
-    props: Object.assign(Object.assign({}, pickerProps), { value: {
+    props: Object.assign(Object.assign({}, pickerProps), { showToolbar: {
+            type: Boolean,
+            value: true,
+        }, value: {
             type: String,
             observer(value) {
                 this.code = value;

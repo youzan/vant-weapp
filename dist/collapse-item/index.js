@@ -5,6 +5,7 @@ VantComponent({
     classes: ['title-class', 'content-class'],
     relation: useParent('collapse'),
     props: {
+        size: String,
         name: null,
         title: null,
         value: null,

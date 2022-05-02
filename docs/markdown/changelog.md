@@ -1,5 +1,20 @@
 # 更新日志
 
+### [v1.10.3](https://github.com/youzan/vant-weapp/compare/v1.10.2...v1.10.3)
+
+`2022-05-02`
+
+**Feature**
+
+- Area: 新增 show-toolbar 属性 [#4752](https://github.com/youzan/vant-weapp/issues/4752)
+- CollapseItem: 新增 size 属性 [#4829](https://github.com/youzan/vant-weapp/issues/4829)
+- uploader: preview-size 属性类型支持 Array 自定义宽高 [#4798](https://github.com/youzan/vant-weapp/issues/4798)
+
+**Bug Fixes**
+
+- Calendar: 修复设置 maxDate 和 minDate 后，周几显示不正确的问题 [#4742](https://github.com/youzan/vant-weapp/issues/4742)
+- NoticeBar: 修复无法从初始最左侧位置开始滚动的问题 [#4746](https://github.com/youzan/vant-weapp/issues/4746)
+
 ### [v1.10.2](https://github.com/youzan/vant-weapp/compare/v1.10.1...v1.10.2)
 
 `2022-01-11`

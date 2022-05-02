@@ -4,7 +4,8 @@ on:
   push:
     branches: [dev]
     paths:
-      - 'docs/**'
+      - 'docs/**/*.md'
+      - 'packages/**/*.md'
 
 jobs:
   build-and-deploy:

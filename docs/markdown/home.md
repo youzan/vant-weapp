@@ -18,6 +18,8 @@ Vant 是一个**轻量、可靠的移动端组件库**，于 2017 年开源。
 
 <img src="https://img.yzcdn.cn/vant-weapp/qrcode-201808101114.jpg" style="width: 200px; height: 200px; margin-top: 15px; box-shadow: none" >
 
+> Tips: 为了便于预览组件效果，本文档的右侧内嵌了 H5 版的 Vant 页面作为参考。在实际使用中，个别组件的表现可能与小程序上的表现有差异，请以实际效果为准。
+
 ### 快速上手
 
 请参考 [快速上手](#/quickstart)。

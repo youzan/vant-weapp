@@ -12,7 +12,7 @@ export default {
     description: '轻量、可靠的小程序 UI 组件库',
     logo: 'https://img.yzcdn.cn/vant/logo.png',
     simulator: {
-      url: 'https://vant-contrib.gitee.io/vant/mobile.html?weapp=1',
+      url: 'https://vant-contrib.gitee.io/vant/v2/mobile.html?weapp=1',
       routeMapper: (path) => {
         const map = {
           '/common': '/style',

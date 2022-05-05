@@ -159,6 +159,7 @@ Page({
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| show | 是否显示分享面板 | _boolean_ | `false` |
 | options | 分享选项 | _Option[]_ | `[]` |
 | title | 顶部标题 | _string_ | - |
 | cancel-text | 取消按钮文字 | _string_ | `'取消'` |

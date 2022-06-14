@@ -9192,9 +9192,9 @@ miniprogram-exparser@2.15.0:
   integrity sha512-W6aS1R3oVTwYw5hPguRqICFqx3wk2dtPAcwT6269WeWRjuQslbVPZRW/nlN16bg0NM5eQFmfU49PM6/PQ5DE8w==
 
 miniprogram-simulate@^1.4.2:
-  version "1.5.5"
-  resolved "https://registry.npmmirror.com/miniprogram-simulate/-/miniprogram-simulate-1.5.5.tgz#d1bcc24675f5ec99bb0d2365697cd96ccf24eab5"
-  integrity sha512-GeI2jZ9y78o7TIybb3NX0BFrdV2YombyXRCEaAJVEoeWtpUSqvxHwfRUSMDsY8na8KXRXUfLtUWP1B5rS6LLlA==
+  version "1.5.7"
+  resolved "https://registry.npmmirror.com/miniprogram-simulate/-/miniprogram-simulate-1.5.7.tgz#58da166b08c1a4a3c8b1d9d3de7e74e8a2fe8597"
+  integrity sha512-RFfZSoDIc+PQTtDmkg9D1/Su+UVCzuWbTV/KM1Zr8IUfFNg6uxsKLdeUem9H5sk0a4dlH/o1Qv7QXZPFfcbAvA==
   dependencies:
     csso "^3.5.1"
     j-component "^1.4.6"

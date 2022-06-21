@@ -46,5 +46,13 @@ export const button = Behavior({
     onOpenSetting(event: WechatMiniprogram.ButtonOpenSetting) {
       this.triggerEvent('opensetting', event.detail);
     },
+
+    onChooseAvatar(
+      event: WechatMiniprogram.CustomEvent<
+        WechatMiniprogram.GeneralCallbackResult & { avatarUrl: string }
+        >
+    ) {
+      this.triggerEvent('chooseavatar', event.detail);
+    },
   },
 });

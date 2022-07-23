@@ -19,7 +19,7 @@
 ### 基础用法
 
 ```js
-import Notify from 'path/to/@vant/weapp/dist/notify/notify';
+import Notify from '@vant/weapp/dist/notify/notify';
 
 Notify('通知内容');
 ```

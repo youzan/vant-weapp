@@ -83,7 +83,7 @@ Page({
 ```
 
 ```js
-import Toast from 'path/to/vant-weapp/dist/toast/toast';
+import Toast from '@vant/weapp/dist/toast/toast';
 
 Page({
   onClick() {

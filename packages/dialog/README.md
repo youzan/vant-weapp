@@ -25,7 +25,7 @@
 ```
 
 ```javascript
-import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+import Dialog from '@vant/weapp/dist/dialog/dialog';
 
 Dialog.alert({
   title: '标题',
@@ -50,7 +50,7 @@ Dialog.alert({
 ```
 
 ```javascript
-import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+import Dialog from '@vant/weapp/dist/dialog/dialog';
 
 Dialog.confirm({
   title: '标题',
@@ -73,7 +73,7 @@ Dialog.confirm({
 ```
 
 ```javascript
-import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+import Dialog from '@vant/weapp/dist/dialog/dialog';
 
 Dialog.alert({
   title: '标题',
@@ -100,7 +100,7 @@ Dialog.alert({
 ```
 
 ```javascript
-import Dialog from 'path/to/@vant/weapp/dist/dialog/dialog';
+import Dialog from '@vant/weapp/dist/dialog/dialog';
 
 const beforeClose = (action) => new Promise((resolve) => {
   setTimeout(() => {

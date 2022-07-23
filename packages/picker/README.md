@@ -23,7 +23,7 @@
 ```
 
 ```javascript
-import Toast from 'path/to/@vant/weapp/dist/toast/toast';
+import Toast from '@vant/weapp/dist/toast/toast';
 
 Page({
   data: {
@@ -62,7 +62,7 @@ Page({
 ```
 
 ```javascript
-import Toast from 'path/to/@vant/weapp/dist/toast/toast';
+import Toast from '@vant/weapp/dist/toast/toast';
 
 Page({
   data: {

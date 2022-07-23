@@ -29,7 +29,7 @@ export default {
       },
       {
         logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
-        url: 'https://github.com/youzan/vant-weapp',
+        url: 'https://github.com/vant-ui/vant-weapp',
       },
     ],
     baiduAnalytics: {

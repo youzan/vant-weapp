@@ -89,7 +89,7 @@ yarn add -D miniprogram-api-typings
 
 ### 示例工程
 
-我们提供了一个[示例工程](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+我们提供了一个[示例工程](https://github.com/vant-ui/vant-demo)，示例工程会帮助你了解如下内容：
 
 - 基于 Vant Weapp 搭建小程序应用
 - 样式覆盖方案
@@ -141,7 +141,7 @@ yarn add -D miniprogram-api-typings
 ```bash
 
 # 将项目克隆到本地
-git clone git@github.com:youzan/vant-weapp.git
+git clone git@github.com:vant-ui/vant-weapp.git
 
 # 安装项目依赖
 cd vant-weapp && npm install

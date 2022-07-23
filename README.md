@@ -15,7 +15,7 @@
   &nbsp;
   🌈 <a href="https://vant-ui.github.io/vant-weapp">文档网站（GitHub）</a>
   &nbsp;
-  🚀 <a href="https://github.com/youzan/vant" target="_blank">Vue 版</a>
+  🚀 <a href="https://github.com/vant-ui/vant" target="_blank">Vue 版</a>
 </p>
 
 ---
@@ -58,7 +58,7 @@ npm i vant-weapp -S --production
 直接通过 git 下载 Vant Weapp 源代码，并将 `dist` 目录拷贝到自己的项目中。
 
 ```bash
-git clone https://github.com/youzan/vant-weapp.git
+git clone https://github.com/vant-ui/vant-weapp.git
 ```
 
 ## 使用组件
@@ -99,10 +99,10 @@ Vant Weapp 最低支持到小程序基础库 2.6.5 版本。
 
 ## 链接
 
-- [意见反馈](https://github.com/youzan/vant-weapp/issues)
+- [意见反馈](https://github.com/vant-ui/vant-weapp/issues)
 - [设计资源](https://vant-contrib.gitee.io/vant/#/zh-CN/design)
 - [更新日志](https://vant-contrib.gitee.io/vant-weapp/#/changelog)
-- [官方示例](https://github.com/youzan/vant-demo)
+- [官方示例](https://github.com/vant-ui/vant-demo)
 
 ## 核心团队
 
@@ -116,7 +116,7 @@ Vant Weapp 最低支持到小程序基础库 2.6.5 版本。
 
 感谢以下小伙伴们为 Vant Weapp 发展做出的贡献：
 
-<a href="https://github.com/youzan/vant-weapp/graphs/contributors">
+<a href="https://github.com/vant-ui/vant-weapp/graphs/contributors">
   <img src="https://opencollective.com/vant-weapp/contributors.svg?width=890&button=false" alt="contributors">
 </a>
 

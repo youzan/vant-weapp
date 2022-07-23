@@ -8,7 +8,7 @@ CSS 变量 的兼容性要求可以在 [这里](https://caniuse.com/#feat=css-va
 
 ### 样式变量
 
-定制使用的 CSS 变量 与 Less 变量 同名，下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant-weapp/blob/dev/packages/common/style/var.less)。
+定制使用的 CSS 变量 与 Less 变量 同名，下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/vant-ui/vant-weapp/blob/dev/packages/common/style/var.less)。
 
 ```less
 // Component Colors

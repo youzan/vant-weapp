@@ -158,6 +158,7 @@
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
+| bind:chooseavatar | 当 open-type 的值为 chooseAvatar 时，选择头像之后的回调 |
 
 > Button 提供的是 click 事件而不是原生 tap 事件，按钮禁用时，click 事件不会触发，tap 事件依然会触发。
 

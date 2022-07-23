@@ -1,5 +1,17 @@
 # 更新日志
 
+### [v1.10.4](https://github.com/vant-ui/vant-weapp/compare/v1.10.3...v1.10.4)
+
+`2022-07-23`
+
+**Feature**
+
+- Button: 新增 chooseavatar 事件 [#4976](https://github.com/vant-ui/vant-weapp/issues/4976)
+
+**Bug Fixes**
+
+- NavBar: 修复因 `box-sizing: border-box` 导致导航栏高度不正确问题 [#4969](https://github.com/vant-ui/vant-weapp/issues/4969)
+
 ### [v1.10.3](https://github.com/vant-ui/vant-weapp/compare/v1.10.2...v1.10.3)
 
 `2022-05-02`

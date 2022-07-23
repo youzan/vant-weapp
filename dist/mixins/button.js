@@ -37,5 +37,8 @@ export const button = Behavior({
         onOpenSetting(event) {
             this.triggerEvent('opensetting', event.detail);
         },
+        onChooseAvatar(event) {
+            this.triggerEvent('chooseavatar', event.detail);
+        },
     },
 });

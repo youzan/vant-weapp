@@ -144,11 +144,8 @@ VantComponent({
 
     emitChange() {
       this.setData({ value: this.value });
-
-      nextTick(() => {
-        this.$emit('input', this.value);
-        this.$emit('change', this.value);
-      });
+      this.$emit('input', this.value);
+      this.$emit('change', this.value);
     },
 
     setShowClear() {

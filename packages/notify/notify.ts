@@ -31,6 +31,8 @@ const defaultOptions: NotifyOptions = {
   onClose: () => {},
 };
 
+let currentOptions: NotifyOptions = { ...defaultOptions };
+
 function parseOptions(
   message?: NotifyOptions | string
 ): Partial<NotifyOptions> {
@@ -47,7 +49,7 @@ function getContext() {
 }
 
 export default function Notify(options: NotifyOptions | string) {
-  options = { ...defaultOptions, ...parseOptions(options) };
+  options = { ...currentOptions, ...parseOptions(options) };
 
   const context = options.context || getContext();
   const notify = context.selectComponent(options.selector);
@@ -73,4 +75,12 @@ Notify.clear = function (options?: NotifyOptions) {
   if (notify) {
     notify.hide();
   }
+};
+
+Notify.setDefaultOptions = (options: NotifyOptions) => {
+  Object.assign(currentOptions, options);
+};
+
+Notify.resetDefaultOptions = () => {
+  currentOptions = { ...defaultOptions };
 };

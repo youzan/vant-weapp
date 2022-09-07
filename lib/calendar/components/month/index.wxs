@@ -9,7 +9,7 @@ var ROW_HEIGHT = 64;
 
 function getDayStyle(type, index, date, rowHeight, color, firstDayOfWeek) {
   var style = [];
-  var current = getDate(date).getDay() || 7;
+  var current = getDate(date).getUTCDay() || 7;
   var offset = current < firstDayOfWeek ? (7 - firstDayOfWeek + current) :
                current === 7 && firstDayOfWeek === 0 ? 0 :
                (current - firstDayOfWeek);

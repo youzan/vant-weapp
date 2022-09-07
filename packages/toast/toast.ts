@@ -1,14 +1,16 @@
 import { isObj } from '../common/validator';
 
 type ToastMessage = string | number;
-type ToastContext = WechatMiniprogram.Component.TrivialInstance | WechatMiniprogram.Page.TrivialInstance
+type ToastContext =
+  | WechatMiniprogram.Component.TrivialInstance
+  | WechatMiniprogram.Page.TrivialInstance;
 
 interface ToastOptions {
   show?: boolean;
   type?: string;
   mask?: boolean;
   zIndex?: number;
-  context?: () => ToastContext | ToastContext;
+  context?: (() => ToastContext) | ToastContext;
   position?: string;
   duration?: number;
   selector?: string;
@@ -49,7 +51,10 @@ function Toast(toastOptions: ToastOptions | ToastMessage) {
     ...parseOptions(toastOptions),
   } as ToastOptions;
 
-  const context = (typeof options.context === 'function' ? options.context() : options.context) || getContext();
+  const context =
+    (typeof options.context === 'function'
+      ? options.context()
+      : options.context) || getContext();
   const toast = context.selectComponent(options.selector as string);
 
   if (!toast) {

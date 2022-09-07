@@ -1,5 +1,19 @@
 # 更新日志
 
+### [v1.10.5](https://github.com/vant-ui/vant-weapp/compare/v1.10.4...v1.10.5)
+
+`2022-09-07`
+
+**Feature**
+
+- Dialog: messageAlign 属性支持传 justify [#5034](https://github.com/vant-ui/vant-weapp/issues/5034)
+- Notify: 支持 setDefaultOptions 和 resetDefaultOptions 方法 [#5028](https://github.com/vant-ui/vant-weapp/issues/5028)
+- toast: context 选项支持传入函数 [#5022](https://github.com/vant-ui/vant-weapp/issues/5022)
+
+**Bug Fixes**
+
+- Calendar: 修复 getDay 和 getUTCDay 有时间差，导致星期错位的问题 [#4883](https://github.com/vant-ui/vant-weapp/issues/4883)
+
 ### [v1.10.4](https://github.com/vant-ui/vant-weapp/compare/v1.10.3...v1.10.4)
 
 `2022-07-23`

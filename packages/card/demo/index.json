@@ -2,6 +2,8 @@
   "component": true,
   "usingComponents": {
     "van-card": "../../card/index",
+    "van-tag": "../../tag/index",
+    "van-button": "../../button/index",
     "demo-block": "../../../example/components/demo-block/index"
   }
 }

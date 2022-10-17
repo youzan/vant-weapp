@@ -78,7 +78,7 @@ Page({
 ```
 
 ```js
-import Notify from '@vant/weapp/dist/notify/notify';
+import Notify from '@vant/weapp/notify/notify';
 
 Page({
   data: {

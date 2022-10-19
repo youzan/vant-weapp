@@ -12,11 +12,11 @@ body:
         - 确认你搜索过 [历史 issue](https://github.com/youzan/vant-weapp/issues)，并且没有发现同样的问题。
         - 如果不是反馈 Bug，请到 [Discussions 讨论区](https://github.com/youzan/vant-weapp/discussions) 发帖。
 
-  - type: input
+  - type: textarea
     id: reproduce
     attributes:
       label: 重现链接
-      description: 请提供一个尽可能简单的 [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) 或 GitHub 仓库链接。不要填写无效的链接，这会导致你的 issue 被直接关闭。
+      description: 请提供一个尽可能简单的 GitHub 仓库链接 或者 真实的代码片段。不要填写无效的链接 或 代码，这会导致你的 issue 被直接关闭。
     validations:
       required: true
 

@@ -1,9 +1,5 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import {
-  canIUseGroupSetData,
-  canIUseNextTick,
-  getSystemInfoSync,
-} from './version';
+import { canIUseGroupSetData, canIUseNextTick, getSystemInfoSync } from './version';
 
 export { isDef } from './validator';
 export { getSystemInfoSync } from './version';

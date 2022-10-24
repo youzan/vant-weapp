@@ -1,4 +1,11 @@
-import { getSystemInfoSync } from './utils';
+let systemInfo: WechatMiniprogram.SystemInfo;
+export function getSystemInfoSync() {
+  if (systemInfo == null) {
+    systemInfo = wx.getSystemInfoSync();
+  }
+
+  return systemInfo;
+}
 
 function compareVersion(v1, v2) {
   v1 = v1.split('.');
@@ -49,22 +56,10 @@ export function canIUseGroupSetData() {
   return gte('2.4.0');
 }
 
-/**
- *
- * wx.nextTick
- * 基础库 2.2.3 开始支持，低版本需做兼容处理。
- * 小程序插件：支持，需要小程序基础库版本不低于 2.7.1
- * 微信 Windows 版：支持
- * 微信 Mac 版：支持
- *
- * 插件内不支持调用 wx.canIUse
- */
 export function canIUseNextTick() {
   try {
     return wx.canIUse('nextTick');
-    // 小程序插件不支持 wx.canIUse
   } catch (e) {
-    // 小程序基础库版本不低于2.7.1插件可以调用wx.nextTick
     return gte('2.7.1');
   }
 }

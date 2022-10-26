@@ -1,7 +1,8 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick } from './version';
+import { canIUseGroupSetData, canIUseNextTick, getSystemInfoSync } from './version';
 
 export { isDef } from './validator';
+export { getSystemInfoSync } from './version';
 
 export function range(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
@@ -15,15 +16,6 @@ export function nextTick(cb: (...args: any[]) => void) {
       cb();
     }, 1000 / 30);
   }
-}
-
-let systemInfo: WechatMiniprogram.SystemInfo;
-export function getSystemInfoSync() {
-  if (systemInfo == null) {
-    systemInfo = wx.getSystemInfoSync();
-  }
-
-  return systemInfo;
 }
 
 export function addUnit(value?: string | number): string | undefined {

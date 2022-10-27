@@ -140,16 +140,21 @@ exports[`should render demo and match snapshot 1`] = `
                   >
                     <van-tag
                       customClass="tag"
-                      plain="{{true}}"
-                      type="danger"
                     >
-                      标签1
+                      <wx-view
+                        class="custom-class van-tag van-tag--danger van-tag--plain"
+                        style=""
+                      >
+                        标签1
+                      </wx-view>
                     </van-tag>
-                    <van-tag
-                      plain="{{true}}"
-                      type="danger"
-                    >
-                      标签2
+                    <van-tag>
+                      <wx-view
+                        class="custom-class van-tag van-tag--danger van-tag--plain"
+                        style=""
+                      >
+                        标签2
+                      </wx-view>
                     </van-tag>
                   </wx-view>
                 </wx-view>
@@ -195,16 +200,73 @@ exports[`should render demo and match snapshot 1`] = `
               >
                 <van-button
                   customClass="button"
-                  round="{{true}}"
-                  size="mini"
                 >
-                  按钮
+                  <wx-button
+                    appParameter=""
+                    ariaLabel=""
+                    businessId="{{0}}"
+                    class="custom-class van-button van-button--default van-button--mini van-button--round "
+                    data-detail="{{null}}"
+                    formType=""
+                    hoverClass="van-button--active hover-class"
+                    id=""
+                    lang=""
+                    openType=""
+                    sendMessageImg=""
+                    sendMessagePath=""
+                    sendMessageTitle=""
+                    sessionFrom=""
+                    showMessageCard="{{false}}"
+                    style=""
+                    bind:chooseavatar="onChooseAvatar"
+                    bind:contact="onContact"
+                    bind:error="onError"
+                    bind:getphonenumber="onGetPhoneNumber"
+                    bind:getuserinfo="onGetUserInfo"
+                    bind:launchapp="onLaunchApp"
+                    bind:opensetting="onOpenSetting"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-button__text"
+                    >
+                      按钮
+                    </wx-view>
+                  </wx-button>
                 </van-button>
-                <van-button
-                  round="{{true}}"
-                  size="mini"
-                >
-                  按钮
+                <van-button>
+                  <wx-button
+                    appParameter=""
+                    ariaLabel=""
+                    businessId="{{0}}"
+                    class="custom-class van-button van-button--default van-button--mini van-button--round "
+                    data-detail="{{null}}"
+                    formType=""
+                    hoverClass="van-button--active hover-class"
+                    id=""
+                    lang=""
+                    openType=""
+                    sendMessageImg=""
+                    sendMessagePath=""
+                    sendMessageTitle=""
+                    sessionFrom=""
+                    showMessageCard="{{false}}"
+                    style=""
+                    bind:chooseavatar="onChooseAvatar"
+                    bind:contact="onContact"
+                    bind:error="onError"
+                    bind:getphonenumber="onGetPhoneNumber"
+                    bind:getuserinfo="onGetUserInfo"
+                    bind:launchapp="onLaunchApp"
+                    bind:opensetting="onOpenSetting"
+                    bind:tap="onClick"
+                  >
+                    <wx-view
+                      class="van-button__text"
+                    >
+                      按钮
+                    </wx-view>
+                  </wx-button>
                 </van-button>
               </wx-view>
             </wx-view>

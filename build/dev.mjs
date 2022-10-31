@@ -1,6 +1,6 @@
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { dev } from '@vant/cli';
+import { dev } from '@vant/cli/lib/commands/dev.js';
 import { exec } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

@@ -15,6 +15,7 @@
       <image
         wx:if="{{ item.isImage }}"
         mode="{{ imageFit }}"
+        webp
         src="{{ item.thumb || item.url }}"
         alt="{{ item.name || ('图片' + index) }}"
         class="van-uploader__preview-image"

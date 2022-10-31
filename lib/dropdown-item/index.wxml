@@ -16,8 +16,8 @@
     bind:enter="onOpen"
     bind:leave="onClose"
     bind:close="toggle"
-    bind:after-enter="onOpened"
-    bind:after-leave="onClosed"
+    bind:afterEnter="onOpened"
+    bind:afterLeave="onClosed"
   >
     <van-cell
       wx:for="{{ options }}"

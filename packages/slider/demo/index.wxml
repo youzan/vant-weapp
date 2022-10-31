@@ -18,8 +18,10 @@
 <demo-block title="指定选择范围">
   <van-slider
     custom-class="slider"
-    min="-50"
-    max="50"
+    value="300"
+    min="25"
+    max="999"
+    step="100"
     bind:change="onChange"
   />
 </demo-block>
@@ -67,13 +69,19 @@
 <demo-block title="垂直方向">
   <view style="height: 150px; padding-left: 30px;">
     <van-slider
-      value="{{ 50 }}"
+      value="{{ 25 }}"
+      min="25"
+      max="999"
+      step="100"
       vertical
       custom-class="slider"
       bind:change="onChange"
     />
     <van-slider
-      value="{{ [20, 60 ] }}"
+      value="{{ [100, 400 ] }}"
+      min="25"
+      max="999"
+      step="100"
       vertical
       range
       custom-class="slider"

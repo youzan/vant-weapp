@@ -1712,7 +1712,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click="onClickOverlay"
       >
         <van-transition
-          customClass="van-overlay"
+          customClass="van-overlay custom-class"
           bind:tap="onClick"
           catch:touchmove="noop"
         />

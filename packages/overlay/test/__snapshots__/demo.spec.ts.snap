@@ -53,7 +53,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click="onClickHide"
       >
         <van-transition
-          customClass="van-overlay"
+          customClass="van-overlay custom-class"
           bind:tap="onClick"
           catch:touchmove="noop"
         />
@@ -111,7 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click="onClickHideEmbedded"
       >
         <van-transition
-          customClass="van-overlay"
+          customClass="van-overlay custom-class"
           bind:tap="onClick"
           catch:touchmove="noop"
         />

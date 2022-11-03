@@ -1,3 +1,4 @@
+import { isFunction } from '../common/validator';
 import { getCurrentPage, isDef } from '../common/utils';
 
 type IPageScrollOption = WechatMiniprogram.Page.IPageScrollOption;
@@ -19,32 +20,48 @@ function onPageScroll(event?: IPageScrollOption) {
   });
 }
 
-export const pageScrollMixin = (scroller: Scroller) =>
-  Behavior({
-    attached() {
+
+export function pageScrollMixin(scroller: Scroller) {
+  return Behavior({
+    attached(this: WechatMiniprogram.Component.TrivialInstance) {
       const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
 
       if (!isDef(page)) {
         return;
       }
 
-      if (Array.isArray(page.vanPageScroller)) {
-        page.vanPageScroller.push(scroller.bind(this));
-      } else {
-        page.vanPageScroller =
-          typeof page.onPageScroll === 'function'
-            ? [page.onPageScroll.bind(page), scroller.bind(this)]
-            : [scroller.bind(this)];
+      const _scroller = scroller.bind(this);
+
+      const { vanPageScroller = [] } = page;
+
+      if (!vanPageScroller.length && isFunction(page.onPageScroll)) {
+        vanPageScroller.push(page.onPageScroll.bind(page));
       }
 
+      vanPageScroller.push(_scroller);
+
+      page.vanPageScroller = vanPageScroller;
       page.onPageScroll = onPageScroll;
+
+      this._scroller = _scroller;
     },
 
-    detached() {
+    detached(this: WechatMiniprogram.Component.TrivialInstance) {
       const page = getCurrentPage<{ vanPageScroller: Scroller[] }>();
-      if (isDef(page)) {
-        page.vanPageScroller =
-          page.vanPageScroller?.filter((item) => item !== scroller) || [];
+
+      if (!isDef(page) || !isDef(page.vanPageScroller)) {
+        return;
       }
+
+      const { vanPageScroller } = page;
+
+      const index = vanPageScroller.findIndex(v => v === this._scroller);
+
+      if (index > -1) {
+        page.vanPageScroller.splice(index, 1);
+      }
+
+      this._scroller = undefined;
     },
   });
+}

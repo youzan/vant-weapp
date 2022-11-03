@@ -1,3 +1,4 @@
+import { isFunction } from '../common/validator';
 import { getCurrentPage, isDef } from '../common/utils';
 
 type IPageScrollOption = WechatMiniprogram.Page.IPageScrollOption;
@@ -33,7 +34,7 @@ export function pageScrollMixin(scroller: Scroller) {
 
       const { vanPageScroller = [] } = page;
 
-      if (vanPageScroller.length === 0 && typeof page.onPageScroll === 'function') {
+      if (!vanPageScroller.length && isFunction(page.onPageScroll)) {
         vanPageScroller.push(page.onPageScroll.bind(page));
       }
 
@@ -52,7 +53,9 @@ export function pageScrollMixin(scroller: Scroller) {
         return;
       }
 
-      const index = page.vanPageScroller.findIndex(v => v === this._scroller);
+      const { vanPageScroller } = page;
+
+      const index = vanPageScroller.findIndex(v => v === this._scroller);
 
       if (index > -1) {
         page.vanPageScroller.splice(index, 1);

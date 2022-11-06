@@ -141,7 +141,7 @@ yarn add -D miniprogram-api-typings
 ```bash
 
 # 将项目克隆到本地
-git clone git@github.com:vant-ui/vant-weapp.git
+git clone git@github.com:youzan/vant-weapp.git
 
 # 安装项目依赖
 cd vant-weapp && npm install

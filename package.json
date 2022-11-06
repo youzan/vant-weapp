@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/vant-ui/vant-weapp.git"
+    "url": "git+ssh://git@github.com/youzan/vant-weapp.git"
   },
   "lint-staged": {
     "*.{ts,js}": [
@@ -39,7 +39,7 @@
       "prettier --write"
     ]
   },
-  "homepage": "https://github.com/vant-ui/vant-weapp#readme",
+  "homepage": "https://github.com/youzan/vant-weapp#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",

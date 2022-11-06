@@ -1,7 +1,7 @@
 <van-transition
   wx:if="{{ lockScroll }}"
   show="{{ show }}"
-  custom-class="van-overlay"
+  custom-class="van-overlay custom-class"
   custom-style="z-index: {{ zIndex }}; {{ customStyle }}"
   duration="{{ duration }}"
   bind:tap="onClick"
@@ -12,7 +12,7 @@
 <van-transition
   wx:else
   show="{{ show }}"
-  custom-class="van-overlay"
+  custom-class="van-overlay custom-class"
   custom-style="z-index: {{ zIndex }}; {{ customStyle }}"
   duration="{{ duration }}"
   bind:tap="onClick"

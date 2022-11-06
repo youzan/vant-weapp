@@ -1,6 +1,7 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick } from './version';
+import { canIUseGroupSetData, canIUseNextTick, getSystemInfoSync } from './version';
 export { isDef } from './validator';
+export { getSystemInfoSync } from './version';
 export function range(num, min, max) {
     return Math.min(Math.max(num, min), max);
 }
@@ -13,13 +14,6 @@ export function nextTick(cb) {
             cb();
         }, 1000 / 30);
     }
-}
-let systemInfo;
-export function getSystemInfoSync() {
-    if (systemInfo == null) {
-        systemInfo = wx.getSystemInfoSync();
-    }
-    return systemInfo;
 }
 export function addUnit(value) {
     if (!isDef(value)) {

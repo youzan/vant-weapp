@@ -1,3 +1,4 @@
+import { isFunction } from '../common/validator';
 import { getCurrentPage, isDef } from '../common/utils';
 function onPageScroll(event) {
     const { vanPageScroller = [] } = getCurrentPage();
@@ -8,29 +9,34 @@ function onPageScroll(event) {
         }
     });
 }
-export const pageScrollMixin = (scroller) => Behavior({
-    attached() {
-        const page = getCurrentPage();
-        if (!isDef(page)) {
-            return;
-        }
-        if (Array.isArray(page.vanPageScroller)) {
-            page.vanPageScroller.push(scroller.bind(this));
-        }
-        else {
-            page.vanPageScroller =
-                typeof page.onPageScroll === 'function'
-                    ? [page.onPageScroll.bind(page), scroller.bind(this)]
-                    : [scroller.bind(this)];
-        }
-        page.onPageScroll = onPageScroll;
-    },
-    detached() {
-        var _a;
-        const page = getCurrentPage();
-        if (isDef(page)) {
-            page.vanPageScroller =
-                ((_a = page.vanPageScroller) === null || _a === void 0 ? void 0 : _a.filter((item) => item !== scroller)) || [];
-        }
-    },
-});
+export function pageScrollMixin(scroller) {
+    return Behavior({
+        attached() {
+            const page = getCurrentPage();
+            if (!isDef(page)) {
+                return;
+            }
+            const _scroller = scroller.bind(this);
+            const { vanPageScroller = [] } = page;
+            if (!vanPageScroller.length && isFunction(page.onPageScroll)) {
+                vanPageScroller.push(page.onPageScroll.bind(page));
+            }
+            vanPageScroller.push(_scroller);
+            page.vanPageScroller = vanPageScroller;
+            page.onPageScroll = onPageScroll;
+            this._scroller = _scroller;
+        },
+        detached() {
+            const page = getCurrentPage();
+            if (!isDef(page) || !isDef(page.vanPageScroller)) {
+                return;
+            }
+            const { vanPageScroller } = page;
+            const index = vanPageScroller.findIndex(v => v === this._scroller);
+            if (index > -1) {
+                page.vanPageScroller.splice(index, 1);
+            }
+            this._scroller = undefined;
+        },
+    });
+}

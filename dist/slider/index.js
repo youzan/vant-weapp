@@ -163,15 +163,19 @@ VantComponent({
             const { max, min } = this.data;
             return max - min;
         },
+        getOffsetWidth(current, min) {
+            const scope = this.getScope();
+            // 避免最小值小于最小step时出现负数情况
+            return `${Math.max((current - min) * 100 / scope, 0)}%`;
+        },
         // 计算选中条的长度百分比
         calcMainAxis() {
             const { value } = this;
             const { min } = this.data;
-            const scope = this.getScope();
             if (this.isRange(value)) {
-                return `${((value[1] - value[0]) * 100) / scope}%`;
+                return this.getOffsetWidth(value[1], value[0]);
             }
-            return `${((value - Number(min)) * 100) / scope}%`;
+            return this.getOffsetWidth(value, Number(min));
         },
         // 计算选中条的开始位置的偏移量
         calcOffset() {

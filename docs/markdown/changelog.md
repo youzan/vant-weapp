@@ -1,4 +1,19 @@
 # 更新日志
+### [v1.10.6](https://github.com/vant-ui/vant-weapp/compare/v1.10.5...v1.10.6)
+
+`2022-11-06`
+
+**Bug Fixes**
+
+- van-tabs: 修复插件内使用 van-tabs 切换 tab 报错的问题 [#5073](https://github.com/vant-ui/vant-weapp/issues/5073)
+- button: 修复 button 在 disabeld 或 loading 时能触发 active 状态问题 [#5084](https://github.com/vant-ui/vant-weapp/issues/5084)
+- mixin: 修复 page-scroll mixin 函数监听没有收回问题 [#5086](https://github.com/vant-ui/vant-weapp/issues/5086)
+- overlay: 修复 custom-class 不生效问题 [#5083](https://github.com/vant-ui/vant-weapp/issues/5083)
+- slider: 修复 slider 在 value 小于 step 无法滑动问题  [#5079](https://github.com/vant-ui/vant-weapp/issues/5079)
+
+**Feature**
+- Dialog: option context 支持传入函数 [#5043](https://github.com/vant-ui/vant-weapp/issues/5043)
+
 
 ### [v1.10.5](https://github.com/vant-ui/vant-weapp/compare/v1.10.4...v1.10.5)
 

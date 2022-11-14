@@ -51,7 +51,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="toggleActionSheet1"
       >
         <van-popup
-          customClass="van-action-sheet"
+          customClass="van-action-sheet custom-class"
           bind:close="onClickOverlay"
         >
           <van-overlay
@@ -116,7 +116,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="toggleActionSheet2"
       >
         <van-popup
-          customClass="van-action-sheet"
+          customClass="van-action-sheet custom-class"
           bind:close="onClickOverlay"
         >
           <van-overlay
@@ -181,7 +181,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="toggleActionSheet3"
       >
         <van-popup
-          customClass="van-action-sheet"
+          customClass="van-action-sheet custom-class"
           bind:close="onClickOverlay"
         >
           <van-overlay
@@ -246,7 +246,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="toggleActionSheet4"
       >
         <van-popup
-          customClass="van-action-sheet"
+          customClass="van-action-sheet custom-class"
           bind:close="onClickOverlay"
         >
           <van-overlay
@@ -311,7 +311,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="toggleActionSheet5"
       >
         <van-popup
-          customClass="van-action-sheet"
+          customClass="van-action-sheet custom-class"
           bind:close="onClickOverlay"
         >
           <van-overlay
@@ -377,7 +377,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:getuserinfo="onGetUserInfo"
       >
         <van-popup
-          customClass="van-action-sheet"
+          customClass="van-action-sheet custom-class"
           bind:close="onClickOverlay"
         >
           <van-overlay

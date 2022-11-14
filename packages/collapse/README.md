@@ -189,7 +189,7 @@ Page({
 | value      | 自定义显示内容                |
 | icon       | 自定义`icon`                  |
 | title      | 自定义`title`                 |
-| right-icon | 自定义右侧按钮，默认是`arrow` |
+| right-icon | 自定义右侧按钮，默认是`arrow`, 需要将 `is-link` 设置为 `false`, 才会生效  |
 
 ### Collapse 外部样式类
 

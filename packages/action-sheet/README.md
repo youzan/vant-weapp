@@ -208,4 +208,4 @@ Page({
 | 类名         | 说明           |
 | ------------ | -------------- |
 | custom-class `v1.10.7` | 根节点样式类   |
-| custom-class `v1.10.7` | `actions`容器样式类   |
+| list-class `v1.10.7` | `actions`容器样式类   |

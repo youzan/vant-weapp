@@ -3,6 +3,7 @@ import { VantComponent } from '../common/component';
 import { Option } from './shared';
 
 VantComponent({
+  classes: ['item-title-class'],
   field: true,
 
   relation: useParent('dropdown-menu', function () {
@@ -84,7 +85,7 @@ VantComponent({
 
     onOptionTap(event: WechatMiniprogram.TouchEvent) {
       const { option } = event.currentTarget.dataset;
-      const { value } = (option as unknown) as Option;
+      const { value } = option as unknown as Option;
 
       const shouldEmitChange = this.data.value !== value;
       this.setData({ showPopup: false, value });

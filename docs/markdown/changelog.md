@@ -1,4 +1,22 @@
 # 更新日志
+### [v1.10.7](https://github.com/youzan/vant-weapp/compare/v1.10.6...v1.10.7)
+
+`2022-11-18`
+
+**Bug Fixes**
+
+- search: 增加 value 默认 props 定义 [697746](https://github.com/youzan/vant-weapp/commit/697746fb470e9e16476f3fe95c15e4448ca9d686)
+
+**Document**
+- collapse: 增加 right-icon 额外使用说明 [d39b35](https://github.com/youzan/vant-weapp/commit/d39b35fc3a1d4b913d7b94bb45b3e861e3cee79e)
+
+**Feature**
+
+- action-sheet: 增加自定义样式能力支持 [#5097](https://github.com/youzan/vant-weapp/issues/5097)
+- dropdown-menu: 增加多个自定义样式能力支持 [#5099](https://github.com/youzan/vant-weapp/issues/5099)
+
+
+
 ### [v1.10.6](https://github.com/youzan/vant-weapp/compare/v1.10.5...v1.10.6)
 
 `2022-11-06`

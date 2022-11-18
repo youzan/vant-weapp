@@ -151,14 +151,14 @@ Page({
 
 ### DropdownItem Props
 
-| 参数        | 说明                   | 类型               | 默认值         |
-| ----------- | ---------------------- | ------------------ | -------------- |
-| value       | 当前选中项对应的 value | _number \| string_ | -              |
-| title       | 菜单项标题             | _string_           | 当前选中项文字 |
-| options     | 选项数组               | _Option[]_         | `[]`           |
-| disabled    | 是否禁用菜单           | _boolean_          | `false`        |
-| title-class | 标题额外类名           | _string_           | -              |
-| popup-style | 自定义弹出层样式       | _string_           | -              |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| value | 当前选中项对应的 value | _number \| string_ | - |
+| title | 菜单项标题 | _string_ | 当前选中项文字 |
+| options | 选项数组 | _Option[]_ | `[]` |
+| disabled | 是否禁用菜单 | _boolean_ | `false` |
+| title-class | 标题额外类名，建议使用自定义样式 item-title-class 代替 | _string_ | - |
+| popup-style | 自定义弹出层样式 | _string_ | - |
 
 ### DropdownItem Events
 
@@ -186,8 +186,16 @@ Page({
 | value | 标识符                           | _number \| string_ |
 | icon  | 左侧[图标名称](#/icon)或图片链接 | _string_           |
 
-### 外部样式类
+### DropdownMenu 外部样式类
 
-| 类名         | 说明         |
-| ------------ | ------------ |
-| custom-class | 根节点样式类 |
+| 类名                  | 说明         |
+| --------------------- | ------------ |
+| custom-class          | 根节点样式类 |
+| title-class `v1.10.7` | 选中项样式类 |
+
+### DropdownItem 外部样式类
+
+| 类名                       | 说明         |
+| -------------------------- | ------------ |
+| custom-class `v1.10.7`     | 根节点样式类 |
+| item-title-class `v1.10.7` | 选项样式类   |

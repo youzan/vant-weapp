@@ -6,6 +6,7 @@ let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
 
 VantComponent({
   field: true,
+  classes: ['title-class'],
 
   relation: useChildren('dropdown-item', function () {
     this.updateItemListData();

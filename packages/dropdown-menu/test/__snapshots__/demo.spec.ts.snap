@@ -23,7 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -41,7 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -80,7 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -98,7 +98,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -139,7 +139,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -157,7 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -196,7 +196,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title van-dropdown-menu__title--down"
+              class=" van-dropdown-menu__title van-dropdown-menu__title--down title-class"
               style=""
             >
               <wx-view
@@ -214,7 +214,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title van-dropdown-menu__title--down"
+              class=" van-dropdown-menu__title van-dropdown-menu__title--down title-class"
               style=""
             >
               <wx-view
@@ -253,7 +253,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view
@@ -271,7 +271,7 @@ exports[`should render demo and match snapshot 1`] = `
             bind:tap="onTitleTap"
           >
             <wx-view
-              class=" van-dropdown-menu__title"
+              class=" van-dropdown-menu__title title-class"
               style=""
             >
               <wx-view

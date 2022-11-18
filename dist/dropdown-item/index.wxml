@@ -2,7 +2,7 @@
 
 <view
   wx:if="{{ showWrapper }}"
-  class="{{ utils.bem('dropdown-item', direction) }}"
+  class="{{ utils.bem('dropdown-item', direction) }} custom-class"
   style="{{ wrapperStyle }}"
 >
   <van-popup
@@ -30,7 +30,7 @@
     >
       <view
         slot="title"
-        class="van-dropdown-item__title"
+        class="van-dropdown-item__title item-title-class"
         style="{{ item.value === value  ? 'color:' + activeColor : '' }}"
       >
         {{ item.text }}

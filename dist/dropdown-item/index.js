@@ -1,6 +1,7 @@
 import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 VantComponent({
+    classes: ['item-title-class'],
     field: true,
     relation: useParent('dropdown-menu', function () {
         this.updateDataFromParent();

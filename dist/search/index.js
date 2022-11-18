@@ -4,6 +4,10 @@ VantComponent({
     field: true,
     classes: ['field-class', 'input-class', 'cancel-class'],
     props: {
+        value: {
+            type: String,
+            value: '',
+        },
         label: String,
         focus: Boolean,
         error: Boolean,

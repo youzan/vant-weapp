@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
 VantComponent({
+    classes: ['list-class'],
     mixins: [button],
     props: {
         show: Boolean,

@@ -4,6 +4,7 @@ import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
 let ARRAY = [];
 VantComponent({
     field: true,
+    classes: ['title-class'],
     relation: useChildren('dropdown-item', function () {
         this.updateItemListData();
     }),

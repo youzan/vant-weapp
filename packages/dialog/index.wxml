@@ -5,7 +5,7 @@
   z-index="{{ zIndex }}"
   overlay="{{ overlay }}"
   transition="{{ transition }}"
-  custom-class="van-dialog van-dialog--{{ theme }} {{ className }}"
+  custom-class="van-dialog van-dialog--{{ theme }}{{ className }} custom-class"
   custom-style="width: {{ utils.addUnit(width) }};{{ customStyle }}"
   overlay-style="{{ overlayStyle }}"
   close-on-click-overlay="{{ closeOnClickOverlay }}"

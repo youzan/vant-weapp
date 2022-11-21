@@ -154,6 +154,27 @@ Page({
 });
 ```
 
+### 自定义样式
+
+如果需要自定义样式，建议使用 `custom-class` 实现，不在推荐 `className` 属性（在自定义组件中使用并不会生效），使用方法如下
+
+#### 组件调用
+
+```html
+<van-dialog
+  title="标题"
+  message="弹窗内容"
+  show="{{ show }}"
+  custom-class="my-custom-class"
+/>
+```
+
+#### API 调用
+
+```html
+<van-dialog id="van-dialog" custom-class="my-custom-class" />
+```
+
 ## API
 
 ### 方法
@@ -180,7 +201,7 @@ Page({
 | messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
 | zIndex | z-index 层级 | _number_ | `100` |
-| className | 自定义类名，dialog 在自定义组件内时无效 | _string_ | '' |
+| className | 自定义类名，dialog 在自定义组件内时无效，已废弃，请使用 `custom-class` 代替，将在 2.0.0 移除 | _string_ | '' |
 | customStyle | 自定义样式 | _string_ | '' |
 | selector | 自定义选择器 | _string_ | `van-dialog` |
 | showConfirmButton | 是否展示确认按钮 | _boolean_ | `true` |
@@ -224,7 +245,7 @@ Page({
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
 | message-align | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
 | z-index | z-index 层级 | _number_ | `100` |
-| class-name | 自定义类名，dialog 在自定义组件内时无效 | _string_ | '' |
+| class-name | 自定义类名，dialog 在自定义组件内时无效，已废弃，请使用 `custom-class` 代替，将在 2.0.0 移除 | _string_ | '' |
 | custom-style | 自定义样式 | _string_ | '' |
 | show-confirm-button | 是否展示确认按钮 | _boolean_ | `true` |
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
@@ -275,3 +296,9 @@ Page({
 | 名称  | 说明                                                 |
 | ----- | ---------------------------------------------------- |
 | title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |
+
+### 外部样式类
+
+| 类名                   | 说明         |
+| ---------------------- | ------------ |
+| custom-class `v1.10.8` | 根节点样式类 |

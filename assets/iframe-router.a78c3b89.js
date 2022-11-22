@@ -386,7 +386,7 @@ db.<span class="hljs-title function_">collection</span>(<span class="hljs-string
   <span class="hljs-title function_">onConfirm</span>(<span class="hljs-params">event</span>) {
     <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>({
       <span class="hljs-attr">show</span>: <span class="hljs-literal">false</span>,
-      <span class="hljs-attr">date</span>: <span class="hljs-string">\`\u9009\u62E9\u4E86 <span class="hljs-subst">\${event.detail.length}</span> \u4E2A\u65E5\u671F\`</span>,
+      <span class="hljs-attr">text</span>: <span class="hljs-string">\`\u9009\u62E9\u4E86 <span class="hljs-subst">\${event.detail.length}</span> \u4E2A\u65E5\u671F\`</span>,
     });
   },
 });

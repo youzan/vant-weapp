@@ -119,7 +119,6 @@ VantComponent({
 
     onBlur(event: WechatMiniprogram.InputBlur) {
       const value = this.format(event.detail.value);
-      this.emitChange(value);
       this.$emit('blur', {
         ...event.detail,
         value,

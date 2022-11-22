@@ -81,7 +81,7 @@ Page({
   onConfirm(event) {
     this.setData({
       show: false,
-      date: `选择了 ${event.detail.length} 个日期`,
+      text: `选择了 ${event.detail.length} 个日期`,
     });
   },
 });

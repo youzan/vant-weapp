@@ -1,9 +1,15 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
-import { getRect, addUnit } from '../common/utils';
+import { getRect, addUnit, nextTick } from '../common/utils';
 
 type SliderValue = number | [number, number];
+
+const DRAG_STATUS = {
+  START: 'start',
+  MOVING: 'moving',
+  END: 'end',
+};
 
 VantComponent({
   mixins: [touch],
@@ -64,18 +70,19 @@ VantComponent({
       } else {
         this.startValue = this.format(this.newValue);
       }
-      this.dragStatus = 'start';
+
+      this.dragStatus = DRAG_STATUS.START;
     },
 
     onTouchMove(event: WechatMiniprogram.TouchEvent) {
       if (this.data.disabled) return;
 
-      if (this.dragStatus === 'start') {
+      if (this.dragStatus === DRAG_STATUS.START) {
         this.$emit('drag-start');
       }
 
       this.touchMove(event);
-      this.dragStatus = 'draging';
+      this.dragStatus = DRAG_STATUS.MOVING;
 
       getRect(this, '.van-slider').then((rect) => {
         const { vertical } = this.data;
@@ -89,6 +96,7 @@ VantComponent({
         } else {
           this.newValue = this.startValue + diff;
         }
+
         this.updateValue(this.newValue, false, true);
       });
     },
@@ -96,9 +104,13 @@ VantComponent({
     onTouchEnd() {
       if (this.data.disabled) return;
 
-      if (this.dragStatus === 'draging') {
-        this.updateValue(this.newValue, true);
-        this.$emit('drag-end');
+      if (this.dragStatus === DRAG_STATUS.MOVING) {
+        this.dragStatus = DRAG_STATUS.END;
+
+        nextTick(() => {
+          this.updateValue(this.newValue, true);
+          this.$emit('drag-end');
+        });
       }
     },
 
@@ -161,7 +173,9 @@ VantComponent({
       this.setData({
         wrapperStyle: `
           background: ${this.data.inactiveColor || ''};
-          ${vertical ? 'width' : 'height'}: ${addUnit(this.data.barHeight) || ''};
+          ${vertical ? 'width' : 'height'}: ${
+          addUnit(this.data.barHeight) || ''
+        };
         `,
         barStyle: `
           ${mainAxis}: ${this.calcMainAxis()};
@@ -195,11 +209,10 @@ VantComponent({
 
     getOffsetWidth(current: number, min: number) {
       const scope = this.getScope();
-      
-      // 避免最小值小于最小step时出现负数情况
-      return `${Math.max((current - min) * 100 / scope, 0)}%`;
-    },
 
+      // 避免最小值小于最小step时出现负数情况
+      return `${Math.max(((current - min) * 100) / scope, 0)}%`;
+    },
 
     // 计算选中条的长度百分比
     calcMainAxis() {
@@ -209,7 +222,7 @@ VantComponent({
       if (this.isRange(value)) {
         return this.getOffsetWidth(value[1], value[0]);
       }
-  
+
       return this.getOffsetWidth(value, Number(min));
     },
 

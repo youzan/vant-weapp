@@ -95,6 +95,7 @@ export function chooseFile({
   sizeType,
   camera,
   maxCount,
+  mediaType,
 }) {
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
@@ -110,6 +111,7 @@ export function chooseFile({
       case 'media':
         wx.chooseMedia({
           count: multiple ? Math.min(maxCount, 9) : 1,
+          mediaType,
           sourceType: capture,
           maxDuration,
           sizeType,

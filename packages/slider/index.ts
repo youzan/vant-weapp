@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
-import { getRect, addUnit } from '../common/utils';
+import { getRect, addUnit, nextTick } from '../common/utils';
 
 type SliderValue = number | [number, number];
 
@@ -97,13 +97,7 @@ VantComponent({
           this.newValue = this.startValue + diff;
         }
 
-        // getRect 是异步函数，无法保证 updateValue 在 onTouchEnd 之前执行
-        // 需要修正 end 状态
-        this.updateValue(
-          this.newValue,
-          this.dragStatus === DRAG_STATUS.END,
-          true
-        );
+        this.updateValue(this.newValue, false, true);
       });
     },
 
@@ -113,8 +107,10 @@ VantComponent({
       if (this.dragStatus === DRAG_STATUS.MOVING) {
         this.dragStatus = DRAG_STATUS.END;
 
-        this.updateValue(this.newValue, true);
-        this.$emit('drag-end');
+        nextTick(() => {
+          this.updateValue(this.newValue, true);
+          this.$emit('drag-end');
+        });
       }
     },
 

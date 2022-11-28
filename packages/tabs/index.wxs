@@ -60,8 +60,9 @@ function trackStyle(data) {
 function lineStyle(data) {
   return style({
     width: utils.addUnit(data.lineWidth),
-    transform: 'translateX(' + data.lineOffsetLeft + 'px)',
-    '-webkit-transform': 'translateX(' + data.lineOffsetLeft + 'px)',
+    'z-index': data.lineOffsetLeft > -1 ? 1 : -1,
+    transform:'translateX(' + data.lineOffsetLeft + 'px)',
+    '-webkit-transform':'translateX(' + data.lineOffsetLeft + 'px)',
     'background-color': data.color,
     height: data.lineHeight !== -1 ? utils.addUnit(data.lineHeight) : null,
     'border-radius':

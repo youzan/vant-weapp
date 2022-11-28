@@ -97,7 +97,7 @@ VantComponent({
     container: null as unknown as () => WechatMiniprogram.NodesRef,
     skipTransition: true,
     scrollWithAnimation: false,
-    lineOffsetLeft: 0,
+    lineOffsetLeft: -1,
   },
 
   mounted() {
@@ -242,9 +242,10 @@ VantComponent({
         this.swiping = true;
 
         if (skipTransition) {
-          nextTick(() => {
+          // waiting transition end
+          setTimeout(() => {
             this.setData({ skipTransition: false });
-          });
+          }, this.data.duration + 80);
         }
       });
     },

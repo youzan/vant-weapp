@@ -1,4 +1,24 @@
 # 更新日志
+### [v1.10.8](https://github.com/youzan/vant-weapp/compare/v1.10.7...v1.10.8)
+
+`2022-11-29`
+
+**Bug Fixes**
+
+- slider: 修复快速滑动时 value 可能错误问题 [#5112](https://github.com/youzan/vant-weapp/issues/5112)
+- tabs: 修复初始化加载时选中状态动画问题 [#5115](https://github.com/youzan/vant-weapp/issues/5115)
+
+**Document**
+
+- Calendar: 修复示例代码错误问题 [c55c78](https://github.com/youzan/vant-weapp/commit/c55c785a9ed67e0801c693d61b1e7e691bd19cf1)
+- fix(stepper): 修复stepper blur事件失焦时会触发change事件 [8b441d](https://github.com/youzan/vant-weapp/commit/8b441de1a6a0d439913d6a582d954331ff17e1fa)
+
+**Feature**
+
+- dialog: 增加 custom-class 属性支持 [#5102](https://github.com/youzan/vant-weapp/issues/5102)
+- uploader: 增加  media-type 属性支持 [#5113](https://github.com/youzan/vant-weapp/issues/5113)
+
+
 ### [v1.10.7](https://github.com/youzan/vant-weapp/compare/v1.10.6...v1.10.7)
 
 `2022-11-18`

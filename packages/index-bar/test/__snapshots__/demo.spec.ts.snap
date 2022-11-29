@@ -35,7 +35,7 @@ exports[`should render demo and match snapshot 1`] = `
                 >
                   <wx-view
                     class="van-tabs__line"
-                    style="width:40px;transform:translateX(0px);-webkit-transform:translateX(0px)"
+                    style="width:40px;opacity:0;transform:translateX(0px);-webkit-transform:translateX(0px)"
                   />
                   <wx-view
                     class="tab-class tab-active-class van-ellipsis van-tab van-tab--active"

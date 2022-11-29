@@ -98,6 +98,7 @@ VantComponent({
     skipTransition: true,
     scrollWithAnimation: false,
     lineOffsetLeft: 0,
+    inited: false,
   },
 
   mounted() {
@@ -238,13 +239,14 @@ VantComponent({
         lineOffsetLeft +=
           (rect.width - lineRect.width) / 2 + (ellipsis ? 0 : 8);
 
-        this.setData({ lineOffsetLeft });
+        this.setData({ lineOffsetLeft, inited: true });
         this.swiping = true;
 
         if (skipTransition) {
-          nextTick(() => {
+          // waiting transition end
+          setTimeout(() => {
             this.setData({ skipTransition: false });
-          });
+          }, this.data.duration);
         }
       });
     },

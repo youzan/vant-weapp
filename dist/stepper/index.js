@@ -96,7 +96,6 @@ VantComponent({
         },
         onBlur(event) {
             const value = this.format(event.detail.value);
-            this.emitChange(value);
             this.$emit('blur', Object.assign(Object.assign({}, event.detail), { value }));
         },
         // filter illegal characters

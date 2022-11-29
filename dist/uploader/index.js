@@ -1,9 +1,9 @@
 import { VantComponent } from '../common/component';
 import { isImageFile, chooseFile, isVideoFile } from './utils';
-import { chooseImageProps, chooseVideoProps } from './shared';
+import { chooseImageProps, chooseVideoProps, chooseMediaProps } from './shared';
 import { isBoolean, isPromise } from '../common/validator';
 VantComponent({
-    props: Object.assign(Object.assign({ disabled: Boolean, multiple: Boolean, uploadText: String, useBeforeRead: Boolean, afterRead: null, beforeRead: null, previewSize: {
+    props: Object.assign(Object.assign(Object.assign({ disabled: Boolean, multiple: Boolean, uploadText: String, useBeforeRead: Boolean, afterRead: null, beforeRead: null, previewSize: {
             type: null,
             value: 80,
         }, name: {
@@ -40,7 +40,7 @@ VantComponent({
         }, uploadIcon: {
             type: String,
             value: 'photograph',
-        } }, chooseImageProps), chooseVideoProps),
+        } }, chooseImageProps), chooseVideoProps), chooseMediaProps),
     data: {
         lists: [],
         isInCount: true,

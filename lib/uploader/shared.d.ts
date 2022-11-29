@@ -26,3 +26,21 @@ export declare const chooseVideoProps: {
         value: string;
     };
 };
+export declare const chooseMediaProps: {
+    capture: {
+        type: ArrayConstructor;
+        value: string[];
+    };
+    mediaType: {
+        type: ArrayConstructor;
+        value: string[];
+    };
+    maxDuration: {
+        type: NumberConstructor;
+        value: number;
+    };
+    camera: {
+        type: StringConstructor;
+        value: string;
+    };
+};

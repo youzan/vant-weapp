@@ -38,7 +38,7 @@ function formatMedia(res) {
 function formatFile(res) {
     return res.tempFiles.map((item) => (Object.assign(Object.assign({}, pickExclude(item, ['path'])), { url: item.path })));
 }
-export function chooseFile({ accept, multiple, capture, compressed, maxDuration, sizeType, camera, maxCount, }) {
+export function chooseFile({ accept, multiple, capture, compressed, maxDuration, sizeType, camera, maxCount, mediaType, }) {
     return new Promise((resolve, reject) => {
         switch (accept) {
             case 'image':
@@ -53,6 +53,7 @@ export function chooseFile({ accept, multiple, capture, compressed, maxDuration,
             case 'media':
                 wx.chooseMedia({
                     count: multiple ? Math.min(maxCount, 9) : 1,
+                    mediaType,
                     sourceType: capture,
                     maxDuration,
                     sizeType,

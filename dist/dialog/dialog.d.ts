@@ -14,6 +14,9 @@ interface DialogOptions {
     overlay?: boolean;
     selector?: string;
     ariaLabel?: string;
+    /**
+     * @deprecated use custom-class instead
+     */
     className?: string;
     customStyle?: string;
     transition?: string;

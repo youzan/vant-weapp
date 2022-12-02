@@ -20,7 +20,6 @@ function onPageScroll(event?: IPageScrollOption) {
   });
 }
 
-
 export function pageScrollMixin(scroller: Scroller) {
   return Behavior({
     attached(this: WechatMiniprogram.Component.TrivialInstance) {
@@ -34,7 +33,7 @@ export function pageScrollMixin(scroller: Scroller) {
 
       const { vanPageScroller = [] } = page;
 
-      if (!vanPageScroller.length && isFunction(page.onPageScroll)) {
+      if (isFunction(page.onPageScroll) && page.onPageScroll !== onPageScroll) {
         vanPageScroller.push(page.onPageScroll.bind(page));
       }
 
@@ -55,7 +54,7 @@ export function pageScrollMixin(scroller: Scroller) {
 
       const { vanPageScroller } = page;
 
-      const index = vanPageScroller.findIndex(v => v === this._scroller);
+      const index = vanPageScroller.findIndex((v) => v === this._scroller);
 
       if (index > -1) {
         page.vanPageScroller.splice(index, 1);

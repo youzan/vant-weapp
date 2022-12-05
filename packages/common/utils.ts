@@ -1,5 +1,9 @@
-import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick, getSystemInfoSync } from './version';
+import { isDef, isNumber, isPlainObject, isPromise, isObj } from './validator';
+import {
+  canIUseGroupSetData,
+  canIUseNextTick,
+  getSystemInfoSync,
+} from './version';
 
 export { isDef } from './validator';
 export { getSystemInfoSync } from './version';
@@ -111,4 +115,28 @@ export function toPromise(promiseLike: Promise<unknown> | unknown) {
 export function getCurrentPage<T>() {
   const pages = getCurrentPages();
   return pages[pages.length - 1] as T & WechatMiniprogram.Page.TrivialInstance;
+}
+
+export function deepClone<T extends Record<string, any> | null | undefined>(
+  obj: T
+): T {
+  if (!isDef(obj)) {
+    return obj;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map((item) => deepClone(item)) as unknown as T;
+  }
+
+  if (isObj(obj)) {
+    const to = {} as Record<string, any>;
+    Object.keys(obj).forEach((key: string) => {
+      // @ts-ignore
+      to[key] = deepClone(obj[key]);
+    });
+
+    return to as T;
+  }
+
+  return obj;
 }

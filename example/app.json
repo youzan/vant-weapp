@@ -52,7 +52,8 @@
     "pages/empty/index",
     "pages/calendar/index",
     "pages/share-sheet/index",
-    "pages/config-provider/index"
+    "pages/config-provider/index",
+    "pages/cascader/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
@@ -114,7 +115,8 @@
     "van-skeleton-demo": "./dist/skeleton/demo/index",
     "van-calendar-demo": "./dist/calendar/demo/index",
     "van-share-sheet-demo": "./dist/share-sheet/demo/index",
-    "van-config-provider-demo": "./dist/config-provider/demo/index"
+    "van-config-provider-demo": "./dist/config-provider/demo/index",
+    "van-cascader-demo": "./dist/cascader/demo/index"
   },
   "sitemapLocation": "sitemap.json"
 }

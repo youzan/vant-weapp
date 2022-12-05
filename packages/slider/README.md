@@ -38,7 +38,7 @@ Page({
 添加 `range` 属性就可以开启双滑块模式，确保 `value` 的值是一个数组。
 
 ```html
-<van-slider value="{{ 10, 50 }}" range @change="onChange" />
+<van-slider value="{{ [10, 50] }}" range @change="onChange" />
 ```
 
 ```js

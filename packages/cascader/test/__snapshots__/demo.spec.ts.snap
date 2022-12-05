@@ -33,7 +33,9 @@ exports[`should render demo and match snapshot 1`] = `
                 class="label-class van-field__label"
                 slot="title"
               >
-                地区 
+                
+    地区
+  
               </wx-view>
             </wx-view>
             <wx-view
@@ -140,9 +142,9 @@ exports[`should render demo and match snapshot 1`] = `
                 class="label-class van-field__label"
                 slot="title"
               >
-      
-        地区
-        
+                
+    地区
+  
               </wx-view>
             </wx-view>
             <wx-view
@@ -249,9 +251,9 @@ exports[`should render demo and match snapshot 1`] = `
                 class="label-class van-field__label"
                 slot="title"
               >
-                      
-        地区
-        
+                
+    地区
+  
               </wx-view>
             </wx-view>
             <wx-view
@@ -358,9 +360,9 @@ exports[`should render demo and match snapshot 1`] = `
                 class="label-class van-field__label"
                 slot="title"
               >
-                      
-        地区
-        
+                
+    地区
+  
               </wx-view>
             </wx-view>
             <wx-view
@@ -434,6 +436,7 @@ exports[`should render demo and match snapshot 1`] = `
           />
         </van-overlay>
       </van-popup>
+    </wx-view>
   </demo-block>
 </main>
 `;

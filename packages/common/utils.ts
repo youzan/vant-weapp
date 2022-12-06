@@ -1,5 +1,5 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick, getSystemInfoSync } from './version';
+import { canIUseGroupSetData, canIUseNextTick } from './version';
 
 export { isDef } from './validator';
 export { getSystemInfoSync } from './version';
@@ -28,21 +28,9 @@ export function addUnit(value?: string | number): string | undefined {
 }
 
 export function requestAnimationFrame(cb: () => void) {
-  const systemInfo = getSystemInfoSync();
-
-  if (systemInfo.platform === 'devtools') {
-    return setTimeout(() => {
-      cb();
-    }, 1000 / 30);
-  }
-
-  return wx
-    .createSelectorQuery()
-    .selectViewport()
-    .boundingClientRect()
-    .exec(() => {
-      cb();
-    });
+  return setTimeout(() => {
+    cb();
+  }, 1000 / 30);
 }
 
 export function pickExclude(obj: unknown, keys: string[]) {

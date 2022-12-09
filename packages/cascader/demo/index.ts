@@ -1,5 +1,28 @@
 import { VantComponent } from '../../common/component';
-import { deepClone } from '../../common/utils';
+import { isDef } from '../../common/utils';
+import { isObj } from '../../common/validator';
+
+function deepClone<T extends Record<string, any>>(obj: T): T {
+  if (!isDef(obj)) {
+    return obj;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map((item) => deepClone(item)) as unknown as T;
+  }
+
+  if (isObj(obj)) {
+    const to = {} as Record<string, any>;
+    Object.keys(obj).forEach((key: string) => {
+      // @ts-ignore
+      to[key] = deepClone(obj[key]);
+    });
+
+    return to as T;
+  }
+
+  return obj;
+}
 
 const zhCNOptions = [
   {

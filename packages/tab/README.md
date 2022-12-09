@@ -250,6 +250,7 @@ Page({
 | nav-class        | 标签栏样式类     |
 | tab-class        | 标签样式类       |
 | tab-active-class | 标签激活态样式类 |
+| wrap-class       | 标签栏根节点样式类 |
 
 ### 方法
 

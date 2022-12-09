@@ -44,7 +44,7 @@
         bind:tap="onSelect"
       >
         <text>{{ option[textKey] }}</text>
-        <van-icon wx:if="{{ utils.isSelected(tab, textKey, option) }}" name="success" custom-class="van-cascader__selected-icon" />
+        <van-icon wx:if="{{ utils.isSelected(tab, textKey, option) }}" name="success" size="18" />
       </view>
     </view>
     <!-- 暂不支持 -->

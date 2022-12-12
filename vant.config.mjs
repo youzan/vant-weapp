@@ -114,6 +114,10 @@ export default {
             title: 'Calendar 日历',
           },
           {
+            path: 'cascader',
+            title: 'Cascader 级联选择',
+          },
+          {
             path: 'checkbox',
             title: 'Checkbox 复选框',
           },

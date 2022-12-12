@@ -69,7 +69,7 @@
     </van-goods-action-button>
   </van-goods-action>
 
-  <view wx:else class="van-hairline--top van-dialog__footer">
+  <view wx:elif="{{ showCancelButton || showConfirmButton }}" class="van-hairline--top van-dialog__footer">
     <van-button
       wx:if="{{ showCancelButton }}"
       size="large"

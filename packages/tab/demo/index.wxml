@@ -147,3 +147,18 @@
     </van-tab>
   </van-tabs>
 </demo-block>
+
+<demo-block title="异步切换">
+  <van-tabs active="{{ 1 }}" swipeable use-before-change bind:change="onChange" bind:before-change="onBeforeChange" >
+   <van-tab
+      wx:for="{{ tabs4 }}"
+      wx:key="index"
+      title="{{ '标签 ' + item }}"
+    >
+      <view class="content">
+        {{ '内容' + item }}
+      </view>
+    </van-tab>
+  </van-tabs>
+</demo-block>
+

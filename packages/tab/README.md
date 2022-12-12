@@ -189,8 +189,6 @@ Page({
 
 通过 `before-change` 事件可以在切换标签前执行特定的逻辑，实现切换前校验、异步切换的目的
 
-此时可以通过使用 `wx:if` 手动控制 van-tabs 的渲染来规避这种场景。
-
 ```html
 <van-tabs active="{{ active }}" use-before-change="{{ true }}" bind:change="onChange" bind:before-change="onBeforeChange" >
   <van-tab title="标签 1">内容 1</van-tab>

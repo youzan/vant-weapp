@@ -9,7 +9,7 @@
     container="{{ container }}"
     bind:scroll="onTouchScroll"
   >
-    <view class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+    <view class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }} wrap-class">
       <slot name="nav-left" />
 
       <scroll-view

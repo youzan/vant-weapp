@@ -18,7 +18,7 @@ export function pageScrollMixin(scroller) {
             }
             const _scroller = scroller.bind(this);
             const { vanPageScroller = [] } = page;
-            if (!vanPageScroller.length && isFunction(page.onPageScroll)) {
+            if (isFunction(page.onPageScroll) && page.onPageScroll !== onPageScroll) {
                 vanPageScroller.push(page.onPageScroll.bind(page));
             }
             vanPageScroller.push(_scroller);
@@ -32,7 +32,7 @@ export function pageScrollMixin(scroller) {
                 return;
             }
             const { vanPageScroller } = page;
-            const index = vanPageScroller.findIndex(v => v === this._scroller);
+            const index = vanPageScroller.findIndex((v) => v === this._scroller);
             if (index > -1) {
                 page.vanPageScroller.splice(index, 1);
             }

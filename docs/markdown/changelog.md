@@ -1,4 +1,16 @@
 # 更新日志
+### [v1.10.9](https://github.com/youzan/vant-weapp/compare/v1.10.8...v1.10.9)
+
+`2022-12-12`
+
+**Bug Fixes**
+- slider: 修复文档示例值错误 [#5128](https://github.com/youzan/vant-weapp/issues/5128)
+- tab: 修复在开启微信工具热更新时出现堆栈溢出问题 [#5125](https://github.com/youzan/vant-weapp/issues/5125)
+- transition: 修复页面切后台后无法触发 transition 相关组件更新 [#5131](https://github.com/youzan/vant-weapp/issues/5131)
+
+**Feature**
+- cascader: 新增 cascader 组件 [#4992](https://github.com/youzan/vant-weapp/issues/4992)
+
 ### [v1.10.8](https://github.com/youzan/vant-weapp/compare/v1.10.7...v1.10.8)
 
 `2022-11-29`

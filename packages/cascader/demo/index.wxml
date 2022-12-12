@@ -1,0 +1,112 @@
+<demo-block title="基础用法">
+  <van-field
+    value="{{ baseState.result }}"
+    is-link
+    readonly
+    label="地区"
+    placeholder="{{ selectArea }}"
+    data-state-key="baseState"
+    bind:tap="onClick"
+  />
+  <van-popup
+    show="{{ baseState.show }}"
+    round
+    position="bottom"
+  >
+    <van-cascader
+      wx:if="{{ baseState.show }}"
+      value="{{ baseState.value }}"
+      title="{{ selectArea }}"
+      options="{{ options }}"
+      data-state-key="baseState"
+      bind:close="onClose"
+      bind:finish="onFinish"
+    />
+  </van-popup>
+</demo-block>
+
+<demo-block title="自定义颜色">
+  <van-field
+    value="{{ customColorState.result }}"
+    is-link
+    readonly
+    label="地区"
+    placeholder="{{ selectArea }}"
+    data-state-key="customColorState"
+    bind:tap="onClick"
+  />
+  <van-popup
+    show="{{ customColorState.show }}"
+    round
+    position="bottom"
+  >
+    <van-cascader
+      wx:if="{{ customColorState.show }}"
+      value="{{ customColorState.value }}"
+      title="{{ selectArea }}"
+      options="{{ options }}"
+      data-state-key="customColorState"
+      active-color="#ee0a24"
+      bind:close="onClose"
+      bind:finish="onFinish"
+    />
+  </van-popup>
+</demo-block>
+
+<demo-block title="异步加载选项">
+  <van-field
+    value="{{ asyncState.result }}"
+    is-link
+    readonly
+    label="地区"
+    placeholder="{{ selectArea }}"
+    data-state-key="asyncState"
+    bind:tap="onClick"
+  />
+  <van-popup
+    show="{{ asyncState.show }}"
+    round
+    position="bottom"
+  >
+    <van-cascader
+      wx:if="{{ asyncState.show }}"
+      value="{{ asyncState.value }}"
+      title="{{ selectArea }}"
+      options="{{ asyncState.options }}"
+      data-state-key="asyncState"
+      bind:close="onClose"
+      bind:change="loadDynamicOptions"
+      bind:finish="onFinish"
+    />
+  </van-popup>
+</demo-block>
+
+<demo-block title="自定义字段名">
+  <van-field
+    value="{{ customFieldState.result }}"
+    is-link
+    readonly
+    label="地区"
+    placeholder="{{ selectArea }}"
+    data-state-key="customFieldState"
+    bind:tap="onClick"
+  />
+  <van-popup
+    show="{{ customFieldState.show }}"
+    round
+    position="bottom"
+    safe-area-inset-bottom
+  >
+    <van-cascader
+      wx:if="{{ customFieldState.show }}"
+      data-state-key="customFieldState"
+      value="{{ customFieldState.value }}"
+      title="{{ selectArea }}"
+      options="{{ customFieldOptions }}"
+      field-names="{{ fieldNames }}"
+      data-state-key="customFieldState"
+      bind:close="onClose"
+      bind:finish="onFinish"
+    />
+  </van-popup>
+</demo-block>

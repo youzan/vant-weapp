@@ -70,7 +70,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap "
+                  class="van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"

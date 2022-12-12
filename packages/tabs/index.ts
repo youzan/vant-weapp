@@ -15,7 +15,13 @@ type TrivialInstance = WechatMiniprogram.Component.TrivialInstance;
 VantComponent({
   mixins: [touch],
 
-  classes: ['nav-class', 'tab-class', 'tab-active-class', 'line-class'],
+  classes: [
+    'nav-class',
+    'tab-class',
+    'tab-active-class',
+    'line-class',
+    'wrap-class',
+  ],
 
   relation: useChildren('tab', function () {
     this.updateTabs();

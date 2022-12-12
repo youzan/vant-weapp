@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Cell 单元格",
+  "usingComponents": {
+    "van-field": "../../field/index",
+    "van-popup": "../../popup/index",
+    "van-cascader": "../../cascader/index",
+    "demo-block": "../../../example/components/demo-block/index"
+  }
+}

@@ -38,13 +38,16 @@
   }
 
   &__action {
-    padding: var(--search-action-padding, @search-action-padding);
     font-size: var(--search-action-font-size, @search-action-font-size);
     line-height: var(--search-input-height, @search-input-height);
     color: var(--search-action-text-color, @search-action-text-color);
 
     &--hover {
       background-color: @active-color;
+    }
+
+    &-button {
+      padding: var(--search-action-padding, @search-action-padding);
     }
   }
 }

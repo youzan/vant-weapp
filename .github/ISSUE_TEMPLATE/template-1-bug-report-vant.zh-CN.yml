@@ -1,5 +1,5 @@
 name: 我要反馈 Vant Weapp 的 Bug
-description: 通过标准模板进行 Bug 反馈。
+description: 通过标准模板进行 Bug 反馈
 title: "[Bug Report] 请在此填写标题"
 labels: ["bug: need confirm"]
 body:
@@ -16,7 +16,7 @@ body:
     id: reproduce
     attributes:
       label: 重现链接
-      description: 请提供一个尽可能简单的 GitHub 仓库链接 或者 真实的代码片段。不要填写无效的链接 或 代码，这会导致你的 issue 被直接关闭。
+      description: 请提供一个尽可能简单的微信小程序代码片段协助我们排查，这可以更快的帮助我们定位问题，解决 issue。
     validations:
       required: true
 

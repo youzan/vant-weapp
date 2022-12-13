@@ -139,7 +139,7 @@ Page({
 | close-icon | 关闭图标名称或图片链接 | _string_ | `cross` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | _boolean_ | `false` |
-| safe-tab-bar `v1.10.10` | 是否留出底部 tabBar 高端| _boolean_ | `false` |
+| safe-tab-bar `v1.10.10` | 是否留出底部 tabBar 安全距离| _boolean_ | `false` |
 | lock-scroll `v1.7.3` | 是否锁定背景滚动 | _boolean_ | `true` |
 
 ### Events

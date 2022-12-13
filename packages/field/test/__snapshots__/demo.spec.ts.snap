@@ -807,11 +807,40 @@ exports[`should render demo and match snapshot 1`] = `
                     >
                       <van-button
                         customClass="button"
-                        size="small"
                         slot="button"
-                        type="primary"
                       >
-                        发送验证码
+                        <wx-button
+                          appParameter=""
+                          ariaLabel=""
+                          businessId="{{0}}"
+                          class="custom-class van-button van-button--primary van-button--small "
+                          data-detail="{{null}}"
+                          formType=""
+                          hoverClass="van-button--active hover-class"
+                          id=""
+                          lang=""
+                          openType=""
+                          sendMessageImg=""
+                          sendMessagePath=""
+                          sendMessageTitle=""
+                          sessionFrom=""
+                          showMessageCard="{{false}}"
+                          style=""
+                          bind:chooseavatar="onChooseAvatar"
+                          bind:contact="onContact"
+                          bind:error="onError"
+                          bind:getphonenumber="onGetPhoneNumber"
+                          bind:getuserinfo="onGetUserInfo"
+                          bind:launchapp="onLaunchApp"
+                          bind:opensetting="onOpenSetting"
+                          bind:tap="onClick"
+                        >
+                          <wx-view
+                            class="van-button__text"
+                          >
+                            发送验证码
+                          </wx-view>
+                        </wx-button>
                       </van-button>
                     </wx-view>
                   </wx-view>

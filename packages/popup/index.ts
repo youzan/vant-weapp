@@ -60,6 +60,10 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    safeTabBar: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   created() {

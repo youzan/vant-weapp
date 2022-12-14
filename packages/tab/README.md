@@ -185,6 +185,49 @@ Page({
 </van-popup>
 ```
 
+### 异步切换
+
+通过 `before-change` 事件可以在切换标签前执行特定的逻辑，实现切换前校验、异步切换的目的
+
+```html
+<van-tabs active="{{ active }}" use-before-change="{{ true }}" bind:change="onChange" bind:before-change="onBeforeChange" >
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
+  <van-tab title="标签 4">内容 4</van-tab>
+</van-tabs>
+```
+
+```js
+Page({
+  data: {
+    active: 1,
+  },
+
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none',
+    });
+  },
+  onBeforeChange(event) {
+    const { callback, title } = event.detail;
+    
+    wx.showModal({
+      title: '异步切换',
+      content: `确定要切换至 ${title} tab吗？`,
+      success: (res) => {
+        if (res.confirm) {
+          callback(true)
+        } else if (res.cancel) {
+          callback(false)
+        }
+      },
+    })
+  }
+});
+```
+
 ## API
 
 ### Tabs Props
@@ -208,6 +251,7 @@ Page({
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
 | z-index | z-index 层级 | _number_ | `1` |
+| use-before-change `v1.10.10` | 是否开启切换前校验 | _boolean_ | `false` |
 
 ### Tab Props
 
@@ -238,18 +282,19 @@ Page({
 | 事件名 | 说明 | 参数 |
 | --- | --- | --- |
 | bind:click | 点击标签时触发 | name：标签标识符，title：标题 |
+| bind:before-change `v1.10.10` | tab 切换前会触发，在回调函数中返回 `false` 可终止 tab 切换，绑定事件的同时需要将`use-before-change`属性设置为`true` | `event.detail.name`: 当前切换的 tab 标识符， `event.detail.title`: 当前切换的 tab 标题， `event.detail.index`: 当前切换的 tab 下标，`event.detail.callback`: 回调函数，调用`callback(false)`终止 tab 切换 |
 | bind:change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
 | bind:disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
 | bind:scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
 
 ### 外部样式类
 
-| 类名             | 说明             |
-| ---------------- | ---------------- |
-| custom-class     | 根节点样式类     |
-| nav-class        | 标签栏样式类     |
-| tab-class        | 标签样式类       |
-| tab-active-class | 标签激活态样式类 |
+| 类名             | 说明               |
+| ---------------- | ------------------ |
+| custom-class     | 根节点样式类       |
+| nav-class        | 标签栏样式类       |
+| tab-class        | 标签样式类         |
+| tab-active-class | 标签激活态样式类   |
 | wrap-class       | 标签栏根节点样式类 |
 
 ### 方法

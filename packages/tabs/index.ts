@@ -93,6 +93,10 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    useBeforeChange: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {
@@ -134,17 +138,13 @@ VantComponent({
     trigger(eventName: string, child?: TrivialInstance) {
       const { currentIndex } = this.data;
 
-      const currentChild = child || this.children[currentIndex];
+      const data = this.getChildData(currentIndex, child);
 
-      if (!isDef(currentChild)) {
+      if (!isDef(data)) {
         return;
       }
 
-      this.$emit(eventName, {
-        index: currentChild.index,
-        name: currentChild.getComputedName(),
-        title: currentChild.data.title,
-      });
+      this.$emit(eventName, data);
     },
 
     onTap(event: WechatMiniprogram.TouchEvent) {
@@ -153,12 +153,15 @@ VantComponent({
 
       if (child.data.disabled) {
         this.trigger('disabled', child);
-      } else {
+        return;
+      }
+
+      this.onBeforeChange(index).then(() => {
         this.setCurrentIndex(index);
         nextTick(() => {
           this.trigger('click');
         });
-      }
+      });
     },
 
     // correct the index of active tab
@@ -313,7 +316,7 @@ VantComponent({
       if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
         const index = this.getAvaiableTab(deltaX);
         if (index !== -1) {
-          this.setCurrentIndex(index);
+          this.onBeforeChange(index).then(() => this.setCurrentIndex(index));
         }
       }
 
@@ -342,6 +345,33 @@ VantComponent({
       }
 
       return -1;
+    },
+    onBeforeChange(index: number): Promise<void> {
+      const { useBeforeChange } = this.data;
+
+      if (!useBeforeChange) {
+        return Promise.resolve();
+      }
+
+      return new Promise((resolve, reject) => {
+        this.$emit('before-change', {
+          ...this.getChildData(index),
+          callback: (status) => (status ? resolve() : reject()),
+        });
+      });
+    },
+    getChildData(index: number, child?: TrivialInstance) {
+      const currentChild = child || this.children[index];
+
+      if (!isDef(currentChild)) {
+        return;
+      }
+
+      return {
+        index: currentChild.index,
+        name: currentChild.getComputedName(),
+        title: currentChild.data.title,
+      };
     },
   },
 });

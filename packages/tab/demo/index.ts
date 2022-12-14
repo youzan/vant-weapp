@@ -41,5 +41,20 @@ VantComponent({
         icon: 'none',
       });
     },
+    onBeforeChange(event) {
+      const { callback, title } = event.detail;
+
+      wx.showModal({
+        title: '异步切换',
+        content: `确定要切换至 ${title} tab吗？`,
+        success: (res) => {
+          if (res.confirm) {
+            callback(true);
+          } else if (res.cancel) {
+            callback(false);
+          }
+        },
+      });
+    },
   },
 });

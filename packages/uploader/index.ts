@@ -186,14 +186,25 @@ VantComponent({
       const { index } = event.currentTarget.dataset;
       const { lists } = this.data as { lists: File[] };
 
+      const sources: WechatMiniprogram.MediaSource[] = [];
+
+      const current = lists.reduce((sum, cur, curIndex) => {
+        if (!isVideoFile(cur)) {
+          return sum;
+        }
+
+        sources.push({ ...cur, type: 'video' });
+
+        if (curIndex < index) {
+          sum++;
+        }
+
+        return sum;
+      }, 0);
+
       wx.previewMedia({
-        sources: lists
-          .filter((item) => isVideoFile(item))
-          .map((item) => ({
-            ...item,
-            type: 'video',
-          })),
-        current: index,
+        sources,
+        current,
         fail() {
           wx.showToast({ title: '预览视频失败', icon: 'none' });
         },

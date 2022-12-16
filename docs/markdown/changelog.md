@@ -1,4 +1,25 @@
 # 更新日志
+### [v1.10.10](https://github.com/youzan/vant-weapp/compare/v1.10.9...v1.10.10)
+
+`2022-12-16`
+
+**Bug Fixes**
+
+- dialog: 修复在没有底部按钮时存在额外的白线 [#5141](https://github.com/youzan/vant-weapp/issues/5141)
+- dropdown: 修复文案超出限制后箭头样式问题 [#5145](https://github.com/youzan/vant-weapp/issues/5145)
+- button: 修复 demo 示例缺失 button 组件引入 [8ec17c](https://github.com/youzan/vant-weapp/commit/8ec17cc87da28b9f3caa5293c3710ee927eaa210)
+- search: 优化取消按钮的点击区域 [#5148](https://github.com/youzan/vant-weapp/issues/5148)
+- uploader: 修复无法预览视频问题 [#5142](https://github.com/youzan/vant-weapp/issues/5142)
+
+**Document**
+
+- cascader: 增加 cascader 文档链接 [4bb9e6](https://github.com/youzan/vant-weapp/commit/4bb9e625381dee97fbe2e6d3c1602365ab2c41c5)
+- uploader: 优化 thumb 字段文案描述 [af7493](https://github.com/youzan/vant-weapp/commit/af74936bdc9a665dfdd024a2e85be66fabf3133d)
+
+**Feature**
+
+- tab: 新增 before-change 属性支持 [#5139](https://github.com/youzan/vant-weapp/issues/5139)
+
 ### [v1.10.9](https://github.com/youzan/vant-weapp/compare/v1.10.8...v1.10.9)
 
 `2022-12-12`

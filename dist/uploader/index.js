@@ -129,11 +129,20 @@ VantComponent({
                 return;
             const { index } = event.currentTarget.dataset;
             const { lists } = this.data;
+            const sources = [];
+            const current = lists.reduce((sum, cur, curIndex) => {
+                if (!isVideoFile(cur)) {
+                    return sum;
+                }
+                sources.push(Object.assign(Object.assign({}, cur), { type: 'video' }));
+                if (curIndex < index) {
+                    sum++;
+                }
+                return sum;
+            }, 0);
             wx.previewMedia({
-                sources: lists
-                    .filter((item) => isVideoFile(item))
-                    .map((item) => (Object.assign(Object.assign({}, item), { type: 'video' }))),
-                current: index,
+                sources,
+                current,
                 fail() {
                     wx.showToast({ title: '预览视频失败', icon: 'none' });
                 },

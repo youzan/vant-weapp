@@ -57,6 +57,10 @@ export function transition(showDefaultValue: boolean) {
         const classNames = getClassNames(name);
         const currentDuration = isObj(duration) ? duration.enter : duration;
 
+        if (this.status === 'enter') {
+          return;
+        }
+
         this.status = 'enter';
         this.$emit('before-enter');
 

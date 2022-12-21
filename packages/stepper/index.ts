@@ -35,7 +35,7 @@ VantComponent({
     disableInput: Boolean,
     decimalLength: {
       type: Number,
-      value: (null as unknown) as number,
+      value: null as unknown as number,
       observer: 'check',
     },
     min: {
@@ -97,14 +97,8 @@ VantComponent({
     },
 
     isDisabled(type: string) {
-      const {
-        disabled,
-        disablePlus,
-        disableMinus,
-        currentValue,
-        max,
-        min,
-      } = this.data;
+      const { disabled, disablePlus, disableMinus, currentValue, max, min } =
+        this.data;
 
       if (type === 'plus') {
         return disabled || disablePlus || currentValue >= max;
@@ -119,6 +113,9 @@ VantComponent({
 
     onBlur(event: WechatMiniprogram.InputBlur) {
       const value = this.format(event.detail.value);
+
+      this.setData({ currentValue: value });
+
       this.$emit('blur', {
         ...event.detail,
         value,

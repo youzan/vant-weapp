@@ -99,6 +99,7 @@
 | radius | 圆角大小，默认单位为`px` | _string \| number_ | `0` |
 | round | 是否显示为圆形 | _boolean_ | `false` |
 | lazy-load | 是否懒加载 | _boolean_ | `false` |
+| webp `v1.10.11` | 是否解析 webp 格式 | _boolean_ | `false` |
 | show-error | 是否展示图片加载失败提示 | _boolean_ | `true` |
 | show-loading | 是否展示图片加载中提示 | _boolean_ | `true` |
 | use-error-slot | 是否使用 error 插槽 | _boolean_ | `false` |

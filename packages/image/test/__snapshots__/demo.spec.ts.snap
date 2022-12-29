@@ -28,6 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
                 mode="scaleToFill"
                 showMenuByLongpress="{{false}}"
                 src="https://img.yzcdn.cn/vant/cat.jpeg"
+                webp="{{false}}"
                 bind:error="onError"
                 bind:load="onLoad"
               />
@@ -81,6 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="aspectFit"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -123,6 +125,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="aspectFill"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -165,6 +168,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="scaleToFill"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -207,6 +211,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="center"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -249,6 +254,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode=""
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -291,6 +297,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="widthFix"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -333,6 +340,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="heightFix"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -393,6 +401,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="aspectFit"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -435,6 +444,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="aspectFill"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -477,6 +487,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="scaleToFill"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -519,6 +530,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="center"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -561,6 +573,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode=""
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -603,6 +616,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="widthFix"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -645,6 +659,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="heightFix"
                     showMenuByLongpress="{{false}}"
                     src="https://img.yzcdn.cn/vant/cat.jpeg"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -705,6 +720,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="scaleToFill"
                     showMenuByLongpress="{{false}}"
                     src=""
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -747,6 +763,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="scaleToFill"
                     showMenuByLongpress="{{false}}"
                     src=""
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -851,6 +868,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="scaleToFill"
                     showMenuByLongpress="{{false}}"
                     src="x"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />
@@ -893,6 +911,7 @@ exports[`should render demo and match snapshot 1`] = `
                     mode="scaleToFill"
                     showMenuByLongpress="{{false}}"
                     src="x"
+                    webp="{{false}}"
                     bind:error="onError"
                     bind:load="onLoad"
                   />

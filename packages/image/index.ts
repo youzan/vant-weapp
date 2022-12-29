@@ -28,6 +28,10 @@ VantComponent({
       type: String,
       value: 'fill',
     },
+    webp: {
+      type: Boolean,
+      value: false,
+    },
     showError: {
       type: Boolean,
       value: true,

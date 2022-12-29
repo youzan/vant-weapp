@@ -49,3 +49,8 @@ export const chooseMediaProps = {
     value: 'back',
   },
 };
+
+// props for choose file
+export const chooseMessageFileProps = {
+  extension: null,
+};

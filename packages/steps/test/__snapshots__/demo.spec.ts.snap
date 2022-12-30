@@ -76,7 +76,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-checked"
@@ -231,7 +231,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-arrow"
@@ -268,7 +268,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-success"
@@ -305,7 +305,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-arrow"
@@ -342,7 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-arrow"
@@ -396,7 +396,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-location-o"
@@ -433,7 +433,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-arrow-left"
@@ -470,7 +470,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-star-o"
@@ -507,7 +507,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-phone-o"
@@ -593,7 +593,7 @@ exports[`should render demo and match snapshot 1`] = `
                 class="van-step__circle-container"
               >
                 <van-icon
-                  customClass="van-step__icon"
+                  class="van-step__icon"
                 >
                   <wx-view
                     class="custom-class van-icon van-icon-checked"

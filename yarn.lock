@@ -8131,14 +8131,14 @@ iterate-value@^1.0.2:
     es-get-iterator "^1.0.2"
     iterate-iterator "^1.0.1"
 
-j-component@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.npmmirror.com/j-component/-/j-component-1.4.6.tgz#e533399addea268aadb00876a2357c8c59a8b43c"
-  integrity sha512-yKugOAw8LmalSC9mFXsFf+q5WRUvqaeA0lnOiUJiBhyBCJGhbSLAqyfYv3+u5TQtQVVUrB691ocyJUNIuYkcmA==
+j-component@^1.4.7:
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/j-component/-/j-component-1.4.7.tgz#800c6da5d52488c8bc4ef6a09385d9d70cccfc12"
+  integrity sha512-9qUH83kWQf3OympyDYVpFYe7NAQDjN5ko6a5cGBksUO8c3cXCRZO3qLaw3q06biGCSdbEvsDkmktjfTt1jDUIA==
   dependencies:
     expr-parser "^1.0.0"
     miniprogram-api-typings "^3.2.2"
-    miniprogram-exparser "2.15.0"
+    miniprogram-exparser "2.29.0"
 
 jake@^10.8.5:
   version "10.8.5"
@@ -9571,18 +9571,18 @@ miniprogram-compiler@latest:
     glob "^7.1.3"
     unescape-js "^1.1.1"
 
-miniprogram-exparser@2.15.0:
-  version "2.15.0"
-  resolved "https://registry.npmmirror.com/miniprogram-exparser/-/miniprogram-exparser-2.15.0.tgz#8893a250dfed768802c061b13ff9ae1958b1223c"
-  integrity sha512-W6aS1R3oVTwYw5hPguRqICFqx3wk2dtPAcwT6269WeWRjuQslbVPZRW/nlN16bg0NM5eQFmfU49PM6/PQ5DE8w==
+miniprogram-exparser@2.29.0:
+  version "2.29.0"
+  resolved "https://registry.yarnpkg.com/miniprogram-exparser/-/miniprogram-exparser-2.29.0.tgz#ae7a21cfffb7361bd38d9cc0708d9d3a4da18d6c"
+  integrity sha512-U77WbauGN3JwQy07LnidSGeVZ1Pm73F5wL7PWHD+sqeu7jvu0YnFpcb6TLRXTlyFYRMUpEN1vELmBnD7BoJUIw==
 
 miniprogram-simulate@^1.4.2:
-  version "1.5.7"
-  resolved "https://registry.npmmirror.com/miniprogram-simulate/-/miniprogram-simulate-1.5.7.tgz#58da166b08c1a4a3c8b1d9d3de7e74e8a2fe8597"
-  integrity sha512-RFfZSoDIc+PQTtDmkg9D1/Su+UVCzuWbTV/KM1Zr8IUfFNg6uxsKLdeUem9H5sk0a4dlH/o1Qv7QXZPFfcbAvA==
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/miniprogram-simulate/-/miniprogram-simulate-1.5.8.tgz#1965dc894dd214148a7208cc248ed8c3317eb225"
+  integrity sha512-VJ+5g4L4S25L9vSMTBgTiwMN6CbBZ+Q44I6aXblg4XHxzbkd0g3smfFblfwkhYp9wMyPUXjFq+PmI4CtP7hgsg==
   dependencies:
     csso "^3.5.1"
-    j-component "^1.4.6"
+    j-component "^1.4.7"
     less "^3.10.3"
     miniprogram-compiler latest
     postcss "^7.0.23"

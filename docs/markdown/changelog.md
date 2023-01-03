@@ -1,4 +1,19 @@
 # 更新日志
+### [v1.10.11](https://github.com/youzan/vant-weapp/compare/v1.10.10...v1.10.11)
+
+`2023-01-03`
+
+**Bug Fixes**
+
+- stepper: 修复显示错误的值在 blur 的情况下 [#5158](https://github.com/youzan/vant-weapp/issues/5158)
+- steps: 修复额外的间距在垂直方向的情况下 [#5166](https://github.com/youzan/vant-weapp/issues/5166)
+- transition: 修复 enter 时间触发多次的问题 [#5157](https://github.com/youzan/vant-weapp/issues/5157)
+
+**Feature**
+
+- image: 增加 webp 属性支持 [#5163](https://github.com/youzan/vant-weapp/issues/5163)
+- uploader: 增加 extension 属性支持 [a80767](https://github.com/youzan/vant-weapp/commit/a80767e9c1699a9b15fb9d4bb1b552ef3fc5c8dc)
+
 ### [v1.10.10](https://github.com/youzan/vant-weapp/compare/v1.10.9...v1.10.10)
 
 `2022-12-16`

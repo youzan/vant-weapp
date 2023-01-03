@@ -85,7 +85,7 @@ VantComponent({
             }
         },
         isDisabled(type) {
-            const { disabled, disablePlus, disableMinus, currentValue, max, min, } = this.data;
+            const { disabled, disablePlus, disableMinus, currentValue, max, min } = this.data;
             if (type === 'plus') {
                 return disabled || disablePlus || currentValue >= max;
             }
@@ -96,6 +96,7 @@ VantComponent({
         },
         onBlur(event) {
             const value = this.format(event.detail.value);
+            this.setData({ currentValue: value });
             this.$emit('blur', Object.assign(Object.assign({}, event.detail), { value }));
         },
         // filter illegal characters

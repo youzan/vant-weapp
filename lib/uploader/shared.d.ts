@@ -44,3 +44,6 @@ export declare const chooseMediaProps: {
         value: string;
     };
 };
+export declare const chooseMessageFileProps: {
+    extension: null;
+};

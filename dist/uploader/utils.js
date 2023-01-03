@@ -38,7 +38,7 @@ function formatMedia(res) {
 function formatFile(res) {
     return res.tempFiles.map((item) => (Object.assign(Object.assign({}, pickExclude(item, ['path'])), { url: item.path })));
 }
-export function chooseFile({ accept, multiple, capture, compressed, maxDuration, sizeType, camera, maxCount, mediaType, }) {
+export function chooseFile({ accept, multiple, capture, compressed, maxDuration, sizeType, camera, maxCount, mediaType, extension, }) {
     return new Promise((resolve, reject) => {
         switch (accept) {
             case 'image':
@@ -73,12 +73,7 @@ export function chooseFile({ accept, multiple, capture, compressed, maxDuration,
                 });
                 break;
             default:
-                wx.chooseMessageFile({
-                    count: multiple ? maxCount : 1,
-                    type: accept,
-                    success: (res) => resolve(formatFile(res)),
-                    fail: reject,
-                });
+                wx.chooseMessageFile(Object.assign(Object.assign({ count: multiple ? maxCount : 1, type: accept }, (extension ? { extension } : {})), { success: (res) => resolve(formatFile(res)), fail: reject }));
                 break;
         }
     });

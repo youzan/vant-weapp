@@ -257,14 +257,15 @@ Page({
 | disable-default-padding | 是否去掉 iOS 下的默认内边距，只对 textarea 有效 | _boolean_ | `true` |
 | cursor | 指定 focus 时的光标位置 | _number_ | `-1` |
 | clear-trigger `v1.8.4` | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
-| always-embed `v1.9.2` | 强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效) |  _boolean_ | `false` |
+| always-embed `v1.9.2` | 强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效) | _boolean_ | `false` |
+| extra `v1.10.12` | 开启事件增强模式，会在 input 和 change 事件额外提供 `cursor` 和 `keyCode` 参数 | _boolean_ | `false` |
 
 ### Events
 
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |
-| bind:input | 输入内容时触发 | event.detail: 当前输入值 |
-| bind:change | 输入内容时触发 | event.detail: 当前输入值 |
+| bind:input | 输入内容时触发 | event.detail: 当前输入值; 在 extra 为 `true` 时, event.detail.value: 当前输入值, event.detail.cursor: 光标位置, event.detail.keyCode: 键值 |
+| bind:change | 输入内容时触发 | event.detail: 当前输入值; 在 extra 为 `true` 时, event.detail.value: 当前输入值, event.detail.cursor: 光标位置, event.detail.keyCode: 键值 |
 | bind:confirm | 点击完成按钮时触发 | event.detail: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
 | bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |

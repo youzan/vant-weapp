@@ -10,7 +10,7 @@ function optionClass(tab, textKey, option) {
 }
 
 function optionStyle(data) {
-  var color = data.option.color || (isSelected(data.tab, data.textKey, data.option) ? data.activeColor : undefined);
+  var color = data.option.color || (isSelected(data.tab, data.valueKey, data.option) ? data.activeColor : undefined);
   return style({
     color
   });

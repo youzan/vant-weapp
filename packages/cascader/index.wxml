@@ -37,7 +37,7 @@
         wx:for="{{ tab.options }}"
         wx:for-item="option"
         wx:key="index"
-        class="{{ option.className }} {{ utils.optionClass(tab, textKey, option) }}"
+        class="{{ option.className }} {{ utils.optionClass(tab, valueKey, option) }}"
         style="{{ utils.optionStyle({ tab, valueKey, option, activeColor }) }}"
         data-option="{{ option }}"
         data-tab-index="{{ tabIndex }}"

@@ -1,12 +1,12 @@
 var utils = require('../wxs/utils.wxs');
 var style = require('../wxs/style.wxs');
 
-function isSelected(tab, textKey, option) {
-  return tab.selected && tab.selected[textKey] === option[textKey]
+function isSelected(tab, valueKey, option) {
+  return tab.selected && tab.selected[valueKey] === option[valueKey]
 }
 
-function optionClass(tab, textKey, option) {
-  return utils.bem('cascader__option', { selected: isSelected({ tab, textKey, option }), disabled: option.disabled })
+function optionClass(tab, valueKey, option) {
+  return utils.bem('cascader__option', { selected: isSelected(tab, valueKey, option), disabled: option.disabled })
 }
 
 function optionStyle(data) {

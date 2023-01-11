@@ -1,6 +1,7 @@
 import { nextTick } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
+import { InputDetails } from './types';
 
 VantComponent({
   field: true,
@@ -53,6 +54,10 @@ VantComponent({
       type: String,
       value: 'clear',
     },
+    extraEventParams: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {
@@ -72,7 +77,8 @@ VantComponent({
 
       this.value = value;
       this.setShowClear();
-      this.emitChange();
+
+      this.emitChange(event.detail);
     },
 
     onFocus(
@@ -105,7 +111,7 @@ VantComponent({
       this.setShowClear();
 
       nextTick(() => {
-        this.emitChange();
+        this.emitChange({ value: '' });
         this.$emit('clear', '');
       });
     },
@@ -119,7 +125,7 @@ VantComponent({
       this.$emit('confirm', value);
     },
 
-    setValue(value) {
+    setValue(value: string) {
       this.value = value;
       this.setShowClear();
 
@@ -127,7 +133,7 @@ VantComponent({
         this.setData({ innerValue: '' });
       }
 
-      this.emitChange();
+      this.emitChange({ value });
     },
 
     onLineChange(event: WechatMiniprogram.TextareaLineChange) {
@@ -142,12 +148,16 @@ VantComponent({
       this.$emit('keyboardheightchange', event.detail);
     },
 
-    emitChange() {
-      this.setData({ value: this.value });
+    emitChange(detail: InputDetails) {
+      const { extraEventParams } = this.data;
+
+      this.setData({ value: detail.value });
 
       nextTick(() => {
-        this.$emit('input', this.value);
-        this.$emit('change', this.value);
+        const data = extraEventParams ? detail : detail.value;
+
+        this.$emit('input', data);
+        this.$emit('change', data);
       });
     },
 

@@ -135,6 +135,42 @@ Page({
 </van-dropdown-menu>
 ```
 
+### 异步打开/关闭
+
+通过 `before-toggle` 事件可以在下拉菜单打开或者关闭前执行特定的逻辑，实现状态变更前校验、异步打开/关闭的目的
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" use-before-toggle bind:before-toggle="onBeforeChange" />
+</van-dropdown-menu>
+```
+
+```js
+Page({
+  data: {
+    value1: 0,
+     option1: [
+      { text: '全部商品', value: 0 },
+      { text: '新款商品', value: 1 },
+      { text: '活动商品', value: 2 },
+    ],
+  },
+  onBeforeChange({ detail: { status, callback }}) {
+    wx.showModal({
+      title: '异步打开/关闭',
+      content: `确定要${status ? '打开' : '关闭'}下拉菜单吗？`,
+      success: (res) => {
+        if (res.confirm) {
+          callback(true)
+        } else if (res.cancel) {
+          callback(false)
+        }
+      },
+    })
+  }
+});
+```
+
 ## API
 
 ### DropdownMenu Props
@@ -159,6 +195,7 @@ Page({
 | disabled | 是否禁用菜单 | _boolean_ | `false` |
 | title-class | 标题额外类名，建议使用自定义样式 item-title-class 代替 | _string_ | - |
 | popup-style | 自定义弹出层样式 | _string_ | - |
+| use-before-toggle `v1.10.12` | 是否开启下拉菜单打开或者关闭前校验  | _boolean_ | `false` |
 
 ### DropdownItem Events
 
@@ -169,6 +206,7 @@ Page({
 | close  | 关闭菜单栏时触发              | -        |
 | opened | 打开菜单栏且动画结束后触发    | -        |
 | closed | 关闭菜单栏且动画结束后触发    | -        |
+| before-toggle `v1.10.12` | 下拉菜单打开或者关闭前触发，需要将`use-before-toggle`属性设置为`true`    | `event.detail.status`: `true` 打开下拉菜单，`false` 关闭下拉菜单 <br>`event.detail.callback`: 回调函数，调用`callback(false)`终止下拉菜单状态变更        |
 
 ### DropdownItem 方法
 

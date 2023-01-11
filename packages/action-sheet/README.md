@@ -164,7 +164,7 @@ Page({
 | overlay | 是否显示遮罩层 | _boolean_ | - |
 | round `v1.0.0` | 是否显示圆角 | _boolean_ | `true` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
-| close-on-click-overlay | 点击遮罩是否关闭菜单 | _boolean_ | - |
+| close-on-click-overlay | 点击遮罩是否关闭菜单 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` |
 
 ### Events

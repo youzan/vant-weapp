@@ -54,7 +54,7 @@ VantComponent({
       type: String,
       value: 'clear',
     },
-    extra: {
+    extraEventParams: {
       type: Boolean,
       value: false,
     },
@@ -149,12 +149,12 @@ VantComponent({
     },
 
     emitChange(detail: InputDetails) {
-      const { extra } = this.data;
+      const { extraEventParams } = this.data;
 
       this.setData({ value: detail.value });
 
       nextTick(() => {
-        const data = extra ? detail : detail.value;
+        const data = extraEventParams ? detail : detail.value;
 
         this.$emit('input', data);
         this.$emit('change', data);

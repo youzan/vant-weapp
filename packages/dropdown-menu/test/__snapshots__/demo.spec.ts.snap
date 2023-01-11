@@ -289,5 +289,45 @@ exports[`should render demo and match snapshot 1`] = `
       </van-dropdown-menu>
     </wx-view>
   </demo-block>
+  <demo-block
+    customClass="white"
+  >
+    <wx-view
+      class="custom-class demo-block van-clearfix "
+    >
+      <wx-view
+        class="demo-block__title"
+      >
+        异步打开/关闭
+      </wx-view>
+      <van-dropdown-menu>
+        <wx-view
+          class="van-dropdown-menu van-dropdown-menu--top-bottom custom-class"
+        >
+          <wx-view
+            class="van-dropdown-menu__item"
+            data-index="{{0}}"
+            bind:tap="onTitleTap"
+          >
+            <wx-view
+              class=" van-dropdown-menu__title title-class"
+              style=""
+            >
+              <wx-view
+                class="van-ellipsis"
+              >
+                
+        全部商品
+      
+              </wx-view>
+            </wx-view>
+          </wx-view>
+          <van-dropdown-item
+            bind:before-toggle="onBeforeChange"
+          />
+        </wx-view>
+      </van-dropdown-menu>
+    </wx-view>
+  </demo-block>
 </main>
 `;

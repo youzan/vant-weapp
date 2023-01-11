@@ -30,6 +30,10 @@ VantComponent({
       observer: 'rerender',
     },
     popupStyle: String,
+    useBeforeToggle: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {
@@ -109,19 +113,39 @@ VantComponent({
         return;
       }
 
-      this.setData({
-        transition: !options.immediate,
-        showPopup: show,
-      });
+      this.onBeforeToggle(show).then((status) => {
+        if (!status) {
+          return;
+        }
 
-      if (show) {
-        this.parent?.getChildWrapperStyle().then((wrapperStyle: string) => {
-          this.setData({ wrapperStyle, showWrapper: true });
-          this.rerender();
+        this.setData({
+          transition: !options.immediate,
+          showPopup: show,
         });
-      } else {
-        this.rerender();
+
+        if (show) {
+          this.parent?.getChildWrapperStyle().then((wrapperStyle: string) => {
+            this.setData({ wrapperStyle, showWrapper: true });
+            this.rerender();
+          });
+        } else {
+          this.rerender();
+        }
+      });
+    },
+    onBeforeToggle(status: boolean): Promise<boolean> {
+      const { useBeforeToggle } = this.data;
+
+      if (!useBeforeToggle) {
+        return Promise.resolve(true);
       }
+
+      return new Promise((resolve) => {
+        this.$emit('before-toggle', {
+          status,
+          callback: (value: boolean) => resolve(value),
+        });
+      });
     },
   },
 });

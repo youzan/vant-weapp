@@ -59,3 +59,9 @@
   </van-dropdown-menu>
 </demo-block>
 
+<demo-block custom-class="white" title="异步打开/关闭">
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" use-before-toggle bind:before-toggle="onBeforeChange" />
+  </van-dropdown-menu>
+</demo-block>
+

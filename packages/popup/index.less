@@ -101,6 +101,10 @@
     padding-bottom: env(safe-area-inset-bottom);
   }
 
+  &--bottom&--safeTabBar {
+    bottom: var(--tabbar-height, @tabbar-height);
+  }
+
   &--safeTop {
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);

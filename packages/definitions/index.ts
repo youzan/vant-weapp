@@ -24,6 +24,8 @@ export type VantComponentOptions<
     mixin: string;
   };
 
+  watch?: Record<string, (...args: any[]) => any>;
+
   methods?: Methods;
 
   // lifetimes

@@ -22,7 +22,6 @@ VantComponent({
   props: {
     value: {
       type: null,
-      observer: 'observeValue',
     },
     integer: {
       type: Boolean,
@@ -74,6 +73,12 @@ VantComponent({
     currentValue: '',
   },
 
+  watch: {
+    value() {
+      this.observeValue();
+    },
+  },
+
   created() {
     this.setData({
       currentValue: this.format(this.data.value),
@@ -82,11 +87,8 @@ VantComponent({
 
   methods: {
     observeValue() {
-      const { value, currentValue } = this.data;
-
-      if (!equal(value, currentValue)) {
-        this.setData({ currentValue: this.format(value) });
-      }
+      const { value } = this.data;
+      this.setData({ currentValue: this.format(value) });
     },
 
     check() {

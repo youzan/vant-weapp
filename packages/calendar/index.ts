@@ -18,6 +18,7 @@ import Toast from '../toast/toast';
 import { requestAnimationFrame } from '../common/utils';
 
 const initialMinDate = getToday().getTime();
+
 const initialMaxDate = (() => {
   const now = getToday();
   return new Date(
@@ -26,6 +27,7 @@ const initialMaxDate = (() => {
     now.getDate()
   ).getTime();
 })();
+
 const getTime = (date: Date | number) =>
   date instanceof Date ? date.getTime() : date;
 
@@ -194,7 +196,7 @@ VantComponent({
     },
 
     getInitialDate(defaultDate: number | number[] | null = null) {
-      const { type, minDate, maxDate } = this.data;
+      const { type, minDate, maxDate, allowSameDay } = this.data;
 
       const now = getToday().getTime();
 
@@ -210,10 +212,14 @@ VantComponent({
           minDate,
           getPrevDay(new Date(maxDate)).getTime()
         );
+
+        const date = getTime(endDay || now);
+
         const end = this.limitDateRange(
-          endDay || now,
-          getNextDay(new Date(minDate)).getTime()
+          date,
+          allowSameDay ? date : getNextDay(new Date(minDate)).getTime()
         );
+
         return [start, end];
       }
 

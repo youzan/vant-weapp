@@ -15,6 +15,7 @@ export declare type VantComponentOptions<Data extends WechatMiniprogram.Componen
         relations: Record<string, WechatMiniprogram.Component.RelationOption>;
         mixin: string;
     };
+    watch?: Record<string, (...args: any[]) => any>;
     methods?: Methods;
     beforeCreate?: () => void;
     created?: () => void;

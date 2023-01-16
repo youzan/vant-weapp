@@ -11,6 +11,7 @@ function VantComponent(vantOptions) {
     mapKeys(vantOptions, options, {
         data: 'data',
         props: 'properties',
+        watch: 'observers',
         mixins: 'behaviors',
         methods: 'methods',
         beforeCreate: 'created',

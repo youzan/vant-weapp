@@ -26,6 +26,10 @@ VantComponent({
             observer: 'rerender',
         },
         popupStyle: String,
+        useBeforeToggle: {
+            type: Boolean,
+            value: false,
+        },
     },
     data: {
         transition: true,
@@ -77,7 +81,6 @@ VantComponent({
             }
         },
         toggle(show, options = {}) {
-            var _a;
             const { showPopup } = this.data;
             if (typeof show !== 'boolean') {
                 show = !showPopup;
@@ -85,19 +88,37 @@ VantComponent({
             if (show === showPopup) {
                 return;
             }
-            this.setData({
-                transition: !options.immediate,
-                showPopup: show,
-            });
-            if (show) {
-                (_a = this.parent) === null || _a === void 0 ? void 0 : _a.getChildWrapperStyle().then((wrapperStyle) => {
-                    this.setData({ wrapperStyle, showWrapper: true });
-                    this.rerender();
+            this.onBeforeToggle(show).then((status) => {
+                var _a;
+                if (!status) {
+                    return;
+                }
+                this.setData({
+                    transition: !options.immediate,
+                    showPopup: show,
                 });
+                if (show) {
+                    (_a = this.parent) === null || _a === void 0 ? void 0 : _a.getChildWrapperStyle().then((wrapperStyle) => {
+                        this.setData({ wrapperStyle, showWrapper: true });
+                        this.rerender();
+                    });
+                }
+                else {
+                    this.rerender();
+                }
+            });
+        },
+        onBeforeToggle(status) {
+            const { useBeforeToggle } = this.data;
+            if (!useBeforeToggle) {
+                return Promise.resolve(true);
             }
-            else {
-                this.rerender();
-            }
+            return new Promise((resolve) => {
+                this.$emit('before-toggle', {
+                    status,
+                    callback: (value) => resolve(value),
+                });
+            });
         },
     },
 });

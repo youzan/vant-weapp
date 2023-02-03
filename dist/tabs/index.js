@@ -223,9 +223,11 @@ VantComponent({
                 const offsetLeft = tabRects
                     .slice(0, currentIndex)
                     .reduce((prev, curr) => prev + curr.width, 0);
-                this.setData({
-                    scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
-                });
+                if (navRect && tabRect) {
+                    this.setData({
+                        scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
+                    });
+                }
                 if (!scrollWithAnimation) {
                     nextTick(() => {
                         this.setData({ scrollWithAnimation: true });

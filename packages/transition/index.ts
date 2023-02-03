@@ -12,4 +12,16 @@ VantComponent({
   ],
 
   mixins: [transition(true)],
+
+  props: {
+    lockScroll: {
+      type: Boolean,
+      value: false,
+    },
+  },
+
+  methods: {
+    // for prevent touchmove
+    noop() {},
+  },
 });

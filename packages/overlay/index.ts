@@ -22,8 +22,5 @@ VantComponent({
     onClick() {
       this.$emit('click');
     },
-
-    // for prevent touchmove
-    noop() {},
   },
 });

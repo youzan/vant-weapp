@@ -1,7 +1,17 @@
 <wxs src="./index.wxs" module="computed" />
 
 <view
-  wx:if="{{ inited }}"
+  wx:if="{{ inited && lockScroll }}"
+  class="van-transition custom-class {{ classes }}"
+  style="{{ computed.rootStyle({ currentDuration, display, customStyle }) }}"
+  bind:transitionend="onTransitionEnd"
+  catch:touchmove="noop"
+>
+  <slot />
+</view>
+
+<view
+  wx:if="{{ inited && !lockScroll }}"
   class="van-transition custom-class {{ classes }}"
   style="{{ computed.rootStyle({ currentDuration, display, customStyle }) }}"
   bind:transitionend="onTransitionEnd"

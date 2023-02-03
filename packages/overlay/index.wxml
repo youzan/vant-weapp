@@ -1,21 +1,10 @@
 <van-transition
-  wx:if="{{ lockScroll }}"
   show="{{ show }}"
   custom-class="van-overlay custom-class"
   custom-style="z-index: {{ zIndex }}; {{ customStyle }}"
   duration="{{ duration }}"
   bind:tap="onClick"
-  catch:touchmove="noop"
->
-  <slot></slot>
-</van-transition>
-<van-transition
-  wx:else
-  show="{{ show }}"
-  custom-class="van-overlay custom-class"
-  custom-style="z-index: {{ zIndex }}; {{ customStyle }}"
-  duration="{{ duration }}"
-  bind:tap="onClick"
+  lock-scroll="{{ lockScroll }}"
 >
   <slot></slot>
 </van-transition>

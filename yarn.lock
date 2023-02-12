@@ -9479,9 +9479,9 @@ miniprogram-api-typings@^3.1.6, miniprogram-api-typings@^3.2.2:
   integrity sha512-AjuBYxghx3LZeTtWQ48TfDMxoACGRUA+NdPrgl+mPPNgi5g0YXn3sDELNHRw0LcjTxfqhVufwLL65AjwT+W+FQ==
 
 miniprogram-ci@^1.6.1:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/miniprogram-ci/-/miniprogram-ci-1.9.3.tgz#08d22a5f16214382734a66b1fe7e099cd44ee1d6"
-  integrity sha512-pPDpRXfbq6QFTwlv3AJNRbCAUtMp910rvNMr4mzi6ozPAwMh0Xgd9xlgBLY7H5woLBbvzWTvir9gLhFpSRMYbA==
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/miniprogram-ci/-/miniprogram-ci-1.9.5.tgz#4424721978f73405b29231f6f641bb89e4f21848"
+  integrity sha512-Fqe8PCc+5VUVOiZAdr2glMZnGz2O5MMYkS+OkT8KKq8WF1AFZLNbIkqmHXQ7/ZvlGgrUW6UpEMKpT5ZfMEF7Mg==
   dependencies:
     "@babel/core" "7.12.3"
     "@babel/generator" "7.17.10"

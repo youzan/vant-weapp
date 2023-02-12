@@ -244,7 +244,8 @@ uploadFilePromise(fileName, chooseResult) {
 | compressed | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true` | _boolean_ | - |
 | max-duration | 当 accept 为 `video` \| `media` 时生效，拍摄视频最长拍摄时间，单位秒 | _number_ | `60` |
 | media-type `v1.10.8` | 当 accept 为 `media` 时生效，选择的文件的文件类型，可选值为 `image` `video` | _string[]_ | `['image', 'video']` |
-| extension `v1.10.11` | 当 accept 为 `file` 时生效，根据文件拓展名过滤可选择文件。每一项都不能是空字符串。默认不过滤 | _string[] | undefined_ | - |
+| extension `v1.10.11` | 当 accept 为 `file` 时生效，根据文件拓展名过滤可选择文件。每一项都不能是空字符串。默认不过滤 | _string[] \| undefined_ | - |
+| showmenu `v1.10.13` | 预览图片时，是否显示长按菜单 | _boolean_ | `true` |
 | upload-icon | 上传区域图标，可选值见 [Icon 组件](#/icon) | _string_ | `plus` |
 
 #### accept 的合法值
@@ -261,14 +262,14 @@ uploadFilePromise(fileName, chooseResult) {
 
 `file-list` 为一个对象数组，数组中的每一个对象包含以下 `key`。
 
-| 参数      | 说明                                                   |
-| --------- | ------------------------------------------------------ |
-| `url`     | 图片和视频的网络资源地址                               |
-| `name`    | 文件名称，视频将在全屏预览时作为标题显示               |
-| `thumb`   | 图片缩略图或视频封面的网络资源地址，仅对图片和视频有效，`accept` 为 `video`时，真机不会返回该属性，建议使用 `media` 和 `media-type` 配合完成视频上传 |
-| `type`    | 文件类型，可选值`image` `video` `file`                 |
-| `isImage` | 手动标记图片资源                                       |
-| `isVideo` | 手动标记视频资源                                       |
+| 参数 | 说明 |
+| --- | --- |
+| `url` | 图片和视频的网络资源地址 |
+| `name` | 文件名称，视频将在全屏预览时作为标题显示 |
+| `thumb` | 图片缩略图或视频封面的网络资源地址，仅对图片和视频有效，`accept` 为 `video`时，真机不会返回该属性，建议使用 `media` 和 `media-type` 配合完成视频上传 |
+| `type` | 文件类型，可选值`image` `video` `file` |
+| `isImage` | 手动标记图片资源 |
+| `isVideo` | 手动标记视频资源 |
 
 ### Slot
 

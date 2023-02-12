@@ -308,6 +308,14 @@ Page({
 | show-range-prompt | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
 | allow-same-day | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
+### Multiple Props
+
+当 Calendar 的 `type` 为 `multiple` 时，支持以下 props:
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| min-range | 日期最少可选天数 | _number \| string_ | `1` |
+
 ### Day 数据结构
 
 日历中的每个日期都对应一个 Day 对象，通过`formatter`属性可以自定义 Day 对象的内容。

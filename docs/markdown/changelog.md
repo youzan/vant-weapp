@@ -1,4 +1,23 @@
 # 更新日志
+### [v1.10.13](https://github.com/youzan/vant-weapp/compare/v1.10.12...v1.10.13)
+
+`2023-02-13`
+
+**Bug Fixes**
+
+- calendar: 修复calendar组件安全区域传参未传递给popup组件的问题 [db7957](https://github.com/youzan/vant-weapp/commit/db79570d98537db669730aa66d3fb3932ded4737)
+- cascader: 修复cascader组件onClickTab事件没有同步activeTab的值导致选择异常的问题 [92ae4a](https://github.com/youzan/vant-weapp/commit/92ae4a29c0b99aa65be6a71004b795ae2650f37c)
+- stepper: 修复 always-embed 申明两次警告问题 [#5231](https://github.com/youzan/vant-weapp/issues/5231)
+- stepper: 修复 onblur 时在值变更的情况下 change 事件没有触发 [#5227](https://github.com/youzan/vant-weapp/issues/5227)
+
+**Feature**
+
+- calendar: 增加 min-range 属性支持在 multiple 模式下 [#5230](https://github.com/youzan/vant-weapp/issues/5230)
+- popup: 增加 safe-area-tab-bar 属性支持 [#5194](https://github.com/youzan/vant-weapp/issues/5194)
+- tabbar-item: 增加 url link-type 属性支持 [#5232](https://github.com/youzan/vant-weapp/issues/5232)
+- uploader: 增加 showmenu 属性支持 [#5229](https://github.com/youzan/vant-weapp/issues/5229)
+
+
 ### [v1.10.12](https://github.com/youzan/vant-weapp/compare/v1.10.11...v1.10.12)
 
 `2023-01-16`

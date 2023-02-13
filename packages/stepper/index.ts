@@ -118,6 +118,8 @@ VantComponent({
 
       this.setData({ currentValue: value });
 
+      this.emitChange(value);
+
       this.$emit('blur', {
         ...event.detail,
         value,

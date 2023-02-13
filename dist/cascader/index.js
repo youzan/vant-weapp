@@ -157,6 +157,9 @@ VantComponent({
         onClickTab(e) {
             const { index: tabIndex, title } = e.detail;
             this.$emit('click-tab', { title, tabIndex });
+            this.setData({
+                activeTab: tabIndex,
+            });
         },
         // 选中
         onSelect(e) {

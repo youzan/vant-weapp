@@ -1,7 +1,7 @@
 /// <reference types="miniprogram-api-typings" />
 /// <reference types="miniprogram-api-typings" />
-export declare type Action = 'confirm' | 'cancel' | 'overlay';
-declare type DialogContext = WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
+export type Action = 'confirm' | 'cancel' | 'overlay';
+type DialogContext = WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
 interface DialogOptions {
     lang?: string;
     show?: boolean;

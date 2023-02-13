@@ -5,7 +5,7 @@ interface VantComponentInstance {
     index: number;
     $emit: (name: string, detail?: unknown, options?: WechatMiniprogram.Component.TriggerEventOption) => void;
 }
-export declare type VantComponentOptions<Data extends WechatMiniprogram.Component.DataOption, Props extends WechatMiniprogram.Component.PropertyOption, Methods extends WechatMiniprogram.Component.MethodOption> = {
+export type VantComponentOptions<Data extends WechatMiniprogram.Component.DataOption, Props extends WechatMiniprogram.Component.PropertyOption, Methods extends WechatMiniprogram.Component.MethodOption> = {
     data?: Data;
     field?: boolean;
     classes?: string[];

@@ -1,4 +1,4 @@
-export declare const chooseImageProps: {
+export declare const imageProps: {
     sizeType: {
         type: ArrayConstructor;
         value: string[];
@@ -7,8 +7,12 @@ export declare const chooseImageProps: {
         type: ArrayConstructor;
         value: string[];
     };
+    showmenu: {
+        type: BooleanConstructor;
+        value: boolean;
+    };
 };
-export declare const chooseVideoProps: {
+export declare const videoProps: {
     capture: {
         type: ArrayConstructor;
         value: string[];
@@ -26,7 +30,7 @@ export declare const chooseVideoProps: {
         value: string;
     };
 };
-export declare const chooseMediaProps: {
+export declare const mediaProps: {
     capture: {
         type: ArrayConstructor;
         value: string[];
@@ -44,6 +48,6 @@ export declare const chooseMediaProps: {
         value: string;
     };
 };
-export declare const chooseMessageFileProps: {
+export declare const messageFileProps: {
     extension: null;
 };

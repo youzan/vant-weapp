@@ -103,6 +103,10 @@ VantComponent({
             type: null,
             value: null,
         },
+        minRange: {
+            type: Number,
+            value: 1,
+        },
         firstDayOfWeek: {
             type: Number,
             value: 0,

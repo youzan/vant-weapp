@@ -202,6 +202,8 @@ Page({
 | icon-prefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/icon#props) | _string_ | `van-icon` |
 | dot | 是否显示小红点 | _boolean_ | - |
 | info | 图标右上角提示信息 | _string \| number_ | - |
+| url `v1.10.13` | 点击后跳转的链接地址, 需要以 `/` 开头 | _string_ | - |
+| link-type `v1.10.13` | 链接跳转类型，可选值为 `redirectTo`、`switchTab`、`reLaunch` | _string_ | `redirectTo` |
 
 ### TabbarItem Slot
 

@@ -41,6 +41,7 @@ VantComponent({
     showPopup: false,
     showWrapper: false,
     displayTitle: '',
+    safeAreaTabBar: false,
   },
 
   methods: {
@@ -58,6 +59,7 @@ VantComponent({
           activeColor,
           closeOnClickOverlay,
           direction,
+          safeAreaTabBar,
         } = this.parent.data;
 
         this.setData({
@@ -66,6 +68,7 @@ VantComponent({
           activeColor,
           closeOnClickOverlay,
           direction,
+          safeAreaTabBar,
         });
       }
     },

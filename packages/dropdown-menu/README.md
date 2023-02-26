@@ -182,6 +182,7 @@ Page({
 | duration | 动画时长，单位毫秒 | _number_ | `200` |
 | direction | 菜单展开方向，可选值为 up | _string_ | `down` |
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
+| safe-area-tab-bar `v1.10.14`| 是否留出底部 tabbar 安全距离 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部 menu 后关闭菜单 | _boolean_ | `true` |
 

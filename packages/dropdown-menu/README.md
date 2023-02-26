@@ -196,6 +196,7 @@ Page({
 | title-class | 标题额外类名，建议使用自定义样式 item-title-class 代替 | _string_ | - |
 | popup-style | 自定义弹出层样式 | _string_ | - |
 | use-before-toggle `v1.10.12` | 是否开启下拉菜单打开或者关闭前校验  | _boolean_ | `false` |
+| root-portal `v1.10.14` | 是否从页面子树中脱离出来，用于解决各种 fixed 失效问题，微信基础库 >= `2.25.2 `  | _boolean_ | `false` |
 
 ### DropdownItem Events
 

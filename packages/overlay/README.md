@@ -94,7 +94,8 @@ Page({
 | duration | 动画时长，单位秒 | _string \| number_ | `0.3` |
 | class-name | 自定义类名 | _string_ | - |
 | custom-style | 自定义样式 | _string_ | - |
-| lock-scroll `v1.7.3` | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_ | true |
+| lock-scroll `v1.7.3` | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_ | `true` |
+| root-portal `v1.10.14` | 是否从页面中脱离出来，用于解决各种 fixed 失效问题，微信基础库 >= `2.25.2 ` | _boolean_ | `false` |
 
 ### Events
 

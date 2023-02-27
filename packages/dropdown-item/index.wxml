@@ -12,6 +12,7 @@
     overlay="{{ overlay }}"
     position="{{ direction === 'down' ? 'top' : 'bottom' }}"
     duration="{{ transition ? duration : 0 }}"
+    safe-area-tab-bar="{{ safeAreaTabBar }}"
     close-on-click-overlay="{{ closeOnClickOverlay }}"
     rootPortal="{{ rootPortal }}"
     bind:enter="onOpen"

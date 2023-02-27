@@ -1,4 +1,24 @@
 # 更新日志
+### [v1.10.14](https://github.com/youzan/vant-weapp/compare/v1.10.13...v1.10.14)
+
+`2023-02-27`
+
+**Bug Fixes**
+
+- icon: fix dot when custom icon [#5253](https://github.com/youzan/vant-weapp/issues/5253)
+
+**Document**
+
+- add @landluck and @wjw-gavin to core team [#5252](https://github.com/youzan/vant-weapp/issues/5252)
+
+**Feature**
+
+- dropdown-item: add root-portal prop support [#5256](https://github.com/youzan/vant-weapp/issues/5256)
+- dropdown-menu: add safe-area-tab-bar prop support [#5257](https://github.com/youzan/vant-weapp/issues/5257)
+- overlay: add root-portal prop support [#5255](https://github.com/youzan/vant-weapp/issues/5255)
+- popup: add root-portal prop support [#5254](https://github.com/youzan/vant-weapp/issues/5254)
+
+
 ### [v1.10.13](https://github.com/youzan/vant-weapp/compare/v1.10.12...v1.10.13)
 
 `2023-02-13`

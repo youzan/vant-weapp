@@ -61,6 +61,10 @@ VantComponent({
             type: Boolean,
             value: true,
         },
+        rootPortal: {
+            type: Boolean,
+            value: false,
+        },
     },
     created() {
         this.observeClass();

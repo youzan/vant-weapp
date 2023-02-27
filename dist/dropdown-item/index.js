@@ -30,12 +30,17 @@ VantComponent({
             type: Boolean,
             value: false,
         },
+        rootPortal: {
+            type: Boolean,
+            value: false,
+        },
     },
     data: {
         transition: true,
         showPopup: false,
         showWrapper: false,
         displayTitle: '',
+        safeAreaTabBar: false,
     },
     methods: {
         rerender() {
@@ -46,13 +51,14 @@ VantComponent({
         },
         updateDataFromParent() {
             if (this.parent) {
-                const { overlay, duration, activeColor, closeOnClickOverlay, direction, } = this.parent.data;
+                const { overlay, duration, activeColor, closeOnClickOverlay, direction, safeAreaTabBar, } = this.parent.data;
                 this.setData({
                     overlay,
                     duration,
                     activeColor,
                     closeOnClickOverlay,
                     direction,
+                    safeAreaTabBar,
                 });
             }
         },

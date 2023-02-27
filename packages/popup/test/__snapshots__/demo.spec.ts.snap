@@ -46,7 +46,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideBasic"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -195,7 +194,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideTop"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -209,7 +207,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideBottom"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -223,7 +220,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideLeft"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -237,7 +233,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideRight"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -355,7 +350,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideCloseIcon"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -369,7 +363,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideCustomCloseIcon"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -383,7 +376,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideCustomIconPosition"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -439,7 +431,6 @@ exports[`should render demo and match snapshot 1`] = `
         bind:close="hideRound"
       >
         <van-overlay
-          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition

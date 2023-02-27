@@ -34,6 +34,10 @@ VantComponent({
       type: Boolean,
       value: false,
     },
+    rootPortal: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {

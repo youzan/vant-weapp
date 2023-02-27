@@ -100,6 +100,7 @@ exports[`should render demo and match snapshot 1`] = `
       </van-field>
       <van-popup>
         <van-overlay
+          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -209,6 +210,7 @@ exports[`should render demo and match snapshot 1`] = `
       </van-field>
       <van-popup>
         <van-overlay
+          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -318,6 +320,7 @@ exports[`should render demo and match snapshot 1`] = `
       </van-field>
       <van-popup>
         <van-overlay
+          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition
@@ -427,6 +430,7 @@ exports[`should render demo and match snapshot 1`] = `
       </van-field>
       <van-popup>
         <van-overlay
+          rootPortal="{{false}}"
           bind:click="onClickOverlay"
         >
           <van-transition

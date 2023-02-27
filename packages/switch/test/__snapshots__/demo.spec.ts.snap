@@ -169,6 +169,7 @@ exports[`should render demo and match snapshot 1`] = `
       bind:close="onClickOverlay"
     >
       <van-overlay
+        rootPortal="{{false}}"
         bind:click="onClickOverlay"
       >
         <van-transition

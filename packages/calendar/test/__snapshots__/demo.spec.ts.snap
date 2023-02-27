@@ -1709,6 +1709,7 @@ exports[`should render demo and match snapshot 1`] = `
       bind:enter="onOpen"
     >
       <van-overlay
+        rootPortal="{{false}}"
         bind:click="onClickOverlay"
       >
         <van-transition

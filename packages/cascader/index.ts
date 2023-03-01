@@ -170,8 +170,7 @@ VantComponent({
       // 异步更新
       if (isAsync) {
         const { tabs } = this.data;
-        tabs[tabs.length - 1].options =
-          options[options.length - 1][this.data.childrenKey];
+        tabs[tabs.length - 1].options = this.deepGetOptions(options, tabs[tabs.length - 2].selected)[this.data.childrenKey];
         this.setData({
           tabs,
         });
@@ -186,6 +185,21 @@ VantComponent({
           },
         ],
       });
+    },
+
+    deepGetOptions(options, selected) {
+      var _this = this
+      var data = {}
+      for (var i = 0; i < options.length; i++) {
+        if (options[i][_this.data.valueKey] === selected[_this.data.valueKey]) {
+          data = options[i]
+          break
+        }
+        if (options[i][_this.data.childrenKey].length > 0) {
+          data = this.deepGetOptions(options[i][_this.data.childrenKey], selected)
+        }
+      }
+      return data
     },
     onClose() {
       this.$emit('close');

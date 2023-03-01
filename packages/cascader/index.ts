@@ -195,7 +195,7 @@ VantComponent({
           data = options[i]
           break
         }
-        if (options[i][_this.data.childrenKey].length > 0) {
+        if (options[i][_this.data.childrenKey] !== undefined && options[i][_this.data.childrenKey].length > 0) {
           data = this.deepGetOptions(options[i][_this.data.childrenKey], selected)
         }
       }

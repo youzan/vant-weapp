@@ -104,6 +104,7 @@ Page({
 | text | 按钮文字 | _string_ | - |
 | icon | 图标类型，可选值见`icon`组件 | _string_ | - |
 | info | 图标右上角提示信息 | _string \| number_ | - |
+| color | 图标颜色 | _string_ | `inherit` |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` |
 | id | 标识符 | _string_ | - |

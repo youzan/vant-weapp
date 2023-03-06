@@ -104,7 +104,7 @@ Page({
 | text | 按钮文字 | _string_ | - |
 | icon | 图标类型，可选值见`icon`组件 | _string_ | - |
 | info | 图标右上角提示信息 | _string \| number_ | - |
-| color | 图标颜色 | _string_ | `inherit` |
+| color `1.10.15` | 图标颜色 | _string_ | `inherit` |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` |
 | id | 标识符 | _string_ | - |
@@ -118,7 +118,7 @@ Page({
 | send-message-path | 会话内消息卡片点击跳转小程序路径 | _string_ | 当前分享路径 |
 | send-message-img | sendMessageImg | _string_ | 截图 |
 | show-message-card | 显示会话内消息卡片 | _string_ | `false` |
-| class-prefix `v1.10.1` | 类名前缀 | _string_ | `van-icon` |
+| class-prefix `v1.10.15` | 类名前缀 | _string_ | `van-icon` |
 
 ### GoodsActionButton Props
 

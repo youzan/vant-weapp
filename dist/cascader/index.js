@@ -132,11 +132,36 @@ VantComponent({
                     return;
                 }
             }
+            /**
+             * 进行注释  tabs[tabs.length - 1].options = options[options.length - 1][this.data.childrenKey]
+             * options[options.length - 1] 异步更新数据不能 获取到正确的数据
+             * 因此进行修改
+             * */
+            var deepTabs = (index, options, tabs) => {
+              var valueKey =  this.data.valueKey
+              var childrenKey = this.data.childrenKey
+              var resultArray = []
+              var _options = options
+              for(var i = 0; i < index; i++) {
+                for(var k = 0; k<_options.length; k++) {
+                  if(tabs[i]['selected'][valueKey] === _options[k][valueKey]){
+                    if(i === (index - 1)) {
+                      resultArray = _options[k]
+                    }else{
+                      _options = _options[k][childrenKey]
+                      break
+                    }
+                  }
+                }
+              }
+              return resultArray
+            }
             // 异步更新
             if (isAsync) {
                 const { tabs } = this.data;
-                tabs[tabs.length - 1].options =
-                    options[options.length - 1][this.data.childrenKey];
+                // tabs[tabs.length - 1].options = options[options.length - 1][this.data.childrenKey];
+                // 重写处理
+                tabs[tabs.length - 1].options = deepTabs(tabs.length - 1, options, tabs)[this.data.childrenKey];
                 this.setData({
                     tabs,
                 });

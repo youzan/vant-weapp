@@ -277,7 +277,7 @@ VantComponent({
           .slice(0, currentIndex)
           .reduce((prev, curr) => prev + curr.width, 0);
 
-        if (navRect && tabRect) {
+        if (navRect && navRect?.width && tabRect && tabRect?.width) {
           this.setData({
             scrollLeft: offsetLeft - (navRect.width - tabRect.width) / 2,
           });

@@ -1,4 +1,20 @@
 # 更新日志
+### [v1.10.15](https://github.com/youzan/vant-weapp/compare/v1.10.14...v1.10.15)
+
+`2023-04-03`
+
+**Bug Fixes**
+
+- calendar: 修复在 allow-same-day 和 不显示 confirm 按钮时 confirm 丢失问题 [db8981](https://github.com/youzan/vant-weapp/commit/db89819f9e3537435ac5fcc52f680affd9255c6b)
+
+**Feature**
+
+- van-goods-action-icon: 增加 color 属性支持 [4fd22f](https://github.com/youzan/vant-weapp/commit/4fd22f0a6b6b5ebcc37807ed3c85c3b40bd60e0c)
+
+**hotfix**
+
+- rate: 修复在覆盖半个星时覆盖高度不够问题 [#5294](https://github.com/youzan/vant-weapp/issues/5294)
+
 ### [v1.10.14](https://github.com/youzan/vant-weapp/compare/v1.10.13...v1.10.14)
 
 `2023-02-27`

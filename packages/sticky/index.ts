@@ -136,7 +136,6 @@ VantComponent({
       const observer = wx.createIntersectionObserver(this);
       observer.relativeTo(ROOT_ELEMENT);
       observer.observe(`.van-sticky-wrap`, (res) => {
-        console.log(res.boundingClientRect.height);
         if (!res.boundingClientRect.height) {
           this.setDataAfterDiff({ fixed: false });
         }

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Cell 单元格",
+  "component": true,
   "usingComponents": {
     "van-field": "../../field/index",
     "van-popup": "../../popup/index",

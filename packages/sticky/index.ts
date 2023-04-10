@@ -49,6 +49,7 @@ VantComponent({
 
   mounted() {
     this.onScroll();
+    this.observeWrap();
   },
 
   methods: {
@@ -129,6 +130,17 @@ VantComponent({
       return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult>(
         (resolve) => nodesRef.boundingClientRect(resolve).exec()
       );
+    },
+    observeWrap() {
+      // 如果子元素没有内容了 高度为0 取消掉fixed
+      const observer = wx.createIntersectionObserver(this);
+      observer.relativeTo(ROOT_ELEMENT);
+      observer.observe(`.van-sticky-wrap`, (res) => {
+        console.log(res.boundingClientRect.height);
+        if (!res.boundingClientRect.height) {
+          this.setDataAfterDiff({ fixed: false });
+        }
+      });
     },
   },
 });

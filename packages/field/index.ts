@@ -76,6 +76,12 @@ VantComponent({
       const { value = '' } = event.detail || {};
 
       this.value = value;
+
+      const { maxlength } = this.data;
+      if (maxlength !== -1 && value.length > maxlength) {
+        return;
+      }
+
       this.setShowClear();
 
       this.emitChange(event.detail);

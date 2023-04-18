@@ -89,9 +89,9 @@ VantComponent({
         isDisabled(type) {
             const { disabled, disablePlus, disableMinus, currentValue, max, min } = this.data;
             if (type === 'plus') {
-                return disabled || disablePlus || currentValue >= max;
+                return disabled || disablePlus || +currentValue >= +max;
             }
-            return disabled || disableMinus || currentValue <= min;
+            return disabled || disableMinus || +currentValue <= +min;
         },
         onFocus(event) {
             this.$emit('focus', event.detail);

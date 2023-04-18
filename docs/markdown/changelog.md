@@ -1,4 +1,14 @@
 # 更新日志
+### [v1.10.16](https://github.com/youzan/vant-weapp/compare/v1.10.15...v1.10.16)
+
+`2023-04-18`
+
+**Bug Fixes**
+
+- icon: 修复显示异常在自定义图标的模式下 [#5320](https://github.com/youzan/vant-weapp/issues/5320)
+- stepper: 修复最大值在设置字符串下功能错误问题 [#5295](https://github.com/youzan/vant-weapp/issues/5295)
+- tabs: 修复在部分设备下 info 样式错误问题 [#5318](https://github.com/youzan/vant-weapp/issues/5318)
+
 ### [v1.10.15](https://github.com/youzan/vant-weapp/compare/v1.10.14...v1.10.15)
 
 `2023-04-03`

@@ -79,7 +79,8 @@ VantComponent({
 
       const { maxlength } = this.data;
       if (maxlength !== -1 && value.length > maxlength) {
-        return;
+        this.value = value.slice(0, maxlength);
+        event.detail.value = this.value;
       }
 
       this.setShowClear();

@@ -131,7 +131,9 @@ VantComponent({
         scrollable:
           this.children.length > data.swipeThreshold || !data.ellipsis,
       });
-
+      nextTick(() => {
+        this.resize()
+      })
       this.setCurrentIndexByName(data.active || this.getCurrentName());
     },
 

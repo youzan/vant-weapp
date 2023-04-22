@@ -132,16 +132,47 @@ VantComponent({
                     return;
                 }
             }
-            // 异步更新
-            if (isAsync) {
-                const { tabs } = this.data;
-                tabs[tabs.length - 1].options =
-                    options[options.length - 1][this.data.childrenKey];
-                this.setData({
-                    tabs,
-                });
-                return;
-            }
+          const updateAsyncOptions = (cascadesPms, options) => {
+            const cascadeColumns = options
+            let resp_cascadeColumns = []
+            cascadesPms.reduce((columns, cur, index) => {
+              if (index < cascadesPms.length - 1) {
+                for (let i = 0; i < columns.length; i++) {
+                  if (columns[i].code === cur) {
+                    return columns[i].children
+                  }
+                }
+              } else {
+                for (let i = 0; i < columns.length; i++) {
+                  if (columns[i].code === cur) {
+                    resp_cascadeColumns = columns[i]
+                  }
+                }
+              }
+            }, cascadeColumns)
+            return resp_cascadeColumns
+          }
+          // 异步更新
+          if (isAsync) {
+            const { tabs } = this.data;
+            // tabs[tabs.length - 1].options = options[options.length - 1][this.data.childrenKey];
+            // 重写处理
+            // tabs[tabs.length - 1].options = deepTabs(tabs.length - 1, options, tabs)[this.data.childrenKey];
+            // 优化 deepTabs 实现方式
+            const valueKey = this.data.valueKey
+            const cascades = []
+            tabs.forEach(element => {
+              if (element && element.selected) {
+                cascades.push(element['selected'][valueKey])
+              }
+            })
+            tabs[tabs.length - 1].options = updateAsyncOptions(cascades, options)[this.data.childrenKey];
+            this.setData({
+              tabs,
+            });
+            return;
+          }
+
             this.setData({
                 tabs: [
                     {

@@ -1,4 +1,30 @@
 # 更新日志
+### [v1.10.16](https://github.com/youzan/vant-weapp/compare/v1.10.15...v1.10.16)
+
+`2023-04-18`
+
+**Bug Fixes**
+
+- icon: 修复显示异常在自定义图标的模式下 [#5320](https://github.com/youzan/vant-weapp/issues/5320)
+- stepper: 修复最大值在设置字符串下功能错误问题 [#5295](https://github.com/youzan/vant-weapp/issues/5295)
+- tabs: 修复在部分设备下 info 样式错误问题 [#5318](https://github.com/youzan/vant-weapp/issues/5318)
+
+### [v1.10.15](https://github.com/youzan/vant-weapp/compare/v1.10.14...v1.10.15)
+
+`2023-04-03`
+
+**Bug Fixes**
+
+- calendar: 修复在 allow-same-day 和 不显示 confirm 按钮时 confirm 丢失问题 [db8981](https://github.com/youzan/vant-weapp/commit/db89819f9e3537435ac5fcc52f680affd9255c6b)
+
+**Feature**
+
+- van-goods-action-icon: 增加 color 属性支持 [4fd22f](https://github.com/youzan/vant-weapp/commit/4fd22f0a6b6b5ebcc37807ed3c85c3b40bd60e0c)
+
+**hotfix**
+
+- rate: 修复在覆盖半个星时覆盖高度不够问题 [#5294](https://github.com/youzan/vant-weapp/issues/5294)
+
 ### [v1.10.14](https://github.com/youzan/vant-weapp/compare/v1.10.13...v1.10.14)
 
 `2023-02-27`

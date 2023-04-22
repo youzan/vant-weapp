@@ -245,7 +245,7 @@ VantComponent({
                         this.select([date, null]);
                     }
                     else if (allowSameDay) {
-                        this.select([date, date]);
+                        this.select([date, date], true);
                     }
                 }
                 else {

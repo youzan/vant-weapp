@@ -9,6 +9,7 @@ VantComponent({
         dot: Boolean,
         info: String,
         icon: String,
+        color: String,
         classPrefix: {
             type: String,
             value: 'van-icon',

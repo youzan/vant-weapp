@@ -103,10 +103,10 @@ VantComponent({
         this.data;
 
       if (type === 'plus') {
-        return disabled || disablePlus || currentValue >= max;
+        return disabled || disablePlus || +currentValue >= +max;
       }
 
-      return disabled || disableMinus || currentValue <= min;
+      return disabled || disableMinus || +currentValue <= +min;
     },
 
     onFocus(event: WechatMiniprogram.InputFocus) {

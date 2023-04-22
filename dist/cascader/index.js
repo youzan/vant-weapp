@@ -137,31 +137,41 @@ VantComponent({
              * options[options.length - 1] 异步更新数据不能 获取到正确的数据
              * 因此进行修改
              * */
-            var deepTabs = (index, options, tabs) => {
-              var valueKey =  this.data.valueKey
-              var childrenKey = this.data.childrenKey
-              var resultArray = []
-              var _options = options
-              for(var i = 0; i < index; i++) {
-                for(var k = 0; k<_options.length; k++) {
-                  if(tabs[i]['selected'][valueKey] === _options[k][valueKey]){
-                    if(i === (index - 1)) {
-                      resultArray = _options[k]
-                    }else{
-                      _options = _options[k][childrenKey]
-                      break
+            const updateOptionsByValueKey = (cascadesPms, options) => {
+              const cascadeColumns = options
+              let resp_cascadeColumns = []
+              cascadesPms.reduce((columns, cur, index) => {
+                if (index < cascadesPms.length - 1) {
+                  for (let i = 0; i < columns.length; i++) {
+                    if (columns[i].code === cur) {
+                      return columns[i].children
+                    }
+                  }
+                } else {
+                  for (let i = 0; i < columns.length; i++) {
+                    if (columns[i].code === cur) {
+                      resp_cascadeColumns = columns[i]
                     }
                   }
                 }
-              }
-              return resultArray
+              }, cascadeColumns)
+              return resp_cascadeColumns
             }
             // 异步更新
             if (isAsync) {
                 const { tabs } = this.data;
-                // tabs[tabs.length - 1].options = options[options.length - 1][this.data.childrenKey];
-                // 重写处理
-                tabs[tabs.length - 1].options = deepTabs(tabs.length - 1, options, tabs)[this.data.childrenKey];
+              // tabs[tabs.length - 1].options = options[options.length - 1][this.data.childrenKey];
+              // 重写处理
+              // tabs[tabs.length - 1].options = deepTabs(tabs.length - 1, options, tabs)[this.data.childrenKey];
+              // 优化 deepTabs 实现方式
+              const valueKey = this.data.valueKey
+              const cascades = []
+              tabs.forEach(element => {
+                if (element && element.selected) {
+                  cascades.push(element['selected'][valueKey])
+                }
+              })
+              tabs[tabs.length - 1].options = updateOptionsByValueKey(cascades, options)[this.data.childrenKey];
                 this.setData({
                     tabs,
                 });

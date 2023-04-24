@@ -6,7 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
     bind:change="onSwitch"
   >
     <wx-view
-      class="custom-class van-tabs van-tabs--line"
+      class="custom-class van-tabs"
     >
       <van-sticky
         bind:scroll="onTouchScroll"
@@ -20,7 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
             style="z-index:1"
           >
             <wx-view
-              class="van-tabs__wrap  wrap-class"
+              class="van-tabs--line van-tabs__wrap  wrap-class"
             >
               <wx-scroll-view
                 class="van-tabs__scroll van-tabs__scroll--line"

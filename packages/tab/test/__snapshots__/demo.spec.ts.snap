@@ -15,7 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -29,7 +29,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -172,7 +172,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <van-tabs>
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -186,7 +186,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -308,7 +308,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <van-tabs>
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -322,7 +322,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap van-tabs__wrap--scrollable  wrap-class"
+                  class="van-tabs--line van-tabs__wrap van-tabs__wrap--scrollable  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -509,7 +509,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:disabled="onClickDisabled"
       >
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -523,7 +523,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -647,7 +647,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabClass="special-tab"
       >
         <wx-view
-          class="custom-class van-tabs van-tabs--card"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -661,7 +661,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--card van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--card"
@@ -781,7 +781,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:click="onClick"
       >
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -795,7 +795,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -896,7 +896,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <van-tabs>
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -910,7 +910,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -1053,7 +1053,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <van-tabs>
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -1067,7 +1067,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -1210,7 +1210,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <van-tabs>
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -1224,7 +1224,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -1371,7 +1371,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -1385,7 +1385,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"
@@ -1562,7 +1562,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="custom-class van-tabs van-tabs--line"
+          class="custom-class van-tabs"
         >
           <van-sticky
             bind:scroll="onTouchScroll"
@@ -1576,7 +1576,7 @@ exports[`should render demo and match snapshot 1`] = `
                 style="z-index:1"
               >
                 <wx-view
-                  class="van-tabs__wrap  wrap-class"
+                  class="van-tabs--line van-tabs__wrap  wrap-class"
                 >
                   <wx-scroll-view
                     class="van-tabs__scroll van-tabs__scroll--line"

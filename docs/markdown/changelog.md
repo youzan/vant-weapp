@@ -1,4 +1,15 @@
 # 更新日志
+### [v1.10.17](https://github.com/youzan/vant-weapp/compare/v1.10.16...v1.10.17)
+
+`2023-05-04`
+
+**Bug Fixes**
+
+- icon: 修复定位样式错误在外部传入 custom-class 的情况下 [#5335](https://github.com/youzan/vant-weapp/issues/5335)
+- tab: 修复 tab 被嵌套时，内部 tab 样式错误问题 [#5200](https://github.com/youzan/vant-weapp/issues/5200)
+- Uploader: 替换 wx.chooseImage 为 wx.chooseMedia 解决选择图片页面刷新问题 [#5343](https://github.com/youzan/vant-weapp/issues/5343)
+- van-field: 修复安卓设备下 textarea maxlength 限制不生效问题 [#5308](https://github.com/youzan/vant-weapp/issues/5308)
+
 ### [v1.10.16](https://github.com/youzan/vant-weapp/compare/v1.10.15...v1.10.16)
 
 `2023-04-18`

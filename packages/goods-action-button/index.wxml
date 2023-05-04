@@ -3,6 +3,7 @@
   id="{{ id }}"
   lang="{{ lang }}"
   type="{{ type }}"
+  size="{{ size }}"
   color="{{ color }}"
   plain="{{ plain }}"
   loading="{{ loading }}"

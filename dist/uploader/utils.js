@@ -25,7 +25,7 @@ export function isVideoFile(item) {
     return false;
 }
 function formatImage(res) {
-    return res.tempFiles.map((item) => (Object.assign(Object.assign({}, pickExclude(item, ['path'])), { type: 'image', url: item.path, thumb: item.path })));
+    return res.tempFiles.map((item) => (Object.assign(Object.assign({}, pickExclude(item, ['path'])), { type: 'image', url: item.tempFilePath, thumb: item.tempFilePath })));
 }
 function formatVideo(res) {
     return [
@@ -42,10 +42,13 @@ export function chooseFile({ accept, multiple, capture, compressed, maxDuration,
     return new Promise((resolve, reject) => {
         switch (accept) {
             case 'image':
-                wx.chooseImage({
+                wx.chooseMedia({
                     count: multiple ? Math.min(maxCount, 9) : 1,
+                    mediaType: ['image'],
                     sourceType: capture,
+                    maxDuration,
                     sizeType,
+                    camera,
                     success: (res) => resolve(formatImage(res)),
                     fail: reject,
                 });

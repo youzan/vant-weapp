@@ -45,13 +45,13 @@ export function isVideoFile(item: File): boolean {
 }
 
 function formatImage(
-  res: WechatMiniprogram.ChooseImageSuccessCallbackResult
+  res: WechatMiniprogram.ChooseMediaSuccessCallbackResult
 ): File[] {
   return res.tempFiles.map((item) => ({
     ...pickExclude(item, ['path']),
     type: 'image',
-    url: item.path,
-    thumb: item.path,
+    url: item.tempFilePath,
+    thumb: item.tempFilePath,
   }));
 }
 
@@ -101,10 +101,13 @@ export function chooseFile({
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
       case 'image':
-        wx.chooseImage({
+        wx.chooseMedia({
           count: multiple ? Math.min(maxCount, 9) : 1,
+          mediaType: ['image'],
           sourceType: capture,
+          maxDuration,
           sizeType,
+          camera,
           success: (res) => resolve(formatImage(res)),
           fail: reject,
         });

@@ -72,20 +72,29 @@ VantComponent({
   },
 
   methods: {
+    formatValue(value: string) {
+      const { maxlength } = this.data;
+
+      if (maxlength !== -1 && value.length > maxlength) {
+        return value.slice(0, maxlength);
+      }
+
+      return value;
+    },
+
     onInput(event: WechatMiniprogram.Input | WechatMiniprogram.TextareaInput) {
       const { value = '' } = event.detail || {};
 
-      this.value = value;
+      const formatValue = this.formatValue(value);
 
-      const { maxlength } = this.data;
-      if (maxlength !== -1 && value.length > maxlength) {
-        this.value = value.slice(0, maxlength);
-        event.detail.value = this.value;
-      }
+      this.value = formatValue;
 
       this.setShowClear();
 
-      this.emitChange(event.detail);
+      return this.emitChange({
+        ...event.detail,
+        value: formatValue,
+      });
     },
 
     onFocus(
@@ -160,12 +169,21 @@ VantComponent({
 
       this.setData({ value: detail.value });
 
-      nextTick(() => {
-        const data = extraEventParams ? detail : detail.value;
+      let result: InputDetails | undefined;
 
-        this.$emit('input', data);
-        this.$emit('change', data);
-      });
+      const data = extraEventParams
+        ? {
+            ...detail,
+            callback: (data: InputDetails) => {
+              result = data;
+            },
+          }
+        : detail.value;
+
+      this.$emit('input', data);
+      this.$emit('change', data);
+
+      return result;
     },
 
     setShowClear() {

@@ -181,6 +181,30 @@ Page({
 </van-cell-group>
 ```
 
+### 替换输入框值
+
+在微信小程序中，bind:input 事件可以通过返回字符串或者一个对象来替换输入框的值以及调整光标的位置，在 vant-weapp 中，可以通过调用 change 或 input 参数中的 callback 函数，传入参数来实现
+
+```html
+<van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" clearable extra-event-params bind:change="onChange" />
+```
+
+```js
+Page({
+  data: {
+    value: '',
+  },
+  onChange(e) {
+    const { value, callback } = e.detail;
+
+    callback({
+      value: value + 1,
+      cursor: 0
+    })
+  }
+});
+```
+
 ## 常见问题
 
 ### 真机上为什么会出现聚焦时 placeholder 加粗、闪烁的现象？
@@ -264,8 +288,8 @@ Page({
 
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |
-| bind:input | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时, event.detail.value: 当前输入值, event.detail.cursor: 光标位置, event.detail.keyCode: 键值 |
-| bind:change | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时, event.detail.value: 当前输入值, event.detail.cursor: 光标位置, event.detail.keyCode: 键值 |
+| bind:input | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时为 [InputDetail](#/field#inputdetail) |
+| bind:change | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时为  [InputDetail](#/field#inputdetail) |
 | bind:confirm | 点击完成按钮时触发 | event.detail: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
 | bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |
@@ -274,6 +298,14 @@ Page({
 | bind:click-input | 点击输入区域时触发 | - |
 | bind:linechange | 输入框行数变化时调用，只对 textarea 有效 | event.detail = { height: 0, heightRpx: 0, lineCount: 0 } |
 | bind:keyboardheightchange | 键盘高度发生变化的时候触发此事件 | event.detail = { height: height, duration: duration } |
+
+### InputDetail
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| value | 当前输入值 | _string_ | - |
+| cursor | 光标位置 | _number_ | - |
+| keyCode | 键值 | _number_ | - |
+| callback | 调用该函数传 `{ value: string, cursor: number }` 来替换输入框的内容，具体用法可以参考 [wx-input](https://developers.weixin.qq.com/miniprogram/dev/component/input.html)  | _function_ | - |
 
 ### Slot
 

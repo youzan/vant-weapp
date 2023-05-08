@@ -36,16 +36,19 @@ VantComponent({
         this.setData({ innerValue: this.value });
     },
     methods: {
-        onInput(event) {
-            const { value = '' } = event.detail || {};
-            this.value = value;
+        formatValue(value) {
             const { maxlength } = this.data;
             if (maxlength !== -1 && value.length > maxlength) {
-                this.value = value.slice(0, maxlength);
-                event.detail.value = this.value;
+                return value.slice(0, maxlength);
             }
+            return value;
+        },
+        onInput(event) {
+            const { value = '' } = event.detail || {};
+            const formatValue = this.formatValue(value);
+            this.value = formatValue;
             this.setShowClear();
-            this.emitChange(event.detail);
+            return this.emitChange(Object.assign(Object.assign({}, event.detail), { value: formatValue }));
         },
         onFocus(event) {
             this.focused = true;
@@ -95,11 +98,14 @@ VantComponent({
         emitChange(detail) {
             const { extraEventParams } = this.data;
             this.setData({ value: detail.value });
-            nextTick(() => {
-                const data = extraEventParams ? detail : detail.value;
-                this.$emit('input', data);
-                this.$emit('change', data);
-            });
+            let result;
+            const data = extraEventParams
+                ? Object.assign(Object.assign({}, detail), { callback: (data) => {
+                        result = data;
+                    } }) : detail.value;
+            this.$emit('input', data);
+            this.$emit('change', data);
+            return result;
         },
         setShowClear() {
             const { clearable, readonly, clearTrigger } = this.data;

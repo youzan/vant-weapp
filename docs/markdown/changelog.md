@@ -1,4 +1,16 @@
 # 更新日志
+### [v1.10.18](https://github.com/youzan/vant-weapp/compare/v1.10.17...v1.10.18)
+
+`2023-05-08`
+
+**Bug Fixes**
+- steps: 修复在竖向模式下 icon 被覆盖的问题 [#5329](https://github.com/youzan/vant-weapp/issues/5329)
+- tabs: 修复 tab 较多时，slot 无法正常显示问题 [#4700](https://github.com/youzan/vant-weapp/issues/4700)
+
+**Feature**
+- field: input/change 事件增加 callback 参数 [#5345](https://github.com/youzan/vant-weapp/issues/5345)
+- goods-action: goods-action-button 增加 size 属性 [#5347](https://github.com/youzan/vant-weapp/issues/5347)
+
 ### [v1.10.17](https://github.com/youzan/vant-weapp/compare/v1.10.16...v1.10.17)
 
 `2023-05-04`

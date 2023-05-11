@@ -11,8 +11,14 @@
       style="{{ status(index, active) === 'inactive' ? 'color: ' + inactiveColor: '' }}"
     >
       <view class="van-step__title" style="{{ index === active ? 'color: ' + activeColor : '' }}">
-        <view>{{ item.text }}</view>
-        <view class="desc-class">{{ item.desc }}</view>
+        <view class="text-class">
+          <slot wx:if="{{ textSlot }}" name="text-{{index}}"></slot>
+          <view wx:else>{{ item.text }}</view>
+        </view>
+        <view class="desc-class">
+          <slot wx:if="{{ descSlot }}" name="desc-{{index}}"></slot>
+          <view wx:else>{{ item.desc }}</view>
+        </view>
       </view>
       <view class="van-step__circle-container">
         <block wx:if="{{ index !== active }}">

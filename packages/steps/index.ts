@@ -2,7 +2,10 @@ import { VantComponent } from '../common/component';
 import { GREEN, GRAY_DARK } from '../common/color';
 
 VantComponent({
-  classes: ['desc-class'],
+  classes: [
+    'text-class',
+    'desc-class',
+  ],
 
   props: {
     icon: String,
@@ -25,6 +28,14 @@ VantComponent({
       value: 'checked',
     },
     inactiveIcon: String,
+    textSlot: {
+      type: Boolean,
+      value: false,
+    },
+    descSlot: {
+        type: Boolean,
+        value: false,
+    }
   },
 
   methods: {

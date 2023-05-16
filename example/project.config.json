@@ -38,7 +38,8 @@
     "packNpmRelationList": [],
     "minifyWXSS": true,
     "showES6CompileOption": false,
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "condition": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.6.5",
@@ -331,6 +332,12 @@
         {
           "name": "divider",
           "pathName": "pages/divider/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "cascader",
+          "pathName": "pages/cascader/index",
           "query": "",
           "scene": null
         }

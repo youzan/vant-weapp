@@ -257,9 +257,11 @@ Page({
 
 ```css
 .calendar {
-  --calendar-height: 500px;
+  --calendar-height: 618px;
 }
 ```
+
+> Tips: 注意，在自定义calendar的高度时，需要确保，滚动到当前月份时，所有的日期要展现在.van-calendar__body内，否则可能会出现滚动时头部月份与当前月份不同步的情况。目前平铺型预设高度618px,弹窗型高度90%。
 
 ## API
 

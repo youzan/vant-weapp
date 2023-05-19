@@ -15,7 +15,6 @@ VantComponent({
         title: String,
         value: {
             type: String,
-            observer: 'updateValue',
         },
         placeholder: {
             type: String,
@@ -28,7 +27,6 @@ VantComponent({
         options: {
             type: Array,
             value: [],
-            observer: 'updateOptions',
         },
         swipeable: {
             type: Boolean,
@@ -58,15 +56,20 @@ VantComponent({
         textKey: FieldName.TEXT,
         valueKey: FieldName.VALUE,
         childrenKey: FieldName.CHILDREN,
+        innerValue: '',
+    },
+    watch: {
+        options() {
+            this.updateTabs();
+        },
+        value(newVal) {
+            this.updateValue(newVal);
+        },
     },
     created() {
         this.updateTabs();
     },
     methods: {
-        updateOptions(val, oldVal) {
-            const isAsync = !!(val.length && oldVal.length);
-            this.updateTabs(isAsync);
-        },
         updateValue(val) {
             if (val !== undefined) {
                 const values = this.data.tabs.map((tab) => tab.selected && tab.selected[this.data.valueKey]);
@@ -74,6 +77,7 @@ VantComponent({
                     return;
                 }
             }
+            this.innerValue = val;
             this.updateTabs();
         },
         updateFieldNames() {
@@ -98,10 +102,14 @@ VantComponent({
                 }
             }
         },
-        updateTabs(isAsync = false) {
-            const { options, value } = this.data;
-            if (value !== undefined) {
-                const selectedOptions = this.getSelectedOptionsByValue(options, value);
+        updateTabs() {
+            const { options } = this.data;
+            const { innerValue } = this;
+            if (!options.length) {
+                return;
+            }
+            if (innerValue !== undefined) {
+                const selectedOptions = this.getSelectedOptionsByValue(options, innerValue);
                 if (selectedOptions) {
                     let optionsCursor = options;
                     const tabs = selectedOptions.map((option) => {
@@ -131,16 +139,6 @@ VantComponent({
                     });
                     return;
                 }
-            }
-            // 异步更新
-            if (isAsync) {
-                const { tabs } = this.data;
-                tabs[tabs.length - 1].options =
-                    options[options.length - 1][this.data.childrenKey];
-                this.setData({
-                    tabs,
-                });
-                return;
             }
             this.setData({
                 tabs: [
@@ -194,11 +192,13 @@ VantComponent({
                 tabs,
             });
             const selectedOptions = tabs.map((tab) => tab.selected).filter(Boolean);
+            const value = option[valueKey];
             const params = {
-                value: option[valueKey],
+                value,
                 tabIndex,
                 selectedOptions,
             };
+            this.innerValue = value;
             this.$emit('change', params);
             if (!option[childrenKey]) {
                 this.$emit('finish', params);

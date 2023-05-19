@@ -4,7 +4,8 @@ VantComponent({
   data: {
     tabs2: [1, 2],
     tabs3: [1, 2, 3],
-    tabs4: [1, 2, 3, 4],
+    // tabs4: [1, 2, 3, 4],
+    tabs4: [] as any,
     tabs6: [1, 2, 3, 4, 5, 6],
     tabsWithName: [
       { name: 'a', index: 1 },
@@ -19,6 +20,14 @@ VantComponent({
         title: `标签 ${event.detail.index + 1} 已被禁用`,
         icon: 'none',
       });
+    },
+
+    mounted() {
+      setTimeout(() => {
+        this.setData({
+          tabs4: [1, 2, 34],
+        });
+      }, 2000);
     },
 
     onChange(event) {

@@ -137,6 +137,7 @@ Page({
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon | 关闭图标名称或图片链接 | _string_ | `cross` |
+| close-icon-position | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | safe-area-inset-bottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` |
 | safe-area-inset-top | 是否留出顶部安全距离（状态栏高度） | _boolean_ | `false` |
 | safe-area-tab-bar | 是否留出底部 tabbar 安全距离（在使用 tabbar 组件 & 小程序自定义 tabbar 时，popup 组件层级无法盖住 tabbar） | _boolean_ | `false` |

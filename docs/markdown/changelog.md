@@ -1,4 +1,15 @@
 # 更新日志
+### [v1.10.19](https://github.com/youzan/vant-weapp/compare/v1.10.18...v1.10.19)
+
+`2023-05-19`
+
+**Bug Fixes**
+
+- calendar: 修复日历月份标题不同步问题 [#5381](https://github.com/youzan/vant-weapp/pull/5381)
+- cascader: 修复选中项目缺失和 fieldNames 不生效问题 [#5182](https://github.com/youzan/vant-weapp/pull/5185)
+- cascader: 修复异步数据视图不更新问题 [#5380](https://github.com/youzan/vant-weapp/pull/5380)
+- tab: 修复异步数据情况选中线向右偏移问题 [#5135](https://github.com/youzan/vant-weapp/issues/5135)
+
 ### [v1.10.18](https://github.com/youzan/vant-weapp/compare/v1.10.17...v1.10.18)
 
 `2023-05-08`

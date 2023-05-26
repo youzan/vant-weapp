@@ -160,6 +160,9 @@ VantComponent({
                 });
             });
             if (currentIndex === data.currentIndex) {
+                if (!data.inited) {
+                    this.resize();
+                }
                 return;
             }
             const shouldEmitChange = data.currentIndex !== null;

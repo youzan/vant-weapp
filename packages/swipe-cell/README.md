@@ -20,11 +20,11 @@
 
 ```html
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
-  <view slot="left">选择</view>
+  <view slot="left" class="van-swipe-cell__left">选择</view>
   <van-cell-group>
     <van-cell title="单元格" value="内容" />
   </van-cell-group>
-  <view slot="right">删除</view>
+  <view slot="right" class="van-swipe-cell__right">删除</view>
 </van-swipe-cell>
 ```
 

@@ -115,7 +115,7 @@ const beforeClose = (action) => new Promise((resolve) => {
 
 Dialog.confirm({
   title: '标题',
-  message: '弹窗内容'
+  message: '弹窗内容',
   beforeClose
 });
 ```

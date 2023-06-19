@@ -1294,7 +1294,7 @@ page {
 
 <span class="hljs-title class_">Dialog</span>.<span class="hljs-title function_">confirm</span>({
   <span class="hljs-attr">title</span>: <span class="hljs-string">&#39;\u6807\u9898&#39;</span>,
-  <span class="hljs-attr">message</span>: <span class="hljs-string">&#39;\u5F39\u7A97\u5185\u5BB9&#39;</span>
+  <span class="hljs-attr">message</span>: <span class="hljs-string">&#39;\u5F39\u7A97\u5185\u5BB9&#39;</span>,
   beforeClose
 });
 </code></pre></div><div class="van-doc-card"><h3 id="zu-jian-diao-yong" tabindex="-1">\u7EC4\u4EF6\u8C03\u7528</h3><p>\u5982\u679C\u9700\u8981\u5728\u5F39\u7A97\u5185\u5D4C\u5165\u7EC4\u4EF6\u6216\u5176\u4ED6\u81EA\u5B9A\u4E49\u5185\u5BB9\uFF0C\u53EF\u4EE5\u4F7F\u7528\u7EC4\u4EF6\u8C03\u7528\u7684\u65B9\u5F0F\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">van-dialog</span>
@@ -2745,11 +2745,11 @@ page {
   <span class="hljs-attr">&quot;van-swipe-cell&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;@vant/weapp/swipe-cell/index&quot;</span>
 <span class="hljs-punctuation">}</span>
 </code></pre></div><h2 id="dai-ma-yan-shi" tabindex="-1">\u4EE3\u7801\u6F14\u793A</h2><div class="van-doc-card"><h3 id="ji-chu-yong-fa" tabindex="-1">\u57FA\u7840\u7528\u6CD5</h3><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">van-swipe-cell</span> <span class="hljs-attr">right-width</span>=<span class="hljs-string">&quot;{{ 65 }}&quot;</span> <span class="hljs-attr">left-width</span>=<span class="hljs-string">&quot;{{ 65 }}&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>\u9009\u62E9<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;left&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;van-swipe-cell__left&quot;</span>&gt;</span>\u9009\u62E9<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">van-cell-group</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">van-cell</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;\u5355\u5143\u683C&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;\u5185\u5BB9&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">van-cell-group</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span>\u5220\u9664<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;van-swipe-cell__right&quot;</span>&gt;</span>\u5220\u9664<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">van-swipe-cell</span>&gt;</span>
 </code></pre></div><div class="van-doc-card"><h3 id="yi-bu-guan-bi" tabindex="-1">\u5F02\u6B65\u5173\u95ED</h3><p>\u5F53\u5F00\u542F<code>async-close</code>\u65F6\uFF0C \u901A\u8FC7\u7ED1\u5B9A<code>close</code>\u4E8B\u4EF6\uFF0C\u53EF\u4EE5\u81EA\u5B9A\u4E49\u4E24\u4FA7\u6ED1\u52A8\u5185\u5BB9\u70B9\u51FB\u65F6\u7684\u5173\u95ED\u884C\u4E3A\u3002</p><pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">van-swipe-cell</span>
   <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;swipe-cell&quot;</span>

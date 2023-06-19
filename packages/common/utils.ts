@@ -96,6 +96,15 @@ export function toPromise(promiseLike: Promise<unknown> | unknown) {
   return Promise.resolve(promiseLike);
 }
 
+// 浮点数精度处理
+export function addNumber(num1, num2) {
+  const cardinal = 10 ** 10;
+  return Math.round((num1 + num2) * cardinal) / cardinal;
+}
+
+// 限制value在[min, max]之间
+export const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
 export function getCurrentPage<T>() {
   const pages = getCurrentPages();
   return pages[pages.length - 1] as T & WechatMiniprogram.Page.TrivialInstance;

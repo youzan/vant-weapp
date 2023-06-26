@@ -1174,7 +1174,7 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap="onClick"
                     >
                       <van-info
-                        customClass="van-icon__info"
+                        customClass="van-icon__info info-class"
                       >
                         <wx-view
                           class="van-info van-info van-info--dot custom-class"
@@ -1216,7 +1216,7 @@ exports[`should render demo and match snapshot 1`] = `
                       bind:tap="onClick"
                     >
                       <van-info
-                        customClass="van-icon__info"
+                        customClass="van-icon__info info-class"
                       >
                         <wx-view
                           class="van-info van-info custom-class"

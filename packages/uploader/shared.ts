@@ -46,7 +46,7 @@ export const mediaProps = {
   },
   maxDuration: {
     type: Number,
-    value: 60,
+    value: 10,
   },
   camera: {
     type: String,

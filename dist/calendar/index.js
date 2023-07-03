@@ -170,7 +170,8 @@ VantComponent({
                     defaultDate = [];
                 }
                 const [startDay, endDay] = defaultDate || [];
-                const start = this.limitDateRange(startDay || now, minDate, getPrevDay(new Date(maxDate)).getTime());
+                const startDate = getTime(startDay || now);
+                const start = this.limitDateRange(startDate, minDate, allowSameDay ? startDate : getPrevDay(new Date(maxDate)).getTime());
                 const date = getTime(endDay || now);
                 const end = this.limitDateRange(date, allowSameDay ? date : getNextDay(new Date(minDate)).getTime());
                 return [start, end];

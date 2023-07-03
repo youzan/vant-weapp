@@ -1,7 +1,7 @@
 import { VantComponent } from '../common/component';
 import { touch } from '../mixins/touch';
 import { canIUseModel } from '../common/version';
-import { getRect, addUnit, nextTick } from '../common/utils';
+import { getRect, addUnit, nextTick, addNumber, clamp } from '../common/utils';
 const DRAG_STATUS = {
     START: 'start',
     MOVING: 'moving',
@@ -196,8 +196,12 @@ VantComponent({
             return '0%';
         },
         format(value) {
-            const { max, min, step } = this.data;
-            return Math.round(Math.max(min, Math.min(value, max)) / step) * step;
+            const min = +this.data.min;
+            const max = +this.data.max;
+            const step = +this.data.step;
+            value = clamp(value, min, max);
+            const diff = Math.round((value - min) / step) * step;
+            return addNumber(min, diff);
         },
     },
 });

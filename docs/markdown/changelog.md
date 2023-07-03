@@ -1,4 +1,25 @@
 # 更新日志
+### [v1.10.20](https://github.com/youzan/vant-weapp/compare/v1.10.19...v1.10.20)
+
+`2023-07-03`
+
+**Bug Fixes**
+
+- calendar: 修复无法选择同一天在 range 模式下 [#5451](https://github.com/youzan/vant-weapp/issues/5451)
+- slider: 修复小数精度丢失问题 [#5444](https://github.com/youzan/vant-weapp/issues/5444)
+
+**Document**
+
+- add @inottn and @zhousg to core team [#5453](https://github.com/youzan/vant-weapp/issues/5453)
+- popup: 修复文档缺失 close-icon-position 属性 [#5389](https://github.com/youzan/vant-weapp/pull/5389)
+- dialog: 修复示例代码错误问题 [#5389](https://github.com/youzan/vant-weapp/pull/5389)
+
+**Feature**
+
+- goods-action-icon: 增加 size 属性 [#5457](https://github.com/youzan/vant-weapp/issues/5457)
+- goods-action-icon: 增加 info-class 自定义样式类 [#5457](https://github.com/youzan/vant-weapp/issues/5457)
+- icon: 增加 info-class 自定义样式类 [#5458](https://github.com/youzan/vant-weapp/issues/5458)
+
 ### [v1.10.19](https://github.com/youzan/vant-weapp/compare/v1.10.18...v1.10.19)
 
 `2023-05-19`

@@ -1,6 +1,7 @@
 import { VantComponent } from '../common/component';
 
 VantComponent({
+  classes: ['info-class'],
   props: {
     dot: Boolean,
     info: null,

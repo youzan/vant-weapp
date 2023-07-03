@@ -168,6 +168,7 @@ Page({
 | ---------- | ---------- |
 | icon-class | 图标样式类 |
 | text-class | 文字样式类 |
+| info-class `v1.10.20`  | 图标右上角文字样式类 |
 
 ### GoodsActionButton 外部样式类
 

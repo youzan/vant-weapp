@@ -12,6 +12,7 @@ VantComponent({
     dot: Boolean,
     info: String,
     icon: String,
+    size: String,
     color: String,
     classPrefix: {
       type: String,

@@ -60,6 +60,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-chat-o"
@@ -125,6 +126,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-cart-o"
@@ -307,6 +309,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-chat-o"
@@ -377,6 +380,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-cart-o"
@@ -447,6 +451,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-shop-o"
@@ -625,6 +630,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-chat-o"
@@ -688,6 +694,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-shop-o"
@@ -866,6 +873,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-chat-o"
@@ -929,6 +937,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <van-icon
                     class="van-goods-action-icon__icon"
                     customClass="icon-class"
+                    infoClass="info-class"
                   >
                     <wx-view
                       class="custom-class van-icon van-icon-shop-o"

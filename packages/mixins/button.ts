@@ -35,6 +35,10 @@ export const button = Behavior({
       this.triggerEvent('getphonenumber', event.detail);
     },
 
+    onGetRealTimePhoneNumber(event: WechatMiniprogram.ButtonGetPhoneNumber) {
+      this.triggerEvent('getrealtimephonenumber', event.detail);
+    },
+
     onError(event: WechatMiniprogram.ButtonError) {
       this.triggerEvent('error', event.detail);
     },
@@ -50,7 +54,7 @@ export const button = Behavior({
     onChooseAvatar(
       event: WechatMiniprogram.CustomEvent<
         WechatMiniprogram.GeneralCallbackResult & { avatarUrl: string }
-        >
+      >
     ) {
       this.triggerEvent('chooseavatar', event.detail);
     },

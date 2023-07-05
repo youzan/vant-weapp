@@ -830,6 +830,7 @@ exports[`should render demo and match snapshot 1`] = `
                           bind:contact="onContact"
                           bind:error="onError"
                           bind:getphonenumber="onGetPhoneNumber"
+                          bind:getrealtimephonenumber="onGetRealTimePhoneNumber"
                           bind:getuserinfo="onGetUserInfo"
                           bind:launchapp="onLaunchApp"
                           bind:opensetting="onOpenSetting"

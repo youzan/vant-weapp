@@ -16,7 +16,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:tap="onClick"
       >
         <van-cell
-          customClass="van-field"
+          customClass="custom-class van-field"
         >
           <wx-view
             class="custom-class van-cell van-cell--clickable"
@@ -125,7 +125,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:tap="onClick"
       >
         <van-cell
-          customClass="van-field"
+          customClass="custom-class van-field"
         >
           <wx-view
             class="custom-class van-cell van-cell--clickable"
@@ -234,7 +234,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:tap="onClick"
       >
         <van-cell
-          customClass="van-field"
+          customClass="custom-class van-field"
         >
           <wx-view
             class="custom-class van-cell van-cell--clickable"
@@ -343,7 +343,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:tap="onClick"
       >
         <van-cell
-          customClass="van-field"
+          customClass="custom-class van-field"
         >
           <wx-view
             class="custom-class van-cell van-cell--clickable"

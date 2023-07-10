@@ -17,7 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <van-field>
             <van-cell
-              customClass="van-field"
+              customClass="custom-class van-field"
             >
               <wx-view
                 class="custom-class van-cell"
@@ -197,7 +197,7 @@ exports[`should render demo and match snapshot 1`] = `
           </van-field>
           <van-field>
             <van-cell
-              customClass="van-field"
+              customClass="custom-class van-field"
             >
               <wx-view
                 class="custom-class van-cell van-cell--borderless"
@@ -372,7 +372,7 @@ exports[`should render demo and match snapshot 1`] = `
             >
               <van-field>
                 <van-cell
-                  customClass="van-field"
+                  customClass="custom-class van-field"
                 >
                   <wx-view
                     class="custom-class van-cell"
@@ -552,7 +552,7 @@ exports[`should render demo and match snapshot 1`] = `
               </van-field>
               <van-field>
                 <van-cell
-                  customClass="van-field"
+                  customClass="custom-class van-field"
                 >
                   <wx-view
                     class="custom-class van-cell van-cell--borderless"

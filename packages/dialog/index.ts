@@ -6,6 +6,7 @@ import type { Action } from './dialog';
 
 VantComponent({
   mixins: [button],
+  classes: ['cancle-button-class', 'confirm-button-class'],
 
   props: {
     show: {
@@ -71,7 +72,7 @@ VantComponent({
       confirm: false,
       cancel: false,
     },
-    callback: ((() => {}) as unknown) as (
+    callback: (() => {}) as unknown as (
       action: string,
       context: WechatMiniprogram.Component.TrivialInstance
     ) => void,

@@ -103,7 +103,7 @@ export function chooseFile({
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
       case 'image':
-        if (isPC()) {
+        if (isPC) {
           wx.chooseImage({
             count: multiple ? Math.min(maxCount, 9) : 1,
             sourceType: capture,

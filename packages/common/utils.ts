@@ -114,7 +114,4 @@ export function getCurrentPage<T>() {
   return pages[pages.length - 1] as T & WechatMiniprogram.Page.TrivialInstance;
 }
 
-export function isPC() {
-  const currentSystemInfo = getSystemInfoSync();
-  return ['mac', 'windows'].includes(currentSystemInfo.platform);
-}
+export const isPC = ['mac', 'windows'].includes(getSystemInfoSync().platform);

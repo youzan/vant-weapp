@@ -28,6 +28,9 @@ export const button = Behavior({
         onGetPhoneNumber(event) {
             this.triggerEvent('getphonenumber', event.detail);
         },
+        onGetRealTimePhoneNumber(event) {
+            this.triggerEvent('getrealtimephonenumber', event.detail);
+        },
         onError(event) {
             this.triggerEvent('error', event.detail);
         },

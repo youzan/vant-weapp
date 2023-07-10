@@ -34,6 +34,9 @@ VantComponent({
         }, previewFullImage: {
             type: Boolean,
             value: true,
+        }, videoFit: {
+            type: String,
+            value: 'contain',
         }, imageFit: {
             type: String,
             value: 'scaleToFill',

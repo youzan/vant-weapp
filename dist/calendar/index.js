@@ -40,6 +40,7 @@ VantComponent({
         },
         defaultDate: {
             type: null,
+            value: getToday().getTime(),
             observer(val) {
                 this.setData({ currentDate: val });
                 this.scrollIntoView();
@@ -164,6 +165,8 @@ VantComponent({
         },
         getInitialDate(defaultDate = null) {
             const { type, minDate, maxDate, allowSameDay } = this.data;
+            if (!defaultDate)
+                return [];
             const now = getToday().getTime();
             if (type === 'range') {
                 if (!Array.isArray(defaultDate)) {
@@ -190,6 +193,8 @@ VantComponent({
         scrollIntoView() {
             requestAnimationFrame(() => {
                 const { currentDate, type, show, poppable, minDate, maxDate } = this.data;
+                if (!currentDate)
+                    return;
                 // @ts-ignore
                 const targetDate = type === 'single' ? currentDate : currentDate[0];
                 const displayed = show || !poppable;

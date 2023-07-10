@@ -1,6 +1,15 @@
 import { pickExclude } from '../common/utils';
 import { isImageUrl, isVideoUrl } from '../common/validator';
 
+let isRunningOnPC = false;
+
+try {
+  const res = wx.getSystemInfoSync();
+  isRunningOnPC = res.platform === 'mac' || res.platform === 'windows';
+} catch (e) {
+  console.error(e);
+}
+
 export interface File {
   url: string; // 上传临时地址
   size?: number; // 上传大小
@@ -45,13 +54,15 @@ export function isVideoFile(item: File): boolean {
 }
 
 function formatImage(
-  res: WechatMiniprogram.ChooseMediaSuccessCallbackResult
+  res:
+    | WechatMiniprogram.ChooseMediaSuccessCallbackResult
+    | WechatMiniprogram.ChooseImageSuccessCallbackResult
 ): File[] {
   return res.tempFiles.map((item) => ({
     ...pickExclude(item, ['path']),
     type: 'image',
-    url: item.tempFilePath,
-    thumb: item.tempFilePath,
+    url: item.tempFilePath || item.path,
+    thumb: item.tempFilePath || item.path,
   }));
 }
 
@@ -101,16 +112,26 @@ export function chooseFile({
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
       case 'image':
-        wx.chooseMedia({
-          count: multiple ? Math.min(maxCount, 9) : 1,
-          mediaType: ['image'],
-          sourceType: capture,
-          maxDuration,
-          sizeType,
-          camera,
-          success: (res) => resolve(formatImage(res)),
-          fail: reject,
-        });
+        if (isRunningOnPC) {
+          wx.chooseImage({
+            count: multiple ? Math.min(maxCount, 9) : 1,
+            sourceType: capture,
+            sizeType,
+            success: (res) => resolve(formatImage(res)),
+            fail: reject,
+          });
+        } else {
+          wx.chooseMedia({
+            count: multiple ? Math.min(maxCount, 9) : 1,
+            mediaType: ['image'],
+            sourceType: capture,
+            maxDuration,
+            sizeType,
+            camera,
+            success: (res) => resolve(formatImage(res)),
+            fail: reject,
+          });
+        }
         break;
       case 'media':
         wx.chooseMedia({

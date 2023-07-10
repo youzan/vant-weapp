@@ -5,7 +5,7 @@ let isRunningOnPC = false;
 
 try {
   const res = wx.getSystemInfoSync();
-  isRunningOnPC = res.platform === 'mac' || res.platform === 'windows';
+  isRunningOnPC = ['mac', 'windows'].includes(res.platform);
 } catch (e) {
   console.error(e);
 }

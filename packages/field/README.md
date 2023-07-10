@@ -240,13 +240,17 @@ Page({
 
 相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)。
 
+### 如何扩大点击区域？点击 label、错误信息 都能聚焦唤起键盘呢？
+
+升级至 1.10.21 版本及以上，配置 `name` 属性即可
+
 ## API
 
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| name | 在表单内提交时的标识符 | _string_ | - |
+| name | 在表单内提交时的标识符。可以通过配置 `name` 来扩大点击区域 | _string_ | - |
 | label | 输入框左侧文本 | _string_ | - |
 | size | 单元格大小，可选值为 `large` | _string_ | - |
 | value | 当前输入的值 | _string \| number_ | - |

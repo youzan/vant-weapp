@@ -30,14 +30,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     评分
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -167,6 +168,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder=""
@@ -210,14 +212,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     滑块
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -282,6 +285,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder=""
@@ -386,14 +390,15 @@ exports[`should render demo and match snapshot 1`] = `
                       class="van-cell__title title-class"
                       style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                     >
-                      <wx-view
+                      <wx-label
                         class="label-class van-field__label"
+                        for=""
                         slot="title"
                       >
                         
     评分
   
-                      </wx-view>
+                      </wx-label>
                     </wx-view>
                     <wx-view
                       class="van-cell__value value-class"
@@ -523,6 +528,7 @@ exports[`should render demo and match snapshot 1`] = `
                           disabled="{{false}}"
                           focus="{{false}}"
                           holdKeyboard="{{false}}"
+                          id=""
                           maxlength="{{-1}}"
                           password="{{false}}"
                           placeholder=""
@@ -566,14 +572,15 @@ exports[`should render demo and match snapshot 1`] = `
                       class="van-cell__title title-class"
                       style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                     >
-                      <wx-view
+                      <wx-label
                         class="label-class van-field__label"
+                        for=""
                         slot="title"
                       >
                         
     滑块
   
-                      </wx-view>
+                      </wx-label>
                     </wx-view>
                     <wx-view
                       class="van-cell__value value-class"
@@ -638,6 +645,7 @@ exports[`should render demo and match snapshot 1`] = `
                           disabled="{{false}}"
                           focus="{{false}}"
                           holdKeyboard="{{false}}"
+                          id=""
                           maxlength="{{-1}}"
                           password="{{false}}"
                           placeholder=""

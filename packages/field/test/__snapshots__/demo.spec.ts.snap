@@ -52,6 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder="请输入用户名"
@@ -115,14 +116,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     用户名
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -146,6 +148,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder="请输入用户名"
@@ -200,14 +203,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     密码
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -231,6 +235,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{true}}"
                       placeholder="请输入密码"
@@ -301,14 +306,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label van-field__label--disabled"
+                    for=""
                     slot="title"
                   >
                     
     用户名
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -332,6 +338,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{true}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder=""
@@ -392,14 +399,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     用户名
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -423,6 +431,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder="请输入用户名"
@@ -466,14 +475,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     手机号
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -497,6 +507,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder="请输入手机号"
@@ -521,13 +532,14 @@ exports[`should render demo and match snapshot 1`] = `
                       class="van-field__button"
                     />
                   </wx-view>
-                  <wx-view
+                  <wx-label
                     class="van-field__error-message"
+                    for=""
                   >
                     
     手机号格式错误
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
               </wx-view>
             </van-cell>
@@ -564,14 +576,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     用户名
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -595,6 +608,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder="请输入用户名"
@@ -657,14 +671,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     留言
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -688,6 +703,7 @@ exports[`should render demo and match snapshot 1`] = `
                       fixed="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       placeholder="请输入留言"
                       placeholderClass="van-field__placeholder"
@@ -751,14 +767,15 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-cell__title title-class"
                   style="max-width:6.2em;min-width:6.2em;margin-right: 12px;"
                 >
-                  <wx-view
+                  <wx-label
                     class="label-class van-field__label"
+                    for=""
                     slot="title"
                   >
                     
     短信验证码
   
-                  </wx-view>
+                  </wx-label>
                 </wx-view>
                 <wx-view
                   class="van-cell__value value-class"
@@ -782,6 +799,7 @@ exports[`should render demo and match snapshot 1`] = `
                       disabled="{{false}}"
                       focus="{{false}}"
                       holdKeyboard="{{false}}"
+                      id=""
                       maxlength="{{-1}}"
                       password="{{false}}"
                       placeholder="请输入短信验证码"

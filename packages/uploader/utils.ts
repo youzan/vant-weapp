@@ -1,14 +1,5 @@
-import { pickExclude } from '../common/utils';
+import { pickExclude, isPC } from '../common/utils';
 import { isImageUrl, isVideoUrl } from '../common/validator';
-
-let isRunningOnPC = false;
-
-try {
-  const res = wx.getSystemInfoSync();
-  isRunningOnPC = ['mac', 'windows'].includes(res.platform);
-} catch (e) {
-  console.error(e);
-}
 
 export interface File {
   url: string; // 上传临时地址
@@ -112,7 +103,7 @@ export function chooseFile({
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
       case 'image':
-        if (isRunningOnPC) {
+        if (isPC()) {
           wx.chooseImage({
             count: multiple ? Math.min(maxCount, 9) : 1,
             sourceType: capture,

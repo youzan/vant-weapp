@@ -1,5 +1,9 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick } from './version';
+import {
+  canIUseGroupSetData,
+  canIUseNextTick,
+  getSystemInfoSync,
+} from './version';
 
 export { isDef } from './validator';
 export { getSystemInfoSync } from './version';
@@ -108,4 +112,9 @@ export const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 export function getCurrentPage<T>() {
   const pages = getCurrentPages();
   return pages[pages.length - 1] as T & WechatMiniprogram.Page.TrivialInstance;
+}
+
+export function isPC() {
+  const currentSystemInfo = getSystemInfoSync();
+  return ['mac', 'windows'].includes(currentSystemInfo.platform);
 }

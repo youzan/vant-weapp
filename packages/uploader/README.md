@@ -238,6 +238,7 @@ uploadFilePromise(fileName, chooseResult) {
 | max-size | 文件大小限制，单位为`byte` | _number_ | - |
 | max-count | 文件上传数量限制 | _number_ | - |
 | upload-text | 上传区域文字提示 | _string_ | - |
+| video-fit `1.10.21` | video 封面的预览图模式，可选值参考小程序`video`组件的`object-fit`属性 | _string_ | `contain` |
 | image-fit | 预览图裁剪模式，可选值参考小程序`image`组件的`mode`属性 | _string_ | `scaleToFill` |
 | use-before-read | 是否开启文件读取前事件 | _boolean_ | - |
 | camera | 当 accept 为 `video` \| `media` 时生效，可选值为 `back` `front` | _string_ | - |

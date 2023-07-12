@@ -1,4 +1,4 @@
-import { pickExclude } from '../common/utils';
+import { pickExclude, isPC } from '../common/utils';
 import { isImageUrl, isVideoUrl } from '../common/validator';
 export function isImageFile(item) {
     if (item.isImage != null) {
@@ -25,7 +25,7 @@ export function isVideoFile(item) {
     return false;
 }
 function formatImage(res) {
-    return res.tempFiles.map((item) => (Object.assign(Object.assign({}, pickExclude(item, ['path'])), { type: 'image', url: item.tempFilePath, thumb: item.tempFilePath })));
+    return res.tempFiles.map((item) => (Object.assign(Object.assign({}, pickExclude(item, ['path'])), { type: 'image', url: item.tempFilePath || item.path, thumb: item.tempFilePath || item.path })));
 }
 function formatVideo(res) {
     return [
@@ -42,16 +42,27 @@ export function chooseFile({ accept, multiple, capture, compressed, maxDuration,
     return new Promise((resolve, reject) => {
         switch (accept) {
             case 'image':
-                wx.chooseMedia({
-                    count: multiple ? Math.min(maxCount, 9) : 1,
-                    mediaType: ['image'],
-                    sourceType: capture,
-                    maxDuration,
-                    sizeType,
-                    camera,
-                    success: (res) => resolve(formatImage(res)),
-                    fail: reject,
-                });
+                if (isPC) {
+                    wx.chooseImage({
+                        count: multiple ? Math.min(maxCount, 9) : 1,
+                        sourceType: capture,
+                        sizeType,
+                        success: (res) => resolve(formatImage(res)),
+                        fail: reject,
+                    });
+                }
+                else {
+                    wx.chooseMedia({
+                        count: multiple ? Math.min(maxCount, 9) : 1,
+                        mediaType: ['image'],
+                        sourceType: capture,
+                        maxDuration,
+                        sizeType,
+                        camera,
+                        success: (res) => resolve(formatImage(res)),
+                        fail: reject,
+                    });
+                }
                 break;
             case 'media':
                 wx.chooseMedia({

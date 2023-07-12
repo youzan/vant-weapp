@@ -1,4 +1,21 @@
 # 更新日志
+### [v1.10.21](https://github.com/youzan/vant-weapp/compare/v1.10.20...v1.10.21)
+
+`2023-07-10`
+
+**Bug Fixes**
+
+- uploader: 修复无法唤起选择图片框在 PC 下 [#5477](https://github.com/youzan/vant-weapp/issues/5477)
+
+**Feature**
+
+- button: 增加 getRealtimePhoneNumber 支持 [#5471](https://github.com/youzan/vant-weapp/issues/5471)
+- calendar: 增加 default-date 为 null 支持 [#5395](https://github.com/youzan/vant-weapp/issues/5395)
+- dialog: 增加确认/取消按钮外部样式类支持 [#5478](https://github.com/youzan/vant-weapp/issues/5478)
+- field: 增加自定义样式类支持 [#5476](https://github.com/youzan/vant-weapp/issues/5476)
+- field: 扩大 input 点击区域支持 [#5479](https://github.com/youzan/vant-weapp/issues/5479)
+- Upload: 增加 videoFit 属性支持 [#5475](https://github.com/youzan/vant-weapp/issues/5475)
+
 ### [v1.10.20](https://github.com/youzan/vant-weapp/compare/v1.10.19...v1.10.20)
 
 `2023-07-03`

@@ -1,5 +1,9 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick } from './version';
+import {
+  canIUseGroupSetData,
+  canIUseNextTick,
+  getSystemInfoSync,
+} from './version';
 
 export { isDef } from './validator';
 export { getSystemInfoSync } from './version';
@@ -109,3 +113,5 @@ export function getCurrentPage<T>() {
   const pages = getCurrentPages();
   return pages[pages.length - 1] as T & WechatMiniprogram.Page.TrivialInstance;
 }
+
+export const isPC = ['mac', 'windows'].includes(getSystemInfoSync().platform);

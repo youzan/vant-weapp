@@ -186,7 +186,14 @@ Page({
 在微信小程序中，bind:input 事件可以通过返回字符串或者一个对象来替换输入框的值以及调整光标的位置，在 vant-weapp 中，可以通过调用 change 或 input 参数中的 callback 函数，传入参数来实现
 
 ```html
-<van-field value="{{ value }}" placeholder="请输入用户名" border="{{ false }}" clearable extra-event-params bind:change="onChange" />
+<van-field
+  value="{{ value }}"
+  placeholder="请输入用户名"
+  border="{{ false }}"
+  clearable
+  extra-event-params
+  bind:change="onChange"
+/>
 ```
 
 ```js
@@ -199,9 +206,9 @@ Page({
 
     callback({
       value: value + 1,
-      cursor: 0
-    })
-  }
+      cursor: 0,
+    });
+  },
 });
 ```
 
@@ -233,13 +240,17 @@ Page({
 
 相关的讨论可以查看[微信开放社区](https://developers.weixin.qq.com/community/search?query=input%20%E6%89%8B%E5%86%99%E8%BE%93%E5%85%A5&page=1&block=1&random=1567079239098)。
 
+### 如何扩大点击区域？点击 label、错误信息 都能聚焦唤起键盘呢？
+
+升级至 1.10.21 版本及以上，配置 `name` 属性即可
+
 ## API
 
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| name | 在表单内提交时的标识符 | _string_ | - |
+| name | 在表单内提交时的标识符。可以通过配置 `name` 来扩大点击区域 | _string_ | - |
 | label | 输入框左侧文本 | _string_ | - |
 | size | 单元格大小，可选值为 `large` | _string_ | - |
 | value | 当前输入的值 | _string \| number_ | - |
@@ -289,7 +300,7 @@ Page({
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |
 | bind:input | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时为 [InputDetail](#/field#inputdetail) |
-| bind:change | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时为  [InputDetail](#/field#inputdetail) |
+| bind:change | 输入内容时触发 | event.detail: 当前输入值; 在 extra-event-params 为 `true` 时为 [InputDetail](#/field#inputdetail) |
 | bind:confirm | 点击完成按钮时触发 | event.detail: 当前输入值 |
 | bind:click-icon | 点击尾部图标时触发 | - |
 | bind:focus | 输入框聚焦时触发 | event.detail.value: 当前输入值; <br>event.detail.height: 键盘高度 |
@@ -300,12 +311,13 @@ Page({
 | bind:keyboardheightchange | 键盘高度发生变化的时候触发此事件 | event.detail = { height: height, duration: duration } |
 
 ### InputDetail
+
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | value | 当前输入值 | _string_ | - |
 | cursor | 光标位置 | _number_ | - |
 | keyCode | 键值 | _number_ | - |
-| callback | 调用该函数传 `{ value: string, cursor: number }` 来替换输入框的内容，具体用法可以参考 [wx-input](https://developers.weixin.qq.com/miniprogram/dev/component/input.html)  | _function_ | - |
+| callback | 调用该函数传 `{ value: string, cursor: number }` 来替换输入框的内容，具体用法可以参考 [wx-input](https://developers.weixin.qq.com/miniprogram/dev/component/input.html) | _function_ | - |
 
 ### Slot
 
@@ -319,8 +331,9 @@ Page({
 
 ### 外部样式类
 
-| 类名             | 说明           |
-| ---------------- | -------------- |
-| label-class      | 左侧文本样式类 |
-| input-class      | 输入框样式类   |
-| right-icon-class | 右侧图标样式类 |
+| 类名                    | 说明           |
+| ----------------------- | -------------- |
+| custom-class `v1.10.21` | 根节点样式类   |
+| label-class             | 左侧文本样式类 |
+| input-class             | 输入框样式类   |
+| right-icon-class        | 右侧图标样式类 |

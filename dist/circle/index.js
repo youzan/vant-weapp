@@ -93,6 +93,8 @@ VantComponent({
             const { color, size } = this.data;
             if (isObj(color)) {
                 return this.getContext().then((context) => {
+                    if (!context)
+                        return;
                     const LinearColor = context.createLinearGradient(size, 0, 0, 0);
                     Object.keys(color)
                         .sort((a, b) => parseFloat(a) - parseFloat(b))
@@ -134,6 +136,8 @@ VantComponent({
         drawCircle(currentValue) {
             const { size } = this.data;
             this.getContext().then((context) => {
+                if (!context)
+                    return;
                 context.clearRect(0, 0, size, size);
                 this.renderLayerCircle(context);
                 const formatValue = format(currentValue);

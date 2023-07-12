@@ -4,6 +4,7 @@ import { GRAY, RED } from '../common/color';
 import { toPromise } from '../common/utils';
 VantComponent({
     mixins: [button],
+    classes: ['cancle-button-class', 'confirm-button-class'],
     props: {
         show: {
             type: Boolean,

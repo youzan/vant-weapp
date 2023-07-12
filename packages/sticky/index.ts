@@ -89,7 +89,7 @@ VantComponent({
       }
 
       getRect(this, ROOT_ELEMENT).then((root) => {
-        if (!isDef(root)) {
+        if (!isDef(root) || (!root.width && !root.height)) {
           return;
         }
         if (offsetTop >= root.top) {

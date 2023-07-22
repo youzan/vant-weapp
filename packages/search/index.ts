@@ -56,6 +56,10 @@ VantComponent({
       type: String,
       value: 'clear',
     },
+    cursorSpacing: {
+      type: Number,
+      value: 50,
+    }
   },
 
   methods: {

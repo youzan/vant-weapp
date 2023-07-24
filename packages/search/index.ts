@@ -58,8 +58,8 @@ VantComponent({
     },
     cursorSpacing: {
       type: Number,
-      value: 50,
-    }
+      value: 0,
+    },
   },
 
   methods: {

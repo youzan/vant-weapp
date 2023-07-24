@@ -1,4 +1,14 @@
 # 更新日志
+### [v1.10.22](https://github.com/youzan/vant-weapp/compare/v1.10.21...v1.10.22)
+
+`2023-07-24`
+
+**Bug Fixes**
+
+- field: 修复 error message 居中错误 [#5482](https://github.com/youzan/vant-weapp/issues/5482)
+- GoodsAction: 修复自定义 icon 时样式错误 [#5496](https://github.com/youzan/vant-weapp/issues/5496)
+- sticky: 修复渲染位置错误再 transition 中 [#5483](https://github.com/youzan/vant-weapp/issues/5483)
+
 ### [v1.10.21](https://github.com/youzan/vant-weapp/compare/v1.10.20...v1.10.21)
 
 `2023-07-10`

@@ -102,21 +102,22 @@ Dialog.alert({
 ```javascript
 import Dialog from '@vant/weapp/dialog/dialog';
 
-const beforeClose = (action) => new Promise((resolve) => {
-  setTimeout(() => {
-    if (action === 'confirm') {
-      resolve(true);
-    } else {
-      // 拦截取消操作
-      resolve(false);
-    }
-  }, 1000);
-});
+const beforeClose = (action) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      if (action === 'confirm') {
+        resolve(true);
+      } else {
+        // 拦截取消操作
+        resolve(false);
+      }
+    }, 1000);
+  });
 
 Dialog.confirm({
   title: '标题',
   message: '弹窗内容',
-  beforeClose
+  beforeClose,
 });
 ```
 
@@ -258,6 +259,8 @@ Page({
 | close-on-click-overlay | 点击遮罩层时是否关闭弹窗 | _boolean_ | `false` |
 | use-slot | 是否使用自定义内容的插槽 | _boolean_ | `false` |
 | use-title-slot | 是否使用自定义标题的插槽 | _boolean_ | `false` |
+| use-confirm-button-slot `1.10.23` | 是否使用自定义确认按钮的插槽 | _boolean_ | `false` |
+| use-cancel-button-slot `1.10.23` | 是否使用自定义取消按钮的插槽 | _boolean_ | `false` |
 | async-close | 已废弃，将在 2.0.0 移除，请使用 `beforeClose` 属性代替 | _boolean_ | `false` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
@@ -294,15 +297,16 @@ Page({
 
 ### Slot
 
-| 名称  | 说明                                                 |
-| ----- | ---------------------------------------------------- |
+| 名称 | 说明 |
+| --- | --- |
 | title | 自定义`title`显示内容，如果设置了`title`属性则不生效 |
+| confirm-button `1.10.23` | 自定义`confirm-button`显示内容，需要 `use-confirm-button-slot` 为 `true` |
+| cancel-button `1.10.23` | 自定义`cancel-button`显示内容，需要 `use-cancel-button-slot` 为 `true` |
 
 ### 外部样式类
 
-| 类名                   | 说明         |
-| ---------------------- | ------------ |
-| custom-class `v1.10.8` | 根节点样式类 |
-| cancle-button-class `v1.10.21` | 取消按钮样式类 |
+| 类名                            | 说明           |
+| ------------------------------- | -------------- |
+| custom-class `v1.10.8`          | 根节点样式类   |
+| cancle-button-class `v1.10.21`  | 取消按钮样式类 |
 | confirm-button-class `v1.10.21` | 确认按钮样式类 |
-

@@ -136,6 +136,7 @@ Page({
 | use-right-icon-slot | 是否使用输入框右侧图标 slot | _boolean_ | `false` |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-left-icon-slot，则该属性无效） | _string_ | `search` |
 | right-icon | 输入框右侧图标名称或图片链接，可选值见 Icon 组件（如果设置了 use-right-icon-slot，则该属性无效） | _string_ | - |
+| cursor-spacing | 输入框聚焦时底部与键盘的距离 | _number_ | `0` |
 
 ### Events
 

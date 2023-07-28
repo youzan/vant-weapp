@@ -53,6 +53,10 @@ VantComponent({
             type: String,
             value: 'clear',
         },
+        cursorSpacing: {
+            type: Number,
+            value: 0,
+        },
     },
     methods: {
         onChange(event) {

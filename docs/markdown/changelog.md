@@ -1,4 +1,14 @@
 # 更新日志
+
+### [v1.10.23](https://github.com/youzan/vant-weapp/compare/v1.10.22...v1.10.23)
+
+`2023-07-28`
+
+**Feature**
+
+- dialog: 增加 confirm/cancel button slot 支持 [#5502](https://github.com/youzan/vant-weapp/issues/5502)
+- Search: 增加 cursor-spacing 属性支持 [#5498](https://github.com/youzan/vant-weapp/issues/5498)
+
 ### [v1.10.22](https://github.com/youzan/vant-weapp/compare/v1.10.21...v1.10.22)
 
 `2023-07-24`
@@ -63,10 +73,12 @@
 `2023-05-08`
 
 **Bug Fixes**
+
 - steps: 修复在竖向模式下 icon 被覆盖的问题 [#5329](https://github.com/youzan/vant-weapp/issues/5329)
 - tabs: 修复 tab 较多时，slot 无法正常显示问题 [#4700](https://github.com/youzan/vant-weapp/issues/4700)
 
 **Feature**
+
 - field: input/change 事件增加 callback 参数 [#5345](https://github.com/youzan/vant-weapp/issues/5345)
 - goods-action: goods-action-button 增加 size 属性 [#5347](https://github.com/youzan/vant-weapp/issues/5347)
 
@@ -126,15 +138,14 @@
 - overlay: 增加 root-portal 属性支持 [#5255](https://github.com/youzan/vant-weapp/issues/5255)
 - popup: 增加 root-portal 属性支持 [#5254](https://github.com/youzan/vant-weapp/issues/5254)
 
-
 ### [v1.10.13](https://github.com/youzan/vant-weapp/compare/v1.10.12...v1.10.13)
 
 `2023-02-13`
 
 **Bug Fixes**
 
-- calendar: 修复calendar组件安全区域传参未传递给popup组件的问题 [db7957](https://github.com/youzan/vant-weapp/commit/db79570d98537db669730aa66d3fb3932ded4737)
-- cascader: 修复cascader组件onClickTab事件没有同步activeTab的值导致选择异常的问题 [92ae4a](https://github.com/youzan/vant-weapp/commit/92ae4a29c0b99aa65be6a71004b795ae2650f37c)
+- calendar: 修复 calendar 组件安全区域传参未传递给 popup 组件的问题 [db7957](https://github.com/youzan/vant-weapp/commit/db79570d98537db669730aa66d3fb3932ded4737)
+- cascader: 修复 cascader 组件 onClickTab 事件没有同步 activeTab 的值导致选择异常的问题 [92ae4a](https://github.com/youzan/vant-weapp/commit/92ae4a29c0b99aa65be6a71004b795ae2650f37c)
 - stepper: 修复 always-embed 申明两次警告问题 [#5231](https://github.com/youzan/vant-weapp/issues/5231)
 - stepper: 修复 onblur 时在值变更的情况下 change 事件没有触发 [#5227](https://github.com/youzan/vant-weapp/issues/5227)
 
@@ -145,7 +156,6 @@
 - tabbar-item: 增加 url link-type 属性支持 [#5232](https://github.com/youzan/vant-weapp/issues/5232)
 - uploader: 增加 showmenu 属性支持 [#5229](https://github.com/youzan/vant-weapp/issues/5229)
 
-
 ### [v1.10.12](https://github.com/youzan/vant-weapp/compare/v1.10.11...v1.10.12)
 
 `2023-01-16`
@@ -153,16 +163,16 @@
 **Bug Fixes**
 
 - calendar: 修复在 allow-same-day 情况下初始不能选择同一天 [#5193](https://github.com/youzan/vant-weapp/issues/5193)
-- stepper: 修复在 async change 情况下外部无法更新 input 值  [#5191](https://github.com/youzan/vant-weapp/issues/5191)
+- stepper: 修复在 async change 情况下外部无法更新 input 值 [#5191](https://github.com/youzan/vant-weapp/issues/5191)
 
 **Document**
-- docs(action-sheet): 修复close-on-click-overlay初始值书写错误 [b2fabe](https://github.com/youzan/vant-weapp/commit/b2fabe6b2b72ce1734b9123b00e78a854111d240)
+
+- docs(action-sheet): 修复 close-on-click-overlay 初始值书写错误 [b2fabe](https://github.com/youzan/vant-weapp/commit/b2fabe6b2b72ce1734b9123b00e78a854111d240)
 
 **Feature**
 
 - dropdown-menu: 增加 use-before-toggle 属性支持 [#5190](https://github.com/youzan/vant-weapp/issues/5190)
 - field: 增加 extra-event-params 属性支持 [#5184](https://github.com/youzan/vant-weapp/issues/5184)
-
 
 ### [v1.10.11](https://github.com/youzan/vant-weapp/compare/v1.10.10...v1.10.11)
 
@@ -205,11 +215,13 @@
 `2022-12-12`
 
 **Bug Fixes**
+
 - slider: 修复文档示例值错误 [#5128](https://github.com/youzan/vant-weapp/issues/5128)
 - tab: 修复在开启微信工具热更新时出现堆栈溢出问题 [#5125](https://github.com/youzan/vant-weapp/issues/5125)
 - transition: 修复页面切后台后无法触发 transition 相关组件更新 [#5131](https://github.com/youzan/vant-weapp/issues/5131)
 
 **Feature**
+
 - cascader: 新增 cascader 组件 [#4992](https://github.com/youzan/vant-weapp/issues/4992)
 
 ### [v1.10.8](https://github.com/youzan/vant-weapp/compare/v1.10.7...v1.10.8)
@@ -224,13 +236,12 @@
 **Document**
 
 - Calendar: 修复示例代码错误问题 [c55c78](https://github.com/youzan/vant-weapp/commit/c55c785a9ed67e0801c693d61b1e7e691bd19cf1)
-- fix(stepper): 修复stepper blur事件失焦时会触发change事件 [8b441d](https://github.com/youzan/vant-weapp/commit/8b441de1a6a0d439913d6a582d954331ff17e1fa)
+- fix(stepper): 修复 stepper blur 事件失焦时会触发 change 事件 [8b441d](https://github.com/youzan/vant-weapp/commit/8b441de1a6a0d439913d6a582d954331ff17e1fa)
 
 **Feature**
 
 - dialog: 增加 custom-class 属性支持 [#5102](https://github.com/youzan/vant-weapp/issues/5102)
-- uploader: 增加  media-type 属性支持 [#5113](https://github.com/youzan/vant-weapp/issues/5113)
-
+- uploader: 增加 media-type 属性支持 [#5113](https://github.com/youzan/vant-weapp/issues/5113)
 
 ### [v1.10.7](https://github.com/youzan/vant-weapp/compare/v1.10.6...v1.10.7)
 
@@ -241,14 +252,13 @@
 - search: 增加 value 默认 props 定义 [697746](https://github.com/youzan/vant-weapp/commit/697746fb470e9e16476f3fe95c15e4448ca9d686)
 
 **Document**
+
 - collapse: 增加 right-icon 额外使用说明 [d39b35](https://github.com/youzan/vant-weapp/commit/d39b35fc3a1d4b913d7b94bb45b3e861e3cee79e)
 
 **Feature**
 
 - action-sheet: 增加自定义样式能力支持 [#5097](https://github.com/youzan/vant-weapp/issues/5097)
 - dropdown-menu: 增加多个自定义样式能力支持 [#5099](https://github.com/youzan/vant-weapp/issues/5099)
-
-
 
 ### [v1.10.6](https://github.com/youzan/vant-weapp/compare/v1.10.5...v1.10.6)
 
@@ -260,11 +270,11 @@
 - button: 修复 button 在 disabeld 或 loading 时能触发 active 状态问题 [#5084](https://github.com/youzan/vant-weapp/issues/5084)
 - mixin: 修复 page-scroll mixin 函数监听没有收回问题 [#5086](https://github.com/youzan/vant-weapp/issues/5086)
 - overlay: 修复 custom-class 不生效问题 [#5083](https://github.com/youzan/vant-weapp/issues/5083)
-- slider: 修复 slider 在 value 小于 step 无法滑动问题  [#5079](https://github.com/youzan/vant-weapp/issues/5079)
+- slider: 修复 slider 在 value 小于 step 无法滑动问题 [#5079](https://github.com/youzan/vant-weapp/issues/5079)
 
 **Feature**
-- Dialog: option context 支持传入函数 [#5043](https://github.com/youzan/vant-weapp/issues/5043)
 
+- Dialog: option context 支持传入函数 [#5043](https://github.com/youzan/vant-weapp/issues/5043)
 
 ### [v1.10.5](https://github.com/youzan/vant-weapp/compare/v1.10.4...v1.10.5)
 

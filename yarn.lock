@@ -9810,9 +9810,9 @@ miniprogram-exparser@latest:
   integrity sha512-f2LUVYcQ5O664nOHhrEbtR//hlqln88dRY0mIwuRncJfuXMCdK9FBk0vzNDG6EgaaeTt3iGLeFQLRHlhYktkXw==
 
 miniprogram-simulate@^1.4.2:
-  version "1.5.9"
-  resolved "https://registry.yarnpkg.com/miniprogram-simulate/-/miniprogram-simulate-1.5.9.tgz#427bf5040a239e3ab017a6e5b18079eca491318e"
-  integrity sha512-l/Ddm/L7tZ1I9/V86JnDJpM5fGqw53LieQIkuyIJyyC4/8lBjBQ0ziMCBwb+1EO2aKz4Uhlt4moT4PS/s9QAjQ==
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/miniprogram-simulate/-/miniprogram-simulate-1.6.0.tgz#a6ad69e55fd1ce4572c2da10a8d1fe4796391c0b"
+  integrity sha512-A3Ypl5Ei1yz+IBrv+8AcuYloOQbB1tvbBYTkOLTOo51RK6e+nkagp8uFufqQAdI7OdW52NFJhO9fv3QzJqcm2w==
   dependencies:
     csso "^3.5.1"
     j-component "^1.4.9"

@@ -51,6 +51,10 @@ export const button = Behavior({
       this.triggerEvent('opensetting', event.detail);
     },
 
+    onAgreeprivacyauthorization(event) {
+      this.triggerEvent('agreePrivacyAuthorization', event.detail);
+    },
+
     onChooseAvatar(
       event: WechatMiniprogram.CustomEvent<
         WechatMiniprogram.GeneralCallbackResult & { avatarUrl: string }

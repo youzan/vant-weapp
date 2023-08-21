@@ -51,8 +51,8 @@ export const button = Behavior({
       this.triggerEvent('opensetting', event.detail);
     },
 
-    onAgreeprivacyauthorization(event) {
-      this.triggerEvent('agreePrivacyAuthorization', event.detail);
+    onAgreePrivacyAuthorization(event) {
+      this.triggerEvent('agreeprivacyauthorization', event.detail);
     },
 
     onChooseAvatar(

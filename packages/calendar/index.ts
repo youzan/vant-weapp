@@ -78,16 +78,10 @@ VantComponent({
     minDate: {
       type: Number,
       value: initialMinDate,
-      observer() {
-        this.initRect();
-      },
     },
     maxDate: {
       type: Number,
       value: initialMaxDate,
-      observer() {
-        this.initRect();
-      },
     },
     position: {
       type: String,
@@ -148,6 +142,15 @@ VantComponent({
     subtitle: '',
     currentDate: null as any,
     scrollIntoView: '',
+  },
+
+  watch: {
+    minDate() {
+      this.initRect();
+    },
+    maxDate() {
+      this.initRect();
+    },
   },
 
   created() {

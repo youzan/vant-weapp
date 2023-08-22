@@ -292,6 +292,7 @@ Page({
 | bind:contact | 客服消息回调 | - |
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:getrealtimephonenumber `v1.10.21` | 获取手机号实时验证回调，open-type=getRealtimePhoneNumber 时有效 | - |
+| bind:agreeprivacyauthorization `v1.10.24` | 同意隐私协议回调，openType="agreePrivacyAuthorization"时有效 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
 

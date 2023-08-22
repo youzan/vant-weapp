@@ -844,6 +844,7 @@ exports[`should render demo and match snapshot 1`] = `
                           sessionFrom=""
                           showMessageCard="{{false}}"
                           style=""
+                          bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
                           bind:chooseavatar="onChooseAvatar"
                           bind:contact="onContact"
                           bind:error="onError"

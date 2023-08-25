@@ -1,4 +1,15 @@
 # 更新日志
+### [v1.10.24](https://github.com/youzan/vant-weapp/compare/v1.10.23...v1.10.24)
+
+`2023-08-25`
+
+**Bug Fixes**
+
+- calendar: 增加 limit date 监听 [#5520](https://github.com/youzan/vant-weapp/issues/5520)
+
+**Feature**
+
+- button: 增加 agreePrivacyAuthorization open-type 支持 [#5527](https://github.com/youzan/vant-weapp/issues/5527)
 
 ### [v1.10.23](https://github.com/youzan/vant-weapp/compare/v1.10.22...v1.10.23)
 

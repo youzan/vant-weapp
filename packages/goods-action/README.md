@@ -130,7 +130,7 @@ Page({
 | url | 点击后跳转的链接地址 | _string_ | - |
 | link-type | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` |
 | id | 标识符 | _string_ | - |
-| btnId `v1.10.25`| 标识符，作为原生button组件的id值 | _string_ | - |
+| buttonId `v1.10.25`| 标识符，作为原生button组件的id值 | _string_ | - |
 | type | 按钮类型，可选值为 `primary` `warning` `danger` | _string_ | `danger` |
 | plain | 是否为朴素按钮 | _boolean_ | `false` |
 | size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | _string_ | `normal` |

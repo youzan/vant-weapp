@@ -240,7 +240,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | show | 是否显示弹窗 | _boolean_ | - |
-| buttonId `v1.10.25`| 标识符，作为原生button组件的id值 | _string_ | - |
+| button-id `v1.10.25`| 标识符，作为原生button组件的id值 | _string_ | - |
 | title | 标题 | _string_ | - |
 | width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |

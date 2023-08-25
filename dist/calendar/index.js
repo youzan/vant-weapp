@@ -119,6 +119,14 @@ VantComponent({
         currentDate: null,
         scrollIntoView: '',
     },
+    watch: {
+        minDate() {
+            this.initRect();
+        },
+        maxDate() {
+            this.initRect();
+        },
+    },
     created() {
         this.setData({
             currentDate: this.getInitialDate(this.data.defaultDate),

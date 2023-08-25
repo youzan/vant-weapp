@@ -1,6 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <van-button
   id="{{ id }}"
+  customId="{{customId}}"
   lang="{{ lang }}"
   type="{{ type }}"
   size="{{ size }}"

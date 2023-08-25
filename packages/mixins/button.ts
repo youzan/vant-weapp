@@ -5,6 +5,7 @@ export const button = Behavior({
 
   properties: {
     id: String,
+    customId: String,
     lang: String,
     businessId: Number,
     sessionFrom: String,

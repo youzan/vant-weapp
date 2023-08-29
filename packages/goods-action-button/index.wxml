@@ -23,6 +23,7 @@
   bindcontact="onContact"
   bindopensetting="onOpenSetting"
   bindgetuserinfo="onGetUserInfo"
+  bindagreeprivacyauthorization="onAgreePrivacyAuthorization"
   bindgetphonenumber="onGetPhoneNumber"
   bindlaunchapp="onLaunchApp"
 >

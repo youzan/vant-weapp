@@ -21,6 +21,7 @@ VantComponent({
       type: String,
       value: 'default',
     },
+    confirmButtonId: String,
     className: String,
     customStyle: String,
     asyncClose: Boolean,

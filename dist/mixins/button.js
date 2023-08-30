@@ -3,6 +3,7 @@ export const button = Behavior({
     externalClasses: ['hover-class'],
     properties: {
         id: String,
+        buttonId: String,
         lang: String,
         businessId: Number,
         sessionFrom: String,

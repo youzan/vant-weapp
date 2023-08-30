@@ -157,6 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--warning van-goods-action-button--first"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -209,6 +210,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--danger van-goods-action-button--last"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -490,6 +492,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--warning van-goods-action-button--first"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -540,6 +543,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--danger van-goods-action-button--last"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -741,6 +745,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--warning van-goods-action-button--first"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -791,6 +796,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--danger van-goods-action-button--last"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -992,6 +998,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--warning van-goods-action-button--first"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"
@@ -1042,6 +1049,7 @@ exports[`should render demo and match snapshot 1`] = `
             <van-button
               class="van-goods-action-button van-goods-action-button--danger van-goods-action-button--last van-goods-action-button--plain"
               customClass="van-goods-action-button__inner custom-class"
+              bind:agreeprivacyauthorization="onAgreePrivacyAuthorization"
               bind:click="onClick"
               bind:contact="onContact"
               bind:error="onError"

@@ -1,6 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <van-button
   id="{{ id }}"
+  button-id="{{ buttonId }}"
   lang="{{ lang }}"
   type="{{ type }}"
   size="{{ size }}"
@@ -23,6 +24,7 @@
   bindcontact="onContact"
   bindopensetting="onOpenSetting"
   bindgetuserinfo="onGetUserInfo"
+  bindagreeprivacyauthorization="onAgreePrivacyAuthorization"
   bindgetphonenumber="onGetPhoneNumber"
   bindlaunchapp="onLaunchApp"
 >

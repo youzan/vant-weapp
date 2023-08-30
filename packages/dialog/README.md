@@ -240,6 +240,7 @@ Page({
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | show | 是否显示弹窗 | _boolean_ | - |
+| confirm-button-id `v1.10.25`| 确认按钮的标识符，作为底层原生button组件的id值 | _string_ | - |
 | title | 标题 | _string_ | - |
 | width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
@@ -292,7 +293,7 @@ Page({
 | bind:contact | 客服消息回调 | - |
 | bind:getphonenumber | 获取用户手机号回调 | - |
 | bind:getrealtimephonenumber `v1.10.21` | 获取手机号实时验证回调，open-type=getRealtimePhoneNumber 时有效 | - |
-| bind:agreeprivacyauthorization `v1.10.24` | 同意隐私协议回调，openType="agreePrivacyAuthorization"时有效 | - |
+| bind:agreeprivacyauthorization `v1.10.25` | 同意隐私协议回调，openType="agreePrivacyAuthorization"时有效 | - |
 | bind:error | 当使用开放能力时，发生错误的回调 | - |
 | bind:opensetting | 在打开授权设置页后回调 | - |
 

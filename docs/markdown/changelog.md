@@ -1,4 +1,16 @@
 # 更新日志
+### [v1.10.25](https://github.com/youzan/vant-weapp/compare/v1.10.24...v1.10.25)
+
+`2023-08-30`
+
+**Document**
+
+- slider: 修复 use-button-slot 文档错误 [#5534](https://github.com/youzan/vant-weapp/issues/5534)
+
+**Feature**
+
+- button: 增加 button-id 属性 和 agreePrivacyAuthorization 事件支持 [#5533](https://github.com/youzan/vant-weapp/issues/5533)
+
 ### [v1.10.24](https://github.com/youzan/vant-weapp/compare/v1.10.23...v1.10.24)
 
 `2023-08-25`

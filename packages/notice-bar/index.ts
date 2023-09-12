@@ -119,7 +119,7 @@ VantComponent({
 
       this.timer = setTimeout(() => {
         this.scroll();
-      }, this.duration);
+      }, this.duration + this.data.delay);
     },
 
     onClickIcon(event) {

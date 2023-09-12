@@ -168,7 +168,7 @@ VantComponent({
 
   methods: {
     reset() {
-      this.setData({ currentDate: this.getInitialDate() });
+      this.setData({ currentDate: this.getInitialDate(this.data.defaultDate) });
       this.scrollIntoView();
     },
 

@@ -72,3 +72,12 @@ Page({
 | avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` |
 | loading | 是否显示占位图，传`false`时会展示子组件内容 | _boolean_ | `true` |
 | animate | 是否开启动画 | _boolean_ | `true` |
+
+### 外部样式类
+
+| 类名             | 说明               |
+| ---------------- | ------------------ |
+| custom-class     | 根节点样式类       |
+| row-class        | 段落占位样式类       |
+| avatar-class        | 头像占位样式类         |
+| title-class | 标题占位样式类   |

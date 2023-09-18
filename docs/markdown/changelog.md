@@ -1,4 +1,22 @@
 # 更新日志
+### [v1.11.0](https://github.com/youzan/vant-weapp/compare/v1.10.25...v1.11.0)
+
+`2023-09-18`
+
+**Bug Fixes**
+
+- calendar: 修复 calendar 调用 reset 方法时丢失默认值 [#5546](https://github.com/youzan/vant-weapp/issues/5546)
+- van-notice-bar: 修复 delay 属性不生效问题 [#5547](https://github.com/youzan/vant-weapp/issues/5547)
+
+**Document**
+
+- skeleton: 修复 custom class 文档缺失 [#5548](https://github.com/youzan/vant-weapp/issues/5548)
+
+**Feature**
+
+- icon: 升级 @vant/icon 到 [3.0.0](https://github.com/youzan/vant/blob/main/packages/vant-icons/CHANGELOG.md) [#5561](https://github.com/youzan/vant-weapp/issues/5561)
+
+
 ### [v1.10.25](https://github.com/youzan/vant-weapp/compare/v1.10.24...v1.10.25)
 
 `2023-08-30`

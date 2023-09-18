@@ -2730,10 +2730,10 @@
     eslint-plugin-import "^2.24.0"
     eslint-plugin-vue "^7.18.0"
 
-"@vant/icons@^1.7.1":
-  version "1.8.0"
-  resolved "https://registry.npmmirror.com/@vant/icons/-/icons-1.8.0.tgz#36b13f2e628b533f6523a93a168cf02f07056674"
-  integrity sha512-sKfEUo2/CkQFuERxvkuF6mGQZDKu3IQdj5rV9Fm0weJXtchDSSQ+zt8qPCNUEhh9Y8shy5PzxbvAfOOkCwlCXg==
+"@vant/icons@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@vant/icons/-/icons-3.0.0.tgz#685bf941ccb7d9ddfa07dd4457188168be5311c4"
+  integrity sha512-g0sNQGwq3xajpri698ql/MjeMZ0Bwptjf7WO+s5fZEPq4smesmwC8Jda1OetidBjI0cQ5c7cYqoNGlkQA81TMw==
 
 "@vant/markdown-vetur@^2.3.0":
   version "2.3.0"

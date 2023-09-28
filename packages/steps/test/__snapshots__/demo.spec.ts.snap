@@ -82,7 +82,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-checked"
                     style="color:#07c160"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -239,7 +241,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-arrow"
                     style="color:#38f"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -276,7 +280,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-success"
                     style="color:#38f"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -313,7 +319,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-arrow"
                     style="color:#969799"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -350,7 +358,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-arrow"
                     style="color:#969799"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
             </wx-view>
@@ -404,7 +414,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-location-o"
                     style="color:#07c160"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -441,7 +453,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-arrow-left"
                     style="color:#07c160"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -478,7 +492,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-star-o"
                     style="color:#969799"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view
@@ -515,7 +531,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-phone-o"
                     style="color:#969799"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
             </wx-view>
@@ -601,7 +619,9 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-checked"
                     style="color:#ee0a24"
                     bind:tap="onClick"
-                  />
+                  >
+                    <wx-view />
+                  </wx-view>
                 </van-icon>
               </wx-view>
               <wx-view

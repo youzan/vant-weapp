@@ -34,7 +34,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -65,7 +67,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -96,7 +100,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -127,7 +133,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -176,7 +184,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -207,7 +217,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -238,7 +250,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -269,7 +283,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -300,7 +316,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -331,7 +349,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -449,7 +469,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -480,7 +502,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -511,7 +535,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -542,7 +568,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -573,7 +601,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -604,7 +634,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -635,7 +667,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -666,7 +700,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -715,7 +751,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -746,7 +784,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -777,7 +817,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -808,7 +850,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -839,7 +883,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -870,7 +916,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -901,7 +949,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -932,7 +982,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -981,7 +1033,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -1012,7 +1066,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -1043,7 +1099,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-photo-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -1092,7 +1150,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-home-o"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -1123,7 +1183,9 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-search"
                       style=""
                       bind:tap="onClick"
-                    />
+                    >
+                      <wx-view />
+                    </wx-view>
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -1173,16 +1235,18 @@ exports[`should render demo and match snapshot 1`] = `
                       style=""
                       bind:tap="onClick"
                     >
-                      <van-info
-                        customClass="van-icon__info info-class"
-                      >
-                        <wx-view
-                          class="van-info van-info van-info--dot custom-class"
-                          style=""
+                      <wx-view>
+                        <van-info
+                          customClass="van-icon__info info-class"
                         >
-                          
-                        </wx-view>
-                      </van-info>
+                          <wx-view
+                            class="van-info van-info van-info--dot custom-class"
+                            style=""
+                          >
+                            
+                          </wx-view>
+                        </van-info>
+                      </wx-view>
                     </wx-view>
                   </van-icon>
                 </wx-view>
@@ -1215,16 +1279,18 @@ exports[`should render demo and match snapshot 1`] = `
                       style=""
                       bind:tap="onClick"
                     >
-                      <van-info
-                        customClass="van-icon__info info-class"
-                      >
-                        <wx-view
-                          class="van-info van-info custom-class"
-                          style=""
+                      <wx-view>
+                        <van-info
+                          customClass="van-icon__info info-class"
                         >
-                          99+
-                        </wx-view>
-                      </van-info>
+                          <wx-view
+                            class="van-info van-info custom-class"
+                            style=""
+                          >
+                            99+
+                          </wx-view>
+                        </van-info>
+                      </wx-view>
                     </wx-view>
                   </van-icon>
                 </wx-view>

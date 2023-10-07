@@ -136,6 +136,10 @@ VantComponent({
       value: 0,
     },
     readonly: Boolean,
+    weekdays: {
+      type: Array,
+      value: ['日', '一', '二', '三', '四', '五', '六'],
+    },
   },
 
   data: {

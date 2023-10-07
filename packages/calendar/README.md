@@ -286,6 +286,7 @@ Page({
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
 | first-day-of-week | 设置周起始日 | _0~6_ | `0` |
 | readonly `v1.9.1` | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
+| weekdays `v1.11.1` | 星期选项 | _string[]_ | ` ['日', '一', '二', '三', '四', '五', '六']` |
 
 ### Poppable Props
 

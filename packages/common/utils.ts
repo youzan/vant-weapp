@@ -115,3 +115,7 @@ export function getCurrentPage<T>() {
 }
 
 export const isPC = ['mac', 'windows'].includes(getSystemInfoSync().platform);
+
+// @ts-ignore
+// 是否企业微信
+export const isWxWork = getSystemInfoSync().environment === 'wxwork';

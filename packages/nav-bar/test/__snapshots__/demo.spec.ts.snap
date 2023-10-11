@@ -33,9 +33,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="custom-class van-icon van-icon-arrow-left"
                   style="font-size:16px"
                   bind:tap="onClick"
-                >
-                  <wx-view />
-                </wx-view>
+                />
               </van-icon>
             </wx-view>
             <wx-view
@@ -88,9 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="custom-class van-icon van-icon-arrow-left"
                   style="font-size:16px"
                   bind:tap="onClick"
-                >
-                  <wx-view />
-                </wx-view>
+                />
               </van-icon>
               <wx-view
                 class="van-nav-bar__text"
@@ -117,9 +113,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="custom-class van-icon van-icon-search"
                   style="font-size:18px"
                   bind:tap="onClick"
-                >
-                  <wx-view />
-                </wx-view>
+                />
               </van-icon>
             </wx-view>
           </wx-view>

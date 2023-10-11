@@ -792,9 +792,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="custom-class van-icon van-icon-star-o"
               style="font-size:1.2em;line-height: inherit;"
               bind:tap="onClick"
-            >
-              <wx-view />
-            </wx-view>
+            />
           </van-icon>
           <wx-view
             class="van-button__text"
@@ -839,9 +837,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="custom-class van-icon van-icon-star-o"
               style="font-size:1.2em;line-height: inherit;"
               bind:tap="onClick"
-            >
-              <wx-view />
-            </wx-view>
+            />
           </van-icon>
           <wx-view
             class="van-button__text"
@@ -887,7 +883,6 @@ exports[`should render demo and match snapshot 1`] = `
               style="font-size:1.2em;line-height: inherit;"
               bind:tap="onClick"
             >
-              <wx-view />
               <wx-image
                 class="van-icon__image"
                 mode="aspectFit"

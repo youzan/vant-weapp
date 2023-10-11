@@ -134,9 +134,7 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-play-circle-o"
                       style=""
                       bind:tap="onClick"
-                    >
-                      <wx-view />
-                    </wx-view>
+                    />
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -169,9 +167,7 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-pause-circle-o"
                       style=""
                       bind:tap="onClick"
-                    >
-                      <wx-view />
-                    </wx-view>
+                    />
                   </van-icon>
                 </wx-view>
                 <wx-view
@@ -204,9 +200,7 @@ exports[`should render demo and match snapshot 1`] = `
                       class="custom-class van-icon van-icon-replay"
                       style=""
                       bind:tap="onClick"
-                    >
-                      <wx-view />
-                    </wx-view>
+                    />
                   </van-icon>
                 </wx-view>
                 <wx-view

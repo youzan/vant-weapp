@@ -144,9 +144,7 @@ exports[`should render demo and match snapshot 1`] = `
                           class="custom-class van-icon van-icon-chat-o"
                           style="font-size:32px"
                           bind:tap="onClick"
-                        >
-                          <wx-view />
-                        </wx-view>
+                        />
                       </van-icon>
                     </wx-view>
                   </van-col>
@@ -165,7 +163,6 @@ exports[`should render demo and match snapshot 1`] = `
                           style="font-size:32px"
                           bind:tap="onClick"
                         >
-                          <wx-view />
                           <wx-image
                             class="van-icon__image"
                             mode="aspectFit"
@@ -201,18 +198,16 @@ exports[`should render demo and match snapshot 1`] = `
                           style="font-size:32px"
                           bind:tap="onClick"
                         >
-                          <wx-view>
-                            <van-info
-                              customClass="van-icon__info info-class"
+                          <van-info
+                            customClass="van-icon__info info-class"
+                          >
+                            <wx-view
+                              class="van-info van-info van-info--dot custom-class"
+                              style=""
                             >
-                              <wx-view
-                                class="van-info van-info van-info--dot custom-class"
-                                style=""
-                              >
-                                
-                              </wx-view>
-                            </van-info>
-                          </wx-view>
+                              
+                            </wx-view>
+                          </van-info>
                         </wx-view>
                       </van-icon>
                     </wx-view>
@@ -232,18 +227,16 @@ exports[`should render demo and match snapshot 1`] = `
                           style="font-size:32px"
                           bind:tap="onClick"
                         >
-                          <wx-view>
-                            <van-info
-                              customClass="van-icon__info info-class"
+                          <van-info
+                            customClass="van-icon__info info-class"
+                          >
+                            <wx-view
+                              class="van-info van-info custom-class"
+                              style=""
                             >
-                              <wx-view
-                                class="van-info van-info custom-class"
-                                style=""
-                              >
-                                9
-                              </wx-view>
-                            </van-info>
-                          </wx-view>
+                              9
+                            </wx-view>
+                          </van-info>
                         </wx-view>
                       </van-icon>
                     </wx-view>
@@ -263,18 +256,16 @@ exports[`should render demo and match snapshot 1`] = `
                           style="font-size:32px"
                           bind:tap="onClick"
                         >
-                          <wx-view>
-                            <van-info
-                              customClass="van-icon__info info-class"
+                          <van-info
+                            customClass="van-icon__info info-class"
+                          >
+                            <wx-view
+                              class="van-info van-info custom-class"
+                              style=""
                             >
-                              <wx-view
-                                class="van-info van-info custom-class"
-                                style=""
-                              >
-                                99+
-                              </wx-view>
-                            </van-info>
-                          </wx-view>
+                              99+
+                            </wx-view>
+                          </van-info>
                         </wx-view>
                       </van-icon>
                     </wx-view>
@@ -304,9 +295,7 @@ exports[`should render demo and match snapshot 1`] = `
                           class="custom-class van-icon van-icon-chat-o"
                           style="color:#1989fa;font-size:32px"
                           bind:tap="onClick"
-                        >
-                          <wx-view />
-                        </wx-view>
+                        />
                       </van-icon>
                     </wx-view>
                   </van-col>
@@ -324,9 +313,7 @@ exports[`should render demo and match snapshot 1`] = `
                           class="custom-class van-icon van-icon-chat-o"
                           style="color:#07c160;font-size:32px"
                           bind:tap="onClick"
-                        >
-                          <wx-view />
-                        </wx-view>
+                        />
                       </van-icon>
                     </wx-view>
                   </van-col>
@@ -355,9 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
                           class="custom-class van-icon van-icon-chat-o"
                           style="font-size:40px"
                           bind:tap="onClick"
-                        >
-                          <wx-view />
-                        </wx-view>
+                        />
                       </van-icon>
                     </wx-view>
                   </van-col>
@@ -375,9 +360,7 @@ exports[`should render demo and match snapshot 1`] = `
                           class="custom-class van-icon van-icon-chat-o"
                           style="font-size:3rem"
                           bind:tap="onClick"
-                        >
-                          <wx-view />
-                        </wx-view>
+                        />
                       </van-icon>
                     </wx-view>
                   </van-col>

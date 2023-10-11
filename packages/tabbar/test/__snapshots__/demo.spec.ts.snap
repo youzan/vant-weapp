@@ -36,9 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-home-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -67,9 +65,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-search"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -98,9 +94,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-friends-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -129,9 +123,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-setting-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -182,9 +174,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-home-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -213,9 +203,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-search"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -244,9 +232,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-friends-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -275,9 +261,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-setting-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -328,9 +312,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-home-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -359,9 +341,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-search"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -397,9 +377,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-friends-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -435,9 +413,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-setting-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -530,9 +506,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-search"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -561,9 +535,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-setting-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -614,9 +586,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-home-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -645,9 +615,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-search"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -676,9 +644,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-friends-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -707,9 +673,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-setting-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -760,9 +724,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-home-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -791,9 +753,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-search"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -822,9 +782,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-friends-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"
@@ -853,9 +811,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="custom-class van-icon van-icon-setting-o"
                     style=""
                     bind:tap="onClick"
-                  >
-                    <wx-view />
-                  </wx-view>
+                  />
                 </van-icon>
                 <van-info
                   customClass="van-tabbar-item__info"

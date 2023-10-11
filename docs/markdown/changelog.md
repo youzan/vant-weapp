@@ -1,4 +1,13 @@
 # 更新日志
+### [v1.11.1](https://github.com/youzan/vant-weapp/compare/v1.11.0...v1.11.1)
+
+`2023-10-10`
+
+**Feature**
+
+- icon: update @vant/icon to v3.0.1 [#5583](https://github.com/youzan/vant-weapp/issues/5583)
+
+
 ### [v1.11.0](https://github.com/youzan/vant-weapp/compare/v1.10.25...v1.11.0)
 
 `2023-09-18`

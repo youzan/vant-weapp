@@ -108,7 +108,7 @@
 
 | 类名         | 说明         |
 | ------------ | ------------ |
-| info-slot `v1.11.1` | 自定义info内容,开启useInfoSlot有效 |
+| info-slot `v1.11.2` | 自定义info内容,开启useInfoSlot有效 |
 
 ## 常见问题
 

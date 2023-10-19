@@ -206,6 +206,7 @@ VantComponent({
       const { option, tabIndex } = e.currentTarget.dataset;
 
       if (option && option.disabled) {
+        this.$emit('click-disabled', { tabIndex, disabledOption: option });
         return;
       }
 

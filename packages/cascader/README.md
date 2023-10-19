@@ -235,6 +235,7 @@ Page({
 | bind:finish | 全部选项选择完成后触发 | event.detail：_{ value: string \| number, selectedOptions: CascaderOption[], tabIndex: number }_ |
 | bind:close | 点击关闭图标时触发 | - |
 | bind:click-tab | 点击标签时触发 | event.detail：_{ tabIndex: number, title: string }_ |
+| bind:click-disabled `v1.11.12`| 点击禁用项时触发 | event.detail：_{ tabIndex: number, disabledOption: CascaderOption }_ |
 
 ### Slots
 

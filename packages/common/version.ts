@@ -1,8 +1,8 @@
-type ExtraSystemInfo = WechatMiniprogram.SystemInfo & {
+type ExtendSystemInfo = WechatMiniprogram.SystemInfo & {
   environment?: string;
 };
 
-let systemInfo: ExtraSystemInfo;
+let systemInfo: ExtendSystemInfo;
 export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();

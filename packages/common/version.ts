@@ -1,14 +1,17 @@
-type ExtendSystemInfo = WechatMiniprogram.SystemInfo & {
-  environment?: string;
-};
+interface WxWorkSystemInfo extends WechatMiniprogram.SystemInfo {
+  environment?: 'wxwork';
+}
 
-let systemInfo: ExtendSystemInfo;
+interface SystemInfo extends WxWorkSystemInfo, WechatMiniprogram.SystemInfo {}
+
+let systemInfo: SystemInfo;
+
 export function getSystemInfoSync() {
   if (systemInfo == null) {
     systemInfo = wx.getSystemInfoSync();
   }
 
-  return systemInfo;
+  return systemInfo as SystemInfo;
 }
 
 function compareVersion(v1, v2) {

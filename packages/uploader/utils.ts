@@ -1,4 +1,4 @@
-import { pickExclude, isPC } from '../common/utils';
+import { pickExclude, isPC, isWxWork } from '../common/utils';
 import { isImageUrl, isVideoUrl } from '../common/validator';
 
 export interface File {
@@ -103,7 +103,7 @@ export function chooseFile({
   return new Promise<File | File[]>((resolve, reject) => {
     switch (accept) {
       case 'image':
-        if (isPC) {
+        if (isPC || isWxWork) {
           wx.chooseImage({
             count: multiple ? Math.min(maxCount, 9) : 1,
             sourceType: capture,

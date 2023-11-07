@@ -193,7 +193,7 @@ VantComponent({
 
       const stack: Promise<void>[] = [];
       const indexes: number[] = [];
-      const { columnsNum } = this.data;
+      const columnsNum = Number(this.data.columnsNum);
 
       if (columnsNum >= 1) {
         stack.push(picker.setColumnValues(0, provinceList, false));

@@ -25,6 +25,7 @@
   bindopensetting="onOpenSetting"
   bindgetuserinfo="onGetUserInfo"
   bindagreeprivacyauthorization="onAgreePrivacyAuthorization"
+  bindgetRealTimePhoneNumber="onGetRealTimePhoneNumber"
   bindgetphonenumber="onGetPhoneNumber"
   bindlaunchapp="onLaunchApp"
 >

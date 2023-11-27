@@ -107,14 +107,3 @@ export function getMonths(minDate: number, maxDate: number) {
 
   return months;
 }
-
-export function debounce(func: Function, delay=100) {
-    let timer = 0
-    return function () {
-        if (timer) clearTimeout(timer);
-        timer = setTimeout (() => {
-            func.apply(this,arguments);
-            timer = 0
-        },delay)
-    }
-}

@@ -1,16 +1,17 @@
 import { VantComponent } from '../common/component';
 import {
-  ROW_HEIGHT,
-  getPrevDay,
-  getNextDay,
-  getToday,
-  compareDay,
-  copyDates,
-  calcDateNum,
-  formatMonthTitle,
-  compareMonth,
-  getMonths,
-  getDayByOffset,
+    ROW_HEIGHT,
+    getPrevDay,
+    getNextDay,
+    getToday,
+    compareDay,
+    copyDates,
+    calcDateNum,
+    formatMonthTitle,
+    compareMonth,
+    getMonths,
+    getDayByOffset,
+    debounce,
 } from './utils';
 import { Day } from './components/month/index';
 
@@ -136,12 +137,19 @@ VantComponent({
       value: 0,
     },
     readonly: Boolean,
+    maxSimDays: {
+      type: Number,
+      value: 300
+    }
   },
 
   data: {
     subtitle: '',
     currentDate: null as any,
     scrollIntoView: '',
+    monthData:[],
+    monthVisibleControl: false,
+    monthShowMap: {}
   },
 
   watch: {
@@ -167,12 +175,41 @@ VantComponent({
   },
 
   methods: {
+      scrolling: debounce(function (e) {
+          const {minDate, maxDate} = this.data;
+          let {monthData} = this.data;
+          if (!monthData?.length) {
+              monthData = getMonths(minDate, maxDate)
+          }
+          const {scrollTop, scrollHeight} = e.detail;
+          //  每一行的高度。
+          const cHeight = scrollHeight / (monthData.length);
+          //  当前所在月
+          const curMonth = Math.floor(scrollTop / cHeight);
+          const monthHideMap = {};
+          for (let i = Math.max(0, curMonth - 3); i < Math.min(monthData.length, curMonth+3); i++) {
+              monthHideMap[monthData[i]] = true;
+          }
+          this.setData({
+              monthData,
+              monthHideMap,
+          })
+
+      }, 100),
+
     reset() {
       this.setData({ currentDate: this.getInitialDate(this.data.defaultDate) });
       this.scrollIntoView();
     },
 
     initRect() {
+      //     新增 当minDate MaxDate区间大于 `maxSimDays` 天时，日历面板控制总节点数量，只显示当前选中前后三个月的月份日期。
+        const {minDate, maxDate, maxSimDays} = this.data;
+        if (minDate && maxDate && Math.abs(maxDate-minDate)>maxSimDays*24*60*60*1000) {
+            this.setData({
+                monthVisibleControl: true,
+            })
+        }
       if (this.contentObserver != null) {
         this.contentObserver.disconnect();
       }

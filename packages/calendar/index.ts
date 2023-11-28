@@ -191,7 +191,7 @@ VantComponent({
               //  当前所在月
               const curMonth = Math.floor(scrollTop / cHeight);
               const monthHideMap: {[key: string]: boolean} = {};
-              for (let i = Math.max(0, curMonth - 3); i < Math.min(monthData.length, curMonth+3); i++) {
+              for (let i = Math.max(0, curMonth - 1); i < Math.min(monthData.length, curMonth+3); i++) {
                   monthHideMap[monthData[i]] = true;
               }
               me.setData({
@@ -217,8 +217,10 @@ VantComponent({
             if (!monthData?.length) {
                 monthData = getMonths(minDate, maxDate)
             }
-            for (let i = 0; i < Math.min(6,monthData.length); i++) {
-                monthHideMap[monthData[i]] = true;
+            if (!Object.keys(this.data.monthHideMap)?.length) {
+                for (let i = 0; i < Math.min(6,monthData.length); i++) {
+                    monthHideMap[monthData[i]] = true;
+                }
             }
 
             this.setData({

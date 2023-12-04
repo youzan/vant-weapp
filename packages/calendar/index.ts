@@ -192,15 +192,18 @@ VantComponent({
               const curMonth = Math.floor(scrollTop / cHeight);
               const monthHideMap: {[key: string]: boolean} = {};
               for (let i = Math.max(0, curMonth - 1); i < Math.min(monthData.length, curMonth+3); i++) {
-                  monthHideMap[monthData[i]] = true;
+                  monthHideMap[i] = true;
               }
               me.setData({
                   // @ts-ignore
                   monthData,
+                  scrollTop,
+                  scrollHeight,
+                  cHeight,
                   monthHideMap,
               })
               clearTimeout(this.data.timer);
-          }, 100)
+          }, 200)
       },
 
     reset() {
@@ -210,17 +213,21 @@ VantComponent({
 
     initRect() {
       //     新增 当minDate MaxDate区间大于 `maxSimDays` 天时，日历面板控制总节点数量，只显示当前选中前后三个月的月份日期。
-        const {minDate, maxDate, maxSimDays} = this.data;
+        const {minDate, maxDate, maxSimDays, cHeight, scrollTop, scrollHeight} = this.data;
         if (minDate && maxDate && Math.abs(maxDate-minDate)>maxSimDays*24*60*60*1000) {
             let monthData: number[] = this.data.monthData;
             const monthHideMap: {[key: string]: boolean} = {};
             if (!monthData?.length) {
                 monthData = getMonths(minDate, maxDate)
             }
-            if (!Object.keys(this.data.monthHideMap)?.length) {
-                for (let i = 0; i < Math.min(6,monthData.length); i++) {
-                    monthHideMap[monthData[i]] = true;
-                }
+            let minLoop = 0,maxLoop = 4;
+            if (scrollTop && cHeight && scrollHeight) {
+                let curMonth = Math.floor(scrollTop / cHeight);
+                minLoop = Math.max(0, curMonth-1);
+                maxLoop = Math.min(monthData.length, curMonth+3);
+            }
+            for (let i = minLoop; i < maxLoop; i++) {
+                monthHideMap[i] = true;
             }
 
             this.setData({
@@ -228,6 +235,10 @@ VantComponent({
                 monthData: monthData,
                 monthHideMap,
                 monthVisibleControl: true,
+            })
+        }else {
+            this.setData({
+                monthVisibleControl: false,
             })
         }
       if (this.contentObserver != null) {

@@ -21,7 +21,7 @@
       wx:key="index"
       id="month{{ index }}"
       class="month"
-      visible="{{!monthVisibleControl || monthHideMap[item]}}"
+      visible="{{!monthVisibleControl || monthHideMap[index]}}"
       data-date="{{ item }}"
       date="{{ item }}"
       type="{{ type }}"

@@ -1,3 +1,4 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
 <input
   id="{{ name }}"
   class="{{ utils.bem('field__control', [inputAlign, { disabled, error }]) }} input-class"

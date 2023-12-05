@@ -1,4 +1,21 @@
 # 更新日志
+
+### [v1.11.2](https://github.com/youzan/vant-weapp/compare/v1.11.1...v1.11.2)
+
+`2023-12-05`
+
+**Bug Fixes**
+
+- dialog/goods-action-button: 修复 dialog、goods-action-button 组件缺少 getRealTimePhoneNumber 事件 [#5633](https://github.com/youzan/vant-weapp/issues/5633)
+- upload: 修复企业微信下图片无法上传 [#5581](https://github.com/youzan/vant-weapp/issues/5581)
+- calendar/input/textarea/popup: 修复 skyline 模式下组件报错问题 [#5650](https://github.com/youzan/vant-weapp/issues/5650)
+
+
+**Document**
+
+- area: 订正 columns-num 只支持 number 类型. [#5631](https://github.com/youzan/vant-weapp/issues/5631)
+
+
 ### [v1.11.1](https://github.com/youzan/vant-weapp/compare/v1.11.0...v1.11.1)
 
 `2023-10-10`

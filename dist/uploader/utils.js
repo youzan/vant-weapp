@@ -1,4 +1,4 @@
-import { pickExclude, isPC } from '../common/utils';
+import { pickExclude, isPC, isWxWork } from '../common/utils';
 import { isImageUrl, isVideoUrl } from '../common/validator';
 export function isImageFile(item) {
     if (item.isImage != null) {
@@ -42,7 +42,7 @@ export function chooseFile({ accept, multiple, capture, compressed, maxDuration,
     return new Promise((resolve, reject) => {
         switch (accept) {
             case 'image':
-                if (isPC) {
+                if (isPC || isWxWork) {
                     wx.chooseImage({
                         count: multiple ? Math.min(maxCount, 9) : 1,
                         sourceType: capture,

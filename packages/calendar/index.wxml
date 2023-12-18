@@ -6,6 +6,7 @@
 <van-popup
   wx:if="{{ poppable }}"
   custom-class="van-calendar__popup--{{ position }}"
+  custom-style="{{ popupStyle }}"
   close-icon-class="van-calendar__close-icon"
   show="{{ show }}"
   round="{{ round }}"

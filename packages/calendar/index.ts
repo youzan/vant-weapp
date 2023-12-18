@@ -136,6 +136,7 @@ VantComponent({
       value: 0,
     },
     readonly: Boolean,
+    popupStyle: String,
   },
 
   data: {

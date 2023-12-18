@@ -261,7 +261,7 @@ Page({
 }
 ```
 
-> Tips: 注意，在自定义calendar的高度时，需要确保，滚动到当前月份时，所有的日期要展现在.van-calendar__body内，否则可能会出现滚动时头部月份与当前月份不同步的情况。目前平铺型预设高度618px,弹窗型高度90%。
+> Tips: 注意，在自定义 calendar 的高度时，需要确保，滚动到当前月份时，所有的日期要展现在.van-calendar\_\_body 内，否则可能会出现滚动时头部月份与当前月份不同步的情况。目前平铺型预设高度 618px,弹窗型高度 90%。如需修改，通过--calendar-height 修改平铺型高度,通过 popup-style 修改弹窗型高度。
 
 ## API
 
@@ -274,7 +274,7 @@ Page({
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | min-date | 可选择的最小日期 | _timestamp_ | 当前日期 |
 | max-date | 可选择的最大日期 | _timestamp_ | 当前日期的六个月后 |
-| default-date `v1.10.21` | 默认选中的日期，`type`为`multiple`或`range`时为数组，传入 `null` 表示默认不选择| _timestamp \| timestamp[] \| null_ | 今天 |
+| default-date `v1.10.21` | 默认选中的日期，`type`为`multiple`或`range`时为数组，传入 `null` 表示默认不选择 | _timestamp \| timestamp[] \| null_ | 今天 |
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
 | poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
@@ -286,6 +286,7 @@ Page({
 | confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
 | first-day-of-week | 设置周起始日 | _0~6_ | `0` |
 | readonly `v1.9.1` | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
+| popup-style `v1.11.3` | 自定义弹出层样式 | _string_ | - |
 
 ### Poppable Props
 
@@ -314,9 +315,9 @@ Page({
 
 当 Calendar 的 `type` 为 `multiple` 时，支持以下 props:
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| min-range | 日期最少可选天数 | _number \| string_ | `1` |
+| 参数      | 说明             | 类型               | 默认值 |
+| --------- | ---------------- | ------------------ | ------ |
+| min-range | 日期最少可选天数 | _number \| string_ | `1`    |
 
 ### Day 数据结构
 

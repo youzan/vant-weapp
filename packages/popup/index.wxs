@@ -4,7 +4,7 @@ var style = require('../wxs/style.wxs');
 function popupStyle(data) {
   return style([
     {
-      'z-index': data.zIndex,
+      'z-index': data.zIndex + 1,
       '-webkit-transition-duration': data.currentDuration + 'ms',
       'transition-duration': data.currentDuration + 'ms',
     },

@@ -58,6 +58,7 @@ VantComponent({
       value: defaultFieldNames,
       observer: 'updateFieldNames',
     },
+    useTitleSlot: Boolean,
   },
 
   data: {

@@ -93,43 +93,43 @@ export function transition(showDefaultValue: boolean) {
       },
 
       leave() {
-        this.waitEnterEndPromise &&
-          this.waitEnterEndPromise.then(() => {
-            if (!this.data.display) {
+        if (!this.waitEnterEndPromise) return;
+        this.waitEnterEndPromise.then(() => {
+          if (!this.data.display) {
+            return;
+          }
+
+          const { duration, name } = this.data;
+          const classNames = getClassNames(name);
+          const currentDuration = isObj(duration) ? duration.leave : duration;
+
+          this.status = 'leave';
+          this.$emit('before-leave');
+
+          requestAnimationFrame(() => {
+            if (this.status !== 'leave') {
               return;
             }
 
-            const { duration, name } = this.data;
-            const classNames = getClassNames(name);
-            const currentDuration = isObj(duration) ? duration.leave : duration;
+            this.$emit('leave');
 
-            this.status = 'leave';
-            this.$emit('before-leave');
+            this.setData({
+              classes: classNames.leave,
+              currentDuration,
+            });
 
             requestAnimationFrame(() => {
               if (this.status !== 'leave') {
                 return;
               }
 
-              this.$emit('leave');
+              this.transitionEnded = false;
+              setTimeout(() => this.onTransitionEnd(), currentDuration);
 
-              this.setData({
-                classes: classNames.leave,
-                currentDuration,
-              });
-
-              requestAnimationFrame(() => {
-                if (this.status !== 'leave') {
-                  return;
-                }
-
-                this.transitionEnded = false;
-                setTimeout(() => this.onTransitionEnd(), currentDuration);
-
-                this.setData({ classes: classNames['leave-to'] });
-              });
+              this.setData({ classes: classNames['leave-to'] });
             });
           });
+        });
       },
 
       onTransitionEnd() {

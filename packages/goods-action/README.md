@@ -146,7 +146,6 @@ Page({
 | show-message-card | 显示会话内消息卡片 | _string_ | `false` |
 | custom-style `v1.11.3` | 自定义样式 | _string_ | '' |
 
-
 ### Events
 
 | 事件名 | 说明             | 参数 |

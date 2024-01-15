@@ -213,6 +213,7 @@ Page({
 | show-header | 是否展示标题栏 | _boolean_ | `true` |
 | close-icon | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/icon) | _string_ | `cross` |
 | field-names | 自定义 `options` 结构中的字段 | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
+| use-title-slot `v1.11.3` | 是否使用自定义标题的插槽 | _boolean_ | `false` |
 
 ### CascaderOption 数据结构
 

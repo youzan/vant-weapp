@@ -1,6 +1,6 @@
 {
   "name": "@vant/weapp",
-  "version": "1.11.2",
+  "version": "1.11.3-beta.0",
   "author": "vant-ui",
   "license": "MIT",
   "miniprogram": "lib",

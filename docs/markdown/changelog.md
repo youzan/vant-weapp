@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v1.11.3](https://github.com/youzan/vant-weapp/compare/v1.11.2...v1.11.3)
+
+`2024-01-16`
+
+**Bug Fixes**
+
+- Cascader: fix title slot inoperative [#5676](https://github.com/youzan/vant-weapp/issues/5676)
+- Transition: fix transition event sequence [#5699](https://github.com/youzan/vant-weapp/issues/5699)
+
+
+**Feature**
+
+- Calendar、ActionSheet、Dialog、ShareSheet: add root portal prop [#5680](https://github.com/youzan/vant-weapp/issues/5680)
+- goods-action-button: add custom-style prop support [#5659](https://github.com/youzan/vant-weapp/issues/5659)
+- Upload: support mix mediaType #5690 [#5690](https://github.com/youzan/vant-weapp/issues/5690)
+
+
 ### [v1.11.2](https://github.com/youzan/vant-weapp/compare/v1.11.1...v1.11.2)
 
 `2023-12-05`

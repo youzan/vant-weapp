@@ -244,7 +244,7 @@ uploadFilePromise(fileName, chooseResult) {
 | camera | 当 accept 为 `video` \| `media` 时生效，可选值为 `back` `front` | _string_ | - |
 | compressed | 当 accept 为 `video` 时生效，是否压缩视频，默认为`true` | _boolean_ | - |
 | max-duration | 当 accept 为 `video` \| `media` 时生效，拍摄视频最长拍摄时间，单位秒 | _number_ | `60` |
-| media-type `v1.10.8` | 当 accept 为 `media` 时生效，选择的文件的文件类型，可选值为 `image` `video` | _string[]_ | `['image', 'video']` |
+| media-type `v1.10.8` | 当 accept 为 `media` 时生效，选择的文件的文件类型，可选值为 `image` `video` `mix` | _string[]_ | `['image', 'video', 'mix']` |
 | extension `v1.10.11` | 当 accept 为 `file` 时生效，根据文件拓展名过滤可选择文件。每一项都不能是空字符串。默认不过滤 | _string[] \| undefined_ | - |
 | showmenu `v1.10.13` | 预览图片时，是否显示长按菜单 | _boolean_ | `true` |
 | upload-icon | 上传区域图标，可选值见 [Icon 组件](#/icon) | _string_ | `plus` |

@@ -68,6 +68,10 @@ VantComponent({
       type: String,
       value: 'scale',
     },
+    rootPortal: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   data: {

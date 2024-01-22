@@ -125,10 +125,12 @@ export function transition(showDefaultValue: boolean) {
               }
 
               this.transitionEnded = false;
-              setTimeout(() => this.onTransitionEnd(), currentDuration);
+              setTimeout(() => {
+                this.onTransitionEnd();
+                this.enterFinishedPromise = null;
+              }, currentDuration);
 
               this.setData({ classes: classNames['leave-to'] });
-              this.enterFinishedPromise = null;
             });
           });
         });

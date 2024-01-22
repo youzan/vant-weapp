@@ -53,7 +53,8 @@ export function transition(showDefaultValue: boolean) {
       },
 
       enter() {
-        this.waitEnterEndPromise = new Promise((resolve) => {
+        if (this.enterFinishedPromise) return;
+        this.enterFinishedPromise = new Promise((resolve) => {
           const { duration, name } = this.data;
           const classNames = getClassNames(name);
           const currentDuration = isObj(duration) ? duration.enter : duration;
@@ -93,8 +94,8 @@ export function transition(showDefaultValue: boolean) {
       },
 
       leave() {
-        if (!this.waitEnterEndPromise) return;
-        this.waitEnterEndPromise.then(() => {
+        if (!this.enterFinishedPromise) return;
+        this.enterFinishedPromise.then(() => {
           if (!this.data.display) {
             return;
           }
@@ -127,6 +128,7 @@ export function transition(showDefaultValue: boolean) {
               setTimeout(() => this.onTransitionEnd(), currentDuration);
 
               this.setData({ classes: classNames['leave-to'] });
+              this.enterFinishedPromise = null;
             });
           });
         });

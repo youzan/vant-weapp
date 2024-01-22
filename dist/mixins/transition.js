@@ -46,7 +46,9 @@ export function transition(showDefaultValue) {
                 value ? this.enter() : this.leave();
             },
             enter() {
-                this.waitEnterEndPromise = new Promise((resolve) => {
+                if (this.enterFinishedPromise)
+                    return;
+                this.enterFinishedPromise = new Promise((resolve) => {
                     const { duration, name } = this.data;
                     const classNames = getClassNames(name);
                     const currentDuration = isObj(duration) ? duration.enter : duration;
@@ -78,9 +80,9 @@ export function transition(showDefaultValue) {
                 });
             },
             leave() {
-                if (!this.waitEnterEndPromise)
+                if (!this.enterFinishedPromise)
                     return;
-                this.waitEnterEndPromise.then(() => {
+                this.enterFinishedPromise.then(() => {
                     if (!this.data.display) {
                         return;
                     }
@@ -103,7 +105,10 @@ export function transition(showDefaultValue) {
                                 return;
                             }
                             this.transitionEnded = false;
-                            setTimeout(() => this.onTransitionEnd(), currentDuration);
+                            setTimeout(() => {
+                                this.onTransitionEnd();
+                                this.enterFinishedPromise = null;
+                            }, currentDuration);
                             this.setData({ classes: classNames['leave-to'] });
                         });
                     });

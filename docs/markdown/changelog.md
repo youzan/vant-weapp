@@ -1,4 +1,12 @@
 # 更新日志
+### [v1.11.4](https://github.com/youzan/vant-weapp/compare/v1.11.3...v1.11.4)
+
+`2024-01-22`
+
+**Bug Fixes**
+
+- Transition: 修复 popup 在特定情况下无法关闭 [#5707](https://github.com/youzan/vant-weapp/issues/5707)
+
 
 ### [v1.11.3](https://github.com/youzan/vant-weapp/compare/v1.11.2...v1.11.3)
 
@@ -6,15 +14,15 @@
 
 **Bug Fixes**
 
-- Cascader: fix title slot inoperative [#5676](https://github.com/youzan/vant-weapp/issues/5676)
-- Transition: fix transition event sequence [#5699](https://github.com/youzan/vant-weapp/issues/5699)
+- Cascader: 修复 title slot 不生效 [#5676](https://github.com/youzan/vant-weapp/issues/5676)
+- Transition: 修复 transition 多次触发 enter 时异常 [#5699](https://github.com/youzan/vant-weapp/issues/5699)
 
 
 **Feature**
 
-- Calendar、ActionSheet、Dialog、ShareSheet: add root portal prop [#5680](https://github.com/youzan/vant-weapp/issues/5680)
-- goods-action-button: add custom-style prop support [#5659](https://github.com/youzan/vant-weapp/issues/5659)
-- Upload: support mix mediaType #5690 [#5690](https://github.com/youzan/vant-weapp/issues/5690)
+- Calendar、ActionSheet、Dialog、ShareSheet: 增加 root-portal 属性支持 [#5680](https://github.com/youzan/vant-weapp/issues/5680)
+- goods-action-button: 增加 custom-style 属性支持 [#5659](https://github.com/youzan/vant-weapp/issues/5659)
+- Upload: 增加 mix mediaType 支持 [#5690](https://github.com/youzan/vant-weapp/issues/5690)
 
 
 ### [v1.11.2](https://github.com/youzan/vant-weapp/compare/v1.11.1...v1.11.2)

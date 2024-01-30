@@ -11,7 +11,6 @@ VantComponent({
     position: 'middle',
     forbidClick: false,
     loadingType: 'circular',
-    selector: '#van-toast',
   },
   methods: {
     // for prevent touchmove

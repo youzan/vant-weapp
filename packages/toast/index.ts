@@ -7,7 +7,6 @@ VantComponent({
     mask: false,
     message: '',
     zIndex: 1000,
-    duration: 2000,
     position: 'middle',
     forbidClick: false,
     loadingType: 'circular',

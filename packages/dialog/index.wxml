@@ -35,7 +35,7 @@
       loading="{{ loading.cancel }}"
       class="van-dialog__button van-hairline--right"
       custom-class="van-dialog__cancel cancle-button-class"
-      custom-style="color: {{ cancelButtonColor }}"
+      custom-style="color: {{ innerCancelButtonColor }}"
       bind:click="onCancel"
     >
       {{ cancelButtonText }}
@@ -46,7 +46,7 @@
       class="van-dialog__button"
       loading="{{ loading.confirm }}"
       custom-class="van-dialog__confirm confirm-button-class"
-      custom-style="color: {{ confirmButtonColor }}"
+      custom-style="color: {{ innerConfirmButtonColor }}"
       button-id="{{ confirmButtonId }}"
       open-type="{{ confirmButtonOpenType }}"
       lang="{{ lang }}"
@@ -81,7 +81,7 @@
         loading="{{ loading.cancel }}"
         class="van-dialog__button van-hairline--right"
         custom-class="van-dialog__cancel cancle-button-class"
-        custom-style="color: {{ cancelButtonColor }}"
+        custom-style="color: {{ innerCancelButtonColor }}"
         bind:click="onCancel"
       >
         {{ cancelButtonText }}
@@ -97,7 +97,7 @@
         class="van-dialog__button"
         loading="{{ loading.confirm }}"
         custom-class="van-dialog__confirm confirm-button-class"
-        custom-style="color: {{ confirmButtonColor }}"
+        custom-style="color: {{ innerConfirmButtonColor }}"
         button-id="{{ confirmButtonId }}"
         open-type="{{ confirmButtonOpenType }}"
         lang="{{ lang }}"

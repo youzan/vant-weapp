@@ -49,7 +49,7 @@
     "gulp": "^4.0.2",
     "gulp-insert": "^0.5.0",
     "gulp-less": "^5.0.0",
-    "gulp-postcss": "^9.0.1",
+    "gulp-postcss": "^10.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "jest": "^27.3.1",

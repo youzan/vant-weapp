@@ -168,7 +168,7 @@ VantComponent({
         const pair = formatted.split('.');
         formatted = `${pair[0]}.${pair[1].slice(0, this.data.decimalLength)}`;
       }
-
+      formatted = this.format(formatted);
       this.emitChange(formatted);
     },
 

@@ -1,6 +1,5 @@
 import { VantComponent } from '../common/component';
 import { button } from '../mixins/button';
-import { GRAY, RED, WHITE } from '../common/color';
 import { toPromise } from '../common/utils';
 import type { Action } from './dialog';
 
@@ -13,7 +12,6 @@ VantComponent({
       type: Boolean,
       observer(show: boolean) {
         !show && this.stopLoading();
-        this.handleButtonColor();
       },
     },
     title: String,
@@ -80,8 +78,6 @@ VantComponent({
       confirm: false,
       cancel: false,
     },
-    innerConfirmButtonColor: '',
-    innerCancelButtonColor: '',
     callback: (() => {}) as unknown as (
       action: string,
       context: WechatMiniprogram.Component.TrivialInstance
@@ -145,16 +141,6 @@ VantComponent({
           }
         });
       }
-    },
-
-    handleButtonColor() {
-      const { confirmButtonColor, cancelButtonColor, theme } = this.data;
-      this.setData({
-        innerConfirmButtonColor:
-          confirmButtonColor || (theme === 'default' ? RED : WHITE),
-        innerCancelButtonColor:
-          cancelButtonColor || (theme === 'default' ? GRAY : WHITE),
-      });
     },
   },
 });

@@ -25,13 +25,13 @@ npm i vant-weapp -S --production
 
 将 app.json 中的 `"style": "v2"` 去除，小程序的[新版基础组件](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#style)强行加上了许多样式，难以覆盖，不关闭将造成部分组件样式混乱。
 
-### 步骤四 构建 npm 包
+### 步骤三 构建 npm 包
 
 打开微信开发者工具，点击 **工具 -> 构建 npm**，并勾选 **使用 npm 模块** 选项，构建完成后，即可引入组件。
 
 <img style="width: 500px;" src="https://img.yzcdn.cn/public_files/2019/08/15/fa0549210055976cb63798503611ce3d.png" />
 
-### 步骤五 typescript 支持
+### 步骤四 typescript 支持
 
 如果你使用 typescript 开发小程序，还需要做如下操作，以获得顺畅的开发体验。
 

@@ -20,7 +20,7 @@ exports[`should render demo and match snapshot 1`] = `
           <wx-button
             appParameter=""
             ariaLabel=""
-            businessId="{{0}}"
+            businessId=""
             class="custom-class van-button van-button--default van-button--normal "
             data-detail="{{null}}"
             formType=""
@@ -58,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
           <wx-button
             appParameter=""
             ariaLabel=""
-            businessId="{{0}}"
+            businessId=""
             class="custom-class van-button van-button--primary van-button--normal "
             data-detail="{{null}}"
             formType=""
@@ -96,7 +96,7 @@ exports[`should render demo and match snapshot 1`] = `
           <wx-button
             appParameter=""
             ariaLabel=""
-            businessId="{{0}}"
+            businessId=""
             class="custom-class van-button van-button--info van-button--normal "
             data-detail="{{null}}"
             formType=""
@@ -135,7 +135,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--danger van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -171,7 +171,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--warning van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -220,7 +220,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--plain "
           data-detail="{{null}}"
           formType=""
@@ -256,7 +256,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--info van-button--normal van-button--plain "
           data-detail="{{null}}"
           formType=""
@@ -305,7 +305,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--plain van-button--hairline van-hairline--surround"
           data-detail="{{null}}"
           formType=""
@@ -341,7 +341,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--info van-button--normal van-button--plain van-button--hairline van-hairline--surround"
           data-detail="{{null}}"
           formType=""
@@ -390,7 +390,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--disabled van-button--unclickable "
           data-detail="{{null}}"
           formType=""
@@ -426,7 +426,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--info van-button--normal van-button--disabled van-button--unclickable "
           data-detail="{{null}}"
           formType=""
@@ -475,7 +475,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--loading van-button--unclickable "
           data-detail="{{null}}"
           formType=""
@@ -524,7 +524,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--loading van-button--unclickable "
           data-detail="{{null}}"
           formType=""
@@ -608,7 +608,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--info van-button--normal van-button--loading van-button--unclickable "
           data-detail="{{null}}"
           formType=""
@@ -675,7 +675,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--square "
           data-detail="{{null}}"
           formType=""
@@ -711,7 +711,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--info van-button--normal van-button--round "
           data-detail="{{null}}"
           formType=""
@@ -760,7 +760,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -805,7 +805,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -850,7 +850,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--plain "
           data-detail="{{null}}"
           formType=""
@@ -914,7 +914,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--large van-button--block "
           data-detail="{{null}}"
           formType=""
@@ -952,7 +952,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -990,7 +990,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--small "
           data-detail="{{null}}"
           formType=""
@@ -1026,7 +1026,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--mini "
           data-detail="{{null}}"
           formType=""
@@ -1075,7 +1075,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -1111,7 +1111,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--primary van-button--normal van-button--block "
           data-detail="{{null}}"
           formType=""
@@ -1160,7 +1160,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--default van-button--normal "
           data-detail="{{null}}"
           formType=""
@@ -1198,7 +1198,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--default van-button--normal van-button--plain "
           data-detail="{{null}}"
           formType=""
@@ -1234,7 +1234,7 @@ exports[`should render demo and match snapshot 1`] = `
         <wx-button
           appParameter=""
           ariaLabel=""
-          businessId="{{0}}"
+          businessId=""
           class="custom-class van-button van-button--default van-button--normal "
           data-detail="{{null}}"
           formType=""

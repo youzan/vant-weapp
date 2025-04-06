@@ -204,7 +204,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <wx-button
                     appParameter=""
                     ariaLabel=""
-                    businessId="{{0}}"
+                    businessId=""
                     class="custom-class van-button van-button--default van-button--mini van-button--round "
                     data-detail="{{null}}"
                     formType=""
@@ -240,7 +240,7 @@ exports[`should render demo and match snapshot 1`] = `
                   <wx-button
                     appParameter=""
                     ariaLabel=""
-                    businessId="{{0}}"
+                    businessId=""
                     class="custom-class van-button van-button--default van-button--mini van-button--round "
                     data-detail="{{null}}"
                     formType=""

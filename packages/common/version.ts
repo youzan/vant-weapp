@@ -18,6 +18,8 @@ export function getSystemInfoSync() {
         //   ...wx.getWindowInfo(),
         //   ...wx.getAppBaseInfo()
         // };
+      } else {
+        systemInfo = wx.getSystemInfoSync();
       }
     } catch (e) {
       systemInfo = wx.getSystemInfoSync();

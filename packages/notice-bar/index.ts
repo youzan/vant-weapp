@@ -82,6 +82,8 @@ VantComponent({
             this.initAnimation(wrapRect.width, contentRect.width);
 
             this.scroll(true);
+          } else {
+            this.reset();
           }
         });
       });
@@ -105,16 +107,19 @@ VantComponent({
       });
     },
 
-    scroll(isInit = false) {
-      this.timer && clearTimeout(this.timer);
-      this.timer = null;
+    reset(x = 0) {
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
 
       this.setData({
-        animationData: this.resetAnimation
-          .translateX(isInit ? 0 : this.wrapWidth)
-          .step()
-          .export(),
+        animationData: this.resetAnimation.translateX(x).step().export(),
       });
+    },
+
+    scroll(isInit = false) {
+      this.reset(isInit ? 0 : this.wrapWidth);
 
       const duration = isInit ? this.contentDuration : this.duration;
 

@@ -16,7 +16,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio
             customClass="demo-radio"
@@ -96,7 +96,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group van-radio-group--horizontal"
+          class="van-radio-group van-radio-group--horizontal custom-class"
         >
           <van-radio>
             <wx-view
@@ -174,7 +174,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio
             customClass="demo-radio"
@@ -254,7 +254,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio
             customClass="demo-radio"
@@ -334,7 +334,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio
             customClass="demo-radio"
@@ -414,7 +414,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio
             customClass="demo-radio"
@@ -494,7 +494,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio>
             <wx-view
@@ -566,7 +566,7 @@ exports[`should render demo and match snapshot 1`] = `
         bind:change="onChange"
       >
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-radio
             customClass="demo-radio"
@@ -643,7 +643,7 @@ exports[`should render demo and match snapshot 1`] = `
       </wx-view>
       <van-radio-group>
         <wx-view
-          class="van-radio-group"
+          class="van-radio-group custom-class"
         >
           <van-cell-group>
             <wx-view

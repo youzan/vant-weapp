@@ -2,15 +2,26 @@ interface WxWorkSystemInfo extends WechatMiniprogram.SystemInfo {
   environment?: 'wxwork';
 }
 
-interface SystemInfo extends WxWorkSystemInfo, WechatMiniprogram.SystemInfo {}
+interface SystemInfo extends WxWorkSystemInfo, WechatMiniprogram.SystemInfo {
+  SDKVersion: string;
+}
 
 let systemInfo: SystemInfo;
 
 export function getSystemInfoSync() {
-  if (systemInfo == null) {
+  try {
+    if (systemInfo == null) {
+      systemInfo = Object.assign(
+        wx.getAppBaseInfo(),
+        wx.getAppAuthorizeSetting(),
+        wx.getDeviceInfo(),
+        wx.getSystemSetting(),
+        wx.getWindowInfo(),
+      );
+    }
+  } catch (error) {
     systemInfo = wx.getSystemInfoSync();
   }
-
   return systemInfo as SystemInfo;
 }
 

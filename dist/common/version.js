@@ -1,6 +1,11 @@
 let systemInfo;
+
 export function getSystemInfoSync() {
-    if (systemInfo == null) {
+    try {
+        if (systemInfo == null) {
+            systemInfo = Object.assign(wx.getAppBaseInfo(), wx.getAppAuthorizeSetting(), wx.getDeviceInfo(), wx.getSystemSetting(), wx.getWindowInfo());
+        }
+    } catch (error) {
         systemInfo = wx.getSystemInfoSync();
     }
     return systemInfo;

@@ -76,7 +76,6 @@ export function canIUseGroupSetData() {
 
 export function canIUseNextTick() {
   try {
-    const { wx } = window as any;
     return wx.canIUse('nextTick');
   } catch (e) {
     return gte('2.7.1');
@@ -88,6 +87,5 @@ export function canIUseCanvas2d() {
 }
 
 export function canIUseGetUserProfile() {
-  const { wx } = window as any;
   return !!wx.getUserProfile;
 }

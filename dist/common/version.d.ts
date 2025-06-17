@@ -3,6 +3,7 @@ interface WxWorkSystemInfo extends WechatMiniprogram.SystemInfo {
     environment?: 'wxwork';
 }
 interface SystemInfo extends WxWorkSystemInfo, WechatMiniprogram.SystemInfo {
+    SDKVersion: string;
 }
 export declare function getSystemInfoSync(): SystemInfo;
 export declare function canIUseModel(): boolean;

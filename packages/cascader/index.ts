@@ -45,6 +45,10 @@ VantComponent({
       type: Boolean,
       value: true,
     },
+    ellipsis: {
+      type: Boolean,
+      value: true,
+    },
     showHeader: {
       type: Boolean,
       value: true,
@@ -193,6 +197,7 @@ VantComponent({
             selected: null,
           },
         ],
+        activeTab: 0,
       });
     },
     onClose() {

@@ -8887,10 +8887,15 @@ minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-miniprogram-api-typings@^3.1.6, miniprogram-api-typings@^3.2.2:
+miniprogram-api-typings@^3.2.2:
   version "3.12.2"
   resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.12.2.tgz#88f9a43e5a7ab9162d848feee0e876f9bae52585"
   integrity sha512-OJB2uVAfhycX4teG/zEVpoThushQqLOx946XACDpVc6OQydiJWjn7djVzvNCbv0VOA7sbHGPQp/RkXD9vMCDEw==
+
+miniprogram-api-typings@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-4.1.2.tgz#69d571f4dcd684dfe345e371157e19bde74045d7"
+  integrity sha512-VmIgxal0GU3nHwsH2UNaRh8jNHG/kauG08Z4W/qiJ1Iubvme48aE+q3grpT9ZLBArMKmSuKlsTq+uPPHSGr0rA==
 
 miniprogram-ci@^1.6.1:
   version "1.9.5"

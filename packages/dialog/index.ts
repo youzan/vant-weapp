@@ -95,7 +95,19 @@ VantComponent({
     },
 
     onClickOverlay() {
-      this.close('overlay');
+      const { asyncClose, beforeClose } = this.data;
+      const CLOSE_ACTION = 'overlay';
+      if (!asyncClose && !beforeClose) {
+        this.close(CLOSE_ACTION);
+        return;
+      }
+      if (beforeClose) {
+        toPromise(beforeClose(CLOSE_ACTION)).then((value) => {
+          if (value) {
+            this.close(CLOSE_ACTION);
+          }
+        });
+      }
     },
 
     close(action: string) {

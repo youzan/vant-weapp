@@ -200,7 +200,7 @@ Page({
 | 事件名称 | 说明                     | 回调参数   |
 | -------- | ------------------------ | ---------- |
 | bind:input    | 当值变化时触发的事件     | 当前 value |
-| bind:change   | 当值变化时触发的事件     | 组件实例   |
+| bind:change   | 当值变化时触发的事件     | {picker: 组件实例, value: Array, index: 触发修改的列索引}   |
 | bind:confirm  | 点击完成按钮时触发的事件 | 当前 value |
 | bind:cancel   | 点击取消按钮时触发的事件 | -          |
 

@@ -17,7 +17,7 @@
     <van-icon
       name="cross"
       custom-class="van-action-sheet__close"
-      bind:click="onClose"
+      bind:click="onCancel"
     />
   </view>
   <view wx:if="{{ description }}" class="van-action-sheet__description van-hairline--bottom">

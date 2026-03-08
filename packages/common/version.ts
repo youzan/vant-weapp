@@ -8,7 +8,22 @@ let systemInfo: SystemInfo;
 
 export function getSystemInfoSync() {
   if (systemInfo == null) {
-    systemInfo = wx.getSystemInfoSync();
+    try {
+      if (wx.canIUse('getAppBaseInfo')) {
+        systemInfo = wx.getAppBaseInfo();
+        // systemInfo = {
+        //   ...wx.getSystemSetting(),
+        //   ...wx.getAppAuthorizeSetting(),
+        //   ...wx.getDeviceInfo(),
+        //   ...wx.getWindowInfo(),
+        //   ...wx.getAppBaseInfo()
+        // };
+      } else {
+        systemInfo = wx.getSystemInfoSync();
+      }
+    } catch (e) {
+      systemInfo = wx.getSystemInfoSync();
+    }
   }
 
   return systemInfo as SystemInfo;

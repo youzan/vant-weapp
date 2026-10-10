@@ -10,6 +10,10 @@
   <van-stepper value="{{ 1 }}" min="5" max="8" />
 </van-cell>
 
+<van-cell center title="字符串类型的范围">
+  <van-stepper value="{{ 8 }}" min="2" max="10" />
+</van-cell>
+
 <van-cell center title="限制输入整数">
   <van-stepper value="{{ 1 }}" integer />
 </van-cell>

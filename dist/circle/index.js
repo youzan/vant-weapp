@@ -1,6 +1,6 @@
 import { BLUE, WHITE } from '../common/color';
 import { VantComponent } from '../common/component';
-import { getSystemInfoSync } from '../common/utils';
+import { getWindowInfo } from '../common/utils';
 import { isObj } from '../common/validator';
 import { canIUseCanvas2d } from '../common/version';
 import { adaptor } from './canvas';
@@ -70,7 +70,6 @@ VantComponent({
                 const ctx = wx.createCanvasContext('van-circle', this);
                 return Promise.resolve(ctx);
             }
-            const dpr = getSystemInfoSync().pixelRatio;
             return new Promise((resolve) => {
                 wx.createSelectorQuery()
                     .in(this)
@@ -80,6 +79,7 @@ VantComponent({
                     const canvas = res[0].node;
                     const ctx = canvas.getContext(type);
                     if (!this.inited) {
+                        const { pixelRatio: dpr } = getWindowInfo();
                         this.inited = true;
                         canvas.width = size * dpr;
                         canvas.height = size * dpr;

@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { useChildren } from '../common/relation';
-import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
+import { addUnit, getRect, getWindowInfo } from '../common/utils';
 
 let ARRAY: WechatMiniprogram.Component.TrivialInstance[] = [];
 
@@ -56,8 +56,6 @@ VantComponent({
   },
 
   beforeCreate() {
-    const { windowHeight } = getSystemInfoSync();
-    this.windowHeight = windowHeight;
     ARRAY.push(this);
   },
 
@@ -100,7 +98,8 @@ VantComponent({
 
       return getRect(this, '.van-dropdown-menu').then((rect) => {
         const { top = 0, bottom = 0 } = rect;
-        const offset = direction === 'down' ? bottom : this.windowHeight - top;
+        const offset =
+          direction === 'down' ? bottom : getWindowInfo().windowHeight - top;
 
         let wrapperStyle = `z-index: ${zIndex};`;
 

@@ -1,5 +1,5 @@
 import { VantComponent } from '../common/component';
-import { getRect, getSystemInfoSync } from '../common/utils';
+import { getRect, getWindowInfo } from '../common/utils';
 VantComponent({
     classes: ['title-class'],
     props: {
@@ -33,7 +33,7 @@ VantComponent({
         height: 46,
     },
     created() {
-        const { statusBarHeight } = getSystemInfoSync();
+        const { statusBarHeight } = getWindowInfo();
         this.setData({
             statusBarHeight,
             height: 46 + statusBarHeight,

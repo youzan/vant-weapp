@@ -4,7 +4,7 @@
 /// <reference types="miniprogram-api-typings" />
 /// <reference types="miniprogram-api-typings" />
 export { isDef } from './validator';
-export { getSystemInfoSync } from './version';
+export { getAppBaseInfo, getDeviceInfo, getSystemInfoSync, getWindowInfo, } from './system';
 export declare function range(num: number, min: number, max: number): number;
 export declare function nextTick(cb: (...args: any[]) => void): void;
 export declare function addUnit(value?: string | number): string | undefined;

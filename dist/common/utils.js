@@ -1,7 +1,8 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import { canIUseGroupSetData, canIUseNextTick, getSystemInfoSync, } from './version';
+import { canIUseGroupSetData, canIUseNextTick } from './version';
+import { getDeviceInfo } from './system';
 export { isDef } from './validator';
-export { getSystemInfoSync } from './version';
+export { getAppBaseInfo, getDeviceInfo, getSystemInfoSync, getWindowInfo, } from './system';
 export function range(num, min, max) {
     return Math.min(Math.max(num, min), max);
 }
@@ -81,6 +82,6 @@ export function getCurrentPage() {
     const pages = getCurrentPages();
     return pages[pages.length - 1];
 }
-export const isPC = ['mac', 'windows'].includes(getSystemInfoSync().platform);
-// 是否企业微信
-export const isWxWork = getSystemInfoSync().environment === 'wxwork';
+export const isPC = ['mac', 'windows'].includes(getDeviceInfo().platform);
+export const isWxWork = !!wx.qy ||
+    getDeviceInfo().environment === 'wxwork';

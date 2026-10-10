@@ -1,12 +1,14 @@
 import { isDef, isNumber, isPlainObject, isPromise } from './validator';
-import {
-  canIUseGroupSetData,
-  canIUseNextTick,
-  getSystemInfoSync,
-} from './version';
+import { canIUseGroupSetData, canIUseNextTick } from './version';
+import { getDeviceInfo } from './system';
 
 export { isDef } from './validator';
-export { getSystemInfoSync } from './version';
+export {
+  getAppBaseInfo,
+  getDeviceInfo,
+  getSystemInfoSync,
+  getWindowInfo,
+} from './system';
 
 export function range(num: number, min: number, max: number) {
   return Math.min(Math.max(num, min), max);
@@ -53,7 +55,7 @@ export function pickExclude(obj: unknown, keys: string[]) {
 
 export function getRect(
   context: WechatMiniprogram.Component.TrivialInstance,
-  selector: string
+  selector: string,
 ) {
   return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult>(
     (resolve) => {
@@ -62,13 +64,13 @@ export function getRect(
         .select(selector)
         .boundingClientRect()
         .exec((rect = []) => resolve(rect[0]));
-    }
+    },
   );
 }
 
 export function getAllRect(
   context: WechatMiniprogram.Component.TrivialInstance,
-  selector: string
+  selector: string,
 ) {
   return new Promise<WechatMiniprogram.BoundingClientRectCallbackResult[]>(
     (resolve) => {
@@ -77,13 +79,13 @@ export function getAllRect(
         .selectAll(selector)
         .boundingClientRect()
         .exec((rect = []) => resolve(rect[0]));
-    }
+    },
   );
 }
 
 export function groupSetData(
   context: WechatMiniprogram.Component.TrivialInstance,
-  cb: () => void
+  cb: () => void,
 ) {
   if (canIUseGroupSetData()) {
     context.groupSetData(cb);
@@ -114,7 +116,8 @@ export function getCurrentPage<T>() {
   return pages[pages.length - 1] as T & WechatMiniprogram.Page.TrivialInstance;
 }
 
-export const isPC = ['mac', 'windows'].includes(getSystemInfoSync().platform);
+export const isPC = ['mac', 'windows'].includes(getDeviceInfo().platform);
 
-// 是否企业微信
-export const isWxWork = getSystemInfoSync().environment === 'wxwork';
+export const isWxWork =
+  !!(wx as typeof wx & { qy?: unknown }).qy ||
+  getDeviceInfo().environment === 'wxwork';

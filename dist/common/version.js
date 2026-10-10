@@ -1,10 +1,5 @@
-let systemInfo;
-export function getSystemInfoSync() {
-    if (systemInfo == null) {
-        systemInfo = wx.getSystemInfoSync();
-    }
-    return systemInfo;
-}
+import { getAppBaseInfo } from './system';
+export { getSystemInfoSync } from './system';
 function compareVersion(v1, v2) {
     v1 = v1.split('.');
     v2 = v2.split('.');
@@ -28,8 +23,8 @@ function compareVersion(v1, v2) {
     return 0;
 }
 function gte(version) {
-    const system = getSystemInfoSync();
-    return compareVersion(system.SDKVersion, version) >= 0;
+    const { SDKVersion } = getAppBaseInfo();
+    return compareVersion(SDKVersion, version) >= 0;
 }
 export function canIUseModel() {
     return gte('2.9.3');

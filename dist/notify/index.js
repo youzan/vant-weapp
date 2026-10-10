@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { WHITE } from '../common/color';
-import { getSystemInfoSync } from '../common/utils';
+import { getWindowInfo } from '../common/utils';
 VantComponent({
     props: {
         message: String,
@@ -34,7 +34,7 @@ VantComponent({
         onClick: null,
     },
     created() {
-        const { statusBarHeight } = getSystemInfoSync();
+        const { statusBarHeight } = getWindowInfo();
         this.setData({ statusBarHeight });
     },
     methods: {

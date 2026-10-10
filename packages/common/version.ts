@@ -1,18 +1,6 @@
-interface WxWorkSystemInfo extends WechatMiniprogram.SystemInfo {
-  environment?: 'wxwork';
-}
+import { getAppBaseInfo } from './system';
 
-interface SystemInfo extends WxWorkSystemInfo, WechatMiniprogram.SystemInfo {}
-
-let systemInfo: SystemInfo;
-
-export function getSystemInfoSync() {
-  if (systemInfo == null) {
-    systemInfo = wx.getSystemInfoSync();
-  }
-
-  return systemInfo as SystemInfo;
-}
+export { getSystemInfoSync } from './system';
 
 function compareVersion(v1, v2) {
   v1 = v1.split('.');
@@ -42,9 +30,9 @@ function compareVersion(v1, v2) {
 }
 
 function gte(version: string) {
-  const system = getSystemInfoSync();
+  const { SDKVersion } = getAppBaseInfo();
 
-  return compareVersion(system.SDKVersion, version) >= 0;
+  return compareVersion(SDKVersion, version) >= 0;
 }
 
 export function canIUseModel() {

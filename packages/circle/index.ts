@@ -1,6 +1,6 @@
 import { BLUE, WHITE } from '../common/color';
 import { VantComponent } from '../common/component';
-import { getSystemInfoSync } from '../common/utils';
+import { getWindowInfo } from '../common/utils';
 import { isObj } from '../common/validator';
 import { canIUseCanvas2d } from '../common/version';
 import { adaptor } from './canvas';
@@ -76,8 +76,6 @@ VantComponent({
         return Promise.resolve(ctx);
       }
 
-      const dpr = getSystemInfoSync().pixelRatio;
-
       return new Promise((resolve) => {
         wx.createSelectorQuery()
           .in(this)
@@ -88,6 +86,7 @@ VantComponent({
             const ctx = canvas.getContext(type);
 
             if (!this.inited) {
+              const { pixelRatio: dpr } = getWindowInfo();
               this.inited = true;
               canvas.width = size * dpr;
               canvas.height = size * dpr;
@@ -112,8 +111,8 @@ VantComponent({
             .map((key) =>
               LinearColor.addColorStop(
                 parseFloat(key) / 100,
-                color[key] as string
-              )
+                color[key] as string,
+              ),
             );
           this.hoverColor = LinearColor;
         });

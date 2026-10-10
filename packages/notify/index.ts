@@ -1,6 +1,6 @@
 import { VantComponent } from '../common/component';
 import { WHITE } from '../common/color';
-import { getSystemInfoSync } from '../common/utils';
+import { getWindowInfo } from '../common/utils';
 
 VantComponent({
   props: {
@@ -31,13 +31,13 @@ VantComponent({
 
   data: {
     show: false,
-    onOpened: (null as unknown) as () => void,
-    onClose: (null as unknown) as () => void,
-    onClick: (null as unknown) as (detail: Record<string, null>) => void,
+    onOpened: null as unknown as () => void,
+    onClose: null as unknown as () => void,
+    onClick: null as unknown as (detail: Record<string, null>) => void,
   },
 
   created() {
-    const { statusBarHeight } = getSystemInfoSync();
+    const { statusBarHeight } = getWindowInfo();
     this.setData({ statusBarHeight });
   },
 

@@ -1,5 +1,32 @@
 # 更新日志
 
+### [v1.11.8](https://github.com/youzan/vant-weapp/compare/v1.11.7...v1.11.8)
+
+`2026-10-10`
+
+**Bug Fixes**
+
+- common: 使用 `getWindowInfo`、`getDeviceInfo` 和 `getAppBaseInfo` 替代已废弃的 `getSystemInfoSync`，保留旧基础库兼容回退 [#6092](https://github.com/youzan/vant-weapp/pull/6092)
+- action-sheet: 修复实时手机号和隐私授权事件未转发的问题，支持通过 `actions[].buttonId` 设置原生按钮 ID [#6093](https://github.com/youzan/vant-weapp/pull/6093)
+- stepper: 修复 `min`、`max` 为字符串时按钮禁用状态错误的问题 [#6090](https://github.com/youzan/vant-weapp/pull/6090)
+- notice-bar: 修复文本变短后显示异常的问题 [#5990](https://github.com/youzan/vant-weapp/pull/5990)
+- dropdown-item: 修复开启 `root-portal` 时定位错误的问题 [#5985](https://github.com/youzan/vant-weapp/pull/5985)
+- button: 修复 `business-id` 导致 `open-type="contact"` 失效的问题 [#5986](https://github.com/youzan/vant-weapp/pull/5986)
+
+**Feature**
+
+- radio-group: 增加 `custom-class` 支持 [#5798](https://github.com/youzan/vant-weapp/pull/5798)
+
+**Document**
+
+- common: 更新推荐的全局字体配置 [#5874](https://github.com/youzan/vant-weapp/pull/5874)
+- overlay、image: 修正文档说明 [#5939](https://github.com/youzan/vant-weapp/pull/5939)
+
+**Build**
+
+- 将 `miniprogram-api-typings` 的最低版本更新为 `3.4.4` [#6092](https://github.com/youzan/vant-weapp/pull/6092)
+- 将 `rollup` 从 `4.22.4` 升级到 `4.59.0` [#6078](https://github.com/youzan/vant-weapp/pull/6078)
+
 ### [v1.11.7](https://github.com/youzan/vant-weapp/compare/v1.11.6...v1.11.7)
 
 `2024-10-14`

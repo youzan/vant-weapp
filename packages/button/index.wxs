@@ -22,6 +22,10 @@ function rootStyle(data) {
 }
 
 function loadingColor(data) {
+  if (data.loadingColor) {
+    return data.loadingColor;
+  }
+
   if (data.plain) {
     return data.color ? data.color : '#c9c9c9';
   }

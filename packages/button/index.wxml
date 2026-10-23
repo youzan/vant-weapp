@@ -34,7 +34,7 @@
       custom-class="loading-class"
       size="{{ loadingSize }}"
       type="{{ loadingType }}"
-      color="{{ computed.loadingColor({ type, color, plain }) }}"
+      color="{{ computed.loadingColor({ loadingColor, type, color, plain }) }}"
     />
     <view wx:if="{{ loadingText }}" class="van-button__loading-text">
       {{ loadingText }}

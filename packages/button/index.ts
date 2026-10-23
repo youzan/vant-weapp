@@ -50,6 +50,7 @@ VantComponent({
       value: '20px',
     },
     color: String,
+    loadingColor: String,
   },
 
   methods: {

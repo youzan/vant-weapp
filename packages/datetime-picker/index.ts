@@ -42,7 +42,7 @@ function getMonthEndDay(year: number, month: number): number {
 
 const defaultFormatter = (
   type: 'year' | 'month' | 'day' | 'hour' | 'minute',
-  value: string
+  value: string,
 ) => value;
 
 VantComponent({
@@ -172,20 +172,10 @@ VantComponent({
         ];
       }
 
-      const {
-        maxYear,
-        maxDate,
-        maxMonth,
-        maxHour,
-        maxMinute,
-      } = this.getBoundary('max', data.innerValue);
-      const {
-        minYear,
-        minDate,
-        minMonth,
-        minHour,
-        minMinute,
-      } = this.getBoundary('min', data.innerValue);
+      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } =
+        this.getBoundary('max', data.innerValue);
+      const { minYear, minDate, minMonth, minHour, minMinute } =
+        this.getBoundary('min', data.innerValue);
 
       const result = [
         {
@@ -288,7 +278,7 @@ VantComponent({
       this.$emit('confirm', this.data.innerValue);
     },
 
-    onChange() {
+    onChange(event) {
       const { data } = this;
       let value;
 
@@ -302,7 +292,7 @@ VantComponent({
       } else {
         const indexes = picker.getIndexes();
         const values = indexes.map(
-          (value, index) => originColumns[index].values[value]
+          (value, index) => originColumns[index].values[value],
         );
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
@@ -324,7 +314,7 @@ VantComponent({
 
       this.updateColumnValue(value).then(() => {
         this.$emit('input', value);
-        this.$emit('change', picker);
+        this.$emit('change', { ...event.detail, picker });
       });
     },
 
@@ -350,7 +340,7 @@ VantComponent({
           values.push(
             formatter('day', padZero(date.getDate())),
             formatter('hour', padZero(date.getHours())),
-            formatter('minute', padZero(date.getMinutes()))
+            formatter('minute', padZero(date.getMinutes())),
           );
         }
       }
